@@ -10,9 +10,8 @@ does not remove upstream copyright notices or relicense third-party software.
 - Language runtimes retain their notices under `lib/language` and
   `src/language`; precompiled host bundles carry their upstream notices in the
   corresponding pinned bundle manifest and payload.
-- Source files imported with Apache-2.0 notices keep those notices. The former
-  parent repository's Apache-2.0 license is preserved in
-  `LICENSES/Apache-2.0.txt` for these components.
+- Source files with existing upstream license notices keep those notices and
+  the applicable license texts supplied with their components.
 
 Consult the applicable component's source, license and provenance metadata when
 redistributing it or producing a linked application. Git LFS changes only the
