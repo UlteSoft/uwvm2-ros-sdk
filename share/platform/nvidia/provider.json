@@ -67,7 +67,8 @@
     "go",
     "js",
     "rs",
-    "tinygo"
+    "tinygo",
+    "typescript"
   ],
   "targets": [
     "wasm32-wasip1",

@@ -1,0 +1,31 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/absolute/path/to/uwvm2-ros",
+  "gateway": "/absolute/path/to/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "connection": {
+    "node-name": "nvidia_typescript_cpu",
+    "namespace": "/",
+    "domain-id": "137",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test"
+  },
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "complete_catalog": {
+      "arguments": [],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [
+            "realtime-clock"
+          ]
+        }
+      }
+    }
+  }
+}

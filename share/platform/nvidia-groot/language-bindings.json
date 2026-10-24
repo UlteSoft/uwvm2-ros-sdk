@@ -43,7 +43,23 @@
     "tinygo": {
       "source_root": "include/platform/nvidia-groot/tinygo/ros2/complete",
       "public_prefix": "nvidia-groot/tinygo/ros2/complete",
-      "source_only": true
+      "source_only": false,
+      "native_action": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo",
+            "include/platform/nvidia-groot/tinygo"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      },
+      "implemented_target_action": "wasm32-wasip1",
+      "wasm64_action": "explicitly-refused-by-shared-frontend; no-fallback",
+      "capabilities": "share/platform/nvidia/development-capabilities.json"
     },
     "rs": {
       "source_root": "include/platform/nvidia-groot/rs/ros2/complete",
@@ -138,6 +154,19 @@
       "source_root": "include/platform/nvidia-groot/zig/ros2/complete",
       "public_prefix": "nvidia-groot/zig/ros2/complete",
       "source_only": true
+    },
+    "typescript": {
+      "source_root": "include/platform/nvidia-groot/typescript/ros2/complete",
+      "public_prefix": "nvidia-groot/typescript/ros2/complete",
+      "source_only": false,
+      "source_extensions": [
+        ".ts",
+        ".mts"
+      ],
+      "required_shared_compiler": "Microsoft TypeScript 5.9.3 strict semantic frontend",
+      "execution_engine": "single shared QuickJS",
+      "implemented_target_action": "wasm32-wasip1",
+      "capabilities": "share/platform/nvidia/development-capabilities.json"
     }
   }
 }

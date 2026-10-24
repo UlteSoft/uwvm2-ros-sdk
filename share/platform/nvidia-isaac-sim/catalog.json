@@ -737,6 +737,10 @@
       "sha256": "59961422f117f50dab280eb877d0045d8d666944eb0b16212e9382ff4e633cee",
       "generator_output_sha256": "15d145fbdcbbb616b800b97d1b3127df2f6ed555f0d78f12f27931e420287e44",
       "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/typescript/ros2/complete/records.mts",
+      "sha256": "1104316e96830e51c365b7c264276e263157ebaefc95026e97f8e370464d6c01"
     }
   ],
   "shared_auxiliary_generator_inputs": [
@@ -1010,17 +1014,5 @@
     }
   },
   "per_output_generator_profiles": true,
-  "generator_inputs_scope": "Baseline03 retained; only qualified C outputs use approved correction19",
-  "Go_documentation_maintenance": {
-    "source_before_sha256": "6d18f0e0816098d97ed170e2852b84394346b09f7972d17a8941e3122af4f10c",
-    "source_sha256": "26140324d34d2ab06d139839357c370b710a9d532e2156b222dcd459a05fb563",
-    "token_ABI_defaults_preserved_by_parent_review": true,
-    "real_source_rebuild_and_same_cases_revalidated": true,
-    "qualification": "share/platform/nvidia/go-native-review41.json"
-  },
-  "Rust_documentation_maintenance": {
-    "source_sha256": "a54b0d119745ccc14f57bb1a3bbc0b8943c6bf521ae98ee17c754231261b401f",
-    "executable_tokens_unchanged": true,
-    "real_build_and_native_qualification": "share/platform/nvidia/rust-native-review41.json"
-  }
+  "generator_inputs_scope": "Baseline03 retained; only qualified C outputs use approved correction19"
 }

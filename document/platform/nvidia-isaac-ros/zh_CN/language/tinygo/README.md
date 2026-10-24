@@ -1,26 +1,33 @@
-# Isaac ROS 完整 AprilTag 值：tinygo
+# nvidia-isaac-ros：TinyGo ROS2
 
-保留数组 Header、每个检测的 family/id/center、四个角点、独立时间戳位姿及全部 36 项协方差。CPU 图像视图同时保留行填充和明确步长。
+组件模块提供完整有界原始记录，保留严格 UTF-8、有限浮点、序列/元组长度、时间戳
+及独立默认值。组件公共入口为 nvidia-isaac-ros/tinygo/ros2/complete；NVIDIA 总入口需
+显式选择 ros.vendor.component，原始 Array 原生组件为 nvidia-isaac-ros。
+按原字段次序的小端规范线序与 ROS CDR 不同。
 
-必须使用统一的真实 tinygo 编译器/解释器或正式 AOT。平台仅提供完整类型和配置；C 替身、预计算结果或平台私有 VM 不能代替该语言。原生 Python GPU 组件也不能当作 CPython-in-Wasm guest 验收。
+每组件有独立 roundtrip、decode_argument、malformed_wire。roundtrip 接受可选 uint32
+种子并输出完整线序，decode_argument 接受一个完整精确 hex 参数，malformed_wire
+验证正常往返及截断/尾随拒绝。本地非法值 22、流失败 5 分别保留。Isaac ROS 样本含
+两检测、各四角点、全部协方差及不归一化的原四元数。
 
-完整源码提交、组件/版本/传输配置、原生 identity、边界、错误与权限要求见本平台 README。公开导入根为安装目录 `include/platform` 及统一语言 module map，不得依赖例子所在目录深度。声明使用 `set_language("tinygo")`、`set_ros_platform("nvidia-isaac-ros")`、`set_ros2_version("jazzy")`、`set_arch` 和 `set_plat`。编译不得依赖本机 ROS 或 runtime。
+设置 UWVM_ROS_SDK_ROOT，用 xmake f -a wasm32 配置、xmake -vD -j1 构建。
+TinyGo 0.38.0 自带 LLVM 19.1.2 代码生成，Go 1.24.2 提供源码支持，公共 LLVM 23.1.4
+负责支持汇编和最终链接。Xmake 从锁定公共包离线恢复工具，输出单一 Wasm；
+原生 ROS 是另行安装的运行依赖。
 
-当前 API 源文件：
+CPU 运行使用各例子的 main-random-opt-in.deployment.template.json。填写 runtime/gateway
+路径及参数，设置 UWVM_ROS_RUN_CONFIG 后 xmake run。只向 main 手工授予
+monotonic-clock/random，ROS 禁用且 grants 为空；默认基本标准流仍可用。
 
-- `include/platform/nvidia-isaac-ros/tinygo/ros2/complete/records.go`
-- `include/platform/nvidia-isaac-ros/tinygo/ros2/isaac-ros-complete/bounded_records.go`
+Isaac ROS 的 original_array_receive、original_array_echo、original_array_revoke 另用
+main-random-realtime-opt-in 模板，仅 main 有 realtime-clock/random 和确切原始 ROS
+别名、原生/codec 身份、QoS 与资源上限。独立 ROS-denied 模板无 ROS grants。
+构建和运行钩子不会自动增加权限。
 
-独立应用目录：
+receive 关闭一次并观察真正旧句柄 9；echo 按 100 ms 间隔有意发布 20 个完整 Array；
+revoke 检查旧句柄 9 和重开拒绝 125。仅空队列 11 允许有限轮询。主操作、退休及
+清理状态分开；超时不撤销已被接纳的外部影响。
 
-- `example/platform/nvidia-isaac-ros/tinygo/ros2/decode_argument`
-- `example/platform/nvidia-isaac-ros/tinygo/ros2/malformed_wire`
-- `example/platform/nvidia-isaac-ros/tinygo/ros2/roundtrip`
-
-C 使用 `*_valid`、`*_wire_size`、`*_encode`、`*_decode`，遵守声明的 MAX_WIRE_BYTES、已初始化且不重叠的调用方存储和精确返回长度。C++ 使用 `roswasmcpp::Codec<T>`、自有字节容器与精确 span。其他已生成模块完整保留 `share/platform/nvidia-isaac-ros/catalog.json` 中每个成员，并依赖统一语言 wire 基础。服务/动作 envelope 的所有权不等同于纯组件编解码；完整失败字段、应用 nonce 和独立清理结果均须保留。
-
-复制独立示例到任意目录，设置 `UWVM_ROS_SDK_ROOT` 后执行 `xmake` 并检查唯一 Wasm；`xmake run` 还需要已安装 runtime 和手工策略。roundtrip 要改变 uint32 输入并比较全部实际字节；malformed_wire 要验证拒绝且目标未改变；stdin_record 要提供完整标准化消息体并逐字节核对。缺少源码、三个独立例子、真实 memory64 编译器结果或原生 peer 见证的路线仍未完成。实际 implemented/built/executed/documented 状态以 SDK 外的覆盖矩阵为准。
-
-统一 Xmake 目标接口要求使用 `set_kind("binary")`、`set_kind("shared")` 和 `set_kind("static")`，配合标准 `add_deps`、`add_links`、`add_linkdirs` 与 public include 传播。当前平台应用示例尚未证明 shared/static 的生产者或消费者支持。动态部署需要各个真实 Wasm 库及明确的 preload 名称；静态 `.a` 必须包含可重定位 Wasm 对象，并实际验证归档符号提取。每种语言、内存宽度及生产者/消费者组合均须单独执行验收。
-
-要求的模块示例包含 `main`、`io`、`algorithm`、`ros_comm`，仅 `ros_comm` 获得绑定实际加载模块身份的手工 ROS Single 权限。默认 WASI 保留基本标准流权限；algorithm 不增加资源或 ROS 授权。统一加载器、目标类型及跨模块调用方契约通过验证后才可声明此流程可用；必须具备原生正向见证及未授权模块的拒绝结果。`xmake run` 保持提交的原始配置。
+未改变的源码/Wasm 队列已有有限冷构建与 x86/QEMU AArch64 CPU/原生资格，简洁范围
+见 share/platform/nvidia/development-capabilities.json。ROS1、memory64、static/shared、
+其他原生类型、GPU/NITROS/模拟器和 ARM 宿主编译仍需单独验收。

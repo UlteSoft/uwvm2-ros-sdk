@@ -1,0 +1,55 @@
+{
+  "format": "uwvm-platform-development-capabilities-v1",
+  "platforms": [
+    "nvidia",
+    "nvidia-groot",
+    "nvidia-isaac-ros",
+    "nvidia-isaac-sim"
+  ],
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "target": "wasm32-wasip1",
+  "application_kind": "binary",
+  "typescript": {
+    "compiler": "Microsoft TypeScript 5.9.3 strict",
+    "execution_engine": "shared QuickJS 2026-06-04",
+    "CPU": "Complete bounded catalog codecs; argument-driven full primary messages and malformed input",
+    "native": "Original AprilTagDetectionArray receive/close, complete republish and revoke/old-handle"
+  },
+  "tinygo": {
+    "compiler": "TinyGo 0.38.0",
+    "compiler_LLVM": "19.1.2",
+    "Go_source_support": "1.24.2",
+    "support_linker": "LLVM 23.1.4",
+    "CPU": "Complete bounded component codecs; argument-driven values and malformed input",
+    "native": "Original AprilTagDetectionArray receive/close, complete republish and revoke/old-handle"
+  },
+  "manual_permissions": {
+    "typescript_CPU": [
+      "realtime-clock"
+    ],
+    "typescript_native": [
+      "realtime-clock",
+      "monotonic-clock"
+    ],
+    "tinygo_CPU": [
+      "monotonic-clock",
+      "random"
+    ],
+    "tinygo_native": [
+      "realtime-clock",
+      "random"
+    ],
+    "ROS": "Only literal aliases of the communicating module; denied templates have an empty grants list"
+  },
+  "open_acceptance": [
+    "ROS1",
+    "memory64",
+    "static/shared producer-consumer combinations",
+    "all native message/service types",
+    "GPU/NITROS acceleration",
+    "GR00T training/inference",
+    "Isaac Sim execution",
+    "ARM-host source compilation"
+  ]
+}

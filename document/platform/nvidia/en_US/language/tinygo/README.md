@@ -1,25 +1,41 @@
-# NVIDIA component selection: tinygo
+# nvidia: TinyGo ROS2
 
-Choose one original GR00T, Isaac ROS or Isaac Sim component. The umbrella introduces no new wire protocol.
+The component modules expose complete bounded original records with strict UTF-8,
+finite numbers, exact sequence/tuple bounds, timestamps and independent defaults.
+Use nvidia/tinygo/ros2/complete for a component. The NVIDIA umbrella selects
+ros.vendor.component explicitly; its original-Array native component is
+nvidia-isaac-ros. Canonical field-order little-endian wire is distinct from ROS CDR.
 
-TinyGo records import the TinyGo ROS foundation and require the single locked TinyGo compiler, with their original source semantics.
+Each component has independent roundtrip, decode_argument and malformed_wire
+CPU programs. roundtrip takes an optional uint32 seed and prints the entire wire;
+decode_argument takes one complete exact hex body; malformed_wire checks a valid
+roundtrip plus truncation/trailing rejection. Local invalid input is 22 and stream
+failure is 5. Isaac ROS values retain two detections, four corners each, every
+covariance entry and the original unnormalized quaternion.
 
-Read the platform README for source revisions, component/version/transport selections, native identities, complete-value quotas, errors and deployment permissions. The public import root is the installed `include/platform` plus the language's shared module map; example imports must not depend on parent-directory depth. Build descriptions use `set_language("tinygo")`, `set_ros_platform("nvidia")`, `set_ros2_version("jazzy")`, `set_arch` and `set_plat`. No native ROS installation or runtime is required to compile the application.
+Set UWVM_ROS_SDK_ROOT to the installed SDK. Build an example with xmake f -a wasm32
+then xmake -vD -j1. TinyGo 0.38.0 owns LLVM 19.1.2 code generation; Go 1.24.2
+provides source support. Shared LLVM 23.1.4 supplies support assembly and final
+linking. The pinned public bundles restore offline through Xmake. The output is
+one Wasm application; native ROS is a separate runtime dependency.
 
-Current source API files:
+CPU execution uses the example's main-random-opt-in.deployment.template.json.
+Replace runtime/gateway paths, review the arguments and set UWVM_ROS_RUN_CONFIG
+to that operator file before xmake run. Only main has monotonic-clock and random;
+ROS is disabled and grants is empty. Basic default standard streams remain.
 
-The complete guest-language module remains to be delivered by the shared route integration.
+The Isaac ROS original_array_receive, original_array_echo and original_array_revoke
+programs use separately named main-random-realtime-opt-in templates. Only their
+main module receives realtime-clock/random and the literal original ROS aliases,
+native/codec identities, QoS and resource limits. The independent ROS-denied
+template retains no ROS grants. No build/run hook adds authority.
 
-Independent application directories:
+Receive closes once and observes actual old-handle status 9; echo deliberately
+publishes 20 complete Arrays at 100 ms intervals; revoke observes old-handle 9 and
+reopen refusal 125. Only empty 11 permits bounded polling. Primary, retirement and
+cleanup status remain separate; timeout does not undo an admitted external effect.
 
-- `example/platform/nvidia/tinygo/ros2/groot_malformed_wire`
-- `example/platform/nvidia/tinygo/ros2/isaac_ros_roundtrip`
-- `example/platform/nvidia/tinygo/ros2/isaac_sim_decode_argument`
-
-For C, the complete records expose `*_valid`, `*_wire_size`, `*_encode` and `*_decode`; use their declared MAX_WIRE_BYTES, initialized disjoint caller storage and exact returned lengths. C++ uses `roswasmcpp::Codec<T>` with owned byte containers and exact spans. Other emitted source modules retain every member from `share/platform/nvidia/catalog.json` and use the shared language's real wire foundation. Native service/action envelope ownership is separate from a pure component codec. Preserve full response fields, explicit application nonces and independent cleanup results.
-
-Run from a copied standalone example with `UWVM_ROS_SDK_ROOT` set: `xmake`, then inspect the sole Wasm. `xmake run` requires the installed runtime and manually supplied permissions. For roundtrip, vary the supplied uint32 seed and compare actual full bytes; for malformed_wire, require refusal and unchanged destinations; for stdin_record, supply the entire canonical body and check all returned bytes. A route with missing source, fewer than three applications, an unverified memory64 frontend, or missing native peer evidence remains open work. Consult the external coverage matrix for independent implemented/built/executed/documented states.
-
-The required ordinary Xmake targets are `set_kind("binary")`, `set_kind("shared")` and `set_kind("static")`, with standard `add_deps`, `add_links`, `add_linkdirs` and public includes. The present platform application examples do not qualify shared/static producer or consumer support. A shared deployment needs each real Wasm library plus explicit preload names; a static archive contains relocatable Wasm objects and must undergo actual archive-symbol extraction. Each language, memory width and producer/consumer combination needs its own execution result.
-
-The required module example has `main`, `io`, `algorithm` and `ros_comm`. Only `ros_comm` receives manual ROS Single authority bound to its loaded module identity. Default WASI retains basic standard-stream rights; algorithm receives no additional resource or ROS grants. The common loader/build-kind/cross-module caller contract must be qualified before claiming this flow. Native positive observations and denied operations from ungranted modules are required; `xmake run` preserves the exact submitted configuration.
+The unchanged source/Wasm cohort has finite cold-build and x86/QEMU AArch64
+CPU/native qualification. See share/platform/nvidia/development-capabilities.json
+for concise scope. ROS1, memory64, static/shared combinations, all other native
+types, GPU/NITROS/simulation and ARM-host compilation require separate acceptance.

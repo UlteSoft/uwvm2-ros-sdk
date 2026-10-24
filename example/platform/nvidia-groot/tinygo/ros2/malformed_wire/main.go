@@ -1,7 +1,7 @@
 // @file main.go
-// @brief Run complete NVIDIA codecs in the selected genuine Go/TinyGo frontend.
-// @details All wire bytes come from real typed Encode/Decode calls. No ROS or GPU
-// entity is created; standard output is the only application output effect.
+// @brief malformed_wire the complete original nvidia-groot record with the real TinyGo frontend.
+// @details All wire bytes are produced/validated at runtime by typed Go codecs.
+// No native resource, timer, goroutine, GPU or implicit authority is constructed.
 package main
 
 import (
@@ -13,9 +13,9 @@ import (
 	"strconv"
 )
 
-// @brief Construct every active sample field from an actual unsigned input.
-// @param seed Dimensionless uint32 selecting finite original-field values.
-// @return Complete owned typed record; no alias or native object is opened.
+// @brief Construct every active original field from a caller-selected unsigned seed.
+// @param seed Dimensionless uint32; all finite sample values retain bounded storage.
+// @return Owned complete record with no borrowed/native memory or retained handle.
 func sample(seed uint32) types.Ros2Uwvm_groot_bridgeMsgFloatTensor {
 	var v types.Ros2Uwvm_groot_bridgeMsgFloatTensor
 	v.Key = "state"
@@ -27,34 +27,25 @@ func sample(seed uint32) types.Ros2Uwvm_groot_bridgeMsgFloatTensor {
 	return v
 }
 
-// @brief Execute one complete-value operation and retain real errors.
+// @brief Validate one complete operation and preserve codec/output refusal.
+// @return Zero on success,22 for input/codec invariants,5 for stdout failure.
 func run() int {
+	seed := uint64(17)
 	if len(os.Args) > 2 {
 		return 22
 	}
-	var wire []byte
-	var err error
-	if "malformed_wire" == "decode_argument" {
-		if len(os.Args) != 2 || len(os.Args[1]) > types.Ros2Uwvm_groot_bridgeMsgFloatTensorMaxWireBytes*2 {
-			return 22
-		}
-		wire, err = hex.DecodeString(os.Args[1])
+	if len(os.Args) == 2 {
+		parsed, err := strconv.ParseUint(os.Args[1], 10, 32)
 		if err != nil {
 			return 22
 		}
-	} else {
-		seed := uint64(17)
-		if len(os.Args) == 2 {
-			seed, err = strconv.ParseUint(os.Args[1], 10, 32)
-			if err != nil {
-				return 22
-			}
-		}
-		wire, err = sample(uint32(seed)).Encode()
-		if err != nil {
-			return 22
-		}
+		seed = parsed
 	}
+	wire, err := sample(uint32(seed)).Encode()
+	if err != nil {
+		return 22
+	}
+
 	value, err := types.DecodeRos2Uwvm_groot_bridgeMsgFloatTensor(wire)
 	if err != nil {
 		return 22
@@ -63,22 +54,22 @@ func run() int {
 	if err != nil || !bytes.Equal(wire, again) {
 		return 22
 	}
-	if "malformed_wire" == "malformed_wire" {
-		if len(wire) == 0 {
-			return 22
-		}
-		if _, err = types.DecodeRos2Uwvm_groot_bridgeMsgFloatTensor(wire[:len(wire)-1]); err == nil {
-			return 22
-		}
-		if _, err = types.DecodeRos2Uwvm_groot_bridgeMsgFloatTensor(append(append([]byte{}, wire...), 0)); err == nil {
-			return 22
-		}
+	if len(wire) == 0 {
+		return 22
 	}
+	if _, err = types.DecodeRos2Uwvm_groot_bridgeMsgFloatTensor(wire[:len(wire)-1]); err == nil {
+		return 22
+	}
+	extra := append(append([]byte{}, wire...), 0)
+	if _, err = types.DecodeRos2Uwvm_groot_bridgeMsgFloatTensor(extra); err == nil {
+		return 22
+	}
+
 	if _, err = fmt.Printf("wire_bytes=%d wire_hex=%s\n", len(wire), hex.EncodeToString(wire)); err != nil {
 		return 5
 	}
 	return 0
 }
 
-// @brief Exit with the actual codec/output result from the real language process.
+// @brief Preserve the actual operation's checked exit status.
 func main() { os.Exit(run()) }

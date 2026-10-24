@@ -1,0 +1,34 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "PATH_TO_INSTALLED_UWVM2_ROS",
+  "gateway": "PATH_TO_INSTALLED_UWVM_ROS2_GATEWAY",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "connection": {
+    "node-name": "nvidia_tinygo_cpu",
+    "namespace": "/",
+    "domain-id": "137",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test"
+  },
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "malformed_wire": {
+      "arguments": [
+        "81"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [
+            "monotonic-clock",
+            "random"
+          ]
+        }
+      }
+    }
+  }
+}
