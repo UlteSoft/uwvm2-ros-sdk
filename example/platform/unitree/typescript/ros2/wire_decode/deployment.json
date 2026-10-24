@@ -1,0 +1,28 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "wire_decode": {
+      "arguments": [
+        "0000003e000080be0000003f000040bf5344"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [
+            "monotonic-clock",
+            "realtime-clock",
+            "random"
+          ]
+        }
+      }
+    }
+  }
+}
