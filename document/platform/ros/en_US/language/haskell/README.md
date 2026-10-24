@@ -60,12 +60,12 @@ API source index:
 
 `publish_string` publishes two complete `std_msgs/String` samples, one discovery second apart. A failed publication is never replayed. `subscribe_string` activates one retained subscription and only repeats idle status 11 within a finite poll budget. `call_trigger` issues the complete empty `std_srvs/Trigger` request once, preserves the native Bool and whole diagnostic, and reports a false response as an application refusal. Every normally acquired owner receives one explicit close attempt. Transport status, original length-slot observation, decoded-value presence and cleanup remain independent.
 
-- `call_trigger`: `example/platform/ros/haskell/call_trigger`.
-- `publish_string`: `example/platform/ros/haskell/publish_string`.
+- `call_trigger`: `example/platform/ros/haskell/ros2/call_trigger`.
+- `publish_string`: `example/platform/ros/haskell/ros2/publish_string`.
 - `ros1_call_trigger`: `example/platform/ros/haskell/ros1/call_trigger`.
 - `ros1_publish_string`: `example/platform/ros/haskell/ros1/publish_string`.
 - `ros1_subscribe_string`: `example/platform/ros/haskell/ros1/subscribe_string`.
-- `subscribe_string`: `example/platform/ros/haskell/subscribe_string`.
+- `subscribe_string`: `example/platform/ros/haskell/ros2/subscribe_string`.
 
 Run `xmake` inside the selected directory. Memory64 variants have separate explicit declarations and retain their original operation scenario. Each directory is independently relocatable within the SDK and uses public imports without parent traversal.
 

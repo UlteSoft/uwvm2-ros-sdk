@@ -52,12 +52,12 @@ String 是 u32 UTF-8 字节数及完整文本，不含终止符。原生示例�
 
 原生 `publish_string` 显式发布两个完整样本，中间等待一个发现周期，失败时不重放。`subscribe_string` 在一个持有的订阅上有限轮询，仅错误 11 允许继续等待。`call_trigger` 仅发送一次完整空请求，保留原始 success 和完整 message；false 是原生业务拒绝，不可伪装为成功。每个正常取得的 owner 显式 close 一次，传输状态、长度槽是否写入、完整响应是否存在、清理结果分别记录。WASI 的 C 系示例分别执行参数精确求和、真实输入字节校验和和完整流复制；其余 WASI 语言示例仍须补齐并完成公共适配器集成，不记为已完成。
 
-- `call_trigger`: `example/platform/ros/go/call_trigger`.
-- `publish_string`: `example/platform/ros/go/publish_string`.
+- `call_trigger`: `example/platform/ros/go/ros2/call_trigger`.
+- `publish_string`: `example/platform/ros/go/ros2/publish_string`.
 - `ros1_call_trigger`: `example/platform/ros/go/ros1/call_trigger`.
 - `ros1_publish_string`: `example/platform/ros/go/ros1/publish_string`.
 - `ros1_subscribe_string`: `example/platform/ros/go/ros1/subscribe_string`.
-- `subscribe_string`: `example/platform/ros/go/subscribe_string`.
+- `subscribe_string`: `example/platform/ros/go/ros2/subscribe_string`.
 
 memory64 变体使用独立声明和原来的操作场景。各目录仅使用公共导入和全局根，不依赖父目录深度。
 
