@@ -51,25 +51,25 @@
     "full_platform_accepted": false,
     "cases": [
       {
-        "project": "example/platform/realman/c/ros2_jazzy/observe_armcurrentstatus",
+        "project": "example/platform/realman/c/ros2/jazzy/observe_armcurrentstatus",
         "language": "c",
         "address_bits": 32,
         "wasm_sha256": "2fe49cd31834274389a0ecdbeb2f57a06d9c2c4187a80ace74eeb2253ca3a868"
       },
       {
-        "project": "example/platform/realman/c/ros2_jazzy/observe_armcurrentstatus",
+        "project": "example/platform/realman/c/ros2/jazzy/observe_armcurrentstatus",
         "language": "c",
         "address_bits": 64,
         "wasm_sha256": "3bc06db7a4c4e31a0051f869ba59ee323acda11f42d0c265e27bf61ad3b714e2"
       },
       {
-        "project": "example/platform/realman/cpp/ros2_jazzy/observe_armcurrentstatus",
+        "project": "example/platform/realman/cpp/ros2/jazzy/observe_armcurrentstatus",
         "language": "cpp",
         "address_bits": 32,
         "wasm_sha256": "a4b2318f174d29dee3f0924434dd4b0816e8ce4cb5573f3979aa021bdd15d87f"
       },
       {
-        "project": "example/platform/realman/cpp/ros2_jazzy/observe_armcurrentstatus",
+        "project": "example/platform/realman/cpp/ros2/jazzy/observe_armcurrentstatus",
         "language": "cpp",
         "address_bits": 64,
         "wasm_sha256": "41bb3462866ec9a8e388809dcea23025044b7ca00f49df951c9511fa2468f92d"

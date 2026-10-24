@@ -7,7 +7,7 @@ package main
 import (
 	"encoding/hex"
 	"encoding/json"
-	records "leju/tinygo/ros1_main_platform"
+	records "leju/tinygo/ros1/main_platform"
 	"os"
 	"strconv"
 	"time"

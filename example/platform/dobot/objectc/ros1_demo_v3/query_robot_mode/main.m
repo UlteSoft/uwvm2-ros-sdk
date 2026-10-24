@@ -4,7 +4,7 @@
  * @details No Foundation/ARC or automatic finalizer is required. The common producer
  * links this selected profile's records.m and genuine Objective-C runtime into one Wasm.
  */
-#include <dobot/objectc/ros1_demo_v3/records.h>
+#include <dobot/objectc/ros1/demo_v3/records.h>
 #include <ros1/c/roswasm/ros1.h>
 #include <ros/c/command.h>
 #include <stdio.h>

@@ -43,43 +43,43 @@ Flexiv Mode, RecoveryPolicy, OperationalStatus and controller configuration reta
 
 - `include/platform/flexiv/c_ffi_bridge/controller_core_foxy/records.h`.
 - `include/platform/flexiv/c_ffi_bridge/controller_core_humble/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros1_noetic/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros2_foxy/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros2_humble_v1/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros2_humble_v2/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros2_humble_v2_2/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros2_jazzy_v1/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros2_jazzy_v2/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros2_jazzy_v2_2/records.h`.
-- `include/platform/flexiv/c_ffi_bridge/ros2_lyrical_v1/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros1/noetic/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros2/foxy/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros2/humble_v1/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros2/humble_v2/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros2/humble_v2_2/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros2/jazzy_v1/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2_2/records.h`.
+- `include/platform/flexiv/c_ffi_bridge/ros2/lyrical_v1/records.h`.
 
-- `example/platform/flexiv/c_ffi_bridge/ros1_noetic/observe/main.c`: `observe`, `flexiv_msgs/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros1_noetic/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/JointPosVel`.
-- `example/platform/flexiv/c_ffi_bridge/ros1_noetic/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/Mode`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_foxy/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_foxy/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/msg/JointPosVel`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_foxy/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/msg/Mode`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v1/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v1/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/ErrorRecovery_Goal`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v1/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v2/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v2/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v2/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v2_2/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v2_2/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_humble_v2_2/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v1/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v1/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/ErrorRecovery_Goal`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v1/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v2/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v2/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v2/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v2_2/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v2_2/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_jazzy_v2_2/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_lyrical_v1/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_lyrical_v1/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/ErrorRecovery_Goal`.
-- `example/platform/flexiv/c_ffi_bridge/ros2_lyrical_v1/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/c_ffi_bridge/ros1/noetic/observe/main.c`: `observe`, `flexiv_msgs/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros1/noetic/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/JointPosVel`.
+- `example/platform/flexiv/c_ffi_bridge/ros1/noetic/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/Mode`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/foxy/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/foxy/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/msg/JointPosVel`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/foxy/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/msg/Mode`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v1/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v1/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/ErrorRecovery_Goal`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v1/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v2/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v2/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v2/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v2_2/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v2_2/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/humble_v2_2/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v1/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v1/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/ErrorRecovery_Goal`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v1/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2_2/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2_2/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2_2/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/lyrical_v1/observe/main.c`: `observe`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/lyrical_v1/validate_goal/main.c`: `validate_goal`, `flexiv_msgs/action/ErrorRecovery_Goal`.
+- `example/platform/flexiv/c_ffi_bridge/ros2/lyrical_v1/inspect_response/main.c`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
 - `example/platform/flexiv/c_ffi_bridge/controller_core_foxy/observe/main.c`: `observe`, `sensor_msgs/msg/JointState`.
 - `example/platform/flexiv/c_ffi_bridge/controller_core_foxy/validate_goal/main.c`: `validate_goal`, `sensor_msgs/msg/JointState`.
 - `example/platform/flexiv/c_ffi_bridge/controller_core_foxy/inspect_response/main.c`: `inspect_response`, `trajectory_msgs/msg/JointTrajectory`.

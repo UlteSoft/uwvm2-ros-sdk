@@ -17,13 +17,13 @@
 交付的源入口：
 
 - `include/platform/agibot/objectc/AgibotClient.h`
-- `include/platform/agibot/objectc/ros2_sdk_v0_8_1_main/Records.h`
-- `include/platform/agibot/objectc/ros2_sdk_v0_8_2_main/Records.h`
-- `include/platform/agibot/objectc/ros2_sdk_v0_9_0_main/Records.h`
-- `include/platform/agibot/objectc/ros2_sdk_v1_0_0_main/Records.h`
-- `include/platform/agibot/objectc/ros2_sdk_v1_0_0_rl/Records.h`
-- `include/platform/agibot/objectc/ros2_sdk_v1_1_0_main/Records.h`
-- `include/platform/agibot/objectc/ros2_sdk_v1_1_0_rl/Records.h`
+- `include/platform/agibot/objectc/ros2/sdk_v0_8_1_main/Records.h`
+- `include/platform/agibot/objectc/ros2/sdk_v0_8_2_main/Records.h`
+- `include/platform/agibot/objectc/ros2/sdk_v0_9_0_main/Records.h`
+- `include/platform/agibot/objectc/ros2/sdk_v1_0_0_main/Records.h`
+- `include/platform/agibot/objectc/ros2/sdk_v1_0_0_rl/Records.h`
+- `include/platform/agibot/objectc/ros2/sdk_v1_1_0_main/Records.h`
+- `include/platform/agibot/objectc/ros2/sdk_v1_1_0_rl/Records.h`
 
 独立例子：
 

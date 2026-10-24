@@ -5,7 +5,7 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include <flexiv/c_ffi_bridge/ros1_noetic/records.h>
+#include <flexiv/c_ffi_bridge/ros1/noetic/records.h>
 #include <platform/ros1/c/roswasm/ros1.h>
 
 int main(int argc, char** argv)

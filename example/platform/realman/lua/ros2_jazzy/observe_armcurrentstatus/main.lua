@@ -2,7 +2,7 @@
 --- @brief Observe every original rm_ros_interfaces/msg/Armcurrentstatus field.
 --- @details Genuine Lua runs full field validation and preserves separate close status.
 local ros = require("roswasm")
-local records = require("realman/lua/ros2_jazzy/records")
+local records = require("realman/lua/ros2/jazzy/records")
 if #arg ~= 1 then return 22 end
 local session = ros.session(1)
 local owner, primary = session:open(arg[1])

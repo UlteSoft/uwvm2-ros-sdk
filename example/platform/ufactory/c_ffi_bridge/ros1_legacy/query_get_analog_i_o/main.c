@@ -4,7 +4,7 @@
  * @details Read one whole original value through an explicitly granted alias.
  * No response is printed after a transport/codec refusal; no service is replayed.
  */
-#include <ufactory/c_ffi_bridge/ros1_legacy/records.h>
+#include <ufactory/c_ffi_bridge/ros1/legacy/records.h>
 #include <ros1/c/roswasm/ros1.h>
 #include <ros/c/command.h>
 #include <stdio.h>

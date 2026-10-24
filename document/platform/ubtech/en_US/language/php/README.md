@@ -16,7 +16,7 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/ubtech/php/ros2_main/records.php`
+- `include/platform/ubtech/php/ros2/main/records.php`
 
 Standalone examples:
 

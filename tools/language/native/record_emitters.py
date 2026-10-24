@@ -10,7 +10,12 @@ qualification. Generation alone creates no deployment authority.
 import hashlib
 import itertools
 import json
+from pathlib import Path
+import sys
 import textwrap
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared"))
+from backend_layout import profile_module
 
 SCALARS = {
     "zig": ["bool", "u8", "i8", "u16", "i16", "u32", "i32", "u64", "i64", "f32", "f64"],
@@ -238,7 +243,7 @@ def emit(language, backend, records, ordered, semantics, namespace, profile):
     if language == "zig":
         output += ['const std = @import("std");', 'const wire = @import("native_wire");', ""]
     elif language == "d":
-        output += [f"module {namespace}.d.{profile}.records;", "import native.d.wire;", ""]
+        output += [f"module {namespace}.d.{profile_module(profile)}.records;", "import native.d.wire;", ""]
     else:
         output += ["import native/nim/wire", ""]
     for record in ordered:

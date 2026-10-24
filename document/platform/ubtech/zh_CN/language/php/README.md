@@ -16,7 +16,7 @@
 
 交付的源入口：
 
-- `include/platform/ubtech/php/ros2_main/records.php`
+- `include/platform/ubtech/php/ros2/main/records.php`
 
 独立例子：
 

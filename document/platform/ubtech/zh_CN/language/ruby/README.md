@@ -16,7 +16,7 @@
 
 交付的源入口：
 
-- `include/platform/ubtech/ruby/ros2_main/records.rb`
+- `include/platform/ubtech/ruby/ros2/main/records.rb`
 
 独立例子：
 

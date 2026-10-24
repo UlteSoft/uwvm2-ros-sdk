@@ -1,4 +1,4 @@
-module leju/go/ros1_main_platform
+module leju/go/ros1/main_platform
 
 go 1.24
 

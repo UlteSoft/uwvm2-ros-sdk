@@ -2,7 +2,7 @@
 # @brief Observe every original xarm_msgs/msg/RobotMsg field.
 # @details Actual Ruby Integer/String semantics remain in the genuine CRuby guest.
 require "roswasm/transport"
-require "ufactory/ruby/ros2_jazzy/records"
+require "ufactory/ruby/ros2/jazzy/records"
 include Uwvm::Ufactory::Ros2Jazzy
 
 # @brief Observe/query one entire original value and retire its exact owner once.

@@ -6,7 +6,7 @@ The shared interpreter packages this application and its modules into one Wasm.
 import json
 import sys
 from ros.py.transport import Capability, pause_ms
-from realman.py.ros2_foxy.records import Ros2Rm_ros_interfacesMsgSixforce
+from realman.py.ros2.foxy.records import Ros2Rm_ros_interfacesMsgSixforce
 
 
 def main():

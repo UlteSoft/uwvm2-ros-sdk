@@ -76,8 +76,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "ubtech/ruby/ros2_main/records",
-            "path": "include/platform/ubtech/ruby/ros2_main/records.rb"
+            "name": "ubtech/ruby/ros2/main/records",
+            "path": "include/platform/ubtech/ruby/ros2/main/records.rb"
           },
           {
             "name": "uwvm/ruby/observation",
@@ -98,8 +98,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "ubtech/php/ros2_main/records",
-            "path": "include/platform/ubtech/php/ros2_main/records.php"
+            "name": "ubtech/php/ros2/main/records",
+            "path": "include/platform/ubtech/php/ros2/main/records.php"
           },
           {
             "name": "uwvm/php/observation",
@@ -136,13 +136,18 @@
             "package": true
           },
           {
-            "name": "ubtech.py.ros2_main",
-            "path": "include/platform/ubtech/py/ros2_main/__init__.py",
+            "name": "ubtech.py.ros2",
+            "path": "include/platform/ubtech/py/ros2/__init__.py",
             "package": true
           },
           {
-            "name": "ubtech.py.ros2_main.records",
-            "path": "include/platform/ubtech/py/ros2_main/records.py"
+            "name": "ubtech.py.ros2.main",
+            "path": "include/platform/ubtech/py/ros2/main/__init__.py",
+            "package": true
+          },
+          {
+            "name": "ubtech.py.ros2.main.records",
+            "path": "include/platform/ubtech/py/ros2/main/records.py"
           }
         ],
         "js": [
@@ -155,8 +160,8 @@
             "path": "include/platform/ros/js/transport.mjs"
           },
           {
-            "name": "ubtech/js/ros2_main/records",
-            "path": "include/platform/ubtech/js/ros2_main/records.mjs"
+            "name": "ubtech/js/ros2/main/records",
+            "path": "include/platform/ubtech/js/ros2/main/records.mjs"
           }
         ],
         "lua": [
@@ -169,8 +174,8 @@
             "path": "include/platform/ros/lua/roswasm/wire.lua"
           },
           {
-            "name": "ubtech/lua/ros2_main/records",
-            "path": "include/platform/ubtech/lua/ros2_main/records.lua"
+            "name": "ubtech/lua/ros2/main/records",
+            "path": "include/platform/ubtech/lua/ros2/main/records.lua"
           }
         ],
         "r": [
@@ -183,8 +188,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "ubtech/r/ros2_main/records",
-            "path": "include/platform/ubtech/r/ros2_main/records.R"
+            "name": "ubtech/r/ros2/main/records",
+            "path": "include/platform/ubtech/r/ros2/main/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -196,22 +201,22 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "go": {
-          "module": "ubtech/go/ros2_main",
+          "module": "ubtech/go/ros2/main",
           "root": "include/platform/ubtech/go/ros2/ubtech-ros2-main-complete",
           "shared_module": "uwvm2.local/roswasmgo",
           "backend_tag": "ros2",
           "complete_original_records": 8
         },
         "tinygo": {
-          "module": "ubtech/tinygo/ros2_main",
+          "module": "ubtech/tinygo/ros2/main",
           "root": "include/platform/ubtech/tinygo/ros2/ubtech-ros2-main-complete",
           "shared_module": "uwvm2.local/roswasm",
           "backend_tag": "ros2",
           "complete_original_records": 8
         },
         "d": {
-          "module": "ubtech.d.ros2_main.records",
-          "source": "include/platform/ubtech/d/ros2_main/records.d",
+          "module": "ubtech.d.ros2.main.records",
+          "source": "include/platform/ubtech/d/ros2/main/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"

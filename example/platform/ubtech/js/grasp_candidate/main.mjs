@@ -5,7 +5,7 @@
  * replayed; only idle subscription polls repeat, with a finite 250-poll budget.
  */
 import {Capability} from "ros/js/transport";
-import {Ros2Grab_demo_msgsMsgGraspCandidate} from "ubtech/js/ros2_main/records";
+import {Ros2Grab_demo_msgsMsgGraspCandidate} from "ubtech/js/ros2/main/records";
 const facts = {
     primary : 0,
     cleanup : 0,

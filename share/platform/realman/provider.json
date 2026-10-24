@@ -46,7 +46,7 @@
       },
       "language_sources": {
         "objectc": [
-          "src/platform/realman/objectc/ros1_develop/records.m"
+          "src/platform/realman/objectc/ros1/develop/records.m"
         ]
       },
       "scenarios": [
@@ -123,7 +123,7 @@
       },
       "language_sources": {
         "objectc": [
-          "src/platform/realman/objectc/ros1_main/records.m"
+          "src/platform/realman/objectc/ros1/main/records.m"
         ]
       },
       "scenarios": [
@@ -193,7 +193,7 @@
       },
       "language_sources": {
         "objectc": [
-          "src/platform/realman/objectc/ros2_foxy/records.m"
+          "src/platform/realman/objectc/ros2/foxy/records.m"
         ]
       },
       "scenarios": [
@@ -263,10 +263,10 @@
       },
       "language_sources": {
         "objectc": [
-          "src/platform/realman/objectc/ros2_humble/records.m"
+          "src/platform/realman/objectc/ros2/humble/records.m"
         ],
         "java": [
-          "include/platform/realman/java/ros2_humble/realman/ros2_humble/BoundedRecords.java"
+          "include/platform/realman/java/ros2/humble/realman/ros2_humble/BoundedRecords.java"
         ]
       },
       "scenarios": [
@@ -303,7 +303,7 @@
           "format": "uwvm-vendor-source-graph-v1",
           "language": "java",
           "sources": [
-            "include/platform/realman/java/ros2_humble/realman/ros2_humble/BoundedRecords.java"
+            "include/platform/realman/java/ros2/humble/realman/ros2_humble/BoundedRecords.java"
           ],
           "main_class": "Main"
         },
@@ -353,7 +353,7 @@
       },
       "language_sources": {
         "objectc": [
-          "src/platform/realman/objectc/ros2_jazzy/records.m"
+          "src/platform/realman/objectc/ros2/jazzy/records.m"
         ]
       },
       "scenarios": [

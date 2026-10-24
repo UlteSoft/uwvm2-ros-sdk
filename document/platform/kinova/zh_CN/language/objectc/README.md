@@ -33,9 +33,9 @@ ROS FollowJointTrajectory 使用弧度及 SI 导数；原生 Kortex 2.8.0 protob
 
 本路由仍需公共语言组件和完整绑定实现。已交付的完整原始目录及字段 IR 是后续实现的输入；本手册不计为绑定，也不计为示例。
 
-- `example/platform/kinova/objectc/ros2_humble/observe/main.m`: `observe`, `sensor_msgs/msg/JointState`.
-- `example/platform/kinova/objectc/ros2_humble/validate_goal/main.m`: `validate_goal`, `control_msgs/action/FollowJointTrajectory_Goal`.
-- `example/platform/kinova/objectc/ros2_humble/inspect_response/main.m`: `inspect_response`, `control_msgs/action/FollowJointTrajectory_Result`.
+- `example/platform/kinova/objectc/ros2/humble/observe/main.m`: `observe`, `sensor_msgs/msg/JointState`.
+- `example/platform/kinova/objectc/ros2/humble/validate_goal/main.m`: `validate_goal`, `control_msgs/action/FollowJointTrajectory_Goal`.
+- `example/platform/kinova/objectc/ros2/humble/inspect_response/main.m`: `inspect_response`, `control_msgs/action/FollowJointTrajectory_Result`.
 
 C/C++/Objective-C/C FFI/Python/JS 的 observe 示例接收用户明确授予的主题别名并完整解码；其他语言的 decode_state 从运行时输入验证完整状态；validate_goal 从标准输入验证完整目标；inspect_response 检查完整响应/结果负载。后两个是 codec 应用，不能当作已完成原生服务/动作操作。每个目录有独立 xmake.lua，最终只部署一个 .wasm。
 

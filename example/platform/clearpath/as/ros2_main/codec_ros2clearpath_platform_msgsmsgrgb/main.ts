@@ -3,7 +3,7 @@
  * @details Checks malformed extents and exact re-encoding without native authority.
  */
 import {abortGuest} from "ros/as/api";
-import {Ros2Clearpath_platform_msgsMsgRGB, Ros2Clearpath_platform_msgsMsgRGBCodec} from "clearpath/as/ros2_main/records";
+import {Ros2Clearpath_platform_msgsMsgRGB, Ros2Clearpath_platform_msgsMsgRGBCodec} from "clearpath/as/ros2/main/records";
 @external("wasi_snapshot_preview1", "fd_write") declare function fd_write(fd: u32, iovs: usize, count: u32, written: usize): u32;
 @external("wasi_snapshot_preview1", "proc_exit") declare function proc_exit(status: u32): void;
 

@@ -57,7 +57,7 @@ target("kinova-r-ros2_humble-validate_goal")
     set_plat(get_config("plat") or "wasm-wasip1")
     set_values("ros.sdk.modules", {
     {name = "ros/r/roswasm/wire", path = "include/platform/ros/r/roswasm/wire.R"},
-    {name = "kinova/r/ros2_humble/records", path = "include/platform/kinova/r/ros2/mobile-fjt-humble-complete/records.R"},
+    {name = "kinova/r/ros2/humble/records", path = "include/platform/kinova/r/ros2/mobile-fjt-humble-complete/records.R"},
     })
     add_files("main.R")
 

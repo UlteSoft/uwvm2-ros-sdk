@@ -2,7 +2,7 @@
 --- @brief Observe every original xarm_msgs/msg/RobotMsg field.
 --- @details Genuine Lua runs full field validation and preserves separate close status.
 local ros = require("roswasm")
-local records = require("ufactory/lua/ros2_master/records")
+local records = require("ufactory/lua/ros2/master/records")
 if #arg ~= 1 then return 22 end
 local session = ros.session(1)
 local owner, primary = session:open(arg[1])

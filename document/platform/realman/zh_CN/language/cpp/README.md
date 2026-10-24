@@ -42,21 +42,21 @@ SDK 不授予权限。受信任操作者手动提供精确别名、资源、完�
 
 ## 示例流程
 
-- `example/platform/realman/cpp/ros1_develop/observe_arm__current__status`：`observe_arm__current__status`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros1_develop/observe_joint__temperature`：`observe_joint__temperature`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros1_develop/observe_six__force`：`observe_six__force`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros1_main/observe_arm__current__status`：`observe_arm__current__status`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros1_main/observe_joint__temperature`：`observe_joint__temperature`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros1_main/observe_six__force`：`observe_six__force`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_foxy/observe_armcurrentstatus`：`observe_armcurrentstatus`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_foxy/observe_jointtemperature`：`observe_jointtemperature`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_foxy/observe_sixforce`：`observe_sixforce`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_humble/observe_armcurrentstatus`：`observe_armcurrentstatus`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_humble/observe_jointtemperature`：`observe_jointtemperature`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_humble/observe_sixforce`：`observe_sixforce`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_jazzy/observe_armcurrentstatus`：`observe_armcurrentstatus`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_jazzy/observe_jointtemperature`：`observe_jointtemperature`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/realman/cpp/ros2_jazzy/observe_sixforce`：`observe_sixforce`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros1/develop/observe_arm__current__status`：`observe_arm__current__status`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros1/develop/observe_joint__temperature`：`observe_joint__temperature`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros1/develop/observe_six__force`：`observe_six__force`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros1/main/observe_arm__current__status`：`observe_arm__current__status`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros1/main/observe_joint__temperature`：`observe_joint__temperature`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros1/main/observe_six__force`：`observe_six__force`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/foxy/observe_armcurrentstatus`：`observe_armcurrentstatus`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/foxy/observe_jointtemperature`：`observe_jointtemperature`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/foxy/observe_sixforce`：`observe_sixforce`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/humble/observe_armcurrentstatus`：`observe_armcurrentstatus`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/humble/observe_jointtemperature`：`observe_jointtemperature`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/humble/observe_sixforce`：`observe_sixforce`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/jazzy/observe_armcurrentstatus`：`observe_armcurrentstatus`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/jazzy/observe_jointtemperature`：`observe_jointtemperature`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/realman/cpp/ros2/jazzy/observe_sixforce`：`observe_sixforce`，独立 `xmake.lua` 和真实语言源码。
 
 观测示例接收并解码实际完整记录，在显式清理后输出全部规范字节；查询示例编码完整原始请求，校验完整原始响应。验收必须逐字节核对原始记录，并独立核对主错误、清理错误、拒绝权限及坏报文，不能只检查退出码 0。
 

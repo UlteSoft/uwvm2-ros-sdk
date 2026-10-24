@@ -45,15 +45,15 @@ Native aliases are strict UTF-8, contain no NUL, and are 1..255 bytes. Wire leng
 - `example/platform/clearpath/haskell/ros1/observe_drivefeedback`: observe the entire original message `clearpath_platform_msgs/DriveFeedback`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
 - `example/platform/clearpath/haskell/ros1/observe_stopstatus`: observe the entire original message `clearpath_platform_msgs/StopStatus`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
 - `example/platform/clearpath/haskell/ros1/observe_rgb`: observe the entire original message `clearpath_platform_msgs/RGB`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_humble/observe_drivefeedback`: observe the entire original message `clearpath_platform_msgs/msg/DriveFeedback`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_humble/observe_stopstatus`: observe the entire original message `clearpath_platform_msgs/msg/StopStatus`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_humble/observe_rgb`: observe the entire original message `clearpath_platform_msgs/msg/RGB`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_jazzy/observe_drivefeedback`: observe the entire original message `clearpath_platform_msgs/msg/DriveFeedback`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_jazzy/observe_stopstatus`: observe the entire original message `clearpath_platform_msgs/msg/StopStatus`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_jazzy/observe_rgb`: observe the entire original message `clearpath_platform_msgs/msg/RGB`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_main/observe_drivefeedback`: observe the entire original message `clearpath_platform_msgs/msg/DriveFeedback`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_main/observe_stopstatus`: observe the entire original message `clearpath_platform_msgs/msg/StopStatus`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
-- `example/platform/clearpath/haskell/ros2_main/observe_rgb`: observe the entire original message `clearpath_platform_msgs/msg/RGB`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/humble/observe_drivefeedback`: observe the entire original message `clearpath_platform_msgs/msg/DriveFeedback`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/humble/observe_stopstatus`: observe the entire original message `clearpath_platform_msgs/msg/StopStatus`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/humble/observe_rgb`: observe the entire original message `clearpath_platform_msgs/msg/RGB`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/jazzy/observe_drivefeedback`: observe the entire original message `clearpath_platform_msgs/msg/DriveFeedback`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/jazzy/observe_stopstatus`: observe the entire original message `clearpath_platform_msgs/msg/StopStatus`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/jazzy/observe_rgb`: observe the entire original message `clearpath_platform_msgs/msg/RGB`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/main/observe_drivefeedback`: observe the entire original message `clearpath_platform_msgs/msg/DriveFeedback`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/main/observe_stopstatus`: observe the entire original message `clearpath_platform_msgs/msg/StopStatus`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
+- `example/platform/clearpath/haskell/ros2/main/observe_rgb`: observe the entire original message `clearpath_platform_msgs/msg/RGB`. Run `xmake` in this directory; it owns an independent `xmake.lua`.
 
 Transport examples require exactly one explicitly configured alias argument. Pure codec examples accept no native alias and perform no native operation. Only one application `.wasm` belongs in `build/`; private objects and frontend caches are build inputs, and no sidecar is deployed.
 

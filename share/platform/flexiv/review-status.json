@@ -62,25 +62,25 @@
     "full_platform_accepted": false,
     "cases": [
       {
-        "project": "example/platform/flexiv/c/ros2_jazzy_v1/decode_state",
+        "project": "example/platform/flexiv/c/ros2/jazzy_v1/decode_state",
         "language": "c",
         "address_bits": 32,
         "wasm_sha256": "3c407e9961f05d00d643f843fac7779f15005c53096dcfadf9bff05beb1f8a33"
       },
       {
-        "project": "example/platform/flexiv/c/ros2_jazzy_v1/decode_state",
+        "project": "example/platform/flexiv/c/ros2/jazzy_v1/decode_state",
         "language": "c",
         "address_bits": 64,
         "wasm_sha256": "48473d68a04d67aae79b06e5a4c39826beff62ff5684f0ed60c0c2445db44ad5"
       },
       {
-        "project": "example/platform/flexiv/cpp/ros2_jazzy_v1/decode_state",
+        "project": "example/platform/flexiv/cpp/ros2/jazzy_v1/decode_state",
         "language": "cpp",
         "address_bits": 32,
         "wasm_sha256": "ce423e32065d0935069ac75bafe531f2006c25dc58512b70a150b3a2b8442869"
       },
       {
-        "project": "example/platform/flexiv/cpp/ros2_jazzy_v1/decode_state",
+        "project": "example/platform/flexiv/cpp/ros2/jazzy_v1/decode_state",
         "language": "cpp",
         "address_bits": 64,
         "wasm_sha256": "bcb145d530cdcfe765b8529e2e8ba224666deecadfcb16bad8ff8ed6e8eab49c"

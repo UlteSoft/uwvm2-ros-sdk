@@ -8,7 +8,7 @@ import sys
 import math
 import json
 from ros.py.transport import Capability, pause_ms
-from ubtech.py.ros2_main.records import Ros2Grab_demo_msgsMsgGraspCandidate
+from ubtech.py.ros2.main.records import Ros2Grab_demo_msgsMsgGraspCandidate
 
 facts = {"primary": 0, "cleanup": 0, "cleanup_present": False, "response_present": False, "wire_hex": "", "required": None, "rpc_status_present": False, "rpc_status": None}
 if len(sys.argv) != 2:

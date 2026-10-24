@@ -18,10 +18,10 @@
 
 - `include/platform/fourier/d/ros1/fourier-ros1-aurora-bridge-v1-complete/interfaces.d`
 - `include/platform/fourier/d/ros1/fourier-ros1-aurora-bridge-v1-complete/records.d`
-- `include/platform/fourier/d/ros1_aurora_bridge_v1/records.d`
+- `include/platform/fourier/d/ros1/aurora_bridge_v1/records.d`
 - `include/platform/fourier/d/ros2/fourier-ros2-aurora-bridge-v1-complete/interfaces.d`
 - `include/platform/fourier/d/ros2/fourier-ros2-aurora-bridge-v1-complete/records.d`
-- `include/platform/fourier/d/ros2_aurora_bridge_v1/records.d`
+- `include/platform/fourier/d/ros2/aurora_bridge_v1/records.d`
 
 独立例子：
 

@@ -6,7 +6,7 @@ The shared interpreter packages this application and its modules into one Wasm.
 import json
 import sys
 from ros.py.transport import Capability, pause_ms
-from ufactory.py.ros2_humble.records import Ros2Xarm_msgsMsgCIOState
+from ufactory.py.ros2.humble.records import Ros2Xarm_msgsMsgCIOState
 
 
 def main():

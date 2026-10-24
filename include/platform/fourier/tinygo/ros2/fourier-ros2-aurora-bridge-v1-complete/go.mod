@@ -1,4 +1,4 @@
-module fourier/tinygo/ros2_aurora_bridge_v1
+module fourier/tinygo/ros2/aurora_bridge_v1
 
 go 1.23
 

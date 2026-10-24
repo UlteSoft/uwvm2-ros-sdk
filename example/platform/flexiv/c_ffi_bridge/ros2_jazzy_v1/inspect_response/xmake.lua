@@ -54,6 +54,6 @@ target("flexiv-c_ffi_bridge-ros2_jazzy_v1-inspect_response")
     set_arch(get_config("arch") or "wasm32")
     set_plat(get_config("plat") or "wasm-wasip1")
     add_files("main.c")
-    add_files(path.join(sdk, "src/platform/flexiv/c_ffi_bridge/ros2_jazzy_v1/records.c"))
+    add_files(path.join(sdk, "src/platform/flexiv/c_ffi_bridge/ros2/jazzy_v1/records.c"))
 
 target_end()

@@ -42,21 +42,21 @@ The SDK creates no grants. A trusted operator manually supplies exact aliases, r
 
 ## Examples
 
-- `example/platform/realman/php/ros1_develop/observe_arm__current__status`: `observe_arm__current__status`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros1_develop/observe_joint__temperature`: `observe_joint__temperature`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros1_develop/observe_six__force`: `observe_six__force`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros1_main/observe_arm__current__status`: `observe_arm__current__status`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros1_main/observe_joint__temperature`: `observe_joint__temperature`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros1_main/observe_six__force`: `observe_six__force`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_foxy/observe_armcurrentstatus`: `observe_armcurrentstatus`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_foxy/observe_jointtemperature`: `observe_jointtemperature`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_foxy/observe_sixforce`: `observe_sixforce`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_humble/observe_armcurrentstatus`: `observe_armcurrentstatus`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_humble/observe_jointtemperature`: `observe_jointtemperature`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_humble/observe_sixforce`: `observe_sixforce`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_jazzy/observe_armcurrentstatus`: `observe_armcurrentstatus`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_jazzy/observe_jointtemperature`: `observe_jointtemperature`; independent `xmake.lua` and actual source.
-- `example/platform/realman/php/ros2_jazzy/observe_sixforce`: `observe_sixforce`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros1/develop/observe_arm__current__status`: `observe_arm__current__status`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros1/develop/observe_joint__temperature`: `observe_joint__temperature`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros1/develop/observe_six__force`: `observe_six__force`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros1/main/observe_arm__current__status`: `observe_arm__current__status`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros1/main/observe_joint__temperature`: `observe_joint__temperature`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros1/main/observe_six__force`: `observe_six__force`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/foxy/observe_armcurrentstatus`: `observe_armcurrentstatus`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/foxy/observe_jointtemperature`: `observe_jointtemperature`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/foxy/observe_sixforce`: `observe_sixforce`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/humble/observe_armcurrentstatus`: `observe_armcurrentstatus`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/humble/observe_jointtemperature`: `observe_jointtemperature`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/humble/observe_sixforce`: `observe_sixforce`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/jazzy/observe_armcurrentstatus`: `observe_armcurrentstatus`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/jazzy/observe_jointtemperature`: `observe_jointtemperature`; independent `xmake.lua` and actual source.
+- `example/platform/realman/php/ros2/jazzy/observe_sixforce`: `observe_sixforce`; independent `xmake.lua` and actual source.
 
 Each observation prints actual complete canonical bytes only after full decoding and explicit close. A query encodes its complete original request and validates its complete original response. It does not infer success from a response's zero/default fields. Independent acceptance must compare the entire record/bytes, primary status, cleanup status and denied/malformed cases; exit zero alone is insufficient.
 

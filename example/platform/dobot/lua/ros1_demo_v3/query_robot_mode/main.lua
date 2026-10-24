@@ -2,7 +2,7 @@
 --- @brief Query every original rosdemo_v3/RobotMode field.
 --- @details Genuine Lua runs full field validation and preserves separate close status.
 local ros = require("roswasm")
-local records = require("dobot/lua/ros1_demo_v3/records")
+local records = require("dobot/lua/ros1/demo_v3/records")
 if #arg ~= 1 then return 22 end
 local session = ros.session(1)
 local owner, primary = session:open(arg[1])

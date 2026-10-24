@@ -17,7 +17,7 @@
 交付的源入口：
 
 - `include/platform/ubtech/js/ros2/ubtech-ros2-main-complete/bounded_records.mjs`
-- `include/platform/ubtech/js/ros2_main/records.mjs`
+- `include/platform/ubtech/js/ros2/main/records.mjs`
 - `include/platform/ubtech/js/telemetry_ros2_main.mjs`
 
 独立例子：

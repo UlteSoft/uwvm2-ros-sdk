@@ -4,7 +4,7 @@
  * @details No Foundation/ARC or automatic finalizer is required. The common producer
  * links this selected profile's records.m and genuine Objective-C runtime into one Wasm.
  */
-#include <ufactory/objectc/ros2_foxy/records.h>
+#include <ufactory/objectc/ros2/foxy/records.h>
 #include <ros2/c/roswasm/ros2.h>
 #include <ros/c/command.h>
 #include <stdio.h>

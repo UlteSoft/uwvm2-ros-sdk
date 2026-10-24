@@ -82,9 +82,9 @@ API source index:
 
 - `call_trigger`: `example/platform/ros/kotlin/call_trigger`.
 - `publish_string`: `example/platform/ros/kotlin/publish_string`.
-- `ros1_call_trigger`: `example/platform/ros/kotlin/ros1_call_trigger`.
-- `ros1_publish_string`: `example/platform/ros/kotlin/ros1_publish_string`.
-- `ros1_subscribe_string`: `example/platform/ros/kotlin/ros1_subscribe_string`.
+- `ros1_call_trigger`: `example/platform/ros/kotlin/ros1/call_trigger`.
+- `ros1_publish_string`: `example/platform/ros/kotlin/ros1/publish_string`.
+- `ros1_subscribe_string`: `example/platform/ros/kotlin/ros1/subscribe_string`.
 - `subscribe_string`: `example/platform/ros/kotlin/subscribe_string`.
 
 Run `xmake` inside the selected directory. Memory64 variants have separate explicit declarations and retain their original operation scenario. Each directory is independently relocatable within the SDK and uses public imports without parent traversal.

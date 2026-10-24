@@ -16,15 +16,15 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/leju/objectc/ros1_beta_packaged_ik/Records.h`
-- `include/platform/leju/objectc/ros1_beta_platform/Records.h`
-- `include/platform/leju/objectc/ros1_beta_unregistered_dtos/Records.h`
-- `include/platform/leju/objectc/ros1_main_packaged_ik/Records.h`
-- `include/platform/leju/objectc/ros1_main_platform/Records.h`
-- `include/platform/leju/objectc/ros1_main_unregistered_dtos/Records.h`
-- `include/platform/leju/objectc/ros1_master_packaged_ik/Records.h`
-- `include/platform/leju/objectc/ros1_master_platform/Records.h`
-- `include/platform/leju/objectc/ros1_master_unregistered_dtos/Records.h`
+- `include/platform/leju/objectc/ros1/beta_packaged_ik/Records.h`
+- `include/platform/leju/objectc/ros1/beta_platform/Records.h`
+- `include/platform/leju/objectc/ros1/beta_unregistered_dtos/Records.h`
+- `include/platform/leju/objectc/ros1/main_packaged_ik/Records.h`
+- `include/platform/leju/objectc/ros1/main_platform/Records.h`
+- `include/platform/leju/objectc/ros1/main_unregistered_dtos/Records.h`
+- `include/platform/leju/objectc/ros1/master_packaged_ik/Records.h`
+- `include/platform/leju/objectc/ros1/master_platform/Records.h`
+- `include/platform/leju/objectc/ros1/master_unregistered_dtos/Records.h`
 
 Standalone examples:
 

@@ -5,7 +5,7 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include <flexiv/c_ffi_bridge/ros2_foxy/records.h>
+#include <flexiv/c_ffi_bridge/ros2/foxy/records.h>
 
 int main(int argc, char** argv)
 {

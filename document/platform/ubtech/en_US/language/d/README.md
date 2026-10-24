@@ -18,7 +18,7 @@ Delivered source entry paths:
 
 - `include/platform/ubtech/d/ros2/ubtech-ros2-main-complete/interfaces.d`
 - `include/platform/ubtech/d/ros2/ubtech-ros2-main-complete/records.d`
-- `include/platform/ubtech/d/ros2_main/records.d`
+- `include/platform/ubtech/d/ros2/main/records.d`
 
 Standalone examples:
 

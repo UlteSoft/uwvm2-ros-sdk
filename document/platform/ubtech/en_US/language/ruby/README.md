@@ -16,7 +16,7 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/ubtech/ruby/ros2_main/records.rb`
+- `include/platform/ubtech/ruby/ros2/main/records.rb`
 
 Standalone examples:
 

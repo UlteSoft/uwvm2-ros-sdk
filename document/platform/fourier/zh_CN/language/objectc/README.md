@@ -16,8 +16,8 @@
 
 交付的源入口：
 
-- `include/platform/fourier/objectc/ros1_aurora_bridge_v1/Records.h`
-- `include/platform/fourier/objectc/ros2_aurora_bridge_v1/Records.h`
+- `include/platform/fourier/objectc/ros1/aurora_bridge_v1/Records.h`
+- `include/platform/fourier/objectc/ros2/aurora_bridge_v1/Records.h`
 
 独立例子：
 

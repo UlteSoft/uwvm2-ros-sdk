@@ -8,7 +8,7 @@ declare(strict_types=1);
 require_once 'ros/php/RosWasm/Word.php';
 require_once 'ros/php/RosWasm/Wire.php';
 require_once 'ros/php/RosWasm/Transport.php';
-require_once 'realman/php/ros2_foxy/records.php';
+require_once 'realman/php/ros2/foxy/records.php';
 use Uwvm\RosWasm\Capability;
 use Uwvm\Realman\ros2_foxy\Ros2Rm_ros_interfacesMsgJointtemperature;
 

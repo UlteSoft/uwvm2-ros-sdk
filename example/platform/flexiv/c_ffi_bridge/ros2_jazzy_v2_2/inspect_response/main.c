@@ -5,7 +5,7 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include <flexiv/c_ffi_bridge/ros2_jazzy_v2_2/records.h>
+#include <flexiv/c_ffi_bridge/ros2/jazzy_v2_2/records.h>
 
 int main(int argc, char** argv)
 {

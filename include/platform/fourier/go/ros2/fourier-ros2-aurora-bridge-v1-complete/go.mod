@@ -1,4 +1,4 @@
-module fourier/go/ros2_aurora_bridge_v1
+module fourier/go/ros2/aurora_bridge_v1
 
 go 1.24
 

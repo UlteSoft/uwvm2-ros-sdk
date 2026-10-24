@@ -63,9 +63,9 @@ String 是 u32 UTF-8 字节数及完整文本，不含终止符。原生示例�
 
 - `call_trigger`: `example/platform/ros/rs/call_trigger`.
 - `publish_string`: `example/platform/ros/rs/publish_string`.
-- `ros1_call_trigger`: `example/platform/ros/rs/ros1_call_trigger`.
-- `ros1_publish_string`: `example/platform/ros/rs/ros1_publish_string`.
-- `ros1_subscribe_string`: `example/platform/ros/rs/ros1_subscribe_string`.
+- `ros1_call_trigger`: `example/platform/ros/rs/ros1/call_trigger`.
+- `ros1_publish_string`: `example/platform/ros/rs/ros1/publish_string`.
+- `ros1_subscribe_string`: `example/platform/ros/rs/ros1/subscribe_string`.
 - `subscribe_string`: `example/platform/ros/rs/subscribe_string`.
 
 memory64 变体使用独立声明和原来的操作场景。各目录仅使用公共导入和全局根，不依赖父目录深度。

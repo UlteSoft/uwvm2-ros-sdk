@@ -16,15 +16,15 @@
 
 交付的源入口：
 
-- `include/platform/leju/lua/ros1_beta_packaged_ik/records.lua`
-- `include/platform/leju/lua/ros1_beta_platform/records.lua`
-- `include/platform/leju/lua/ros1_beta_unregistered_dtos/records.lua`
-- `include/platform/leju/lua/ros1_main_packaged_ik/records.lua`
-- `include/platform/leju/lua/ros1_main_platform/records.lua`
-- `include/platform/leju/lua/ros1_main_unregistered_dtos/records.lua`
-- `include/platform/leju/lua/ros1_master_packaged_ik/records.lua`
-- `include/platform/leju/lua/ros1_master_platform/records.lua`
-- `include/platform/leju/lua/ros1_master_unregistered_dtos/records.lua`
+- `include/platform/leju/lua/ros1/beta_packaged_ik/records.lua`
+- `include/platform/leju/lua/ros1/beta_platform/records.lua`
+- `include/platform/leju/lua/ros1/beta_unregistered_dtos/records.lua`
+- `include/platform/leju/lua/ros1/main_packaged_ik/records.lua`
+- `include/platform/leju/lua/ros1/main_platform/records.lua`
+- `include/platform/leju/lua/ros1/main_unregistered_dtos/records.lua`
+- `include/platform/leju/lua/ros1/master_packaged_ik/records.lua`
+- `include/platform/leju/lua/ros1/master_platform/records.lua`
+- `include/platform/leju/lua/ros1/master_unregistered_dtos/records.lua`
 
 独立例子：
 

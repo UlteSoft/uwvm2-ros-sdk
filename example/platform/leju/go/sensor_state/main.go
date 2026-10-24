@@ -7,7 +7,7 @@ package main
 import (
 	"encoding/hex"
 	"encoding/json"
-	records "leju/go/ros1_main_platform"
+	records "leju/go/ros1/main_platform"
 	"os"
 	"strconv"
 	"time"

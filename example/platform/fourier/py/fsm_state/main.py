@@ -7,7 +7,7 @@ runs even when a codec raises. Output keeps the full original canonical bytes.
 import sys
 import json
 from ros.py.transport import Capability, pause_ms
-from fourier.py.ros2_aurora_bridge_v1.records import Ros2Uwvm_fourier_bridgeSrvGetFsmState_Response , Ros2Uwvm_fourier_bridgeSrvGetFsmState_Request
+from fourier.py.ros2.aurora_bridge_v1.records import Ros2Uwvm_fourier_bridgeSrvGetFsmState_Response , Ros2Uwvm_fourier_bridgeSrvGetFsmState_Request
 
 facts = {"primary": 0, "cleanup": 0, "cleanup_present": False, "response_present": False, "wire_hex": "", "required": None, "rpc_status_present": False, "rpc_status": None}
 if len(sys.argv) != 3:

@@ -80,8 +80,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "fourier/ruby/ros1_aurora_bridge_v1/records",
-            "path": "include/platform/fourier/ruby/ros1_aurora_bridge_v1/records.rb"
+            "name": "fourier/ruby/ros1/aurora_bridge_v1/records",
+            "path": "include/platform/fourier/ruby/ros1/aurora_bridge_v1/records.rb"
           }
         ],
         "php": [
@@ -98,8 +98,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "fourier/php/ros1_aurora_bridge_v1/records",
-            "path": "include/platform/fourier/php/ros1_aurora_bridge_v1/records.php"
+            "name": "fourier/php/ros1/aurora_bridge_v1/records",
+            "path": "include/platform/fourier/php/ros1/aurora_bridge_v1/records.php"
           }
         ],
         "r": [
@@ -112,8 +112,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "fourier/r/ros1_aurora_bridge_v1/records",
-            "path": "include/platform/fourier/r/ros1_aurora_bridge_v1/records.R"
+            "name": "fourier/r/ros1/aurora_bridge_v1/records",
+            "path": "include/platform/fourier/r/ros1/aurora_bridge_v1/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -125,8 +125,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "fourier.d.ros1_aurora_bridge_v1.records",
-          "source": "include/platform/fourier/d/ros1_aurora_bridge_v1/records.d",
+          "module": "fourier.d.ros1.aurora_bridge_v1.records",
+          "source": "include/platform/fourier/d/ros1/aurora_bridge_v1/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -156,8 +156,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "fourier/ruby/ros2_aurora_bridge_v1/records",
-            "path": "include/platform/fourier/ruby/ros2_aurora_bridge_v1/records.rb"
+            "name": "fourier/ruby/ros2/aurora_bridge_v1/records",
+            "path": "include/platform/fourier/ruby/ros2/aurora_bridge_v1/records.rb"
           },
           {
             "name": "uwvm/ruby/observation",
@@ -178,8 +178,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "fourier/php/ros2_aurora_bridge_v1/records",
-            "path": "include/platform/fourier/php/ros2_aurora_bridge_v1/records.php"
+            "name": "fourier/php/ros2/aurora_bridge_v1/records",
+            "path": "include/platform/fourier/php/ros2/aurora_bridge_v1/records.php"
           },
           {
             "name": "uwvm/php/observation",
@@ -216,13 +216,18 @@
             "package": true
           },
           {
-            "name": "fourier.py.ros2_aurora_bridge_v1",
-            "path": "include/platform/fourier/py/ros2_aurora_bridge_v1/__init__.py",
+            "name": "fourier.py.ros2",
+            "path": "include/platform/fourier/py/ros2/__init__.py",
             "package": true
           },
           {
-            "name": "fourier.py.ros2_aurora_bridge_v1.records",
-            "path": "include/platform/fourier/py/ros2_aurora_bridge_v1/records.py"
+            "name": "fourier.py.ros2.aurora_bridge_v1",
+            "path": "include/platform/fourier/py/ros2/aurora_bridge_v1/__init__.py",
+            "package": true
+          },
+          {
+            "name": "fourier.py.ros2.aurora_bridge_v1.records",
+            "path": "include/platform/fourier/py/ros2/aurora_bridge_v1/records.py"
           }
         ],
         "js": [
@@ -235,8 +240,8 @@
             "path": "include/platform/ros/js/transport.mjs"
           },
           {
-            "name": "fourier/js/ros2_aurora_bridge_v1/records",
-            "path": "include/platform/fourier/js/ros2_aurora_bridge_v1/records.mjs"
+            "name": "fourier/js/ros2/aurora_bridge_v1/records",
+            "path": "include/platform/fourier/js/ros2/aurora_bridge_v1/records.mjs"
           }
         ],
         "lua": [
@@ -249,8 +254,8 @@
             "path": "include/platform/ros/lua/roswasm/wire.lua"
           },
           {
-            "name": "fourier/lua/ros2_aurora_bridge_v1/records",
-            "path": "include/platform/fourier/lua/ros2_aurora_bridge_v1/records.lua"
+            "name": "fourier/lua/ros2/aurora_bridge_v1/records",
+            "path": "include/platform/fourier/lua/ros2/aurora_bridge_v1/records.lua"
           }
         ],
         "r": [
@@ -263,8 +268,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "fourier/r/ros2_aurora_bridge_v1/records",
-            "path": "include/platform/fourier/r/ros2_aurora_bridge_v1/records.R"
+            "name": "fourier/r/ros2/aurora_bridge_v1/records",
+            "path": "include/platform/fourier/r/ros2/aurora_bridge_v1/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -276,22 +281,22 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "go": {
-          "module": "fourier/go/ros2_aurora_bridge_v1",
+          "module": "fourier/go/ros2/aurora_bridge_v1",
           "root": "include/platform/fourier/go/ros2/fourier-ros2-aurora-bridge-v1-complete",
           "shared_module": "uwvm2.local/roswasmgo",
           "backend_tag": "ros2",
           "complete_original_records": 51
         },
         "tinygo": {
-          "module": "fourier/tinygo/ros2_aurora_bridge_v1",
+          "module": "fourier/tinygo/ros2/aurora_bridge_v1",
           "root": "include/platform/fourier/tinygo/ros2/fourier-ros2-aurora-bridge-v1-complete",
           "shared_module": "uwvm2.local/roswasm",
           "backend_tag": "ros2",
           "complete_original_records": 51
         },
         "d": {
-          "module": "fourier.d.ros2_aurora_bridge_v1.records",
-          "source": "include/platform/fourier/d/ros2_aurora_bridge_v1/records.d",
+          "module": "fourier.d.ros2.aurora_bridge_v1.records",
+          "source": "include/platform/fourier/d/ros2/aurora_bridge_v1/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"

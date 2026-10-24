@@ -12,7 +12,10 @@
 function describe(language, profile, backend, architecture)
     local vendor = "boston_dynamics"
     local base = "include/platform/" .. vendor
-    local records = base .. "/" .. language .. "/" .. profile
+    -- Keep the catalog selector separate from its public backend directory.
+    local profile_path = profile:gsub("^(ros[12])_(.+)$", "%1/%2")
+    local profile_module = profile_path:gsub("/", ".")
+    local records = base .. "/" .. language .. "/" .. profile_path
     local action = { format = "uwvm-native-action-v1", language = language }
     local macros = { "UWVM_NATIVE_POINTER_BITS=" .. (architecture == "wasm64" and "64" or "32") }
     if backend == "ros1" then
@@ -52,8 +55,8 @@ function describe(language, profile, backend, architecture)
             modules = {
                 "native.d.wire",
                 "native.d.observation",
-                vendor .. ".d." .. profile .. ".records",
-                vendor .. ".d." .. profile .. ".observation",
+                vendor .. ".d." .. profile_module .. ".records",
+                vendor .. ".d." .. profile_module .. ".observation",
             },
         }
     elseif language == "nim" then

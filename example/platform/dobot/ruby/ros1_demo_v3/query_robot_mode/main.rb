@@ -2,7 +2,7 @@
 # @brief Query every original rosdemo_v3/RobotMode field.
 # @details Actual Ruby Integer/String semantics remain in the genuine CRuby guest.
 require "roswasm/transport"
-require "dobot/ruby/ros1_demo_v3/records"
+require "dobot/ruby/ros1/demo_v3/records"
 include Uwvm::Dobot::Ros1DemoV3
 
 # @brief Observe/query one entire original value and retire its exact owner once.

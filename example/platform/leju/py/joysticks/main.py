@@ -7,7 +7,7 @@ runs even when a codec raises. Output keeps the full original canonical bytes.
 import sys
 import json
 from ros.py.transport import Capability, pause_ms
-from leju.py.ros1_main_platform.records import Ros1Kuavo_msgsJoySticks
+from leju.py.ros1.main_platform.records import Ros1Kuavo_msgsJoySticks
 
 facts = {"primary": 0, "cleanup": 0, "cleanup_present": False, "response_present": False, "wire_hex": "", "required": None, "rpc_status_present": False, "rpc_status": None}
 if len(sys.argv) != 2:

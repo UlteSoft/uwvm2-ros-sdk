@@ -5,7 +5,7 @@
  * replayed; only idle subscription polls repeat, with a finite 250-poll budget.
  */
 import {Capability} from "ros/js/transport";
-import {Ros1Kuavo_msgsSensorsData} from "leju/js/ros1_main_platform/records";
+import {Ros1Kuavo_msgsSensorsData} from "leju/js/ros1/main_platform/records";
 const facts = {
     primary : 0,
     cleanup : 0,

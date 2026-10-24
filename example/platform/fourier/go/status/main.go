@@ -7,7 +7,7 @@ package main
 import (
 	"encoding/hex"
 	"encoding/json"
-	records "fourier/go/ros2_aurora_bridge_v1"
+	records "fourier/go/ros2/aurora_bridge_v1"
 	"os"
 	"strconv"
 	"time"

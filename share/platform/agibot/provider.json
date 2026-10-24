@@ -76,8 +76,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "agibot/ruby/ros2_sdk_v0_8_1_main/records",
-            "path": "include/platform/agibot/ruby/ros2_sdk_v0_8_1_main/records.rb"
+            "name": "agibot/ruby/ros2/sdk_v0_8_1_main/records",
+            "path": "include/platform/agibot/ruby/ros2/sdk_v0_8_1_main/records.rb"
           }
         ],
         "php": [
@@ -94,8 +94,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "agibot/php/ros2_sdk_v0_8_1_main/records",
-            "path": "include/platform/agibot/php/ros2_sdk_v0_8_1_main/records.php"
+            "name": "agibot/php/ros2/sdk_v0_8_1_main/records",
+            "path": "include/platform/agibot/php/ros2/sdk_v0_8_1_main/records.php"
           }
         ],
         "r": [
@@ -108,8 +108,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "agibot/r/ros2_sdk_v0_8_1_main/records",
-            "path": "include/platform/agibot/r/ros2_sdk_v0_8_1_main/records.R"
+            "name": "agibot/r/ros2/sdk_v0_8_1_main/records",
+            "path": "include/platform/agibot/r/ros2/sdk_v0_8_1_main/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -121,8 +121,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "agibot.d.ros2_sdk_v0_8_1_main.records",
-          "source": "include/platform/agibot/d/ros2_sdk_v0_8_1_main/records.d",
+          "module": "agibot.d.ros2.sdk_v0_8_1_main.records",
+          "source": "include/platform/agibot/d/ros2/sdk_v0_8_1_main/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -137,7 +137,7 @@
           "extra_sources": [
             "src/platform/agibot/shared/observation.c",
             "src/platform/agibot/objectc/AgibotClient.m",
-            "src/platform/agibot/objectc/ros2_sdk_v0_8_1_main/Records.m"
+            "src/platform/agibot/objectc/ros2/sdk_v0_8_1_main/Records.m"
           ],
           "integration_status": "SHARED_PRODUCER_CONTRACT_PENDING"
         }
@@ -163,8 +163,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "agibot/ruby/ros2_sdk_v0_8_2_main/records",
-            "path": "include/platform/agibot/ruby/ros2_sdk_v0_8_2_main/records.rb"
+            "name": "agibot/ruby/ros2/sdk_v0_8_2_main/records",
+            "path": "include/platform/agibot/ruby/ros2/sdk_v0_8_2_main/records.rb"
           }
         ],
         "php": [
@@ -181,8 +181,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "agibot/php/ros2_sdk_v0_8_2_main/records",
-            "path": "include/platform/agibot/php/ros2_sdk_v0_8_2_main/records.php"
+            "name": "agibot/php/ros2/sdk_v0_8_2_main/records",
+            "path": "include/platform/agibot/php/ros2/sdk_v0_8_2_main/records.php"
           }
         ],
         "r": [
@@ -195,8 +195,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "agibot/r/ros2_sdk_v0_8_2_main/records",
-            "path": "include/platform/agibot/r/ros2_sdk_v0_8_2_main/records.R"
+            "name": "agibot/r/ros2/sdk_v0_8_2_main/records",
+            "path": "include/platform/agibot/r/ros2/sdk_v0_8_2_main/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -208,8 +208,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "agibot.d.ros2_sdk_v0_8_2_main.records",
-          "source": "include/platform/agibot/d/ros2_sdk_v0_8_2_main/records.d",
+          "module": "agibot.d.ros2.sdk_v0_8_2_main.records",
+          "source": "include/platform/agibot/d/ros2/sdk_v0_8_2_main/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -224,7 +224,7 @@
           "extra_sources": [
             "src/platform/agibot/shared/observation.c",
             "src/platform/agibot/objectc/AgibotClient.m",
-            "src/platform/agibot/objectc/ros2_sdk_v0_8_2_main/Records.m"
+            "src/platform/agibot/objectc/ros2/sdk_v0_8_2_main/Records.m"
           ],
           "integration_status": "SHARED_PRODUCER_CONTRACT_PENDING"
         }
@@ -250,8 +250,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "agibot/ruby/ros2_sdk_v0_9_0_main/records",
-            "path": "include/platform/agibot/ruby/ros2_sdk_v0_9_0_main/records.rb"
+            "name": "agibot/ruby/ros2/sdk_v0_9_0_main/records",
+            "path": "include/platform/agibot/ruby/ros2/sdk_v0_9_0_main/records.rb"
           }
         ],
         "php": [
@@ -268,8 +268,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "agibot/php/ros2_sdk_v0_9_0_main/records",
-            "path": "include/platform/agibot/php/ros2_sdk_v0_9_0_main/records.php"
+            "name": "agibot/php/ros2/sdk_v0_9_0_main/records",
+            "path": "include/platform/agibot/php/ros2/sdk_v0_9_0_main/records.php"
           }
         ],
         "r": [
@@ -282,8 +282,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "agibot/r/ros2_sdk_v0_9_0_main/records",
-            "path": "include/platform/agibot/r/ros2_sdk_v0_9_0_main/records.R"
+            "name": "agibot/r/ros2/sdk_v0_9_0_main/records",
+            "path": "include/platform/agibot/r/ros2/sdk_v0_9_0_main/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -295,8 +295,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "agibot.d.ros2_sdk_v0_9_0_main.records",
-          "source": "include/platform/agibot/d/ros2_sdk_v0_9_0_main/records.d",
+          "module": "agibot.d.ros2.sdk_v0_9_0_main.records",
+          "source": "include/platform/agibot/d/ros2/sdk_v0_9_0_main/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -311,7 +311,7 @@
           "extra_sources": [
             "src/platform/agibot/shared/observation.c",
             "src/platform/agibot/objectc/AgibotClient.m",
-            "src/platform/agibot/objectc/ros2_sdk_v0_9_0_main/Records.m"
+            "src/platform/agibot/objectc/ros2/sdk_v0_9_0_main/Records.m"
           ],
           "integration_status": "SHARED_PRODUCER_CONTRACT_PENDING"
         }
@@ -337,8 +337,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "agibot/ruby/ros2_sdk_v1_0_0_main/records",
-            "path": "include/platform/agibot/ruby/ros2_sdk_v1_0_0_main/records.rb"
+            "name": "agibot/ruby/ros2/sdk_v1_0_0_main/records",
+            "path": "include/platform/agibot/ruby/ros2/sdk_v1_0_0_main/records.rb"
           }
         ],
         "php": [
@@ -355,8 +355,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "agibot/php/ros2_sdk_v1_0_0_main/records",
-            "path": "include/platform/agibot/php/ros2_sdk_v1_0_0_main/records.php"
+            "name": "agibot/php/ros2/sdk_v1_0_0_main/records",
+            "path": "include/platform/agibot/php/ros2/sdk_v1_0_0_main/records.php"
           }
         ],
         "r": [
@@ -369,8 +369,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "agibot/r/ros2_sdk_v1_0_0_main/records",
-            "path": "include/platform/agibot/r/ros2_sdk_v1_0_0_main/records.R"
+            "name": "agibot/r/ros2/sdk_v1_0_0_main/records",
+            "path": "include/platform/agibot/r/ros2/sdk_v1_0_0_main/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -382,8 +382,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "agibot.d.ros2_sdk_v1_0_0_main.records",
-          "source": "include/platform/agibot/d/ros2_sdk_v1_0_0_main/records.d",
+          "module": "agibot.d.ros2.sdk_v1_0_0_main.records",
+          "source": "include/platform/agibot/d/ros2/sdk_v1_0_0_main/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -398,7 +398,7 @@
           "extra_sources": [
             "src/platform/agibot/shared/observation.c",
             "src/platform/agibot/objectc/AgibotClient.m",
-            "src/platform/agibot/objectc/ros2_sdk_v1_0_0_main/Records.m"
+            "src/platform/agibot/objectc/ros2/sdk_v1_0_0_main/Records.m"
           ],
           "integration_status": "SHARED_PRODUCER_CONTRACT_PENDING"
         }
@@ -424,8 +424,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "agibot/ruby/ros2_sdk_v1_0_0_rl/records",
-            "path": "include/platform/agibot/ruby/ros2_sdk_v1_0_0_rl/records.rb"
+            "name": "agibot/ruby/ros2/sdk_v1_0_0_rl/records",
+            "path": "include/platform/agibot/ruby/ros2/sdk_v1_0_0_rl/records.rb"
           }
         ],
         "php": [
@@ -442,8 +442,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "agibot/php/ros2_sdk_v1_0_0_rl/records",
-            "path": "include/platform/agibot/php/ros2_sdk_v1_0_0_rl/records.php"
+            "name": "agibot/php/ros2/sdk_v1_0_0_rl/records",
+            "path": "include/platform/agibot/php/ros2/sdk_v1_0_0_rl/records.php"
           }
         ],
         "r": [
@@ -456,8 +456,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "agibot/r/ros2_sdk_v1_0_0_rl/records",
-            "path": "include/platform/agibot/r/ros2_sdk_v1_0_0_rl/records.R"
+            "name": "agibot/r/ros2/sdk_v1_0_0_rl/records",
+            "path": "include/platform/agibot/r/ros2/sdk_v1_0_0_rl/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -469,8 +469,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "agibot.d.ros2_sdk_v1_0_0_rl.records",
-          "source": "include/platform/agibot/d/ros2_sdk_v1_0_0_rl/records.d",
+          "module": "agibot.d.ros2.sdk_v1_0_0_rl.records",
+          "source": "include/platform/agibot/d/ros2/sdk_v1_0_0_rl/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -485,7 +485,7 @@
           "extra_sources": [
             "src/platform/agibot/shared/observation.c",
             "src/platform/agibot/objectc/AgibotClient.m",
-            "src/platform/agibot/objectc/ros2_sdk_v1_0_0_rl/Records.m"
+            "src/platform/agibot/objectc/ros2/sdk_v1_0_0_rl/Records.m"
           ],
           "integration_status": "SHARED_PRODUCER_CONTRACT_PENDING"
         }
@@ -511,8 +511,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "agibot/ruby/ros2_sdk_v1_1_0_main/records",
-            "path": "include/platform/agibot/ruby/ros2_sdk_v1_1_0_main/records.rb"
+            "name": "agibot/ruby/ros2/sdk_v1_1_0_main/records",
+            "path": "include/platform/agibot/ruby/ros2/sdk_v1_1_0_main/records.rb"
           },
           {
             "name": "uwvm/ruby/observation",
@@ -533,8 +533,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "agibot/php/ros2_sdk_v1_1_0_main/records",
-            "path": "include/platform/agibot/php/ros2_sdk_v1_1_0_main/records.php"
+            "name": "agibot/php/ros2/sdk_v1_1_0_main/records",
+            "path": "include/platform/agibot/php/ros2/sdk_v1_1_0_main/records.php"
           },
           {
             "name": "uwvm/php/observation",
@@ -571,13 +571,18 @@
             "package": true
           },
           {
-            "name": "agibot.py.ros2_sdk_v1_1_0_main",
-            "path": "include/platform/agibot/py/ros2_sdk_v1_1_0_main/__init__.py",
+            "name": "agibot.py.ros2",
+            "path": "include/platform/agibot/py/ros2/__init__.py",
             "package": true
           },
           {
-            "name": "agibot.py.ros2_sdk_v1_1_0_main.records",
-            "path": "include/platform/agibot/py/ros2_sdk_v1_1_0_main/records.py"
+            "name": "agibot.py.ros2.sdk_v1_1_0_main",
+            "path": "include/platform/agibot/py/ros2/sdk_v1_1_0_main/__init__.py",
+            "package": true
+          },
+          {
+            "name": "agibot.py.ros2.sdk_v1_1_0_main.records",
+            "path": "include/platform/agibot/py/ros2/sdk_v1_1_0_main/records.py"
           }
         ],
         "js": [
@@ -590,8 +595,8 @@
             "path": "include/platform/ros/js/transport.mjs"
           },
           {
-            "name": "agibot/js/ros2_sdk_v1_1_0_main/records",
-            "path": "include/platform/agibot/js/ros2_sdk_v1_1_0_main/records.mjs"
+            "name": "agibot/js/ros2/sdk_v1_1_0_main/records",
+            "path": "include/platform/agibot/js/ros2/sdk_v1_1_0_main/records.mjs"
           }
         ],
         "lua": [
@@ -604,8 +609,8 @@
             "path": "include/platform/ros/lua/roswasm/wire.lua"
           },
           {
-            "name": "agibot/lua/ros2_sdk_v1_1_0_main/records",
-            "path": "include/platform/agibot/lua/ros2_sdk_v1_1_0_main/records.lua"
+            "name": "agibot/lua/ros2/sdk_v1_1_0_main/records",
+            "path": "include/platform/agibot/lua/ros2/sdk_v1_1_0_main/records.lua"
           }
         ],
         "r": [
@@ -618,8 +623,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "agibot/r/ros2_sdk_v1_1_0_main/records",
-            "path": "include/platform/agibot/r/ros2_sdk_v1_1_0_main/records.R"
+            "name": "agibot/r/ros2/sdk_v1_1_0_main/records",
+            "path": "include/platform/agibot/r/ros2/sdk_v1_1_0_main/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -631,22 +636,22 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "go": {
-          "module": "agibot/go/ros2_sdk_v1_1_0_main",
+          "module": "agibot/go/ros2/sdk_v1_1_0_main",
           "root": "include/platform/agibot/go/ros2/agibot-ros2-sdk-v1-1-0-main-complete",
           "shared_module": "uwvm2.local/roswasmgo",
           "backend_tag": "ros2",
           "complete_original_records": 166
         },
         "tinygo": {
-          "module": "agibot/tinygo/ros2_sdk_v1_1_0_main",
+          "module": "agibot/tinygo/ros2/sdk_v1_1_0_main",
           "root": "include/platform/agibot/tinygo/ros2/agibot-ros2-sdk-v1-1-0-main-complete",
           "shared_module": "uwvm2.local/roswasm",
           "backend_tag": "ros2",
           "complete_original_records": 166
         },
         "d": {
-          "module": "agibot.d.ros2_sdk_v1_1_0_main.records",
-          "source": "include/platform/agibot/d/ros2_sdk_v1_1_0_main/records.d",
+          "module": "agibot.d.ros2.sdk_v1_1_0_main.records",
+          "source": "include/platform/agibot/d/ros2/sdk_v1_1_0_main/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -661,7 +666,7 @@
           "extra_sources": [
             "src/platform/agibot/shared/observation.c",
             "src/platform/agibot/objectc/AgibotClient.m",
-            "src/platform/agibot/objectc/ros2_sdk_v1_1_0_main/Records.m"
+            "src/platform/agibot/objectc/ros2/sdk_v1_1_0_main/Records.m"
           ],
           "integration_status": "SHARED_PRODUCER_CONTRACT_PENDING"
         }
@@ -687,8 +692,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "agibot/ruby/ros2_sdk_v1_1_0_rl/records",
-            "path": "include/platform/agibot/ruby/ros2_sdk_v1_1_0_rl/records.rb"
+            "name": "agibot/ruby/ros2/sdk_v1_1_0_rl/records",
+            "path": "include/platform/agibot/ruby/ros2/sdk_v1_1_0_rl/records.rb"
           }
         ],
         "php": [
@@ -705,8 +710,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "agibot/php/ros2_sdk_v1_1_0_rl/records",
-            "path": "include/platform/agibot/php/ros2_sdk_v1_1_0_rl/records.php"
+            "name": "agibot/php/ros2/sdk_v1_1_0_rl/records",
+            "path": "include/platform/agibot/php/ros2/sdk_v1_1_0_rl/records.php"
           }
         ],
         "r": [
@@ -719,8 +724,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "agibot/r/ros2_sdk_v1_1_0_rl/records",
-            "path": "include/platform/agibot/r/ros2_sdk_v1_1_0_rl/records.R"
+            "name": "agibot/r/ros2/sdk_v1_1_0_rl/records",
+            "path": "include/platform/agibot/r/ros2/sdk_v1_1_0_rl/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -732,8 +737,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "agibot.d.ros2_sdk_v1_1_0_rl.records",
-          "source": "include/platform/agibot/d/ros2_sdk_v1_1_0_rl/records.d",
+          "module": "agibot.d.ros2.sdk_v1_1_0_rl.records",
+          "source": "include/platform/agibot/d/ros2/sdk_v1_1_0_rl/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -748,7 +753,7 @@
           "extra_sources": [
             "src/platform/agibot/shared/observation.c",
             "src/platform/agibot/objectc/AgibotClient.m",
-            "src/platform/agibot/objectc/ros2_sdk_v1_1_0_rl/Records.m"
+            "src/platform/agibot/objectc/ros2/sdk_v1_1_0_rl/Records.m"
           ],
           "integration_status": "SHARED_PRODUCER_CONTRACT_PENDING"
         }

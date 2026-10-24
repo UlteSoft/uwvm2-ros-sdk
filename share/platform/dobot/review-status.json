@@ -51,25 +51,25 @@
     "full_platform_accepted": false,
     "cases": [
       {
-        "project": "example/platform/dobot/c/ros1_demo_v3/query_get_angle",
+        "project": "example/platform/dobot/c/ros1/demo_v3/query_get_angle",
         "language": "c",
         "address_bits": 32,
         "wasm_sha256": "3a29ce9f3e742b3dc1b013692684f6d8c6f8e34d78ff500195488549cf167941"
       },
       {
-        "project": "example/platform/dobot/c/ros1_demo_v3/query_get_angle",
+        "project": "example/platform/dobot/c/ros1/demo_v3/query_get_angle",
         "language": "c",
         "address_bits": 64,
         "wasm_sha256": "a05aa38dfecd8978c157956a65a3067aa849096186cf4e948606562c59770c77"
       },
       {
-        "project": "example/platform/dobot/cpp/ros1_demo_v3/query_get_angle",
+        "project": "example/platform/dobot/cpp/ros1/demo_v3/query_get_angle",
         "language": "cpp",
         "address_bits": 32,
         "wasm_sha256": "d2aa5971a3cc1c8ebfde550e65f2f3a0bd23263c3dd074152280f0e3afd92466"
       },
       {
-        "project": "example/platform/dobot/cpp/ros1_demo_v3/query_get_angle",
+        "project": "example/platform/dobot/cpp/ros1/demo_v3/query_get_angle",
         "language": "cpp",
         "address_bits": 64,
         "wasm_sha256": "56eebaef8caef3e535088108eeeeb66e6de13b78ad698a44fee3dc77a580bb37"

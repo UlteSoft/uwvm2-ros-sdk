@@ -18,10 +18,10 @@
 
 - `include/platform/fourier/js/ros1/fourier-ros1-aurora-bridge-v1-complete/bounded_interfaces.mjs`
 - `include/platform/fourier/js/ros1/fourier-ros1-aurora-bridge-v1-complete/bounded_records.mjs`
-- `include/platform/fourier/js/ros1_aurora_bridge_v1/records.mjs`
+- `include/platform/fourier/js/ros1/aurora_bridge_v1/records.mjs`
 - `include/platform/fourier/js/ros2/fourier-ros2-aurora-bridge-v1-complete/bounded_interfaces.mjs`
 - `include/platform/fourier/js/ros2/fourier-ros2-aurora-bridge-v1-complete/bounded_records.mjs`
-- `include/platform/fourier/js/ros2_aurora_bridge_v1/records.mjs`
+- `include/platform/fourier/js/ros2/aurora_bridge_v1/records.mjs`
 - `include/platform/fourier/js/telemetry_ros1_aurora_bridge_v1.mjs`
 - `include/platform/fourier/js/telemetry_ros2_aurora_bridge_v1.mjs`
 

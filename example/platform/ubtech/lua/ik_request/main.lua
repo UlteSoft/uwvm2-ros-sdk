@@ -4,7 +4,7 @@
 --- exceptions still trigger exactly one explicit capability-close attempt.
 local ros = require("roswasm")
 local wire = require("roswasm/wire")
-local records = require("ubtech/lua/ros2_main/records")
+local records = require("ubtech/lua/ros2/main/records")
 if #arg ~= 1 then return 22 end
 local request = ""
 local session = ros.session(1)

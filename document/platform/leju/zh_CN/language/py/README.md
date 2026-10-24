@@ -26,16 +26,16 @@
 - `include/platform/leju/py/ros1/leju-ros1-master-packaged-ik-complete/bounded_records.py`
 - `include/platform/leju/py/ros1/leju-ros1-master-platform-complete/bounded_records.py`
 - `include/platform/leju/py/ros1/leju-ros1-master-unregistered-dtos-complete/bounded_records.py`
-- `include/platform/leju/py/ros1_beta_packaged_ik/records.py`
-- `include/platform/leju/py/ros1_beta_platform/records.py`
-- `include/platform/leju/py/ros1_beta_unregistered_dtos/records.py`
-- `include/platform/leju/py/ros1_main_packaged_ik/records.py`
-- `include/platform/leju/py/ros1_main_platform/__init__.py`
-- `include/platform/leju/py/ros1_main_platform/records.py`
-- `include/platform/leju/py/ros1_main_unregistered_dtos/records.py`
-- `include/platform/leju/py/ros1_master_packaged_ik/records.py`
-- `include/platform/leju/py/ros1_master_platform/records.py`
-- `include/platform/leju/py/ros1_master_unregistered_dtos/records.py`
+- `include/platform/leju/py/ros1/beta_packaged_ik/records.py`
+- `include/platform/leju/py/ros1/beta_platform/records.py`
+- `include/platform/leju/py/ros1/beta_unregistered_dtos/records.py`
+- `include/platform/leju/py/ros1/main_packaged_ik/records.py`
+- `include/platform/leju/py/ros1/main_platform/__init__.py`
+- `include/platform/leju/py/ros1/main_platform/records.py`
+- `include/platform/leju/py/ros1/main_unregistered_dtos/records.py`
+- `include/platform/leju/py/ros1/master_packaged_ik/records.py`
+- `include/platform/leju/py/ros1/master_platform/records.py`
+- `include/platform/leju/py/ros1/master_unregistered_dtos/records.py`
 
 独立例子：
 

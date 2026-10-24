@@ -74,8 +74,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_beta_platform/records",
-            "path": "include/platform/leju/ruby/ros1_beta_platform/records.rb"
+            "name": "leju/ruby/ros1/beta_platform/records",
+            "path": "include/platform/leju/ruby/ros1/beta_platform/records.rb"
           }
         ],
         "php": [
@@ -92,8 +92,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_beta_platform/records",
-            "path": "include/platform/leju/php/ros1_beta_platform/records.php"
+            "name": "leju/php/ros1/beta_platform/records",
+            "path": "include/platform/leju/php/ros1/beta_platform/records.php"
           }
         ],
         "r": [
@@ -106,8 +106,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_beta_platform/records",
-            "path": "include/platform/leju/r/ros1_beta_platform/records.R"
+            "name": "leju/r/ros1/beta_platform/records",
+            "path": "include/platform/leju/r/ros1/beta_platform/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -119,8 +119,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "leju.d.ros1_beta_platform.records",
-          "source": "include/platform/leju/d/ros1_beta_platform/records.d",
+          "module": "leju.d.ros1.beta_platform.records",
+          "source": "include/platform/leju/d/ros1/beta_platform/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -149,8 +149,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_beta_packaged_ik/records",
-            "path": "include/platform/leju/ruby/ros1_beta_packaged_ik/records.rb"
+            "name": "leju/ruby/ros1/beta_packaged_ik/records",
+            "path": "include/platform/leju/ruby/ros1/beta_packaged_ik/records.rb"
           }
         ],
         "php": [
@@ -167,8 +167,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_beta_packaged_ik/records",
-            "path": "include/platform/leju/php/ros1_beta_packaged_ik/records.php"
+            "name": "leju/php/ros1/beta_packaged_ik/records",
+            "path": "include/platform/leju/php/ros1/beta_packaged_ik/records.php"
           }
         ],
         "r": [
@@ -181,8 +181,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_beta_packaged_ik/records",
-            "path": "include/platform/leju/r/ros1_beta_packaged_ik/records.R"
+            "name": "leju/r/ros1/beta_packaged_ik/records",
+            "path": "include/platform/leju/r/ros1/beta_packaged_ik/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -194,8 +194,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "leju.d.ros1_beta_packaged_ik.records",
-          "source": "include/platform/leju/d/ros1_beta_packaged_ik/records.d",
+          "module": "leju.d.ros1.beta_packaged_ik.records",
+          "source": "include/platform/leju/d/ros1/beta_packaged_ik/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -224,8 +224,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_beta_unregistered_dtos/records",
-            "path": "include/platform/leju/ruby/ros1_beta_unregistered_dtos/records.rb"
+            "name": "leju/ruby/ros1/beta_unregistered_dtos/records",
+            "path": "include/platform/leju/ruby/ros1/beta_unregistered_dtos/records.rb"
           }
         ],
         "php": [
@@ -242,8 +242,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_beta_unregistered_dtos/records",
-            "path": "include/platform/leju/php/ros1_beta_unregistered_dtos/records.php"
+            "name": "leju/php/ros1/beta_unregistered_dtos/records",
+            "path": "include/platform/leju/php/ros1/beta_unregistered_dtos/records.php"
           }
         ],
         "r": [
@@ -256,8 +256,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_beta_unregistered_dtos/records",
-            "path": "include/platform/leju/r/ros1_beta_unregistered_dtos/records.R"
+            "name": "leju/r/ros1/beta_unregistered_dtos/records",
+            "path": "include/platform/leju/r/ros1/beta_unregistered_dtos/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -269,8 +269,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "leju.d.ros1_beta_unregistered_dtos.records",
-          "source": "include/platform/leju/d/ros1_beta_unregistered_dtos/records.d",
+          "module": "leju.d.ros1.beta_unregistered_dtos.records",
+          "source": "include/platform/leju/d/ros1/beta_unregistered_dtos/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -299,8 +299,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_main_platform/records",
-            "path": "include/platform/leju/ruby/ros1_main_platform/records.rb"
+            "name": "leju/ruby/ros1/main_platform/records",
+            "path": "include/platform/leju/ruby/ros1/main_platform/records.rb"
           },
           {
             "name": "uwvm/ruby/observation",
@@ -321,8 +321,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_main_platform/records",
-            "path": "include/platform/leju/php/ros1_main_platform/records.php"
+            "name": "leju/php/ros1/main_platform/records",
+            "path": "include/platform/leju/php/ros1/main_platform/records.php"
           },
           {
             "name": "uwvm/php/observation",
@@ -359,13 +359,18 @@
             "package": true
           },
           {
-            "name": "leju.py.ros1_main_platform",
-            "path": "include/platform/leju/py/ros1_main_platform/__init__.py",
+            "name": "leju.py.ros1",
+            "path": "include/platform/leju/py/ros1/__init__.py",
             "package": true
           },
           {
-            "name": "leju.py.ros1_main_platform.records",
-            "path": "include/platform/leju/py/ros1_main_platform/records.py"
+            "name": "leju.py.ros1.main_platform",
+            "path": "include/platform/leju/py/ros1/main_platform/__init__.py",
+            "package": true
+          },
+          {
+            "name": "leju.py.ros1.main_platform.records",
+            "path": "include/platform/leju/py/ros1/main_platform/records.py"
           }
         ],
         "js": [
@@ -378,8 +383,8 @@
             "path": "include/platform/ros/js/transport.mjs"
           },
           {
-            "name": "leju/js/ros1_main_platform/records",
-            "path": "include/platform/leju/js/ros1_main_platform/records.mjs"
+            "name": "leju/js/ros1/main_platform/records",
+            "path": "include/platform/leju/js/ros1/main_platform/records.mjs"
           }
         ],
         "lua": [
@@ -392,8 +397,8 @@
             "path": "include/platform/ros/lua/roswasm/wire.lua"
           },
           {
-            "name": "leju/lua/ros1_main_platform/records",
-            "path": "include/platform/leju/lua/ros1_main_platform/records.lua"
+            "name": "leju/lua/ros1/main_platform/records",
+            "path": "include/platform/leju/lua/ros1/main_platform/records.lua"
           }
         ],
         "r": [
@@ -406,8 +411,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_main_platform/records",
-            "path": "include/platform/leju/r/ros1_main_platform/records.R"
+            "name": "leju/r/ros1/main_platform/records",
+            "path": "include/platform/leju/r/ros1/main_platform/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -419,22 +424,22 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "go": {
-          "module": "leju/go/ros1_main_platform",
+          "module": "leju/go/ros1/main_platform",
           "root": "include/platform/leju/go/ros1/leju-ros1-main-platform-complete",
           "shared_module": "uwvm2.local/roswasmgo",
           "backend_tag": "ros1",
           "complete_original_records": 532
         },
         "tinygo": {
-          "module": "leju/tinygo/ros1_main_platform",
+          "module": "leju/tinygo/ros1/main_platform",
           "root": "include/platform/leju/tinygo/ros1/leju-ros1-main-platform-complete",
           "shared_module": "uwvm2.local/roswasm",
           "backend_tag": "ros1",
           "complete_original_records": 532
         },
         "d": {
-          "module": "leju.d.ros1_main_platform.records",
-          "source": "include/platform/leju/d/ros1_main_platform/records.d",
+          "module": "leju.d.ros1.main_platform.records",
+          "source": "include/platform/leju/d/ros1/main_platform/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -463,8 +468,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_main_packaged_ik/records",
-            "path": "include/platform/leju/ruby/ros1_main_packaged_ik/records.rb"
+            "name": "leju/ruby/ros1/main_packaged_ik/records",
+            "path": "include/platform/leju/ruby/ros1/main_packaged_ik/records.rb"
           }
         ],
         "php": [
@@ -481,8 +486,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_main_packaged_ik/records",
-            "path": "include/platform/leju/php/ros1_main_packaged_ik/records.php"
+            "name": "leju/php/ros1/main_packaged_ik/records",
+            "path": "include/platform/leju/php/ros1/main_packaged_ik/records.php"
           }
         ],
         "r": [
@@ -495,8 +500,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_main_packaged_ik/records",
-            "path": "include/platform/leju/r/ros1_main_packaged_ik/records.R"
+            "name": "leju/r/ros1/main_packaged_ik/records",
+            "path": "include/platform/leju/r/ros1/main_packaged_ik/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -508,8 +513,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "leju.d.ros1_main_packaged_ik.records",
-          "source": "include/platform/leju/d/ros1_main_packaged_ik/records.d",
+          "module": "leju.d.ros1.main_packaged_ik.records",
+          "source": "include/platform/leju/d/ros1/main_packaged_ik/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -538,8 +543,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_main_unregistered_dtos/records",
-            "path": "include/platform/leju/ruby/ros1_main_unregistered_dtos/records.rb"
+            "name": "leju/ruby/ros1/main_unregistered_dtos/records",
+            "path": "include/platform/leju/ruby/ros1/main_unregistered_dtos/records.rb"
           }
         ],
         "php": [
@@ -556,8 +561,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_main_unregistered_dtos/records",
-            "path": "include/platform/leju/php/ros1_main_unregistered_dtos/records.php"
+            "name": "leju/php/ros1/main_unregistered_dtos/records",
+            "path": "include/platform/leju/php/ros1/main_unregistered_dtos/records.php"
           }
         ],
         "r": [
@@ -570,8 +575,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_main_unregistered_dtos/records",
-            "path": "include/platform/leju/r/ros1_main_unregistered_dtos/records.R"
+            "name": "leju/r/ros1/main_unregistered_dtos/records",
+            "path": "include/platform/leju/r/ros1/main_unregistered_dtos/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -583,8 +588,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "leju.d.ros1_main_unregistered_dtos.records",
-          "source": "include/platform/leju/d/ros1_main_unregistered_dtos/records.d",
+          "module": "leju.d.ros1.main_unregistered_dtos.records",
+          "source": "include/platform/leju/d/ros1/main_unregistered_dtos/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -613,8 +618,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_master_platform/records",
-            "path": "include/platform/leju/ruby/ros1_master_platform/records.rb"
+            "name": "leju/ruby/ros1/master_platform/records",
+            "path": "include/platform/leju/ruby/ros1/master_platform/records.rb"
           }
         ],
         "php": [
@@ -631,8 +636,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_master_platform/records",
-            "path": "include/platform/leju/php/ros1_master_platform/records.php"
+            "name": "leju/php/ros1/master_platform/records",
+            "path": "include/platform/leju/php/ros1/master_platform/records.php"
           }
         ],
         "r": [
@@ -645,8 +650,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_master_platform/records",
-            "path": "include/platform/leju/r/ros1_master_platform/records.R"
+            "name": "leju/r/ros1/master_platform/records",
+            "path": "include/platform/leju/r/ros1/master_platform/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -658,8 +663,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "leju.d.ros1_master_platform.records",
-          "source": "include/platform/leju/d/ros1_master_platform/records.d",
+          "module": "leju.d.ros1.master_platform.records",
+          "source": "include/platform/leju/d/ros1/master_platform/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -688,8 +693,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_master_packaged_ik/records",
-            "path": "include/platform/leju/ruby/ros1_master_packaged_ik/records.rb"
+            "name": "leju/ruby/ros1/master_packaged_ik/records",
+            "path": "include/platform/leju/ruby/ros1/master_packaged_ik/records.rb"
           }
         ],
         "php": [
@@ -706,8 +711,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_master_packaged_ik/records",
-            "path": "include/platform/leju/php/ros1_master_packaged_ik/records.php"
+            "name": "leju/php/ros1/master_packaged_ik/records",
+            "path": "include/platform/leju/php/ros1/master_packaged_ik/records.php"
           }
         ],
         "r": [
@@ -720,8 +725,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_master_packaged_ik/records",
-            "path": "include/platform/leju/r/ros1_master_packaged_ik/records.R"
+            "name": "leju/r/ros1/master_packaged_ik/records",
+            "path": "include/platform/leju/r/ros1/master_packaged_ik/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -733,8 +738,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "leju.d.ros1_master_packaged_ik.records",
-          "source": "include/platform/leju/d/ros1_master_packaged_ik/records.d",
+          "module": "leju.d.ros1.master_packaged_ik.records",
+          "source": "include/platform/leju/d/ros1/master_packaged_ik/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"
@@ -763,8 +768,8 @@
             "path": "include/platform/ros/ruby/roswasm/transport.rb"
           },
           {
-            "name": "leju/ruby/ros1_master_unregistered_dtos/records",
-            "path": "include/platform/leju/ruby/ros1_master_unregistered_dtos/records.rb"
+            "name": "leju/ruby/ros1/master_unregistered_dtos/records",
+            "path": "include/platform/leju/ruby/ros1/master_unregistered_dtos/records.rb"
           }
         ],
         "php": [
@@ -781,8 +786,8 @@
             "path": "include/platform/ros/php/RosWasm/Transport.php"
           },
           {
-            "name": "leju/php/ros1_master_unregistered_dtos/records",
-            "path": "include/platform/leju/php/ros1_master_unregistered_dtos/records.php"
+            "name": "leju/php/ros1/master_unregistered_dtos/records",
+            "path": "include/platform/leju/php/ros1/master_unregistered_dtos/records.php"
           }
         ],
         "r": [
@@ -795,8 +800,8 @@
             "path": "src/language/r/native.R"
           },
           {
-            "name": "leju/r/ros1_master_unregistered_dtos/records",
-            "path": "include/platform/leju/r/ros1_master_unregistered_dtos/records.R"
+            "name": "leju/r/ros1/master_unregistered_dtos/records",
+            "path": "include/platform/leju/r/ros1/master_unregistered_dtos/records.R"
           },
           {
             "name": "uwvm/r/observation",
@@ -808,8 +813,8 @@
       "native_identity_qualification_required": true,
       "bindings": {
         "d": {
-          "module": "leju.d.ros1_master_unregistered_dtos.records",
-          "source": "include/platform/leju/d/ros1_master_unregistered_dtos/records.d",
+          "module": "leju.d.ros1.master_unregistered_dtos.records",
+          "source": "include/platform/leju/d/ros1/master_unregistered_dtos/records.d",
           "shared_imports": [
             "roswasm",
             "roswasm.wire"

@@ -2,7 +2,7 @@
 # @brief Observe every original rm_ros_interfaces/msg/Armcurrentstatus field.
 # @details Actual Ruby Integer/String semantics remain in the genuine CRuby guest.
 require "roswasm/transport"
-require "realman/ruby/ros2_jazzy/records"
+require "realman/ruby/ros2/jazzy/records"
 include Uwvm::Realman::Ros2Jazzy
 
 # @brief Observe/query one entire original value and retire its exact owner once.

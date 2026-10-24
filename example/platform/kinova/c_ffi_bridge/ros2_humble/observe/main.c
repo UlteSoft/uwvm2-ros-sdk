@@ -5,7 +5,7 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include <kinova/c_ffi_bridge/ros2_humble/records.h>
+#include <kinova/c_ffi_bridge/ros2/humble/records.h>
 #include <platform/ros2/c/roswasm/ros2.h>
 
 int main(int argc, char** argv)

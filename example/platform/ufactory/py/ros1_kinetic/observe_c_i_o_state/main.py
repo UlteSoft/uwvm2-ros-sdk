@@ -6,7 +6,7 @@ The shared interpreter packages this application and its modules into one Wasm.
 import json
 import sys
 from ros.py.transport import Capability, pause_ms
-from ufactory.py.ros1_kinetic.records import Ros1Xarm_msgsCIOState
+from ufactory.py.ros1.kinetic.records import Ros1Xarm_msgsCIOState
 
 
 def main():

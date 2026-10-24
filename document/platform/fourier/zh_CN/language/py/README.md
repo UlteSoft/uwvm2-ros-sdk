@@ -18,10 +18,10 @@
 
 - `include/platform/fourier/py/__init__.py`
 - `include/platform/fourier/py/ros1/fourier-ros1-aurora-bridge-v1-complete/bounded_records.py`
-- `include/platform/fourier/py/ros1_aurora_bridge_v1/records.py`
+- `include/platform/fourier/py/ros1/aurora_bridge_v1/records.py`
 - `include/platform/fourier/py/ros2/fourier-ros2-aurora-bridge-v1-complete/bounded_records.py`
-- `include/platform/fourier/py/ros2_aurora_bridge_v1/__init__.py`
-- `include/platform/fourier/py/ros2_aurora_bridge_v1/records.py`
+- `include/platform/fourier/py/ros2/aurora_bridge_v1/__init__.py`
+- `include/platform/fourier/py/ros2/aurora_bridge_v1/records.py`
 
 独立例子：
 

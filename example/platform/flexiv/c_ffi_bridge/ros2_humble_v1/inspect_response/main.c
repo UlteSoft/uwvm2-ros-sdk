@@ -5,7 +5,7 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include <flexiv/c_ffi_bridge/ros2_humble_v1/records.h>
+#include <flexiv/c_ffi_bridge/ros2/humble_v1/records.h>
 
 int main(int argc, char** argv)
 {

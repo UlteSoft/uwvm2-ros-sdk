@@ -54,6 +54,6 @@ target("flexiv-c_ffi_bridge-ros1_noetic-observe")
     set_arch(get_config("arch") or "wasm32")
     set_plat(get_config("plat") or "wasm-wasip1")
     add_files("main.c")
-    add_files(path.join(sdk, "src/platform/flexiv/c_ffi_bridge/ros1_noetic/records.c"))
+    add_files(path.join(sdk, "src/platform/flexiv/c_ffi_bridge/ros1/noetic/records.c"))
 
 target_end()

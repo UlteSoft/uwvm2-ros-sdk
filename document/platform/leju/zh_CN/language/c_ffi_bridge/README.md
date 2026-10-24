@@ -16,15 +16,15 @@
 
 交付的源入口：
 
-- `include/platform/leju/c_ffi_bridge/ros1_beta_packaged_ik/records.h`
-- `include/platform/leju/c_ffi_bridge/ros1_beta_platform/records.h`
-- `include/platform/leju/c_ffi_bridge/ros1_beta_unregistered_dtos/records.h`
-- `include/platform/leju/c_ffi_bridge/ros1_main_packaged_ik/records.h`
-- `include/platform/leju/c_ffi_bridge/ros1_main_platform/records.h`
-- `include/platform/leju/c_ffi_bridge/ros1_main_unregistered_dtos/records.h`
-- `include/platform/leju/c_ffi_bridge/ros1_master_packaged_ik/records.h`
-- `include/platform/leju/c_ffi_bridge/ros1_master_platform/records.h`
-- `include/platform/leju/c_ffi_bridge/ros1_master_unregistered_dtos/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/beta_packaged_ik/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/beta_platform/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/beta_unregistered_dtos/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/main_packaged_ik/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/main_platform/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/main_unregistered_dtos/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/master_packaged_ik/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/master_platform/records.h`
+- `include/platform/leju/c_ffi_bridge/ros1/master_unregistered_dtos/records.h`
 
 独立例子：
 

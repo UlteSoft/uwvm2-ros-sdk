@@ -51,25 +51,25 @@
     "full_platform_accepted": false,
     "cases": [
       {
-        "project": "example/platform/ufactory/c/ros2_jazzy/observe_c_i_o_state",
+        "project": "example/platform/ufactory/c/ros2/jazzy/observe_c_i_o_state",
         "language": "c",
         "address_bits": 32,
         "wasm_sha256": "9565f9686f38a6576369b5883275448aa160496964a8e762653d077ae1f0965c"
       },
       {
-        "project": "example/platform/ufactory/c/ros2_jazzy/observe_c_i_o_state",
+        "project": "example/platform/ufactory/c/ros2/jazzy/observe_c_i_o_state",
         "language": "c",
         "address_bits": 64,
         "wasm_sha256": "e829dc1f99e25220e132c5dba98c64a22ec388c06a8617ab7a2343043aeb113c"
       },
       {
-        "project": "example/platform/ufactory/cpp/ros2_jazzy/observe_c_i_o_state",
+        "project": "example/platform/ufactory/cpp/ros2/jazzy/observe_c_i_o_state",
         "language": "cpp",
         "address_bits": 32,
         "wasm_sha256": "eb858112383acb5ec6a224cb257a9ee4374f693f549ff18fbed57222a3160c89"
       },
       {
-        "project": "example/platform/ufactory/cpp/ros2_jazzy/observe_c_i_o_state",
+        "project": "example/platform/ufactory/cpp/ros2/jazzy/observe_c_i_o_state",
         "language": "cpp",
         "address_bits": 64,
         "wasm_sha256": "2a837c2da8603ff88914aba8613596f88054534d60b738e3614890ee1b2b7d34"

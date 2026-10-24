@@ -57,7 +57,7 @@ target("flexiv-r-ros2_jazzy_v2-decode_state")
     set_plat(get_config("plat") or "wasm-wasip1")
     set_values("ros.sdk.modules", {
     {name = "ros/r/roswasm/wire", path = "include/platform/ros/r/roswasm/wire.R"},
-    {name = "flexiv/r/ros2_jazzy_v2/records", path = "include/platform/flexiv/r/ros2/flexiv-ros2-jazzy-v2-complete/records.R"},
+    {name = "flexiv/r/ros2/jazzy_v2/records", path = "include/platform/flexiv/r/ros2/flexiv-ros2-jazzy-v2-complete/records.R"},
     })
     add_files("main.R")
 

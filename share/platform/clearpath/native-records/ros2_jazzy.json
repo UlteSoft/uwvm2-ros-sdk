@@ -4220,16 +4220,16 @@
   ],
   "outputs": [
     {
-      "path": "include/platform/clearpath/zig/ros2_jazzy/records.zig",
+      "path": "include/platform/clearpath/zig/ros2/jazzy/records.zig",
       "sha256": "9f059a9580e8c3571acf6e8345569064192ee8f221c89a109a82290d32083c2c"
     },
     {
-      "path": "include/platform/clearpath/d/ros2_jazzy/records.d",
-      "sha256": "4e99586ecb8cd13c30daebf8ade03f5d3df36bcbb516f997a5616952dca80199",
+      "path": "include/platform/clearpath/d/ros2/jazzy/records.d",
+      "sha256": "1dd27203c6252e5038064e0136fcbac0207a1b466bc6a6e4daab192ef4d6fafa",
       "generated_before_formatting_sha256": "c4e7c4fd5aac830965841882112195aad2531cd7290b44edc7f273a95c9cf51e"
     },
     {
-      "path": "include/platform/clearpath/nim/ros2_jazzy/records.nim",
+      "path": "include/platform/clearpath/nim/ros2/jazzy/records.nim",
       "sha256": "e31c882305db398eca9cc57c03d83bf906b19df90a8b18abae1b0cfe04d2826e"
     },
     {
@@ -4237,12 +4237,12 @@
       "sha256": "773a46c257469589170dd942a31a3ba4f35316512075c8178b7a1a6029661e6a"
     },
     {
-      "path": "include/platform/clearpath/odin/ros2_jazzy/records.odin",
+      "path": "include/platform/clearpath/odin/ros2/jazzy/records.odin",
       "sha256": "a8f41698f54da1953d525f64c5031054444caa53168d6ec48fa96323ae36aa95"
     },
     {
-      "path": "include/platform/clearpath/swift/ros2_jazzy/Records.swift",
-      "sha256": "f4aadd1ccfb2748bc4c583abebf3d58bfd10e251d9a34c584d5156776efd8ccc"
+      "path": "include/platform/clearpath/swift/ros2/jazzy/Records.swift",
+      "sha256": "7cc505433990319a65404913f10b4e8a6d5722529c26f3db815f95b93ef08ef2"
     }
   ],
   "source_pins": [],

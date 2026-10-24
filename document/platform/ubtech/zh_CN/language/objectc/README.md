@@ -16,7 +16,7 @@
 
 交付的源入口：
 
-- `include/platform/ubtech/objectc/ros2_main/Records.h`
+- `include/platform/ubtech/objectc/ros2/main/Records.h`
 
 独立例子：
 

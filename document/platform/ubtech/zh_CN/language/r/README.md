@@ -16,7 +16,7 @@
 
 交付的源入口：
 
-- `include/platform/ubtech/r/ros2_main/records.R`
+- `include/platform/ubtech/r/ros2/main/records.R`
 
 独立例子：
 

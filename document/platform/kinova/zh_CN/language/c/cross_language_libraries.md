@@ -1,7 +1,7 @@
 # 跨语言 FJT 动静态库
 
-- `sdk/example/platform/kinova/c/ros2_humble/codec_cpp_static`
-- `sdk/example/platform/kinova/c/ros2_humble/codec_cpp_shared`
+- `sdk/example/platform/kinova/c/ros2/humble/codec_cpp_static`
+- `sdk/example/platform/kinova/c/ros2/humble/codec_cpp_shared`
 
 本图通过普通 Xmake target kind 和 `add_deps` 构建真实 cpp 的 `record_codec` shared 库与真实 c 主程序。每个源文件使用其声明语言的实际前端；C 主程序链接 C++ archive 时，公共 SDK 负责选择现有 C++ 链接驱动，不把 C 源伪装成 C++，不提供私有编译器或链接器。
 

@@ -26,14 +26,14 @@ Delivered source entry paths:
 - `include/platform/agibot/py/ros2/agibot-ros2-sdk-v1-0-0-rl-complete/bounded_records.py`
 - `include/platform/agibot/py/ros2/agibot-ros2-sdk-v1-1-0-main-complete/bounded_records.py`
 - `include/platform/agibot/py/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/bounded_records.py`
-- `include/platform/agibot/py/ros2_sdk_v0_8_1_main/records.py`
-- `include/platform/agibot/py/ros2_sdk_v0_8_2_main/records.py`
-- `include/platform/agibot/py/ros2_sdk_v0_9_0_main/records.py`
-- `include/platform/agibot/py/ros2_sdk_v1_0_0_main/records.py`
-- `include/platform/agibot/py/ros2_sdk_v1_0_0_rl/records.py`
-- `include/platform/agibot/py/ros2_sdk_v1_1_0_main/__init__.py`
-- `include/platform/agibot/py/ros2_sdk_v1_1_0_main/records.py`
-- `include/platform/agibot/py/ros2_sdk_v1_1_0_rl/records.py`
+- `include/platform/agibot/py/ros2/sdk_v0_8_1_main/records.py`
+- `include/platform/agibot/py/ros2/sdk_v0_8_2_main/records.py`
+- `include/platform/agibot/py/ros2/sdk_v0_9_0_main/records.py`
+- `include/platform/agibot/py/ros2/sdk_v1_0_0_main/records.py`
+- `include/platform/agibot/py/ros2/sdk_v1_0_0_rl/records.py`
+- `include/platform/agibot/py/ros2/sdk_v1_1_0_main/__init__.py`
+- `include/platform/agibot/py/ros2/sdk_v1_1_0_main/records.py`
+- `include/platform/agibot/py/ros2/sdk_v1_1_0_rl/records.py`
 
 Standalone examples:
 

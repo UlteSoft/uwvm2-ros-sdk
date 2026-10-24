@@ -8,7 +8,7 @@ declare(strict_types=1);
 require_once 'ros/php/RosWasm/Word.php';
 require_once 'ros/php/RosWasm/Wire.php';
 require_once 'ros/php/RosWasm/Transport.php';
-require_once 'ufactory/php/ros1_legacy/records.php';
+require_once 'ufactory/php/ros1/legacy/records.php';
 use Uwvm\RosWasm\Capability;
 use Uwvm\Ufactory\ros1_legacy\Ros1Xarm_msgsRobotMsg;
 

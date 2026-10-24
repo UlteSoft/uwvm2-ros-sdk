@@ -42,21 +42,21 @@ The SDK creates no grants. A trusted operator manually supplies exact aliases, r
 
 ## Examples
 
-- `example/platform/dobot/php/ros1_demo_v3/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_demo_v3/query_get_angle`: `query_get_angle`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_demo_v3/query_get_pose`: `query_get_pose`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_demo_v4/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_demo_v4/query_get_angle`: `query_get_angle`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_demo_v4/query_get_pose`: `query_get_pose`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_v3/observe_robot_status`: `observe_robot_status`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_v3/observe_tool_vector_actual`: `observe_tool_vector_actual`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_v3/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_v4/observe_robot_status`: `observe_robot_status`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_v4/observe_tool_vector_actual`: `observe_tool_vector_actual`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros1_v4/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros2_v4/observe_robot_status`: `observe_robot_status`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros2_v4/observe_tool_vector_actual`: `observe_tool_vector_actual`; independent `xmake.lua` and actual source.
-- `example/platform/dobot/php/ros2_v4/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/demo_v3/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/demo_v3/query_get_angle`: `query_get_angle`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/demo_v3/query_get_pose`: `query_get_pose`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/demo_v4/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/demo_v4/query_get_angle`: `query_get_angle`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/demo_v4/query_get_pose`: `query_get_pose`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/v3/observe_robot_status`: `observe_robot_status`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/v3/observe_tool_vector_actual`: `observe_tool_vector_actual`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/v3/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/v4/observe_robot_status`: `observe_robot_status`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/v4/observe_tool_vector_actual`: `observe_tool_vector_actual`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros1/v4/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros2/v4/observe_robot_status`: `observe_robot_status`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros2/v4/observe_tool_vector_actual`: `observe_tool_vector_actual`; independent `xmake.lua` and actual source.
+- `example/platform/dobot/php/ros2/v4/query_robot_mode`: `query_robot_mode`; independent `xmake.lua` and actual source.
 
 Each observation prints actual complete canonical bytes only after full decoding and explicit close. A query encodes its complete original request and validates its complete original response. It does not infer success from a response's zero/default fields. Independent acceptance must compare the entire record/bytes, primary status, cleanup status and denied/malformed cases; exit zero alone is insufficient.
 

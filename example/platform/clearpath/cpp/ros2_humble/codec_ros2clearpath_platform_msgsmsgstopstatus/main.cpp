@@ -3,7 +3,7 @@
  * extents are refused without a native call or authority grant.
  * @return Zero after exact bytes and checked stdout, otherwise a refusal code.
  */
-#include <clearpath/cpp/ros2_humble/records.hpp>
+#include <clearpath/cpp/ros2/humble/records.hpp>
 #include <cstdio>
 
 int main()

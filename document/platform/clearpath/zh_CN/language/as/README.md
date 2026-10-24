@@ -39,15 +39,15 @@ alias 必须为无 NUL 的严格 UTF-8，长度为 1..255 字节。owner 和长�
 - `example/platform/clearpath/as/ros1/codec_ros1clearpath_platform_msgsdrivefeedback`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
 - `example/platform/clearpath/as/ros1/codec_ros1clearpath_platform_msgsstopstatus`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
 - `example/platform/clearpath/as/ros1/codec_ros1clearpath_platform_msgsrgb`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_humble/codec_ros2clearpath_platform_msgsmsgdrivefeedback`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_humble/codec_ros2clearpath_platform_msgsmsgstopstatus`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_humble/codec_ros2clearpath_platform_msgsmsgrgb`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_jazzy/codec_ros2clearpath_platform_msgsmsgdrivefeedback`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_jazzy/codec_ros2clearpath_platform_msgsmsgstopstatus`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_jazzy/codec_ros2clearpath_platform_msgsmsgrgb`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_main/codec_ros2clearpath_platform_msgsmsgdrivefeedback`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_main/codec_ros2clearpath_platform_msgsmsgstopstatus`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/as/ros2_main/codec_ros2clearpath_platform_msgsmsgrgb`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/humble/codec_ros2clearpath_platform_msgsmsgdrivefeedback`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/humble/codec_ros2clearpath_platform_msgsmsgstopstatus`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/humble/codec_ros2clearpath_platform_msgsmsgrgb`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/jazzy/codec_ros2clearpath_platform_msgsmsgdrivefeedback`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/jazzy/codec_ros2clearpath_platform_msgsmsgstopstatus`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/jazzy/codec_ros2clearpath_platform_msgsmsgrgb`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/main/codec_ros2clearpath_platform_msgsmsgdrivefeedback`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/main/codec_ros2clearpath_platform_msgsmsgstopstatus`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/as/ros2/main/codec_ros2clearpath_platform_msgsmsgrgb`：编码、解码并再次编码完整原始值 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
 
 通信示例要求一个显式配置的 alias 参数；纯 codec 示例不接收 alias，也不执行原生操作。`build/` 中只能有一个应用 `.wasm`；前端缓存与中间对象留在构建缓存中，部署不需要 sidecar。
 

@@ -31,11 +31,11 @@ ROS FollowJointTrajectory uses radians and SI derivatives. Native Kortex 2.8.0 p
 
 ## Sources and examples
 
-- `include/platform/kinova/c_ffi_bridge/ros2_humble/records.h`.
+- `include/platform/kinova/c_ffi_bridge/ros2/humble/records.h`.
 
-- `example/platform/kinova/c_ffi_bridge/ros2_humble/observe/main.c`: `observe`, `sensor_msgs/msg/JointState`.
-- `example/platform/kinova/c_ffi_bridge/ros2_humble/validate_goal/main.c`: `validate_goal`, `control_msgs/action/FollowJointTrajectory_Goal`.
-- `example/platform/kinova/c_ffi_bridge/ros2_humble/inspect_response/main.c`: `inspect_response`, `control_msgs/action/FollowJointTrajectory_Result`.
+- `example/platform/kinova/c_ffi_bridge/ros2/humble/observe/main.c`: `observe`, `sensor_msgs/msg/JointState`.
+- `example/platform/kinova/c_ffi_bridge/ros2/humble/validate_goal/main.c`: `validate_goal`, `control_msgs/action/FollowJointTrajectory_Goal`.
+- `example/platform/kinova/c_ffi_bridge/ros2/humble/inspect_response/main.c`: `inspect_response`, `control_msgs/action/FollowJointTrajectory_Result`.
 
 The C/C++/Objective-C/C FFI/Python/JS observe examples decode a complete event from a manually granted topic alias. Other languages use decode_state to validate complete runtime input. validate_goal checks complete standard-input payloads. inspect_response checks a whole response/result payload. The latter two are codec applications and do not count as native service/action completion. Each directory has its own xmake.lua and a sole .wasm deployment output.
 

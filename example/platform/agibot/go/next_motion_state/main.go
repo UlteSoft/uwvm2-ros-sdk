@@ -5,7 +5,7 @@
 package main
 
 import (
-	records "agibot/go/ros2_sdk_v1_1_0_main"
+	records "agibot/go/ros2/sdk_v1_1_0_main"
 	"encoding/hex"
 	"encoding/json"
 	"os"

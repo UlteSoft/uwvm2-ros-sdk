@@ -60,12 +60,12 @@ API source index:
 - `call_trigger_memory64`: `example/platform/ros/c_ffi_bridge/call_trigger_memory64`.
 - `publish_string`: `example/platform/ros/c_ffi_bridge/publish_string`.
 - `publish_string_memory64`: `example/platform/ros/c_ffi_bridge/publish_string_memory64`.
-- `ros1_call_trigger`: `example/platform/ros/c_ffi_bridge/ros1_call_trigger`.
-- `ros1_call_trigger_memory64`: `example/platform/ros/c_ffi_bridge/ros1_call_trigger_memory64`.
-- `ros1_publish_string`: `example/platform/ros/c_ffi_bridge/ros1_publish_string`.
-- `ros1_publish_string_memory64`: `example/platform/ros/c_ffi_bridge/ros1_publish_string_memory64`.
-- `ros1_subscribe_string`: `example/platform/ros/c_ffi_bridge/ros1_subscribe_string`.
-- `ros1_subscribe_string_memory64`: `example/platform/ros/c_ffi_bridge/ros1_subscribe_string_memory64`.
+- `ros1_call_trigger`: `example/platform/ros/c_ffi_bridge/ros1/call_trigger`.
+- `ros1_call_trigger_memory64`: `example/platform/ros/c_ffi_bridge/ros1/call_trigger_memory64`.
+- `ros1_publish_string`: `example/platform/ros/c_ffi_bridge/ros1/publish_string`.
+- `ros1_publish_string_memory64`: `example/platform/ros/c_ffi_bridge/ros1/publish_string_memory64`.
+- `ros1_subscribe_string`: `example/platform/ros/c_ffi_bridge/ros1/subscribe_string`.
+- `ros1_subscribe_string_memory64`: `example/platform/ros/c_ffi_bridge/ros1/subscribe_string_memory64`.
 - `subscribe_string`: `example/platform/ros/c_ffi_bridge/subscribe_string`.
 - `subscribe_string_memory64`: `example/platform/ros/c_ffi_bridge/subscribe_string_memory64`.
 

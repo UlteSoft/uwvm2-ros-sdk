@@ -16,7 +16,7 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/ubtech/lua/ros2_main/records.lua`
+- `include/platform/ubtech/lua/ros2/main/records.lua`
 
 Standalone examples:
 

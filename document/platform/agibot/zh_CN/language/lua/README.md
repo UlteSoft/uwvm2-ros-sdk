@@ -18,13 +18,13 @@
 
 - `include/platform/agibot/lua/client.lua`
 - `include/platform/agibot/lua/records.lua`
-- `include/platform/agibot/lua/ros2_sdk_v0_8_1_main/records.lua`
-- `include/platform/agibot/lua/ros2_sdk_v0_8_2_main/records.lua`
-- `include/platform/agibot/lua/ros2_sdk_v0_9_0_main/records.lua`
-- `include/platform/agibot/lua/ros2_sdk_v1_0_0_main/records.lua`
-- `include/platform/agibot/lua/ros2_sdk_v1_0_0_rl/records.lua`
-- `include/platform/agibot/lua/ros2_sdk_v1_1_0_main/records.lua`
-- `include/platform/agibot/lua/ros2_sdk_v1_1_0_rl/records.lua`
+- `include/platform/agibot/lua/ros2/sdk_v0_8_1_main/records.lua`
+- `include/platform/agibot/lua/ros2/sdk_v0_8_2_main/records.lua`
+- `include/platform/agibot/lua/ros2/sdk_v0_9_0_main/records.lua`
+- `include/platform/agibot/lua/ros2/sdk_v1_0_0_main/records.lua`
+- `include/platform/agibot/lua/ros2/sdk_v1_0_0_rl/records.lua`
+- `include/platform/agibot/lua/ros2/sdk_v1_1_0_main/records.lua`
+- `include/platform/agibot/lua/ros2/sdk_v1_1_0_rl/records.lua`
 
 独立例子：
 

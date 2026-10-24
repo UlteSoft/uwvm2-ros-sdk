@@ -47,36 +47,36 @@ The SDK creates no grants. A trusted operator manually supplies exact aliases, r
 
 ## Examples
 
-- `example/platform/ufactory/as/ros1_kinetic/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros1_kinetic/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros1_kinetic/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros1_legacy/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros1_legacy/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros1_legacy/query_get_analog_i_o`: `query_get_analog_i_o`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros1_master/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros1_master/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros1_master/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_foxy/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_foxy/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_foxy/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_galactic/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_galactic/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_galactic/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_humble/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_humble/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_humble/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_humble_gz/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_humble_gz/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_humble_gz/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_jazzy/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_jazzy/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_jazzy/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_master/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_master/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_master/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_rolling/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_rolling/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
-- `example/platform/ufactory/as/ros2_rolling/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/kinetic/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/kinetic/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/kinetic/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/legacy/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/legacy/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/legacy/query_get_analog_i_o`: `query_get_analog_i_o`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/master/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/master/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros1/master/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/foxy/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/foxy/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/foxy/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/galactic/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/galactic/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/galactic/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/humble/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/humble/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/humble/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/humble_gz/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/humble_gz/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/humble_gz/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/jazzy/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/jazzy/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/jazzy/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/master/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/master/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/master/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/rolling/observe_robot_msg`: `observe_robot_msg`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/rolling/observe_i_o_state`: `observe_i_o_state`; independent `xmake.lua` and actual source.
+- `example/platform/ufactory/as/ros2/rolling/observe_c_i_o_state`: `observe_c_i_o_state`; independent `xmake.lua` and actual source.
 
 Each observation prints actual complete canonical bytes only after full decoding and explicit close. A query encodes its complete original request and validates its complete original response. It does not infer success from a response's zero/default fields. Independent acceptance must compare the entire record/bytes, primary status, cleanup status and denied/malformed cases; exit zero alone is insufficient.
 

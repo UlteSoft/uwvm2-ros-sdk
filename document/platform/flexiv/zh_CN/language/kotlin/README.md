@@ -50,24 +50,24 @@ Flexiv 各版本的 Mode、RecoveryPolicy、OperationalStatus 和控制器配置
 - `include/platform/flexiv/kotlin/ros2/flexiv-ros2-jazzy-v2-2-complete/Records.kt`.
 - `include/platform/flexiv/kotlin/ros2/flexiv-ros2-jazzy-v2-complete/Records.kt`.
 
-- `example/platform/flexiv/kotlin/ros1_noetic/decode_state/main.kt`: `decode_state`, `flexiv_msgs/RobotStates`.
-- `example/platform/flexiv/kotlin/ros1_noetic/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/JointPosVel`.
-- `example/platform/flexiv/kotlin/ros1_noetic/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/Mode`.
-- `example/platform/flexiv/kotlin/ros2_foxy/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/kotlin/ros2_foxy/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/msg/JointPosVel`.
-- `example/platform/flexiv/kotlin/ros2_foxy/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/msg/Mode`.
-- `example/platform/flexiv/kotlin/ros2_humble_v2/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/kotlin/ros2_humble_v2/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/kotlin/ros2_humble_v2/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
-- `example/platform/flexiv/kotlin/ros2_humble_v2_2/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/kotlin/ros2_humble_v2_2/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/kotlin/ros2_humble_v2_2/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
-- `example/platform/flexiv/kotlin/ros2_jazzy_v2/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/kotlin/ros2_jazzy_v2/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/kotlin/ros2_jazzy_v2/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
-- `example/platform/flexiv/kotlin/ros2_jazzy_v2_2/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/kotlin/ros2_jazzy_v2_2/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/kotlin/ros2_jazzy_v2_2/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/kotlin/ros1/noetic/decode_state/main.kt`: `decode_state`, `flexiv_msgs/RobotStates`.
+- `example/platform/flexiv/kotlin/ros1/noetic/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/JointPosVel`.
+- `example/platform/flexiv/kotlin/ros1/noetic/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/Mode`.
+- `example/platform/flexiv/kotlin/ros2/foxy/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/kotlin/ros2/foxy/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/msg/JointPosVel`.
+- `example/platform/flexiv/kotlin/ros2/foxy/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/msg/Mode`.
+- `example/platform/flexiv/kotlin/ros2/humble_v2/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/kotlin/ros2/humble_v2/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/kotlin/ros2/humble_v2/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
+- `example/platform/flexiv/kotlin/ros2/humble_v2_2/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/kotlin/ros2/humble_v2_2/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/kotlin/ros2/humble_v2_2/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/kotlin/ros2/jazzy_v2/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/kotlin/ros2/jazzy_v2/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/kotlin/ros2/jazzy_v2/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
+- `example/platform/flexiv/kotlin/ros2/jazzy_v2_2/decode_state/main.kt`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/kotlin/ros2/jazzy_v2_2/validate_goal/main.kt`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/kotlin/ros2/jazzy_v2_2/inspect_response/main.kt`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
 - `example/platform/flexiv/kotlin/controller_core_foxy/decode_state/main.kt`: `decode_state`, `sensor_msgs/msg/JointState`.
 - `example/platform/flexiv/kotlin/controller_core_foxy/validate_goal/main.kt`: `validate_goal`, `sensor_msgs/msg/JointState`.
 - `example/platform/flexiv/kotlin/controller_core_foxy/inspect_response/main.kt`: `inspect_response`, `trajectory_msgs/msg/JointTrajectory`.

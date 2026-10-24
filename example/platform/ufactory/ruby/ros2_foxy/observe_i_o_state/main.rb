@@ -2,7 +2,7 @@
 # @brief Observe every original xarm_msgs/msg/IOState field.
 # @details Actual Ruby Integer/String semantics remain in the genuine CRuby guest.
 require "roswasm/transport"
-require "ufactory/ruby/ros2_foxy/records"
+require "ufactory/ruby/ros2/foxy/records"
 include Uwvm::Ufactory::Ros2Foxy
 
 # @brief Observe/query one entire original value and retire its exact owner once.

@@ -62,25 +62,25 @@
     "full_platform_accepted": false,
     "cases": [
       {
-        "project": "example/platform/kinova/c/ros2_humble/decode_state",
+        "project": "example/platform/kinova/c/ros2/humble/decode_state",
         "language": "c",
         "address_bits": 32,
         "wasm_sha256": "fdd450db4ab498a3dc1670ad294ec702fc2886ae05f3c574a948dc1c7ffabcb9"
       },
       {
-        "project": "example/platform/kinova/c/ros2_humble/decode_state",
+        "project": "example/platform/kinova/c/ros2/humble/decode_state",
         "language": "c",
         "address_bits": 64,
         "wasm_sha256": "c6348110cb4a0478c5679834b279f0d6da14c9e6ac8abd7f7eedaeaaa35aedcb"
       },
       {
-        "project": "example/platform/kinova/cpp/ros2_humble/decode_state",
+        "project": "example/platform/kinova/cpp/ros2/humble/decode_state",
         "language": "cpp",
         "address_bits": 32,
         "wasm_sha256": "7b6ce0da465d3e2626a863b6e279b80e8da7c5afcbb79722d4d823cb5ccc9d78"
       },
       {
-        "project": "example/platform/kinova/cpp/ros2_humble/decode_state",
+        "project": "example/platform/kinova/cpp/ros2/humble/decode_state",
         "language": "cpp",
         "address_bits": 64,
         "wasm_sha256": "1a6736ce04f34585118120e1441fe4a91caba3045c53d651bb82e71e6c70d734"

@@ -16,8 +16,8 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/fourier/objectc/ros1_aurora_bridge_v1/Records.h`
-- `include/platform/fourier/objectc/ros2_aurora_bridge_v1/Records.h`
+- `include/platform/fourier/objectc/ros1/aurora_bridge_v1/Records.h`
+- `include/platform/fourier/objectc/ros2/aurora_bridge_v1/Records.h`
 
 Standalone examples:
 

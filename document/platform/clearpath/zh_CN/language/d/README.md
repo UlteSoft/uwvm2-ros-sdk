@@ -39,15 +39,15 @@ alias 必须为无 NUL 的严格 UTF-8，长度为 1..255 字节。owner 和长�
 - `example/platform/clearpath/d/ros1/observe_drivefeedback`：观测完整原始消息 `clearpath_platform_msgs/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
 - `example/platform/clearpath/d/ros1/observe_stopstatus`：观测完整原始消息 `clearpath_platform_msgs/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
 - `example/platform/clearpath/d/ros1/observe_rgb`：观测完整原始消息 `clearpath_platform_msgs/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_humble/observe_drivefeedback`：观测完整原始消息 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_humble/observe_stopstatus`：观测完整原始消息 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_humble/observe_rgb`：观测完整原始消息 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_jazzy/observe_drivefeedback`：观测完整原始消息 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_jazzy/observe_stopstatus`：观测完整原始消息 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_jazzy/observe_rgb`：观测完整原始消息 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_main/observe_drivefeedback`：观测完整原始消息 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_main/observe_stopstatus`：观测完整原始消息 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
-- `example/platform/clearpath/d/ros2_main/observe_rgb`：观测完整原始消息 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/humble/observe_drivefeedback`：观测完整原始消息 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/humble/observe_stopstatus`：观测完整原始消息 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/humble/observe_rgb`：观测完整原始消息 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/jazzy/observe_drivefeedback`：观测完整原始消息 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/jazzy/observe_stopstatus`：观测完整原始消息 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/jazzy/observe_rgb`：观测完整原始消息 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/main/observe_drivefeedback`：观测完整原始消息 `clearpath_platform_msgs/msg/DriveFeedback`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/main/observe_stopstatus`：观测完整原始消息 `clearpath_platform_msgs/msg/StopStatus`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
+- `example/platform/clearpath/d/ros2/main/observe_rgb`：观测完整原始消息 `clearpath_platform_msgs/msg/RGB`。在该目录执行 `xmake`；每个示例都有独立 `xmake.lua`。
 
 通信示例要求一个显式配置的 alias 参数；纯 codec 示例不接收 alias，也不执行原生操作。`build/` 中只能有一个应用 `.wasm`；前端缓存与中间对象留在构建缓存中，部署不需要 sidecar。
 

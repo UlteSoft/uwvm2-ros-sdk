@@ -2,7 +2,7 @@
 # @brief Observe every original rm_msgs/Joint_Temperature field.
 # @details Actual Ruby Integer/String semantics remain in the genuine CRuby guest.
 require "roswasm/transport"
-require "realman/ruby/ros1_main/records"
+require "realman/ruby/ros1/main/records"
 include Uwvm::Realman::Ros1Main
 
 # @brief Observe/query one entire original value and retire its exact owner once.

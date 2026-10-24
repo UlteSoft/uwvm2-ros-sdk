@@ -4,7 +4,7 @@
 --- exceptions still trigger exactly one explicit capability-close attempt.
 local ros = require("roswasm")
 local wire = require("roswasm/wire")
-local records = require("agibot/lua/ros2_sdk_v1_1_0_main/records")
+local records = require("agibot/lua/ros2/sdk_v1_1_0_main/records")
 if #arg ~= 1 then return 22 end
 local request = records.Ros2Aimdk_msgsSrvGetRobotResources_Request.encode(records.Ros2Aimdk_msgsSrvGetRobotResources_Request.new())
 local session = ros.session(1)

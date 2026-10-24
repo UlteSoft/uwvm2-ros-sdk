@@ -2,7 +2,7 @@
 /// @brief Use the complete original clearpath_platform_msgs/msg/RGB through an explicit native alias.
 /// @details Preserve every original field and independent request/close status. No permission is granted.
 module clearpath_example;
-import api = clearpath.d.ros2_main.observation;
+import api = clearpath.d.ros2.main.observation;
 import core = native.d.observation;
 
 /// @brief Enter the actual compiled language with one exact alias argument.

@@ -16,7 +16,7 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/ubtech/r/ros2_main/records.R`
+- `include/platform/ubtech/r/ros2/main/records.R`
 
 Standalone examples:
 

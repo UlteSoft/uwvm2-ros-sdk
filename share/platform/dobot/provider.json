@@ -29,7 +29,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/dobot/objectc/ros1_demo_v3/records.m"
+          "src/platform/dobot/objectc/ros1/demo_v3/records.m"
         ]
       },
       "scenarios": [
@@ -89,7 +89,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/dobot/objectc/ros1_demo_v4/records.m"
+          "src/platform/dobot/objectc/ros1/demo_v4/records.m"
         ]
       },
       "scenarios": [
@@ -151,7 +151,7 @@
       },
       "language_sources": {
         "objectc": [
-          "src/platform/dobot/objectc/ros1_v3/records.m"
+          "src/platform/dobot/objectc/ros1/v3/records.m"
         ]
       },
       "scenarios": [
@@ -213,7 +213,7 @@
       },
       "language_sources": {
         "objectc": [
-          "src/platform/dobot/objectc/ros1_v4/records.m"
+          "src/platform/dobot/objectc/ros1/v4/records.m"
         ]
       },
       "scenarios": [
@@ -275,10 +275,10 @@
       },
       "language_sources": {
         "objectc": [
-          "src/platform/dobot/objectc/ros2_v4/records.m"
+          "src/platform/dobot/objectc/ros2/v4/records.m"
         ],
         "java": [
-          "include/platform/dobot/java/ros2_v4/dobot/ros2_v4/BoundedRecords.java"
+          "include/platform/dobot/java/ros2/v4/dobot/ros2_v4/BoundedRecords.java"
         ]
       },
       "scenarios": [
@@ -315,7 +315,7 @@
           "format": "uwvm-vendor-source-graph-v1",
           "language": "java",
           "sources": [
-            "include/platform/dobot/java/ros2_v4/dobot/ros2_v4/BoundedRecords.java"
+            "include/platform/dobot/java/ros2/v4/dobot/ros2_v4/BoundedRecords.java"
           ],
           "main_class": "Main"
         },

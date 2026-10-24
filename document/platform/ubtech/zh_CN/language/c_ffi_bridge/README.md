@@ -16,7 +16,7 @@
 
 交付的源入口：
 
-- `include/platform/ubtech/c_ffi_bridge/ros2_main/records.h`
+- `include/platform/ubtech/c_ffi_bridge/ros2/main/records.h`
 
 独立例子：
 

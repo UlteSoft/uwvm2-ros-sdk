@@ -52,6 +52,7 @@ deployment configuration.
 - [Platform manuals](document/platform)
 - [Language manuals](document/language)
 - [Independent platform examples](example/platform)
+- [Public directory layout](document/LAYOUT.en_US.md) / [公共目录规范](document/LAYOUT.zh_CN.md)
 
 The SDK is under development. A language or platform directory records source
 availability; it does not certify every architecture, library kind or native

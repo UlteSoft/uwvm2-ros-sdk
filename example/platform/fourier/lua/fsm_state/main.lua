@@ -4,7 +4,7 @@
 --- exceptions still trigger exactly one explicit capability-close attempt.
 local ros = require("roswasm")
 local wire = require("roswasm/wire")
-local records = require("fourier/lua/ros2_aurora_bridge_v1/records")
+local records = require("fourier/lua/ros2/aurora_bridge_v1/records")
 if #arg ~= 2 then return 22 end
 local request = records.Ros2Uwvm_fourier_bridgeSrvGetFsmState_Request.encode(records.Ros2Uwvm_fourier_bridgeSrvGetFsmState_Request.new({sequence = wire.uint64(arg[2])}))
 local session = ros.session(1)

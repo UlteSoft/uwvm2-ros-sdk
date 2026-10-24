@@ -16,7 +16,7 @@
 
 交付的源入口：
 
-- `include/platform/ubtech/lua/ros2_main/records.lua`
+- `include/platform/ubtech/lua/ros2/main/records.lua`
 
 独立例子：
 

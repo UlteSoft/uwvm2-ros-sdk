@@ -3,7 +3,7 @@
 
 ## serve_native_joint_impedance
 
-源码：`sdk/example/platform/flexiv/c/ros2_jazzy_v2_2/serve_native_joint_impedance`。
+源码：`sdk/example/platform/flexiv/c/ros2/jazzy_v2_2/serve_native_joint_impedance`。
 
 该有限离线 Jazzy v2.2 用例使用完整原始类型。Service 响应保留 JointImpedance setting 的全部嵌套字段；Action 反馈保留宽度、力和 moving，kind3 明确中止，保留 false 与 UTF-8 错误文本；ROS2 原生 ABORTED 状态为6。示例不操作实体硬件。
 
@@ -11,7 +11,7 @@
 
 ## serve_native_grasp
 
-源码：`sdk/example/platform/flexiv/c/ros2_jazzy_v2_2/serve_native_grasp`。
+源码：`sdk/example/platform/flexiv/c/ros2/jazzy_v2_2/serve_native_grasp`。
 
 该有限离线 Jazzy v2.2 用例使用完整原始类型。Service 响应保留 JointImpedance setting 的全部嵌套字段；Action 反馈保留宽度、力和 moving，kind3 明确中止，保留 false 与 UTF-8 错误文本；ROS2 原生 ABORTED 状态为6。示例不操作实体硬件。
 

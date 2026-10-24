@@ -19537,7 +19537,7 @@
   "outputs": [
     {
       "path": "include/platform/clearpath/zig/ros1/records.zig",
-      "sha256": "27284f4cb1b49ba41da0f9f29d861999fbcdeb99cf5caa84d2e2b8e479c20a0c"
+      "sha256": "4f5f48bc05f9e3e5a68b272890c21107a0ff5ce4b57fdf0efadaed177e1e91e5"
     },
     {
       "path": "include/platform/clearpath/d/ros1/records.d",
@@ -19558,7 +19558,7 @@
     },
     {
       "path": "include/platform/clearpath/swift/ros1/Records.swift",
-      "sha256": "64f7b4682dd78b5ab9d0145dcd14ce7ba6ef3a32063132ca56e9eacb3fb1e8d1"
+      "sha256": "d44493be50666d25a69fea8912f6304d18c53be3ea8299f2e1419e6a63945ef0"
     }
   ],
   "source_pins": [],

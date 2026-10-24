@@ -16,8 +16,8 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/fourier/php/ros1_aurora_bridge_v1/records.php`
-- `include/platform/fourier/php/ros2_aurora_bridge_v1/records.php`
+- `include/platform/fourier/php/ros1/aurora_bridge_v1/records.php`
+- `include/platform/fourier/php/ros2/aurora_bridge_v1/records.php`
 
 Standalone examples:
 

@@ -16,8 +16,8 @@
 
 交付的源入口：
 
-- `include/platform/fourier/php/ros1_aurora_bridge_v1/records.php`
-- `include/platform/fourier/php/ros2_aurora_bridge_v1/records.php`
+- `include/platform/fourier/php/ros1/aurora_bridge_v1/records.php`
+- `include/platform/fourier/php/ros2/aurora_bridge_v1/records.php`
 
 独立例子：
 

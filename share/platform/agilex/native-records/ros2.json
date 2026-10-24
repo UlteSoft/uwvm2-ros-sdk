@@ -1132,7 +1132,7 @@
     },
     {
       "path": "include/platform/agilex/swift/ros2/Records.swift",
-      "sha256": "2bb41462e70b7992ea6338bbaf0cdde721bea5a3c62c49cdfc991fb036d8a6cb"
+      "sha256": "271c661aa6557f8d45eea87dfc41557c44ca8361cc4e05123d3ad5f492ad3a4c"
     }
   ],
   "source_pins": [],

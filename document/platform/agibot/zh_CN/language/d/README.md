@@ -31,13 +31,13 @@
 - `include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-1-0-main-complete/records.d`
 - `include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/interfaces.d`
 - `include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/records.d`
-- `include/platform/agibot/d/ros2_sdk_v0_8_1_main/records.d`
-- `include/platform/agibot/d/ros2_sdk_v0_8_2_main/records.d`
-- `include/platform/agibot/d/ros2_sdk_v0_9_0_main/records.d`
-- `include/platform/agibot/d/ros2_sdk_v1_0_0_main/records.d`
-- `include/platform/agibot/d/ros2_sdk_v1_0_0_rl/records.d`
-- `include/platform/agibot/d/ros2_sdk_v1_1_0_main/records.d`
-- `include/platform/agibot/d/ros2_sdk_v1_1_0_rl/records.d`
+- `include/platform/agibot/d/ros2/sdk_v0_8_1_main/records.d`
+- `include/platform/agibot/d/ros2/sdk_v0_8_2_main/records.d`
+- `include/platform/agibot/d/ros2/sdk_v0_9_0_main/records.d`
+- `include/platform/agibot/d/ros2/sdk_v1_0_0_main/records.d`
+- `include/platform/agibot/d/ros2/sdk_v1_0_0_rl/records.d`
+- `include/platform/agibot/d/ros2/sdk_v1_1_0_main/records.d`
+- `include/platform/agibot/d/ros2/sdk_v1_1_0_rl/records.d`
 
 独立例子：
 

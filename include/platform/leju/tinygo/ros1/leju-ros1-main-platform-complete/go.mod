@@ -1,4 +1,4 @@
-module leju/tinygo/ros1_main_platform
+module leju/tinygo/ros1/main_platform
 
 go 1.23
 

@@ -18,8 +18,8 @@ Delivered source entry paths:
 
 - `include/platform/ubtech/py/__init__.py`
 - `include/platform/ubtech/py/ros2/ubtech-ros2-main-complete/bounded_records.py`
-- `include/platform/ubtech/py/ros2_main/__init__.py`
-- `include/platform/ubtech/py/ros2_main/records.py`
+- `include/platform/ubtech/py/ros2/main/__init__.py`
+- `include/platform/ubtech/py/ros2/main/records.py`
 
 Standalone examples:
 

@@ -47,36 +47,36 @@ SDK 不授予权限。受信任操作者手动提供精确别名、资源、完�
 
 ## 示例流程
 
-- `example/platform/ufactory/py/ros1_kinetic/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros1_kinetic/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros1_kinetic/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros1_legacy/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros1_legacy/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros1_legacy/query_get_analog_i_o`：`query_get_analog_i_o`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros1_master/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros1_master/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros1_master/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_foxy/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_foxy/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_foxy/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_galactic/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_galactic/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_galactic/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_humble/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_humble/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_humble/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_humble_gz/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_humble_gz/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_humble_gz/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_jazzy/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_jazzy/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_jazzy/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_master/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_master/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_master/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_rolling/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_rolling/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/ufactory/py/ros2_rolling/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/kinetic/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/kinetic/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/kinetic/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/legacy/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/legacy/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/legacy/query_get_analog_i_o`：`query_get_analog_i_o`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/master/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/master/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros1/master/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/foxy/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/foxy/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/foxy/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/galactic/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/galactic/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/galactic/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/humble/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/humble/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/humble/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/humble_gz/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/humble_gz/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/humble_gz/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/jazzy/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/jazzy/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/jazzy/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/master/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/master/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/master/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/rolling/observe_robot_msg`：`observe_robot_msg`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/rolling/observe_i_o_state`：`observe_i_o_state`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/ufactory/py/ros2/rolling/observe_c_i_o_state`：`observe_c_i_o_state`，独立 `xmake.lua` 和真实语言源码。
 
 观测示例接收并解码实际完整记录，在显式清理后输出全部规范字节；查询示例编码完整原始请求，校验完整原始响应。验收必须逐字节核对原始记录，并独立核对主错误、清理错误、拒绝权限及坏报文，不能只检查退出码 0。
 

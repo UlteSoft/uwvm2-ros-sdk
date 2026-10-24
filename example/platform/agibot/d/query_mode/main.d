@@ -3,7 +3,7 @@
 // @details Caller-owned wire and Arena storage stay live through output. The
 // C bridge only transports bytes; the complete generated D codec validates them.
 import agibot.d.client : observe;
-import agibot.d.ros2_sdk_v1_1_0_main.records : Ros2Aimdk_msgsSrvGetMcAction_Response;
+import agibot.d.ros2.sdk_v1_1_0_main.records : Ros2Aimdk_msgsSrvGetMcAction_Response;
 import roswasm.wire : Arena;
 import core.stdc.stdio : printf, putchar, fflush, stdout;
 import core.stdc.stdlib : malloc, free;

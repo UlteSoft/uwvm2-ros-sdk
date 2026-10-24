@@ -50,24 +50,24 @@ Flexiv Mode, RecoveryPolicy, OperationalStatus and controller configuration reta
 - `include/platform/flexiv/ruby/ros2/flexiv_ros2_jazzy_v2_2_complete/records.rb`.
 - `include/platform/flexiv/ruby/ros2/flexiv_ros2_jazzy_v2_complete/records.rb`.
 
-- `example/platform/flexiv/ruby/ros1_noetic/decode_state/main.rb`: `decode_state`, `flexiv_msgs/RobotStates`.
-- `example/platform/flexiv/ruby/ros1_noetic/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/JointPosVel`.
-- `example/platform/flexiv/ruby/ros1_noetic/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/Mode`.
-- `example/platform/flexiv/ruby/ros2_foxy/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/ruby/ros2_foxy/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/msg/JointPosVel`.
-- `example/platform/flexiv/ruby/ros2_foxy/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/msg/Mode`.
-- `example/platform/flexiv/ruby/ros2_humble_v2/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/ruby/ros2_humble_v2/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/ruby/ros2_humble_v2/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
-- `example/platform/flexiv/ruby/ros2_humble_v2_2/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/ruby/ros2_humble_v2_2/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/ruby/ros2_humble_v2_2/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
-- `example/platform/flexiv/ruby/ros2_jazzy_v2/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/ruby/ros2_jazzy_v2/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/ruby/ros2_jazzy_v2/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
-- `example/platform/flexiv/ruby/ros2_jazzy_v2_2/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/ruby/ros2_jazzy_v2_2/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/ruby/ros2_jazzy_v2_2/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/ruby/ros1/noetic/decode_state/main.rb`: `decode_state`, `flexiv_msgs/RobotStates`.
+- `example/platform/flexiv/ruby/ros1/noetic/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/JointPosVel`.
+- `example/platform/flexiv/ruby/ros1/noetic/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/Mode`.
+- `example/platform/flexiv/ruby/ros2/foxy/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/ruby/ros2/foxy/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/msg/JointPosVel`.
+- `example/platform/flexiv/ruby/ros2/foxy/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/msg/Mode`.
+- `example/platform/flexiv/ruby/ros2/humble_v2/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/ruby/ros2/humble_v2/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/ruby/ros2/humble_v2/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
+- `example/platform/flexiv/ruby/ros2/humble_v2_2/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/ruby/ros2/humble_v2_2/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/ruby/ros2/humble_v2_2/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/ruby/ros2/jazzy_v2/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/ruby/ros2/jazzy_v2/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/ruby/ros2/jazzy_v2/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
+- `example/platform/flexiv/ruby/ros2/jazzy_v2_2/decode_state/main.rb`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/ruby/ros2/jazzy_v2_2/validate_goal/main.rb`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/ruby/ros2/jazzy_v2_2/inspect_response/main.rb`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
 - `example/platform/flexiv/ruby/controller_core_foxy/decode_state/main.rb`: `decode_state`, `sensor_msgs/msg/JointState`.
 - `example/platform/flexiv/ruby/controller_core_foxy/validate_goal/main.rb`: `validate_goal`, `sensor_msgs/msg/JointState`.
 - `example/platform/flexiv/ruby/controller_core_foxy/inspect_response/main.rb`: `inspect_response`, `trajectory_msgs/msg/JointTrajectory`.

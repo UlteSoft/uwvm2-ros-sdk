@@ -8,7 +8,7 @@ declare(strict_types=1);
 require_once 'ros/php/RosWasm/Word.php';
 require_once 'ros/php/RosWasm/Wire.php';
 require_once 'ros/php/RosWasm/Transport.php';
-require_once 'dobot/php/ros1_v4/records.php';
+require_once 'dobot/php/ros1/v4/records.php';
 use Uwvm\RosWasm\Capability;
 use Uwvm\Dobot\ros1_v4\Ros1Dobot_v4_bringupRobotStatus;
 

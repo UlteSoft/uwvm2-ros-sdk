@@ -992,7 +992,7 @@
     },
     {
       "path": "include/platform/boston_dynamics/swift/ros2/Records.swift",
-      "sha256": "575f05bf5fc94e5bd20e2550b1617138df88d2a6f7e703d081b4113a955380be"
+      "sha256": "ea15dfcee0ca951b2a5a53f2246a78e08175d2669a3d10c66abfcd97c12e8d12"
     }
   ],
   "source_pins": [],

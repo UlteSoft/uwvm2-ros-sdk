@@ -16,13 +16,13 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/agibot/ruby/ros2_sdk_v0_8_1_main/records.rb`
-- `include/platform/agibot/ruby/ros2_sdk_v0_8_2_main/records.rb`
-- `include/platform/agibot/ruby/ros2_sdk_v0_9_0_main/records.rb`
-- `include/platform/agibot/ruby/ros2_sdk_v1_0_0_main/records.rb`
-- `include/platform/agibot/ruby/ros2_sdk_v1_0_0_rl/records.rb`
-- `include/platform/agibot/ruby/ros2_sdk_v1_1_0_main/records.rb`
-- `include/platform/agibot/ruby/ros2_sdk_v1_1_0_rl/records.rb`
+- `include/platform/agibot/ruby/ros2/sdk_v0_8_1_main/records.rb`
+- `include/platform/agibot/ruby/ros2/sdk_v0_8_2_main/records.rb`
+- `include/platform/agibot/ruby/ros2/sdk_v0_9_0_main/records.rb`
+- `include/platform/agibot/ruby/ros2/sdk_v1_0_0_main/records.rb`
+- `include/platform/agibot/ruby/ros2/sdk_v1_0_0_rl/records.rb`
+- `include/platform/agibot/ruby/ros2/sdk_v1_1_0_main/records.rb`
+- `include/platform/agibot/ruby/ros2/sdk_v1_1_0_rl/records.rb`
 
 Standalone examples:
 

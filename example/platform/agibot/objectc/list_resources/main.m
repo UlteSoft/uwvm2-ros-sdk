@@ -4,7 +4,7 @@
  * class. No native JSON parsing or C replacement entry is used.
  */
 #import <agibot/objectc/AgibotClient.h>
-#import <agibot/objectc/ros2_sdk_v1_1_0_main/Records.h>
+#import <agibot/objectc/ros2/sdk_v1_1_0_main/Records.h>
 #include <inttypes.h>
 #include <stdbool.h>
 #include <stdio.h>

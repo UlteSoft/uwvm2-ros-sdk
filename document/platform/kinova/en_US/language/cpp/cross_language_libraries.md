@@ -1,7 +1,7 @@
 # Cross-language FJT static and shared libraries
 
-- `sdk/example/platform/kinova/cpp/ros2_humble/codec_c_static`
-- `sdk/example/platform/kinova/cpp/ros2_humble/codec_c_shared`
+- `sdk/example/platform/kinova/cpp/ros2/humble/codec_c_static`
+- `sdk/example/platform/kinova/cpp/ros2/humble/codec_c_shared`
 
 This graph builds an actual c `record_codec` shared library and an actual cpp main application through ordinary Xmake target kinds and `add_deps`. Each source is compiled by its declared real frontend. A C main linked with a C++ archive uses the shared SDK's existing C++ link-driver selection; no C source is compiled as C++, and no private compiler or linker is supplied.
 

@@ -57,7 +57,7 @@ target("flexiv-r-ros2_humble_v2_2-inspect_response")
     set_plat(get_config("plat") or "wasm-wasip1")
     set_values("ros.sdk.modules", {
     {name = "ros/r/roswasm/wire", path = "include/platform/ros/r/roswasm/wire.R"},
-    {name = "flexiv/r/ros2_humble_v2_2/records", path =
+    {name = "flexiv/r/ros2/humble_v2_2/records", path =
             "include/platform/flexiv/r/ros2/flexiv-ros2-humble-v2-2-complete/records.R"},
     })
     add_files("main.R")

@@ -4,7 +4,7 @@
  * @details Read one whole original value through an explicitly granted alias.
  * No response is printed after a transport/codec refusal; no service is replayed.
  */
-#include <realman/c_ffi_bridge/ros2_jazzy/records.h>
+#include <realman/c_ffi_bridge/ros2/jazzy/records.h>
 #include <ros2/c/roswasm/ros2.h>
 #include <ros/c/command.h>
 #include <stdio.h>

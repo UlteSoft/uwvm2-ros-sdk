@@ -50,24 +50,24 @@ Flexiv Mode, RecoveryPolicy, OperationalStatus and controller configuration reta
 - `include/platform/flexiv/odin/ros2/flexiv-ros2-jazzy-v2-2-complete/records.odin`.
 - `include/platform/flexiv/odin/ros2/flexiv-ros2-jazzy-v2-complete/records.odin`.
 
-- `example/platform/flexiv/odin/ros1_noetic/decode_state/main.odin`: `decode_state`, `flexiv_msgs/RobotStates`.
-- `example/platform/flexiv/odin/ros1_noetic/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/JointPosVel`.
-- `example/platform/flexiv/odin/ros1_noetic/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/Mode`.
-- `example/platform/flexiv/odin/ros2_foxy/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/odin/ros2_foxy/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/msg/JointPosVel`.
-- `example/platform/flexiv/odin/ros2_foxy/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/msg/Mode`.
-- `example/platform/flexiv/odin/ros2_humble_v2/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/odin/ros2_humble_v2/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/odin/ros2_humble_v2/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
-- `example/platform/flexiv/odin/ros2_humble_v2_2/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/odin/ros2_humble_v2_2/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/odin/ros2_humble_v2_2/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
-- `example/platform/flexiv/odin/ros2_jazzy_v2/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/odin/ros2_jazzy_v2/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/odin/ros2_jazzy_v2/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
-- `example/platform/flexiv/odin/ros2_jazzy_v2_2/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
-- `example/platform/flexiv/odin/ros2_jazzy_v2_2/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
-- `example/platform/flexiv/odin/ros2_jazzy_v2_2/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/odin/ros1/noetic/decode_state/main.odin`: `decode_state`, `flexiv_msgs/RobotStates`.
+- `example/platform/flexiv/odin/ros1/noetic/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/JointPosVel`.
+- `example/platform/flexiv/odin/ros1/noetic/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/Mode`.
+- `example/platform/flexiv/odin/ros2/foxy/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/odin/ros2/foxy/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/msg/JointPosVel`.
+- `example/platform/flexiv/odin/ros2/foxy/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/msg/Mode`.
+- `example/platform/flexiv/odin/ros2/humble_v2/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/odin/ros2/humble_v2/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/odin/ros2/humble_v2/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
+- `example/platform/flexiv/odin/ros2/humble_v2_2/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/odin/ros2/humble_v2_2/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/odin/ros2/humble_v2_2/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
+- `example/platform/flexiv/odin/ros2/jazzy_v2/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/odin/ros2/jazzy_v2/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/odin/ros2/jazzy_v2/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/action/Grasp_Result`.
+- `example/platform/flexiv/odin/ros2/jazzy_v2_2/decode_state/main.odin`: `decode_state`, `flexiv_msgs/msg/RobotStates`.
+- `example/platform/flexiv/odin/ros2/jazzy_v2_2/validate_goal/main.odin`: `validate_goal`, `flexiv_msgs/action/Grasp_Goal`.
+- `example/platform/flexiv/odin/ros2/jazzy_v2_2/inspect_response/main.odin`: `inspect_response`, `flexiv_msgs/srv/GetOperationalStatus_Response`.
 - `example/platform/flexiv/odin/controller_core_foxy/decode_state/main.odin`: `decode_state`, `sensor_msgs/msg/JointState`.
 - `example/platform/flexiv/odin/controller_core_foxy/validate_goal/main.odin`: `validate_goal`, `sensor_msgs/msg/JointState`.
 - `example/platform/flexiv/odin/controller_core_foxy/inspect_response/main.odin`: `inspect_response`, `trajectory_msgs/msg/JointTrajectory`.

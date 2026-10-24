@@ -42,21 +42,21 @@ SDK 不授予权限。受信任操作者手动提供精确别名、资源、完�
 
 ## 示例流程
 
-- `example/platform/dobot/rs/ros1_demo_v3/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_demo_v3/query_get_angle`：`query_get_angle`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_demo_v3/query_get_pose`：`query_get_pose`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_demo_v4/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_demo_v4/query_get_angle`：`query_get_angle`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_demo_v4/query_get_pose`：`query_get_pose`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_v3/observe_robot_status`：`observe_robot_status`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_v3/observe_tool_vector_actual`：`observe_tool_vector_actual`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_v3/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_v4/observe_robot_status`：`observe_robot_status`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_v4/observe_tool_vector_actual`：`observe_tool_vector_actual`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros1_v4/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros2_v4/observe_robot_status`：`observe_robot_status`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros2_v4/observe_tool_vector_actual`：`observe_tool_vector_actual`，独立 `xmake.lua` 和真实语言源码。
-- `example/platform/dobot/rs/ros2_v4/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/demo_v3/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/demo_v3/query_get_angle`：`query_get_angle`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/demo_v3/query_get_pose`：`query_get_pose`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/demo_v4/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/demo_v4/query_get_angle`：`query_get_angle`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/demo_v4/query_get_pose`：`query_get_pose`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/v3/observe_robot_status`：`observe_robot_status`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/v3/observe_tool_vector_actual`：`observe_tool_vector_actual`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/v3/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/v4/observe_robot_status`：`observe_robot_status`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/v4/observe_tool_vector_actual`：`observe_tool_vector_actual`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros1/v4/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros2/v4/observe_robot_status`：`observe_robot_status`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros2/v4/observe_tool_vector_actual`：`observe_tool_vector_actual`，独立 `xmake.lua` 和真实语言源码。
+- `example/platform/dobot/rs/ros2/v4/query_robot_mode`：`query_robot_mode`，独立 `xmake.lua` 和真实语言源码。
 
 观测示例接收并解码实际完整记录，在显式清理后输出全部规范字节；查询示例编码完整原始请求，校验完整原始响应。验收必须逐字节核对原始记录，并独立核对主错误、清理错误、拒绝权限及坏报文，不能只检查退出码 0。
 

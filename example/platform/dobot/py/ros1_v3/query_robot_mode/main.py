@@ -6,7 +6,7 @@ The shared interpreter packages this application and its modules into one Wasm.
 import json
 import sys
 from ros.py.transport import Capability, pause_ms
-from dobot.py.ros1_v3.records import Ros1Dobot_bringupRobotModeResponse, Ros1Dobot_bringupRobotModeRequest
+from dobot.py.ros1.v3.records import Ros1Dobot_bringupRobotModeResponse, Ros1Dobot_bringupRobotModeRequest
 
 
 def main():

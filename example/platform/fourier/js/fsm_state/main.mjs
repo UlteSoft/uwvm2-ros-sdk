@@ -5,7 +5,7 @@
  * replayed; only idle subscription polls repeat, with a finite 250-poll budget.
  */
 import {Capability} from "ros/js/transport";
-import {Ros2Uwvm_fourier_bridgeSrvGetFsmState_Response, Ros2Uwvm_fourier_bridgeSrvGetFsmState_Request} from "fourier/js/ros2_aurora_bridge_v1/records";
+import {Ros2Uwvm_fourier_bridgeSrvGetFsmState_Response, Ros2Uwvm_fourier_bridgeSrvGetFsmState_Request} from "fourier/js/ros2/aurora_bridge_v1/records";
 const facts = {
     primary : 0,
     cleanup : 0,

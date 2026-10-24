@@ -8,7 +8,7 @@ declare(strict_types=1);
 require_once 'ros/php/RosWasm/Word.php';
 require_once 'ros/php/RosWasm/Wire.php';
 require_once 'ros/php/RosWasm/Transport.php';
-require_once 'realman/php/ros1_develop/records.php';
+require_once 'realman/php/ros1/develop/records.php';
 use Uwvm\RosWasm\Capability;
 use Uwvm\Realman\ros1_develop\Ros1Rm_msgsSix_Force;
 

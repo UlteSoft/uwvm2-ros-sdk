@@ -34,9 +34,9 @@ ROS FollowJointTrajectory 使用弧度及 SI 导数；原生 Kortex 2.8.0 protob
 - `include/platform/kinova/as/ros2/mobile-fjt-humble-complete/bounded_interfaces.ts`.
 - `include/platform/kinova/as/ros2/mobile-fjt-humble-complete/bounded_records.ts`.
 
-- `example/platform/kinova/as/ros2_humble/decode_state/main.ts`: `decode_state`, `sensor_msgs/msg/JointState`.
-- `example/platform/kinova/as/ros2_humble/validate_goal/main.ts`: `validate_goal`, `control_msgs/action/FollowJointTrajectory_Goal`.
-- `example/platform/kinova/as/ros2_humble/inspect_response/main.ts`: `inspect_response`, `control_msgs/action/FollowJointTrajectory_Result`.
+- `example/platform/kinova/as/ros2/humble/decode_state/main.ts`: `decode_state`, `sensor_msgs/msg/JointState`.
+- `example/platform/kinova/as/ros2/humble/validate_goal/main.ts`: `validate_goal`, `control_msgs/action/FollowJointTrajectory_Goal`.
+- `example/platform/kinova/as/ros2/humble/inspect_response/main.ts`: `inspect_response`, `control_msgs/action/FollowJointTrajectory_Result`.
 
 C/C++/Objective-C/C FFI/Python/JS 的 observe 示例接收用户明确授予的主题别名并完整解码；其他语言的 decode_state 从运行时输入验证完整状态；validate_goal 从标准输入验证完整目标；inspect_response 检查完整响应/结果负载。后两个是 codec 应用，不能当作已完成原生服务/动作操作。每个目录有独立 xmake.lua，最终只部署一个 .wasm。
 

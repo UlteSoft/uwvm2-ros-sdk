@@ -16,15 +16,15 @@
 
 交付的源入口：
 
-- `include/platform/leju/r/ros1_beta_packaged_ik/records.R`
-- `include/platform/leju/r/ros1_beta_platform/records.R`
-- `include/platform/leju/r/ros1_beta_unregistered_dtos/records.R`
-- `include/platform/leju/r/ros1_main_packaged_ik/records.R`
-- `include/platform/leju/r/ros1_main_platform/records.R`
-- `include/platform/leju/r/ros1_main_unregistered_dtos/records.R`
-- `include/platform/leju/r/ros1_master_packaged_ik/records.R`
-- `include/platform/leju/r/ros1_master_platform/records.R`
-- `include/platform/leju/r/ros1_master_unregistered_dtos/records.R`
+- `include/platform/leju/r/ros1/beta_packaged_ik/records.R`
+- `include/platform/leju/r/ros1/beta_platform/records.R`
+- `include/platform/leju/r/ros1/beta_unregistered_dtos/records.R`
+- `include/platform/leju/r/ros1/main_packaged_ik/records.R`
+- `include/platform/leju/r/ros1/main_platform/records.R`
+- `include/platform/leju/r/ros1/main_unregistered_dtos/records.R`
+- `include/platform/leju/r/ros1/master_packaged_ik/records.R`
+- `include/platform/leju/r/ros1/master_platform/records.R`
+- `include/platform/leju/r/ros1/master_unregistered_dtos/records.R`
 
 独立例子：
 

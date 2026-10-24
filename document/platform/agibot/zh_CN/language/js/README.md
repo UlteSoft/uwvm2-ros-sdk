@@ -30,13 +30,13 @@
 - `include/platform/agibot/js/ros2/agibot-ros2-sdk-v1-1-0-main-complete/bounded_interfaces.mjs`
 - `include/platform/agibot/js/ros2/agibot-ros2-sdk-v1-1-0-main-complete/bounded_records.mjs`
 - `include/platform/agibot/js/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/bounded_records.mjs`
-- `include/platform/agibot/js/ros2_sdk_v0_8_1_main/records.mjs`
-- `include/platform/agibot/js/ros2_sdk_v0_8_2_main/records.mjs`
-- `include/platform/agibot/js/ros2_sdk_v0_9_0_main/records.mjs`
-- `include/platform/agibot/js/ros2_sdk_v1_0_0_main/records.mjs`
-- `include/platform/agibot/js/ros2_sdk_v1_0_0_rl/records.mjs`
-- `include/platform/agibot/js/ros2_sdk_v1_1_0_main/records.mjs`
-- `include/platform/agibot/js/ros2_sdk_v1_1_0_rl/records.mjs`
+- `include/platform/agibot/js/ros2/sdk_v0_8_1_main/records.mjs`
+- `include/platform/agibot/js/ros2/sdk_v0_8_2_main/records.mjs`
+- `include/platform/agibot/js/ros2/sdk_v0_9_0_main/records.mjs`
+- `include/platform/agibot/js/ros2/sdk_v1_0_0_main/records.mjs`
+- `include/platform/agibot/js/ros2/sdk_v1_0_0_rl/records.mjs`
+- `include/platform/agibot/js/ros2/sdk_v1_1_0_main/records.mjs`
+- `include/platform/agibot/js/ros2/sdk_v1_1_0_rl/records.mjs`
 
 独立例子：
 

@@ -3,7 +3,7 @@
  * publish a partial value. No native handle, ROS operation or grant is created.
  * @return Zero after actual codec checks and checked stdout, otherwise an error.
  */
-#include <clearpath/c/ros2_humble/records.h>
+#include <clearpath/c/ros2/humble/records.h>
 #include <stdio.h>
 #include <string.h>
 

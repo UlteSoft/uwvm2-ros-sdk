@@ -2,7 +2,7 @@
 # @brief Observe every original rm_msgs/Six_Force field.
 # @details Actual Ruby Integer/String semantics remain in the genuine CRuby guest.
 require "roswasm/transport"
-require "realman/ruby/ros1_develop/records"
+require "realman/ruby/ros1/develop/records"
 include Uwvm::Realman::Ros1Develop
 
 # @brief Observe/query one entire original value and retire its exact owner once.

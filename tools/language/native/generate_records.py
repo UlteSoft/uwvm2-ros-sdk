@@ -17,7 +17,9 @@ import re
 import sys
 
 sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared"))
 
+from backend_layout import profile_path
 from record_emitters import emit, bind_rules
 from additional_record_emitters import haskell, odin, swift
 from source_layout import haskell as layout_haskell
@@ -104,7 +106,7 @@ def generate(api, catalog, destination, namespace, profile, major):
             "odin": "records.odin",
             "swift": "Records.swift",
         }[language]
-        directory = destination / f"include/platform/{namespace}/{language}/{profile}"
+        directory = destination / f"include/platform/{namespace}/{language}/{profile_path(profile)}"
         if language == "haskell":
             directory = (
                 destination / f"include/platform/{namespace}/haskell/{namespace.capitalize()}/{profile.capitalize()}"

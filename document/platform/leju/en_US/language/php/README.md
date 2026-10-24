@@ -16,15 +16,15 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 
 Delivered source entry paths:
 
-- `include/platform/leju/php/ros1_beta_packaged_ik/records.php`
-- `include/platform/leju/php/ros1_beta_platform/records.php`
-- `include/platform/leju/php/ros1_beta_unregistered_dtos/records.php`
-- `include/platform/leju/php/ros1_main_packaged_ik/records.php`
-- `include/platform/leju/php/ros1_main_platform/records.php`
-- `include/platform/leju/php/ros1_main_unregistered_dtos/records.php`
-- `include/platform/leju/php/ros1_master_packaged_ik/records.php`
-- `include/platform/leju/php/ros1_master_platform/records.php`
-- `include/platform/leju/php/ros1_master_unregistered_dtos/records.php`
+- `include/platform/leju/php/ros1/beta_packaged_ik/records.php`
+- `include/platform/leju/php/ros1/beta_platform/records.php`
+- `include/platform/leju/php/ros1/beta_unregistered_dtos/records.php`
+- `include/platform/leju/php/ros1/main_packaged_ik/records.php`
+- `include/platform/leju/php/ros1/main_platform/records.php`
+- `include/platform/leju/php/ros1/main_unregistered_dtos/records.php`
+- `include/platform/leju/php/ros1/master_packaged_ik/records.php`
+- `include/platform/leju/php/ros1/master_platform/records.php`
+- `include/platform/leju/php/ros1/master_unregistered_dtos/records.php`
 
 Standalone examples:
 

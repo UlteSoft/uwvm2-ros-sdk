@@ -3,7 +3,7 @@
  * extents are refused without a native call or authority grant.
  * @return Zero after exact bytes and checked stdout, otherwise a refusal code.
  */
-#include <clearpath/cpp/ros2_jazzy/records.hpp>
+#include <clearpath/cpp/ros2/jazzy/records.hpp>
 #include <cstdio>
 
 int main()

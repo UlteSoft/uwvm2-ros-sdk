@@ -90,7 +90,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros1_kinetic/records.m"
+          "src/platform/ufactory/objectc/ros1/kinetic/records.m"
         ]
       },
       "scenarios": [
@@ -186,7 +186,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros1_legacy/records.m"
+          "src/platform/ufactory/objectc/ros1/legacy/records.m"
         ]
       },
       "scenarios": [
@@ -267,7 +267,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros1_master/records.m"
+          "src/platform/ufactory/objectc/ros1/master/records.m"
         ]
       },
       "scenarios": [
@@ -423,7 +423,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros2_foxy/records.m"
+          "src/platform/ufactory/objectc/ros2/foxy/records.m"
         ]
       },
       "scenarios": [
@@ -579,7 +579,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros2_galactic/records.m"
+          "src/platform/ufactory/objectc/ros2/galactic/records.m"
         ]
       },
       "scenarios": [
@@ -826,10 +826,10 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros2_humble/records.m"
+          "src/platform/ufactory/objectc/ros2/humble/records.m"
         ],
         "java": [
-          "include/platform/ufactory/java/ros2_humble/ufactory/ros2_humble/BoundedRecords.java"
+          "include/platform/ufactory/java/ros2/humble/ufactory/ros2_humble/BoundedRecords.java"
         ]
       },
       "scenarios": [
@@ -866,7 +866,7 @@
           "format": "uwvm-vendor-source-graph-v1",
           "language": "java",
           "sources": [
-            "include/platform/ufactory/java/ros2_humble/ufactory/ros2_humble/BoundedRecords.java"
+            "include/platform/ufactory/java/ros2/humble/ufactory/ros2_humble/BoundedRecords.java"
           ],
           "main_class": "Main"
         },
@@ -1093,7 +1093,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros2_humble_gz/records.m"
+          "src/platform/ufactory/objectc/ros2/humble_gz/records.m"
         ]
       },
       "scenarios": [
@@ -1366,7 +1366,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros2_jazzy/records.m"
+          "src/platform/ufactory/objectc/ros2/jazzy/records.m"
         ]
       },
       "scenarios": [
@@ -1522,7 +1522,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros2_master/records.m"
+          "src/platform/ufactory/objectc/ros2/master/records.m"
         ]
       },
       "scenarios": [
@@ -1611,7 +1611,7 @@
       "legacy_defines": {},
       "language_sources": {
         "objectc": [
-          "src/platform/ufactory/objectc/ros2_rolling/records.m"
+          "src/platform/ufactory/objectc/ros2/rolling/records.m"
         ]
       },
       "scenarios": [

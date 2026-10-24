@@ -17,7 +17,7 @@ The observation API returns separate primary status, cleanup status, cleanup pre
 Delivered source entry paths:
 
 - `include/platform/ubtech/js/ros2/ubtech-ros2-main-complete/bounded_records.mjs`
-- `include/platform/ubtech/js/ros2_main/records.mjs`
+- `include/platform/ubtech/js/ros2/main/records.mjs`
 - `include/platform/ubtech/js/telemetry_ros2_main.mjs`
 
 Standalone examples:

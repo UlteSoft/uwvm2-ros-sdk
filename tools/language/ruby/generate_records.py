@@ -9,6 +9,10 @@ import ast
 import json
 from pathlib import Path
 import struct
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared"))
+from backend_layout import profile_path
 
 
 def normalized(kind, source):
@@ -146,7 +150,7 @@ def emit(sdk, ir, platform, namespace):
             codec_identity=row['codec_identity'], registered=row['registered'],
             components={role: symbols[item['name']] for role, item in row['components'].items()})
             for row in family['interfaces']}
-        directory = sdk / f'include/platform/{platform}/ruby/{profile}'
+        directory = sdk / f'include/platform/{platform}/ruby/{profile_path(profile)}'
         directory.mkdir(parents=True, exist_ok=True)
         lines = ['# @file records.rb', f'# @brief All {len(schemas)} original vendor ROS {backend} records and {len(interfaces)} interfaces.',
             '# @details Ordinary namespace values retain complete original fields and identities.',
@@ -164,7 +168,7 @@ def emit(sdk, ir, platform, namespace):
             '            # @brief Every interface, component role and both original identities.',
             '            INTERFACES = ' + ruby(interfaces, 12), '        end', '    end', 'end', '']
         (directory / 'records.rb').write_text('\n'.join(lines))
-        directory = sdk / f'include/platform/{platform}/php/{profile}'
+        directory = sdk / f'include/platform/{platform}/php/{profile_path(profile)}'
         directory.mkdir(parents=True, exist_ok=True)
         php_namespace = 'Uwvm\\' + namespace + '\\' + profile_namespace
         lines = ['<?php', 'declare(strict_types=1);', 'namespace ' + php_namespace + ';',
@@ -232,7 +236,7 @@ def emit(sdk, ir, platform, namespace):
                 "                        'class' => " + symbol + '::class', '                    ],']
         lines += ['            ]);', '        }', '        return $wire;', '    }', '}', '']
         (directory / 'records.php').write_text('\n'.join(lines))
-        directory = sdk / f'include/platform/{platform}/r/{profile}'
+        directory = sdk / f'include/platform/{platform}/r/{profile_path(profile)}'
         directory.mkdir(parents=True, exist_ok=True)
         lines = ['# @file records.R', f'# @brief All {len(schemas)} complete original ROS {backend} vendor values.',
             '# @details The module exposes only an ordinary owned namespace list.',

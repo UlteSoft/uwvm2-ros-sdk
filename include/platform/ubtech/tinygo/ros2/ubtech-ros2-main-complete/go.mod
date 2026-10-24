@@ -1,4 +1,4 @@
-module ubtech/tinygo/ros2_main
+module ubtech/tinygo/ros2/main
 
 go 1.23
 

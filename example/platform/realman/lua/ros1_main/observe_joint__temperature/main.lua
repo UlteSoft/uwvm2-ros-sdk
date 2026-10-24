@@ -2,7 +2,7 @@
 --- @brief Observe every original rm_msgs/Joint_Temperature field.
 --- @details Genuine Lua runs full field validation and preserves separate close status.
 local ros = require("roswasm")
-local records = require("realman/lua/ros1_main/records")
+local records = require("realman/lua/ros1/main/records")
 if #arg ~= 1 then return 22 end
 local session = ros.session(1)
 local owner, primary = session:open(arg[1])

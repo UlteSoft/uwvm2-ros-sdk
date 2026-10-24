@@ -28,15 +28,15 @@ Delivered source entry paths:
 - `include/platform/leju/d/ros1/leju-ros1-master-platform-complete/interfaces.d`
 - `include/platform/leju/d/ros1/leju-ros1-master-platform-complete/records.d`
 - `include/platform/leju/d/ros1/leju-ros1-master-unregistered-dtos-complete/records.d`
-- `include/platform/leju/d/ros1_beta_packaged_ik/records.d`
-- `include/platform/leju/d/ros1_beta_platform/records.d`
-- `include/platform/leju/d/ros1_beta_unregistered_dtos/records.d`
-- `include/platform/leju/d/ros1_main_packaged_ik/records.d`
-- `include/platform/leju/d/ros1_main_platform/records.d`
-- `include/platform/leju/d/ros1_main_unregistered_dtos/records.d`
-- `include/platform/leju/d/ros1_master_packaged_ik/records.d`
-- `include/platform/leju/d/ros1_master_platform/records.d`
-- `include/platform/leju/d/ros1_master_unregistered_dtos/records.d`
+- `include/platform/leju/d/ros1/beta_packaged_ik/records.d`
+- `include/platform/leju/d/ros1/beta_platform/records.d`
+- `include/platform/leju/d/ros1/beta_unregistered_dtos/records.d`
+- `include/platform/leju/d/ros1/main_packaged_ik/records.d`
+- `include/platform/leju/d/ros1/main_platform/records.d`
+- `include/platform/leju/d/ros1/main_unregistered_dtos/records.d`
+- `include/platform/leju/d/ros1/master_packaged_ik/records.d`
+- `include/platform/leju/d/ros1/master_platform/records.d`
+- `include/platform/leju/d/ros1/master_unregistered_dtos/records.d`
 
 Standalone examples:
 

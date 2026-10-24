@@ -7,7 +7,7 @@ runs even when a codec raises. Output keeps the full original canonical bytes.
 import sys
 import json
 from ros.py.transport import Capability, pause_ms
-from agibot.py.ros2_sdk_v1_1_0_main.records import Ros2Aimdk_msgsSrvGetMcAction_Response , Ros2Aimdk_msgsSrvGetMcAction_Request
+from agibot.py.ros2.sdk_v1_1_0_main.records import Ros2Aimdk_msgsSrvGetMcAction_Response , Ros2Aimdk_msgsSrvGetMcAction_Request
 
 facts = {"primary": 0, "cleanup": 0, "cleanup_present": False, "response_present": False, "wire_hex": "", "required": None, "rpc_status_present": False, "rpc_status": None}
 if len(sys.argv) != 2:

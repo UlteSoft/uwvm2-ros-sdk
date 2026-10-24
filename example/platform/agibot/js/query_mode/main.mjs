@@ -5,7 +5,7 @@
  * replayed; only idle subscription polls repeat, with a finite 250-poll budget.
  */
 import {Capability} from "ros/js/transport";
-import {Ros2Aimdk_msgsSrvGetMcAction_Response, Ros2Aimdk_msgsSrvGetMcAction_Request} from "agibot/js/ros2_sdk_v1_1_0_main/records";
+import {Ros2Aimdk_msgsSrvGetMcAction_Response, Ros2Aimdk_msgsSrvGetMcAction_Request} from "agibot/js/ros2/sdk_v1_1_0_main/records";
 const facts = {
     primary : 0,
     cleanup : 0,
