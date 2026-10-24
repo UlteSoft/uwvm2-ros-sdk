@@ -31,7 +31,9 @@ set(_uwvm_saved_required_includes "${CMAKE_REQUIRED_INCLUDES}")
 set(_uwvm_saved_required_libraries "${CMAKE_REQUIRED_LIBRARIES}")
 set(_uwvm_saved_try_type "${CMAKE_TRY_COMPILE_TARGET_TYPE}")
 set(CMAKE_TRY_COMPILE_TARGET_TYPE EXECUTABLE)
-set(CMAKE_REQUIRED_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/../../../.." "${CMAKE_CURRENT_SOURCE_DIR}/../../../../src")
+set(CMAKE_REQUIRED_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}"
+  "${UWVM_ROS_SOURCE_ROOT}" "${UWVM_ROS_SOURCE_ROOT}/src"
+  "${UWVM_ROS_SOURCE_ROOT}/third-parties/fast_io/include")
 set(CMAKE_REQUIRED_LIBRARIES "")
 foreach(package IN ITEMS rclcpp rcl rmw std_srvs rcl_interfaces rclcpp_action action_tutorials_interfaces rcl_action lifecycle_msgs rosidl_typesupport_introspection_cpp tf2 tf2_ros tf2_msgs)
   if(${package}_FOUND)
@@ -114,7 +116,8 @@ uwvm_ros2_probe(UWVM_ROS2_HAVE_ACTION "#include \"compat/action_probe.h\"\n#incl
 set(UWVM_ROS2_HAVE_CUSTOM_ACTION 0)
 function(uwvm_ros2_probe_selected_custom_actions)
   set(CMAKE_TRY_COMPILE_TARGET_TYPE EXECUTABLE)
-  set(CMAKE_REQUIRED_INCLUDES ${_uwvm_ros2_sdk_probe_includes} "${CMAKE_CURRENT_SOURCE_DIR}/../../../../sdk/include" "${CMAKE_CURRENT_SOURCE_DIR}/../../../../sdk/include/platform/ros/c")
+  set(CMAKE_REQUIRED_INCLUDES ${_uwvm_ros2_sdk_probe_includes}
+    "${UWVM_ROS_SDK_ROOT}/include" "${UWVM_ROS_SDK_ROOT}/include/platform/ros/c")
   set(CMAKE_REQUIRED_LIBRARIES ${_uwvm_ros2_sdk_probe_libraries})
   foreach(package IN LISTS UWVM_ROS_CUSTOM_ROS2_PACKAGES)
     list(APPEND CMAKE_REQUIRED_INCLUDES ${${package}_INCLUDE_DIRS})

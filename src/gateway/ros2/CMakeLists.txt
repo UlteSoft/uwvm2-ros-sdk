@@ -5,7 +5,12 @@
 # compiling this native component does not grant authority to a Wasm module.
 cmake_minimum_required(VERSION 3.16)
 project(uwvm_ros2_gateway LANGUAGES CXX)
-get_filename_component(UWVM_ROS_SOURCE_ROOT "${CMAKE_CURRENT_LIST_DIR}/../../../.." ABSOLUTE)
+get_filename_component(UWVM_ROS_SDK_ROOT "${CMAKE_CURRENT_LIST_DIR}/../../.." ABSOLUTE)
+set(UWVM_ROS_SOURCE_ROOT "${UWVM_ROS_SDK_ROOT}/../uwvm2-ros" CACHE PATH
+    "uwvm2-ros VM source checkout providing the gateway protocol headers")
+if(NOT EXISTS "${UWVM_ROS_SOURCE_ROOT}/src/uwvm2/imported/ros/common/types.h")
+  message(FATAL_ERROR "Set UWVM_ROS_SOURCE_ROOT to the matching uwvm2-ros VM checkout")
+endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action QUIET)
@@ -28,7 +33,13 @@ find_package(OpenSSL QUIET COMPONENTS Crypto)
 include(compat/Probe.cmake)
 add_executable(uwvm-ros2-gateway main.cc)
 target_compile_definitions(uwvm-ros2-gateway PRIVATE UWVM_ROS2_USE_COMPOSED_NODE=1)
-target_include_directories(uwvm-ros2-gateway PRIVATE "${UWVM_ROS_SOURCE_ROOT}" ${UWVM_ROS_SOURCE_ROOT}/src "${CMAKE_CURRENT_BINARY_DIR}")
+# C++20 and newer protocol helpers use the VM's matching fast_io headers.
+# Keep this dependency rooted in the selected VM checkout after repository
+# separation; no installed or independently versioned copy is substituted.
+target_include_directories(uwvm-ros2-gateway PRIVATE
+  "${UWVM_ROS_SOURCE_ROOT}" "${UWVM_ROS_SOURCE_ROOT}/src"
+  "${UWVM_ROS_SOURCE_ROOT}/third-parties/fast_io/include"
+  "${CMAKE_CURRENT_BINARY_DIR}")
 target_compile_options(uwvm-ros2-gateway PRIVATE -Wall -Wextra -Wpedantic)
 uwvm_ros2_dependencies(uwvm-ros2-gateway rclcpp std_msgs geometry_msgs sensor_msgs std_srvs rcl_interfaces)
 foreach(optional IN ITEMS tf2 tf2_ros tf2_msgs rclcpp_action action_tutorials_interfaces rcl_action lifecycle_msgs rosidl_typesupport_introspection_cpp)
