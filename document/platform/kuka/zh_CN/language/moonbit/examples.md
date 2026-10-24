@@ -1,48 +1,17 @@
-# kuka / MoonBit 例子指导
+# kuka MoonBit 示例
 
-每个源码域都有三个独立项目，各自提供 `xmake.lua` 与真实 `main.mbt`：
-
-| 项目 | 实际运行内容 |
-| --- | --- |
-| `state_codec` | 构造、编码、解码原始完整状态记录。 |
-| `service_response_codec` | 处理原始完整响应组件。 |
-| `feedback_codec` | 处理目录声明的完整 action feedback 或保留遥测记录。 |
-
-当前实测域为 `kuka-ros2-complete`，声明 ROS2 `jazzy`。使用已安装 SDK 与其经过校验的公共工具包：
+每个原始目录提供独立的 state_codec、service_response_codec、feedback_codec 项目，分别演示完整状态、服务响应和原始反馈/诊断值。每项都有自己的 xmake.lua 和精炼 main.mbt。程序构造原始默认值，实际编码及解码，输出原始类型和实际字节长度，任一错误分支都会终止。
 
 ```sh
-export UWVM_ROS_SDK_ROOT=/opt/uwvm2-ros/sdk
+export UWVM_ROS_SDK_ROOT=/opt/uwvm2-ros-sdk
 cd "$UWVM_ROS_SDK_ROOT/example/platform/kuka/moonbit/ros2/kuka-ros2-complete/state_codec"
 xmake f -c -p wasm-wasip1 -a wasm32
 xmake
 ```
 
-唯一应用产物为 `.wasm`，另外两个目录分别执行相同构建流程。状态例子的真实源码为：
 
-```moonbit
-/// @file main.mbt
-/// @brief Exercise the complete original kuka_driver_interfaces/msg/KssStatus through genuine MoonBit compilation.
-fn main {
-    let codec = @records.Ros2Kuka_driver_interfacesMsgKssStatusCodec::new()
-    let value = @records.Ros2Kuka_driver_interfacesMsgKssStatus::new()
-    let bytes = match codec.encode(value) {
-        Ok(bytes) => bytes
-        Err(code) => abort("whole record encode error \{code}")
-    }
-    match codec.decode(bytes) {
-        Ok(_) => println("{\"type\":\"kuka_driver_interfaces/msg/KssStatus\",\"bytes\":\{bytes.length()}}")
-        Err(code) => abort("whole record decode error \{code}")
-    }
-}
-```
+公共选择器为 set_language、set_ros_platform、set_ros1_version/set_ros2_version、set_ros_scenario、set_arch、set_plat。保留示例的确切 ros.sdk.vendor_version 目录身份。共享工具包属于构建输入，应用仅输出一个 Wasm 文件。
 
-运行前在可信 v2 部署文件中明确配置已安装的 native runtime 与 gateway。选择准确 `state_codec` 场景，模块声明 `ros_enabled: false`、`grants: []`，并显式授予 WASI `stdio-full-rights`。在没有 source ROS 环境的 shell 中执行：
+运行另外需要已安装的 uwvm2-ros 与手工 uwvm-native-ros-run-v2 部署文件。本地值示例的 main 设置 ros_enabled:false、grants:[]、wasi_grants:["stdio-full-rights"]。backend/distribution 与 Xmake 目标一致；即使关闭 ROS 效果，仍需填写相应 runtime/gateway 路径及后端连接字段。使用 `xmake f --ros-run-config=/absolute/path/value-deployment.json` 后运行 `xmake run`。
 
-```sh
-xmake f --ros-run-config=/absolute/path/value-deployment.json
-xmake run
-```
-
-另外两个例子的场景名称与项目匹配。`run.autobuild=false` 保持编译为独立动作；例子不创建权限或自动 source 中间件。公共运行器保留准确 backend/distribution，已 source 环境与声明不一致时会拒绝运行。
-
-这三个项目已使用逐项相同 SHA 的 Wasm 在 x86_64 与 QEMU AArch64 执行通过，证据范围为值编解码。其他域的三例执行、native peer、权限／错误／清理矩阵、memory64 和库组合仍未完成。选择其他域时保留原始 Humble 或 ROS1 声明，准确 native 发行版资格需另行验收。
+完整非默认字段与畸形输入回归保存在 VM 仓库，其 fixture 和计数器与 SDK 教程分开维护。原生通信需要确切手工 alias 及受控 peer。wasm64 请求必须实际产生 memory64 或明确失败；static/shared 需要真实共享编译器和加载契约，不能把改名脚本包视为链接结果。

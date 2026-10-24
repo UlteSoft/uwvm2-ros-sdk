@@ -1,17 +1,19 @@
-# universal_robots / MoonBit API guide
+# universal_robots MoonBit API
 
-The shared emitter preserves all 394 original records across this platform's 5 source domains. It retains every original member, constant, default, bound and codec identity. Select the exact domain from `share/platform/universal_robots/provider.json`; the complete original IR is in `share/platform/universal_robots/domains/`.
+Use the canonical `set_language("moonbit")` route and the shared pinned MoonBit 0.10.16+b1a0e846e frontend. The provider selects one exact original catalog; complete catalog identities remain below the ros1 or ros2 backend directory.
 
-The selected package is imported as `@records`. Use each record's exact `symbol` from the IR: `Symbol::new()` constructs the complete value, and `SymbolCodec::new()` constructs its codec. `encode(value)` returns `Result[Bytes, Int]`; `decode(bytes)` returns `Result[Symbol, Int]`. Handle `Err` before consuming a result. Empty service/action components retain their genuine zero-byte payload.
+| Domain | Backend | Records |
+| --- | --- | ---: |
+| `universal-robots-ros1-complete` | ros1 | 56 |
+| `universal-robots-ros1-trajectory-complete` | ros1 | 64 |
+| `universal-robots-polyscopex-complete` | ros2 | 50 |
+| `universal-robots-ros2-complete` | ros2 | 108 |
+| `universal-robots-ros2-trajectory-complete` | ros2 | 116 |
 
-MoonBit storage uses the reversible `field_` prefix, for example original `type` becomes `field_type`. Schema metadata and wire identities retain the official original names. `schema_bytes()` exposes the complete record metadata. Each constructor creates its own mutable arrays; generated string and fixed-array defaults come from the authoritative original IR.
+The public Xmake binding imports its complete record package as `@records`. Construct `@records.Symbol::new()` and `@records.SymbolCodec::new()`. All original fields remain available with a `field_` storage prefix. Nested records, fixed arrays, bounded sequences, native defaults and constants retain their original definitions. Signed and unsigned 64-bit fields use Int64 and UInt64; float32 uses Float, float64 uses Double, text uses String and raw bytes use Bytes.
 
-The genuine compiler is pinned to MoonBit `0.10.16+b1a0e846e` by the common SDK tool manifest. The SDK selects the complete ordered package graph, including `wire`, `float` and the directly used `utf8` dependency. Use the first-release `set_language("moonbit")`, `set_ros_platform("universal_robots")`, `set_ros2_version("humble")`, `set_ros_scenario(...)`, `set_arch("wasm32")` and `set_plat("wasm-wasip1")` declarations in the independent examples.
+`codec.encode(value)` returns `Result[Bytes, Int]`; `codec.decode(bytes)` returns the complete typed value or an error. Handle both branches explicitly. Code 22 means invalid canonical input and code 90 means capacity. Fixed lengths, sequence and byte bounds, strict UTF-8, declared float policy and the admitted standard time/JointState rules apply on encoding and decoding. Decode rejects trailing bytes. Capacities are maxima rather than the actual encoded length.
 
-The selected `universal-robots-ros2-complete` graph contains 108 complete records. Its three value lessons have genuine clean-project Wasm32 builds and executions on x86_64 and QEMU AArch64 using the same Wasm bytes. The lessons exercise complete selected values through construction, encode and decode. All-record independent byte oracles and malformed/semantic-input matrices remain unfinished.
+Original definitions, field names, bounds, native identities and codec identities are recorded in the corresponding share/platform domain IR. Keep native distribution and interface compatibility explicit. Original Humble definitions used with a Jazzy fixture do not establish a Humble driver qualification.
 
-These modules have ROS disabled and no ROS grants. Native topic/service/action communication, exact native distribution qualification, memory64, and shared/static producer-consumer combinations remain unfinished for MoonBit. The original Humble declaration on UR source is preserved; the value runs do not qualify a Humble driver. Each source domain and deployment needs its own evidence. See [examples](examples.md) and [library integration](../../libraries.md).
-
-## Additional verified source domain
-
-The `universal-robots-ros2-trajectory-complete` Humble source graph contains 116 complete records. Its three independent value projects also passed genuine clean-project Wasm32 builds and actual x86_64/QEMU AArch64 execution. The shared formatter reproduces the reviewed multiline floating-array defaults exactly. This adds value-codec evidence; precise native Humble, memory64 and library qualification remain unfinished.
+The examples exercise local values. Native topic/service/action ownership, permissions and cleanup require separately qualified shared bindings and native peers. wasm32, memory64, x86_64, QEMU AArch64, static archives and shared modules each have their own acceptance scope. MoonBit native ROS, memory64 and library linking remain unqualified in this delivery.

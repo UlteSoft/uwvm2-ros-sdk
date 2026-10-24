@@ -182,10 +182,16 @@ fn write_Ros2Builtin_interfacesMsgDuration(writer : BoundedWriter, value : Ros2B
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 4294967295UL, 4)
   let part1 = value.field_nanosec
   writer.unsigned(part1.to_uint64(), 4)
+  if part1 >= 1000000000U {
+    writer.error = 22
+  }
 }
 fn read_Ros2Builtin_interfacesMsgDuration(reader : BoundedReader) -> Ros2Builtin_interfacesMsgDuration {
   let part0 = reader.unsigned(4).to_uint().reinterpret_as_int()
   let part1 = reader.unsigned(4).to_uint()
+  if part1 >= 1000000000U {
+    reader.error = 22
+  }
   { field_sec: part0, field_nanosec: part1 }
 }
 
@@ -237,10 +243,16 @@ fn write_Ros2Builtin_interfacesMsgTime(writer : BoundedWriter, value : Ros2Built
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 4294967295UL, 4)
   let part1 = value.field_nanosec
   writer.unsigned(part1.to_uint64(), 4)
+  if part1 >= 1000000000U {
+    writer.error = 22
+  }
 }
 fn read_Ros2Builtin_interfacesMsgTime(reader : BoundedReader) -> Ros2Builtin_interfacesMsgTime {
   let part0 = reader.unsigned(4).to_uint().reinterpret_as_int()
   let part1 = reader.unsigned(4).to_uint()
+  if part1 >= 1000000000U {
+    reader.error = 22
+  }
   { field_sec: part0, field_nanosec: part1 }
 }
 
@@ -1045,7 +1057,9 @@ fn write_Ros2Control_msgsMsgJointComponentTolerance(
   let part0 = value.field_joint_name
   writer.text(part0, 512)
   let part1 = value.field_component
-  if part1 < 0 || part1 > 65535 { writer.error = 22 }
+  if part1 < 0 || part1 > 65535 {
+    writer.error = 22
+  }
   writer.unsigned(part1.to_int64().reinterpret_as_uint64() & 65535UL, 2)
   let part2 = value.field_position
   writer.float64(part2)
@@ -1686,7 +1700,9 @@ fn write_Ros2Kuka_driver_interfacesMsgHardwareEvent(
   let part0 = value.field_robot_name
   writer.text(part0, 512)
   let part1 = value.field_event
-  if part1 < 0 || part1 > 255 { writer.error = 22 }
+  if part1 < 0 || part1 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part1.to_int64().reinterpret_as_uint64() & 255UL, 1)
 }
 fn read_Ros2Kuka_driver_interfacesMsgHardwareEvent(
@@ -1759,10 +1775,14 @@ fn write_Ros2Kuka_driver_interfacesMsgKssStatus(
   value : Ros2Kuka_driver_interfacesMsgKssStatus,
 ) -> Unit {
   let part0 = value.field_control_mode
-  if part0 < 0 || part0 > 255 { writer.error = 22 }
+  if part0 < 0 || part0 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_cycle_time
-  if part1 < 0 || part1 > 255 { writer.error = 22 }
+  if part1 < 0 || part1 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part1.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part2 = value.field_drives_powered
   writer.unsigned(if part2 { 1UL } else { 0UL }, 1)
@@ -1775,7 +1795,9 @@ fn write_Ros2Kuka_driver_interfacesMsgKssStatus(
   let part6 = value.field_motion_possible
   writer.unsigned(if part6 { 1UL } else { 0UL }, 1)
   let part7 = value.field_operation_mode
-  if part7 < 0 || part7 > 255 { writer.error = 22 }
+  if part7 < 0 || part7 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part7.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part8 = value.field_robot_stopped
   writer.unsigned(if part8 { 1UL } else { 0UL }, 1)
@@ -1928,7 +1950,9 @@ pub fn Ros2Lifecycle_msgsMsgStateCodec::decode(
 }
 fn write_Ros2Lifecycle_msgsMsgState(writer : BoundedWriter, value : Ros2Lifecycle_msgsMsgState) -> Unit {
   let part0 = value.field_id
-  if part0 < 0 || part0 > 255 { writer.error = 22 }
+  if part0 < 0 || part0 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_label
   writer.text(part1, 512)
@@ -1984,7 +2008,9 @@ pub fn Ros2Lifecycle_msgsMsgTransitionCodec::decode(
 }
 fn write_Ros2Lifecycle_msgsMsgTransition(writer : BoundedWriter, value : Ros2Lifecycle_msgsMsgTransition) -> Unit {
   let part0 = value.field_id
-  if part0 < 0 || part0 > 255 { writer.error = 22 }
+  if part0 < 0 || part0 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_label
   writer.text(part1, 512)
@@ -2283,6 +2309,16 @@ fn write_Ros2Sensor_msgsMsgJointState(writer : BoundedWriter, value : Ros2Sensor
     let element = part4[index]
     writer.float64(element)
   }
+  if (
+    (count1 != 0 && count2 != 0 && count1 != count2) ||
+    (count1 != 0 && count3 != 0 && count1 != count3) ||
+    (count1 != 0 && count4 != 0 && count1 != count4) ||
+    (count2 != 0 && count3 != 0 && count2 != count3) ||
+    (count2 != 0 && count4 != 0 && count2 != count4) ||
+    (count3 != 0 && count4 != 0 && count3 != count4)
+  ) {
+    writer.error = 22
+  }
 }
 fn read_Ros2Sensor_msgsMsgJointState(reader : BoundedReader) -> Ros2Sensor_msgsMsgJointState {
   let part0 = read_Ros2Std_msgsMsgHeader(reader)
@@ -2305,6 +2341,16 @@ fn read_Ros2Sensor_msgsMsgJointState(reader : BoundedReader) -> Ros2Sensor_msgsM
   let count4 = reader.count(12, 8)
   for index = 0; index < count4; index = index + 1 {
     part4.push(reader.float64())
+  }
+  if (
+    (part1.length() != 0 && part2.length() != 0 && part1.length() != part2.length()) ||
+    (part1.length() != 0 && part3.length() != 0 && part1.length() != part3.length()) ||
+    (part1.length() != 0 && part4.length() != 0 && part1.length() != part4.length()) ||
+    (part2.length() != 0 && part3.length() != 0 && part2.length() != part3.length()) ||
+    (part2.length() != 0 && part4.length() != 0 && part2.length() != part4.length()) ||
+    (part3.length() != 0 && part4.length() != 0 && part3.length() != part4.length())
+  ) {
+    reader.error = 22
   }
   { field_header: part0, field_name: part1, field_position: part2, field_velocity: part3, field_effort: part4 }
 }

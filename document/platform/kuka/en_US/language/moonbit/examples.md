@@ -1,48 +1,17 @@
-# kuka / MoonBit example guide
+# kuka MoonBit examples
 
-Each source domain provides three independent projects with its own `xmake.lua` and genuine `main.mbt`:
-
-| Project | Runtime operation |
-| --- | --- |
-| `state_codec` | Construct, encode and decode the original complete state record. |
-| `service_response_codec` | Exercise the original complete response component. |
-| `feedback_codec` | Exercise the catalog's complete action feedback or retained telemetry record. |
-
-The tested domain is `kuka-ros2-complete`, declared as ROS2 `jazzy`. Build with the installed SDK and its verified common tool bundle:
+Each original domain supplies independent state_codec, service_response_codec and feedback_codec projects. They demonstrate complete state, service-response and original feedback/diagnostic values respectively. Each project has its own xmake.lua and a concise main.mbt. The program constructs the original defaults, performs actual encoding and decoding, reports the original type and actual byte length, and terminates on either error.
 
 ```sh
-export UWVM_ROS_SDK_ROOT=/opt/uwvm2-ros/sdk
+export UWVM_ROS_SDK_ROOT=/opt/uwvm2-ros-sdk
 cd "$UWVM_ROS_SDK_ROOT/example/platform/kuka/moonbit/ros2/kuka-ros2-complete/state_codec"
 xmake f -c -p wasm-wasip1 -a wasm32
 xmake
 ```
 
-The sole application artifact is `.wasm`. Repeat in `service_response_codec` and `feedback_codec`. The real source for the state lesson is:
 
-```moonbit
-/// @file main.mbt
-/// @brief Exercise the complete original kuka_driver_interfaces/msg/KssStatus through genuine MoonBit compilation.
-fn main {
-    let codec = @records.Ros2Kuka_driver_interfacesMsgKssStatusCodec::new()
-    let value = @records.Ros2Kuka_driver_interfacesMsgKssStatus::new()
-    let bytes = match codec.encode(value) {
-        Ok(bytes) => bytes
-        Err(code) => abort("whole record encode error \{code}")
-    }
-    match codec.decode(bytes) {
-        Ok(_) => println("{\"type\":\"kuka_driver_interfaces/msg/KssStatus\",\"bytes\":\{bytes.length()}}")
-        Err(code) => abort("whole record decode error \{code}")
-    }
-}
-```
+The public selectors are set_language, set_ros_platform, set_ros1_version/set_ros2_version, set_ros_scenario, set_arch and set_plat. Preserve the exact ros.sdk.vendor_version domain selected by the example. The shared tool bundle is a build input; the sole application output is one Wasm file.
 
-For execution, configure the installed native runtime and gateway in a trusted v2 deployment file. Select the exact `state_codec` scenario, declare `ros_enabled: false`, `grants: []`, and explicitly authorize WASI `stdio-full-rights`. In a shell without a sourced ROS environment, run:
+Run separately with an installed uwvm2-ros and an explicit uwvm-native-ros-run-v2 deployment. Set main to ros_enabled:false, grants:[] and wasi_grants:["stdio-full-rights"] for these local-value lessons. Keep the backend/distribution equal to the Xmake target. Supply the matching runtime/gateway paths and required backend connection fields even when ROS effects are disabled. Use `xmake f --ros-run-config=/absolute/path/value-deployment.json` followed by `xmake run`.
 
-```sh
-xmake f --ros-run-config=/absolute/path/value-deployment.json
-xmake run
-```
-
-The scenario changes to the matching project name for the other two lessons. `run.autobuild=false` keeps compilation explicit. These projects never create permissions or source middleware. The public runner preserves the example's exact backend/distribution and rejects a conflicting sourced ROS environment.
-
-All three projects passed on x86_64 and QEMU AArch64 with identical Wasm SHA per project. This is value-codec execution evidence. Other domains' three-project executions, native peers and permissions/error/cleanup matrices, memory64, and library combinations remain unfinished. Keep original Humble/ROS1 source declarations when selecting other domains; each exact native distribution still needs independent qualification.
+The complete non-default-field and malformed-input regressions are maintained in the VM repository. Their fixtures and counters are separate from these SDK tutorials. Native communication requires exact manually selected aliases and controlled peers. A wasm64 request must produce a real memory64 module or fail explicitly; static/shared kinds require the real shared compiler and loader contract rather than a renamed script package.

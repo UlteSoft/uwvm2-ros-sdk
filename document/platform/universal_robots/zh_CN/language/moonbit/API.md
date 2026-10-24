@@ -1,17 +1,19 @@
-# universal_robots / MoonBit API 指导
+# universal_robots MoonBit API
 
-共享发射器保留本平台 5 个原始源码域的全部 394 个完整记录，包括所有原始成员、常量、默认值、边界和 codec identity。准确域名见 `share/platform/universal_robots/provider.json`，完整原始 IR 位于 `share/platform/universal_robots/domains/`。
+使用规范 `set_language("moonbit")` 入口和唯一共享的 MoonBit 0.10.16+b1a0e846e 前端。供应商版本必须选择确切的原始目录；完整目录身份位于 ros1 或 ros2 后端层之下。
 
-选中的记录包使用 `@records` 导入。类型名称直接取 IR 的 `symbol`：`Symbol::new()` 构造完整值，`SymbolCodec::new()` 构造 codec。`encode(value)` 返回 `Result[Bytes, Int]`，`decode(bytes)` 返回 `Result[Symbol, Int]`；必须先处理 `Err`。空 service/action 组件保留真实零字节 payload。
+| Domain | Backend | Records |
+| --- | --- | ---: |
+| `universal-robots-ros1-complete` | ros1 | 56 |
+| `universal-robots-ros1-trajectory-complete` | ros1 | 64 |
+| `universal-robots-polyscopex-complete` | ros2 | 50 |
+| `universal-robots-ros2-complete` | ros2 | 108 |
+| `universal-robots-ros2-trajectory-complete` | ros2 | 116 |
 
-MoonBit 存储字段统一使用可逆的 `field_` 前缀，例如原始 `type` 对应 `field_type`。schema 与 wire identity 保留官方原名，`schema_bytes()` 返回完整记录元数据。每次构造都分配独立的可变数组，字符串和定长数组默认值来自原始权威 IR。
+公共 Xmake 绑定以 `@records` 导入完整记录包。使用 `@records.Symbol::new()` 构造值，使用 `@records.SymbolCodec::new()` 构造 codec。全部原始字段保留，MoonBit 存储名增加 `field_` 前缀；嵌套记录、固定数组、有界序列、原始默认值和常量均来自原始定义。64 位整数使用 Int64/UInt64，float32 使用 Float，float64 使用 Double，文本使用 String，原始字节使用 Bytes。
 
-公共工具清单锁定真实 MoonBit `0.10.16+b1a0e846e` 编译器。SDK 明确选择完整、有序的包图，包括 `wire`、`float` 和记录包直接使用的 `utf8`。独立例子使用新发布入口 `set_language("moonbit")`、`set_ros_platform("universal_robots")`、`set_ros2_version("humble")`、`set_ros_scenario(...)`、`set_arch("wasm32")`、`set_plat("wasm-wasip1")`。
+`codec.encode(value)` 返回 `Result[Bytes, Int]`；`codec.decode(bytes)` 返回完整 typed 值或错误。必须显式处理两个分支。22 表示非法 canonical 输入，90 表示容量问题。编码与解码均检查固定长度、序列及字节边界、严格 UTF-8、声明的浮点策略，以及已接入的标准时间/JointState 规则；解码拒绝多余尾字节。容量上限不是实际编码长度。
 
-当前 `universal-robots-ros2-complete` 编译图包含 108 个完整记录。该域三个完整值例子已在清空的项目目录构建真实 Wasm32，并以相同 Wasm 字节在 x86_64 与 QEMU AArch64 执行。例子实际构造选中的完整值并进行编码、解码；全记录独立字节 oracle 和畸形／语义输入矩阵仍未完成。
+原始定义、字段名、边界、native identity 和 codec identity 位于对应 share/platform domain IR。原生发行版与接口兼容性必须明确；Humble 原始定义用于 Jazzy fixture 不代表 Humble 驱动资格。
 
-这些值模块显式关闭 ROS，ROS grants 为空。MoonBit 的原生 topic/service/action 通信、准确 native 发行版、memory64，以及 shared/static 生产者和消费者矩阵仍未完成。UR 原始 Humble 声明保留，值运行不构成 Humble 驱动资格。每个源码域和部署都需独立证据。参见[例子](examples.md)与[库集成状态](../../libraries.md)。
-
-## 新增已验收源码域
-
-Humble 原始域 `universal-robots-ros2-trajectory-complete` 包含 116 个完整记录。其三个独立值例子也已完成真实的干净项目 Wasm32 构建，以及 x86_64／QEMU AArch64 实际执行。共享配方精确再现了已审查的浮点默认数组换行。本次增加值编解码证据；精确 native Humble、memory64 和库资格仍未完成。
+示例处理本地完整值。原生 topic/service/action 的所有权、权限及清理需要单独验证共享绑定和原生 peer。wasm32、memory64、x86_64、QEMU AArch64、静态归档和共享模块分别验收。本交付的 MoonBit native ROS、memory64 和库链接仍未取得资格。

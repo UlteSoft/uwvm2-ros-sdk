@@ -182,10 +182,16 @@ fn write_Ros2Builtin_interfacesMsgDuration(writer : BoundedWriter, value : Ros2B
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 4294967295UL, 4)
   let part1 = value.field_nanosec
   writer.unsigned(part1.to_uint64(), 4)
+  if part1 >= 1000000000U {
+    writer.error = 22
+  }
 }
 fn read_Ros2Builtin_interfacesMsgDuration(reader : BoundedReader) -> Ros2Builtin_interfacesMsgDuration {
   let part0 = reader.unsigned(4).to_uint().reinterpret_as_int()
   let part1 = reader.unsigned(4).to_uint()
+  if part1 >= 1000000000U {
+    reader.error = 22
+  }
   { field_sec: part0, field_nanosec: part1 }
 }
 
@@ -237,10 +243,16 @@ fn write_Ros2Builtin_interfacesMsgTime(writer : BoundedWriter, value : Ros2Built
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 4294967295UL, 4)
   let part1 = value.field_nanosec
   writer.unsigned(part1.to_uint64(), 4)
+  if part1 >= 1000000000U {
+    writer.error = 22
+  }
 }
 fn read_Ros2Builtin_interfacesMsgTime(reader : BoundedReader) -> Ros2Builtin_interfacesMsgTime {
   let part0 = reader.unsigned(4).to_uint().reinterpret_as_int()
   let part1 = reader.unsigned(4).to_uint()
+  if part1 >= 1000000000U {
+    reader.error = 22
+  }
   { field_sec: part0, field_nanosec: part1 }
 }
 
@@ -1081,7 +1093,9 @@ fn write_Ros2Ur_dashboard_msgsActionSetMode_Goal(
   value : Ros2Ur_dashboard_msgsActionSetMode_Goal,
 ) -> Unit {
   let part0 = value.field_target_robot_mode
-  if part0 < -128 || part0 > 127 { writer.error = 22 }
+  if part0 < -128 || part0 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_stop_program
   writer.unsigned(if part1 { 1UL } else { 0UL }, 1)
@@ -1201,10 +1215,14 @@ fn write_Ros2Ur_dashboard_msgsActionSetMode_Feedback(
   value : Ros2Ur_dashboard_msgsActionSetMode_Feedback,
 ) -> Unit {
   let part0 = value.field_current_robot_mode
-  if part0 < -128 || part0 > 127 { writer.error = 22 }
+  if part0 < -128 || part0 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_current_safety_mode
-  if part1 < -128 || part1 > 127 { writer.error = 22 }
+  if part1 < -128 || part1 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part1.to_int64().reinterpret_as_uint64() & 255UL, 1)
 }
 fn read_Ros2Ur_dashboard_msgsActionSetMode_Feedback(
@@ -1451,7 +1469,9 @@ pub fn Ros2Ur_dashboard_msgsMsgRobotModeCodec::decode(
 }
 fn write_Ros2Ur_dashboard_msgsMsgRobotMode(writer : BoundedWriter, value : Ros2Ur_dashboard_msgsMsgRobotMode) -> Unit {
   let part0 = value.field_mode
-  if part0 < -128 || part0 > 127 { writer.error = 22 }
+  if part0 < -128 || part0 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
 }
 fn read_Ros2Ur_dashboard_msgsMsgRobotMode(reader : BoundedReader) -> Ros2Ur_dashboard_msgsMsgRobotMode {
@@ -1505,7 +1525,9 @@ fn write_Ros2Ur_dashboard_msgsMsgSafetyMode(
   value : Ros2Ur_dashboard_msgsMsgSafetyMode,
 ) -> Unit {
   let part0 = value.field_mode
-  if part0 < 0 || part0 > 255 { writer.error = 22 }
+  if part0 < 0 || part0 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
 }
 fn read_Ros2Ur_dashboard_msgsMsgSafetyMode(reader : BoundedReader) -> Ros2Ur_dashboard_msgsMsgSafetyMode {
@@ -1559,7 +1581,9 @@ fn write_Ros2Ur_dashboard_msgsMsgSafetyStatus(
   value : Ros2Ur_dashboard_msgsMsgSafetyStatus,
 ) -> Unit {
   let part0 = value.field_status
-  if part0 < -128 || part0 > 127 { writer.error = 22 }
+  if part0 < -128 || part0 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
 }
 fn read_Ros2Ur_dashboard_msgsMsgSafetyStatus(reader : BoundedReader) -> Ros2Ur_dashboard_msgsMsgSafetyStatus {
@@ -4668,7 +4692,9 @@ fn write_Ros2Ur_msgsActionFollowJointTrajectoryUntil_Goal(
   let part3 = value.field_goal_time_tolerance
   write_Ros2Builtin_interfacesMsgDuration(writer, part3)
   let part4 = value.field_until_type
-  if part4 < 0 || part4 > 255 { writer.error = 22 }
+  if part4 < 0 || part4 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part4.to_int64().reinterpret_as_uint64() & 255UL, 1)
 }
 fn read_Ros2Ur_msgsActionFollowJointTrajectoryUntil_Goal(
@@ -5196,10 +5222,14 @@ pub fn Ros2Ur_msgsMsgAnalogCodec::decode(
 }
 fn write_Ros2Ur_msgsMsgAnalog(writer : BoundedWriter, value : Ros2Ur_msgsMsgAnalog) -> Unit {
   let part0 = value.field_pin
-  if part0 < 0 || part0 > 255 { writer.error = 22 }
+  if part0 < 0 || part0 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_domain
-  if part1 < 0 || part1 > 255 { writer.error = 22 }
+  if part1 < 0 || part1 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part1.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part2 = value.field_state
   writer.float32(part2)
@@ -5256,7 +5286,9 @@ pub fn Ros2Ur_msgsMsgDigitalCodec::decode(
 }
 fn write_Ros2Ur_msgsMsgDigital(writer : BoundedWriter, value : Ros2Ur_msgsMsgDigital) -> Unit {
   let part0 = value.field_pin
-  if part0 < 0 || part0 > 255 { writer.error = 22 }
+  if part0 < 0 || part0 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_state
   writer.unsigned(if part1 { 1UL } else { 0UL }, 1)
@@ -5548,20 +5580,28 @@ fn write_Ros2Ur_msgsMsgMasterboardDataMsg(writer : BoundedWriter, value : Ros2Ur
   let part1 = value.field_digital_output_bits
   writer.unsigned(part1.to_uint64(), 4)
   let part2 = value.field_analog_input_range0
-  if part2 < -128 || part2 > 127 { writer.error = 22 }
+  if part2 < -128 || part2 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part2.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part3 = value.field_analog_input_range1
-  if part3 < -128 || part3 > 127 { writer.error = 22 }
+  if part3 < -128 || part3 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part3.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part4 = value.field_analog_input0
   writer.float64(part4)
   let part5 = value.field_analog_input1
   writer.float64(part5)
   let part6 = value.field_analog_output_domain0
-  if part6 < -128 || part6 > 127 { writer.error = 22 }
+  if part6 < -128 || part6 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part6.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part7 = value.field_analog_output_domain1
-  if part7 < -128 || part7 > 127 { writer.error = 22 }
+  if part7 < -128 || part7 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part7.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part8 = value.field_analog_output0
   writer.float64(part8)
@@ -5576,10 +5616,14 @@ fn write_Ros2Ur_msgsMsgMasterboardDataMsg(writer : BoundedWriter, value : Ros2Ur
   let part13 = value.field_master_io_current
   writer.float32(part13)
   let part14 = value.field_master_safety_state
-  if part14 < 0 || part14 > 255 { writer.error = 22 }
+  if part14 < 0 || part14 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part14.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part15 = value.field_master_onoff_state
-  if part15 < 0 || part15 > 255 { writer.error = 22 }
+  if part15 < 0 || part15 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part15.to_int64().reinterpret_as_uint64() & 255UL, 1)
 }
 fn read_Ros2Ur_msgsMsgMasterboardDataMsg(reader : BoundedReader) -> Ros2Ur_msgsMsgMasterboardDataMsg {
@@ -6072,10 +6116,14 @@ pub fn Ros2Ur_msgsMsgToolDataMsgCodec::decode(
 }
 fn write_Ros2Ur_msgsMsgToolDataMsg(writer : BoundedWriter, value : Ros2Ur_msgsMsgToolDataMsg) -> Unit {
   let part0 = value.field_analog_input_range2
-  if part0 < -128 || part0 > 127 { writer.error = 22 }
+  if part0 < -128 || part0 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_analog_input_range3
-  if part1 < -128 || part1 > 127 { writer.error = 22 }
+  if part1 < -128 || part1 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part1.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part2 = value.field_analog_input2
   writer.float64(part2)
@@ -6084,14 +6132,18 @@ fn write_Ros2Ur_msgsMsgToolDataMsg(writer : BoundedWriter, value : Ros2Ur_msgsMs
   let part4 = value.field_tool_voltage_48v
   writer.float32(part4)
   let part5 = value.field_tool_output_voltage
-  if part5 < 0 || part5 > 255 { writer.error = 22 }
+  if part5 < 0 || part5 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part5.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part6 = value.field_tool_current
   writer.float32(part6)
   let part7 = value.field_tool_temperature
   writer.float32(part7)
   let part8 = value.field_tool_mode
-  if part8 < 0 || part8 > 255 { writer.error = 22 }
+  if part8 < 0 || part8 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part8.to_int64().reinterpret_as_uint64() & 255UL, 1)
 }
 fn read_Ros2Ur_msgsMsgToolDataMsg(reader : BoundedReader) -> Ros2Ur_msgsMsgToolDataMsg {
@@ -6434,7 +6486,9 @@ fn write_Ros2Ur_msgsSrvSetForceMode_Request(
   let part7 = value.field_wrench
   write_Ros2Geometry_msgsMsgWrench(writer, part7)
   let part8 = value.field_type
-  if part8 < 0 || part8 > 255 { writer.error = 22 }
+  if part8 < 0 || part8 > 255 {
+    writer.error = 22
+  }
   writer.unsigned(part8.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part9 = value.field_speed_limits
   write_Ros2Geometry_msgsMsgTwist(writer, part9)
@@ -6802,10 +6856,14 @@ pub fn Ros2Ur_msgsSrvSetIO_RequestCodec::decode(
 }
 fn write_Ros2Ur_msgsSrvSetIO_Request(writer : BoundedWriter, value : Ros2Ur_msgsSrvSetIO_Request) -> Unit {
   let part0 = value.field_fun
-  if part0 < -128 || part0 > 127 { writer.error = 22 }
+  if part0 < -128 || part0 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part1 = value.field_pin
-  if part1 < -128 || part1 > 127 { writer.error = 22 }
+  if part1 < -128 || part1 > 127 {
+    writer.error = 22
+  }
   writer.unsigned(part1.to_int64().reinterpret_as_uint64() & 255UL, 1)
   let part2 = value.field_state
   writer.float32(part2)

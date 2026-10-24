@@ -103,6 +103,34 @@ def array_entries(source):
     return entries
 
 
+def semantic_guard_lines(line):
+    """@brief Expand one generated validation guard without altering its predicate.
+
+    @param line One original generated MoonBit source line.
+    @return Readable source lines, or None when the production is unrelated.
+    @details Scalar nanosecond guards and pairwise JointState predicates retain
+    their original order and status assignment. Long disjunctions are grouped
+    explicitly so the original Boolean precedence survives line breaks.
+    """
+    match = re.fullmatch(
+        r"(\s*)if (.+) \{ ((?:reader|writer)\.error = 22) \}", line
+    )
+    if match is None:
+        return None
+    indentation, predicate, assignment = match.groups()
+    if len(line) > 120 and " || " in predicate:
+        clauses = predicate.split(" || ")
+        lines = [indentation + "if ("]
+        for index, clause in enumerate(clauses):
+            suffix = " ||" if index + 1 < len(clauses) else ""
+            lines.append(indentation + "  " + clause + suffix)
+        lines.append(indentation + ") {")
+    else:
+        lines = [indentation + "if " + predicate + " {"]
+    lines.extend((indentation + "  " + assignment, indentation + "}"))
+    return lines
+
+
 def readable_source(source):
     """@brief Lay out generated declarations without changing expression tokens.
 
@@ -113,7 +141,10 @@ def readable_source(source):
     """
     result = []
     for line in source.splitlines():
-        if len(line) <= 120:
+        guard_lines = semantic_guard_lines(line)
+        if guard_lines is not None:
+            result.extend(guard_lines)
+        elif len(line) <= 120:
             result.append(line)
         elif line.startswith(("pub fn ", "fn ")) and "(" in line:
             start, rest = line.split("(", 1)
@@ -235,6 +266,12 @@ def emit(api, source, runtime_source, records, ordered, interfaces):
     # the unrelated 4096-node ceiling. Only this isolated emitter view changes.
     bounded_view = SimpleNamespace(**vars(api.bounded))
     bounded_view.MAX_NODES = max(api.bounded.MAX_NODES, api.bounded.MAX_WIRE)
+    # The paired industrial API admits the same original standard Time,
+    # Duration and JointState rules under its complete vendor profile. Use that
+    # authoritative rule resolver here too; the baseline bounded resolver only
+    # recognizes the narrower official-standard profile and otherwise silently
+    # omits both encode and decode guards. IR and codec identities stay intact.
+    bounded_view.standard_semantics = api.env["standard_semantics"]
     runtime = runtime_source.read_text()
     old_float_reader = "bits.to_uint().reinterpret_as_float()"
     if runtime.count(old_float_reader) != 1:
@@ -325,6 +362,7 @@ def emit(api, source, runtime_source, records, ordered, interfaces):
         "official_field_names_preserved": True,
         "native_identity_inferred": False,
         "source_parser_node_budget_changed": False,
+        "standard_semantics_resolver": "source-paired industrial API; normalized nanoseconds and optional JointState equal lengths on encode and decode",
         "moonbit_vector_capacity_ceiling": api.bounded.MAX_WIRE,
         "float32_reinterpret_api": "Float::reinterpret_from_uint; unchanged shared IEEE-754 literal bits",
         "built": False,

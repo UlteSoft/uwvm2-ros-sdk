@@ -12,7 +12,8 @@
     "language": "moonbit",
     "moonbit": {
       "entry_dependencies": [
-        "records"
+        "records",
+        "float"
       ],
       "main_package": "doosan/command",
       "packages": [

@@ -1,14 +1,18 @@
 /// @file main.mbt
-/// @brief Exercise the complete original urinterfaces/srv/SetAnalogOutput_Response through genuine MoonBit compilation.
+/// @brief Encode and decode the complete original urinterfaces/srv/SetAnalogOutput_Response value.
+/// @details Construct every declared member with its original default.
+/// Both error branches terminate before a successful value observation.
+/// This local-value lesson enables no ROS resources; complete field and
+/// malformed-input regressions belong to the separate VM test suite.
 fn main {
     let codec = @records.Ros2UrinterfacesSrvSetAnalogOutput_ResponseCodec::new()
     let value = @records.Ros2UrinterfacesSrvSetAnalogOutput_Response::new()
     let bytes = match codec.encode(value) {
         Ok(bytes) => bytes
-        Err(code) => abort("whole record encode error \(code)")
+        Err(code) => abort("whole record encode error \{code}")
     }
     match codec.decode(bytes) {
-        Ok(_) => println("{\"type\":\"urinterfaces/srv/SetAnalogOutput_Response\",\"bytes\":\(bytes.length())}")
-        Err(code) => abort("whole record decode error \(code)")
+        Ok(_) => println("{\"type\":\"urinterfaces/srv/SetAnalogOutput_Response\",\"bytes\":\{bytes.length()}}")
+        Err(code) => abort("whole record decode error \{code}")
     }
 }

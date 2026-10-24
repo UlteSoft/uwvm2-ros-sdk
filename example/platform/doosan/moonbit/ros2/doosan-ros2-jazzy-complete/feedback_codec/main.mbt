@@ -1,9 +1,9 @@
-/// @details Construct the complete original record with its declared defaults,
-/// encode it through the shared bounded codec, and require decoding to succeed.
-/// This value example disables ROS; it does not establish native transport or
-/// exhaustive field-value coverage. Encoding or decoding errors terminate it.
 /// @file main.mbt
-/// @brief Exercise the complete original dsr_msgs2/action/JogH2r_Feedback through genuine MoonBit compilation.
+/// @brief Encode and decode the complete original dsr_msgs2/action/JogH2r_Feedback value.
+/// @details Construct every declared member with its original default.
+/// Both error branches terminate before a successful value observation.
+/// This local-value lesson enables no ROS resources; complete field and
+/// malformed-input regressions belong to the separate VM test suite.
 fn main {
     let codec = @records.Ros2Dsr_msgs2ActionJogH2r_FeedbackCodec::new()
     let value = @records.Ros2Dsr_msgs2ActionJogH2r_Feedback::new()
