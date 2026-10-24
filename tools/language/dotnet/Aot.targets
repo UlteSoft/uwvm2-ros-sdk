@@ -202,13 +202,15 @@
       <_AotInputAssemblies Include="@(_WasmAssembliesInternal)">
         <AotArguments>@(MonoAOTCompilerDefaultAotArguments, ';')</AotArguments>
         <ProcessArguments>@(MonoAOTCompilerDefaultProcessArguments, ';')</ProcessArguments>
-        <!-- @brief Preserve the genuine F# method's own AOT initialization.
-             @details Preview 6 can inline F# module state accesses into an
-             external native wrapper whose LLVM-only GOT is not initialized.
-             The original Mono option keeps this library's user methods intact
-             and lets their normal original AOT prologues initialize state.
-             Framework assemblies and the C#/VB profiles retain their options. -->
-        <ProcessArguments Condition="'$(ManagedTargetKind)' == 'shared' And '$(ManagedSourceLanguage)' == 'fsharp'
+        <!-- @brief Preserve shared C#/F# methods' own AOT initialization.
+             @details Preview 6 can inline managed static-field access into an
+             external native wrapper without the method's lazy GOT initializer.
+             The original Mono option preserves source-assembly method boundaries
+             and their original AOT initialization prologues. Framework assemblies,
+             binary targets and VB profiles retain their existing options.
+             This policy does not certify that EH methods avoid interpreter entries. -->
+        <ProcessArguments Condition="'$(ManagedTargetKind)' == 'shared'
+                                     And ('$(ManagedSourceLanguage)' == 'fsharp' Or '$(ManagedSourceLanguage)' == 'csharp')
                                      And '%(_WasmAssembliesInternal.Filename)' == '$(AssemblyName)'">@(MonoAOTCompilerDefaultProcessArguments, ';');--optimize=-inline</ProcessArguments>
       </_AotInputAssemblies>
       <_WasmAssembliesInternal Remove="@(_WasmAssembliesInternal)" />
