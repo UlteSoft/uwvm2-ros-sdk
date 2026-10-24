@@ -16,7 +16,7 @@
 
 GPU 功能是独立的原生依赖：GR00T 需要锁定的真实 SDK、离线模型/处理器权重、NumPy/PyTorch/transformers/CUDA 和获准设备；Isaac ROS 需要真实检测器及输入 buffer 所有权/同步；Isaac Sim 需要真实 Kit/USD 场景、图、物理与渲染器。消息 peer、编解码回环或默认拒绝测试不能证明训练、推理、渲染或仿真通过。
 
-在 Linux 上对完整传输的工作目录调用 `tools/testing/aarch64/run_container.py`，使用全局 flock 与实际 64 GiB/零 swap cgroup。`accept.py` 验证原生 ELF machine、真实 memory64 标志、QEMU 版本/参数、完整消息/服务/动作见证和独立清理。QEMU 下 ARM runtime 执行与 ARM 宿主源码编译必须分别记录。实际完成度以 SDK 外的 coverage 与原始回执为准，源码或手册存在不等于路线完成。
+在 Linux 上对完整传输的工作目录调用 [uwvm2-ros 中的 `run_container.py`](https://github.com/UlteSoft/uwvm2-ros/blob/main/test/0073.ros-tests/sdk/tools/aarch64/run_container.py)，使用全局 flock 与实际 64 GiB/零 swap cgroup。`accept.py` 验证原生 ELF machine、真实 memory64 标志、QEMU 版本/参数、完整消息/服务/动作见证和独立清理。QEMU 下 ARM runtime 执行与 ARM 宿主源码编译必须分别记录。实际完成度以 SDK 外的 coverage 与原始回执为准，源码或手册存在不等于路线完成。
 
 `InferAction` 与 `InferUploadedAction` 是返回完整 action 张量的 ROS 服务；此目录没有 `.action` 定义。真正动作服务器的 goal/cancel/feedback/result 验收是独立能力，服务调用不能代替。
 

@@ -70,9 +70,13 @@ work. Repository separation does not expand those qualifications.
 | `example` | Independent Xmake application and library projects |
 | `document` | Chinese and English development manuals |
 
-Private orchestration, candidate deliveries and historical test evidence stay
-in the ignored `.tmp` directory. Directory-level `.gitignore` files exclude
-regenerable build products without excluding the shipped precompiled inputs.
+Regression tests that demonstrate the VM's language, library and native ROS
+support live in [uwvm2-ros/test/0073.ros-tests/sdk](https://github.com/UlteSoft/uwvm2-ros/tree/main/test/0073.ros-tests/sdk).
+Test drivers, fixtures and execution evidence are maintained in that VM
+repository. SDK application examples and the tools needed to build them remain
+here. Private SDK orchestration and candidate deliveries stay in the ignored
+`.tmp` directory. Directory-level `.gitignore` files exclude regenerable build
+products without excluding the shipped precompiled inputs.
 
 ## 中文说明
 
@@ -84,6 +88,11 @@ regenerable build products without excluding the shipped precompiled inputs.
 工具链均为正式开发输入，全部保留。已验收示例通过 Xmake 直接构建用户程序，
 无需先从源码构建编译器或解释器。`xmake run` 另需安装 uwvm2-ros，并按示例
 手册手动配置权限和原生 ROS 环境。具体支持范围以双语审查文档为准。
+
+多语言、动静态库及原生 ROS 的回归测试维护在
+[uwvm2-ros 的测试目录](https://github.com/UlteSoft/uwvm2-ros/tree/main/test/0073.ros-tests/sdk)，
+用于验证虚拟机的实际支持能力。SDK 仓库保留用户开发所需的示例、构建工具和
+预编译组件，不收录测试运行结果与中间产物。
 
 ## License
 
