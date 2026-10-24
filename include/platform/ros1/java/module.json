@@ -1,0 +1,8 @@
+{
+  "default_authority": [],
+  "language": "java",
+  "module_root": ".",
+  "platform": "ros1",
+  "producer_required": true,
+  "source_only": true
+}

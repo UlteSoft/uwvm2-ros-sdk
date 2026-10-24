@@ -1,0 +1,10 @@
+# Authored bridge envelope for AuroraClient.wait_groups_motion_complete.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+string[] groups
+float64 timeout_seconds
+float64 poll_seconds
+---
+uint32 status
+string error
+bool complete

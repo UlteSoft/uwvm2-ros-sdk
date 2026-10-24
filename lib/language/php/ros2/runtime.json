@@ -1,0 +1,22 @@
+{
+  "format": "uwvm-real-interpreter-v1",
+  "language": "php",
+  "version": "8.4.13",
+  "target": "wasm32-wasip1",
+  "ros_backend": "ros2",
+  "bytes": 10584722,
+  "sha256": "963c675980ad938a46495c08e3b482a3d077a87e2effa74842441f749279ca87",
+  "qualification": "FORMATTED_ENTRY_RECONSTRUCTED_BYTE_IDENTICAL; retained execution scope is separately recorded",
+  "maximum_pages": 16384,
+  "abi_profile": "complete-ros-v1",
+  "ros_import_count": 43,
+  "canonical_abi_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "construction_receipt_sha256": "864f93537f41baff68f498883ad86eabae682ebb7bc0e5db23e787b42b563296",
+  "source_lock_sha256": "9b60fbd479d8795fc2cebcdfb357e4ede405f4f251a6df41f1eb2b3b0dcf4677",
+  "source_lock_scope": "Original cold construction input identity; the current maintained recipe is separately locked and tested",
+  "prior_source_lock_sha256": "6c3ee3079884d95395be5ce1bf6baac4db6720c03c5a019e4d35f83c5cb5ad9b",
+  "entry_reconstruction_receipt_sha256": "ef2349551d2476eb2ff0f04cf598769326f92196e13dd5264432e7d0da113d1e",
+  "entry_reconstruction_scope": "Actual entry compilation/link and Asyncify using unchanged qualified genuine upstream static archives",
+  "entry_reconstruction_source_lock_sha256": "9b60fbd479d8795fc2cebcdfb357e4ede405f4f251a6df41f1eb2b3b0dcf4677",
+  "source_lock_binding_note": "Current checked extra-support binds the exact observed formatted reactor sources; upstream archive payload is unchanged."
+}

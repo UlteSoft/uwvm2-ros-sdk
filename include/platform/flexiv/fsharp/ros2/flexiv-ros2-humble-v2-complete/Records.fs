@@ -1,0 +1,25 @@
+namespace Flexiv.ros2humblev2
+
+/// @brief Full typed .NET records shared with the selected C# library.
+type Ros2Builtin_interfacesMsgTime = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Builtin_interfacesMsgTime
+type Ros2Flexiv_msgsActionGrasp_Goal = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsActionGrasp_Goal
+type Ros2Flexiv_msgsActionGrasp_Result = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsActionGrasp_Result
+type Ros2Flexiv_msgsActionGrasp_Feedback = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsActionGrasp_Feedback
+type Ros2Flexiv_msgsActionMove_Goal = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsActionMove_Goal
+type Ros2Flexiv_msgsActionMove_Result = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsActionMove_Result
+type Ros2Flexiv_msgsActionMove_Feedback = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsActionMove_Feedback
+type Ros2Flexiv_msgsMsgDigital = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsMsgDigital
+type Ros2Flexiv_msgsMsgGPIOStates = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsMsgGPIOStates
+type Ros2Flexiv_msgsMsgJointPosVel = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsMsgJointPosVel
+type Ros2Flexiv_msgsMsgMode = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsMsgMode
+type Ros2Std_msgsMsgHeader = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Std_msgsMsgHeader
+type Ros2Geometry_msgsMsgPoint = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgPoint
+type Ros2Geometry_msgsMsgQuaternion = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgQuaternion
+type Ros2Geometry_msgsMsgPose = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgPose
+type Ros2Geometry_msgsMsgPoseStamped = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgPoseStamped
+type Ros2Geometry_msgsMsgVector3 = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgVector3
+type Ros2Geometry_msgsMsgTwist = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgTwist
+type Ros2Geometry_msgsMsgTwistStamped = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgTwistStamped
+type Ros2Geometry_msgsMsgWrench = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgWrench
+type Ros2Geometry_msgsMsgWrenchStamped = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Geometry_msgsMsgWrenchStamped
+type Ros2Flexiv_msgsMsgRobotStates = Uwvm.Flexiv.ros2humblev2.BoundedRecords._Ros2Flexiv_msgsMsgRobotStates

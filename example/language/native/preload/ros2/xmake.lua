@@ -1,0 +1,103 @@
+-- @file xmake.lua
+-- @brief Locate the installed SDK without parent-depth imports.
+-- @details UWVM_ROS_SDK_ROOT selects the installed SDK. An explicit invalid
+-- path is diagnosed rather than replaced by another installation.
+local root = os.getenv("UWVM_ROS_SDK_ROOT")
+local installation_error
+if root then
+	if not os.isfile(path.join(root, "tools/xmake/ros.lua")) then
+		installation_error = "The configured SDK root does not contain tools/xmake/ros.lua"
+	end
+else
+	local current = path.absolute(os.scriptdir())
+	local visited = {}
+	while current and not visited[current] do
+		visited[current] = true
+		if os.isfile(path.join(current, "tools/xmake/ros.lua")) then
+			root = current
+			break
+		end
+		local parent = path.directory(current)
+		if parent == current or parent == "." or parent == "" then
+			break
+		end
+		current = path.absolute(parent)
+	end
+	if not root then
+		installation_error = "Set UWVM_ROS_SDK_ROOT to the installed SDK"
+	end
+end
+if installation_error then
+	-- Diagnostics run in Xmake's script domain, where raise is available.
+	-- Returning here prevents declarations from using an unavailable SDK API.
+	target("sdk-installation-required")
+	set_kind("phony")
+	on_load(function()
+		raise(installation_error)
+	end)
+	target_end()
+	return
+end
+includes(path.join(root, "tools/xmake/ros.lua"))
+
+set_policy("run.autobuild", false)
+set_arch(get_config("arch") or "wasm32")
+
+set_plat("wasm-wasip1")
+
+target("bias")
+set_kind("static")
+set_language("d")
+set_ros_platform("wasi")
+set_targetdir(path.join(os.scriptdir(), "build", "bias"))
+add_files("bias.d")
+target_end()
+
+target("algorithm")
+set_kind("shared")
+set_language("zig")
+set_ros_platform("ros2")
+set_ros2_version("jazzy")
+set_ros_scenario("preload_pipeline")
+set_targetdir(path.join(os.scriptdir(), "build", "algorithm"))
+add_files("algorithm.zig")
+add_shflags("-Wl,--export=algorithm_mix", { force = true })
+add_shflags("-Wl,--export=algorithm_denied", { force = true })
+add_deps("bias")
+target_end()
+
+target("io")
+set_kind("shared")
+set_language("d")
+set_ros_platform("ros2")
+set_ros2_version("jazzy")
+set_ros_scenario("preload_pipeline")
+set_targetdir(path.join(os.scriptdir(), "build", "io"))
+add_files("io.d")
+add_shflags("-Wl,--export=io_report", { force = true })
+add_shflags("-Wl,--export=io_denied", { force = true })
+target_end()
+
+target("ros_comm")
+set_kind("shared")
+set_language("objectc")
+set_ros_platform("ros2")
+set_ros2_version("jazzy")
+set_ros_scenario("preload_pipeline")
+set_targetdir(path.join(os.scriptdir(), "build", "ros_comm"))
+add_files("ros_comm.m")
+add_shflags("-Wl,--export=ros_comm_publish", { force = true })
+target_end()
+
+target("main")
+set_kind("binary")
+set_language("zig")
+set_ros_platform("ros2")
+set_ros2_version("jazzy")
+set_ros_scenario("preload_pipeline")
+set_targetdir(path.join(os.scriptdir(), "build", "main"))
+add_files("main.zig")
+add_deps("io", "algorithm", "ros_comm")
+add_ldflags("-Wl,--allow-undefined", { force = true })
+set_ros_run_config(path.join(os.scriptdir(), "deployment.json"))
+target_end()

@@ -1,0 +1,15 @@
+# Preserve pinned source and manifest bytes across all checkout platforms.
+* -text
+
+# Required precompiled development inputs are distributed through Git LFS.
+# They remain at their normal paths after git lfs pull; Xmake consumes them
+# without first compiling the compiler, interpreter or target sysroot.
+share/toolchains/host/**/*.xmz filter=lfs diff=lfs merge=lfs -text
+lib/**/*.wasm filter=lfs diff=lfs merge=lfs -text
+lib/**/*.a filter=lfs diff=lfs merge=lfs -text
+lib/**/*.o filter=lfs diff=lfs merge=lfs -text
+lib/**/*.lib filter=lfs diff=lfs merge=lfs -text
+lib/**/*.rlib filter=lfs diff=lfs merge=lfs -text
+lib/**/*.so filter=lfs diff=lfs merge=lfs -text
+lib/**/*.dylib filter=lfs diff=lfs merge=lfs -text
+lib/**/*.dll filter=lfs diff=lfs merge=lfs -text

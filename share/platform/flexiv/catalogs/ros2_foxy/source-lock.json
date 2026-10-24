@@ -1,0 +1,122 @@
+{
+  "catalog_sha256": "0bb7c7508a31f8cb8e15bfd808e0ab3c62cd0bd257d7ef5b4f95bd15e92e6942",
+  "default_authority": [],
+  "definitions": [
+    {
+      "bytes": 43,
+      "generation_file": "flexiv_msgs/msg/JointPosVel.msg",
+      "git_blob_sha1": "43d0c50aa55966cc076bce12d05a89af0a17b234",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/JointPosVel.msg",
+      "repository": "ros2_foxy",
+      "sha256": "89d55d9135207d6b07739cabdf753d1cfe1dfe7d9d6cce6898b695407aa5dd10",
+      "type": "flexiv_msgs/msg/JointPosVel"
+    },
+    {
+      "bytes": 528,
+      "generation_file": "flexiv_msgs/msg/Mode.msg",
+      "git_blob_sha1": "6d04f286e05c8b584529699d5ab35c5362399b28",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/Mode.msg",
+      "repository": "ros2_foxy",
+      "sha256": "549fac75da9f7797e779ea8e8a055efa7a71b739dfdb999b44fa1bac912e5697",
+      "type": "flexiv_msgs/msg/Mode"
+    },
+    {
+      "bytes": 400,
+      "generation_file": "flexiv_msgs/msg/RobotStates.msg",
+      "git_blob_sha1": "cf96c28386a96ff011981db9bea13e53369b54fc",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/RobotStates.msg",
+      "repository": "ros2_foxy",
+      "sha256": "e7f122e3058f1db32521ed50cb460c479910dd57c13282dbc6cc9fa64e2255e3",
+      "type": "flexiv_msgs/msg/RobotStates"
+    },
+    {
+      "bytes": 119,
+      "generation_file": "geometry_msgs/msg/Accel.msg",
+      "git_blob_sha1": "19fef1411b7704ca358a27ce11111204befa5237",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Accel.msg",
+      "repository": "common_foxy",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb",
+      "type": "geometry_msgs/msg/Accel"
+    },
+    {
+      "bytes": 84,
+      "generation_file": "geometry_msgs/msg/Point.msg",
+      "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Point.msg",
+      "repository": "common_foxy",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+      "type": "geometry_msgs/msg/Point"
+    },
+    {
+      "bytes": 119,
+      "generation_file": "geometry_msgs/msg/Pose.msg",
+      "git_blob_sha1": "277e2f0179a64cd3e17e31502e3d8a074ace7064",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Pose.msg",
+      "repository": "common_foxy",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de",
+      "type": "geometry_msgs/msg/Pose"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Quaternion.msg",
+      "git_blob_sha1": "96d392779a286cc3f4c83d80962236f5ea42c884",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Quaternion.msg",
+      "repository": "common_foxy",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+      "type": "geometry_msgs/msg/Quaternion"
+    },
+    {
+      "bytes": 251,
+      "generation_file": "geometry_msgs/msg/Vector3.msg",
+      "git_blob_sha1": "b54588e117c4632f551c221fbc33df8f958804bf",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Vector3.msg",
+      "repository": "common_foxy",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d",
+      "type": "geometry_msgs/msg/Vector3"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Wrench.msg",
+      "git_blob_sha1": "0b8efccbe338bf5aba4e28be5552f6f933aeef08",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Wrench.msg",
+      "repository": "common_foxy",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25",
+      "type": "geometry_msgs/msg/Wrench"
+    }
+  ],
+  "kind": "flexiv-complete-original-source-lock-v1",
+  "original_custom_roots": [
+    "flexiv_msgs/msg/JointPosVel",
+    "flexiv_msgs/msg/Mode",
+    "flexiv_msgs/msg/RobotStates"
+  ],
+  "profile": "ros2_foxy",
+  "repositories": [
+    {
+      "branch": "foxy",
+      "commit": "ce7ed0a0288cf93d0d2fac8eb94e094c1f06b817",
+      "id": "ros2_foxy",
+      "repository": "flexivrobotics/flexiv_ros2",
+      "tree_git_sha1": "ca537214fc8ca7b11d557787bd9410b8e038ceb6"
+    },
+    {
+      "branch": "foxy",
+      "commit": "6356bc82f3a034f5d2c61c6760df0007a6cadfb0",
+      "id": "common_foxy",
+      "repository": "ros2/common_interfaces",
+      "tree_git_sha1": "e8d7302c3b89dcf535fe0ef5f1b0836b9790d411"
+    }
+  ],
+  "ros_version": 2,
+  "scope": "Every original Flexiv msg/srv/action in this exact source tree, plus every reached unchanged core definition. No native RDK identity, controller, model or release acceptance is inferred.",
+  "vendor": "flexiv"
+}

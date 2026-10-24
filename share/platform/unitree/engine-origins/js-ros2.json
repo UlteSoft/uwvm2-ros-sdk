@@ -1,0 +1,46 @@
+{
+    "format": "uwvm-real-interpreter-v1",
+    "language": "js",
+    "implementation": "QuickJS",
+    "version": "2026-06-04",
+    "filename": "quickjs.wasm",
+    "sha256": "56730d6cef5df60a9c4af2a5a513d195680bb2ac0d026091a01d5381bc5b5a65",
+    "bytes": 5191835,
+    "compiler": "LLVM 23.1.4",
+    "license": "MIT",
+    "target": "wasm32-wasip1",
+    "ros_backend": "ros2",
+    "native_distribution": "jazzy",
+    "source_manifest": "src/language/js/source.json",
+    "maintenance_recipe": "tools/language/build_interpreters.py",
+    "application_packer": "tools/platform/abb/pack_interpreter.lua",
+    "application_capacity": 4194304,
+    "supported_native_observations": [
+        "read_speed",
+        "read_io",
+        "system_state"
+    ],
+    "full_catalog_native_acceptance": false,
+    "source_catalogs": {
+        "ros1": {
+            "records": 79,
+            "interfaces": 53
+        },
+        "ros2": {
+            "records": 88,
+            "interfaces": 63
+        }
+    },
+    "qualifications": {
+        "all_catalog_codec_checks": 511,
+        "native_ros_cases": 6,
+        "abi_fixture_cases": 45,
+        "xmake_only_examples": 3
+    },
+    "adapter_sources": {
+        "src/language/common/abi.h": "d78fd838ed157531d04e151bb75e2116eeff5ebbe7341be8d997a708c3252a8b",
+        "src/language/common/application.h": "200a615a7a2f6c71a72bebbd6b5d1e1d940752659e06deea280784fb97e94dda",
+        "src/language/js/command.c": "886bcc6ba409f60417ae9347e618b8ed04cf216d7792c72168bb6c547630b69f"
+    },
+    "source_manifest_sha256": "bc6f9d1d01c163cdcdfab83c26854132ce9afe441cd9399c7db4c532d790615f"
+}

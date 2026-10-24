@@ -1,0 +1,8 @@
+/** @file records.h
+ * @brief Explicit C-ABI route to every complete original record.
+ * @details Callers select their actual FFI frontend. Record storage and capacities are
+ * caller-owned; codec success is unrelated to native ROS type registration or grants.
+ */
+#pragma once
+#include <dobot/c/ros2/dobot-ros2-v4-complete/bounded_records.h>
+#include <dobot/c/ros2/dobot-ros2-v4-complete/bounded_interfaces.h>

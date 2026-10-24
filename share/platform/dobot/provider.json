@@ -1,0 +1,480 @@
+{
+  "schema": "uwvm-ros-vendor-provider-consumer-v1",
+  "vendor": "dobot",
+  "profiles": [
+    {
+      "id": "ros1_demo_v3",
+      "ros_version": 1,
+      "catalog": "share/platform/dobot/catalogs/ros1_demo_v3/catalog.json",
+      "source_lock_sha256": "f69063924a41c9c392d7290215f51ea169603e2b22947b4d06ccee1a67da7602",
+      "catalog_sha256": "66e6eb01340169b40d94e1252a8a0abc7e4189a67b4310e13e6d5bb82cff4c0b",
+      "repositories": [
+        {
+          "commit": "0924e785f1827b7125ba4ba2bc3325811ed21c18",
+          "id": "ros1",
+          "repository": "Dobot-Arm/TCP-IP-ROS-6AXis",
+          "tree_git_sha1": "621e03f777184da9d55fa1f1b5efaae57d2f5ee2"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/dobot/c/ros1/dobot-ros1-demo-v3-complete",
+        "include/platform/dobot/cpp/ros1/dobot-ros1-demo-v3-complete"
+      ],
+      "operations": {
+        "msg": 0,
+        "srv": 95,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/dobot/objectc/ros1_demo_v3/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "dobot",
+          "profile": "ros1_demo_v3",
+          "scenario": "query_robot_mode",
+          "type": "rosdemo_v3/RobotMode",
+          "operation": "service.call",
+          "response": "rosdemo_v3/RobotModeResponse",
+          "request": "rosdemo_v3/RobotModeRequest"
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros1_demo_v3",
+          "scenario": "query_get_angle",
+          "type": "rosdemo_v3/GetAngle",
+          "operation": "service.call",
+          "response": "rosdemo_v3/GetAngleResponse",
+          "request": "rosdemo_v3/GetAngleRequest"
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros1_demo_v3",
+          "scenario": "query_get_pose",
+          "type": "rosdemo_v3/GetPose",
+          "operation": "service.call",
+          "response": "rosdemo_v3/GetPoseResponse",
+          "request": "rosdemo_v3/GetPoseRequest"
+        }
+      ]
+    },
+    {
+      "id": "ros1_demo_v4",
+      "ros_version": 1,
+      "catalog": "share/platform/dobot/catalogs/ros1_demo_v4/catalog.json",
+      "source_lock_sha256": "4700de3246031646c9d468d60c1d7844a32139263bed0fae1875b0a44f37dea1",
+      "catalog_sha256": "9c2cd52c5e29bdb6329c29d8a34f9d81f3af4e9f58b4fa30eb3c01e553622aa7",
+      "repositories": [
+        {
+          "commit": "0924e785f1827b7125ba4ba2bc3325811ed21c18",
+          "id": "ros1",
+          "repository": "Dobot-Arm/TCP-IP-ROS-6AXis",
+          "tree_git_sha1": "621e03f777184da9d55fa1f1b5efaae57d2f5ee2"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/dobot/c/ros1/dobot-ros1-demo-v4-complete",
+        "include/platform/dobot/cpp/ros1/dobot-ros1-demo-v4-complete"
+      ],
+      "operations": {
+        "msg": 0,
+        "srv": 94,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/dobot/objectc/ros1_demo_v4/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "dobot",
+          "profile": "ros1_demo_v4",
+          "scenario": "query_robot_mode",
+          "type": "rosdemo_v4/RobotMode",
+          "operation": "service.call",
+          "response": "rosdemo_v4/RobotModeResponse",
+          "request": "rosdemo_v4/RobotModeRequest"
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros1_demo_v4",
+          "scenario": "query_get_angle",
+          "type": "rosdemo_v4/GetAngle",
+          "operation": "service.call",
+          "response": "rosdemo_v4/GetAngleResponse",
+          "request": "rosdemo_v4/GetAngleRequest"
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros1_demo_v4",
+          "scenario": "query_get_pose",
+          "type": "rosdemo_v4/GetPose",
+          "operation": "service.call",
+          "response": "rosdemo_v4/GetPoseResponse",
+          "request": "rosdemo_v4/GetPoseRequest"
+        }
+      ]
+    },
+    {
+      "id": "ros1_v3",
+      "ros_version": 1,
+      "catalog": "share/platform/dobot/catalogs/ros1_v3/catalog.json",
+      "source_lock_sha256": "bbf84a39f3ffdae94085d75882744e7aa07412e2e964067520014e02941284d6",
+      "catalog_sha256": "eb667e69f475b0c19f42b3652bb74514965203055ea0914f335c5b178d8be6a4",
+      "repositories": [
+        {
+          "commit": "0924e785f1827b7125ba4ba2bc3325811ed21c18",
+          "id": "ros1",
+          "repository": "https://github.com/Dobot-Arm/TCP-IP-ROS-6AXis",
+          "tree_git_sha1": "621e03f777184da9d55fa1f1b5efaae57d2f5ee2"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/dobot/c/ros1/dobot-ros1-v3-complete",
+        "include/platform/dobot/cpp/ros1/dobot-ros1-v3-complete"
+      ],
+      "operations": {
+        "msg": 2,
+        "srv": 98,
+        "action": 0
+      },
+      "legacy_defines": {
+        "UWVM_DOBOT_PROFILE": 1
+      },
+      "language_sources": {
+        "objectc": [
+          "src/platform/dobot/objectc/ros1_v3/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "dobot",
+          "profile": "ros1_v3",
+          "scenario": "observe_robot_status",
+          "type": "dobot_bringup/RobotStatus",
+          "operation": "topic.subscribe",
+          "response": "dobot_bringup/RobotStatus",
+          "request": null
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros1_v3",
+          "scenario": "observe_tool_vector_actual",
+          "type": "dobot_bringup/ToolVectorActual",
+          "operation": "topic.subscribe",
+          "response": "dobot_bringup/ToolVectorActual",
+          "request": null
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros1_v3",
+          "scenario": "query_robot_mode",
+          "type": "dobot_bringup/RobotMode",
+          "operation": "service.call",
+          "response": "dobot_bringup/RobotModeResponse",
+          "request": "dobot_bringup/RobotModeRequest"
+        }
+      ]
+    },
+    {
+      "id": "ros1_v4",
+      "ros_version": 1,
+      "catalog": "share/platform/dobot/catalogs/ros1_v4/catalog.json",
+      "source_lock_sha256": "05945840a3412353b583bcf7650efcd3de9cc731acd6ceae5ef9ed65c63deceb",
+      "catalog_sha256": "2516cdeada8b4a8b7cb661090eb2c2a90cd2e986422203641380f55061606d6f",
+      "repositories": [
+        {
+          "commit": "0924e785f1827b7125ba4ba2bc3325811ed21c18",
+          "id": "ros1",
+          "repository": "https://github.com/Dobot-Arm/TCP-IP-ROS-6AXis",
+          "tree_git_sha1": "621e03f777184da9d55fa1f1b5efaae57d2f5ee2"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/dobot/c/ros1/dobot-ros1-v4-complete",
+        "include/platform/dobot/cpp/ros1/dobot-ros1-v4-complete"
+      ],
+      "operations": {
+        "msg": 2,
+        "srv": 94,
+        "action": 0
+      },
+      "legacy_defines": {
+        "UWVM_DOBOT_PROFILE": 2
+      },
+      "language_sources": {
+        "objectc": [
+          "src/platform/dobot/objectc/ros1_v4/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "dobot",
+          "profile": "ros1_v4",
+          "scenario": "observe_robot_status",
+          "type": "dobot_v4_bringup/RobotStatus",
+          "operation": "topic.subscribe",
+          "response": "dobot_v4_bringup/RobotStatus",
+          "request": null
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros1_v4",
+          "scenario": "observe_tool_vector_actual",
+          "type": "dobot_v4_bringup/ToolVectorActual",
+          "operation": "topic.subscribe",
+          "response": "dobot_v4_bringup/ToolVectorActual",
+          "request": null
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros1_v4",
+          "scenario": "query_robot_mode",
+          "type": "dobot_v4_bringup/RobotMode",
+          "operation": "service.call",
+          "response": "dobot_v4_bringup/RobotModeResponse",
+          "request": "dobot_v4_bringup/RobotModeRequest"
+        }
+      ]
+    },
+    {
+      "id": "ros2_v4",
+      "ros_version": 2,
+      "catalog": "share/platform/dobot/catalogs/ros2_v4/catalog.json",
+      "source_lock_sha256": "c5304fd4b7377df0f81cf5f6912e27c4edb3bbf7768878e3098b48021dc59011",
+      "catalog_sha256": "32971ff714f6e455890911f2c1d21f33204af9613a19d2e34ea17ac870c62940",
+      "repositories": [
+        {
+          "commit": "ec201c40d5db63185a3593ec9c39f80fe25aa527",
+          "id": "ros2",
+          "repository": "https://github.com/Dobot-Arm/DOBOT_6Axis_ROS2_V4",
+          "tree_git_sha1": "b78c69b88f24f7a47d040810e1b5127b9e44caf9"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/dobot/c/ros2/dobot-ros2-v4-complete",
+        "include/platform/dobot/cpp/ros2/dobot-ros2-v4-complete"
+      ],
+      "operations": {
+        "msg": 2,
+        "srv": 124,
+        "action": 0
+      },
+      "legacy_defines": {
+        "UWVM_DOBOT_PROFILE": 3
+      },
+      "language_sources": {
+        "objectc": [
+          "src/platform/dobot/objectc/ros2_v4/records.m"
+        ],
+        "java": [
+          "include/platform/dobot/java/ros2_v4/dobot/ros2_v4/BoundedRecords.java"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "dobot",
+          "profile": "ros2_v4",
+          "scenario": "observe_robot_status",
+          "type": "dobot_msgs_v4/msg/RobotStatus",
+          "operation": "topic.subscribe",
+          "response": "dobot_msgs_v4/msg/RobotStatus",
+          "request": null
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros2_v4",
+          "scenario": "observe_tool_vector_actual",
+          "type": "dobot_msgs_v4/msg/ToolVectorActual",
+          "operation": "topic.subscribe",
+          "response": "dobot_msgs_v4/msg/ToolVectorActual",
+          "request": null
+        },
+        {
+          "vendor": "dobot",
+          "profile": "ros2_v4",
+          "scenario": "query_robot_mode",
+          "type": "dobot_msgs_v4/srv/RobotMode",
+          "operation": "service.call",
+          "response": "dobot_msgs_v4/srv/RobotMode_Response",
+          "request": "dobot_msgs_v4/srv/RobotMode_Request"
+        }
+      ],
+      "source_graph_v1": {
+        "java": {
+          "format": "uwvm-vendor-source-graph-v1",
+          "language": "java",
+          "sources": [
+            "include/platform/dobot/java/ros2_v4/dobot/ros2_v4/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "js": {
+          "format": "uwvm-vendor-source-graph-v1",
+          "language": "js",
+          "bundle_manifest": "share/platform/dobot/bundles/js/ros2_v4.json",
+          "module_count": 13,
+          "native_definition_catalog": "share/platform/dobot/catalogs/ros2_v4/catalog.json"
+        }
+      }
+    }
+  ],
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "default_authority": [],
+  "transports": [
+    "native-ros"
+  ],
+  "requested_targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "target_qualification": "per-language-produced-and-executed-module-required",
+  "distributions": {
+    "ros1": [
+      "kinetic",
+      "melodic",
+      "noetic"
+    ],
+    "ros2": [
+      "foxy",
+      "galactic",
+      "humble",
+      "jazzy",
+      "rolling"
+    ]
+  },
+  "model_selections": [],
+  "configuration": {
+    "profile": "ros.sdk.provider.profile",
+    "model": "ros.sdk.provider.model",
+    "transport": "ros.sdk.provider.transport",
+    "distribution": "ros.sdk.distribution",
+    "catalog_version": "immutable per-profile source_lock_sha256; not controller firmware",
+    "abi": "uwvm ROS ABI v1 plus the exact selected canonical type catalog",
+    "wasm_features": "Exact common target manifest; no implicit threads/EH/preview/address-width substitution"
+  },
+  "shared_producer_contract": "tools/xmake/language_adapter.lua api_version=1 with the complete request/source graph",
+  "format": "uwvm-ros-provider-v1",
+  "api_version": 1,
+  "id": "dobot",
+  "module": "tools/platform/dobot/provider.lua",
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "kinetic",
+        "melodic",
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "foxy",
+        "galactic",
+        "humble",
+        "jazzy",
+        "rolling"
+      ]
+    }
+  },
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "go",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "objectc",
+    "php",
+    "py",
+    "rs",
+    "ruby",
+    "tinygo"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {
+    "profile": {
+      "values": [
+        "ros1_demo_v3",
+        "ros1_demo_v4",
+        "ros1_v3",
+        "ros1_v4",
+        "ros2_v4"
+      ]
+    },
+    "catalog_version": {
+      "values": [
+        "05945840a3412353b583bcf7650efcd3de9cc731acd6ceae5ef9ed65c63deceb",
+        "4700de3246031646c9d468d60c1d7844a32139263bed0fae1875b0a44f37dea1",
+        "bbf84a39f3ffdae94085d75882744e7aa07412e2e964067520014e02941284d6",
+        "c5304fd4b7377df0f81cf5f6912e27c4edb3bbf7768878e3098b48021dc59011",
+        "f69063924a41c9c392d7290215f51ea169603e2b22947b4d06ccee1a67da7602"
+      ]
+    },
+    "abi": {
+      "values": [
+        "uwvm-ros-v1"
+      ],
+      "default": "uwvm-ros-v1"
+    },
+    "transport": {
+      "values": [
+        "native-ros"
+      ],
+      "default": "native-ros"
+    }
+  },
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  }
+}

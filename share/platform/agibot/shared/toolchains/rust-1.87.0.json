@@ -1,0 +1,20 @@
+{
+  "version": "1.87.0",
+  "components": [
+    {
+      "file": "rust-std-1.87.0-wasm32-wasip1.tar.xz",
+      "sha256": "a029ea4f2c696c543d22e4c19466a68c04c41195a6c45a90d9b3fb56e2047d9e",
+      "url": "https://static.rust-lang.org/dist/rust-std-1.87.0-wasm32-wasip1.tar.xz"
+    },
+    {
+      "file": "rust-std-1.87.0-x86_64-unknown-linux-gnu.tar.xz",
+      "sha256": "1b57253bd32b8b292c965b3a2d992a266763158494cab8555584c09360b90f77",
+      "url": "https://static.rust-lang.org/dist/rust-std-1.87.0-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "file": "rustc-1.87.0-x86_64-unknown-linux-gnu.tar.xz",
+      "sha256": "e8395c5c5756253b76107055e093ffbc4431af7b30aeebe72ce2684b9cb53973",
+      "url": "https://static.rust-lang.org/dist/rustc-1.87.0-x86_64-unknown-linux-gnu.tar.xz"
+    }
+  ]
+}

@@ -1,0 +1,678 @@
+{
+  "format": "agibot-restored-source-selection-v1",
+  "roots": [
+    "aimdk_msgs/srv/GetMcAction",
+    "aimdk_msgs/msg/McCommonState",
+    "aimdk_msgs/srv/GetRobotResources"
+  ],
+  "qualification": "SOURCE_REFERENCE_ONLY; no production native registry is restored or qualified",
+  "archive_catalog": ".tmp/sdk 07-26-57-965/share/platform/agibot/catalogs/ros2_sdk_v1_1_0_main/catalog.json",
+  "archive_catalog_sha256": "6370a07a43c76be3f6f2efa8c229474c0496a7d0f92a6270b2f56477f66b2f7d",
+  "archive_source_lock": ".tmp/sdk 07-26-57-965/share/platform/agibot/catalogs/ros2_sdk_v1_1_0_main/source-lock.json",
+  "archive_source_lock_sha256": "fa486e08d675aea7c960835181bf3861640b3d47d262198006a6a7e203e84855",
+  "source_proof": {
+    "archive_bytes": 282622293,
+    "archive_sha256": "dc80fe5d2907881ed77beb230680867efac6bd28b458f83d2ff4e9479abe3615",
+    "label": "SDK v1.1.0",
+    "original_package_root": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs",
+    "original_zip_lock_sha256": "79b6588b331c76b76eb7b1724dcd63dd6596f8e0d434700402142fb26d809059",
+    "scope": "main",
+    "url": "https://x2-aimdk.agibot.com/downloads/aimdk-sdk-v1_1_0-aimdk-aarch64-faf4c945-artifacts.zip"
+  },
+  "types": [
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/CommonRequest.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonRequest"
+    },
+    {
+      "bounds": {
+        "message": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/CommonResponse.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonResponse"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/CommonState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonState"
+    },
+    {
+      "bounds": {
+        "files": {
+          "sequence": 16,
+          "string": 128
+        },
+        "name": {
+          "string": 128
+        },
+        "version": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/CurrentVersion.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CurrentVersion"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McAction.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McAction"
+    },
+    {
+      "bounds": {
+        "action_desc": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/McActionInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McActionInfo"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McActionStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McActionStatus"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McBodyPoseStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McBodyPoseStatus"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McCommonState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McCommonState"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McControlArea.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McControlArea"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McFsmState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McFsmState"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McHandStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McHandStatus"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/McInputSource.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McInputSource"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McLocomotionSpeedBounds.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McLocomotionSpeedBounds"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McLocomotionSpeedMode.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McLocomotionSpeedMode"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McLocomotionSpeedStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McLocomotionSpeedStatus"
+    },
+    {
+      "bounds": {
+        "motion": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/McMotionStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McMotionStatus"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McMotionType.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McMotionType"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McPlayerState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McPlayerState"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McRuntimeModel.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McRuntimeModel"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McServoStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McServoStatus"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/MessageHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/MessageHeader"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/RequestHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/RequestHeader"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/ResponseHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ResponseHeader"
+    },
+    {
+      "bounds": {
+        "resource_key": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/RobotResource.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/RobotResource"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/GetMcAction.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/GetMcAction"
+    },
+    {
+      "bounds": {
+        "response.robot_resources": {
+          "sequence": 4
+        }
+      },
+      "file": "aimdk_msgs/srv/GetRobotResources.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/GetRobotResources"
+    },
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time"
+    }
+  ],
+  "definitions": [
+    {
+      "bytes": 34,
+      "crc32": 3913412664,
+      "generation_file": "aimdk_msgs/msg/CommonRequest.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/CommonRequest.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/CommonRequest.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "4a6cb4e09e314c68a8daccfd82eae36ad85c30b366061ff1b5fd5ebba44340e5",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/CommonRequest"
+    },
+    {
+      "bytes": 102,
+      "crc32": 4162855563,
+      "generation_file": "aimdk_msgs/msg/CommonResponse.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/CommonResponse.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/CommonResponse.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "bb33cf169353fa4ac412d85e54785fcf0e6d91d53dfe658f0ca728d555ff8382",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/CommonResponse"
+    },
+    {
+      "bytes": 335,
+      "crc32": 3324979407,
+      "generation_file": "aimdk_msgs/msg/CommonState.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/CommonState.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/CommonState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "2dfa028420c9906499bd489dc3761f36503f33920302ae14b112c9bf457489d7",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/CommonState"
+    },
+    {
+      "bytes": 370,
+      "crc32": 884292613,
+      "generation_file": "aimdk_msgs/msg/CurrentVersion.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/app_proxy/msg/CurrentVersion.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/app_proxy/msg/CurrentVersion.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "574fb48e322f428b73870f6a2e7e093c24d0d336ab8a57f3268928419d86f4c7",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/CurrentVersion"
+    },
+    {
+      "bytes": 862,
+      "crc32": 4025205591,
+      "generation_file": "aimdk_msgs/msg/McAction.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/action/McAction.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/action/McAction.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "6e7c7e279a2d94c435044678e9e3bd93e5ced61cd1d6ba9eb50fbedea9c5d7ad",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McAction"
+    },
+    {
+      "bytes": 115,
+      "crc32": 2670574601,
+      "generation_file": "aimdk_msgs/msg/McActionInfo.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/action/McActionInfo.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/action/McActionInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "d486071df385595095cc4f5098509548693bf1ed940bfdfadc6fb4050dd4bf4c",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McActionInfo"
+    },
+    {
+      "bytes": 134,
+      "crc32": 1633130887,
+      "generation_file": "aimdk_msgs/msg/McActionStatus.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/action/McActionStatus.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/action/McActionStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "449daa669493202bb11969699acfabebd997006e8c0541caf95ef2f3a9ff7b06",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McActionStatus"
+    },
+    {
+      "bytes": 247,
+      "crc32": 1830789360,
+      "generation_file": "aimdk_msgs/msg/McBodyPoseStatus.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/common/McBodyPoseStatus.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/common/McBodyPoseStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "aa69803bc3afe0970cbc35c840d77c275d093a01dc4675a235d6eee996784743",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McBodyPoseStatus"
+    },
+    {
+      "bytes": 820,
+      "crc32": 2290374880,
+      "generation_file": "aimdk_msgs/msg/McCommonState.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/McCommonState.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/McCommonState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "ca75ce7ec40a7947c3cd67e7b37da53b194e71509ec8f15dfecbd2e78bcb1fc0",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McCommonState"
+    },
+    {
+      "bytes": 161,
+      "crc32": 3668128883,
+      "generation_file": "aimdk_msgs/msg/McControlArea.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McControlArea.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McControlArea.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "7ecef6b3c48d43b19c9f5da8ae28613e42890a1bd579d91fcdd9214192e7ac8d",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McControlArea"
+    },
+    {
+      "bytes": 485,
+      "crc32": 2293960051,
+      "generation_file": "aimdk_msgs/msg/McFsmState.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/common/McFsmState.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/common/McFsmState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "da8a0370cba82d5d2955004a9b68489ee150f557e4c520dcd085bf58600cf6cf",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McFsmState"
+    },
+    {
+      "bytes": 99,
+      "crc32": 2395532008,
+      "generation_file": "aimdk_msgs/msg/McHandStatus.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McHandStatus.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McHandStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "ed9a91ef655c4fbd516a90eae800dbdf8955d1ae53f2fcc5754d3afa7f8baf96",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McHandStatus"
+    },
+    {
+      "bytes": 447,
+      "crc32": 3833646784,
+      "generation_file": "aimdk_msgs/msg/McInputSource.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McInputSource.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McInputSource.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "d1740a334177927074534c7bb9474a229154f25b69b8f107992afa960616ef8e",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McInputSource"
+    },
+    {
+      "bytes": 94,
+      "crc32": 2701909391,
+      "generation_file": "aimdk_msgs/msg/McLocomotionSpeedBounds.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/McLocomotionSpeedBounds.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/McLocomotionSpeedBounds.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "84974a7f1e17cfcc92cb864c4b61facdc19c480f7cb870923b1eb7002b7dbda7",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McLocomotionSpeedBounds"
+    },
+    {
+      "bytes": 217,
+      "crc32": 2026214954,
+      "generation_file": "aimdk_msgs/msg/McLocomotionSpeedMode.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/McLocomotionSpeedMode.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/McLocomotionSpeedMode.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "5161b40ac218d7f1d42a54f9f7f2b6e5a9e96b23db44057626b694e557a70a24",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McLocomotionSpeedMode"
+    },
+    {
+      "bytes": 285,
+      "crc32": 963776611,
+      "generation_file": "aimdk_msgs/msg/McLocomotionSpeedStatus.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/McLocomotionSpeedStatus.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/McLocomotionSpeedStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "5ea0680f804c436f0d46822b3d91ee42ca9641ed5a62deb91fc5babf4b2230c9",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McLocomotionSpeedStatus"
+    },
+    {
+      "bytes": 443,
+      "crc32": 2365052111,
+      "generation_file": "aimdk_msgs/msg/McMotionStatus.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/common/McMotionStatus.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/common/McMotionStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "46feceb3e45785a775d1e6ecd90cd53e21f92d0bf8f9db553945abad5abab4f1",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McMotionStatus"
+    },
+    {
+      "bytes": 137,
+      "crc32": 17147771,
+      "generation_file": "aimdk_msgs/msg/McMotionType.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McMotionType.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McMotionType.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "611b362b9851a774551389494de9e577b19eb76c004ecf91e6835c6f27427da9",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McMotionType"
+    },
+    {
+      "bytes": 478,
+      "crc32": 4106728473,
+      "generation_file": "aimdk_msgs/msg/McPlayerState.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McPlayerState.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McPlayerState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "79f992417b2819d2b201eb238dc9139953c509a272ca3eae6ea0d24c33eaa6ff",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McPlayerState"
+    },
+    {
+      "bytes": 394,
+      "crc32": 3876185708,
+      "generation_file": "aimdk_msgs/msg/McRuntimeModel.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McRuntimeModel.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/motion/msg/McRuntimeModel.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "d715b0bb1c5d1a13f48ec03b9a7660779d1a103aead957e4fe16428575b511d8",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McRuntimeModel"
+    },
+    {
+      "bytes": 986,
+      "crc32": 490026191,
+      "generation_file": "aimdk_msgs/msg/McServoStatus.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/common/McServoStatus.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/data/msg/common/McServoStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "f4768deea22f78813ea06de992ea19bba81a4375d23b6f45713b1586d09b3898",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/McServoStatus"
+    },
+    {
+      "bytes": 356,
+      "crc32": 3772262415,
+      "generation_file": "aimdk_msgs/msg/MessageHeader.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/MessageHeader.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/MessageHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "ea70387167120925f14373d1ac9030ac529b1c44c49503db6c2ac012d5a3efb4",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/MessageHeader"
+    },
+    {
+      "bytes": 97,
+      "crc32": 1670427083,
+      "generation_file": "aimdk_msgs/msg/RequestHeader.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/RequestHeader.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/RequestHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "48a9467857fa698ba1de18236f9f80741406e5d4bfedfffd36be6fa50fb10664",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/RequestHeader"
+    },
+    {
+      "bytes": 159,
+      "crc32": 1006806059,
+      "generation_file": "aimdk_msgs/msg/ResponseHeader.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/ResponseHeader.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/common/msg/ResponseHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "d5d78dddcee2ab78e32c4ad81cac5d69b078a99fc637ba4a08fb9a03ba52d87f",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/ResponseHeader"
+    },
+    {
+      "bytes": 287,
+      "crc32": 3830216144,
+      "generation_file": "aimdk_msgs/msg/RobotResource.msg",
+      "kind": "msg",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/app_proxy/msg/RobotResource.msg",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/app_proxy/msg/RobotResource.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "f1164ac24c6509460b860442f775a1f59559ed0aa554940997a5fd3b68d0a114",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/msg/RobotResource"
+    },
+    {
+      "bytes": 113,
+      "crc32": 3853393323,
+      "generation_file": "aimdk_msgs/srv/GetMcAction.srv",
+      "kind": "srv",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/action/srv/GetMcAction.srv",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/mc/action/srv/GetMcAction.srv",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "a3bd4cc6e0eb2dcdafdccf1aef0dae0162de4e64f6dc8687812aadf7e447d222",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/srv/GetMcAction"
+    },
+    {
+      "bytes": 673,
+      "crc32": 2362371983,
+      "generation_file": "aimdk_msgs/srv/GetRobotResources.srv",
+      "kind": "srv",
+      "origin": "exact_agibot_original",
+      "original_path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/app_proxy/srv/GetRobotResources.srv",
+      "package": "aimdk_msgs",
+      "path": "aimdk-aarch64-faf4c945-artifacts/src/aimdk_msgs/interface/robot/app_proxy/srv/GetRobotResources.srv",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "b7c53ea0a8d1420fd88253dcd755257985bdc0f9b5f44a58c86f4da6a3743b7d",
+      "source_kind": "ORIGINAL_VENDOR_ZIP_MEMBER",
+      "type": "aimdk_msgs/srv/GetRobotResources"
+    },
+    {
+      "bytes": 420,
+      "generation_file": "builtin_interfaces/msg/Time.msg",
+      "kind": "msg",
+      "manifest_sha256": "9d3bd049fee317745fb925a0a3891708f1212da8ff2ceb33f6f3a89f6e3c190e",
+      "origin": "actual_restored_humble_manifest",
+      "original_path": "opt/ros/humble/share/builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae",
+      "type": "builtin_interfaces/msg/Time"
+    }
+  ]
+}

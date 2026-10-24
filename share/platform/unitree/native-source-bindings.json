@@ -1,0 +1,163 @@
+{
+    "format": "uwvm-unitree-native-source-bindings-v1",
+    "source_languages": [
+        "zig",
+        "d",
+        "nim",
+        "odin",
+        "swift",
+        "haskell"
+    ],
+    "default_authority": [],
+    "native_field_definitions_changed": false,
+    "generated_outputs": [
+        {
+            "path": "include/platform/unitree/d/observation.d",
+            "sha256": "b7f8ef9832161bbfa83369b609169f35a27110446b21d38a940bcd3255879719"
+        },
+        {
+            "path": "include/platform/unitree/d/ros1/observation.d",
+            "sha256": "1f6aa5f2d3d6235462f048075c244c68af5ffe803f960c1ac09147f8c8f49887"
+        },
+        {
+            "path": "include/platform/unitree/d/ros1/records.d",
+            "sha256": "0458d7394eb3e7715488804d0473bd1a0feada913da186e5933049ad0ac06d57"
+        },
+        {
+            "path": "include/platform/unitree/d/ros2/observation.d",
+            "sha256": "688bfe2b9687189329d5612a38edcf49df2b90965cd9cd625bdf03a2cdff74ff"
+        },
+        {
+            "path": "include/platform/unitree/d/ros2/records.d",
+            "sha256": "27bd438c6f0f56d6f75b73896a84bed690147f5d1bc6e29e1d0a8e43246890de"
+        },
+        {
+            "path": "include/platform/unitree/d/wire.d",
+            "sha256": "79b88c132e8151844198600e332d0df89457e2aea7a494cfecafaa37b09b405c"
+        },
+        {
+            "path": "include/platform/unitree/haskell/Unitree/Observation.hs",
+            "sha256": "9e6547126d7f1643f4cc591e3c84ac3f24e0add0196d15873f7af1f9d9b58c2d"
+        },
+        {
+            "path": "include/platform/unitree/haskell/Unitree/Ros1/Observation.hs",
+            "sha256": "2bdea29fcf9abec2bc200af9c03917958e1e4993142cb3680d28b9d4ab84e4f2"
+        },
+        {
+            "path": "include/platform/unitree/haskell/Unitree/Ros1/Records.hs",
+            "sha256": "8ac732a2695b5c116ef2ae6319310a2c88fd75265e1bd48fbde91a2897a18223"
+        },
+        {
+            "path": "include/platform/unitree/haskell/Unitree/Ros2/Observation.hs",
+            "sha256": "f7cf315bd38c47c7509384a676d92dc9ab726ecc41b08ff8f415d5757dfb1fc0"
+        },
+        {
+            "path": "include/platform/unitree/haskell/Unitree/Ros2/Records.hs",
+            "sha256": "2b1fcf98ae9368427bdd51c145e2d086ac57c20b5e02d9960d750ee1a5806561"
+        },
+        {
+            "path": "include/platform/unitree/haskell/Unitree/Wire.hs",
+            "sha256": "e6a73bc1ed4f8a7392ea714d0fe621287a0ae12f1342b9621a8c66c6eaf9e33c"
+        },
+        {
+            "path": "include/platform/unitree/nim/observation.nim",
+            "sha256": "a4613e2fdba98cd316b6898d7c5448edc26afb91f92ffd2e66c257736e2895cc"
+        },
+        {
+            "path": "include/platform/unitree/nim/ros1/observation.nim",
+            "sha256": "a9ca5a8c3869248b326196a1ba099ac8546262b9684941f9c433b7611c84e6ed"
+        },
+        {
+            "path": "include/platform/unitree/nim/ros1/records.nim",
+            "sha256": "eb33fd08976532f153fb2866110f864bf2e27da06210aa0690c852b6ee1fd9c2"
+        },
+        {
+            "path": "include/platform/unitree/nim/ros2/observation.nim",
+            "sha256": "082f60e299f7bb3ef0f5ad97669d5c477419b576ba9a6a03ad34c225a3795aeb"
+        },
+        {
+            "path": "include/platform/unitree/nim/ros2/records.nim",
+            "sha256": "21c646c1788bb41f8b62192e2956d18e9c55b7d5e29f1f579a984f7d22f6f92e"
+        },
+        {
+            "path": "include/platform/unitree/nim/wire.nim",
+            "sha256": "136f2555917eac385fe40e80e31fd0618fa8761fc7ca0e9d01647fb399157e94"
+        },
+        {
+            "path": "include/platform/unitree/odin/observation.odin",
+            "sha256": "5b5f4d81b3054775b4377269f247ff0a74b420a6bff7dbb02b1704183f76b9d0"
+        },
+        {
+            "path": "include/platform/unitree/odin/ros1/observation/observation.odin",
+            "sha256": "22f5a1e9b67cf90a3dbca5353ccc68df4bd89d79697a95042c442652c49584fc"
+        },
+        {
+            "path": "include/platform/unitree/odin/ros1/records.odin",
+            "sha256": "86792c88dc2ed2c225bd42946d284be4724fde906a487e8aab385372269d388d"
+        },
+        {
+            "path": "include/platform/unitree/odin/ros2/observation/observation.odin",
+            "sha256": "06c32b8b4505a73685708a5a9a1958d75a2eb35c3182d14f49602c7e6e32de00"
+        },
+        {
+            "path": "include/platform/unitree/odin/ros2/records.odin",
+            "sha256": "4688bb4f3132751ee2392d70339529a85818b896c79e07dec7700ef427de502b"
+        },
+        {
+            "path": "include/platform/unitree/odin/wire/wire.odin",
+            "sha256": "e7fde30bdcb0109b05068362085761ff354f698de483a59f745917070088884a"
+        },
+        {
+            "path": "include/platform/unitree/swift/CoreObservation.swift",
+            "sha256": "87ea7207ac874b947fc7357517337223b050d9f7036b7f1d0f42530326005602"
+        },
+        {
+            "path": "include/platform/unitree/swift/Wire.swift",
+            "sha256": "c1e692fae8e4cf2fe08cd51393c48f07cee78f8a62846a1dbb5b1676411a7ede"
+        },
+        {
+            "path": "include/platform/unitree/swift/ros1/Observation.swift",
+            "sha256": "4275ec2f9acd897f617823df8e25af2800e4708c202f03da3007b4c7e535581f"
+        },
+        {
+            "path": "include/platform/unitree/swift/ros1/Records.swift",
+            "sha256": "01773d923d6eca7fad2aed2ae64c271a0114927cef8a9842d1665b1b1e969da3"
+        },
+        {
+            "path": "include/platform/unitree/swift/ros2/Observation.swift",
+            "sha256": "3f1731a15b084d126ff7d5c57664d7321b05178113c0413915356ba186add6d7"
+        },
+        {
+            "path": "include/platform/unitree/swift/ros2/Records.swift",
+            "sha256": "aa1ed03573de2732bf4c0801d2433f76b755c5702c17cece0b2241079c363139"
+        },
+        {
+            "path": "include/platform/unitree/zig/observation.zig",
+            "sha256": "466d735eb2794fbcd15fdb79fa895ac4ac7cb424cf3a48f64f0ed44eea855ef8"
+        },
+        {
+            "path": "include/platform/unitree/zig/ros1/observation.zig",
+            "sha256": "f1bf9c07432241555f6b82b9ce725a3572fee1e79b035c498dca050c69d5e564"
+        },
+        {
+            "path": "include/platform/unitree/zig/ros1/records.zig",
+            "sha256": "c4a2768e1eba8c13b3ccaba9dcf76995ba5951d968e112e4e0a43bbb5f23114e"
+        },
+        {
+            "path": "include/platform/unitree/zig/ros2/observation.zig",
+            "sha256": "04741725e140fd18c1037ad8759c013a16d6d172cd33e09dd6f025ef9ed95b0a"
+        },
+        {
+            "path": "include/platform/unitree/zig/ros2/records.zig",
+            "sha256": "acc30e7b6c84d5e576c4d506d789f7f19dc7bf7eb6e2e5c51fc3a79e35f2846d"
+        },
+        {
+            "path": "include/platform/unitree/zig/wire.zig",
+            "sha256": "38530cef258de7c017458dd3dcc97bcb5598cd0bd1d485a9495a3487d9d05ed8"
+        }
+    ],
+    "source_records": "share/platform/unitree/native-source-records.json",
+    "qualification": "share/platform/unitree/native-source-qualification.json",
+    "canonical_encoder_partial_output_on_refusal": "discard whole output prefix",
+    "capability_owner": "genuine source-language observation function"
+}

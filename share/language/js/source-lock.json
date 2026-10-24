@@ -1,0 +1,159 @@
+{
+  "format": "uwvm-shared-interpreter-source-lock-v2",
+  "language": "js",
+  "version": "2026-06-04",
+  "upstream_url": "https://bellard.org/quickjs/quickjs-2026-06-04.tar.xz",
+  "upstream_archive_sha256": "b376e839b322978313d929fd20663b11ba58b75df5a46c126dd19ea2fa70ad2a",
+  "llvm_version": "23.1.4",
+  "source_date_epoch": 1792635234,
+  "logical_sdk_prefix": "/__uwvm_sdk__",
+  "logical_build_prefix": "/__uwvm_build__/js",
+  "files": [
+    {
+      "path": "share/language/js/upstream.json",
+      "bytes": 4784,
+      "sha256": "bc6f9d1d01c163cdcdfab83c26854132ce9afe441cd9399c7db4c532d790615f"
+    },
+    {
+      "path": "src/language/js/command.c",
+      "bytes": 14454,
+      "sha256": "487e8858983ffb95b170208677e91b5b7700103030f7b1234cc08d44ee44aabe"
+    },
+    {
+      "path": "src/language/js/modules/observation.mjs",
+      "bytes": 3944,
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "path": "src/language/js/support/abi.h",
+      "bytes": 4005,
+      "sha256": "b335dece0f2b468ef11aee0e7cb2640eadd75b235e5309dc4ca640854145eded"
+    },
+    {
+      "path": "src/language/js/support/application.h",
+      "bytes": 1460,
+      "sha256": "d0c1a3b869c9624a72fc0e74925a8883a9b7f481dd0d050f6175da13dbfdd5b1"
+    },
+    {
+      "path": "src/language/js/upstream/LICENSE",
+      "bytes": 1130,
+      "sha256": "598fd7fc928e4350abce36e337ba5a1346923c5c692f5be92c3d8e29ddd7c18d"
+    },
+    {
+      "path": "src/language/js/upstream/cutils.c",
+      "bytes": 18632,
+      "sha256": "b266be9ac0d1ce82c7fade36861ef9b59740f8fd2fa43d52b9efae78a4b9062f"
+    },
+    {
+      "path": "src/language/js/upstream/cutils.h",
+      "bytes": 11277,
+      "sha256": "ae45698aa4f479dad164a573cabd22de01aa42377440ee8e7e81ca6366a95f25"
+    },
+    {
+      "path": "src/language/js/upstream/dtoa.c",
+      "bytes": 46182,
+      "sha256": "9a920871bbcc0d17196e51b665475b0d44fa869cb61cc3871a6aa9d8720466ce"
+    },
+    {
+      "path": "src/language/js/upstream/dtoa.h",
+      "bytes": 3491,
+      "sha256": "344d75304dc6de080c2899caec86607f5879ee7d2d970df9adf8d3e72107e9ed"
+    },
+    {
+      "path": "src/language/js/upstream/libregexp-opcode.h",
+      "bytes": 3317,
+      "sha256": "0f634a4b026c030013cf3048f377c0a031a4ed039f771a15afc6eba4927af966"
+    },
+    {
+      "path": "src/language/js/upstream/libregexp.c",
+      "bytes": 123594,
+      "sha256": "dcc1a0d7919921a08b80f00e85a1901e111df8d9cd2544592db10f22340e9813"
+    },
+    {
+      "path": "src/language/js/upstream/libregexp.h",
+      "bytes": 2921,
+      "sha256": "2362311b8693975d869f5cf746340062b8d2346cb732607c328b3ccf2f6a1b18"
+    },
+    {
+      "path": "src/language/js/upstream/libunicode-table.h",
+      "bytes": 265653,
+      "sha256": "649b072c3fee26d5fa778cd140a23bfdd0ff34f532b4b21ce263b7a979cce5bc"
+    },
+    {
+      "path": "src/language/js/upstream/libunicode.c",
+      "bytes": 63822,
+      "sha256": "591413a857aa7cd17c6ae000d4d381d3978f67bd33a1279856933ebe82da2eda"
+    },
+    {
+      "path": "src/language/js/upstream/libunicode.h",
+      "bytes": 6066,
+      "sha256": "7aa9cf58be71e877162fbbf169680995c7a853f3d08760cf309f48ae456bff2a"
+    },
+    {
+      "path": "src/language/js/upstream/list.h",
+      "bytes": 3366,
+      "sha256": "4ee9eda6f7eb739a1860fd7c3239943d808619b0464a42c8552d6c695afbbfe8"
+    },
+    {
+      "path": "src/language/js/upstream/quickjs-atom.h",
+      "bytes": 8544,
+      "sha256": "c40bd3c96ba87b09463189a96b80252cfe220641f9b796df4f4e1a080ef35d41"
+    },
+    {
+      "path": "src/language/js/upstream/quickjs-opcode.h",
+      "bytes": 16650,
+      "sha256": "2e0a108da1769e4c10a5bd4aff2753d618929317ebce084b1b76f81ac83924ee"
+    },
+    {
+      "path": "src/language/js/upstream/quickjs.c",
+      "bytes": 2024354,
+      "sha256": "631c8ae06fee70fe80f39001e4d4a0bcb1cb8507a6a160d584464fac2fbcd4c0"
+    },
+    {
+      "path": "src/language/js/upstream/quickjs.h",
+      "bytes": 53142,
+      "sha256": "971c141dca08ae46cd29380db91902edab3ca08abebfbd73f82331ddfbcfd2d2"
+    },
+    {
+      "path": "src/language/js/upstream/unicode_gen_def.h",
+      "bytes": 8029,
+      "sha256": "8c2916d8df39bc3066eb59ec21e345e7d5412df078641ae7abdab54bee627506"
+    },
+    {
+      "path": "tools/language/js/abi_dispatch.py",
+      "bytes": 6577,
+      "sha256": "06e08835aecda4af454ad7d078d6e568179380c49eb6ce90eafadfd6a5447b5d"
+    },
+    {
+      "path": "tools/language/js/build.py",
+      "bytes": 4722,
+      "sha256": "325bb8d430cf0757d87dc49848bc0991500da5252becbc90112a93e6e580ecba"
+    },
+    {
+      "path": "tools/language/js/maintenance.py",
+      "bytes": 14971,
+      "sha256": "c312ed49e0cdcf228ed0c73c34826c91faf723ed7aa7f0720a48039832771e89"
+    },
+    {
+      "path": "tools/language/js/pack.lua",
+      "bytes": 13396,
+      "sha256": "92fd918503bb627a1675f2f402f65d7ab0259cbdabf65dc73cdb0d5daead153a"
+    },
+    {
+      "path": "tools/language/js/records.py",
+      "bytes": 7883,
+      "sha256": "e71c3b848e1f664eea9dfb3797f03ef6df08a2666a42d73605a916462d504ec4"
+    },
+    {
+      "path": "tools/language/js/wasm.py",
+      "bytes": 11035,
+      "sha256": "353f7a98053513d6de0f70c1c975c8b04ddb9220484d507c425cfea567df965b"
+    }
+  ],
+  "external_inputs": [
+    "share/toolchains/host/linux-x86_64/llvm23.json",
+    "share/wasm/toolchains.json",
+    "share/abi/abi-v1.json"
+  ],
+  "qualification": "Source identity only. Rebuild and execution must be recorded separately."
+}

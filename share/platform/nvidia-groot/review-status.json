@@ -1,0 +1,100 @@
+{
+  "platform": "nvidia-groot",
+  "review_state": "source-review",
+  "examples": 24,
+  "example_languages": {
+    "as": 3,
+    "c": 3,
+    "c_ffi_bridge": 3,
+    "cpp": 3,
+    "go": 3,
+    "js": 3,
+    "rs": 3,
+    "tinygo": 3
+  },
+  "manuals": {
+    "zh_CN": 27,
+    "en_US": 29
+  },
+  "current_snapshot_build_acceptance": "pending",
+  "current_snapshot_native_ros_acceptance": "pending",
+  "current_snapshot_qemu_aarch64_acceptance": "pending",
+  "static_shared_library_acceptance": "pending",
+  "complete": false,
+  "withheld_source_files": 0,
+  "source_review_revision": "2026-10-23-parent-review-34",
+  "source_owner": "10",
+  "source_inventory_review": 44,
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig",
+    "fortran",
+    "wat",
+    "typescript"
+  ],
+  "new_language_work": {
+    "fortran": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_compiler": "LLVM Flang 23.1.4 source candidate",
+      "common_raw_abi_modules": [
+        "uwvm_ros1_v1",
+        "uwvm_ros2_v1"
+      ],
+      "compiled": false,
+      "executed": false
+    },
+    "wat": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_assembler": "WABT wat2wasm source candidate",
+      "compiled": false,
+      "executed": false
+    }
+  },
+  "review42_scoped_go_rust": {
+    "combined_platform_scope": true,
+    "go_real_rebuilds": 12,
+    "go_retained_cases_revalidated": 42,
+    "go_new_coverage": 0,
+    "rust_real_builds": 12,
+    "rust_CPU_cases": 30,
+    "rust_native_Array_cases": 12,
+    "hosts": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "width": 32,
+    "shared_ARM_harness_complete_dependencies": true,
+    "TinyGo_startup_qualified": false,
+    "GPU_NITROS_or_full_platform_qualified": false
+  },
+  "typescript": {
+    "shared_frontend_available": true,
+    "platform_native_qualification": "pending",
+    "platform_registration_qualified": false,
+    "scope": "Common two-width frontend and scalar libraries; platform native ROS acceptance is separate"
+  }
+}

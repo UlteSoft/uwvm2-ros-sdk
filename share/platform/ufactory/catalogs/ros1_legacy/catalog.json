@@ -1,0 +1,167 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "ros_version": 1,
+      "type": "geometry_msgs/Point",
+      "file": "geometry_msgs/msg/Point.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 1,
+      "type": "geometry_msgs/Pose",
+      "file": "geometry_msgs/msg/Pose.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 1,
+      "type": "geometry_msgs/Quaternion",
+      "file": "geometry_msgs/msg/Quaternion.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/IOState",
+      "file": "xarm_msgs/msg/IOState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/RobotMsg",
+      "file": "xarm_msgs/msg/RobotMsg.msg",
+      "registered": true,
+      "bounds": {
+        "angle": {
+          "sequence": 7
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/ClearErr",
+      "file": "xarm_msgs/srv/ClearErr.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/GetAnalogIO",
+      "file": "xarm_msgs/srv/GetAnalogIO.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/GetDigitalIO",
+      "file": "xarm_msgs/srv/GetDigitalIO.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/Move",
+      "file": "xarm_msgs/srv/Move.srv",
+      "registered": true,
+      "bounds": {
+        "request.pose": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/SetAxis",
+      "file": "xarm_msgs/srv/SetAxis.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/SetDigitalIO",
+      "file": "xarm_msgs/srv/SetDigitalIO.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/SetInt16",
+      "file": "xarm_msgs/srv/SetInt16.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_msgs/TCPOffset",
+      "file": "xarm_msgs/srv/TCPOffset.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_planner/exec_plan",
+      "file": "xarm_planner/srv/exec_plan.srv",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_planner/joint_plan",
+      "file": "xarm_planner/srv/joint_plan.srv",
+      "registered": true,
+      "bounds": {
+        "request.target": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_planner/pose_plan",
+      "file": "xarm_planner/srv/pose_plan.srv",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 1,
+      "type": "xarm_planner/single_straight_plan",
+      "file": "xarm_planner/srv/single_straight_plan.srv",
+      "registered": true,
+      "bounds": {}
+    }
+  ]
+}

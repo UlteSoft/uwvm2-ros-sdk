@@ -1,0 +1,233 @@
+{
+  "profile": "uwvm-ros-vendor-complete-bounded-v1",
+  "status": "SOURCE_BOUND_NOT_NATIVE_OR_HARDWARE_QUALIFIED",
+  "default_authority": [],
+  "source_inputs": {
+    "catalog": {
+      "bytes": 8874,
+      "sha256": "64e468c2017fc33dcf648158fb98980d42963d29d87b017941a7852e2346b52e"
+    },
+    "definitions": [
+      {
+        "file": "unitree_api/msg/Request.msg",
+        "bytes": 52,
+        "sha256": "095718e795b7fb08210f32fad9b2ce519ca2b0a0976054e772bc89e48fbe14bc"
+      },
+      {
+        "file": "unitree_api/msg/RequestHeader.msg",
+        "bytes": 64,
+        "sha256": "0783c0fd13fa9cd588bc2cd2b7961c98f1312ab7c1e730d62eae43901c093ab3"
+      },
+      {
+        "file": "unitree_api/msg/RequestIdentity.msg",
+        "bytes": 22,
+        "sha256": "ae144634bbd4b142308d3801fe0fe1712b4fad442fe15cca3552fcce127be2fd"
+      },
+      {
+        "file": "unitree_api/msg/RequestLease.msg",
+        "bytes": 8,
+        "sha256": "b16d384a7334bf5f9d59a90800984ba0e5fdf0b5bed931f2ce11557d0f49f879"
+      },
+      {
+        "file": "unitree_api/msg/RequestPolicy.msg",
+        "bytes": 27,
+        "sha256": "b93c83f07a266ed0de9071be1242d7d7c5cd247a5ec494cfd16720d1a41161ee"
+      },
+      {
+        "file": "unitree_api/msg/Response.msg",
+        "bytes": 48,
+        "sha256": "deeb19c6fec4bf67790d33a9e4a391f717840e274f6882e968d7d65c57402a13"
+      },
+      {
+        "file": "unitree_api/msg/ResponseHeader.msg",
+        "bytes": 47,
+        "sha256": "808649ac643d66fa0620c11cec50d7d8f5cba576094cd50a941093b2f7ac673b"
+      },
+      {
+        "file": "unitree_api/msg/ResponseStatus.msg",
+        "bytes": 10,
+        "sha256": "1102bc217ff8add7007d6bd6ffb6d6f183ee1c9b029d20cd5b09cc7134a6ac41"
+      },
+      {
+        "file": "unitree_go/msg/AudioData.msg",
+        "bytes": 30,
+        "sha256": "c875fbedf1b48aa990cbdf061cf2fe406a91152966e155df488d0eb6bbcba9f9"
+      },
+      {
+        "file": "unitree_go/msg/BmsCmd.msg",
+        "bytes": 26,
+        "sha256": "59861adb50b81c76bd1c792e6db604a0cf67e46f781a957bbe422d40e3e60415"
+      },
+      {
+        "file": "unitree_go/msg/BmsState.msg",
+        "bytes": 137,
+        "sha256": "0f7ad8e09f8fd02999da9aa222ab0ecb848d9f70136af78a5ec7a10631959828"
+      },
+      {
+        "file": "unitree_go/msg/Error.msg",
+        "bytes": 26,
+        "sha256": "dcb46b69ed65270bb96c729ad94743b9557d166c048efc5c273eed9cedfa7139"
+      },
+      {
+        "file": "unitree_go/msg/Go2FrontVideoData.msg",
+        "bytes": 72,
+        "sha256": "86078978dd1f90357a6ff41e16f28eb16ccedb15a7302b17d5f5738128fddddf"
+      },
+      {
+        "file": "unitree_go/msg/HeightMap.msg",
+        "bytes": 654,
+        "sha256": "e7b732d004e8a482a19ca231ea85095aa3902584a7dc0a849d1cc6fd210ebfdd"
+      },
+      {
+        "file": "unitree_go/msg/IMUState.msg",
+        "bytes": 100,
+        "sha256": "95b5b2aa84fbbea748a560f18cc3950a6091c5822aa1dba326aa183327cb8198"
+      },
+      {
+        "file": "unitree_go/msg/InterfaceConfig.msg",
+        "bytes": 39,
+        "sha256": "03004edb03d062c83309cf233d2135570538b15c1bf837cbf4f1d515766f3695"
+      },
+      {
+        "file": "unitree_go/msg/LidarState.msg",
+        "bytes": 396,
+        "sha256": "cb3dac931714cabba31604f73d1c69eeaf5ae3d1a2d06bac71d68c54d2d6d5e3"
+      },
+      {
+        "file": "unitree_go/msg/LowCmd.msg",
+        "bytes": 228,
+        "sha256": "5254dae41aaee1c32d879affa5b5393e35303f405e68d65e39fd9606497659ee"
+      },
+      {
+        "file": "unitree_go/msg/LowState.msg",
+        "bytes": 403,
+        "sha256": "927537585595e44ab6753741c78410f43c0fe190f3f2f47825fdb57793ed19e5"
+      },
+      {
+        "file": "unitree_go/msg/MotorCmd.msg",
+        "bytes": 83,
+        "sha256": "067edd164076ca83f13b251a152ac4fe15cdec501a08f845a1ca4f0829dd90b1"
+      },
+      {
+        "file": "unitree_go/msg/MotorCmds.msg",
+        "bytes": 15,
+        "sha256": "85679ea65fae74079c6e094674f600f9f33dabeb4410be51730cc2ee6e6e42cb"
+      },
+      {
+        "file": "unitree_go/msg/MotorState.msg",
+        "bytes": 151,
+        "sha256": "e4c7440b1f096b723e48c626c21ef6b77d828d19af0ce5bd90e28a80590014a0"
+      },
+      {
+        "file": "unitree_go/msg/MotorStates.msg",
+        "bytes": 19,
+        "sha256": "aeb5cf4202e80f24b67bdc7480f745f9bcb3cf17b639bc97b43193827cb8b22f"
+      },
+      {
+        "file": "unitree_go/msg/PathPoint.msg",
+        "bytes": 87,
+        "sha256": "f669eeecb1e279267cef687e2b9485a520e7c7a841a8e1f337611304606e457c"
+      },
+      {
+        "file": "unitree_go/msg/Req.msg",
+        "bytes": 23,
+        "sha256": "b356c1bb1e19aa07f6d7fcf38d5e5ea1888f64ecd9f5f28566e71d4aa97e01f9"
+      },
+      {
+        "file": "unitree_go/msg/Res.msg",
+        "bytes": 36,
+        "sha256": "07d84bf89cc9680b066a21f4d0c40833a94b8401cb8ff6df783cd445c88edeef"
+      },
+      {
+        "file": "unitree_go/msg/SportModeCmd.msg",
+        "bytes": 208,
+        "sha256": "21dc358a1d4cf1f4660c9327c2feb9a85ba67139099b1c506d6a4566dc83b2d0"
+      },
+      {
+        "file": "unitree_go/msg/SportModeState.msg",
+        "bytes": 307,
+        "sha256": "4034e8c6805e002c5ad2327912f52219c712853a51a518378acb1d22764d122c"
+      },
+      {
+        "file": "unitree_go/msg/TimeSpec.msg",
+        "bytes": 212,
+        "sha256": "1bab331c842af6a6847f471cf2aad56ad38139c901b9df436470e7b42f86369f"
+      },
+      {
+        "file": "unitree_go/msg/UwbState.msg",
+        "bytes": 307,
+        "sha256": "8813add9680f3c448c4e35d62a49058709f992024867529754d3cd774fd9686b"
+      },
+      {
+        "file": "unitree_go/msg/UwbSwitch.msg",
+        "bytes": 13,
+        "sha256": "4aa32edaaa274891d5997de5355e000a0dcdd51d7c0702f7b25bbde0b7492dc4"
+      },
+      {
+        "file": "unitree_go/msg/WirelessController.msg",
+        "bytes": 55,
+        "sha256": "ce175fee57fa89c6edfd0d57e8395e5b75788b62ad6d19a393dc68e0f2fddd6d"
+      },
+      {
+        "file": "unitree_hg/msg/BmsCmd.msg",
+        "bytes": 27,
+        "sha256": "9452e803d119863b93e24f8ea541354e50dccf0b82186da4cf7474be6f06de9e"
+      },
+      {
+        "file": "unitree_hg/msg/BmsState.msg",
+        "bytes": 218,
+        "sha256": "2eeb27d31b6105ea72f6a08c7233773f52a73b298df058afcc95d0473d4dc04e"
+      },
+      {
+        "file": "unitree_hg/msg/HandCmd.msg",
+        "bytes": 38,
+        "sha256": "1c99f616847c67f0cb2f11ed504f1608cbd2151e1e966c293ac754dd2e410b97"
+      },
+      {
+        "file": "unitree_hg/msg/HandState.msg",
+        "bytes": 183,
+        "sha256": "75258443eb3a38fcb011033a01df8f3ee9df6a694b5e43e006f5ebe9a6668d8a"
+      },
+      {
+        "file": "unitree_hg/msg/IMUState.msg",
+        "bytes": 101,
+        "sha256": "fdc5aec218a0853d72e6d530018983023b4c69dc8c61ca93cd0d8f7b315a32e7"
+      },
+      {
+        "file": "unitree_hg/msg/LowCmd.msg",
+        "bytes": 86,
+        "sha256": "f61c798b935b60667dd8b5b9e927a0f2d6a156f7c10ccc487d8eb69fdcbcd502"
+      },
+      {
+        "file": "unitree_hg/msg/LowState.msg",
+        "bytes": 163,
+        "sha256": "e0472b7d1d1e5177ccd44ed591c2eca3e0781ebff41b59f2802eb1fa6adbdd57"
+      },
+      {
+        "file": "unitree_hg/msg/MainBoardState.msg",
+        "bytes": 73,
+        "sha256": "7c8d10779d345571de448a44db2eae7d17a8c07e161d070518403b461b4e2d89"
+      },
+      {
+        "file": "unitree_hg/msg/MotorCmd.msg",
+        "bytes": 80,
+        "sha256": "8cd7564b21acfaf933e6a854e7f7958163d3fbf1280c947aaba21fd45ab95ef7"
+      },
+      {
+        "file": "unitree_hg/msg/MotorState.msg",
+        "bytes": 146,
+        "sha256": "9627e5eaaa3d360f33f10b120e7aa45eab811e37b4f67c4321ca03b6fdaa5a5e"
+      },
+      {
+        "file": "unitree_hg/msg/PressSensorState.msg",
+        "bytes": 71,
+        "sha256": "edaf5a0a9fff12a27a18300a02a0eb38cb738271dbe618cf75a9eb67726cb617"
+      }
+    ]
+  },
+  "native_metadata": {
+    "bytes": 104931,
+    "sha256": "882394832fd41676d7dd0014bd0a758b71ab50c4c57d1ad0eb9cbf071e684711"
+  },
+  "constant_schema_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+}

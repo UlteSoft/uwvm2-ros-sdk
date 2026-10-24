@@ -1,0 +1,435 @@
+/// @file Records.fs
+/// @brief Full vendor CLR type aliases for genuine F# applications.
+namespace Uwvm.UniversalRobotsUniversalRobotsRos2Complete
+/// @brief Complete original builtin_interfaces/msg/Duration.
+type Ros2Builtin_interfacesMsgDuration = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Builtin_interfacesMsgDuration
+/// @brief Complete codec for the aliased original value.
+type Ros2Builtin_interfacesMsgDurationCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Builtin_interfacesMsgDurationCodec
+/// @brief Complete original builtin_interfaces/msg/Time.
+type Ros2Builtin_interfacesMsgTime = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Builtin_interfacesMsgTime
+/// @brief Complete codec for the aliased original value.
+type Ros2Builtin_interfacesMsgTimeCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Builtin_interfacesMsgTimeCodec
+/// @brief Complete original control_msgs/msg/JointTolerance.
+type Ros2Control_msgsMsgJointTolerance = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Control_msgsMsgJointTolerance
+/// @brief Complete codec for the aliased original value.
+type Ros2Control_msgsMsgJointToleranceCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Control_msgsMsgJointToleranceCodec
+/// @brief Complete original geometry_msgs/msg/Point.
+type Ros2Geometry_msgsMsgPoint = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Geometry_msgsMsgPoint
+/// @brief Complete codec for the aliased original value.
+type Ros2Geometry_msgsMsgPointCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Geometry_msgsMsgPointCodec
+/// @brief Complete original geometry_msgs/msg/Quaternion.
+type Ros2Geometry_msgsMsgQuaternion = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Geometry_msgsMsgQuaternion
+/// @brief Complete codec for the aliased original value.
+type Ros2Geometry_msgsMsgQuaternionCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Geometry_msgsMsgQuaternionCodec
+/// @brief Complete original geometry_msgs/msg/Pose.
+type Ros2Geometry_msgsMsgPose = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Geometry_msgsMsgPose
+/// @brief Complete codec for the aliased original value.
+type Ros2Geometry_msgsMsgPoseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Geometry_msgsMsgPoseCodec
+/// @brief Complete original std_msgs/msg/Header.
+type Ros2Std_msgsMsgHeader = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Std_msgsMsgHeader
+/// @brief Complete codec for the aliased original value.
+type Ros2Std_msgsMsgHeaderCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Std_msgsMsgHeaderCodec
+/// @brief Complete original geometry_msgs/msg/PoseStamped.
+type Ros2Geometry_msgsMsgPoseStamped = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Geometry_msgsMsgPoseStamped
+/// @brief Complete codec for the aliased original value.
+type Ros2Geometry_msgsMsgPoseStampedCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Geometry_msgsMsgPoseStampedCodec
+/// @brief Complete original geometry_msgs/msg/Vector3.
+type Ros2Geometry_msgsMsgVector3 = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Geometry_msgsMsgVector3
+/// @brief Complete codec for the aliased original value.
+type Ros2Geometry_msgsMsgVector3Codec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Geometry_msgsMsgVector3Codec
+/// @brief Complete original geometry_msgs/msg/Twist.
+type Ros2Geometry_msgsMsgTwist = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Geometry_msgsMsgTwist
+/// @brief Complete codec for the aliased original value.
+type Ros2Geometry_msgsMsgTwistCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Geometry_msgsMsgTwistCodec
+/// @brief Complete original geometry_msgs/msg/Vector3Stamped.
+type Ros2Geometry_msgsMsgVector3Stamped = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Geometry_msgsMsgVector3Stamped
+/// @brief Complete codec for the aliased original value.
+type Ros2Geometry_msgsMsgVector3StampedCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Geometry_msgsMsgVector3StampedCodec
+/// @brief Complete original geometry_msgs/msg/Wrench.
+type Ros2Geometry_msgsMsgWrench = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Geometry_msgsMsgWrench
+/// @brief Complete codec for the aliased original value.
+type Ros2Geometry_msgsMsgWrenchCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Geometry_msgsMsgWrenchCodec
+/// @brief Complete original trajectory_msgs/msg/JointTrajectoryPoint.
+type Ros2Trajectory_msgsMsgJointTrajectoryPoint = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Trajectory_msgsMsgJointTrajectoryPoint
+/// @brief Complete codec for the aliased original value.
+type Ros2Trajectory_msgsMsgJointTrajectoryPointCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Trajectory_msgsMsgJointTrajectoryPointCodec
+/// @brief Complete original trajectory_msgs/msg/JointTrajectory.
+type Ros2Trajectory_msgsMsgJointTrajectory = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Trajectory_msgsMsgJointTrajectory
+/// @brief Complete codec for the aliased original value.
+type Ros2Trajectory_msgsMsgJointTrajectoryCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Trajectory_msgsMsgJointTrajectoryCodec
+/// @brief Complete original ur_dashboard_msgs/action/SetMode_Goal.
+type Ros2Ur_dashboard_msgsActionSetMode_Goal = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsActionSetMode_Goal
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsActionSetMode_GoalCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsActionSetMode_GoalCodec
+/// @brief Complete original ur_dashboard_msgs/action/SetMode_Result.
+type Ros2Ur_dashboard_msgsActionSetMode_Result = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsActionSetMode_Result
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsActionSetMode_ResultCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsActionSetMode_ResultCodec
+/// @brief Complete original ur_dashboard_msgs/action/SetMode_Feedback.
+type Ros2Ur_dashboard_msgsActionSetMode_Feedback = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsActionSetMode_Feedback
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsActionSetMode_FeedbackCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsActionSetMode_FeedbackCodec
+/// @brief Complete original ur_dashboard_msgs/msg/OperationalMode.
+type Ros2Ur_dashboard_msgsMsgOperationalMode = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsMsgOperationalMode
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsMsgOperationalModeCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsMsgOperationalModeCodec
+/// @brief Complete original ur_dashboard_msgs/msg/ProgramInformation.
+type Ros2Ur_dashboard_msgsMsgProgramInformation = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsMsgProgramInformation
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsMsgProgramInformationCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsMsgProgramInformationCodec
+/// @brief Complete original ur_dashboard_msgs/msg/ProgramState.
+type Ros2Ur_dashboard_msgsMsgProgramState = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsMsgProgramState
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsMsgProgramStateCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsMsgProgramStateCodec
+/// @brief Complete original ur_dashboard_msgs/msg/RobotMode.
+type Ros2Ur_dashboard_msgsMsgRobotMode = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsMsgRobotMode
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsMsgRobotModeCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsMsgRobotModeCodec
+/// @brief Complete original ur_dashboard_msgs/msg/SafetyMode.
+type Ros2Ur_dashboard_msgsMsgSafetyMode = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsMsgSafetyMode
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsMsgSafetyModeCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsMsgSafetyModeCodec
+/// @brief Complete original ur_dashboard_msgs/msg/SafetyStatus.
+type Ros2Ur_dashboard_msgsMsgSafetyStatus = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsMsgSafetyStatus
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsMsgSafetyStatusCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsMsgSafetyStatusCodec
+/// @brief Complete original ur_dashboard_msgs/msg/UserRole.
+type Ros2Ur_dashboard_msgsMsgUserRole = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsMsgUserRole
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsMsgUserRoleCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsMsgUserRoleCodec
+/// @brief Complete original ur_dashboard_msgs/msg/VersionInformation.
+type Ros2Ur_dashboard_msgsMsgVersionInformation = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsMsgVersionInformation
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsMsgVersionInformationCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsMsgVersionInformationCodec
+/// @brief Complete original ur_dashboard_msgs/srv/AddToLog_Request.
+type Ros2Ur_dashboard_msgsSrvAddToLog_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvAddToLog_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvAddToLog_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvAddToLog_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/AddToLog_Response.
+type Ros2Ur_dashboard_msgsSrvAddToLog_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvAddToLog_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvAddToLog_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvAddToLog_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/DownloadProgram_Request.
+type Ros2Ur_dashboard_msgsSrvDownloadProgram_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvDownloadProgram_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvDownloadProgram_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvDownloadProgram_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/DownloadProgram_Response.
+type Ros2Ur_dashboard_msgsSrvDownloadProgram_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvDownloadProgram_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvDownloadProgram_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvDownloadProgram_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/DownloadSupportFile_Request.
+type Ros2Ur_dashboard_msgsSrvDownloadSupportFile_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvDownloadSupportFile_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvDownloadSupportFile_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvDownloadSupportFile_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/DownloadSupportFile_Response.
+type Ros2Ur_dashboard_msgsSrvDownloadSupportFile_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvDownloadSupportFile_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvDownloadSupportFile_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvDownloadSupportFile_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GenerateFlightReport_Request.
+type Ros2Ur_dashboard_msgsSrvGenerateFlightReport_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGenerateFlightReport_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGenerateFlightReport_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGenerateFlightReport_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GenerateFlightReport_Response.
+type Ros2Ur_dashboard_msgsSrvGenerateFlightReport_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGenerateFlightReport_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGenerateFlightReport_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGenerateFlightReport_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GenerateSupportFile_Request.
+type Ros2Ur_dashboard_msgsSrvGenerateSupportFile_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGenerateSupportFile_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGenerateSupportFile_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGenerateSupportFile_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GenerateSupportFile_Response.
+type Ros2Ur_dashboard_msgsSrvGenerateSupportFile_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGenerateSupportFile_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGenerateSupportFile_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGenerateSupportFile_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetLoadedProgram_Request.
+type Ros2Ur_dashboard_msgsSrvGetLoadedProgram_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetLoadedProgram_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetLoadedProgram_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetLoadedProgram_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetLoadedProgram_Response.
+type Ros2Ur_dashboard_msgsSrvGetLoadedProgram_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetLoadedProgram_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetLoadedProgram_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetLoadedProgram_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetOperationalMode_Request.
+type Ros2Ur_dashboard_msgsSrvGetOperationalMode_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetOperationalMode_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetOperationalMode_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetOperationalMode_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetOperationalMode_Response.
+type Ros2Ur_dashboard_msgsSrvGetOperationalMode_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetOperationalMode_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetOperationalMode_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetOperationalMode_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetPolyScopeVersion_Request.
+type Ros2Ur_dashboard_msgsSrvGetPolyScopeVersion_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetPolyScopeVersion_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetPolyScopeVersion_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetPolyScopeVersion_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetPolyScopeVersion_Response.
+type Ros2Ur_dashboard_msgsSrvGetPolyScopeVersion_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetPolyScopeVersion_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetPolyScopeVersion_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetPolyScopeVersion_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetProgramState_Request.
+type Ros2Ur_dashboard_msgsSrvGetProgramState_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetProgramState_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetProgramState_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetProgramState_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetProgramState_Response.
+type Ros2Ur_dashboard_msgsSrvGetProgramState_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetProgramState_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetProgramState_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetProgramState_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetPrograms_Request.
+type Ros2Ur_dashboard_msgsSrvGetPrograms_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetPrograms_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetPrograms_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetPrograms_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetPrograms_Response.
+type Ros2Ur_dashboard_msgsSrvGetPrograms_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetPrograms_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetPrograms_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetPrograms_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetRobotMode_Request.
+type Ros2Ur_dashboard_msgsSrvGetRobotMode_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetRobotMode_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetRobotMode_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetRobotMode_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetRobotMode_Response.
+type Ros2Ur_dashboard_msgsSrvGetRobotMode_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetRobotMode_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetRobotMode_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetRobotMode_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetRobotModel_Request.
+type Ros2Ur_dashboard_msgsSrvGetRobotModel_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetRobotModel_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetRobotModel_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetRobotModel_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetRobotModel_Response.
+type Ros2Ur_dashboard_msgsSrvGetRobotModel_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetRobotModel_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetRobotModel_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetRobotModel_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetSafetyMode_Request.
+type Ros2Ur_dashboard_msgsSrvGetSafetyMode_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetSafetyMode_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetSafetyMode_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetSafetyMode_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetSafetyMode_Response.
+type Ros2Ur_dashboard_msgsSrvGetSafetyMode_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetSafetyMode_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetSafetyMode_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetSafetyMode_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetSafetyStatus_Request.
+type Ros2Ur_dashboard_msgsSrvGetSafetyStatus_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetSafetyStatus_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetSafetyStatus_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetSafetyStatus_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetSafetyStatus_Response.
+type Ros2Ur_dashboard_msgsSrvGetSafetyStatus_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetSafetyStatus_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetSafetyStatus_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetSafetyStatus_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetSerialNumber_Request.
+type Ros2Ur_dashboard_msgsSrvGetSerialNumber_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetSerialNumber_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetSerialNumber_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetSerialNumber_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetSerialNumber_Response.
+type Ros2Ur_dashboard_msgsSrvGetSerialNumber_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetSerialNumber_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetSerialNumber_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetSerialNumber_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetUserRole_Request.
+type Ros2Ur_dashboard_msgsSrvGetUserRole_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetUserRole_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetUserRole_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetUserRole_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/GetUserRole_Response.
+type Ros2Ur_dashboard_msgsSrvGetUserRole_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvGetUserRole_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvGetUserRole_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvGetUserRole_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/IsInRemoteControl_Request.
+type Ros2Ur_dashboard_msgsSrvIsInRemoteControl_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvIsInRemoteControl_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvIsInRemoteControl_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvIsInRemoteControl_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/IsInRemoteControl_Response.
+type Ros2Ur_dashboard_msgsSrvIsInRemoteControl_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvIsInRemoteControl_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvIsInRemoteControl_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvIsInRemoteControl_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/IsProgramRunning_Request.
+type Ros2Ur_dashboard_msgsSrvIsProgramRunning_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvIsProgramRunning_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvIsProgramRunning_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvIsProgramRunning_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/IsProgramRunning_Response.
+type Ros2Ur_dashboard_msgsSrvIsProgramRunning_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvIsProgramRunning_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvIsProgramRunning_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvIsProgramRunning_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/IsProgramSaved_Request.
+type Ros2Ur_dashboard_msgsSrvIsProgramSaved_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvIsProgramSaved_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvIsProgramSaved_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvIsProgramSaved_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/IsProgramSaved_Response.
+type Ros2Ur_dashboard_msgsSrvIsProgramSaved_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvIsProgramSaved_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvIsProgramSaved_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvIsProgramSaved_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/Load_Request.
+type Ros2Ur_dashboard_msgsSrvLoad_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvLoad_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvLoad_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvLoad_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/Load_Response.
+type Ros2Ur_dashboard_msgsSrvLoad_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvLoad_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvLoad_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvLoad_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/Popup_Request.
+type Ros2Ur_dashboard_msgsSrvPopup_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvPopup_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvPopup_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvPopup_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/Popup_Response.
+type Ros2Ur_dashboard_msgsSrvPopup_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvPopup_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvPopup_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvPopup_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/RawRequest_Request.
+type Ros2Ur_dashboard_msgsSrvRawRequest_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvRawRequest_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvRawRequest_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvRawRequest_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/RawRequest_Response.
+type Ros2Ur_dashboard_msgsSrvRawRequest_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvRawRequest_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvRawRequest_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvRawRequest_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/SetOperationalMode_Request.
+type Ros2Ur_dashboard_msgsSrvSetOperationalMode_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvSetOperationalMode_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvSetOperationalMode_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvSetOperationalMode_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/SetOperationalMode_Response.
+type Ros2Ur_dashboard_msgsSrvSetOperationalMode_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvSetOperationalMode_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvSetOperationalMode_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvSetOperationalMode_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/SetUserRole_Request.
+type Ros2Ur_dashboard_msgsSrvSetUserRole_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvSetUserRole_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvSetUserRole_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvSetUserRole_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/SetUserRole_Response.
+type Ros2Ur_dashboard_msgsSrvSetUserRole_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvSetUserRole_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvSetUserRole_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvSetUserRole_ResponseCodec
+/// @brief Complete original ur_dashboard_msgs/srv/UploadProgram_Request.
+type Ros2Ur_dashboard_msgsSrvUploadProgram_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvUploadProgram_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvUploadProgram_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvUploadProgram_RequestCodec
+/// @brief Complete original ur_dashboard_msgs/srv/UploadProgram_Response.
+type Ros2Ur_dashboard_msgsSrvUploadProgram_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_dashboard_msgsSrvUploadProgram_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_dashboard_msgsSrvUploadProgram_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_dashboard_msgsSrvUploadProgram_ResponseCodec
+/// @brief Complete original ur_msgs/action/FollowJointTrajectoryUntil_Goal.
+type Ros2Ur_msgsActionFollowJointTrajectoryUntil_Goal = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionFollowJointTrajectoryUntil_Goal
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionFollowJointTrajectoryUntil_GoalCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionFollowJointTrajectoryUntil_GoalCodec
+/// @brief Complete original ur_msgs/action/FollowJointTrajectoryUntil_Result.
+type Ros2Ur_msgsActionFollowJointTrajectoryUntil_Result = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionFollowJointTrajectoryUntil_Result
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionFollowJointTrajectoryUntil_ResultCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionFollowJointTrajectoryUntil_ResultCodec
+/// @brief Complete original ur_msgs/action/FollowJointTrajectoryUntil_Feedback.
+type Ros2Ur_msgsActionFollowJointTrajectoryUntil_Feedback = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionFollowJointTrajectoryUntil_Feedback
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionFollowJointTrajectoryUntil_FeedbackCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionFollowJointTrajectoryUntil_FeedbackCodec
+/// @brief Complete original ur_msgs/action/SendScript_Goal.
+type Ros2Ur_msgsActionSendScript_Goal = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionSendScript_Goal
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionSendScript_GoalCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionSendScript_GoalCodec
+/// @brief Complete original ur_msgs/action/SendScript_Result.
+type Ros2Ur_msgsActionSendScript_Result = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionSendScript_Result
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionSendScript_ResultCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionSendScript_ResultCodec
+/// @brief Complete original ur_msgs/action/SendScript_Feedback.
+type Ros2Ur_msgsActionSendScript_Feedback = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionSendScript_Feedback
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionSendScript_FeedbackCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionSendScript_FeedbackCodec
+/// @brief Complete original ur_msgs/action/ToolContact_Goal.
+type Ros2Ur_msgsActionToolContact_Goal = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionToolContact_Goal
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionToolContact_GoalCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionToolContact_GoalCodec
+/// @brief Complete original ur_msgs/action/ToolContact_Result.
+type Ros2Ur_msgsActionToolContact_Result = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionToolContact_Result
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionToolContact_ResultCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionToolContact_ResultCodec
+/// @brief Complete original ur_msgs/action/ToolContact_Feedback.
+type Ros2Ur_msgsActionToolContact_Feedback = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsActionToolContact_Feedback
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsActionToolContact_FeedbackCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsActionToolContact_FeedbackCodec
+/// @brief Complete original ur_msgs/msg/Analog.
+type Ros2Ur_msgsMsgAnalog = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsMsgAnalog
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsMsgAnalogCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsMsgAnalogCodec
+/// @brief Complete original ur_msgs/msg/Digital.
+type Ros2Ur_msgsMsgDigital = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsMsgDigital
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsMsgDigitalCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsMsgDigitalCodec
+/// @brief Complete original ur_msgs/msg/FrictionModelParameters.
+type Ros2Ur_msgsMsgFrictionModelParameters = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsMsgFrictionModelParameters
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsMsgFrictionModelParametersCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsMsgFrictionModelParametersCodec
+/// @brief Complete original ur_msgs/msg/IOStates.
+type Ros2Ur_msgsMsgIOStates = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsMsgIOStates
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsMsgIOStatesCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsMsgIOStatesCodec
+/// @brief Complete original ur_msgs/msg/MasterboardDataMsg.
+type Ros2Ur_msgsMsgMasterboardDataMsg = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsMsgMasterboardDataMsg
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsMsgMasterboardDataMsgCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsMsgMasterboardDataMsgCodec
+/// @brief Complete original ur_msgs/msg/RobotModeDataMsg.
+type Ros2Ur_msgsMsgRobotModeDataMsg = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsMsgRobotModeDataMsg
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsMsgRobotModeDataMsgCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsMsgRobotModeDataMsgCodec
+/// @brief Complete original ur_msgs/msg/RobotStateRTMsg.
+type Ros2Ur_msgsMsgRobotStateRTMsg = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsMsgRobotStateRTMsg
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsMsgRobotStateRTMsgCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsMsgRobotStateRTMsgCodec
+/// @brief Complete original ur_msgs/msg/ToolDataMsg.
+type Ros2Ur_msgsMsgToolDataMsg = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsMsgToolDataMsg
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsMsgToolDataMsgCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsMsgToolDataMsgCodec
+/// @brief Complete original ur_msgs/srv/GetRobotSoftwareVersion_Request.
+type Ros2Ur_msgsSrvGetRobotSoftwareVersion_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvGetRobotSoftwareVersion_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvGetRobotSoftwareVersion_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvGetRobotSoftwareVersion_RequestCodec
+/// @brief Complete original ur_msgs/srv/GetRobotSoftwareVersion_Response.
+type Ros2Ur_msgsSrvGetRobotSoftwareVersion_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvGetRobotSoftwareVersion_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvGetRobotSoftwareVersion_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvGetRobotSoftwareVersion_ResponseCodec
+/// @brief Complete original ur_msgs/srv/SetAnalogOutput_Request.
+type Ros2Ur_msgsSrvSetAnalogOutput_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetAnalogOutput_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetAnalogOutput_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetAnalogOutput_RequestCodec
+/// @brief Complete original ur_msgs/srv/SetAnalogOutput_Response.
+type Ros2Ur_msgsSrvSetAnalogOutput_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetAnalogOutput_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetAnalogOutput_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetAnalogOutput_ResponseCodec
+/// @brief Complete original ur_msgs/srv/SetForceMode_Request.
+type Ros2Ur_msgsSrvSetForceMode_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetForceMode_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetForceMode_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetForceMode_RequestCodec
+/// @brief Complete original ur_msgs/srv/SetForceMode_Response.
+type Ros2Ur_msgsSrvSetForceMode_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetForceMode_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetForceMode_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetForceMode_ResponseCodec
+/// @brief Complete original ur_msgs/srv/SetFrictionModelParameters_Request.
+type Ros2Ur_msgsSrvSetFrictionModelParameters_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetFrictionModelParameters_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetFrictionModelParameters_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetFrictionModelParameters_RequestCodec
+/// @brief Complete original ur_msgs/srv/SetFrictionModelParameters_Response.
+type Ros2Ur_msgsSrvSetFrictionModelParameters_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetFrictionModelParameters_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetFrictionModelParameters_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetFrictionModelParameters_ResponseCodec
+/// @brief Complete original ur_msgs/srv/SetGravity_Request.
+type Ros2Ur_msgsSrvSetGravity_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetGravity_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetGravity_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetGravity_RequestCodec
+/// @brief Complete original ur_msgs/srv/SetGravity_Response.
+type Ros2Ur_msgsSrvSetGravity_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetGravity_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetGravity_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetGravity_ResponseCodec
+/// @brief Complete original ur_msgs/srv/SetIO_Request.
+type Ros2Ur_msgsSrvSetIO_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetIO_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetIO_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetIO_RequestCodec
+/// @brief Complete original ur_msgs/srv/SetIO_Response.
+type Ros2Ur_msgsSrvSetIO_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetIO_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetIO_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetIO_ResponseCodec
+/// @brief Complete original ur_msgs/srv/SetPayload_Request.
+type Ros2Ur_msgsSrvSetPayload_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetPayload_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetPayload_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetPayload_RequestCodec
+/// @brief Complete original ur_msgs/srv/SetPayload_Response.
+type Ros2Ur_msgsSrvSetPayload_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetPayload_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetPayload_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetPayload_ResponseCodec
+/// @brief Complete original ur_msgs/srv/SetSpeedSliderFraction_Request.
+type Ros2Ur_msgsSrvSetSpeedSliderFraction_Request = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetSpeedSliderFraction_Request
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetSpeedSliderFraction_RequestCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetSpeedSliderFraction_RequestCodec
+/// @brief Complete original ur_msgs/srv/SetSpeedSliderFraction_Response.
+type Ros2Ur_msgsSrvSetSpeedSliderFraction_Response = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords._Ros2Ur_msgsSrvSetSpeedSliderFraction_Response
+/// @brief Complete codec for the aliased original value.
+type Ros2Ur_msgsSrvSetSpeedSliderFraction_ResponseCodec = Uwvm.UniversalRobotsUniversalRobotsRos2Complete.Models.BoundedRecords.Ros2Ur_msgsSrvSetSpeedSliderFraction_ResponseCodec

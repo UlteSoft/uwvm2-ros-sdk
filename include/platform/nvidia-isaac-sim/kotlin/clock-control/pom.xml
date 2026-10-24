@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Genuine Kotlin/JVM-IR library; build only with its admitted offline closure.
+     Generated records and the actual Java platform/shared SDK artifacts are
+     required dependencies, not copied or replaced Kotlin wire implementations. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.uwvm</groupId><artifactId>roswasm-isaac-sim-clock-kotlin</artifactId><version>1.0.0</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <kotlin.version>2.1.20</kotlin.version>
+  </properties>
+  <dependencies>
+    <dependency><groupId>org.uwvm</groupId><artifactId>roswasm-isaac-sim-clock</artifactId><version>1.0.0</version></dependency>
+    <dependency><groupId>org.jetbrains.kotlin</groupId><artifactId>kotlin-stdlib</artifactId><version>${kotlin.version}</version></dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src/main/kotlin</sourceDirectory>
+    <plugins><plugin>
+      <groupId>org.jetbrains.kotlin</groupId><artifactId>kotlin-maven-plugin</artifactId><version>${kotlin.version}</version>
+      <executions><execution><id>kotlin</id><phase>compile</phase><goals><goal>compile</goal></goals></execution></executions>
+      <configuration><jvmTarget>17</jvmTarget><languageVersion>2.1</languageVersion></configuration>
+    </plugin></plugins>
+  </build>
+</project>

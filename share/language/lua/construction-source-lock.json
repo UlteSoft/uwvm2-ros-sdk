@@ -1,0 +1,474 @@
+{
+  "format": "uwvm-shared-interpreter-source-lock-v2",
+  "language": "lua",
+  "version": "5.4.8",
+  "upstream_url": "https://www.lua.org/ftp/lua-5.4.8.tar.gz",
+  "upstream_archive_sha256": "4f18ddae154e793e46eeab727c59ef1c0c0c2b744e7b94219710d76f530629ae",
+  "llvm_version": "23.1.4",
+  "source_date_epoch": 1792635234,
+  "logical_sdk_prefix": "/__uwvm_sdk__",
+  "logical_build_prefix": "/__uwvm_build__/lua",
+  "files": [
+    {
+      "path": "share/language/lua/layout-members.json",
+      "bytes": 17724,
+      "sha256": "3d24d5a59ada74214c71404a16fbe84017d4e00c400eff3eb5a2f38ca2270181"
+    },
+    {
+      "path": "share/language/lua/reviewed-source.json",
+      "bytes": 14036,
+      "sha256": "1c2992c204d2a4f5c7c28aaa437e2d6e2a8239594ef46efc6a276614948f2155"
+    },
+    {
+      "path": "share/language/lua/source-layout.patch",
+      "bytes": 1701473,
+      "sha256": "c0521abddf23b8127721e7dced4c8201f988cc0b46e74bd67d83c26c5255e2be"
+    },
+    {
+      "path": "share/language/lua/upstream.json",
+      "bytes": 15681,
+      "sha256": "786eeaa44890656f7b7cf966a269643cbab019ccbb3443ac1b5325faef00a8a7"
+    },
+    {
+      "path": "src/language/lua/command.c",
+      "bytes": 8014,
+      "sha256": "1eb10873614ff07d1ae9a3534b1ed07696b83accaf2c9d1cbc74652708e0c9a8"
+    },
+    {
+      "path": "src/language/lua/guest_config.h",
+      "bytes": 4867,
+      "sha256": "e34fd79b709d7ade30dd2885e83dbfe4d8c799808656f93f52d4258cba219ff2"
+    },
+    {
+      "path": "src/language/lua/modules/observation.lua",
+      "bytes": 5979,
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "path": "src/language/lua/native.c.in",
+      "bytes": 16485,
+      "sha256": "9ff380b68af33c0b4df6a9aeb2cf8dd961d08a1cdf8c4b22b23f9bf58fca2710"
+    },
+    {
+      "path": "src/language/lua/upstream/Makefile",
+      "bytes": 3150,
+      "sha256": "9f795369736889308d67ed639a3944c34ea3b91cd98287a21a3a60cf95ac4ae9"
+    },
+    {
+      "path": "src/language/lua/upstream/README",
+      "bytes": 151,
+      "sha256": "c4fb70c135345decfcf9bae79106e8eb3c2f4625c922f53b9bea7288ed2c363a"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/OSIApproved_100X125.png",
+      "bytes": 12127,
+      "sha256": "0f6cc3aaa68597034efda8bb6bfa214fc2fde99bd1e67d0bb32d7fe75a5dc777"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/contents.html",
+      "bytes": 32733,
+      "sha256": "2198624e43488a8183ea35f9d25714193d89a55d2da63e269160c7a4b4e27e06"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/index.css",
+      "bytes": 240,
+      "sha256": "b6ef324ca66e9ffdafa9e5b5a1478a548aa20f3a23f264eb1bed6d21c1c7d039"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/logo.gif",
+      "bytes": 9893,
+      "sha256": "de4ca280a5561940ace4b1a72dc5bc1d96ac154e59c7ae32d98ddcde010baeaa"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/lua.1",
+      "bytes": 3100,
+      "sha256": "1e30751606577e71f55f664f03eb58e644c17ee786f80e43c396c94521b370a5"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/lua.css",
+      "bytes": 2247,
+      "sha256": "73e7e5fa61afec5f04f5e43ad5c8348620abc41b8e4671631300b5defe3f2826"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/luac.1",
+      "bytes": 3071,
+      "sha256": "ac60e6992db478539dff611beed7ad01f52622c897657a9152165470039b0494"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/manual.css",
+      "bytes": 256,
+      "sha256": "759bbd5b1935c43cc9ed427c9facd5fe259c5033a4ce0c05225175c36b07bb8c"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/manual.html",
+      "bytes": 362125,
+      "sha256": "3bfa6dd7a33a8122038982903fcfa4f95720be2bce4f4bb2972241429b2c1956"
+    },
+    {
+      "path": "src/language/lua/upstream/doc/readme.html",
+      "bytes": 11056,
+      "sha256": "3773a4900f3539c56aea9d6cd48d71c8751d495c4abc28472706bb9553d1493c"
+    },
+    {
+      "path": "src/language/lua/upstream/src/Makefile",
+      "bytes": 7685,
+      "sha256": "d945aee4718785b5bbdbc575d76a16ef60bd65cbfed47ef53e7ced99b580371d"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lapi.c",
+      "bytes": 36182,
+      "sha256": "6afef609bc1d93280a1da898c82734b14ca94d98f72d786c397c5988e6cc6e98"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lapi.h",
+      "bytes": 1427,
+      "sha256": "9522209670086adfbb11379416078a7f4dafe154043e320cd435fa1811aaabfb"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lauxlib.c",
+      "bytes": 33543,
+      "sha256": "50ef12f21926fa3b80d1e9e611c5e4669012efe792b5a3515fd5a7ee1cc796e3"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lauxlib.h",
+      "bytes": 9314,
+      "sha256": "2d9e18e577a6062646268e7f7228264c28bd9b972c186e1af81b8357179c0ab4"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lbaselib.c",
+      "bytes": 15478,
+      "sha256": "5dc9a64468c1ac31e59066c7d3597eeb8ea4ac8fc19a257a74c431624300b487"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lcode.c",
+      "bytes": 53215,
+      "sha256": "2cf13c7f8205e9f07c2ccf1fedc3f0f0a05d238c194b176c72cc22b2cc96210e"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lcode.h",
+      "bytes": 3636,
+      "sha256": "c5ad73fb12fd3e9f6b6a5f37fea5b60e4c09f8a262e9ac3ca85e8e047f745cea"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lcorolib.c",
+      "bytes": 4856,
+      "sha256": "5408ccec737678d045d421f84a56e1ce03192a42c55440ffef07bec356aaec89"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lctype.c",
+      "bytes": 2461,
+      "sha256": "3e21ae6a8faab3ed470ae0de19360da6b4e21a0a0f8572f502f7e13d590186f8"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lctype.h",
+      "bytes": 2115,
+      "sha256": "c800311872ecba642f6d013b290eda83ba6cd8df8061e25cdca1dd4adcbed8b5"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ldblib.c",
+      "bytes": 13356,
+      "sha256": "349afd63c8be2cb8a522e4a04e9f444b65ed1fc7f4dabba5b4b61fd8c11d0c42"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ldebug.c",
+      "bytes": 29785,
+      "sha256": "06d065d1f26c29546cc74b61a50267cb70567ae538691f190bf15ca5cd29d308"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ldebug.h",
+      "bytes": 2215,
+      "sha256": "b0fd38f6461251ec481cf5633d622569cef939067e37cac23331d9f96b601702"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ldo.c",
+      "bytes": 35053,
+      "sha256": "ff588c58143d3dd75157004a5a785044beb9a6746378ccc6e46d4b3a303657c2"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ldo.h",
+      "bytes": 3249,
+      "sha256": "f150c09811f1d1f302dd9eafea36d4003a834c7af24fb6329b4e9a1970c3dfec"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ldump.c",
+      "bytes": 4879,
+      "sha256": "3c05402c5e282e06c2218f2469b1f38e1b84c783b9387aec7740c60b287d82c9"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lfunc.c",
+      "bytes": 8423,
+      "sha256": "38809428b76fafa79db9f65b7248cc0c02c9b696e7410fc4ab1699940768f1b2"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lfunc.h",
+      "bytes": 1708,
+      "sha256": "81dc02d55ae8000461ab90bb9689d2600ba51f2ea9ac9fb019386995c07e3e4a"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lgc.c",
+      "bytes": 56792,
+      "sha256": "bf28b521954d66ba02a49569c0f7bf37ebdd4f0a62fde4312284e817fb1e42fe"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lgc.h",
+      "bytes": 6431,
+      "sha256": "c83d3b8e31345c0aacd37442954a7f2434312ee48f98a8b9ae4fc8aad26d0c99"
+    },
+    {
+      "path": "src/language/lua/upstream/src/linit.c",
+      "bytes": 1621,
+      "sha256": "3578568e27b9c1e2f4a7f9a53fdb4bc8ac095db75cc86e966bb1deec2792158e"
+    },
+    {
+      "path": "src/language/lua/upstream/src/liolib.c",
+      "bytes": 22211,
+      "sha256": "bd3176d1c5d30d61fdfc2aa17d7af0819f2da51694942a24b6c185ef797f0060"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ljumptab.h",
+      "bytes": 1663,
+      "sha256": "6c3e9858b9dad03ccd61445ab0bff0eb6ddfa5e731e044f93350fe6c6b2ad8d5"
+    },
+    {
+      "path": "src/language/lua/upstream/src/llex.c",
+      "bytes": 17100,
+      "sha256": "5cfbaabf3dc0d75835aaafc37fcd87a92f3dba451e002732747b602fda122958"
+    },
+    {
+      "path": "src/language/lua/upstream/src/llex.h",
+      "bytes": 2402,
+      "sha256": "5ce0302528260ed6a40ec3ebf5e27d3bc108242d9dca57e8cdbe80fe34e13410"
+    },
+    {
+      "path": "src/language/lua/upstream/src/llimits.h",
+      "bytes": 9294,
+      "sha256": "d588bdac3c8e1adc88df3dc92c950a1bfa29663d15f9221f58e2aa553b05a422"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lmathlib.c",
+      "bytes": 19616,
+      "sha256": "da5c7d74cffce22f0a9eb468e6e7e80b543ea6bec5c21aefb8cf285a3556722a"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lmem.c",
+      "bytes": 6174,
+      "sha256": "6154c2865bec97e61a92d8284be7e8ba21818f6edc95f5d72adb5dcf3e9532ca"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lmem.h",
+      "bytes": 3368,
+      "sha256": "8318a170a1d4bf21c3cb4deb1f8661f1dc7cf4eb688e4ec9a1e7ea16bfc3b5cf"
+    },
+    {
+      "path": "src/language/lua/upstream/src/loadlib.c",
+      "bytes": 22892,
+      "sha256": "f21cafa3258669d6f8c4f09195c654a4a588ab402f5e976c731918658b747a5b"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lobject.c",
+      "bytes": 19504,
+      "sha256": "7a9748e38c52e45bc468cae74ccea08b98f8c53a523c1b0f9a117e5cf162c921"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lobject.h",
+      "bytes": 22773,
+      "sha256": "8539beae7dd9a08efc09b04d64c09663e9afc0f2ad342abc612bb000c0c9be70"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lopcodes.c",
+      "bytes": 4126,
+      "sha256": "bdc9d39fd8bf1a350c0249f726c5f61bef64b122b93a0fbc172b0328dc01f594"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lopcodes.h",
+      "bytes": 13367,
+      "sha256": "b3f511933be3039a4b92ba79601b2e5daf75b34f268bfc757adf3e24ea4f1ec9"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lopnames.h",
+      "bytes": 1143,
+      "sha256": "fbdbebc96b136efc6165cba1ac2b311b0c52413aaef59ae9ec750748f13c9e9a"
+    },
+    {
+      "path": "src/language/lua/upstream/src/loslib.c",
+      "bytes": 11825,
+      "sha256": "474f2a3ee7ca8083e4552177da426ea159be82b4b34f3bd2151239810b57bb0e"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lparser.c",
+      "bytes": 56339,
+      "sha256": "c5507307586c1a2336a7722229f7b350ae9c548b854933b370ad150e9e6e7f84"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lparser.h",
+      "bytes": 5927,
+      "sha256": "68c34ef2d6e5a227f7cff18436a42c6739b1470ce12f059f168d9bb69fc8d49c"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lprefix.h",
+      "bytes": 828,
+      "sha256": "626785d4eda75e9435f0ac21a780ae3b11f8b27dc36934e637a5c2305f906531"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lstate.c",
+      "bytes": 11600,
+      "sha256": "5b2003a6bd7c8d98af10f4851ced899581130d5ba9db831cedcc7ac53314e806"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lstate.h",
+      "bytes": 15302,
+      "sha256": "ac1f8464e0d0dc6c9d22220bc3b5ec682c91de81a661bfb5f971e22b8fce0a9a"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lstring.c",
+      "bytes": 7580,
+      "sha256": "b6162f3a65735a902911ffafcafe1db0994c3b0df441581dcbb04dca6bc0b71d"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lstring.h",
+      "bytes": 1603,
+      "sha256": "a8cb0d737276f6a41071a0776ee1d8aa13cf02fa7c79ea096d202b14ea792e31"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lstrlib.c",
+      "bytes": 56541,
+      "sha256": "3257cd857653560773947d70b65c8b8bf8ef43f920ed449587fa662224d859e1"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ltable.c",
+      "bytes": 32757,
+      "sha256": "27a711276b1e22aaea3b9182e2d17693f598cfe9bc7fd203c05d400df6673853"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ltable.h",
+      "bytes": 2052,
+      "sha256": "1c8736b87aa408ef2afebfe693f46ae5424d658d798fb2a8a88b6868cf5569b5"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ltablib.c",
+      "bytes": 13227,
+      "sha256": "3d430a6f9cde66d0b791444c6164e7559ccf62b7cdc3a6325882408c6806e26c"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ltm.c",
+      "bytes": 8268,
+      "sha256": "7cbe645ed7e1161d31eb32ea467d8220b592c0acfa6107f0194487f0ddbf954b"
+    },
+    {
+      "path": "src/language/lua/upstream/src/ltm.h",
+      "bytes": 2907,
+      "sha256": "5b2f6e59951edeef6e71bebe5ac4351f4b3602ee0461729308b80dcee8cea910"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lua.c",
+      "bytes": 20475,
+      "sha256": "d2c482b9f389699ee6eb0018a20a2d7be66a94a26b2c8554725a79f846ca7596"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lua.h",
+      "bytes": 15949,
+      "sha256": "3b77329f9deed929a5cbe7a7d5fc81ebbb63fd869a49e0a9302fe9240caf1930"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lua.hpp",
+      "bytes": 191,
+      "sha256": "fd83f7e823cfbb03ac2da937ec83f01b4a6ddaac220a4fa1ffd6c6c3842c5890"
+    },
+    {
+      "path": "src/language/lua/upstream/src/luac.c",
+      "bytes": 15145,
+      "sha256": "3a424e6cb4177886c8790821cf15345f488764bc215eb29719c80002ef24cdc1"
+    },
+    {
+      "path": "src/language/lua/upstream/src/luaconf.h",
+      "bytes": 21743,
+      "sha256": "af243c94bee6d2601383e8b65ed66a0d1b4ab3b7418ff903fcd0679912160e3a"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lualib.h",
+      "bytes": 1116,
+      "sha256": "4ea0f67d3e467f5d6a327616e22a3c2da8e03d47a3c3660916275f2842f521ea"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lundump.c",
+      "bytes": 7976,
+      "sha256": "7f7b078026e162161d402feba73a69cbe66a98558ec0745a445a595f42eac688"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lundump.h",
+      "bytes": 805,
+      "sha256": "1137c0c9d8654ce223374d21c52a599fd1cc1ccb869801f87a27238a7bf55e8e"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lutf8lib.c",
+      "bytes": 8148,
+      "sha256": "ed24c3faa8abda78ee6df53f011475ab9565a2e3ace64e714bd412c90160742c"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lvm.c",
+      "bytes": 59115,
+      "sha256": "88b10a2f1f539cdfbefac818c64ceee59ac1b5f55038643637109a98834bb926"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lvm.h",
+      "bytes": 4552,
+      "sha256": "aba601b887236d5e135392e0c49370df3b5a9ac5c66ab2d44156b3244f2dcef3"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lzio.c",
+      "bytes": 1322,
+      "sha256": "fba61ceeeb257a3fe5f63310f21e14fc26c4be647583dcf8e74cbc7fb7e43e8a"
+    },
+    {
+      "path": "src/language/lua/upstream/src/lzio.h",
+      "bytes": 1438,
+      "sha256": "9673f62eac2d0fe3010f9d23148be7b8113319fdf4c4490015cd9feae2ecaad4"
+    },
+    {
+      "path": "tools/language/js/maintenance.py",
+      "bytes": 14971,
+      "sha256": "264ed1222622c5e79f37ee7b408f36fcc482c8f5acdf3fa2fadea633eac58958"
+    },
+    {
+      "path": "tools/language/js/pack.lua",
+      "bytes": 13396,
+      "sha256": "92fd918503bb627a1675f2f402f65d7ab0259cbdabf65dc73cdb0d5daead153a"
+    },
+    {
+      "path": "tools/language/js/wasm.py",
+      "bytes": 11035,
+      "sha256": "353f7a98053513d6de0f70c1c975c8b04ddb9220484d507c425cfea567df965b"
+    },
+    {
+      "path": "tools/language/lua/build.py",
+      "bytes": 6074,
+      "sha256": "f489c9b5bcf4a2de63c985cf58c14176112da65a841a7370e452545e59cf187f"
+    },
+    {
+      "path": "tools/language/lua/layout.py",
+      "bytes": 3277,
+      "sha256": "2dcea8c2fb2372f9ba133a0d323c6f7cf3f844fd610ff3203db939b0b687add5"
+    },
+    {
+      "path": "tools/language/lua/lua_bridge.py",
+      "bytes": 7714,
+      "sha256": "f79b127f68586ea259b443d5bba253e1cb8d8dffe61602d09423e1fba7d55435"
+    },
+    {
+      "path": "tools/language/lua/lua_stdlib.py",
+      "bytes": 2795,
+      "sha256": "6b69bc75d507190bfd57f3eb205e9a7e8fc4d7f23a5f30cd200527857c95abaf"
+    },
+    {
+      "path": "tools/language/lua/pack.lua",
+      "bytes": 543,
+      "sha256": "0169bcaab10c79bbd498477397ef5a7a07c3e451ce2827804d421b50797d733e"
+    }
+  ],
+  "external_inputs": [
+    "share/toolchains/host/linux-x86_64/llvm23.json",
+    "share/wasm/toolchains.json",
+    "share/abi/abi-v1.json"
+  ],
+  "qualification": "Source identity only. Rebuild and execution must be recorded separately."
+}

@@ -1,0 +1,3187 @@
+{
+  "archive_bytes": 221953,
+  "archive_sha256": "249aa3b8afab62f023617e89ea2ea155873c0fb73a26596d61a3b6f7950edd4d",
+  "archive_url": "https://codeload.github.com/ros-industrial/abb_robot_driver/tar.gz/d1678957d3792e6aa54582ff894db62b6a51dac0",
+  "archive_variants": [],
+  "cache_uses": [
+    {
+      "path": "original-review-workspace/agents/07/20261021-source-r4/work/upstream/abb/ros1-driver/tree.json",
+      "sha256": "12a853b56cd975242272e0169644e83a68d70df5cfca20d14337156ee274830b",
+      "url": "https://api.github.com/repos/ros-industrial/abb_robot_driver/git/trees/d1678957d3792e6aa54582ff894db62b6a51dac0?recursive=1"
+    },
+    {
+      "path": "original-review-workspace/agents/07/20261021-source-r4/work/upstream/abb/ros1-driver/original.tar.gz",
+      "sha256": "249aa3b8afab62f023617e89ea2ea155873c0fb73a26596d61a3b6f7950edd4d",
+      "url": "https://codeload.github.com/ros-industrial/abb_robot_driver/tar.gz/d1678957d3792e6aa54582ff894db62b6a51dac0"
+    }
+  ],
+  "candidate_source_files": 21,
+  "candidates": [
+    {
+      "bytes": 600,
+      "git_blob_sha1": "46558b540bfa7dc533c322cf8d50180dc9cf14e3",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_egm_hardware_interface/config/base_configs_example.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "3cf2e7bbe0025897226138cfa2774818722cd0a57d2044a898ee1893633a3a8f",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/base_configs_example.yaml"
+    },
+    {
+      "bytes": 495,
+      "git_blob_sha1": "22bae802bf34ac04ac0326b193d03d7e456858f6",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_egm_hardware_interface/config/egm_multiple_mech_units_example.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "e3a57cc8793720251ea073d0ce4c7f8aa60d2b0c341c2ebf8925a9047c22cd89",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_multiple_mech_units_example.yaml"
+    },
+    {
+      "bytes": 171,
+      "git_blob_sha1": "7bf338d9234acc3122741371cb8b9bd744495d79",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_egm_hardware_interface/config/egm_single_mech_unit_example.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "a129541b2046b2757d59c0602391fff69e9dba36a0cec0fc097de3e7d4be1ef0",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_single_mech_unit_example.yaml"
+    },
+    {
+      "bytes": 371,
+      "git_blob_sha1": "c6b2d0858d2360c266181c199a97997de79c4773",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_egm_hardware_interface/config/egm_yumi_mech_units_example.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "1979767a6837c458381220364c87aad1e3caed4b3f81cbd45ff25b24eb9e8229",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_yumi_mech_units_example.yaml"
+    },
+    {
+      "bytes": 1003,
+      "git_blob_sha1": "d7e68e8da174278194347a5c79bd67a732ee922a",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_egm_hardware_interface/launch/egm_hardware_interface.launch",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "ros1_launch_entry",
+      "sha256": "59365f6b5f0b0f55055bb71d2337cc4a60427860349ea9b750473e160541da70",
+      "syntax_evidence": [
+        "launch XML root"
+      ],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/launch/egm_hardware_interface.launch"
+    },
+    {
+      "bytes": 235,
+      "git_blob_sha1": "4b5ba68611b69d274bfdf570657e3a2506159bd9",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_egm_state_controller/launch/egm_state_controller.launch",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "ros1_launch_entry",
+      "sha256": "4963b32baa0ea840ae7da6b9374b4cf742cf6712de60e6978cc93c0f9e75d259",
+      "syntax_evidence": [
+        "launch XML root"
+      ],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/launch/egm_state_controller.launch"
+    },
+    {
+      "bytes": 2046,
+      "git_blob_sha1": "2f223ce23713be5edec4ee24cfdbdbe3be4c277c",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/CMakeLists.txt",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "02e7c628aa7dd7918858b33359f6ead42763931c4e93eff2d816218eaf029757",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/CMakeLists.txt"
+    },
+    {
+      "bytes": 1505,
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/LICENSE",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/LICENSE"
+    },
+    {
+      "bytes": 8446,
+      "git_blob_sha1": "270a7e51247d49bfd7f1bd083cd20b5383f0c5d5",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/README.md",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "26dccf2368a017cef7fc43fb6d4259f23e0a96a3dd67f1cec22a7bcfa7e84546",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/README.md"
+    },
+    {
+      "bytes": 473,
+      "git_blob_sha1": "d9853374ca94b2e13cb86ff7bcf71b508991f9c4",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/config/ex2_controllers.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "ae07f37de4db604480e4ca34b3ebb28e70ee9982a85efb31e15d54352443526a",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_controllers.yaml"
+    },
+    {
+      "bytes": 605,
+      "git_blob_sha1": "8b079f85545619013eb66b7b74b5973007d6696b",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/config/ex2_hardware_base.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "603f64be44bdcea80fa35ddb3d020ed9a4e2077ce167f2afd80bd2340f8e4e74",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_hardware_base.yaml"
+    },
+    {
+      "bytes": 745,
+      "git_blob_sha1": "ebfc1e768658d9260ac574b408e283775cda74d4",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/config/ex2_hardware_egm.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "a7d19f0ef0b95b532ef2c4f1715da667a4800e763cdc83b0f44f6d8f83d1aa27",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_hardware_egm.yaml"
+    },
+    {
+      "bytes": 835,
+      "git_blob_sha1": "a30e243b5a243985bfb053d4a723839037df8b95",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/config/ex3_controllers.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "1b3355cb3db69333f139efde7bae6d28a9b732f4259788e41b27854355176567",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_controllers.yaml"
+    },
+    {
+      "bytes": 605,
+      "git_blob_sha1": "8b079f85545619013eb66b7b74b5973007d6696b",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/config/ex3_hardware_base.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "603f64be44bdcea80fa35ddb3d020ed9a4e2077ce167f2afd80bd2340f8e4e74",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_hardware_base.yaml"
+    },
+    {
+      "bytes": 1699,
+      "git_blob_sha1": "8ee2de576e0aeeac0c544b88cd745867f155cdf6",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/config/ex3_hardware_egm.yaml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "672df5db969b3ce36400911b63ffdda6d944e95a7efced7bd35ee5ab7fe1e470",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_hardware_egm.yaml"
+    },
+    {
+      "bytes": 1159,
+      "git_blob_sha1": "d6cf07a98334154133398c9ea24a367af4d36dd9",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/launch/ex1_rws_only.launch",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "ros1_launch_entry",
+      "sha256": "05c9aa3e378507a984273f1ae8149d4f7a168eca1ea6530f478e7a375900562b",
+      "syntax_evidence": [
+        "launch XML root"
+      ],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex1_rws_only.launch"
+    },
+    {
+      "bytes": 3087,
+      "git_blob_sha1": "754ba70b74df5442ee37f9fe8c89bba4064d881d",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/launch/ex2_rws_and_egm_6axis_robot.launch",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "ros1_launch_entry",
+      "sha256": "ee8c84fca23b209f1f29a33c7e86cc099315a0a6947bf0dc4356192e3f29ded8",
+      "syntax_evidence": [
+        "launch XML root"
+      ],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex2_rws_and_egm_6axis_robot.launch"
+    },
+    {
+      "bytes": 3568,
+      "git_blob_sha1": "b1c07846c6cb7c30e28d5a3083a13bdcca00dd7e",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/launch/ex3_rws_and_egm_yumi_robot.launch",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "ros1_launch_entry",
+      "sha256": "de8cfeee1cf25d08bf202c00c0db559234a21c8c1b94147bd06756dd6ab4267a",
+      "syntax_evidence": [
+        "launch XML root"
+      ],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex3_rws_and_egm_yumi_robot.launch"
+    },
+    {
+      "bytes": 974,
+      "git_blob_sha1": "0aceaea83f9c56b783782a5aee93c1eb7a930bdd",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_robot_bringup_examples/package.xml",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "helper_or_configuration_candidate",
+      "sha256": "458df0fc9744829b384ac02f1cce261ffa91aecbda13c20ccfc607313a845749",
+      "syntax_evidence": [],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/package.xml"
+    },
+    {
+      "bytes": 1068,
+      "git_blob_sha1": "2de8550fad9ccd4a3bccc7afefa0950e1ded06f0",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_rws_service_provider/launch/rws_service_provider.launch",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "ros1_launch_entry",
+      "sha256": "c7754a71d59d4bec7e24757ce4216dcaf143b4eda6ddb6dc23e93bf73c94fb1e",
+      "syntax_evidence": [
+        "launch XML root"
+      ],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/launch/rws_service_provider.launch"
+    },
+    {
+      "bytes": 1248,
+      "git_blob_sha1": "404b255184d408b7a35fb14c52e582361a46e374",
+      "imports": [],
+      "languages": {
+        "assemblyscript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "c": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "cpp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "csharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "d": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "dart": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "fsharp": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "go": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "grain": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "haskell": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "java": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "javascript": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "kotlin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "lua": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "moonbit": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "nim": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "odin": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "php": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "python": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "r": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "ruby": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "rust": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "scala": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "swift": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "tinygo": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "vbnet": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        },
+        "zig": {
+          "status": "NOT_MAPPED",
+          "test_receipt": null
+        }
+      },
+      "limitations": "Syntax classification is not an audited standalone example or a port.",
+      "migration_path": null,
+      "path": "abb_rws_state_publisher/launch/rws_state_publisher.launch",
+      "required_authority": "UNREVIEWED; default empty",
+      "role": "ros1_launch_entry",
+      "sha256": "4065e84ba4b017731c93b1483b61528ab8d67ec53e8885e9824126fd6279e1d7",
+      "syntax_evidence": [
+        "launch XML root"
+      ],
+      "test_layers": {},
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/launch/rws_state_publisher.launch"
+    }
+  ],
+  "captured_text_files": 74,
+  "classification": "syntax audit; semantic review still required",
+  "commit": "d1678957d3792e6aa54582ff894db62b6a51dac0",
+  "commit_metadata_limitation": null,
+  "commit_metadata_sha256": "d3da94510434cca7c9d6024d29014f17e791967edaf2954a1ddee0c62f1d85a1",
+  "commit_tree_association": "original commit metadata",
+  "commit_url": "https://api.github.com/repos/ros-industrial/abb_robot_driver/git/commits/d1678957d3792e6aa54582ff894db62b6a51dac0",
+  "complete_platform_support": false,
+  "default_authority": [],
+  "official_example_total": null,
+  "original_official_suite_cases_run": 0,
+  "platform": "abb",
+  "repository": "ros-industrial/abb_robot_driver",
+  "response_treeish": "d1678957d3792e6aa54582ff894db62b6a51dac0",
+  "roles": {
+    "helper_or_configuration_candidate": 14,
+    "ros1_launch_entry": 7
+  },
+  "selection": "ros1-driver",
+  "skipped_nonregular": [],
+  "source_files": [
+    {
+      "bytes": 1459,
+      "git_blob_sha1": "d75bb685fffd11726d28caafd486918358811b17",
+      "path": ".github/workflows/ci_bionic.yml",
+      "sha256": "ad65f85e0c20e836067a1985d8c40943538f08ff4b55d5e60d6e660d93294c83",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/.github/workflows/ci_bionic.yml"
+    },
+    {
+      "bytes": 1527,
+      "git_blob_sha1": "85535ef4eeb69270436c97751da7f0348153dd59",
+      "path": ".github/workflows/ci_focal.yml",
+      "sha256": "d67cfea3ff4cd41a375d01be1c8f5c9f7961e7d1e01ade33928417e45461ac66",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/.github/workflows/ci_focal.yml"
+    },
+    {
+      "bytes": 1505,
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "path": "LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/LICENSE"
+    },
+    {
+      "bytes": 7035,
+      "git_blob_sha1": "370053fe3a690bfb83c0163d567f00cb446f071e",
+      "path": "README.md",
+      "sha256": "f8dd593fe781bcc4bae1641a6627281d686d5e028e0811a3b5c74401e994f0fc",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/README.md"
+    },
+    {
+      "bytes": 7367,
+      "git_blob_sha1": "080320bb875391a777993e38e01969421ce84fb8",
+      "path": "abb_egm_hardware_interface/CMakeLists.txt",
+      "sha256": "bb0199d72e9f9e78d26b4e618723fbe172babffee3452b2108faaf8afa75e85c",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/CMakeLists.txt"
+    },
+    {
+      "bytes": 1505,
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "path": "abb_egm_hardware_interface/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/LICENSE"
+    },
+    {
+      "bytes": 6227,
+      "git_blob_sha1": "ea34991d4e34760c12637c7123dadbc1c2cbc7fe",
+      "path": "abb_egm_hardware_interface/README.md",
+      "sha256": "e99b35ba3dabfdd2425b3f66bb13dae6260e4f8f8a510ddc00d180ae4052ff31",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/README.md"
+    },
+    {
+      "bytes": 600,
+      "git_blob_sha1": "46558b540bfa7dc533c322cf8d50180dc9cf14e3",
+      "path": "abb_egm_hardware_interface/config/base_configs_example.yaml",
+      "sha256": "3cf2e7bbe0025897226138cfa2774818722cd0a57d2044a898ee1893633a3a8f",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/base_configs_example.yaml"
+    },
+    {
+      "bytes": 495,
+      "git_blob_sha1": "22bae802bf34ac04ac0326b193d03d7e456858f6",
+      "path": "abb_egm_hardware_interface/config/egm_multiple_mech_units_example.yaml",
+      "sha256": "e3a57cc8793720251ea073d0ce4c7f8aa60d2b0c341c2ebf8925a9047c22cd89",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_multiple_mech_units_example.yaml"
+    },
+    {
+      "bytes": 171,
+      "git_blob_sha1": "7bf338d9234acc3122741371cb8b9bd744495d79",
+      "path": "abb_egm_hardware_interface/config/egm_single_mech_unit_example.yaml",
+      "sha256": "a129541b2046b2757d59c0602391fff69e9dba36a0cec0fc097de3e7d4be1ef0",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_single_mech_unit_example.yaml"
+    },
+    {
+      "bytes": 371,
+      "git_blob_sha1": "c6b2d0858d2360c266181c199a97997de79c4773",
+      "path": "abb_egm_hardware_interface/config/egm_yumi_mech_units_example.yaml",
+      "sha256": "1979767a6837c458381220364c87aad1e3caed4b3f81cbd45ff25b24eb9e8229",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_yumi_mech_units_example.yaml"
+    },
+    {
+      "bytes": 5079,
+      "git_blob_sha1": "0a86c2d4954872463a7c9ee881460c7356724c1d",
+      "path": "abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_controller_stopper.h",
+      "sha256": "bb946b6f3c6d9105b41d084a4e035756971230fc4536e68eb04800ce220aebd4",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_controller_stopper.h"
+    },
+    {
+      "bytes": 8817,
+      "git_blob_sha1": "b9af6e2ab25e378662b64cac421efe95342c6bf6",
+      "path": "abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_hardware_interface.h",
+      "sha256": "23b6cf807209d915194220c3063f875e55f74f4a4c4047b70aae57ab2c5f2e5c",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_hardware_interface.h"
+    },
+    {
+      "bytes": 3717,
+      "git_blob_sha1": "8353edfb0e30ef03bc40ee12028293013f76cb7d",
+      "path": "abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_state_interface.h",
+      "sha256": "77db10d6e6f8ac2a845754a5b80fe90262162a5da2f8cc11d91055ba42b253cd",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_state_interface.h"
+    },
+    {
+      "bytes": 1003,
+      "git_blob_sha1": "d7e68e8da174278194347a5c79bd67a732ee922a",
+      "path": "abb_egm_hardware_interface/launch/egm_hardware_interface.launch",
+      "sha256": "59365f6b5f0b0f55055bb71d2337cc4a60427860349ea9b750473e160541da70",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/launch/egm_hardware_interface.launch"
+    },
+    {
+      "bytes": 1192,
+      "git_blob_sha1": "b0efc8bfe0ac295f59bc986895e8c0bc4600106b",
+      "path": "abb_egm_hardware_interface/package.xml",
+      "sha256": "5054b3f31a2ff48c91d346a6e955eaa3e397521935a9252f0c9cfe4649dd43bd",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/package.xml"
+    },
+    {
+      "bytes": 7418,
+      "git_blob_sha1": "8ac013cdfa92b295a4b121f2499cac29f94fba73",
+      "path": "abb_egm_hardware_interface/src/egm_controller_stopper.cpp",
+      "sha256": "8c16c4a7a45bee4fb5dcb313eaef39f187b3d06db45625e8df92aeb19c31230b",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/src/egm_controller_stopper.cpp"
+    },
+    {
+      "bytes": 3451,
+      "git_blob_sha1": "dad7b740b9b2e78a605ad87a4b1f19bc736280d6",
+      "path": "abb_egm_hardware_interface/src/egm_controller_stopper_main.cpp",
+      "sha256": "261b85bdbb47babcbe77dd7919d4a549888af52fe7233d42736086c156ec7c74",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/src/egm_controller_stopper_main.cpp"
+    },
+    {
+      "bytes": 26792,
+      "git_blob_sha1": "95bb3cf80464a6a698b020ca3ab5c5cd7141346b",
+      "path": "abb_egm_hardware_interface/src/egm_hardware_interface.cpp",
+      "sha256": "006b2aa1b339bc235a8fdf388c98e3792733b798252d469ed8c4a44d41a6b645",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/src/egm_hardware_interface.cpp"
+    },
+    {
+      "bytes": 6894,
+      "git_blob_sha1": "5e1098677801e61f7c365d679eb0ae49e62a46b4",
+      "path": "abb_egm_hardware_interface/src/egm_hardware_interface_main.cpp",
+      "sha256": "bb86b529766c6372b04747c24b59c9d9ba9b5946227f0c17edce663ca88883bd",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/src/egm_hardware_interface_main.cpp"
+    },
+    {
+      "bytes": 3871,
+      "git_blob_sha1": "d2e739f7ca00e5a7bb34959d05898ea24579b181",
+      "path": "abb_egm_state_controller/CMakeLists.txt",
+      "sha256": "ae4d7d17280c8a76f772127a5ac9395c45b93cde97b2d600ef819e2c6150da9f",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/CMakeLists.txt"
+    },
+    {
+      "bytes": 1505,
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "path": "abb_egm_state_controller/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/LICENSE"
+    },
+    {
+      "bytes": 1931,
+      "git_blob_sha1": "dfc8a10b8946ae99ab0851b1d56b7ade2267014f",
+      "path": "abb_egm_state_controller/README.md",
+      "sha256": "ce92dcff6e1b8cd68d073ed7199126f0e92ed1dc849bc0dde298142f5dec1cf8",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/README.md"
+    },
+    {
+      "bytes": 104,
+      "git_blob_sha1": "3dc2835054788831c277eda0e161d0665cc82443",
+      "path": "abb_egm_state_controller/config/egm_state_controller.yaml",
+      "sha256": "2449b38d6b7d995dc75d93cda00d608566d2ecbe298aa554e13aeb0f8b67f29e",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/config/egm_state_controller.yaml"
+    },
+    {
+      "bytes": 543,
+      "git_blob_sha1": "f0b7d80e3d441c26aef7e291d48c32f06fc39050",
+      "path": "abb_egm_state_controller/egm_state_controller_plugin.xml",
+      "sha256": "7f6799bda0dfe2251c241505ba16b7bdaafda6f6b8a44b898f75265acb3f3fb6",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/egm_state_controller_plugin.xml"
+    },
+    {
+      "bytes": 4113,
+      "git_blob_sha1": "537996b5580d6c3bef614963702513d91787c314",
+      "path": "abb_egm_state_controller/include/abb_egm_state_controller/egm_state_controller.h",
+      "sha256": "3f59e414ebb02bad2fd754db6cc14e012459d404f7e27b13b5da3b91857f2bff",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/include/abb_egm_state_controller/egm_state_controller.h"
+    },
+    {
+      "bytes": 235,
+      "git_blob_sha1": "4b5ba68611b69d274bfdf570657e3a2506159bd9",
+      "path": "abb_egm_state_controller/launch/egm_state_controller.launch",
+      "sha256": "4963b32baa0ea840ae7da6b9374b4cf742cf6712de60e6978cc93c0f9e75d259",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/launch/egm_state_controller.launch"
+    },
+    {
+      "bytes": 1153,
+      "git_blob_sha1": "2c2692e64fe3fb1d7abeffd8ff85cc9ec2de8208",
+      "path": "abb_egm_state_controller/package.xml",
+      "sha256": "be25a221f55a14fb65ada0e8216a5d960fe4126063d6d6e6fac8d14ecfaa1aa8",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/package.xml"
+    },
+    {
+      "bytes": 6587,
+      "git_blob_sha1": "7aacd9ca2963173d088fb6b7a6ac951e86d7ebb1",
+      "path": "abb_egm_state_controller/src/egm_state_controller.cpp",
+      "sha256": "32b432dfcd608782171f77b3013f9a406061f2d6930932e90436c03fdc9b8ff5",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/src/egm_state_controller.cpp"
+    },
+    {
+      "bytes": 2046,
+      "git_blob_sha1": "2f223ce23713be5edec4ee24cfdbdbe3be4c277c",
+      "path": "abb_robot_bringup_examples/CMakeLists.txt",
+      "sha256": "02e7c628aa7dd7918858b33359f6ead42763931c4e93eff2d816218eaf029757",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/CMakeLists.txt"
+    },
+    {
+      "bytes": 1505,
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "path": "abb_robot_bringup_examples/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/LICENSE"
+    },
+    {
+      "bytes": 8446,
+      "git_blob_sha1": "270a7e51247d49bfd7f1bd083cd20b5383f0c5d5",
+      "path": "abb_robot_bringup_examples/README.md",
+      "sha256": "26dccf2368a017cef7fc43fb6d4259f23e0a96a3dd67f1cec22a7bcfa7e84546",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/README.md"
+    },
+    {
+      "bytes": 473,
+      "git_blob_sha1": "d9853374ca94b2e13cb86ff7bcf71b508991f9c4",
+      "path": "abb_robot_bringup_examples/config/ex2_controllers.yaml",
+      "sha256": "ae07f37de4db604480e4ca34b3ebb28e70ee9982a85efb31e15d54352443526a",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_controllers.yaml"
+    },
+    {
+      "bytes": 605,
+      "git_blob_sha1": "8b079f85545619013eb66b7b74b5973007d6696b",
+      "path": "abb_robot_bringup_examples/config/ex2_hardware_base.yaml",
+      "sha256": "603f64be44bdcea80fa35ddb3d020ed9a4e2077ce167f2afd80bd2340f8e4e74",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_hardware_base.yaml"
+    },
+    {
+      "bytes": 745,
+      "git_blob_sha1": "ebfc1e768658d9260ac574b408e283775cda74d4",
+      "path": "abb_robot_bringup_examples/config/ex2_hardware_egm.yaml",
+      "sha256": "a7d19f0ef0b95b532ef2c4f1715da667a4800e763cdc83b0f44f6d8f83d1aa27",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_hardware_egm.yaml"
+    },
+    {
+      "bytes": 835,
+      "git_blob_sha1": "a30e243b5a243985bfb053d4a723839037df8b95",
+      "path": "abb_robot_bringup_examples/config/ex3_controllers.yaml",
+      "sha256": "1b3355cb3db69333f139efde7bae6d28a9b732f4259788e41b27854355176567",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_controllers.yaml"
+    },
+    {
+      "bytes": 605,
+      "git_blob_sha1": "8b079f85545619013eb66b7b74b5973007d6696b",
+      "path": "abb_robot_bringup_examples/config/ex3_hardware_base.yaml",
+      "sha256": "603f64be44bdcea80fa35ddb3d020ed9a4e2077ce167f2afd80bd2340f8e4e74",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_hardware_base.yaml"
+    },
+    {
+      "bytes": 1699,
+      "git_blob_sha1": "8ee2de576e0aeeac0c544b88cd745867f155cdf6",
+      "path": "abb_robot_bringup_examples/config/ex3_hardware_egm.yaml",
+      "sha256": "672df5db969b3ce36400911b63ffdda6d944e95a7efced7bd35ee5ab7fe1e470",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_hardware_egm.yaml"
+    },
+    {
+      "bytes": 1159,
+      "git_blob_sha1": "d6cf07a98334154133398c9ea24a367af4d36dd9",
+      "path": "abb_robot_bringup_examples/launch/ex1_rws_only.launch",
+      "sha256": "05c9aa3e378507a984273f1ae8149d4f7a168eca1ea6530f478e7a375900562b",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex1_rws_only.launch"
+    },
+    {
+      "bytes": 3087,
+      "git_blob_sha1": "754ba70b74df5442ee37f9fe8c89bba4064d881d",
+      "path": "abb_robot_bringup_examples/launch/ex2_rws_and_egm_6axis_robot.launch",
+      "sha256": "ee8c84fca23b209f1f29a33c7e86cc099315a0a6947bf0dc4356192e3f29ded8",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex2_rws_and_egm_6axis_robot.launch"
+    },
+    {
+      "bytes": 3568,
+      "git_blob_sha1": "b1c07846c6cb7c30e28d5a3083a13bdcca00dd7e",
+      "path": "abb_robot_bringup_examples/launch/ex3_rws_and_egm_yumi_robot.launch",
+      "sha256": "de8cfeee1cf25d08bf202c00c0db559234a21c8c1b94147bd06756dd6ab4267a",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex3_rws_and_egm_yumi_robot.launch"
+    },
+    {
+      "bytes": 974,
+      "git_blob_sha1": "0aceaea83f9c56b783782a5aee93c1eb7a930bdd",
+      "path": "abb_robot_bringup_examples/package.xml",
+      "sha256": "458df0fc9744829b384ac02f1cce261ffa91aecbda13c20ccfc607313a845749",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/package.xml"
+    },
+    {
+      "bytes": 4444,
+      "git_blob_sha1": "a44c0462074777eb1de1ed0d26ecf78621159fac",
+      "path": "abb_robot_cpp_utilities/CMakeLists.txt",
+      "sha256": "376a0e7636aebff46e99db632090781aeba631bc2f4bb645dc31638cfde2067d",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/CMakeLists.txt"
+    },
+    {
+      "bytes": 1505,
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "path": "abb_robot_cpp_utilities/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/LICENSE"
+    },
+    {
+      "bytes": 1885,
+      "git_blob_sha1": "14bb7e9a95f5eccb7781a2772972963449a9956f",
+      "path": "abb_robot_cpp_utilities/README.md",
+      "sha256": "5557492bbfbce879e14b883c26a7a3fc141b402a53349143a786adb5902a8847",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/README.md"
+    },
+    {
+      "bytes": 2929,
+      "git_blob_sha1": "c27e4f2fb1ca5f0cdc42c961ba2dd6c6d255150c",
+      "path": "abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/initialization.h",
+      "sha256": "e8cf676729cf659a52f80be4565431732aa474645b4fa64e24699e4314e63103",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/initialization.h"
+    },
+    {
+      "bytes": 7608,
+      "git_blob_sha1": "998bf6891ef2e3b26d3964a3462223310c98b52f",
+      "path": "abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/mapping.h",
+      "sha256": "59419fb62e840d6a3ef7c55b583ba2f0ee4f65ad6fc75c53e25d54f618baabd5",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/mapping.h"
+    },
+    {
+      "bytes": 3999,
+      "git_blob_sha1": "4c5e5953c83fac5848ee6efaf3c640d362714a1a",
+      "path": "abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/parameters.h",
+      "sha256": "5947ee2ca58a884b5cdb30c15560f0130cf7ef9342e7eff542d9d42e5d3b76f6",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/parameters.h"
+    },
+    {
+      "bytes": 3375,
+      "git_blob_sha1": "fc80d6799ab53e5ecb383503bf7148912db3d40c",
+      "path": "abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/verification.h",
+      "sha256": "51910b1fdfbccf7cd6528532f6d8ac659a91aaade863f97f2939eb242caccb76",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/verification.h"
+    },
+    {
+      "bytes": 974,
+      "git_blob_sha1": "a9b402aee716e90a53767e1305625a9f727a6741",
+      "path": "abb_robot_cpp_utilities/package.xml",
+      "sha256": "344e3056cb31d4ef1ea656d3c2eb245ddfe5fcb6ac56cf97764352f46ee8d10e",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/package.xml"
+    },
+    {
+      "bytes": 4001,
+      "git_blob_sha1": "f71729f913fcd2edf42698f9a33cfe077990ae4d",
+      "path": "abb_robot_cpp_utilities/src/initialization.cpp",
+      "sha256": "30445f1fb9b5431c8c413e0faa225e2c8f6ca941b2607ca19e848b84d6dec481",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/src/initialization.cpp"
+    },
+    {
+      "bytes": 17107,
+      "git_blob_sha1": "fba1428794128a7c5a97394eaf8c94c159a0905e",
+      "path": "abb_robot_cpp_utilities/src/mapping.cpp",
+      "sha256": "77268cebb9dcea04c3869e7d486accc09bd856ea84e097273b07e2546f636e5e",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/src/mapping.cpp"
+    },
+    {
+      "bytes": 6551,
+      "git_blob_sha1": "f0d32a2e3a6b5a4981996f46ed14760709672aff",
+      "path": "abb_robot_cpp_utilities/src/parameters.cpp",
+      "sha256": "0a0afb5464be935084586defabcd779b27eb58e40ca01e298c9fdf47b8fc7532",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/src/parameters.cpp"
+    },
+    {
+      "bytes": 3863,
+      "git_blob_sha1": "0bc4eda8c2c9a6f395974f06245cdbeba5d2aeb2",
+      "path": "abb_robot_cpp_utilities/src/verification.cpp",
+      "sha256": "bc801468dbe87f19312a6b0230aa2d9aac3123ff49eb9487d33a78f83b71ac1f",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_cpp_utilities/src/verification.cpp"
+    },
+    {
+      "bytes": 4726,
+      "git_blob_sha1": "013563de82dde12595649b7d18a499db5bd0651b",
+      "path": "abb_rws_service_provider/CMakeLists.txt",
+      "sha256": "f914d1d0d1840ca3dc12fc90e8028f4d52b708da2077b9ac58c229819edd0c80",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/CMakeLists.txt"
+    },
+    {
+      "bytes": 1505,
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "path": "abb_rws_service_provider/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/LICENSE"
+    },
+    {
+      "bytes": 5190,
+      "git_blob_sha1": "6210e6b2b62f985f2bbff458520339318d835888",
+      "path": "abb_rws_service_provider/README.md",
+      "sha256": "a7c7b8b44e4be90e0e4c688dea2a8a77a00f7024ba146c7df01736e3b1ff76ce",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/README.md"
+    },
+    {
+      "bytes": 23390,
+      "git_blob_sha1": "095b868fdab2a2ee88162b65194c0652665fb04c",
+      "path": "abb_rws_service_provider/include/abb_rws_service_provider/rws_service_provider.h",
+      "sha256": "152342868f6304c28805b064bd92d213ab08a8c718c9c3c3ef8c33cb2e769e54",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/include/abb_rws_service_provider/rws_service_provider.h"
+    },
+    {
+      "bytes": 1068,
+      "git_blob_sha1": "2de8550fad9ccd4a3bccc7afefa0950e1ded06f0",
+      "path": "abb_rws_service_provider/launch/rws_service_provider.launch",
+      "sha256": "c7754a71d59d4bec7e24757ce4216dcaf143b4eda6ddb6dc23e93bf73c94fb1e",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/launch/rws_service_provider.launch"
+    },
+    {
+      "bytes": 1030,
+      "git_blob_sha1": "f7183acb6041ab1f2b21d122678a5941f9c3dc13",
+      "path": "abb_rws_service_provider/package.xml",
+      "sha256": "fea6718ef67bfd63a7829118b1f8f167e357a4c999693e054a39bebc53ef9d53",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/package.xml"
+    },
+    {
+      "bytes": 3421,
+      "git_blob_sha1": "b9a8ed1456cf165507e54ee68667e7e54d724d54",
+      "path": "abb_rws_service_provider/src/main.cpp",
+      "sha256": "e04257a85c62abb3333f2e839740c59df8d84a89ba80fbf6f09aeb05fd1091c9",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/src/main.cpp"
+    },
+    {
+      "bytes": 17706,
+      "git_blob_sha1": "3a0205671d76a1ca020df71521c1954d9ef32980",
+      "path": "abb_rws_service_provider/src/rws_service_provider.cpp",
+      "sha256": "ea765db459916af00675bf13538bd30e86c346eac224a6f37771ac7764158bca",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/src/rws_service_provider.cpp"
+    },
+    {
+      "bytes": 23952,
+      "git_blob_sha1": "d4677cc9c553d98d12fd675dad6846ec1b2340b6",
+      "path": "abb_rws_service_provider/src/rws_service_provider_core_srvs.cpp",
+      "sha256": "473b640a95a552f212b76a48bdc6d633017f539a031457cb71b6b2bab12d7747",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/src/rws_service_provider_core_srvs.cpp"
+    },
+    {
+      "bytes": 16485,
+      "git_blob_sha1": "a5d6ebb36ccc97200bb3df2267025ee9a48163be",
+      "path": "abb_rws_service_provider/src/rws_service_provider_sm_srvs.cpp",
+      "sha256": "41439be149420072e3c46b9b015cce111ac520bea9dcb9d59ee919f97600d223",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/src/rws_service_provider_sm_srvs.cpp"
+    },
+    {
+      "bytes": 4672,
+      "git_blob_sha1": "61ff4ab0a868fb4107e57161024d3baa9d3864b4",
+      "path": "abb_rws_state_publisher/CMakeLists.txt",
+      "sha256": "627e0a8df4869b52c6d67208da21a61e9305dab3807d10855dce5b105e9cd821",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/CMakeLists.txt"
+    },
+    {
+      "bytes": 1505,
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "path": "abb_rws_state_publisher/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/LICENSE"
+    },
+    {
+      "bytes": 3912,
+      "git_blob_sha1": "c53c4b242890b490d3e8360bb1beb8fff4bec8ee",
+      "path": "abb_rws_state_publisher/README.md",
+      "sha256": "dc0df2531422bb59e53b68c2f94313d29638cfb3cf37e834e24c4fbf340a3681",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/README.md"
+    },
+    {
+      "bytes": 5173,
+      "git_blob_sha1": "d37593fe3e9d108c5774f047ed357eb3d7293aac",
+      "path": "abb_rws_state_publisher/include/abb_rws_state_publisher/rws_state_publisher.h",
+      "sha256": "10fa6bbd54eea1b12a98a98a78e6bed68e0197b4d44f92a1862663eb5d117dda",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/include/abb_rws_state_publisher/rws_state_publisher.h"
+    },
+    {
+      "bytes": 1248,
+      "git_blob_sha1": "404b255184d408b7a35fb14c52e582361a46e374",
+      "path": "abb_rws_state_publisher/launch/rws_state_publisher.launch",
+      "sha256": "4065e84ba4b017731c93b1483b61528ab8d67ec53e8885e9824126fd6279e1d7",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/launch/rws_state_publisher.launch"
+    },
+    {
+      "bytes": 902,
+      "git_blob_sha1": "0c79b68e3ac63b189be6c436748b6504ee2c7f9d",
+      "path": "abb_rws_state_publisher/package.xml",
+      "sha256": "75f1f34ef572eb41255a9a23101efb20911f6617138d755c10a5f9b959acfc49",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/package.xml"
+    },
+    {
+      "bytes": 3414,
+      "git_blob_sha1": "992800c9119fc7c8bf9780dce66c413df34a988e",
+      "path": "abb_rws_state_publisher/src/main.cpp",
+      "sha256": "a0f50c4a48cb1191b63ea2e2d0f7f98e437c3dbd9f6b167c84a08db412b6310b",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/src/main.cpp"
+    },
+    {
+      "bytes": 9375,
+      "git_blob_sha1": "89fdd83f4f99072f17c5904ff5162c473dbca3ed",
+      "path": "abb_rws_state_publisher/src/rws_state_publisher.cpp",
+      "sha256": "cf9c01cab77152126c6619710b0a362d9b99d883282d330215ba6b4ae12cda09",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/src/rws_state_publisher.cpp"
+    },
+    {
+      "bytes": 464,
+      "git_blob_sha1": "26a35cb393594cb761bdad9171d8c2ec8d36e825",
+      "path": "pkgs.repos",
+      "sha256": "42f1bab0816d563ec0c34a8fdb249a42020d72e5a01f16c4db5852c3edfd2546",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/pkgs.repos"
+    },
+    {
+      "bytes": 600,
+      "git_blob_sha1": "b4b6f70723cab30e856e532dbf2f02bc6786ae37",
+      "path": "pkgs_only_sources.repos",
+      "sha256": "6b02b7209de0013a03a76de19736708ae664213e653a308fd76f3c5e546ca4a3",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/pkgs_only_sources.repos"
+    }
+  ],
+  "source_tree_entries": 109,
+  "tree": "098c179030fc9b85ac471508ea9fe83e140f7f75",
+  "tree_reconstructed": true,
+  "tree_sha256": "12a853b56cd975242272e0169644e83a68d70df5cfca20d14337156ee274830b",
+  "tree_url": "https://api.github.com/repos/ros-industrial/abb_robot_driver/git/trees/d1678957d3792e6aa54582ff894db62b6a51dac0?recursive=1",
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "ed2f85090f73e3ded1f98c89e8e8dc35c87893e084801824113ff1245f655b36"
+}

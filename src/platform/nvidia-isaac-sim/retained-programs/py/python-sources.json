@@ -1,0 +1,70 @@
+{
+  "entry": "native_graph.py",
+  "files": [
+    {
+      "output": "native_camera.py",
+      "source": "src/platform/nvidia-isaac-sim/retained-programs/py/native_camera.py"
+    },
+    {
+      "output": "native_carter.py",
+      "source": "src/platform/nvidia-isaac-sim/retained-programs/py/native_carter.py"
+    },
+    {
+      "output": "native_clock.py",
+      "source": "src/platform/nvidia-isaac-sim/retained-programs/py/native_clock.py"
+    },
+    {
+      "output": "native_clock_bridge.py",
+      "source": "src/platform/nvidia-isaac-sim/retained-programs/py/native_clock_bridge.py"
+    },
+    {
+      "output": "native_cube_subscriber.py",
+      "source": "src/platform/nvidia-isaac-sim/retained-programs/py/native_cube_subscriber.py"
+    },
+    {
+      "output": "native_graph.py",
+      "source": "src/platform/nvidia-isaac-sim/retained-programs/py/native_graph.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim/__init__.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim/__init__.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim/native_camera.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim/native_camera.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim/native_carter.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim/native_carter.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim/native_clock.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim/native_clock.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim/native_cube_subscriber.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim/native_cube_subscriber.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim/native_graph.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim/native_graph.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim/native_observer.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim/native_observer.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim/sensor_graph.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim/sensor_graph.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim_native/__init__.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim_native/__init__.py"
+    },
+    {
+      "output": "roswasm_nvidia_isaac_sim_native/clock_bridge.py",
+      "source": "src/platform/nvidia-isaac-sim/py/roswasm_nvidia_isaac_sim_native/clock_bridge.py"
+    }
+  ],
+  "format": "uwvm-nvidia-native-python-source-v2"
+}

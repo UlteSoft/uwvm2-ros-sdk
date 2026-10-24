@@ -1,0 +1,21 @@
+{
+  "format": "vendor-language-source-inputs-v1",
+  "platform": "universal_robots",
+  "language": "lua",
+  "domain": "universal-robots-ros1-trajectory-complete",
+  "backend": "ros1",
+  "include_root": "include/platform",
+  "source_root": "include/platform/universal_robots/lua/ros1/universal-robots-ros1-trajectory-complete",
+  "model_module": "universal_robots",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "record_catalog": "share/platform/universal_robots/domains/universal-robots-ros1-trajectory-complete.ir.json",
+  "target_widths_requested": [
+    32,
+    64
+  ],
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "support_source_roots": [
+    "src/platform"
+  ],
+  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+}

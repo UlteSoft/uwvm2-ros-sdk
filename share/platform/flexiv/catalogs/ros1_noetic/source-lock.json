@@ -1,0 +1,122 @@
+{
+  "catalog_sha256": "783758847488c49afff9e78525f71fea4b89b576cdf8b63f8f573a3d58664e25",
+  "default_authority": [],
+  "definitions": [
+    {
+      "bytes": 43,
+      "generation_file": "flexiv_msgs/msg/JointPosVel.msg",
+      "git_blob_sha1": "43d0c50aa55966cc076bce12d05a89af0a17b234",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/JointPosVel.msg",
+      "repository": "ros1_noetic",
+      "sha256": "89d55d9135207d6b07739cabdf753d1cfe1dfe7d9d6cce6898b695407aa5dd10",
+      "type": "flexiv_msgs/JointPosVel"
+    },
+    {
+      "bytes": 529,
+      "generation_file": "flexiv_msgs/msg/Mode.msg",
+      "git_blob_sha1": "6f50129f1b4859c35c6c1ff8dec100954e394ad1",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/Mode.msg",
+      "repository": "ros1_noetic",
+      "sha256": "d288724d36c0f6f19cff66779b7e8af4c2ceab03e2e5e407add8c1c39fd46716",
+      "type": "flexiv_msgs/Mode"
+    },
+    {
+      "bytes": 401,
+      "generation_file": "flexiv_msgs/msg/RobotStates.msg",
+      "git_blob_sha1": "9c09851c0d6ccdc67ddf14bda616c5b020f7e3fc",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/RobotStates.msg",
+      "repository": "ros1_noetic",
+      "sha256": "a7a89902b9ba98717617a551ab795c421d48929ad5e588da02e070ad9c7a7011",
+      "type": "flexiv_msgs/RobotStates"
+    },
+    {
+      "bytes": 119,
+      "generation_file": "geometry_msgs/msg/Accel.msg",
+      "git_blob_sha1": "19fef1411b7704ca358a27ce11111204befa5237",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Accel.msg",
+      "repository": "common_ros1",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb",
+      "type": "geometry_msgs/Accel"
+    },
+    {
+      "bytes": 84,
+      "generation_file": "geometry_msgs/msg/Point.msg",
+      "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Point.msg",
+      "repository": "common_ros1",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+      "type": "geometry_msgs/Point"
+    },
+    {
+      "bytes": 119,
+      "generation_file": "geometry_msgs/msg/Pose.msg",
+      "git_blob_sha1": "763708f7a98d12e0e27894bea3bdd0b085602f2f",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Pose.msg",
+      "repository": "common_ros1",
+      "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5",
+      "type": "geometry_msgs/Pose"
+    },
+    {
+      "bytes": 108,
+      "generation_file": "geometry_msgs/msg/Quaternion.msg",
+      "git_blob_sha1": "9f4fde2bf4c13dc86a95688e4b5254aaec186e2a",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Quaternion.msg",
+      "repository": "common_ros1",
+      "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e",
+      "type": "geometry_msgs/Quaternion"
+    },
+    {
+      "bytes": 382,
+      "generation_file": "geometry_msgs/msg/Vector3.msg",
+      "git_blob_sha1": "2877783d0a235620515987ce0604085041132312",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Vector3.msg",
+      "repository": "common_ros1",
+      "sha256": "fa1d5b56a10a940afcfd312936dde90864a398aa2a35598f36943c570d391296",
+      "type": "geometry_msgs/Vector3"
+    },
+    {
+      "bytes": 117,
+      "generation_file": "geometry_msgs/msg/Wrench.msg",
+      "git_blob_sha1": "41201d4b844607ee2d3751f3f474774a2ae1e387",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Wrench.msg",
+      "repository": "common_ros1",
+      "sha256": "2a6eef4f4afa2da2e076fe3bfd16732e74074bb5d48a70eef5214e2b8caa8fe2",
+      "type": "geometry_msgs/Wrench"
+    }
+  ],
+  "kind": "flexiv-complete-original-source-lock-v1",
+  "original_custom_roots": [
+    "flexiv_msgs/JointPosVel",
+    "flexiv_msgs/Mode",
+    "flexiv_msgs/RobotStates"
+  ],
+  "profile": "ros1_noetic",
+  "repositories": [
+    {
+      "branch": "main",
+      "commit": "959774b0adb2d87ae6ca0cfac3e10b4ba18304cf",
+      "id": "ros1_noetic",
+      "repository": "flexivrobotics/flexiv_ros",
+      "tree_git_sha1": "5b083b5f482548210b34c86e0a27e2f0b5828262"
+    },
+    {
+      "branch": "noetic-devel",
+      "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+      "id": "common_ros1",
+      "repository": "ros/common_msgs",
+      "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f"
+    }
+  ],
+  "ros_version": 1,
+  "scope": "Every original Flexiv msg/srv/action in this exact source tree, plus every reached unchanged core definition. No native RDK identity, controller, model or release acceptance is inferred.",
+  "vendor": "flexiv"
+}

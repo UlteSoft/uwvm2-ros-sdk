@@ -1,0 +1,20 @@
+{
+  "format": "uwvm-ros-binding-v1",
+  "language": "tinygo",
+  "extensions": [
+    ".go"
+  ],
+  "abi": {
+    "ros2": "uwvm_ros2_v1"
+  },
+  "module_roots": [
+    "include/platform",
+    "include/platform/fanuc/tinygo"
+  ],
+  "native_sources": {},
+  "catalogs": {
+    "ros2": "share/platform/fanuc/catalogs/ros2/catalog.preparation.json"
+  },
+  "records_ir": "share/platform/fanuc/records-ir.json",
+  "original_complete_source_fields_retained": true
+}

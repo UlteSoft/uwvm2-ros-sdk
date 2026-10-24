@@ -1,0 +1,47 @@
+{
+  "default_authority": [],
+  "profiles": [
+    {
+      "admitted_roots": 28,
+      "branch": "aurora_bridge_v1",
+      "command": "VelocityCommand",
+      "command_type": "uwvm_fourier_bridge/VelocityCommand",
+      "complete_definitions": 28,
+      "display": "Fourier Aurora native SDK bridge",
+      "excluded_roots": 0,
+      "family": "fourier-ros1-aurora-bridge-v1-complete",
+      "has_protocols": true,
+      "id": "ros1_aurora_bridge_v1",
+      "original_roots": 28,
+      "package": "uwvm_fourier_bridge",
+      "ros_version": 1,
+      "source_max_total_nodes": 65536,
+      "source_only": false,
+      "state": "Status",
+      "state_type": "uwvm_fourier_bridge/Status",
+      "vendor": "fourier"
+    },
+    {
+      "admitted_roots": 28,
+      "branch": "aurora_bridge_v1",
+      "command": "VelocityCommand",
+      "command_type": "uwvm_fourier_bridge/msg/VelocityCommand",
+      "complete_definitions": 28,
+      "display": "Fourier Aurora native SDK bridge",
+      "excluded_roots": 0,
+      "family": "fourier-ros2-aurora-bridge-v1-complete",
+      "has_protocols": true,
+      "id": "ros2_aurora_bridge_v1",
+      "original_roots": 28,
+      "package": "uwvm_fourier_bridge",
+      "ros_version": 2,
+      "source_max_total_nodes": 65536,
+      "source_only": false,
+      "state": "Status",
+      "state_type": "uwvm_fourier_bridge/msg/Status",
+      "vendor": "fourier"
+    }
+  ],
+  "vendor": "fourier",
+  "review_status": "source_preservation_and_complete_IR_only"
+}

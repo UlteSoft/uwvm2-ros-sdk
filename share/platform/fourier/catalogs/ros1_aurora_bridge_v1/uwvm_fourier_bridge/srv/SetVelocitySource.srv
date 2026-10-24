@@ -1,0 +1,7 @@
+# Authored bridge envelope for AuroraClient.set_velocity_source.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+int32 source
+---
+uint32 status
+string error

@@ -1,0 +1,124 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "runtime": "__RUNTIME__",
+  "gateway": "__GATEWAY__",
+  "connection": {
+    "node-name": "fanuc_original_service_gateway",
+    "namespace": "/sdk_fixture",
+    "domain-id": "143",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "get_payload_value": {
+      "arguments": [
+        "boundary_denied"
+      ],
+      "main_module": "main",
+      "preloads": [
+        {
+          "module": "io",
+          "path": "__IO_WASM__",
+          "attribute": "none"
+        },
+        {
+          "module": "algorithm",
+          "path": "__ALGORITHM_WASM__",
+          "attribute": "none"
+        },
+        {
+          "module": "ros_comm",
+          "path": "__ROS_COMM_WASM__",
+          "attribute": "none"
+        }
+      ],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [],
+          "call_boundary": "same-module"
+        },
+        "io": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [],
+          "call_boundary": "same-module"
+        },
+        "algorithm": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [],
+          "call_boundary": "same-module"
+        },
+        "ros_comm": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "sample",
+              "operation": "service.call",
+              "resource": "/sdk_fixture/fanuc/GetPayloadValue",
+              "type": "fanuc_msgs/srv/GetPayloadValue",
+              "identity": "RIHS01_c6746a48155ece7f5402c881606476267cf708bca86cf6bc0de81d1f730d589f",
+              "limits": {
+                "timeout-ms": "5000",
+                "max-inflight": "1",
+                "max-rate-hz": "10",
+                "burst": "10",
+                "max-request-bytes": "2",
+                "max-response-bytes": "32",
+                "max-bytes-per-second": "65536",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite",
+                "adapter-codec-identity": "UWVMROS1_8a309e04e5785a23b077faf5de03a9b2881f19dcb4759b0309612ba9db280b69"
+              }
+            }
+          ],
+          "wasi_grants": [],
+          "connection": {
+            "node-name": "fanuc_original_service_gateway",
+            "namespace": "/sdk_fixture",
+            "domain-id": "143",
+            "rmw-implementation": "rmw_fastrtps_cpp",
+            "security-mode": "disabled-test",
+            "keystore": "not-applicable",
+            "enclave": "not-applicable"
+          },
+          "call_boundary": "same-module",
+          "worker_limits": {
+            "connect-timeout-ms": "5000",
+            "audit-deny-max-rate-hz": "100",
+            "audit-deny-burst": "100",
+            "audit-deny-max-records": "10000",
+            "audit-deny-max-bytes": "1048576"
+          },
+          "gateway_limits": {
+            "timeout-ms": "10000",
+            "max-sessions": "16",
+            "audit-max-records-per-second": "100",
+            "audit-max-records": "10000",
+            "audit-max-bytes": "1048576"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "format": "uwvm-unitree-jvm-unsigned-report-qualification-v1",
+  "status": "PASS",
+  "source_languages": [
+    "java",
+    "kotlin"
+  ],
+  "compiler_host": "linux-x86_64",
+  "target": "wasm32-wasip1",
+  "only_changed_qualified_sdk_source": "include/platform/unitree/java/uwvm/unitree/Observation.java",
+  "source_before_sha256": "6080b70f4f4c18b86e27a31098e9a447fce81fb7d6224ddb2e0b016889197920",
+  "source_after_sha256": "70ffa345fe06e7af8d77dd7cd6756f22c612e3d25efb874440198fea9192d8f2",
+  "new_bare_cold_application_builds": 12,
+  "new_actual_xmake_run_arm_executions": 24,
+  "new_application_wasm_sha_values_changed": 12,
+  "old_modules_substituted_for_new_outputs": false,
+  "fixed_real_wasm_serializer_guests": 2,
+  "fixed_vectors_per_guest": 6,
+  "fixed_unsigned_field_comparisons_per_guest": 24,
+  "fixed_unsigned_decimal_mismatches": 0,
+  "baseline_real_wasm_guests": 1,
+  "baseline_completed_vectors": 6,
+  "baseline_reproduced_negative_decimal_differences": 13,
+  "status_selection_and_bit_patterns_and_presence_preserved": true,
+  "u32_boundary_bits": [
+    "0x80000000",
+    "0xffffffff"
+  ],
+  "u64_boundary_bits": [
+    "0x8000000000000000",
+    "0xffffffffffffffff"
+  ],
+  "cgroup": {
+    "path": "/sys/fs/cgroup",
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "ros2_domain": 219,
+  "ros1_master_port": 12416,
+  "qemu_version": "qemu-aarch64 version 10.2.1 (Debian 1:10.2.1+ds-1ubuntu3.1)\nCopyright (c) 2003-2025 Fabrice Bellard and the QEMU Project developers\n",
+  "qemu_sha256": "6b8505bcdd48f1ff0214630a978214d8fe770049b2515d31b160bfa0c1804ebb",
+  "host_kernel_architecture": "x86_64",
+  "native_artifacts": [
+    {
+      "path": "/work/build/runtime-unitree/uwvm2-ros",
+      "sha256": "b5a3136709603bc8b429a47db2a696e5feb3b66bd61f61902b7ca7ce5fe5ef9b",
+      "elf": {
+        "class_bits": 64,
+        "machine": 183
+      }
+    },
+    {
+      "path": "/work/build/gateway-unitree/uwvm-ros2-gateway",
+      "sha256": "db34e9fc8e0f99ebbd4097eebebf37feef1051ece5fe46f90f82c00c3b25da50",
+      "elf": {
+        "class_bits": 64,
+        "machine": 183
+      }
+    },
+    {
+      "path": "/work/build/native-peer",
+      "sha256": "796dbf0301f27aa81dfa22648168b9cef981d6a98694595bc269a4e146ee70e7",
+      "elf": {
+        "class_bits": 64,
+        "machine": 183
+      }
+    },
+    {
+      "path": "/work/unitree-public-final/build/runtime-ros1/uwvm2-ros",
+      "sha256": "2b31f13cdafada128b51a349b28f86b32976069ee053bcef117ac1239ae82557",
+      "elf": {
+        "class_bits": 64,
+        "machine": 183
+      }
+    },
+    {
+      "path": "/work/unitree-public-final/build/gateway-ros1/uwvm-ros1-gateway",
+      "sha256": "2f37084bd449ee15d510d06edf9199548dc0db7aa777246375b405d27366e01f",
+      "elf": {
+        "class_bits": 64,
+        "machine": 183
+      }
+    }
+  ],
+  "mapped_elf_files_reverified": 134,
+  "native_children_reaped": [
+    15747,
+    15756,
+    16044
+  ],
+  "hardware_qualified": false,
+  "arm_compiler_host_qualified": false,
+  "memory64_qualified": false,
+  "runtime_jvm_or_clr_required": false,
+  "clr_payload_in_delivery": false,
+  "unified_unitree_provider_sha256": "ba9d6637f018732e506e0ff8b131f07547ffec877f43ac64d4af9b02601d463e",
+  "jvm_language_provider_sha256": "bea7bc14db273f40d44a709aeb2805fa644bbf657d2c127e0c27b6e5b132b619",
+  "original_tool_archive_sha256": "71719ce3462b89957f3297e9d8db97004a058ced15f16858293b514c92e7a5aa",
+  "original_tool_archive_bytes": 198461828,
+  "original_tool_files": 266,
+  "original_tools_modified": false,
+  "initial_source_input_manifest_sha256": "0eb850e66407f64f734a396f18c3ea57b7db0815c41ca6dfed3da0ff53f8fe55",
+  "prepared_sdk_manifest_sha256": "75c2754b0cb49cec17a6ddfce3a173a05d4d15bb23fa5c11911d07a435d61f2d",
+  "application_cold_build_receipt_sha256": "5950783a7e7f2ba75707d213c4ad541d4d32eb526ed699ca9dfb47251180b286",
+  "native_execution_receipt_sha256": "647359e9bcc8269e115c1cb33fa6df037c7446f2ae842b011d1c6975f503d46b",
+  "probe_build_receipts": [
+    {
+      "path": "evidence/bare-cold-reportfix-baseline-r1/builds.json",
+      "bytes": 23344,
+      "sha256": "48d955c4099fbbbf46973c69049c798ac5f45ff7830d10d67dae0a1ee8763778"
+    },
+    {
+      "path": "evidence/bare-cold-reportfix-probes-r1/builds.json",
+      "bytes": 55715,
+      "sha256": "5bb69f1f83519fe9cef60e3c74ea7f57533612cfcfde3127d81ffdb8e7e458a7"
+    }
+  ],
+  "probe_execution_receipts": [
+    {
+      "path": "results/serializer-baseline-r1/receipt.json",
+      "sha256": "4c387ec94ea85280ce2fce2db10bf3580a57a088b03498723fc4ae5b835258bc",
+      "status": "EXPECTED_REGRESSION_REPRODUCED",
+      "actual_guest_executions": 1
+    },
+    {
+      "path": "results/serializer-fixed-r1/receipt.json",
+      "sha256": "6d324824d09f99dfde39abb15e6f5afb3e3e495e31672e0e6f76ec2d7c12f2dd",
+      "status": "PASS",
+      "actual_guest_executions": 2
+    }
+  ],
+  "retained_real_serializer_modules": [
+    {
+      "role": "baseline",
+      "language": "java",
+      "artifact": {
+        "path": "artifacts/serializer/baseline/java/unitree-java-ros1-report_boundary.wasm",
+        "bytes": 177417,
+        "sha256": "a304457f8dac61d7bc1204b2e54d35f2541ed956f9bd772083ee658c62cf9ad2"
+      }
+    },
+    {
+      "role": "fixed",
+      "language": "java",
+      "artifact": {
+        "path": "artifacts/serializer/fixed/java/unitree-java-ros1-report_boundary.wasm",
+        "bytes": 178020,
+        "sha256": "627b0dd6eb8ab65307f34e0ae7e36ba3b82103041a6b14a840f46adeae30f396"
+      }
+    },
+    {
+      "role": "fixed",
+      "language": "kotlin",
+      "artifact": {
+        "path": "artifacts/serializer/fixed/kotlin/unitree-kotlin-ros1-report_boundary.wasm",
+        "bytes": 188177,
+        "sha256": "a42750cc35a9069c1838db3c8b225387c574187c7ad611c2084803eb3cabc8be"
+      }
+    }
+  ],
+  "exact_new_module_input_closure_sha256": "5d92749372c2f354e7977ea5a43bbf5e1ef09e6b8340b74b477a2a0ad51c1694",
+  "prior_unified_evidence_files_reverified": 645,
+  "prior_unified_audit_sha256": "c9a50c778867c11f41f769d7e53daa42f40b2c6623405363ee3a943dc25c4d4d",
+  "prior_clr_rejections_preserved_in_immutable_previous_cohort": 6,
+  "additional_final_local_first_audit_files_verified": 2,
+  "communication_types": 6,
+  "complete_record_codecs_reexecuted_in_this_report_fix": 0,
+  "earlier_java_kotlin_record_codec_sources_unchanged": true,
+  "elapsed_values_are_wall_time_not_source_or_robot_timing": true,
+  "modules": [
+    {
+      "project": "unitree/java/ros1/low_state",
+      "artifact": {
+        "path": "artifacts/applications/java/ros1/low_state/unitree-java-ros1-low_state.wasm",
+        "bytes": 259680,
+        "sha256": "f0377e7039133a326d9519218737ae04c5eed0b7ea501a6c3624dc7fc3657829"
+      }
+    },
+    {
+      "project": "unitree/java/ros1/motion_state",
+      "artifact": {
+        "path": "artifacts/applications/java/ros1/motion_state/unitree-java-ros1-motion_state.wasm",
+        "bytes": 270741,
+        "sha256": "0f3f8d1d06304ae320b7d22f8d4afd37adf6e925d568f47ae74e1c95f190f323"
+      }
+    },
+    {
+      "project": "unitree/java/ros1/motor_state",
+      "artifact": {
+        "path": "artifacts/applications/java/ros1/motor_state/unitree-java-ros1-motor_state.wasm",
+        "bytes": 211604,
+        "sha256": "a3c51a9b7813baa7084355c51d63128a3fdec99db1dd95da565c70b2d5125b0e"
+      }
+    },
+    {
+      "project": "unitree/java/ros2/low_state",
+      "artifact": {
+        "path": "artifacts/applications/java/ros2/low_state/unitree-java-ros2-low_state.wasm",
+        "bytes": 258662,
+        "sha256": "95fadf43c2def8db40c9f81979061d629132dcfa210c4e81b7ec7ba9df2f910e"
+      }
+    },
+    {
+      "project": "unitree/java/ros2/motion_state",
+      "artifact": {
+        "path": "artifacts/applications/java/ros2/motion_state/unitree-java-ros2-motion_state.wasm",
+        "bytes": 235013,
+        "sha256": "0618e9584d71e0bb0d63c451a9cc8a81a55de945632e251ffe9ae9f10578745d"
+      }
+    },
+    {
+      "project": "unitree/java/ros2/wireless_controller",
+      "artifact": {
+        "path": "artifacts/applications/java/ros2/wireless_controller/unitree-java-ros2-wireless_controller.wasm",
+        "bytes": 205707,
+        "sha256": "639d2dae7286df4ef946483445df089390f23dc4c2ae7c3a3bf23b674c51f354"
+      }
+    },
+    {
+      "project": "unitree/kotlin/ros1/low_state",
+      "artifact": {
+        "path": "artifacts/applications/kotlin/ros1/low_state/unitree-kotlin-ros1-low_state.wasm",
+        "bytes": 272290,
+        "sha256": "7c481985c11a9bba3e79ec2dc3c8196996a81b1f248d68c6b13c26d38bbc2300"
+      }
+    },
+    {
+      "project": "unitree/kotlin/ros1/motion_state",
+      "artifact": {
+        "path": "artifacts/applications/kotlin/ros1/motion_state/unitree-kotlin-ros1-motion_state.wasm",
+        "bytes": 283359,
+        "sha256": "16813f648d9bd317d7c195bf6bd0275a7e91ac2ba33739f4fab0de05c849d451"
+      }
+    },
+    {
+      "project": "unitree/kotlin/ros1/motor_state",
+      "artifact": {
+        "path": "artifacts/applications/kotlin/ros1/motor_state/unitree-kotlin-ros1-motor_state.wasm",
+        "bytes": 224217,
+        "sha256": "1a7453c9160e1d56356303157ee2016bf878e7dab1c18593c470d9b80c4dc66c"
+      }
+    },
+    {
+      "project": "unitree/kotlin/ros2/low_state",
+      "artifact": {
+        "path": "artifacts/applications/kotlin/ros2/low_state/unitree-kotlin-ros2-low_state.wasm",
+        "bytes": 271275,
+        "sha256": "7cb7bbc801cdc2e9077d4095ae262e845ff649203f10e1c0c03b327c01311334"
+      }
+    },
+    {
+      "project": "unitree/kotlin/ros2/motion_state",
+      "artifact": {
+        "path": "artifacts/applications/kotlin/ros2/motion_state/unitree-kotlin-ros2-motion_state.wasm",
+        "bytes": 247626,
+        "sha256": "c5254a8b559e6282259eba3497fde3e11ea6b8776061af3a54eeecb6fdb027dc"
+      }
+    },
+    {
+      "project": "unitree/kotlin/ros2/wireless_controller",
+      "artifact": {
+        "path": "artifacts/applications/kotlin/ros2/wireless_controller/unitree-kotlin-ros2-wireless_controller.wasm",
+        "bytes": 218304,
+        "sha256": "c7616993626b10df140bd4b157af1ec8ff17db0d70d00bab8de75f96d8586bcd"
+      }
+    }
+  ]
+}

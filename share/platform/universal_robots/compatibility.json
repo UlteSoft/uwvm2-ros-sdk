@@ -1,0 +1,263 @@
+{
+  "schema": "uwvm-vendor-source-compatibility-v1",
+  "platform": "universal_robots",
+  "scope": "Exact retained source domains, not all releases or driver/controller compatibility.",
+  "domains": [
+    {
+      "domain": "universal-robots-ros1-complete",
+      "backend": "ros1",
+      "source_fixture_distribution": "noetic",
+      "source_profile": null,
+      "source_catalog": "share/platform/universal_robots/catalogs/ros1/catalog.json",
+      "source_catalog_sha256": "6cc428586464c0cc472e8139c810dd912ffbbf82dc95cc5544ba16beb80bae76",
+      "complete_expanded_records": 56,
+      "source_definition_occurrences": 36,
+      "native_driver_compatibility": "Not established by retaining or compiling interface declarations."
+    },
+    {
+      "domain": "universal-robots-ros1-trajectory-complete",
+      "backend": "ros1",
+      "source_fixture_distribution": "noetic",
+      "source_profile": null,
+      "source_catalog": "share/platform/universal_robots/catalogs/ros1_trajectory/catalog.json",
+      "source_catalog_sha256": "87577b3e9411caa26c3eac112278d8694745baa7d5dd7cececedd1959866bf96",
+      "complete_expanded_records": 64,
+      "source_definition_occurrences": 41,
+      "native_driver_compatibility": "Not established by retaining or compiling interface declarations."
+    },
+    {
+      "domain": "universal-robots-polyscopex-complete",
+      "backend": "ros2",
+      "source_fixture_distribution": "humble",
+      "source_profile": null,
+      "source_catalog": "share/platform/universal_robots/catalogs/polyscopex/catalog.json",
+      "source_catalog_sha256": "f19e5fb4a2b230de2cf6fa2046abe6fb7ba9ee8a4851ea1884221f3635fbf80d",
+      "complete_expanded_records": 50,
+      "source_definition_occurrences": 43,
+      "native_driver_compatibility": "Not established by retaining or compiling interface declarations."
+    },
+    {
+      "domain": "universal-robots-ros2-complete",
+      "backend": "ros2",
+      "source_fixture_distribution": "humble",
+      "source_profile": null,
+      "source_catalog": "share/platform/universal_robots/catalogs/ros2/catalog.json",
+      "source_catalog_sha256": "d5123ac097da1b1e67dc8c3546f25be0521a92bedeeffe618de4236329a13ffe",
+      "complete_expanded_records": 108,
+      "source_definition_occurrences": 67,
+      "native_driver_compatibility": "Not established by retaining or compiling interface declarations."
+    },
+    {
+      "domain": "universal-robots-ros2-trajectory-complete",
+      "backend": "ros2",
+      "source_fixture_distribution": "humble",
+      "source_profile": null,
+      "source_catalog": "share/platform/universal_robots/catalogs/ros2_trajectory/catalog.json",
+      "source_catalog_sha256": "02b088b1088ab660e34556a3ef01e08f7b139ca7a93b4da5067972c011d5e9c2",
+      "complete_expanded_records": 116,
+      "source_definition_occurrences": 73,
+      "native_driver_compatibility": "Not established by retaining or compiling interface declarations."
+    }
+  ],
+  "upstream_source_pins": [
+    {
+      "id": "common_ros1",
+      "repository": "ros/common_msgs",
+      "branch": "noetic-devel",
+      "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+      "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f"
+    },
+    {
+      "id": "driver_ros1",
+      "repository": "UniversalRobots/Universal_Robots_ROS_Driver",
+      "branch": "master",
+      "commit": "bd14b5c533135886f4f85ef0cabd097a5e1b8d0f",
+      "tree_git_sha1": "313539d9de7b6583e5635571cea2dba0d7930c7b"
+    },
+    {
+      "id": "std_ros1",
+      "repository": "ros/std_msgs",
+      "branch": "noetic-devel",
+      "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+      "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519"
+    },
+    {
+      "id": "ur_msgs_ros1",
+      "repository": "ros-industrial/ur_msgs",
+      "branch": "noetic-devel",
+      "commit": "6c6dc66c63bd551e3985281739add762bfaa3aa9",
+      "tree_git_sha1": "41dd6b850776d49f8269c415085a16f401abb0a0"
+    },
+    {
+      "id": "control_ros1_kinetic",
+      "repository": "ros-controls/control_msgs",
+      "commit": "36e2e30551e3f2bfd9e55fca553f1ef019f4e4b1",
+      "tree": "6c99a727518cae7f7283b96e15e03c2a72b5572f",
+      "tree_git_sha1": "6c99a727518cae7f7283b96e15e03c2a72b5572f"
+    },
+    {
+      "id": "common_humble",
+      "repository": "ros2/common_interfaces",
+      "branch": "humble",
+      "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+      "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46"
+    },
+    {
+      "id": "control_humble",
+      "repository": "ros-controls/control_msgs",
+      "branch": "humble",
+      "commit": "4418bbf3efda12828795e4bb011742133c67a6e2",
+      "tree_git_sha1": "9e655261e019801059195e6edff98e933f276cf2"
+    },
+    {
+      "id": "driver_ros2",
+      "repository": "UniversalRobots/Universal_Robots_ROS2_Driver",
+      "branch": "humble",
+      "commit": "262330ed9b5467a17c8ceae09567991e22d13944",
+      "tree_git_sha1": "d61d173ff9af278fc6eef0f6b5868840cd5da090"
+    },
+    {
+      "id": "rcl_humble",
+      "repository": "ros2/rcl_interfaces",
+      "branch": "humble",
+      "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+      "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e"
+    },
+    {
+      "id": "ur_msgs_inventory",
+      "repository": "ros-industrial/ur_msgs",
+      "branch": "humble-devel",
+      "commit": "3c584014d9b228e0b2da819db0ca1d887c373e1d",
+      "tree_git_sha1": "dbe738c83aeacb1a282d7792ce3638988e7044e6"
+    },
+    {
+      "id": "common_humble",
+      "repository": "ros2/common_interfaces",
+      "branch": "humble",
+      "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+      "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46"
+    },
+    {
+      "id": "polyscopex_interfaces",
+      "repository": "UniversalRobots/urinterfaces",
+      "branch": "master",
+      "commit": "e88cebb16503bcbe6e7385251e1f83b1fa54e9c8",
+      "tree_git_sha1": "b49534f8a27c6a817c23620298506f8f46eaa090"
+    },
+    {
+      "id": "rcl_humble",
+      "repository": "ros2/rcl_interfaces",
+      "branch": "humble",
+      "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+      "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e"
+    },
+    {
+      "id": "common_humble",
+      "repository": "ros2/common_interfaces",
+      "branch": "humble",
+      "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+      "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46"
+    },
+    {
+      "id": "control_humble",
+      "repository": "ros-controls/control_msgs",
+      "branch": "humble",
+      "commit": "4418bbf3efda12828795e4bb011742133c67a6e2",
+      "tree_git_sha1": "9e655261e019801059195e6edff98e933f276cf2"
+    },
+    {
+      "id": "driver_ros2",
+      "repository": "UniversalRobots/Universal_Robots_ROS2_Driver",
+      "branch": "humble",
+      "commit": "262330ed9b5467a17c8ceae09567991e22d13944",
+      "tree_git_sha1": "d61d173ff9af278fc6eef0f6b5868840cd5da090"
+    },
+    {
+      "id": "rcl_humble",
+      "repository": "ros2/rcl_interfaces",
+      "branch": "humble",
+      "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+      "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e"
+    },
+    {
+      "id": "ur_msgs_inventory",
+      "repository": "ros-industrial/ur_msgs",
+      "branch": "humble-devel",
+      "commit": "3c584014d9b228e0b2da819db0ca1d887c373e1d",
+      "tree_git_sha1": "dbe738c83aeacb1a282d7792ce3638988e7044e6"
+    },
+    {
+      "id": "common_ros1",
+      "repository": "ros/common_msgs",
+      "branch": "noetic-devel",
+      "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+      "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f"
+    },
+    {
+      "id": "driver_ros1",
+      "repository": "UniversalRobots/Universal_Robots_ROS_Driver",
+      "branch": "master",
+      "commit": "bd14b5c533135886f4f85ef0cabd097a5e1b8d0f",
+      "tree_git_sha1": "313539d9de7b6583e5635571cea2dba0d7930c7b"
+    },
+    {
+      "id": "std_ros1",
+      "repository": "ros/std_msgs",
+      "branch": "noetic-devel",
+      "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+      "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519"
+    },
+    {
+      "id": "ur_msgs_ros1",
+      "repository": "ros-industrial/ur_msgs",
+      "branch": "noetic-devel",
+      "commit": "6c6dc66c63bd551e3985281739add762bfaa3aa9",
+      "tree_git_sha1": "41dd6b850776d49f8269c415085a16f401abb0a0"
+    }
+  ],
+  "independently_captured_metadata": [
+    {
+      "repository": "UniversalRobots/Universal_Robots_ROS_Driver",
+      "commit": "bd14b5c533135886f4f85ef0cabd097a5e1b8d0f",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/UniversalRobots/Universal_Robots_ROS_Driver/bd14b5c533135886f4f85ef0cabd097a5e1b8d0f/README.md",
+      "sha256": "193e709380d0f2e667d0885dceef5ec14b3e8971161ddbe55a75b413dfd71235"
+    },
+    {
+      "repository": "UniversalRobots/Universal_Robots_ROS2_Driver",
+      "commit": "262330ed9b5467a17c8ceae09567991e22d13944",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/UniversalRobots/Universal_Robots_ROS2_Driver/262330ed9b5467a17c8ceae09567991e22d13944/README.md",
+      "sha256": "9374f5ebf202e52b472cdbf9f6b5ca25bea9ddfff9dc488026ce075924945151"
+    },
+    {
+      "repository": "UniversalRobots/Universal_Robots_ROS2_Driver",
+      "commit": "262330ed9b5467a17c8ceae09567991e22d13944",
+      "path": "ur_dashboard_msgs/package.xml",
+      "url": "https://raw.githubusercontent.com/UniversalRobots/Universal_Robots_ROS2_Driver/262330ed9b5467a17c8ceae09567991e22d13944/ur_dashboard_msgs/package.xml",
+      "sha256": "27a8a960088486c28dc9c8518ffc9aaab09730b5d22213605495b88f70e84fab",
+      "package": "ur_dashboard_msgs",
+      "package_version": "2.15.0"
+    },
+    {
+      "repository": "ros-industrial/ur_msgs",
+      "commit": "3c584014d9b228e0b2da819db0ca1d887c373e1d",
+      "path": "package.xml",
+      "url": "https://raw.githubusercontent.com/ros-industrial/ur_msgs/3c584014d9b228e0b2da819db0ca1d887c373e1d/package.xml",
+      "sha256": "e2d839623cf79a8d8248e8e4cb8b192ee072a4011c57a377dab1112c3ed42748",
+      "package": "ur_msgs",
+      "package_version": "2.6.0"
+    },
+    {
+      "repository": "UniversalRobots/urinterfaces",
+      "commit": "e88cebb16503bcbe6e7385251e1f83b1fa54e9c8",
+      "path": "package.xml",
+      "url": "https://raw.githubusercontent.com/UniversalRobots/urinterfaces/e88cebb16503bcbe6e7385251e1f83b1fa54e9c8/package.xml",
+      "sha256": "e1839fe1f2dbc74635ee858c3c9d985a687aa8dccbd4b4a68686369e786b4bed",
+      "package": "urinterfaces",
+      "package_version": "9.0.0"
+    }
+  ],
+  "default_authority": [],
+  "deployment_rule": "Use the exact native schema/identity and manually selected model/controller; no hardware command is implied."
+}

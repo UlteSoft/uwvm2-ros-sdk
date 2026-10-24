@@ -1,0 +1,25 @@
+package flexiv.ros2jazzyv2
+
+/** @brief Exact Kotlin aliases of the full selected JVM record classes. */
+typealias Ros2Builtin_interfacesMsgTime = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Builtin_interfacesMsgTime
+typealias Ros2Flexiv_msgsActionGrasp_Goal = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsActionGrasp_Goal
+typealias Ros2Flexiv_msgsActionGrasp_Result = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsActionGrasp_Result
+typealias Ros2Flexiv_msgsActionGrasp_Feedback = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsActionGrasp_Feedback
+typealias Ros2Flexiv_msgsActionMove_Goal = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsActionMove_Goal
+typealias Ros2Flexiv_msgsActionMove_Result = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsActionMove_Result
+typealias Ros2Flexiv_msgsActionMove_Feedback = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsActionMove_Feedback
+typealias Ros2Flexiv_msgsMsgDigital = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsMsgDigital
+typealias Ros2Flexiv_msgsMsgGPIOStates = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsMsgGPIOStates
+typealias Ros2Flexiv_msgsMsgJointPosVel = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsMsgJointPosVel
+typealias Ros2Flexiv_msgsMsgMode = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsMsgMode
+typealias Ros2Std_msgsMsgHeader = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Std_msgsMsgHeader
+typealias Ros2Geometry_msgsMsgPoint = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgPoint
+typealias Ros2Geometry_msgsMsgQuaternion = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgQuaternion
+typealias Ros2Geometry_msgsMsgPose = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgPose
+typealias Ros2Geometry_msgsMsgPoseStamped = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgPoseStamped
+typealias Ros2Geometry_msgsMsgVector3 = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgVector3
+typealias Ros2Geometry_msgsMsgTwist = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgTwist
+typealias Ros2Geometry_msgsMsgTwistStamped = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgTwistStamped
+typealias Ros2Geometry_msgsMsgWrench = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgWrench
+typealias Ros2Geometry_msgsMsgWrenchStamped = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Geometry_msgsMsgWrenchStamped
+typealias Ros2Flexiv_msgsMsgRobotStates = org.uwvm.flexiv.ros2jazzyv2.BoundedRecords.Ros2Flexiv_msgsMsgRobotStates

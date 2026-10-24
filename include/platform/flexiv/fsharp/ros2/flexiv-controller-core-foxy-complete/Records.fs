@@ -1,0 +1,13 @@
+namespace Flexiv.controllercorefoxy
+
+/// @brief Full typed .NET records shared with the selected C# library.
+type Ros2Builtin_interfacesMsgTime = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Builtin_interfacesMsgTime
+type Ros2Builtin_interfacesMsgDuration = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Builtin_interfacesMsgDuration
+type Ros2Std_msgsMsgHeader = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Std_msgsMsgHeader
+type Ros2Sensor_msgsMsgJointState = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Sensor_msgsMsgJointState
+type Ros2Trajectory_msgsMsgJointTrajectoryPoint =
+        Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Trajectory_msgsMsgJointTrajectoryPoint
+type Ros2Trajectory_msgsMsgJointTrajectory = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Trajectory_msgsMsgJointTrajectory
+type Ros2Std_msgsMsgMultiArrayDimension = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Std_msgsMsgMultiArrayDimension
+type Ros2Std_msgsMsgMultiArrayLayout = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Std_msgsMsgMultiArrayLayout
+type Ros2Std_msgsMsgFloat64MultiArray = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Std_msgsMsgFloat64MultiArray

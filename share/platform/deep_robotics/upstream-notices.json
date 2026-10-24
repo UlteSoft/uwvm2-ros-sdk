@@ -1,0 +1,17 @@
+{
+  "format": "uwvm-pinned-platform-upstream-notices-v1",
+  "sources": [
+    {
+      "repository": "https://github.com/DeepRoboticsLab/sdk_deploy",
+      "revision": "9ea6ee94bfe90c9a36f5799d39f8dc1d821128db",
+      "original_license_url": "https://raw.githubusercontent.com/DeepRoboticsLab/sdk_deploy/9ea6ee94bfe90c9a36f5799d39f8dc1d821128db/LICENSE",
+      "retained_notice": "licenses/sdk_deploy-LICENSE",
+      "notice_sha256": "a5faaa5866c9b0414a6f5fe02724e2178b4f0b07426c77b7f3beb3e05f112c94",
+      "notice_bytes": 1502,
+      "license_identifier": "BSD-3-Clause"
+    }
+  ],
+  "source_role": "Full source catalogs and SDK-native bridge definitions remain distinguished by catalog/source-mapping metadata.",
+  "notice_integrity_only": true,
+  "native_ros_identity_qualification": false
+}

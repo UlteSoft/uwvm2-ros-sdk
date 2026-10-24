@@ -1,0 +1,96 @@
+{
+  "format": "NVIDIA-final-native-header-code-generation-v1",
+  "final_headers": [
+    {
+      "path": "include/platform/nvidia-isaac-ros/native/first-array-jazzy/bounded_records.h",
+      "bytes": 109078,
+      "sha256": "866252c064c488f713a759f2a4275eccc660e4406b482a4e35af5e2b2a083b22",
+      "original_sha256": "84afad026fd8ceb048903bd2bea2841c3c45c75554f09f596c588992535240e6"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/native/first-array-jazzy/manifest.hpp",
+      "bytes": 10491,
+      "sha256": "65d2b2f14a63b8dc02706f8fef8f9bb98eb72dd2a0f6cc68b774ff64b3f5dd00",
+      "original_sha256": "1586e539ebac14a44ac05df9e38a32afd09577499be4323c4b52853fc44803f9"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/native/first-array-jazzy/native_constants.hpp",
+      "bytes": 893,
+      "sha256": "3b37351af9f1707c680f99f7259b9cc8157232344e6778f0c63dfd4a5f7da706",
+      "original_sha256": "642db5fd80f08c8d8c6721f80b3496f2faec440ae1ec5517eeaf3938f58d7ff5"
+    },
+    {
+      "path": "src/platform/nvidia-isaac-ros/native/first-array-jazzy/native_ros2.hpp",
+      "bytes": 149571,
+      "sha256": "1e9bf8672aedc0ba268dbc5b2458c954d23e700e1b824219e73cb3e01440d1f8",
+      "original_sha256": "cd5d21527366d848dbea8d9173b0db50477010f2f5c67df802ea26ffd57299a9"
+    }
+  ],
+  "compiler": "shared LLVM 23.1.4",
+  "compiler_manifest_sha256": "9dcca4deb56c2bfbbef0f4e8a0fb76529f0bd9525bcce951fc417f2bfca12fea",
+  "source_packet_manifest_sha256": "36891104a61c5a0ff9408fc55854b78312e2eb71a326fe0abde2ed771094d4a6",
+  "VM_header_dependent_unit": "main; runtime and host-api have no dependency on the four changed native files",
+  "VM_object_equivalence": [
+    {
+      "architecture": "x86_64",
+      "baseline_object_sha256": "f77da05274b20a1e86b090ebb6b567f0acb2b0f9320e89a880314030d24ffe68",
+      "final_object_sha256": "f77da05274b20a1e86b090ebb6b567f0acb2b0f9320e89a880314030d24ffe68",
+      "byte_identical": true,
+      "unaffected_units_recompiled": false,
+      "ELF_relinked": false
+    },
+    {
+      "architecture": "aarch64",
+      "baseline_object_sha256": "a6a820a0c94a58eb986684ba654a391122162ffe9f5da1f7f0eac81b7d736af5",
+      "final_object_sha256": "a6a820a0c94a58eb986684ba654a391122162ffe9f5da1f7f0eac81b7d736af5",
+      "byte_identical": true,
+      "unaffected_units_recompiled": false,
+      "ELF_relinked": false
+    }
+  ],
+  "ELF_identities": [
+    {
+      "architecture": "x86_64",
+      "sha256": "a22e1704350e54f3d81e72d42d0c748b90f32a5c6c93a2a16040db09f3ae3a1e",
+      "original_sha256": "a22e1704350e54f3d81e72d42d0c748b90f32a5c6c93a2a16040db09f3ae3a1e",
+      "machine": 62,
+      "mode": "existing ELF retained after the only header-dependent TU recompiles byte-identically",
+      "ELF_byte_identical_to_original": true
+    },
+    {
+      "architecture": "aarch64",
+      "sha256": "ec0d5f4fc523cd41d8d07559f9cf8a66d6925a00678f94370bffe7848c7f163e",
+      "original_sha256": "ec0d5f4fc523cd41d8d07559f9cf8a66d6925a00678f94370bffe7848c7f163e",
+      "machine": 183,
+      "mode": "existing ELF retained after the only header-dependent TU recompiles byte-identically",
+      "ELF_byte_identical_to_original": true
+    },
+    {
+      "architecture": "x86_64",
+      "sha256": "29f0429878eda62b1260743c39316db9d8fc0652ccfd3d5e7624a5b6267a8359",
+      "original_sha256": "29f0429878eda62b1260743c39316db9d8fc0652ccfd3d5e7624a5b6267a8359",
+      "machine": 62,
+      "mode": "all five header-dependent gateway units rebuilt and linked through original public CMake",
+      "ELF_byte_identical_to_original": true
+    },
+    {
+      "architecture": "aarch64",
+      "sha256": "af39169829c1cdb5783fcae9d59f77b5ccc6025f68491ba2245bedabe8bf4cae",
+      "original_sha256": "af39169829c1cdb5783fcae9d59f77b5ccc6025f68491ba2245bedabe8bf4cae",
+      "machine": 183,
+      "mode": "all five header-dependent gateway units rebuilt and linked through original public CMake",
+      "ELF_byte_identical_to_original": true
+    }
+  ],
+  "gateway_dependent_units_per_architecture": 5,
+  "gateway_ELFs_rebuilt_and_relinked": 2,
+  "native_regression_runs": 0,
+  "original52_and_new48_execution_identities_preserved": true,
+  "build_receipt_sha256": "3b58bcc9365033d243a1b5a9bbfc11eb5171faa6f0400087de0a6082b1a30e72",
+  "raw_producer_manifest_sha256": "6005622500abf66d799b34c46108ff408abf981512ef0e6856b2b6239c120d3f",
+  "raw_members": 49,
+  "raw_members_all_SHA256_verified": true,
+  "VFS_preserves_original_logical_paths_and_historical_files": true,
+  "GPU_NITROS_qualified": false,
+  "ARM_compiler_host_qualified": false
+}

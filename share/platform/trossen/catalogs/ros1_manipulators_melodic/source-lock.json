@@ -1,0 +1,24 @@
+{
+  "repository": "Interbotix/interbotix_ros_manipulators",
+  "branch": "melodic",
+  "commit": "120c32a0e557fb1e2142051787b47edeea57d99a",
+  "tree": "77141b9d3d64b460de8eab8b5e9708eb4bd3de91",
+  "ros_version": 1,
+  "vendor": "trossen",
+  "profile": "ros1_manipulators_melodic",
+  "admitted_custom_roots": [
+    "interbotix_uxarm_joy/ArmJoy"
+  ],
+  "excluded_original_roots": [],
+  "format": "uwvm-platform-source-lock-v1",
+  "original_catalog_sha256": "59df11cd1c2f8cd9fa08671a3098ba4910a488004b5ee5d4bc416da0968d405a",
+  "catalog_sha256": "8ee2f365249002adba2728640928758574d2447253769aa03f256538e4bf7c79",
+  "definitions": [
+    {
+      "file": "interbotix_uxarm_joy/ArmJoy.msg",
+      "sha256": "894621088d83c7f4363ca32d1277fc5540527a97d5c1fe82cc53fa3579c33797"
+    }
+  ],
+  "native_identity_qualified": false,
+  "hardware_executed": false
+}

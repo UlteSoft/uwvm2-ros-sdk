@@ -1,0 +1,12516 @@
+-- | @file records.hs
+-- | @brief Preserve the complete original ufactory/ros2_master canonical value domain.
+-- | @details The selected domain contains 102 complete record/components and 262 original fields. Declared
+-- | scalar widths, order, defaults, array/sequence distinctions and finite bounds remain explicit.
+-- | Validate the whole value before accepting bytes; partial/trailing data is a refusal. Pure codecs
+-- | create no ROS owner, permission, callback, unit conversion or native type binding. Module availability
+-- | does not qualify a frontend, target ABI or native ROS transport.
+-- | @see The platform's localized language guide and complete API-CATALOG.md.
+-- Generated complete canonical values; all field selectors are record-qualified.
+module Ufactory.Ros2Master.Records where
+import Data.Int
+import Data.Word
+import qualified Data.ByteString as B
+import qualified Data.Text as T
+import GHC.Float
+import Control.Monad (replicateM)
+import qualified RosWasm.Wire as W
+import RosWasm.Typed (Canonical(..))
+-- | \@brief Complete ROS 2 builtin_interfaces/msg/Time value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 8..8 bytes and is identified by
+-- UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime
+  {
+    -- | \@brief builtin_interfaces/msg/Time.sec: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Builtin_interfacesMsgTime; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Builtin_interfacesMsgTime_sec :: Int32
+  ,
+    -- | \@brief builtin_interfaces/msg/Time.nanosec: uint32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Builtin_interfacesMsgTime; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Builtin_interfacesMsgTime_nanosec :: Word32
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of builtin_interfaces/msg/Time.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Builtin_interfacesMsgTime; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Builtin_interfacesMsgTime :: Ros2Builtin_interfacesMsgTime
+defaultRos2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime (0) (0)
+-- | \@brief Canonical codec identity of builtin_interfaces/msg/Time.
+-- \@details Exact identity UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Builtin_interfacesMsgTime; share/platform/ros/haskell/API-CONTRACT.md
+ros2Builtin_interfacesMsgTimeCodecIdentity :: String
+-- | \@brief Canonical codec identity of builtin_interfaces/msg/Time.
+-- \@details Exact identity UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Builtin_interfacesMsgTime; share/platform/ros/haskell/API-CONTRACT.md
+ros2Builtin_interfacesMsgTimeCodecIdentity = "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7"
+-- | \@brief Encode one complete builtin_interfaces/msg/Time value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Builtin_interfacesMsgTime; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Builtin_interfacesMsgTime :: Ros2Builtin_interfacesMsgTime -> Either Word32 B.ByteString
+encodeRos2Builtin_interfacesMsgTime value = do
+  if (ros2Builtin_interfacesMsgTime_nanosec value) >= 1000000000 then Left 22 else Right ()
+  b0 <- W.encodeSigned 4 (fromIntegral (ros2Builtin_interfacesMsgTime_sec value))
+  b1 <- W.encodeUnsigned 4 (fromIntegral (ros2Builtin_interfacesMsgTime_nanosec value))
+  W.bounded 8 [b0, b1]
+-- | \@brief Read the ordered canonical fields of builtin_interfaces/msg/Time.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Builtin_interfacesMsgTime; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Builtin_interfacesMsgTime :: W.Decoder Ros2Builtin_interfacesMsgTime
+readRos2Builtin_interfacesMsgTime = do
+  a0 <- fromIntegral <$> W.signed 4
+  a1 <- fromIntegral <$> W.unsigned 4
+  let value = Ros2Builtin_interfacesMsgTime a0 a1
+  case encodeRos2Builtin_interfacesMsgTime value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete builtin_interfaces/msg/Time value.
+-- \@details Require the complete 8..8-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Builtin_interfacesMsgTime; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Builtin_interfacesMsgTime :: B.ByteString -> Either Word32 Ros2Builtin_interfacesMsgTime
+decodeRos2Builtin_interfacesMsgTime = W.runDecoder 8 readRos2Builtin_interfacesMsgTime
+instance Canonical Ros2Builtin_interfacesMsgTime where
+  maximumBytes _ = 8
+  encodeValue = encodeRos2Builtin_interfacesMsgTime
+  readValue = readRos2Builtin_interfacesMsgTime
+-- | \@brief Complete ROS 2 geometry_msgs/msg/Point value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 24..24 bytes and is identified by
+-- UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Geometry_msgsMsgPoint = Ros2Geometry_msgsMsgPoint
+  {
+    -- | \@brief geometry_msgs/msg/Point.x: float64.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgPoint_x :: Double
+  ,
+    -- | \@brief geometry_msgs/msg/Point.y: float64.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgPoint_y :: Double
+  ,
+    -- | \@brief geometry_msgs/msg/Point.z: float64.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgPoint_z :: Double
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of geometry_msgs/msg/Point.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Geometry_msgsMsgPoint :: Ros2Geometry_msgsMsgPoint
+defaultRos2Geometry_msgsMsgPoint = Ros2Geometry_msgsMsgPoint (0) (0) (0)
+-- | \@brief Canonical codec identity of geometry_msgs/msg/Point.
+-- \@details Exact identity UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+ros2Geometry_msgsMsgPointCodecIdentity :: String
+-- | \@brief Canonical codec identity of geometry_msgs/msg/Point.
+-- \@details Exact identity UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+ros2Geometry_msgsMsgPointCodecIdentity = "UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616"
+-- | \@brief Encode one complete geometry_msgs/msg/Point value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Geometry_msgsMsgPoint :: Ros2Geometry_msgsMsgPoint -> Either Word32 B.ByteString
+encodeRos2Geometry_msgsMsgPoint value = do
+  b0 <- W.encodeFloat64 (ros2Geometry_msgsMsgPoint_x value)
+  b1 <- W.encodeFloat64 (ros2Geometry_msgsMsgPoint_y value)
+  b2 <- W.encodeFloat64 (ros2Geometry_msgsMsgPoint_z value)
+  W.bounded 24 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of geometry_msgs/msg/Point.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Geometry_msgsMsgPoint :: W.Decoder Ros2Geometry_msgsMsgPoint
+readRos2Geometry_msgsMsgPoint = do
+  a0 <- W.float64
+  a1 <- W.float64
+  a2 <- W.float64
+  let value = Ros2Geometry_msgsMsgPoint a0 a1 a2
+  case encodeRos2Geometry_msgsMsgPoint value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete geometry_msgs/msg/Point value.
+-- \@details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgPoint; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Geometry_msgsMsgPoint :: B.ByteString -> Either Word32 Ros2Geometry_msgsMsgPoint
+decodeRos2Geometry_msgsMsgPoint = W.runDecoder 24 readRos2Geometry_msgsMsgPoint
+instance Canonical Ros2Geometry_msgsMsgPoint where
+  maximumBytes _ = 24
+  encodeValue = encodeRos2Geometry_msgsMsgPoint
+  readValue = readRos2Geometry_msgsMsgPoint
+-- | \@brief Complete ROS 2 geometry_msgs/msg/Quaternion value.
+-- \@details All 4 declared fields are retained in source order. The canonical representation occupies
+-- 32..32 bytes and is identified by
+-- UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Geometry_msgsMsgQuaternion = Ros2Geometry_msgsMsgQuaternion
+  {
+    -- | \@brief geometry_msgs/msg/Quaternion.x: float64.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgQuaternion_x :: Double
+  ,
+    -- | \@brief geometry_msgs/msg/Quaternion.y: float64.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgQuaternion_y :: Double
+  ,
+    -- | \@brief geometry_msgs/msg/Quaternion.z: float64.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgQuaternion_z :: Double
+  ,
+    -- | \@brief geometry_msgs/msg/Quaternion.w: float64.
+    -- \@details Schema default 1.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgQuaternion_w :: Double
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of geometry_msgs/msg/Quaternion.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Geometry_msgsMsgQuaternion :: Ros2Geometry_msgsMsgQuaternion
+defaultRos2Geometry_msgsMsgQuaternion =
+  Ros2Geometry_msgsMsgQuaternion
+    (castWord64ToDouble 0x0)
+    (castWord64ToDouble 0x0)
+    (castWord64ToDouble 0x0)
+    (castWord64ToDouble 0x3ff0000000000000)
+-- | \@brief Canonical codec identity of geometry_msgs/msg/Quaternion.
+-- \@details Exact identity UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+ros2Geometry_msgsMsgQuaternionCodecIdentity :: String
+-- | \@brief Canonical codec identity of geometry_msgs/msg/Quaternion.
+-- \@details Exact identity UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+ros2Geometry_msgsMsgQuaternionCodecIdentity = "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672"
+-- | \@brief Encode one complete geometry_msgs/msg/Quaternion value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Geometry_msgsMsgQuaternion :: Ros2Geometry_msgsMsgQuaternion -> Either Word32 B.ByteString
+encodeRos2Geometry_msgsMsgQuaternion value = do
+  b0 <- W.encodeFloat64 (ros2Geometry_msgsMsgQuaternion_x value)
+  b1 <- W.encodeFloat64 (ros2Geometry_msgsMsgQuaternion_y value)
+  b2 <- W.encodeFloat64 (ros2Geometry_msgsMsgQuaternion_z value)
+  b3 <- W.encodeFloat64 (ros2Geometry_msgsMsgQuaternion_w value)
+  W.bounded 32 [b0, b1, b2, b3]
+-- | \@brief Read the ordered canonical fields of geometry_msgs/msg/Quaternion.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Geometry_msgsMsgQuaternion :: W.Decoder Ros2Geometry_msgsMsgQuaternion
+readRos2Geometry_msgsMsgQuaternion = do
+  a0 <- W.float64
+  a1 <- W.float64
+  a2 <- W.float64
+  a3 <- W.float64
+  let value = Ros2Geometry_msgsMsgQuaternion a0 a1 a2 a3
+  case encodeRos2Geometry_msgsMsgQuaternion value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete geometry_msgs/msg/Quaternion value.
+-- \@details Require the complete 32..32-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgQuaternion; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Geometry_msgsMsgQuaternion :: B.ByteString -> Either Word32 Ros2Geometry_msgsMsgQuaternion
+decodeRos2Geometry_msgsMsgQuaternion = W.runDecoder 32 readRos2Geometry_msgsMsgQuaternion
+instance Canonical Ros2Geometry_msgsMsgQuaternion where
+  maximumBytes _ = 32
+  encodeValue = encodeRos2Geometry_msgsMsgQuaternion
+  readValue = readRos2Geometry_msgsMsgQuaternion
+-- | \@brief Complete ROS 2 geometry_msgs/msg/Pose value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 56..56 bytes and is identified by
+-- UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Geometry_msgsMsgPose = Ros2Geometry_msgsMsgPose
+  {
+    -- | \@brief geometry_msgs/msg/Pose.position: geometry_msgs/msg/Point.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgPose; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgPose_position :: Ros2Geometry_msgsMsgPoint
+  ,
+    -- | \@brief geometry_msgs/msg/Pose.orientation: geometry_msgs/msg/Quaternion.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Geometry_msgsMsgPose; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Geometry_msgsMsgPose_orientation :: Ros2Geometry_msgsMsgQuaternion
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of geometry_msgs/msg/Pose.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgPose; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Geometry_msgsMsgPose :: Ros2Geometry_msgsMsgPose
+defaultRos2Geometry_msgsMsgPose =
+  Ros2Geometry_msgsMsgPose
+    (defaultRos2Geometry_msgsMsgPoint)
+    (defaultRos2Geometry_msgsMsgQuaternion)
+-- | \@brief Canonical codec identity of geometry_msgs/msg/Pose.
+-- \@details Exact identity UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Geometry_msgsMsgPose; share/platform/ros/haskell/API-CONTRACT.md
+ros2Geometry_msgsMsgPoseCodecIdentity :: String
+-- | \@brief Canonical codec identity of geometry_msgs/msg/Pose.
+-- \@details Exact identity UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Geometry_msgsMsgPose; share/platform/ros/haskell/API-CONTRACT.md
+ros2Geometry_msgsMsgPoseCodecIdentity = "UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777"
+-- | \@brief Encode one complete geometry_msgs/msg/Pose value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgPose; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Geometry_msgsMsgPose :: Ros2Geometry_msgsMsgPose -> Either Word32 B.ByteString
+encodeRos2Geometry_msgsMsgPose value = do
+  b0 <- encodeRos2Geometry_msgsMsgPoint (ros2Geometry_msgsMsgPose_position value)
+  b1 <- encodeRos2Geometry_msgsMsgQuaternion (ros2Geometry_msgsMsgPose_orientation value)
+  W.bounded 56 [b0, b1]
+-- | \@brief Read the ordered canonical fields of geometry_msgs/msg/Pose.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgPose; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Geometry_msgsMsgPose :: W.Decoder Ros2Geometry_msgsMsgPose
+readRos2Geometry_msgsMsgPose = do
+  a0 <- readRos2Geometry_msgsMsgPoint
+  a1 <- readRos2Geometry_msgsMsgQuaternion
+  let value = Ros2Geometry_msgsMsgPose a0 a1
+  case encodeRos2Geometry_msgsMsgPose value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete geometry_msgs/msg/Pose value.
+-- \@details Require the complete 56..56-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Geometry_msgsMsgPose; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Geometry_msgsMsgPose :: B.ByteString -> Either Word32 Ros2Geometry_msgsMsgPose
+decodeRos2Geometry_msgsMsgPose = W.runDecoder 56 readRos2Geometry_msgsMsgPose
+instance Canonical Ros2Geometry_msgsMsgPose where
+  maximumBytes _ = 56
+  encodeValue = encodeRos2Geometry_msgsMsgPose
+  readValue = readRos2Geometry_msgsMsgPose
+-- | \@brief Complete ROS 2 std_msgs/msg/Header value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 12..268 bytes and is identified by
+-- UWVMROS1_2f4f374a97a14337b36f87987a2c2fe2fba6dc9597fa4455029ba3bef65c1c2b.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Std_msgsMsgHeader = Ros2Std_msgsMsgHeader
+  {
+    -- | \@brief std_msgs/msg/Header.stamp: builtin_interfaces/msg/Time.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Std_msgsMsgHeader; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Std_msgsMsgHeader_stamp :: Ros2Builtin_interfacesMsgTime
+  ,
+    -- | \@brief std_msgs/msg/Header.frame_id: string; each string is 0..256 bytes; strict UTF-8 with no
+    -- | embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Std_msgsMsgHeader; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Std_msgsMsgHeader_frame_id :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of std_msgs/msg/Header.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Std_msgsMsgHeader; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Std_msgsMsgHeader :: Ros2Std_msgsMsgHeader
+defaultRos2Std_msgsMsgHeader = Ros2Std_msgsMsgHeader (defaultRos2Builtin_interfacesMsgTime) (T.empty)
+-- | \@brief Canonical codec identity of std_msgs/msg/Header.
+-- \@details Exact identity UWVMROS1_2f4f374a97a14337b36f87987a2c2fe2fba6dc9597fa4455029ba3bef65c1c2b
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Std_msgsMsgHeader; share/platform/ros/haskell/API-CONTRACT.md
+ros2Std_msgsMsgHeaderCodecIdentity :: String
+-- | \@brief Canonical codec identity of std_msgs/msg/Header.
+-- \@details Exact identity UWVMROS1_2f4f374a97a14337b36f87987a2c2fe2fba6dc9597fa4455029ba3bef65c1c2b
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Std_msgsMsgHeader; share/platform/ros/haskell/API-CONTRACT.md
+ros2Std_msgsMsgHeaderCodecIdentity = "UWVMROS1_2f4f374a97a14337b36f87987a2c2fe2fba6dc9597fa4455029ba3bef65c1c2b"
+-- | \@brief Encode one complete std_msgs/msg/Header value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Std_msgsMsgHeader; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Std_msgsMsgHeader :: Ros2Std_msgsMsgHeader -> Either Word32 B.ByteString
+encodeRos2Std_msgsMsgHeader value = do
+  b0 <- encodeRos2Builtin_interfacesMsgTime (ros2Std_msgsMsgHeader_stamp value)
+  b1 <- W.encodeText 256 True (ros2Std_msgsMsgHeader_frame_id value)
+  W.bounded 268 [b0, b1]
+-- | \@brief Read the ordered canonical fields of std_msgs/msg/Header.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Std_msgsMsgHeader; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Std_msgsMsgHeader :: W.Decoder Ros2Std_msgsMsgHeader
+readRos2Std_msgsMsgHeader = do
+  a0 <- readRos2Builtin_interfacesMsgTime
+  a1 <- W.text 256 True
+  let value = Ros2Std_msgsMsgHeader a0 a1
+  case encodeRos2Std_msgsMsgHeader value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete std_msgs/msg/Header value.
+-- \@details Require the complete 12..268-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Std_msgsMsgHeader; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Std_msgsMsgHeader :: B.ByteString -> Either Word32 Ros2Std_msgsMsgHeader
+decodeRos2Std_msgsMsgHeader = W.runDecoder 268 readRos2Std_msgsMsgHeader
+instance Canonical Ros2Std_msgsMsgHeader where
+  maximumBytes _ = 268
+  encodeValue = encodeRos2Std_msgsMsgHeader
+  readValue = readRos2Std_msgsMsgHeader
+-- | \@brief Complete ROS 2 xarm_msgs/msg/CIOState value.
+-- \@details All 9 declared fields are retained in source order. The canonical representation occupies
+-- 72..328 bytes and is identified by
+-- UWVMROS1_87e50011fee05d07ce49effe9f8fd2be4e5edf3a09a2b3cd735692fea85c2268.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsMsgCIOState = Ros2Xarm_msgsMsgCIOState
+  {
+    -- | \@brief xarm_msgs/msg/CIOState.header: std_msgs/msg/Header.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_header :: Ros2Std_msgsMsgHeader
+  ,
+    -- | \@brief xarm_msgs/msg/CIOState.state: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_state :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/CIOState.code: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_code :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/CIOState.input_digitals: uint16; exactly 2 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_input_digitals :: [Word16]
+  ,
+    -- | \@brief xarm_msgs/msg/CIOState.output_digitals: uint16; exactly 2 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_output_digitals :: [Word16]
+  ,
+    -- | \@brief xarm_msgs/msg/CIOState.input_analogs: float32; exactly 2 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_input_analogs :: [Float]
+  ,
+    -- | \@brief xarm_msgs/msg/CIOState.output_analogs: float32; exactly 2 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_output_analogs :: [Float]
+  ,
+    -- | \@brief xarm_msgs/msg/CIOState.input_conf: uint8; exactly 16 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_input_conf :: [Word8]
+  ,
+    -- | \@brief xarm_msgs/msg/CIOState.output_conf: uint8; exactly 16 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgCIOState_output_conf :: [Word8]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/msg/CIOState.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsMsgCIOState :: Ros2Xarm_msgsMsgCIOState
+defaultRos2Xarm_msgsMsgCIOState =
+  Ros2Xarm_msgsMsgCIOState
+    (defaultRos2Std_msgsMsgHeader)
+    (0)
+    (0)
+    (replicate 2 (0))
+    (replicate 2 (0))
+    (replicate 2 (0))
+    (replicate 2 (0))
+    (replicate 16 (0))
+    (replicate 16 (0))
+-- | \@brief Canonical codec identity of xarm_msgs/msg/CIOState.
+-- \@details Exact identity UWVMROS1_87e50011fee05d07ce49effe9f8fd2be4e5edf3a09a2b3cd735692fea85c2268
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsMsgCIOStateCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/msg/CIOState.
+-- \@details Exact identity UWVMROS1_87e50011fee05d07ce49effe9f8fd2be4e5edf3a09a2b3cd735692fea85c2268
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsMsgCIOStateCodecIdentity = "UWVMROS1_87e50011fee05d07ce49effe9f8fd2be4e5edf3a09a2b3cd735692fea85c2268"
+-- | \@brief Encode one complete xarm_msgs/msg/CIOState value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsMsgCIOState :: Ros2Xarm_msgsMsgCIOState -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsMsgCIOState value = do
+  b0 <- encodeRos2Std_msgsMsgHeader (ros2Xarm_msgsMsgCIOState_header value)
+  b1 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgCIOState_state value))
+  b2 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgCIOState_code value))
+  if length (ros2Xarm_msgsMsgCIOState_input_digitals value) /= 2 then Left 22 else Right ()
+  b3 <- B.concat <$> mapM (\e -> W.encodeUnsigned 2 (fromIntegral (e))) (ros2Xarm_msgsMsgCIOState_input_digitals value)
+  if length (ros2Xarm_msgsMsgCIOState_output_digitals value) /= 2 then Left 22 else Right ()
+  b4 <- B.concat <$> mapM (\e -> W.encodeUnsigned 2 (fromIntegral (e))) (ros2Xarm_msgsMsgCIOState_output_digitals value)
+  if length (ros2Xarm_msgsMsgCIOState_input_analogs value) /= 2 then Left 22 else Right ()
+  b5 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsMsgCIOState_input_analogs value)
+  if length (ros2Xarm_msgsMsgCIOState_output_analogs value) /= 2 then Left 22 else Right ()
+  b6 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsMsgCIOState_output_analogs value)
+  if length (ros2Xarm_msgsMsgCIOState_input_conf value) /= 16 then Left 22 else Right ()
+  b7 <- B.concat <$> mapM (\e -> W.encodeUnsigned 1 (fromIntegral (e))) (ros2Xarm_msgsMsgCIOState_input_conf value)
+  if length (ros2Xarm_msgsMsgCIOState_output_conf value) /= 16 then Left 22 else Right ()
+  b8 <- B.concat <$> mapM (\e -> W.encodeUnsigned 1 (fromIntegral (e))) (ros2Xarm_msgsMsgCIOState_output_conf value)
+  W.bounded 328 [b0, b1, b2, b3, b4, b5, b6, b7, b8]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/msg/CIOState.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsMsgCIOState :: W.Decoder Ros2Xarm_msgsMsgCIOState
+readRos2Xarm_msgsMsgCIOState = do
+  a0 <- readRos2Std_msgsMsgHeader
+  a1 <- fromIntegral <$> W.signed 2
+  a2 <- fromIntegral <$> W.signed 2
+  a3 <- replicateM 2 (fromIntegral <$> W.unsigned 2)
+  a4 <- replicateM 2 (fromIntegral <$> W.unsigned 2)
+  a5 <- replicateM 2 (W.float32)
+  a6 <- replicateM 2 (W.float32)
+  a7 <- replicateM 16 (fromIntegral <$> W.unsigned 1)
+  a8 <- replicateM 16 (fromIntegral <$> W.unsigned 1)
+  let value = Ros2Xarm_msgsMsgCIOState a0 a1 a2 a3 a4 a5 a6 a7 a8
+  case encodeRos2Xarm_msgsMsgCIOState value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/msg/CIOState value.
+-- \@details Require the complete 72..328-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgCIOState; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsMsgCIOState :: B.ByteString -> Either Word32 Ros2Xarm_msgsMsgCIOState
+decodeRos2Xarm_msgsMsgCIOState = W.runDecoder 328 readRos2Xarm_msgsMsgCIOState
+instance Canonical Ros2Xarm_msgsMsgCIOState where
+  maximumBytes _ = 328
+  encodeValue = encodeRos2Xarm_msgsMsgCIOState
+  readValue = readRos2Xarm_msgsMsgCIOState
+-- | \@brief Complete ROS 2 xarm_msgs/msg/IOState value.
+-- \@details All 4 declared fields are retained in source order. The canonical representation occupies
+-- 16..16 bytes and is identified by
+-- UWVMROS1_8f3e77d7d4c6ac1e49dadd8f4615cb015c028ecf494050a5a6b794d310863dc3.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsMsgIOState = Ros2Xarm_msgsMsgIOState
+  {
+    -- | \@brief xarm_msgs/msg/IOState.digital_1: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgIOState_digital_1 :: Int32
+  ,
+    -- | \@brief xarm_msgs/msg/IOState.digital_2: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgIOState_digital_2 :: Int32
+  ,
+    -- | \@brief xarm_msgs/msg/IOState.analog_1: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgIOState_analog_1 :: Float
+  ,
+    -- | \@brief xarm_msgs/msg/IOState.analog_2: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgIOState_analog_2 :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/msg/IOState.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsMsgIOState :: Ros2Xarm_msgsMsgIOState
+defaultRos2Xarm_msgsMsgIOState = Ros2Xarm_msgsMsgIOState (0) (0) (0) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/msg/IOState.
+-- \@details Exact identity UWVMROS1_8f3e77d7d4c6ac1e49dadd8f4615cb015c028ecf494050a5a6b794d310863dc3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsMsgIOStateCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/msg/IOState.
+-- \@details Exact identity UWVMROS1_8f3e77d7d4c6ac1e49dadd8f4615cb015c028ecf494050a5a6b794d310863dc3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsMsgIOStateCodecIdentity = "UWVMROS1_8f3e77d7d4c6ac1e49dadd8f4615cb015c028ecf494050a5a6b794d310863dc3"
+-- | \@brief Encode one complete xarm_msgs/msg/IOState value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsMsgIOState :: Ros2Xarm_msgsMsgIOState -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsMsgIOState value = do
+  b0 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsMsgIOState_digital_1 value))
+  b1 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsMsgIOState_digital_2 value))
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsMsgIOState_analog_1 value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsMsgIOState_analog_2 value)
+  W.bounded 16 [b0, b1, b2, b3]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/msg/IOState.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsMsgIOState :: W.Decoder Ros2Xarm_msgsMsgIOState
+readRos2Xarm_msgsMsgIOState = do
+  a0 <- fromIntegral <$> W.signed 4
+  a1 <- fromIntegral <$> W.signed 4
+  a2 <- W.float32
+  a3 <- W.float32
+  let value = Ros2Xarm_msgsMsgIOState a0 a1 a2 a3
+  case encodeRos2Xarm_msgsMsgIOState value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/msg/IOState value.
+-- \@details Require the complete 16..16-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgIOState; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsMsgIOState :: B.ByteString -> Either Word32 Ros2Xarm_msgsMsgIOState
+decodeRos2Xarm_msgsMsgIOState = W.runDecoder 16 readRos2Xarm_msgsMsgIOState
+instance Canonical Ros2Xarm_msgsMsgIOState where
+  maximumBytes _ = 16
+  encodeValue = encodeRos2Xarm_msgsMsgIOState
+  readValue = readRos2Xarm_msgsMsgIOState
+-- | \@brief Complete ROS 2 xarm_msgs/msg/RobotMsg value.
+-- \@details All 11 declared fields are retained in source order. The canonical representation occupies
+-- 78..362 bytes and is identified by
+-- UWVMROS1_065254beab3e0439a6fb2965a10d270ca0aef1384523118d04cb39e886841c78.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsMsgRobotMsg = Ros2Xarm_msgsMsgRobotMsg
+  {
+    -- | \@brief xarm_msgs/msg/RobotMsg.header: std_msgs/msg/Header.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_header :: Ros2Std_msgsMsgHeader
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.state: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_state :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.mode: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_mode :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.cmdnum: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_cmdnum :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.mt_brake: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_mt_brake :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.mt_able: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_mt_able :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.err: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_err :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.warn: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_warn :: Int16
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.angle: float32; 0..7 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_angle :: [Float]
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.pose: float32; exactly 6 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_pose :: [Float]
+  ,
+    -- | \@brief xarm_msgs/msg/RobotMsg.offset: float32; exactly 6 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsMsgRobotMsg_offset :: [Float]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/msg/RobotMsg.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsMsgRobotMsg :: Ros2Xarm_msgsMsgRobotMsg
+defaultRos2Xarm_msgsMsgRobotMsg =
+  Ros2Xarm_msgsMsgRobotMsg
+    (defaultRos2Std_msgsMsgHeader)
+    (0)
+    (0)
+    (0)
+    (0)
+    (0)
+    (0)
+    (0)
+    ([])
+    (replicate 6 (0))
+    (replicate 6 (0))
+-- | \@brief Canonical codec identity of xarm_msgs/msg/RobotMsg.
+-- \@details Exact identity UWVMROS1_065254beab3e0439a6fb2965a10d270ca0aef1384523118d04cb39e886841c78
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsMsgRobotMsgCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/msg/RobotMsg.
+-- \@details Exact identity UWVMROS1_065254beab3e0439a6fb2965a10d270ca0aef1384523118d04cb39e886841c78
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsMsgRobotMsgCodecIdentity = "UWVMROS1_065254beab3e0439a6fb2965a10d270ca0aef1384523118d04cb39e886841c78"
+-- | \@brief Encode one complete xarm_msgs/msg/RobotMsg value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsMsgRobotMsg :: Ros2Xarm_msgsMsgRobotMsg -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsMsgRobotMsg value = do
+  b0 <- encodeRos2Std_msgsMsgHeader (ros2Xarm_msgsMsgRobotMsg_header value)
+  b1 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgRobotMsg_state value))
+  b2 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgRobotMsg_mode value))
+  b3 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgRobotMsg_cmdnum value))
+  b4 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgRobotMsg_mt_brake value))
+  b5 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgRobotMsg_mt_able value))
+  b6 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgRobotMsg_err value))
+  b7 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsMsgRobotMsg_warn value))
+  if length (ros2Xarm_msgsMsgRobotMsg_angle value) > 7 then Left 22 else Right ()
+  prefix8 <- W.encodeCount 7 (length (ros2Xarm_msgsMsgRobotMsg_angle value))
+  b8 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsMsgRobotMsg_angle value)
+  if length (ros2Xarm_msgsMsgRobotMsg_pose value) /= 6 then Left 22 else Right ()
+  b9 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsMsgRobotMsg_pose value)
+  if length (ros2Xarm_msgsMsgRobotMsg_offset value) /= 6 then Left 22 else Right ()
+  b10 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsMsgRobotMsg_offset value)
+  W.bounded 362 [b0, b1, b2, b3, b4, b5, b6, b7, prefix8, b8, b9, b10]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/msg/RobotMsg.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsMsgRobotMsg :: W.Decoder Ros2Xarm_msgsMsgRobotMsg
+readRos2Xarm_msgsMsgRobotMsg = do
+  a0 <- readRos2Std_msgsMsgHeader
+  a1 <- fromIntegral <$> W.signed 2
+  a2 <- fromIntegral <$> W.signed 2
+  a3 <- fromIntegral <$> W.signed 2
+  a4 <- fromIntegral <$> W.signed 2
+  a5 <- fromIntegral <$> W.signed 2
+  a6 <- fromIntegral <$> W.signed 2
+  a7 <- fromIntegral <$> W.signed 2
+  count8 <- W.count 7
+  a8 <- replicateM count8 (W.float32)
+  a9 <- replicateM 6 (W.float32)
+  a10 <- replicateM 6 (W.float32)
+  let value = Ros2Xarm_msgsMsgRobotMsg a0 a1 a2 a3 a4 a5 a6 a7 a8 a9 a10
+  case encodeRos2Xarm_msgsMsgRobotMsg value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/msg/RobotMsg value.
+-- \@details Require the complete 78..362-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsMsgRobotMsg; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsMsgRobotMsg :: B.ByteString -> Either Word32 Ros2Xarm_msgsMsgRobotMsg
+decodeRos2Xarm_msgsMsgRobotMsg = W.runDecoder 362 readRos2Xarm_msgsMsgRobotMsg
+instance Canonical Ros2Xarm_msgsMsgRobotMsg where
+  maximumBytes _ = 362
+  encodeValue = encodeRos2Xarm_msgsMsgRobotMsg
+  readValue = readRos2Xarm_msgsMsgRobotMsg
+-- | \@brief Complete ROS 2 xarm_msgs/srv/BioGripperCtrl_Request value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 7..7 bytes and is identified by
+-- UWVMROS1_7eccf0c454f9b64aae93f91d23083b3b5121f540b0d0406142ea7e234a2f634f.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvBioGripperCtrl_Request = Ros2Xarm_msgsSrvBioGripperCtrl_Request
+  {
+    -- | \@brief xarm_msgs/srv/BioGripperCtrl_Request.speed: int16.
+    -- \@details Schema default 0. Encoding preserves the original field position and signedness; invalid
+    -- bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperCtrl_Request_speed :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/BioGripperCtrl_Request.wait: bool.
+    -- \@details Schema default True. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperCtrl_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/BioGripperCtrl_Request.timeout: float32.
+    -- \@details Schema default 5.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperCtrl_Request_timeout :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/BioGripperCtrl_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvBioGripperCtrl_Request :: Ros2Xarm_msgsSrvBioGripperCtrl_Request
+defaultRos2Xarm_msgsSrvBioGripperCtrl_Request =
+  Ros2Xarm_msgsSrvBioGripperCtrl_Request
+    (0)
+    (True)
+    (castWord32ToFloat 0x40a00000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/BioGripperCtrl_Request.
+-- \@details Exact identity UWVMROS1_7eccf0c454f9b64aae93f91d23083b3b5121f540b0d0406142ea7e234a2f634f
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvBioGripperCtrl_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/BioGripperCtrl_Request.
+-- \@details Exact identity UWVMROS1_7eccf0c454f9b64aae93f91d23083b3b5121f540b0d0406142ea7e234a2f634f
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvBioGripperCtrl_RequestCodecIdentity = "UWVMROS1_7eccf0c454f9b64aae93f91d23083b3b5121f540b0d0406142ea7e234a2f634f"
+-- | \@brief Encode one complete xarm_msgs/srv/BioGripperCtrl_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvBioGripperCtrl_Request :: Ros2Xarm_msgsSrvBioGripperCtrl_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvBioGripperCtrl_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvBioGripperCtrl_Request_speed value))
+  b1 <- W.encodeBool (ros2Xarm_msgsSrvBioGripperCtrl_Request_wait value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvBioGripperCtrl_Request_timeout value)
+  W.bounded 7 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/BioGripperCtrl_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvBioGripperCtrl_Request :: W.Decoder Ros2Xarm_msgsSrvBioGripperCtrl_Request
+readRos2Xarm_msgsSrvBioGripperCtrl_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.boolean
+  a2 <- W.float32
+  let value = Ros2Xarm_msgsSrvBioGripperCtrl_Request a0 a1 a2
+  case encodeRos2Xarm_msgsSrvBioGripperCtrl_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/BioGripperCtrl_Request value.
+-- \@details Require the complete 7..7-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvBioGripperCtrl_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvBioGripperCtrl_Request
+decodeRos2Xarm_msgsSrvBioGripperCtrl_Request = W.runDecoder 7 readRos2Xarm_msgsSrvBioGripperCtrl_Request
+instance Canonical Ros2Xarm_msgsSrvBioGripperCtrl_Request where
+  maximumBytes _ = 7
+  encodeValue = encodeRos2Xarm_msgsSrvBioGripperCtrl_Request
+  readValue = readRos2Xarm_msgsSrvBioGripperCtrl_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/BioGripperCtrl_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_c72e0d7eb90ef20e8f7f521346886fc558547a1357a7915058d0e47c238f316a.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvBioGripperCtrl_Response = Ros2Xarm_msgsSrvBioGripperCtrl_Response
+  {
+    -- | \@brief xarm_msgs/srv/BioGripperCtrl_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperCtrl_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/BioGripperCtrl_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperCtrl_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/BioGripperCtrl_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvBioGripperCtrl_Response :: Ros2Xarm_msgsSrvBioGripperCtrl_Response
+defaultRos2Xarm_msgsSrvBioGripperCtrl_Response = Ros2Xarm_msgsSrvBioGripperCtrl_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/BioGripperCtrl_Response.
+-- \@details Exact identity UWVMROS1_c72e0d7eb90ef20e8f7f521346886fc558547a1357a7915058d0e47c238f316a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvBioGripperCtrl_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/BioGripperCtrl_Response.
+-- \@details Exact identity UWVMROS1_c72e0d7eb90ef20e8f7f521346886fc558547a1357a7915058d0e47c238f316a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvBioGripperCtrl_ResponseCodecIdentity = "UWVMROS1_c72e0d7eb90ef20e8f7f521346886fc558547a1357a7915058d0e47c238f316a"
+-- | \@brief Encode one complete xarm_msgs/srv/BioGripperCtrl_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvBioGripperCtrl_Response :: Ros2Xarm_msgsSrvBioGripperCtrl_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvBioGripperCtrl_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvBioGripperCtrl_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvBioGripperCtrl_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/BioGripperCtrl_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvBioGripperCtrl_Response :: W.Decoder Ros2Xarm_msgsSrvBioGripperCtrl_Response
+readRos2Xarm_msgsSrvBioGripperCtrl_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvBioGripperCtrl_Response a0 a1
+  case encodeRos2Xarm_msgsSrvBioGripperCtrl_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/BioGripperCtrl_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvBioGripperCtrl_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvBioGripperCtrl_Response
+decodeRos2Xarm_msgsSrvBioGripperCtrl_Response = W.runDecoder 262 readRos2Xarm_msgsSrvBioGripperCtrl_Response
+instance Canonical Ros2Xarm_msgsSrvBioGripperCtrl_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvBioGripperCtrl_Response
+  readValue = readRos2Xarm_msgsSrvBioGripperCtrl_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/BioGripperEnable_Request value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 6..6 bytes and is identified by
+-- UWVMROS1_611333734053d9a2c9d3f776be73081c9ddcaaf435d927e1c87ff9b74f12eb43.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvBioGripperEnable_Request = Ros2Xarm_msgsSrvBioGripperEnable_Request
+  {
+    -- | \@brief xarm_msgs/srv/BioGripperEnable_Request.enable: bool.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperEnable_Request_enable :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/BioGripperEnable_Request.wait: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperEnable_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/BioGripperEnable_Request.timeout: float32.
+    -- \@details Schema default 3.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperEnable_Request_timeout :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/BioGripperEnable_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvBioGripperEnable_Request :: Ros2Xarm_msgsSrvBioGripperEnable_Request
+defaultRos2Xarm_msgsSrvBioGripperEnable_Request =
+  Ros2Xarm_msgsSrvBioGripperEnable_Request
+    (False)
+    (False)
+    (castWord32ToFloat 0x40400000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/BioGripperEnable_Request.
+-- \@details Exact identity UWVMROS1_611333734053d9a2c9d3f776be73081c9ddcaaf435d927e1c87ff9b74f12eb43
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvBioGripperEnable_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/BioGripperEnable_Request.
+-- \@details Exact identity UWVMROS1_611333734053d9a2c9d3f776be73081c9ddcaaf435d927e1c87ff9b74f12eb43
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvBioGripperEnable_RequestCodecIdentity = "UWVMROS1_611333734053d9a2c9d3f776be73081c9ddcaaf435d927e1c87ff9b74f12eb43"
+-- | \@brief Encode one complete xarm_msgs/srv/BioGripperEnable_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvBioGripperEnable_Request :: Ros2Xarm_msgsSrvBioGripperEnable_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvBioGripperEnable_Request value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvBioGripperEnable_Request_enable value)
+  b1 <- W.encodeBool (ros2Xarm_msgsSrvBioGripperEnable_Request_wait value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvBioGripperEnable_Request_timeout value)
+  W.bounded 6 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/BioGripperEnable_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvBioGripperEnable_Request :: W.Decoder Ros2Xarm_msgsSrvBioGripperEnable_Request
+readRos2Xarm_msgsSrvBioGripperEnable_Request = do
+  a0 <- W.boolean
+  a1 <- W.boolean
+  a2 <- W.float32
+  let value = Ros2Xarm_msgsSrvBioGripperEnable_Request a0 a1 a2
+  case encodeRos2Xarm_msgsSrvBioGripperEnable_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/BioGripperEnable_Request value.
+-- \@details Require the complete 6..6-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvBioGripperEnable_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvBioGripperEnable_Request
+decodeRos2Xarm_msgsSrvBioGripperEnable_Request = W.runDecoder 6 readRos2Xarm_msgsSrvBioGripperEnable_Request
+instance Canonical Ros2Xarm_msgsSrvBioGripperEnable_Request where
+  maximumBytes _ = 6
+  encodeValue = encodeRos2Xarm_msgsSrvBioGripperEnable_Request
+  readValue = readRos2Xarm_msgsSrvBioGripperEnable_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/BioGripperEnable_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_95ffb8f48b2e1bf41855513b3234b6a7b070e0d58d5a07d98fd7de4454034586.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvBioGripperEnable_Response = Ros2Xarm_msgsSrvBioGripperEnable_Response
+  {
+    -- | \@brief xarm_msgs/srv/BioGripperEnable_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperEnable_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperEnable_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/BioGripperEnable_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvBioGripperEnable_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvBioGripperEnable_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/BioGripperEnable_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvBioGripperEnable_Response :: Ros2Xarm_msgsSrvBioGripperEnable_Response
+defaultRos2Xarm_msgsSrvBioGripperEnable_Response = Ros2Xarm_msgsSrvBioGripperEnable_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/BioGripperEnable_Response.
+-- \@details Exact identity UWVMROS1_95ffb8f48b2e1bf41855513b3234b6a7b070e0d58d5a07d98fd7de4454034586
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvBioGripperEnable_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/BioGripperEnable_Response.
+-- \@details Exact identity UWVMROS1_95ffb8f48b2e1bf41855513b3234b6a7b070e0d58d5a07d98fd7de4454034586
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvBioGripperEnable_ResponseCodecIdentity = "UWVMROS1_95ffb8f48b2e1bf41855513b3234b6a7b070e0d58d5a07d98fd7de4454034586"
+-- | \@brief Encode one complete xarm_msgs/srv/BioGripperEnable_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvBioGripperEnable_Response :: Ros2Xarm_msgsSrvBioGripperEnable_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvBioGripperEnable_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvBioGripperEnable_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvBioGripperEnable_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/BioGripperEnable_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvBioGripperEnable_Response :: W.Decoder Ros2Xarm_msgsSrvBioGripperEnable_Response
+readRos2Xarm_msgsSrvBioGripperEnable_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvBioGripperEnable_Response a0 a1
+  case encodeRos2Xarm_msgsSrvBioGripperEnable_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/BioGripperEnable_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvBioGripperEnable_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvBioGripperEnable_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvBioGripperEnable_Response
+decodeRos2Xarm_msgsSrvBioGripperEnable_Response = W.runDecoder 262 readRos2Xarm_msgsSrvBioGripperEnable_Response
+instance Canonical Ros2Xarm_msgsSrvBioGripperEnable_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvBioGripperEnable_Response
+  readValue = readRos2Xarm_msgsSrvBioGripperEnable_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/Call_Request value.
+-- \@details All 0 declared fields are retained in source order. The canonical representation occupies
+-- 0..0 bytes and is identified by
+-- UWVMROS1_6646b9fc8c0050e5c56cf918988e8cf8d7c633aabece1be11ec515f1ca2f837d.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvCall_Request = Ros2Xarm_msgsSrvCall_Request deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/Call_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvCall_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvCall_Request :: Ros2Xarm_msgsSrvCall_Request
+defaultRos2Xarm_msgsSrvCall_Request = Ros2Xarm_msgsSrvCall_Request 
+-- | \@brief Canonical codec identity of xarm_msgs/srv/Call_Request.
+-- \@details Exact identity UWVMROS1_6646b9fc8c0050e5c56cf918988e8cf8d7c633aabece1be11ec515f1ca2f837d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvCall_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvCall_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/Call_Request.
+-- \@details Exact identity UWVMROS1_6646b9fc8c0050e5c56cf918988e8cf8d7c633aabece1be11ec515f1ca2f837d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvCall_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvCall_RequestCodecIdentity = "UWVMROS1_6646b9fc8c0050e5c56cf918988e8cf8d7c633aabece1be11ec515f1ca2f837d"
+-- | \@brief Encode one complete xarm_msgs/srv/Call_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvCall_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvCall_Request :: Ros2Xarm_msgsSrvCall_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvCall_Request value = do
+  W.bounded 0 []
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/Call_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvCall_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvCall_Request :: W.Decoder Ros2Xarm_msgsSrvCall_Request
+readRos2Xarm_msgsSrvCall_Request = do
+  let value = Ros2Xarm_msgsSrvCall_Request 
+  case encodeRos2Xarm_msgsSrvCall_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/Call_Request value.
+-- \@details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvCall_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvCall_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvCall_Request
+decodeRos2Xarm_msgsSrvCall_Request = W.runDecoder 0 readRos2Xarm_msgsSrvCall_Request
+instance Canonical Ros2Xarm_msgsSrvCall_Request where
+  maximumBytes _ = 0
+  encodeValue = encodeRos2Xarm_msgsSrvCall_Request
+  readValue = readRos2Xarm_msgsSrvCall_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/Call_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 8..264 bytes and is identified by
+-- UWVMROS1_c41e249f4ee21ea39233597918f3204e3a276e70c67b120b164c9cd3852c19da.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvCall_Response = Ros2Xarm_msgsSrvCall_Response
+  {
+    -- | \@brief xarm_msgs/srv/Call_Response.ret: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvCall_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvCall_Response_ret :: Int32
+  ,
+    -- | \@brief xarm_msgs/srv/Call_Response.message: string; each string is 0..256 bytes; strict UTF-8
+    -- | with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvCall_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvCall_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/Call_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvCall_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvCall_Response :: Ros2Xarm_msgsSrvCall_Response
+defaultRos2Xarm_msgsSrvCall_Response = Ros2Xarm_msgsSrvCall_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/Call_Response.
+-- \@details Exact identity UWVMROS1_c41e249f4ee21ea39233597918f3204e3a276e70c67b120b164c9cd3852c19da
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvCall_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvCall_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/Call_Response.
+-- \@details Exact identity UWVMROS1_c41e249f4ee21ea39233597918f3204e3a276e70c67b120b164c9cd3852c19da
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvCall_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvCall_ResponseCodecIdentity = "UWVMROS1_c41e249f4ee21ea39233597918f3204e3a276e70c67b120b164c9cd3852c19da"
+-- | \@brief Encode one complete xarm_msgs/srv/Call_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvCall_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvCall_Response :: Ros2Xarm_msgsSrvCall_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvCall_Response value = do
+  b0 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsSrvCall_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvCall_Response_message value)
+  W.bounded 264 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/Call_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvCall_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvCall_Response :: W.Decoder Ros2Xarm_msgsSrvCall_Response
+readRos2Xarm_msgsSrvCall_Response = do
+  a0 <- fromIntegral <$> W.signed 4
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvCall_Response a0 a1
+  case encodeRos2Xarm_msgsSrvCall_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/Call_Response value.
+-- \@details Require the complete 8..264-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvCall_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvCall_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvCall_Response
+decodeRos2Xarm_msgsSrvCall_Response = W.runDecoder 264 readRos2Xarm_msgsSrvCall_Response
+instance Canonical Ros2Xarm_msgsSrvCall_Response where
+  maximumBytes _ = 264
+  encodeValue = encodeRos2Xarm_msgsSrvCall_Response
+  readValue = readRos2Xarm_msgsSrvCall_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/FtCaliLoad_Request value.
+-- \@details All 6 declared fields are retained in source order. The canonical representation occupies
+-- 21..149 bytes and is identified by
+-- UWVMROS1_c14b8269ccc16d30043f48a086d43bf98eca1e7746ef52be4ba0f9cf392eb2fb.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvFtCaliLoad_Request = Ros2Xarm_msgsSrvFtCaliLoad_Request
+  {
+    -- | \@brief xarm_msgs/srv/FtCaliLoad_Request.datas: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtCaliLoad_Request_datas :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/FtCaliLoad_Request.association_setting_tcp_load: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtCaliLoad_Request_association_setting_tcp_load :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/FtCaliLoad_Request.m: float32.
+    -- \@details Schema default 0.325. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtCaliLoad_Request_m :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/FtCaliLoad_Request.x: float32.
+    -- \@details Schema default -17.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtCaliLoad_Request_x :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/FtCaliLoad_Request.y: float32.
+    -- \@details Schema default 9.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtCaliLoad_Request_y :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/FtCaliLoad_Request.z: float32.
+    -- \@details Schema default 11.8. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtCaliLoad_Request_z :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/FtCaliLoad_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvFtCaliLoad_Request :: Ros2Xarm_msgsSrvFtCaliLoad_Request
+defaultRos2Xarm_msgsSrvFtCaliLoad_Request =
+  Ros2Xarm_msgsSrvFtCaliLoad_Request
+    ([])
+    (False)
+    (castWord32ToFloat 0x3ea66666)
+    (castWord32ToFloat 0xc1880000)
+    (castWord32ToFloat 0x41100000)
+    (castWord32ToFloat 0x413ccccd)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtCaliLoad_Request.
+-- \@details Exact identity UWVMROS1_c14b8269ccc16d30043f48a086d43bf98eca1e7746ef52be4ba0f9cf392eb2fb
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtCaliLoad_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtCaliLoad_Request.
+-- \@details Exact identity UWVMROS1_c14b8269ccc16d30043f48a086d43bf98eca1e7746ef52be4ba0f9cf392eb2fb
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtCaliLoad_RequestCodecIdentity = "UWVMROS1_c14b8269ccc16d30043f48a086d43bf98eca1e7746ef52be4ba0f9cf392eb2fb"
+-- | \@brief Encode one complete xarm_msgs/srv/FtCaliLoad_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvFtCaliLoad_Request :: Ros2Xarm_msgsSrvFtCaliLoad_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvFtCaliLoad_Request value = do
+  if length (ros2Xarm_msgsSrvFtCaliLoad_Request_datas value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtCaliLoad_Request_datas value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtCaliLoad_Request_datas value)
+  b1 <- W.encodeBool (ros2Xarm_msgsSrvFtCaliLoad_Request_association_setting_tcp_load value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvFtCaliLoad_Request_m value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsSrvFtCaliLoad_Request_x value)
+  b4 <- W.encodeFloat32 (ros2Xarm_msgsSrvFtCaliLoad_Request_y value)
+  b5 <- W.encodeFloat32 (ros2Xarm_msgsSrvFtCaliLoad_Request_z value)
+  W.bounded 149 [prefix0, b0, b1, b2, b3, b4, b5]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/FtCaliLoad_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvFtCaliLoad_Request :: W.Decoder Ros2Xarm_msgsSrvFtCaliLoad_Request
+readRos2Xarm_msgsSrvFtCaliLoad_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (W.float32)
+  a1 <- W.boolean
+  a2 <- W.float32
+  a3 <- W.float32
+  a4 <- W.float32
+  a5 <- W.float32
+  let value = Ros2Xarm_msgsSrvFtCaliLoad_Request a0 a1 a2 a3 a4 a5
+  case encodeRos2Xarm_msgsSrvFtCaliLoad_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/FtCaliLoad_Request value.
+-- \@details Require the complete 21..149-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvFtCaliLoad_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvFtCaliLoad_Request
+decodeRos2Xarm_msgsSrvFtCaliLoad_Request = W.runDecoder 149 readRos2Xarm_msgsSrvFtCaliLoad_Request
+instance Canonical Ros2Xarm_msgsSrvFtCaliLoad_Request where
+  maximumBytes _ = 149
+  encodeValue = encodeRos2Xarm_msgsSrvFtCaliLoad_Request
+  readValue = readRos2Xarm_msgsSrvFtCaliLoad_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/FtCaliLoad_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_990034f596c4a8e859c06c438635306e2938e763b5bea45019cdf5223347e4e7.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvFtCaliLoad_Response = Ros2Xarm_msgsSrvFtCaliLoad_Response
+  {
+    -- | \@brief xarm_msgs/srv/FtCaliLoad_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtCaliLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtCaliLoad_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/FtCaliLoad_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtCaliLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtCaliLoad_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/FtCaliLoad_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvFtCaliLoad_Response :: Ros2Xarm_msgsSrvFtCaliLoad_Response
+defaultRos2Xarm_msgsSrvFtCaliLoad_Response = Ros2Xarm_msgsSrvFtCaliLoad_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtCaliLoad_Response.
+-- \@details Exact identity UWVMROS1_990034f596c4a8e859c06c438635306e2938e763b5bea45019cdf5223347e4e7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtCaliLoad_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtCaliLoad_Response.
+-- \@details Exact identity UWVMROS1_990034f596c4a8e859c06c438635306e2938e763b5bea45019cdf5223347e4e7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtCaliLoad_ResponseCodecIdentity = "UWVMROS1_990034f596c4a8e859c06c438635306e2938e763b5bea45019cdf5223347e4e7"
+-- | \@brief Encode one complete xarm_msgs/srv/FtCaliLoad_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvFtCaliLoad_Response :: Ros2Xarm_msgsSrvFtCaliLoad_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvFtCaliLoad_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvFtCaliLoad_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvFtCaliLoad_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/FtCaliLoad_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvFtCaliLoad_Response :: W.Decoder Ros2Xarm_msgsSrvFtCaliLoad_Response
+readRos2Xarm_msgsSrvFtCaliLoad_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvFtCaliLoad_Response a0 a1
+  case encodeRos2Xarm_msgsSrvFtCaliLoad_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/FtCaliLoad_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtCaliLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvFtCaliLoad_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvFtCaliLoad_Response
+decodeRos2Xarm_msgsSrvFtCaliLoad_Response = W.runDecoder 262 readRos2Xarm_msgsSrvFtCaliLoad_Response
+instance Canonical Ros2Xarm_msgsSrvFtCaliLoad_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvFtCaliLoad_Response
+  readValue = readRos2Xarm_msgsSrvFtCaliLoad_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/FtForceConfig_Request value.
+-- \@details All 4 declared fields are retained in source order. The canonical representation occupies
+-- 14..334 bytes and is identified by
+-- UWVMROS1_0b337f5e2eb604e3057ca3378f3e1cb2b2032bac9d8c60e6b64ac85548b94e63.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvFtForceConfig_Request = Ros2Xarm_msgsSrvFtForceConfig_Request
+  {
+    -- | \@brief xarm_msgs/srv/FtForceConfig_Request.coord: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForceConfig_Request_coord :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/FtForceConfig_Request.c_axis: int16; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForceConfig_Request_c_axis :: [Int16]
+  ,
+    -- | \@brief xarm_msgs/srv/FtForceConfig_Request.ref: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForceConfig_Request_ref :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/FtForceConfig_Request.limits: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForceConfig_Request_limits :: [Float]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/FtForceConfig_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvFtForceConfig_Request :: Ros2Xarm_msgsSrvFtForceConfig_Request
+defaultRos2Xarm_msgsSrvFtForceConfig_Request = Ros2Xarm_msgsSrvFtForceConfig_Request (0) ([]) ([]) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtForceConfig_Request.
+-- \@details Exact identity UWVMROS1_0b337f5e2eb604e3057ca3378f3e1cb2b2032bac9d8c60e6b64ac85548b94e63
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtForceConfig_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtForceConfig_Request.
+-- \@details Exact identity UWVMROS1_0b337f5e2eb604e3057ca3378f3e1cb2b2032bac9d8c60e6b64ac85548b94e63
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtForceConfig_RequestCodecIdentity = "UWVMROS1_0b337f5e2eb604e3057ca3378f3e1cb2b2032bac9d8c60e6b64ac85548b94e63"
+-- | \@brief Encode one complete xarm_msgs/srv/FtForceConfig_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvFtForceConfig_Request :: Ros2Xarm_msgsSrvFtForceConfig_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvFtForceConfig_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvFtForceConfig_Request_coord value))
+  if length (ros2Xarm_msgsSrvFtForceConfig_Request_c_axis value) > 32 then Left 22 else Right ()
+  prefix1 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtForceConfig_Request_c_axis value))
+  b1 <- B.concat <$> mapM (\e -> W.encodeSigned 2 (fromIntegral (e))) (ros2Xarm_msgsSrvFtForceConfig_Request_c_axis value)
+  if length (ros2Xarm_msgsSrvFtForceConfig_Request_ref value) > 32 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtForceConfig_Request_ref value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtForceConfig_Request_ref value)
+  if length (ros2Xarm_msgsSrvFtForceConfig_Request_limits value) > 32 then Left 22 else Right ()
+  prefix3 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtForceConfig_Request_limits value))
+  b3 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtForceConfig_Request_limits value)
+  W.bounded 334 [b0, prefix1, b1, prefix2, b2, prefix3, b3]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/FtForceConfig_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvFtForceConfig_Request :: W.Decoder Ros2Xarm_msgsSrvFtForceConfig_Request
+readRos2Xarm_msgsSrvFtForceConfig_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  count1 <- W.count 32
+  a1 <- replicateM count1 (fromIntegral <$> W.signed 2)
+  count2 <- W.count 32
+  a2 <- replicateM count2 (W.float32)
+  count3 <- W.count 32
+  a3 <- replicateM count3 (W.float32)
+  let value = Ros2Xarm_msgsSrvFtForceConfig_Request a0 a1 a2 a3
+  case encodeRos2Xarm_msgsSrvFtForceConfig_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/FtForceConfig_Request value.
+-- \@details Require the complete 14..334-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvFtForceConfig_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvFtForceConfig_Request
+decodeRos2Xarm_msgsSrvFtForceConfig_Request = W.runDecoder 334 readRos2Xarm_msgsSrvFtForceConfig_Request
+instance Canonical Ros2Xarm_msgsSrvFtForceConfig_Request where
+  maximumBytes _ = 334
+  encodeValue = encodeRos2Xarm_msgsSrvFtForceConfig_Request
+  readValue = readRos2Xarm_msgsSrvFtForceConfig_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/FtForceConfig_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_43ef4f729fcc96502a26261afb70e25a7cdd02d03097d93099b691dec28d59dc.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvFtForceConfig_Response = Ros2Xarm_msgsSrvFtForceConfig_Response
+  {
+    -- | \@brief xarm_msgs/srv/FtForceConfig_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForceConfig_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForceConfig_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/FtForceConfig_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForceConfig_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForceConfig_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/FtForceConfig_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvFtForceConfig_Response :: Ros2Xarm_msgsSrvFtForceConfig_Response
+defaultRos2Xarm_msgsSrvFtForceConfig_Response = Ros2Xarm_msgsSrvFtForceConfig_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtForceConfig_Response.
+-- \@details Exact identity UWVMROS1_43ef4f729fcc96502a26261afb70e25a7cdd02d03097d93099b691dec28d59dc
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtForceConfig_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtForceConfig_Response.
+-- \@details Exact identity UWVMROS1_43ef4f729fcc96502a26261afb70e25a7cdd02d03097d93099b691dec28d59dc
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtForceConfig_ResponseCodecIdentity = "UWVMROS1_43ef4f729fcc96502a26261afb70e25a7cdd02d03097d93099b691dec28d59dc"
+-- | \@brief Encode one complete xarm_msgs/srv/FtForceConfig_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvFtForceConfig_Response :: Ros2Xarm_msgsSrvFtForceConfig_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvFtForceConfig_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvFtForceConfig_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvFtForceConfig_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/FtForceConfig_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvFtForceConfig_Response :: W.Decoder Ros2Xarm_msgsSrvFtForceConfig_Response
+readRos2Xarm_msgsSrvFtForceConfig_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvFtForceConfig_Response a0 a1
+  case encodeRos2Xarm_msgsSrvFtForceConfig_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/FtForceConfig_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForceConfig_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvFtForceConfig_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvFtForceConfig_Response
+decodeRos2Xarm_msgsSrvFtForceConfig_Response = W.runDecoder 262 readRos2Xarm_msgsSrvFtForceConfig_Response
+instance Canonical Ros2Xarm_msgsSrvFtForceConfig_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvFtForceConfig_Response
+  readValue = readRos2Xarm_msgsSrvFtForceConfig_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/FtForcePid_Request value.
+-- \@details All 4 declared fields are retained in source order. The canonical representation occupies
+-- 16..528 bytes and is identified by
+-- UWVMROS1_b69ed1d3e81b0b83a498bff16aab71a8f26e472c5e5bc1fad4559e781366b367.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvFtForcePid_Request = Ros2Xarm_msgsSrvFtForcePid_Request
+  {
+    -- | \@brief xarm_msgs/srv/FtForcePid_Request.kp: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForcePid_Request_kp :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/FtForcePid_Request.ki: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForcePid_Request_ki :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/FtForcePid_Request.kd: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForcePid_Request_kd :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/FtForcePid_Request.xe_limit: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForcePid_Request_xe_limit :: [Float]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/FtForcePid_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvFtForcePid_Request :: Ros2Xarm_msgsSrvFtForcePid_Request
+defaultRos2Xarm_msgsSrvFtForcePid_Request = Ros2Xarm_msgsSrvFtForcePid_Request ([]) ([]) ([]) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtForcePid_Request.
+-- \@details Exact identity UWVMROS1_b69ed1d3e81b0b83a498bff16aab71a8f26e472c5e5bc1fad4559e781366b367
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtForcePid_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtForcePid_Request.
+-- \@details Exact identity UWVMROS1_b69ed1d3e81b0b83a498bff16aab71a8f26e472c5e5bc1fad4559e781366b367
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtForcePid_RequestCodecIdentity = "UWVMROS1_b69ed1d3e81b0b83a498bff16aab71a8f26e472c5e5bc1fad4559e781366b367"
+-- | \@brief Encode one complete xarm_msgs/srv/FtForcePid_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvFtForcePid_Request :: Ros2Xarm_msgsSrvFtForcePid_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvFtForcePid_Request value = do
+  if length (ros2Xarm_msgsSrvFtForcePid_Request_kp value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtForcePid_Request_kp value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtForcePid_Request_kp value)
+  if length (ros2Xarm_msgsSrvFtForcePid_Request_ki value) > 32 then Left 22 else Right ()
+  prefix1 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtForcePid_Request_ki value))
+  b1 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtForcePid_Request_ki value)
+  if length (ros2Xarm_msgsSrvFtForcePid_Request_kd value) > 32 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtForcePid_Request_kd value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtForcePid_Request_kd value)
+  if length (ros2Xarm_msgsSrvFtForcePid_Request_xe_limit value) > 32 then Left 22 else Right ()
+  prefix3 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtForcePid_Request_xe_limit value))
+  b3 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtForcePid_Request_xe_limit value)
+  W.bounded 528 [prefix0, b0, prefix1, b1, prefix2, b2, prefix3, b3]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/FtForcePid_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvFtForcePid_Request :: W.Decoder Ros2Xarm_msgsSrvFtForcePid_Request
+readRos2Xarm_msgsSrvFtForcePid_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (W.float32)
+  count1 <- W.count 32
+  a1 <- replicateM count1 (W.float32)
+  count2 <- W.count 32
+  a2 <- replicateM count2 (W.float32)
+  count3 <- W.count 32
+  a3 <- replicateM count3 (W.float32)
+  let value = Ros2Xarm_msgsSrvFtForcePid_Request a0 a1 a2 a3
+  case encodeRos2Xarm_msgsSrvFtForcePid_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/FtForcePid_Request value.
+-- \@details Require the complete 16..528-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvFtForcePid_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvFtForcePid_Request
+decodeRos2Xarm_msgsSrvFtForcePid_Request = W.runDecoder 528 readRos2Xarm_msgsSrvFtForcePid_Request
+instance Canonical Ros2Xarm_msgsSrvFtForcePid_Request where
+  maximumBytes _ = 528
+  encodeValue = encodeRos2Xarm_msgsSrvFtForcePid_Request
+  readValue = readRos2Xarm_msgsSrvFtForcePid_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/FtForcePid_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_308d5da22a4445f2b001974907c5b459e5b01ee06fb5029096ae86220e046c89.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvFtForcePid_Response = Ros2Xarm_msgsSrvFtForcePid_Response
+  {
+    -- | \@brief xarm_msgs/srv/FtForcePid_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForcePid_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForcePid_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/FtForcePid_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtForcePid_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtForcePid_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/FtForcePid_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvFtForcePid_Response :: Ros2Xarm_msgsSrvFtForcePid_Response
+defaultRos2Xarm_msgsSrvFtForcePid_Response = Ros2Xarm_msgsSrvFtForcePid_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtForcePid_Response.
+-- \@details Exact identity UWVMROS1_308d5da22a4445f2b001974907c5b459e5b01ee06fb5029096ae86220e046c89
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtForcePid_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtForcePid_Response.
+-- \@details Exact identity UWVMROS1_308d5da22a4445f2b001974907c5b459e5b01ee06fb5029096ae86220e046c89
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtForcePid_ResponseCodecIdentity = "UWVMROS1_308d5da22a4445f2b001974907c5b459e5b01ee06fb5029096ae86220e046c89"
+-- | \@brief Encode one complete xarm_msgs/srv/FtForcePid_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvFtForcePid_Response :: Ros2Xarm_msgsSrvFtForcePid_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvFtForcePid_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvFtForcePid_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvFtForcePid_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/FtForcePid_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvFtForcePid_Response :: W.Decoder Ros2Xarm_msgsSrvFtForcePid_Response
+readRos2Xarm_msgsSrvFtForcePid_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvFtForcePid_Response a0 a1
+  case encodeRos2Xarm_msgsSrvFtForcePid_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/FtForcePid_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtForcePid_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvFtForcePid_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvFtForcePid_Response
+decodeRos2Xarm_msgsSrvFtForcePid_Response = W.runDecoder 262 readRos2Xarm_msgsSrvFtForcePid_Response
+instance Canonical Ros2Xarm_msgsSrvFtForcePid_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvFtForcePid_Response
+  readValue = readRos2Xarm_msgsSrvFtForcePid_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/FtImpedance_Request value.
+-- \@details All 5 declared fields are retained in source order. The canonical representation occupies
+-- 18..466 bytes and is identified by
+-- UWVMROS1_66d926f6b7e15bcfc2023215e434d931a77895df36376bb1dfd2cae852c9078d.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvFtImpedance_Request = Ros2Xarm_msgsSrvFtImpedance_Request
+  {
+    -- | \@brief xarm_msgs/srv/FtImpedance_Request.coord: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtImpedance_Request_coord :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/FtImpedance_Request.c_axis: int16; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtImpedance_Request_c_axis :: [Int16]
+  ,
+    -- | \@brief xarm_msgs/srv/FtImpedance_Request.m: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtImpedance_Request_m :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/FtImpedance_Request.k: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtImpedance_Request_k :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/FtImpedance_Request.b: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtImpedance_Request_b :: [Float]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/FtImpedance_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvFtImpedance_Request :: Ros2Xarm_msgsSrvFtImpedance_Request
+defaultRos2Xarm_msgsSrvFtImpedance_Request = Ros2Xarm_msgsSrvFtImpedance_Request (0) ([]) ([]) ([]) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtImpedance_Request.
+-- \@details Exact identity UWVMROS1_66d926f6b7e15bcfc2023215e434d931a77895df36376bb1dfd2cae852c9078d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtImpedance_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtImpedance_Request.
+-- \@details Exact identity UWVMROS1_66d926f6b7e15bcfc2023215e434d931a77895df36376bb1dfd2cae852c9078d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtImpedance_RequestCodecIdentity = "UWVMROS1_66d926f6b7e15bcfc2023215e434d931a77895df36376bb1dfd2cae852c9078d"
+-- | \@brief Encode one complete xarm_msgs/srv/FtImpedance_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvFtImpedance_Request :: Ros2Xarm_msgsSrvFtImpedance_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvFtImpedance_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvFtImpedance_Request_coord value))
+  if length (ros2Xarm_msgsSrvFtImpedance_Request_c_axis value) > 32 then Left 22 else Right ()
+  prefix1 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtImpedance_Request_c_axis value))
+  b1 <- B.concat <$> mapM (\e -> W.encodeSigned 2 (fromIntegral (e))) (ros2Xarm_msgsSrvFtImpedance_Request_c_axis value)
+  if length (ros2Xarm_msgsSrvFtImpedance_Request_m value) > 32 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtImpedance_Request_m value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtImpedance_Request_m value)
+  if length (ros2Xarm_msgsSrvFtImpedance_Request_k value) > 32 then Left 22 else Right ()
+  prefix3 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtImpedance_Request_k value))
+  b3 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtImpedance_Request_k value)
+  if length (ros2Xarm_msgsSrvFtImpedance_Request_b value) > 32 then Left 22 else Right ()
+  prefix4 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvFtImpedance_Request_b value))
+  b4 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvFtImpedance_Request_b value)
+  W.bounded 466 [b0, prefix1, b1, prefix2, b2, prefix3, b3, prefix4, b4]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/FtImpedance_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvFtImpedance_Request :: W.Decoder Ros2Xarm_msgsSrvFtImpedance_Request
+readRos2Xarm_msgsSrvFtImpedance_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  count1 <- W.count 32
+  a1 <- replicateM count1 (fromIntegral <$> W.signed 2)
+  count2 <- W.count 32
+  a2 <- replicateM count2 (W.float32)
+  count3 <- W.count 32
+  a3 <- replicateM count3 (W.float32)
+  count4 <- W.count 32
+  a4 <- replicateM count4 (W.float32)
+  let value = Ros2Xarm_msgsSrvFtImpedance_Request a0 a1 a2 a3 a4
+  case encodeRos2Xarm_msgsSrvFtImpedance_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/FtImpedance_Request value.
+-- \@details Require the complete 18..466-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvFtImpedance_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvFtImpedance_Request
+decodeRos2Xarm_msgsSrvFtImpedance_Request = W.runDecoder 466 readRos2Xarm_msgsSrvFtImpedance_Request
+instance Canonical Ros2Xarm_msgsSrvFtImpedance_Request where
+  maximumBytes _ = 466
+  encodeValue = encodeRos2Xarm_msgsSrvFtImpedance_Request
+  readValue = readRos2Xarm_msgsSrvFtImpedance_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/FtImpedance_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_47e50f8950f42a2ee65ea8e760b98a78d4cd57729f528785c8307f072ad64cdb.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvFtImpedance_Response = Ros2Xarm_msgsSrvFtImpedance_Response
+  {
+    -- | \@brief xarm_msgs/srv/FtImpedance_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtImpedance_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtImpedance_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/FtImpedance_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvFtImpedance_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvFtImpedance_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/FtImpedance_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvFtImpedance_Response :: Ros2Xarm_msgsSrvFtImpedance_Response
+defaultRos2Xarm_msgsSrvFtImpedance_Response = Ros2Xarm_msgsSrvFtImpedance_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtImpedance_Response.
+-- \@details Exact identity UWVMROS1_47e50f8950f42a2ee65ea8e760b98a78d4cd57729f528785c8307f072ad64cdb
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtImpedance_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/FtImpedance_Response.
+-- \@details Exact identity UWVMROS1_47e50f8950f42a2ee65ea8e760b98a78d4cd57729f528785c8307f072ad64cdb
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvFtImpedance_ResponseCodecIdentity = "UWVMROS1_47e50f8950f42a2ee65ea8e760b98a78d4cd57729f528785c8307f072ad64cdb"
+-- | \@brief Encode one complete xarm_msgs/srv/FtImpedance_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvFtImpedance_Response :: Ros2Xarm_msgsSrvFtImpedance_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvFtImpedance_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvFtImpedance_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvFtImpedance_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/FtImpedance_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvFtImpedance_Response :: W.Decoder Ros2Xarm_msgsSrvFtImpedance_Response
+readRos2Xarm_msgsSrvFtImpedance_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvFtImpedance_Response a0 a1
+  case encodeRos2Xarm_msgsSrvFtImpedance_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/FtImpedance_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvFtImpedance_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvFtImpedance_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvFtImpedance_Response
+decodeRos2Xarm_msgsSrvFtImpedance_Response = W.runDecoder 262 readRos2Xarm_msgsSrvFtImpedance_Response
+instance Canonical Ros2Xarm_msgsSrvFtImpedance_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvFtImpedance_Response
+  readValue = readRos2Xarm_msgsSrvFtImpedance_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetAnalogIO_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 2..2 bytes and is identified by
+-- UWVMROS1_41f0b8344aedb31609753c92a949f995b9b36e36f4bd45080e7c806e4977d3c2.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetAnalogIO_Request = Ros2Xarm_msgsSrvGetAnalogIO_Request
+  {
+    -- | \@brief xarm_msgs/srv/GetAnalogIO_Request.ionum: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetAnalogIO_Request_ionum :: Int16
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetAnalogIO_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetAnalogIO_Request :: Ros2Xarm_msgsSrvGetAnalogIO_Request
+defaultRos2Xarm_msgsSrvGetAnalogIO_Request = Ros2Xarm_msgsSrvGetAnalogIO_Request (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetAnalogIO_Request.
+-- \@details Exact identity UWVMROS1_41f0b8344aedb31609753c92a949f995b9b36e36f4bd45080e7c806e4977d3c2
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetAnalogIO_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetAnalogIO_Request.
+-- \@details Exact identity UWVMROS1_41f0b8344aedb31609753c92a949f995b9b36e36f4bd45080e7c806e4977d3c2
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetAnalogIO_RequestCodecIdentity = "UWVMROS1_41f0b8344aedb31609753c92a949f995b9b36e36f4bd45080e7c806e4977d3c2"
+-- | \@brief Encode one complete xarm_msgs/srv/GetAnalogIO_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetAnalogIO_Request :: Ros2Xarm_msgsSrvGetAnalogIO_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetAnalogIO_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetAnalogIO_Request_ionum value))
+  W.bounded 2 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetAnalogIO_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetAnalogIO_Request :: W.Decoder Ros2Xarm_msgsSrvGetAnalogIO_Request
+readRos2Xarm_msgsSrvGetAnalogIO_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  let value = Ros2Xarm_msgsSrvGetAnalogIO_Request a0
+  case encodeRos2Xarm_msgsSrvGetAnalogIO_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetAnalogIO_Request value.
+-- \@details Require the complete 2..2-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetAnalogIO_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetAnalogIO_Request
+decodeRos2Xarm_msgsSrvGetAnalogIO_Request = W.runDecoder 2 readRos2Xarm_msgsSrvGetAnalogIO_Request
+instance Canonical Ros2Xarm_msgsSrvGetAnalogIO_Request where
+  maximumBytes _ = 2
+  encodeValue = encodeRos2Xarm_msgsSrvGetAnalogIO_Request
+  readValue = readRos2Xarm_msgsSrvGetAnalogIO_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetAnalogIO_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..266 bytes and is identified by
+-- UWVMROS1_c60eab1570b682fa2a1de07edbcf04155d63abf98cfc6d0aa3ebfa39445d5bbc.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetAnalogIO_Response = Ros2Xarm_msgsSrvGetAnalogIO_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetAnalogIO_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetAnalogIO_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetAnalogIO_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetAnalogIO_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetAnalogIO_Response.data: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetAnalogIO_Response_data :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetAnalogIO_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetAnalogIO_Response :: Ros2Xarm_msgsSrvGetAnalogIO_Response
+defaultRos2Xarm_msgsSrvGetAnalogIO_Response = Ros2Xarm_msgsSrvGetAnalogIO_Response (0) (T.empty) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetAnalogIO_Response.
+-- \@details Exact identity UWVMROS1_c60eab1570b682fa2a1de07edbcf04155d63abf98cfc6d0aa3ebfa39445d5bbc
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetAnalogIO_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetAnalogIO_Response.
+-- \@details Exact identity UWVMROS1_c60eab1570b682fa2a1de07edbcf04155d63abf98cfc6d0aa3ebfa39445d5bbc
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetAnalogIO_ResponseCodecIdentity = "UWVMROS1_c60eab1570b682fa2a1de07edbcf04155d63abf98cfc6d0aa3ebfa39445d5bbc"
+-- | \@brief Encode one complete xarm_msgs/srv/GetAnalogIO_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetAnalogIO_Response :: Ros2Xarm_msgsSrvGetAnalogIO_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetAnalogIO_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetAnalogIO_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetAnalogIO_Response_message value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvGetAnalogIO_Response_data value)
+  W.bounded 266 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetAnalogIO_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetAnalogIO_Response :: W.Decoder Ros2Xarm_msgsSrvGetAnalogIO_Response
+readRos2Xarm_msgsSrvGetAnalogIO_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  a2 <- W.float32
+  let value = Ros2Xarm_msgsSrvGetAnalogIO_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetAnalogIO_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetAnalogIO_Response value.
+-- \@details Require the complete 10..266-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetAnalogIO_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetAnalogIO_Response
+decodeRos2Xarm_msgsSrvGetAnalogIO_Response = W.runDecoder 266 readRos2Xarm_msgsSrvGetAnalogIO_Response
+instance Canonical Ros2Xarm_msgsSrvGetAnalogIO_Response where
+  maximumBytes _ = 266
+  encodeValue = encodeRos2Xarm_msgsSrvGetAnalogIO_Response
+  readValue = readRos2Xarm_msgsSrvGetAnalogIO_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetDigitalIO_Request value.
+-- \@details All 0 declared fields are retained in source order. The canonical representation occupies
+-- 0..0 bytes and is identified by
+-- UWVMROS1_46633e09d5231d69307a8dbdbd90c2d81ef6ad279b961da81b2af86fed51f188.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetDigitalIO_Request = Ros2Xarm_msgsSrvGetDigitalIO_Request deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetDigitalIO_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetDigitalIO_Request :: Ros2Xarm_msgsSrvGetDigitalIO_Request
+defaultRos2Xarm_msgsSrvGetDigitalIO_Request = Ros2Xarm_msgsSrvGetDigitalIO_Request 
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetDigitalIO_Request.
+-- \@details Exact identity UWVMROS1_46633e09d5231d69307a8dbdbd90c2d81ef6ad279b961da81b2af86fed51f188
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetDigitalIO_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetDigitalIO_Request.
+-- \@details Exact identity UWVMROS1_46633e09d5231d69307a8dbdbd90c2d81ef6ad279b961da81b2af86fed51f188
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetDigitalIO_RequestCodecIdentity = "UWVMROS1_46633e09d5231d69307a8dbdbd90c2d81ef6ad279b961da81b2af86fed51f188"
+-- | \@brief Encode one complete xarm_msgs/srv/GetDigitalIO_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetDigitalIO_Request :: Ros2Xarm_msgsSrvGetDigitalIO_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetDigitalIO_Request value = do
+  W.bounded 0 []
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetDigitalIO_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetDigitalIO_Request :: W.Decoder Ros2Xarm_msgsSrvGetDigitalIO_Request
+readRos2Xarm_msgsSrvGetDigitalIO_Request = do
+  let value = Ros2Xarm_msgsSrvGetDigitalIO_Request 
+  case encodeRos2Xarm_msgsSrvGetDigitalIO_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetDigitalIO_Request value.
+-- \@details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetDigitalIO_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetDigitalIO_Request
+decodeRos2Xarm_msgsSrvGetDigitalIO_Request = W.runDecoder 0 readRos2Xarm_msgsSrvGetDigitalIO_Request
+instance Canonical Ros2Xarm_msgsSrvGetDigitalIO_Request where
+  maximumBytes _ = 0
+  encodeValue = encodeRos2Xarm_msgsSrvGetDigitalIO_Request
+  readValue = readRos2Xarm_msgsSrvGetDigitalIO_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetDigitalIO_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..330 bytes and is identified by
+-- UWVMROS1_325fb8d7a911dfc1746a289380e295d6e153ac2fad2018932ce7cd431511985c.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetDigitalIO_Response = Ros2Xarm_msgsSrvGetDigitalIO_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetDigitalIO_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetDigitalIO_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetDigitalIO_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetDigitalIO_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetDigitalIO_Response.digitals: int16; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetDigitalIO_Response_digitals :: [Int16]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetDigitalIO_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetDigitalIO_Response :: Ros2Xarm_msgsSrvGetDigitalIO_Response
+defaultRos2Xarm_msgsSrvGetDigitalIO_Response = Ros2Xarm_msgsSrvGetDigitalIO_Response (0) (T.empty) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetDigitalIO_Response.
+-- \@details Exact identity UWVMROS1_325fb8d7a911dfc1746a289380e295d6e153ac2fad2018932ce7cd431511985c
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetDigitalIO_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetDigitalIO_Response.
+-- \@details Exact identity UWVMROS1_325fb8d7a911dfc1746a289380e295d6e153ac2fad2018932ce7cd431511985c
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetDigitalIO_ResponseCodecIdentity = "UWVMROS1_325fb8d7a911dfc1746a289380e295d6e153ac2fad2018932ce7cd431511985c"
+-- | \@brief Encode one complete xarm_msgs/srv/GetDigitalIO_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetDigitalIO_Response :: Ros2Xarm_msgsSrvGetDigitalIO_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetDigitalIO_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetDigitalIO_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetDigitalIO_Response_message value)
+  if length (ros2Xarm_msgsSrvGetDigitalIO_Response_digitals value) > 32 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvGetDigitalIO_Response_digitals value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeSigned 2 (fromIntegral (e))) (ros2Xarm_msgsSrvGetDigitalIO_Response_digitals value)
+  W.bounded 330 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetDigitalIO_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetDigitalIO_Response :: W.Decoder Ros2Xarm_msgsSrvGetDigitalIO_Response
+readRos2Xarm_msgsSrvGetDigitalIO_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 32
+  a2 <- replicateM count2 (fromIntegral <$> W.signed 2)
+  let value = Ros2Xarm_msgsSrvGetDigitalIO_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetDigitalIO_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetDigitalIO_Response value.
+-- \@details Require the complete 10..330-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetDigitalIO_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetDigitalIO_Response
+decodeRos2Xarm_msgsSrvGetDigitalIO_Response = W.runDecoder 330 readRos2Xarm_msgsSrvGetDigitalIO_Response
+instance Canonical Ros2Xarm_msgsSrvGetDigitalIO_Response where
+  maximumBytes _ = 330
+  encodeValue = encodeRos2Xarm_msgsSrvGetDigitalIO_Response
+  readValue = readRos2Xarm_msgsSrvGetDigitalIO_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetFloat32_Request value.
+-- \@details All 0 declared fields are retained in source order. The canonical representation occupies
+-- 0..0 bytes and is identified by
+-- UWVMROS1_6a3aa3004f481bde62974b72be6157b1e388e6097733474e3fb11855f3aa5c84.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetFloat32_Request = Ros2Xarm_msgsSrvGetFloat32_Request deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetFloat32_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetFloat32_Request :: Ros2Xarm_msgsSrvGetFloat32_Request
+defaultRos2Xarm_msgsSrvGetFloat32_Request = Ros2Xarm_msgsSrvGetFloat32_Request 
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetFloat32_Request.
+-- \@details Exact identity UWVMROS1_6a3aa3004f481bde62974b72be6157b1e388e6097733474e3fb11855f3aa5c84
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetFloat32_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetFloat32_Request.
+-- \@details Exact identity UWVMROS1_6a3aa3004f481bde62974b72be6157b1e388e6097733474e3fb11855f3aa5c84
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetFloat32_RequestCodecIdentity = "UWVMROS1_6a3aa3004f481bde62974b72be6157b1e388e6097733474e3fb11855f3aa5c84"
+-- | \@brief Encode one complete xarm_msgs/srv/GetFloat32_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetFloat32_Request :: Ros2Xarm_msgsSrvGetFloat32_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetFloat32_Request value = do
+  W.bounded 0 []
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetFloat32_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetFloat32_Request :: W.Decoder Ros2Xarm_msgsSrvGetFloat32_Request
+readRos2Xarm_msgsSrvGetFloat32_Request = do
+  let value = Ros2Xarm_msgsSrvGetFloat32_Request 
+  case encodeRos2Xarm_msgsSrvGetFloat32_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetFloat32_Request value.
+-- \@details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetFloat32_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetFloat32_Request
+decodeRos2Xarm_msgsSrvGetFloat32_Request = W.runDecoder 0 readRos2Xarm_msgsSrvGetFloat32_Request
+instance Canonical Ros2Xarm_msgsSrvGetFloat32_Request where
+  maximumBytes _ = 0
+  encodeValue = encodeRos2Xarm_msgsSrvGetFloat32_Request
+  readValue = readRos2Xarm_msgsSrvGetFloat32_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetFloat32_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..266 bytes and is identified by
+-- UWVMROS1_e43f1551258cbf7bae19089eade8321e8d565c0783551e016dc73ed410c9e3f2.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetFloat32_Response = Ros2Xarm_msgsSrvGetFloat32_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetFloat32_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetFloat32_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetFloat32_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetFloat32_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetFloat32_Response.data: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetFloat32_Response_data :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetFloat32_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetFloat32_Response :: Ros2Xarm_msgsSrvGetFloat32_Response
+defaultRos2Xarm_msgsSrvGetFloat32_Response = Ros2Xarm_msgsSrvGetFloat32_Response (0) (T.empty) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetFloat32_Response.
+-- \@details Exact identity UWVMROS1_e43f1551258cbf7bae19089eade8321e8d565c0783551e016dc73ed410c9e3f2
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetFloat32_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetFloat32_Response.
+-- \@details Exact identity UWVMROS1_e43f1551258cbf7bae19089eade8321e8d565c0783551e016dc73ed410c9e3f2
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetFloat32_ResponseCodecIdentity = "UWVMROS1_e43f1551258cbf7bae19089eade8321e8d565c0783551e016dc73ed410c9e3f2"
+-- | \@brief Encode one complete xarm_msgs/srv/GetFloat32_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetFloat32_Response :: Ros2Xarm_msgsSrvGetFloat32_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetFloat32_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetFloat32_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetFloat32_Response_message value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvGetFloat32_Response_data value)
+  W.bounded 266 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetFloat32_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetFloat32_Response :: W.Decoder Ros2Xarm_msgsSrvGetFloat32_Response
+readRos2Xarm_msgsSrvGetFloat32_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  a2 <- W.float32
+  let value = Ros2Xarm_msgsSrvGetFloat32_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetFloat32_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetFloat32_Response value.
+-- \@details Require the complete 10..266-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetFloat32_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetFloat32_Response
+decodeRos2Xarm_msgsSrvGetFloat32_Response = W.runDecoder 266 readRos2Xarm_msgsSrvGetFloat32_Response
+instance Canonical Ros2Xarm_msgsSrvGetFloat32_Response where
+  maximumBytes _ = 266
+  encodeValue = encodeRos2Xarm_msgsSrvGetFloat32_Response
+  readValue = readRos2Xarm_msgsSrvGetFloat32_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetFloat32List_Request value.
+-- \@details All 0 declared fields are retained in source order. The canonical representation occupies
+-- 0..0 bytes and is identified by
+-- UWVMROS1_36ec63da8ede627478e174c1f1dd75926973d3b1d57a6f03c05ffac8e4b649a3.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetFloat32List_Request = Ros2Xarm_msgsSrvGetFloat32List_Request deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetFloat32List_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetFloat32List_Request :: Ros2Xarm_msgsSrvGetFloat32List_Request
+defaultRos2Xarm_msgsSrvGetFloat32List_Request = Ros2Xarm_msgsSrvGetFloat32List_Request 
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetFloat32List_Request.
+-- \@details Exact identity UWVMROS1_36ec63da8ede627478e174c1f1dd75926973d3b1d57a6f03c05ffac8e4b649a3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetFloat32List_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetFloat32List_Request.
+-- \@details Exact identity UWVMROS1_36ec63da8ede627478e174c1f1dd75926973d3b1d57a6f03c05ffac8e4b649a3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetFloat32List_RequestCodecIdentity = "UWVMROS1_36ec63da8ede627478e174c1f1dd75926973d3b1d57a6f03c05ffac8e4b649a3"
+-- | \@brief Encode one complete xarm_msgs/srv/GetFloat32List_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetFloat32List_Request :: Ros2Xarm_msgsSrvGetFloat32List_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetFloat32List_Request value = do
+  W.bounded 0 []
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetFloat32List_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetFloat32List_Request :: W.Decoder Ros2Xarm_msgsSrvGetFloat32List_Request
+readRos2Xarm_msgsSrvGetFloat32List_Request = do
+  let value = Ros2Xarm_msgsSrvGetFloat32List_Request 
+  case encodeRos2Xarm_msgsSrvGetFloat32List_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetFloat32List_Request value.
+-- \@details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetFloat32List_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetFloat32List_Request
+decodeRos2Xarm_msgsSrvGetFloat32List_Request = W.runDecoder 0 readRos2Xarm_msgsSrvGetFloat32List_Request
+instance Canonical Ros2Xarm_msgsSrvGetFloat32List_Request where
+  maximumBytes _ = 0
+  encodeValue = encodeRos2Xarm_msgsSrvGetFloat32List_Request
+  readValue = readRos2Xarm_msgsSrvGetFloat32List_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetFloat32List_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..394 bytes and is identified by
+-- UWVMROS1_f30d581b8aa511578c21a3db64c818693b06268b7916cc16e927fc329f40e8d4.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetFloat32List_Response = Ros2Xarm_msgsSrvGetFloat32List_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetFloat32List_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetFloat32List_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetFloat32List_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetFloat32List_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetFloat32List_Response.datas: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetFloat32List_Response_datas :: [Float]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetFloat32List_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetFloat32List_Response :: Ros2Xarm_msgsSrvGetFloat32List_Response
+defaultRos2Xarm_msgsSrvGetFloat32List_Response = Ros2Xarm_msgsSrvGetFloat32List_Response (0) (T.empty) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetFloat32List_Response.
+-- \@details Exact identity UWVMROS1_f30d581b8aa511578c21a3db64c818693b06268b7916cc16e927fc329f40e8d4
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetFloat32List_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetFloat32List_Response.
+-- \@details Exact identity UWVMROS1_f30d581b8aa511578c21a3db64c818693b06268b7916cc16e927fc329f40e8d4
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetFloat32List_ResponseCodecIdentity = "UWVMROS1_f30d581b8aa511578c21a3db64c818693b06268b7916cc16e927fc329f40e8d4"
+-- | \@brief Encode one complete xarm_msgs/srv/GetFloat32List_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetFloat32List_Response :: Ros2Xarm_msgsSrvGetFloat32List_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetFloat32List_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetFloat32List_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetFloat32List_Response_message value)
+  if length (ros2Xarm_msgsSrvGetFloat32List_Response_datas value) > 32 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvGetFloat32List_Response_datas value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvGetFloat32List_Response_datas value)
+  W.bounded 394 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetFloat32List_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetFloat32List_Response :: W.Decoder Ros2Xarm_msgsSrvGetFloat32List_Response
+readRos2Xarm_msgsSrvGetFloat32List_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 32
+  a2 <- replicateM count2 (W.float32)
+  let value = Ros2Xarm_msgsSrvGetFloat32List_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetFloat32List_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetFloat32List_Response value.
+-- \@details Require the complete 10..394-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetFloat32List_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetFloat32List_Response
+decodeRos2Xarm_msgsSrvGetFloat32List_Response = W.runDecoder 394 readRos2Xarm_msgsSrvGetFloat32List_Response
+instance Canonical Ros2Xarm_msgsSrvGetFloat32List_Response where
+  maximumBytes _ = 394
+  encodeValue = encodeRos2Xarm_msgsSrvGetFloat32List_Response
+  readValue = readRos2Xarm_msgsSrvGetFloat32List_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetInt16_Request value.
+-- \@details All 0 declared fields are retained in source order. The canonical representation occupies
+-- 0..0 bytes and is identified by
+-- UWVMROS1_85fe1186c4f0887d4ac9cf3f0d690c32ba3ec895bef3d49b2199527b53627865.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetInt16_Request = Ros2Xarm_msgsSrvGetInt16_Request deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetInt16_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetInt16_Request :: Ros2Xarm_msgsSrvGetInt16_Request
+defaultRos2Xarm_msgsSrvGetInt16_Request = Ros2Xarm_msgsSrvGetInt16_Request 
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt16_Request.
+-- \@details Exact identity UWVMROS1_85fe1186c4f0887d4ac9cf3f0d690c32ba3ec895bef3d49b2199527b53627865
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt16_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt16_Request.
+-- \@details Exact identity UWVMROS1_85fe1186c4f0887d4ac9cf3f0d690c32ba3ec895bef3d49b2199527b53627865
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt16_RequestCodecIdentity = "UWVMROS1_85fe1186c4f0887d4ac9cf3f0d690c32ba3ec895bef3d49b2199527b53627865"
+-- | \@brief Encode one complete xarm_msgs/srv/GetInt16_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetInt16_Request :: Ros2Xarm_msgsSrvGetInt16_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetInt16_Request value = do
+  W.bounded 0 []
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetInt16_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetInt16_Request :: W.Decoder Ros2Xarm_msgsSrvGetInt16_Request
+readRos2Xarm_msgsSrvGetInt16_Request = do
+  let value = Ros2Xarm_msgsSrvGetInt16_Request 
+  case encodeRos2Xarm_msgsSrvGetInt16_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetInt16_Request value.
+-- \@details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetInt16_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetInt16_Request
+decodeRos2Xarm_msgsSrvGetInt16_Request = W.runDecoder 0 readRos2Xarm_msgsSrvGetInt16_Request
+instance Canonical Ros2Xarm_msgsSrvGetInt16_Request where
+  maximumBytes _ = 0
+  encodeValue = encodeRos2Xarm_msgsSrvGetInt16_Request
+  readValue = readRos2Xarm_msgsSrvGetInt16_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetInt16_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 8..264 bytes and is identified by
+-- UWVMROS1_c29870d9604ae0d220de53bb6768681bfbb120171af61c36e45b9a660fd8f1a9.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetInt16_Response = Ros2Xarm_msgsSrvGetInt16_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetInt16_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt16_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetInt16_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt16_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetInt16_Response.data: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt16_Response_data :: Int16
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetInt16_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetInt16_Response :: Ros2Xarm_msgsSrvGetInt16_Response
+defaultRos2Xarm_msgsSrvGetInt16_Response = Ros2Xarm_msgsSrvGetInt16_Response (0) (T.empty) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt16_Response.
+-- \@details Exact identity UWVMROS1_c29870d9604ae0d220de53bb6768681bfbb120171af61c36e45b9a660fd8f1a9
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt16_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt16_Response.
+-- \@details Exact identity UWVMROS1_c29870d9604ae0d220de53bb6768681bfbb120171af61c36e45b9a660fd8f1a9
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt16_ResponseCodecIdentity = "UWVMROS1_c29870d9604ae0d220de53bb6768681bfbb120171af61c36e45b9a660fd8f1a9"
+-- | \@brief Encode one complete xarm_msgs/srv/GetInt16_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetInt16_Response :: Ros2Xarm_msgsSrvGetInt16_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetInt16_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetInt16_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetInt16_Response_message value)
+  b2 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetInt16_Response_data value))
+  W.bounded 264 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetInt16_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetInt16_Response :: W.Decoder Ros2Xarm_msgsSrvGetInt16_Response
+readRos2Xarm_msgsSrvGetInt16_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  a2 <- fromIntegral <$> W.signed 2
+  let value = Ros2Xarm_msgsSrvGetInt16_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetInt16_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetInt16_Response value.
+-- \@details Require the complete 8..264-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetInt16_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetInt16_Response
+decodeRos2Xarm_msgsSrvGetInt16_Response = W.runDecoder 264 readRos2Xarm_msgsSrvGetInt16_Response
+instance Canonical Ros2Xarm_msgsSrvGetInt16_Response where
+  maximumBytes _ = 264
+  encodeValue = encodeRos2Xarm_msgsSrvGetInt16_Response
+  readValue = readRos2Xarm_msgsSrvGetInt16_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetInt16List_Request value.
+-- \@details All 0 declared fields are retained in source order. The canonical representation occupies
+-- 0..0 bytes and is identified by
+-- UWVMROS1_ca95d35c75e9843b2c9d27bd94e34e336641255ad5dd2b0ff22f8a6efb36db2d.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetInt16List_Request = Ros2Xarm_msgsSrvGetInt16List_Request deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetInt16List_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetInt16List_Request :: Ros2Xarm_msgsSrvGetInt16List_Request
+defaultRos2Xarm_msgsSrvGetInt16List_Request = Ros2Xarm_msgsSrvGetInt16List_Request 
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt16List_Request.
+-- \@details Exact identity UWVMROS1_ca95d35c75e9843b2c9d27bd94e34e336641255ad5dd2b0ff22f8a6efb36db2d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt16List_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt16List_Request.
+-- \@details Exact identity UWVMROS1_ca95d35c75e9843b2c9d27bd94e34e336641255ad5dd2b0ff22f8a6efb36db2d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt16List_RequestCodecIdentity = "UWVMROS1_ca95d35c75e9843b2c9d27bd94e34e336641255ad5dd2b0ff22f8a6efb36db2d"
+-- | \@brief Encode one complete xarm_msgs/srv/GetInt16List_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetInt16List_Request :: Ros2Xarm_msgsSrvGetInt16List_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetInt16List_Request value = do
+  W.bounded 0 []
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetInt16List_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetInt16List_Request :: W.Decoder Ros2Xarm_msgsSrvGetInt16List_Request
+readRos2Xarm_msgsSrvGetInt16List_Request = do
+  let value = Ros2Xarm_msgsSrvGetInt16List_Request 
+  case encodeRos2Xarm_msgsSrvGetInt16List_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetInt16List_Request value.
+-- \@details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetInt16List_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetInt16List_Request
+decodeRos2Xarm_msgsSrvGetInt16List_Request = W.runDecoder 0 readRos2Xarm_msgsSrvGetInt16List_Request
+instance Canonical Ros2Xarm_msgsSrvGetInt16List_Request where
+  maximumBytes _ = 0
+  encodeValue = encodeRos2Xarm_msgsSrvGetInt16List_Request
+  readValue = readRos2Xarm_msgsSrvGetInt16List_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetInt16List_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..330 bytes and is identified by
+-- UWVMROS1_d35b6ac9d82960e32fd035554dc021e8f3e592259c1db9a714e9b575cc611139.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetInt16List_Response = Ros2Xarm_msgsSrvGetInt16List_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetInt16List_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt16List_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetInt16List_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt16List_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetInt16List_Response.datas: int16; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt16List_Response_datas :: [Int16]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetInt16List_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetInt16List_Response :: Ros2Xarm_msgsSrvGetInt16List_Response
+defaultRos2Xarm_msgsSrvGetInt16List_Response = Ros2Xarm_msgsSrvGetInt16List_Response (0) (T.empty) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt16List_Response.
+-- \@details Exact identity UWVMROS1_d35b6ac9d82960e32fd035554dc021e8f3e592259c1db9a714e9b575cc611139
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt16List_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt16List_Response.
+-- \@details Exact identity UWVMROS1_d35b6ac9d82960e32fd035554dc021e8f3e592259c1db9a714e9b575cc611139
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt16List_ResponseCodecIdentity = "UWVMROS1_d35b6ac9d82960e32fd035554dc021e8f3e592259c1db9a714e9b575cc611139"
+-- | \@brief Encode one complete xarm_msgs/srv/GetInt16List_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetInt16List_Response :: Ros2Xarm_msgsSrvGetInt16List_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetInt16List_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetInt16List_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetInt16List_Response_message value)
+  if length (ros2Xarm_msgsSrvGetInt16List_Response_datas value) > 32 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvGetInt16List_Response_datas value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeSigned 2 (fromIntegral (e))) (ros2Xarm_msgsSrvGetInt16List_Response_datas value)
+  W.bounded 330 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetInt16List_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetInt16List_Response :: W.Decoder Ros2Xarm_msgsSrvGetInt16List_Response
+readRos2Xarm_msgsSrvGetInt16List_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 32
+  a2 <- replicateM count2 (fromIntegral <$> W.signed 2)
+  let value = Ros2Xarm_msgsSrvGetInt16List_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetInt16List_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetInt16List_Response value.
+-- \@details Require the complete 10..330-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetInt16List_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetInt16List_Response
+decodeRos2Xarm_msgsSrvGetInt16List_Response = W.runDecoder 330 readRos2Xarm_msgsSrvGetInt16List_Response
+instance Canonical Ros2Xarm_msgsSrvGetInt16List_Response where
+  maximumBytes _ = 330
+  encodeValue = encodeRos2Xarm_msgsSrvGetInt16List_Response
+  readValue = readRos2Xarm_msgsSrvGetInt16List_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetInt32_Request value.
+-- \@details All 0 declared fields are retained in source order. The canonical representation occupies
+-- 0..0 bytes and is identified by
+-- UWVMROS1_e7dbcdb905c89364b288e23c985ba73394529613bdb2f4a74b10d811203f0dfe.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetInt32_Request = Ros2Xarm_msgsSrvGetInt32_Request deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetInt32_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetInt32_Request :: Ros2Xarm_msgsSrvGetInt32_Request
+defaultRos2Xarm_msgsSrvGetInt32_Request = Ros2Xarm_msgsSrvGetInt32_Request 
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt32_Request.
+-- \@details Exact identity UWVMROS1_e7dbcdb905c89364b288e23c985ba73394529613bdb2f4a74b10d811203f0dfe
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt32_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt32_Request.
+-- \@details Exact identity UWVMROS1_e7dbcdb905c89364b288e23c985ba73394529613bdb2f4a74b10d811203f0dfe
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt32_RequestCodecIdentity = "UWVMROS1_e7dbcdb905c89364b288e23c985ba73394529613bdb2f4a74b10d811203f0dfe"
+-- | \@brief Encode one complete xarm_msgs/srv/GetInt32_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetInt32_Request :: Ros2Xarm_msgsSrvGetInt32_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetInt32_Request value = do
+  W.bounded 0 []
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetInt32_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetInt32_Request :: W.Decoder Ros2Xarm_msgsSrvGetInt32_Request
+readRos2Xarm_msgsSrvGetInt32_Request = do
+  let value = Ros2Xarm_msgsSrvGetInt32_Request 
+  case encodeRos2Xarm_msgsSrvGetInt32_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetInt32_Request value.
+-- \@details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetInt32_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetInt32_Request
+decodeRos2Xarm_msgsSrvGetInt32_Request = W.runDecoder 0 readRos2Xarm_msgsSrvGetInt32_Request
+instance Canonical Ros2Xarm_msgsSrvGetInt32_Request where
+  maximumBytes _ = 0
+  encodeValue = encodeRos2Xarm_msgsSrvGetInt32_Request
+  readValue = readRos2Xarm_msgsSrvGetInt32_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetInt32_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..266 bytes and is identified by
+-- UWVMROS1_9834d69ebc7644d3d2feee8f4bcb20effbc15931709be7264ea04bd88b2686f2.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetInt32_Response = Ros2Xarm_msgsSrvGetInt32_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetInt32_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt32_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetInt32_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt32_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetInt32_Response.data: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt32_Response_data :: Int32
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetInt32_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetInt32_Response :: Ros2Xarm_msgsSrvGetInt32_Response
+defaultRos2Xarm_msgsSrvGetInt32_Response = Ros2Xarm_msgsSrvGetInt32_Response (0) (T.empty) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt32_Response.
+-- \@details Exact identity UWVMROS1_9834d69ebc7644d3d2feee8f4bcb20effbc15931709be7264ea04bd88b2686f2
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt32_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt32_Response.
+-- \@details Exact identity UWVMROS1_9834d69ebc7644d3d2feee8f4bcb20effbc15931709be7264ea04bd88b2686f2
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt32_ResponseCodecIdentity = "UWVMROS1_9834d69ebc7644d3d2feee8f4bcb20effbc15931709be7264ea04bd88b2686f2"
+-- | \@brief Encode one complete xarm_msgs/srv/GetInt32_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetInt32_Response :: Ros2Xarm_msgsSrvGetInt32_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetInt32_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetInt32_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetInt32_Response_message value)
+  b2 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsSrvGetInt32_Response_data value))
+  W.bounded 266 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetInt32_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetInt32_Response :: W.Decoder Ros2Xarm_msgsSrvGetInt32_Response
+readRos2Xarm_msgsSrvGetInt32_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  a2 <- fromIntegral <$> W.signed 4
+  let value = Ros2Xarm_msgsSrvGetInt32_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetInt32_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetInt32_Response value.
+-- \@details Require the complete 10..266-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetInt32_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetInt32_Response
+decodeRos2Xarm_msgsSrvGetInt32_Response = W.runDecoder 266 readRos2Xarm_msgsSrvGetInt32_Response
+instance Canonical Ros2Xarm_msgsSrvGetInt32_Response where
+  maximumBytes _ = 266
+  encodeValue = encodeRos2Xarm_msgsSrvGetInt32_Response
+  readValue = readRos2Xarm_msgsSrvGetInt32_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetInt32ByType_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 2..2 bytes and is identified by
+-- UWVMROS1_5d4ba9b5c23452f3b203c66e3cbc5880b99cac6b9ec9ce3acac96414013f993a.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetInt32ByType_Request = Ros2Xarm_msgsSrvGetInt32ByType_Request
+  {
+    -- | \@brief xarm_msgs/srv/GetInt32ByType_Request.type: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt32ByType_Request_type :: Int16
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetInt32ByType_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetInt32ByType_Request :: Ros2Xarm_msgsSrvGetInt32ByType_Request
+defaultRos2Xarm_msgsSrvGetInt32ByType_Request = Ros2Xarm_msgsSrvGetInt32ByType_Request (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt32ByType_Request.
+-- \@details Exact identity UWVMROS1_5d4ba9b5c23452f3b203c66e3cbc5880b99cac6b9ec9ce3acac96414013f993a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt32ByType_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt32ByType_Request.
+-- \@details Exact identity UWVMROS1_5d4ba9b5c23452f3b203c66e3cbc5880b99cac6b9ec9ce3acac96414013f993a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt32ByType_RequestCodecIdentity = "UWVMROS1_5d4ba9b5c23452f3b203c66e3cbc5880b99cac6b9ec9ce3acac96414013f993a"
+-- | \@brief Encode one complete xarm_msgs/srv/GetInt32ByType_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetInt32ByType_Request :: Ros2Xarm_msgsSrvGetInt32ByType_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetInt32ByType_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetInt32ByType_Request_type value))
+  W.bounded 2 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetInt32ByType_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetInt32ByType_Request :: W.Decoder Ros2Xarm_msgsSrvGetInt32ByType_Request
+readRos2Xarm_msgsSrvGetInt32ByType_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  let value = Ros2Xarm_msgsSrvGetInt32ByType_Request a0
+  case encodeRos2Xarm_msgsSrvGetInt32ByType_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetInt32ByType_Request value.
+-- \@details Require the complete 2..2-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetInt32ByType_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetInt32ByType_Request
+decodeRos2Xarm_msgsSrvGetInt32ByType_Request = W.runDecoder 2 readRos2Xarm_msgsSrvGetInt32ByType_Request
+instance Canonical Ros2Xarm_msgsSrvGetInt32ByType_Request where
+  maximumBytes _ = 2
+  encodeValue = encodeRos2Xarm_msgsSrvGetInt32ByType_Request
+  readValue = readRos2Xarm_msgsSrvGetInt32ByType_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetInt32ByType_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..266 bytes and is identified by
+-- UWVMROS1_6cabb4a9a840ef62c4f8a2da7da917410a97a8aafcf78e361cc928a7cdbe5c3a.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetInt32ByType_Response = Ros2Xarm_msgsSrvGetInt32ByType_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetInt32ByType_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt32ByType_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetInt32ByType_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt32ByType_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetInt32ByType_Response.data: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetInt32ByType_Response_data :: Int32
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetInt32ByType_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetInt32ByType_Response :: Ros2Xarm_msgsSrvGetInt32ByType_Response
+defaultRos2Xarm_msgsSrvGetInt32ByType_Response = Ros2Xarm_msgsSrvGetInt32ByType_Response (0) (T.empty) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt32ByType_Response.
+-- \@details Exact identity UWVMROS1_6cabb4a9a840ef62c4f8a2da7da917410a97a8aafcf78e361cc928a7cdbe5c3a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt32ByType_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetInt32ByType_Response.
+-- \@details Exact identity UWVMROS1_6cabb4a9a840ef62c4f8a2da7da917410a97a8aafcf78e361cc928a7cdbe5c3a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetInt32ByType_ResponseCodecIdentity = "UWVMROS1_6cabb4a9a840ef62c4f8a2da7da917410a97a8aafcf78e361cc928a7cdbe5c3a"
+-- | \@brief Encode one complete xarm_msgs/srv/GetInt32ByType_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetInt32ByType_Response :: Ros2Xarm_msgsSrvGetInt32ByType_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetInt32ByType_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetInt32ByType_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetInt32ByType_Response_message value)
+  b2 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsSrvGetInt32ByType_Response_data value))
+  W.bounded 266 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetInt32ByType_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetInt32ByType_Response :: W.Decoder Ros2Xarm_msgsSrvGetInt32ByType_Response
+readRos2Xarm_msgsSrvGetInt32ByType_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  a2 <- fromIntegral <$> W.signed 4
+  let value = Ros2Xarm_msgsSrvGetInt32ByType_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetInt32ByType_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetInt32ByType_Response value.
+-- \@details Require the complete 10..266-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetInt32ByType_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetInt32ByType_Response
+decodeRos2Xarm_msgsSrvGetInt32ByType_Response = W.runDecoder 266 readRos2Xarm_msgsSrvGetInt32ByType_Response
+instance Canonical Ros2Xarm_msgsSrvGetInt32ByType_Response where
+  maximumBytes _ = 266
+  encodeValue = encodeRos2Xarm_msgsSrvGetInt32ByType_Response
+  readValue = readRos2Xarm_msgsSrvGetInt32ByType_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetSetModbusData_Request value.
+-- \@details All 6 declared fields are retained in source order. The canonical representation occupies
+-- 11..4107 bytes and is identified by
+-- UWVMROS1_f9cc9e1e5635a37023cc50f66930072f3d61bcfd58f0d8ebb0218c4eb3a035cd.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetSetModbusData_Request = Ros2Xarm_msgsSrvGetSetModbusData_Request
+  {
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Request.modbus_data: uint8; 0..4096 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Request_modbus_data :: [Word8]
+  ,
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Request.modbus_length: int16.
+    -- \@details Schema default 0. Encoding preserves the original field position and signedness; invalid
+    -- bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Request_modbus_length :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Request.ret_length: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Request_ret_length :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Request.host_id: uint8.
+    -- \@details Schema default 9. Encoding preserves the original field position and signedness; invalid
+    -- bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Request_host_id :: Word8
+  ,
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Request.is_transparent_transmission: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Request_is_transparent_transmission :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Request.use_503_port: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Request_use_503_port :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetSetModbusData_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetSetModbusData_Request :: Ros2Xarm_msgsSrvGetSetModbusData_Request
+defaultRos2Xarm_msgsSrvGetSetModbusData_Request =
+  Ros2Xarm_msgsSrvGetSetModbusData_Request
+    ([])
+    (0)
+    (0)
+    (9)
+    (False)
+    (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetSetModbusData_Request.
+-- \@details Exact identity UWVMROS1_f9cc9e1e5635a37023cc50f66930072f3d61bcfd58f0d8ebb0218c4eb3a035cd
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetSetModbusData_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetSetModbusData_Request.
+-- \@details Exact identity UWVMROS1_f9cc9e1e5635a37023cc50f66930072f3d61bcfd58f0d8ebb0218c4eb3a035cd
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetSetModbusData_RequestCodecIdentity = "UWVMROS1_f9cc9e1e5635a37023cc50f66930072f3d61bcfd58f0d8ebb0218c4eb3a035cd"
+-- | \@brief Encode one complete xarm_msgs/srv/GetSetModbusData_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetSetModbusData_Request :: Ros2Xarm_msgsSrvGetSetModbusData_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetSetModbusData_Request value = do
+  if length (ros2Xarm_msgsSrvGetSetModbusData_Request_modbus_data value) > 4096 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 4096 (length (ros2Xarm_msgsSrvGetSetModbusData_Request_modbus_data value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeUnsigned 1 (fromIntegral (e))) (ros2Xarm_msgsSrvGetSetModbusData_Request_modbus_data value)
+  b1 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetSetModbusData_Request_modbus_length value))
+  b2 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetSetModbusData_Request_ret_length value))
+  b3 <- W.encodeUnsigned 1 (fromIntegral (ros2Xarm_msgsSrvGetSetModbusData_Request_host_id value))
+  b4 <- W.encodeBool (ros2Xarm_msgsSrvGetSetModbusData_Request_is_transparent_transmission value)
+  b5 <- W.encodeBool (ros2Xarm_msgsSrvGetSetModbusData_Request_use_503_port value)
+  W.bounded 4107 [prefix0, b0, b1, b2, b3, b4, b5]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetSetModbusData_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetSetModbusData_Request :: W.Decoder Ros2Xarm_msgsSrvGetSetModbusData_Request
+readRos2Xarm_msgsSrvGetSetModbusData_Request = do
+  count0 <- W.count 4096
+  a0 <- replicateM count0 (fromIntegral <$> W.unsigned 1)
+  a1 <- fromIntegral <$> W.signed 2
+  a2 <- fromIntegral <$> W.signed 2
+  a3 <- fromIntegral <$> W.unsigned 1
+  a4 <- W.boolean
+  a5 <- W.boolean
+  let value = Ros2Xarm_msgsSrvGetSetModbusData_Request a0 a1 a2 a3 a4 a5
+  case encodeRos2Xarm_msgsSrvGetSetModbusData_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetSetModbusData_Request value.
+-- \@details Require the complete 11..4107-byte canonical representation. Reject truncation, invalid
+-- fields and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetSetModbusData_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetSetModbusData_Request
+decodeRos2Xarm_msgsSrvGetSetModbusData_Request = W.runDecoder 4107 readRos2Xarm_msgsSrvGetSetModbusData_Request
+instance Canonical Ros2Xarm_msgsSrvGetSetModbusData_Request where
+  maximumBytes _ = 4107
+  encodeValue = encodeRos2Xarm_msgsSrvGetSetModbusData_Request
+  readValue = readRos2Xarm_msgsSrvGetSetModbusData_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GetSetModbusData_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..4362 bytes and is identified by
+-- UWVMROS1_7367e58167bc61c209e7a28ee1a4d5809525cb11cbe48ee972724b5f0536b5b7.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGetSetModbusData_Response = Ros2Xarm_msgsSrvGetSetModbusData_Response
+  {
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/GetSetModbusData_Response.ret_data: uint8; 0..4096 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGetSetModbusData_Response_ret_data :: [Word8]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GetSetModbusData_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGetSetModbusData_Response :: Ros2Xarm_msgsSrvGetSetModbusData_Response
+defaultRos2Xarm_msgsSrvGetSetModbusData_Response =
+  Ros2Xarm_msgsSrvGetSetModbusData_Response
+    (0)
+    (T.empty)
+    ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetSetModbusData_Response.
+-- \@details Exact identity UWVMROS1_7367e58167bc61c209e7a28ee1a4d5809525cb11cbe48ee972724b5f0536b5b7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetSetModbusData_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GetSetModbusData_Response.
+-- \@details Exact identity UWVMROS1_7367e58167bc61c209e7a28ee1a4d5809525cb11cbe48ee972724b5f0536b5b7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGetSetModbusData_ResponseCodecIdentity = "UWVMROS1_7367e58167bc61c209e7a28ee1a4d5809525cb11cbe48ee972724b5f0536b5b7"
+-- | \@brief Encode one complete xarm_msgs/srv/GetSetModbusData_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGetSetModbusData_Response :: Ros2Xarm_msgsSrvGetSetModbusData_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGetSetModbusData_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGetSetModbusData_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGetSetModbusData_Response_message value)
+  if length (ros2Xarm_msgsSrvGetSetModbusData_Response_ret_data value) > 4096 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 4096 (length (ros2Xarm_msgsSrvGetSetModbusData_Response_ret_data value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeUnsigned 1 (fromIntegral (e))) (ros2Xarm_msgsSrvGetSetModbusData_Response_ret_data value)
+  W.bounded 4362 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GetSetModbusData_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGetSetModbusData_Response :: W.Decoder Ros2Xarm_msgsSrvGetSetModbusData_Response
+readRos2Xarm_msgsSrvGetSetModbusData_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 4096
+  a2 <- replicateM count2 (fromIntegral <$> W.unsigned 1)
+  let value = Ros2Xarm_msgsSrvGetSetModbusData_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGetSetModbusData_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GetSetModbusData_Response value.
+-- \@details Require the complete 10..4362-byte canonical representation. Reject truncation, invalid
+-- fields and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGetSetModbusData_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGetSetModbusData_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGetSetModbusData_Response
+decodeRos2Xarm_msgsSrvGetSetModbusData_Response = W.runDecoder 4362 readRos2Xarm_msgsSrvGetSetModbusData_Response
+instance Canonical Ros2Xarm_msgsSrvGetSetModbusData_Response where
+  maximumBytes _ = 4362
+  encodeValue = encodeRos2Xarm_msgsSrvGetSetModbusData_Response
+  readValue = readRos2Xarm_msgsSrvGetSetModbusData_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GripperMove_Request value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 9..9 bytes and is identified by
+-- UWVMROS1_54c0e0eeb956e5ab0b1bd31aabc67493ee2bdb9b7028f41b73eb9d8b1e568322.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGripperMove_Request = Ros2Xarm_msgsSrvGripperMove_Request
+  {
+    -- | \@brief xarm_msgs/srv/GripperMove_Request.pos: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGripperMove_Request_pos :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/GripperMove_Request.wait: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGripperMove_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/GripperMove_Request.timeout: float32.
+    -- \@details Schema default 10.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGripperMove_Request_timeout :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GripperMove_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGripperMove_Request :: Ros2Xarm_msgsSrvGripperMove_Request
+defaultRos2Xarm_msgsSrvGripperMove_Request =
+  Ros2Xarm_msgsSrvGripperMove_Request
+    (0)
+    (False)
+    (castWord32ToFloat 0x41200000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GripperMove_Request.
+-- \@details Exact identity UWVMROS1_54c0e0eeb956e5ab0b1bd31aabc67493ee2bdb9b7028f41b73eb9d8b1e568322
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGripperMove_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GripperMove_Request.
+-- \@details Exact identity UWVMROS1_54c0e0eeb956e5ab0b1bd31aabc67493ee2bdb9b7028f41b73eb9d8b1e568322
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGripperMove_RequestCodecIdentity = "UWVMROS1_54c0e0eeb956e5ab0b1bd31aabc67493ee2bdb9b7028f41b73eb9d8b1e568322"
+-- | \@brief Encode one complete xarm_msgs/srv/GripperMove_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGripperMove_Request :: Ros2Xarm_msgsSrvGripperMove_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGripperMove_Request value = do
+  b0 <- W.encodeFloat32 (ros2Xarm_msgsSrvGripperMove_Request_pos value)
+  b1 <- W.encodeBool (ros2Xarm_msgsSrvGripperMove_Request_wait value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvGripperMove_Request_timeout value)
+  W.bounded 9 [b0, b1, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GripperMove_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGripperMove_Request :: W.Decoder Ros2Xarm_msgsSrvGripperMove_Request
+readRos2Xarm_msgsSrvGripperMove_Request = do
+  a0 <- W.float32
+  a1 <- W.boolean
+  a2 <- W.float32
+  let value = Ros2Xarm_msgsSrvGripperMove_Request a0 a1 a2
+  case encodeRos2Xarm_msgsSrvGripperMove_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GripperMove_Request value.
+-- \@details Require the complete 9..9-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGripperMove_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGripperMove_Request
+decodeRos2Xarm_msgsSrvGripperMove_Request = W.runDecoder 9 readRos2Xarm_msgsSrvGripperMove_Request
+instance Canonical Ros2Xarm_msgsSrvGripperMove_Request where
+  maximumBytes _ = 9
+  encodeValue = encodeRos2Xarm_msgsSrvGripperMove_Request
+  readValue = readRos2Xarm_msgsSrvGripperMove_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/GripperMove_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_1c64a50983aaf8dd20d3a400be9d69242f52c6ad7f369ea54dd19be931dc80a1.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvGripperMove_Response = Ros2Xarm_msgsSrvGripperMove_Response
+  {
+    -- | \@brief xarm_msgs/srv/GripperMove_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGripperMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGripperMove_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/GripperMove_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvGripperMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvGripperMove_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/GripperMove_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvGripperMove_Response :: Ros2Xarm_msgsSrvGripperMove_Response
+defaultRos2Xarm_msgsSrvGripperMove_Response = Ros2Xarm_msgsSrvGripperMove_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GripperMove_Response.
+-- \@details Exact identity UWVMROS1_1c64a50983aaf8dd20d3a400be9d69242f52c6ad7f369ea54dd19be931dc80a1
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGripperMove_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/GripperMove_Response.
+-- \@details Exact identity UWVMROS1_1c64a50983aaf8dd20d3a400be9d69242f52c6ad7f369ea54dd19be931dc80a1
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvGripperMove_ResponseCodecIdentity = "UWVMROS1_1c64a50983aaf8dd20d3a400be9d69242f52c6ad7f369ea54dd19be931dc80a1"
+-- | \@brief Encode one complete xarm_msgs/srv/GripperMove_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvGripperMove_Response :: Ros2Xarm_msgsSrvGripperMove_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvGripperMove_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvGripperMove_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvGripperMove_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/GripperMove_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvGripperMove_Response :: W.Decoder Ros2Xarm_msgsSrvGripperMove_Response
+readRos2Xarm_msgsSrvGripperMove_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvGripperMove_Response a0 a1
+  case encodeRos2Xarm_msgsSrvGripperMove_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/GripperMove_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvGripperMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvGripperMove_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvGripperMove_Response
+decodeRos2Xarm_msgsSrvGripperMove_Response = W.runDecoder 262 readRos2Xarm_msgsSrvGripperMove_Response
+instance Canonical Ros2Xarm_msgsSrvGripperMove_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvGripperMove_Response
+  readValue = readRos2Xarm_msgsSrvGripperMove_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/IdenLoad_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 4..4 bytes and is identified by
+-- UWVMROS1_51918f23cc7db51b63e91cca012e657836528d8557a4479b287cd9631015a79a.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvIdenLoad_Request = Ros2Xarm_msgsSrvIdenLoad_Request
+  {
+    -- | \@brief xarm_msgs/srv/IdenLoad_Request.estimated_mass: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvIdenLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvIdenLoad_Request_estimated_mass :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/IdenLoad_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvIdenLoad_Request :: Ros2Xarm_msgsSrvIdenLoad_Request
+defaultRos2Xarm_msgsSrvIdenLoad_Request = Ros2Xarm_msgsSrvIdenLoad_Request (castWord32ToFloat 0x0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/IdenLoad_Request.
+-- \@details Exact identity UWVMROS1_51918f23cc7db51b63e91cca012e657836528d8557a4479b287cd9631015a79a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvIdenLoad_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/IdenLoad_Request.
+-- \@details Exact identity UWVMROS1_51918f23cc7db51b63e91cca012e657836528d8557a4479b287cd9631015a79a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvIdenLoad_RequestCodecIdentity = "UWVMROS1_51918f23cc7db51b63e91cca012e657836528d8557a4479b287cd9631015a79a"
+-- | \@brief Encode one complete xarm_msgs/srv/IdenLoad_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvIdenLoad_Request :: Ros2Xarm_msgsSrvIdenLoad_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvIdenLoad_Request value = do
+  b0 <- W.encodeFloat32 (ros2Xarm_msgsSrvIdenLoad_Request_estimated_mass value)
+  W.bounded 4 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/IdenLoad_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvIdenLoad_Request :: W.Decoder Ros2Xarm_msgsSrvIdenLoad_Request
+readRos2Xarm_msgsSrvIdenLoad_Request = do
+  a0 <- W.float32
+  let value = Ros2Xarm_msgsSrvIdenLoad_Request a0
+  case encodeRos2Xarm_msgsSrvIdenLoad_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/IdenLoad_Request value.
+-- \@details Require the complete 4..4-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvIdenLoad_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvIdenLoad_Request
+decodeRos2Xarm_msgsSrvIdenLoad_Request = W.runDecoder 4 readRos2Xarm_msgsSrvIdenLoad_Request
+instance Canonical Ros2Xarm_msgsSrvIdenLoad_Request where
+  maximumBytes _ = 4
+  encodeValue = encodeRos2Xarm_msgsSrvIdenLoad_Request
+  readValue = readRos2Xarm_msgsSrvIdenLoad_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/IdenLoad_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..394 bytes and is identified by
+-- UWVMROS1_3934143122064209bd30159d9972b5cfd529728f3f95785c9641d20790e4f64e.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvIdenLoad_Response = Ros2Xarm_msgsSrvIdenLoad_Response
+  {
+    -- | \@brief xarm_msgs/srv/IdenLoad_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvIdenLoad_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/IdenLoad_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvIdenLoad_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/IdenLoad_Response.datas: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvIdenLoad_Response_datas :: [Float]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/IdenLoad_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvIdenLoad_Response :: Ros2Xarm_msgsSrvIdenLoad_Response
+defaultRos2Xarm_msgsSrvIdenLoad_Response = Ros2Xarm_msgsSrvIdenLoad_Response (0) (T.empty) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/IdenLoad_Response.
+-- \@details Exact identity UWVMROS1_3934143122064209bd30159d9972b5cfd529728f3f95785c9641d20790e4f64e
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvIdenLoad_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/IdenLoad_Response.
+-- \@details Exact identity UWVMROS1_3934143122064209bd30159d9972b5cfd529728f3f95785c9641d20790e4f64e
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvIdenLoad_ResponseCodecIdentity = "UWVMROS1_3934143122064209bd30159d9972b5cfd529728f3f95785c9641d20790e4f64e"
+-- | \@brief Encode one complete xarm_msgs/srv/IdenLoad_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvIdenLoad_Response :: Ros2Xarm_msgsSrvIdenLoad_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvIdenLoad_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvIdenLoad_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvIdenLoad_Response_message value)
+  if length (ros2Xarm_msgsSrvIdenLoad_Response_datas value) > 32 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvIdenLoad_Response_datas value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvIdenLoad_Response_datas value)
+  W.bounded 394 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/IdenLoad_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvIdenLoad_Response :: W.Decoder Ros2Xarm_msgsSrvIdenLoad_Response
+readRos2Xarm_msgsSrvIdenLoad_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 32
+  a2 <- replicateM count2 (W.float32)
+  let value = Ros2Xarm_msgsSrvIdenLoad_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvIdenLoad_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/IdenLoad_Response value.
+-- \@details Require the complete 10..394-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvIdenLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvIdenLoad_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvIdenLoad_Response
+decodeRos2Xarm_msgsSrvIdenLoad_Response = W.runDecoder 394 readRos2Xarm_msgsSrvIdenLoad_Response
+instance Canonical Ros2Xarm_msgsSrvIdenLoad_Response where
+  maximumBytes _ = 394
+  encodeValue = encodeRos2Xarm_msgsSrvIdenLoad_Response
+  readValue = readRos2Xarm_msgsSrvIdenLoad_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/LinearTrackBackOrigin_Request value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 2..2 bytes and is identified by
+-- UWVMROS1_797f71ddda85f463999f437e70aaaf40517fe78dfa0356a640afaffa5154e8d9.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request = Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request
+  {
+    -- | \@brief xarm_msgs/srv/LinearTrackBackOrigin_Request.wait: bool.
+    -- \@details Schema default True. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackBackOrigin_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/LinearTrackBackOrigin_Request.auto_enable: bool.
+    -- \@details Schema default True. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackBackOrigin_Request_auto_enable :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/LinearTrackBackOrigin_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvLinearTrackBackOrigin_Request :: Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request
+defaultRos2Xarm_msgsSrvLinearTrackBackOrigin_Request =
+  Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request
+    (True)
+    (True)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/LinearTrackBackOrigin_Request.
+-- \@details Exact identity UWVMROS1_797f71ddda85f463999f437e70aaaf40517fe78dfa0356a640afaffa5154e8d9
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvLinearTrackBackOrigin_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/LinearTrackBackOrigin_Request.
+-- \@details Exact identity UWVMROS1_797f71ddda85f463999f437e70aaaf40517fe78dfa0356a640afaffa5154e8d9
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvLinearTrackBackOrigin_RequestCodecIdentity = "UWVMROS1_797f71ddda85f463999f437e70aaaf40517fe78dfa0356a640afaffa5154e8d9"
+-- | \@brief Encode one complete xarm_msgs/srv/LinearTrackBackOrigin_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Request :: Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Request value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvLinearTrackBackOrigin_Request_wait value)
+  b1 <- W.encodeBool (ros2Xarm_msgsSrvLinearTrackBackOrigin_Request_auto_enable value)
+  W.bounded 2 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/LinearTrackBackOrigin_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvLinearTrackBackOrigin_Request :: W.Decoder Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request
+readRos2Xarm_msgsSrvLinearTrackBackOrigin_Request = do
+  a0 <- W.boolean
+  a1 <- W.boolean
+  let value = Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request a0 a1
+  case encodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/LinearTrackBackOrigin_Request value.
+-- \@details Require the complete 2..2-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request
+decodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Request = W.runDecoder 2 readRos2Xarm_msgsSrvLinearTrackBackOrigin_Request
+instance Canonical Ros2Xarm_msgsSrvLinearTrackBackOrigin_Request where
+  maximumBytes _ = 2
+  encodeValue = encodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Request
+  readValue = readRos2Xarm_msgsSrvLinearTrackBackOrigin_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/LinearTrackBackOrigin_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_0881a1e5f823c169ed5d1063e8bd681b8b2f994ebd9bee3e335c47d3bd2db4de.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response = Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response
+  {
+    -- | \@brief xarm_msgs/srv/LinearTrackBackOrigin_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackBackOrigin_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/LinearTrackBackOrigin_Response.message: string; each string is 0..256
+    -- | bytes; strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackBackOrigin_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/LinearTrackBackOrigin_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvLinearTrackBackOrigin_Response :: Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response
+defaultRos2Xarm_msgsSrvLinearTrackBackOrigin_Response =
+  Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response
+    (0)
+    (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/LinearTrackBackOrigin_Response.
+-- \@details Exact identity UWVMROS1_0881a1e5f823c169ed5d1063e8bd681b8b2f994ebd9bee3e335c47d3bd2db4de
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvLinearTrackBackOrigin_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/LinearTrackBackOrigin_Response.
+-- \@details Exact identity UWVMROS1_0881a1e5f823c169ed5d1063e8bd681b8b2f994ebd9bee3e335c47d3bd2db4de
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvLinearTrackBackOrigin_ResponseCodecIdentity = "UWVMROS1_0881a1e5f823c169ed5d1063e8bd681b8b2f994ebd9bee3e335c47d3bd2db4de"
+-- | \@brief Encode one complete xarm_msgs/srv/LinearTrackBackOrigin_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Response :: Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvLinearTrackBackOrigin_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvLinearTrackBackOrigin_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/LinearTrackBackOrigin_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvLinearTrackBackOrigin_Response :: W.Decoder Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response
+readRos2Xarm_msgsSrvLinearTrackBackOrigin_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response a0 a1
+  case encodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/LinearTrackBackOrigin_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response
+decodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Response = W.runDecoder 262 readRos2Xarm_msgsSrvLinearTrackBackOrigin_Response
+instance Canonical Ros2Xarm_msgsSrvLinearTrackBackOrigin_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvLinearTrackBackOrigin_Response
+  readValue = readRos2Xarm_msgsSrvLinearTrackBackOrigin_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/LinearTrackSetPos_Request value.
+-- \@details All 5 declared fields are retained in source order. The canonical representation occupies
+-- 10..10 bytes and is identified by
+-- UWVMROS1_b73e173d593e64d898e69d32e659ddff1741eaada6af1ae00d9a4c406d9dad62.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvLinearTrackSetPos_Request = Ros2Xarm_msgsSrvLinearTrackSetPos_Request
+  {
+    -- | \@brief xarm_msgs/srv/LinearTrackSetPos_Request.pos: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackSetPos_Request_pos :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/LinearTrackSetPos_Request.speed: int16.
+    -- \@details Schema default 0. Encoding preserves the original field position and signedness; invalid
+    -- bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackSetPos_Request_speed :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/LinearTrackSetPos_Request.wait: bool.
+    -- \@details Schema default True. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackSetPos_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/LinearTrackSetPos_Request.timeout: float32.
+    -- \@details Schema default 100.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackSetPos_Request_timeout :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/LinearTrackSetPos_Request.auto_enable: bool.
+    -- \@details Schema default True. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackSetPos_Request_auto_enable :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/LinearTrackSetPos_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvLinearTrackSetPos_Request :: Ros2Xarm_msgsSrvLinearTrackSetPos_Request
+defaultRos2Xarm_msgsSrvLinearTrackSetPos_Request =
+  Ros2Xarm_msgsSrvLinearTrackSetPos_Request
+    (0)
+    (0)
+    (True)
+    (castWord32ToFloat 0x42c80000)
+    (True)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/LinearTrackSetPos_Request.
+-- \@details Exact identity UWVMROS1_b73e173d593e64d898e69d32e659ddff1741eaada6af1ae00d9a4c406d9dad62
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvLinearTrackSetPos_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/LinearTrackSetPos_Request.
+-- \@details Exact identity UWVMROS1_b73e173d593e64d898e69d32e659ddff1741eaada6af1ae00d9a4c406d9dad62
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvLinearTrackSetPos_RequestCodecIdentity = "UWVMROS1_b73e173d593e64d898e69d32e659ddff1741eaada6af1ae00d9a4c406d9dad62"
+-- | \@brief Encode one complete xarm_msgs/srv/LinearTrackSetPos_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvLinearTrackSetPos_Request :: Ros2Xarm_msgsSrvLinearTrackSetPos_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvLinearTrackSetPos_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvLinearTrackSetPos_Request_pos value))
+  b1 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvLinearTrackSetPos_Request_speed value))
+  b2 <- W.encodeBool (ros2Xarm_msgsSrvLinearTrackSetPos_Request_wait value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsSrvLinearTrackSetPos_Request_timeout value)
+  b4 <- W.encodeBool (ros2Xarm_msgsSrvLinearTrackSetPos_Request_auto_enable value)
+  W.bounded 10 [b0, b1, b2, b3, b4]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/LinearTrackSetPos_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvLinearTrackSetPos_Request :: W.Decoder Ros2Xarm_msgsSrvLinearTrackSetPos_Request
+readRos2Xarm_msgsSrvLinearTrackSetPos_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- fromIntegral <$> W.signed 2
+  a2 <- W.boolean
+  a3 <- W.float32
+  a4 <- W.boolean
+  let value = Ros2Xarm_msgsSrvLinearTrackSetPos_Request a0 a1 a2 a3 a4
+  case encodeRos2Xarm_msgsSrvLinearTrackSetPos_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/LinearTrackSetPos_Request value.
+-- \@details Require the complete 10..10-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvLinearTrackSetPos_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvLinearTrackSetPos_Request
+decodeRos2Xarm_msgsSrvLinearTrackSetPos_Request = W.runDecoder 10 readRos2Xarm_msgsSrvLinearTrackSetPos_Request
+instance Canonical Ros2Xarm_msgsSrvLinearTrackSetPos_Request where
+  maximumBytes _ = 10
+  encodeValue = encodeRos2Xarm_msgsSrvLinearTrackSetPos_Request
+  readValue = readRos2Xarm_msgsSrvLinearTrackSetPos_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/LinearTrackSetPos_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_aba9a933b5cde05c0a1d0a44fe404b3c3dadad72aac91b7a7aff04221c6667f7.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvLinearTrackSetPos_Response = Ros2Xarm_msgsSrvLinearTrackSetPos_Response
+  {
+    -- | \@brief xarm_msgs/srv/LinearTrackSetPos_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackSetPos_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/LinearTrackSetPos_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvLinearTrackSetPos_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/LinearTrackSetPos_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvLinearTrackSetPos_Response :: Ros2Xarm_msgsSrvLinearTrackSetPos_Response
+defaultRos2Xarm_msgsSrvLinearTrackSetPos_Response = Ros2Xarm_msgsSrvLinearTrackSetPos_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/LinearTrackSetPos_Response.
+-- \@details Exact identity UWVMROS1_aba9a933b5cde05c0a1d0a44fe404b3c3dadad72aac91b7a7aff04221c6667f7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvLinearTrackSetPos_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/LinearTrackSetPos_Response.
+-- \@details Exact identity UWVMROS1_aba9a933b5cde05c0a1d0a44fe404b3c3dadad72aac91b7a7aff04221c6667f7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvLinearTrackSetPos_ResponseCodecIdentity = "UWVMROS1_aba9a933b5cde05c0a1d0a44fe404b3c3dadad72aac91b7a7aff04221c6667f7"
+-- | \@brief Encode one complete xarm_msgs/srv/LinearTrackSetPos_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvLinearTrackSetPos_Response :: Ros2Xarm_msgsSrvLinearTrackSetPos_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvLinearTrackSetPos_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvLinearTrackSetPos_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvLinearTrackSetPos_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/LinearTrackSetPos_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvLinearTrackSetPos_Response :: W.Decoder Ros2Xarm_msgsSrvLinearTrackSetPos_Response
+readRos2Xarm_msgsSrvLinearTrackSetPos_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvLinearTrackSetPos_Response a0 a1
+  case encodeRos2Xarm_msgsSrvLinearTrackSetPos_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/LinearTrackSetPos_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvLinearTrackSetPos_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvLinearTrackSetPos_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvLinearTrackSetPos_Response
+decodeRos2Xarm_msgsSrvLinearTrackSetPos_Response = W.runDecoder 262 readRos2Xarm_msgsSrvLinearTrackSetPos_Response
+instance Canonical Ros2Xarm_msgsSrvLinearTrackSetPos_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvLinearTrackSetPos_Response
+  readValue = readRos2Xarm_msgsSrvLinearTrackSetPos_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveCartesian_Request value.
+-- \@details All 9 declared fields are retained in source order. The canonical representation occupies
+-- 27..155 bytes and is identified by
+-- UWVMROS1_7483ca119d8fcac25f3b24380700c8d0ed169390997fdd80215b47baa3bbefb1.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveCartesian_Request = Ros2Xarm_msgsSrvMoveCartesian_Request
+  {
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.pose: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_pose :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.speed: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_speed :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.acc: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_acc :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.mvtime: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_mvtime :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.wait: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.timeout: float32.
+    -- \@details Schema default -1.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_timeout :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.radius: float32.
+    -- \@details Schema default -1.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_radius :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.is_tool_coord: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_is_tool_coord :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Request.relative: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Request_relative :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveCartesian_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveCartesian_Request :: Ros2Xarm_msgsSrvMoveCartesian_Request
+defaultRos2Xarm_msgsSrvMoveCartesian_Request =
+  Ros2Xarm_msgsSrvMoveCartesian_Request
+    ([])
+    (castWord32ToFloat 0x0)
+    (castWord32ToFloat 0x0)
+    (castWord32ToFloat 0x0)
+    (False)
+    (castWord32ToFloat 0xbf800000)
+    (castWord32ToFloat 0xbf800000)
+    (False)
+    (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveCartesian_Request.
+-- \@details Exact identity UWVMROS1_7483ca119d8fcac25f3b24380700c8d0ed169390997fdd80215b47baa3bbefb1
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveCartesian_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveCartesian_Request.
+-- \@details Exact identity UWVMROS1_7483ca119d8fcac25f3b24380700c8d0ed169390997fdd80215b47baa3bbefb1
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveCartesian_RequestCodecIdentity = "UWVMROS1_7483ca119d8fcac25f3b24380700c8d0ed169390997fdd80215b47baa3bbefb1"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveCartesian_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveCartesian_Request :: Ros2Xarm_msgsSrvMoveCartesian_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveCartesian_Request value = do
+  if length (ros2Xarm_msgsSrvMoveCartesian_Request_pose value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvMoveCartesian_Request_pose value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvMoveCartesian_Request_pose value)
+  b1 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCartesian_Request_speed value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCartesian_Request_acc value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCartesian_Request_mvtime value)
+  b4 <- W.encodeBool (ros2Xarm_msgsSrvMoveCartesian_Request_wait value)
+  b5 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCartesian_Request_timeout value)
+  b6 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCartesian_Request_radius value)
+  b7 <- W.encodeBool (ros2Xarm_msgsSrvMoveCartesian_Request_is_tool_coord value)
+  b8 <- W.encodeBool (ros2Xarm_msgsSrvMoveCartesian_Request_relative value)
+  W.bounded 155 [prefix0, b0, b1, b2, b3, b4, b5, b6, b7, b8]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveCartesian_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveCartesian_Request :: W.Decoder Ros2Xarm_msgsSrvMoveCartesian_Request
+readRos2Xarm_msgsSrvMoveCartesian_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (W.float32)
+  a1 <- W.float32
+  a2 <- W.float32
+  a3 <- W.float32
+  a4 <- W.boolean
+  a5 <- W.float32
+  a6 <- W.float32
+  a7 <- W.boolean
+  a8 <- W.boolean
+  let value = Ros2Xarm_msgsSrvMoveCartesian_Request a0 a1 a2 a3 a4 a5 a6 a7 a8
+  case encodeRos2Xarm_msgsSrvMoveCartesian_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveCartesian_Request value.
+-- \@details Require the complete 27..155-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveCartesian_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveCartesian_Request
+decodeRos2Xarm_msgsSrvMoveCartesian_Request = W.runDecoder 155 readRos2Xarm_msgsSrvMoveCartesian_Request
+instance Canonical Ros2Xarm_msgsSrvMoveCartesian_Request where
+  maximumBytes _ = 155
+  encodeValue = encodeRos2Xarm_msgsSrvMoveCartesian_Request
+  readValue = readRos2Xarm_msgsSrvMoveCartesian_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveCartesian_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_17659e470cc45dd7fe1bc6240aa09aa6693e90e40d5dcf556cfb2b8d946af7be.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveCartesian_Response = Ros2Xarm_msgsSrvMoveCartesian_Response
+  {
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCartesian_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCartesian_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCartesian_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveCartesian_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveCartesian_Response :: Ros2Xarm_msgsSrvMoveCartesian_Response
+defaultRos2Xarm_msgsSrvMoveCartesian_Response = Ros2Xarm_msgsSrvMoveCartesian_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveCartesian_Response.
+-- \@details Exact identity UWVMROS1_17659e470cc45dd7fe1bc6240aa09aa6693e90e40d5dcf556cfb2b8d946af7be
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveCartesian_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveCartesian_Response.
+-- \@details Exact identity UWVMROS1_17659e470cc45dd7fe1bc6240aa09aa6693e90e40d5dcf556cfb2b8d946af7be
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveCartesian_ResponseCodecIdentity = "UWVMROS1_17659e470cc45dd7fe1bc6240aa09aa6693e90e40d5dcf556cfb2b8d946af7be"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveCartesian_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveCartesian_Response :: Ros2Xarm_msgsSrvMoveCartesian_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveCartesian_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvMoveCartesian_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvMoveCartesian_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveCartesian_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveCartesian_Response :: W.Decoder Ros2Xarm_msgsSrvMoveCartesian_Response
+readRos2Xarm_msgsSrvMoveCartesian_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvMoveCartesian_Response a0 a1
+  case encodeRos2Xarm_msgsSrvMoveCartesian_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveCartesian_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCartesian_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveCartesian_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveCartesian_Response
+decodeRos2Xarm_msgsSrvMoveCartesian_Response = W.runDecoder 262 readRos2Xarm_msgsSrvMoveCartesian_Response
+instance Canonical Ros2Xarm_msgsSrvMoveCartesian_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvMoveCartesian_Response
+  readValue = readRos2Xarm_msgsSrvMoveCartesian_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveCircle_Request value.
+-- \@details All 8 declared fields are retained in source order. The canonical representation occupies
+-- 29..285 bytes and is identified by
+-- UWVMROS1_34fed48317b76dc87d7e975f0d23a706ac856f9deff89d2789ef8d180074658c.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveCircle_Request = Ros2Xarm_msgsSrvMoveCircle_Request
+  {
+    -- | \@brief xarm_msgs/srv/MoveCircle_Request.pose1: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Request_pose1 :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCircle_Request.pose2: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Request_pose2 :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCircle_Request.percent: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Request_percent :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCircle_Request.speed: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Request_speed :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCircle_Request.acc: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Request_acc :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCircle_Request.mvtime: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Request_mvtime :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCircle_Request.wait: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCircle_Request.timeout: float32.
+    -- \@details Schema default -1.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Request_timeout :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveCircle_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveCircle_Request :: Ros2Xarm_msgsSrvMoveCircle_Request
+defaultRos2Xarm_msgsSrvMoveCircle_Request =
+  Ros2Xarm_msgsSrvMoveCircle_Request
+    ([])
+    ([])
+    (0)
+    (castWord32ToFloat 0x0)
+    (castWord32ToFloat 0x0)
+    (castWord32ToFloat 0x0)
+    (False)
+    (castWord32ToFloat 0xbf800000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveCircle_Request.
+-- \@details Exact identity UWVMROS1_34fed48317b76dc87d7e975f0d23a706ac856f9deff89d2789ef8d180074658c
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveCircle_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveCircle_Request.
+-- \@details Exact identity UWVMROS1_34fed48317b76dc87d7e975f0d23a706ac856f9deff89d2789ef8d180074658c
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveCircle_RequestCodecIdentity = "UWVMROS1_34fed48317b76dc87d7e975f0d23a706ac856f9deff89d2789ef8d180074658c"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveCircle_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveCircle_Request :: Ros2Xarm_msgsSrvMoveCircle_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveCircle_Request value = do
+  if length (ros2Xarm_msgsSrvMoveCircle_Request_pose1 value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvMoveCircle_Request_pose1 value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvMoveCircle_Request_pose1 value)
+  if length (ros2Xarm_msgsSrvMoveCircle_Request_pose2 value) > 32 then Left 22 else Right ()
+  prefix1 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvMoveCircle_Request_pose2 value))
+  b1 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvMoveCircle_Request_pose2 value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCircle_Request_percent value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCircle_Request_speed value)
+  b4 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCircle_Request_acc value)
+  b5 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCircle_Request_mvtime value)
+  b6 <- W.encodeBool (ros2Xarm_msgsSrvMoveCircle_Request_wait value)
+  b7 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveCircle_Request_timeout value)
+  W.bounded 285 [prefix0, b0, prefix1, b1, b2, b3, b4, b5, b6, b7]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveCircle_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveCircle_Request :: W.Decoder Ros2Xarm_msgsSrvMoveCircle_Request
+readRos2Xarm_msgsSrvMoveCircle_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (W.float32)
+  count1 <- W.count 32
+  a1 <- replicateM count1 (W.float32)
+  a2 <- W.float32
+  a3 <- W.float32
+  a4 <- W.float32
+  a5 <- W.float32
+  a6 <- W.boolean
+  a7 <- W.float32
+  let value = Ros2Xarm_msgsSrvMoveCircle_Request a0 a1 a2 a3 a4 a5 a6 a7
+  case encodeRos2Xarm_msgsSrvMoveCircle_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveCircle_Request value.
+-- \@details Require the complete 29..285-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveCircle_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveCircle_Request
+decodeRos2Xarm_msgsSrvMoveCircle_Request = W.runDecoder 285 readRos2Xarm_msgsSrvMoveCircle_Request
+instance Canonical Ros2Xarm_msgsSrvMoveCircle_Request where
+  maximumBytes _ = 285
+  encodeValue = encodeRos2Xarm_msgsSrvMoveCircle_Request
+  readValue = readRos2Xarm_msgsSrvMoveCircle_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveCircle_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_e884158bfd9d5bed6cb76d276e7d312c5f2d69d0508a1c01566f6773b7e4dbbd.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveCircle_Response = Ros2Xarm_msgsSrvMoveCircle_Response
+  {
+    -- | \@brief xarm_msgs/srv/MoveCircle_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/MoveCircle_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveCircle_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveCircle_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveCircle_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveCircle_Response :: Ros2Xarm_msgsSrvMoveCircle_Response
+defaultRos2Xarm_msgsSrvMoveCircle_Response = Ros2Xarm_msgsSrvMoveCircle_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveCircle_Response.
+-- \@details Exact identity UWVMROS1_e884158bfd9d5bed6cb76d276e7d312c5f2d69d0508a1c01566f6773b7e4dbbd
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveCircle_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveCircle_Response.
+-- \@details Exact identity UWVMROS1_e884158bfd9d5bed6cb76d276e7d312c5f2d69d0508a1c01566f6773b7e4dbbd
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveCircle_ResponseCodecIdentity = "UWVMROS1_e884158bfd9d5bed6cb76d276e7d312c5f2d69d0508a1c01566f6773b7e4dbbd"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveCircle_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveCircle_Response :: Ros2Xarm_msgsSrvMoveCircle_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveCircle_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvMoveCircle_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvMoveCircle_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveCircle_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveCircle_Response :: W.Decoder Ros2Xarm_msgsSrvMoveCircle_Response
+readRos2Xarm_msgsSrvMoveCircle_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvMoveCircle_Response a0 a1
+  case encodeRos2Xarm_msgsSrvMoveCircle_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveCircle_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveCircle_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveCircle_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveCircle_Response
+decodeRos2Xarm_msgsSrvMoveCircle_Response = W.runDecoder 262 readRos2Xarm_msgsSrvMoveCircle_Response
+instance Canonical Ros2Xarm_msgsSrvMoveCircle_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvMoveCircle_Response
+  readValue = readRos2Xarm_msgsSrvMoveCircle_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveHome_Request value.
+-- \@details All 5 declared fields are retained in source order. The canonical representation occupies
+-- 17..17 bytes and is identified by
+-- UWVMROS1_f9c04cf15dadd5c45cc16017533216bcbf682ac3366764c0546e73deabfab5a3.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveHome_Request = Ros2Xarm_msgsSrvMoveHome_Request
+  {
+    -- | \@brief xarm_msgs/srv/MoveHome_Request.speed: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveHome_Request_speed :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveHome_Request.acc: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveHome_Request_acc :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveHome_Request.mvtime: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveHome_Request_mvtime :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveHome_Request.wait: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveHome_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/MoveHome_Request.timeout: float32.
+    -- \@details Schema default -1.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveHome_Request_timeout :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveHome_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveHome_Request :: Ros2Xarm_msgsSrvMoveHome_Request
+defaultRos2Xarm_msgsSrvMoveHome_Request =
+  Ros2Xarm_msgsSrvMoveHome_Request
+    (castWord32ToFloat 0x0)
+    (castWord32ToFloat 0x0)
+    (castWord32ToFloat 0x0)
+    (False)
+    (castWord32ToFloat 0xbf800000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveHome_Request.
+-- \@details Exact identity UWVMROS1_f9c04cf15dadd5c45cc16017533216bcbf682ac3366764c0546e73deabfab5a3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveHome_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveHome_Request.
+-- \@details Exact identity UWVMROS1_f9c04cf15dadd5c45cc16017533216bcbf682ac3366764c0546e73deabfab5a3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveHome_RequestCodecIdentity = "UWVMROS1_f9c04cf15dadd5c45cc16017533216bcbf682ac3366764c0546e73deabfab5a3"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveHome_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveHome_Request :: Ros2Xarm_msgsSrvMoveHome_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveHome_Request value = do
+  b0 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveHome_Request_speed value)
+  b1 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveHome_Request_acc value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveHome_Request_mvtime value)
+  b3 <- W.encodeBool (ros2Xarm_msgsSrvMoveHome_Request_wait value)
+  b4 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveHome_Request_timeout value)
+  W.bounded 17 [b0, b1, b2, b3, b4]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveHome_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveHome_Request :: W.Decoder Ros2Xarm_msgsSrvMoveHome_Request
+readRos2Xarm_msgsSrvMoveHome_Request = do
+  a0 <- W.float32
+  a1 <- W.float32
+  a2 <- W.float32
+  a3 <- W.boolean
+  a4 <- W.float32
+  let value = Ros2Xarm_msgsSrvMoveHome_Request a0 a1 a2 a3 a4
+  case encodeRos2Xarm_msgsSrvMoveHome_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveHome_Request value.
+-- \@details Require the complete 17..17-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveHome_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveHome_Request
+decodeRos2Xarm_msgsSrvMoveHome_Request = W.runDecoder 17 readRos2Xarm_msgsSrvMoveHome_Request
+instance Canonical Ros2Xarm_msgsSrvMoveHome_Request where
+  maximumBytes _ = 17
+  encodeValue = encodeRos2Xarm_msgsSrvMoveHome_Request
+  readValue = readRos2Xarm_msgsSrvMoveHome_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveHome_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_c5a0764d10a7a2c3285ada1c04594d1cad466f7ec71fe53e42b2ea98b70793aa.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveHome_Response = Ros2Xarm_msgsSrvMoveHome_Response
+  {
+    -- | \@brief xarm_msgs/srv/MoveHome_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveHome_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveHome_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/MoveHome_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveHome_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveHome_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveHome_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveHome_Response :: Ros2Xarm_msgsSrvMoveHome_Response
+defaultRos2Xarm_msgsSrvMoveHome_Response = Ros2Xarm_msgsSrvMoveHome_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveHome_Response.
+-- \@details Exact identity UWVMROS1_c5a0764d10a7a2c3285ada1c04594d1cad466f7ec71fe53e42b2ea98b70793aa
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveHome_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveHome_Response.
+-- \@details Exact identity UWVMROS1_c5a0764d10a7a2c3285ada1c04594d1cad466f7ec71fe53e42b2ea98b70793aa
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveHome_ResponseCodecIdentity = "UWVMROS1_c5a0764d10a7a2c3285ada1c04594d1cad466f7ec71fe53e42b2ea98b70793aa"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveHome_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveHome_Response :: Ros2Xarm_msgsSrvMoveHome_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveHome_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvMoveHome_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvMoveHome_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveHome_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveHome_Response :: W.Decoder Ros2Xarm_msgsSrvMoveHome_Response
+readRos2Xarm_msgsSrvMoveHome_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvMoveHome_Response a0 a1
+  case encodeRos2Xarm_msgsSrvMoveHome_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveHome_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveHome_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveHome_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveHome_Response
+decodeRos2Xarm_msgsSrvMoveHome_Response = W.runDecoder 262 readRos2Xarm_msgsSrvMoveHome_Response
+instance Canonical Ros2Xarm_msgsSrvMoveHome_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvMoveHome_Response
+  readValue = readRos2Xarm_msgsSrvMoveHome_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveJoint_Request value.
+-- \@details All 7 declared fields are retained in source order. The canonical representation occupies
+-- 25..153 bytes and is identified by
+-- UWVMROS1_666e0343fa54b3a93a3176842f52411d3bf009164ba19f8bd4d59ad43d22d894.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveJoint_Request = Ros2Xarm_msgsSrvMoveJoint_Request
+  {
+    -- | \@brief xarm_msgs/srv/MoveJoint_Request.angles: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Request_angles :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/MoveJoint_Request.speed: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Request_speed :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveJoint_Request.acc: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Request_acc :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveJoint_Request.mvtime: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Request_mvtime :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveJoint_Request.wait: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/MoveJoint_Request.timeout: float32.
+    -- \@details Schema default -1.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Request_timeout :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/MoveJoint_Request.radius: float32.
+    -- \@details Schema default -1.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Request_radius :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveJoint_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveJoint_Request :: Ros2Xarm_msgsSrvMoveJoint_Request
+defaultRos2Xarm_msgsSrvMoveJoint_Request =
+  Ros2Xarm_msgsSrvMoveJoint_Request
+    ([])
+    (castWord32ToFloat 0x0)
+    (castWord32ToFloat 0x0)
+    (castWord32ToFloat 0x0)
+    (False)
+    (castWord32ToFloat 0xbf800000)
+    (castWord32ToFloat 0xbf800000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveJoint_Request.
+-- \@details Exact identity UWVMROS1_666e0343fa54b3a93a3176842f52411d3bf009164ba19f8bd4d59ad43d22d894
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveJoint_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveJoint_Request.
+-- \@details Exact identity UWVMROS1_666e0343fa54b3a93a3176842f52411d3bf009164ba19f8bd4d59ad43d22d894
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveJoint_RequestCodecIdentity = "UWVMROS1_666e0343fa54b3a93a3176842f52411d3bf009164ba19f8bd4d59ad43d22d894"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveJoint_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveJoint_Request :: Ros2Xarm_msgsSrvMoveJoint_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveJoint_Request value = do
+  if length (ros2Xarm_msgsSrvMoveJoint_Request_angles value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvMoveJoint_Request_angles value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvMoveJoint_Request_angles value)
+  b1 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveJoint_Request_speed value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveJoint_Request_acc value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveJoint_Request_mvtime value)
+  b4 <- W.encodeBool (ros2Xarm_msgsSrvMoveJoint_Request_wait value)
+  b5 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveJoint_Request_timeout value)
+  b6 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveJoint_Request_radius value)
+  W.bounded 153 [prefix0, b0, b1, b2, b3, b4, b5, b6]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveJoint_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveJoint_Request :: W.Decoder Ros2Xarm_msgsSrvMoveJoint_Request
+readRos2Xarm_msgsSrvMoveJoint_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (W.float32)
+  a1 <- W.float32
+  a2 <- W.float32
+  a3 <- W.float32
+  a4 <- W.boolean
+  a5 <- W.float32
+  a6 <- W.float32
+  let value = Ros2Xarm_msgsSrvMoveJoint_Request a0 a1 a2 a3 a4 a5 a6
+  case encodeRos2Xarm_msgsSrvMoveJoint_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveJoint_Request value.
+-- \@details Require the complete 25..153-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveJoint_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveJoint_Request
+decodeRos2Xarm_msgsSrvMoveJoint_Request = W.runDecoder 153 readRos2Xarm_msgsSrvMoveJoint_Request
+instance Canonical Ros2Xarm_msgsSrvMoveJoint_Request where
+  maximumBytes _ = 153
+  encodeValue = encodeRos2Xarm_msgsSrvMoveJoint_Request
+  readValue = readRos2Xarm_msgsSrvMoveJoint_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveJoint_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_0af0f83fe9efc15c4a2334c229e0d079fad286630c52d703b7e0cfaa037f04a7.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveJoint_Response = Ros2Xarm_msgsSrvMoveJoint_Response
+  {
+    -- | \@brief xarm_msgs/srv/MoveJoint_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/MoveJoint_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveJoint_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveJoint_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveJoint_Response :: Ros2Xarm_msgsSrvMoveJoint_Response
+defaultRos2Xarm_msgsSrvMoveJoint_Response = Ros2Xarm_msgsSrvMoveJoint_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveJoint_Response.
+-- \@details Exact identity UWVMROS1_0af0f83fe9efc15c4a2334c229e0d079fad286630c52d703b7e0cfaa037f04a7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveJoint_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveJoint_Response.
+-- \@details Exact identity UWVMROS1_0af0f83fe9efc15c4a2334c229e0d079fad286630c52d703b7e0cfaa037f04a7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveJoint_ResponseCodecIdentity = "UWVMROS1_0af0f83fe9efc15c4a2334c229e0d079fad286630c52d703b7e0cfaa037f04a7"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveJoint_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveJoint_Response :: Ros2Xarm_msgsSrvMoveJoint_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveJoint_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvMoveJoint_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvMoveJoint_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveJoint_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveJoint_Response :: W.Decoder Ros2Xarm_msgsSrvMoveJoint_Response
+readRos2Xarm_msgsSrvMoveJoint_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvMoveJoint_Response a0 a1
+  case encodeRos2Xarm_msgsSrvMoveJoint_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveJoint_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveJoint_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveJoint_Response
+decodeRos2Xarm_msgsSrvMoveJoint_Response = W.runDecoder 262 readRos2Xarm_msgsSrvMoveJoint_Response
+instance Canonical Ros2Xarm_msgsSrvMoveJoint_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvMoveJoint_Response
+  readValue = readRos2Xarm_msgsSrvMoveJoint_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveVelocity_Request value.
+-- \@details All 4 declared fields are retained in source order. The canonical representation occupies
+-- 10..138 bytes and is identified by
+-- UWVMROS1_a5378f3f0f4b89e04279b6d79b8b756d0970f74cd582636d56f1302be2c015c4.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveVelocity_Request = Ros2Xarm_msgsSrvMoveVelocity_Request
+  {
+    -- | \@brief xarm_msgs/srv/MoveVelocity_Request.speeds: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveVelocity_Request_speeds :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/MoveVelocity_Request.is_sync: bool.
+    -- \@details Schema default True. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveVelocity_Request_is_sync :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/MoveVelocity_Request.is_tool_coord: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveVelocity_Request_is_tool_coord :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/MoveVelocity_Request.duration: float32.
+    -- \@details Schema default -1.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveVelocity_Request_duration :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveVelocity_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveVelocity_Request :: Ros2Xarm_msgsSrvMoveVelocity_Request
+defaultRos2Xarm_msgsSrvMoveVelocity_Request =
+  Ros2Xarm_msgsSrvMoveVelocity_Request
+    ([])
+    (True)
+    (False)
+    (castWord32ToFloat 0xbf800000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveVelocity_Request.
+-- \@details Exact identity UWVMROS1_a5378f3f0f4b89e04279b6d79b8b756d0970f74cd582636d56f1302be2c015c4
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveVelocity_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveVelocity_Request.
+-- \@details Exact identity UWVMROS1_a5378f3f0f4b89e04279b6d79b8b756d0970f74cd582636d56f1302be2c015c4
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveVelocity_RequestCodecIdentity = "UWVMROS1_a5378f3f0f4b89e04279b6d79b8b756d0970f74cd582636d56f1302be2c015c4"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveVelocity_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveVelocity_Request :: Ros2Xarm_msgsSrvMoveVelocity_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveVelocity_Request value = do
+  if length (ros2Xarm_msgsSrvMoveVelocity_Request_speeds value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvMoveVelocity_Request_speeds value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvMoveVelocity_Request_speeds value)
+  b1 <- W.encodeBool (ros2Xarm_msgsSrvMoveVelocity_Request_is_sync value)
+  b2 <- W.encodeBool (ros2Xarm_msgsSrvMoveVelocity_Request_is_tool_coord value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsSrvMoveVelocity_Request_duration value)
+  W.bounded 138 [prefix0, b0, b1, b2, b3]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveVelocity_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveVelocity_Request :: W.Decoder Ros2Xarm_msgsSrvMoveVelocity_Request
+readRos2Xarm_msgsSrvMoveVelocity_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (W.float32)
+  a1 <- W.boolean
+  a2 <- W.boolean
+  a3 <- W.float32
+  let value = Ros2Xarm_msgsSrvMoveVelocity_Request a0 a1 a2 a3
+  case encodeRos2Xarm_msgsSrvMoveVelocity_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveVelocity_Request value.
+-- \@details Require the complete 10..138-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveVelocity_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveVelocity_Request
+decodeRos2Xarm_msgsSrvMoveVelocity_Request = W.runDecoder 138 readRos2Xarm_msgsSrvMoveVelocity_Request
+instance Canonical Ros2Xarm_msgsSrvMoveVelocity_Request where
+  maximumBytes _ = 138
+  encodeValue = encodeRos2Xarm_msgsSrvMoveVelocity_Request
+  readValue = readRos2Xarm_msgsSrvMoveVelocity_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/MoveVelocity_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_3ec82a1e864723e95f8fec98073d5e1ed009d2882fa8c20e55b4f8d86ec1d318.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvMoveVelocity_Response = Ros2Xarm_msgsSrvMoveVelocity_Response
+  {
+    -- | \@brief xarm_msgs/srv/MoveVelocity_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveVelocity_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveVelocity_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/MoveVelocity_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvMoveVelocity_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvMoveVelocity_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/MoveVelocity_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvMoveVelocity_Response :: Ros2Xarm_msgsSrvMoveVelocity_Response
+defaultRos2Xarm_msgsSrvMoveVelocity_Response = Ros2Xarm_msgsSrvMoveVelocity_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveVelocity_Response.
+-- \@details Exact identity UWVMROS1_3ec82a1e864723e95f8fec98073d5e1ed009d2882fa8c20e55b4f8d86ec1d318
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveVelocity_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/MoveVelocity_Response.
+-- \@details Exact identity UWVMROS1_3ec82a1e864723e95f8fec98073d5e1ed009d2882fa8c20e55b4f8d86ec1d318
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvMoveVelocity_ResponseCodecIdentity = "UWVMROS1_3ec82a1e864723e95f8fec98073d5e1ed009d2882fa8c20e55b4f8d86ec1d318"
+-- | \@brief Encode one complete xarm_msgs/srv/MoveVelocity_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvMoveVelocity_Response :: Ros2Xarm_msgsSrvMoveVelocity_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvMoveVelocity_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvMoveVelocity_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvMoveVelocity_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/MoveVelocity_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvMoveVelocity_Response :: W.Decoder Ros2Xarm_msgsSrvMoveVelocity_Response
+readRos2Xarm_msgsSrvMoveVelocity_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvMoveVelocity_Response a0 a1
+  case encodeRos2Xarm_msgsSrvMoveVelocity_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/MoveVelocity_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvMoveVelocity_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvMoveVelocity_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvMoveVelocity_Response
+decodeRos2Xarm_msgsSrvMoveVelocity_Response = W.runDecoder 262 readRos2Xarm_msgsSrvMoveVelocity_Response
+instance Canonical Ros2Xarm_msgsSrvMoveVelocity_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvMoveVelocity_Response
+  readValue = readRos2Xarm_msgsSrvMoveVelocity_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/PlanExec_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 1..1 bytes and is identified by
+-- UWVMROS1_376aa0461a41377c8e5ba44ec96e9dac39fea01da3db1d31a6a90190b5bf66d5.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvPlanExec_Request = Ros2Xarm_msgsSrvPlanExec_Request
+  {
+    -- | \@brief xarm_msgs/srv/PlanExec_Request.wait: bool.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvPlanExec_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvPlanExec_Request_wait :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/PlanExec_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvPlanExec_Request :: Ros2Xarm_msgsSrvPlanExec_Request
+defaultRos2Xarm_msgsSrvPlanExec_Request = Ros2Xarm_msgsSrvPlanExec_Request (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanExec_Request.
+-- \@details Exact identity UWVMROS1_376aa0461a41377c8e5ba44ec96e9dac39fea01da3db1d31a6a90190b5bf66d5
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanExec_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanExec_Request.
+-- \@details Exact identity UWVMROS1_376aa0461a41377c8e5ba44ec96e9dac39fea01da3db1d31a6a90190b5bf66d5
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanExec_RequestCodecIdentity = "UWVMROS1_376aa0461a41377c8e5ba44ec96e9dac39fea01da3db1d31a6a90190b5bf66d5"
+-- | \@brief Encode one complete xarm_msgs/srv/PlanExec_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvPlanExec_Request :: Ros2Xarm_msgsSrvPlanExec_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvPlanExec_Request value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvPlanExec_Request_wait value)
+  W.bounded 1 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/PlanExec_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvPlanExec_Request :: W.Decoder Ros2Xarm_msgsSrvPlanExec_Request
+readRos2Xarm_msgsSrvPlanExec_Request = do
+  a0 <- W.boolean
+  let value = Ros2Xarm_msgsSrvPlanExec_Request a0
+  case encodeRos2Xarm_msgsSrvPlanExec_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/PlanExec_Request value.
+-- \@details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvPlanExec_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvPlanExec_Request
+decodeRos2Xarm_msgsSrvPlanExec_Request = W.runDecoder 1 readRos2Xarm_msgsSrvPlanExec_Request
+instance Canonical Ros2Xarm_msgsSrvPlanExec_Request where
+  maximumBytes _ = 1
+  encodeValue = encodeRos2Xarm_msgsSrvPlanExec_Request
+  readValue = readRos2Xarm_msgsSrvPlanExec_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/PlanExec_Response value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 1..1 bytes and is identified by
+-- UWVMROS1_5adfabe15405e2e15b08760866169c214029fe826a69dd1277808c3ebb16a88e.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvPlanExec_Response = Ros2Xarm_msgsSrvPlanExec_Response
+  {
+    -- | \@brief xarm_msgs/srv/PlanExec_Response.success: bool.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvPlanExec_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvPlanExec_Response_success :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/PlanExec_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvPlanExec_Response :: Ros2Xarm_msgsSrvPlanExec_Response
+defaultRos2Xarm_msgsSrvPlanExec_Response = Ros2Xarm_msgsSrvPlanExec_Response (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanExec_Response.
+-- \@details Exact identity UWVMROS1_5adfabe15405e2e15b08760866169c214029fe826a69dd1277808c3ebb16a88e
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanExec_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanExec_Response.
+-- \@details Exact identity UWVMROS1_5adfabe15405e2e15b08760866169c214029fe826a69dd1277808c3ebb16a88e
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanExec_ResponseCodecIdentity = "UWVMROS1_5adfabe15405e2e15b08760866169c214029fe826a69dd1277808c3ebb16a88e"
+-- | \@brief Encode one complete xarm_msgs/srv/PlanExec_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvPlanExec_Response :: Ros2Xarm_msgsSrvPlanExec_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvPlanExec_Response value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvPlanExec_Response_success value)
+  W.bounded 1 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/PlanExec_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvPlanExec_Response :: W.Decoder Ros2Xarm_msgsSrvPlanExec_Response
+readRos2Xarm_msgsSrvPlanExec_Response = do
+  a0 <- W.boolean
+  let value = Ros2Xarm_msgsSrvPlanExec_Response a0
+  case encodeRos2Xarm_msgsSrvPlanExec_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/PlanExec_Response value.
+-- \@details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanExec_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvPlanExec_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvPlanExec_Response
+decodeRos2Xarm_msgsSrvPlanExec_Response = W.runDecoder 1 readRos2Xarm_msgsSrvPlanExec_Response
+instance Canonical Ros2Xarm_msgsSrvPlanExec_Response where
+  maximumBytes _ = 1
+  encodeValue = encodeRos2Xarm_msgsSrvPlanExec_Response
+  readValue = readRos2Xarm_msgsSrvPlanExec_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/PlanJoint_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 4..260 bytes and is identified by
+-- UWVMROS1_997562beca1e50895151970e89f0f253431451c60e274222ae622c49c0455bd5.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvPlanJoint_Request = Ros2Xarm_msgsSrvPlanJoint_Request
+  {
+    -- | \@brief xarm_msgs/srv/PlanJoint_Request.target: float64; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvPlanJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvPlanJoint_Request_target :: [Double]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/PlanJoint_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvPlanJoint_Request :: Ros2Xarm_msgsSrvPlanJoint_Request
+defaultRos2Xarm_msgsSrvPlanJoint_Request = Ros2Xarm_msgsSrvPlanJoint_Request ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanJoint_Request.
+-- \@details Exact identity UWVMROS1_997562beca1e50895151970e89f0f253431451c60e274222ae622c49c0455bd5
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanJoint_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanJoint_Request.
+-- \@details Exact identity UWVMROS1_997562beca1e50895151970e89f0f253431451c60e274222ae622c49c0455bd5
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanJoint_RequestCodecIdentity = "UWVMROS1_997562beca1e50895151970e89f0f253431451c60e274222ae622c49c0455bd5"
+-- | \@brief Encode one complete xarm_msgs/srv/PlanJoint_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvPlanJoint_Request :: Ros2Xarm_msgsSrvPlanJoint_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvPlanJoint_Request value = do
+  if length (ros2Xarm_msgsSrvPlanJoint_Request_target value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvPlanJoint_Request_target value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeFloat64 (e)) (ros2Xarm_msgsSrvPlanJoint_Request_target value)
+  W.bounded 260 [prefix0, b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/PlanJoint_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvPlanJoint_Request :: W.Decoder Ros2Xarm_msgsSrvPlanJoint_Request
+readRos2Xarm_msgsSrvPlanJoint_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (W.float64)
+  let value = Ros2Xarm_msgsSrvPlanJoint_Request a0
+  case encodeRos2Xarm_msgsSrvPlanJoint_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/PlanJoint_Request value.
+-- \@details Require the complete 4..260-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvPlanJoint_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvPlanJoint_Request
+decodeRos2Xarm_msgsSrvPlanJoint_Request = W.runDecoder 260 readRos2Xarm_msgsSrvPlanJoint_Request
+instance Canonical Ros2Xarm_msgsSrvPlanJoint_Request where
+  maximumBytes _ = 260
+  encodeValue = encodeRos2Xarm_msgsSrvPlanJoint_Request
+  readValue = readRos2Xarm_msgsSrvPlanJoint_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/PlanJoint_Response value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 1..1 bytes and is identified by
+-- UWVMROS1_dfe1e3eaf8913c9e6b5aed6ee60bd7c24eb4e2944036f0de92fcd6846acac782.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvPlanJoint_Response = Ros2Xarm_msgsSrvPlanJoint_Response
+  {
+    -- | \@brief xarm_msgs/srv/PlanJoint_Response.success: bool.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvPlanJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvPlanJoint_Response_success :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/PlanJoint_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvPlanJoint_Response :: Ros2Xarm_msgsSrvPlanJoint_Response
+defaultRos2Xarm_msgsSrvPlanJoint_Response = Ros2Xarm_msgsSrvPlanJoint_Response (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanJoint_Response.
+-- \@details Exact identity UWVMROS1_dfe1e3eaf8913c9e6b5aed6ee60bd7c24eb4e2944036f0de92fcd6846acac782
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanJoint_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanJoint_Response.
+-- \@details Exact identity UWVMROS1_dfe1e3eaf8913c9e6b5aed6ee60bd7c24eb4e2944036f0de92fcd6846acac782
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanJoint_ResponseCodecIdentity = "UWVMROS1_dfe1e3eaf8913c9e6b5aed6ee60bd7c24eb4e2944036f0de92fcd6846acac782"
+-- | \@brief Encode one complete xarm_msgs/srv/PlanJoint_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvPlanJoint_Response :: Ros2Xarm_msgsSrvPlanJoint_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvPlanJoint_Response value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvPlanJoint_Response_success value)
+  W.bounded 1 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/PlanJoint_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvPlanJoint_Response :: W.Decoder Ros2Xarm_msgsSrvPlanJoint_Response
+readRos2Xarm_msgsSrvPlanJoint_Response = do
+  a0 <- W.boolean
+  let value = Ros2Xarm_msgsSrvPlanJoint_Response a0
+  case encodeRos2Xarm_msgsSrvPlanJoint_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/PlanJoint_Response value.
+-- \@details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanJoint_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvPlanJoint_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvPlanJoint_Response
+decodeRos2Xarm_msgsSrvPlanJoint_Response = W.runDecoder 1 readRos2Xarm_msgsSrvPlanJoint_Response
+instance Canonical Ros2Xarm_msgsSrvPlanJoint_Response where
+  maximumBytes _ = 1
+  encodeValue = encodeRos2Xarm_msgsSrvPlanJoint_Response
+  readValue = readRos2Xarm_msgsSrvPlanJoint_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/PlanPose_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 56..56 bytes and is identified by
+-- UWVMROS1_01b292bd33f28682cde3cb35f9d62e8d99cd8a58d2a5c3d5e6411121d3a09859.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvPlanPose_Request = Ros2Xarm_msgsSrvPlanPose_Request
+  {
+    -- | \@brief xarm_msgs/srv/PlanPose_Request.target: geometry_msgs/msg/Pose.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvPlanPose_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvPlanPose_Request_target :: Ros2Geometry_msgsMsgPose
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/PlanPose_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvPlanPose_Request :: Ros2Xarm_msgsSrvPlanPose_Request
+defaultRos2Xarm_msgsSrvPlanPose_Request = Ros2Xarm_msgsSrvPlanPose_Request (defaultRos2Geometry_msgsMsgPose)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanPose_Request.
+-- \@details Exact identity UWVMROS1_01b292bd33f28682cde3cb35f9d62e8d99cd8a58d2a5c3d5e6411121d3a09859
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanPose_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanPose_Request.
+-- \@details Exact identity UWVMROS1_01b292bd33f28682cde3cb35f9d62e8d99cd8a58d2a5c3d5e6411121d3a09859
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanPose_RequestCodecIdentity = "UWVMROS1_01b292bd33f28682cde3cb35f9d62e8d99cd8a58d2a5c3d5e6411121d3a09859"
+-- | \@brief Encode one complete xarm_msgs/srv/PlanPose_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvPlanPose_Request :: Ros2Xarm_msgsSrvPlanPose_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvPlanPose_Request value = do
+  b0 <- encodeRos2Geometry_msgsMsgPose (ros2Xarm_msgsSrvPlanPose_Request_target value)
+  W.bounded 56 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/PlanPose_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvPlanPose_Request :: W.Decoder Ros2Xarm_msgsSrvPlanPose_Request
+readRos2Xarm_msgsSrvPlanPose_Request = do
+  a0 <- readRos2Geometry_msgsMsgPose
+  let value = Ros2Xarm_msgsSrvPlanPose_Request a0
+  case encodeRos2Xarm_msgsSrvPlanPose_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/PlanPose_Request value.
+-- \@details Require the complete 56..56-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvPlanPose_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvPlanPose_Request
+decodeRos2Xarm_msgsSrvPlanPose_Request = W.runDecoder 56 readRos2Xarm_msgsSrvPlanPose_Request
+instance Canonical Ros2Xarm_msgsSrvPlanPose_Request where
+  maximumBytes _ = 56
+  encodeValue = encodeRos2Xarm_msgsSrvPlanPose_Request
+  readValue = readRos2Xarm_msgsSrvPlanPose_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/PlanPose_Response value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 1..1 bytes and is identified by
+-- UWVMROS1_0cdcf4232f673c3034319f90c1d0f56fbfd86a829fa9f6460f87fea391ce766d.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvPlanPose_Response = Ros2Xarm_msgsSrvPlanPose_Response
+  {
+    -- | \@brief xarm_msgs/srv/PlanPose_Response.success: bool.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvPlanPose_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvPlanPose_Response_success :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/PlanPose_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvPlanPose_Response :: Ros2Xarm_msgsSrvPlanPose_Response
+defaultRos2Xarm_msgsSrvPlanPose_Response = Ros2Xarm_msgsSrvPlanPose_Response (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanPose_Response.
+-- \@details Exact identity UWVMROS1_0cdcf4232f673c3034319f90c1d0f56fbfd86a829fa9f6460f87fea391ce766d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanPose_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanPose_Response.
+-- \@details Exact identity UWVMROS1_0cdcf4232f673c3034319f90c1d0f56fbfd86a829fa9f6460f87fea391ce766d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanPose_ResponseCodecIdentity = "UWVMROS1_0cdcf4232f673c3034319f90c1d0f56fbfd86a829fa9f6460f87fea391ce766d"
+-- | \@brief Encode one complete xarm_msgs/srv/PlanPose_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvPlanPose_Response :: Ros2Xarm_msgsSrvPlanPose_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvPlanPose_Response value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvPlanPose_Response_success value)
+  W.bounded 1 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/PlanPose_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvPlanPose_Response :: W.Decoder Ros2Xarm_msgsSrvPlanPose_Response
+readRos2Xarm_msgsSrvPlanPose_Response = do
+  a0 <- W.boolean
+  let value = Ros2Xarm_msgsSrvPlanPose_Response a0
+  case encodeRos2Xarm_msgsSrvPlanPose_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/PlanPose_Response value.
+-- \@details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanPose_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvPlanPose_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvPlanPose_Response
+decodeRos2Xarm_msgsSrvPlanPose_Response = W.runDecoder 1 readRos2Xarm_msgsSrvPlanPose_Response
+instance Canonical Ros2Xarm_msgsSrvPlanPose_Response where
+  maximumBytes _ = 1
+  encodeValue = encodeRos2Xarm_msgsSrvPlanPose_Response
+  readValue = readRos2Xarm_msgsSrvPlanPose_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/PlanSingleStraight_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 56..56 bytes and is identified by
+-- UWVMROS1_4e350b5145aa64c8ff4dc15cd61ba557f0db2b256798e50e4b4e28d47ecdc2b0.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvPlanSingleStraight_Request = Ros2Xarm_msgsSrvPlanSingleStraight_Request
+  {
+    -- | \@brief xarm_msgs/srv/PlanSingleStraight_Request.target: geometry_msgs/msg/Pose.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvPlanSingleStraight_Request_target :: Ros2Geometry_msgsMsgPose
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/PlanSingleStraight_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvPlanSingleStraight_Request :: Ros2Xarm_msgsSrvPlanSingleStraight_Request
+defaultRos2Xarm_msgsSrvPlanSingleStraight_Request =
+  Ros2Xarm_msgsSrvPlanSingleStraight_Request
+    (defaultRos2Geometry_msgsMsgPose)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanSingleStraight_Request.
+-- \@details Exact identity UWVMROS1_4e350b5145aa64c8ff4dc15cd61ba557f0db2b256798e50e4b4e28d47ecdc2b0
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanSingleStraight_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanSingleStraight_Request.
+-- \@details Exact identity UWVMROS1_4e350b5145aa64c8ff4dc15cd61ba557f0db2b256798e50e4b4e28d47ecdc2b0
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanSingleStraight_RequestCodecIdentity = "UWVMROS1_4e350b5145aa64c8ff4dc15cd61ba557f0db2b256798e50e4b4e28d47ecdc2b0"
+-- | \@brief Encode one complete xarm_msgs/srv/PlanSingleStraight_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvPlanSingleStraight_Request :: Ros2Xarm_msgsSrvPlanSingleStraight_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvPlanSingleStraight_Request value = do
+  b0 <- encodeRos2Geometry_msgsMsgPose (ros2Xarm_msgsSrvPlanSingleStraight_Request_target value)
+  W.bounded 56 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/PlanSingleStraight_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvPlanSingleStraight_Request :: W.Decoder Ros2Xarm_msgsSrvPlanSingleStraight_Request
+readRos2Xarm_msgsSrvPlanSingleStraight_Request = do
+  a0 <- readRos2Geometry_msgsMsgPose
+  let value = Ros2Xarm_msgsSrvPlanSingleStraight_Request a0
+  case encodeRos2Xarm_msgsSrvPlanSingleStraight_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/PlanSingleStraight_Request value.
+-- \@details Require the complete 56..56-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvPlanSingleStraight_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvPlanSingleStraight_Request
+decodeRos2Xarm_msgsSrvPlanSingleStraight_Request = W.runDecoder 56 readRos2Xarm_msgsSrvPlanSingleStraight_Request
+instance Canonical Ros2Xarm_msgsSrvPlanSingleStraight_Request where
+  maximumBytes _ = 56
+  encodeValue = encodeRos2Xarm_msgsSrvPlanSingleStraight_Request
+  readValue = readRos2Xarm_msgsSrvPlanSingleStraight_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/PlanSingleStraight_Response value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 1..1 bytes and is identified by
+-- UWVMROS1_ef2fdd22f223f4c91ccc886bddae43b0d48bc9063b3a199c7d8bb6f1bfb86432.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvPlanSingleStraight_Response = Ros2Xarm_msgsSrvPlanSingleStraight_Response
+  {
+    -- | \@brief xarm_msgs/srv/PlanSingleStraight_Response.success: bool.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvPlanSingleStraight_Response_success :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/PlanSingleStraight_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvPlanSingleStraight_Response :: Ros2Xarm_msgsSrvPlanSingleStraight_Response
+defaultRos2Xarm_msgsSrvPlanSingleStraight_Response = Ros2Xarm_msgsSrvPlanSingleStraight_Response (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanSingleStraight_Response.
+-- \@details Exact identity UWVMROS1_ef2fdd22f223f4c91ccc886bddae43b0d48bc9063b3a199c7d8bb6f1bfb86432
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanSingleStraight_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/PlanSingleStraight_Response.
+-- \@details Exact identity UWVMROS1_ef2fdd22f223f4c91ccc886bddae43b0d48bc9063b3a199c7d8bb6f1bfb86432
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvPlanSingleStraight_ResponseCodecIdentity = "UWVMROS1_ef2fdd22f223f4c91ccc886bddae43b0d48bc9063b3a199c7d8bb6f1bfb86432"
+-- | \@brief Encode one complete xarm_msgs/srv/PlanSingleStraight_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvPlanSingleStraight_Response :: Ros2Xarm_msgsSrvPlanSingleStraight_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvPlanSingleStraight_Response value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvPlanSingleStraight_Response_success value)
+  W.bounded 1 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/PlanSingleStraight_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvPlanSingleStraight_Response :: W.Decoder Ros2Xarm_msgsSrvPlanSingleStraight_Response
+readRos2Xarm_msgsSrvPlanSingleStraight_Response = do
+  a0 <- W.boolean
+  let value = Ros2Xarm_msgsSrvPlanSingleStraight_Response a0
+  case encodeRos2Xarm_msgsSrvPlanSingleStraight_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/PlanSingleStraight_Response value.
+-- \@details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvPlanSingleStraight_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvPlanSingleStraight_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvPlanSingleStraight_Response
+decodeRos2Xarm_msgsSrvPlanSingleStraight_Response = W.runDecoder 1 readRos2Xarm_msgsSrvPlanSingleStraight_Response
+instance Canonical Ros2Xarm_msgsSrvPlanSingleStraight_Response where
+  maximumBytes _ = 1
+  encodeValue = encodeRos2Xarm_msgsSrvPlanSingleStraight_Response
+  readValue = readRos2Xarm_msgsSrvPlanSingleStraight_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/RobotiqActivate_Request value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 5..5 bytes and is identified by
+-- UWVMROS1_7c4501be17de61893d5d91b3808769133ac5a444d2f0a8b1b3b13a01f03b75c3.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvRobotiqActivate_Request = Ros2Xarm_msgsSrvRobotiqActivate_Request
+  {
+    -- | \@brief xarm_msgs/srv/RobotiqActivate_Request.wait: bool.
+    -- \@details Schema default True. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqActivate_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqActivate_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqActivate_Request.timeout: float32.
+    -- \@details Schema default 3.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqActivate_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqActivate_Request_timeout :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/RobotiqActivate_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvRobotiqActivate_Request :: Ros2Xarm_msgsSrvRobotiqActivate_Request
+defaultRos2Xarm_msgsSrvRobotiqActivate_Request =
+  Ros2Xarm_msgsSrvRobotiqActivate_Request
+    (True)
+    (castWord32ToFloat 0x40400000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqActivate_Request.
+-- \@details Exact identity UWVMROS1_7c4501be17de61893d5d91b3808769133ac5a444d2f0a8b1b3b13a01f03b75c3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqActivate_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqActivate_Request.
+-- \@details Exact identity UWVMROS1_7c4501be17de61893d5d91b3808769133ac5a444d2f0a8b1b3b13a01f03b75c3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqActivate_RequestCodecIdentity = "UWVMROS1_7c4501be17de61893d5d91b3808769133ac5a444d2f0a8b1b3b13a01f03b75c3"
+-- | \@brief Encode one complete xarm_msgs/srv/RobotiqActivate_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvRobotiqActivate_Request :: Ros2Xarm_msgsSrvRobotiqActivate_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvRobotiqActivate_Request value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvRobotiqActivate_Request_wait value)
+  b1 <- W.encodeFloat32 (ros2Xarm_msgsSrvRobotiqActivate_Request_timeout value)
+  W.bounded 5 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/RobotiqActivate_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvRobotiqActivate_Request :: W.Decoder Ros2Xarm_msgsSrvRobotiqActivate_Request
+readRos2Xarm_msgsSrvRobotiqActivate_Request = do
+  a0 <- W.boolean
+  a1 <- W.float32
+  let value = Ros2Xarm_msgsSrvRobotiqActivate_Request a0 a1
+  case encodeRos2Xarm_msgsSrvRobotiqActivate_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/RobotiqActivate_Request value.
+-- \@details Require the complete 5..5-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvRobotiqActivate_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvRobotiqActivate_Request
+decodeRos2Xarm_msgsSrvRobotiqActivate_Request = W.runDecoder 5 readRos2Xarm_msgsSrvRobotiqActivate_Request
+instance Canonical Ros2Xarm_msgsSrvRobotiqActivate_Request where
+  maximumBytes _ = 5
+  encodeValue = encodeRos2Xarm_msgsSrvRobotiqActivate_Request
+  readValue = readRos2Xarm_msgsSrvRobotiqActivate_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/RobotiqActivate_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..4362 bytes and is identified by
+-- UWVMROS1_e6f6d01b439afdbb2461a8ed682ce1332e021a9a8ae3326772f13469a70648d4.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvRobotiqActivate_Response = Ros2Xarm_msgsSrvRobotiqActivate_Response
+  {
+    -- | \@brief xarm_msgs/srv/RobotiqActivate_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqActivate_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqActivate_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqActivate_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqActivate_Response.ret_data: uint8; 0..4096 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqActivate_Response_ret_data :: [Word8]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/RobotiqActivate_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvRobotiqActivate_Response :: Ros2Xarm_msgsSrvRobotiqActivate_Response
+defaultRos2Xarm_msgsSrvRobotiqActivate_Response = Ros2Xarm_msgsSrvRobotiqActivate_Response (0) (T.empty) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqActivate_Response.
+-- \@details Exact identity UWVMROS1_e6f6d01b439afdbb2461a8ed682ce1332e021a9a8ae3326772f13469a70648d4
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqActivate_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqActivate_Response.
+-- \@details Exact identity UWVMROS1_e6f6d01b439afdbb2461a8ed682ce1332e021a9a8ae3326772f13469a70648d4
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqActivate_ResponseCodecIdentity = "UWVMROS1_e6f6d01b439afdbb2461a8ed682ce1332e021a9a8ae3326772f13469a70648d4"
+-- | \@brief Encode one complete xarm_msgs/srv/RobotiqActivate_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvRobotiqActivate_Response :: Ros2Xarm_msgsSrvRobotiqActivate_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvRobotiqActivate_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvRobotiqActivate_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvRobotiqActivate_Response_message value)
+  if length (ros2Xarm_msgsSrvRobotiqActivate_Response_ret_data value) > 4096 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 4096 (length (ros2Xarm_msgsSrvRobotiqActivate_Response_ret_data value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeUnsigned 1 (fromIntegral (e))) (ros2Xarm_msgsSrvRobotiqActivate_Response_ret_data value)
+  W.bounded 4362 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/RobotiqActivate_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvRobotiqActivate_Response :: W.Decoder Ros2Xarm_msgsSrvRobotiqActivate_Response
+readRos2Xarm_msgsSrvRobotiqActivate_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 4096
+  a2 <- replicateM count2 (fromIntegral <$> W.unsigned 1)
+  let value = Ros2Xarm_msgsSrvRobotiqActivate_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvRobotiqActivate_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/RobotiqActivate_Response value.
+-- \@details Require the complete 10..4362-byte canonical representation. Reject truncation, invalid
+-- fields and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqActivate_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvRobotiqActivate_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvRobotiqActivate_Response
+decodeRos2Xarm_msgsSrvRobotiqActivate_Response = W.runDecoder 4362 readRos2Xarm_msgsSrvRobotiqActivate_Response
+instance Canonical Ros2Xarm_msgsSrvRobotiqActivate_Response where
+  maximumBytes _ = 4362
+  encodeValue = encodeRos2Xarm_msgsSrvRobotiqActivate_Response
+  readValue = readRos2Xarm_msgsSrvRobotiqActivate_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/RobotiqGetStatus_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 1..1 bytes and is identified by
+-- UWVMROS1_99970019152494d54024cb4c44af400853506d81149e1bba55d40caa9bd44e6b.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvRobotiqGetStatus_Request = Ros2Xarm_msgsSrvRobotiqGetStatus_Request
+  {
+    -- | \@brief xarm_msgs/srv/RobotiqGetStatus_Request.number_of_registers: uint8.
+    -- \@details Schema default 3. Encoding preserves the original field position and signedness; invalid
+    -- bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqGetStatus_Request_number_of_registers :: Word8
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/RobotiqGetStatus_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvRobotiqGetStatus_Request :: Ros2Xarm_msgsSrvRobotiqGetStatus_Request
+defaultRos2Xarm_msgsSrvRobotiqGetStatus_Request = Ros2Xarm_msgsSrvRobotiqGetStatus_Request (3)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqGetStatus_Request.
+-- \@details Exact identity UWVMROS1_99970019152494d54024cb4c44af400853506d81149e1bba55d40caa9bd44e6b
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqGetStatus_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqGetStatus_Request.
+-- \@details Exact identity UWVMROS1_99970019152494d54024cb4c44af400853506d81149e1bba55d40caa9bd44e6b
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqGetStatus_RequestCodecIdentity = "UWVMROS1_99970019152494d54024cb4c44af400853506d81149e1bba55d40caa9bd44e6b"
+-- | \@brief Encode one complete xarm_msgs/srv/RobotiqGetStatus_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvRobotiqGetStatus_Request :: Ros2Xarm_msgsSrvRobotiqGetStatus_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvRobotiqGetStatus_Request value = do
+  b0 <- W.encodeUnsigned 1 (fromIntegral (ros2Xarm_msgsSrvRobotiqGetStatus_Request_number_of_registers value))
+  W.bounded 1 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/RobotiqGetStatus_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvRobotiqGetStatus_Request :: W.Decoder Ros2Xarm_msgsSrvRobotiqGetStatus_Request
+readRos2Xarm_msgsSrvRobotiqGetStatus_Request = do
+  a0 <- fromIntegral <$> W.unsigned 1
+  let value = Ros2Xarm_msgsSrvRobotiqGetStatus_Request a0
+  case encodeRos2Xarm_msgsSrvRobotiqGetStatus_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/RobotiqGetStatus_Request value.
+-- \@details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvRobotiqGetStatus_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvRobotiqGetStatus_Request
+decodeRos2Xarm_msgsSrvRobotiqGetStatus_Request = W.runDecoder 1 readRos2Xarm_msgsSrvRobotiqGetStatus_Request
+instance Canonical Ros2Xarm_msgsSrvRobotiqGetStatus_Request where
+  maximumBytes _ = 1
+  encodeValue = encodeRos2Xarm_msgsSrvRobotiqGetStatus_Request
+  readValue = readRos2Xarm_msgsSrvRobotiqGetStatus_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/RobotiqGetStatus_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..4362 bytes and is identified by
+-- UWVMROS1_b1b7945622a48beab45b569b9c64139eec028b5a61dc75cfb6dc302d8b787e43.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvRobotiqGetStatus_Response = Ros2Xarm_msgsSrvRobotiqGetStatus_Response
+  {
+    -- | \@brief xarm_msgs/srv/RobotiqGetStatus_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqGetStatus_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqGetStatus_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqGetStatus_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqGetStatus_Response.ret_data: uint8; 0..4096 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqGetStatus_Response_ret_data :: [Word8]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/RobotiqGetStatus_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvRobotiqGetStatus_Response :: Ros2Xarm_msgsSrvRobotiqGetStatus_Response
+defaultRos2Xarm_msgsSrvRobotiqGetStatus_Response =
+  Ros2Xarm_msgsSrvRobotiqGetStatus_Response
+    (0)
+    (T.empty)
+    ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqGetStatus_Response.
+-- \@details Exact identity UWVMROS1_b1b7945622a48beab45b569b9c64139eec028b5a61dc75cfb6dc302d8b787e43
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqGetStatus_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqGetStatus_Response.
+-- \@details Exact identity UWVMROS1_b1b7945622a48beab45b569b9c64139eec028b5a61dc75cfb6dc302d8b787e43
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqGetStatus_ResponseCodecIdentity = "UWVMROS1_b1b7945622a48beab45b569b9c64139eec028b5a61dc75cfb6dc302d8b787e43"
+-- | \@brief Encode one complete xarm_msgs/srv/RobotiqGetStatus_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvRobotiqGetStatus_Response :: Ros2Xarm_msgsSrvRobotiqGetStatus_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvRobotiqGetStatus_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvRobotiqGetStatus_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvRobotiqGetStatus_Response_message value)
+  if length (ros2Xarm_msgsSrvRobotiqGetStatus_Response_ret_data value) > 4096 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 4096 (length (ros2Xarm_msgsSrvRobotiqGetStatus_Response_ret_data value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeUnsigned 1 (fromIntegral (e))) (ros2Xarm_msgsSrvRobotiqGetStatus_Response_ret_data value)
+  W.bounded 4362 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/RobotiqGetStatus_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvRobotiqGetStatus_Response :: W.Decoder Ros2Xarm_msgsSrvRobotiqGetStatus_Response
+readRos2Xarm_msgsSrvRobotiqGetStatus_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 4096
+  a2 <- replicateM count2 (fromIntegral <$> W.unsigned 1)
+  let value = Ros2Xarm_msgsSrvRobotiqGetStatus_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvRobotiqGetStatus_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/RobotiqGetStatus_Response value.
+-- \@details Require the complete 10..4362-byte canonical representation. Reject truncation, invalid
+-- fields and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqGetStatus_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvRobotiqGetStatus_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvRobotiqGetStatus_Response
+decodeRos2Xarm_msgsSrvRobotiqGetStatus_Response = W.runDecoder 4362 readRos2Xarm_msgsSrvRobotiqGetStatus_Response
+instance Canonical Ros2Xarm_msgsSrvRobotiqGetStatus_Response where
+  maximumBytes _ = 4362
+  encodeValue = encodeRos2Xarm_msgsSrvRobotiqGetStatus_Response
+  readValue = readRos2Xarm_msgsSrvRobotiqGetStatus_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/RobotiqMove_Request value.
+-- \@details All 5 declared fields are retained in source order. The canonical representation occupies
+-- 8..8 bytes and is identified by
+-- UWVMROS1_f1e5c6c7be4583ecdb91da2401c9adcf727eff9e2b69df21e8a4f1de468775ad.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvRobotiqMove_Request = Ros2Xarm_msgsSrvRobotiqMove_Request
+  {
+    -- | \@brief xarm_msgs/srv/RobotiqMove_Request.pos: uint8.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqMove_Request_pos :: Word8
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqMove_Request.speed: uint8.
+    -- \@details Schema default 255. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqMove_Request_speed :: Word8
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqMove_Request.force: uint8.
+    -- \@details Schema default 255. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqMove_Request_force :: Word8
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqMove_Request.wait: bool.
+    -- \@details Schema default True. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqMove_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqMove_Request.timeout: float32.
+    -- \@details Schema default 5.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqMove_Request_timeout :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/RobotiqMove_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvRobotiqMove_Request :: Ros2Xarm_msgsSrvRobotiqMove_Request
+defaultRos2Xarm_msgsSrvRobotiqMove_Request =
+  Ros2Xarm_msgsSrvRobotiqMove_Request
+    (0)
+    (255)
+    (255)
+    (True)
+    (castWord32ToFloat 0x40a00000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqMove_Request.
+-- \@details Exact identity UWVMROS1_f1e5c6c7be4583ecdb91da2401c9adcf727eff9e2b69df21e8a4f1de468775ad
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqMove_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqMove_Request.
+-- \@details Exact identity UWVMROS1_f1e5c6c7be4583ecdb91da2401c9adcf727eff9e2b69df21e8a4f1de468775ad
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqMove_RequestCodecIdentity = "UWVMROS1_f1e5c6c7be4583ecdb91da2401c9adcf727eff9e2b69df21e8a4f1de468775ad"
+-- | \@brief Encode one complete xarm_msgs/srv/RobotiqMove_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvRobotiqMove_Request :: Ros2Xarm_msgsSrvRobotiqMove_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvRobotiqMove_Request value = do
+  b0 <- W.encodeUnsigned 1 (fromIntegral (ros2Xarm_msgsSrvRobotiqMove_Request_pos value))
+  b1 <- W.encodeUnsigned 1 (fromIntegral (ros2Xarm_msgsSrvRobotiqMove_Request_speed value))
+  b2 <- W.encodeUnsigned 1 (fromIntegral (ros2Xarm_msgsSrvRobotiqMove_Request_force value))
+  b3 <- W.encodeBool (ros2Xarm_msgsSrvRobotiqMove_Request_wait value)
+  b4 <- W.encodeFloat32 (ros2Xarm_msgsSrvRobotiqMove_Request_timeout value)
+  W.bounded 8 [b0, b1, b2, b3, b4]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/RobotiqMove_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvRobotiqMove_Request :: W.Decoder Ros2Xarm_msgsSrvRobotiqMove_Request
+readRos2Xarm_msgsSrvRobotiqMove_Request = do
+  a0 <- fromIntegral <$> W.unsigned 1
+  a1 <- fromIntegral <$> W.unsigned 1
+  a2 <- fromIntegral <$> W.unsigned 1
+  a3 <- W.boolean
+  a4 <- W.float32
+  let value = Ros2Xarm_msgsSrvRobotiqMove_Request a0 a1 a2 a3 a4
+  case encodeRos2Xarm_msgsSrvRobotiqMove_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/RobotiqMove_Request value.
+-- \@details Require the complete 8..8-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvRobotiqMove_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvRobotiqMove_Request
+decodeRos2Xarm_msgsSrvRobotiqMove_Request = W.runDecoder 8 readRos2Xarm_msgsSrvRobotiqMove_Request
+instance Canonical Ros2Xarm_msgsSrvRobotiqMove_Request where
+  maximumBytes _ = 8
+  encodeValue = encodeRos2Xarm_msgsSrvRobotiqMove_Request
+  readValue = readRos2Xarm_msgsSrvRobotiqMove_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/RobotiqMove_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..4362 bytes and is identified by
+-- UWVMROS1_7b581f9f45349f688543ea57a3889b351909b43a9d5bff65d916b804b00bacf6.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvRobotiqMove_Response = Ros2Xarm_msgsSrvRobotiqMove_Response
+  {
+    -- | \@brief xarm_msgs/srv/RobotiqMove_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqMove_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqMove_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqMove_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqMove_Response.ret_data: uint8; 0..4096 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqMove_Response_ret_data :: [Word8]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/RobotiqMove_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvRobotiqMove_Response :: Ros2Xarm_msgsSrvRobotiqMove_Response
+defaultRos2Xarm_msgsSrvRobotiqMove_Response = Ros2Xarm_msgsSrvRobotiqMove_Response (0) (T.empty) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqMove_Response.
+-- \@details Exact identity UWVMROS1_7b581f9f45349f688543ea57a3889b351909b43a9d5bff65d916b804b00bacf6
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqMove_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqMove_Response.
+-- \@details Exact identity UWVMROS1_7b581f9f45349f688543ea57a3889b351909b43a9d5bff65d916b804b00bacf6
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqMove_ResponseCodecIdentity = "UWVMROS1_7b581f9f45349f688543ea57a3889b351909b43a9d5bff65d916b804b00bacf6"
+-- | \@brief Encode one complete xarm_msgs/srv/RobotiqMove_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvRobotiqMove_Response :: Ros2Xarm_msgsSrvRobotiqMove_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvRobotiqMove_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvRobotiqMove_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvRobotiqMove_Response_message value)
+  if length (ros2Xarm_msgsSrvRobotiqMove_Response_ret_data value) > 4096 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 4096 (length (ros2Xarm_msgsSrvRobotiqMove_Response_ret_data value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeUnsigned 1 (fromIntegral (e))) (ros2Xarm_msgsSrvRobotiqMove_Response_ret_data value)
+  W.bounded 4362 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/RobotiqMove_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvRobotiqMove_Response :: W.Decoder Ros2Xarm_msgsSrvRobotiqMove_Response
+readRos2Xarm_msgsSrvRobotiqMove_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 4096
+  a2 <- replicateM count2 (fromIntegral <$> W.unsigned 1)
+  let value = Ros2Xarm_msgsSrvRobotiqMove_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvRobotiqMove_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/RobotiqMove_Response value.
+-- \@details Require the complete 10..4362-byte canonical representation. Reject truncation, invalid
+-- fields and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqMove_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvRobotiqMove_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvRobotiqMove_Response
+decodeRos2Xarm_msgsSrvRobotiqMove_Response = W.runDecoder 4362 readRos2Xarm_msgsSrvRobotiqMove_Response
+instance Canonical Ros2Xarm_msgsSrvRobotiqMove_Response where
+  maximumBytes _ = 4362
+  encodeValue = encodeRos2Xarm_msgsSrvRobotiqMove_Response
+  readValue = readRos2Xarm_msgsSrvRobotiqMove_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/RobotiqReset_Request value.
+-- \@details All 0 declared fields are retained in source order. The canonical representation occupies
+-- 0..0 bytes and is identified by
+-- UWVMROS1_59168733ec2ce73fc135dfa2c0f1edd10a4ad82062acf477c7ca9258ecb8d755.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvRobotiqReset_Request = Ros2Xarm_msgsSrvRobotiqReset_Request deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/RobotiqReset_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvRobotiqReset_Request :: Ros2Xarm_msgsSrvRobotiqReset_Request
+defaultRos2Xarm_msgsSrvRobotiqReset_Request = Ros2Xarm_msgsSrvRobotiqReset_Request 
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqReset_Request.
+-- \@details Exact identity UWVMROS1_59168733ec2ce73fc135dfa2c0f1edd10a4ad82062acf477c7ca9258ecb8d755
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqReset_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqReset_Request.
+-- \@details Exact identity UWVMROS1_59168733ec2ce73fc135dfa2c0f1edd10a4ad82062acf477c7ca9258ecb8d755
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqReset_RequestCodecIdentity = "UWVMROS1_59168733ec2ce73fc135dfa2c0f1edd10a4ad82062acf477c7ca9258ecb8d755"
+-- | \@brief Encode one complete xarm_msgs/srv/RobotiqReset_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvRobotiqReset_Request :: Ros2Xarm_msgsSrvRobotiqReset_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvRobotiqReset_Request value = do
+  W.bounded 0 []
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/RobotiqReset_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvRobotiqReset_Request :: W.Decoder Ros2Xarm_msgsSrvRobotiqReset_Request
+readRos2Xarm_msgsSrvRobotiqReset_Request = do
+  let value = Ros2Xarm_msgsSrvRobotiqReset_Request 
+  case encodeRos2Xarm_msgsSrvRobotiqReset_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/RobotiqReset_Request value.
+-- \@details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvRobotiqReset_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvRobotiqReset_Request
+decodeRos2Xarm_msgsSrvRobotiqReset_Request = W.runDecoder 0 readRos2Xarm_msgsSrvRobotiqReset_Request
+instance Canonical Ros2Xarm_msgsSrvRobotiqReset_Request where
+  maximumBytes _ = 0
+  encodeValue = encodeRos2Xarm_msgsSrvRobotiqReset_Request
+  readValue = readRos2Xarm_msgsSrvRobotiqReset_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/RobotiqReset_Response value.
+-- \@details All 3 declared fields are retained in source order. The canonical representation occupies
+-- 10..4362 bytes and is identified by
+-- UWVMROS1_4c0f6950fe50ffae8b6b30be7265606bddaebeb1099038b1e973f144c8164d2e.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvRobotiqReset_Response = Ros2Xarm_msgsSrvRobotiqReset_Response
+  {
+    -- | \@brief xarm_msgs/srv/RobotiqReset_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqReset_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqReset_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqReset_Response_message :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/RobotiqReset_Response.ret_data: uint8; 0..4096 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvRobotiqReset_Response_ret_data :: [Word8]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/RobotiqReset_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvRobotiqReset_Response :: Ros2Xarm_msgsSrvRobotiqReset_Response
+defaultRos2Xarm_msgsSrvRobotiqReset_Response = Ros2Xarm_msgsSrvRobotiqReset_Response (0) (T.empty) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqReset_Response.
+-- \@details Exact identity UWVMROS1_4c0f6950fe50ffae8b6b30be7265606bddaebeb1099038b1e973f144c8164d2e
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqReset_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/RobotiqReset_Response.
+-- \@details Exact identity UWVMROS1_4c0f6950fe50ffae8b6b30be7265606bddaebeb1099038b1e973f144c8164d2e
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvRobotiqReset_ResponseCodecIdentity = "UWVMROS1_4c0f6950fe50ffae8b6b30be7265606bddaebeb1099038b1e973f144c8164d2e"
+-- | \@brief Encode one complete xarm_msgs/srv/RobotiqReset_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvRobotiqReset_Response :: Ros2Xarm_msgsSrvRobotiqReset_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvRobotiqReset_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvRobotiqReset_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvRobotiqReset_Response_message value)
+  if length (ros2Xarm_msgsSrvRobotiqReset_Response_ret_data value) > 4096 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 4096 (length (ros2Xarm_msgsSrvRobotiqReset_Response_ret_data value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeUnsigned 1 (fromIntegral (e))) (ros2Xarm_msgsSrvRobotiqReset_Response_ret_data value)
+  W.bounded 4362 [b0, b1, prefix2, b2]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/RobotiqReset_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvRobotiqReset_Response :: W.Decoder Ros2Xarm_msgsSrvRobotiqReset_Response
+readRos2Xarm_msgsSrvRobotiqReset_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  count2 <- W.count 4096
+  a2 <- replicateM count2 (fromIntegral <$> W.unsigned 1)
+  let value = Ros2Xarm_msgsSrvRobotiqReset_Response a0 a1 a2
+  case encodeRos2Xarm_msgsSrvRobotiqReset_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/RobotiqReset_Response value.
+-- \@details Require the complete 10..4362-byte canonical representation. Reject truncation, invalid
+-- fields and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvRobotiqReset_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvRobotiqReset_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvRobotiqReset_Response
+decodeRos2Xarm_msgsSrvRobotiqReset_Response = W.runDecoder 4362 readRos2Xarm_msgsSrvRobotiqReset_Response
+instance Canonical Ros2Xarm_msgsSrvRobotiqReset_Response where
+  maximumBytes _ = 4362
+  encodeValue = encodeRos2Xarm_msgsSrvRobotiqReset_Response
+  readValue = readRos2Xarm_msgsSrvRobotiqReset_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetAnalogIO_Request value.
+-- \@details All 4 declared fields are retained in source order. The canonical representation occupies
+-- 14..142 bytes and is identified by
+-- UWVMROS1_77df87cd98b5dd0b384674739c65f045eb32346596b82ceca2ccb9ff6e9dfe96.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetAnalogIO_Request = Ros2Xarm_msgsSrvSetAnalogIO_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetAnalogIO_Request.ionum: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetAnalogIO_Request_ionum :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetAnalogIO_Request.value: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetAnalogIO_Request_value :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/SetAnalogIO_Request.xyz: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetAnalogIO_Request_xyz :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/SetAnalogIO_Request.tol_r: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetAnalogIO_Request_tol_r :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetAnalogIO_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetAnalogIO_Request :: Ros2Xarm_msgsSrvSetAnalogIO_Request
+defaultRos2Xarm_msgsSrvSetAnalogIO_Request = Ros2Xarm_msgsSrvSetAnalogIO_Request (0) (0) ([]) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetAnalogIO_Request.
+-- \@details Exact identity UWVMROS1_77df87cd98b5dd0b384674739c65f045eb32346596b82ceca2ccb9ff6e9dfe96
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetAnalogIO_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetAnalogIO_Request.
+-- \@details Exact identity UWVMROS1_77df87cd98b5dd0b384674739c65f045eb32346596b82ceca2ccb9ff6e9dfe96
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetAnalogIO_RequestCodecIdentity = "UWVMROS1_77df87cd98b5dd0b384674739c65f045eb32346596b82ceca2ccb9ff6e9dfe96"
+-- | \@brief Encode one complete xarm_msgs/srv/SetAnalogIO_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetAnalogIO_Request :: Ros2Xarm_msgsSrvSetAnalogIO_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetAnalogIO_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetAnalogIO_Request_ionum value))
+  b1 <- W.encodeFloat32 (ros2Xarm_msgsSrvSetAnalogIO_Request_value value)
+  if length (ros2Xarm_msgsSrvSetAnalogIO_Request_xyz value) > 32 then Left 22 else Right ()
+  prefix2 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvSetAnalogIO_Request_xyz value))
+  b2 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvSetAnalogIO_Request_xyz value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsSrvSetAnalogIO_Request_tol_r value)
+  W.bounded 142 [b0, b1, prefix2, b2, b3]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetAnalogIO_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetAnalogIO_Request :: W.Decoder Ros2Xarm_msgsSrvSetAnalogIO_Request
+readRos2Xarm_msgsSrvSetAnalogIO_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.float32
+  count2 <- W.count 32
+  a2 <- replicateM count2 (W.float32)
+  a3 <- W.float32
+  let value = Ros2Xarm_msgsSrvSetAnalogIO_Request a0 a1 a2 a3
+  case encodeRos2Xarm_msgsSrvSetAnalogIO_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetAnalogIO_Request value.
+-- \@details Require the complete 14..142-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetAnalogIO_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetAnalogIO_Request
+decodeRos2Xarm_msgsSrvSetAnalogIO_Request = W.runDecoder 142 readRos2Xarm_msgsSrvSetAnalogIO_Request
+instance Canonical Ros2Xarm_msgsSrvSetAnalogIO_Request where
+  maximumBytes _ = 142
+  encodeValue = encodeRos2Xarm_msgsSrvSetAnalogIO_Request
+  readValue = readRos2Xarm_msgsSrvSetAnalogIO_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetAnalogIO_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_480194824f2056f0dd3d3031fda9e27f49b3f7b242f0d0bcb4a783c6649164ec.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetAnalogIO_Response = Ros2Xarm_msgsSrvSetAnalogIO_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetAnalogIO_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetAnalogIO_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetAnalogIO_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetAnalogIO_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetAnalogIO_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetAnalogIO_Response :: Ros2Xarm_msgsSrvSetAnalogIO_Response
+defaultRos2Xarm_msgsSrvSetAnalogIO_Response = Ros2Xarm_msgsSrvSetAnalogIO_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetAnalogIO_Response.
+-- \@details Exact identity UWVMROS1_480194824f2056f0dd3d3031fda9e27f49b3f7b242f0d0bcb4a783c6649164ec
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetAnalogIO_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetAnalogIO_Response.
+-- \@details Exact identity UWVMROS1_480194824f2056f0dd3d3031fda9e27f49b3f7b242f0d0bcb4a783c6649164ec
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetAnalogIO_ResponseCodecIdentity = "UWVMROS1_480194824f2056f0dd3d3031fda9e27f49b3f7b242f0d0bcb4a783c6649164ec"
+-- | \@brief Encode one complete xarm_msgs/srv/SetAnalogIO_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetAnalogIO_Response :: Ros2Xarm_msgsSrvSetAnalogIO_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetAnalogIO_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetAnalogIO_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetAnalogIO_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetAnalogIO_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetAnalogIO_Response :: W.Decoder Ros2Xarm_msgsSrvSetAnalogIO_Response
+readRos2Xarm_msgsSrvSetAnalogIO_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetAnalogIO_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetAnalogIO_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetAnalogIO_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetAnalogIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetAnalogIO_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetAnalogIO_Response
+decodeRos2Xarm_msgsSrvSetAnalogIO_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetAnalogIO_Response
+instance Canonical Ros2Xarm_msgsSrvSetAnalogIO_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetAnalogIO_Response
+  readValue = readRos2Xarm_msgsSrvSetAnalogIO_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetDigitalIO_Request value.
+-- \@details All 5 declared fields are retained in source order. The canonical representation occupies
+-- 16..144 bytes and is identified by
+-- UWVMROS1_1bb4c857c4625a17ef5800f821d5aed95124ba24dc472ee61c2193798967aaf2.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetDigitalIO_Request = Ros2Xarm_msgsSrvSetDigitalIO_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetDigitalIO_Request.ionum: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetDigitalIO_Request_ionum :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetDigitalIO_Request.value: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetDigitalIO_Request_value :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetDigitalIO_Request.delay_sec: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetDigitalIO_Request_delay_sec :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/SetDigitalIO_Request.xyz: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetDigitalIO_Request_xyz :: [Float]
+  ,
+    -- | \@brief xarm_msgs/srv/SetDigitalIO_Request.tol_r: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetDigitalIO_Request_tol_r :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetDigitalIO_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetDigitalIO_Request :: Ros2Xarm_msgsSrvSetDigitalIO_Request
+defaultRos2Xarm_msgsSrvSetDigitalIO_Request =
+  Ros2Xarm_msgsSrvSetDigitalIO_Request
+    (0)
+    (0)
+    (castWord32ToFloat 0x0)
+    ([])
+    (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetDigitalIO_Request.
+-- \@details Exact identity UWVMROS1_1bb4c857c4625a17ef5800f821d5aed95124ba24dc472ee61c2193798967aaf2
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetDigitalIO_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetDigitalIO_Request.
+-- \@details Exact identity UWVMROS1_1bb4c857c4625a17ef5800f821d5aed95124ba24dc472ee61c2193798967aaf2
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetDigitalIO_RequestCodecIdentity = "UWVMROS1_1bb4c857c4625a17ef5800f821d5aed95124ba24dc472ee61c2193798967aaf2"
+-- | \@brief Encode one complete xarm_msgs/srv/SetDigitalIO_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetDigitalIO_Request :: Ros2Xarm_msgsSrvSetDigitalIO_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetDigitalIO_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetDigitalIO_Request_ionum value))
+  b1 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetDigitalIO_Request_value value))
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvSetDigitalIO_Request_delay_sec value)
+  if length (ros2Xarm_msgsSrvSetDigitalIO_Request_xyz value) > 32 then Left 22 else Right ()
+  prefix3 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvSetDigitalIO_Request_xyz value))
+  b3 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvSetDigitalIO_Request_xyz value)
+  b4 <- W.encodeFloat32 (ros2Xarm_msgsSrvSetDigitalIO_Request_tol_r value)
+  W.bounded 144 [b0, b1, b2, prefix3, b3, b4]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetDigitalIO_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetDigitalIO_Request :: W.Decoder Ros2Xarm_msgsSrvSetDigitalIO_Request
+readRos2Xarm_msgsSrvSetDigitalIO_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- fromIntegral <$> W.signed 2
+  a2 <- W.float32
+  count3 <- W.count 32
+  a3 <- replicateM count3 (W.float32)
+  a4 <- W.float32
+  let value = Ros2Xarm_msgsSrvSetDigitalIO_Request a0 a1 a2 a3 a4
+  case encodeRos2Xarm_msgsSrvSetDigitalIO_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetDigitalIO_Request value.
+-- \@details Require the complete 16..144-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetDigitalIO_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetDigitalIO_Request
+decodeRos2Xarm_msgsSrvSetDigitalIO_Request = W.runDecoder 144 readRos2Xarm_msgsSrvSetDigitalIO_Request
+instance Canonical Ros2Xarm_msgsSrvSetDigitalIO_Request where
+  maximumBytes _ = 144
+  encodeValue = encodeRos2Xarm_msgsSrvSetDigitalIO_Request
+  readValue = readRos2Xarm_msgsSrvSetDigitalIO_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetDigitalIO_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_cb18f2968dd4014c8fe100a63d4c80ce10e813fc0998a9f76cd8699bc511a17b.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetDigitalIO_Response = Ros2Xarm_msgsSrvSetDigitalIO_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetDigitalIO_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetDigitalIO_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetDigitalIO_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetDigitalIO_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetDigitalIO_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetDigitalIO_Response :: Ros2Xarm_msgsSrvSetDigitalIO_Response
+defaultRos2Xarm_msgsSrvSetDigitalIO_Response = Ros2Xarm_msgsSrvSetDigitalIO_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetDigitalIO_Response.
+-- \@details Exact identity UWVMROS1_cb18f2968dd4014c8fe100a63d4c80ce10e813fc0998a9f76cd8699bc511a17b
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetDigitalIO_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetDigitalIO_Response.
+-- \@details Exact identity UWVMROS1_cb18f2968dd4014c8fe100a63d4c80ce10e813fc0998a9f76cd8699bc511a17b
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetDigitalIO_ResponseCodecIdentity = "UWVMROS1_cb18f2968dd4014c8fe100a63d4c80ce10e813fc0998a9f76cd8699bc511a17b"
+-- | \@brief Encode one complete xarm_msgs/srv/SetDigitalIO_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetDigitalIO_Response :: Ros2Xarm_msgsSrvSetDigitalIO_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetDigitalIO_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetDigitalIO_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetDigitalIO_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetDigitalIO_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetDigitalIO_Response :: W.Decoder Ros2Xarm_msgsSrvSetDigitalIO_Response
+readRos2Xarm_msgsSrvSetDigitalIO_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetDigitalIO_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetDigitalIO_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetDigitalIO_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetDigitalIO_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetDigitalIO_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetDigitalIO_Response
+decodeRos2Xarm_msgsSrvSetDigitalIO_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetDigitalIO_Response
+instance Canonical Ros2Xarm_msgsSrvSetDigitalIO_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetDigitalIO_Response
+  readValue = readRos2Xarm_msgsSrvSetDigitalIO_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetFloat32_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 4..4 bytes and is identified by
+-- UWVMROS1_6fec5cd9973c8f68bdffad4b582b26547d325167942379830a84c7d8469987c1.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetFloat32_Request = Ros2Xarm_msgsSrvSetFloat32_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetFloat32_Request.data: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetFloat32_Request_data :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetFloat32_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetFloat32_Request :: Ros2Xarm_msgsSrvSetFloat32_Request
+defaultRos2Xarm_msgsSrvSetFloat32_Request = Ros2Xarm_msgsSrvSetFloat32_Request (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetFloat32_Request.
+-- \@details Exact identity UWVMROS1_6fec5cd9973c8f68bdffad4b582b26547d325167942379830a84c7d8469987c1
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetFloat32_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetFloat32_Request.
+-- \@details Exact identity UWVMROS1_6fec5cd9973c8f68bdffad4b582b26547d325167942379830a84c7d8469987c1
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetFloat32_RequestCodecIdentity = "UWVMROS1_6fec5cd9973c8f68bdffad4b582b26547d325167942379830a84c7d8469987c1"
+-- | \@brief Encode one complete xarm_msgs/srv/SetFloat32_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetFloat32_Request :: Ros2Xarm_msgsSrvSetFloat32_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetFloat32_Request value = do
+  b0 <- W.encodeFloat32 (ros2Xarm_msgsSrvSetFloat32_Request_data value)
+  W.bounded 4 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetFloat32_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetFloat32_Request :: W.Decoder Ros2Xarm_msgsSrvSetFloat32_Request
+readRos2Xarm_msgsSrvSetFloat32_Request = do
+  a0 <- W.float32
+  let value = Ros2Xarm_msgsSrvSetFloat32_Request a0
+  case encodeRos2Xarm_msgsSrvSetFloat32_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetFloat32_Request value.
+-- \@details Require the complete 4..4-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetFloat32_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetFloat32_Request
+decodeRos2Xarm_msgsSrvSetFloat32_Request = W.runDecoder 4 readRos2Xarm_msgsSrvSetFloat32_Request
+instance Canonical Ros2Xarm_msgsSrvSetFloat32_Request where
+  maximumBytes _ = 4
+  encodeValue = encodeRos2Xarm_msgsSrvSetFloat32_Request
+  readValue = readRos2Xarm_msgsSrvSetFloat32_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetFloat32_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_d7bb8df8e3e4ab02a30ebfdc4af57cdbcee5ce3b48591524e70e2a07f8843ea1.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetFloat32_Response = Ros2Xarm_msgsSrvSetFloat32_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetFloat32_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetFloat32_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetFloat32_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetFloat32_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetFloat32_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetFloat32_Response :: Ros2Xarm_msgsSrvSetFloat32_Response
+defaultRos2Xarm_msgsSrvSetFloat32_Response = Ros2Xarm_msgsSrvSetFloat32_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetFloat32_Response.
+-- \@details Exact identity UWVMROS1_d7bb8df8e3e4ab02a30ebfdc4af57cdbcee5ce3b48591524e70e2a07f8843ea1
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetFloat32_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetFloat32_Response.
+-- \@details Exact identity UWVMROS1_d7bb8df8e3e4ab02a30ebfdc4af57cdbcee5ce3b48591524e70e2a07f8843ea1
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetFloat32_ResponseCodecIdentity = "UWVMROS1_d7bb8df8e3e4ab02a30ebfdc4af57cdbcee5ce3b48591524e70e2a07f8843ea1"
+-- | \@brief Encode one complete xarm_msgs/srv/SetFloat32_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetFloat32_Response :: Ros2Xarm_msgsSrvSetFloat32_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetFloat32_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetFloat32_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetFloat32_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetFloat32_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetFloat32_Response :: W.Decoder Ros2Xarm_msgsSrvSetFloat32_Response
+readRos2Xarm_msgsSrvSetFloat32_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetFloat32_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetFloat32_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetFloat32_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetFloat32_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetFloat32_Response
+decodeRos2Xarm_msgsSrvSetFloat32_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetFloat32_Response
+instance Canonical Ros2Xarm_msgsSrvSetFloat32_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetFloat32_Response
+  readValue = readRos2Xarm_msgsSrvSetFloat32_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetFloat32List_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 4..132 bytes and is identified by
+-- UWVMROS1_38bd43fd452ab1f59bd4875deb4dea6d0a17c3409ee9c5446f798e1b8ba93532.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetFloat32List_Request = Ros2Xarm_msgsSrvSetFloat32List_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetFloat32List_Request.datas: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetFloat32List_Request_datas :: [Float]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetFloat32List_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetFloat32List_Request :: Ros2Xarm_msgsSrvSetFloat32List_Request
+defaultRos2Xarm_msgsSrvSetFloat32List_Request = Ros2Xarm_msgsSrvSetFloat32List_Request ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetFloat32List_Request.
+-- \@details Exact identity UWVMROS1_38bd43fd452ab1f59bd4875deb4dea6d0a17c3409ee9c5446f798e1b8ba93532
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetFloat32List_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetFloat32List_Request.
+-- \@details Exact identity UWVMROS1_38bd43fd452ab1f59bd4875deb4dea6d0a17c3409ee9c5446f798e1b8ba93532
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetFloat32List_RequestCodecIdentity = "UWVMROS1_38bd43fd452ab1f59bd4875deb4dea6d0a17c3409ee9c5446f798e1b8ba93532"
+-- | \@brief Encode one complete xarm_msgs/srv/SetFloat32List_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetFloat32List_Request :: Ros2Xarm_msgsSrvSetFloat32List_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetFloat32List_Request value = do
+  if length (ros2Xarm_msgsSrvSetFloat32List_Request_datas value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvSetFloat32List_Request_datas value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvSetFloat32List_Request_datas value)
+  W.bounded 132 [prefix0, b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetFloat32List_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetFloat32List_Request :: W.Decoder Ros2Xarm_msgsSrvSetFloat32List_Request
+readRos2Xarm_msgsSrvSetFloat32List_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (W.float32)
+  let value = Ros2Xarm_msgsSrvSetFloat32List_Request a0
+  case encodeRos2Xarm_msgsSrvSetFloat32List_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetFloat32List_Request value.
+-- \@details Require the complete 4..132-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetFloat32List_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetFloat32List_Request
+decodeRos2Xarm_msgsSrvSetFloat32List_Request = W.runDecoder 132 readRos2Xarm_msgsSrvSetFloat32List_Request
+instance Canonical Ros2Xarm_msgsSrvSetFloat32List_Request where
+  maximumBytes _ = 132
+  encodeValue = encodeRos2Xarm_msgsSrvSetFloat32List_Request
+  readValue = readRos2Xarm_msgsSrvSetFloat32List_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetFloat32List_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_f2c08d32b1238bb78dc0daccfc97066563a14e8e4b891e37e2effaed91a74396.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetFloat32List_Response = Ros2Xarm_msgsSrvSetFloat32List_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetFloat32List_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetFloat32List_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetFloat32List_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetFloat32List_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetFloat32List_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetFloat32List_Response :: Ros2Xarm_msgsSrvSetFloat32List_Response
+defaultRos2Xarm_msgsSrvSetFloat32List_Response = Ros2Xarm_msgsSrvSetFloat32List_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetFloat32List_Response.
+-- \@details Exact identity UWVMROS1_f2c08d32b1238bb78dc0daccfc97066563a14e8e4b891e37e2effaed91a74396
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetFloat32List_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetFloat32List_Response.
+-- \@details Exact identity UWVMROS1_f2c08d32b1238bb78dc0daccfc97066563a14e8e4b891e37e2effaed91a74396
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetFloat32List_ResponseCodecIdentity = "UWVMROS1_f2c08d32b1238bb78dc0daccfc97066563a14e8e4b891e37e2effaed91a74396"
+-- | \@brief Encode one complete xarm_msgs/srv/SetFloat32List_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetFloat32List_Response :: Ros2Xarm_msgsSrvSetFloat32List_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetFloat32List_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetFloat32List_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetFloat32List_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetFloat32List_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetFloat32List_Response :: W.Decoder Ros2Xarm_msgsSrvSetFloat32List_Response
+readRos2Xarm_msgsSrvSetFloat32List_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetFloat32List_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetFloat32List_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetFloat32List_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetFloat32List_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetFloat32List_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetFloat32List_Response
+decodeRos2Xarm_msgsSrvSetFloat32List_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetFloat32List_Response
+instance Canonical Ros2Xarm_msgsSrvSetFloat32List_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetFloat32List_Response
+  readValue = readRos2Xarm_msgsSrvSetFloat32List_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt16_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 2..2 bytes and is identified by
+-- UWVMROS1_09e0c90763447d7b4ed57ce37650d4a4d918bc96ec8b8df61189f8e636a58adb.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt16_Request = Ros2Xarm_msgsSrvSetInt16_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetInt16_Request.data: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16_Request_data :: Int16
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt16_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt16_Request :: Ros2Xarm_msgsSrvSetInt16_Request
+defaultRos2Xarm_msgsSrvSetInt16_Request = Ros2Xarm_msgsSrvSetInt16_Request (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16_Request.
+-- \@details Exact identity UWVMROS1_09e0c90763447d7b4ed57ce37650d4a4d918bc96ec8b8df61189f8e636a58adb
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16_Request.
+-- \@details Exact identity UWVMROS1_09e0c90763447d7b4ed57ce37650d4a4d918bc96ec8b8df61189f8e636a58adb
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16_RequestCodecIdentity = "UWVMROS1_09e0c90763447d7b4ed57ce37650d4a4d918bc96ec8b8df61189f8e636a58adb"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt16_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt16_Request :: Ros2Xarm_msgsSrvSetInt16_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt16_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt16_Request_data value))
+  W.bounded 2 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt16_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt16_Request :: W.Decoder Ros2Xarm_msgsSrvSetInt16_Request
+readRos2Xarm_msgsSrvSetInt16_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  let value = Ros2Xarm_msgsSrvSetInt16_Request a0
+  case encodeRos2Xarm_msgsSrvSetInt16_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt16_Request value.
+-- \@details Require the complete 2..2-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt16_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt16_Request
+decodeRos2Xarm_msgsSrvSetInt16_Request = W.runDecoder 2 readRos2Xarm_msgsSrvSetInt16_Request
+instance Canonical Ros2Xarm_msgsSrvSetInt16_Request where
+  maximumBytes _ = 2
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt16_Request
+  readValue = readRos2Xarm_msgsSrvSetInt16_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt16_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_0c02f9a01383e37346637ec7d6a608cca7d025259b67c9ab528f3b13aa842155.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt16_Response = Ros2Xarm_msgsSrvSetInt16_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetInt16_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetInt16_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt16_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt16_Response :: Ros2Xarm_msgsSrvSetInt16_Response
+defaultRos2Xarm_msgsSrvSetInt16_Response = Ros2Xarm_msgsSrvSetInt16_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16_Response.
+-- \@details Exact identity UWVMROS1_0c02f9a01383e37346637ec7d6a608cca7d025259b67c9ab528f3b13aa842155
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16_Response.
+-- \@details Exact identity UWVMROS1_0c02f9a01383e37346637ec7d6a608cca7d025259b67c9ab528f3b13aa842155
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16_ResponseCodecIdentity = "UWVMROS1_0c02f9a01383e37346637ec7d6a608cca7d025259b67c9ab528f3b13aa842155"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt16_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt16_Response :: Ros2Xarm_msgsSrvSetInt16_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt16_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt16_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetInt16_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt16_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt16_Response :: W.Decoder Ros2Xarm_msgsSrvSetInt16_Response
+readRos2Xarm_msgsSrvSetInt16_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetInt16_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetInt16_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt16_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt16_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt16_Response
+decodeRos2Xarm_msgsSrvSetInt16_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetInt16_Response
+instance Canonical Ros2Xarm_msgsSrvSetInt16_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt16_Response
+  readValue = readRos2Xarm_msgsSrvSetInt16_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt16ById_Request value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 4..4 bytes and is identified by
+-- UWVMROS1_9472db1bda5f8d557e75c9be0c902c67a76952ba0bc258693cf047c6c10954f0.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt16ById_Request = Ros2Xarm_msgsSrvSetInt16ById_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetInt16ById_Request.id: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16ById_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16ById_Request_id :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetInt16ById_Request.data: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16ById_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16ById_Request_data :: Int16
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt16ById_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt16ById_Request :: Ros2Xarm_msgsSrvSetInt16ById_Request
+defaultRos2Xarm_msgsSrvSetInt16ById_Request = Ros2Xarm_msgsSrvSetInt16ById_Request (0) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16ById_Request.
+-- \@details Exact identity UWVMROS1_9472db1bda5f8d557e75c9be0c902c67a76952ba0bc258693cf047c6c10954f0
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16ById_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16ById_Request.
+-- \@details Exact identity UWVMROS1_9472db1bda5f8d557e75c9be0c902c67a76952ba0bc258693cf047c6c10954f0
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16ById_RequestCodecIdentity = "UWVMROS1_9472db1bda5f8d557e75c9be0c902c67a76952ba0bc258693cf047c6c10954f0"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt16ById_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt16ById_Request :: Ros2Xarm_msgsSrvSetInt16ById_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt16ById_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt16ById_Request_id value))
+  b1 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt16ById_Request_data value))
+  W.bounded 4 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt16ById_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt16ById_Request :: W.Decoder Ros2Xarm_msgsSrvSetInt16ById_Request
+readRos2Xarm_msgsSrvSetInt16ById_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- fromIntegral <$> W.signed 2
+  let value = Ros2Xarm_msgsSrvSetInt16ById_Request a0 a1
+  case encodeRos2Xarm_msgsSrvSetInt16ById_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt16ById_Request value.
+-- \@details Require the complete 4..4-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt16ById_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt16ById_Request
+decodeRos2Xarm_msgsSrvSetInt16ById_Request = W.runDecoder 4 readRos2Xarm_msgsSrvSetInt16ById_Request
+instance Canonical Ros2Xarm_msgsSrvSetInt16ById_Request where
+  maximumBytes _ = 4
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt16ById_Request
+  readValue = readRos2Xarm_msgsSrvSetInt16ById_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt16ById_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_cd16eec98546214169bf4e32eff4190d9276ee41b6bfc5eef919dd44cdeae92a.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt16ById_Response = Ros2Xarm_msgsSrvSetInt16ById_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetInt16ById_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16ById_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16ById_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetInt16ById_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16ById_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16ById_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt16ById_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt16ById_Response :: Ros2Xarm_msgsSrvSetInt16ById_Response
+defaultRos2Xarm_msgsSrvSetInt16ById_Response = Ros2Xarm_msgsSrvSetInt16ById_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16ById_Response.
+-- \@details Exact identity UWVMROS1_cd16eec98546214169bf4e32eff4190d9276ee41b6bfc5eef919dd44cdeae92a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16ById_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16ById_Response.
+-- \@details Exact identity UWVMROS1_cd16eec98546214169bf4e32eff4190d9276ee41b6bfc5eef919dd44cdeae92a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16ById_ResponseCodecIdentity = "UWVMROS1_cd16eec98546214169bf4e32eff4190d9276ee41b6bfc5eef919dd44cdeae92a"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt16ById_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt16ById_Response :: Ros2Xarm_msgsSrvSetInt16ById_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt16ById_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt16ById_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetInt16ById_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt16ById_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt16ById_Response :: W.Decoder Ros2Xarm_msgsSrvSetInt16ById_Response
+readRos2Xarm_msgsSrvSetInt16ById_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetInt16ById_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetInt16ById_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt16ById_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16ById_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt16ById_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt16ById_Response
+decodeRos2Xarm_msgsSrvSetInt16ById_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetInt16ById_Response
+instance Canonical Ros2Xarm_msgsSrvSetInt16ById_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt16ById_Response
+  readValue = readRos2Xarm_msgsSrvSetInt16ById_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt16List_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 4..68 bytes and is identified by
+-- UWVMROS1_d1ef15eb18c2f3c377c25c486d945fbf77887ca7a9ef9c291355e9a23541ec96.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt16List_Request = Ros2Xarm_msgsSrvSetInt16List_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetInt16List_Request.datas: int16; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16List_Request_datas :: [Int16]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt16List_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt16List_Request :: Ros2Xarm_msgsSrvSetInt16List_Request
+defaultRos2Xarm_msgsSrvSetInt16List_Request = Ros2Xarm_msgsSrvSetInt16List_Request ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16List_Request.
+-- \@details Exact identity UWVMROS1_d1ef15eb18c2f3c377c25c486d945fbf77887ca7a9ef9c291355e9a23541ec96
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16List_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16List_Request.
+-- \@details Exact identity UWVMROS1_d1ef15eb18c2f3c377c25c486d945fbf77887ca7a9ef9c291355e9a23541ec96
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16List_RequestCodecIdentity = "UWVMROS1_d1ef15eb18c2f3c377c25c486d945fbf77887ca7a9ef9c291355e9a23541ec96"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt16List_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt16List_Request :: Ros2Xarm_msgsSrvSetInt16List_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt16List_Request value = do
+  if length (ros2Xarm_msgsSrvSetInt16List_Request_datas value) > 32 then Left 22 else Right ()
+  prefix0 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvSetInt16List_Request_datas value))
+  b0 <- B.concat <$> mapM (\e -> W.encodeSigned 2 (fromIntegral (e))) (ros2Xarm_msgsSrvSetInt16List_Request_datas value)
+  W.bounded 68 [prefix0, b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt16List_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt16List_Request :: W.Decoder Ros2Xarm_msgsSrvSetInt16List_Request
+readRos2Xarm_msgsSrvSetInt16List_Request = do
+  count0 <- W.count 32
+  a0 <- replicateM count0 (fromIntegral <$> W.signed 2)
+  let value = Ros2Xarm_msgsSrvSetInt16List_Request a0
+  case encodeRos2Xarm_msgsSrvSetInt16List_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt16List_Request value.
+-- \@details Require the complete 4..68-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt16List_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt16List_Request
+decodeRos2Xarm_msgsSrvSetInt16List_Request = W.runDecoder 68 readRos2Xarm_msgsSrvSetInt16List_Request
+instance Canonical Ros2Xarm_msgsSrvSetInt16List_Request where
+  maximumBytes _ = 68
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt16List_Request
+  readValue = readRos2Xarm_msgsSrvSetInt16List_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt16List_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_326ef9ea75d627cdc4187908191f230f87efb6f3fb2b0a7f783260c7ffee583f.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt16List_Response = Ros2Xarm_msgsSrvSetInt16List_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetInt16List_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16List_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetInt16List_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt16List_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt16List_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt16List_Response :: Ros2Xarm_msgsSrvSetInt16List_Response
+defaultRos2Xarm_msgsSrvSetInt16List_Response = Ros2Xarm_msgsSrvSetInt16List_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16List_Response.
+-- \@details Exact identity UWVMROS1_326ef9ea75d627cdc4187908191f230f87efb6f3fb2b0a7f783260c7ffee583f
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16List_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt16List_Response.
+-- \@details Exact identity UWVMROS1_326ef9ea75d627cdc4187908191f230f87efb6f3fb2b0a7f783260c7ffee583f
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt16List_ResponseCodecIdentity = "UWVMROS1_326ef9ea75d627cdc4187908191f230f87efb6f3fb2b0a7f783260c7ffee583f"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt16List_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt16List_Response :: Ros2Xarm_msgsSrvSetInt16List_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt16List_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt16List_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetInt16List_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt16List_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt16List_Response :: W.Decoder Ros2Xarm_msgsSrvSetInt16List_Response
+readRos2Xarm_msgsSrvSetInt16List_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetInt16List_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetInt16List_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt16List_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt16List_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt16List_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt16List_Response
+decodeRos2Xarm_msgsSrvSetInt16List_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetInt16List_Response
+instance Canonical Ros2Xarm_msgsSrvSetInt16List_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt16List_Response
+  readValue = readRos2Xarm_msgsSrvSetInt16List_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt32_Request value.
+-- \@details All 1 declared fields are retained in source order. The canonical representation occupies
+-- 4..4 bytes and is identified by
+-- UWVMROS1_f219450be903e96baf55dfb3fcc03851aabc43899d637f869d9adba55b36c1d3.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt32_Request = Ros2Xarm_msgsSrvSetInt32_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetInt32_Request.data: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt32_Request_data :: Int32
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt32_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt32_Request :: Ros2Xarm_msgsSrvSetInt32_Request
+defaultRos2Xarm_msgsSrvSetInt32_Request = Ros2Xarm_msgsSrvSetInt32_Request (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt32_Request.
+-- \@details Exact identity UWVMROS1_f219450be903e96baf55dfb3fcc03851aabc43899d637f869d9adba55b36c1d3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt32_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt32_Request.
+-- \@details Exact identity UWVMROS1_f219450be903e96baf55dfb3fcc03851aabc43899d637f869d9adba55b36c1d3
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt32_RequestCodecIdentity = "UWVMROS1_f219450be903e96baf55dfb3fcc03851aabc43899d637f869d9adba55b36c1d3"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt32_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt32_Request :: Ros2Xarm_msgsSrvSetInt32_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt32_Request value = do
+  b0 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsSrvSetInt32_Request_data value))
+  W.bounded 4 [b0]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt32_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt32_Request :: W.Decoder Ros2Xarm_msgsSrvSetInt32_Request
+readRos2Xarm_msgsSrvSetInt32_Request = do
+  a0 <- fromIntegral <$> W.signed 4
+  let value = Ros2Xarm_msgsSrvSetInt32_Request a0
+  case encodeRos2Xarm_msgsSrvSetInt32_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt32_Request value.
+-- \@details Require the complete 4..4-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt32_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt32_Request
+decodeRos2Xarm_msgsSrvSetInt32_Request = W.runDecoder 4 readRos2Xarm_msgsSrvSetInt32_Request
+instance Canonical Ros2Xarm_msgsSrvSetInt32_Request where
+  maximumBytes _ = 4
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt32_Request
+  readValue = readRos2Xarm_msgsSrvSetInt32_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt32_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_1510982ab2c740a570f21179997368cd4be93c4086967e9ff98b24606f0b7f65.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt32_Response = Ros2Xarm_msgsSrvSetInt32_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetInt32_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt32_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetInt32_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt32_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt32_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt32_Response :: Ros2Xarm_msgsSrvSetInt32_Response
+defaultRos2Xarm_msgsSrvSetInt32_Response = Ros2Xarm_msgsSrvSetInt32_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt32_Response.
+-- \@details Exact identity UWVMROS1_1510982ab2c740a570f21179997368cd4be93c4086967e9ff98b24606f0b7f65
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt32_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt32_Response.
+-- \@details Exact identity UWVMROS1_1510982ab2c740a570f21179997368cd4be93c4086967e9ff98b24606f0b7f65
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt32_ResponseCodecIdentity = "UWVMROS1_1510982ab2c740a570f21179997368cd4be93c4086967e9ff98b24606f0b7f65"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt32_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt32_Response :: Ros2Xarm_msgsSrvSetInt32_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt32_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt32_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetInt32_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt32_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt32_Response :: W.Decoder Ros2Xarm_msgsSrvSetInt32_Response
+readRos2Xarm_msgsSrvSetInt32_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetInt32_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetInt32_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt32_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt32_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt32_Response
+decodeRos2Xarm_msgsSrvSetInt32_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetInt32_Response
+instance Canonical Ros2Xarm_msgsSrvSetInt32_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt32_Response
+  readValue = readRos2Xarm_msgsSrvSetInt32_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt32ByType_Request value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..6 bytes and is identified by
+-- UWVMROS1_8a6e3ab3e34eeff45dbddc698cb249c2acb27d74717be8724fa0f9448ff981d7.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt32ByType_Request = Ros2Xarm_msgsSrvSetInt32ByType_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetInt32ByType_Request.type: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt32ByType_Request_type :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetInt32ByType_Request.data: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt32ByType_Request_data :: Int32
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt32ByType_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt32ByType_Request :: Ros2Xarm_msgsSrvSetInt32ByType_Request
+defaultRos2Xarm_msgsSrvSetInt32ByType_Request = Ros2Xarm_msgsSrvSetInt32ByType_Request (0) (0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt32ByType_Request.
+-- \@details Exact identity UWVMROS1_8a6e3ab3e34eeff45dbddc698cb249c2acb27d74717be8724fa0f9448ff981d7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt32ByType_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt32ByType_Request.
+-- \@details Exact identity UWVMROS1_8a6e3ab3e34eeff45dbddc698cb249c2acb27d74717be8724fa0f9448ff981d7
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt32ByType_RequestCodecIdentity = "UWVMROS1_8a6e3ab3e34eeff45dbddc698cb249c2acb27d74717be8724fa0f9448ff981d7"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt32ByType_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt32ByType_Request :: Ros2Xarm_msgsSrvSetInt32ByType_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt32ByType_Request value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt32ByType_Request_type value))
+  b1 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsSrvSetInt32ByType_Request_data value))
+  W.bounded 6 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt32ByType_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt32ByType_Request :: W.Decoder Ros2Xarm_msgsSrvSetInt32ByType_Request
+readRos2Xarm_msgsSrvSetInt32ByType_Request = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- fromIntegral <$> W.signed 4
+  let value = Ros2Xarm_msgsSrvSetInt32ByType_Request a0 a1
+  case encodeRos2Xarm_msgsSrvSetInt32ByType_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt32ByType_Request value.
+-- \@details Require the complete 6..6-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt32ByType_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt32ByType_Request
+decodeRos2Xarm_msgsSrvSetInt32ByType_Request = W.runDecoder 6 readRos2Xarm_msgsSrvSetInt32ByType_Request
+instance Canonical Ros2Xarm_msgsSrvSetInt32ByType_Request where
+  maximumBytes _ = 6
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt32ByType_Request
+  readValue = readRos2Xarm_msgsSrvSetInt32ByType_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetInt32ByType_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_6fcd5dddde2d38a61ffdeab64ae09514137b364347357c62b81c26c86b44882a.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetInt32ByType_Response = Ros2Xarm_msgsSrvSetInt32ByType_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetInt32ByType_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt32ByType_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetInt32ByType_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetInt32ByType_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetInt32ByType_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetInt32ByType_Response :: Ros2Xarm_msgsSrvSetInt32ByType_Response
+defaultRos2Xarm_msgsSrvSetInt32ByType_Response = Ros2Xarm_msgsSrvSetInt32ByType_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt32ByType_Response.
+-- \@details Exact identity UWVMROS1_6fcd5dddde2d38a61ffdeab64ae09514137b364347357c62b81c26c86b44882a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt32ByType_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetInt32ByType_Response.
+-- \@details Exact identity UWVMROS1_6fcd5dddde2d38a61ffdeab64ae09514137b364347357c62b81c26c86b44882a
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetInt32ByType_ResponseCodecIdentity = "UWVMROS1_6fcd5dddde2d38a61ffdeab64ae09514137b364347357c62b81c26c86b44882a"
+-- | \@brief Encode one complete xarm_msgs/srv/SetInt32ByType_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetInt32ByType_Response :: Ros2Xarm_msgsSrvSetInt32ByType_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetInt32ByType_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetInt32ByType_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetInt32ByType_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetInt32ByType_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetInt32ByType_Response :: W.Decoder Ros2Xarm_msgsSrvSetInt32ByType_Response
+readRos2Xarm_msgsSrvSetInt32ByType_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetInt32ByType_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetInt32ByType_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetInt32ByType_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetInt32ByType_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetInt32ByType_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetInt32ByType_Response
+decodeRos2Xarm_msgsSrvSetInt32ByType_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetInt32ByType_Response
+instance Canonical Ros2Xarm_msgsSrvSetInt32ByType_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetInt32ByType_Response
+  readValue = readRos2Xarm_msgsSrvSetInt32ByType_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetModbusTimeout_Request value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 5..5 bytes and is identified by
+-- UWVMROS1_186f84404c6a11cfd3c7a64fc9ac55b39343d5f8c4a01bd81efdd038d6c7e685.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetModbusTimeout_Request = Ros2Xarm_msgsSrvSetModbusTimeout_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetModbusTimeout_Request.timeout: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetModbusTimeout_Request_timeout :: Int32
+  ,
+    -- | \@brief xarm_msgs/srv/SetModbusTimeout_Request.is_transparent_transmission: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetModbusTimeout_Request_is_transparent_transmission :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetModbusTimeout_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetModbusTimeout_Request :: Ros2Xarm_msgsSrvSetModbusTimeout_Request
+defaultRos2Xarm_msgsSrvSetModbusTimeout_Request = Ros2Xarm_msgsSrvSetModbusTimeout_Request (0) (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetModbusTimeout_Request.
+-- \@details Exact identity UWVMROS1_186f84404c6a11cfd3c7a64fc9ac55b39343d5f8c4a01bd81efdd038d6c7e685
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetModbusTimeout_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetModbusTimeout_Request.
+-- \@details Exact identity UWVMROS1_186f84404c6a11cfd3c7a64fc9ac55b39343d5f8c4a01bd81efdd038d6c7e685
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetModbusTimeout_RequestCodecIdentity = "UWVMROS1_186f84404c6a11cfd3c7a64fc9ac55b39343d5f8c4a01bd81efdd038d6c7e685"
+-- | \@brief Encode one complete xarm_msgs/srv/SetModbusTimeout_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetModbusTimeout_Request :: Ros2Xarm_msgsSrvSetModbusTimeout_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetModbusTimeout_Request value = do
+  b0 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsSrvSetModbusTimeout_Request_timeout value))
+  b1 <- W.encodeBool (ros2Xarm_msgsSrvSetModbusTimeout_Request_is_transparent_transmission value)
+  W.bounded 5 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetModbusTimeout_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetModbusTimeout_Request :: W.Decoder Ros2Xarm_msgsSrvSetModbusTimeout_Request
+readRos2Xarm_msgsSrvSetModbusTimeout_Request = do
+  a0 <- fromIntegral <$> W.signed 4
+  a1 <- W.boolean
+  let value = Ros2Xarm_msgsSrvSetModbusTimeout_Request a0 a1
+  case encodeRos2Xarm_msgsSrvSetModbusTimeout_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetModbusTimeout_Request value.
+-- \@details Require the complete 5..5-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetModbusTimeout_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetModbusTimeout_Request
+decodeRos2Xarm_msgsSrvSetModbusTimeout_Request = W.runDecoder 5 readRos2Xarm_msgsSrvSetModbusTimeout_Request
+instance Canonical Ros2Xarm_msgsSrvSetModbusTimeout_Request where
+  maximumBytes _ = 5
+  encodeValue = encodeRos2Xarm_msgsSrvSetModbusTimeout_Request
+  readValue = readRos2Xarm_msgsSrvSetModbusTimeout_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetModbusTimeout_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_32da6d0583896c59968213be225e17146d619cddb4c520060640e13b886f3397.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetModbusTimeout_Response = Ros2Xarm_msgsSrvSetModbusTimeout_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetModbusTimeout_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetModbusTimeout_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/SetModbusTimeout_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetModbusTimeout_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetModbusTimeout_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetModbusTimeout_Response :: Ros2Xarm_msgsSrvSetModbusTimeout_Response
+defaultRos2Xarm_msgsSrvSetModbusTimeout_Response = Ros2Xarm_msgsSrvSetModbusTimeout_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetModbusTimeout_Response.
+-- \@details Exact identity UWVMROS1_32da6d0583896c59968213be225e17146d619cddb4c520060640e13b886f3397
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetModbusTimeout_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetModbusTimeout_Response.
+-- \@details Exact identity UWVMROS1_32da6d0583896c59968213be225e17146d619cddb4c520060640e13b886f3397
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetModbusTimeout_ResponseCodecIdentity = "UWVMROS1_32da6d0583896c59968213be225e17146d619cddb4c520060640e13b886f3397"
+-- | \@brief Encode one complete xarm_msgs/srv/SetModbusTimeout_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetModbusTimeout_Response :: Ros2Xarm_msgsSrvSetModbusTimeout_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetModbusTimeout_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvSetModbusTimeout_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetModbusTimeout_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetModbusTimeout_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetModbusTimeout_Response :: W.Decoder Ros2Xarm_msgsSrvSetModbusTimeout_Response
+readRos2Xarm_msgsSrvSetModbusTimeout_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetModbusTimeout_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetModbusTimeout_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetModbusTimeout_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetModbusTimeout_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetModbusTimeout_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetModbusTimeout_Response
+decodeRos2Xarm_msgsSrvSetModbusTimeout_Response = W.runDecoder 262 readRos2Xarm_msgsSrvSetModbusTimeout_Response
+instance Canonical Ros2Xarm_msgsSrvSetModbusTimeout_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvSetModbusTimeout_Response
+  readValue = readRos2Xarm_msgsSrvSetModbusTimeout_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetTcpLoad_Request value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 8..136 bytes and is identified by
+-- UWVMROS1_5428d98daa8dd42c8dba0cb78152b1b718afe34eb1da16de65a333a81d293e99.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetTcpLoad_Request = Ros2Xarm_msgsSrvSetTcpLoad_Request
+  {
+    -- | \@brief xarm_msgs/srv/SetTcpLoad_Request.weight: float32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetTcpLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetTcpLoad_Request_weight :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/SetTcpLoad_Request.center_of_gravity: float32; 0..32 elements.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetTcpLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetTcpLoad_Request_center_of_gravity :: [Float]
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetTcpLoad_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetTcpLoad_Request :: Ros2Xarm_msgsSrvSetTcpLoad_Request
+defaultRos2Xarm_msgsSrvSetTcpLoad_Request = Ros2Xarm_msgsSrvSetTcpLoad_Request (0) ([])
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetTcpLoad_Request.
+-- \@details Exact identity UWVMROS1_5428d98daa8dd42c8dba0cb78152b1b718afe34eb1da16de65a333a81d293e99
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetTcpLoad_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetTcpLoad_Request.
+-- \@details Exact identity UWVMROS1_5428d98daa8dd42c8dba0cb78152b1b718afe34eb1da16de65a333a81d293e99
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetTcpLoad_RequestCodecIdentity = "UWVMROS1_5428d98daa8dd42c8dba0cb78152b1b718afe34eb1da16de65a333a81d293e99"
+-- | \@brief Encode one complete xarm_msgs/srv/SetTcpLoad_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetTcpLoad_Request :: Ros2Xarm_msgsSrvSetTcpLoad_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetTcpLoad_Request value = do
+  b0 <- W.encodeFloat32 (ros2Xarm_msgsSrvSetTcpLoad_Request_weight value)
+  if length (ros2Xarm_msgsSrvSetTcpLoad_Request_center_of_gravity value) > 32 then Left 22 else Right ()
+  prefix1 <- W.encodeCount 32 (length (ros2Xarm_msgsSrvSetTcpLoad_Request_center_of_gravity value))
+  b1 <- B.concat <$> mapM (\e -> W.encodeFloat32 (e)) (ros2Xarm_msgsSrvSetTcpLoad_Request_center_of_gravity value)
+  W.bounded 136 [b0, prefix1, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetTcpLoad_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetTcpLoad_Request :: W.Decoder Ros2Xarm_msgsSrvSetTcpLoad_Request
+readRos2Xarm_msgsSrvSetTcpLoad_Request = do
+  a0 <- W.float32
+  count1 <- W.count 32
+  a1 <- replicateM count1 (W.float32)
+  let value = Ros2Xarm_msgsSrvSetTcpLoad_Request a0 a1
+  case encodeRos2Xarm_msgsSrvSetTcpLoad_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetTcpLoad_Request value.
+-- \@details Require the complete 8..136-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetTcpLoad_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetTcpLoad_Request
+decodeRos2Xarm_msgsSrvSetTcpLoad_Request = W.runDecoder 136 readRos2Xarm_msgsSrvSetTcpLoad_Request
+instance Canonical Ros2Xarm_msgsSrvSetTcpLoad_Request where
+  maximumBytes _ = 136
+  encodeValue = encodeRos2Xarm_msgsSrvSetTcpLoad_Request
+  readValue = readRos2Xarm_msgsSrvSetTcpLoad_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/SetTcpLoad_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 8..264 bytes and is identified by
+-- UWVMROS1_7438021022e94f66f464a561a54cb8f808da8c2e35830853cbecc98fa76ef46f.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvSetTcpLoad_Response = Ros2Xarm_msgsSrvSetTcpLoad_Response
+  {
+    -- | \@brief xarm_msgs/srv/SetTcpLoad_Response.ret: int32.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetTcpLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetTcpLoad_Response_ret :: Int32
+  ,
+    -- | \@brief xarm_msgs/srv/SetTcpLoad_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvSetTcpLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvSetTcpLoad_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/SetTcpLoad_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvSetTcpLoad_Response :: Ros2Xarm_msgsSrvSetTcpLoad_Response
+defaultRos2Xarm_msgsSrvSetTcpLoad_Response = Ros2Xarm_msgsSrvSetTcpLoad_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetTcpLoad_Response.
+-- \@details Exact identity UWVMROS1_7438021022e94f66f464a561a54cb8f808da8c2e35830853cbecc98fa76ef46f
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetTcpLoad_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/SetTcpLoad_Response.
+-- \@details Exact identity UWVMROS1_7438021022e94f66f464a561a54cb8f808da8c2e35830853cbecc98fa76ef46f
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvSetTcpLoad_ResponseCodecIdentity = "UWVMROS1_7438021022e94f66f464a561a54cb8f808da8c2e35830853cbecc98fa76ef46f"
+-- | \@brief Encode one complete xarm_msgs/srv/SetTcpLoad_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvSetTcpLoad_Response :: Ros2Xarm_msgsSrvSetTcpLoad_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvSetTcpLoad_Response value = do
+  b0 <- W.encodeSigned 4 (fromIntegral (ros2Xarm_msgsSrvSetTcpLoad_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvSetTcpLoad_Response_message value)
+  W.bounded 264 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/SetTcpLoad_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvSetTcpLoad_Response :: W.Decoder Ros2Xarm_msgsSrvSetTcpLoad_Response
+readRos2Xarm_msgsSrvSetTcpLoad_Response = do
+  a0 <- fromIntegral <$> W.signed 4
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvSetTcpLoad_Response a0 a1
+  case encodeRos2Xarm_msgsSrvSetTcpLoad_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/SetTcpLoad_Response value.
+-- \@details Require the complete 8..264-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvSetTcpLoad_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvSetTcpLoad_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvSetTcpLoad_Response
+decodeRos2Xarm_msgsSrvSetTcpLoad_Response = W.runDecoder 264 readRos2Xarm_msgsSrvSetTcpLoad_Response
+instance Canonical Ros2Xarm_msgsSrvSetTcpLoad_Response where
+  maximumBytes _ = 264
+  encodeValue = encodeRos2Xarm_msgsSrvSetTcpLoad_Response
+  readValue = readRos2Xarm_msgsSrvSetTcpLoad_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/TrajCtrl_Request value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 8..264 bytes and is identified by
+-- UWVMROS1_f29343b422932e055d5930c46615f38cc1600d4c4b89506a1050f89728e0ca0d.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvTrajCtrl_Request = Ros2Xarm_msgsSrvTrajCtrl_Request
+  {
+    -- | \@brief xarm_msgs/srv/TrajCtrl_Request.filename: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajCtrl_Request_filename :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/TrajCtrl_Request.timeout: float32.
+    -- \@details Schema default 10.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajCtrl_Request_timeout :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/TrajCtrl_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvTrajCtrl_Request :: Ros2Xarm_msgsSrvTrajCtrl_Request
+defaultRos2Xarm_msgsSrvTrajCtrl_Request =
+  Ros2Xarm_msgsSrvTrajCtrl_Request
+    (T.empty)
+    (castWord32ToFloat 0x41200000)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/TrajCtrl_Request.
+-- \@details Exact identity UWVMROS1_f29343b422932e055d5930c46615f38cc1600d4c4b89506a1050f89728e0ca0d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvTrajCtrl_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/TrajCtrl_Request.
+-- \@details Exact identity UWVMROS1_f29343b422932e055d5930c46615f38cc1600d4c4b89506a1050f89728e0ca0d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvTrajCtrl_RequestCodecIdentity = "UWVMROS1_f29343b422932e055d5930c46615f38cc1600d4c4b89506a1050f89728e0ca0d"
+-- | \@brief Encode one complete xarm_msgs/srv/TrajCtrl_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvTrajCtrl_Request :: Ros2Xarm_msgsSrvTrajCtrl_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvTrajCtrl_Request value = do
+  b0 <- W.encodeText 256 True (ros2Xarm_msgsSrvTrajCtrl_Request_filename value)
+  b1 <- W.encodeFloat32 (ros2Xarm_msgsSrvTrajCtrl_Request_timeout value)
+  W.bounded 264 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/TrajCtrl_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvTrajCtrl_Request :: W.Decoder Ros2Xarm_msgsSrvTrajCtrl_Request
+readRos2Xarm_msgsSrvTrajCtrl_Request = do
+  a0 <- W.text 256 True
+  a1 <- W.float32
+  let value = Ros2Xarm_msgsSrvTrajCtrl_Request a0 a1
+  case encodeRos2Xarm_msgsSrvTrajCtrl_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/TrajCtrl_Request value.
+-- \@details Require the complete 8..264-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvTrajCtrl_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvTrajCtrl_Request
+decodeRos2Xarm_msgsSrvTrajCtrl_Request = W.runDecoder 264 readRos2Xarm_msgsSrvTrajCtrl_Request
+instance Canonical Ros2Xarm_msgsSrvTrajCtrl_Request where
+  maximumBytes _ = 264
+  encodeValue = encodeRos2Xarm_msgsSrvTrajCtrl_Request
+  readValue = readRos2Xarm_msgsSrvTrajCtrl_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/TrajCtrl_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_00cac1ec8b7d312cae07a3ffe3235bd599086c62b028cb446bf7478306aa1b3c.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvTrajCtrl_Response = Ros2Xarm_msgsSrvTrajCtrl_Response
+  {
+    -- | \@brief xarm_msgs/srv/TrajCtrl_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajCtrl_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/TrajCtrl_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajCtrl_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/TrajCtrl_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvTrajCtrl_Response :: Ros2Xarm_msgsSrvTrajCtrl_Response
+defaultRos2Xarm_msgsSrvTrajCtrl_Response = Ros2Xarm_msgsSrvTrajCtrl_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/TrajCtrl_Response.
+-- \@details Exact identity UWVMROS1_00cac1ec8b7d312cae07a3ffe3235bd599086c62b028cb446bf7478306aa1b3c
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvTrajCtrl_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/TrajCtrl_Response.
+-- \@details Exact identity UWVMROS1_00cac1ec8b7d312cae07a3ffe3235bd599086c62b028cb446bf7478306aa1b3c
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvTrajCtrl_ResponseCodecIdentity = "UWVMROS1_00cac1ec8b7d312cae07a3ffe3235bd599086c62b028cb446bf7478306aa1b3c"
+-- | \@brief Encode one complete xarm_msgs/srv/TrajCtrl_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvTrajCtrl_Response :: Ros2Xarm_msgsSrvTrajCtrl_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvTrajCtrl_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvTrajCtrl_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvTrajCtrl_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/TrajCtrl_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvTrajCtrl_Response :: W.Decoder Ros2Xarm_msgsSrvTrajCtrl_Response
+readRos2Xarm_msgsSrvTrajCtrl_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvTrajCtrl_Response a0 a1
+  case encodeRos2Xarm_msgsSrvTrajCtrl_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/TrajCtrl_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvTrajCtrl_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvTrajCtrl_Response
+decodeRos2Xarm_msgsSrvTrajCtrl_Response = W.runDecoder 262 readRos2Xarm_msgsSrvTrajCtrl_Response
+instance Canonical Ros2Xarm_msgsSrvTrajCtrl_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvTrajCtrl_Response
+  readValue = readRos2Xarm_msgsSrvTrajCtrl_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/TrajPlay_Request value.
+-- \@details All 4 declared fields are retained in source order. The canonical representation occupies
+-- 9..265 bytes and is identified by
+-- UWVMROS1_edbd9ed5bcbc1cf8882fab3b69b24373542273b74a51bd3cae94e7970a7d3e72.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvTrajPlay_Request = Ros2Xarm_msgsSrvTrajPlay_Request
+  {
+    -- | \@brief xarm_msgs/srv/TrajPlay_Request.filename: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajPlay_Request_filename :: T.Text
+  ,
+    -- | \@brief xarm_msgs/srv/TrajPlay_Request.times: int16.
+    -- \@details Schema default 1. Encoding preserves the original field position and signedness; invalid
+    -- bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajPlay_Request_times :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/TrajPlay_Request.double_speed: int16.
+    -- \@details Schema default 1. Encoding preserves the original field position and signedness; invalid
+    -- bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajPlay_Request_double_speed :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/TrajPlay_Request.wait: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajPlay_Request_wait :: Bool
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/TrajPlay_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvTrajPlay_Request :: Ros2Xarm_msgsSrvTrajPlay_Request
+defaultRos2Xarm_msgsSrvTrajPlay_Request = Ros2Xarm_msgsSrvTrajPlay_Request (T.empty) (1) (1) (False)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/TrajPlay_Request.
+-- \@details Exact identity UWVMROS1_edbd9ed5bcbc1cf8882fab3b69b24373542273b74a51bd3cae94e7970a7d3e72
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvTrajPlay_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/TrajPlay_Request.
+-- \@details Exact identity UWVMROS1_edbd9ed5bcbc1cf8882fab3b69b24373542273b74a51bd3cae94e7970a7d3e72
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvTrajPlay_RequestCodecIdentity = "UWVMROS1_edbd9ed5bcbc1cf8882fab3b69b24373542273b74a51bd3cae94e7970a7d3e72"
+-- | \@brief Encode one complete xarm_msgs/srv/TrajPlay_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvTrajPlay_Request :: Ros2Xarm_msgsSrvTrajPlay_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvTrajPlay_Request value = do
+  b0 <- W.encodeText 256 True (ros2Xarm_msgsSrvTrajPlay_Request_filename value)
+  b1 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvTrajPlay_Request_times value))
+  b2 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvTrajPlay_Request_double_speed value))
+  b3 <- W.encodeBool (ros2Xarm_msgsSrvTrajPlay_Request_wait value)
+  W.bounded 265 [b0, b1, b2, b3]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/TrajPlay_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvTrajPlay_Request :: W.Decoder Ros2Xarm_msgsSrvTrajPlay_Request
+readRos2Xarm_msgsSrvTrajPlay_Request = do
+  a0 <- W.text 256 True
+  a1 <- fromIntegral <$> W.signed 2
+  a2 <- fromIntegral <$> W.signed 2
+  a3 <- W.boolean
+  let value = Ros2Xarm_msgsSrvTrajPlay_Request a0 a1 a2 a3
+  case encodeRos2Xarm_msgsSrvTrajPlay_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/TrajPlay_Request value.
+-- \@details Require the complete 9..265-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvTrajPlay_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvTrajPlay_Request
+decodeRos2Xarm_msgsSrvTrajPlay_Request = W.runDecoder 265 readRos2Xarm_msgsSrvTrajPlay_Request
+instance Canonical Ros2Xarm_msgsSrvTrajPlay_Request where
+  maximumBytes _ = 265
+  encodeValue = encodeRos2Xarm_msgsSrvTrajPlay_Request
+  readValue = readRos2Xarm_msgsSrvTrajPlay_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/TrajPlay_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_ce86fc20a5a16288b138fe2e37794c1318dc393b811f45d3fe3eccf954837ea0.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvTrajPlay_Response = Ros2Xarm_msgsSrvTrajPlay_Response
+  {
+    -- | \@brief xarm_msgs/srv/TrajPlay_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajPlay_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajPlay_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/TrajPlay_Response.message: string; each string is 0..256 bytes; strict
+    -- | UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvTrajPlay_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvTrajPlay_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/TrajPlay_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvTrajPlay_Response :: Ros2Xarm_msgsSrvTrajPlay_Response
+defaultRos2Xarm_msgsSrvTrajPlay_Response = Ros2Xarm_msgsSrvTrajPlay_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/TrajPlay_Response.
+-- \@details Exact identity UWVMROS1_ce86fc20a5a16288b138fe2e37794c1318dc393b811f45d3fe3eccf954837ea0
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvTrajPlay_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/TrajPlay_Response.
+-- \@details Exact identity UWVMROS1_ce86fc20a5a16288b138fe2e37794c1318dc393b811f45d3fe3eccf954837ea0
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvTrajPlay_ResponseCodecIdentity = "UWVMROS1_ce86fc20a5a16288b138fe2e37794c1318dc393b811f45d3fe3eccf954837ea0"
+-- | \@brief Encode one complete xarm_msgs/srv/TrajPlay_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvTrajPlay_Response :: Ros2Xarm_msgsSrvTrajPlay_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvTrajPlay_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvTrajPlay_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvTrajPlay_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/TrajPlay_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvTrajPlay_Response :: W.Decoder Ros2Xarm_msgsSrvTrajPlay_Response
+readRos2Xarm_msgsSrvTrajPlay_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvTrajPlay_Response a0 a1
+  case encodeRos2Xarm_msgsSrvTrajPlay_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/TrajPlay_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvTrajPlay_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvTrajPlay_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvTrajPlay_Response
+decodeRos2Xarm_msgsSrvTrajPlay_Response = W.runDecoder 262 readRos2Xarm_msgsSrvTrajPlay_Response
+instance Canonical Ros2Xarm_msgsSrvTrajPlay_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvTrajPlay_Response
+  readValue = readRos2Xarm_msgsSrvTrajPlay_Response
+-- | \@brief Complete ROS 2 xarm_msgs/srv/VacuumGripperCtrl_Request value.
+-- \@details All 4 declared fields are retained in source order. The canonical representation occupies
+-- 10..10 bytes and is identified by
+-- UWVMROS1_c01af96304226d7ed9b64ece79c00c696e012deb938a6a4b4ac3f2a40e4289bf.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvVacuumGripperCtrl_Request = Ros2Xarm_msgsSrvVacuumGripperCtrl_Request
+  {
+    -- | \@brief xarm_msgs/srv/VacuumGripperCtrl_Request.on: bool.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvVacuumGripperCtrl_Request_on :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/VacuumGripperCtrl_Request.wait: bool.
+    -- \@details Schema default False. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvVacuumGripperCtrl_Request_wait :: Bool
+  ,
+    -- | \@brief xarm_msgs/srv/VacuumGripperCtrl_Request.timeout: float32.
+    -- \@details Schema default 3.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvVacuumGripperCtrl_Request_timeout :: Float
+  ,
+    -- | \@brief xarm_msgs/srv/VacuumGripperCtrl_Request.delay_sec: float32.
+    -- \@details Schema default 0.0. Encoding preserves the original field position and signedness;
+    -- invalid bounds fail instead of truncating the value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvVacuumGripperCtrl_Request_delay_sec :: Float
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/VacuumGripperCtrl_Request.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvVacuumGripperCtrl_Request :: Ros2Xarm_msgsSrvVacuumGripperCtrl_Request
+defaultRos2Xarm_msgsSrvVacuumGripperCtrl_Request =
+  Ros2Xarm_msgsSrvVacuumGripperCtrl_Request
+    (False)
+    (False)
+    (castWord32ToFloat 0x40400000)
+    (castWord32ToFloat 0x0)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/VacuumGripperCtrl_Request.
+-- \@details Exact identity UWVMROS1_c01af96304226d7ed9b64ece79c00c696e012deb938a6a4b4ac3f2a40e4289bf
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvVacuumGripperCtrl_RequestCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/VacuumGripperCtrl_Request.
+-- \@details Exact identity UWVMROS1_c01af96304226d7ed9b64ece79c00c696e012deb938a6a4b4ac3f2a40e4289bf
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvVacuumGripperCtrl_RequestCodecIdentity = "UWVMROS1_c01af96304226d7ed9b64ece79c00c696e012deb938a6a4b4ac3f2a40e4289bf"
+-- | \@brief Encode one complete xarm_msgs/srv/VacuumGripperCtrl_Request value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvVacuumGripperCtrl_Request :: Ros2Xarm_msgsSrvVacuumGripperCtrl_Request -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvVacuumGripperCtrl_Request value = do
+  b0 <- W.encodeBool (ros2Xarm_msgsSrvVacuumGripperCtrl_Request_on value)
+  b1 <- W.encodeBool (ros2Xarm_msgsSrvVacuumGripperCtrl_Request_wait value)
+  b2 <- W.encodeFloat32 (ros2Xarm_msgsSrvVacuumGripperCtrl_Request_timeout value)
+  b3 <- W.encodeFloat32 (ros2Xarm_msgsSrvVacuumGripperCtrl_Request_delay_sec value)
+  W.bounded 10 [b0, b1, b2, b3]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/VacuumGripperCtrl_Request.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvVacuumGripperCtrl_Request :: W.Decoder Ros2Xarm_msgsSrvVacuumGripperCtrl_Request
+readRos2Xarm_msgsSrvVacuumGripperCtrl_Request = do
+  a0 <- W.boolean
+  a1 <- W.boolean
+  a2 <- W.float32
+  a3 <- W.float32
+  let value = Ros2Xarm_msgsSrvVacuumGripperCtrl_Request a0 a1 a2 a3
+  case encodeRos2Xarm_msgsSrvVacuumGripperCtrl_Request value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/VacuumGripperCtrl_Request value.
+-- \@details Require the complete 10..10-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Request; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvVacuumGripperCtrl_Request :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvVacuumGripperCtrl_Request
+decodeRos2Xarm_msgsSrvVacuumGripperCtrl_Request = W.runDecoder 10 readRos2Xarm_msgsSrvVacuumGripperCtrl_Request
+instance Canonical Ros2Xarm_msgsSrvVacuumGripperCtrl_Request where
+  maximumBytes _ = 10
+  encodeValue = encodeRos2Xarm_msgsSrvVacuumGripperCtrl_Request
+  readValue = readRos2Xarm_msgsSrvVacuumGripperCtrl_Request
+-- | \@brief Complete ROS 2 xarm_msgs/srv/VacuumGripperCtrl_Response value.
+-- \@details All 2 declared fields are retained in source order. The canonical representation occupies
+-- 6..262 bytes and is identified by
+-- UWVMROS1_fa202ccf3d36ec8ff49c0e32f3af07e18d19a6694566fcbaf8ce9ff4a79f352d.
+-- \@native No native identity is established by this source record.
+-- \@ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+-- publisher, subscriber, service or Action owner.
+-- \@thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+-- mutable readers/writers must not be shared during a call.
+-- \@permissions None for construction or pure encoding; transport needs a separate exact grant.
+-- \@version The selected finite schema profile fixes field order, bounds and constants.
+-- \@see share/platform/ros/haskell/API-CONTRACT.md
+data Ros2Xarm_msgsSrvVacuumGripperCtrl_Response = Ros2Xarm_msgsSrvVacuumGripperCtrl_Response
+  {
+    -- | \@brief xarm_msgs/srv/VacuumGripperCtrl_Response.ret: int16.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvVacuumGripperCtrl_Response_ret :: Int16
+  ,
+    -- | \@brief xarm_msgs/srv/VacuumGripperCtrl_Response.message: string; each string is 0..256 bytes;
+    -- | strict UTF-8 with no embedded NUL.
+    -- \@details The generated initializer supplies the declared zero/empty/nested default. Encoding
+    -- preserves the original field position and signedness; invalid bounds fail instead of truncating the
+    -- value.
+    -- \@units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+    -- scaling, frame conversion or normalization.
+    -- \@lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded
+    -- borrowing and allocator ownership follow the enclosing decode function.
+    -- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+    ros2Xarm_msgsSrvVacuumGripperCtrl_Response_message :: T.Text
+  } deriving (Eq, Show)
+-- | \@brief Construct the declared defaults of xarm_msgs/srv/VacuumGripperCtrl_Response.
+-- \@details Initialize every field without transport access. Fixed arrays retain their exact shape;
+-- sequence and string defaults are empty unless the schema declares a supported scalar default.
+-- \@return A fresh ordinary value with all generated defaults.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+defaultRos2Xarm_msgsSrvVacuumGripperCtrl_Response :: Ros2Xarm_msgsSrvVacuumGripperCtrl_Response
+defaultRos2Xarm_msgsSrvVacuumGripperCtrl_Response = Ros2Xarm_msgsSrvVacuumGripperCtrl_Response (0) (T.empty)
+-- | \@brief Canonical codec identity of xarm_msgs/srv/VacuumGripperCtrl_Response.
+-- \@details Exact identity UWVMROS1_fa202ccf3d36ec8ff49c0e32f3af07e18d19a6694566fcbaf8ce9ff4a79f352d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvVacuumGripperCtrl_ResponseCodecIdentity :: String
+-- | \@brief Canonical codec identity of xarm_msgs/srv/VacuumGripperCtrl_Response.
+-- \@details Exact identity UWVMROS1_fa202ccf3d36ec8ff49c0e32f3af07e18d19a6694566fcbaf8ce9ff4a79f352d
+-- binds field order, shape and bounds. It does not replace the native type identity.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+ros2Xarm_msgsSrvVacuumGripperCtrl_ResponseCodecIdentity = "UWVMROS1_fa202ccf3d36ec8ff49c0e32f3af07e18d19a6694566fcbaf8ce9ff4a79f352d"
+-- | \@brief Encode one complete xarm_msgs/srv/VacuumGripperCtrl_Response value.
+-- \@details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+-- profile. Validate all finite bounds; never silently truncate or issue a Host call.
+-- \@param[in] value Complete selected record; retain all field storage unchanged during encoding.
+-- \@return Owned complete canonical bytes through the native language result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+encodeRos2Xarm_msgsSrvVacuumGripperCtrl_Response :: Ros2Xarm_msgsSrvVacuumGripperCtrl_Response -> Either Word32 B.ByteString
+encodeRos2Xarm_msgsSrvVacuumGripperCtrl_Response value = do
+  b0 <- W.encodeSigned 2 (fromIntegral (ros2Xarm_msgsSrvVacuumGripperCtrl_Response_ret value))
+  b1 <- W.encodeText 256 True (ros2Xarm_msgsSrvVacuumGripperCtrl_Response_message value)
+  W.bounded 262 [b0, b1]
+-- | \@brief Read the ordered canonical fields of xarm_msgs/srv/VacuumGripperCtrl_Response.
+-- \@details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+-- leaves subsequent enclosing fields unread; discard partial values on any failure.
+-- \@return A pure decoder for this complete record prefix; its execution preserves the original unsigned
+-- refusal.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+readRos2Xarm_msgsSrvVacuumGripperCtrl_Response :: W.Decoder Ros2Xarm_msgsSrvVacuumGripperCtrl_Response
+readRos2Xarm_msgsSrvVacuumGripperCtrl_Response = do
+  a0 <- fromIntegral <$> W.signed 2
+  a1 <- W.text 256 True
+  let value = Ros2Xarm_msgsSrvVacuumGripperCtrl_Response a0 a1
+  case encodeRos2Xarm_msgsSrvVacuumGripperCtrl_Response value of
+    Left c -> W.failure c
+    Right _ -> pure value
+-- | \@brief Decode exactly one complete xarm_msgs/srv/VacuumGripperCtrl_Response value.
+-- \@details Require the complete 6..262-byte canonical representation. Reject truncation, invalid fields
+-- and trailing bytes before publishing a successful value.
+-- \@return A complete decoded record through the native language value/result/exception/error contract.
+-- \@failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+-- buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+-- actual language runtime; not every failure is a recoverable codec status. No Host, network or
+-- asynchronous side effect is issued.
+-- \@lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+-- during synchronous encoding; do not share mutable cursors during a call.
+-- \@thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+-- \@see Ros2Xarm_msgsSrvVacuumGripperCtrl_Response; share/platform/ros/haskell/API-CONTRACT.md
+decodeRos2Xarm_msgsSrvVacuumGripperCtrl_Response :: B.ByteString -> Either Word32 Ros2Xarm_msgsSrvVacuumGripperCtrl_Response
+decodeRos2Xarm_msgsSrvVacuumGripperCtrl_Response = W.runDecoder 262 readRos2Xarm_msgsSrvVacuumGripperCtrl_Response
+instance Canonical Ros2Xarm_msgsSrvVacuumGripperCtrl_Response where
+  maximumBytes _ = 262
+  encodeValue = encodeRos2Xarm_msgsSrvVacuumGripperCtrl_Response
+  readValue = readRos2Xarm_msgsSrvVacuumGripperCtrl_Response

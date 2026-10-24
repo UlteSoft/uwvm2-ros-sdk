@@ -1,0 +1,12 @@
+Option Strict On
+Option Explicit On
+' @brief Complete selected .NET record aliases.
+Imports Ros2Flexiv_msgsMsgJointPosVel = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Flexiv_msgsMsgJointPosVel
+Imports Ros2Flexiv_msgsMsgMode = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Flexiv_msgsMsgMode
+Imports Ros2Geometry_msgsMsgPoint = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Geometry_msgsMsgPoint
+Imports Ros2Geometry_msgsMsgQuaternion = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Geometry_msgsMsgQuaternion
+Imports Ros2Geometry_msgsMsgPose = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Geometry_msgsMsgPose
+Imports Ros2Geometry_msgsMsgVector3 = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Geometry_msgsMsgVector3
+Imports Ros2Geometry_msgsMsgAccel = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Geometry_msgsMsgAccel
+Imports Ros2Geometry_msgsMsgWrench = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Geometry_msgsMsgWrench
+Imports Ros2Flexiv_msgsMsgRobotStates = Uwvm.Flexiv.ros2foxy.BoundedRecords._Ros2Flexiv_msgsMsgRobotStates

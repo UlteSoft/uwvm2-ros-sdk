@@ -1,0 +1,38 @@
+{
+  "format": "uwvm-shared-interpreter-v2",
+  "language": "py",
+  "implementation": "CPython",
+  "version": "3.14.8",
+  "target": "wasm64-wasip1",
+  "ros_backend": "ros1",
+  "filename": "cpython.wasm",
+  "bytes": 36587523,
+  "sha256": "d35f5bd8c5102675d854dea7cdcc2842d0cfe7e5cb2977976ce28def6d49f9db",
+  "source_lock_sha256": "fa53c387ab6b3c7a4824eb42c5683e4a5ac8a0c91b74559a1ba6d5dac434c17f",
+  "application_capacity": 4194304,
+  "application_marker": "UWVM-SRC-APP-v1!",
+  "compiler": "LLVM 23.1.4",
+  "threads": false,
+  "memory": {
+    "address_bits": 64,
+    "shared": false,
+    "minimum_pages": 250,
+    "maximum_pages": 4096,
+    "tables": [
+      {
+        "address_bits": 64,
+        "minimum": 4601,
+        "maximum": 4601
+      }
+    ]
+  },
+  "raw_abi_functions": 38,
+  "raw_abi_descriptor_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "exceptions": "none",
+  "wasm_features": [
+    "memory64",
+    "table64"
+  ],
+  "native_ros_qualification": "separate platform acceptance required",
+  "source_lock_path": "share/language/python/construction-source-lock.json"
+}

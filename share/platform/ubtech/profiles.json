@@ -1,0 +1,27 @@
+{
+  "default_authority": [],
+  "profiles": [
+    {
+      "admitted_roots": 2,
+      "branch": "main",
+      "command": "IKRequest",
+      "command_type": "grab_demo_msgs/msg/IKRequest",
+      "complete_definitions": 8,
+      "display": "UBTECH",
+      "excluded_roots": 0,
+      "family": "ubtech-ros2-main-complete",
+      "has_protocols": false,
+      "id": "ros2_main",
+      "original_roots": 2,
+      "package": "grab_demo_msgs",
+      "ros_version": 2,
+      "source_max_total_nodes": 65536,
+      "source_only": false,
+      "state": "GraspCandidate",
+      "state_type": "grab_demo_msgs/msg/GraspCandidate",
+      "vendor": "ubtech"
+    }
+  ],
+  "vendor": "ubtech",
+  "review_status": "source_preservation_and_complete_IR_only"
+}

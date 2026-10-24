@@ -1,0 +1,358 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time"
+    },
+    {
+      "bounds": {
+        "feedback.recovery_state_name": {
+          "string": 256
+        },
+        "result.message": {
+          "string": 256
+        }
+      },
+      "file": "flexiv_msgs/action/ErrorRecovery.action",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/action/ErrorRecovery"
+    },
+    {
+      "bounds": {
+        "result.error": {
+          "string": 256
+        }
+      },
+      "file": "flexiv_msgs/action/Grasp.action",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/action/Grasp"
+    },
+    {
+      "bounds": {
+        "result.error": {
+          "string": 256
+        }
+      },
+      "file": "flexiv_msgs/action/Move.action",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/action/Move"
+    },
+    {
+      "bounds": {},
+      "file": "flexiv_msgs/msg/Digital.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/Digital"
+    },
+    {
+      "bounds": {
+        "states": {
+          "sequence": 32
+        }
+      },
+      "file": "flexiv_msgs/msg/GPIOStates.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/GPIOStates"
+    },
+    {
+      "bounds": {
+        "joint_names": {
+          "sequence": 32,
+          "string": 256
+        },
+        "k_q": {
+          "sequence": 32
+        },
+        "k_q_nom": {
+          "sequence": 32
+        },
+        "z_q": {
+          "sequence": 32
+        }
+      },
+      "file": "flexiv_msgs/msg/JointImpedance.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/JointImpedance"
+    },
+    {
+      "bounds": {
+        "inertia_scales": {
+          "sequence": 32
+        },
+        "joint_names": {
+          "sequence": 32,
+          "string": 256
+        }
+      },
+      "file": "flexiv_msgs/msg/JointInertiaScale.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/JointInertiaScale"
+    },
+    {
+      "bounds": {
+        "positions": {
+          "sequence": 32
+        },
+        "velocities": {
+          "sequence": 32
+        }
+      },
+      "file": "flexiv_msgs/msg/JointPosVel.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/JointPosVel"
+    },
+    {
+      "bounds": {
+        "joint_names": {
+          "sequence": 32,
+          "string": 256
+        },
+        "max_contact_torques": {
+          "sequence": 32
+        },
+        "tau_max": {
+          "sequence": 32
+        }
+      },
+      "file": "flexiv_msgs/msg/MaxContactTorque.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/MaxContactTorque"
+    },
+    {
+      "bounds": {},
+      "file": "flexiv_msgs/msg/Mode.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/Mode"
+    },
+    {
+      "bounds": {
+        "message": {
+          "string": 256
+        },
+        "operational_status_name": {
+          "string": 256
+        },
+        "recent_events": {
+          "sequence": 16
+        }
+      },
+      "file": "flexiv_msgs/msg/OperationalStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/OperationalStatus"
+    },
+    {
+      "bounds": {},
+      "file": "flexiv_msgs/msg/RecoveryPolicy.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/RecoveryPolicy"
+    },
+    {
+      "bounds": {
+        "consequences": {
+          "string": 256
+        },
+        "description": {
+          "string": 256
+        },
+        "probable_causes": {
+          "string": 256
+        },
+        "recommended_actions": {
+          "string": 256
+        }
+      },
+      "file": "flexiv_msgs/msg/RobotEvent.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/RobotEvent"
+    },
+    {
+      "bounds": {
+        "dq": {
+          "sequence": 32
+        },
+        "dtheta": {
+          "sequence": 32
+        },
+        "q": {
+          "sequence": 32
+        },
+        "tau": {
+          "sequence": 32
+        },
+        "tau_dot": {
+          "sequence": 32
+        },
+        "tau_ext": {
+          "sequence": 32
+        },
+        "tau_interact": {
+          "sequence": 32
+        },
+        "temperature": {
+          "sequence": 32
+        },
+        "theta": {
+          "sequence": 32
+        }
+      },
+      "file": "flexiv_msgs/msg/RobotStates.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/msg/RobotStates"
+    },
+    {
+      "bounds": {},
+      "file": "flexiv_msgs/srv/GetOperationalStatus.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/srv/GetOperationalStatus"
+    },
+    {
+      "bounds": {
+        "request.joint_names": {
+          "sequence": 32,
+          "string": 256
+        },
+        "request.k_q": {
+          "sequence": 32
+        },
+        "request.z_q": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "flexiv_msgs/srv/SetJointImpedance.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/srv/SetJointImpedance"
+    },
+    {
+      "bounds": {
+        "request.inertia_scales": {
+          "sequence": 32
+        },
+        "request.joint_names": {
+          "sequence": 32,
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/srv/SetJointInertiaScale"
+    },
+    {
+      "bounds": {
+        "request.joint_names": {
+          "sequence": 32,
+          "string": 256
+        },
+        "request.max_contact_torques": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "flexiv_msgs/srv/SetMaxContactTorque"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Point.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Point"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Pose.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Pose"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/PoseStamped.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/PoseStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Quaternion.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Quaternion"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Twist.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Twist"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/TwistStamped.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/TwistStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Vector3.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Vector3"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Wrench.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Wrench"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/WrenchStamped.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/WrenchStamped"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 256
+        }
+      },
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "std_msgs/msg/Header"
+    }
+  ]
+}

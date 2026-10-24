@@ -1,0 +1,4 @@
+# These are D language sources, not generated C dependency files.
+!**/*.d
+!*.d
+!**/*.d

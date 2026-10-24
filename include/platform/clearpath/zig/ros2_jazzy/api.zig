@@ -1,0 +1,326 @@
+//! @file api.zig
+//! @brief Typed complete clearpath observers and service clients.
+//! @details Full source-language records remain independent of native owners.
+const core = @import("native");
+const wire = @import("native_wire");
+pub const records = @import("records");
+/// @brief Observe every original builtin_interfaces/msg/Duration field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Builtin_interfacesMsgDuration(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Builtin_interfacesMsgDuration) {
+    return core.receive(records.Ros2Builtin_interfacesMsgDuration, alias_bytes, attempts);
+}
+
+/// @brief Observe every original builtin_interfaces/msg/Time field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Builtin_interfacesMsgTime(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Builtin_interfacesMsgTime) {
+    return core.receive(records.Ros2Builtin_interfacesMsgTime, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_control_msgs/msg/DeviceInfo field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_control_msgsMsgDeviceInfo(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_control_msgsMsgDeviceInfo) {
+    return core.receive(records.Ros2Clearpath_control_msgsMsgDeviceInfo, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_control_msgs/msg/StreamControl field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_control_msgsMsgStreamControl(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_control_msgsMsgStreamControl) {
+    return core.receive(records.Ros2Clearpath_control_msgsMsgStreamControl, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/LynxDebug field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgLynxDebug(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgLynxDebug) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgLynxDebug, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/LynxFeedback field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgLynxFeedback(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgLynxFeedback) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgLynxFeedback, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/LynxMotorProtection field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgLynxMotorProtection(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgLynxMotorProtection) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgLynxMotorProtection, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/LynxMultiDebug field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgLynxMultiDebug(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgLynxMultiDebug) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgLynxMultiDebug, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/LynxMultiFeedback field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgLynxMultiFeedback(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgLynxMultiFeedback) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgLynxMultiFeedback, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/LynxMultiStatus field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgLynxMultiStatus(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgLynxMultiStatus) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgLynxMultiStatus, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/LynxStatus field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgLynxStatus(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgLynxStatus) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgLynxStatus, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/LynxSystemProtection field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgLynxSystemProtection(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgLynxSystemProtection) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgLynxSystemProtection, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/PumaFeedback field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgPumaFeedback(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgPumaFeedback) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgPumaFeedback, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/PumaMultiFeedback field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgPumaMultiFeedback(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgPumaMultiFeedback) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgPumaMultiFeedback, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/PumaMultiStatus field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgPumaMultiStatus(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgPumaMultiStatus) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgPumaMultiStatus, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_motor_msgs/msg/PumaStatus field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_motor_msgsMsgPumaStatus(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_motor_msgsMsgPumaStatus) {
+    return core.receive(records.Ros2Clearpath_motor_msgsMsgPumaStatus, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/DisplayStatus field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgDisplayStatus(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgDisplayStatus) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgDisplayStatus, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/Drive field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgDrive(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgDrive) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgDrive, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/DriveFeedback field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgDriveFeedback(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgDriveFeedback) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgDriveFeedback, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/Fans field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgFans(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgFans) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgFans, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/Feedback field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgFeedback(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgFeedback) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgFeedback, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/Lights field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgLights(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgLights) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgLights, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/PinoutCommand field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgPinoutCommand(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgPinoutCommand) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgPinoutCommand, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/PinoutState field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgPinoutState(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgPinoutState) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgPinoutState, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/Power field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgPower(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgPower) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgPower, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/RGB field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgRGB(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgRGB) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgRGB, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/Status field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgStatus(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgStatus) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgStatus, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/StopStatus field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgStopStatus(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgStopStatus) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgStopStatus, alias_bytes, attempts);
+}
+
+/// @brief Observe every original clearpath_platform_msgs/msg/Temperature field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Clearpath_platform_msgsMsgTemperature(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Clearpath_platform_msgsMsgTemperature) {
+    return core.receive(records.Ros2Clearpath_platform_msgsMsgTemperature, alias_bytes, attempts);
+}
+
+/// @brief Observe every original std_msgs/msg/Header field through one retained owner.
+/// @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
+/// @param attempts Total finite poll budget in 1..250.
+/// @return Complete owned original record and independent operation/close facts.
+/// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+pub fn waitRos2Std_msgsMsgHeader(alias_bytes: []const u8, attempts: u32) core.Observation(records.Ros2Std_msgsMsgHeader) {
+    return core.receive(records.Ros2Std_msgsMsgHeader, alias_bytes, attempts);
+}
+
+/// @brief Call complete clearpath_control_msgs/srv/PowerControl exactly once.
+/// @details Encode the complete request before acquisition. Retain original transport and close errors.
+/// @param aliasBytes Strict UTF-8 exact-type service.call alias, 1..255 bytes, borrowed until return.
+/// @param requestValue Complete immutable original request; every field and bound is validated.
+/// @return Entire owned response with independent transport, provider and cleanup facts.
+/// @details A timeout or ambiguous effect is never replayed. Normal acquired owners close once.
+pub fn callRos2Clearpath_control_msgsSrvPowerControl(
+    aliasBytes: []const u8,
+    requestValue: *const records.Ros2Clearpath_control_msgsSrvPowerControl_Request,
+) core.Observation(records.Ros2Clearpath_control_msgsSrvPowerControl_Response) {
+    var bytes: [1]u8 = @splat(0);
+    var owned_request = requestValue.*;
+    const size = wire.encode(&owned_request, &bytes) catch return .{ .primary = 22 };
+    const result = core.request(records.Ros2Clearpath_control_msgsSrvPowerControl_Response, aliasBytes, 1, bytes[0..size]);
+    return result;
+}
+
+/// @brief Call complete clearpath_platform_msgs/srv/ConfigureMcu exactly once.
+/// @details Encode the complete request before acquisition. Retain original transport and close errors.
+/// @param aliasBytes Strict UTF-8 exact-type service.call alias, 1..255 bytes, borrowed until return.
+/// @param requestValue Complete immutable original request; every field and bound is validated.
+/// @return Entire owned response with independent transport, provider and cleanup facts.
+/// @details A timeout or ambiguous effect is never replayed. Normal acquired owners close once.
+pub fn callRos2Clearpath_platform_msgsSrvConfigureMcu(
+    aliasBytes: []const u8,
+    requestValue: *const records.Ros2Clearpath_platform_msgsSrvConfigureMcu_Request,
+) core.Observation(records.Ros2Clearpath_platform_msgsSrvConfigureMcu_Response) {
+    var bytes: [261]u8 = @splat(0);
+    var owned_request = requestValue.*;
+    const size = wire.encode(&owned_request, &bytes) catch return .{ .primary = 22 };
+    const result = core.request(records.Ros2Clearpath_platform_msgsSrvConfigureMcu_Response, aliasBytes, 1, bytes[0..size]);
+    return result;
+}
+
+/// @brief Call complete clearpath_platform_msgs/srv/SetPinout exactly once.
+/// @details Encode the complete request before acquisition. Retain original transport and close errors.
+/// @param aliasBytes Strict UTF-8 exact-type service.call alias, 1..255 bytes, borrowed until return.
+/// @param requestValue Complete immutable original request; every field and bound is validated.
+/// @return Entire owned response with independent transport, provider and cleanup facts.
+/// @details A timeout or ambiguous effect is never replayed. Normal acquired owners close once.
+pub fn callRos2Clearpath_platform_msgsSrvSetPinout(
+    aliasBytes: []const u8,
+    requestValue: *const records.Ros2Clearpath_platform_msgsSrvSetPinout_Request,
+) core.Observation(records.Ros2Clearpath_platform_msgsSrvSetPinout_Response) {
+    var bytes: [5]u8 = @splat(0);
+    var owned_request = requestValue.*;
+    const size = wire.encode(&owned_request, &bytes) catch return .{ .primary = 22 };
+    const result = core.request(records.Ros2Clearpath_platform_msgsSrvSetPinout_Response, aliasBytes, 1, bytes[0..size]);
+    return result;
+}

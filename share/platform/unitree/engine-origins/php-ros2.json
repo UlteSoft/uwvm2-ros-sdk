@@ -1,0 +1,13 @@
+{
+    "format": "uwvm-real-interpreter-v1",
+    "language": "php",
+    "version": "8.4.13",
+    "target": "wasm32-wasip1",
+    "ros_backend": "ros2",
+    "exception_profile": "CRuby-origin maintained Asyncify",
+    "sha256": "46205e865e595e022e8f09eb261c59cff388734a6e94f0f3d2efa128919091ff",
+    "bytes": 10569524,
+    "source": "src/language/php/source.json",
+    "qualification": "share/language/php/qualification.json",
+    "qualification_sha256": "d79fb3441946d4f8c3819d4672c0a32a8cf2a4c62a2857bb1ad0cdac69d3e2a2"
+}

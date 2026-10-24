@@ -1,0 +1,1131 @@
+{
+  "cache_is_optional_explicit_maintainer_input": true,
+  "canonical_schemas": "sdk/share/platform/universal_robots/catalogs/",
+  "normal_SDK_depends_on_origin": false,
+  "platform": "universal_robots",
+  "repositories": [
+    {
+      "branch": "noetic-devel",
+      "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+      "default_authority": [],
+      "id": "common_ros1",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros/common_msgs",
+      "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f",
+      "url": "https://github.com/ros/common_msgs"
+    },
+    {
+      "archive": {
+        "bytes": 2149381,
+        "sha256": "137ab883404f996524c3b42cf4b1b7366ccaa31d6a4ec5eb9b34847ec03a7098",
+        "url": "https://codeload.github.com/UniversalRobots/Universal_Robots_ROS_Driver/tar.gz/bd14b5c533135886f4f85ef0cabd097a5e1b8d0f"
+      },
+      "branch": "master",
+      "commit": "bd14b5c533135886f4f85ef0cabd097a5e1b8d0f",
+      "default_authority": [],
+      "id": "driver_ros1",
+      "interface_inventory": [
+        {
+          "bytes": 969,
+          "git_blob_sha1": "4eac29152fd3c0292a6b2e1355b4b132edcd72fb",
+          "path": "ur_dashboard_msgs/action/SetMode.action"
+        },
+        {
+          "bytes": 82,
+          "git_blob_sha1": "cd597bd30b3227db0c22b8e27490eb3d90ad38d0",
+          "path": "ur_dashboard_msgs/msg/ProgramState.msg"
+        },
+        {
+          "bytes": 193,
+          "git_blob_sha1": "3acec31d491c53789d9a24bfb3564ed52f557b03",
+          "path": "ur_dashboard_msgs/msg/RobotMode.msg"
+        },
+        {
+          "bytes": 340,
+          "git_blob_sha1": "7db0851e928e7067f291335abf544f02d0034b4a",
+          "path": "ur_dashboard_msgs/msg/SafetyMode.msg"
+        },
+        {
+          "bytes": 46,
+          "git_blob_sha1": "230cee461cdd8bb27a884f20c394cd2e19d89ea1",
+          "path": "ur_dashboard_msgs/srv/AddToLog.srv"
+        },
+        {
+          "bytes": 51,
+          "git_blob_sha1": "c564420c70ecc8e0d71da4b22e919939e1787de2",
+          "path": "ur_dashboard_msgs/srv/GetLoadedProgram.srv"
+        },
+        {
+          "bytes": 70,
+          "git_blob_sha1": "68a4b0862cabee345f8f7e9510309b117a9b444d",
+          "path": "ur_dashboard_msgs/srv/GetProgramState.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "7b419508b701b638ff08b107518290c7a9e40dfe",
+          "path": "ur_dashboard_msgs/srv/GetRobotMode.srv"
+        },
+        {
+          "bytes": 54,
+          "git_blob_sha1": "5b3874fba66eecffece1648483a5111c6650a046",
+          "path": "ur_dashboard_msgs/srv/GetSafetyMode.srv"
+        },
+        {
+          "bytes": 144,
+          "git_blob_sha1": "3e44b4d395398e7e705dadeec0273d42371a1147",
+          "path": "ur_dashboard_msgs/srv/IsInRemoteControl.srv"
+        },
+        {
+          "bytes": 117,
+          "git_blob_sha1": "61d6067bc95242ba4d8c9a789ea5272b835202ba",
+          "path": "ur_dashboard_msgs/srv/IsProgramRunning.srv"
+        },
+        {
+          "bytes": 143,
+          "git_blob_sha1": "065bbf6df083ce1dc7efe3de363ad06761e9db91",
+          "path": "ur_dashboard_msgs/srv/IsProgramSaved.srv"
+        },
+        {
+          "bytes": 91,
+          "git_blob_sha1": "6883ab6531e67eca71f8fabeec5997769884be1d",
+          "path": "ur_dashboard_msgs/srv/Load.srv"
+        },
+        {
+          "bytes": 46,
+          "git_blob_sha1": "230cee461cdd8bb27a884f20c394cd2e19d89ea1",
+          "path": "ur_dashboard_msgs/srv/Popup.srv"
+        },
+        {
+          "bytes": 111,
+          "git_blob_sha1": "92712adcdd359a35113e4748a2a4496641f01c6c",
+          "path": "ur_dashboard_msgs/srv/RawRequest.srv"
+        }
+      ],
+      "repository": "UniversalRobots/Universal_Robots_ROS_Driver",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "313539d9de7b6583e5635571cea2dba0d7930c7b"
+    },
+    {
+      "branch": "noetic-devel",
+      "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+      "default_authority": [],
+      "id": "std_ros1",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros/std_msgs",
+      "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519",
+      "url": "https://github.com/ros/std_msgs"
+    },
+    {
+      "archive": {
+        "bytes": 6272,
+        "sha256": "478c31fb5c52a98c98874a24c09144de0ec01fe743bf84c26f99cb8c1de85ec6",
+        "url": "https://codeload.github.com/ros-industrial/ur_msgs/tar.gz/6c6dc66c63bd551e3985281739add762bfaa3aa9"
+      },
+      "branch": "noetic-devel",
+      "commit": "6c6dc66c63bd551e3985281739add762bfaa3aa9",
+      "default_authority": [],
+      "id": "ur_msgs_ros1",
+      "repository": "ros-industrial/ur_msgs",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "41dd6b850776d49f8269c415085a16f401abb0a0"
+    },
+    {
+      "commit": "36e2e30551e3f2bfd9e55fca553f1ef019f4e4b1",
+      "id": "control_ros1_kinetic",
+      "repository": "ros-controls/control_msgs",
+      "scope": "Explicit original ROS1 standard interfaces; Kinetic branch label does not qualify a Noetic native build.",
+      "tree": "6c99a727518cae7f7283b96e15e03c2a72b5572f",
+      "tree_git_sha1": "6c99a727518cae7f7283b96e15e03c2a72b5572f"
+    },
+    {
+      "branch": "humble",
+      "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+      "default_authority": [],
+      "id": "common_humble",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros2/common_interfaces",
+      "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46",
+      "url": "https://github.com/ros2/common_interfaces"
+    },
+    {
+      "branch": "humble",
+      "commit": "4418bbf3efda12828795e4bb011742133c67a6e2",
+      "default_authority": [],
+      "id": "control_humble",
+      "repository": "ros-controls/control_msgs",
+      "scope": "Selected original JointTolerance dependency only, not a native control_msgs build.",
+      "tree_git_sha1": "9e655261e019801059195e6edff98e933f276cf2"
+    },
+    {
+      "archive": {
+        "bytes": 5666668,
+        "sha256": "2ace36b80365614fdc3b3dd79a3e2601037b6a3e006e9e8c13e5d3e9d8e4f039",
+        "url": "https://codeload.github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tar.gz/262330ed9b5467a17c8ceae09567991e22d13944"
+      },
+      "branch": "humble",
+      "commit": "262330ed9b5467a17c8ceae09567991e22d13944",
+      "default_authority": [],
+      "id": "driver_ros2",
+      "interface_inventory": [
+        {
+          "bytes": 1045,
+          "git_blob_sha1": "c0ee7e27b450032fa76091dfc5da94adc3c78259",
+          "path": "ur_dashboard_msgs/action/SetMode.action"
+        },
+        {
+          "bytes": 65,
+          "git_blob_sha1": "438b6a0c6898906f1bb0e22abe544b4da6e148ad",
+          "path": "ur_dashboard_msgs/msg/OperationalMode.msg"
+        },
+        {
+          "bytes": 196,
+          "git_blob_sha1": "c7bd9fe84ee5769b4f8ccbc2d0e4e3d5933be53f",
+          "path": "ur_dashboard_msgs/msg/ProgramInformation.msg"
+        },
+        {
+          "bytes": 81,
+          "git_blob_sha1": "8fc827494a79723f0dde6c52d8e9161963ed24cf",
+          "path": "ur_dashboard_msgs/msg/ProgramState.msg"
+        },
+        {
+          "bytes": 192,
+          "git_blob_sha1": "05f792b36874102d85751b27cca73f3a406d7f16",
+          "path": "ur_dashboard_msgs/msg/RobotMode.msg"
+        },
+        {
+          "bytes": 340,
+          "git_blob_sha1": "7db0851e928e7067f291335abf544f02d0034b4a",
+          "path": "ur_dashboard_msgs/msg/SafetyMode.msg"
+        },
+        {
+          "bytes": 635,
+          "git_blob_sha1": "63448faac2245fe6e763eb61230c2adc879ca917",
+          "path": "ur_dashboard_msgs/msg/SafetyStatus.msg"
+        },
+        {
+          "bytes": 144,
+          "git_blob_sha1": "2872c592d2871874c59b31bc3e071d8160658131",
+          "path": "ur_dashboard_msgs/msg/UserRole.msg"
+        },
+        {
+          "bytes": 53,
+          "git_blob_sha1": "061da5f2a486827ee4053bae9dbf501a53904bf5",
+          "path": "ur_dashboard_msgs/msg/VersionInformation.msg"
+        },
+        {
+          "bytes": 46,
+          "git_blob_sha1": "230cee461cdd8bb27a884f20c394cd2e19d89ea1",
+          "path": "ur_dashboard_msgs/srv/AddToLog.srv"
+        },
+        {
+          "bytes": 70,
+          "git_blob_sha1": "72afb54c110b159af6889d48ef5fc317a776a23d",
+          "path": "ur_dashboard_msgs/srv/DownloadProgram.srv"
+        },
+        {
+          "bytes": 189,
+          "git_blob_sha1": "f117b2f3e6e7db121d561b9ec0d6136c3470db0e",
+          "path": "ur_dashboard_msgs/srv/DownloadSupportFile.srv"
+        },
+        {
+          "bytes": 198,
+          "git_blob_sha1": "cee81a38fd30ae48fb8bdd9a586f750482964f65",
+          "path": "ur_dashboard_msgs/srv/GenerateFlightReport.srv"
+        },
+        {
+          "bytes": 110,
+          "git_blob_sha1": "01888d201d0fdc354ef912f7aa82968f97c14a5f",
+          "path": "ur_dashboard_msgs/srv/GenerateSupportFile.srv"
+        },
+        {
+          "bytes": 51,
+          "git_blob_sha1": "c564420c70ecc8e0d71da4b22e919939e1787de2",
+          "path": "ur_dashboard_msgs/srv/GetLoadedProgram.srv"
+        },
+        {
+          "bytes": 64,
+          "git_blob_sha1": "9ed6a1768391b0a990dc3d418f5364786110171b",
+          "path": "ur_dashboard_msgs/srv/GetOperationalMode.srv"
+        },
+        {
+          "bytes": 58,
+          "git_blob_sha1": "89e8681b55c27a71902313253b6b46b43a66c234",
+          "path": "ur_dashboard_msgs/srv/GetPolyScopeVersion.srv"
+        },
+        {
+          "bytes": 70,
+          "git_blob_sha1": "68a4b0862cabee345f8f7e9510309b117a9b444d",
+          "path": "ur_dashboard_msgs/srv/GetProgramState.srv"
+        },
+        {
+          "bytes": 61,
+          "git_blob_sha1": "a18c3be7aab5397267156a1a26c7e65123a5dc50",
+          "path": "ur_dashboard_msgs/srv/GetPrograms.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "7b419508b701b638ff08b107518290c7a9e40dfe",
+          "path": "ur_dashboard_msgs/srv/GetRobotMode.srv"
+        },
+        {
+          "bytes": 50,
+          "git_blob_sha1": "fe585ac6be04746d9b3673db2cc2ef307fc12f7d",
+          "path": "ur_dashboard_msgs/srv/GetRobotModel.srv"
+        },
+        {
+          "bytes": 54,
+          "git_blob_sha1": "5b3874fba66eecffece1648483a5111c6650a046",
+          "path": "ur_dashboard_msgs/srv/GetSafetyMode.srv"
+        },
+        {
+          "bytes": 58,
+          "git_blob_sha1": "7bb6ed5f5ddc8569271aa692caf042740dfabb76",
+          "path": "ur_dashboard_msgs/srv/GetSafetyStatus.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "05ddee087b407781d1671d95f9c0d3cb5902c381",
+          "path": "ur_dashboard_msgs/srv/GetSerialNumber.srv"
+        },
+        {
+          "bytes": 50,
+          "git_blob_sha1": "0eaa6fe9081650fb352e59c81662ccb58de9bf13",
+          "path": "ur_dashboard_msgs/srv/GetUserRole.srv"
+        },
+        {
+          "bytes": 126,
+          "git_blob_sha1": "622bbd4af4825e661db952a7518528826fb17dba",
+          "path": "ur_dashboard_msgs/srv/IsInRemoteControl.srv"
+        },
+        {
+          "bytes": 117,
+          "git_blob_sha1": "61d6067bc95242ba4d8c9a789ea5272b835202ba",
+          "path": "ur_dashboard_msgs/srv/IsProgramRunning.srv"
+        },
+        {
+          "bytes": 143,
+          "git_blob_sha1": "065bbf6df083ce1dc7efe3de363ad06761e9db91",
+          "path": "ur_dashboard_msgs/srv/IsProgramSaved.srv"
+        },
+        {
+          "bytes": 91,
+          "git_blob_sha1": "6883ab6531e67eca71f8fabeec5997769884be1d",
+          "path": "ur_dashboard_msgs/srv/Load.srv"
+        },
+        {
+          "bytes": 134,
+          "git_blob_sha1": "6b21a1c81209b67f3577e51463a149b28c7a3a95",
+          "path": "ur_dashboard_msgs/srv/Popup.srv"
+        },
+        {
+          "bytes": 111,
+          "git_blob_sha1": "92712adcdd359a35113e4748a2a4496641f01c6c",
+          "path": "ur_dashboard_msgs/srv/RawRequest.srv"
+        },
+        {
+          "bytes": 64,
+          "git_blob_sha1": "8b0de1e07d12d92e9402fb41a3ec5279e86d7b0f",
+          "path": "ur_dashboard_msgs/srv/SetOperationalMode.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "05f74ffe7fa89a894d21a791740f0c85a0da20a2",
+          "path": "ur_dashboard_msgs/srv/SetUserRole.srv"
+        },
+        {
+          "bytes": 68,
+          "git_blob_sha1": "27f8d493aa921cc6db23f97eee7a2e09ae55ddbd",
+          "path": "ur_dashboard_msgs/srv/UploadProgram.srv"
+        }
+      ],
+      "repository": "UniversalRobots/Universal_Robots_ROS2_Driver",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "d61d173ff9af278fc6eef0f6b5868840cd5da090"
+    },
+    {
+      "branch": "humble",
+      "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+      "default_authority": [],
+      "id": "rcl_humble",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros2/rcl_interfaces",
+      "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e",
+      "url": "https://github.com/ros2/rcl_interfaces"
+    },
+    {
+      "archive": {
+        "bytes": 8776,
+        "sha256": "b7e5f68edbf3b6ebc193b1446ff2daa4be8b72aaff1c9df82ba9ea2cfd21eaa7",
+        "url": "https://codeload.github.com/ros-industrial/ur_msgs/tar.gz/3c584014d9b228e0b2da819db0ca1d887c373e1d"
+      },
+      "branch": "humble-devel",
+      "commit": "3c584014d9b228e0b2da819db0ca1d887c373e1d",
+      "default_authority": [],
+      "id": "ur_msgs_inventory",
+      "interface_inventory": [
+        {
+          "bytes": 1206,
+          "git_blob_sha1": "24fbbde8c5952beb3aaa0857ca6d94950c6dce35",
+          "path": "action/FollowJointTrajectoryUntil.action"
+        },
+        {
+          "bytes": 721,
+          "git_blob_sha1": "a8ec34280072ea1b5beee659dc168d43884ca6fb",
+          "path": "action/SendScript.action"
+        },
+        {
+          "bytes": 10,
+          "git_blob_sha1": "4c1f1b4978bfe17ebbf522c1edeb3ad9786db0b2",
+          "path": "action/ToolContact.action"
+        },
+        {
+          "bytes": 98,
+          "git_blob_sha1": "f7400ca1c5868d4db15cd82b3b0705a44cb2d55c",
+          "path": "msg/Analog.msg"
+        },
+        {
+          "bytes": 21,
+          "git_blob_sha1": "6183945954e683178d10d2fde80da6ed1d314de9",
+          "path": "msg/Digital.msg"
+        },
+        {
+          "bytes": 411,
+          "git_blob_sha1": "c6800ab9c41eeaed348da8877fb29a8cdf21f597",
+          "path": "msg/FrictionModelParameters.msg"
+        },
+        {
+          "bytes": 132,
+          "git_blob_sha1": "e7195735371cd94d40d749828776b6afd3b5b9b5",
+          "path": "msg/IOStates.msg"
+        },
+        {
+          "bytes": 774,
+          "git_blob_sha1": "5059f73149817eaf65bf6435391a0a13e67a3696",
+          "path": "msg/MasterboardDataMsg.msg"
+        },
+        {
+          "bytes": 486,
+          "git_blob_sha1": "5c443f7b6cbc590201c0cceaebdd3bd6488b8075",
+          "path": "msg/RobotModeDataMsg.msg"
+        },
+        {
+          "bytes": 722,
+          "git_blob_sha1": "2741463973e0c1ed1d052f885e274fb912efc860",
+          "path": "msg/RobotStateRTMsg.msg"
+        },
+        {
+          "bytes": 545,
+          "git_blob_sha1": "83d782ab96e14e588f11319fb93b5254df63ac23",
+          "path": "msg/ToolDataMsg.msg"
+        },
+        {
+          "bytes": 153,
+          "git_blob_sha1": "d9dfc2a184e72b14bf4ff8c883275943dcf7f300",
+          "path": "srv/GetRobotSoftwareVersion.srv"
+        },
+        {
+          "bytes": 29,
+          "git_blob_sha1": "b7b934c8a8525fc85fbaeaaad0a4cc626ac9dbe5",
+          "path": "srv/SetAnalogOutput.srv"
+        },
+        {
+          "bytes": 2056,
+          "git_blob_sha1": "54c5fad72fe9dda293de44526aa754da39478de0",
+          "path": "srv/SetForceMode.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "9108d4ef8417c927346f320a7ba99b0586f95202",
+          "path": "srv/SetFrictionModelParameters.srv"
+        },
+        {
+          "bytes": 239,
+          "git_blob_sha1": "28f4d78e0218c980361c9317e06d51c0da48726c",
+          "path": "srv/SetGravity.srv"
+        },
+        {
+          "bytes": 1629,
+          "git_blob_sha1": "b1c83e6bc97b436a9047266d3d0d872bec45a83b",
+          "path": "srv/SetIO.srv"
+        },
+        {
+          "bytes": 199,
+          "git_blob_sha1": "efcfd1dedc7fdfed3a4d93145ddfdfdaf09973ac",
+          "path": "srv/SetPayload.srv"
+        },
+        {
+          "bytes": 266,
+          "git_blob_sha1": "263a375973a2c93a1e12688628385703cbfa50b8",
+          "path": "srv/SetSpeedSliderFraction.srv"
+        }
+      ],
+      "repository": "ros-industrial/ur_msgs",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "dbe738c83aeacb1a282d7792ce3638988e7044e6"
+    },
+    {
+      "branch": "humble",
+      "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+      "default_authority": [],
+      "id": "common_humble",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros2/common_interfaces",
+      "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46",
+      "url": "https://github.com/ros2/common_interfaces"
+    },
+    {
+      "archive": {
+        "bytes": 6815,
+        "sha256": "0323521b0cac87e9673a0c621caa74d69339fb42d0980e793890dbb9465bf1c4",
+        "url": "https://codeload.github.com/UniversalRobots/urinterfaces/tar.gz/e88cebb16503bcbe6e7385251e1f83b1fa54e9c8"
+      },
+      "branch": "master",
+      "commit": "e88cebb16503bcbe6e7385251e1f83b1fa54e9c8",
+      "default_authority": [],
+      "id": "polyscopex_interfaces",
+      "interface_inventory": [
+        {
+          "bytes": 957,
+          "git_blob_sha1": "3d589dbc1da60cf5a1480eadf866f43271316bc0",
+          "path": "action/SetMode.action"
+        },
+        {
+          "bytes": 36,
+          "git_blob_sha1": "d6e29e383083216a4fd4a99dcd6074c32df41f75",
+          "path": "msg/ActiveTCP.msg"
+        },
+        {
+          "bytes": 102,
+          "git_blob_sha1": "e7af1ce99ed20fb96927129c61c8caa569b9f45c",
+          "path": "msg/Analog.msg"
+        },
+        {
+          "bytes": 113,
+          "git_blob_sha1": "a35089bddadf9705a9f8839a612f6ba6a3c32792",
+          "path": "msg/AnalogIO.msg"
+        },
+        {
+          "bytes": 42,
+          "git_blob_sha1": "e3bae79d033246b35790a5b77411070aa1896cff",
+          "path": "msg/AnalogIOStateStamped.msg"
+        },
+        {
+          "bytes": 35,
+          "git_blob_sha1": "836695939b9c35b5654ea619348d1730eccc8969",
+          "path": "msg/AnalogStamped.msg"
+        },
+        {
+          "bytes": 33,
+          "git_blob_sha1": "b8b7e7a655ec55861bb894c8f6b966d1bda16518",
+          "path": "msg/BoolStamped.msg"
+        },
+        {
+          "bytes": 35,
+          "git_blob_sha1": "e1015bc5cfed028cc504e034d2816439e62af2ab",
+          "path": "msg/ControlCycle.msg"
+        },
+        {
+          "bytes": 36,
+          "git_blob_sha1": "2072419759a4572d12ab46b73cc03d45aa307c3b",
+          "path": "msg/Current.msg"
+        },
+        {
+          "bytes": 21,
+          "git_blob_sha1": "6183945954e683178d10d2fde80da6ed1d314de9",
+          "path": "msg/Digital.msg"
+        },
+        {
+          "bytes": 117,
+          "git_blob_sha1": "c7cf3046870c6ab2e8271a8c64ff33396b22716a",
+          "path": "msg/DigitalIO.msg"
+        },
+        {
+          "bytes": 72,
+          "git_blob_sha1": "88db8aff44a77edd856c8b749aeb7f4157ee24c9",
+          "path": "msg/DigitalIOStateStamped.msg"
+        },
+        {
+          "bytes": 36,
+          "git_blob_sha1": "93b3ea2c5d641f9a45e54606660f7a18ae21ae20",
+          "path": "msg/DigitalStamped.msg"
+        },
+        {
+          "bytes": 38,
+          "git_blob_sha1": "8e4a1c8f3a869934eec36e73cfa3fcb1ffcc7d79",
+          "path": "msg/DoubleMultiArrayStamped.msg"
+        },
+        {
+          "bytes": 36,
+          "git_blob_sha1": "2072419759a4572d12ab46b73cc03d45aa307c3b",
+          "path": "msg/Float32Stamped.msg"
+        },
+        {
+          "bytes": 36,
+          "git_blob_sha1": "5a609c9301a288c52730a65a9fd416b901368c04",
+          "path": "msg/Float64Stamped.msg"
+        },
+        {
+          "bytes": 597,
+          "git_blob_sha1": "f2e769521f2add007977d6a206b40e65410cd8d8",
+          "path": "msg/JointMode.msg"
+        },
+        {
+          "bytes": 39,
+          "git_blob_sha1": "9fdcd2767818a4a17636b0250891974673e2061d",
+          "path": "msg/JointTemperature.msg"
+        },
+        {
+          "bytes": 39,
+          "git_blob_sha1": "b4eb3d760290da58ec046283f056b7e079d23ec2",
+          "path": "msg/JointVoltage.msg"
+        },
+        {
+          "bytes": 28,
+          "git_blob_sha1": "673b10c5392e115cca2fe1ee9ad948eda18cd7a0",
+          "path": "msg/JsonStringType.msg"
+        },
+        {
+          "bytes": 193,
+          "git_blob_sha1": "38cf7c7fa5528dc742dded3d607ec017fe4f0377",
+          "path": "msg/RobotMode.msg"
+        },
+        {
+          "bytes": 273,
+          "git_blob_sha1": "3ad3d9f8238da854c547a7ef8929c6b4fc7c1f44",
+          "path": "msg/RuntimeState.msg"
+        },
+        {
+          "bytes": 656,
+          "git_blob_sha1": "9a9329e30e986c1c66d3404db47913f23f3071ca",
+          "path": "msg/SafetyStatus.msg"
+        },
+        {
+          "bytes": 95,
+          "git_blob_sha1": "15533000590775d9c06e15ec838422eb05f8e8fc",
+          "path": "msg/SharedVariablesEditResponse.msg"
+        },
+        {
+          "bytes": 36,
+          "git_blob_sha1": "5a609c9301a288c52730a65a9fd416b901368c04",
+          "path": "msg/SpeedSliderFraction.msg"
+        },
+        {
+          "bytes": 74,
+          "git_blob_sha1": "e6133a8263ce9c7d9de6ba7b89da912b965a59e5",
+          "path": "msg/TCPState.msg"
+        },
+        {
+          "bytes": 242,
+          "git_blob_sha1": "3bd171c405e3211ad6ed813c8e8ed06b0f55130a",
+          "path": "msg/ToolOutputMode.msg"
+        },
+        {
+          "bytes": 43,
+          "git_blob_sha1": "6c60b89c7f49932b36529c1c735693e0ac14ea79",
+          "path": "msg/VariableUpdate.msg"
+        },
+        {
+          "bytes": 55,
+          "git_blob_sha1": "a071fdcebc9b07be2311e95c62d37baa681ffe50",
+          "path": "msg/VoltageCurrentStamped.msg"
+        },
+        {
+          "bytes": 47,
+          "git_blob_sha1": "de79ee7d74ac6afd82af6b06c3e290e23baa9936",
+          "path": "msg/WorldModelNames.msg"
+        },
+        {
+          "bytes": 161,
+          "git_blob_sha1": "fee09cc3e68a3c3c8cb0d9d82a49691bf657fef9",
+          "path": "srv/SetAnalogOutput.srv"
+        },
+        {
+          "bytes": 162,
+          "git_blob_sha1": "eae4bc838b4d66093452a88e8c501dde1b55b909",
+          "path": "srv/SetDigitalOutput.srv"
+        },
+        {
+          "bytes": 133,
+          "git_blob_sha1": "be351b926614710d298f035319c72f5f57ad115c",
+          "path": "srv/SetSpeedFraction.srv"
+        },
+        {
+          "bytes": 125,
+          "git_blob_sha1": "3d6eb4ae55bff0dff40aeae3cdcd7a8954e5cc2d",
+          "path": "srv/SharedVariablesEditor.srv"
+        },
+        {
+          "bytes": 70,
+          "git_blob_sha1": "cdb21b2cb9b16fa0e9c56af3d3d1add12de07cb4",
+          "path": "srv/VariablesViewer.srv"
+        }
+      ],
+      "repository": "UniversalRobots/urinterfaces",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "b49534f8a27c6a817c23620298506f8f46eaa090"
+    },
+    {
+      "branch": "humble",
+      "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+      "default_authority": [],
+      "id": "rcl_humble",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros2/rcl_interfaces",
+      "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e",
+      "url": "https://github.com/ros2/rcl_interfaces"
+    },
+    {
+      "branch": "humble",
+      "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+      "default_authority": [],
+      "id": "common_humble",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros2/common_interfaces",
+      "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46",
+      "url": "https://github.com/ros2/common_interfaces"
+    },
+    {
+      "branch": "humble",
+      "commit": "4418bbf3efda12828795e4bb011742133c67a6e2",
+      "default_authority": [],
+      "id": "control_humble",
+      "repository": "ros-controls/control_msgs",
+      "scope": "Selected original JointTolerance dependency only, not a native control_msgs build.",
+      "tree_git_sha1": "9e655261e019801059195e6edff98e933f276cf2"
+    },
+    {
+      "archive": {
+        "bytes": 5666668,
+        "sha256": "2ace36b80365614fdc3b3dd79a3e2601037b6a3e006e9e8c13e5d3e9d8e4f039",
+        "url": "https://codeload.github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tar.gz/262330ed9b5467a17c8ceae09567991e22d13944"
+      },
+      "branch": "humble",
+      "commit": "262330ed9b5467a17c8ceae09567991e22d13944",
+      "default_authority": [],
+      "id": "driver_ros2",
+      "interface_inventory": [
+        {
+          "bytes": 1045,
+          "git_blob_sha1": "c0ee7e27b450032fa76091dfc5da94adc3c78259",
+          "path": "ur_dashboard_msgs/action/SetMode.action"
+        },
+        {
+          "bytes": 65,
+          "git_blob_sha1": "438b6a0c6898906f1bb0e22abe544b4da6e148ad",
+          "path": "ur_dashboard_msgs/msg/OperationalMode.msg"
+        },
+        {
+          "bytes": 196,
+          "git_blob_sha1": "c7bd9fe84ee5769b4f8ccbc2d0e4e3d5933be53f",
+          "path": "ur_dashboard_msgs/msg/ProgramInformation.msg"
+        },
+        {
+          "bytes": 81,
+          "git_blob_sha1": "8fc827494a79723f0dde6c52d8e9161963ed24cf",
+          "path": "ur_dashboard_msgs/msg/ProgramState.msg"
+        },
+        {
+          "bytes": 192,
+          "git_blob_sha1": "05f792b36874102d85751b27cca73f3a406d7f16",
+          "path": "ur_dashboard_msgs/msg/RobotMode.msg"
+        },
+        {
+          "bytes": 340,
+          "git_blob_sha1": "7db0851e928e7067f291335abf544f02d0034b4a",
+          "path": "ur_dashboard_msgs/msg/SafetyMode.msg"
+        },
+        {
+          "bytes": 635,
+          "git_blob_sha1": "63448faac2245fe6e763eb61230c2adc879ca917",
+          "path": "ur_dashboard_msgs/msg/SafetyStatus.msg"
+        },
+        {
+          "bytes": 144,
+          "git_blob_sha1": "2872c592d2871874c59b31bc3e071d8160658131",
+          "path": "ur_dashboard_msgs/msg/UserRole.msg"
+        },
+        {
+          "bytes": 53,
+          "git_blob_sha1": "061da5f2a486827ee4053bae9dbf501a53904bf5",
+          "path": "ur_dashboard_msgs/msg/VersionInformation.msg"
+        },
+        {
+          "bytes": 46,
+          "git_blob_sha1": "230cee461cdd8bb27a884f20c394cd2e19d89ea1",
+          "path": "ur_dashboard_msgs/srv/AddToLog.srv"
+        },
+        {
+          "bytes": 70,
+          "git_blob_sha1": "72afb54c110b159af6889d48ef5fc317a776a23d",
+          "path": "ur_dashboard_msgs/srv/DownloadProgram.srv"
+        },
+        {
+          "bytes": 189,
+          "git_blob_sha1": "f117b2f3e6e7db121d561b9ec0d6136c3470db0e",
+          "path": "ur_dashboard_msgs/srv/DownloadSupportFile.srv"
+        },
+        {
+          "bytes": 198,
+          "git_blob_sha1": "cee81a38fd30ae48fb8bdd9a586f750482964f65",
+          "path": "ur_dashboard_msgs/srv/GenerateFlightReport.srv"
+        },
+        {
+          "bytes": 110,
+          "git_blob_sha1": "01888d201d0fdc354ef912f7aa82968f97c14a5f",
+          "path": "ur_dashboard_msgs/srv/GenerateSupportFile.srv"
+        },
+        {
+          "bytes": 51,
+          "git_blob_sha1": "c564420c70ecc8e0d71da4b22e919939e1787de2",
+          "path": "ur_dashboard_msgs/srv/GetLoadedProgram.srv"
+        },
+        {
+          "bytes": 64,
+          "git_blob_sha1": "9ed6a1768391b0a990dc3d418f5364786110171b",
+          "path": "ur_dashboard_msgs/srv/GetOperationalMode.srv"
+        },
+        {
+          "bytes": 58,
+          "git_blob_sha1": "89e8681b55c27a71902313253b6b46b43a66c234",
+          "path": "ur_dashboard_msgs/srv/GetPolyScopeVersion.srv"
+        },
+        {
+          "bytes": 70,
+          "git_blob_sha1": "68a4b0862cabee345f8f7e9510309b117a9b444d",
+          "path": "ur_dashboard_msgs/srv/GetProgramState.srv"
+        },
+        {
+          "bytes": 61,
+          "git_blob_sha1": "a18c3be7aab5397267156a1a26c7e65123a5dc50",
+          "path": "ur_dashboard_msgs/srv/GetPrograms.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "7b419508b701b638ff08b107518290c7a9e40dfe",
+          "path": "ur_dashboard_msgs/srv/GetRobotMode.srv"
+        },
+        {
+          "bytes": 50,
+          "git_blob_sha1": "fe585ac6be04746d9b3673db2cc2ef307fc12f7d",
+          "path": "ur_dashboard_msgs/srv/GetRobotModel.srv"
+        },
+        {
+          "bytes": 54,
+          "git_blob_sha1": "5b3874fba66eecffece1648483a5111c6650a046",
+          "path": "ur_dashboard_msgs/srv/GetSafetyMode.srv"
+        },
+        {
+          "bytes": 58,
+          "git_blob_sha1": "7bb6ed5f5ddc8569271aa692caf042740dfabb76",
+          "path": "ur_dashboard_msgs/srv/GetSafetyStatus.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "05ddee087b407781d1671d95f9c0d3cb5902c381",
+          "path": "ur_dashboard_msgs/srv/GetSerialNumber.srv"
+        },
+        {
+          "bytes": 50,
+          "git_blob_sha1": "0eaa6fe9081650fb352e59c81662ccb58de9bf13",
+          "path": "ur_dashboard_msgs/srv/GetUserRole.srv"
+        },
+        {
+          "bytes": 126,
+          "git_blob_sha1": "622bbd4af4825e661db952a7518528826fb17dba",
+          "path": "ur_dashboard_msgs/srv/IsInRemoteControl.srv"
+        },
+        {
+          "bytes": 117,
+          "git_blob_sha1": "61d6067bc95242ba4d8c9a789ea5272b835202ba",
+          "path": "ur_dashboard_msgs/srv/IsProgramRunning.srv"
+        },
+        {
+          "bytes": 143,
+          "git_blob_sha1": "065bbf6df083ce1dc7efe3de363ad06761e9db91",
+          "path": "ur_dashboard_msgs/srv/IsProgramSaved.srv"
+        },
+        {
+          "bytes": 91,
+          "git_blob_sha1": "6883ab6531e67eca71f8fabeec5997769884be1d",
+          "path": "ur_dashboard_msgs/srv/Load.srv"
+        },
+        {
+          "bytes": 134,
+          "git_blob_sha1": "6b21a1c81209b67f3577e51463a149b28c7a3a95",
+          "path": "ur_dashboard_msgs/srv/Popup.srv"
+        },
+        {
+          "bytes": 111,
+          "git_blob_sha1": "92712adcdd359a35113e4748a2a4496641f01c6c",
+          "path": "ur_dashboard_msgs/srv/RawRequest.srv"
+        },
+        {
+          "bytes": 64,
+          "git_blob_sha1": "8b0de1e07d12d92e9402fb41a3ec5279e86d7b0f",
+          "path": "ur_dashboard_msgs/srv/SetOperationalMode.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "05f74ffe7fa89a894d21a791740f0c85a0da20a2",
+          "path": "ur_dashboard_msgs/srv/SetUserRole.srv"
+        },
+        {
+          "bytes": 68,
+          "git_blob_sha1": "27f8d493aa921cc6db23f97eee7a2e09ae55ddbd",
+          "path": "ur_dashboard_msgs/srv/UploadProgram.srv"
+        }
+      ],
+      "repository": "UniversalRobots/Universal_Robots_ROS2_Driver",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "d61d173ff9af278fc6eef0f6b5868840cd5da090"
+    },
+    {
+      "branch": "humble",
+      "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+      "default_authority": [],
+      "id": "rcl_humble",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros2/rcl_interfaces",
+      "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e",
+      "url": "https://github.com/ros2/rcl_interfaces"
+    },
+    {
+      "archive": {
+        "bytes": 8776,
+        "sha256": "b7e5f68edbf3b6ebc193b1446ff2daa4be8b72aaff1c9df82ba9ea2cfd21eaa7",
+        "url": "https://codeload.github.com/ros-industrial/ur_msgs/tar.gz/3c584014d9b228e0b2da819db0ca1d887c373e1d"
+      },
+      "branch": "humble-devel",
+      "commit": "3c584014d9b228e0b2da819db0ca1d887c373e1d",
+      "default_authority": [],
+      "id": "ur_msgs_inventory",
+      "interface_inventory": [
+        {
+          "bytes": 1206,
+          "git_blob_sha1": "24fbbde8c5952beb3aaa0857ca6d94950c6dce35",
+          "path": "action/FollowJointTrajectoryUntil.action"
+        },
+        {
+          "bytes": 721,
+          "git_blob_sha1": "a8ec34280072ea1b5beee659dc168d43884ca6fb",
+          "path": "action/SendScript.action"
+        },
+        {
+          "bytes": 10,
+          "git_blob_sha1": "4c1f1b4978bfe17ebbf522c1edeb3ad9786db0b2",
+          "path": "action/ToolContact.action"
+        },
+        {
+          "bytes": 98,
+          "git_blob_sha1": "f7400ca1c5868d4db15cd82b3b0705a44cb2d55c",
+          "path": "msg/Analog.msg"
+        },
+        {
+          "bytes": 21,
+          "git_blob_sha1": "6183945954e683178d10d2fde80da6ed1d314de9",
+          "path": "msg/Digital.msg"
+        },
+        {
+          "bytes": 411,
+          "git_blob_sha1": "c6800ab9c41eeaed348da8877fb29a8cdf21f597",
+          "path": "msg/FrictionModelParameters.msg"
+        },
+        {
+          "bytes": 132,
+          "git_blob_sha1": "e7195735371cd94d40d749828776b6afd3b5b9b5",
+          "path": "msg/IOStates.msg"
+        },
+        {
+          "bytes": 774,
+          "git_blob_sha1": "5059f73149817eaf65bf6435391a0a13e67a3696",
+          "path": "msg/MasterboardDataMsg.msg"
+        },
+        {
+          "bytes": 486,
+          "git_blob_sha1": "5c443f7b6cbc590201c0cceaebdd3bd6488b8075",
+          "path": "msg/RobotModeDataMsg.msg"
+        },
+        {
+          "bytes": 722,
+          "git_blob_sha1": "2741463973e0c1ed1d052f885e274fb912efc860",
+          "path": "msg/RobotStateRTMsg.msg"
+        },
+        {
+          "bytes": 545,
+          "git_blob_sha1": "83d782ab96e14e588f11319fb93b5254df63ac23",
+          "path": "msg/ToolDataMsg.msg"
+        },
+        {
+          "bytes": 153,
+          "git_blob_sha1": "d9dfc2a184e72b14bf4ff8c883275943dcf7f300",
+          "path": "srv/GetRobotSoftwareVersion.srv"
+        },
+        {
+          "bytes": 29,
+          "git_blob_sha1": "b7b934c8a8525fc85fbaeaaad0a4cc626ac9dbe5",
+          "path": "srv/SetAnalogOutput.srv"
+        },
+        {
+          "bytes": 2056,
+          "git_blob_sha1": "54c5fad72fe9dda293de44526aa754da39478de0",
+          "path": "srv/SetForceMode.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "9108d4ef8417c927346f320a7ba99b0586f95202",
+          "path": "srv/SetFrictionModelParameters.srv"
+        },
+        {
+          "bytes": 239,
+          "git_blob_sha1": "28f4d78e0218c980361c9317e06d51c0da48726c",
+          "path": "srv/SetGravity.srv"
+        },
+        {
+          "bytes": 1629,
+          "git_blob_sha1": "b1c83e6bc97b436a9047266d3d0d872bec45a83b",
+          "path": "srv/SetIO.srv"
+        },
+        {
+          "bytes": 199,
+          "git_blob_sha1": "efcfd1dedc7fdfed3a4d93145ddfdfdaf09973ac",
+          "path": "srv/SetPayload.srv"
+        },
+        {
+          "bytes": 266,
+          "git_blob_sha1": "263a375973a2c93a1e12688628385703cbfa50b8",
+          "path": "srv/SetSpeedSliderFraction.srv"
+        }
+      ],
+      "repository": "ros-industrial/ur_msgs",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "dbe738c83aeacb1a282d7792ce3638988e7044e6"
+    },
+    {
+      "branch": "noetic-devel",
+      "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+      "default_authority": [],
+      "id": "common_ros1",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros/common_msgs",
+      "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f",
+      "url": "https://github.com/ros/common_msgs"
+    },
+    {
+      "archive": {
+        "bytes": 2149381,
+        "sha256": "137ab883404f996524c3b42cf4b1b7366ccaa31d6a4ec5eb9b34847ec03a7098",
+        "url": "https://codeload.github.com/UniversalRobots/Universal_Robots_ROS_Driver/tar.gz/bd14b5c533135886f4f85ef0cabd097a5e1b8d0f"
+      },
+      "branch": "master",
+      "commit": "bd14b5c533135886f4f85ef0cabd097a5e1b8d0f",
+      "default_authority": [],
+      "id": "driver_ros1",
+      "interface_inventory": [
+        {
+          "bytes": 969,
+          "git_blob_sha1": "4eac29152fd3c0292a6b2e1355b4b132edcd72fb",
+          "path": "ur_dashboard_msgs/action/SetMode.action"
+        },
+        {
+          "bytes": 82,
+          "git_blob_sha1": "cd597bd30b3227db0c22b8e27490eb3d90ad38d0",
+          "path": "ur_dashboard_msgs/msg/ProgramState.msg"
+        },
+        {
+          "bytes": 193,
+          "git_blob_sha1": "3acec31d491c53789d9a24bfb3564ed52f557b03",
+          "path": "ur_dashboard_msgs/msg/RobotMode.msg"
+        },
+        {
+          "bytes": 340,
+          "git_blob_sha1": "7db0851e928e7067f291335abf544f02d0034b4a",
+          "path": "ur_dashboard_msgs/msg/SafetyMode.msg"
+        },
+        {
+          "bytes": 46,
+          "git_blob_sha1": "230cee461cdd8bb27a884f20c394cd2e19d89ea1",
+          "path": "ur_dashboard_msgs/srv/AddToLog.srv"
+        },
+        {
+          "bytes": 51,
+          "git_blob_sha1": "c564420c70ecc8e0d71da4b22e919939e1787de2",
+          "path": "ur_dashboard_msgs/srv/GetLoadedProgram.srv"
+        },
+        {
+          "bytes": 70,
+          "git_blob_sha1": "68a4b0862cabee345f8f7e9510309b117a9b444d",
+          "path": "ur_dashboard_msgs/srv/GetProgramState.srv"
+        },
+        {
+          "bytes": 52,
+          "git_blob_sha1": "7b419508b701b638ff08b107518290c7a9e40dfe",
+          "path": "ur_dashboard_msgs/srv/GetRobotMode.srv"
+        },
+        {
+          "bytes": 54,
+          "git_blob_sha1": "5b3874fba66eecffece1648483a5111c6650a046",
+          "path": "ur_dashboard_msgs/srv/GetSafetyMode.srv"
+        },
+        {
+          "bytes": 144,
+          "git_blob_sha1": "3e44b4d395398e7e705dadeec0273d42371a1147",
+          "path": "ur_dashboard_msgs/srv/IsInRemoteControl.srv"
+        },
+        {
+          "bytes": 117,
+          "git_blob_sha1": "61d6067bc95242ba4d8c9a789ea5272b835202ba",
+          "path": "ur_dashboard_msgs/srv/IsProgramRunning.srv"
+        },
+        {
+          "bytes": 143,
+          "git_blob_sha1": "065bbf6df083ce1dc7efe3de363ad06761e9db91",
+          "path": "ur_dashboard_msgs/srv/IsProgramSaved.srv"
+        },
+        {
+          "bytes": 91,
+          "git_blob_sha1": "6883ab6531e67eca71f8fabeec5997769884be1d",
+          "path": "ur_dashboard_msgs/srv/Load.srv"
+        },
+        {
+          "bytes": 46,
+          "git_blob_sha1": "230cee461cdd8bb27a884f20c394cd2e19d89ea1",
+          "path": "ur_dashboard_msgs/srv/Popup.srv"
+        },
+        {
+          "bytes": 111,
+          "git_blob_sha1": "92712adcdd359a35113e4748a2a4496641f01c6c",
+          "path": "ur_dashboard_msgs/srv/RawRequest.srv"
+        }
+      ],
+      "repository": "UniversalRobots/Universal_Robots_ROS_Driver",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "313539d9de7b6583e5635571cea2dba0d7930c7b"
+    },
+    {
+      "branch": "noetic-devel",
+      "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+      "default_authority": [],
+      "id": "std_ros1",
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+      "repository": "ros/std_msgs",
+      "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519",
+      "url": "https://github.com/ros/std_msgs"
+    },
+    {
+      "archive": {
+        "bytes": 6272,
+        "sha256": "478c31fb5c52a98c98874a24c09144de0ec01fe743bf84c26f99cb8c1de85ec6",
+        "url": "https://codeload.github.com/ros-industrial/ur_msgs/tar.gz/6c6dc66c63bd551e3985281739add762bfaa3aa9"
+      },
+      "branch": "noetic-devel",
+      "commit": "6c6dc66c63bd551e3985281739add762bfaa3aa9",
+      "default_authority": [],
+      "id": "ur_msgs_ros1",
+      "repository": "ros-industrial/ur_msgs",
+      "scope": "Whole original declared interface files and selected original native implementation/documentation, not native execution or all releases.",
+      "tree_git_sha1": "41dd6b850776d49f8269c415085a16f401abb0a0"
+    }
+  ],
+  "schema": "uwvm-upstream-reference-lock-v1",
+  "source_inventory": "test/0073.ros-tests/support/coordination/20261022-sdk-single-source/07-upstream-cache-inputs.jsonl.gz"
+}

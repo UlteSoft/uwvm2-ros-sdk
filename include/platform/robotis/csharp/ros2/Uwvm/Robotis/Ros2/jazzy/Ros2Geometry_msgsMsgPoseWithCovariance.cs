@@ -1,0 +1,129 @@
+using System;
+using Uwvm.Ros;
+
+namespace Uwvm.Robotis.Ros2.jazzy
+{
+    /**
+     * @brief Complete ROS 2 geometry_msgs/msg/PoseWithCovariance value and canonical codec.
+     * @details All fields, constants, defaults and nested capacities come from the
+     * canonical bounded catalog. Instances own their strings/arrays/nested values.
+     * Encode/decode perform no ROS operation and confer no authority. Native type
+     * identity must still be independently qualified by the deployment registry.
+     */
+    public sealed class Ros2Geometry_msgsMsgPoseWithCovariance
+    {
+        /** @brief Exact registered max wire bytes. */
+        public const int MAX_WIRE_BYTES = 344;
+        /** @brief Exact registered min wire bytes. */
+        public const int MIN_WIRE_BYTES = 344;
+        /** @brief Original codec identity; empty native identity is unqualified. */
+        public const string CODEC_IDENTITY = "UWVMROS1_8eb3e25c45769eb29691011c05315ed50f2b97eff488f9e8ee2dc70bddab4dc2";
+        /** @brief Original source type; empty native identity is unqualified. */
+        public const string SOURCE_TYPE = "geometry_msgs/msg/PoseWithCovariance";
+        /** @brief Original native identity; empty native identity is unqualified. */
+        public const string NATIVE_IDENTITY = "";
+        /** @brief Complete native field pose; scalar, text bound 0. */
+        public Ros2Geometry_msgsMsgPose field_pose = new Ros2Geometry_msgsMsgPose();
+        /** @brief Complete native field covariance; array capacity 36, text bound 0. */
+        public double[] field_covariance = new double[36];
+
+        /**
+         * @brief Construct the complete original default value with owned storage.
+         * @details Nested fixed arrays initialize every logical element; sequences
+         * start empty. No native capability, pointer, or shared buffer is retained.
+         */
+        public Ros2Geometry_msgsMsgPoseWithCovariance()
+        {
+        }
+
+        /**
+         * @brief Encode every field of one complete bounded value.
+         * @param value Borrowed stable value; all referenced arrays remain caller-owned.
+         * @return Newly owned complete canonical bytes, excluding unused capacity.
+         * @details Invalid fields/bounds/semantics throw ArgumentException.
+         */
+        public static byte[] Encode(Ros2Geometry_msgsMsgPoseWithCovariance value)
+        {
+            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            WriteFields(wire, value);
+            return wire.Finish();
+        }
+
+        /**
+         * @brief Decode transactionally with exact extent and trailing-byte checks.
+         * @param bytes Borrowed immutable complete canonical body.
+         * @return Newly owned full value; failed decoding commits no caller storage.
+         * @details Invalid wire, text, bounds or semantics throw ArgumentException.
+         */
+        public static Ros2Geometry_msgsMsgPoseWithCovariance Decode(byte[] bytes)
+        {
+            if(bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
+            {
+                throw new ArgumentException("Invalid complete canonical extent");
+            }
+            Wire.Reader wire = new Wire.Reader(bytes);
+            Ros2Geometry_msgsMsgPoseWithCovariance value = ReadFields(wire);
+            wire.Finish();
+            return value;
+        }
+
+        /**
+         * @brief Write this complete nested value within the enclosing aggregate bound.
+         * @param wire Borrowed caller-owned finite writer.
+         * @param value Borrowed stable complete value.
+         * @return No value; invalid fields or aggregate bounds throw before publication.
+         */
+        internal static void WriteFields(Wire.Writer wire, Ros2Geometry_msgsMsgPoseWithCovariance value)
+        {
+            if(value == null)
+            {
+                throw new ArgumentException("Null canonical record");
+            }
+            int start = wire.Position;
+            Ros2Geometry_msgsMsgPose.WriteFields(wire, value.field_pose);
+            if(value.field_covariance == null || value.field_covariance.Length != 36)
+            {
+                throw new ArgumentException("Invalid covariance extent");
+            }
+            for(int index = 0; index < value.field_covariance.Length; ++index)
+            {
+                if(!double.IsFinite(value.field_covariance[index]))
+                {
+                    throw new ArgumentException("Nonfinite covariance");
+                }
+                wire.F64(value.field_covariance[index]);
+            }
+            if(wire.Position - start > MAX_WIRE_BYTES)
+            {
+                throw new ArgumentException("Nested aggregate exceeds registered wire bound");
+            }
+        }
+
+        /**
+         * @brief Read one complete nested record without exposing partial values.
+         * @param wire Borrowed immutable bounded reader and its private cursor.
+         * @return Newly owned complete record; malformed nested input throws.
+         * @details The caller separately requires complete top-level consumption.
+         */
+        internal static Ros2Geometry_msgsMsgPoseWithCovariance ReadFields(Wire.Reader wire)
+        {
+            int start = wire.Position;
+            Ros2Geometry_msgsMsgPoseWithCovariance value = new Ros2Geometry_msgsMsgPoseWithCovariance();
+            value.field_pose = Ros2Geometry_msgsMsgPose.ReadFields(wire);
+            value.field_covariance = new double[36];
+            for(int index = 0; index < value.field_covariance.Length; ++index)
+            {
+                value.field_covariance[index] = wire.F64();
+                if(!double.IsFinite(value.field_covariance[index]))
+                {
+                    throw new ArgumentException("Nonfinite covariance");
+                }
+            }
+            if(wire.Position - start > MAX_WIRE_BYTES)
+            {
+                throw new ArgumentException("Nested aggregate exceeds registered wire bound");
+            }
+            return value;
+        }
+    }
+}

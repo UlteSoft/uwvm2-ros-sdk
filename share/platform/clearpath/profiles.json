@@ -1,0 +1,621 @@
+{
+  "format": "uwvm-mobile-platform-profiles-v1",
+  "platform": "clearpath",
+  "profiles": [
+    {
+      "profile": "ros1",
+      "ros_major": 1,
+      "distribution": "noetic",
+      "legacy_catalog": "clearpath-noetic-complete",
+      "source_lock_sha256": "d115cb3a7b78461e92304dc07d5f46923a867acdc1679e4e8a38bfe86e895e9f",
+      "repositories": [
+        {
+          "id": "common_ros1",
+          "repository": "ros/common_msgs",
+          "url": "https://github.com/ros/common_msgs",
+          "branch": "noetic-devel",
+          "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+          "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+        },
+        {
+          "id": "husky_noetic",
+          "url": "https://github.com/husky/husky",
+          "branch": "noetic-devel",
+          "commit": "41e15d283a8d955938204e79554a875264417bb9",
+          "tree_git_sha1": "a3c762088f8e095fd1ff7ce7008d86ff7387bd1a",
+          "archive": {
+            "url": "https://codeload.github.com/husky/husky/tar.gz/41e15d283a8d955938204e79554a875264417bb9",
+            "bytes": 2667326,
+            "sha256": "8cb38d1b6f907536ad78f86f6964baf98466b2e31e864cf29b7128bd9543325e"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "jackal_noetic",
+          "url": "https://github.com/jackal/jackal",
+          "branch": "noetic-devel",
+          "commit": "4ddf9b578bb7abce1115c8dc59d8b7f86aa9268c",
+          "tree_git_sha1": "06e4c3872c919fd792a643fe4ff7882feed8c5aa",
+          "archive": {
+            "url": "https://codeload.github.com/jackal/jackal/tar.gz/4ddf9b578bb7abce1115c8dc59d8b7f86aa9268c",
+            "bytes": 2391401,
+            "sha256": "b944c1b1f1039bff4d489c9a10297188da3d322efbb24baca1667a1176d7c028"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "msgs_noetic",
+          "url": "https://github.com/clearpathrobotics/clearpath_msgs",
+          "branch": "noetic-devel",
+          "commit": "c17b52e7ba7061310493b43d5b1cd4ffd33cc9b6",
+          "tree_git_sha1": "d7a5d6329f87aa819648cebb82168abb72d84f7a",
+          "archive": {
+            "url": "https://codeload.github.com/clearpathrobotics/clearpath_msgs/tar.gz/c17b52e7ba7061310493b43d5b1cd4ffd33cc9b6",
+            "bytes": 36572,
+            "sha256": "0dd9fb75369ec1e03d57256151e898e74ac494df37156a468dfb519b6869ab51"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "std_ros1",
+          "repository": "ros/std_msgs",
+          "url": "https://github.com/ros/std_msgs",
+          "branch": "noetic-devel",
+          "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+          "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+        }
+      ]
+    },
+    {
+      "profile": "ros2_humble",
+      "ros_major": 2,
+      "distribution": "humble",
+      "legacy_catalog": "clearpath-humble-complete",
+      "source_lock_sha256": "f9ef0e6a0ba26ac1d98da59f5d0dbf2b4f0b6081abdd079e18d1d27f073ea212",
+      "repositories": [
+        {
+          "id": "common_humble",
+          "repository": "ros2/common_interfaces",
+          "url": "https://github.com/ros2/common_interfaces",
+          "branch": "humble",
+          "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+          "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "diagnostic_msgs/srv/AddDiagnostics.srv",
+                "bytes": 1458,
+                "sha256": "e88df6a6769a9ee85480aa2b1adac052fa368b4a00016f1a9b8422fdacdf1767",
+                "git_blob_sha1": "413c4019d73e3860dd09c51b5d6a078bf57a7bcb"
+              },
+              {
+                "path": "diagnostic_msgs/srv/SelfTest.srv",
+                "bytes": 52,
+                "sha256": "3a95f0dfd99d48a34b58608a80443e9bcd343ebd76d8865f58f8b9b312b6d38f",
+                "git_blob_sha1": "ee2974d4270d5c37aedd4b2253d0075b91582f74"
+              },
+              {
+                "path": "nav_msgs/srv/GetMap.srv",
+                "bytes": 110,
+                "sha256": "b4bdbb1875bfd2b22596e238cb9571f0baec6505032f7df8cc7e5cd47bfd3adc",
+                "git_blob_sha1": "91be6a7bdf5593b58a1815be2e5f2096f654d68d"
+              },
+              {
+                "path": "nav_msgs/srv/GetPlan.srv",
+                "bytes": 400,
+                "sha256": "84582c21447bd35286bbf93b9ca80de69e964cad577fa6ac44aabdbba43cba2e",
+                "git_blob_sha1": "689290a632bef9aff8f5186211b387e03f237b64"
+              },
+              {
+                "path": "nav_msgs/srv/LoadMap.srv",
+                "bytes": 473,
+                "sha256": "301ea2a2226e8723ae8a421eefc4dfbc0e3ed7819402583bd13c034f0802d3aa",
+                "git_blob_sha1": "3b9caaad47004e34d800ef84aae0553a8e2e5077"
+              },
+              {
+                "path": "nav_msgs/srv/SetMap.srv",
+                "bytes": 280,
+                "sha256": "14b58f196f2eafdeb75d2b913af3687665cce880aef970e03e6a6c014cd6fbed",
+                "git_blob_sha1": "5270d458bd409ad922289e457388af8930afd2f5"
+              },
+              {
+                "path": "sensor_msgs/srv/SetCameraInfo.srv",
+                "bytes": 597,
+                "sha256": "d7e720e522387083ff70c0b9e8aacec379c416d8d04f3cdca55de2008beba1f3",
+                "git_blob_sha1": "98b5b261d409d1b44fd7b50586777d380ed46249"
+              },
+              {
+                "path": "std_srvs/srv/Empty.srv",
+                "bytes": 4,
+                "sha256": "f52d711103d50a437830c6fbcd04fb4bab49a0f82f6d26d1c791c6e8488dd090",
+                "git_blob_sha1": "ed97d539c095cf1413af30cc23dea272095b97dd"
+              },
+              {
+                "path": "std_srvs/srv/SetBool.srv",
+                "bytes": 173,
+                "sha256": "a36d99cd5f0467a58a5b06b1443e9ffc0fcb59977190def5ef677fd16f05a664",
+                "git_blob_sha1": "93003477744daee97782eeafe272eccece948b7b"
+              },
+              {
+                "path": "std_srvs/srv/Trigger.srv",
+                "bytes": 122,
+                "sha256": "81e80d26771d0c0af8783938720c763cacc429e68d9d6b9c1f912474db0d8dca",
+                "git_blob_sha1": "371dfd22e1508994dacdf1fa93290f46d138fcaa"
+              },
+              {
+                "path": "visualization_msgs/srv/GetInteractiveMarkers.srv",
+                "bytes": 287,
+                "sha256": "a5291d771d7568d176844b2322c5d91b389370e8c25015a5ae00d63fac4471ea",
+                "git_blob_sha1": "493e885ec305e7d0beadda281c3297ea341fdfba"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        },
+        {
+          "id": "driver_humble",
+          "url": "https://github.com/clearpathrobotics/clearpath_robot",
+          "branch": "humble",
+          "commit": "baf3aa4ef81f5614b1c1898d5a58c11e9e28d7a5",
+          "tree_git_sha1": "bdc8ad46652b71619bfc1cfc67027382b239bc02",
+          "archive": {
+            "url": "https://codeload.github.com/clearpathrobotics/clearpath_robot/tar.gz/baf3aa4ef81f5614b1c1898d5a58c11e9e28d7a5",
+            "bytes": 132443,
+            "sha256": "a287541e160e8be504a1ae9545b16e2771e172b7b4a83c0dd7fd54b5d4ebe880"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "msgs_humble",
+          "url": "https://github.com/clearpathrobotics/clearpath_msgs",
+          "branch": "humble",
+          "commit": "37d701812e9980b4722664d4ada2f484bd36af93",
+          "tree_git_sha1": "9d1df121e3214a04d2175f155dffb7adb6bd1139",
+          "archive": {
+            "url": "https://codeload.github.com/clearpathrobotics/clearpath_msgs/tar.gz/37d701812e9980b4722664d4ada2f484bd36af93",
+            "bytes": 6744,
+            "sha256": "8dba2e9ee055d8ef5bdb538818609a4142b519f33bff659d23dd71f031281bc4"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "rcl_humble",
+          "repository": "ros2/rcl_interfaces",
+          "url": "https://github.com/ros2/rcl_interfaces",
+          "branch": "humble",
+          "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+          "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "action_msgs/srv/CancelGoal.srv",
+                "bytes": 1453,
+                "sha256": "5f4dc57f41cab2fd1987a61d5821282ece5075e38e5044f90126ab62c98fac20",
+                "git_blob_sha1": "86afbdbf4eacb2c55c1faf8da3a17946c5f0fa9b"
+              },
+              {
+                "path": "composition_interfaces/srv/ListNodes.srv",
+                "bytes": 167,
+                "sha256": "7b01c631b25d12e91315098748bb526f19101c70041613704ac8f09b7482db63",
+                "git_blob_sha1": "4b1421eb4031b37e38cd90f614cd303e66b5d9e3"
+              },
+              {
+                "path": "composition_interfaces/srv/LoadNode.srv",
+                "bytes": 1253,
+                "sha256": "db83f2776f37bf2cbe94ba8d3e8fefb0bca5b3edaa978e2b151c16f41bb47f11",
+                "git_blob_sha1": "ffd243f3a518362e11ccf059417b5a6bd037a8d1"
+              },
+              {
+                "path": "composition_interfaces/srv/UnloadNode.srv",
+                "bytes": 221,
+                "sha256": "6b6106bb2ba8ec9c8fd3812ab57a57775da388d12754bc6b266e1a883618f4d9",
+                "git_blob_sha1": "0fa36a516759a491a799a7f15a84a54f30ff5189"
+              },
+              {
+                "path": "lifecycle_msgs/srv/ChangeState.srv",
+                "bytes": 217,
+                "sha256": "a724c2437f5dc7eda1120f79ac30f945fea1475ac62654936f0d04530b1aef23",
+                "git_blob_sha1": "1bad3d1012bcd67269d05c893770be9b4dfa48d5"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableStates.srv",
+                "bytes": 85,
+                "sha256": "ab291560449fc5914c35cb9a9ec14cedfa67f6b643d4b7abb6c98cfb29e76f0d",
+                "git_blob_sha1": "2faa79b03d1f094781b03ced38e553fe984196e2"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableTransitions.srv",
+                "bytes": 112,
+                "sha256": "b6081c35e61f405e999e10044e9a68f862347da3c133070fe04dad9b54f2ecea",
+                "git_blob_sha1": "a7f4e506626903c8b90d1297415e51004ada8a17"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetState.srv",
+                "bytes": 71,
+                "sha256": "fc5e96531728baa4fcbc78d79b93e4c84e5787e288cc49d8c76ce8fcfef67292",
+                "git_blob_sha1": "b2569fa65ba13d3de35c482587332bd8fcb98458"
+              },
+              {
+                "path": "rcl_interfaces/srv/DescribeParameters.srv",
+                "bytes": 278,
+                "sha256": "6047a59261d6c19a4e8e921f06702cc0672e0e8b6a6854fe601b30edf02e5981",
+                "git_blob_sha1": "a8f0b9162c4bb92b0eb003ef9d8248394c53bec7"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameterTypes.srv",
+                "bytes": 322,
+                "sha256": "e5745ed79201f3ea515c13917f8d28780d16ed53c35f1b8d0f27c89945777bbe",
+                "git_blob_sha1": "cdf0e78d8727c6304d0baab30fc3c8ee886046fe"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameters.srv",
+                "bytes": 518,
+                "sha256": "3ae49531812d8813350fad5261905a88939f8352f8a08fd238dcae19a08e59f7",
+                "git_blob_sha1": "1822479bca1c947446fda9b4a158cfdb723b8e61"
+              },
+              {
+                "path": "rcl_interfaces/srv/ListParameters.srv",
+                "bytes": 369,
+                "sha256": "8254b67551049b2dc477d2fad286b645588227188482436d1b3bc0041731ed8b",
+                "git_blob_sha1": "ee1b7a6ffa6f40d27f59d369e24e4eccca9c378f"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParameters.srv",
+                "bytes": 158,
+                "sha256": "6a0dcce330e51f954350e4ca3095fff7a7c0a0fa1c9d986b1dad340afb05f70a",
+                "git_blob_sha1": "97d11796b67e2c6deb0deafb12dbadc87546cd9e"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParametersAtomically.srv",
+                "bytes": 238,
+                "sha256": "8593b435156b70299a4664839dc1b799ff22a7b7c0c27cec7b33bcc336389954",
+                "git_blob_sha1": "2df928a4fddd5a2accd9363821ca1bf9abe9b956"
+              },
+              {
+                "path": "test_msgs/action/NestedMessage.action",
+                "bytes": 381,
+                "sha256": "cb976305a0af5bc92868e74e9d0e9d088285608c668b09195c8e7d53089ae835",
+                "git_blob_sha1": "f0c7cf279cfbfe5210212cd3f3297bd605792d16"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        }
+      ]
+    },
+    {
+      "profile": "ros2_jazzy",
+      "ros_major": 2,
+      "distribution": "jazzy",
+      "legacy_catalog": "clearpath-jazzy-complete",
+      "source_lock_sha256": "19b7fa51844109a4185a2079c51dea250bc265bc9081891918fae8f7dd5bfad4",
+      "repositories": [
+        {
+          "id": "common_jazzy",
+          "url": "https://github.com/ros2/common_interfaces",
+          "branch": "jazzy",
+          "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+          "tree_git_sha1": "bbd609d90753abf6e10bdc94f594f36b75921677",
+          "archive": {
+            "url": "https://codeload.github.com/ros2/common_interfaces/tar.gz/a941f14bb318d8d904505ed935ccbb97f24a70a4",
+            "bytes": 150460,
+            "sha256": "4140cc780aec296bcd88c3049ba541783d40fbb7dd0e5919e621a85e314416ba"
+          },
+          "default_authority": [],
+          "scope": "Unchanged selected original interfaces/source and complete original acquisition archive; no compilation, native or robot execution.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "diagnostic_msgs/srv/AddDiagnostics.srv",
+                "bytes": 1458,
+                "sha256": "e88df6a6769a9ee85480aa2b1adac052fa368b4a00016f1a9b8422fdacdf1767",
+                "git_blob_sha1": "413c4019d73e3860dd09c51b5d6a078bf57a7bcb"
+              },
+              {
+                "path": "diagnostic_msgs/srv/SelfTest.srv",
+                "bytes": 52,
+                "sha256": "3a95f0dfd99d48a34b58608a80443e9bcd343ebd76d8865f58f8b9b312b6d38f",
+                "git_blob_sha1": "ee2974d4270d5c37aedd4b2253d0075b91582f74"
+              },
+              {
+                "path": "nav_msgs/srv/GetMap.srv",
+                "bytes": 110,
+                "sha256": "b4bdbb1875bfd2b22596e238cb9571f0baec6505032f7df8cc7e5cd47bfd3adc",
+                "git_blob_sha1": "91be6a7bdf5593b58a1815be2e5f2096f654d68d"
+              },
+              {
+                "path": "nav_msgs/srv/GetPlan.srv",
+                "bytes": 400,
+                "sha256": "84582c21447bd35286bbf93b9ca80de69e964cad577fa6ac44aabdbba43cba2e",
+                "git_blob_sha1": "689290a632bef9aff8f5186211b387e03f237b64"
+              },
+              {
+                "path": "nav_msgs/srv/LoadMap.srv",
+                "bytes": 473,
+                "sha256": "301ea2a2226e8723ae8a421eefc4dfbc0e3ed7819402583bd13c034f0802d3aa",
+                "git_blob_sha1": "3b9caaad47004e34d800ef84aae0553a8e2e5077"
+              },
+              {
+                "path": "nav_msgs/srv/SetMap.srv",
+                "bytes": 280,
+                "sha256": "14b58f196f2eafdeb75d2b913af3687665cce880aef970e03e6a6c014cd6fbed",
+                "git_blob_sha1": "5270d458bd409ad922289e457388af8930afd2f5"
+              },
+              {
+                "path": "sensor_msgs/srv/SetCameraInfo.srv",
+                "bytes": 597,
+                "sha256": "d7e720e522387083ff70c0b9e8aacec379c416d8d04f3cdca55de2008beba1f3",
+                "git_blob_sha1": "98b5b261d409d1b44fd7b50586777d380ed46249"
+              },
+              {
+                "path": "std_srvs/srv/Empty.srv",
+                "bytes": 4,
+                "sha256": "f52d711103d50a437830c6fbcd04fb4bab49a0f82f6d26d1c791c6e8488dd090",
+                "git_blob_sha1": "ed97d539c095cf1413af30cc23dea272095b97dd"
+              },
+              {
+                "path": "std_srvs/srv/SetBool.srv",
+                "bytes": 173,
+                "sha256": "a36d99cd5f0467a58a5b06b1443e9ffc0fcb59977190def5ef677fd16f05a664",
+                "git_blob_sha1": "93003477744daee97782eeafe272eccece948b7b"
+              },
+              {
+                "path": "std_srvs/srv/Trigger.srv",
+                "bytes": 122,
+                "sha256": "81e80d26771d0c0af8783938720c763cacc429e68d9d6b9c1f912474db0d8dca",
+                "git_blob_sha1": "371dfd22e1508994dacdf1fa93290f46d138fcaa"
+              },
+              {
+                "path": "visualization_msgs/srv/GetInteractiveMarkers.srv",
+                "bytes": 287,
+                "sha256": "a5291d771d7568d176844b2322c5d91b389370e8c25015a5ae00d63fac4471ea",
+                "git_blob_sha1": "493e885ec305e7d0beadda281c3297ea341fdfba"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        },
+        {
+          "id": "driver_jazzy",
+          "url": "https://github.com/clearpathrobotics/clearpath_robot",
+          "branch": "jazzy",
+          "commit": "1f73b9416bc2c1426424d2cd5b641a53c916da45",
+          "tree_git_sha1": "85c1af4e5729e96d9f50b04d08b6ee0e1cb36c0a",
+          "archive": {
+            "url": "https://codeload.github.com/clearpathrobotics/clearpath_robot/tar.gz/1f73b9416bc2c1426424d2cd5b641a53c916da45",
+            "bytes": 264324,
+            "sha256": "778225ea547d9362627b5bc1677e21f9c61f7f781f488e1de0f05c0688d28cde"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "msgs_jazzy",
+          "url": "https://github.com/clearpathrobotics/clearpath_msgs",
+          "branch": "jazzy",
+          "commit": "11aa5eb22a84bd38443c180b1218b5c35486ba19",
+          "tree_git_sha1": "72e73cf1dce18ec7dafcd76c464c6bc23f9f49c7",
+          "archive": {
+            "url": "https://codeload.github.com/clearpathrobotics/clearpath_msgs/tar.gz/11aa5eb22a84bd38443c180b1218b5c35486ba19",
+            "bytes": 14080,
+            "sha256": "8b40f7882e02e3fe2c203deaee2228d72a39c667a8e5536f4743908a687fb4d1"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "rcl_jazzy",
+          "url": "https://github.com/ros2/rcl_interfaces",
+          "branch": "jazzy",
+          "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+          "tree_git_sha1": "4515d6d00cf6209db404352534818e4199fe33c9",
+          "archive": {
+            "url": "https://codeload.github.com/ros2/rcl_interfaces/tar.gz/7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+            "bytes": 48039,
+            "sha256": "d984942035cd4df4f60c92d6038cecbfc3f5a01a1977c1b3199cee45cd67281c"
+          },
+          "default_authority": [],
+          "scope": "Unchanged selected original interfaces/source and complete original acquisition archive; no compilation, native or robot execution.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "action_msgs/srv/CancelGoal.srv",
+                "bytes": 1453,
+                "sha256": "5f4dc57f41cab2fd1987a61d5821282ece5075e38e5044f90126ab62c98fac20",
+                "git_blob_sha1": "86afbdbf4eacb2c55c1faf8da3a17946c5f0fa9b"
+              },
+              {
+                "path": "composition_interfaces/srv/ListNodes.srv",
+                "bytes": 167,
+                "sha256": "7b01c631b25d12e91315098748bb526f19101c70041613704ac8f09b7482db63",
+                "git_blob_sha1": "4b1421eb4031b37e38cd90f614cd303e66b5d9e3"
+              },
+              {
+                "path": "composition_interfaces/srv/LoadNode.srv",
+                "bytes": 1253,
+                "sha256": "db83f2776f37bf2cbe94ba8d3e8fefb0bca5b3edaa978e2b151c16f41bb47f11",
+                "git_blob_sha1": "ffd243f3a518362e11ccf059417b5a6bd037a8d1"
+              },
+              {
+                "path": "composition_interfaces/srv/UnloadNode.srv",
+                "bytes": 221,
+                "sha256": "6b6106bb2ba8ec9c8fd3812ab57a57775da388d12754bc6b266e1a883618f4d9",
+                "git_blob_sha1": "0fa36a516759a491a799a7f15a84a54f30ff5189"
+              },
+              {
+                "path": "lifecycle_msgs/srv/ChangeState.srv",
+                "bytes": 217,
+                "sha256": "a724c2437f5dc7eda1120f79ac30f945fea1475ac62654936f0d04530b1aef23",
+                "git_blob_sha1": "1bad3d1012bcd67269d05c893770be9b4dfa48d5"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableStates.srv",
+                "bytes": 85,
+                "sha256": "ab291560449fc5914c35cb9a9ec14cedfa67f6b643d4b7abb6c98cfb29e76f0d",
+                "git_blob_sha1": "2faa79b03d1f094781b03ced38e553fe984196e2"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableTransitions.srv",
+                "bytes": 112,
+                "sha256": "b6081c35e61f405e999e10044e9a68f862347da3c133070fe04dad9b54f2ecea",
+                "git_blob_sha1": "a7f4e506626903c8b90d1297415e51004ada8a17"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetState.srv",
+                "bytes": 71,
+                "sha256": "fc5e96531728baa4fcbc78d79b93e4c84e5787e288cc49d8c76ce8fcfef67292",
+                "git_blob_sha1": "b2569fa65ba13d3de35c482587332bd8fcb98458"
+              },
+              {
+                "path": "rcl_interfaces/srv/DescribeParameters.srv",
+                "bytes": 278,
+                "sha256": "6047a59261d6c19a4e8e921f06702cc0672e0e8b6a6854fe601b30edf02e5981",
+                "git_blob_sha1": "a8f0b9162c4bb92b0eb003ef9d8248394c53bec7"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetLoggerLevels.srv",
+                "bytes": 220,
+                "sha256": "80d7c2ffe896e3b8d0ee228b78a5783d544887bbd3bd4549ef9d2a83403bae3c",
+                "git_blob_sha1": "3c0884e53b8f19bb7a67357ec172f0f6fa31085a"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameterTypes.srv",
+                "bytes": 322,
+                "sha256": "e5745ed79201f3ea515c13917f8d28780d16ed53c35f1b8d0f27c89945777bbe",
+                "git_blob_sha1": "cdf0e78d8727c6304d0baab30fc3c8ee886046fe"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameters.srv",
+                "bytes": 518,
+                "sha256": "3ae49531812d8813350fad5261905a88939f8352f8a08fd238dcae19a08e59f7",
+                "git_blob_sha1": "1822479bca1c947446fda9b4a158cfdb723b8e61"
+              },
+              {
+                "path": "rcl_interfaces/srv/ListParameters.srv",
+                "bytes": 369,
+                "sha256": "8254b67551049b2dc477d2fad286b645588227188482436d1b3bc0041731ed8b",
+                "git_blob_sha1": "ee1b7a6ffa6f40d27f59d369e24e4eccca9c378f"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetLoggerLevels.srv",
+                "bytes": 152,
+                "sha256": "f418e17d4db720944d1edae8073ae6df1499677c8f1a11ca19b0bcba6a19d44d",
+                "git_blob_sha1": "7a83b1b01c605bf6906449c1741d68de0926907d"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParameters.srv",
+                "bytes": 158,
+                "sha256": "6a0dcce330e51f954350e4ca3095fff7a7c0a0fa1c9d986b1dad340afb05f70a",
+                "git_blob_sha1": "97d11796b67e2c6deb0deafb12dbadc87546cd9e"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParametersAtomically.srv",
+                "bytes": 238,
+                "sha256": "8593b435156b70299a4664839dc1b799ff22a7b7c0c27cec7b33bcc336389954",
+                "git_blob_sha1": "2df928a4fddd5a2accd9363821ca1bf9abe9b956"
+              },
+              {
+                "path": "test_msgs/action/NestedMessage.action",
+                "bytes": 381,
+                "sha256": "cb976305a0af5bc92868e74e9d0e9d088285608c668b09195c8e7d53089ae835",
+                "git_blob_sha1": "f0c7cf279cfbfe5210212cd3f3297bd605792d16"
+              },
+              {
+                "path": "type_description_interfaces/srv/GetTypeDescription.srv",
+                "bytes": 1182,
+                "sha256": "3e26a2ac0c055cc8c1b6bd50c4b5c9cdd750a5604027c20cc23519a1905b4f5f",
+                "git_blob_sha1": "9d34d0d0b4139a85499793c83aa7fb102f68e8c3"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        }
+      ]
+    },
+    {
+      "profile": "ros2_main",
+      "ros_major": 2,
+      "distribution": "rolling",
+      "legacy_catalog": "clearpath-main-complete",
+      "source_lock_sha256": "d8d3f08fa94a14aee2aa7d0291e7e8f619237f636423dc305732b10e42436b83",
+      "repositories": [
+        {
+          "id": "common_rolling",
+          "url": "https://github.com/ros2/common_interfaces",
+          "branch": "rolling",
+          "commit": "56be9f336d3ed54d18b3821d3b2b183123ec17d8",
+          "tree_git_sha1": "0371125c5a3b409d8ae32fff3e66ce9b8f3a6961",
+          "archive": {
+            "url": "https://codeload.github.com/ros2/common_interfaces/tar.gz/56be9f336d3ed54d18b3821d3b2b183123ec17d8",
+            "bytes": 151445,
+            "sha256": "5fc6947ff1fcdedc73d3a454b21e827d2a4a2233a900c15e8bdc78ddc95e2c85"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "driver_main",
+          "url": "https://github.com/clearpathrobotics/clearpath_robot",
+          "branch": "main",
+          "commit": "18906e74507ed98e778d4b44b59326a063708db0",
+          "tree_git_sha1": "36f6b44b0e3bf745373e45a44c609ec8b1709a88",
+          "archive": {
+            "url": "https://codeload.github.com/clearpathrobotics/clearpath_robot/tar.gz/18906e74507ed98e778d4b44b59326a063708db0",
+            "bytes": 49963,
+            "sha256": "81fb1e97a3321467547e54a08310232a2838fc735ad39cb576cf889b3ea4f23a"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "msgs_main",
+          "url": "https://github.com/clearpathrobotics/clearpath_msgs",
+          "branch": "main",
+          "commit": "b1300765c4a11e257ac427e9b7623da921f2d833",
+          "tree_git_sha1": "7b87d692bdbb3dccb99820bfb0a8f59e8c6db344",
+          "archive": {
+            "url": "https://codeload.github.com/clearpathrobotics/clearpath_msgs/tar.gz/b1300765c4a11e257ac427e9b7623da921f2d833",
+            "bytes": 5685,
+            "sha256": "f1a11d84eb9abe2c2131ac425cc7d93145e20281d0d85f110092a095eeaefd18"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "rcl_rolling",
+          "url": "https://github.com/ros2/rcl_interfaces",
+          "branch": "rolling",
+          "commit": "614f3c4942e1a67a568546cb805ff3e0ff7777f5",
+          "tree_git_sha1": "1fc8125d7a10587a81e083994142d313ad1903db",
+          "archive": {
+            "url": "https://codeload.github.com/ros2/rcl_interfaces/tar.gz/614f3c4942e1a67a568546cb805ff3e0ff7777f5",
+            "bytes": 49809,
+            "sha256": "42c8ecac42e99b2a68f3eda231a99be0e8511cb690be84a94e64e99959081bb2"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        }
+      ]
+    }
+  ],
+  "default_authority": [],
+  "native_registration_qualified": false,
+  "models": [
+    "generic",
+    "husky",
+    "jackal"
+  ]
+}

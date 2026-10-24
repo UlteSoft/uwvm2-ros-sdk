@@ -1,0 +1,219 @@
+{
+  "id": "ros2_lyrical_v1",
+  "backend": "ros2",
+  "distribution": "lyrical",
+  "bundle": "flexiv-ros2-lyrical-v1-complete",
+  "catalog": "share/platform/flexiv/catalogs/ros2_lyrical_v1/catalog.json",
+  "catalog_sha256": "a30b3ef676effa6d91be7844827b3b0e1775b75b290c6c8b875d3b93618ffc78",
+  "records": 57,
+  "interfaces": 39,
+  "fields": 163,
+  "constants": 54,
+  "source_inputs": {
+    "catalog": {
+      "bytes": 11602,
+      "sha256": "a30b3ef676effa6d91be7844827b3b0e1775b75b290c6c8b875d3b93618ffc78"
+    },
+    "definitions": [
+      {
+        "file": "builtin_interfaces/msg/Time.msg",
+        "bytes": 421,
+        "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+      },
+      {
+        "file": "flexiv_msgs/action/ErrorRecovery.action",
+        "bytes": 1511,
+        "sha256": "dc028136a2af814d4ac79da26b6fb69abb8838c6b16d7a9800ea2187d52974e9"
+      },
+      {
+        "file": "flexiv_msgs/action/Grasp.action",
+        "bytes": 116,
+        "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c"
+      },
+      {
+        "file": "flexiv_msgs/action/Move.action",
+        "bytes": 161,
+        "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8"
+      },
+      {
+        "file": "flexiv_msgs/msg/CartesianMotionForce.msg",
+        "bytes": 759,
+        "sha256": "fc8db2dcf45bbe32790e15c023fdc856dba01aad94b6a2b68b8e6a25a3fbdaf4"
+      },
+      {
+        "file": "flexiv_msgs/msg/Digital.msg",
+        "bytes": 21,
+        "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b"
+      },
+      {
+        "file": "flexiv_msgs/msg/GPIOStates.msg",
+        "bytes": 17,
+        "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629"
+      },
+      {
+        "file": "flexiv_msgs/msg/JointImpedance.msg",
+        "bytes": 756,
+        "sha256": "c7ef77c08cb85f57dc1adfd5256ff792632a5c36c5cd338a8a4421462942cd67"
+      },
+      {
+        "file": "flexiv_msgs/msg/JointInertiaScale.msg",
+        "bytes": 692,
+        "sha256": "1e1918f58c5ad198a36e1e796185d0353e0e96c0214a7db50be4e0fd6b4ba57c"
+      },
+      {
+        "file": "flexiv_msgs/msg/JointPosVel.msg",
+        "bytes": 41,
+        "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b"
+      },
+      {
+        "file": "flexiv_msgs/msg/MaxContactTorque.msg",
+        "bytes": 705,
+        "sha256": "daeb075dd4e3c44c3cc8dc56cd29648fd56aec2eb2f0d70d9c1e2ccdc6a491d7"
+      },
+      {
+        "file": "flexiv_msgs/msg/Mode.msg",
+        "bytes": 577,
+        "sha256": "32541d8e8122ff30e21360c65ba9f4a9d7f24d8c526272fa6f76d69f05079a91"
+      },
+      {
+        "file": "flexiv_msgs/msg/OperationalStatus.msg",
+        "bytes": 1588,
+        "sha256": "419c332be71ea5199c63907b81945cfe724f05f56eb7ef88690473e019fd9936"
+      },
+      {
+        "file": "flexiv_msgs/msg/RecoveryPolicy.msg",
+        "bytes": 626,
+        "sha256": "329fb02a248def2bd62b0f4c7cefa7f03fe79a5ff1d44ac93436413c25e38601"
+      },
+      {
+        "file": "flexiv_msgs/msg/RobotEvent.msg",
+        "bytes": 543,
+        "sha256": "da04febf57ecf1da890c4b2698638684d14d35412baf144c57588f27e219bb39"
+      },
+      {
+        "file": "flexiv_msgs/msg/RobotStates.msg",
+        "bytes": 1482,
+        "sha256": "1eb53f80f2c3fdfb050df717dea3ff33b4301ae0a5f309355bfe46139f48df3a"
+      },
+      {
+        "file": "flexiv_msgs/srv/GetOperationalStatus.srv",
+        "bytes": 96,
+        "sha256": "f11651848b7cc8fa448ac022c78b61541612f63a6f87e8318b2fe1c455480245"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetCartesianImpedance.srv",
+        "bytes": 696,
+        "sha256": "7fd8b550587dfc0144d17d318a8d4354de93b3d9bae01b220d4946b6e4b67bbf"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetCartesianMotionLimits.srv",
+        "bytes": 803,
+        "sha256": "eb4d1d503b492d872d90c44642355775ccd2ec28fc5c9b0fe4a83d80cf0ee5d9"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetForceControlAxis.srv",
+        "bytes": 668,
+        "sha256": "04d6cf9d8feca568faa8edfee0692159ce160731744d7a3f86f97ed9acd47a85"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetForceControlFrame.srv",
+        "bytes": 648,
+        "sha256": "4bcdfde59d8ea2ab8c7dd61a58b20c5fa8aa8b8dbf4692a75a0747247542a7c4"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetJointImpedance.srv",
+        "bytes": 1056,
+        "sha256": "6e3d7659b18e2ed0ca81e25fe765ed030c4e477ac7466ea2a95011365cfc6dee"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetJointInertiaScale.srv",
+        "bytes": 783,
+        "sha256": "df53c223afeae42585d8e859041d0d25874d806ea947683899fba5d1eab7f88b"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetMaxContactTorque.srv",
+        "bytes": 827,
+        "sha256": "814b9a80a9da8d4bc0fe3a6a90d26a65da63c82e36f7b3e5d9680c4aaed3920a"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetMaxContactWrench.srv",
+        "bytes": 485,
+        "sha256": "731404d0b6f633969ba26e4954399df71a7714ee8323829588d0de1cedb098c8"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetNullSpaceObjectives.srv",
+        "bytes": 696,
+        "sha256": "0d18e8873ce87a22d3f48fdb2ab292fc0e454cd3b92e8999b0a59d76295e2815"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetNullSpacePosture.srv",
+        "bytes": 418,
+        "sha256": "623926fc25ddea3bb81e97173d2590abf6d73e551ca98601b796412de5c785d7"
+      },
+      {
+        "file": "flexiv_msgs/srv/SetPassiveForceControl.srv",
+        "bytes": 417,
+        "sha256": "fca5b46f9ad4a3182d272e6bbc05e1766838b0e902abef12b9195a91104275b7"
+      },
+      {
+        "file": "geometry_msgs/msg/Accel.msg",
+        "bytes": 119,
+        "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+      },
+      {
+        "file": "geometry_msgs/msg/AccelStamped.msg",
+        "bytes": 92,
+        "sha256": "c46e9fcf5551d2330b63b1efe0626f747bcda24ddcc9e281597a9354b3bd9eea"
+      },
+      {
+        "file": "geometry_msgs/msg/Point.msg",
+        "bytes": 84,
+        "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+      },
+      {
+        "file": "geometry_msgs/msg/Pose.msg",
+        "bytes": 119,
+        "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+      },
+      {
+        "file": "geometry_msgs/msg/PoseStamped.msg",
+        "bytes": 89,
+        "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+      },
+      {
+        "file": "geometry_msgs/msg/Quaternion.msg",
+        "bytes": 116,
+        "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+      },
+      {
+        "file": "geometry_msgs/msg/Twist.msg",
+        "bytes": 116,
+        "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+      },
+      {
+        "file": "geometry_msgs/msg/Vector3.msg",
+        "bytes": 251,
+        "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+      },
+      {
+        "file": "geometry_msgs/msg/Wrench.msg",
+        "bytes": 116,
+        "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+      },
+      {
+        "file": "geometry_msgs/msg/WrenchStamped.msg",
+        "bytes": 95,
+        "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+      },
+      {
+        "file": "std_msgs/msg/Header.msg",
+        "bytes": 322,
+        "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+      }
+    ]
+  },
+  "positive_infinity_semantics": true,
+  "native_identity": null,
+  "built": false,
+  "executed": false
+}

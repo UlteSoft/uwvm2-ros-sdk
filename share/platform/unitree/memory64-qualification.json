@@ -1,0 +1,55 @@
+{
+  "format": "uwvm-unitree-cfamily-memory64-final-audit-v1",
+  "status": "PASS",
+  "actual_review_cgroup": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "qualified_languages": [
+    "c",
+    "cpp"
+  ],
+  "standards_executed": [
+    "c17",
+    "c++23"
+  ],
+  "wasi": "p1",
+  "profile": "noeh",
+  "abi": "Uwvm Preview 1 memory64 extension",
+  "normal_memory64_artifacts": 12,
+  "normal_twelve_application_builds_reused_verified_compiler_cache": true,
+  "separate_true_cold_tool_memory64_builds": 2,
+  "cold_tool_builds_match_existing_qualified_artifacts": true,
+  "cold_tool_receipt_sha256": "8a3353e593ecb9c93c7d1ddc6138ab28ef71d9c9ec755d57b38125e03dc7e249",
+  "separate_memory64_abi_artifacts": 4,
+  "normal_memory64_native_runs": 48,
+  "separate_memory64_abi_native_runs": 16,
+  "separate_live_arm_native_runs": 2,
+  "wasm32_regression_artifacts_identical_to_prior": 12,
+  "wasm32_regression_native_runs": 16,
+  "actual_native_runs_total": 82,
+  "created": 82,
+  "closed": 82,
+  "configuration_acceptances": 24,
+  "configuration_refusals": 68,
+  "launcher_refusals": 36,
+  "exact_original132_memory_preflight_compatibility": true,
+  "original132_preflight_sha256": "35c98a5d0d305363db1eec6c9618788e9c9204d8edf703622471fe133ab96205",
+  "local_guest_or_compiler_execution": false,
+  "empty_host_tool_cache_claimed_for_original_twelve": false,
+  "separate_two_tool_caches_observed_empty_before_installation": true,
+  "original_twelve_reused_readonly_verified_host_compiler_cache": true,
+  "physical_arm_hardware_qualified": false,
+  "successful_allocation_above_4GiB_claimed": false,
+  "whole_54_record_memory64_codec_matrix_claimed": false,
+  "annotation_bridge_sha256": "472d607176149aca1818172d663f5266622d90d7c550d89a3213797326cf363f",
+  "publication_input_manifest_sha256": "5bb61d56267370e459d995018488e7119d3449e2a370324c025f1c0a4353c739",
+  "diagnostic_failures_retained": [
+    "smoke64",
+    "abi64-final",
+    "abi64-final-r2",
+    "ros2-container.json",
+    "selection-final"
+  ],
+  "final_audit_sha256": "306bf8b8772e6175bff686134d6a28d55484bb19cdf72e091bf5b58bdfadfdd3"
+}

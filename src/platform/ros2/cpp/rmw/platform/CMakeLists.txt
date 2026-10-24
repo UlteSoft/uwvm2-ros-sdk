@@ -1,0 +1,36 @@
+# @file CMakeLists.txt
+# @brief Build the platform native ROS integration from the canonical SDK layout.
+# @details Original ROS packages supply type support; SDK headers and definitions
+# remain in their public include and share roots. Configuration grants no ROS rights.
+cmake_minimum_required(VERSION 3.20)
+project(uwvm_rmw_platform LANGUAGES C)
+include("${CMAKE_CURRENT_LIST_DIR}/../../../../../../tools/platform/ros/cmake/SdkLayout.cmake")
+find_package(ament_cmake REQUIRED)
+option(UWVM_RMW_ENABLE_THREADED_PROFILE "Actual shared dispatch/pin/wait profile; rebuild the entire composition" OFF)
+if(UWVM_RMW_ENABLE_THREADED_PROFILE)
+  find_package(uwvm_rmw_dispatch REQUIRED)
+endif()
+if(NOT DEFINED UWVM_SDK_INCLUDE OR NOT EXISTS "${UWVM_SDK_INCLUDE}/roswasm/codec.h")
+  message(FATAL_ERROR "Select the canonical include/platform/ros/c raw headers; native ROS types come from original packages")
+endif()
+if(BUILD_SHARED_LIBS)
+  message(FATAL_ERROR "uwvm_rmw_platform is a static WASI platform")
+endif()
+add_library(uwvm_rmw_platform STATIC src/platform.c)
+uwvm_ros_rmw_target_headers(uwvm_rmw_platform)
+target_compile_features(uwvm_rmw_platform PUBLIC c_std_11)
+if(UWVM_RMW_ENABLE_THREADED_PROFILE)
+  target_link_libraries(uwvm_rmw_platform PUBLIC uwvm_rmw_dispatch::uwvm_rmw_dispatch)
+  target_compile_definitions(uwvm_rmw_platform PUBLIC UWVM_RMW_PLATFORM_THREADED=1)
+else()
+  target_compile_definitions(uwvm_rmw_platform PUBLIC UWVM_RMW_PLATFORM_THREADED=0)
+endif()
+
+install(TARGETS uwvm_rmw_platform EXPORT uwvm_rmw_platform ARCHIVE DESTINATION lib)
+
+uwvm_ros_rmw_install_headers()
+ament_export_targets(uwvm_rmw_platform HAS_LIBRARY_TARGET)
+if(UWVM_RMW_ENABLE_THREADED_PROFILE)
+  ament_export_dependencies(uwvm_rmw_dispatch)
+endif()
+ament_package()

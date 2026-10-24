@@ -1,0 +1,3677 @@
+{
+  "format": "vendor-complete-ir-v1",
+  "platform": "universal_robots",
+  "domain": "universal-robots-polyscopex-complete",
+  "backend": "ros2",
+  "default_authority": [],
+  "native_registry_emitted": false,
+  "records": [
+    {
+      "symbol": "Ros2Builtin_interfacesMsgTime",
+      "ros_version": 2,
+      "native_type": "builtin_interfaces/msg/Time",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "minimum": 8,
+      "maximum": 8,
+      "semantics": "normalized-time",
+      "fields": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "builtin_interfaces/msg/Time"
+    },
+    {
+      "symbol": "Ros2Geometry_msgsMsgPoint",
+      "ros_version": 2,
+      "native_type": "geometry_msgs/msg/Point",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616",
+      "minimum": 24,
+      "maximum": 24,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "geometry_msgs/msg/Point"
+    },
+    {
+      "symbol": "Ros2Geometry_msgsMsgQuaternion",
+      "ros_version": 2,
+      "native_type": "geometry_msgs/msg/Quaternion",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672",
+      "minimum": 32,
+      "maximum": 32,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8,
+          "default": "0.0"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8,
+          "default": "0.0"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8,
+          "default": "0.0"
+        },
+        {
+          "name": "w",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8,
+          "default": "1.0"
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "w",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "1.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "geometry_msgs/msg/Quaternion"
+    },
+    {
+      "symbol": "Ros2Geometry_msgsMsgPose",
+      "ros_version": 2,
+      "native_type": "geometry_msgs/msg/Pose",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777",
+      "minimum": 56,
+      "maximum": 56,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "position",
+          "type": "Ros2Geometry_msgsMsgPoint",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 24
+        },
+        {
+          "name": "orientation",
+          "type": "Ros2Geometry_msgsMsgQuaternion",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 32
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "position",
+          "type": "geometry_msgs/msg/Point",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "orientation",
+          "type": "geometry_msgs/msg/Quaternion",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "geometry_msgs/msg/Pose"
+    },
+    {
+      "symbol": "Ros2Geometry_msgsMsgVector3",
+      "ros_version": 2,
+      "native_type": "geometry_msgs/msg/Vector3",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_5adebf211fe375fba92c0628f9b8ebf05bff9ab22ddc4bbf00629167af295d5e",
+      "minimum": 24,
+      "maximum": 24,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "geometry_msgs/msg/Vector3"
+    },
+    {
+      "symbol": "Ros2Geometry_msgsMsgTwist",
+      "ros_version": 2,
+      "native_type": "geometry_msgs/msg/Twist",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_1a6c18d19bb6853a2cff3b775974ba31f8e3674c1bbe566444ccabf0ef9d117e",
+      "minimum": 48,
+      "maximum": 48,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "linear",
+          "type": "Ros2Geometry_msgsMsgVector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 24
+        },
+        {
+          "name": "angular",
+          "type": "Ros2Geometry_msgsMsgVector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 24
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "linear",
+          "type": "geometry_msgs/msg/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "angular",
+          "type": "geometry_msgs/msg/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "geometry_msgs/msg/Twist"
+    },
+    {
+      "symbol": "Ros2Std_msgsMsgHeader",
+      "ros_version": 2,
+      "native_type": "std_msgs/msg/Header",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+      "minimum": 12,
+      "maximum": 140,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "stamp",
+          "type": "Ros2Builtin_interfacesMsgTime",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        },
+        {
+          "name": "frame_id",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 128,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "frame_id",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "std_msgs/msg/Header"
+    },
+    {
+      "symbol": "Ros2Std_msgsMsgString",
+      "ros_version": 2,
+      "native_type": "std_msgs/msg/String",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_c48b5497cbf487f56eb073a982b93acd501c6bb72f0e9ef9dce2175ce7ac15c5",
+      "minimum": 4,
+      "maximum": 1028,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "data",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 1024,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "data",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 1024,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "std_msgs/msg/String"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgRobotMode",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/RobotMode",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_a16ec0ed8caa1a2b48cd4116d88877911921848469cd139f4783e4f2c549e7ea",
+      "minimum": 13,
+      "maximum": 141,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {
+        "DISCONNECTED": {
+          "type": "int8",
+          "value": "0"
+        },
+        "CONFIRM_SAFETY": {
+          "type": "int8",
+          "value": "1"
+        },
+        "BOOTING": {
+          "type": "int8",
+          "value": "2"
+        },
+        "POWER_OFF": {
+          "type": "int8",
+          "value": "3"
+        },
+        "POWER_ON": {
+          "type": "int8",
+          "value": "4"
+        },
+        "IDLE": {
+          "type": "int8",
+          "value": "5"
+        },
+        "BACKDRIVE": {
+          "type": "int8",
+          "value": "6"
+        },
+        "RUNNING": {
+          "type": "int8",
+          "value": "7"
+        },
+        "UPDATING_FIRMWARE": {
+          "type": "int8",
+          "value": "8"
+        }
+      },
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/RobotMode"
+    },
+    {
+      "symbol": "Ros2UrinterfacesActionSetMode_Goal",
+      "ros_version": 2,
+      "native_type": "urinterfaces/action/SetMode_Goal",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_d1d998e217d6f3d3eefd8ffccecff8463580346150a59a1c7a2dac8d609e0e09",
+      "minimum": 15,
+      "maximum": 143,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "target_robot_mode",
+          "type": "Ros2UrinterfacesMsgRobotMode",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 13
+        },
+        {
+          "name": "stop_program",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "play_program",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1,
+          "default": "False"
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "target_robot_mode",
+          "type": "urinterfaces/msg/RobotMode",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "stop_program",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "play_program",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "False",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "goal",
+      "owner": "urinterfaces/action/SetMode"
+    },
+    {
+      "symbol": "Ros2UrinterfacesActionSetMode_Result",
+      "ros_version": 2,
+      "native_type": "urinterfaces/action/SetMode_Result",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_500243a508824c42fe2da424040aa60bf2426ac607f2f6016fab014f81518af7",
+      "minimum": 5,
+      "maximum": 261,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "result",
+      "owner": "urinterfaces/action/SetMode"
+    },
+    {
+      "symbol": "Ros2UrinterfacesActionSetMode_Feedback",
+      "ros_version": 2,
+      "native_type": "urinterfaces/action/SetMode_Feedback",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_22fb71c17066829bd66c98bc631c82b2bfef3c501e08960a6bfad3d902f76537",
+      "minimum": 2,
+      "maximum": 2,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "current_robot_mode",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "current_safety_mode",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "current_robot_mode",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "current_safety_mode",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "feedback",
+      "owner": "urinterfaces/action/SetMode"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgActiveTCP",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/ActiveTCP",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_e62d31728eca201dee256d88d1d268bf2ecb9607ed5c48783432f966edf459ae",
+      "minimum": 16,
+      "maximum": 400,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/ActiveTCP"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgAnalog",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/Analog",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_e81cffd909f3bc387ee00c37537434341ef93fd160e465be033aa9bc412b979b",
+      "minimum": 6,
+      "maximum": 6,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "pin",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "domain",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "value",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {
+        "CURRENT": {
+          "type": "uint8",
+          "value": "0"
+        },
+        "VOLTAGE": {
+          "type": "uint8",
+          "value": "1"
+        }
+      },
+      "members": [
+        {
+          "name": "pin",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "domain",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "value",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/Analog"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgAnalogIO",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/AnalogIO",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_3130f3e3857f21bab5092d9c6abea8c45965c07ebb9c1ab14b28fa51b7d71e0c",
+      "minimum": 8,
+      "maximum": 200,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "analog_inputs",
+          "type": "Ros2UrinterfacesMsgAnalog",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 6
+        },
+        {
+          "name": "analog_outputs",
+          "type": "Ros2UrinterfacesMsgAnalog",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 6
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "analog_inputs",
+          "type": "urinterfaces/msg/Analog",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "analog_outputs",
+          "type": "urinterfaces/msg/Analog",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/AnalogIO"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgAnalogIOStateStamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/AnalogIOStateStamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_a40e839bb4acfcb26503c79f01216b7aea9ab8ff25c50dca42578b206ab40a89",
+      "minimum": 20,
+      "maximum": 340,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "io_state",
+          "type": "Ros2UrinterfacesMsgAnalogIO",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "io_state",
+          "type": "urinterfaces/msg/AnalogIO",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/AnalogIOStateStamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgAnalogStamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/AnalogStamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_749557c6e79b882385927c62d3c45963797ce116d7be6235bd9f186a7b4da76c",
+      "minimum": 18,
+      "maximum": 146,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "Ros2UrinterfacesMsgAnalog",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 6
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "urinterfaces/msg/Analog",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/AnalogStamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgBoolStamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/BoolStamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_1a4128638df10bd9a8d33af0ed3c2ee9b4deb771d45dfe83f2a9a75c7f77de66",
+      "minimum": 13,
+      "maximum": 141,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/BoolStamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgControlCycle",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/ControlCycle",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_99a4d96e5673f5ac49eab13cd8b28af55ac83e1626c39ed20ff46655df4d6278",
+      "minimum": 20,
+      "maximum": 148,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/ControlCycle"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgCurrent",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/Current",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_759f2139335bcb720f7f4a38cd8b1413f203f2dd2b72149fa0de0fb7a0a778df",
+      "minimum": 16,
+      "maximum": 144,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/Current"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgDigital",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/Digital",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_c60c73df0383bb9a3e23ae3148cff9d6eb49b88c2d10add0af6a86ec9af54512",
+      "minimum": 2,
+      "maximum": 2,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "pin",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "state",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "pin",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "state",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/Digital"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgDigitalIO",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/DigitalIO",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_11235b6010feb7e3e5e6c2be8acd3fbba1c25ecbf97ae5e0c899a0e3de3c4e4a",
+      "minimum": 8,
+      "maximum": 136,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "digital_inputs",
+          "type": "Ros2UrinterfacesMsgDigital",
+          "array": "sequence",
+          "count": 32,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 2
+        },
+        {
+          "name": "digital_outputs",
+          "type": "Ros2UrinterfacesMsgDigital",
+          "array": "sequence",
+          "count": 32,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 2
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "digital_inputs",
+          "type": "urinterfaces/msg/Digital",
+          "array": "sequence",
+          "count": 32,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "digital_outputs",
+          "type": "urinterfaces/msg/Digital",
+          "array": "sequence",
+          "count": 32,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/DigitalIO"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgDigitalIOStateStamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/DigitalIOStateStamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_542db76916f234e79216804426dc4e8d386a0ef547907391c921f51ed45e64c9",
+      "minimum": 28,
+      "maximum": 412,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "configurable_io",
+          "type": "Ros2UrinterfacesMsgDigitalIO",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        },
+        {
+          "name": "standard_io",
+          "type": "Ros2UrinterfacesMsgDigitalIO",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "configurable_io",
+          "type": "urinterfaces/msg/DigitalIO",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "standard_io",
+          "type": "urinterfaces/msg/DigitalIO",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/DigitalIOStateStamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgDigitalStamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/DigitalStamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_dc86d5a04c0801089ddf6b61b5fd33d63df8b5599550c6a0e84e19bbff375865",
+      "minimum": 14,
+      "maximum": 142,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "Ros2UrinterfacesMsgDigital",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 2
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "urinterfaces/msg/Digital",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/DigitalStamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgDoubleMultiArrayStamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/DoubleMultiArrayStamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_82b52f88248ea8d6cd7b809d1fd5aa55b4bbe1618044e739998a7ec74a23a8ae",
+      "minimum": 16,
+      "maximum": 272,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "float64",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "float64",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/DoubleMultiArrayStamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgFloat32Stamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/Float32Stamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_5989940d19890b6d3b78172e9920708745b78e35c1c4fb238412c37a813d30d3",
+      "minimum": 16,
+      "maximum": 144,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/Float32Stamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgFloat64Stamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/Float64Stamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_4f8950feff6f20dbdbf9cac1f01168824be3698a4bd90355a470b580930edb21",
+      "minimum": 20,
+      "maximum": 148,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/Float64Stamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgJointMode",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/JointMode",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_6d766192096ced3c8568a98fb286c309e00cfb97e34b2611fff70e5bb1eaa95c",
+      "minimum": 19,
+      "maximum": 147,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "joint_modes",
+          "type": "uint8",
+          "array": "array",
+          "count": 6,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "tool_mode",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {
+        "JOINT_MODE_RESET": {
+          "type": "uint8",
+          "value": "235"
+        },
+        "JOINT_MODE_SHUTTING_DOWN": {
+          "type": "uint8",
+          "value": "236"
+        },
+        "JOINT_MODE_PART_D_CALIBRATION": {
+          "type": "uint8",
+          "value": "237"
+        },
+        "JOINT_MODE_BACKDRIVE": {
+          "type": "uint8",
+          "value": "238"
+        },
+        "JOINT_MODE_POWER_OFF": {
+          "type": "uint8",
+          "value": "239"
+        },
+        "JOINT_MODE_READY_FOR_POWER_OFF": {
+          "type": "uint8",
+          "value": "240"
+        },
+        "JOINT_MODE_NOT_RESPONDING": {
+          "type": "uint8",
+          "value": "245"
+        },
+        "JOINT_MODE_MOTOR_INITIALISATION": {
+          "type": "uint8",
+          "value": "246"
+        },
+        "JOINT_MODE_BOOTING": {
+          "type": "uint8",
+          "value": "247"
+        },
+        "JOINT_MODE_PART_D_CALIBRATION_ERROR": {
+          "type": "uint8",
+          "value": "248"
+        },
+        "JOINT_MODE_BOOTLOADER": {
+          "type": "uint8",
+          "value": "249"
+        },
+        "JOINT_MODE_CALIBRATION": {
+          "type": "uint8",
+          "value": "250"
+        },
+        "JOINT_MODE_VIOLATION": {
+          "type": "uint8",
+          "value": "251"
+        },
+        "JOINT_MODE_FAULT": {
+          "type": "uint8",
+          "value": "252"
+        },
+        "JOINT_MODE_RUNNING": {
+          "type": "uint8",
+          "value": "253"
+        },
+        "JOINT_MODE_IDLE": {
+          "type": "uint8",
+          "value": "255"
+        }
+      },
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "joint_modes",
+          "type": "uint8",
+          "array": "array",
+          "count": 6,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "tool_mode",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/JointMode"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgJointTemperature",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/JointTemperature",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_af77f1ec4c6b4d71e6387315d2388e7493c229dbf216848e61d5638cb308d017",
+      "minimum": 36,
+      "maximum": 164,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "float32",
+          "array": "array",
+          "count": 6,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "float32",
+          "array": "array",
+          "count": 6,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/JointTemperature"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgJointVoltage",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/JointVoltage",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_9fa2179402b5dc29b898ac1321c1f6f86676300939776a6e32de4529f3776b61",
+      "minimum": 60,
+      "maximum": 188,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "float64",
+          "array": "array",
+          "count": 6,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "float64",
+          "array": "array",
+          "count": 6,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/JointVoltage"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgJsonStringType",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/JsonStringType",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_05da0dcf2728cd73f875421c457804a146ceffe76e9d4619be71c2c92efdd728",
+      "minimum": 4,
+      "maximum": 1028,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "json_string",
+          "type": "Ros2Std_msgsMsgString",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "json_string",
+          "type": "std_msgs/msg/String",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/JsonStringType"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgRuntimeState",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/RuntimeState",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_711ca0e324cbeb36fcedea4881b8658a4b453402c410c8d3efaa57205aaf74b6",
+      "minimum": 13,
+      "maximum": 141,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {
+        "PROGRAM_STATE_UNDEFINED": {
+          "type": "int8",
+          "value": "-1"
+        },
+        "PROGRAM_STATE_STOPPING": {
+          "type": "int8",
+          "value": "0"
+        },
+        "PROGRAM_STATE_STOPPED": {
+          "type": "int8",
+          "value": "1"
+        },
+        "PROGRAM_STATE_RUNNING": {
+          "type": "int8",
+          "value": "2"
+        },
+        "PROGRAM_STATE_PAUSING": {
+          "type": "int8",
+          "value": "3"
+        },
+        "PROGRAM_STATE_PAUSED": {
+          "type": "int8",
+          "value": "4"
+        },
+        "PROGRAM_STATE_RESUMING": {
+          "type": "int8",
+          "value": "5"
+        },
+        "PROGRAM_STATE_RETRACTING": {
+          "type": "int8",
+          "value": "6"
+        }
+      },
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/RuntimeState"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgSafetyStatus",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/SafetyStatus",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_8f266e1ee8ab2ee9791ff4b52f9dae8ef982844c8d24a0bdfb4bb93cc55b78d4",
+      "minimum": 13,
+      "maximum": 141,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {
+        "NORMAL": {
+          "type": "int8",
+          "value": "1"
+        },
+        "REDUCED": {
+          "type": "int8",
+          "value": "2"
+        },
+        "PROTECTIVE_STOP": {
+          "type": "int8",
+          "value": "3"
+        },
+        "RECOVERY": {
+          "type": "int8",
+          "value": "4"
+        },
+        "SAFEGUARD_STOP": {
+          "type": "int8",
+          "value": "5"
+        },
+        "SYSTEM_EMERGENCY_STOP": {
+          "type": "int8",
+          "value": "6"
+        },
+        "ROBOT_EMERGENCY_STOP": {
+          "type": "int8",
+          "value": "7"
+        },
+        "VIOLATION": {
+          "type": "int8",
+          "value": "8"
+        },
+        "FAULT": {
+          "type": "int8",
+          "value": "9"
+        },
+        "VALIDATE_JOINT_ID": {
+          "type": "int8",
+          "value": "10"
+        },
+        "UNDEFINED_SAFETY_MODE": {
+          "type": "int8",
+          "value": "11"
+        },
+        "AUTOMATIC_MODE_SAFEGUARD_STOP": {
+          "type": "int8",
+          "value": "12"
+        },
+        "SYSTEM_THREE_POSITION_ENABLING_STOP": {
+          "type": "int8",
+          "value": "13"
+        },
+        "TP_THREE_POSITION_ENABLING_STOP": {
+          "type": "int8",
+          "value": "14"
+        },
+        "IMMI_EMERGENCY_STOP": {
+          "type": "int8",
+          "value": "15"
+        },
+        "IMMI_SAFEGUARD_STOP": {
+          "type": "int8",
+          "value": "16"
+        },
+        "PROFISAFE_WAITING_FOR_PARAMETERS": {
+          "type": "int8",
+          "value": "17"
+        },
+        "PROFISAFE_AUTOMATIC_MODE_SAFEGUARD_STOP": {
+          "type": "int8",
+          "value": "18"
+        },
+        "PROFISAFE_SAFEGUARD_STOP": {
+          "type": "int8",
+          "value": "19"
+        },
+        "PROFISAFE_EMERGENCY_STOP": {
+          "type": "int8",
+          "value": "20"
+        },
+        "SAFETY_API_SAFEGUARD_STOP": {
+          "type": "int8",
+          "value": "22"
+        },
+        "IO_PLANE_STOP": {
+          "type": "int8",
+          "value": "23"
+        }
+      },
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/SafetyStatus"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgSharedVariablesEditResponse",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/SharedVariablesEditResponse",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_870ce8f649642b6edcce8ba5c7cb27818ec138d7afb2cde926638d21ea748212",
+      "minimum": 5,
+      "maximum": 1029,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "result_message",
+          "type": "Ros2Std_msgsMsgString",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "result_message",
+          "type": "std_msgs/msg/String",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/SharedVariablesEditResponse"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgSpeedSliderFraction",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/SpeedSliderFraction",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_55158782c2bc4d4741e8f2850efddf09d27666f9c3aeeded762d8d8e4198fccd",
+      "minimum": 20,
+      "maximum": 148,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/SpeedSliderFraction"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgTCPState",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/TCPState",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_49d8f678cc32669dd81528bb4c5d97f28019745159ef5e7267c8a076cd315b92",
+      "minimum": 116,
+      "maximum": 244,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "pose",
+          "type": "Ros2Geometry_msgsMsgPose",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 56
+        },
+        {
+          "name": "speed",
+          "type": "Ros2Geometry_msgsMsgTwist",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 48
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "pose",
+          "type": "geometry_msgs/msg/Pose",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "speed",
+          "type": "geometry_msgs/msg/Twist",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/TCPState"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgToolOutputMode",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/ToolOutputMode",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_21df545459050dc86de1fb111c9a4b2c8bb50c3729137b8d5c5134dd33b84660",
+      "minimum": 15,
+      "maximum": 143,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "output_mode",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        },
+        {
+          "name": "output_pin_mode",
+          "type": "uint8",
+          "array": "array",
+          "count": 2,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {
+        "TOOL_OUTPUT": {
+          "type": "uint8",
+          "value": "0"
+        },
+        "TOOL_POWER": {
+          "type": "uint8",
+          "value": "1"
+        },
+        "TOOL_SAFE": {
+          "type": "uint8",
+          "value": "2"
+        },
+        "OUTPUT_MODE_DISABLED": {
+          "type": "uint8",
+          "value": "0"
+        },
+        "OUTPUT_MODE_SINKING": {
+          "type": "uint8",
+          "value": "1"
+        },
+        "OUTPUT_MODE_SOURCING": {
+          "type": "uint8",
+          "value": "2"
+        },
+        "OUTPUT_MODE_PUSH_PULL": {
+          "type": "uint8",
+          "value": "3"
+        }
+      },
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "output_mode",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "output_pin_mode",
+          "type": "uint8",
+          "array": "array",
+          "count": 2,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/ToolOutputMode"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgVariableUpdate",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/VariableUpdate",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_7028ea5c674be886f4fac1d2ac0452167489f2c23d7ea759cdbec90feccbdb20",
+      "minimum": 16,
+      "maximum": 1168,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "Ros2UrinterfacesMsgJsonStringType",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "urinterfaces/msg/JsonStringType",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/VariableUpdate"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgVoltageCurrentStamped",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/VoltageCurrentStamped",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_bcc3f6871a7bf0ff691d0c9c1b6596a633597de795b486c2b82ac922ede76805",
+      "minimum": 28,
+      "maximum": 156,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "voltage",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        },
+        {
+          "name": "current",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 8
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "voltage",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "current",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/VoltageCurrentStamped"
+    },
+    {
+      "symbol": "Ros2UrinterfacesMsgWorldModelNames",
+      "ros_version": 2,
+      "native_type": "urinterfaces/msg/WorldModelNames",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_499f722fc97565bd0124888d7c20f4e9f8947893c49b1608dcf201fe3538d7a9",
+      "minimum": 16,
+      "maximum": 16592,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "Ros2Std_msgsMsgHeader",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 12
+        },
+        {
+          "name": "data",
+          "type": "Ros2Std_msgsMsgString",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data",
+          "type": "std_msgs/msg/String",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "",
+      "owner": "urinterfaces/msg/WorldModelNames"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvSetAnalogOutput_Request",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/SetAnalogOutput_Request",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_8be07a94dd334a03871180a9c73bab11377664e60500ac68d312398d51acd32d",
+      "minimum": 4,
+      "maximum": 100,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "data",
+          "type": "Ros2UrinterfacesMsgAnalog",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 6
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "data",
+          "type": "urinterfaces/msg/Analog",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "request",
+      "owner": "urinterfaces/srv/SetAnalogOutput"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvSetAnalogOutput_Response",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/SetAnalogOutput_Response",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_14016138286129e4f155ac2f82f5573e8a4af7d7c5ede55ce57f3ad76cb82e4e",
+      "minimum": 1,
+      "maximum": 1,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "response",
+      "owner": "urinterfaces/srv/SetAnalogOutput"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvSetDigitalOutput_Request",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/SetDigitalOutput_Request",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_ec6c587810af7f3d04b10058e69c8095775e8b6feede5fc0f60ca1dfda0b5e47",
+      "minimum": 4,
+      "maximum": 36,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "data",
+          "type": "Ros2UrinterfacesMsgDigital",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 2
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "data",
+          "type": "urinterfaces/msg/Digital",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "request",
+      "owner": "urinterfaces/srv/SetDigitalOutput"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvSetDigitalOutput_Response",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/SetDigitalOutput_Response",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_0c5f0b8a7f1d14c6223838c3a28cb2236848b81ecfda29d2b704557579e9162d",
+      "minimum": 1,
+      "maximum": 1,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "response",
+      "owner": "urinterfaces/srv/SetDigitalOutput"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvSetSpeedFraction_Request",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/SetSpeedFraction_Request",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_21fca7e952e32f24c905094c09776968c8cd80b7712a03de7c2a693ea79a7d63",
+      "minimum": 4,
+      "maximum": 4,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "value",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "value",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "request",
+      "owner": "urinterfaces/srv/SetSpeedFraction"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvSetSpeedFraction_Response",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/SetSpeedFraction_Response",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_386b067db70c17a88297d005650f6a05c0fb72eb5ee142a25c3e51c70b80c6e6",
+      "minimum": 1,
+      "maximum": 1,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 1
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "response",
+      "owner": "urinterfaces/srv/SetSpeedFraction"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvSharedVariablesEditor_Request",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/SharedVariablesEditor_Request",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_c32d00237370b2eeb596c76bd9cda1ccfcab7618c71dec77d273f712462f5fa3",
+      "minimum": 4,
+      "maximum": 1028,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "request",
+          "type": "Ros2UrinterfacesMsgJsonStringType",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 4
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "request",
+          "type": "urinterfaces/msg/JsonStringType",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "request",
+      "owner": "urinterfaces/srv/SharedVariablesEditor"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvSharedVariablesEditor_Response",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/SharedVariablesEditor_Response",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_4134f7ed9715b3f6e3fd7ecca44fcae67cdd5dc2fa432b07ab75485901d1d5ea",
+      "minimum": 5,
+      "maximum": 1029,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "response",
+          "type": "Ros2UrinterfacesMsgSharedVariablesEditResponse",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 5
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "response",
+          "type": "urinterfaces/msg/SharedVariablesEditResponse",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "response",
+      "owner": "urinterfaces/srv/SharedVariablesEditor"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvVariablesViewer_Request",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/VariablesViewer_Request",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_6ecb0db6328d813bfb987ae987d3b7f2c6913dba2cf2a62f644a8eb2f760152a",
+      "minimum": 0,
+      "maximum": 0,
+      "semantics": "",
+      "fields": [],
+      "constants": {},
+      "members": [],
+      "component": "request",
+      "owner": "urinterfaces/srv/VariablesViewer"
+    },
+    {
+      "symbol": "Ros2UrinterfacesSrvVariablesViewer_Response",
+      "ros_version": 2,
+      "native_type": "urinterfaces/srv/VariablesViewer_Response",
+      "native_identity": null,
+      "codec_identity": "UWVMROS1_e8cb16ca847189ac38c0d972afbdd2208d8641c29a0ee0cce8284e9e0dd249a2",
+      "minimum": 16,
+      "maximum": 1168,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "response",
+          "type": "Ros2UrinterfacesMsgVariableUpdate",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "raw": false,
+          "element_minimum": 16
+        }
+      ],
+      "constants": {},
+      "members": [
+        {
+          "name": "response",
+          "type": "urinterfaces/msg/VariableUpdate",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "component": "response",
+      "owner": "urinterfaces/srv/VariablesViewer"
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "components": {
+        "message": "Ros2Builtin_interfacesMsgTime"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Point",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgPoint"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Pose",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgPose"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Quaternion",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgQuaternion"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Twist",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_1a6c18d19bb6853a2cff3b775974ba31f8e3674c1bbe566444ccabf0ef9d117e",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgTwist"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Vector3",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_5adebf211fe375fba92c0628f9b8ebf05bff9ab22ddc4bbf00629167af295d5e",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgVector3"
+      }
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+      "components": {
+        "message": "Ros2Std_msgsMsgHeader"
+      }
+    },
+    {
+      "type": "std_msgs/msg/String",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_c48b5497cbf487f56eb073a982b93acd501c6bb72f0e9ef9dce2175ce7ac15c5",
+      "components": {
+        "message": "Ros2Std_msgsMsgString"
+      }
+    },
+    {
+      "type": "urinterfaces/action/SetMode",
+      "kind": "action",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_a595032dc31d2a4461204b3a5b172403e964d8596fb3af7f992b9b08f43f9994",
+      "components": {
+        "goal": "Ros2UrinterfacesActionSetMode_Goal",
+        "result": "Ros2UrinterfacesActionSetMode_Result",
+        "feedback": "Ros2UrinterfacesActionSetMode_Feedback"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/ActiveTCP",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_e62d31728eca201dee256d88d1d268bf2ecb9607ed5c48783432f966edf459ae",
+      "components": {
+        "message": "Ros2UrinterfacesMsgActiveTCP"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/Analog",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_e81cffd909f3bc387ee00c37537434341ef93fd160e465be033aa9bc412b979b",
+      "components": {
+        "message": "Ros2UrinterfacesMsgAnalog"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/AnalogIO",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_3130f3e3857f21bab5092d9c6abea8c45965c07ebb9c1ab14b28fa51b7d71e0c",
+      "components": {
+        "message": "Ros2UrinterfacesMsgAnalogIO"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/AnalogIOStateStamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_a40e839bb4acfcb26503c79f01216b7aea9ab8ff25c50dca42578b206ab40a89",
+      "components": {
+        "message": "Ros2UrinterfacesMsgAnalogIOStateStamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/AnalogStamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_749557c6e79b882385927c62d3c45963797ce116d7be6235bd9f186a7b4da76c",
+      "components": {
+        "message": "Ros2UrinterfacesMsgAnalogStamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/BoolStamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_1a4128638df10bd9a8d33af0ed3c2ee9b4deb771d45dfe83f2a9a75c7f77de66",
+      "components": {
+        "message": "Ros2UrinterfacesMsgBoolStamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/ControlCycle",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_99a4d96e5673f5ac49eab13cd8b28af55ac83e1626c39ed20ff46655df4d6278",
+      "components": {
+        "message": "Ros2UrinterfacesMsgControlCycle"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/Current",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_759f2139335bcb720f7f4a38cd8b1413f203f2dd2b72149fa0de0fb7a0a778df",
+      "components": {
+        "message": "Ros2UrinterfacesMsgCurrent"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/Digital",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_c60c73df0383bb9a3e23ae3148cff9d6eb49b88c2d10add0af6a86ec9af54512",
+      "components": {
+        "message": "Ros2UrinterfacesMsgDigital"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/DigitalIO",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_11235b6010feb7e3e5e6c2be8acd3fbba1c25ecbf97ae5e0c899a0e3de3c4e4a",
+      "components": {
+        "message": "Ros2UrinterfacesMsgDigitalIO"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/DigitalIOStateStamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_542db76916f234e79216804426dc4e8d386a0ef547907391c921f51ed45e64c9",
+      "components": {
+        "message": "Ros2UrinterfacesMsgDigitalIOStateStamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/DigitalStamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_dc86d5a04c0801089ddf6b61b5fd33d63df8b5599550c6a0e84e19bbff375865",
+      "components": {
+        "message": "Ros2UrinterfacesMsgDigitalStamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/DoubleMultiArrayStamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_82b52f88248ea8d6cd7b809d1fd5aa55b4bbe1618044e739998a7ec74a23a8ae",
+      "components": {
+        "message": "Ros2UrinterfacesMsgDoubleMultiArrayStamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/Float32Stamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_5989940d19890b6d3b78172e9920708745b78e35c1c4fb238412c37a813d30d3",
+      "components": {
+        "message": "Ros2UrinterfacesMsgFloat32Stamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/Float64Stamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_4f8950feff6f20dbdbf9cac1f01168824be3698a4bd90355a470b580930edb21",
+      "components": {
+        "message": "Ros2UrinterfacesMsgFloat64Stamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/JointMode",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_6d766192096ced3c8568a98fb286c309e00cfb97e34b2611fff70e5bb1eaa95c",
+      "components": {
+        "message": "Ros2UrinterfacesMsgJointMode"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/JointTemperature",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_af77f1ec4c6b4d71e6387315d2388e7493c229dbf216848e61d5638cb308d017",
+      "components": {
+        "message": "Ros2UrinterfacesMsgJointTemperature"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/JointVoltage",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_9fa2179402b5dc29b898ac1321c1f6f86676300939776a6e32de4529f3776b61",
+      "components": {
+        "message": "Ros2UrinterfacesMsgJointVoltage"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/JsonStringType",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_05da0dcf2728cd73f875421c457804a146ceffe76e9d4619be71c2c92efdd728",
+      "components": {
+        "message": "Ros2UrinterfacesMsgJsonStringType"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/RobotMode",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_a16ec0ed8caa1a2b48cd4116d88877911921848469cd139f4783e4f2c549e7ea",
+      "components": {
+        "message": "Ros2UrinterfacesMsgRobotMode"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/RuntimeState",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_711ca0e324cbeb36fcedea4881b8658a4b453402c410c8d3efaa57205aaf74b6",
+      "components": {
+        "message": "Ros2UrinterfacesMsgRuntimeState"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/SafetyStatus",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_8f266e1ee8ab2ee9791ff4b52f9dae8ef982844c8d24a0bdfb4bb93cc55b78d4",
+      "components": {
+        "message": "Ros2UrinterfacesMsgSafetyStatus"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/SharedVariablesEditResponse",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_870ce8f649642b6edcce8ba5c7cb27818ec138d7afb2cde926638d21ea748212",
+      "components": {
+        "message": "Ros2UrinterfacesMsgSharedVariablesEditResponse"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/SpeedSliderFraction",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_55158782c2bc4d4741e8f2850efddf09d27666f9c3aeeded762d8d8e4198fccd",
+      "components": {
+        "message": "Ros2UrinterfacesMsgSpeedSliderFraction"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/TCPState",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_49d8f678cc32669dd81528bb4c5d97f28019745159ef5e7267c8a076cd315b92",
+      "components": {
+        "message": "Ros2UrinterfacesMsgTCPState"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/ToolOutputMode",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_21df545459050dc86de1fb111c9a4b2c8bb50c3729137b8d5c5134dd33b84660",
+      "components": {
+        "message": "Ros2UrinterfacesMsgToolOutputMode"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/VariableUpdate",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_7028ea5c674be886f4fac1d2ac0452167489f2c23d7ea759cdbec90feccbdb20",
+      "components": {
+        "message": "Ros2UrinterfacesMsgVariableUpdate"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/VoltageCurrentStamped",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_bcc3f6871a7bf0ff691d0c9c1b6596a633597de795b486c2b82ac922ede76805",
+      "components": {
+        "message": "Ros2UrinterfacesMsgVoltageCurrentStamped"
+      }
+    },
+    {
+      "type": "urinterfaces/msg/WorldModelNames",
+      "kind": "message",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_499f722fc97565bd0124888d7c20f4e9f8947893c49b1608dcf201fe3538d7a9",
+      "components": {
+        "message": "Ros2UrinterfacesMsgWorldModelNames"
+      }
+    },
+    {
+      "type": "urinterfaces/srv/SetAnalogOutput",
+      "kind": "service",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_6f951aa342279767504beacddad11b0d838257e492a6d58c815d26a40db29778",
+      "components": {
+        "request": "Ros2UrinterfacesSrvSetAnalogOutput_Request",
+        "response": "Ros2UrinterfacesSrvSetAnalogOutput_Response"
+      }
+    },
+    {
+      "type": "urinterfaces/srv/SetDigitalOutput",
+      "kind": "service",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_c4e40ef9a3a1579d12278ea0eff481d9944413a38cc73ec4e49aa8940de73965",
+      "components": {
+        "request": "Ros2UrinterfacesSrvSetDigitalOutput_Request",
+        "response": "Ros2UrinterfacesSrvSetDigitalOutput_Response"
+      }
+    },
+    {
+      "type": "urinterfaces/srv/SetSpeedFraction",
+      "kind": "service",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_4f5590b72a4646fc6b2998f48f5a729a63bd77b6fa3cb467cf38c452124829a0",
+      "components": {
+        "request": "Ros2UrinterfacesSrvSetSpeedFraction_Request",
+        "response": "Ros2UrinterfacesSrvSetSpeedFraction_Response"
+      }
+    },
+    {
+      "type": "urinterfaces/srv/SharedVariablesEditor",
+      "kind": "service",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_9842aee738b78c7930e1f792918b5cb87fd76ef0a76427223e3eec8a8da2ec4e",
+      "components": {
+        "request": "Ros2UrinterfacesSrvSharedVariablesEditor_Request",
+        "response": "Ros2UrinterfacesSrvSharedVariablesEditor_Response"
+      }
+    },
+    {
+      "type": "urinterfaces/srv/VariablesViewer",
+      "kind": "service",
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_a231c7183c80795abce9fe761f22bb6e9a64a31cc0892f4094d16cca7c001d4f",
+      "components": {
+        "request": "Ros2UrinterfacesSrvVariablesViewer_Request",
+        "response": "Ros2UrinterfacesSrvVariablesViewer_Response"
+      }
+    }
+  ]
+}

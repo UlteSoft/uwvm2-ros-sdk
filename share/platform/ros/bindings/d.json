@@ -1,0 +1,90 @@
+{
+  "abi": {
+    "ros1": "uwvm_ros1_v1",
+    "ros2": "uwvm_ros2_v1"
+  },
+  "backend_roots": {
+    "ros1": "include/platform/ros1/d",
+    "ros2": "include/platform/ros2/d"
+  },
+  "extensions": [
+    ".d"
+  ],
+  "format": "uwvm-ros-binding-v1",
+  "frontend_profile": "betterC; records/codecs and command decisions execute in genuine D",
+  "language": "d",
+  "module_roots": [
+    "include/platform",
+    "include/platform/ros/d",
+    "include/platform/ros/d/source"
+  ],
+  "native_definitions": {
+    "ros1": [
+      "UWVM_NATIVE_ROS1=1"
+    ],
+    "ros2": [
+      "UWVM_NATIVE_ROS2=1"
+    ]
+  },
+  "native_object_name": "abi.o",
+  "native_sources": {
+    "ros1": [
+      "src/platform/ros/native_sources/abi.c"
+    ],
+    "ros2": [
+      "src/platform/ros/native_sources/abi.c"
+    ]
+  },
+  "operations": {
+    "call_trigger": {
+      "operation": "service.call",
+      "types": {
+        "ros1": "std_srvs/Trigger",
+        "ros2": "std_srvs/srv/Trigger"
+      }
+    },
+    "publish_string": {
+      "operation": "topic.publish",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    },
+    "subscribe_string": {
+      "operation": "topic.subscribe",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    }
+  },
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "native_actions": {
+    "preload_pipeline": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "d",
+        "c_sources": [
+          {
+            "source": "src/language/native/abi.c",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ]
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "d",
+        "c_sources": [
+          {
+            "source": "src/language/native/abi.c",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

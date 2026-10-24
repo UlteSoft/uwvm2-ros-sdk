@@ -1,0 +1,91 @@
+{
+  "format": "uwvm-abb-tool-layout-acceptance-v1",
+  "status": "PASS",
+  "limits": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "cgroup": "/sys/fs/cgroup/system.slice/docker-4dd58ad4560fde2ab9b539e4ef9cab1fac531654e99ad554aff1fce8ae0eae37.scope",
+  "cases": [
+    {
+      "entry": "tinygo",
+      "source_language": "tinygo",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/tinygo/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/tinygo/read_speed/build/abb-tinygo-read_speed.wasm",
+      "bytes": 1245311,
+      "build_directory_entries": [
+        "abb-tinygo-read_speed.wasm"
+      ],
+      "sha256": "0fd2ce711b4b630fb78d6e138b3f143309077bd8ce982b982c230f11519e2136",
+      "log": "/abb-test/logs/tool-layout/tinygo-read_speed.log"
+    },
+    {
+      "entry": "tinygo",
+      "source_language": "tinygo",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/tinygo/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/tinygo/read_io/build/abb-tinygo-read_io.wasm",
+      "bytes": 1253478,
+      "build_directory_entries": [
+        "abb-tinygo-read_io.wasm"
+      ],
+      "sha256": "95851db035e8085e35f9d2aab0c5b8c858bee9aed176e54d4340545d8d50d535",
+      "log": "/abb-test/logs/tool-layout/tinygo-read_io.log"
+    },
+    {
+      "entry": "tinygo",
+      "source_language": "tinygo",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/tinygo/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/tinygo/system_state/build/abb-tinygo-system_state.wasm",
+      "bytes": 1271569,
+      "build_directory_entries": [
+        "abb-tinygo-system_state.wasm"
+      ],
+      "sha256": "16330b1c2a108997631eab5ed0319aabd26fa5e335f8e711863c2d28c9b186d3",
+      "log": "/abb-test/logs/tool-layout/tinygo-system_state.log"
+    }
+  ],
+  "case_count": 3,
+  "source_languages": [
+    "as",
+    "c",
+    "cpp",
+    "go",
+    "rs",
+    "objectc"
+  ],
+  "bridge_entries": [
+    "c_ffi_bridge"
+  ],
+  "bridge_case_count": 0,
+  "tools": {
+    "tools/platform/abb/README.md": "46a06dd4caa54364054f2df2b95cfffac7af4c130261ca63cfb2b53c5dbf57da",
+    "tools/platform/abb/bindings.py": "fdb9006e7ae5db3bd27be98bcdc95bce0c7cf78affee3b9a794c29ef59d0e8cf",
+    "tools/platform/abb/documents.py": "e5c2e9287a9f9acae38d237c3f36dfc18558a27739f78e68c5f80384a606efd7",
+    "tools/platform/abb/examples.py": "f4318f71c2e14b0f6d6b14689e45061f36fde7d31892f3cf7e026d37cb5d04b9",
+    "tools/platform/abb/repository.lua": "cd4e6823660095fd8bb9d90986eea951846356710f56846d190b0c007450dfc6",
+    "tools/platform/abb/run.lua": "dca8a671e5972b78c3db066ec74f6b05738df747c5433300223b548b2654c462",
+    "tools/platform/abb/run.py": "3b73cb7d90aec0ecf7f5525213c82158b1d49dd4652f6869df1356ae59949a9c",
+    "tools/platform/abb/standalone.lua": "02c0c0fe29525e5f6f923155b9aec4a281ed5f5786bdb3e96fd8c34aaeb7df5c"
+  }
+}

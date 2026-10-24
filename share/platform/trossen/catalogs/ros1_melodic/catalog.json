@@ -1,0 +1,457 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "interbotix_xs_msgs/ArmJoy.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/ArmJoy"
+    },
+    {
+      "bounds": {},
+      "file": "interbotix_xs_msgs/HexJoy.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/HexJoy"
+    },
+    {
+      "bounds": {
+        "cmd": {
+          "sequence": 64
+        },
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/JointGroupCommand.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/JointGroupCommand"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/JointSingleCommand.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/JointSingleCommand"
+    },
+    {
+      "bounds": {
+        "names": {
+          "sequence": 64,
+          "string": 128
+        },
+        "temps": {
+          "sequence": 64
+        }
+      },
+      "file": "interbotix_xs_msgs/JointTemps.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/JointTemps"
+    },
+    {
+      "bounds": {
+        "cmd_type": {
+          "string": 128
+        },
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/JointTrajectoryCommand.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/JointTrajectoryCommand"
+    },
+    {
+      "bounds": {},
+      "file": "interbotix_xs_msgs/LocobotJoy.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/LocobotJoy"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/MotorGains.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/MotorGains"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.mode": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        },
+        "request.profile_type": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/OperatingModes.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/OperatingModes"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/Reboot.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/Reboot"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        },
+        "request.reg": {
+          "string": 128
+        },
+        "response.values": {
+          "sequence": 16
+        }
+      },
+      "file": "interbotix_xs_msgs/RegisterValues.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/RegisterValues"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        },
+        "response.joint_ids": {
+          "sequence": 64
+        },
+        "response.joint_lower_limits": {
+          "sequence": 64
+        },
+        "response.joint_names": {
+          "sequence": 64,
+          "string": 128
+        },
+        "response.joint_sleep_positions": {
+          "sequence": 64
+        },
+        "response.joint_state_indices": {
+          "sequence": 64
+        },
+        "response.joint_upper_limits": {
+          "sequence": 64
+        },
+        "response.joint_velocity_limits": {
+          "sequence": 64
+        },
+        "response.mode": {
+          "string": 128
+        },
+        "response.name": {
+          "sequence": 64,
+          "string": 128
+        },
+        "response.profile_type": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/RobotInfo.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/RobotInfo"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/TorqueEnable.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/TorqueEnable"
+    },
+    {
+      "bounds": {},
+      "file": "interbotix_xs_msgs/TurretJoy.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_xs_msgs/TurretJoy"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 128
+        }
+      },
+      "file": "std_msgs/Header.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Header"
+    },
+    {
+      "bounds": {
+        "joint_names": {
+          "sequence": 16,
+          "string": 128
+        },
+        "points": {
+          "sequence": 4
+        }
+      },
+      "file": "trajectory_msgs/JointTrajectory.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "trajectory_msgs/JointTrajectory"
+    },
+    {
+      "bounds": {
+        "accelerations": {
+          "sequence": 16
+        },
+        "effort": {
+          "sequence": 16
+        },
+        "positions": {
+          "sequence": 16
+        },
+        "velocities": {
+          "sequence": 16
+        }
+      },
+      "file": "trajectory_msgs/JointTrajectoryPoint.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "trajectory_msgs/JointTrajectoryPoint"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/ClearErr.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/ClearErr"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/ConfigToolModbus.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/ConfigToolModbus"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/GetAnalogIO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/GetAnalogIO"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/GetControllerDigitalIO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/GetControllerDigitalIO"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/GetDigitalIO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/GetDigitalIO"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/GetErr.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/GetErr"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/GripperConfig.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/GripperConfig"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/GripperMove.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/GripperMove"
+    },
+    {
+      "bounds": {},
+      "file": "xarm_msgs/GripperState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/GripperState"
+    },
+    {
+      "bounds": {},
+      "file": "xarm_msgs/IOState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/IOState"
+    },
+    {
+      "bounds": {
+        "request.pose": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/Move.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/Move"
+    },
+    {
+      "bounds": {
+        "angle": {
+          "sequence": 16
+        }
+      },
+      "file": "xarm_msgs/RobotMsg.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/RobotMsg"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/SetAxis.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/SetAxis"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/SetDigitalIO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/SetDigitalIO"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/SetInt16.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/SetInt16"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/SetLoad.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/SetLoad"
+    },
+    {
+      "bounds": {
+        "request.send_data": {
+          "sequence": 256
+        },
+        "response.respond_data": {
+          "sequence": 256
+        }
+      },
+      "file": "xarm_msgs/SetToolModbus.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/SetToolModbus"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "xarm_msgs/TCPOffset.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "xarm_msgs/TCPOffset"
+    }
+  ]
+}

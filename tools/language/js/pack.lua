@@ -1,0 +1,225 @@
+-- @file pack.lua
+-- @brief Package ordinary modules into shared genuine QuickJS, CPython or Lua.
+-- @details Platform providers supply a declarative ordered module manifest. This
+-- adapter contains no platform, model, schema, controller or ROS permission logic.
+-- Packaging runs only Xmake Lua; the guest's real language engine parses sources.
+
+local identities = {
+    js = { directory = "js", filename = "quickjs.wasm", extension = ".mjs", version = "2026-06-04" },
+    py = { directory = "python", filename = "cpython.wasm", extension = ".py", version = "3.14.8" },
+    lua = { directory = "lua", filename = "lua.wasm", extension = ".lua", version = "5.4.8" },
+}
+
+-- @brief Confine installed metadata members to a portable SDK-relative path.
+-- @param root Installed SDK root. @param member Manifest-relative regular file.
+-- @return Absolute input path; absolute paths and parent segments are rejected.
+local function member_path(root, member)
+    assert(type(member) == "string" and #member > 0 and not path.is_absolute(member), "Use an SDK-relative member")
+    assert(not member:find("\\", 1, true) and not member:find(":", 1, true), "Use portable slash paths")
+    for part in member:gmatch("[^/]+") do
+        assert(part ~= "." and part ~= "..", "Parent or current-directory segments are not public module paths")
+    end
+    local result = path.join(root, member)
+    assert(os.isfile(result), "A complete declared module is missing: " .. member)
+    return result
+end
+
+-- @brief Encode a finite exact unsigned byte count as little-endian u32.
+-- @param value Integral byte count in 0..2^32-1. @return Four encoded bytes.
+local function word(value)
+    assert(value >= 0 and value <= 4294967295 and value == math.floor(value), "Source length must fit u32")
+    return string.char(value % 256, math.floor(value / 256) % 256,
+        math.floor(value / 65536) % 256, math.floor(value / 16777216) % 256)
+end
+
+-- @brief Quote complete source bytes as a Python bytes literal without evaluating them.
+-- @param raw Immutable source bytes. @return Exact safe ASCII expression.
+local function python_bytes(raw)
+    local parts = { 'b"' }
+    for index = 1, #raw do
+        local byte = raw:byte(index)
+        if byte >= 32 and byte < 127 and byte ~= 34 and byte ~= 92 then
+            parts[#parts + 1] = string.char(byte)
+        else
+            parts[#parts + 1] = string.format("\\x%02x", byte)
+        end
+    end
+    parts[#parts + 1] = '"'
+    return table.concat(parts)
+end
+
+-- @brief Quote source with a collision-free Lua long string delimiter.
+-- @param raw Complete original source. @return A byte-preserving Lua source literal.
+local function lua_string(raw)
+    local delimiter = "="
+    while raw:find("]" .. delimiter .. "]", 1, true) do
+        delimiter = delimiter .. "="
+    end
+    -- Lua discards exactly the inserted initial newline, preserving an original
+    -- leading newline. Byte 13 normalization is refused instead of changing it.
+    assert(not raw:find("\r", 1, true), "Lua source bundles require LF-normalized modules")
+    return "[" .. delimiter .. "[\n" .. raw .. "]" .. delimiter .. "]"
+end
+
+-- @brief Validate a real-language target and exact supported engine target width.
+-- @param target Shared DSL target. @param root Complete installed SDK namespace.
+-- @details This changes build paths only. No runtime, native ROS or compiler is probed.
+function configure(target, root)
+    local selection = identities[target:values("ros.sdk.language")]
+    assert(selection, "Select the common js, py or lua interpreter adapter")
+    local backend = target:values("ros.sdk.backend")
+    assert(backend == "ros1" or backend == "ros2", "Select exactly one native ROS import namespace")
+    local architecture = target:arch()
+    assert(target:plat() == "wasm-wasip1" and (architecture == "wasm32" or architecture == "wasm64"),
+        "Select an exact wasm32/wasm64 WASI Preview 1 target")
+    local sources = target:sourcefiles()
+    assert(#sources == 1 and path.extension(sources[1]) == selection.extension,
+        "Declare exactly one actual-language entry source")
+    target:set("values", "ros.sdk.triple", architecture .. "-wasip1")
+    target:set("values", "ros.sdk.producer", "shared-genuine-interpreter")
+    target:set("kind", "binary")
+    target:set("extension", ".wasm")
+    target:set("filename", target:name() .. ".wasm")
+    target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build"))
+    target:set("objectdir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/objects"))
+    target:set("dependir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/dependencies"))
+    target:set("toolchains", "ros.wasm.command")
+end
+
+-- @brief Read a declared platform module closure and prepare genuine guest source.
+-- @param root Installed SDK root. @param language js, py or lua.
+-- @param entry Explicit real application path. @param manifest Complete ordered module metadata.
+-- @return Guest source bundle and every exact module/entry byte identity.
+-- @details Module order is significant for ordinary Python package initialization.
+-- JS imports retain the real module loader; Lua modules use ordinary package.preload.
+function bundle(root, language, entry, manifest)
+    assert(manifest.format == "uwvm-language-bundle-v1" and manifest.language == language,
+        "The platform must supply the versioned genuine-language module manifest")
+    assert(type(manifest.modules) == "table" and #manifest.modules <= (language == "js" and 63 or 256),
+        "The complete source closure exceeds the engine's declared module bound")
+    local inputs, modules, names = {}, {}, {}
+    for _, module in ipairs(manifest.modules) do
+        assert(type(module.name) == "string" and #module.name >= 1 and #module.name <= 159,
+            "Declare a finite public module name")
+        assert(module.name:match("^[A-Za-z_][A-Za-z0-9_./-]*$") and not module.name:find("..", 1, true),
+            "Public module names must not contain traversal or quoting characters")
+        assert(module.name ~= "application" and not names[module.name], "Public module names must be unique")
+        if language == "py" then
+            assert(module.name:match("^[A-Za-z_][A-Za-z0-9_.]*$"), "Python requires a dotted public module identity")
+            local parent = module.name:match("^(.*)%.[^.]+$")
+            assert(not parent or names[parent], "Declare and initialize the parent Python package first")
+        end
+        names[module.name] = true
+        local file = member_path(root, module.file)
+        local sha = hash.sha256(file):lower()
+        assert(type(module.sha256) == "string" and sha == module.sha256:lower(),
+            "A declared module changed: " .. module.file)
+        inputs[#inputs + 1] = { path = module.file, sha256 = sha }
+        modules[#modules + 1] = { name = module.name, source = assert(io.readfile(file, { encoding = "binary" })),
+            package = module.package == true }
+    end
+    local raw_entry = assert(io.readfile(entry, { encoding = "binary" }))
+    inputs[#inputs + 1] = { path = "application", sha256 = hash.sha256(entry):lower() }
+    local parts = {}
+    if language == "js" then
+        modules[#modules + 1] = { name = "application", source = raw_entry }
+        for _, module in ipairs(modules) do
+            parts[#parts + 1] = word(#module.name) .. word(#module.source) .. module.name .. module.source .. "\0"
+        end
+    elseif language == "py" then
+        parts = {
+            "import sys",
+            "def _uwvm_register(name, source, package=False):",
+            "    module = type(sys)(name)",
+            "    module.__package__ = name if package else name.rpartition('.')[0]",
+            "    module.__file__ = '/__uwvm_source__/' + name.replace('.', '/') + '.py'",
+            "    if package: module.__path__ = []",
+            "    sys.modules[name] = module",
+            "    parent, _, leaf = name.rpartition('.')",
+            "    if parent: setattr(sys.modules[parent], leaf, module)",
+            "    exec(compile(source, module.__file__, 'exec'), module.__dict__)",
+        }
+        for _, module in ipairs(modules) do
+            parts[#parts + 1] = "_uwvm_register('" .. module.name .. "', " .. python_bytes(module.source)
+                .. ", " .. (module.package and "True" or "False") .. ")"
+        end
+        parts[#parts + 1] = "exec(compile(" .. python_bytes(raw_entry)
+            .. ", '/__uwvm_source__/application.py', 'exec'), globals())"
+        return table.concat(parts, "\n") .. "\n", inputs
+    else
+        assert(language == "lua", "No substituted language evaluator is available")
+        for _, module in ipairs(modules) do
+            parts[#parts + 1] = 'uwvm.preload("' .. module.name .. '", ' .. lua_string(module.source) .. ")"
+        end
+        parts[#parts + 1] = raw_entry
+        return table.concat(parts, "\n") .. "\n", inputs
+    end
+    return table.concat(parts), inputs
+end
+
+-- @brief Produce one application Wasm by changing only the checked empty data slot.
+-- @param target Fully configured shared DSL target. @param root Installed SDK root.
+-- @details Requires the exact locked runtime version, backend, target, SHA and
+-- source slot. Build metadata stays in .uwvm-ros; build/ contains only the Wasm.
+function build(target, root, compiled)
+    configure(target, root)
+    import("core.base.json")
+    local language = target:values("ros.sdk.language")
+    local selected = identities[language]
+    local backend = target:values("ros.sdk.backend")
+    local triple = target:values("ros.sdk.triple")
+    local folder = path.join(root, "lib/language", selected.directory)
+    if triple ~= "wasm32-wasip1" then
+        folder = path.join(folder, triple)
+    end
+    folder = path.join(folder, backend)
+    local runtime = path.join(folder, selected.filename)
+    assert(os.isfile(runtime), "Build/install the shared genuine interpreter for " .. triple .. "/" .. backend)
+    local metadata = assert(json.loadfile(path.join(folder, "runtime.json")))
+    assert(metadata.format == "uwvm-shared-interpreter-v2", "Require the portable common runtime metadata")
+    assert(metadata.language == language and metadata.version == selected.version and metadata.target == triple,
+        "The runtime language, upstream version or target width differs from the common lock")
+    assert(metadata.ros_backend == backend and metadata.filename == selected.filename,
+        "The runtime import family or basename differs from the selected backend")
+    assert(metadata.raw_abi_functions == (backend == "ros1" and 38 or 43),
+        "Install the one complete original ABI bridge for the selected backend")
+    assert(metadata.raw_abi_descriptor_sha256 == hash.sha256(path.join(root, "share/abi/abi-v1.json")):lower(),
+        "The installed common ABI descriptor differs from the complete static bridge")
+    assert(hash.sha256(runtime):lower() == metadata.sha256:lower(), "The genuine interpreter bytes changed")
+    local raw = assert(io.readfile(runtime, { encoding = "binary" }))
+    local capacity = language == "lua" and 2097152 or 4194304
+    local marker = language == "lua" and "UWVM-LUA-APP-v1!" or "UWVM-SRC-APP-v1!"
+    assert(metadata.application_capacity == capacity and metadata.application_marker == marker,
+        "The versioned application source-slot contract differs")
+    assert(raw:sub(1, 8) == "\0asm\1\0\0\0" and #raw == metadata.bytes, "Require complete core Wasm bytes")
+    local first, last = raw:find(marker, 1, true)
+    assert(first and not raw:find(marker, last + 1, true), "Require exactly one source-slot marker")
+    local guard = last + 5 + capacity
+    assert(raw:sub(last + 1, guard - 1) == string.rep("\0", 4 + capacity) and raw:byte(guard) == 167,
+        "Require the entire empty source slot and original guard")
+    -- A genuine source frontend may supply a private emitted module closure.
+    -- Engine selection and validation always use the original installed root.
+    local manifest_path = target:values("ros.sdk.bundle_manifest")
+    assert(compiled or manifest_path, "The platform provider must declare ros.sdk.bundle_manifest")
+    local installed_manifest = compiled and compiled.manifest or member_path(root, manifest_path)
+    local manifest = assert(json.loadfile(installed_manifest))
+    assert(manifest.backend == backend, "The public source modules target a different native ROS family")
+    local source, inputs = bundle(compiled and compiled.root or root, language,
+        path.absolute(target:sourcefiles()[1]), manifest)
+    assert(#source <= capacity, "The complete genuine source closure exceeds the finite source slot")
+    local packed = raw:sub(1, last) .. word(#source) .. source
+        .. string.rep("\0", capacity - #source) .. raw:sub(guard)
+    assert(#packed == #raw, "Application packing must preserve all Wasm section extents")
+    local destination = path.absolute(target:targetfile())
+    os.mkdir(path.directory(destination))
+    io.writefile(destination, packed, { encoding = "binary" })
+    local cache = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/interpreter")
+    os.mkdir(cache)
+    json.savefile(path.join(cache, "build-receipt.json"), {
+        format = "uwvm-shared-interpreter-application-v2", status = "PACKAGED",
+        language = language, backend = backend, target = triple, engine_sha256 = metadata.sha256,
+        manifest_sha256 = hash.sha256(installed_manifest):lower(), source_bytes = #source,
+        application_sha256 = hash.sha256(destination):lower(), inputs = inputs,
+        source_evaluated_by_host = false, runtime_executed = false,
+    })
+end

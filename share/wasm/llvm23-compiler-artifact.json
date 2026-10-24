@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "name": "LLVM-23.1.4-Linux-X64.tar.zst",
+  "version": "23.1.4",
+  "source": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-23.1.4",
+  "download_url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/LLVM-23.1.4-Linux-X64.tar.zst",
+  "bytes": 1190060068,
+  "sha256": "efdd1dbd089b99bfcfcde7b8eb1236163f2e88df5a981cca4f783ec9cb5e0378",
+  "verification": "SHA-256 matches the digest returned by the official GitHub release API; no GPG or Sigstore verification claimed"
+}

@@ -1,0 +1,21 @@
+{
+  "format": "vendor-language-source-inputs-v1",
+  "platform": "doosan",
+  "language": "haskell",
+  "domain": "doosan-ros2-jazzy-complete",
+  "backend": "ros2",
+  "include_root": "include/platform",
+  "source_root": "include/platform/doosan/haskell/ros2/doosan-ros2-jazzy-complete",
+  "model_module": "doosan",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "record_catalog": "share/platform/doosan/domains/doosan-ros2-jazzy-complete.ir.json",
+  "target_widths_requested": [
+    32,
+    64
+  ],
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "support_source_roots": [
+    "src/platform"
+  ],
+  "retained_native_operation_flows": "src/platform/doosan/flows"
+}

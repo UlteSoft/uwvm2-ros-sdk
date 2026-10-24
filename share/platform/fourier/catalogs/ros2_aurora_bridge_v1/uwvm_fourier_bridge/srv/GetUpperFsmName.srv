@@ -1,0 +1,7 @@
+# Authored bridge envelope for AuroraClient.get_upper_fsm_name.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+---
+uint32 status
+string error
+string value

@@ -1,0 +1,37 @@
+{
+  "format": "uwvm-shared-interpreter-v2",
+  "language": "lua",
+  "implementation": "Lua",
+  "version": "5.4.8",
+  "target": "wasm32-wasip1",
+  "ros_backend": "ros1",
+  "filename": "lua.wasm",
+  "bytes": 2483311,
+  "sha256": "9999e22c00e740afb38548a8eb7204bef81a92869ae43f3012da73d02b67ea84",
+  "source_lock_sha256": "749b2a4cacbc6b21587b24194230dbb5a508287253337190f69f78e975864388",
+  "application_capacity": 2097152,
+  "application_marker": "UWVM-LUA-APP-v1!",
+  "compiler": "LLVM 23.1.4",
+  "threads": false,
+  "memory": {
+    "address_bits": 32,
+    "shared": false,
+    "minimum_pages": 256,
+    "maximum_pages": 2048,
+    "tables": [
+      {
+        "address_bits": 32,
+        "minimum": 222,
+        "maximum": 222
+      }
+    ]
+  },
+  "raw_abi_functions": 38,
+  "raw_abi_descriptor_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "exceptions": "modern",
+  "wasm_features": [
+    "exceptions"
+  ],
+  "native_ros_qualification": "separate platform acceptance required",
+  "source_lock_path": "share/language/lua/construction-source-lock.json"
+}

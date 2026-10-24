@@ -1,0 +1,4336 @@
+{
+  "format": "uwvm-shared-asyncify-engine-source-lock-v1",
+  "language": "php",
+  "version": "8.4.13",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 3204,
+      "sha256": "b42e4df5e50e6ecda1047d503d6d91d71032d09ed1027ba1ef29eed26f890c5a",
+      "mode": 420,
+      "mtime": 1792638628
+    },
+    {
+      "path": "TSRM/LICENSE",
+      "bytes": 1314,
+      "sha256": "fe97b8423e34199f7df3e65fd53c4df067a56ab6fe0f2296474ba7da0656460c",
+      "mode": 420,
+      "mtime": 1792638628
+    },
+    {
+      "path": "TSRM/TSRM.c",
+      "bytes": 31195,
+      "sha256": "3a90d7e7e6a711566fd00545be1e45d79caf9c1019324852484128a6608ea54f",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "TSRM/TSRM.h",
+      "bytes": 7216,
+      "sha256": "db222b6da338bf38a67eadea39f7e9caeaba41b53c51f2f3238d74852566cb66",
+      "mode": 420,
+      "mtime": 1792644211
+    },
+    {
+      "path": "Zend/LICENSE",
+      "bytes": 2803,
+      "sha256": "509aeb3be64e428d7e0004ce224620ab01bf94adaacefbb449611939df56bc5b",
+      "mode": 420,
+      "mtime": 1792638628
+    },
+    {
+      "path": "Zend/Makefile.frag",
+      "bytes": 2279,
+      "sha256": "b8b1fa000bc307e9707fb779b287e507538b3c504ceda756f39c508c78cd6e19",
+      "mode": 420,
+      "mtime": 1792638628
+    },
+    {
+      "path": "Zend/Optimizer/block_pass.c",
+      "bytes": 80443,
+      "sha256": "6ca8ab1b7fda20ce0bd9660ab981f072bc3b74bf002bfec2c299116d547d8d77",
+      "mode": 420,
+      "mtime": 1792644211
+    },
+    {
+      "path": "Zend/Optimizer/compact_literals.c",
+      "bytes": 41867,
+      "sha256": "7c8dd0137faf4957754c62715ea6e20b314bc6d129c2fe0888e32a0417689fad",
+      "mode": 420,
+      "mtime": 1792644211
+    },
+    {
+      "path": "Zend/Optimizer/compact_vars.c",
+      "bytes": 5608,
+      "sha256": "ecb8d02fcf3e8afedb22b4124f0fa4fbe845fac98735fff38cb8e45334f32c99",
+      "mode": 420,
+      "mtime": 1792644211
+    },
+    {
+      "path": "Zend/Optimizer/dce.c",
+      "bytes": 27865,
+      "sha256": "ea3cdc78c4f4f95c78359c085b292e55083862e719d98bf7354fb9947bf14b1d",
+      "mode": 420,
+      "mtime": 1792644211
+    },
+    {
+      "path": "Zend/Optimizer/dfa_pass.c",
+      "bytes": 80293,
+      "sha256": "628f40597612bb340d675dcb881dc60236a96b67c37bd36de2a9160cf5f080c6",
+      "mode": 420,
+      "mtime": 1792644211
+    },
+    {
+      "path": "Zend/Optimizer/escape_analysis.c",
+      "bytes": 20767,
+      "sha256": "a0447830e8cc7d9e17a68baffc3ad9a277e9e3c96a271cc1f5584981e0f5de81",
+      "mode": 420,
+      "mtime": 1792644211
+    },
+    {
+      "path": "Zend/Optimizer/nop_removal.c",
+      "bytes": 4180,
+      "sha256": "cd040562b183f030321d022f0fff4deb55f31f656fcdb098d34f1de3f57df239",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/optimize_func_calls.c",
+      "bytes": 17208,
+      "sha256": "20d0cdacd28d970f5f5c7e4e1807269f201c05121c7ebc9a0c39b143178f5c77",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/optimize_temp_vars_5.c",
+      "bytes": 9158,
+      "sha256": "8c0f768ee2071a770783d11a07ba4ff286cb7a210d6f79928acfe70353c37e5b",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/pass1.c",
+      "bytes": 18240,
+      "sha256": "1eb59424a6c4a0e7243b728824da1c387a8dc14cd14a448006947b667e35a8d8",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/pass3.c",
+      "bytes": 12466,
+      "sha256": "407bb38651a80e0ae4f771cb1261684e5f4facbdd0a37d4175ad98b5208865ec",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/sccp.c",
+      "bytes": 96220,
+      "sha256": "ea355533c6752980a9bb056ebf25a7d4701229a78a8576aac1bf86c341713232",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/scdf.c",
+      "bytes": 13035,
+      "sha256": "ea5859f64c95940734f396d1fcead0e4eceffca329f57f4810e4eb42392e1abc",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/scdf.h",
+      "bytes": 4056,
+      "sha256": "a0b8bedecf7cce63e31f2b74119b20debd794a4af8d1ac70c625cbde49653302",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_call_graph.c",
+      "bytes": 12171,
+      "sha256": "c7d121cd1615b0c13137a6dbd37d45cf069202b3732caa0c8e0e0c159c5bce7e",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_call_graph.h",
+      "bytes": 3399,
+      "sha256": "f2456a0073a8a46ca07053f6b62c5c031c33677ea7b16d6581dc0ff7cc6f0fa2",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_cfg.c",
+      "bytes": 37487,
+      "sha256": "68953c273f06f9e2a3aab98a60eb88fb6191c62783a8a6c7dbbb025d049b701f",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_cfg.h",
+      "bytes": 5979,
+      "sha256": "8facce41114d2aab64e4fcec5eb2f52892cd8a823107162a09b35505130a9946",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_dfg.c",
+      "bytes": 13959,
+      "sha256": "1c4f8e30abb3c2042712230cba93c3ab429c84a347583d237d4967c41616774c",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_dfg.h",
+      "bytes": 2319,
+      "sha256": "f09aa386b51aaa885793fdc8a9db3c125c173a0ec8a67d9a09abf0fe5b51aad9",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_dump.c",
+      "bytes": 52004,
+      "sha256": "28c34ffb7ecfadc9e5b439fd0773b8c8bfaf16a30aaf37b8f4d8c8913179a597",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_dump.h",
+      "bytes": 3427,
+      "sha256": "021260af0e0e44dced525059c9efed9353eace5dc06a23a8d8fbf99b869101cf",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_func_info.c",
+      "bytes": 10470,
+      "sha256": "5526ad828d9d9109b2ea207ca2b239b836f19fed04c7a1bdc13ee29f94d56d47",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_func_info.h",
+      "bytes": 3745,
+      "sha256": "93d78ff8af1d6cd65b1d16abd4426eb069f47866bcb1eced3d1b8ccd3b1e146d",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_func_infos.h",
+      "bytes": 46815,
+      "sha256": "68f4bb3996a422a112ab888e2dab1e80cb72eb61254e23e0036dfd2c46697a96",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_inference.c",
+      "bytes": 252615,
+      "sha256": "8daead44e2b975959834b37a5eb924906813ec073dddca8ceb693e9b72b44e40",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_inference.h",
+      "bytes": 20974,
+      "sha256": "dc89e4b6a7a3e2cc817783dfd0f0c7c27b68013bbf12e3f57f7fadf780ac5103",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_optimizer.c",
+      "bytes": 75592,
+      "sha256": "4eec6fc2988ae3bb1ad190611b9b345a85c53766cdf693808ca1132202eca6d7",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_optimizer.h",
+      "bytes": 5332,
+      "sha256": "655b6e6d1fc8f6216d8fb893a4f90c3e4b5bdcaa9dca4eab43c22d60778551d9",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_optimizer_internal.h",
+      "bytes": 9770,
+      "sha256": "33020d41fe8161422e8e71df9adfd3d10a7df7a7479f29e55f67234e5c093df0",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_ssa.c",
+      "bytes": 76217,
+      "sha256": "d890484d217c7127042e1c86dd8e868a9c74ab1a233c2574026ddb008e7300b9",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_ssa.h",
+      "bytes": 19367,
+      "sha256": "a069307d8fb6e9f7820105eb2c6bf44931f30f1eadc2fb610ebd76c79c4f1d77",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/Optimizer/zend_worklist.h",
+      "bytes": 5505,
+      "sha256": "43ea6eef9e6463201fe2087280560c5aed0a314ea5ba2c547208252910623961",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend.c",
+      "bytes": 76074,
+      "sha256": "b5ac21db20758730a32d84f010135f165fc8794f7cf244512d9ea13699e5273e",
+      "mode": 420,
+      "mtime": 1792644394
+    },
+    {
+      "path": "Zend/zend.h",
+      "bytes": 20238,
+      "sha256": "bd8def323e284093fa606001b6045c4c75ba37e680712e27ebef857d0924866d",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_API.c",
+      "bytes": 206508,
+      "sha256": "cb5b256c5dbdfc8addcf9f804c1283db25dbece3994498dd849cdc454b9e5943",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_API.h",
+      "bytes": 215940,
+      "sha256": "46262e54fe3ea01091219b06feb6ceb54de27fa15092d475f973e50671d7b751",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_alloc.c",
+      "bytes": 129250,
+      "sha256": "7023a60cd1241f55f0c1f1d15e4e7391b42f15aa34a86fcea2b0bcd72c00948f",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_alloc.h",
+      "bytes": 28297,
+      "sha256": "dca77273c5faaaecae8527cd8c59b0f7984b7e8f527f1c590f28f908ca08a9fc",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_alloc_sizes.h",
+      "bytes": 5617,
+      "sha256": "a62a38eedccb2de9885350b6cdeef87ec48522c2f9b262af4fb53cc7688dfcd3",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_arena.h",
+      "bytes": 6946,
+      "sha256": "f372853de2cd5386ebadad2f99067445efded7b712547ac9f37a33b18d4962a7",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_ast.c",
+      "bytes": 106362,
+      "sha256": "7ced85e2dd219cabfe43d76459583d11fb20d3910fe96eba2d61050295e3a695",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_ast.h",
+      "bytes": 15674,
+      "sha256": "eefc3f08a9f1290a77cbad9260a451010476ae7b20c499cc28033c6d2dc0fc6a",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_atomic.c",
+      "bytes": 3195,
+      "sha256": "4003f594881f00c774126f5b22e03e0d9c6abd810bccb2fff387f9920e39947d",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_atomic.h",
+      "bytes": 13828,
+      "sha256": "bac392fa418afcefa11bd6841992c1dd02c6bf29821582381142615d520c55ca",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_attributes.c",
+      "bytes": 17660,
+      "sha256": "b0bbb7428f060c3de02a78abbe858c04d63e02102e0f3149ba75d0d91ba98459",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_attributes.h",
+      "bytes": 6539,
+      "sha256": "7e0f265df7018b5b0addd2a86bb95a02158006fbdc7c881d0c3229eeee827fde",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_attributes_arginfo.h",
+      "bytes": 17663,
+      "sha256": "436666384ddd6f234a9abd9c7dbebeed93e89db6ef3ebd1be75e7e589012dd8e",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_bitset.h",
+      "bytes": 12648,
+      "sha256": "db4da8db21bdb94296adae0dd6c65d73659eb4c83776d100a56117788250deda",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_build.h",
+      "bytes": 1894,
+      "sha256": "c609b75524b9121e20166c10e9311587ca76984ebcad847a3c5e7f0ba02b013c",
+      "mode": 420,
+      "mtime": 1792640671
+    },
+    {
+      "path": "Zend/zend_builtin_functions.c",
+      "bytes": 78640,
+      "sha256": "d7a1fc6afb3f43fc377fb0b4a99a6b74dbabdb9f2af54750f967a698a6066190",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_builtin_functions.h",
+      "bytes": 1853,
+      "sha256": "d0f872d9d40e5b1c276bd0e7d98a58edfa32e7eeb5976958f71512834144d73d",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_builtin_functions_arginfo.h",
+      "bytes": 21782,
+      "sha256": "95f18a22b6647a35973960dd17bccf7101d73d4132a54dec3f9aab3ee8a90056",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_call_stack.c",
+      "bytes": 23706,
+      "sha256": "488f0521716e60fb567105d0a34e456f4a03523ed718890aea7a8a68e8a8a482",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_call_stack.h",
+      "bytes": 3431,
+      "sha256": "accd9cc121c76d889f336438c4c7f5d92e283aa76f2f2506a156eb30ac75d75a",
+      "mode": 420,
+      "mtime": 1792644212
+    },
+    {
+      "path": "Zend/zend_closures.c",
+      "bytes": 35966,
+      "sha256": "8e6668674360291b3e715877ac3b45426c951abd167e1c4dc949d587b98d1ced",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_closures.h",
+      "bytes": 2593,
+      "sha256": "f778b1f6f31a83ae6c9818b6cb60500d3ca4e38a016240b08c8b31473c463b4f",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_closures_arginfo.h",
+      "bytes": 2446,
+      "sha256": "53e0fdab13da7bc39040f5c6dbadff6e09702fda5807b9abe28e76160e9de914",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_compile.c",
+      "bytes": 451163,
+      "sha256": "66781992640edf23c53c66292d3204c3df7fe2f3a45d48d7338c5b5bd0bbfb11",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_compile.h",
+      "bytes": 62657,
+      "sha256": "d74fcf94822c8a1d48d1123ab3b5ec835dec12292d338b16211004f0c89b970d",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_constants.c",
+      "bytes": 18818,
+      "sha256": "f04a1446d648dee122293721e226b10f670667bccd1b05ec25a23c24b05547de",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_constants.h",
+      "bytes": 10358,
+      "sha256": "ba7d91ec3cb0d4efb22f690b2255ca7e81bee6f0c51f859a80aa8cd05a07b06c",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_constants_arginfo.h",
+      "bytes": 2242,
+      "sha256": "47a6d2c556abe50233aaac77102896e8a021603ceb6543f4f025155c93ee1ba1",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_cpuinfo.c",
+      "bytes": 5705,
+      "sha256": "3d9639a0fab1889905575fea9c5a7551d9b05f03fa9a906f35baec7735d17256",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_cpuinfo.h",
+      "bytes": 10140,
+      "sha256": "e24c96ddee4f2b939713deec7506587f3fa0cda137933eb1e9a0207835cccc7c",
+      "mode": 420,
+      "mtime": 1792640672
+    },
+    {
+      "path": "Zend/zend_default_classes.c",
+      "bytes": 2150,
+      "sha256": "fc84de8863682431f5a748ee7536339d6b111b2f979ac2efa163673963c46a59",
+      "mode": 420,
+      "mtime": 1792640672
+    },
+    {
+      "path": "Zend/zend_dtrace.c",
+      "bytes": 4845,
+      "sha256": "b7863058e402f3e38c5cbf07b5e6e45ec992cd1d69fbd97213be488bc53512e5",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_dtrace.h",
+      "bytes": 2347,
+      "sha256": "76d20b600d0e7f179e1afb52d8eacef3dd88c098b6ce79a49f60245dbd8c722a",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_enum.c",
+      "bytes": 25836,
+      "sha256": "438861e40586d520c040021ea3d9826123c670d2b86953c95600013d47e62be1",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_enum.h",
+      "bytes": 3213,
+      "sha256": "4622d8abed95f7c3a4fa7e29a013cb25fb4da4663bbf0421e90a6d2ee8008b12",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_enum_arginfo.h",
+      "bytes": 2209,
+      "sha256": "10dee0598a4ef5005974fcc3bd7b75172c1411d7266e01dcddc3a8c08280dcbe",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_errors.h",
+      "bytes": 2815,
+      "sha256": "ab4459363c535587a63b953167d6c271dc4d4038fae46aa5d4889ea0a42972ad",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_exceptions.c",
+      "bytes": 40686,
+      "sha256": "c625bbe242cbad4f99406495b42a1d68d58ef016fee8e9698a754b033d7d0a70",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_exceptions.h",
+      "bytes": 4947,
+      "sha256": "3de18247f4a4716fca5f414823fe8d2be5fd9d38a5335aed1dfaa1cf74b8179d",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_exceptions_arginfo.h",
+      "bytes": 24442,
+      "sha256": "b30a3799ea0c0fff917cad47d599499929c585b9298ad3789298ff319bcf2d43",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_execute.c",
+      "bytes": 249161,
+      "sha256": "cde9dbc1654653c31d5a0b8a2652ec27e3d1816b4d6b1658659ee0e34a62160b",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_execute.h",
+      "bytes": 31945,
+      "sha256": "a68fc1a7c9967f397051d0a21fbfe5f65779c89969adb08a732db07108948665",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_execute_API.c",
+      "bytes": 69498,
+      "sha256": "9d11fce155756cc85fca5c7132333d1b869b1a8a4b642e0584b9aad57c4840bb",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_extensions.c",
+      "bytes": 16039,
+      "sha256": "e85c3ddc020ac4b2d90a7b6818a416c662c8aff53f996ec4274057bfcdb06ead",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_extensions.h",
+      "bytes": 7098,
+      "sha256": "90a34ba81138407b9a9151862f1ee3794a1da0a21e98f3794db3952b3b5702f0",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_fibers.c",
+      "bytes": 37696,
+      "sha256": "ec65b4f2a05d8802e6aeef60012c6f6dba9aef1811f372bd77b00f5ccd59d8cc",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_fibers.h",
+      "bytes": 6124,
+      "sha256": "e3594240ef2e593118425d8e029b673f806135b4aaaebf46b1815811f9d5d044",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_fibers_arginfo.h",
+      "bytes": 4099,
+      "sha256": "876e076a45827c8473caa9507fa39b9862647321877c4668237e552c2f5d3fe8",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_float.c",
+      "bytes": 2120,
+      "sha256": "c535d39339a1c46358042ea5bb6d80756bc52d78995e5d7638318e50935b01d7",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_float.h",
+      "bytes": 34511,
+      "sha256": "4aae1b052f3bc72f7319285383a3faeda098f71cd3eb1e4d985874afbda82ab4",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_frameless_function.c",
+      "bytes": 1477,
+      "sha256": "30fbb1c587c4981f1fa75c190a8e80a48262f219c92b4cb33d55b685353a6162",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_frameless_function.h",
+      "bytes": 11396,
+      "sha256": "cd87100e2f48089262f372ab4c77c1f8a6398ba760d7c291ae0f2b17a65685dd",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_gc.c",
+      "bytes": 83548,
+      "sha256": "8c85e6e77be35ba5833d3cf2df539710a2ad6726bcd717349887954d7c3c74d5",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_gc.h",
+      "bytes": 5965,
+      "sha256": "c4ce748f7e3061df6774ea30c0bed8f605cbe78b45b6aa550d9c16a26146173b",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_gdb.c",
+      "bytes": 5247,
+      "sha256": "300e3a91be2bdd7af9283f48be041ced5bf467c0c2774914855c214ebba05291",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_gdb.h",
+      "bytes": 1686,
+      "sha256": "6cd4f381a29620a156394cae0e82d72ee5caa14c1fb3c20a988e2c52093a7358",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_generators.c",
+      "bytes": 43757,
+      "sha256": "63b696eeb365b9d0a434fbfcf7a4086864e1c60a9d59ea9cd465df674e3216e9",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_generators.h",
+      "bytes": 8203,
+      "sha256": "6a2fb6379a839824e5410628f28ed6a486819c7a0c040d996a15e845aa97672b",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_generators_arginfo.h",
+      "bytes": 3410,
+      "sha256": "29d8509d8d7bf7578ab0331a082ed7664173d46ee0d826e1708cdc2cfbae5d45",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_globals.h",
+      "bytes": 10788,
+      "sha256": "71f727120497c9ca14f97d3bf32d5a16c34a29b4713ad80f900d4db3e049bc4f",
+      "mode": 420,
+      "mtime": 1792644213
+    },
+    {
+      "path": "Zend/zend_globals_macros.h",
+      "bytes": 3104,
+      "sha256": "6e23a5afeed8ba3b4047490336e9796f891d10e8caab9c5ec1bc37b45c463d8f",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_hash.c",
+      "bytes": 116434,
+      "sha256": "0fe3aed210ed29e00d6dc60da7dffa49725bb3bb5ac63e4694307f89613516b8",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_hash.h",
+      "bytes": 98036,
+      "sha256": "ca4d320ee849a0acb86004234c301f38b568a7fa7febbe8a06ce6f7f60266f2b",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_highlight.c",
+      "bytes": 7680,
+      "sha256": "ed35dafed2ed68f7e899948446794fe5d953248a7dbd913244b09684bf461aa4",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_highlight.h",
+      "bytes": 2571,
+      "sha256": "e297e3e513a28ae4b9df549b7b29a832ad0abb0612d37b9fb3f2e6a26545ea81",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_hrtime.c",
+      "bytes": 2405,
+      "sha256": "537c9374d15c11dd9061c140a1a8b8d017c7cf2743771c183786ed5ab881ad97",
+      "mode": 420,
+      "mtime": 1792640672
+    },
+    {
+      "path": "Zend/zend_hrtime.h",
+      "bytes": 4350,
+      "sha256": "ec449663f390b916a4ee39ce9014d4b65729130d590ebc2caa85c3c4abb764a3",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_inheritance.c",
+      "bytes": 187811,
+      "sha256": "9f29acce1099fa500a7993349bb39e033e123cb305fc1e5cf0f25d6a2b5e24ca",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_inheritance.h",
+      "bytes": 4068,
+      "sha256": "98d19d20342e2f0877cd8f31b64aff91f23156e68c924dc696626ac86454fac1",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_ini.c",
+      "bytes": 34301,
+      "sha256": "ef7358f7b5898f1df69ec45f2a62ddd093663ac27b30a5fe243a408934d88f7e",
+      "mode": 420,
+      "mtime": 1792644396
+    },
+    {
+      "path": "Zend/zend_ini.h",
+      "bytes": 17797,
+      "sha256": "9b18ea57cca4e74c44ee701a55a86bcad719f489e194d1c982c549c6bfb852dc",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_ini_parser.c",
+      "bytes": 82952,
+      "sha256": "aad954b1c82d3d5abc72370345719ed92e214f1bd728f4b2b11c66db3165c2cd",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_ini_parser.h",
+      "bytes": 3671,
+      "sha256": "732a41c7c8417e22c3521784f02b6d83f004879bbd18bf1eb13c6701d97dbd9b",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_ini_parser.y",
+      "bytes": 13904,
+      "sha256": "3dbb00d520fe8ff5a810cc5412e7b74a3305f7f38d20f5026041e5915a73a492",
+      "mode": 420,
+      "mtime": 1792638613
+    },
+    {
+      "path": "Zend/zend_ini_scanner.c",
+      "bytes": 88961,
+      "sha256": "ce526a69b8ecc0f0095094db9cc3f1cd2989b0873347a924e48fc88fafd23054",
+      "mode": 384,
+      "mtime": 1792640672
+    },
+    {
+      "path": "Zend/zend_ini_scanner.h",
+      "bytes": 2252,
+      "sha256": "99b51da31e98c8640f9bd02c9fd25af29daef54f3ac124791ff3836ab0e3a08f",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_ini_scanner.l",
+      "bytes": 17951,
+      "sha256": "354f02f1b0625c5e39c9966892beb5fba2c217a774bed61641bf5dac5cc26d65",
+      "mode": 420,
+      "mtime": 1792638613
+    },
+    {
+      "path": "Zend/zend_ini_scanner_defs.h",
+      "bytes": 510,
+      "sha256": "5612c08accfda9c17122562612ea69cdb5f20f0b812e4da6241ddeb464cab48f",
+      "mode": 420,
+      "mtime": 1792640672
+    },
+    {
+      "path": "Zend/zend_interfaces.c",
+      "bytes": 26017,
+      "sha256": "b65ae5a3443249392c73e1189521debf63159f98c7e84be87e45b3e533a96918",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_interfaces.h",
+      "bytes": 5330,
+      "sha256": "1a3419529119ce068add66a35a4732f732dbec6a9cc8ce50d19465cb07818415",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_interfaces_arginfo.h",
+      "bytes": 8990,
+      "sha256": "7704fdff63f4f1d3693581c760e2ec652e60a114a73d6d137d3ee7bf302ed9ff",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_iterators.c",
+      "bytes": 3774,
+      "sha256": "a5e71781888ae74fb67d02f7ac90ad4725ce95f7995a0f8b6e4f46e9c3bd01b2",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_iterators.h",
+      "bytes": 4275,
+      "sha256": "04b8112df2e45712f02ab420429b353666abf2cb76284c5d6547be3f6bcd0a17",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_language_parser.c",
+      "bytes": 399011,
+      "sha256": "3f0463a157c9e6b10d63feaca4198ef17c9a0ed603b488c4819851b04d7daad7",
+      "mode": 420,
+      "mtime": 1792644248
+    },
+    {
+      "path": "Zend/zend_language_parser.h",
+      "bytes": 13972,
+      "sha256": "791e820e7b78a8763ee8951f149b3149159c86c6c938e5753fa04c640a836cf0",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_language_parser.y",
+      "bytes": 64959,
+      "sha256": "53bf84957214b7d02f62acb8b1f3088c38289377b1a00a0a240ea4f7bb31e5c1",
+      "mode": 420,
+      "mtime": 1792638613
+    },
+    {
+      "path": "Zend/zend_language_scanner.c",
+      "bytes": 262546,
+      "sha256": "1d185bc5e7a394c7c62b800394da03e7e63f3a55507c287d781400cb228c8099",
+      "mode": 384,
+      "mtime": 1792640672
+    },
+    {
+      "path": "Zend/zend_language_scanner.h",
+      "bytes": 3446,
+      "sha256": "f8f0693466c817680a5f76f98ed0cd24b183a2469968e551d890e112fc85b86e",
+      "mode": 420,
+      "mtime": 1792644214
+    },
+    {
+      "path": "Zend/zend_language_scanner.l",
+      "bytes": 77513,
+      "sha256": "e45cef50c1667951767f0eceaef028864c270cd6fda7fa6f17c9a941bb4dd61e",
+      "mode": 420,
+      "mtime": 1792638613
+    },
+    {
+      "path": "Zend/zend_language_scanner_defs.h",
+      "bytes": 580,
+      "sha256": "fd6d4d15f4855c86abb5cd8ed6c27148e10eea51e6619b3cab813b2ff388db2a",
+      "mode": 420,
+      "mtime": 1792640672
+    },
+    {
+      "path": "Zend/zend_lazy_objects.c",
+      "bytes": 30648,
+      "sha256": "ca2b8670b48e1db0b19fb2d20fa3bf69be16f8b2f885d5a6d34c2c6699734b13",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_lazy_objects.h",
+      "bytes": 4978,
+      "sha256": "dae0b94d8331fb0337a6b47dd1b565546d46a5f48977d413ae5d832487c91871",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_list.c",
+      "bytes": 11063,
+      "sha256": "269f229bdab642ba0362d9ac67e584231992cdacddc52d359ff92e6bdea5b227",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_list.h",
+      "bytes": 3763,
+      "sha256": "cb18c4caa847dd9bc6c50c941fe7502ce3fe64de6528ae65eadc7b872bc71995",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_llist.c",
+      "bytes": 10196,
+      "sha256": "8a587ed6a07e0f5b24af8dd169c7ba7f663958381bcb417377b2e087798aab21",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_llist.h",
+      "bytes": 4338,
+      "sha256": "99e04e11804bc102c010dccf5403d7ba5962cef9cf71188bca4bc8b2e448dc4d",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_long.h",
+      "bytes": 5401,
+      "sha256": "413b197b0bea7b2cf4a3a828a7607b87b7446107d7e2e3e0503110e5551bf4ba",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_map_ptr.h",
+      "bytes": 6807,
+      "sha256": "b7e7a6e837c0c09912d60245372a9f0ee91c101cd5525134165d8e2518d2f050",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_max_execution_timer.c",
+      "bytes": 4808,
+      "sha256": "09ada8e9a60031a0ee6054442562f9b0c13336bd123c42e108e252ded30f8211",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_max_execution_timer.h",
+      "bytes": 1763,
+      "sha256": "2c26184b4e9c59e2e45395908b8a6185c2bba24992b0a4dfb3c479e7c810a35a",
+      "mode": 420,
+      "mtime": 1792640673
+    },
+    {
+      "path": "Zend/zend_mmap.h",
+      "bytes": 1773,
+      "sha256": "9572bdc0459476dba42d4588a76013f169d9d2d259d34138e50f06e74c241c6f",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_modules.h",
+      "bytes": 5258,
+      "sha256": "452feebe773923c0a3ef733bb59082cd3784c63bea897446673f57548e645f5a",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_multibyte.c",
+      "bytes": 9438,
+      "sha256": "0af287edf8451f3142e9ef39dcf067340d20faf9f5c3e475c1ba06b2e32bca79",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_multibyte.h",
+      "bytes": 6569,
+      "sha256": "1092772c15cb8d56e023ecd66654f346cdd480bd1b265f27afa718f5def3051d",
+      "mode": 420,
+      "mtime": 1792644215
+    },
+    {
+      "path": "Zend/zend_multiply.h",
+      "bytes": 24888,
+      "sha256": "97c44e0b9b1faf197c7a13b8cd3860de653a23822f1c4050dccc8b1bd17af3dd",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_object_handlers.c",
+      "bytes": 100433,
+      "sha256": "4679c5a3f12185c6860cd802f5a7b5035f743064c410fdbcd7202a9889421d9c",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_object_handlers.h",
+      "bytes": 24041,
+      "sha256": "f3e41ae43f6c2149d2d5c12dc524576d1acd33873131016e156f6df655afbb6d",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_objects.c",
+      "bytes": 13785,
+      "sha256": "5ece64ee219250fc83d559e78940938177805692b9964dc20787bf49e6297437",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_objects.h",
+      "bytes": 2211,
+      "sha256": "534695cb3d31c680c5d0547edba9c1b299284a5ba24cd4dadbb18e2af899acff",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_objects_API.c",
+      "bytes": 8580,
+      "sha256": "b6c865836920513dddcd0191fba54e99e66968001f580434ca9e9936ab483c2d",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_objects_API.h",
+      "bytes": 6834,
+      "sha256": "732ecb274c24ff7978ad22d9c962dec0377459c7db43b6006ee03b87a75fa29b",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_observer.c",
+      "bytes": 19835,
+      "sha256": "7be0128e0056ca03b9c40451b97c000b7748e8e0c25ce42a40bfa5659226375a",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_observer.h",
+      "bytes": 11769,
+      "sha256": "7ee7d7ed17b12e9e1c8b3d08fe71f30ac716baa29f1f0bfba9053e2df1533a40",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_opcode.c",
+      "bytes": 49525,
+      "sha256": "22483f5bc5be4b3d17574d197885170e158e7c00cedaad3df641d9e24474af74",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_operators.c",
+      "bytes": 138075,
+      "sha256": "9bc91aaa4618280adec597044ec7978833c08e32cd5cfa9d85a6f32bfac134d7",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_operators.h",
+      "bytes": 39520,
+      "sha256": "38ae5ab8d795c0c6fe0def52badad9aec824441a389bdc62ed8414f7c3176307",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_portability.h",
+      "bytes": 30437,
+      "sha256": "5e2e716566e26e8c40904eeebdf1aebdc5f4088528a404a41e5f1150fc66308f",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_property_hooks.c",
+      "bytes": 15745,
+      "sha256": "b84ec527a5c839938828a578ee215df05d8f46c04a8aa5ff9cad0db40b37cb07",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_property_hooks.h",
+      "bytes": 2107,
+      "sha256": "bb594dfb4cf583d210f66aa35e4302d448635ece821c2d2fd655e04738e3fb71",
+      "mode": 420,
+      "mtime": 1792644216
+    },
+    {
+      "path": "Zend/zend_ptr_stack.c",
+      "bytes": 3502,
+      "sha256": "901aa538f3a4cc110a2325ce50142cceae44ad4c410154bb13069450904538a1",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_ptr_stack.h",
+      "bytes": 5457,
+      "sha256": "602aac77da246f1959fff45932bc3f9b2decffe5e7de3ff6f82dfbe81906986f",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_range_check.h",
+      "bytes": 3259,
+      "sha256": "53d40ea73f50cd2f52ad56d1dddd3ddcfccc30b76ea1c9288aaa74fbb6255827",
+      "mode": 420,
+      "mtime": 1792640673
+    },
+    {
+      "path": "Zend/zend_signal.c",
+      "bytes": 15829,
+      "sha256": "29951e79a065c4e27251203fa4356e17ae14e678acc470133ddd74d5feef45b2",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_signal.h",
+      "bytes": 5406,
+      "sha256": "0d0be1398d07429369d05fc666b130362dc7f4af0af23dd80184f9cedf3ee85e",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_smart_str.c",
+      "bytes": 9412,
+      "sha256": "d781eb84f9462a568a709192adfd855e3c4c3b51e22c7d2622500193b4834fa4",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_smart_str.h",
+      "bytes": 7710,
+      "sha256": "bf772bc426de80547623c2539f421d906bd6717ae305e736c1f1f878bfb37640",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_smart_str_public.h",
+      "bytes": 1510,
+      "sha256": "9639637f03d1cd458e992d65e39161d0b4d3f4a2aef961d8fc070d598fcd178a",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_smart_string.h",
+      "bytes": 4682,
+      "sha256": "d057e53e77b451d643510add3e7b2de7f9b1eecab7f8f8ae6d4a4299ce8fd579",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_smart_string_public.h",
+      "bytes": 1531,
+      "sha256": "f7f05c9e037013f2e70e27173a306012ed11f0c057660e6d12efc4225ad0d71a",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_sort.c",
+      "bytes": 12109,
+      "sha256": "22e145da4ebb6f183259756cdcd853943dabd1b7103739eb86a7957a26138579",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_sort.h",
+      "bytes": 1821,
+      "sha256": "14dcf1a6cd5f4a51af6895161ff04ce481bede81275f28bebf185a55a914762b",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_stack.c",
+      "bytes": 5031,
+      "sha256": "baec336ffff176453929ae7b88fcccc487f1b1c9376fd3dbc6e3e94fedeb77ba",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_stack.h",
+      "bytes": 2855,
+      "sha256": "78bb72fbd6e32669dcca5635cb691afadcdb79fd538bea7bea8121693cc4b6f2",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_stream.c",
+      "bytes": 9827,
+      "sha256": "d373db92b351ab0c7794e0cc8731d9c9282f909f8473441b2949da914fc26d36",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_stream.h",
+      "bytes": 3850,
+      "sha256": "b730c61819900d8871bd9d4d6be91cb27ae55de22486bf6161345459d8024f1c",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_string.c",
+      "bytes": 18723,
+      "sha256": "180fbba3276a26b73e61b10b569390b7c4bb90e52f8afe8c412e1cde646dd635",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_string.h",
+      "bytes": 32509,
+      "sha256": "c6487386c7481119a7c06d1d7fbe263ab21ef2a78b44e4f650610b89d441afe3",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_strtod.c",
+      "bytes": 118843,
+      "sha256": "6ed4c86a7870a3ba5df8f62250407da3b9ff4b20161494e0b314d470bba8b7b6",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_strtod.h",
+      "bytes": 2626,
+      "sha256": "5e048b4043edcf528c356dcc70ec850dd2f9522cbe54d6a2a528fbcc6ce2eec0",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_strtod_int.h",
+      "bytes": 3156,
+      "sha256": "a19b483c198c65588240af14c2ec92d099045afc1f641026fb3fa8428c717702",
+      "mode": 420,
+      "mtime": 1792640673
+    },
+    {
+      "path": "Zend/zend_system_id.c",
+      "bytes": 4084,
+      "sha256": "2e8be99869d85a8e955d68072fbec840092b5bee1e5f9cd6e5e25dbe19d1b290",
+      "mode": 420,
+      "mtime": 1792644217
+    },
+    {
+      "path": "Zend/zend_system_id.h",
+      "bytes": 1831,
+      "sha256": "9c38336a565d676fe2532d8eef345f2239cfcfab58e13973182a25062ce0273b",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_type_info.h",
+      "bytes": 4546,
+      "sha256": "f20958aac540216530aa44a217ce04463a5e43e6513db4c2f84fcc6a8a6b16a4",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_types.h",
+      "bytes": 119241,
+      "sha256": "40729b5923d001ab20123fc1c3caefb6ced5256bc660d329d6d9bb35a42fc85e",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_variables.c",
+      "bytes": 5887,
+      "sha256": "d8e691f10816989b2db647830c2ed69901bd39e28a1bdaa64e669d3d53277e1c",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_variables.h",
+      "bytes": 3552,
+      "sha256": "fe2ac88dff2fe5dcf7aba948a109d756e2f916b1a0f8f4195ce6ce637b9a07ff",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_virtual_cwd.c",
+      "bytes": 57142,
+      "sha256": "d2fbdc4a3823ca49b243d36a08b9fd62dd4f696309ae693a173712f042a74714",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_virtual_cwd.h",
+      "bytes": 13348,
+      "sha256": "9aea9741f5736ece9b45b73b2e485216b25ea02afcd26213289fe6fb4b78dcff",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_vm.h",
+      "bytes": 2551,
+      "sha256": "ace8c2a1e4def91cd9fe78f4eb72b85e51c03e1d54991056380009cfd65d0c9d",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_vm_def.h",
+      "bytes": 393403,
+      "sha256": "26239519a275e697fe2ea6f5403feb1f3496134c51629e9084635a6014ecdcdd",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_vm_execute.h",
+      "bytes": 3070799,
+      "sha256": "de0ab49bc6864c1455e0b76b02d2b328df5aee0341e5937cae00d0d8026905f1",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "Zend/zend_vm_execute.skl",
+      "bytes": 4276,
+      "sha256": "21f27d6043a9e786ea68980e5694d84ee4f79fe7d03642da8d5a8e30a88567fb",
+      "mode": 420,
+      "mtime": 1792638613
+    },
+    {
+      "path": "Zend/zend_vm_gen.php",
+      "bytes": 142535,
+      "sha256": "0df37868a004260c6807329b55f8ec3359de9b8cb76f3608c33226539e7576b1",
+      "mode": 493,
+      "mtime": 1792638613
+    },
+    {
+      "path": "Zend/zend_vm_opcodes.c",
+      "bytes": 10338,
+      "sha256": "23e80ba0cf4bf7500d52d54ef3019ab90cf146734066f2123b6a9c9ef5222fa7",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_vm_opcodes.h",
+      "bytes": 9906,
+      "sha256": "94b670c6031b6bbaa0ba299013392ce7bccd2072ca6a78a1f59538fcb7ba787e",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_weakrefs.c",
+      "bytes": 29982,
+      "sha256": "d4f0235715832aefccbcd270f3643447711fa13887361dfdccea6ce5c616fc0a",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_weakrefs.h",
+      "bytes": 3547,
+      "sha256": "c3e5f9656e37708fee63819426c9862971c524729ed9b2d711f0271abc114bae",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "Zend/zend_weakrefs_arginfo.h",
+      "bytes": 3968,
+      "sha256": "40460977f99600a49a385beb41ea18d660d1c2ce9841804144c65da16de57413",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "build/Makefile.global",
+      "bytes": 7442,
+      "sha256": "6bd142781428ddbcc45bf9c366ec3a63b762e5e8cad5dbc5e44cd9d35ddf14d0",
+      "mode": 420,
+      "mtime": 1792638613
+    },
+    {
+      "path": "build/config.guess",
+      "bytes": 50743,
+      "sha256": "e3d148130e9151735f8b9a8e69a70d06890ece51468a9762eb7ac0feddddcc2f",
+      "mode": 493,
+      "mtime": 1792638613
+    },
+    {
+      "path": "build/config.sub",
+      "bytes": 39713,
+      "sha256": "11c54f55c3ac99e5d2c3dc2bb0bcccbf69f8223cc68f6b2438daa806cf0d16d8",
+      "mode": 493,
+      "mtime": 1792638613
+    },
+    {
+      "path": "build/genif.sh",
+      "bytes": 1260,
+      "sha256": "460ad8ed289a8f73acd7c913c088d17af77baf76f90883505d9637db305f8098",
+      "mode": 493,
+      "mtime": 1792638613
+    },
+    {
+      "path": "build/ltmain.sh",
+      "bytes": 200034,
+      "sha256": "9b6e2f4ccfa7b773bb42b527caa99eba211fd19542cce94caf75846af56209fb",
+      "mode": 493,
+      "mtime": 1792638613
+    },
+    {
+      "path": "build/order_by_dep.awk",
+      "bytes": 1556,
+      "sha256": "13fefd27534cfab37e4dc9364d67e62dc83eddf9a59e983c042e90443b2425f9",
+      "mode": 420,
+      "mtime": 1792638613
+    },
+    {
+      "path": "build/print_include.awk",
+      "bytes": 122,
+      "sha256": "c211e91a09666f70ddebd9e934de402b2bbb47d5418ab935e4373d403505e459",
+      "mode": 420,
+      "mtime": 1792638613
+    },
+    {
+      "path": "build/shtool",
+      "bytes": 65765,
+      "sha256": "d2870760684807555ca939427794a956e73e9508e7a5458bc74ee64adefb0e9e",
+      "mode": 493,
+      "mtime": 1792638613
+    },
+    {
+      "path": "configure",
+      "bytes": 2496729,
+      "sha256": "793c93c70095fbb902ab5fcb5ef4a021fef916926cb9b1a764d46bba78f09729",
+      "mode": 493,
+      "mtime": 1792638613
+    },
+    {
+      "path": "ext/date/config0.m4",
+      "bytes": 1357,
+      "sha256": "10ea3db3db6fcf6dad17a3e1323f4981db819d71b0a0376493e1388130b03ca4",
+      "mode": 420,
+      "mtime": 1792638611
+    },
+    {
+      "path": "ext/date/lib/LICENSE.rst",
+      "bytes": 1129,
+      "sha256": "2120d029e7c67b9d08c1f665f1c3ed581206f00970b664cccdebe1419bf566e9",
+      "mode": 420,
+      "mtime": 1792638611
+    },
+    {
+      "path": "ext/date/lib/astro.c",
+      "bytes": 12787,
+      "sha256": "e363061ab82d3b350f822a11e2a66c5f484720b5188acc4918fe3ebcdc2f9c07",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "ext/date/lib/astro.h",
+      "bytes": 4461,
+      "sha256": "407e06554a44efb1bfbeea3c0c4cd5055337356a340f739cc399c6b21599e53d",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "ext/date/lib/dow.c",
+      "bytes": 7055,
+      "sha256": "7a74e811f7d39505c7e46cce7b0e502d77a57a46b61902cf58a9f62a4dc66066",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "ext/date/lib/fallbackmap.h",
+      "bytes": 2094,
+      "sha256": "69d437c465ad0f65916136450d224a131073487e3fe1474bf582fd2dd7f07ce1",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "ext/date/lib/interval.c",
+      "bytes": 13321,
+      "sha256": "ca768bda16bb90e5f858bf62bc676f20f42f9e4ecd8f90dbf3ed0fcaf890d217",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "ext/date/lib/parse_date.c",
+      "bytes": 528618,
+      "sha256": "4b3dec10c796fbb3d41a247067e749e69a081465f087cfd1b637e1599eae6145",
+      "mode": 420,
+      "mtime": 1792640675
+    },
+    {
+      "path": "ext/date/lib/parse_iso_intervals.c",
+      "bytes": 36955,
+      "sha256": "f0be206eeefcee287ab959960c796aae332b9d2c89bea4e45b17d66e3efa2523",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "ext/date/lib/parse_posix.c",
+      "bytes": 15574,
+      "sha256": "eaae3d2e74354749520ba0669d12c5d35051d429b2e3876d681e7b580a09649e",
+      "mode": 420,
+      "mtime": 1792644218
+    },
+    {
+      "path": "ext/date/lib/parse_tz.c",
+      "bytes": 30414,
+      "sha256": "8b871bb0f948893715aee0342ff1cdcc800fa3f36a881a71f9632955dc451e3a",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/lib/timelib.c",
+      "bytes": 13163,
+      "sha256": "08e66ebcd0179774f8299a09504a016109fd0f346cb3b85251ca9748dd20ade4",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/lib/timelib.h",
+      "bytes": 42122,
+      "sha256": "197c935834d8770cc591c618e7441ee1b227d6e83d24ca3d29c815d9e6313cce",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/lib/timelib_private.h",
+      "bytes": 6003,
+      "sha256": "b721976629373d7aa5bed1a03f270cbf57724f3f3b6e68580fe3c0452bdaf091",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/lib/timezonedb.h",
+      "bytes": 10773630,
+      "sha256": "ae27164f28ace7394b6fbcf6f1b83560ae7a75e1b0fb6665b0a3be7668cbf5e8",
+      "mode": 420,
+      "mtime": 1792644400
+    },
+    {
+      "path": "ext/date/lib/timezonemap.h",
+      "bytes": 45821,
+      "sha256": "806cf2e04c0a9cc126b92d0b3e45246918b259a13683a2b3490d2ad23f3eaf10",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/lib/tm2unixtime.c",
+      "bytes": 18779,
+      "sha256": "52df8911b6366e8c8634bfd155d773d13812e6e13322f830b7398a941442e7bd",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/lib/unixtime2tm.c",
+      "bytes": 7640,
+      "sha256": "706331324fd4b23e50d89a1dcd72e65ae5238fcb9511dd807d4471253a3ead0c",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/php_date.c",
+      "bytes": 218634,
+      "sha256": "04fa4d88bfe6a90ec188c9bb9aa7105237e4e75d661a59f7bb25ea3bc2195e9a",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/php_date.h",
+      "bytes": 6380,
+      "sha256": "658fc43eb807b3e80fc2e53eb9d8a2d5d8fec9a016655be9a8923d98b2aaab62",
+      "mode": 420,
+      "mtime": 1792644219
+    },
+    {
+      "path": "ext/date/php_date_arginfo.h",
+      "bytes": 93325,
+      "sha256": "d85e80cb49aebac8d5449d1f2d51481d85dcefa9363600efb43fe96637e544fc",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/config.m4",
+      "bytes": 2336,
+      "sha256": "ad97e167bd5c467a812ebb474aedb9a89ccc5065c034e7233c5534fdafa61663",
+      "mode": 420,
+      "mtime": 1792638599
+    },
+    {
+      "path": "ext/hash/hash.c",
+      "bytes": 58785,
+      "sha256": "fa1b571abcc91c175eea1640473c0ff3fadb239c190b4bde55c50f96fbf9e9d3",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_adler32.c",
+      "bytes": 3480,
+      "sha256": "8acf70286a20c49d50dcee8663f8f45bf84619aff38a7840438bfb2720a4cbf7",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_arginfo.h",
+      "bytes": 16070,
+      "sha256": "ed02f38055c9aa257959b623bebbb8903c3fe5038aa753d2e024ed0649e0f0c3",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_crc32.c",
+      "bytes": 6296,
+      "sha256": "478acabb189bf20e2e21f7ae4d2f8c6e4bc5990831cbc35480f01bd334cb47cb",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_fnv.c",
+      "bytes": 8572,
+      "sha256": "5e55496c9da5099919edc77a2fbe3dec9feb508547e44bcab322ecb3398d1c2b",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_gost.c",
+      "bytes": 22824,
+      "sha256": "69b713bf9e70436256d5918e572c5f096449e220d8e64158c9fc456e01e1b367",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_haval.c",
+      "bytes": 23963,
+      "sha256": "7069332500f938dd7bfb8e63e117ebf027b2b5100f1db1dc8e514e53b8d8c439",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_joaat.c",
+      "bytes": 3368,
+      "sha256": "9cada07e1a3b031a66cfaff4a48269c30e60f08d74a54b66e382c262be1e6655",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_md.c",
+      "bytes": 13535,
+      "sha256": "02ca3a9484e89e65f7c34ac52d93e080a69ad7c3e7151b5517dd94454ed268c5",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_murmur.c",
+      "bytes": 11342,
+      "sha256": "75710f829ed4dbd8cd4b8217083328c2ea28237cc806adf7b7cc7139394bdbc5",
+      "mode": 420,
+      "mtime": 1792644220
+    },
+    {
+      "path": "ext/hash/hash_ripemd.c",
+      "bytes": 30279,
+      "sha256": "9482b08a5b1a84b4aba6f0026d96702293d4497f95a6dbdc1da42c6af34a94d7",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/hash_sha.c",
+      "bytes": 32781,
+      "sha256": "4222bee95c1a1a754076f8e8564c30aa6067e73b5114dbfb6ebdab59d2b524fc",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/hash_sha3.c",
+      "bytes": 16010,
+      "sha256": "2dc02eca5cab14c72885cb3ab2acd05605f13a7820cc01aea63e270fc0d54e0f",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/hash_sha_ni.c",
+      "bytes": 9790,
+      "sha256": "9208134adf5acc7749d408b903fb50dbb09ec8ff88ac6c083db4e438a5a70f00",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/hash_sha_sse2.c",
+      "bytes": 10372,
+      "sha256": "f2f96a67f4746f38ec02df3a769f727da58d3a85b7888a6fc421aac03e6466f8",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/hash_snefru.c",
+      "bytes": 8092,
+      "sha256": "73c4943f9be5f199ba9bc2fa8a4ab42192f3a5d9cc20fac0c78275e7bc2e8658",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/hash_tiger.c",
+      "bytes": 17157,
+      "sha256": "fcf06ace56bd605c8fe4c2cebb5d962da04eab2c536533e63ed86f3f6451fc1b",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/hash_whirlpool.c",
+      "bytes": 15803,
+      "sha256": "acfdd1598af5ac91bee95e731789018790aa9c34a96768ca426d815d280672be",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/hash_xxhash.c",
+      "bytes": 13157,
+      "sha256": "50e8877d5df859c631e2341a193585493afa8002804af535724c9582f052e0ff",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/murmur/PMurHash.c",
+      "bytes": 10633,
+      "sha256": "ec16e16527fc88e47be6b5efd369a1d757c4dfca1e80d3db739e396479050ce2",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/murmur/PMurHash.h",
+      "bytes": 1157,
+      "sha256": "fe92d2a1a1373afd28bbfd4e6c76071ef8cc073cf79a543d46f0c3ab64dd7f02",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/murmur/PMurHash128.c",
+      "bytes": 37961,
+      "sha256": "674d21b88258583527afbdca67ffcd55672360c5035c105a9cd00a60647f7dac",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/murmur/PMurHash128.h",
+      "bytes": 1655,
+      "sha256": "bb3972456faf49583c052c3b0b90cf871317379b2dd251f7a0f8406390a72c0f",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/murmur/endianness.h",
+      "bytes": 2296,
+      "sha256": "00a259a33557e463aee4f18fa319c3d818052880416e19b0b454f78dda206775",
+      "mode": 420,
+      "mtime": 1792644221
+    },
+    {
+      "path": "ext/hash/php_hash.h",
+      "bytes": 7060,
+      "sha256": "700709b14d21c0a85089d6e4bc16be903edf246512f2c1de3307905801d7396e",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_adler32.h",
+      "bytes": 1927,
+      "sha256": "3ce45898b34fc45bd2671349c06a04c72c4460622cf9b0e4333bee943001586d",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_crc32.h",
+      "bytes": 2225,
+      "sha256": "99c5f5db7c9c199afbe5d76687af6267ca78229ff212267b9e08094af8fe431c",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_crc32_tables.h",
+      "bytes": 10969,
+      "sha256": "d7e03fd25300fb43875bdf1b42e4a100ddef4f48740d4912468e7bce5bd6adb4",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_fnv.h",
+      "bytes": 3021,
+      "sha256": "d10315bd412101f1954ba008409201a67167fac66a97e9f98e55d77d3bb0213e",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_gost.h",
+      "bytes": 1784,
+      "sha256": "9431a01eb485c41af44a16d552e0057b4a4bbc08e242e8d2351cd67e4cc178b5",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_gost_tables.h",
+      "bytes": 31379,
+      "sha256": "20a696b4e6a28401f6858b89efd9130a0fa3843bd93107530308fd39954f5463",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_haval.h",
+      "bytes": 2501,
+      "sha256": "38d571cbcbf2b3616a13673573ed08dc209acac8219dcae534f85147a7d31413",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_joaat.h",
+      "bytes": 1746,
+      "sha256": "39f5f0154b3c29d32f86d8edafc885b3943a181c410fb78e7f03d35071782282",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_md.h",
+      "bytes": 2358,
+      "sha256": "8feb4f3f65806307a4079c0b130b2a900d7242b802180f397c639d50ca8a2a9d",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_murmur.h",
+      "bytes": 3195,
+      "sha256": "bf9d959fcda0ac501059d3c1ffd15b5a484f6706fc59600cd3f6e3e454e609e4",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_ripemd.h",
+      "bytes": 3415,
+      "sha256": "321888a4b72903efafbdf71e30944fc6968757e53c650b3dc75371687965d66c",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_sha.h",
+      "bytes": 5183,
+      "sha256": "369aa0705a36c9fcc2b06f29f5c74df0e08963773c03ee5fdb5efd4de92f9851",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_sha3.h",
+      "bytes": 2749,
+      "sha256": "dae9ad4c8b1110f327e31024374d25f38791499c1287bff5c7c3dc4cf922de56",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_snefru.h",
+      "bytes": 1859,
+      "sha256": "976fc8b12b8a1ca2b0f56d23bdf600cb9c3dd429a6db941bbfb5e3cac91a7bf1",
+      "mode": 420,
+      "mtime": 1792644222
+    },
+    {
+      "path": "ext/hash/php_hash_snefru_tables.h",
+      "bytes": 67202,
+      "sha256": "14afc44adf4639745ffaa5b9c2dd2d323f781a770b7fb33ffac183f0d3da9764",
+      "mode": 420,
+      "mtime": 1792640692
+    },
+    {
+      "path": "ext/hash/php_hash_tiger.h",
+      "bytes": 2093,
+      "sha256": "1f2c7a2c1f391ee4354e8f74ec5c18e07708cdfa11b5f04cd6dce5d2286b0dfe",
+      "mode": 420,
+      "mtime": 1792644223
+    },
+    {
+      "path": "ext/hash/php_hash_tiger_tables.h",
+      "bytes": 39715,
+      "sha256": "7871341d0a0bfdf837a25bc74738a0791a5a9aaf0f444d5052aae66c6d2f8702",
+      "mode": 420,
+      "mtime": 1792644224
+    },
+    {
+      "path": "ext/hash/php_hash_whirlpool.h",
+      "bytes": 1855,
+      "sha256": "296f9cc843e48d897c92882cf862e69c4dd04bd071f71a83cb0bc63e4c43ea25",
+      "mode": 420,
+      "mtime": 1792644224
+    },
+    {
+      "path": "ext/hash/php_hash_whirlpool_tables.h",
+      "bytes": 55283,
+      "sha256": "0b7668bab190cda773fc3625893b5ce86ec39f7526a7e00a2f49736962931733",
+      "mode": 420,
+      "mtime": 1792644224
+    },
+    {
+      "path": "ext/hash/php_hash_xxhash.h",
+      "bytes": 4158,
+      "sha256": "041a0aac4ab0abeced3a102d0d8440e212faf11940415a306cdd283990e254ea",
+      "mode": 420,
+      "mtime": 1792644224
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/KeccakHash.c",
+      "bytes": 3762,
+      "sha256": "dc90d24b6d97784874fff7d5ad526b51bd7f83185ab3b432a2370e419768f5a8",
+      "mode": 420,
+      "mtime": 1792644224
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/KeccakHash.h",
+      "bytes": 5744,
+      "sha256": "e66cd9ca488ffb0aa8d65c4574d0ce98c766ceb1dbb24a5a28e699e4496a5445",
+      "mode": 420,
+      "mtime": 1792644224
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/KeccakP-1600-SnP.h",
+      "bytes": 1984,
+      "sha256": "abf9bbea19f8c801867460319516b369b2351bc17ade1394db668fc99437f7ba",
+      "mode": 420,
+      "mtime": 1792644224
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/KeccakP-1600-inplace32BI.c",
+      "bytes": 91280,
+      "sha256": "a324e6f5507a22ca760492bad78dd25d4459d014b16f7fb7f3733339d8c122ee",
+      "mode": 420,
+      "mtime": 1792644224
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/KeccakSponge.c",
+      "bytes": 2996,
+      "sha256": "9607ffc03c43bce2964c75438015ee91938741e2e5399ce63dd3047520d52008",
+      "mode": 420,
+      "mtime": 1792640692
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/KeccakSponge.h",
+      "bytes": 11201,
+      "sha256": "0f63b074491aa82b743dd8451e49e3998413b7a41dc7e805259d864b2b6ddea5",
+      "mode": 420,
+      "mtime": 1792644225
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/KeccakSponge.inc",
+      "bytes": 11249,
+      "sha256": "bfd613a66ca4aca5301dc6f5ae48da27a6ac42d663f2fe1b34f1ff5c02fb5867",
+      "mode": 420,
+      "mtime": 1792638599
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/SnP-Relaned.h",
+      "bytes": 15652,
+      "sha256": "9436fd6ceb56bc39397683246b7db839b0851b73e3c56d9b4261bed8c5cb027f",
+      "mode": 420,
+      "mtime": 1792644225
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/align.h",
+      "bytes": 1201,
+      "sha256": "59cd14645e394118060bfd80898b0cc2e79f24cc8234b779ad94bab5ee5ce714",
+      "mode": 420,
+      "mtime": 1792640692
+    },
+    {
+      "path": "ext/hash/sha3/generic32lc/brg_endian.h",
+      "bytes": 5504,
+      "sha256": "d49978eaf3822996439a0c72073b39892fcb69b4f3550780e31582f0e9305051",
+      "mode": 420,
+      "mtime": 1792644225
+    },
+    {
+      "path": "ext/hash/xxhash/xxhash.h",
+      "bytes": 236581,
+      "sha256": "479c0c42ba4e23d07a3b486c4fb330640787a68dea0743277d45acb457f1537d",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "ext/json/Makefile.frag",
+      "bytes": 404,
+      "sha256": "6d7e629fe296951f106a6b8afe7687cdbce34ba7d2d9e5a2e62a53f44916bf93",
+      "mode": 420,
+      "mtime": 1792638596
+    },
+    {
+      "path": "ext/json/config.m4",
+      "bytes": 299,
+      "sha256": "3915a593c0b55b44f8ab222589dcb99c203f347fc226dc10046887ddeb4f72bd",
+      "mode": 420,
+      "mtime": 1792638596
+    },
+    {
+      "path": "ext/json/json.c",
+      "bytes": 11775,
+      "sha256": "3d51c51fe587654a2b56d584644f513d086768adc5c26110e098c703d659d129",
+      "mode": 420,
+      "mtime": 1792644248
+    },
+    {
+      "path": "ext/json/json_arginfo.h",
+      "bytes": 5909,
+      "sha256": "0db12333998ad8bac6dda1e8da556cb3f0fea67311d5387a6060477d27d67c6f",
+      "mode": 420,
+      "mtime": 1792644248
+    },
+    {
+      "path": "ext/json/json_encoder.c",
+      "bytes": 28337,
+      "sha256": "5037bc34cd94ea1d1414b71c90869cf8bb6f4626940b3ee644f0d981d60b1a7d",
+      "mode": 420,
+      "mtime": 1792644249
+    },
+    {
+      "path": "ext/json/json_parser.tab.c",
+      "bytes": 59231,
+      "sha256": "73191bf5d6af87b4d41e20e5bfd7ef8350a386f5dfcaf73d2f03ac7582bb8a31",
+      "mode": 420,
+      "mtime": 1792644251
+    },
+    {
+      "path": "ext/json/json_parser.tab.h",
+      "bytes": 3669,
+      "sha256": "244c44cb132837dd3c0df969a39e88b8e0b1379e260559ab037b8fc569767fc1",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/json/json_parser.y",
+      "bytes": 8749,
+      "sha256": "f67e72b573b82d9275559a71310f8b69198c5afb9da6e874d59e792a8720374d",
+      "mode": 420,
+      "mtime": 1792638596
+    },
+    {
+      "path": "ext/json/json_scanner.c",
+      "bytes": 59850,
+      "sha256": "4f6e498095e936b303de13a49d7f965801d974e1d66f6bbb60b44b66562e53b3",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/json/json_scanner.re",
+      "bytes": 11515,
+      "sha256": "0756e03e93f6a9373eb5bc712792ec607998592d7b90285e0fb5953787c137f9",
+      "mode": 420,
+      "mtime": 1792638596
+    },
+    {
+      "path": "ext/json/php_json.h",
+      "bytes": 4378,
+      "sha256": "4ed959869bf70523269e06ebe20024a9f7192146050239693bddc7e02aa72c98",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/json/php_json_encoder.h",
+      "bytes": 1886,
+      "sha256": "77a6a6743eac43792a8cd4a0a7f818b997f1ee847c0e96f2ef02fe16bf653bb4",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/json/php_json_parser.h",
+      "bytes": 3846,
+      "sha256": "310232758b495d2183358190163830b028888dded04d4e3f24e79c1f88cfff4c",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/json/php_json_scanner.h",
+      "bytes": 2544,
+      "sha256": "b3eef91ae99a5e63f66f207ebda44c66627689745117217106b8dd25110bec40",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/json/php_json_scanner_defs.h",
+      "bytes": 392,
+      "sha256": "ae505bb78685aae4cb2fbebd09269dd2651ff04cd4216714fd53aaaaf7863ab4",
+      "mode": 420,
+      "mtime": 1792640697
+    },
+    {
+      "path": "ext/pcre/config0.m4",
+      "bytes": 4266,
+      "sha256": "c6bccba947e6f3078621cb9cef8780f84db1baddd1d91541570dab2cd6329283",
+      "mode": 420,
+      "mtime": 1792638587
+    },
+    {
+      "path": "ext/pcre/pcre2lib/config.h",
+      "bytes": 4167,
+      "sha256": "a62fe715fa2914e0d0addeabd1df377d8b5de5684af9925c8d2f6954c00b3e32",
+      "mode": 420,
+      "mtime": 1792640711
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2.h",
+      "bytes": 57677,
+      "sha256": "e42829214de5e0c36951190d79e2719297719a1401b8e5fb575c88df916b1d16",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_auto_possess.c",
+      "bytes": 50396,
+      "sha256": "19c64d3263316d1636399412acc545c7f81b4375b393ca26eb102be5c9bf8611",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_chartables.c",
+      "bytes": 13259,
+      "sha256": "a40a867656b2f93c073280f60da6ea03adba976f79ce75d93aabad56d39b0907",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_chkdint.c",
+      "bytes": 3558,
+      "sha256": "6cfd85725c69a82ac4abeba825fc97ed71080a3d2811b212aea64a855642a137",
+      "mode": 420,
+      "mtime": 1792644252
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_compile.c",
+      "bytes": 477165,
+      "sha256": "5ba488fb5d18cac11297d5558159aebe0eee352907e8c404d4abcea08965108e",
+      "mode": 420,
+      "mtime": 1792644253
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_config.c",
+      "bytes": 9117,
+      "sha256": "56dd833bef0f914b863878b8959637d1038462f7e688cabf12b42a0d2501be3e",
+      "mode": 420,
+      "mtime": 1792644253
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_context.c",
+      "bytes": 18023,
+      "sha256": "f19b38276076764bd0e329b9a519b8c7667f114e25522922640c5d9a62eb6058",
+      "mode": 420,
+      "mtime": 1792644253
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_convert.c",
+      "bytes": 39800,
+      "sha256": "55412cb65ef5cd406af37ef6627baa8ef20d80cda70d36577cc35a4d45eed89f",
+      "mode": 420,
+      "mtime": 1792644253
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_dfa_match.c",
+      "bytes": 191359,
+      "sha256": "8f4bf313541c6fd9ae18cc1cb35f308ff54173a02140e8113b0c9160f12502a2",
+      "mode": 420,
+      "mtime": 1792644254
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_error.c",
+      "bytes": 23313,
+      "sha256": "76af7a77b02ab6ce15a6fdbbd61531058eaef4965441a887f359ebbc442a2084",
+      "mode": 420,
+      "mtime": 1792644254
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_extuni.c",
+      "bytes": 6169,
+      "sha256": "03c451a4c263b58c105d0a23cf7cd934e39cf53cbe165091eb1ed4976d91d49a",
+      "mode": 420,
+      "mtime": 1792644254
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_find_bracket.c",
+      "bytes": 8638,
+      "sha256": "b2e9dcfe76c441b157c7f45b5080fca1ee69a284f1f07adf4170180012cb9191",
+      "mode": 420,
+      "mtime": 1792644254
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_internal.h",
+      "bytes": 97843,
+      "sha256": "6adcf95c40997de42dbb02ae7dae45a3a79aa2323ce87b327aac0a6075e2fee6",
+      "mode": 420,
+      "mtime": 1792644254
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_intmodedep.h",
+      "bytes": 46725,
+      "sha256": "8166ab4a63631783e5e3f2d48f7cf328a103cd995e1ea965890a7ceef896ea86",
+      "mode": 420,
+      "mtime": 1792644255
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_jit_compile.c",
+      "bytes": 578433,
+      "sha256": "e6290bc0cfabf38e85e67b2d15fccf5295b9b3d864d000d82e3697e832921e8f",
+      "mode": 420,
+      "mtime": 1792644257
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_jit_match.c",
+      "bytes": 7860,
+      "sha256": "0772729c4b6537b519de2bf4dc1bf566ae257635bd36e4351685014333d4f50a",
+      "mode": 420,
+      "mtime": 1792644257
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_jit_misc.c",
+      "bytes": 7919,
+      "sha256": "21a6a28e77b3ce0bf2e34958040c0f906e759c4a6d7874d7d16435c3c8793464",
+      "mode": 420,
+      "mtime": 1792644257
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_maketables.c",
+      "bytes": 7389,
+      "sha256": "e73fece87dce89760a82eda10b7b03fea8bb3c571c981bdafa16c02378ba5653",
+      "mode": 420,
+      "mtime": 1792644257
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_match.c",
+      "bytes": 344649,
+      "sha256": "e0531f4c640f73c076c7004975d2b71f2a136fdc2493f8b69ed1d6606e4815f0",
+      "mode": 420,
+      "mtime": 1792644411
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_match_data.c",
+      "bytes": 6590,
+      "sha256": "1f3a3c24f040fec9e158662a8055e3c4a96046532de9689e49b8cf8444f84072",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_newline.c",
+      "bytes": 7558,
+      "sha256": "56f8215933b139827f4c0806b0dfc57a454cb7447c03c7a423a99a001dfdbb60",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_ord2utf.c",
+      "bytes": 4140,
+      "sha256": "766e06c883fc80be35a4ca2f15167133abdab33aace778e44630f10507e4088a",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_pattern_info.c",
+      "bytes": 14556,
+      "sha256": "1c293cb63ace8a3d439aa81446a0459d26901475260258bdb4e4255756e0cb2f",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_script_run.c",
+      "bytes": 14705,
+      "sha256": "57c1418550499ca0a203798cfa8f6b55a989434ec3e40a4ceb69e963e7f45169",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_serialize.c",
+      "bytes": 11517,
+      "sha256": "f326ff27d6be53a05135923014c8779f5e1f8291a867b9d6fcae61e7e317d151",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_string_utils.c",
+      "bytes": 6765,
+      "sha256": "72407eebdd5a672dcd5a15680b1825ef1a00680d4728dadbfafd21d1b99537c4",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_study.c",
+      "bytes": 75201,
+      "sha256": "0ac6a0d00fb7128b6d0983ed9e3ce94a5c0aeef20b25c24af4b992aa1900a9b1",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_substitute.c",
+      "bytes": 41512,
+      "sha256": "966a48a616dfe321721c7bd0fe5d52c564a04e611f969171a657f8191ac15d56",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_substring.c",
+      "bytes": 21344,
+      "sha256": "dd9e78542d3e47c4c0a8ee28bbe0f82630c7d4220ebf7c1ce7c0ec6fa058cb30",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_tables.c",
+      "bytes": 10696,
+      "sha256": "3af591713d2d216ebe7d074011d21a228911e4409f946292b45a7e6a428cf4af",
+      "mode": 420,
+      "mtime": 1792644258
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_ucd.c",
+      "bytes": 335600,
+      "sha256": "4c080eae4ffacedba6f5892f1d66da9d870616a99a92b1c0c7d1e3d589690bb2",
+      "mode": 420,
+      "mtime": 1792640715
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_ucp.h",
+      "bytes": 10993,
+      "sha256": "5aa916788106f81d72309276d2f1f0006cddd5cc561a70097be6822d2656c3e6",
+      "mode": 420,
+      "mtime": 1792640715
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_ucptables.c",
+      "bytes": 80140,
+      "sha256": "793b6c9aefcda617c333f39e974a8d4458c1aa1df3cb76c936cb586bd3840c92",
+      "mode": 420,
+      "mtime": 1792644259
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_valid_utf.c",
+      "bytes": 15478,
+      "sha256": "f5a03098fc293986380d3d82b152e15ec706daad44cd973f845d71fe02ea804f",
+      "mode": 420,
+      "mtime": 1792644259
+    },
+    {
+      "path": "ext/pcre/pcre2lib/pcre2_xclass.c",
+      "bytes": 11801,
+      "sha256": "7d79f55b8c7b3fcc0f4c2fc329eb5553d063aa8d63df4a8cb672d0d2a1b89ca4",
+      "mode": 420,
+      "mtime": 1792644259
+    },
+    {
+      "path": "ext/pcre/php_pcre.c",
+      "bytes": 117224,
+      "sha256": "2d8746a86561307e0f5b74ff8c8a1f8f74a6a157f52261cf7f8bbf8d3df8bc5c",
+      "mode": 420,
+      "mtime": 1792644259
+    },
+    {
+      "path": "ext/pcre/php_pcre.h",
+      "bytes": 4696,
+      "sha256": "4439a6c3548b0839a7a7a4dd262608f504eccbb2f3e7192e441c9452b66b361c",
+      "mode": 420,
+      "mtime": 1792644259
+    },
+    {
+      "path": "ext/pcre/php_pcre_arginfo.h",
+      "bytes": 6966,
+      "sha256": "97b11a7edd9c2a64f4ffe268f9fbcbb6539862e464918fe8ac8e3e7ffb4859e1",
+      "mode": 420,
+      "mtime": 1792644259
+    },
+    {
+      "path": "ext/random/config.m4",
+      "bytes": 898,
+      "sha256": "20fc34869f348ef357cd891b5e4ccc042258e516803b11b65f31cb50df199713",
+      "mode": 420,
+      "mtime": 1792638582
+    },
+    {
+      "path": "ext/random/csprng.c",
+      "bytes": 10550,
+      "sha256": "87771969a685b69f99753e4f386cab051c41b899194c78894b255499d9ba6677",
+      "mode": 420,
+      "mtime": 1792644412
+    },
+    {
+      "path": "ext/random/engine_mt19937.c",
+      "bytes": 15007,
+      "sha256": "69e97e4655d3866874561ac177ffdc51ac7cf8ec90dbbd6e966358bd2bdf4719",
+      "mode": 420,
+      "mtime": 1792644259
+    },
+    {
+      "path": "ext/random/engine_pcgoneseq128xslrr64.c",
+      "bytes": 7864,
+      "sha256": "52f0f4aabedd1f5a8d98a58d96453ae0cd988bca31437c934a6d5c88ecf5238e",
+      "mode": 420,
+      "mtime": 1792644259
+    },
+    {
+      "path": "ext/random/engine_secure.c",
+      "bytes": 1965,
+      "sha256": "6616527d660737d615b1089d7b8d6bb5fa9749ff223e8205f8b6cb3bf84af2cf",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/engine_user.c",
+      "bytes": 3100,
+      "sha256": "ac50d758f724c1d15694445259e0e5d901b002014df244ca34df6991688f5f83",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/engine_xoshiro256starstar.c",
+      "bytes": 8691,
+      "sha256": "7727291ba7e3feadd0eb5ef142808b8e2bcc3af9d8a768c3418d71f115f196d2",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/gammasection.c",
+      "bytes": 5765,
+      "sha256": "243230c96268a03951520297201862d6d6ca3339f34f20c78b7079054b672e44",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/php_random.h",
+      "bytes": 9630,
+      "sha256": "454a61d0a41c242d11d518121d0f1a27c60d5e2a91835ddb2f3dc942f5c3984a",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/php_random_csprng.h",
+      "bytes": 2871,
+      "sha256": "5fb4ec64b0430623fe083251fee9d31d622d03ab8fd239766caa2a7a03ba625b",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/php_random_uint128.h",
+      "bytes": 4059,
+      "sha256": "75fcdd3ccba158c218e98020ca6e7301989e7fee8698248e47f56049286f527f",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/php_random_zend_utils.h",
+      "bytes": 1970,
+      "sha256": "93611b820d18cd2529d6b34a3d85a8e03a852118cd51955ebff824b0ea98da3b",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/random.c",
+      "bytes": 28326,
+      "sha256": "497363828b4af9d8aec1e4f9d5f7896f5dfdd3edd35a474a23c752eeb2918a28",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/random_arginfo.h",
+      "bytes": 22681,
+      "sha256": "9a55e979b241567a3fad5df0ff9cff5f43a087f9b91cee60c009628538bf6474",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/randomizer.c",
+      "bytes": 18321,
+      "sha256": "360a06c3a9dbf4b3f4fcb53726392a1cd264529e7a35ffc3b5f9a407ee3778cc",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/random/zend_utils.c",
+      "bytes": 3292,
+      "sha256": "ac56540893fad292d89a1247158c1422cdaacd1cd8ca8a7eea8dbeff55284a98",
+      "mode": 420,
+      "mtime": 1792644260
+    },
+    {
+      "path": "ext/reflection/config.m4",
+      "bytes": 104,
+      "sha256": "221839cdb998084828724cdd170cf6ee49d062af8062c7a7c51ae8027e39bce8",
+      "mode": 420,
+      "mtime": 1792638581
+    },
+    {
+      "path": "ext/reflection/php_reflection.c",
+      "bytes": 264498,
+      "sha256": "26de46373e04474cc8dcba7d68a5a4e85871681a99440a4441b9304fc830ad19",
+      "mode": 420,
+      "mtime": 1792644261
+    },
+    {
+      "path": "ext/reflection/php_reflection.h",
+      "bytes": 2857,
+      "sha256": "3f7f63b974faf21f61edbef2a4ee41e02257e891ed18cb3ca626f757f99a6537",
+      "mode": 420,
+      "mtime": 1792644261
+    },
+    {
+      "path": "ext/reflection/php_reflection_arginfo.h",
+      "bytes": 173426,
+      "sha256": "d2d9986f822c5f95f74c605eb5b35f47e7f1c7ea4137e97a73cd24a9d68fff83",
+      "mode": 420,
+      "mtime": 1792644263
+    },
+    {
+      "path": "ext/session/php_session.h",
+      "bytes": 18490,
+      "sha256": "5eed12d28e13b3bc0f289ee1aa6e8ee919560b37f7b98da35586325f097e9dce",
+      "mode": 420,
+      "mtime": 1792644263
+    },
+    {
+      "path": "ext/spl/config.m4",
+      "bytes": 607,
+      "sha256": "9561dcfd355b87a76dff24f949c5e322c7eb877ecedc85a8c706bcae99116e3e",
+      "mode": 420,
+      "mtime": 1792638576
+    },
+    {
+      "path": "ext/spl/php_spl.c",
+      "bytes": 30898,
+      "sha256": "d7fb65a78d1d8264fc98f6b328dc905451907dd461eee92c8163631a8f16110b",
+      "mode": 420,
+      "mtime": 1792644263
+    },
+    {
+      "path": "ext/spl/php_spl.h",
+      "bytes": 1655,
+      "sha256": "e2be45a839c105dde2b16311030957de52dec58570f5fe2d5fe5829560248445",
+      "mode": 420,
+      "mtime": 1792644263
+    },
+    {
+      "path": "ext/spl/php_spl_arginfo.h",
+      "bytes": 4629,
+      "sha256": "bd27efb8f23ab70610deda0164bddb6229afaa2e7f8084216fe91e32a29df676",
+      "mode": 420,
+      "mtime": 1792644263
+    },
+    {
+      "path": "ext/spl/spl_array.c",
+      "bytes": 66723,
+      "sha256": "18950cd8c61ed0b5c104aaad4060605e01f194169a57b63125fd254ce5ce6a84",
+      "mode": 420,
+      "mtime": 1792644263
+    },
+    {
+      "path": "ext/spl/spl_array.h",
+      "bytes": 2099,
+      "sha256": "404dfb8f7f0116fb1e15f3be90aa70b1d77aaff33a18f084da62540b6c665618",
+      "mode": 420,
+      "mtime": 1792644263
+    },
+    {
+      "path": "ext/spl/spl_array_arginfo.h",
+      "bytes": 27448,
+      "sha256": "9098e687d72f4d009478c93f10c3f0af09ed07625d7ba0df66d79cf284d356cc",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_directory.c",
+      "bytes": 96129,
+      "sha256": "b8b44c8c6203e2d4de003dab6b51dbbd4e0f90d2abe959616675eaafd2f8fabf",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_directory.h",
+      "bytes": 5845,
+      "sha256": "fd057bffef51570a908c7681feed1b64934459bb54de737d73ea117d8cce827d",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_directory_arginfo.h",
+      "bytes": 48819,
+      "sha256": "b833e94a21ffb3d0fbb867d2cfcaf4039f9baab47e173b7cf913a2378212ca34",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_dllist.c",
+      "bytes": 38018,
+      "sha256": "dd29fca27ef2ef089d33df3c53a380f764abf0033f66b4ad3856bd1d31913412",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_dllist.h",
+      "bytes": 2096,
+      "sha256": "4de8de77ffa87a8b8791092b40b21eb01f87310e71765f7fab0de58e8bfe3fe6",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_dllist_arginfo.h",
+      "bytes": 15596,
+      "sha256": "22f3a8c722d58451632c2f4f11cf058713095769b3fdf4461bbe0e55d6f58371",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_exceptions.c",
+      "bytes": 3502,
+      "sha256": "d9598206d8119e49205b5896850d080084a9e250acc0823dd2f49918f9fdde9c",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_exceptions.h",
+      "bytes": 2181,
+      "sha256": "fbec6fe39d09c07ddcf859479ce79496235ae9ec147aedb087df9e56c15fa65d",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_exceptions_arginfo.h",
+      "bytes": 4648,
+      "sha256": "9a3c2b57fc99427100ae863990196aff0b71bd0069a54c3517e5a91670d8486d",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_fixedarray.c",
+      "bytes": 31614,
+      "sha256": "7e8d0ca0cf0c95876383664b5e4e052919708e19c75d854cadbb0dea2046776f",
+      "mode": 420,
+      "mtime": 1792644264
+    },
+    {
+      "path": "ext/spl/spl_fixedarray.h",
+      "bytes": 1502,
+      "sha256": "5fd0750fe5b93dbe69c7df0eb52fd6ac5ec858bf095d95dd2a812dc2edd30834",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_fixedarray_arginfo.h",
+      "bytes": 7799,
+      "sha256": "fa8e52002e62131a7c5915d53934051c39e42210ea26060a3fe4c2669b15f098",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_functions.c",
+      "bytes": 3819,
+      "sha256": "75a1f8628911cef49151e51856857647593e8eef263e018348bf89f87ac50929",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_functions.h",
+      "bytes": 2069,
+      "sha256": "e4a7be64e99a90f7c9b96fe9bef20f7c9c0a2cacbb93264e237c7cb24146cfb4",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_heap.c",
+      "bytes": 34119,
+      "sha256": "f071dfc74c4ac7b27416199402191d7f3f42f998c60baa9141607269310182eb",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_heap.h",
+      "bytes": 1748,
+      "sha256": "6c1d38d3906ef1073f7b225c859092e3074729e0cc81cbbd6ac6c07f053fe58a",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_heap_arginfo.h",
+      "bytes": 14285,
+      "sha256": "886a93a24a5418eb1eca0bc90cf099eadc949604a6e112cc4e1b6dccf4d19ad8",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_iterators.c",
+      "bytes": 117312,
+      "sha256": "82c775af306f3e7714df5b46f2ef4eb31549b22b7db06e1a6d6af18ac3eee725",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_iterators.h",
+      "bytes": 4326,
+      "sha256": "cfbae7215772927f6efdbcc2f233862304ab4203efc5704bf291720e724c21ca",
+      "mode": 420,
+      "mtime": 1792644265
+    },
+    {
+      "path": "ext/spl/spl_iterators_arginfo.h",
+      "bytes": 62179,
+      "sha256": "1fa55780c7fc63fc94796bc11691321f19c984805a7646c8d77f37c679e26d6a",
+      "mode": 420,
+      "mtime": 1792644266
+    },
+    {
+      "path": "ext/spl/spl_observer.c",
+      "bytes": 48915,
+      "sha256": "b501b4bb3d4dd15470790351027f4cdfb0cd810cd9d7d9f4f602a9cbe3e8328f",
+      "mode": 420,
+      "mtime": 1792644266
+    },
+    {
+      "path": "ext/spl/spl_observer.h",
+      "bytes": 1746,
+      "sha256": "38a65e132ddb6cdd7e142240fa590c300beb9217132fee1439bcd2f55d567973",
+      "mode": 420,
+      "mtime": 1792644266
+    },
+    {
+      "path": "ext/spl/spl_observer_arginfo.h",
+      "bytes": 20598,
+      "sha256": "70a978aec117a0aa066ef9d01d627900088760ef0feb361069ee21b4e61c8421",
+      "mode": 420,
+      "mtime": 1792644266
+    },
+    {
+      "path": "ext/standard/Makefile.frag",
+      "bytes": 476,
+      "sha256": "204acea208d2c42ba81c9f54b3ec133eeb2c1b54db47893b0bc6368339ea31df",
+      "mode": 420,
+      "mtime": 1792638573
+    },
+    {
+      "path": "ext/standard/array.c",
+      "bytes": 268724,
+      "sha256": "9871396dc704ca5781eadd3b14e727e6d4b95e384778fa3131aed929f1f9c36f",
+      "mode": 420,
+      "mtime": 1792644266
+    },
+    {
+      "path": "ext/standard/assert.c",
+      "bytes": 12398,
+      "sha256": "35764a79a0d17fbf846c402a761672cd10efab10b5847782b533935f32468458",
+      "mode": 420,
+      "mtime": 1792644266
+    },
+    {
+      "path": "ext/standard/base64.c",
+      "bytes": 63715,
+      "sha256": "e21402d8b8aa1a0736bf1e0311ddabe4a8172034a2a0c34468dac05926b052f5",
+      "mode": 420,
+      "mtime": 1792644266
+    },
+    {
+      "path": "ext/standard/base64.h",
+      "bytes": 4367,
+      "sha256": "2c44596eab36aee9788c84de199286ea4bac5f5359d6cca02b612e0f8df3505a",
+      "mode": 420,
+      "mtime": 1792644266
+    },
+    {
+      "path": "ext/standard/basic_functions.c",
+      "bytes": 77974,
+      "sha256": "6df263ef103e5e858a46808719a78fa68506364162609e5babbcf32803a30985",
+      "mode": 420,
+      "mtime": 1792644267
+    },
+    {
+      "path": "ext/standard/basic_functions.h",
+      "bytes": 5107,
+      "sha256": "7d89cc5490a22a80e167a685cee53dd4199327549036b885f61d76769d6b97cc",
+      "mode": 420,
+      "mtime": 1792644267
+    },
+    {
+      "path": "ext/standard/basic_functions_arginfo.h",
+      "bytes": 680483,
+      "sha256": "678ec52d0ad66c5ec36d869b2ef0d753d40be5fb6ed664de464aa0459ad9d30f",
+      "mode": 420,
+      "mtime": 1792644296
+    },
+    {
+      "path": "ext/standard/browscap.c",
+      "bytes": 28722,
+      "sha256": "22c3de75b9813d2ac252c0b679eb25ea2500e5a0a52bd7e48086fa9f60efbef7",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/config.m4",
+      "bytes": 10676,
+      "sha256": "5ba23b6c8b82622c33be5727db46975aa1dd704a900db07440042e28e3372bfd",
+      "mode": 420,
+      "mtime": 1792638573
+    },
+    {
+      "path": "ext/standard/crc32.c",
+      "bytes": 4987,
+      "sha256": "61f233c368d0a375af4a3becdcdea5c5fd597ff1fdd71d400a7ca7d2937cb99a",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crc32.h",
+      "bytes": 5230,
+      "sha256": "6b0aac3b6a57db47af500101aeed93dff78c5fc677839d854f43b036860c9209",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crc32_x86.c",
+      "bytes": 14118,
+      "sha256": "fd8d2e05cfc3c617fc8531ca9377c893f9a8f13f5db09988368892ce8c5e2e25",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crc32_x86.h",
+      "bytes": 2191,
+      "sha256": "7561b12da949b5e3d80af46c3468904149012c872a5cef4f374332769ea8652a",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/credits.c",
+      "bytes": 6961,
+      "sha256": "e9bbddceb214b00a0534dc0bb2511aafef072b1eeba19e24111fad175e583a36",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/credits.h",
+      "bytes": 1823,
+      "sha256": "e083072a9a611cf896ea6582a5a957c9f2321300658e1df7fc25a0f071745acc",
+      "mode": 420,
+      "mtime": 1792640731
+    },
+    {
+      "path": "ext/standard/credits_ext.h",
+      "bytes": 5421,
+      "sha256": "8f8cadf26f00f030ffaf2958d122e1edd8500fc0cd2ea153460163950b5e98db",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/credits_sapi.h",
+      "bytes": 1101,
+      "sha256": "68366c55928773afd99ec2f39ba969bcd4c170f948275756805f44ddbe60de8a",
+      "mode": 420,
+      "mtime": 1792640731
+    },
+    {
+      "path": "ext/standard/crypt.c",
+      "bytes": 7659,
+      "sha256": "2b1a8b1125ab865ab71185598a4040bcfab0e93927d577da50c4da0a06397ec8",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crypt_blowfish.c",
+      "bytes": 41402,
+      "sha256": "40dd97a26ce404124ae5f6056833199ad5d8541e7008ef8a8847429e049ab4e2",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crypt_blowfish.h",
+      "bytes": 1061,
+      "sha256": "91be22d73decd8b8b20894a897fb0450d7f7aac3d07e61e879497af25caa1000",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crypt_freesec.c",
+      "bytes": 25158,
+      "sha256": "1d8a476902aceb0f688d2837366f61d26f9aa19293b5f43b9cda23f33fd4f59c",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crypt_freesec.h",
+      "bytes": 875,
+      "sha256": "005924fb6718fea785b2cb7e3c9ba58e7f13b58e935788275cf1480fea10aaf1",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crypt_sha256.c",
+      "bytes": 26965,
+      "sha256": "703b3282d1b2a7a156e82903a2fa73a07455954f126ab4e18c2195b3217df6c7",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/crypt_sha512.c",
+      "bytes": 32606,
+      "sha256": "b7ef3962b3218cb83bd6ea6de0afc823cb092cc7c9ba00d0d23141e95a2ee8dc",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/css.c",
+      "bytes": 3313,
+      "sha256": "b9b144021b1e7ffca40f4c22d7ff14188bd0c6baa6994e93f55c086a78a5c939",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/css.h",
+      "bytes": 1331,
+      "sha256": "dfaaf77c71dfd95c32d620c4520bc8d43f08050775680a752f36dd6baa1dc9d2",
+      "mode": 420,
+      "mtime": 1792640731
+    },
+    {
+      "path": "ext/standard/datetime.c",
+      "bytes": 3798,
+      "sha256": "23cf3030dbec90e570c82ab7c1e8d49f26597c90558ef028ccf07f5f89c0c924",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/datetime.h",
+      "bytes": 1438,
+      "sha256": "a7f04a3a35208c897dd28f502944ce2456990884b7b9d66dcd32fdcdbe5c5666",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/dir.c",
+      "bytes": 17640,
+      "sha256": "1f0918c48212a1dbe10e12ac2ca156b1f2ea9a0faaa501e1ae12dd6a0e13463b",
+      "mode": 420,
+      "mtime": 1792644282
+    },
+    {
+      "path": "ext/standard/dir_arginfo.h",
+      "bytes": 4294,
+      "sha256": "3df54368ae401256549e53aaf9ace0e2b21e9afd9a12ac820c362ede56beb6ef",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/dl.c",
+      "bytes": 10974,
+      "sha256": "f4679c414450e05616e0d68c028a6365069142fd60f0170a163903dcfa8377f3",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/dl.h",
+      "bytes": 1757,
+      "sha256": "1b9553d8c480fe7c3b9b4e38e8099efa9867bc1d5cc7dcee2b7f351301af5136",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/dl_arginfo.h",
+      "bytes": 536,
+      "sha256": "b9faa867830092d1d1d7fd0eb533c12228ee01ba8856fb64c763cbbe96059c12",
+      "mode": 420,
+      "mtime": 1792640731
+    },
+    {
+      "path": "ext/standard/dns.c",
+      "bytes": 36875,
+      "sha256": "6eeadbd1a843da5268fd5757a7a03f78a2fee59961194bc6d9b6ab4c67f2488f",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/exec.c",
+      "bytes": 15633,
+      "sha256": "58fdf3280476e2e1a1d858f8e7d5114db5bb0ff97ea64912e5bd3c42413389e8",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/exec.h",
+      "bytes": 1600,
+      "sha256": "8740d26c5c2273536be1a168b23f95aad1b1dc93df6ea0774006540bcc231bbe",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/file.c",
+      "bytes": 73189,
+      "sha256": "ba38427a92a120192a93dbc22e265a3d661292131087892e357584b1a1074aae",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/file.h",
+      "bytes": 4555,
+      "sha256": "e8c8a83fcd3dba78553d53fc24e1031c48730cd52d01a1a54eafc6442ca2876f",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/file_arginfo.h",
+      "bytes": 9202,
+      "sha256": "0bd7cbd13032a63862f279f38e6f7d0f56b6a786ff790295b748d283d470c7c2",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/filestat.c",
+      "bytes": 37659,
+      "sha256": "46aa00fcb3d7056464599dd0e77709fcc6cb47ae26ccf23af83b5649cee6dd78",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/filters.c",
+      "bytes": 71286,
+      "sha256": "fe45e2cbf5818e8a4d5f87fd91f0bbef09f348d05fd584e24be9944f58438ac4",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/flock_compat.c",
+      "bytes": 5818,
+      "sha256": "96fcfa7a751eb9f1ef950e9e59335b847dde22618ca01785b0bff844815e9837",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/flock_compat.h",
+      "bytes": 2162,
+      "sha256": "d9d7339ff6ac2d8d4bc10d61cfb289008f45791458506e2e52459b6ef9b4cf43",
+      "mode": 420,
+      "mtime": 1792640731
+    },
+    {
+      "path": "ext/standard/formatted_print.c",
+      "bytes": 33531,
+      "sha256": "21c5b94437aecdce6845feafdae1f9c2cffd3ab02eb6a7cad379fae3b91362e0",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/fsock.c",
+      "bytes": 5994,
+      "sha256": "dd1516a774c088e67cf9d58524ebb8af86ea0200e4e0e3afd4adebef0db46dd2",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/fsock.h",
+      "bytes": 1509,
+      "sha256": "0a697218e12b138b889292bc38529fe4dc54cff64e3528891f930101bf10b352",
+      "mode": 420,
+      "mtime": 1792640731
+    },
+    {
+      "path": "ext/standard/ftok.c",
+      "bytes": 2245,
+      "sha256": "3f3df72f6cd26512ad32114fe37e98e9e647c7b9aa0c00b54fab326d180b8be8",
+      "mode": 420,
+      "mtime": 1792644283
+    },
+    {
+      "path": "ext/standard/ftp_fopen_wrapper.c",
+      "bytes": 41111,
+      "sha256": "a4e35220a1cd6775be3d7ce53d6a00f900290c74304013ae4fe7717feb244bcf",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/head.c",
+      "bytes": 14087,
+      "sha256": "3c97a465ec8fbd9c4e6417222eb5075cfbb16162430d57f3ae0ef3f452be0e5c",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/head.h",
+      "bytes": 2066,
+      "sha256": "2679c09e160b403e025f704024bb6ca3e51de7d7e89e9a7e001f3132c1e419b3",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/hrtime.c",
+      "bytes": 4196,
+      "sha256": "b64a4c5c7daee848682ea14bb543cbac97a0828f6335ec3606c5ed43049fc9ae",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/html.c",
+      "bytes": 58980,
+      "sha256": "525f8183ea39b708d2180ce12999a8f06d0304843375951ce7ae6c0ba9b061b9",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/html.h",
+      "bytes": 2952,
+      "sha256": "92e4dce23a15ae911934e58ab2b9e2dbb3d652e177876038f76401b7528cb7e1",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/html_tables.h",
+      "bytes": 483990,
+      "sha256": "92db4515702247e64fd3dda205ed97ffd5e4aa0f12b306097fae820b686144d4",
+      "mode": 420,
+      "mtime": 1792640731
+    },
+    {
+      "path": "ext/standard/http.c",
+      "bytes": 17994,
+      "sha256": "4e0d6f2a5e5e2e8695584d39af016585debe32ea417c9c791025f35bd5d33906",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/http_fopen_wrapper.c",
+      "bytes": 58534,
+      "sha256": "fbcaa2f41671db2e0a032da41f8db4ffb77defb4abea6e600828e417c5feb810",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/image.c",
+      "bytes": 51393,
+      "sha256": "ada95e1e117dd487c8c38009d5c2303cb530b3d17ad1336e6b5b12de0dad781d",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/incomplete_class.c",
+      "bytes": 5908,
+      "sha256": "2828995409f8bd7ae519afeaff84a732b9cb33802e9c570bd87a4f6b615229dd",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/info.c",
+      "bytes": 54209,
+      "sha256": "23787bb9126bfeeb13a58237f2f1d8d54749bfad9445cb0a54f3441ce6b56591",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/info.h",
+      "bytes": 38618,
+      "sha256": "485a2a40ea31c85d90977af8572d78eeeef9eefb21b2ca1031c1ca9e5af4cd47",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/iptc.c",
+      "bytes": 11160,
+      "sha256": "4ef5adbeabb884875c87be734099800b674d685219eac9565aeff05c988620b9",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/levenshtein.c",
+      "bytes": 3618,
+      "sha256": "a16f08607a6bf8fa53f31ead51fac632e3d5fa77aceb99627831a59adb592924",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/libavifinfo/LICENSE",
+      "bytes": 1315,
+      "sha256": "5d40dcb72f934c3d08e10ddb8ba4844de17bf6f9aabc1a382aacf8a8bf4567f8",
+      "mode": 420,
+      "mtime": 1792638573
+    },
+    {
+      "path": "ext/standard/libavifinfo/avifinfo.c",
+      "bytes": 37549,
+      "sha256": "8d3e8e821cb02add7c55b595b596a9fc20c6468080fa0726e6172e3e7156d387",
+      "mode": 420,
+      "mtime": 1792644284
+    },
+    {
+      "path": "ext/standard/libavifinfo/avifinfo.h",
+      "bytes": 4768,
+      "sha256": "550cf9cf30a56e3e8ce6edf3045319e33a393d7d4c2e29eef0fcf85f137fdd5e",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/link.c",
+      "bytes": 6335,
+      "sha256": "6082b28b13f15872d93ab481cf2827de9ae833eab412a20838b0647aac354545",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/mail.c",
+      "bytes": 25918,
+      "sha256": "098e38d9ed5a0930a1fc7df14f48d98fc5f6a3dde151a0bfed176ad6067bccf8",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/math.c",
+      "bytes": 40720,
+      "sha256": "58f7bd057f5c675181a6c03b3ff684abff407bf18c815b1604435b51273fe6a8",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/md5.c",
+      "bytes": 12548,
+      "sha256": "4a94f58ba099e7042d1cbde5f8a682223917785bd7252f6d54f8753086f347e8",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/md5.h",
+      "bytes": 2296,
+      "sha256": "9fd182bd0db204c69882d0cb9abb4650091ff8530aa0ad5b090ee3dca92c10aa",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/metaphone.c",
+      "bytes": 18837,
+      "sha256": "c5514c26e9904cc38d4fadef857e4a0897ff1c126a5218b42cff681394cf72dc",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/microtime.c",
+      "bytes": 4774,
+      "sha256": "2c18588908742f992745cc4c4a4bd9355a8d26eaef83ff33727990fd40c85cff",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/net.c",
+      "bytes": 11440,
+      "sha256": "8589da46122e29f869e3e31c3620f30a700cc75de27f5d7c8d22c1a56ef945c1",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/pack.c",
+      "bytes": 47485,
+      "sha256": "32ab0aa22a39178e6c3f5b47fd1f1033c076468d7a547f948ff630d5bf27f248",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/pack.h",
+      "bytes": 1335,
+      "sha256": "2a654a06c21957142dcca24bbdc85317a6fdb88823289957360149c8e0ed99fa",
+      "mode": 420,
+      "mtime": 1792640731
+    },
+    {
+      "path": "ext/standard/pageinfo.c",
+      "bytes": 3929,
+      "sha256": "f3c7c6b361dc1b5f22687a3dc17272604295eb0703c4ff8b14032dd6987352d6",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/pageinfo.h",
+      "bytes": 1446,
+      "sha256": "58bdbfa73f0fb0b9eb07807d950c4ca7d4c9f6cbe9bf7de9124aea953e408b82",
+      "mode": 420,
+      "mtime": 1792640732
+    },
+    {
+      "path": "ext/standard/password.c",
+      "bytes": 21156,
+      "sha256": "8038c09e95cc09d7c36bc5dbb11c1ef74d6cca1941b36d4de259ed870f7542bd",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/password_arginfo.h",
+      "bytes": 1507,
+      "sha256": "e4e0c738f80870255de0489daac887bfe8303fd98624b1d80acd43478500dc76",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/php_array.h",
+      "bytes": 3014,
+      "sha256": "d0e46468f96b868ff85d037d44b21d6cdde742fc148ddd763c7b585e39066488",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/php_assert.h",
+      "bytes": 1667,
+      "sha256": "8750dee510e1e685583d864e8c4420ce3134cb70c3279ba70ff1551d8b7e1a86",
+      "mode": 420,
+      "mtime": 1792644285
+    },
+    {
+      "path": "ext/standard/php_browscap.h",
+      "bytes": 1405,
+      "sha256": "0c47a26cfd80eb678972dd674785cbf779917f34628ca753daa0b7dd3cc4405f",
+      "mode": 420,
+      "mtime": 1792640732
+    },
+    {
+      "path": "ext/standard/php_crypt.h",
+      "bytes": 1760,
+      "sha256": "da22b2642dcdec3d81a56d87567b1751df9be9026436b71d025c7052bcf4f4dd",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_crypt_r.c",
+      "bytes": 6584,
+      "sha256": "ed85e7894865600b02ef6c888778debfc670f5c5093475d3858ec8fb8e09fff4",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_crypt_r.h",
+      "bytes": 1941,
+      "sha256": "7360546ee3c128aade8165c9168ed94f9de66f17166b3107b74125832bc667c4",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_dir.h",
+      "bytes": 1506,
+      "sha256": "51e2dade1f35522a3d926dca66fd0a3f818f39c821a4c82e582a1d449065da05",
+      "mode": 420,
+      "mtime": 1792640732
+    },
+    {
+      "path": "ext/standard/php_dir_int.h",
+      "bytes": 2231,
+      "sha256": "8d9f86a62f0f1618960a02554897732fc948da08282e0645a32d95d1a861f0b9",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_dns.h",
+      "bytes": 4547,
+      "sha256": "421242741efa76976e0848eb5c27bce96dcda61b718fa699fbf4139bfb3284af",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_ext_syslog.h",
+      "bytes": 1465,
+      "sha256": "f579655354c3f76e3ebf179eaf85f83649920ca9abe5b711ef309bbe153ce10e",
+      "mode": 420,
+      "mtime": 1792640732
+    },
+    {
+      "path": "ext/standard/php_filestat.h",
+      "bytes": 2378,
+      "sha256": "63af51d6dc1f4ab058cca8293a9a903fc71892b881258ba10139c548352860d6",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_fopen_wrapper.c",
+      "bytes": 15592,
+      "sha256": "d97c9d8c5263cb496405a1d1f9b5258036f50ec19038a99a4439d5a4c076c774",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_fopen_wrappers.h",
+      "bytes": 2478,
+      "sha256": "b5aeceaec09f94bfdf1bbeeb9cecffffc748dbe7bd559c7c8360162754d421d1",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_http.h",
+      "bytes": 1848,
+      "sha256": "fac49564dbdde76399453388200d45c72cd41e3adc92edecd47dc28118a58a83",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_image.h",
+      "bytes": 2494,
+      "sha256": "52ac18014b54e223a049161eae963430339bbe9776f1f69fec684b2987a10620",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_incomplete_class.h",
+      "bytes": 3938,
+      "sha256": "32dd8527999ebd55d341088027099fe432404b2e02ad9489174da3313d9f593e",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_mail.h",
+      "bytes": 1547,
+      "sha256": "4e5a145e9fc915a0ff830b08ef2ec94b4a5de8c3d28e04b1d1e5cb3cea7d2491",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_math.h",
+      "bytes": 3754,
+      "sha256": "b267f96bebdfdb90b24f10c3a8cfb8b0b12d7d04737511a10be9242ff44dda9d",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_math_round_mode.h",
+      "bytes": 2202,
+      "sha256": "1d3a92e9da0b3b3177620380dce286229c7af0bc68f8e7020a6e99dc439ec4e1",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_net.h",
+      "bytes": 1428,
+      "sha256": "72e053cb5321790212b4ffb6b9185059a6594241bdde714bc568135426582ce0",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_password.h",
+      "bytes": 3166,
+      "sha256": "7dfbe85235877f97935757caa739918a7ecc747ecde6de465673ace71f594871",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_smart_string.h",
+      "bytes": 1435,
+      "sha256": "9a02b015fa2dbe17a750b8fbb684b815f31a8ff8f5ef1569155b886808038634",
+      "mode": 420,
+      "mtime": 1792640732
+    },
+    {
+      "path": "ext/standard/php_smart_string_public.h",
+      "bytes": 1449,
+      "sha256": "4ba371eb6a5acbe25ee0e93c8180a55ab38ad0504babcf0afea18f736836edc2",
+      "mode": 420,
+      "mtime": 1792640732
+    },
+    {
+      "path": "ext/standard/php_standard.h",
+      "bytes": 2162,
+      "sha256": "c7c6b27a88141a0b2bdbfd4f3da7853d5a06985ab2a6df541f6f0e7c1f55e749",
+      "mode": 420,
+      "mtime": 1792640732
+    },
+    {
+      "path": "ext/standard/php_string.h",
+      "bytes": 4189,
+      "sha256": "0ee77661fe1f002d8c097c04461238179c3ddae38e2cc166197a4ed4684feb0b",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_uuencode.h",
+      "bytes": 1475,
+      "sha256": "d383c7859048b0944e0014a14d36389f46b2cf0445d91d45b4383e4942289803",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_var.h",
+      "bytes": 3974,
+      "sha256": "00d193f2c4a7a528e44f3d1d6c9df665eb1d31fd62e78450a41b974f645e63a8",
+      "mode": 420,
+      "mtime": 1792644286
+    },
+    {
+      "path": "ext/standard/php_versioning.h",
+      "bytes": 1480,
+      "sha256": "a1b7cb6bf7de1ac6b5ea90ad124cc87a399b4652426052a16f1c3f68ad868176",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/proc_open.c",
+      "bytes": 50978,
+      "sha256": "691dd8c5662d98a7d1934a60f68ddf5a0d914d9c55baeb4d926fc5aa681b8f9a",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/proc_open.h",
+      "bytes": 2243,
+      "sha256": "1e87d37eadc10cacfafded4eac30cb0eb6042fa70cff7c3c966faa952dadc659",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/quot_print.c",
+      "bytes": 9440,
+      "sha256": "f124dfeea687621d8978c3e4f8c07125e235eb0e8018675475a750d576923a62",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/quot_print.h",
+      "bytes": 1523,
+      "sha256": "605dfc2842bc23fe620fb4a2e971be0a08a6308d0f176428014be00c022bb8d4",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/scanf.c",
+      "bytes": 42947,
+      "sha256": "28cba8b369714038046a2f27c686863744b9ad8824672f64b6591fa4ac12bc05",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/scanf.h",
+      "bytes": 2264,
+      "sha256": "e6930cddc3f99eda4a1e343c5f59425cd4531e43375f6092ab0b363b5649686e",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/sha1.c",
+      "bytes": 14180,
+      "sha256": "d17046282d688eb021e80b93c65d491a8239dd2ef6e876067f16de93fea491fd",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/sha1.h",
+      "bytes": 1899,
+      "sha256": "0436fec3e9d7a2ea31d0a31147b0db3a4cb41477747fe306ddfc5c73d9ffac20",
+      "mode": 420,
+      "mtime": 1792644287
+    },
+    {
+      "path": "ext/standard/soundex.c",
+      "bytes": 4543,
+      "sha256": "567741f2b10542926344cee4107473663dd93c4d61f0991c72ab34a6862c73e1",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/streamsfuncs.c",
+      "bytes": 54818,
+      "sha256": "c8e2e3d09b27484720150f934e2b9bdfceb2073de2f30740c59c2dbd17434b7c",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/streamsfuncs.h",
+      "bytes": 1406,
+      "sha256": "92cdcc495a7c6a8fe4647ce495245783d23282ab5a363e413b03fbdc72ffbfd6",
+      "mode": 420,
+      "mtime": 1792640732
+    },
+    {
+      "path": "ext/standard/string.c",
+      "bytes": 197841,
+      "sha256": "620491133f6b7edd949d3f54a96aaeb52238c63e8aaa7f9d5bef70b5d76076ca",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/strnatcmp.c",
+      "bytes": 5465,
+      "sha256": "6388b30458c9b86cffcb9a8c0c696b0df8e83995b9438192a912c1ab637a1db7",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/syslog.c",
+      "bytes": 3002,
+      "sha256": "f0abe99cf43e88aaf5cf952f713f90d0785d6cae5fc69bc7277a50e172c856cf",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/type.c",
+      "bytes": 13300,
+      "sha256": "02769d6f1b1ec26ccf41f28582c82aaa892d56a9181e981a1a7eb2a3996535dd",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/uniqid.c",
+      "bytes": 3141,
+      "sha256": "ba079445765de52ba52add1999278cff399be126f4c280067499bfe21a1342b8",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/url.c",
+      "bytes": 23464,
+      "sha256": "a3baae6c497aa4050199509b0b35687f30e31dd6898a596bd22c1a6dbfbb89eb",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/url.h",
+      "bytes": 2359,
+      "sha256": "b9ed5e770e33f806a94f1b461f59a2b963915c8baba5ff3e315cae3c34ee8c67",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/url_scanner_ex.c",
+      "bytes": 48766,
+      "sha256": "65ba7ca26baca292dbb1c5c241833d9ad4546e69467edb29929b219f572a04f0",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/url_scanner_ex.h",
+      "bytes": 2755,
+      "sha256": "f1508b3235f16a7ecd928a46021baee2f015e4a6b50da06b5b5d2bfc05a498a5",
+      "mode": 420,
+      "mtime": 1792644288
+    },
+    {
+      "path": "ext/standard/url_scanner_ex.re",
+      "bytes": 29414,
+      "sha256": "f571fc0a2b3beb562f6bbb6b24056b40fe157d3c32a537539b8166866f09df0a",
+      "mode": 420,
+      "mtime": 1792638561
+    },
+    {
+      "path": "ext/standard/user_filters.c",
+      "bytes": 17987,
+      "sha256": "a5994087a3cbfb478f6ef9f9cb593ef0b13daf487fac8af407000ef828e8f7d5",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "ext/standard/user_filters_arginfo.h",
+      "bytes": 6453,
+      "sha256": "a0522f870d47f6388845ee2c6e24d46b3f5f441e9ba55bb2c3c47cc1d1b4012c",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "ext/standard/uuencode.c",
+      "bytes": 7550,
+      "sha256": "fa1d65eed84cdc0000382bdb3165d704946d5147ad7be858eff749eb201768ea",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "ext/standard/var.c",
+      "bytes": 61593,
+      "sha256": "95758fc91497ed271042e62876fbc1f8bb24a73785481f7bfe6e95cee968bd6c",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "ext/standard/var_unserializer.c",
+      "bytes": 62050,
+      "sha256": "1c02b3f250e47f06aa0731bdd52f328d6224a567d1da27c42a1e5b42e83667eb",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "ext/standard/var_unserializer.re",
+      "bytes": 35803,
+      "sha256": "f20f3ed6d5550a2a46fb918979d80343990d459ef34001c1ddbdfdebf7e59917",
+      "mode": 420,
+      "mtime": 1792638561
+    },
+    {
+      "path": "ext/standard/versioning.c",
+      "bytes": 7638,
+      "sha256": "6bd9262227d3f0d21ccafbb56c4534064ec04f9f878b7a81e690024ddbbf30a8",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "ext/standard/winver.h",
+      "bytes": 5272,
+      "sha256": "0e647384e18aa0e196ed54ab769198bcfb02ecae65a82f67124c2c3312361027",
+      "mode": 420,
+      "mtime": 1792640733
+    },
+    {
+      "path": "main/SAPI.c",
+      "bytes": 38571,
+      "sha256": "d78e724fd331e9d2817a8d31329adb5784a9ed042e8db153384a4bcff3bbd224",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "main/SAPI.h",
+      "bytes": 13163,
+      "sha256": "dad95954a4da60fa35683f7dc5a7c673fd370ea9409dde98ef266c26e9627a08",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "main/build-defs.h.in",
+      "bytes": 2057,
+      "sha256": "0331f84a048d9fb606874adaf831d26601013691d5ef0b2c369afa63a738838f",
+      "mode": 420,
+      "mtime": 1792638558
+    },
+    {
+      "path": "main/explicit_bzero.c",
+      "bytes": 1878,
+      "sha256": "92722f0a20b334787bd5c94b58cd881881f42c90b1c9ff9bb36c341f47542771",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "main/fopen_wrappers.c",
+      "bytes": 29816,
+      "sha256": "8a34d80e0f20c3687bd928d6138ba06267e7e6aa413c98d4f6e207ac8308deec",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "main/fopen_wrappers.h",
+      "bytes": 2533,
+      "sha256": "ab7aad5a07ef391c26ec272cd3d7cdda68441f4670ab68933285cfdb26cf6f31",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "main/getopt.c",
+      "bytes": 7412,
+      "sha256": "d916ec4deff0723f60a7d0c183bd2f0dc6d2b15954e10a56c3635eed93a5a830",
+      "mode": 420,
+      "mtime": 1792644289
+    },
+    {
+      "path": "main/internal_functions.c.in",
+      "bytes": 1527,
+      "sha256": "3bdc5934aec82dc8f8b92fd6129cf1bfc25d17402f78a895f94343bb60340c6a",
+      "mode": 420,
+      "mtime": 1792638558
+    },
+    {
+      "path": "main/main.c",
+      "bytes": 100756,
+      "sha256": "a28518f536d642efab0acd8f8b554777d15da2a75beddad784eebe77e228cf7d",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/main_arginfo.h",
+      "bytes": 7397,
+      "sha256": "66af52170d38f83176148150f4084336419784438df2b38132dbbb028cf08d74",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/network.c",
+      "bytes": 42207,
+      "sha256": "a497e0f8c281e85cb990cf8101bbae5b485123767dd0aee8beab707b5080242a",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/output.c",
+      "bytes": 55492,
+      "sha256": "f9d3603e34d70bdac096c30f5ac3f39c767fc245bd7e8426a03caf7ef24d953b",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php.h",
+      "bytes": 13101,
+      "sha256": "6a61e510bc3918bf5822d0776b2e14d87c3bb3d6245ae1d9553317bd8702b80c",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_compat.h",
+      "bytes": 20394,
+      "sha256": "d6d513608092d2da2aaf772017d3ff54f878dbc6a7cc5e6409d997d2e4ac9123",
+      "mode": 420,
+      "mtime": 1792640734
+    },
+    {
+      "path": "main/php_config.h.in",
+      "bytes": 63669,
+      "sha256": "e2cf49171bcc8ed7504fe8b7bfbb8b477889dae0104974eb27a1f5fc766c27a6",
+      "mode": 420,
+      "mtime": 1792638558
+    },
+    {
+      "path": "main/php_content_types.c",
+      "bytes": 2538,
+      "sha256": "00e7e37f6b277cda082a32631a1c4a054378834324913df0586c947727ac4308",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_content_types.h",
+      "bytes": 1613,
+      "sha256": "40f6eabc1439df2618ca227fc93caf90210e167ada4e8fbe9b56000578845b3e",
+      "mode": 420,
+      "mtime": 1792640734
+    },
+    {
+      "path": "main/php_getopt.h",
+      "bytes": 1951,
+      "sha256": "265534fd5938ed4519058b589c8c3b64f182d33ef9fea4c1ad08cdf922421ad5",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_globals.h",
+      "bytes": 4484,
+      "sha256": "f6236cc8f4a9cb1d07db581635b9f813c019bfb165d57bd89767c960b2705e9b",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_ini.c",
+      "bytes": 36297,
+      "sha256": "e0d36dfe98c81767a80c7387060349270045c2238a1e52452cf7d630054bf644",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_ini.h",
+      "bytes": 3860,
+      "sha256": "39227c721b6f820cda10e94c38dc7d5938d195c76725a90616688f81835c2115",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_ini_builder.c",
+      "bytes": 3279,
+      "sha256": "b076142a275c740d9c8b7be7a8447ee3ba2962fcd83154d86530038478c5a994",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_ini_builder.h",
+      "bytes": 3127,
+      "sha256": "21066191636a249a877d3d0871183bed33cee0ea869c3e9f485414b9ba53d51b",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_main.h",
+      "bytes": 3532,
+      "sha256": "f1a5b4a8d4c518ecf86287f5c99d222a515db5734f8c84e719ad1057c46b62b4",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_memory_streams.h",
+      "bytes": 3748,
+      "sha256": "8cf6bace1d6296a4348ec0885f2adf8704ed88481fac84a3770bc73c401ee243",
+      "mode": 420,
+      "mtime": 1792644290
+    },
+    {
+      "path": "main/php_network.h",
+      "bytes": 13631,
+      "sha256": "4309026e34078108e19f5e6e8f5ec3f38571fe165a3a61770579d97f711d2add",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_odbc_utils.c",
+      "bytes": 4291,
+      "sha256": "e618f341fbbf1284b77ebbeb85f1ed248fbabdb0ca51e08ccfbd28260c81115b",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_open_temporary_file.c",
+      "bytes": 12344,
+      "sha256": "92d37555870be7a13fd045fc33316704967a23613867068b9406c20af6886570",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_open_temporary_file.h",
+      "bytes": 2318,
+      "sha256": "4bb5e35df2890194c7434ae6268641e4564044b42eb82d4a88ccacd1c972f419",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_output.h",
+      "bytes": 11786,
+      "sha256": "0c557c00a7ab84aa367ba3685dfd7d9d34bbe82ed2e2edc9400ba1790f5a0d0b",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_reentrancy.h",
+      "bytes": 3500,
+      "sha256": "5d71da20ee0764a30dc1468f6939e144e2ac08cfa404e098e77a54875c91e487",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_scandir.c",
+      "bytes": 3648,
+      "sha256": "8cf8c84fc1329b0dfb406e3b8b7880e33c055e85a84b811066d014299512f2bd",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_scandir.h",
+      "bytes": 2050,
+      "sha256": "0f8d61a168272eee2073b547cf227570da824d225117b4db300b676805c6618e",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_streams.h",
+      "bytes": 35951,
+      "sha256": "1b6a1b19391b17cc552ff772c55e5e2855f9a61c7fdfd138f296ae83ac3e5642",
+      "mode": 420,
+      "mtime": 1792644429
+    },
+    {
+      "path": "main/php_syslog.c",
+      "bytes": 4384,
+      "sha256": "feebd26a4f8456318de37ee7022778bbc010f8a20cee4d047d17b004626d0af8",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_syslog.h",
+      "bytes": 1840,
+      "sha256": "93be03c9957a008409b015101843556a7b740abe5c3667245d8647f0176137fe",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_ticks.c",
+      "bytes": 2701,
+      "sha256": "0e007d965788f3b405394b873cd20f6f186298d2e8f5530b19341d372727bc99",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_ticks.h",
+      "bytes": 1641,
+      "sha256": "bb0f790733b8e91994efda8f730f2a4dcb730b8bba8451f6f0d0377d7fe049cf",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_variables.c",
+      "bytes": 35247,
+      "sha256": "afd50b7059384110cfa3e476e1e13991a2e8ab20b30bfd108fcffb7e9adca16d",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_variables.h",
+      "bytes": 2368,
+      "sha256": "451c50f01ee49a6c5223445a18335b04f67a9d5e72f5a05918c9730e2207d4a3",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/php_version.h",
+      "bytes": 535,
+      "sha256": "ca54ceed976298e3a4bf773f27693900484ba927df8a6a998651436b02c81ced",
+      "mode": 420,
+      "mtime": 1792640735
+    },
+    {
+      "path": "main/reentrancy.c",
+      "bytes": 7858,
+      "sha256": "e141f0663c87a7e4ae6a524f2308eaa8f7cadc3fbf0781a6d42fdcf4356aa13d",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/rfc1867.c",
+      "bytes": 49735,
+      "sha256": "3f35ff3f6711869a5189321c6846113651bf0d701b1451ba3cfd989107d8ee17",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/rfc1867.h",
+      "bytes": 4251,
+      "sha256": "f33c0c1d3451cd87fb95851436a3a0c413f9aacaa5629dfd73479a99c11841e1",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/safe_bcmp.c",
+      "bytes": 1929,
+      "sha256": "6f64fc52d382ab36006c23d29ef2e56f1cfd0dbf6b4b0e9af382d1fe07e8f304",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/snprintf.c",
+      "bytes": 42395,
+      "sha256": "ebe152e3827768563302d7d7358c45478f7f94fcdbbd527bff8f285f25955c3c",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/snprintf.h",
+      "bytes": 6004,
+      "sha256": "d67d7b22854100ac994f197cb97e24a8ef03f92d735550860edae0d80fb50e3a",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/spprintf.c",
+      "bytes": 35559,
+      "sha256": "0db79cfd427346eb68a7cc2e35e8d4812b601e7c54f7e7054d1266d61e4fb35b",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/spprintf.h",
+      "bytes": 1767,
+      "sha256": "caf746da96155efc0708108c1c2cdefa65aa52e6c9454b2bc090d7d17e289856",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/streams/cast.c",
+      "bytes": 13924,
+      "sha256": "b6b97ce727e0587ea2355ce5f63d75679ac9d83251cf6a24997639875969b4e7",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/streams/filter.c",
+      "bytes": 18266,
+      "sha256": "2c4ec83433cce7ea0c848e03d7a05ee458f73239b955e57717db69877dffbd40",
+      "mode": 420,
+      "mtime": 1792644291
+    },
+    {
+      "path": "main/streams/glob_wrapper.c",
+      "bytes": 9739,
+      "sha256": "d08b3320854098520f6ff0348cedb71f87d192273561444ae724c2baf9b500a7",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/memory.c",
+      "bytes": 25494,
+      "sha256": "dfb7c9d8859969644a476bfd2718bbc14c60589855fdfdf63aefe8bab4091fba",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/mmap.c",
+      "bytes": 2376,
+      "sha256": "6cb9a40ffe5b3cd7e3e4687f7678f353781944cb930861377f143d5cde8d8c4b",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/php_stream_context.h",
+      "bytes": 15024,
+      "sha256": "7a44d948d023a14f26af250e9d0ce7e15c278780d2d1a3d28f29d3c5d232924c",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/php_stream_filter_api.h",
+      "bytes": 7451,
+      "sha256": "c78db8c3131941508e52f0a610e48d9e03201c622b8dcb392fe3c9b69042435e",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/php_stream_glob_wrapper.h",
+      "bytes": 2005,
+      "sha256": "72c6276e780c2f78dd26df939ff3c5c193ae6506255ee0128ac3c9154d73c75d",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/php_stream_mmap.h",
+      "bytes": 3653,
+      "sha256": "4b371f589dc1dba60ca529ed54043c751494fa78b55f6f7a1deccd1f1742ba3b",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/php_stream_plain_wrapper.h",
+      "bytes": 4063,
+      "sha256": "d61eb65594fd9b39103038826112e1c1ed028689df2c4862709da97196e34d5a",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/php_stream_transport.h",
+      "bytes": 9497,
+      "sha256": "2264f1d7edb0484e4434588b32b3dc220b9044481c6aa7f5b0beff3d7ea67144",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/php_stream_userspace.h",
+      "bytes": 1553,
+      "sha256": "f0c033e85584acd11e5ccef200614c88e580079b81971f6860c6cda4fcfa8e93",
+      "mode": 420,
+      "mtime": 1792640735
+    },
+    {
+      "path": "main/streams/php_streams_int.h",
+      "bytes": 3331,
+      "sha256": "23a10aa78af5a83c1bc900a655f1e75ee94f54df42eca316ffa13b4015b86019",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/plain_wrapper.c",
+      "bytes": 59927,
+      "sha256": "43aa2919460ca615fe4478b44d86c9d31a5cda34a9e6dbca69d91916ff458055",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/streams.c",
+      "bytes": 89764,
+      "sha256": "7e4e3b82e609568a915dc676081cf18732a3fc1efec116bc46d7568d97be4d36",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/transports.c",
+      "bytes": 19755,
+      "sha256": "f657f51f51dea0b320f3fa27175911a0f4a83b4c8e9c81025579e39b63bd1c4f",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/userspace.c",
+      "bytes": 50811,
+      "sha256": "6c15b70c812eb479043d81f43854d5482f2525c38d135aeb3e98be55ed767d4d",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/streams/userspace_arginfo.h",
+      "bytes": 2610,
+      "sha256": "852baf511c1c9020352baae914753e5db65731fcd3318e68cfb9c9dc005fb7bd",
+      "mode": 420,
+      "mtime": 1792640735
+    },
+    {
+      "path": "main/streams/xp_socket.c",
+      "bytes": 35246,
+      "sha256": "781ae6ceceb6668f5efb5096098351e00d9cdc03b252d6dff65a478718fa9f1d",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/strlcat.c",
+      "bytes": 3969,
+      "sha256": "19b1d5b61774c559aedafe2fd146fc67d559fc704d722a6be7f4d06debaeaef6",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "main/strlcpy.c",
+      "bytes": 3816,
+      "sha256": "c402471d3393f986979760b38f26286834133c926b6ca7894d4cb420b52a56d3",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "sapi/embed/php_embed.c",
+      "bytes": 9629,
+      "sha256": "974be17c48f204bd6de9547f61851d638a14a61eaed6a1b57b64d080b1a5ca3f",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "sapi/embed/php_embed.h",
+      "bytes": 3286,
+      "sha256": "a3ed7e8e29d8cb7101453d32f94e10389f228fd80b0a4abacde78791186bdfbf",
+      "mode": 420,
+      "mtime": 1792644292
+    },
+    {
+      "path": "scripts/Makefile.frag",
+      "bytes": 1537,
+      "sha256": "6b0fd4d5b8d6e76c56999e5fd0a78eb65c1728dbfcdffe280821c0d33145fa34",
+      "mode": 420,
+      "mtime": 1792638556
+    },
+    {
+      "path": "scripts/man1/php-config.1.in",
+      "bytes": 2150,
+      "sha256": "d432bdcc2203e1bd0827a6f18800aa00a65f9fb28f13e36212480e4e852793d4",
+      "mode": 420,
+      "mtime": 1792638556
+    },
+    {
+      "path": "scripts/man1/phpize.1.in",
+      "bytes": 1092,
+      "sha256": "a432e6fa90f5d0eacb5d72f09dc5636f2a8ea06fba891abf55aec373a860a845",
+      "mode": 420,
+      "mtime": 1792638556
+    },
+    {
+      "path": "scripts/php-config.in",
+      "bytes": 2680,
+      "sha256": "bea07c711250e74b7a2481e38119750082407df87a4477df0cee926b0c563945",
+      "mode": 420,
+      "mtime": 1792638556
+    },
+    {
+      "path": "scripts/phpize.in",
+      "bytes": 4834,
+      "sha256": "4ce7434714a6a52b80c9ba7b82f1aeeb72497bc54d6da4ec02ce8bee360f3dc5",
+      "mode": 420,
+      "mtime": 1792638556
+    }
+  ],
+  "archive": {
+    "path": "share/language/php/maintained-source-d0e55755f53ca4691b77.tar.xz",
+    "bytes": 2426156,
+    "sha256": "d0e55755f53ca4691b7793554ae2c188e02bb171ce5b1c07edecee268f5cc46d"
+  },
+  "support_manifest": {
+    "path": "src/language/common/asyncify/support-manifest.json",
+    "bytes": 11354,
+    "sha256": "0e77b481d8d18748db30df95e1f7ae186c1ac578216d5fe077f526d96633ca35"
+  },
+  "target_inventory": {
+    "path": "src/language/common/asyncify/target-inventory.json",
+    "bytes": 858983,
+    "sha256": "0de37c65a0412283cb1c665f5263b413db03a0cb1c6dfffc41917bd8bcd521b0"
+  },
+  "original_artifact": {
+    "bytes": 10569524,
+    "sha256": "46205e865e595e022e8f09eb261c59cff388734a6e94f0f3d2efa128919091ff"
+  },
+  "original_construction_sha256": "69168c33e8098f0f884962bd41d48a3f563a30effc12f561630df79c963be7a9",
+  "producer_origin": {
+    "path": "tools/language/php/build.py",
+    "source_sha256": "4594a6822a1b5071e68d739d39ebf27e5705a940a87a1bc49105f89a71e6a8e4"
+  },
+  "source_rebuilt": false,
+  "reproducibility": {
+    "source_date_epoch": 1792674454,
+    "asyncify_macro_prefix": "/__uwvm_sdk__/src/language/common/asyncify/asyncify/",
+    "basis": "Portable source-name macros and deterministic build stamp. Changed binaries require fresh qualification."
+  },
+  "upstream": {
+    "language": "php",
+    "version": "8.4.13",
+    "official_archive": "https://www.php.net/distributions/php-8.4.13.tar.xz",
+    "archive_sha256": "b4f27adf30bcf262eacf93c78250dd811980f20f3b90d79a3dc11248681842df"
+  },
+  "canonical_abi": {
+    "path": "share/abi/abi-v1.json",
+    "bytes": 74230,
+    "sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+    "resolution": "qualified-sdk; never a separate private descriptor"
+  },
+  "canonical_abi_headers": [
+    {
+      "path": "include/platform/ros1/c/roswasm/detail/ros1/abi.h",
+      "bytes": 85359,
+      "sha256": "666e50f45ad2b3786abaa858e597b89c4e873cc5214ccd4d11abc7de35c2c991"
+    },
+    {
+      "path": "include/platform/ros2/c/roswasm/detail/ros2/abi.h",
+      "bytes": 95726,
+      "sha256": "ccc978219bd47893b6ce4efae4fcb1ebdb7a75c0aadded0001b7dde97310289b"
+    },
+    {
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "bytes": 12477,
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "path": "include/platform/ros/c/roswasm/detail/common/c_portability.h",
+      "bytes": 24516,
+      "sha256": "adb03faee9f7ec38c75e5723d7eefa0a6a9b7e8931f7bbe4953efc417a0dbff6"
+    }
+  ],
+  "current_adapter_status": "PARENT_FORMATTED_SUPPORT_REQUIRES_AFFECTED_ENTRY_RECOMPILATION",
+  "extra_support": [
+    {
+      "path": "include/language/common/module.h",
+      "bytes": 1751,
+      "sha256": "0f880a85103d2c23f347e0519e68e5eca007088a111ae127a43a4209c1498a60"
+    },
+    {
+      "path": "include/language/php/embed.h",
+      "bytes": 3156,
+      "sha256": "41af0c0025c4faafb774a3167e5610a8353beb6f79a975b10ad99d297e7d44c9"
+    },
+    {
+      "path": "src/language/php/embed.c",
+      "bytes": 6205,
+      "sha256": "8d9a233f317214f741ece657eee26c30c87f857c89ae8a97d2c72a91271321f5"
+    },
+    {
+      "path": "src/language/php/module.c",
+      "bytes": 2231,
+      "sha256": "e257aea8d03b04f249a42d389f1be11938edf0646de4d991da847aee73787551"
+    }
+  ]
+}

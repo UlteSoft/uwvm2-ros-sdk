@@ -1,0 +1,45 @@
+{
+  "cache_is_optional_explicit_maintainer_input": true,
+  "canonical_schemas": "sdk/share/platform/yaskawa/catalogs/",
+  "normal_SDK_depends_on_origin": false,
+  "platform": "yaskawa",
+  "repositories": [
+    {
+      "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+      "id": "rcl_interfaces_ros2",
+      "repository": "ros2/rcl_interfaces",
+      "tree": "4515d6d00cf6209db404352534818e4199fe33c9"
+    },
+    {
+      "commit": "2eaaa5440d6dc2291601ea445b83015a663f5f88",
+      "id": "control_ros2",
+      "repository": "ros-controls/control_msgs",
+      "tree": "857d95399e05a5da7b5fd28d94690e5fed4f3f3e"
+    },
+    {
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "id": "common_ros2",
+      "repository": "ros2/common_interfaces",
+      "tree": "bbd609d90753abf6e10bdc94f594f36b75921677"
+    },
+    {
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "id": "industrial_ros2",
+      "repository": "ros-industrial/industrial_core",
+      "tree": "3fe453f70bd9b4dbba008968b61fa38a069f5c3a"
+    },
+    {
+      "commit": "24a63cf8a7a582c9fa6744507d605415462c9c17",
+      "id": "motoros2_interfaces_release",
+      "repository": "Yaskawa-Global/motoros2_interfaces",
+      "tree": "c1ebf93bc8c8439dd5aeedeee9f1befa7821949a"
+    },
+    {
+      "commit": "f702874b1c8535d6a038230ab2cda0ba5d521ebd",
+      "id": "tf_ros2",
+      "repository": "ros2/geometry2",
+      "tree": "2fb3e96ba7995ea7e490aa7c0499724ec5483117"
+    }
+  ],
+  "schema": "uwvm-upstream-reference-lock-v1"
+}

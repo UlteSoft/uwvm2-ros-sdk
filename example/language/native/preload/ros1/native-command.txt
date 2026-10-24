@@ -1,0 +1,57 @@
+uwvm2-ros \
+  --wasm-set-main-module-name main \
+  --wasip1-single-create main \
+  --wasip1-single-enable main \
+  --wasip1-single-noinherit-system-environment main \
+  --ros1-single-create main \
+  --wasip1-single-create io \
+  --wasip1-single-enable io \
+  --wasip1-single-noinherit-system-environment io \
+  --ros1-single-create io \
+  --wasip1-single-create algorithm \
+  --wasip1-single-enable algorithm \
+  --wasip1-single-noinherit-system-environment algorithm \
+  --ros1-single-create algorithm \
+  --wasip1-single-create ros_comm \
+  --wasip1-single-enable ros_comm \
+  --wasip1-single-noinherit-system-environment ros_comm \
+  --ros1-single-create ros_comm \
+  --wasm-preload-library build/io/io.wasm io \
+  --wasm-set-preload-module-attribute io copy \
+  --wasm-preload-library build/algorithm/algorithm.wasm algorithm \
+  --wasm-set-preload-module-attribute algorithm copy \
+  --wasm-preload-library build/ros_comm/ros_comm.wasm ros_comm \
+  --wasm-set-preload-module-attribute ros_comm copy \
+  --wasip1-single-grant ros_comm realtime-clock \
+  --ros1-single-enable ros_comm \
+  --ros1-single-call-boundary ros_comm module-exports \
+  --ros1-single-master-uri ros_comm http://127.0.0.1:11311 \
+  --ros1-single-node-name ros_comm uwvm_library_gateway \
+  --ros1-single-namespace ros_comm /uwvm_library \
+  --ros1-single-advertise-host ros_comm 127.0.0.1 \
+  --ros1-single-transport ros_comm tcpros \
+  --ros1-single-gateway-socket ros_comm /tmp/uwvm-library.sock \
+  --ros1-single-gateway-uid ros_comm $worker_uid \
+  --ros1-single-connect-timeout-ms ros_comm 5000 \
+  --ros1-single-audit-deny-max-rate-hz ros_comm 100 \
+  --ros1-single-audit-deny-burst ros_comm 100 \
+  --ros1-single-audit-deny-max-records ros_comm 10000 \
+  --ros1-single-audit-deny-max-bytes ros_comm 1048576 \
+  --ros1-single-grant ros_comm library_pub topic.publish /uwvm_library/outgoing std_msgs/String 992ce8a1687cec8c8bd883ec73ca41d1 \
+  --ros1-single-set ros_comm library_pub max-rate-hz 100 \
+  --ros1-single-set ros_comm library_pub burst 8 \
+  --ros1-single-set ros_comm library_pub max-bytes-per-second 1048576 \
+  --ros1-single-set ros_comm library_pub validator none \
+  --ros1-single-set ros_comm library_pub audit allow-and-deny \
+  --ros1-single-set ros_comm library_pub audit-max-rate-hz 100 \
+  --ros1-single-set ros_comm library_pub audit-burst 100 \
+  --ros1-single-set ros_comm library_pub audit-max-records 10000 \
+  --ros1-single-set ros_comm library_pub audit-max-bytes 1048576 \
+  --ros1-single-set ros_comm library_pub max-message-bytes 256 \
+  --ros1-single-set ros_comm library_pub max-queue-bytes 2048 \
+  --ros1-single-set ros_comm library_pub overflow-policy drop-oldest \
+  --ros1-single-set ros_comm library_pub max-publishers 1 \
+  --ros1-single-set ros_comm library_pub queue-depth 8 \
+  --ros1-single-set ros_comm library_pub transport tcpros \
+  --ros1-single-set ros_comm library_pub latch false \
+  --run build/main/main.wasm 9 granted

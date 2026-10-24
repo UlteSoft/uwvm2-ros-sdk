@@ -1,0 +1,43 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros1-gateway",
+  "backend": "ros1",
+  "distribution": "noetic",
+  "connection": {
+    "master-uri": "http://127.0.0.1:11311",
+    "node-name": "sdk_codec_reader",
+    "namespace": "/sdk_fixture",
+    "advertise-host": "127.0.0.1",
+    "transport": "tcp"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "codec_shared": {
+      "arguments": [
+        "REPLACE_WITH_COMPLETE_ENCODED_VALUE_HEX"
+      ],
+      "main_module": "main",
+      "preloads": [
+        {
+          "module": "record_codec",
+          "path": "build/record_codec/record_codec.wasm",
+          "attribute": "none"
+        }
+      ],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        },
+        "record_codec": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        }
+      }
+    }
+  }
+}

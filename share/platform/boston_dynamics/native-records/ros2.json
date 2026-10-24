@@ -1,0 +1,1006 @@
+{
+  "format": "uwvm-native-record-source-v1",
+  "namespace": "boston_dynamics",
+  "profile": "ros2",
+  "ros_major": 2,
+  "catalog_sha256": "6c043dccd0d008dc7cbae8bf683d0356f3a701a9ff65c8f7112e4885d49108e3",
+  "record_count": 10,
+  "interface_count": 5,
+  "field_count": 62,
+  "constant_count": 0,
+  "records": [
+    {
+      "type": "uwvm_spot_bridge/srv/State_Request",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvState_Request",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request",
+      "minimum": 24,
+      "maximum": 24,
+      "codec_identity": "UWVMROS1_9becf278bc168ed6d5b15fe7f1ec35b83e274de8a5173cb2335948306bc7a47e",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "budget_ns",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/State_Response",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvState_Response",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Response",
+      "minimum": 57,
+      "maximum": 21433,
+      "codec_identity": "UWVMROS1_ab07340e952c2ff63f35dad37e9d4837a280eee9ce477ac5be4a05f82408ce0a",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "error",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "unknown",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "acquisition_sec",
+          "type": "int64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "acquisition_nsec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "joint_names",
+          "type": "string",
+          "array": "sequence",
+          "count": 32,
+          "string_bound": 128,
+          "native_string_bound": 128,
+          "native_sequence_bound": 32,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "joint_position",
+          "type": "float64",
+          "array": "sequence",
+          "count": 32,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 32,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "joint_velocity",
+          "type": "float64",
+          "array": "sequence",
+          "count": 32,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 32,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "joint_load",
+          "type": "float64",
+          "array": "sequence",
+          "count": 32,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 32,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "motor_power_state",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "native_proto",
+          "type": "uint8",
+          "array": "sequence",
+          "count": 16384,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 16384,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Lease_Request",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvLease_Request",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request",
+      "minimum": 24,
+      "maximum": 24,
+      "codec_identity": "UWVMROS1_a9aacd78dc6ae9d18fb6bb0d185797c6463c882edadf251eb5c21e3aa3c538a1",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "budget_ns",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Lease_Response",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvLease_Response",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response",
+      "minimum": 22,
+      "maximum": 22,
+      "codec_identity": "UWVMROS1_ce875eb701b607c01f8a19dc8fcff607829824ad99276f906c7fc8fc5567f6d3",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "error",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "unknown",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "provider_holds_body_lease",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Command_Request",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvCommand_Request",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request",
+      "minimum": 24,
+      "maximum": 24,
+      "codec_identity": "UWVMROS1_29996d4dacb4ea847c5d629cb634d4aa5e2451627d2469d6cdf301cc007968f8",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "budget_ns",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Command_Response",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvCommand_Response",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response",
+      "minimum": 26,
+      "maximum": 26,
+      "codec_identity": "UWVMROS1_e35556e7439c8d5ca79cb0f4ad23cf73c85a8a79d1382cde398dd85082dd1733",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "error",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "unknown",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "native_accepted",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "native_command_id",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Velocity_Request",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvVelocity_Request",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request",
+      "minimum": 56,
+      "maximum": 56,
+      "codec_identity": "UWVMROS1_ffe3b1dec91a25cd84d221ba4ebeae576bd7d6b96f258579c0b3d280cad79f8d",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "budget_ns",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "x_mps",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y_mps",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "yaw_rps",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "duration_ns",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Velocity_Response",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvVelocity_Response",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response",
+      "minimum": 26,
+      "maximum": 26,
+      "codec_identity": "UWVMROS1_031f37beeb5a03c4e65d4be8fd70bc680408d110a020e066bea593d86498401a",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "error",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "unknown",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "native_accepted",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "native_command_id",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Feedback_Request",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvFeedback_Request",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request",
+      "minimum": 32,
+      "maximum": 32,
+      "codec_identity": "UWVMROS1_de64ce283f49f5c324912ec262f7d15b6fd828879c01039d455c765743c45ba3",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "budget_ns",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "command_token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Feedback_Response",
+      "symbol": "Ros2Uwvm_spot_bridgeSrvFeedback_Response",
+      "c_symbol": "roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Response",
+      "minimum": 45,
+      "maximum": 16429,
+      "codec_identity": "UWVMROS1_4a19efe7f64fe0d7f6f13abe8980fb55503d3b897af64abc73bbd236587adfe8",
+      "members": [
+        {
+          "name": "token",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "error",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "unknown",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "native_command_id",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "has_full_body_feedback",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "full_body_status",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "has_mobility_feedback",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "mobility_status",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "feedback_kind",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "has_subcommand_status",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "subcommand_status",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "native_proto",
+          "type": "uint8",
+          "array": "sequence",
+          "count": 16384,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 16384,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "uwvm_spot_bridge/srv/State",
+      "kind": "service",
+      "components": {
+        "request": "uwvm_spot_bridge/srv/State_Request",
+        "response": "uwvm_spot_bridge/srv/State_Response"
+      }
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Lease",
+      "kind": "service",
+      "components": {
+        "request": "uwvm_spot_bridge/srv/Lease_Request",
+        "response": "uwvm_spot_bridge/srv/Lease_Response"
+      }
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Command",
+      "kind": "service",
+      "components": {
+        "request": "uwvm_spot_bridge/srv/Command_Request",
+        "response": "uwvm_spot_bridge/srv/Command_Response"
+      }
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Velocity",
+      "kind": "service",
+      "components": {
+        "request": "uwvm_spot_bridge/srv/Velocity_Request",
+        "response": "uwvm_spot_bridge/srv/Velocity_Response"
+      }
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Feedback",
+      "kind": "service",
+      "components": {
+        "request": "uwvm_spot_bridge/srv/Feedback_Request",
+        "response": "uwvm_spot_bridge/srv/Feedback_Response"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "path": "include/platform/boston_dynamics/zig/ros2/records.zig",
+      "sha256": "25ddcba76aee00405d1229356c7b7424abd0a4ade013c6f2aac7056f717ca2ca"
+    },
+    {
+      "path": "include/platform/boston_dynamics/d/ros2/records.d",
+      "sha256": "71fcc1f01c449c3100f9db0447871fc24292f623f72896ed38cf8c970489f999",
+      "generated_before_formatting_sha256": "9541332d4fc633b43d4dffd730b7f1697d319af94a927c184a062ed01e4382e8"
+    },
+    {
+      "path": "include/platform/boston_dynamics/nim/ros2/records.nim",
+      "sha256": "395392a49b1d1539760b797c7b682b7287b08032ef98d239872d6247405ad98f"
+    },
+    {
+      "path": "include/platform/boston_dynamics/haskell/Boston_dynamics/Ros2/Records.hs",
+      "sha256": "f6f266e8f0a3813cd7d1d466da02f6116e5127a68377ecaae52c98a3304783e1"
+    },
+    {
+      "path": "include/platform/boston_dynamics/odin/ros2/records.odin",
+      "sha256": "7e8700bc5695931c92723dce373c19e51b56bd7d32ca23865db0d8d11ddbc07c"
+    },
+    {
+      "path": "include/platform/boston_dynamics/swift/ros2/Records.swift",
+      "sha256": "575f05bf5fc94e5bd20e2550b1617138df88d2a6f7e703d081b4113a955380be"
+    }
+  ],
+  "source_pins": [],
+  "implemented": true,
+  "built": false,
+  "executed": false,
+  "native_registration": false,
+  "default_authority": [],
+  "shared_native_rules_sha256": "815c0d040d4e94cbaf694e428c559ff425a5dfac0013008142607c8b378092fa",
+  "semantic_contract": "normalized time/duration and all six optional JointState nonempty-array pairs"
+}

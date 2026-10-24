@@ -1,0 +1,49 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "api_version": 1,
+  "id": "agilex",
+  "module": "tools/platform/agilex/provider.lua",
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "humble"
+      ]
+    }
+  },
+  "languages": [
+    "as",
+    "c",
+    "cpp",
+    "d",
+    "go",
+    "haskell",
+    "moonbit",
+    "nim",
+    "odin",
+    "rs",
+    "swift",
+    "tinygo",
+    "zig"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {},
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  }
+}

@@ -1,0 +1,1365 @@
+{
+  "catalog_sha256": "2516cdeada8b4a8b7cb661090eb2c2a90cd2e986422203641380f55061606d6f",
+  "default_authority": [],
+  "definitions": [
+    {
+      "bytes": 33,
+      "generation_file": "dobot_v4_bringup/msg/RobotStatus.msg",
+      "git_blob_sha1": "53d01906eeb1913e3496f749d7a60800e8088ebd",
+      "kind": "msg",
+      "original_file": "dobot_v4_bringup/msg/RobotStatus.msg",
+      "repository": "ros1",
+      "sha256": "8c1e59d51e0b18be1911a4da8b63e3e74f8ab3d874b943eb50805f8d3d126513",
+      "type": "dobot_v4_bringup/RobotStatus"
+    },
+    {
+      "bytes": 62,
+      "generation_file": "dobot_v4_bringup/msg/ToolVectorActual.msg",
+      "git_blob_sha1": "2ec214d6e83230db5de248dd762da5c8c68562f0",
+      "kind": "msg",
+      "original_file": "dobot_v4_bringup/msg/ToolVectorActual.msg",
+      "repository": "ros1",
+      "sha256": "efea2cfebe14ce3bf673ca0b233d4c510f79513e6caabcbe6d17f4d84c1ed917",
+      "type": "dobot_v4_bringup/ToolVectorActual"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/AI.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/AI.srv",
+      "repository": "ros1",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_v4_bringup/AI"
+    },
+    {
+      "bytes": 74,
+      "generation_file": "dobot_v4_bringup/srv/AO.srv",
+      "git_blob_sha1": "eff77fb74ccbc19ff3d59bfcf1cf648b0f04be42",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/AO.srv",
+      "repository": "ros1",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5",
+      "type": "dobot_v4_bringup/AO"
+    },
+    {
+      "bytes": 74,
+      "generation_file": "dobot_v4_bringup/srv/AOInstant.srv",
+      "git_blob_sha1": "eff77fb74ccbc19ff3d59bfcf1cf648b0f04be42",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/AOInstant.srv",
+      "repository": "ros1",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5",
+      "type": "dobot_v4_bringup/AOInstant"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_v4_bringup/srv/AccJ.srv",
+      "git_blob_sha1": "f09e24a02aa260bfd325977eca1de6fea1bc654f",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/AccJ.srv",
+      "repository": "ros1",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710",
+      "type": "dobot_v4_bringup/AccJ"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_v4_bringup/srv/AccL.srv",
+      "git_blob_sha1": "f09e24a02aa260bfd325977eca1de6fea1bc654f",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/AccL.srv",
+      "repository": "ros1",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710",
+      "type": "dobot_v4_bringup/AccL"
+    },
+    {
+      "bytes": 170,
+      "generation_file": "dobot_v4_bringup/srv/Arc.srv",
+      "git_blob_sha1": "04e47105117826ca8fb51f42966e3e3b0bc83009",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/Arc.srv",
+      "repository": "ros1",
+      "sha256": "f03c64b77d90311c32233a68ce57e44415857fcadb5b7e94756de9f70a596df4",
+      "type": "dobot_v4_bringup/Arc"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_v4_bringup/srv/BrakeControl.srv",
+      "git_blob_sha1": "85420ee774cec734cfe689c1422140f893369b05",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/BrakeControl.srv",
+      "repository": "ros1",
+      "sha256": "8c8eadfce46088c226ba013e4a51dd14bef0f44794cf75dffeb87a6d92297b38",
+      "type": "dobot_v4_bringup/BrakeControl"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_v4_bringup/srv/CP.srv",
+      "git_blob_sha1": "f09e24a02aa260bfd325977eca1de6fea1bc654f",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/CP.srv",
+      "repository": "ros1",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710",
+      "type": "dobot_v4_bringup/CP"
+    },
+    {
+      "bytes": 54,
+      "generation_file": "dobot_v4_bringup/srv/CalcTool.srv",
+      "git_blob_sha1": "b2c78afda9ef93071152ab42bad21d11b4de704f",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/CalcTool.srv",
+      "repository": "ros1",
+      "sha256": "49568bfbacff884a1db9da9370ed080195dbf893698e76cfaf315f4b7b87ae3b",
+      "type": "dobot_v4_bringup/CalcTool"
+    },
+    {
+      "bytes": 55,
+      "generation_file": "dobot_v4_bringup/srv/CalcUser.srv",
+      "git_blob_sha1": "14bcb13ee59a8530efea8f6926260860e110d213",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/CalcUser.srv",
+      "repository": "ros1",
+      "sha256": "8eb8a4452fbd1f3e58413d02ca57606f17e04a7cd41a3b76e3162a0959d05fa4",
+      "type": "dobot_v4_bringup/CalcUser"
+    },
+    {
+      "bytes": 181,
+      "generation_file": "dobot_v4_bringup/srv/Circle.srv",
+      "git_blob_sha1": "361097665a01a9eef0c5092cae9b0c5889a72cb8",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/Circle.srv",
+      "repository": "ros1",
+      "sha256": "86c25af52883b4b446d8bace4c387accf9b5f3ec7127a556aff9e00499811ef4",
+      "type": "dobot_v4_bringup/Circle"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/ClearError.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ClearError.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/ClearError"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/Continue.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/Continue.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/Continue"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/DI.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/DI.srv",
+      "repository": "ros1",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_v4_bringup/DI"
+    },
+    {
+      "bytes": 26,
+      "generation_file": "dobot_v4_bringup/srv/DIGroup.srv",
+      "git_blob_sha1": "5d20459d1ab4cb0d552326e50fa3f022cb0bebc9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/DIGroup.srv",
+      "repository": "ros1",
+      "sha256": "02f35d3f23f6ab7e7cce305eedfec4203fdf4de639341abe3030dee7e382f3e4",
+      "type": "dobot_v4_bringup/DIGroup"
+    },
+    {
+      "bytes": 49,
+      "generation_file": "dobot_v4_bringup/srv/DO.srv",
+      "git_blob_sha1": "70f68eac7e2b3469f0e909d80aaa0bd3808b0ef4",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/DO.srv",
+      "repository": "ros1",
+      "sha256": "2311b2905316e6e591a22865eca8ef1a931205da6b191cd8a94ce215af827824",
+      "type": "dobot_v4_bringup/DO"
+    },
+    {
+      "bytes": 26,
+      "generation_file": "dobot_v4_bringup/srv/DOGroup.srv",
+      "git_blob_sha1": "5d20459d1ab4cb0d552326e50fa3f022cb0bebc9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/DOGroup.srv",
+      "repository": "ros1",
+      "sha256": "02f35d3f23f6ab7e7cce305eedfec4203fdf4de639341abe3030dee7e382f3e4",
+      "type": "dobot_v4_bringup/DOGroup"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_v4_bringup/srv/DOInstant.srv",
+      "git_blob_sha1": "bdfebbbe409d17145f4baf6c9fce019131e1c0f3",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/DOInstant.srv",
+      "repository": "ros1",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09",
+      "type": "dobot_v4_bringup/DOInstant"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/DisableRobot.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/DisableRobot.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/DisableRobot"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_v4_bringup/srv/DragSensivity.srv",
+      "git_blob_sha1": "3cb8b50c28cdf5aa5e826287026d05dd5720cb79",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/DragSensivity.srv",
+      "repository": "ros1",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6",
+      "type": "dobot_v4_bringup/DragSensivity"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/EmergencyStop.srv",
+      "git_blob_sha1": "c4c3047b0a0d4e4d5d74d86df0ba779d5be754ff",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/EmergencyStop.srv",
+      "repository": "ros1",
+      "sha256": "9ac2aa5fe5a9da66f3ca2c2a18284f17a2aa75639e815f983fae3cfd81e240cc",
+      "type": "dobot_v4_bringup/EmergencyStop"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/EnableRobot.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/EnableRobot.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/EnableRobot"
+    },
+    {
+      "bytes": 26,
+      "generation_file": "dobot_v4_bringup/srv/EnableSafeSkin.srv",
+      "git_blob_sha1": "b3584213babd67524ddfea1df5aa209cd4ba4985",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/EnableSafeSkin.srv",
+      "repository": "ros1",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5",
+      "type": "dobot_v4_bringup/EnableSafeSkin"
+    },
+    {
+      "bytes": 45,
+      "generation_file": "dobot_v4_bringup/srv/GetAO.srv",
+      "git_blob_sha1": "551fc24451abaecd8f982de6143e2967a3a551b9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetAO.srv",
+      "repository": "ros1",
+      "sha256": "455cc2a5192a242296d47161cb98aab1dd0dcf7d7eb19e5bf0571bc450776945",
+      "type": "dobot_v4_bringup/GetAO"
+    },
+    {
+      "bytes": 34,
+      "generation_file": "dobot_v4_bringup/srv/GetAngle.srv",
+      "git_blob_sha1": "804acd931d611c494d8cae21a8e42ac94b3d55ba",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetAngle.srv",
+      "repository": "ros1",
+      "sha256": "4a6588b846abc3244a1f4034bdcad046691d1cab44c37bd5f455b846fc2b86e8",
+      "type": "dobot_v4_bringup/GetAngle"
+    },
+    {
+      "bytes": 48,
+      "generation_file": "dobot_v4_bringup/srv/GetCoils.srv",
+      "git_blob_sha1": "e4338d281ef57d9764dd0eb2ade1f34c141be5b9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetCoils.srv",
+      "repository": "ros1",
+      "sha256": "417c48901d05e4016aa13ff6883aa32f528197a8b3cc2867c481f61e553059b1",
+      "type": "dobot_v4_bringup/GetCoils"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/GetCurrentCommandId.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetCurrentCommandId.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/GetCurrentCommandId"
+    },
+    {
+      "bytes": 45,
+      "generation_file": "dobot_v4_bringup/srv/GetDO.srv",
+      "git_blob_sha1": "551fc24451abaecd8f982de6143e2967a3a551b9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetDO.srv",
+      "repository": "ros1",
+      "sha256": "455cc2a5192a242296d47161cb98aab1dd0dcf7d7eb19e5bf0571bc450776945",
+      "type": "dobot_v4_bringup/GetDO"
+    },
+    {
+      "bytes": 53,
+      "generation_file": "dobot_v4_bringup/srv/GetDOGroup.srv",
+      "git_blob_sha1": "d002e591b5bd6a30497091beb6319e9e7ba688c2",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetDOGroup.srv",
+      "repository": "ros1",
+      "sha256": "f2d43f474d03bd9c531eec204450b2cbfb88f3763f6a1dfc786de7d391a620a6",
+      "type": "dobot_v4_bringup/GetDOGroup"
+    },
+    {
+      "bytes": 30,
+      "generation_file": "dobot_v4_bringup/srv/GetErrorID.srv",
+      "git_blob_sha1": "493ff04c44b941264a23c0e3f9fa1e9162e7733f",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetErrorID.srv",
+      "repository": "ros1",
+      "sha256": "ea39c930bae2109969e1d1538552f23957c0908e7d0d3168e0019a609058e44e",
+      "type": "dobot_v4_bringup/GetErrorID"
+    },
+    {
+      "bytes": 66,
+      "generation_file": "dobot_v4_bringup/srv/GetHoldRegs.srv",
+      "git_blob_sha1": "19b0d2fbe87610c5986c04a1490b6e3f986674a0",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetHoldRegs.srv",
+      "repository": "ros1",
+      "sha256": "74795918e074dd3dc687dab1c348fe4def2648bbb9a9fcbea823e2c2f7262927",
+      "type": "dobot_v4_bringup/GetHoldRegs"
+    },
+    {
+      "bytes": 48,
+      "generation_file": "dobot_v4_bringup/srv/GetInBits.srv",
+      "git_blob_sha1": "e4338d281ef57d9764dd0eb2ade1f34c141be5b9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetInBits.srv",
+      "repository": "ros1",
+      "sha256": "417c48901d05e4016aa13ff6883aa32f528197a8b3cc2867c481f61e553059b1",
+      "type": "dobot_v4_bringup/GetInBits"
+    },
+    {
+      "bytes": 70,
+      "generation_file": "dobot_v4_bringup/srv/GetInRegs.srv",
+      "git_blob_sha1": "e9f3719de4f79cc0cb72ea24bb6f14d309556881",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetInRegs.srv",
+      "repository": "ros1",
+      "sha256": "810b04a57869525ed11dbef76898ccb3394f1228fa2382b726df8c5f4f521758",
+      "type": "dobot_v4_bringup/GetInRegs"
+    },
+    {
+      "bytes": 27,
+      "generation_file": "dobot_v4_bringup/srv/GetInputBool.srv",
+      "git_blob_sha1": "b484613a5c0dfb6ca5a0cc20096c2266c2f8e913",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetInputBool.srv",
+      "repository": "ros1",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4",
+      "type": "dobot_v4_bringup/GetInputBool"
+    },
+    {
+      "bytes": 27,
+      "generation_file": "dobot_v4_bringup/srv/GetInputFloat.srv",
+      "git_blob_sha1": "b484613a5c0dfb6ca5a0cc20096c2266c2f8e913",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetInputFloat.srv",
+      "repository": "ros1",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4",
+      "type": "dobot_v4_bringup/GetInputFloat"
+    },
+    {
+      "bytes": 27,
+      "generation_file": "dobot_v4_bringup/srv/GetInputInt.srv",
+      "git_blob_sha1": "b484613a5c0dfb6ca5a0cc20096c2266c2f8e913",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetInputInt.srv",
+      "repository": "ros1",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4",
+      "type": "dobot_v4_bringup/GetInputInt"
+    },
+    {
+      "bytes": 27,
+      "generation_file": "dobot_v4_bringup/srv/GetOutputBool.srv",
+      "git_blob_sha1": "b484613a5c0dfb6ca5a0cc20096c2266c2f8e913",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetOutputBool.srv",
+      "repository": "ros1",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4",
+      "type": "dobot_v4_bringup/GetOutputBool"
+    },
+    {
+      "bytes": 27,
+      "generation_file": "dobot_v4_bringup/srv/GetOutputFloat.srv",
+      "git_blob_sha1": "b484613a5c0dfb6ca5a0cc20096c2266c2f8e913",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetOutputFloat.srv",
+      "repository": "ros1",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4",
+      "type": "dobot_v4_bringup/GetOutputFloat"
+    },
+    {
+      "bytes": 27,
+      "generation_file": "dobot_v4_bringup/srv/GetOutputInt.srv",
+      "git_blob_sha1": "b484613a5c0dfb6ca5a0cc20096c2266c2f8e913",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetOutputInt.srv",
+      "repository": "ros1",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4",
+      "type": "dobot_v4_bringup/GetOutputInt"
+    },
+    {
+      "bytes": 34,
+      "generation_file": "dobot_v4_bringup/srv/GetPose.srv",
+      "git_blob_sha1": "804acd931d611c494d8cae21a8e42ac94b3d55ba",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetPose.srv",
+      "repository": "ros1",
+      "sha256": "4a6588b846abc3244a1f4034bdcad046691d1cab44c37bd5f455b846fc2b86e8",
+      "type": "dobot_v4_bringup/GetPose"
+    },
+    {
+      "bytes": 30,
+      "generation_file": "dobot_v4_bringup/srv/GetStartPose.srv",
+      "git_blob_sha1": "445485f3ebc182c97057fc910f22d99d23ca6806",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/GetStartPose.srv",
+      "repository": "ros1",
+      "sha256": "df6c9afc3f4376652be6705a398e82a322fd803db3cb06735379768b7879553d",
+      "type": "dobot_v4_bringup/GetStartPose"
+    },
+    {
+      "bytes": 142,
+      "generation_file": "dobot_v4_bringup/srv/InverseKin.srv",
+      "git_blob_sha1": "98cf60bf98dc061c2b01b55c29934638e101429e",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/InverseKin.srv",
+      "repository": "ros1",
+      "sha256": "dc980a99144e05fbe3d4eb7bd05f8b24075a5b0d6e4d41c6fdd817e51ed43a13",
+      "type": "dobot_v4_bringup/InverseKin"
+    },
+    {
+      "bytes": 30,
+      "generation_file": "dobot_v4_bringup/srv/InverseSolution.srv",
+      "git_blob_sha1": "6d88ed8ee7bb2d6fa21b51850aac94ab33f963bb",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/InverseSolution.srv",
+      "repository": "ros1",
+      "sha256": "0dc6b38298c3f3f6ddceb003174b3bd4cbcf09d6bdbf94d886386a48fbb9a84b",
+      "type": "dobot_v4_bringup/InverseSolution"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/ModbusClose.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ModbusClose.srv",
+      "repository": "ros1",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_v4_bringup/ModbusClose"
+    },
+    {
+      "bytes": 75,
+      "generation_file": "dobot_v4_bringup/srv/ModbusCreate.srv",
+      "git_blob_sha1": "d50e3b0f83569e6833b4a9d134a8b0a5adeb3674",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ModbusCreate.srv",
+      "repository": "ros1",
+      "sha256": "63235a5e002fc159134f4d3798c8a0fc4a2bace438e3468f1a220002e7ac785a",
+      "type": "dobot_v4_bringup/ModbusCreate"
+    },
+    {
+      "bytes": 93,
+      "generation_file": "dobot_v4_bringup/srv/ModbusRTUCreate.srv",
+      "git_blob_sha1": "021a43e7a5899e1c444cc93b4072440e863cc7ba",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ModbusRTUCreate.srv",
+      "repository": "ros1",
+      "sha256": "1c668ebf1a100c868c6e7ba1b259d1d8db2814a204bdc0a26fa60150f0b0415a",
+      "type": "dobot_v4_bringup/ModbusRTUCreate"
+    },
+    {
+      "bytes": 103,
+      "generation_file": "dobot_v4_bringup/srv/MovJ.srv",
+      "git_blob_sha1": "585e2fc73d7009b94dc4120198f9c0b4d950b4af",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/MovJ.srv",
+      "repository": "ros1",
+      "sha256": "9ac604cbf05d81e791a91ac67a5d23ecba7ad7227a0b71c8c306d0cdbf58e8d5",
+      "type": "dobot_v4_bringup/MovJ"
+    },
+    {
+      "bytes": 117,
+      "generation_file": "dobot_v4_bringup/srv/MovJIO.srv",
+      "git_blob_sha1": "59884e13096629abf3cf79d8e4d2cdd0be2dd14e",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/MovJIO.srv",
+      "repository": "ros1",
+      "sha256": "e3a240a72a1638fbbbdf8c283f4d031e3ee304f691471c4a5ac06cc67861b810",
+      "type": "dobot_v4_bringup/MovJIO"
+    },
+    {
+      "bytes": 103,
+      "generation_file": "dobot_v4_bringup/srv/MovL.srv",
+      "git_blob_sha1": "585e2fc73d7009b94dc4120198f9c0b4d950b4af",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/MovL.srv",
+      "repository": "ros1",
+      "sha256": "9ac604cbf05d81e791a91ac67a5d23ecba7ad7227a0b71c8c306d0cdbf58e8d5",
+      "type": "dobot_v4_bringup/MovL"
+    },
+    {
+      "bytes": 117,
+      "generation_file": "dobot_v4_bringup/srv/MovLIO.srv",
+      "git_blob_sha1": "59884e13096629abf3cf79d8e4d2cdd0be2dd14e",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/MovLIO.srv",
+      "repository": "ros1",
+      "sha256": "e3a240a72a1638fbbbdf8c283f4d031e3ee304f691471c4a5ac06cc67861b810",
+      "type": "dobot_v4_bringup/MovLIO"
+    },
+    {
+      "bytes": 47,
+      "generation_file": "dobot_v4_bringup/srv/MoveJog.srv",
+      "git_blob_sha1": "fcca24b6e96b1125e96da164618be628f77e88cb",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/MoveJog.srv",
+      "repository": "ros1",
+      "sha256": "0d5bb9bcf16db0367fba741164b636e8e91f68036087c7fe86612c51356d51fa",
+      "type": "dobot_v4_bringup/MoveJog"
+    },
+    {
+      "bytes": 14,
+      "generation_file": "dobot_v4_bringup/srv/Pause.srv",
+      "git_blob_sha1": "821e795a55a6cee31ac2da62705c26bfcd7eec3e",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/Pause.srv",
+      "repository": "ros1",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970",
+      "type": "dobot_v4_bringup/Pause"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "dobot_v4_bringup/srv/PositiveKin.srv",
+      "git_blob_sha1": "971b5f69c820ba9a1d45aa73ecb9b93cdd53a126",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/PositiveKin.srv",
+      "repository": "ros1",
+      "sha256": "6a0b126c1ddaf26eb31348953e876e59a1f772a31d1b5796bdf03d3e54b8f341",
+      "type": "dobot_v4_bringup/PositiveKin"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/PowerOn.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/PowerOn.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/PowerOn"
+    },
+    {
+      "bytes": 94,
+      "generation_file": "dobot_v4_bringup/srv/RelJointMovJ.srv",
+      "git_blob_sha1": "4a5cf2ec51744b2d1e5e8d7e6f9bc8c443957735",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/RelJointMovJ.srv",
+      "repository": "ros1",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1",
+      "type": "dobot_v4_bringup/RelJointMovJ"
+    },
+    {
+      "bytes": 94,
+      "generation_file": "dobot_v4_bringup/srv/RelMovJTool.srv",
+      "git_blob_sha1": "4a5cf2ec51744b2d1e5e8d7e6f9bc8c443957735",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/RelMovJTool.srv",
+      "repository": "ros1",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1",
+      "type": "dobot_v4_bringup/RelMovJTool"
+    },
+    {
+      "bytes": 94,
+      "generation_file": "dobot_v4_bringup/srv/RelMovJUser.srv",
+      "git_blob_sha1": "4a5cf2ec51744b2d1e5e8d7e6f9bc8c443957735",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/RelMovJUser.srv",
+      "repository": "ros1",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1",
+      "type": "dobot_v4_bringup/RelMovJUser"
+    },
+    {
+      "bytes": 94,
+      "generation_file": "dobot_v4_bringup/srv/RelMovLTool.srv",
+      "git_blob_sha1": "4a5cf2ec51744b2d1e5e8d7e6f9bc8c443957735",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/RelMovLTool.srv",
+      "repository": "ros1",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1",
+      "type": "dobot_v4_bringup/RelMovLTool"
+    },
+    {
+      "bytes": 94,
+      "generation_file": "dobot_v4_bringup/srv/RelMovLUser.srv",
+      "git_blob_sha1": "4a5cf2ec51744b2d1e5e8d7e6f9bc8c443957735",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/RelMovLUser.srv",
+      "repository": "ros1",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1",
+      "type": "dobot_v4_bringup/RelMovLUser"
+    },
+    {
+      "bytes": 24,
+      "generation_file": "dobot_v4_bringup/srv/RobotMode.srv",
+      "git_blob_sha1": "a85c5c3b5d9af07510f702a57a6d5077c9bb12e1",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/RobotMode.srv",
+      "repository": "ros1",
+      "sha256": "8d6a42cc6e96eb32b31de7300a801f7481d8a1c2de6135a619ea5bc13e87a087",
+      "type": "dobot_v4_bringup/RobotMode"
+    },
+    {
+      "bytes": 32,
+      "generation_file": "dobot_v4_bringup/srv/RunScript.srv",
+      "git_blob_sha1": "0131d5061207e2318d67290a243ed8114c12c574",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/RunScript.srv",
+      "repository": "ros1",
+      "sha256": "9568046e84da3b786f409d44f5c8c4879d84969efb6cf558135ef018247cb09a",
+      "type": "dobot_v4_bringup/RunScript"
+    },
+    {
+      "bytes": 94,
+      "generation_file": "dobot_v4_bringup/srv/ServoJ.srv",
+      "git_blob_sha1": "4a5cf2ec51744b2d1e5e8d7e6f9bc8c443957735",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ServoJ.srv",
+      "repository": "ros1",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1",
+      "type": "dobot_v4_bringup/ServoJ"
+    },
+    {
+      "bytes": 94,
+      "generation_file": "dobot_v4_bringup/srv/ServoP.srv",
+      "git_blob_sha1": "4a5cf2ec51744b2d1e5e8d7e6f9bc8c443957735",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ServoP.srv",
+      "repository": "ros1",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1",
+      "type": "dobot_v4_bringup/ServoP"
+    },
+    {
+      "bytes": 30,
+      "generation_file": "dobot_v4_bringup/srv/SetBackDistance.srv",
+      "git_blob_sha1": "73bcbb05322b59f3b7661a3cc35aae29537f5be5",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetBackDistance.srv",
+      "repository": "ros1",
+      "sha256": "02e1a1a796cbd95aaf8878d9bed6a5780cafcb560b63cbd9a9905d0eae1fdbc3",
+      "type": "dobot_v4_bringup/SetBackDistance"
+    },
+    {
+      "bytes": 73,
+      "generation_file": "dobot_v4_bringup/srv/SetCoils.srv",
+      "git_blob_sha1": "ca62b06321e2cb3076d1cfa739d475226648ea32",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetCoils.srv",
+      "repository": "ros1",
+      "sha256": "aec4724fd06cc04c726523b333a427ba54f509ee2097e1cdb1dbb62de616e9f7",
+      "type": "dobot_v4_bringup/SetCoils"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/SetCollisionLevel.srv",
+      "git_blob_sha1": "d357f3f1caad65cd29263acf588ef8e58add72d2",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetCollisionLevel.srv",
+      "repository": "ros1",
+      "sha256": "27ae0e0a9a1ce83429647f8c1d9b6b2992c2ab54c308c5e286d8e431b049ad79",
+      "type": "dobot_v4_bringup/SetCollisionLevel"
+    },
+    {
+      "bytes": 90,
+      "generation_file": "dobot_v4_bringup/srv/SetHoldRegs.srv",
+      "git_blob_sha1": "018cacfc2df835f8d6792267653d8788f7840a0d",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetHoldRegs.srv",
+      "repository": "ros1",
+      "sha256": "d2866e090f00726bc4626c6f2572f249dbfcf400813d3e28403e4e8a3b2b01b1",
+      "type": "dobot_v4_bringup/SetHoldRegs"
+    },
+    {
+      "bytes": 39,
+      "generation_file": "dobot_v4_bringup/srv/SetOutputBool.srv",
+      "git_blob_sha1": "5085ce805457a60ffb364859cadcf85ece2a033b",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetOutputBool.srv",
+      "repository": "ros1",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf",
+      "type": "dobot_v4_bringup/SetOutputBool"
+    },
+    {
+      "bytes": 41,
+      "generation_file": "dobot_v4_bringup/srv/SetOutputFloat.srv",
+      "git_blob_sha1": "bb10aa1f83ea2151d18a4a040c6c9c390a659b88",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetOutputFloat.srv",
+      "repository": "ros1",
+      "sha256": "8de6326a303983a47b8006f57a7790d387234510c9de76a20dc5f54e4d39fc46",
+      "type": "dobot_v4_bringup/SetOutputFloat"
+    },
+    {
+      "bytes": 39,
+      "generation_file": "dobot_v4_bringup/srv/SetOutputInt.srv",
+      "git_blob_sha1": "5085ce805457a60ffb364859cadcf85ece2a033b",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetOutputInt.srv",
+      "repository": "ros1",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf",
+      "type": "dobot_v4_bringup/SetOutputInt"
+    },
+    {
+      "bytes": 57,
+      "generation_file": "dobot_v4_bringup/srv/SetPayload.srv",
+      "git_blob_sha1": "138deb68c42ec23d3af34eb8db2d5cbdda3dda6a",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetPayload.srv",
+      "repository": "ros1",
+      "sha256": "8c364eee3d61bc00a1b3179d0c81d8655c24a5aea6ba01e74bdb155f8b70627e",
+      "type": "dobot_v4_bringup/SetPayload"
+    },
+    {
+      "bytes": 24,
+      "generation_file": "dobot_v4_bringup/srv/SetPostCollisionMode.srv",
+      "git_blob_sha1": "e802e1c78551f31b8f4a84c090a12a7320ce4ff2",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetPostCollisionMode.srv",
+      "repository": "ros1",
+      "sha256": "7838512d90223c4e10955dee1a1b22d52f1a254ac3a9c157597beda72d0196e6",
+      "type": "dobot_v4_bringup/SetPostCollisionMode"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_v4_bringup/srv/SetSafeSkin.srv",
+      "git_blob_sha1": "41b5383052a05a3e5f13864b129a979c5f1f82b0",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetSafeSkin.srv",
+      "repository": "ros1",
+      "sha256": "f1359d4a02b230df980d8ff29a461b45b1c0fd3dc528b0b393a6f63a1340464f",
+      "type": "dobot_v4_bringup/SetSafeSkin"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_v4_bringup/srv/SetSafeWallEnable.srv",
+      "git_blob_sha1": "3cb8b50c28cdf5aa5e826287026d05dd5720cb79",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetSafeWallEnable.srv",
+      "repository": "ros1",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6",
+      "type": "dobot_v4_bringup/SetSafeWallEnable"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_v4_bringup/srv/SetTool.srv",
+      "git_blob_sha1": "7b1ed4e7e4f4d5118d2eed44073e712f9749c8da",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetTool.srv",
+      "repository": "ros1",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247",
+      "type": "dobot_v4_bringup/SetTool"
+    },
+    {
+      "bytes": 71,
+      "generation_file": "dobot_v4_bringup/srv/SetTool485.srv",
+      "git_blob_sha1": "d479d67c5f0fa9b51cbd26682b6a30b91b67eb6e",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetTool485.srv",
+      "repository": "ros1",
+      "sha256": "4b1e92876d5385125e35bab4d05aa389e3615089a0d015025a1aa3442145f321",
+      "type": "dobot_v4_bringup/SetTool485"
+    },
+    {
+      "bytes": 35,
+      "generation_file": "dobot_v4_bringup/srv/SetToolMode.srv",
+      "git_blob_sha1": "b8ea9bea90e15996aade48398897ad765e83cee8",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetToolMode.srv",
+      "repository": "ros1",
+      "sha256": "85a497adc59ff51e46ce24081457516ad0071f0fe9feb38981803604ce6ddfeb",
+      "type": "dobot_v4_bringup/SetToolMode"
+    },
+    {
+      "bytes": 26,
+      "generation_file": "dobot_v4_bringup/srv/SetToolPower.srv",
+      "git_blob_sha1": "b3584213babd67524ddfea1df5aa209cd4ba4985",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetToolPower.srv",
+      "repository": "ros1",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5",
+      "type": "dobot_v4_bringup/SetToolPower"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_v4_bringup/srv/SetUser.srv",
+      "git_blob_sha1": "7b1ed4e7e4f4d5118d2eed44073e712f9749c8da",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SetUser.srv",
+      "repository": "ros1",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247",
+      "type": "dobot_v4_bringup/SetUser"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/SpeedFactor.srv",
+      "git_blob_sha1": "ae553007d1ff57a44c23aac43a8eccc8a57f1b43",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/SpeedFactor.srv",
+      "repository": "ros1",
+      "sha256": "f5655cbfc3f5b30b3004702f2cacde1f14c8763e243133b7a4fdea1209253476",
+      "type": "dobot_v4_bringup/SpeedFactor"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/StartDrag.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/StartDrag.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/StartDrag"
+    },
+    {
+      "bytes": 50,
+      "generation_file": "dobot_v4_bringup/srv/StartPath.srv",
+      "git_blob_sha1": "ed2e5af57ab0603ebd95162d571f340f26c0dc6b",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/StartPath.srv",
+      "repository": "ros1",
+      "sha256": "aae17a7c419f847292a423317407b8500c9e627b57c5c222583e4938a39e83c3",
+      "type": "dobot_v4_bringup/StartPath"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/Stop.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/Stop.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/Stop"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/StopDrag.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/StopDrag.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/StopDrag"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_v4_bringup/srv/StopMoveJog.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/StopMoveJog.srv",
+      "repository": "ros1",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_v4_bringup/StopMoveJog"
+    },
+    {
+      "bytes": 32,
+      "generation_file": "dobot_v4_bringup/srv/TcpDashboard.srv",
+      "git_blob_sha1": "90b401ca380630b6a26fab3900b703c1777a18c7",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/TcpDashboard.srv",
+      "repository": "ros1",
+      "sha256": "f71eb9a763d355d7e99b6a19dd5b4dda3be9e9a4e438b7e2be67ff6e961f643c",
+      "type": "dobot_v4_bringup/TcpDashboard"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/Tool.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/Tool.srv",
+      "repository": "ros1",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_v4_bringup/Tool"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/ToolAI.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ToolAI.srv",
+      "repository": "ros1",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_v4_bringup/ToolAI"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/ToolDI.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ToolDI.srv",
+      "repository": "ros1",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_v4_bringup/ToolDI"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_v4_bringup/srv/ToolDO.srv",
+      "git_blob_sha1": "bdfebbbe409d17145f4baf6c9fce019131e1c0f3",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ToolDO.srv",
+      "repository": "ros1",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09",
+      "type": "dobot_v4_bringup/ToolDO"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_v4_bringup/srv/ToolDOInstant.srv",
+      "git_blob_sha1": "bdfebbbe409d17145f4baf6c9fce019131e1c0f3",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/ToolDOInstant.srv",
+      "repository": "ros1",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09",
+      "type": "dobot_v4_bringup/ToolDOInstant"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_v4_bringup/srv/User.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/User.srv",
+      "repository": "ros1",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_v4_bringup/User"
+    },
+    {
+      "bytes": 21,
+      "generation_file": "dobot_v4_bringup/srv/VelJ.srv",
+      "git_blob_sha1": "d5c8c82aad1c78f8b678d93c9383decc9b50630e",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/VelJ.srv",
+      "repository": "ros1",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a",
+      "type": "dobot_v4_bringup/VelJ"
+    },
+    {
+      "bytes": 21,
+      "generation_file": "dobot_v4_bringup/srv/VelL.srv",
+      "git_blob_sha1": "d5c8c82aad1c78f8b678d93c9383decc9b50630e",
+      "kind": "srv",
+      "original_file": "dobot_v4_bringup/srv/VelL.srv",
+      "repository": "ros1",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a",
+      "type": "dobot_v4_bringup/VelL"
+    }
+  ],
+  "kind": "dobot-selected-complete-original-driver-source-lock-v1",
+  "original_custom_roots": [
+    {
+      "kind": "msg",
+      "type": "dobot_v4_bringup/RobotStatus"
+    },
+    {
+      "kind": "msg",
+      "type": "dobot_v4_bringup/ToolVectorActual"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/AI"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/AO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/AOInstant"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/AccJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/AccL"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/Arc"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/BrakeControl"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/CP"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/CalcTool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/CalcUser"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/Circle"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ClearError"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/Continue"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/DI"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/DIGroup"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/DO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/DOGroup"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/DOInstant"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/DisableRobot"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/DragSensivity"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/EmergencyStop"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/EnableRobot"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/EnableSafeSkin"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetAO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetAngle"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetCoils"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetCurrentCommandId"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetDO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetDOGroup"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetErrorID"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetHoldRegs"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetInBits"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetInRegs"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetInputBool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetInputFloat"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetInputInt"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetOutputBool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetOutputFloat"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetOutputInt"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetPose"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/GetStartPose"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/InverseKin"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/InverseSolution"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ModbusClose"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ModbusCreate"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ModbusRTUCreate"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/MovJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/MovJIO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/MovL"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/MovLIO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/MoveJog"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/Pause"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/PositiveKin"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/PowerOn"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/RelJointMovJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/RelMovJTool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/RelMovJUser"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/RelMovLTool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/RelMovLUser"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/RobotMode"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/RunScript"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ServoJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ServoP"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetBackDistance"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetCoils"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetCollisionLevel"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetHoldRegs"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetOutputBool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetOutputFloat"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetOutputInt"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetPayload"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetPostCollisionMode"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetSafeSkin"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetSafeWallEnable"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetTool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetTool485"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetToolMode"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetToolPower"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SetUser"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/SpeedFactor"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/StartDrag"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/StartPath"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/Stop"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/StopDrag"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/StopMoveJog"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/TcpDashboard"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/Tool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ToolAI"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ToolDI"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ToolDO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/ToolDOInstant"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/User"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/VelJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_v4_bringup/VelL"
+    }
+  ],
+  "profile": "ros1_v4",
+  "repositories": [
+    {
+      "commit": "0924e785f1827b7125ba4ba2bc3325811ed21c18",
+      "id": "ros1",
+      "repository": "https://github.com/Dobot-Arm/TCP-IP-ROS-6AXis",
+      "tree_git_sha1": "621e03f777184da9d55fa1f1b5efaae57d2f5ee2"
+    }
+  ],
+  "ros_version": 1,
+  "scope": "Every declaration in this exact driver interface package; original demo-package copies, other source branches and standard trajectory dependencies are separate domains.",
+  "vendor": "dobot"
+}

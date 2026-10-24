@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Actual Kotlin full application source; SOURCE_ONLY_UNCOMPILED.
+     Use the genuine pinned Kotlin/JDK/patched TeaVM offline producer.
+     No host JVM ROS execution or Kotlin/WasmGC fallback is selected. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.uwvm</groupId><artifactId>isaac-sim-clock-kotlin-program</artifactId><version>1.0.0</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <kotlin.version>2.1.20</kotlin.version><teavm.version>0.13.1</teavm.version>
+  </properties>
+  <dependencies>
+    <dependency><groupId>org.uwvm</groupId><artifactId>roswasm-isaac-sim-clock-kotlin</artifactId><version>1.0.0</version></dependency>
+    <dependency><groupId>org.teavm</groupId><artifactId>teavm-classlib</artifactId><version>${teavm.version}</version></dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src/main/kotlin</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.jetbrains.kotlin</groupId><artifactId>kotlin-maven-plugin</artifactId><version>${kotlin.version}</version>
+        <executions><execution><id>kotlin</id><phase>compile</phase><goals><goal>compile</goal></goals></execution></executions>
+        <configuration><jvmTarget>17</jvmTarget><languageVersion>2.1</languageVersion></configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.teavm</groupId><artifactId>teavm-maven-plugin</artifactId><version>${teavm.version}</version>
+        <executions><execution><phase>process-classes</phase><goals><goal>compile</goal></goals></execution></executions>
+        <configuration>
+          <mainClass>org.uwvm.roswasm.nvidia.isaacsim.kotlin.example.ClockProgram</mainClass>
+          <targetType>WEBASSEMBLY_WASI</targetType>
+          <targetDirectory>${project.build.directory}/wasm</targetDirectory><targetFileName>clock-program.wasm</targetFileName>
+          <optimizationLevel>FULL</optimizationLevel><strict>true</strict><stopOnErrors>true</stopOnErrors>
+          <debugInformationGenerated>true</debugInformationGenerated><wasmDebugInfoLocation>EMBEDDED</wasmDebugInfoLocation>
+          <minHeapSize>1</minHeapSize><maxHeapSize>32</maxHeapSize>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

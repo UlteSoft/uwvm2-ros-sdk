@@ -1,0 +1,31 @@
+backend ros1
+worker-uid @WORKER_UID@
+worker-pid @WORKER_PID@
+socket /tmp/uwvm-library.sock
+timeout-ms 10000
+max-sessions 16
+audit-max-records-per-second 100
+audit-max-records 10000
+audit-max-bytes 1048576
+connection master-uri http://127.0.0.1:11311
+connection node-name uwvm_library_gateway
+connection namespace /uwvm_library
+connection advertise-host 127.0.0.1
+connection transport tcpros
+grant library_pub topic.publish /uwvm_library/outgoing std_msgs/String 992ce8a1687cec8c8bd883ec73ca41d1
+set library_pub max-rate-hz 100
+set library_pub burst 8
+set library_pub max-bytes-per-second 1048576
+set library_pub validator none
+set library_pub audit allow-and-deny
+set library_pub audit-max-rate-hz 100
+set library_pub audit-burst 100
+set library_pub audit-max-records 10000
+set library_pub audit-max-bytes 1048576
+set library_pub max-message-bytes 256
+set library_pub max-queue-bytes 2048
+set library_pub overflow-policy drop-oldest
+set library_pub max-publishers 1
+set library_pub queue-depth 8
+set library_pub transport tcpros
+set library_pub latch false

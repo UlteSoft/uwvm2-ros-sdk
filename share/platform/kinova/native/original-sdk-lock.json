@@ -1,0 +1,843 @@
+{
+  "archive_bytes": 6715146,
+  "archive_sha256": "3c5cbb273b366c5b7cc277abed29574b38b4d2c2ce02877178290adbb76d7c3c",
+  "execution_credit": 0,
+  "expanded_bytes": 47884758,
+  "files": [
+    {
+      "bytes": 8037,
+      "path": "include/google/protobuf/timestamp.pb.h",
+      "sha256": "ac66f9e1894e7bfe9ff96448701c454298f1aac8d65b04af7030f52396b3de31"
+    },
+    {
+      "bytes": 4727,
+      "path": "include/google/protobuf/any.h",
+      "sha256": "1f54b2b46432cba182d814581fa68972df295b551ac150aee5caac76ece71c16"
+    },
+    {
+      "bytes": 9718,
+      "path": "include/google/protobuf/field_mask.pb.h",
+      "sha256": "fff14c34378f560454ae62ca0133b7de06a17d7b0f30f60f3ff40beb82d36fb7"
+    },
+    {
+      "bytes": 13692,
+      "path": "include/google/protobuf/map_field_inl.h",
+      "sha256": "83272301335b44544f47573d06d942d62be2927d4015e5f852549460e1c50f72"
+    },
+    {
+      "bytes": 12926,
+      "path": "include/google/protobuf/generated_message_util.h",
+      "sha256": "b159b3fd301eb38a3310af922ed8e60671dd3fa30a8c0c20ce3196eaaeda4408"
+    },
+    {
+      "bytes": 3110,
+      "path": "include/google/protobuf/metadata.h",
+      "sha256": "c4985833bc4c4ab5eb66180f3e9e883283942f9a2066661fb2ca067a8647eace"
+    },
+    {
+      "bytes": 53948,
+      "path": "include/google/protobuf/message.h",
+      "sha256": "e63c3ff89036ac88e94a88ef6f8d48796879178219726f3decc28c4fc656b11b"
+    },
+    {
+      "bytes": 13829,
+      "path": "include/google/protobuf/wire_format.h",
+      "sha256": "2cf43f0f80bdfed99f1c52d0f93668e0f7701e49ca39d87b20c3a66dfbac1aee"
+    },
+    {
+      "bytes": 30025,
+      "path": "include/google/protobuf/map_field.h",
+      "sha256": "cfbfe7698a47d12c8680603c314a2982864bb0eff7b7acc19084ccc1dd40917c"
+    },
+    {
+      "bytes": 10053,
+      "path": "include/google/protobuf/dynamic_message.h",
+      "sha256": "ce54f768f99d78d34da6213532b3255a84b473684be9d523a9a4f5a2171fc0b2"
+    },
+    {
+      "bytes": 9655,
+      "path": "include/google/protobuf/arena_impl.h",
+      "sha256": "f49fdba05893a965cf5c5f729d34d689d4db93cf8eb39dec91e4dcd298316839"
+    },
+    {
+      "bytes": 43367,
+      "path": "include/google/protobuf/map.h",
+      "sha256": "aab4fb73360d92861105cb106ada57366317b424d7903a3498f5125701459fc3"
+    },
+    {
+      "bytes": 41142,
+      "path": "include/google/protobuf/wire_format_lite.h",
+      "sha256": "49cda7e21ed170adcd82ad35e3a1fe98da2fe716875ed22d1ed76184adcb1716"
+    },
+    {
+      "bytes": 3754,
+      "path": "include/google/protobuf/generated_enum_reflection.h",
+      "sha256": "37728d56d577ce584975bd8240c7a5f5c9f7c38e76ff65e7cf16c066f08154f6"
+    },
+    {
+      "bytes": 92873,
+      "path": "include/google/protobuf/repeated_field.h",
+      "sha256": "160a0c96a134486b63d115b48281263089fc41ba4e4df81833465934e06a5c30"
+    },
+    {
+      "bytes": 26112,
+      "path": "include/google/protobuf/map_entry_lite.h",
+      "sha256": "10e4ff9813de53c91a38a40014896b41fa1b09fa6e19839ddaf92f53b913a55a"
+    },
+    {
+      "bytes": 18730,
+      "path": "include/google/protobuf/message_lite.h",
+      "sha256": "29bcf8b475bcc4822e97ef3819293f67eb918b374acaa4c128fd7330dd1c4dfd"
+    },
+    {
+      "bytes": 88901,
+      "path": "include/google/protobuf/type.pb.h",
+      "sha256": "960b927586b0f000dcf9e2b0b973c092043baf840fabd70f6c3ffdb3b53ec2cb"
+    },
+    {
+      "bytes": 7982,
+      "path": "include/google/protobuf/duration.pb.h",
+      "sha256": "461dd777a0aba1fcc348f9358b5531168b39578794f092f8705ea611974583e0"
+    },
+    {
+      "bytes": 38762,
+      "path": "include/google/protobuf/arena.h",
+      "sha256": "b3318d6ab8ec983791989f9f468702ff95a35211b599a3e4706018e8c7323d57"
+    },
+    {
+      "bytes": 8143,
+      "path": "include/google/protobuf/generated_message_table_driven.h",
+      "sha256": "f700b7ac4ff49d34b792ac22a0aeb30e97891303c152d7858ce89b60c0b28921"
+    },
+    {
+      "bytes": 13137,
+      "path": "include/google/protobuf/service.h",
+      "sha256": "e8758acc1eb3e5ad549673258a77d536f5c4e459d9b78a1f14b688042f2b461d"
+    },
+    {
+      "bytes": 45356,
+      "path": "include/google/protobuf/wire_format_lite_inl.h",
+      "sha256": "fb623f14825eb4a2c435d016a383bf30fef95900bf3851dbf1d177bf2b119628"
+    },
+    {
+      "bytes": 485062,
+      "path": "include/google/protobuf/descriptor.pb.h",
+      "sha256": "216377dd0915871596a274c60af1039dc9499386a007d2b49f747273d756f991"
+    },
+    {
+      "bytes": 12663,
+      "path": "include/google/protobuf/unknown_field_set.h",
+      "sha256": "33a00c58c76d2f9b842ca73571df5853161573ce7f860c1a85cfb54f0649e1a2"
+    },
+    {
+      "bytes": 22519,
+      "path": "include/google/protobuf/reflection.h",
+      "sha256": "b8a0629e99831e295397b74d74350f640fc213deca1052ead68141ee2514da0a"
+    },
+    {
+      "bytes": 6404,
+      "path": "include/google/protobuf/map_entry.h",
+      "sha256": "5253354e7da991dd0a52d65c6cd11441eadc9e62588ef108d679023657066a23"
+    },
+    {
+      "bytes": 37863,
+      "path": "include/google/protobuf/map_type_handler.h",
+      "sha256": "8eb815256174fdf44fdf9dc6a1343ed37299070d458ddaf7fd2c15c92d982240"
+    },
+    {
+      "bytes": 8196,
+      "path": "include/google/protobuf/metadata_lite.h",
+      "sha256": "d1ed3e9721f8b8648a3f4b6b10430c8f10a37431b5026711352985e34cd9303b"
+    },
+    {
+      "bytes": 3401,
+      "path": "include/google/protobuf/has_bits.h",
+      "sha256": "70a48427de01ce50fe2bd0cbc6fa57404cbf89bc653ad370db82f643fa807450"
+    },
+    {
+      "bytes": 6592,
+      "path": "include/google/protobuf/empty.pb.h",
+      "sha256": "fbf327c2b22b7e91df19fe1fd7e42fa0265de24b24bfbdbb29dc99c7694ac7ac"
+    },
+    {
+      "bytes": 11566,
+      "path": "include/google/protobuf/any.pb.h",
+      "sha256": "76048e580505afe17c6ed0af917308c4c53be3f3f279a4a91b125648201f5b0a"
+    },
+    {
+      "bytes": 24051,
+      "path": "include/google/protobuf/text_format.h",
+      "sha256": "8c6423013481e5affc3ed105234e9d3fd4da50c1d0a8be624d0c4108ced6dba6"
+    },
+    {
+      "bytes": 17877,
+      "path": "include/google/protobuf/descriptor_database.h",
+      "sha256": "903c194ee95332092ae91867faa9cbe1214060ae35df16f985252e457336d9d5"
+    },
+    {
+      "bytes": 3536,
+      "path": "include/google/protobuf/reflection_ops.h",
+      "sha256": "6b94c730ba5240d4921ba552baf6c226723dfbffe6081af680e6a94cf777a67f"
+    },
+    {
+      "bytes": 12536,
+      "path": "include/google/protobuf/arenastring.h",
+      "sha256": "bfa4bde4580929385a3c0a4610cfaf8b06a254f2b51d29eb8a2752812e0d9a95"
+    },
+    {
+      "bytes": 32888,
+      "path": "include/google/protobuf/generated_message_reflection.h",
+      "sha256": "bc2c1e52661f584d9f5250f7d9483236ce0bec28a32b2899b56ed9251fbecfa3"
+    },
+    {
+      "bytes": 5606,
+      "path": "include/google/protobuf/map_field_lite.h",
+      "sha256": "6900f6459f679ef1965c0cd639a43c84793899ad4819b3de6a303eaa7be6c735"
+    },
+    {
+      "bytes": 89233,
+      "path": "include/google/protobuf/descriptor.h",
+      "sha256": "f5623e98c767eff4e394a093c2d35972796f1b242b2e0514aa546a19bd973e13"
+    },
+    {
+      "bytes": 43245,
+      "path": "include/google/protobuf/api.pb.h",
+      "sha256": "ff6acf5a1b5965145fb85e992219ceb89ef689e63edd8184f7e65d12d68c0134"
+    },
+    {
+      "bytes": 36345,
+      "path": "include/google/protobuf/struct.pb.h",
+      "sha256": "688ed676a31f7eaf569592ff9435df8daca0cd7edc6b43416cd79cf34a347ca5"
+    },
+    {
+      "bytes": 2125,
+      "path": "include/google/protobuf/generated_enum_util.h",
+      "sha256": "bf968e54cf20d8af5a91964fa2d87f7956028b22397973ab99dc82b58f0773b6"
+    },
+    {
+      "bytes": 52915,
+      "path": "include/google/protobuf/wrappers.pb.h",
+      "sha256": "f94ead232fd1c8349876a270ac51903f7085629c9f72f73f846be513022b6f2b"
+    },
+    {
+      "bytes": 70875,
+      "path": "include/google/protobuf/extension_set.h",
+      "sha256": "42c19b1838b7d7a029f89d4d4018a196363d841fcd6b145a76df97b6c370c41c"
+    },
+    {
+      "bytes": 9209,
+      "path": "include/google/protobuf/source_context.pb.h",
+      "sha256": "a69c2c6e706579d1b0b2076cb8e61b8dbbad3f1e96c0f2ecaadfa8190166d5b7"
+    },
+    {
+      "bytes": 10175,
+      "path": "include/google/protobuf/io/zero_copy_stream.h",
+      "sha256": "4f2d779732ee3d4da013350170e0e4df369979c2eef2e83330291fc2b5f8e1c9"
+    },
+    {
+      "bytes": 16985,
+      "path": "include/google/protobuf/io/printer.h",
+      "sha256": "3c99b92122627de9d9f03d9204637bdb792922e65abb16a14b8bdfea9fe6476b"
+    },
+    {
+      "bytes": 6579,
+      "path": "include/google/protobuf/io/gzip_stream.h",
+      "sha256": "5036ddb6d32f80f9644cbad87fe7efa5d7a5fbc6e548297bd6dbed3e27b972ad"
+    },
+    {
+      "bytes": 15879,
+      "path": "include/google/protobuf/io/zero_copy_stream_impl_lite.h",
+      "sha256": "40c673237eadadfe70be810b2aabaf1dd16951536431022512fcd2803340fa33"
+    },
+    {
+      "bytes": 58718,
+      "path": "include/google/protobuf/io/coded_stream.h",
+      "sha256": "d0ec46a899750b400463858a1dee8e3981982c63d091e4b1910c9943221c3d07"
+    },
+    {
+      "bytes": 2431,
+      "path": "include/google/protobuf/io/strtod.h",
+      "sha256": "aaea86a44c3594e4a2aff7322e1e1ff6c614e7a0d2b77cf0b7c09d69da1d386d"
+    },
+    {
+      "bytes": 13577,
+      "path": "include/google/protobuf/io/zero_copy_stream_impl.h",
+      "sha256": "314cfe8f486976ac4ac1d9a69b35287b536562018e469b163163f788113cf8cb"
+    },
+    {
+      "bytes": 16598,
+      "path": "include/google/protobuf/io/tokenizer.h",
+      "sha256": "bb41b8d0493642e25810c86935ea516b4b10ee5da2826250201edb1321cd2e49"
+    },
+    {
+      "bytes": 19022,
+      "path": "include/google/protobuf/compiler/command_line_interface.h",
+      "sha256": "899be0c7191ea1b89ac4db74a866e7e5e3bc0f738fade33134e4e7cd8f631da9"
+    },
+    {
+      "bytes": 13733,
+      "path": "include/google/protobuf/compiler/importer.h",
+      "sha256": "31a1e1321e1f958566e1c888590d75a92a5168e731c6dcd4f6a50be53bf0168f"
+    },
+    {
+      "bytes": 4250,
+      "path": "include/google/protobuf/compiler/plugin.h",
+      "sha256": "6a81b5f060ae0453da37e071608133e2def74de1df9a7587175f87b275fd707c"
+    },
+    {
+      "bytes": 26584,
+      "path": "include/google/protobuf/compiler/parser.h",
+      "sha256": "6714cd7e1a8c46747980a9f094bd12bb7a41706e27c611eccd3939eaed461a15"
+    },
+    {
+      "bytes": 7392,
+      "path": "include/google/protobuf/compiler/code_generator.h",
+      "sha256": "f2d15247b34547cd9a21ae86a5f457c0b1164f4300ee7df5a483530c79fa1d65"
+    },
+    {
+      "bytes": 56487,
+      "path": "include/google/protobuf/compiler/plugin.pb.h",
+      "sha256": "da13205d5d7f21b04b441564f3743c0b5fbb93020ba16136cf98fada05e112f5"
+    },
+    {
+      "bytes": 2755,
+      "path": "include/google/protobuf/compiler/php/php_generator.h",
+      "sha256": "2423d274743d8d5f73ccdfcea95b72e790e77414e19fd0d0fd1cd606cc2ee1c8"
+    },
+    {
+      "bytes": 2931,
+      "path": "include/google/protobuf/compiler/java/java_names.h",
+      "sha256": "5d13a389a378bc11cf3fe7fb03403375fc1cf388308fad533399224934ea1600"
+    },
+    {
+      "bytes": 2945,
+      "path": "include/google/protobuf/compiler/java/java_generator.h",
+      "sha256": "1095e4adc9affcaaddef7a33d79328f02e488818637e24e371c472bc9a06bf37"
+    },
+    {
+      "bytes": 10956,
+      "path": "include/google/protobuf/compiler/objectivec/objectivec_helpers.h",
+      "sha256": "c276e32c318f13d0352e8f3110c05d8bf62c1f7e7e3dbbb5b0fde75c69bae46a"
+    },
+    {
+      "bytes": 3121,
+      "path": "include/google/protobuf/compiler/objectivec/objectivec_generator.h",
+      "sha256": "5e7f110856221db5eb90b4937b46914ffe88c8d9e3436d2b3af51ca91a2e96c6"
+    },
+    {
+      "bytes": 2663,
+      "path": "include/google/protobuf/compiler/ruby/ruby_generator.h",
+      "sha256": "e54e82ada2f5f205b2e742ab260a3e43e5be6699a2e071d697316d7e5f5cb2d4"
+    },
+    {
+      "bytes": 1981,
+      "path": "include/google/protobuf/compiler/js/well_known_types_embed.h",
+      "sha256": "86e8c4977f37224c657cd8d0a690751ccead55e469326babbaa27b1f24988584"
+    },
+    {
+      "bytes": 15161,
+      "path": "include/google/protobuf/compiler/js/js_generator.h",
+      "sha256": "cce200da5789f8064eda36a4b2e01d3486a2b0c61aee500347175bd463cf11cf"
+    },
+    {
+      "bytes": 3916,
+      "path": "include/google/protobuf/compiler/csharp/csharp_names.h",
+      "sha256": "28b3f7743f0161dc53e3700f4e746f5d1b6b250af1357dc44853ebac09a39a8f"
+    },
+    {
+      "bytes": 2678,
+      "path": "include/google/protobuf/compiler/csharp/csharp_generator.h",
+      "sha256": "a12b9255d6d4d8954e1d8e1e128aeab6564053e74f53aa4b9662c2800897930e"
+    },
+    {
+      "bytes": 3023,
+      "path": "include/google/protobuf/compiler/javanano/javanano_generator.h",
+      "sha256": "788ccec156e3a4e7760e200e23535e7ff841fa1725ea7c761a5c5aab072b9e47"
+    },
+    {
+      "bytes": 2963,
+      "path": "include/google/protobuf/compiler/cpp/cpp_generator.h",
+      "sha256": "d118fc0caf08382fa9b3aff0d4b0a274b47bebf8327ce7877b40a34fbb4ad479"
+    },
+    {
+      "bytes": 7550,
+      "path": "include/google/protobuf/compiler/python/python_generator.h",
+      "sha256": "0eed053887764278c4567c9ecff6e7f6d7984a927b31c5b9a1680923e7001ace"
+    },
+    {
+      "bytes": 10224,
+      "path": "include/google/protobuf/util/field_comparator.h",
+      "sha256": "41c93b8efc1565ab537bbc476d41f98941bfe5e3c7f5332fa1bb11001b5be347"
+    },
+    {
+      "bytes": 2363,
+      "path": "include/google/protobuf/util/type_resolver_util.h",
+      "sha256": "1a2a39eb1fff29f1f1d0ef0cff14654490e42ca6b90a6297a60a51b1e6b2639e"
+    },
+    {
+      "bytes": 10221,
+      "path": "include/google/protobuf/util/field_mask_util.h",
+      "sha256": "ba62599a0a6a0ea25f2eb201c73cbe1fff699dc26b8999482363a24e09a4d20f"
+    },
+    {
+      "bytes": 2798,
+      "path": "include/google/protobuf/util/type_resolver.h",
+      "sha256": "c87282a27574925db84a4118cf3c6c88155cf541cead7e6ac7506e76d7dd9045"
+    },
+    {
+      "bytes": 11702,
+      "path": "include/google/protobuf/util/time_util.h",
+      "sha256": "2ad22ed44edb01c4233886cdfb6ef1dd25519e17e0fa8fbe1fa1612236d78438"
+    },
+    {
+      "bytes": 41754,
+      "path": "include/google/protobuf/util/message_differencer.h",
+      "sha256": "cf630dd361286d7362ff474f6c821113aee02e0f355f52dbef4d0c709657c0b9"
+    },
+    {
+      "bytes": 3487,
+      "path": "include/google/protobuf/util/delimited_message_util.h",
+      "sha256": "f912748c87d87b7897c9f047ffc3f93adf2232029ff398e53b64da3a23de1beb"
+    },
+    {
+      "bytes": 7775,
+      "path": "include/google/protobuf/util/json_util.h",
+      "sha256": "47ce56920ffd1b0e0e1624f6b72068b4484af98af7fee5c6e7cd83c1cfc1d0b2"
+    },
+    {
+      "bytes": 15614,
+      "path": "include/google/protobuf/stubs/type_traits.h",
+      "sha256": "a90c6fcec96a287fadc6a8cb618a74927f281eb3aeb23f8df090afd3e46c8850"
+    },
+    {
+      "bytes": 6148,
+      "path": "include/google/protobuf/stubs/once.h",
+      "sha256": "9a0b57d42f01cd1efedc0d0e985682f58a792748723d8cd0fe70605dc3e2e996"
+    },
+    {
+      "bytes": 2168,
+      "path": "include/google/protobuf/stubs/atomic_sequence_num.h",
+      "sha256": "f7b2a7f2476281e73532dba92db0c9d27ff041eaf64bf1b9d3347135c797f348"
+    },
+    {
+      "bytes": 9003,
+      "path": "include/google/protobuf/stubs/common.h",
+      "sha256": "ce6213bf3ae2171e0af7e32800b889ca5f72e386a7a566829a1edc846c56d793"
+    },
+    {
+      "bytes": 5028,
+      "path": "include/google/protobuf/stubs/atomicops_internals_arm_qnx.h",
+      "sha256": "916cbd7d04dbcabd62c9ecf09be6cfae014e0009892401309bafab95c8cc4479"
+    },
+    {
+      "bytes": 7903,
+      "path": "include/google/protobuf/stubs/scoped_ptr.h",
+      "sha256": "7b815b53bbac871f68eb3c867253385ced21f6c3763f832539527e841292500b"
+    },
+    {
+      "bytes": 16228,
+      "path": "include/google/protobuf/stubs/port.h",
+      "sha256": "3da8c4820304afc6c3c45664a70fc0bdce546190e329e8ec8cc6dd2349ea59b6"
+    },
+    {
+      "bytes": 5190,
+      "path": "include/google/protobuf/stubs/stl_util.h",
+      "sha256": "ab1d4b41a24e077ed55078851506706057734439f8830bb9968d81631bf77de4"
+    },
+    {
+      "bytes": 4834,
+      "path": "include/google/protobuf/stubs/template_util.h",
+      "sha256": "79659b54c2909ce47eeaa24201771dfb0e6b7cddd30b10cc6beeddf92153bc08"
+    },
+    {
+      "bytes": 9134,
+      "path": "include/google/protobuf/stubs/atomicops_internals_generic_c11_atomic.h",
+      "sha256": "468b738e6afc57bbcbcc6bb50e4339e00c412754c953c53e4bbbf80ffad49065"
+    },
+    {
+      "bytes": 16211,
+      "path": "include/google/protobuf/stubs/shared_ptr.h",
+      "sha256": "bc3daef953a61c0594ccf2e99a253c02eebf9d379a2586e0285248d1ff16b8f8"
+    },
+    {
+      "bytes": 17661,
+      "path": "include/google/protobuf/stubs/stringpiece.h",
+      "sha256": "6d03927ea23c2df617ff2da5c8f0a797cc33c1a0cd2b3eec30c09ef2431e549c"
+    },
+    {
+      "bytes": 8910,
+      "path": "include/google/protobuf/stubs/logging.h",
+      "sha256": "4e1b0ef092501d8dc5c8c544a47c3ff1dd39a993ea6efd551cee410ef4320584"
+    },
+    {
+      "bytes": 5382,
+      "path": "include/google/protobuf/stubs/atomicops_internals_x86_msvc.h",
+      "sha256": "ddb7e824295c607262001f2f5156d08178dbd800288df5dd7b3a7116d5127aff"
+    },
+    {
+      "bytes": 5697,
+      "path": "include/google/protobuf/stubs/casts.h",
+      "sha256": "0bc6ca62cb540e1c47a4c4ae3e69a62c07a7e4a0db16b1a9cd6976f92b467e67"
+    },
+    {
+      "bytes": 4536,
+      "path": "include/google/protobuf/stubs/mutex.h",
+      "sha256": "7394cf7a973715bc5bfd0487ab7fe3e705ff7b14d9cbd880e5815875a51d4a25"
+    },
+    {
+      "bytes": 10396,
+      "path": "include/google/protobuf/stubs/atomicops_internals_arm64_gcc.h",
+      "sha256": "d0ea615e7f9b509e117744b50af3fafe55f21b99ba8eff58647d5f39291cc0e4"
+    },
+    {
+      "bytes": 5915,
+      "path": "include/google/protobuf/stubs/atomicops_internals_generic_gcc.h",
+      "sha256": "86f8f19a9f6d4caf3603f8542e37e7d2db872d56b4001d3330a276be4bbd3e4e"
+    },
+    {
+      "bytes": 5618,
+      "path": "include/google/protobuf/stubs/atomicops_internals_arm_gcc.h",
+      "sha256": "13863ce9cc301fcaf8c824ebb4c5821857acb2577fd5caa41161e1b12cc55f60"
+    },
+    {
+      "bytes": 15521,
+      "path": "include/google/protobuf/stubs/atomicops_internals_power.h",
+      "sha256": "3f91dea5d6ec3029c91f86f6800f2fa3199dc0553d0a86093961516afebcadf0"
+    },
+    {
+      "bytes": 2514,
+      "path": "include/google/protobuf/stubs/singleton.h",
+      "sha256": "a9c009f397066926ec0ff3266ebc78494937b4d427b3481e509b2eb8597b79ce"
+    },
+    {
+      "bytes": 12090,
+      "path": "include/google/protobuf/stubs/atomicops_internals_mips_gcc.h",
+      "sha256": "2e2a22e361cd3f0e2b7ee140636d319041e1ff533d991164251a1fc4d860203b"
+    },
+    {
+      "bytes": 15220,
+      "path": "include/google/protobuf/stubs/hash.h",
+      "sha256": "612fdec73115c836f0585521933114e332d9c0f09b0439990b60f58c8e0a85ba"
+    },
+    {
+      "bytes": 4907,
+      "path": "include/google/protobuf/stubs/platform_macros.h",
+      "sha256": "c9f94cfa32405192398c30c5630f8d72216413be27fac3ae65315e31b3d5cd64"
+    },
+    {
+      "bytes": 16725,
+      "path": "include/google/protobuf/stubs/callback.h",
+      "sha256": "5310609cdfee25f10e81b8bc01f6b1fcbb6fe91ea4973dc6926d5727da3e514f"
+    },
+    {
+      "bytes": 10519,
+      "path": "include/google/protobuf/stubs/atomicops.h",
+      "sha256": "5eea93d73cca5a0d2afad0e094b06364488b54b573a62ce062e40c38b7ff9527"
+    },
+    {
+      "bytes": 6307,
+      "path": "include/google/protobuf/stubs/atomicops_internals_solaris.h",
+      "sha256": "c30f11a80bdc1dc30f8c52b57d5ef0306abbaae940de5f802e188e1da49dd3d5"
+    },
+    {
+      "bytes": 11609,
+      "path": "include/google/protobuf/stubs/bytestream.h",
+      "sha256": "64f10e5f1c8b3b5100d2b301be3f511e984b2a17ba3f045a90f67b03c415ae3e"
+    },
+    {
+      "bytes": 10755,
+      "path": "include/google/protobuf/stubs/atomicops_internals_x86_gcc.h",
+      "sha256": "c210e863626ebd959669c9cfbfc65f31750bf93420a0c9151379093b25db990c"
+    },
+    {
+      "bytes": 3782,
+      "path": "include/google/protobuf/stubs/status.h",
+      "sha256": "75b97b4c5f33f48a4c4d56206869a7e74c99394cd1669b229409ada6c893600e"
+    },
+    {
+      "bytes": 8565,
+      "path": "include/google/protobuf/stubs/atomicops_internals_tsan.h",
+      "sha256": "b951a3654496689a5e3b33330db7c86c9500e6f76c81bfa912c106b933c2d798"
+    },
+    {
+      "bytes": 6625,
+      "path": "include/google/protobuf/stubs/macros.h",
+      "sha256": "7fe61e67f6effe7628191c7e83c05f6135b916338195171ab2bdbeca38755973"
+    },
+    {
+      "bytes": 5930,
+      "path": "include/google/protobuf/stubs/fastmem.h",
+      "sha256": "bdfccdff54550a6590e8640c265095d09c9cf9b762cec82437d74144caf3a387"
+    },
+    {
+      "bytes": 5530,
+      "path": "include/google/protobuf/stubs/atomicops_internals_ppc_gcc.h",
+      "sha256": "2cdaa0b21139938ada4d8eeb26ded81cdb54903ac7883ed87431d6d74d92eed3"
+    },
+    {
+      "bytes": 3914,
+      "path": "include/client/TransportClientTcp.h",
+      "sha256": "5b8645770de037e61437e6f8d5b4917feffe366bccd750d53e76f9f1df90bbf3"
+    },
+    {
+      "bytes": 4250,
+      "path": "include/client/TransportClientUdp.h",
+      "sha256": "5ee5492e26c753e4130f86e6ea8448a1475c2071bf94b2a93ef6339b264fe5b4"
+    },
+    {
+      "bytes": 1255,
+      "path": "include/client/SessionManager.h",
+      "sha256": "40eaffd081c065c8e7de43f47ad5d0cd78d90647771b22c47a9cf25cb12b0b81"
+    },
+    {
+      "bytes": 1454,
+      "path": "include/client/ITransportClient.h",
+      "sha256": "3d0ba080299365e8ea673c7f00e37cbd3cb168798104500865d3766c9f536ef4"
+    },
+    {
+      "bytes": 1683,
+      "path": "include/client/IRouterClient.h",
+      "sha256": "d9f6d9bd950b7b6b7d07f07c352094026547d529760b73fee5a2064d042e6239"
+    },
+    {
+      "bytes": 516,
+      "path": "include/client/version.h",
+      "sha256": "ba16fd1a3ed3197c4c1ed1fc5dcb4c08ff0f4f0aa504d18e29faf8e3f5dedba1"
+    },
+    {
+      "bytes": 2099,
+      "path": "include/client/FrameHandler.h",
+      "sha256": "73c01579ac7513f79ea23485376a855bc011107586aeeade910506084a02863e"
+    },
+    {
+      "bytes": 2838,
+      "path": "include/client/NotificationHandler.h",
+      "sha256": "dae11a60263236087de28029cbbc2e061f62b9b3110032c34e3a143e812c4b1d"
+    },
+    {
+      "bytes": 2462,
+      "path": "include/client/RouterClient.h",
+      "sha256": "cd844db068ac46ea05301f81f30c3490a60d8ed471c9dab64ee7983b94dc8744"
+    },
+    {
+      "bytes": 53162,
+      "path": "include/messages/ActuatorCyclic.pb.h",
+      "sha256": "04c4ef7849e59737c2f54f4579e59fec0badd93a6d9f9fb7aa9b187a2d54a168"
+    },
+    {
+      "bytes": 4146,
+      "path": "include/messages/InterconnectCyclic.pb.h",
+      "sha256": "dac0635fbe137f8032593440641e9b9290ed3e388bcd2f5a1403077441d747f1"
+    },
+    {
+      "bytes": 99674,
+      "path": "include/messages/Test.pb.h",
+      "sha256": "f0920234ec4a19c115fd7bc4f08ddc5becd0eeac27bbb3927377c732083825fa"
+    },
+    {
+      "bytes": 111912,
+      "path": "include/messages/BaseCyclic.pb.h",
+      "sha256": "2248071e4ab93407255c939a7f1945451ec664047679a10713b673bee948d550"
+    },
+    {
+      "bytes": 125452,
+      "path": "include/messages/VisionConfig.pb.h",
+      "sha256": "b34517949a2fc5fcf13ad75f0eba47f3552ef047f91bccee85e56d0ffb422ca0"
+    },
+    {
+      "bytes": 5929,
+      "path": "include/messages/GripperConfig.pb.h",
+      "sha256": "57c2ab1b330bfc630c3b1383a064befe8fe7da7b7eeb82a015f1467066973da5"
+    },
+    {
+      "bytes": 26500,
+      "path": "include/messages/Frame.pb.h",
+      "sha256": "eb4f912e07f55181efa4f4cbf021206f10742c898a94d45c67f679bf9b35499a"
+    },
+    {
+      "bytes": 167957,
+      "path": "include/messages/DeviceConfig.pb.h",
+      "sha256": "37a21edff70bceb29638620468470867abdfff4dd7f959bc5dea9ff1acf0e61c"
+    },
+    {
+      "bytes": 96491,
+      "path": "include/messages/Common.pb.h",
+      "sha256": "d3ac4cf4f7da90db58b7de116278ff708a861fc3f55e46bad1227340807ed9f8"
+    },
+    {
+      "bytes": 20959,
+      "path": "include/messages/Session.pb.h",
+      "sha256": "977d83423b4d80364b333533f12ae3d03b7e4da5279eb5a88d0524945d70b422"
+    },
+    {
+      "bytes": 7906,
+      "path": "include/messages/Errors.pb.h",
+      "sha256": "b6a8c34d5c0479b6492a50d9eac24d7d4a2b25bc2e471a3cc1728630609e93c8"
+    },
+    {
+      "bytes": 1371842,
+      "path": "include/messages/Base.pb.h",
+      "sha256": "1571d26a7fec37c0e19906fcd1469ce10c156b3251ba22668ca22809ed1c731c"
+    },
+    {
+      "bytes": 9546,
+      "path": "include/messages/DeviceManager.pb.h",
+      "sha256": "e8e3f9afc65b4044fafaf64c9814f07d5f12e8e0ce13ddeb8ef1730216b86285"
+    },
+    {
+      "bytes": 44629,
+      "path": "include/messages/ProductConfiguration.pb.h",
+      "sha256": "10338b9993ee742a02f33d9428ad5636f67f953425830270443a1a19c08fb93c"
+    },
+    {
+      "bytes": 67979,
+      "path": "include/messages/GripperCyclicMessage.pb.h",
+      "sha256": "3bbed8bd7d9c69f3aa2c9ad1e822ccb060a54fc2c0619205f2dbe77568dd6d2d"
+    },
+    {
+      "bytes": 57097,
+      "path": "include/messages/InterconnectCyclicMessage.pb.h",
+      "sha256": "6b8cfddfdca7ba4f52843e3c90a8152e2092338df89313c9292f00c5aa97d921"
+    },
+    {
+      "bytes": 121119,
+      "path": "include/messages/ActuatorConfig.pb.h",
+      "sha256": "98502e0359e92a0884156d07f24d4a1fd8a7b002a1fe0fe2262de6733773e8dc"
+    },
+    {
+      "bytes": 139320,
+      "path": "include/messages/ControlConfig.pb.h",
+      "sha256": "bf0b85695bb02daa779b99a44d50993c726db0cc0b896f885683edb41a443d9d"
+    },
+    {
+      "bytes": 4076,
+      "path": "include/messages/GripperCyclic.pb.h",
+      "sha256": "044bb2b31466203b20e56a69240bd98b6225b923f9c69eaf79f03039ae61563c"
+    },
+    {
+      "bytes": 104977,
+      "path": "include/messages/InterconnectConfig.pb.h",
+      "sha256": "0b60e89f826087b03a03212fc81c238aa74644b5fb59f340eb6e225a58b837a2"
+    },
+    {
+      "bytes": 2215,
+      "path": "include/common/Frame.h",
+      "sha256": "94feb0a8435058e42c750b066549e269d89b6534648986eedd36605a6751304c"
+    },
+    {
+      "bytes": 1486,
+      "path": "include/common/HeaderInfo.h",
+      "sha256": "65003016650cc62c546ae3f30c07414744bf02842d70073a27af1532f7a85567"
+    },
+    {
+      "bytes": 788,
+      "path": "include/common/KDetailedException.h",
+      "sha256": "b3bcaf3f87c4c00215f8ebfccc60f0bd5b818b838d07e4a23e91306b63d19a1c"
+    },
+    {
+      "bytes": 212,
+      "path": "include/common/version.h",
+      "sha256": "0b3574234f8460592a53b5515a6e7053cea3ae779eb1e3febb61cda3aad60f54"
+    },
+    {
+      "bytes": 754,
+      "path": "include/common/KinovaTcpUtilities.h",
+      "sha256": "9cce90acd588a2a4da3f2cbfcf6d54ee048f4626aa3ca742ae2b2813a0ee0a70"
+    },
+    {
+      "bytes": 1109,
+      "path": "include/common/KError.h",
+      "sha256": "b556a9a3380c462f0a2fe6baa510fbef0d773e7138513a5e561f4f383bb5738d"
+    },
+    {
+      "bytes": 586,
+      "path": "include/common/KBasicException.h",
+      "sha256": "8d6476684b9879e2c239a42ca5c2a9c57dabd2b51c482106803b729afb7e86d9"
+    },
+    {
+      "bytes": 4968,
+      "path": "include/common/TransportBridgeDummy.h",
+      "sha256": "85cbe8ed6d20fd6a16858f63fdd51ddadec440906101e47d99ba941b39241278"
+    },
+    {
+      "bytes": 16274,
+      "path": "include/client_stubs/ControlConfigClientRpc.h",
+      "sha256": "0919d8a7ed88fd2ae301abd85c466808dde28a767f824364834af1f9ccab496e"
+    },
+    {
+      "bytes": 3186,
+      "path": "include/client_stubs/GripperCyclicClientRpc.h",
+      "sha256": "23c40b9e6fe0390f35f32c38ecca0dcbb7343dafb36e22b84001fd73db87b511"
+    },
+    {
+      "bytes": 2902,
+      "path": "include/client_stubs/SessionClientRpc.h",
+      "sha256": "b48955b636e490026b7e5fbc40d6c159c587608a3fc37afdfe501f3a46ccb378"
+    },
+    {
+      "bytes": 9212,
+      "path": "include/client_stubs/InterconnectConfigClientRpc.h",
+      "sha256": "c6ad00999d74838b406c657e39e7b44f750cf02278c406654ebd10fde21fdec4"
+    },
+    {
+      "bytes": 3217,
+      "path": "include/client_stubs/InterconnectCyclicClientRpc.h",
+      "sha256": "c383c1537db6f6cbeca2317c8f747dca1bd6406556596a34fd98b63076239bb5"
+    },
+    {
+      "bytes": 17421,
+      "path": "include/client_stubs/DeviceConfigClientRpc.h",
+      "sha256": "62527c6e7adf870ccaf61e99a4fce5d7d857ae65a94c5fa182cfe233df613bec"
+    },
+    {
+      "bytes": 3083,
+      "path": "include/client_stubs/BaseCyclicClientRpc.h",
+      "sha256": "0f55cc9c6860489f1417848cbb1ac1f13522e7e194b84caf1176e5ea0d43e8b9"
+    },
+    {
+      "bytes": 1738,
+      "path": "include/client_stubs/DeviceManagerClientRpc.h",
+      "sha256": "9da61d9dae638044603292cdda5d91f6a96da91b4771af9e0818d609acec1c6d"
+    },
+    {
+      "bytes": 9821,
+      "path": "include/client_stubs/TestClientRpc.h",
+      "sha256": "daadbbae278535924d0c0af57936478042b6c7f890953313ca37d16880f56a50"
+    },
+    {
+      "bytes": 16686,
+      "path": "include/client_stubs/ActuatorConfigClientRpc.h",
+      "sha256": "0e5868a607bd3ba2cfc5843c493017348537b844b5fe9c8ee422bb8039381949"
+    },
+    {
+      "bytes": 7554,
+      "path": "include/client_stubs/VisionConfigClientRpc.h",
+      "sha256": "5fd6a0fc0de00c19630f5b339656168aabce2610e36a0e8ea4d1dc17fb6b1352"
+    },
+    {
+      "bytes": 3189,
+      "path": "include/client_stubs/ActuatorCyclicClientRpc.h",
+      "sha256": "6b38d1ec4b79ac4866f5c3e593f8f32899aa915c9e8180b72c08e5f046fe6d72"
+    },
+    {
+      "bytes": 69959,
+      "path": "include/client_stubs/BaseClientRpc.h",
+      "sha256": "048660e6525ea55ad17757bbfa16ca341831bd1b707a4898393328c5ca26da1b"
+    },
+    {
+      "bytes": 24912594,
+      "path": "lib/release/libKortexApiCpp.a",
+      "sha256": "c9e079db1c20a3f618645d4d5f7c75b95c8e12a134cee8b643e428830571b7a7"
+    },
+    {
+      "bytes": 17822422,
+      "path": "lib/release/libKortexApiCpp_without_protobuf.a",
+      "sha256": "5c3a74ac689dc43b75159d325d575ef125a20b027ca24eba268927894a48d992"
+    }
+  ],
+  "native_route": "API 2.8.0 Linux x86-64 GCC 5.4 binary archive",
+  "official_suite_credit": 0,
+  "schema": "uwvm-task08-kortex-original-v1",
+  "upstream_md5": "b9b68885df8e1dd0e5a2ba7285f14c0d",
+  "url": "https://artifactory.kinovaapps.com/artifactory/generic-public/kortex/API/2.8.0/linux_x86-64_gcc_5.4.zip"
+}

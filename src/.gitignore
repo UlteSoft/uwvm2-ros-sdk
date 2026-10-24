@@ -1,0 +1,5 @@
+# These upstream directories are maintained build-system sources, not outputs.
+!language/python/upstream/Tools/build/
+!language/python/upstream/Tools/build/**
+!language/python/upstream/Apple/testbed/Python.xcframework/build/
+!language/python/upstream/Apple/testbed/Python.xcframework/build/**

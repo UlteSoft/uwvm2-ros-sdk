@@ -1,0 +1,275 @@
+{
+  "type": "control_msgs/action/FollowJointTrajectory",
+  "original_goals": [
+    {
+      "trajectory": {
+        "header": {
+          "stamp": {
+            "sec": 1,
+            "nanosec": 1000
+          },
+          "frame_id": "goal-1"
+        },
+        "joint_names": [
+          "fixture1"
+        ],
+        "points": [
+          {
+            "positions": [
+              1.25
+            ],
+            "velocities": [
+              1.25
+            ],
+            "accelerations": [
+              1.25
+            ],
+            "effort": [
+              1.25
+            ],
+            "time_from_start": {
+              "sec": 1,
+              "nanosec": 1000
+            }
+          }
+        ]
+      },
+      "multi_dof_trajectory": {
+        "header": {
+          "stamp": {
+            "sec": 1,
+            "nanosec": 1000
+          },
+          "frame_id": "fixture1"
+        },
+        "joint_names": [
+          "fixture1"
+        ],
+        "points": [
+          {
+            "transforms": [
+              {
+                "translation": {
+                  "x": 1.25,
+                  "y": 1.25,
+                  "z": 1.25
+                },
+                "rotation": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0,
+                  "w": 1.0
+                }
+              }
+            ],
+            "velocities": [
+              {
+                "linear": {
+                  "x": 1.25,
+                  "y": 1.25,
+                  "z": 1.25
+                },
+                "angular": {
+                  "x": 1.25,
+                  "y": 1.25,
+                  "z": 1.25
+                }
+              }
+            ],
+            "accelerations": [
+              {
+                "linear": {
+                  "x": 1.25,
+                  "y": 1.25,
+                  "z": 1.25
+                },
+                "angular": {
+                  "x": 1.25,
+                  "y": 1.25,
+                  "z": 1.25
+                }
+              }
+            ],
+            "time_from_start": {
+              "sec": 1,
+              "nanosec": 1000
+            }
+          }
+        ]
+      },
+      "path_tolerance": [
+        {
+          "name": "fixture1",
+          "position": 1.25,
+          "velocity": 1.25,
+          "acceleration": 1.25
+        }
+      ],
+      "component_path_tolerance": [
+        {
+          "joint_name": "fixture1",
+          "component": 1,
+          "position": 1.25,
+          "velocity": 1.25,
+          "acceleration": 1.25
+        }
+      ],
+      "goal_tolerance": [
+        {
+          "name": "fixture1",
+          "position": 1.25,
+          "velocity": 1.25,
+          "acceleration": 1.25
+        }
+      ],
+      "component_goal_tolerance": [
+        {
+          "joint_name": "fixture1",
+          "component": 1,
+          "position": 1.25,
+          "velocity": 1.25,
+          "acceleration": 1.25
+        }
+      ],
+      "goal_time_tolerance": {
+        "sec": 1,
+        "nanosec": 1000
+      }
+    },
+    {
+      "trajectory": {
+        "header": {
+          "stamp": {
+            "sec": 2,
+            "nanosec": 2000
+          },
+          "frame_id": "goal-2"
+        },
+        "joint_names": [
+          "fixture2"
+        ],
+        "points": [
+          {
+            "positions": [
+              2.25
+            ],
+            "velocities": [
+              2.25
+            ],
+            "accelerations": [
+              2.25
+            ],
+            "effort": [
+              2.25
+            ],
+            "time_from_start": {
+              "sec": 2,
+              "nanosec": 2000
+            }
+          }
+        ]
+      },
+      "multi_dof_trajectory": {
+        "header": {
+          "stamp": {
+            "sec": 2,
+            "nanosec": 2000
+          },
+          "frame_id": "fixture2"
+        },
+        "joint_names": [
+          "fixture2"
+        ],
+        "points": [
+          {
+            "transforms": [
+              {
+                "translation": {
+                  "x": 2.25,
+                  "y": 2.25,
+                  "z": 2.25
+                },
+                "rotation": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0,
+                  "w": 1.0
+                }
+              }
+            ],
+            "velocities": [
+              {
+                "linear": {
+                  "x": 2.25,
+                  "y": 2.25,
+                  "z": 2.25
+                },
+                "angular": {
+                  "x": 2.25,
+                  "y": 2.25,
+                  "z": 2.25
+                }
+              }
+            ],
+            "accelerations": [
+              {
+                "linear": {
+                  "x": 2.25,
+                  "y": 2.25,
+                  "z": 2.25
+                },
+                "angular": {
+                  "x": 2.25,
+                  "y": 2.25,
+                  "z": 2.25
+                }
+              }
+            ],
+            "time_from_start": {
+              "sec": 2,
+              "nanosec": 2000
+            }
+          }
+        ]
+      },
+      "path_tolerance": [
+        {
+          "name": "fixture2",
+          "position": 2.25,
+          "velocity": 2.25,
+          "acceleration": 2.25
+        }
+      ],
+      "component_path_tolerance": [
+        {
+          "joint_name": "fixture2",
+          "component": 2,
+          "position": 2.25,
+          "velocity": 2.25,
+          "acceleration": 2.25
+        }
+      ],
+      "goal_tolerance": [
+        {
+          "name": "fixture2",
+          "position": 2.25,
+          "velocity": 2.25,
+          "acceleration": 2.25
+        }
+      ],
+      "component_goal_tolerance": [
+        {
+          "joint_name": "fixture2",
+          "component": 2,
+          "position": 2.25,
+          "velocity": 2.25,
+          "acceleration": 2.25
+        }
+      ],
+      "goal_time_tolerance": {
+        "sec": 2,
+        "nanosec": 2000
+      }
+    }
+  ]
+}

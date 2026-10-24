@@ -1,0 +1,55 @@
+{
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "backend": "ros1",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "domain": "doosan-ros1-aws-robot-complete",
+  "format": "vendor-language-source-inputs-v1",
+  "include_root": "include/platform",
+  "language": "moonbit",
+  "model_module": "doosan",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "moonbit",
+    "moonbit": {
+      "entry_dependencies": [
+        "records"
+      ],
+      "main_package": "doosan/command",
+      "packages": [
+        {
+          "alias": "wire",
+          "dependencies": [
+            "utf8"
+          ],
+          "name": "uwvm/ros/wire",
+          "sources": [
+            "include/platform/ros/moonbit/wire/image.mbt",
+            "include/platform/ros/moonbit/wire/transform.mbt",
+            "include/platform/ros/moonbit/wire/wire.mbt"
+          ]
+        },
+        {
+          "alias": "records",
+          "dependencies": [
+            "wire",
+            "float",
+            "utf8"
+          ],
+          "name": "doosan/ros1/doosan_ros1_aws_robot_complete",
+          "sources": [
+            "include/platform/doosan/moonbit/ros1/doosan-ros1-aws-robot-complete/bounded_records.mbt"
+          ]
+        }
+      ]
+    }
+  },
+  "platform": "doosan",
+  "record_catalog": "share/platform/doosan/domains/doosan-ros1-aws-robot-complete.ir.json",
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "source_root": "include/platform/doosan/moonbit/ros1/doosan-ros1-aws-robot-complete",
+  "support_source_roots": [],
+  "target_widths_requested": [
+    32,
+    64
+  ]
+}

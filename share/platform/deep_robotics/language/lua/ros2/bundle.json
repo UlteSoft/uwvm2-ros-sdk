@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "uwvm/lua/observation",
+      "file": "src/language/lua/modules/observation.lua",
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "name": "deep_robotics/lua/ros2/records",
+      "file": "include/platform/deep_robotics/lua/ros2/records.lua",
+      "sha256": "9e294e967dc76f09beaae9f83a16372c68b497e47e256cddd5359015329609b1"
+    },
+    {
+      "name": "deep_robotics/lua/ros2/observation",
+      "file": "include/platform/deep_robotics/lua/ros2/observation.lua",
+      "sha256": "638d12863d74fea2bb48e04eb5450a332fa453f837d90b44e85d159abd325286"
+    }
+  ],
+  "default_authority": []
+}

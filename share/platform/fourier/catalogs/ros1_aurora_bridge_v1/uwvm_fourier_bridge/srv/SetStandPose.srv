@@ -1,0 +1,9 @@
+# Authored bridge envelope for AuroraClient.set_stand_pose.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+float64 delta_z
+float64 delta_pitch
+float64 delta_yaw
+---
+uint32 status
+string error

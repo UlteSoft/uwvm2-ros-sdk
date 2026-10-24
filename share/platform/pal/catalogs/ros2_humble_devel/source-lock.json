@@ -1,0 +1,130 @@
+{
+  "repository": "pal-robotics/pal_msgs",
+  "branch": "humble-devel",
+  "commit": "eb4efdcc80789dc74dfc7a09d1b5c3345e510933",
+  "tree": "f79a01cd81a4190d31d0a5a340c04ebe8c0c816b",
+  "ros_version": 2,
+  "vendor": "pal",
+  "profile": "ros2_humble_devel",
+  "admitted_custom_roots": [
+    "pal_device_msgs/action/DoTimedLedEffect",
+    "pal_device_msgs/msg/BatteryState",
+    "pal_device_msgs/msg/Bumper",
+    "pal_device_msgs/msg/LedBlinkParams",
+    "pal_device_msgs/msg/LedDataArrayParams",
+    "pal_device_msgs/msg/LedEffectParams",
+    "pal_device_msgs/msg/LedEffectViaTopicParams",
+    "pal_device_msgs/msg/LedFadeParams",
+    "pal_device_msgs/msg/LedFixedColorParams",
+    "pal_device_msgs/msg/LedFlowParams",
+    "pal_device_msgs/msg/LedGroup",
+    "pal_device_msgs/msg/LedPreProgrammedParams",
+    "pal_device_msgs/msg/LedProgressParams",
+    "pal_device_msgs/msg/LedRainbowParams",
+    "pal_device_msgs/srv/CancelEffect",
+    "pal_device_msgs/srv/ShutdownAndWakeUpRobot",
+    "pal_device_msgs/srv/TimedBlinkEffect",
+    "pal_device_msgs/srv/TimedColourEffect",
+    "pal_device_msgs/srv/TimedFadeEffect"
+  ],
+  "excluded_original_roots": [],
+  "format": "uwvm-platform-source-lock-v1",
+  "original_catalog_sha256": "96be20573525860baf482ae6640dfc0fc58dfc906b6d7a89d047c22606aba7c7",
+  "catalog_sha256": "96be20573525860baf482ae6640dfc0fc58dfc906b6d7a89d047c22606aba7c7",
+  "definitions": [
+    {
+      "file": "builtin_interfaces/msg/Duration.msg",
+      "sha256": "a8f4349a6332f8576f9dfe24cf77a751abb115cfd1310dab9b774e3602516f39"
+    },
+    {
+      "file": "builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    },
+    {
+      "file": "pal_device_msgs/action/DoTimedLedEffect.action",
+      "sha256": "e1d739bfe93af8f16d3c32c43db4568caa34e4f298f713f0c50ad70dcf0bb91a"
+    },
+    {
+      "file": "pal_device_msgs/msg/BatteryState.msg",
+      "sha256": "82ed04a5fcd291b36e755e69fa10301366eb59a3a846186d70bc8333cd103874"
+    },
+    {
+      "file": "pal_device_msgs/msg/Bumper.msg",
+      "sha256": "967cd2ef774d33b2eddfa75ed1918057c494a9df75eaa61db746d954169edd5a"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedBlinkParams.msg",
+      "sha256": "d01178f44d5e4b936a64145782f6e8fee69b05abe5d1f62aeabc3eba2d8992b9"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedDataArrayParams.msg",
+      "sha256": "e3182891bb7ac2b975f646728f2fb01296268ec2dd1004203ec0f25f5388fd2d"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedEffectParams.msg",
+      "sha256": "e6d8c96a8e0dca26f3519881104f2721728af0e435536496b3819f41e86385f4"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedEffectViaTopicParams.msg",
+      "sha256": "ab6ab4b9d8c5a4acecd307b5e3a10c282038263c4bfb34830db14b98b53ef171"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedFadeParams.msg",
+      "sha256": "3fb10b90844637a160cda270edf5ea58b268d43c2f40f37ca8d6b21054468f40"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedFixedColorParams.msg",
+      "sha256": "d48729e51a750fba0db188d568a792fb249c0adf02e115185fb4a49377c8eb43"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedFlowParams.msg",
+      "sha256": "6b8e0126493ba8dcf3444e2c2be7d346f54645c7f1517178858a89dfa065f25e"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedGroup.msg",
+      "sha256": "488b7b9567e18497fbc89e1e4ed1da733cac26c3a21c282e05ce529deb2b33f7"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedPreProgrammedParams.msg",
+      "sha256": "4f5eb8449ddeea473c278412e04abde05dab6dedb0d61b8446e9af4b811c1060"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedProgressParams.msg",
+      "sha256": "d816d31dfd5c4a57eff486b46d75b778f090e416a265417f5d4866769c1f939e"
+    },
+    {
+      "file": "pal_device_msgs/msg/LedRainbowParams.msg",
+      "sha256": "48f364ba55cbb058dec7eb1e56af41034f9345ef952fba49e9f21aa3fa93f994"
+    },
+    {
+      "file": "pal_device_msgs/srv/CancelEffect.srv",
+      "sha256": "f90040a4835b1f19e9ecdbfecb8525c464d08f134248a7c587ea61cecd5a8c65"
+    },
+    {
+      "file": "pal_device_msgs/srv/ShutdownAndWakeUpRobot.srv",
+      "sha256": "d558789552499a11bcc75818b93bd159e7fbcc565d9289b06540fd32d774df3c"
+    },
+    {
+      "file": "pal_device_msgs/srv/TimedBlinkEffect.srv",
+      "sha256": "714c8798df29881d4836db668356b70a3d7325fc382f0b245cde5142fb2e081d"
+    },
+    {
+      "file": "pal_device_msgs/srv/TimedColourEffect.srv",
+      "sha256": "fb90aa2d8ce3a501ce02ce374adc8195538c867ed5126f69a28440c4046b74ca"
+    },
+    {
+      "file": "pal_device_msgs/srv/TimedFadeEffect.srv",
+      "sha256": "5c0dbbaae66b49f5487c3be38ca72d8afb4915c830b1224d9d6e920c9058d42a"
+    },
+    {
+      "file": "std_msgs/msg/ColorRGBA.msg",
+      "sha256": "6a2ce596d968f23d8456ff1e0b1218dec75ce2542614e004c99d29aceb3be697"
+    },
+    {
+      "file": "std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    }
+  ],
+  "native_identity_qualified": false,
+  "hardware_executed": false
+}

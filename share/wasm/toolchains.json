@@ -1,0 +1,509 @@
+{
+  "audit_metadata_in_distribution": false,
+  "compiler_sha256": "c336d48383874cffaab0dc4c5c359456d871f21380b746520dde5c7f4c125a67",
+  "compiler_version": "clang version 23.1.4 (https://github.com/llvm/llvm-project 7a941dfb2877a0b8cf30323fefa85ad019e0b0f5)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix",
+  "llvm_major": 23,
+  "schema_version": 1,
+  "source_lock": "share/wasm/source-lock.json",
+  "targets": [
+    {
+      "abi": "wasi_snapshot_preview1",
+      "arch": "wasm32",
+      "artifacts": {
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/crt1-command.o": {
+          "bytes": 793,
+          "sha256": "799f4475eb68a7e7add6c35252dd7e21fd3ae986c8fe2a51357f7e5d40b1ce9f"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/crt1-reactor.o": {
+          "bytes": 698,
+          "sha256": "8a8faa6a76afd59d5593853fd891943e070eea5c068d5febbfb01a78c9bc7963"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/crt1.o": {
+          "bytes": 793,
+          "sha256": "799f4475eb68a7e7add6c35252dd7e21fd3ae986c8fe2a51357f7e5d40b1ce9f"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libc++.a": {
+          "bytes": 1301426,
+          "sha256": "f5ad7ac49f5a42ec89fe1c52a09120c54c5667c276f774d8590675a44b6c92ab"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libc++abi.a": {
+          "bytes": 367860,
+          "sha256": "b20f6453351a7212aa5a3995c85c358d5c609614371b1d78743c964f3c3d5cee"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libc++experimental.a": {
+          "bytes": 1142,
+          "sha256": "4eb65462843cf11e8cb9eab48b089b6d684adb27e5227f4c68d5c4ed3cc60153"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libc-printscan-long-double.a": {
+          "bytes": 37352,
+          "sha256": "bf1e9462864b2fa9646a69b84e7ce1561ea5aa5a165cc7f7e9bb0e109bb0de99"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libc-printscan-no-floating-point.a": {
+          "bytes": 30668,
+          "sha256": "027f09668cf96f68b5bfd4e4b34ad33d831a81bc36d011d3127bafa6b856763e"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libc.a": {
+          "bytes": 1055208,
+          "sha256": "cacd7c0f917cff49d4c0bf49ee16606fa0bbb3f7e3e3b648222a6267357ccaa8"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libcrypt.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libdl.a": {
+          "bytes": 970,
+          "sha256": "9d4059cabdebf1786645d8bf33311aae31158c7aa434368e9807e6f1d9dcc2c6"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libm.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libpthread.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libresolv.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/librt.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libutil.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libwasi-emulated-getpid.a": {
+          "bytes": 524,
+          "sha256": "ea2ea22786cc55b4b5737510aa43dba2a761e36eb34d0c27a2ae88fdb0fc1181"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libwasi-emulated-mman.a": {
+          "bytes": 1230,
+          "sha256": "d6c8f98988731a0f2497a1781c54e9558d8e57623e7a320cf81dd23408d237ee"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libwasi-emulated-process-clocks.a": {
+          "bytes": 2182,
+          "sha256": "5c7afc7bedd86c4efad5fa2296b3f321a7f4a5fc681b058e9991f4d5cf4cb4dd"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libwasi-emulated-signal.a": {
+          "bytes": 4738,
+          "sha256": "0be14dbd492d939911ca5b3a4fb8fd2f3598015e2b782e7b100acd8c51d53e5b"
+        },
+        "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1/libxnet.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        }
+      },
+      "builtins_lib": "lib/language/cfamily/clang/23/lib/wasm32-unknown-wasip1/libclang_rt.builtins.a",
+      "builtins_sha256": "1eaea0c3533f4a48043c0a2ae5b36683465362cefe1e2d0ae9c80fcba9669e19",
+      "cflags": [
+        "--target=wasm32-wasip1"
+      ],
+      "compiler": "clang",
+      "compiler_requirement": ">=23.0.0,<24.0.0",
+      "cxxflags": [
+        "-stdlib=libc++",
+        "-fno-exceptions"
+      ],
+      "include_dir": "include/wasm/llvm23/noeh/wasm32-wasip1",
+      "ldflags": [
+        "-rtlib=compiler-rt"
+      ],
+      "lib_dir": "lib/wasm/llvm23/noeh/wasm32-wasip1/lib/wasm32-wasip1",
+      "libcxx_abi_version": 2,
+      "llvm_major": 23,
+      "memory64": false,
+      "platform": "wasm-wasip1",
+      "profile": "noeh",
+      "resource_dir": "lib/language/cfamily/clang/23",
+      "runtime_flags": [],
+      "shared_libraries": false,
+      "source_build_state": "retained-llvm23-source-build-pending-current-qualification",
+      "sysroot": "lib/wasm/llvm23/noeh/wasm32-wasip1",
+      "table64": false,
+      "threads": false,
+      "triple": "wasm32-wasip1"
+    },
+    {
+      "abi": "wasi_snapshot_preview1",
+      "arch": "wasm32",
+      "artifacts": {
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/crt1-command.o": {
+          "bytes": 793,
+          "sha256": "799f4475eb68a7e7add6c35252dd7e21fd3ae986c8fe2a51357f7e5d40b1ce9f"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/crt1-reactor.o": {
+          "bytes": 698,
+          "sha256": "8a8faa6a76afd59d5593853fd891943e070eea5c068d5febbfb01a78c9bc7963"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/crt1.o": {
+          "bytes": 793,
+          "sha256": "799f4475eb68a7e7add6c35252dd7e21fd3ae986c8fe2a51357f7e5d40b1ce9f"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libc++.a": {
+          "bytes": 1449196,
+          "sha256": "5847ff1aca7a3c7c4324e20db493985dee9ac4986cf91aee5a8064df90498430"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libc++abi.a": {
+          "bytes": 383600,
+          "sha256": "b3f5e27b5153f289216862a4459feb4048a16e656bd5fb37cc940c71b6a91c24"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libc++experimental.a": {
+          "bytes": 1256,
+          "sha256": "5dbd640463e1f12bf9a931ec6224dcdc1da7e016152cd3084ce28700e752ef6e"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libc-printscan-long-double.a": {
+          "bytes": 37352,
+          "sha256": "bf1e9462864b2fa9646a69b84e7ce1561ea5aa5a165cc7f7e9bb0e109bb0de99"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libc-printscan-no-floating-point.a": {
+          "bytes": 30668,
+          "sha256": "027f09668cf96f68b5bfd4e4b34ad33d831a81bc36d011d3127bafa6b856763e"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libc.a": {
+          "bytes": 1055208,
+          "sha256": "cacd7c0f917cff49d4c0bf49ee16606fa0bbb3f7e3e3b648222a6267357ccaa8"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libcrypt.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libdl.a": {
+          "bytes": 970,
+          "sha256": "9d4059cabdebf1786645d8bf33311aae31158c7aa434368e9807e6f1d9dcc2c6"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libm.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libpthread.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libresolv.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/librt.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libunwind.a": {
+          "bytes": 6650,
+          "sha256": "9315eb082969c66ef494cb6c2fdd42060946d5b8940de35ce72cb16cdd5648fa"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libutil.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libwasi-emulated-getpid.a": {
+          "bytes": 524,
+          "sha256": "ea2ea22786cc55b4b5737510aa43dba2a761e36eb34d0c27a2ae88fdb0fc1181"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libwasi-emulated-mman.a": {
+          "bytes": 1230,
+          "sha256": "d6c8f98988731a0f2497a1781c54e9558d8e57623e7a320cf81dd23408d237ee"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libwasi-emulated-process-clocks.a": {
+          "bytes": 2182,
+          "sha256": "5c7afc7bedd86c4efad5fa2296b3f321a7f4a5fc681b058e9991f4d5cf4cb4dd"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libwasi-emulated-signal.a": {
+          "bytes": 4738,
+          "sha256": "0be14dbd492d939911ca5b3a4fb8fd2f3598015e2b782e7b100acd8c51d53e5b"
+        },
+        "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1/libxnet.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        }
+      },
+      "builtins_lib": "lib/language/cfamily/clang/23/lib/wasm32-unknown-wasip1/libclang_rt.builtins.a",
+      "builtins_sha256": "1eaea0c3533f4a48043c0a2ae5b36683465362cefe1e2d0ae9c80fcba9669e19",
+      "cflags": [
+        "--target=wasm32-wasip1"
+      ],
+      "compiler": "clang",
+      "compiler_requirement": ">=23.0.0,<24.0.0",
+      "cxxflags": [
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "-mllvm",
+        "-wasm-use-legacy-eh=false"
+      ],
+      "include_dir": "include/wasm/llvm23/eh/wasm32-wasip1",
+      "ldflags": [
+        "-rtlib=compiler-rt",
+        "-lunwind"
+      ],
+      "lib_dir": "lib/wasm/llvm23/eh/wasm32-wasip1/lib/wasm32-wasip1",
+      "libcxx_abi_version": 2,
+      "llvm_major": 23,
+      "memory64": false,
+      "platform": "wasm-wasip1",
+      "profile": "eh",
+      "resource_dir": "lib/language/cfamily/clang/23",
+      "runtime_flags": [
+        "--wasm-feature-enable-exceptions"
+      ],
+      "shared_libraries": false,
+      "source_build_state": "retained-llvm23-source-build-pending-current-qualification",
+      "sysroot": "lib/wasm/llvm23/eh/wasm32-wasip1",
+      "table64": false,
+      "threads": false,
+      "triple": "wasm32-wasip1"
+    },
+    {
+      "abi": "uwvm-preview1-memory64-extension",
+      "arch": "wasm64",
+      "artifacts": {
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/crt1-command.o": {
+          "bytes": 813,
+          "sha256": "5e451bcad6c13a5a428608b3d6c869f187e422b31e4d765b5ca22766f7e0eb4e"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/crt1-reactor.o": {
+          "bytes": 718,
+          "sha256": "866c7a3d082ac4ea606067e2763f1403309921307df9b7dcbd757e204493d885"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/crt1.o": {
+          "bytes": 813,
+          "sha256": "5e451bcad6c13a5a428608b3d6c869f187e422b31e4d765b5ca22766f7e0eb4e"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libc++.a": {
+          "bytes": 1356478,
+          "sha256": "a7ad653482bf84fa16d3ab9f6c73fe39f53d646a7dde73ac915421a237526fc9"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libc++abi.a": {
+          "bytes": 386436,
+          "sha256": "9a77e99f79a7a7ea27da452f0a8897cd110b666a1fbe13ae409f9af7a560b01b"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libc++experimental.a": {
+          "bytes": 1166,
+          "sha256": "534e48f1cb761fd626c31b0948247d60ec1f28daa9f1a4c9531ea23a8ba1b8b3"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libc-printscan-long-double.a": {
+          "bytes": 38342,
+          "sha256": "5b98718b1241d0c96ac62899b8f3de19c1adbb10f303f27f71341c21f3b9e8e5"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libc-printscan-no-floating-point.a": {
+          "bytes": 31570,
+          "sha256": "7aa8b25d5bc3b1ba8210670c3b963f6326e07158df9ee49c717b8d5dfdcac468"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libc.a": {
+          "bytes": 1086998,
+          "sha256": "42be3c987ff43ac14dacf0415c002b5459351d8f4fbac4a8c778d0655027c8b3"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libcrypt.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libdl.a": {
+          "bytes": 1030,
+          "sha256": "76ebcc741e2e47bf93c369e63e8e064ee8798edd4ed82d154731baab9834c8d3"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libm.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libpthread.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libresolv.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/librt.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libutil.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libwasi-emulated-getpid.a": {
+          "bytes": 534,
+          "sha256": "18cc508c7d186395870b4419529a6cf6191c4a36601e5506503e2f3470e73a79"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libwasi-emulated-mman.a": {
+          "bytes": 1300,
+          "sha256": "44d4886b31714277201b8641da9458837c89ceb7a88c8b38b66dbb53edabe0b3"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libwasi-emulated-process-clocks.a": {
+          "bytes": 2222,
+          "sha256": "eede49e304d962c0ed4dcc1e8991bad47fd9db20bf312be808f72ff1d8e71b1c"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libwasi-emulated-signal.a": {
+          "bytes": 5438,
+          "sha256": "ad2b349010685700ded8edf3b1945e449f6648fb5f34bd3c94e2bd638406dfe1"
+        },
+        "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1/libxnet.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        }
+      },
+      "builtins_lib": "lib/language/cfamily/clang/23/lib/wasm64-unknown-wasip1/libclang_rt.builtins.a",
+      "builtins_sha256": "7bd927ae075a68b92c1dc970779d92dd49d38bef71e64789e2e44e75b5912074",
+      "cflags": [
+        "--target=wasm64-wasip1"
+      ],
+      "compiler": "clang",
+      "compiler_requirement": ">=23.0.0,<24.0.0",
+      "cxxflags": [
+        "-stdlib=libc++",
+        "-fno-exceptions"
+      ],
+      "include_dir": "include/wasm/llvm23/noeh/wasm64-wasip1",
+      "ldflags": [
+        "-rtlib=compiler-rt"
+      ],
+      "lib_dir": "lib/wasm/llvm23/noeh/wasm64-wasip1/lib/wasm64-wasip1",
+      "libcxx_abi_version": 2,
+      "llvm_major": 23,
+      "memory64": true,
+      "platform": "wasm-wasip1",
+      "profile": "noeh",
+      "resource_dir": "lib/language/cfamily/clang/23",
+      "runtime_flags": [
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64"
+      ],
+      "shared_libraries": false,
+      "source_build_state": "retained-llvm23-source-build-pending-current-qualification",
+      "sysroot": "lib/wasm/llvm23/noeh/wasm64-wasip1",
+      "table64": true,
+      "threads": false,
+      "triple": "wasm64-wasip1"
+    },
+    {
+      "abi": "uwvm-preview1-memory64-extension",
+      "arch": "wasm64",
+      "artifacts": {
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/crt1-command.o": {
+          "bytes": 813,
+          "sha256": "5e451bcad6c13a5a428608b3d6c869f187e422b31e4d765b5ca22766f7e0eb4e"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/crt1-reactor.o": {
+          "bytes": 718,
+          "sha256": "866c7a3d082ac4ea606067e2763f1403309921307df9b7dcbd757e204493d885"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/crt1.o": {
+          "bytes": 813,
+          "sha256": "5e451bcad6c13a5a428608b3d6c869f187e422b31e4d765b5ca22766f7e0eb4e"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libc++.a": {
+          "bytes": 1504554,
+          "sha256": "dc7ca6e5ae7e98ab961e571e8c39b51d25e54efaacb1605fd0e6dc27043968cd"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libc++abi.a": {
+          "bytes": 402308,
+          "sha256": "f381b548fc4aa90882214d17a3ffcafe991eb07bc8278cfd83b6e720065ac030"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libc++experimental.a": {
+          "bytes": 1280,
+          "sha256": "bc640faec4b6ce1c8348a71120ef2cddb350d46709b3167606dec2c184bb6354"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libc-printscan-long-double.a": {
+          "bytes": 38342,
+          "sha256": "5b98718b1241d0c96ac62899b8f3de19c1adbb10f303f27f71341c21f3b9e8e5"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libc-printscan-no-floating-point.a": {
+          "bytes": 31570,
+          "sha256": "7aa8b25d5bc3b1ba8210670c3b963f6326e07158df9ee49c717b8d5dfdcac468"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libc.a": {
+          "bytes": 1086998,
+          "sha256": "42be3c987ff43ac14dacf0415c002b5459351d8f4fbac4a8c778d0655027c8b3"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libcrypt.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libdl.a": {
+          "bytes": 1030,
+          "sha256": "76ebcc741e2e47bf93c369e63e8e064ee8798edd4ed82d154731baab9834c8d3"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libm.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libpthread.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libresolv.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/librt.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libunwind.a": {
+          "bytes": 6906,
+          "sha256": "5d7d03abd84e1d59a53f5d95ff1e02065bd5d5ef1dbd00b2193077217e28c419"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libutil.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libwasi-emulated-getpid.a": {
+          "bytes": 534,
+          "sha256": "18cc508c7d186395870b4419529a6cf6191c4a36601e5506503e2f3470e73a79"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libwasi-emulated-mman.a": {
+          "bytes": 1300,
+          "sha256": "44d4886b31714277201b8641da9458837c89ceb7a88c8b38b66dbb53edabe0b3"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libwasi-emulated-process-clocks.a": {
+          "bytes": 2222,
+          "sha256": "eede49e304d962c0ed4dcc1e8991bad47fd9db20bf312be808f72ff1d8e71b1c"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libwasi-emulated-signal.a": {
+          "bytes": 5438,
+          "sha256": "ad2b349010685700ded8edf3b1945e449f6648fb5f34bd3c94e2bd638406dfe1"
+        },
+        "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1/libxnet.a": {
+          "bytes": 8,
+          "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5"
+        }
+      },
+      "builtins_lib": "lib/language/cfamily/clang/23/lib/wasm64-unknown-wasip1/libclang_rt.builtins.a",
+      "builtins_sha256": "7bd927ae075a68b92c1dc970779d92dd49d38bef71e64789e2e44e75b5912074",
+      "cflags": [
+        "--target=wasm64-wasip1"
+      ],
+      "compiler": "clang",
+      "compiler_requirement": ">=23.0.0,<24.0.0",
+      "cxxflags": [
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "-mllvm",
+        "-wasm-use-legacy-eh=false"
+      ],
+      "include_dir": "include/wasm/llvm23/eh/wasm64-wasip1",
+      "ldflags": [
+        "-rtlib=compiler-rt",
+        "-lunwind"
+      ],
+      "lib_dir": "lib/wasm/llvm23/eh/wasm64-wasip1/lib/wasm64-wasip1",
+      "libcxx_abi_version": 2,
+      "llvm_major": 23,
+      "memory64": true,
+      "platform": "wasm-wasip1",
+      "profile": "eh",
+      "resource_dir": "lib/language/cfamily/clang/23",
+      "runtime_flags": [
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasm-feature-enable-exceptions"
+      ],
+      "shared_libraries": false,
+      "source_build_state": "retained-llvm23-source-build-pending-current-qualification",
+      "sysroot": "lib/wasm/llvm23/eh/wasm64-wasip1",
+      "table64": true,
+      "threads": false,
+      "triple": "wasm64-wasip1"
+    }
+  ]
+}

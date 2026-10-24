@@ -1,0 +1,56 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros1-gateway",
+  "backend": "ros1",
+  "distribution": "noetic",
+  "connection": {
+    "master-uri": "http://127.0.0.1:11321",
+    "node-name": "sdk_native_rpc_guest",
+    "namespace": "/sdk_fixture",
+    "advertise-host": "127.0.0.1",
+    "transport": "tcpros"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "call_native_joint_impedance": {
+      "arguments": [
+        "sample"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "sample",
+              "operation": "service.call",
+              "resource": "/sdk_fixture/franka/joint_impedance",
+              "type": "franka_msgs/SetJointImpedance",
+              "identity": "f11c4defa2a13040512214f9d77dc982",
+              "limits": {
+                "max-rate-hz": "100",
+                "burst": "10",
+                "max-bytes-per-second": "1048576",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "adapter-codec-identity": "UWVMROS1_adc5ca154fe552aa0d3a0d29e8054389187031cbe3d4f21f86ae7fa7b38be25a",
+                "timeout-ms": "5000",
+                "max-inflight": "1",
+                "max-request-bytes": "56",
+                "max-response-bytes": "261"
+              }
+            }
+          ],
+          "wasi_grants": []
+        }
+      }
+    }
+  }
+}

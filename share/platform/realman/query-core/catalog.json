@@ -1,0 +1,6 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {"ros_version": 1, "type": "std_msgs/Empty", "file": "std_msgs/Empty.msg", "registered": false, "bounds": {}}
+  ]
+}

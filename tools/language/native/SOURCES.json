@@ -1,0 +1,104 @@
+{
+  "format": "uwvm-native-compiler-origins-v1",
+  "host": "linux-x86_64",
+  "scope": "Pinned input identity; qualification is recorded separately for each delivered action and artifact.",
+  "distribution_frontends": [
+    {
+      "language": "d",
+      "compiler": "LDC 1.41.0 / DMD 2.111.0",
+      "original_backend": "LLVM 19.1.7",
+      "binary_package": "ldc",
+      "binary_version": "1:1.41.0-1ubuntu1",
+      "source_package": "ldc",
+      "source_version": "1:1.41.0-1ubuntu1",
+      "sha256": "d058264cfff73033599701d2322ff86a153c9f4cb5d738f3cc2bdfcaa22ceb37"
+    },
+    {
+      "language": "nim",
+      "compiler": "Nim 2.2.4",
+      "binary_package": "nim",
+      "binary_version": "2.2.4-2",
+      "source_package": "nim",
+      "source_version": "2.2.4-2",
+      "sha256": "b3ed03d23690e8f2139e0c77f7b88e341908fbb6287ac5d00e517f579df668b3"
+    }
+  ],
+  "archives": [
+    {
+      "language": "zig",
+      "version": "0.14.1",
+      "url": "https://ziglang.org/download/0.14.1/zig-x86_64-linux-0.14.1.tar.xz",
+      "sha256": "24aeeec8af16c381934a6cd7d95c807a8cb2cf7df9fa40d359aa884195c4716c",
+      "compiler_backend_description": "Genuine Zig wasm32-freestanding object backend; LLVM 23 C adapter and final WASI link"
+    },
+    {
+      "language": "odin",
+      "version": "dev-2025-10-05",
+      "release": "https://github.com/odin-lang/Odin/releases/tag/dev-2025-10",
+      "sha256": "f1387c4d95545ffa5b60bf3e3ce72f5ad41b61aeaeabe549af35c9b788baa0bf",
+      "compiler_backend_description": "Original static Odin compiler with its own Wasi wasm32 backend and original base/core/vendor trees; LLVM 23 ABI adapter and final link"
+    },
+    {
+      "language": "swift",
+      "version": "6.4.1",
+      "url": "https://download.swift.org/swift-6.4.1-release/ubuntu2404/swift-6.4.1-RELEASE/swift-6.4.1-RELEASE-ubuntu24.04.tar.gz",
+      "sha256": "7d246c7114077ad01dba4ad897628446ada4c489d6c7dbcf39ae3f25cbe17e8b",
+      "compiler_backend_description": "Swift Embedded wasm32-unknown-none-wasm; LLVM 23 C adapter and final link"
+    },
+    {
+      "language": "haskell",
+      "version": "9.14.1.20260731",
+      "url": "https://github.com/haskell-wasm/ghc-wasm-bindists/releases/download/20260731T193144/wasm32-wasi-ghc-9.14.tar.xz",
+      "sha256": "b7dcc471472e56635c8624e4efa90b21b2491aa0277458a2dd113e04cef703a5",
+      "compiler_backend_description": "GHC native WASI code generator; LLVM 23 assembler, C stubs and final link"
+    },
+    {
+      "language": "haskell",
+      "component": "libffi-wasm",
+      "url": "https://github.com/haskell-wasm/ghc-wasm-bindists/releases/download/20250310T060803/libffi-wasm",
+      "sha256": "526f4672ef732a5d29cc560bdd19809f2149a3338f295a2ad4d9d4da38a5234b"
+    },
+    {
+      "language": "go",
+      "version": "1.24.2",
+      "url": "https://go.dev/dl/go1.24.2.linux-amd64.tar.gz",
+      "sha256": "68097bd680839cbc9d464a0edce4f7c333975e27a90246890e9f1078c7e702ad",
+      "compiler_backend_description": "Official Go wasm32 WASI compiler/runtime/linker; CGO disabled; original standard library retained."
+    },
+    {
+      "language": "tinygo",
+      "version": "0.38.0",
+      "url": "https://github.com/tinygo-org/tinygo/releases/download/v0.38.0/tinygo0.38.0.linux-amd64.tar.gz",
+      "sha256": "edc3476ec69e309f0fd4afc1ec79c34e00a14bc3848a7133ac53f814e72faebd",
+      "compiler_backend_description": "Genuine TinyGo LLVM19.1.2 emits a Wasm object; LLVM23 builds runtime assembly and supplies libc/Compiler-RT/final link. Complete original frontend/resources and pinned Go1.24.2 dependency retained. Precise GC and scheduler=none, no internal C compilation or linker."
+    }
+  ],
+  "components": [
+    {
+      "language": "rs",
+      "version": "1.87.0",
+      "compiler_sha256": "9aac770e110f2b2cf1a38e40c9da8268139bae1fcf88d5d152889d199a514a73",
+      "original_backend": "LLVM20.1.1 with qualified LLVM23 final linker",
+      "component_archive_state": "Original installation receipt preserves upstream URLs and SHA256; complete installed bytes are independently inventoried in native-rs.json. Original compressed component archives were not present in the borrowed cache.",
+      "inputs": [
+        {
+          "url": "https://static.rust-lang.org/dist/rustc-1.87.0-x86_64-unknown-linux-gnu.tar.xz",
+          "sha256": "e8395c5c5756253b76107055e093ffbc4431af7b30aeebe72ce2684b9cb53973"
+        },
+        {
+          "url": "https://static.rust-lang.org/dist/rust-std-1.87.0-x86_64-unknown-linux-gnu.tar.xz",
+          "sha256": "1b57253bd32b8b292c965b3a2d992a266763158494cab8555584c09360b90f77"
+        },
+        {
+          "url": "https://static.rust-lang.org/dist/rust-std-1.87.0-wasm32-wasip1.tar.xz",
+          "sha256": "a029ea4f2c696c543d22e4c19466a68c04c41195a6c45a90d9b3fb56e2047d9e"
+        }
+      ]
+    }
+  ],
+  "bounds_and_targets": {
+    "d": "BetterC retains -boundscheck=on and uses -checkaction=halt; actual D loops copy checked byte spans without a missing druntime slice-copy dependency. Ordinary codec errors remain explicit statuses; a bounds fault is terminal.",
+    "zig": "Real wasm32-freestanding and wasm64-freestanding object targets; the matching LLVM 23 WASI closure performs the final link.",
+    "tinygo": "The current explicit object target uses precise GC and scheduler=none. No blocking scheduler or unqualified goroutine support is implied."
+  }
+}

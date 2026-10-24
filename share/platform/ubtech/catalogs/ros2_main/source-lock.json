@@ -1,0 +1,129 @@
+{
+  "admitted_custom_roots": [
+    "grab_demo_msgs/msg/GraspCandidate",
+    "grab_demo_msgs/msg/IKRequest"
+  ],
+  "branch": "main",
+  "catalog_sha256": "de20fa53271fd9922f5be0081edf57ea407ea67ed654a9d4b54c4a5a109ce58b",
+  "commit": "3df9f9dc7689203fb673a21d8205bb597ed4fafe",
+  "default_authority": [],
+  "definitions": [
+    {
+      "bytes": 420,
+      "generation_file": "builtin_interfaces/msg/Time.msg",
+      "kind": "msg",
+      "manifest_sha256": "9d3bd049fee317745fb925a0a3891708f1212da8ff2ceb33f6f3a89f6e3c190e",
+      "origin": "actual_restored_humble_manifest",
+      "original_path": "opt/ros/humble/share/builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae",
+      "type": "builtin_interfaces/msg/Time"
+    },
+    {
+      "bytes": 84,
+      "generation_file": "geometry_msgs/msg/Point.msg",
+      "kind": "msg",
+      "manifest_sha256": "9d3bd049fee317745fb925a0a3891708f1212da8ff2ceb33f6f3a89f6e3c190e",
+      "origin": "actual_restored_humble_manifest",
+      "original_path": "opt/ros/humble/share/geometry_msgs/msg/Point.msg",
+      "registered": false,
+      "ros_version": 2,
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+      "type": "geometry_msgs/msg/Point"
+    },
+    {
+      "bytes": 119,
+      "generation_file": "geometry_msgs/msg/Pose.msg",
+      "kind": "msg",
+      "manifest_sha256": "9d3bd049fee317745fb925a0a3891708f1212da8ff2ceb33f6f3a89f6e3c190e",
+      "origin": "actual_restored_humble_manifest",
+      "original_path": "opt/ros/humble/share/geometry_msgs/msg/Pose.msg",
+      "registered": false,
+      "ros_version": 2,
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de",
+      "type": "geometry_msgs/msg/Pose"
+    },
+    {
+      "bytes": 89,
+      "generation_file": "geometry_msgs/msg/PoseStamped.msg",
+      "kind": "msg",
+      "manifest_sha256": "9d3bd049fee317745fb925a0a3891708f1212da8ff2ceb33f6f3a89f6e3c190e",
+      "origin": "actual_restored_humble_manifest",
+      "original_path": "opt/ros/humble/share/geometry_msgs/msg/PoseStamped.msg",
+      "registered": false,
+      "ros_version": 2,
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5",
+      "type": "geometry_msgs/msg/PoseStamped"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Quaternion.msg",
+      "kind": "msg",
+      "manifest_sha256": "9d3bd049fee317745fb925a0a3891708f1212da8ff2ceb33f6f3a89f6e3c190e",
+      "origin": "actual_restored_humble_manifest",
+      "original_path": "opt/ros/humble/share/geometry_msgs/msg/Quaternion.msg",
+      "registered": false,
+      "ros_version": 2,
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+      "type": "geometry_msgs/msg/Quaternion"
+    },
+    {
+      "bytes": 450,
+      "generation_file": "grab_demo_msgs/msg/GraspCandidate.msg",
+      "git_blob": "354d54e4c1d4f0b2c6beb77c38302632d8448a78",
+      "kind": "msg",
+      "origin": "exact_ubtech_original",
+      "original_mode": "100644",
+      "original_path": "src/grab_demo_msgs/msg/GraspCandidate.msg",
+      "package": "grab_demo_msgs",
+      "path": "src/grab_demo_msgs/msg/GraspCandidate.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "c6acb64fe6ff41c571c80f2f269834e5d041027d16c937d5086f9b1bc992cf4c",
+      "type": "grab_demo_msgs/msg/GraspCandidate"
+    },
+    {
+      "bytes": 339,
+      "generation_file": "grab_demo_msgs/msg/IKRequest.msg",
+      "git_blob": "a9f49d678f13135d6e3cff7a08ed7675ae0be427",
+      "kind": "msg",
+      "origin": "exact_ubtech_original",
+      "original_mode": "100644",
+      "original_path": "src/grab_demo_msgs/msg/IKRequest.msg",
+      "package": "grab_demo_msgs",
+      "path": "src/grab_demo_msgs/msg/IKRequest.msg",
+      "registered": true,
+      "ros_version": 2,
+      "sha256": "a4fd70e0d357e0638491c433cc2e4be82716bfaf09dfc1bce5ea4c0d903edd1b",
+      "type": "grab_demo_msgs/msg/IKRequest"
+    },
+    {
+      "bytes": 322,
+      "generation_file": "std_msgs/msg/Header.msg",
+      "kind": "msg",
+      "manifest_sha256": "9d3bd049fee317745fb925a0a3891708f1212da8ff2ceb33f6f3a89f6e3c190e",
+      "origin": "actual_restored_humble_manifest",
+      "original_path": "opt/ros/humble/share/std_msgs/msg/Header.msg",
+      "registered": false,
+      "ros_version": 2,
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+      "type": "std_msgs/msg/Header"
+    }
+  ],
+  "excluded_original_roots": [],
+  "kind": "explicit-original-ros-platform-source-v1",
+  "native_driver_qualified": false,
+  "original_custom_roots": [
+    "grab_demo_msgs/msg/GraspCandidate",
+    "grab_demo_msgs/msg/IKRequest"
+  ],
+  "original_official_cases_run": 0,
+  "profile": "ros2_main",
+  "repository": "UBTECH-Robot/tk_sdk_demo",
+  "ros_version": 2,
+  "source_only_empty_topics": [],
+  "source_proof": null,
+  "tree": "4dcb4f033362a855fb5a36ac05b06765db2c9203",
+  "vendor": "ubtech"
+}

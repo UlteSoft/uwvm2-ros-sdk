@@ -1,0 +1,39 @@
+# @file CMakeLists.txt
+# @brief Build the threaded native ROS integration from the canonical SDK layout.
+# @details Original ROS packages supply type support; SDK headers and definitions
+# remain in their public include and share roots. Configuration grants no ROS rights.
+cmake_minimum_required(VERSION 3.20)
+project(uwvm_rmw_dispatch LANGUAGES C)
+include("${CMAKE_CURRENT_LIST_DIR}/../../../../../../tools/platform/ros/cmake/SdkLayout.cmake")
+find_package(ament_cmake REQUIRED)
+find_package(Threads REQUIRED)
+if(BUILD_SHARED_LIBS)
+  message(FATAL_ERROR "Threaded RMW support must use one actual process-wide static gate")
+endif()
+# This source check is a genuine EXECUTABLE link, scoped to this function. An
+# outer cross-toolchain STATIC_LIBRARY setting must not skip pthread/TLS/wait
+# symbol resolution. It is NOT run here, and source delivery is not a result.
+function(_uwvm_actual_dispatch_link)
+  include(CheckCSourceCompiles)
+  set(CMAKE_TRY_COMPILE_TARGET_TYPE EXECUTABLE)
+  set(CMAKE_REQUIRED_LIBRARIES Threads::Threads)
+  unset(UWVM_RMW_DISPATCH_LINKS CACHE)
+  file(READ "${CMAKE_CURRENT_SOURCE_DIR}/contracts/compiler_link.c" _source)
+  check_c_source_compiles("${_source}" UWVM_RMW_DISPATCH_LINKS)
+  if(NOT UWVM_RMW_DISPATCH_LINKS)
+    message(FATAL_ERROR "Actual compiler/TLS/cleanup/pthread/shared wait link is unavailable")
+  endif()
+endfunction()
+_uwvm_actual_dispatch_link()
+add_library(uwvm_rmw_dispatch STATIC src/dispatch.c)
+uwvm_ros_rmw_target_headers(uwvm_rmw_dispatch)
+target_compile_features(uwvm_rmw_dispatch PUBLIC c_std_11)
+target_compile_definitions(uwvm_rmw_dispatch PUBLIC UWVM_RMW_ENABLE_THREADED_PROFILE=1)
+target_link_libraries(uwvm_rmw_dispatch PUBLIC Threads::Threads)
+
+install(TARGETS uwvm_rmw_dispatch EXPORT uwvm_rmw_dispatch ARCHIVE DESTINATION lib)
+
+uwvm_ros_rmw_install_headers()
+ament_export_targets(uwvm_rmw_dispatch HAS_LIBRARY_TARGET)
+ament_export_dependencies(Threads)
+ament_package()

@@ -1,0 +1,33 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "11b7da720d46b35047e233c8ce96b8b8c9abd95d51a822cfd8c0258b512fea1c"
+    },
+    {
+      "name": "ros/js/transport",
+      "file": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "name": "uwvm/js/observation",
+      "file": "src/language/js/modules/observation.mjs",
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "name": "booster/js/ros2/records",
+      "file": "include/platform/booster/js/ros2/records.mjs",
+      "sha256": "be2dc8039a084b0d462ca60bed7716e7f34f5b08a7491ac2262abd3c2f9ab851"
+    },
+    {
+      "name": "booster/js/ros2/observation",
+      "file": "include/platform/booster/js/ros2/observation.mjs",
+      "sha256": "4627a775a87461ef2755c1d6fadb40cb8e35133f8119fa3ececab71a53987a01"
+    }
+  ],
+  "default_authority": []
+}

@@ -1,0 +1,68 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "flexiv_msgs/msg/JointPosVel.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "flexiv_msgs/JointPosVel"
+    },
+    {
+      "bounds": {},
+      "file": "flexiv_msgs/msg/Mode.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "flexiv_msgs/Mode"
+    },
+    {
+      "bounds": {},
+      "file": "flexiv_msgs/msg/RobotStates.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "flexiv_msgs/RobotStates"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Accel.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Accel"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Point.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Point"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Pose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Pose"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Quaternion.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Quaternion"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Vector3.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Vector3"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Wrench.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Wrench"
+    }
+  ]
+}

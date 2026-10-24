@@ -1,0 +1,387 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "ros_version": 2,
+      "type": "unitree_api/msg/Request",
+      "file": "unitree_api/msg/Request.msg",
+      "registered": true,
+      "bounds": {
+        "parameter": {
+          "string": 2048
+        },
+        "binary": {
+          "sequence": 2048
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_api/msg/RequestHeader",
+      "file": "unitree_api/msg/RequestHeader.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_api/msg/RequestIdentity",
+      "file": "unitree_api/msg/RequestIdentity.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_api/msg/RequestLease",
+      "file": "unitree_api/msg/RequestLease.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_api/msg/RequestPolicy",
+      "file": "unitree_api/msg/RequestPolicy.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_api/msg/Response",
+      "file": "unitree_api/msg/Response.msg",
+      "registered": true,
+      "bounds": {
+        "data": {
+          "string": 2048
+        },
+        "binary": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_api/msg/ResponseHeader",
+      "file": "unitree_api/msg/ResponseHeader.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_api/msg/ResponseStatus",
+      "file": "unitree_api/msg/ResponseStatus.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/AudioData",
+      "file": "unitree_go/msg/AudioData.msg",
+      "registered": true,
+      "bounds": {
+        "data": {
+          "sequence": 2048
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/BmsCmd",
+      "file": "unitree_go/msg/BmsCmd.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/BmsState",
+      "file": "unitree_go/msg/BmsState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/Error",
+      "file": "unitree_go/msg/Error.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/Go2FrontVideoData",
+      "file": "unitree_go/msg/Go2FrontVideoData.msg",
+      "registered": true,
+      "bounds": {
+        "video720p": {
+          "sequence": 2048
+        },
+        "video360p": {
+          "sequence": 2048
+        },
+        "video180p": {
+          "sequence": 2048
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/HeightMap",
+      "file": "unitree_go/msg/HeightMap.msg",
+      "registered": true,
+      "bounds": {
+        "frame_id": {
+          "string": 2048
+        },
+        "data": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/IMUState",
+      "file": "unitree_go/msg/IMUState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/InterfaceConfig",
+      "file": "unitree_go/msg/InterfaceConfig.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/LidarState",
+      "file": "unitree_go/msg/LidarState.msg",
+      "registered": true,
+      "bounds": {
+        "firmware_version": {
+          "string": 2048
+        },
+        "software_version": {
+          "string": 2048
+        },
+        "sdk_version": {
+          "string": 2048
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/LowCmd",
+      "file": "unitree_go/msg/LowCmd.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/LowState",
+      "file": "unitree_go/msg/LowState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/MotorCmd",
+      "file": "unitree_go/msg/MotorCmd.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/MotorCmds",
+      "file": "unitree_go/msg/MotorCmds.msg",
+      "registered": true,
+      "bounds": {
+        "cmds": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/MotorState",
+      "file": "unitree_go/msg/MotorState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/MotorStates",
+      "file": "unitree_go/msg/MotorStates.msg",
+      "registered": true,
+      "bounds": {
+        "states": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/PathPoint",
+      "file": "unitree_go/msg/PathPoint.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/Req",
+      "file": "unitree_go/msg/Req.msg",
+      "registered": true,
+      "bounds": {
+        "uuid": {
+          "string": 2048
+        },
+        "body": {
+          "string": 2048
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/Res",
+      "file": "unitree_go/msg/Res.msg",
+      "registered": true,
+      "bounds": {
+        "uuid": {
+          "string": 2048
+        },
+        "data": {
+          "sequence": 2048
+        },
+        "body": {
+          "string": 2048
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/SportModeCmd",
+      "file": "unitree_go/msg/SportModeCmd.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/SportModeState",
+      "file": "unitree_go/msg/SportModeState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/TimeSpec",
+      "file": "unitree_go/msg/TimeSpec.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/UwbState",
+      "file": "unitree_go/msg/UwbState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/UwbSwitch",
+      "file": "unitree_go/msg/UwbSwitch.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_go/msg/WirelessController",
+      "file": "unitree_go/msg/WirelessController.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/BmsCmd",
+      "file": "unitree_hg/msg/BmsCmd.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/BmsState",
+      "file": "unitree_hg/msg/BmsState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/HandCmd",
+      "file": "unitree_hg/msg/HandCmd.msg",
+      "registered": true,
+      "bounds": {
+        "motor_cmd": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/HandState",
+      "file": "unitree_hg/msg/HandState.msg",
+      "registered": true,
+      "bounds": {
+        "motor_state": {
+          "sequence": 32
+        },
+        "press_sensor_state": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/IMUState",
+      "file": "unitree_hg/msg/IMUState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/LowCmd",
+      "file": "unitree_hg/msg/LowCmd.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/LowState",
+      "file": "unitree_hg/msg/LowState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/MainBoardState",
+      "file": "unitree_hg/msg/MainBoardState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/MotorCmd",
+      "file": "unitree_hg/msg/MotorCmd.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/MotorState",
+      "file": "unitree_hg/msg/MotorState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "unitree_hg/msg/PressSensorState",
+      "file": "unitree_hg/msg/PressSensorState.msg",
+      "registered": true,
+      "bounds": {}
+    }
+  ]
+}

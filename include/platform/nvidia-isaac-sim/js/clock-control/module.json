@@ -1,0 +1,16 @@
+{
+  "default_authority": [],
+  "language": "js",
+  "module_root": ".",
+  "platform": "nvidia-isaac-sim",
+  "entry": "clock.mjs",
+  "source_only": true,
+  "producer_required": true,
+  "requires": {
+    "shared_sdk": "../../../ros2/js/guest.mjs",
+    "same_wasm_builtin": "roswasm:rmw_service_native",
+    "backend": 2,
+    "generated_records": "generated/bounded_records.mjs",
+    "service_root_facts": "generated/service_identity.mjs"
+  }
+}

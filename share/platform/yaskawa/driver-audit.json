@@ -1,0 +1,757 @@
+{
+  "repository": "Yaskawa-Global/motoros2",
+  "revision": "41ac074a879bb9f75fd1f96618ce54b4899cfd1a",
+  "archive_sha256": "536e9cb662b297de3c8eef07d82a0bf259b8c6144962d19bd03fded62647e93a",
+  "archive_url": "https://codeload.github.com/Yaskawa-Global/motoros2/tar.gz/41ac074a879bb9f75fd1f96618ce54b4899cfd1a",
+  "audited_text_files": [
+    {
+      "path": ".ci/alarm_subcode_doc_linter.py",
+      "sha256": "82a99a64a9f6808583d9ea155265842a113a37231744ef8f38172daf01a2926c",
+      "bytes": 10112
+    },
+    {
+      "path": ".editorconfig",
+      "sha256": "293cd147509a5fc8f1fd8414aafd1e44a5c26b3129cdd3daedf71f790cdcd703",
+      "bytes": 576
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "c60695492dc2e40980be684da704c487645a008257fa1577b2fc9c51602e8852",
+      "bytes": 2683
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "sha256": "687d68f23857256c242163c3adacc22a36eadd86347dffc3884e8c367225668b",
+      "bytes": 310
+    },
+    {
+      "path": ".github/matchers/gcc.json",
+      "sha256": "84d0ad2329561f8c8ae1eaceb2c9ada47be4cff74a5e5e61e05169549d8b442f",
+      "bytes": 313
+    },
+    {
+      "path": ".github/matchers/mpbuilder.json",
+      "sha256": "8921b4ddba0f249f2ba7b096b0cac894cef0344369f312440d857c9859121b26",
+      "bytes": 286
+    },
+    {
+      "path": ".github/workflows/ci_check_subcode_docs.yaml",
+      "sha256": "da5b2fd17c57137beaa4cda9004931d7de4ca0e7b7d6cd49948ec9eb0a530c8f",
+      "bytes": 1093
+    },
+    {
+      "path": ".github/workflows/ci_md_lint.yaml",
+      "sha256": "0299f6fa0314517b8a31ea7f0459664bb4720b0f22f1763e8a0c640630b53013",
+      "bytes": 402
+    },
+    {
+      "path": ".github/workflows/ci_msbuild.yaml",
+      "sha256": "470a4f6e6fc1158fb7e80fda4f44e2cff25e168b973de06c70b9cfa8548ff8d2",
+      "bytes": 4507
+    },
+    {
+      "path": ".github/workflows/ci_reuse_lint.yaml",
+      "sha256": "59ed72a8fff9c4eb31464f0f75112c4dce308d968cc029103ab246ad3d40f0c5",
+      "bytes": 354
+    },
+    {
+      "path": ".github/workflows/ci_yamllint.yaml",
+      "sha256": "e728494446e1142b08bdd86f3202c4e0724bcc5f08d3019878d3b1c114015b22",
+      "bytes": 621
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "98b4042709ada443076c6571253925dab04c7dbf5eda9ab8dbc7d3efa4b1a4e8",
+      "bytes": 6346
+    },
+    {
+      "path": ".markdownlint.yaml",
+      "sha256": "89d45b1b706c520a904c73cc901be7eee44e025e1a0fee9bb393b5700e6c01e8",
+      "bytes": 783
+    },
+    {
+      "path": ".reuse/dep5",
+      "sha256": "9054a452db93c3850d45a05644dda5be82b51f5e026ed9cf69cb2be0c7442230",
+      "bytes": 1468
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "454af1d90cf4d03e19077de4e8efe9d5356f33920750e80aa2a805b254351ea4",
+      "bytes": 15642
+    },
+    {
+      "path": "COLCON_IGNORE",
+      "sha256": "2d5fe5fc389a79f613f53638d405e916f2ef518b9862551440a81f4d221c6ac4",
+      "bytes": 233
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "39662be9680ec28a09d67f2c3701bbab9848aa8036cf39faea173c622e3b7df3",
+      "bytes": 811
+    },
+    {
+      "path": "LICENSES/Apache-2.0.txt",
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "bytes": 10280
+    },
+    {
+      "path": "LICENSES/BSD-2-Clause.txt",
+      "sha256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+      "bytes": 1267
+    },
+    {
+      "path": "LICENSES/BSD-3-Clause.txt",
+      "sha256": "5a93d5831e1297ab10fe643e1a631e83be392896da14ee2951285a79012df69d",
+      "bytes": 1460
+    },
+    {
+      "path": "LICENSES/CC-BY-NC-ND-4.0.txt",
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839",
+      "bytes": 17452
+    },
+    {
+      "path": "LICENSES/CC-BY-SA-4.0.txt",
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966",
+      "bytes": 18375
+    },
+    {
+      "path": "LICENSES/CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048
+    },
+    {
+      "path": "LICENSES/LicenseRef-Microsoft-AllowedUses-Screenshots.txt",
+      "sha256": "b5582a53072c2a1ffb31099c593c02ecfd66cedc407472eac99e2f604b799dab",
+      "bytes": 353
+    },
+    {
+      "path": "LICENSES/MIT.txt",
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "bytes": 1078
+    },
+    {
+      "path": "MotoROS2.sln",
+      "sha256": "9f4a8d3bfebeb22bcefc17effbcfd8cdd967eefdd6b59724dd2f50db5ecf1ef8",
+      "bytes": 3390
+    },
+    {
+      "path": "README.md",
+      "sha256": "7e1689bbc6b746aec15c699bf62748695c0ce51a264d77d45081ae2d1e0f23dd",
+      "bytes": 49639
+    },
+    {
+      "path": "config/.gitattributes",
+      "sha256": "dd143c8f06d50a18a5db2c0973cb63a276ec292e666f396450eb3c4ce494908b",
+      "bytes": 310
+    },
+    {
+      "path": "config/.yamllint",
+      "sha256": "efe28c347ce65d4c89d7572b7c56a0827a62bf47abdd0e8c1731a2b6a4ecbdd7",
+      "bytes": 704
+    },
+    {
+      "path": "config/motoros2_config.yaml",
+      "sha256": "87b6c2be4958fcce26924021f781903eedcd03b177ac07681f48387faa20cff5",
+      "bytes": 13176
+    },
+    {
+      "path": "doc/build_from_source.md",
+      "sha256": "14c275764b50ff132c41bb34916015c45203a698f8c117cffc13ccf0cb1616da",
+      "bytes": 5254
+    },
+    {
+      "path": "doc/faq.md",
+      "sha256": "cf5d699410da7e5d24b1e777aead8d2b633a5f09074ca2c2a7871dc1e39492b4",
+      "bytes": 11798
+    },
+    {
+      "path": "doc/network_configuration.md",
+      "sha256": "8494c8db064011bb1874fcecdea288de13a08d2451a0d17e0a027742d9126bfd",
+      "bytes": 7684
+    },
+    {
+      "path": "doc/ros_api.md",
+      "sha256": "724bde2ae32d2e08c919c9493f7ad3278a7b1a22a93c8c373cb3f1308e984838",
+      "bytes": 10823
+    },
+    {
+      "path": "doc/troubleshooting.md",
+      "sha256": "a8e38e6b74c8bdad6d60d1b7f7713fdda06d93966a036cb70ede7d1631887125",
+      "bytes": 40625
+    },
+    {
+      "path": "lib/CmosParameterExtraction.h",
+      "sha256": "400d0635322dca2ee0293eefb96cd7a94f56ed34d85287f86fc7b604ee99fc83",
+      "bytes": 14195
+    },
+    {
+      "path": "lib/CmosParameterTypes.h",
+      "sha256": "701337352cb4887d23278d9e847b5549891a60e8182043e1fce13a7e40de1829",
+      "bytes": 2683
+    },
+    {
+      "path": "lib/MotoPlusExterns.h",
+      "sha256": "cef21a8789832b613585a12b0692589b37533f30fcb3eb397cca47059d7969d7",
+      "bytes": 1066
+    },
+    {
+      "path": "lib/MotoROS_PlatformLib.h",
+      "sha256": "5dc7c732c326c9ed83a4fbda499417e156db47c52140955b956e91c09757f072",
+      "bytes": 3691
+    },
+    {
+      "path": "robot_jobs/.gitattributes",
+      "sha256": "36e6db0348b66bf45b258a1a11dea895fef4d385a4ee8a8a5c2e93400c061319",
+      "bytes": 371
+    },
+    {
+      "path": "robot_jobs/README.md",
+      "sha256": "7155143dddb117a869d0d293929900858ca67efaa7de06d5d7d518b7ec7a5430",
+      "bytes": 394
+    },
+    {
+      "path": "robot_jobs/sda_dual_arm/INIT_ROS.JBI",
+      "sha256": "437a24b34cd18fb7c87ed5f8ce6b4c8d78f325a1b9b81c004eb55b6b2350850e",
+      "bytes": 274
+    },
+    {
+      "path": "robot_jobs/sda_dual_arm/IONAME.DAT",
+      "sha256": "156b65803885333b6969119c61f2c1e58be65773d899a772c470fb292ac19a03",
+      "bytes": 2798
+    },
+    {
+      "path": "robot_jobs/single_arm/INIT_ROS.JBI",
+      "sha256": "18c3a3a9fdc381ba894956d482d3cb715b7c85a8afb65eaa7e6fd7c086029a03",
+      "bytes": 251
+    },
+    {
+      "path": "robot_jobs/single_arm/IONAME.DAT",
+      "sha256": "156b65803885333b6969119c61f2c1e58be65773d899a772c470fb292ac19a03",
+      "bytes": 2798
+    },
+    {
+      "path": "robot_jobs/single_arm_with_base_axis/INIT_ROS.JBI",
+      "sha256": "5b26a362c51c67b7692732f7fc2a12007c3b924a246167bcc8eadab0800e8e46",
+      "bytes": 255
+    },
+    {
+      "path": "robot_jobs/single_arm_with_base_axis/IONAME.DAT",
+      "sha256": "156b65803885333b6969119c61f2c1e58be65773d899a772c470fb292ac19a03",
+      "bytes": 2798
+    },
+    {
+      "path": "robot_jobs/single_arm_with_ext_axis/INIT_ROS.JBI",
+      "sha256": "773d4c3401176a7268ddef4644e92ce496610a51fe2e98c197fa88f23b606a7e",
+      "bytes": 266
+    },
+    {
+      "path": "robot_jobs/single_arm_with_ext_axis/IONAME.DAT",
+      "sha256": "156b65803885333b6969119c61f2c1e58be65773d899a772c470fb292ac19a03",
+      "bytes": 2798
+    },
+    {
+      "path": "robot_jobs/two_arms/INIT_ROS.JBI",
+      "sha256": "0555af343a11b52ab92d1df95f3133f75c835a669e6f0f53692f55c2ff0af4b2",
+      "bytes": 266
+    },
+    {
+      "path": "robot_jobs/two_arms/IONAME.DAT",
+      "sha256": "156b65803885333b6969119c61f2c1e58be65773d899a772c470fb292ac19a03",
+      "bytes": 2798
+    },
+    {
+      "path": "src/ActionServer_FJT.c",
+      "sha256": "b0535266c9371fcade05fa8d3f4b55562ab687f3b6ed668089e08ccdb97b7a3f",
+      "bytes": 38219
+    },
+    {
+      "path": "src/ActionServer_FJT.h",
+      "sha256": "e3b08946acd65f0dc352c6cfc231c70b38b40a54d5f62b0adbfac96a655083c1",
+      "bytes": 1396
+    },
+    {
+      "path": "src/CommunicationExecutor.c",
+      "sha256": "55b18eb2c785811306a8934fdc125c5ebffe9d219fc834166498dd01532f0338",
+      "bytes": 23712
+    },
+    {
+      "path": "src/CommunicationExecutor.h",
+      "sha256": "b285f2227048fccfef0763ae0f3177e888dbe0e259f0383f92ee037703641196",
+      "bytes": 1710
+    },
+    {
+      "path": "src/ConfigFile.c",
+      "sha256": "790e3e6b63422bd8d7fa1134fa15cfbed795372df51547bd2ea13e8d49501a2a",
+      "bytes": 38585
+    },
+    {
+      "path": "src/ConfigFile.h",
+      "sha256": "87339907d1b190c4b33b445d5b61f22b81e5c25a1f0610847cb5f86ea6ddb52a",
+      "bytes": 5052
+    },
+    {
+      "path": "src/ControllerStatusIO.c",
+      "sha256": "2cbc8ef7ce22485fb904564b1fa9c3a5a26b6df9128976975e621abdbe6268ea",
+      "bytes": 33381
+    },
+    {
+      "path": "src/ControllerStatusIO.h",
+      "sha256": "dc293027a8b337479bca84c43409366e9f17028d7e3dd0ff3efaca27c4430346",
+      "bytes": 6650
+    },
+    {
+      "path": "src/CtrlGroup.c",
+      "sha256": "9a46c52d97b529ddedbe49ee5d8ae3445aba814499ad12fd0e5b67f614730288",
+      "bytes": 29575
+    },
+    {
+      "path": "src/CtrlGroup.h",
+      "sha256": "33e5c98afc05d11af207a55ec687424396f3004a67ab9b3083d309ba8e9a4e21",
+      "bytes": 6956
+    },
+    {
+      "path": "src/DX200_foxyCompilerArguments.mps",
+      "sha256": "e22256b15b9324b640e12dd725c8e6aa594c670941e3ecc9508345f77b60693d",
+      "bytes": 344
+    },
+    {
+      "path": "src/DX200_foxyLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/DX200_galacticCompilerArguments.mps",
+      "sha256": "e22256b15b9324b640e12dd725c8e6aa594c670941e3ecc9508345f77b60693d",
+      "bytes": 344
+    },
+    {
+      "path": "src/DX200_galacticLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/DX200_humbleCompilerArguments.mps",
+      "sha256": "e22256b15b9324b640e12dd725c8e6aa594c670941e3ecc9508345f77b60693d",
+      "bytes": 344
+    },
+    {
+      "path": "src/DX200_humbleLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/DX200_jazzyCompilerArguments.mps",
+      "sha256": "e22256b15b9324b640e12dd725c8e6aa594c670941e3ecc9508345f77b60693d",
+      "bytes": 344
+    },
+    {
+      "path": "src/DX200_jazzyLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/Debug.c",
+      "sha256": "a4d4b57ede1cbfaf59d653be5567e4c0ac59e6b44cde55c9b2b5f6fe0cb58d6c",
+      "bytes": 6576
+    },
+    {
+      "path": "src/Debug.h",
+      "sha256": "bf0c78693bcb7e0fb24076ded0be56551c4548f73756b7b2795256c9010d589e",
+      "bytes": 498
+    },
+    {
+      "path": "src/ErrorHandling.c",
+      "sha256": "0728a34d9c6ea91adccf9998be1aaabb86b3889c148465a2ee7590dec193afe2",
+      "bytes": 8724
+    },
+    {
+      "path": "src/ErrorHandling.h",
+      "sha256": "2aa1288a16acdaddcab6cf4e3cd927a58c282111d71a2769ca486108602694cc",
+      "bytes": 12960
+    },
+    {
+      "path": "src/FauxCommandLineArgs.c",
+      "sha256": "ae902bfb12563abc3a1b17d82da92e5caa1a31c26da02445b97f953f48ab789c",
+      "bytes": 3775
+    },
+    {
+      "path": "src/FauxCommandLineArgs.h",
+      "sha256": "bf6a0322a7b0daa9f410280e1514593faf0d9fb4810d221a1cf75ea585b74575",
+      "bytes": 494
+    },
+    {
+      "path": "src/FileUtilityFunctions.c",
+      "sha256": "a07a8c17aa96b1938063b65f804f139661ff62c2adf852600a62acbdb3a7d482",
+      "bytes": 1203
+    },
+    {
+      "path": "src/FileUtilityFunctions.h",
+      "sha256": "95b11ebc4f618e54ee09a7d08818ee3394f190dd837ff3b57e5ef511b4338223",
+      "bytes": 439
+    },
+    {
+      "path": "src/InformCheckerAndGenerator.c",
+      "sha256": "8db1843ab43d1a649d6c6b30903ddb02c045b12626b40a7218a47eac20715d7e",
+      "bytes": 11904
+    },
+    {
+      "path": "src/InformCheckerAndGenerator.h",
+      "sha256": "6b0caa7e722f6b960ae45c8d509686bbae362e494419d9dbb441ec4e1cbc1760",
+      "bytes": 450
+    },
+    {
+      "path": "src/MathConstants.h",
+      "sha256": "d2271bd33fe7d9828473f0836cc712c31ab1d840d90dcca81671673f6ccd70fa",
+      "bytes": 865
+    },
+    {
+      "path": "src/MemoryAllocation.c",
+      "sha256": "8b09065313fb1f02a9840d3977463bfc28321db99e7d049120c3b2c4605de916",
+      "bytes": 2230
+    },
+    {
+      "path": "src/MemoryAllocation.h",
+      "sha256": "4c955eb14695741c5d205993e3539b53f65bfe8da962e50102eb5f003bb046f4",
+      "bytes": 525
+    },
+    {
+      "path": "src/MemoryTracing.h",
+      "sha256": "e569a60dbec1c7d876052fcc5b6b14846463ce4b7e0efc1e1a3406a78a72ca44",
+      "bytes": 1838
+    },
+    {
+      "path": "src/MotionControl.c",
+      "sha256": "e5063a3b36c4ac4756ad34463d5b5c519764291e67ad268401a3b9fcb9313487",
+      "bytes": 76136
+    },
+    {
+      "path": "src/MotionControl.h",
+      "sha256": "62a5cc04214f6b84fd31665e2dd64e4b52b42eda6c04e1e9f1ae741d239e55f4",
+      "bytes": 1909
+    },
+    {
+      "path": "src/MotoROS.h",
+      "sha256": "a4317df18f95d76e6cc13ba479a37b6c7478ef12ea0387c5a1a47ffc6f4ee664",
+      "bytes": 4159
+    },
+    {
+      "path": "src/MotoROS2_AllControllers.vcxproj",
+      "sha256": "8411bae39d882ba1a0779353b25d5c2c060665fe41c4f56e79ec40c255f5dc2a",
+      "bytes": 35642
+    },
+    {
+      "path": "src/MotoROS2_AllControllers.vcxproj.filters",
+      "sha256": "8743dfa2a512c936316d1af7a14193382bbb452c65b0720b1efd47b332c6a28a",
+      "bytes": 19069
+    },
+    {
+      "path": "src/PositionMonitor.c",
+      "sha256": "c034e83d77b13e8dd29229d86c1c3ceff2107f0e5bb0dda57f20427f6633b6af",
+      "bytes": 24559
+    },
+    {
+      "path": "src/PositionMonitor.h",
+      "sha256": "6e0921b5c3fc724d41c89359c87b3f4d39dce8d1383bcb2d7fbcdade6ecec72d",
+      "bytes": 1012
+    },
+    {
+      "path": "src/Quaternion_Conversion.c",
+      "sha256": "55da40736bf61dc97c2e40cff0e1a382b3ab3080382d091bd5c814bd6cfd7c26",
+      "bytes": 6342
+    },
+    {
+      "path": "src/Quaternion_Conversion.h",
+      "sha256": "e4c2b7b41671fad71ff52f6019168391823bf9224c47c69faaa1ac5944c5a5b5",
+      "bytes": 4250
+    },
+    {
+      "path": "src/RosApiNameConstants.h",
+      "sha256": "1e293f5439901537fc9dee8b6e7c346e99fb72d2306e2e25bb6a32b3a9eb098c",
+      "bytes": 1320
+    },
+    {
+      "path": "src/RosMotoPlusConversionUtils.c",
+      "sha256": "ac3cff89b6edb6a0ff7fc4f748e8bead4ad624afc4e0c16b5cb81b154995dfc6",
+      "bytes": 1121
+    },
+    {
+      "path": "src/RosMotoPlusConversionUtils.h",
+      "sha256": "6fdf1a2aa5cbcec49de0a430ffe93b4046713656096dd62b87bbf18d9131ab2e",
+      "bytes": 1470
+    },
+    {
+      "path": "src/Ros_mpGetRobotCalibrationData.c",
+      "sha256": "b84f5fe8cea3471ea2567107bc7ef666f761bf44928a7d45a12a0e7c619872de",
+      "bytes": 9796
+    },
+    {
+      "path": "src/Ros_mpGetRobotCalibrationData.h",
+      "sha256": "a06daa4197fe02da671d0537313c93ffcec9dbbb1a75a7bf9f99fe9ec8ff2b86",
+      "bytes": 1475
+    },
+    {
+      "path": "src/ServiceQueueTrajPoint.c",
+      "sha256": "0920d268578bf9a4ddc1be6894a8beb9fc667af2c7b43c208f886502793ea069",
+      "bytes": 5701
+    },
+    {
+      "path": "src/ServiceQueueTrajPoint.h",
+      "sha256": "c0dbe61f000bf3eaade4f1dd805e6a4e76c277a3a125ea5868ca499947eef1a2",
+      "bytes": 822
+    },
+    {
+      "path": "src/ServiceReadWriteIO.c",
+      "sha256": "48fb074b0d0ae2ed236fe447b580dac884f4b5e0284ebc3678341ade3a33ae22",
+      "bytes": 23330
+    },
+    {
+      "path": "src/ServiceReadWriteIO.h",
+      "sha256": "66c386da20934744384c61515eafe614b4309b4a8e53df6db693c41b7a1dce02",
+      "bytes": 2141
+    },
+    {
+      "path": "src/ServiceResetError.c",
+      "sha256": "090b42233563ee0463479726ec53f11e5f828d63209c6de2975a302676082156",
+      "bytes": 4483
+    },
+    {
+      "path": "src/ServiceResetError.h",
+      "sha256": "0c3baeef82939e09f8adcf2286465201df95a0c6e3569e9612ee8e109178ac75",
+      "bytes": 765
+    },
+    {
+      "path": "src/ServiceSelectMotionTool.c",
+      "sha256": "911495fa4101b12aa1f53672b308f73c2727a38bbc9f89feb464f8a8cf45de61",
+      "bytes": 4789
+    },
+    {
+      "path": "src/ServiceSelectMotionTool.h",
+      "sha256": "6c78de5436a9c011cd0582f2ee0b991c852ce0b511866ee48047a075b5366492",
+      "bytes": 825
+    },
+    {
+      "path": "src/ServiceStartPointQueueMode.c",
+      "sha256": "c969705df9f0f78c5d1a488dc6b74d08dba9716cf2544d61f72b0208c389db0c",
+      "bytes": 2941
+    },
+    {
+      "path": "src/ServiceStartPointQueueMode.h",
+      "sha256": "863cd75308c6249a2ca78a8330a869ddfabd3cdada56ac490d3e19bbc0d46702",
+      "bytes": 880
+    },
+    {
+      "path": "src/ServiceStartTrajMode.c",
+      "sha256": "a5ed8256cabb571b6b7bb5fe7c39be11c7b47a66dbc120c368023e3ade3652d2",
+      "bytes": 2800
+    },
+    {
+      "path": "src/ServiceStartTrajMode.h",
+      "sha256": "4749f2cd2414624d12f0aaa9250a317bba4bb375a8116fab9abac1b609452c0c",
+      "bytes": 809
+    },
+    {
+      "path": "src/ServiceStopTrajMode.c",
+      "sha256": "b145e378f5e05f1c5146aa613bbe1e51b1ecca8153d94e98e311ab810e55257e",
+      "bytes": 2686
+    },
+    {
+      "path": "src/ServiceStopTrajMode.h",
+      "sha256": "59d6c618c3395afe0c8fed7be1bddb538cd5168904415a5bbc1e92b5656f8333",
+      "bytes": 762
+    },
+    {
+      "path": "src/Tests_ActionServer_FJT.c",
+      "sha256": "668c76e858a841d4b156406b7f4bfa2959b6c1dc7c490a6fb7456b1a8660c293",
+      "bytes": 29213
+    },
+    {
+      "path": "src/Tests_ActionServer_FJT.h",
+      "sha256": "c3338ffcd1dd256c4450800e31385d118fce206de2e5f38169e2785f15488806",
+      "bytes": 453
+    },
+    {
+      "path": "src/Tests_ControllerStatusIO.c",
+      "sha256": "d9e10ae7a3dc35287df60f9821fb701571c0c94b53c75b2b901107a3b5f527d4",
+      "bytes": 15815
+    },
+    {
+      "path": "src/Tests_ControllerStatusIO.h",
+      "sha256": "a7580e585969db3d7f7cd9c6540a6ec91856245e40ec26da94e77a68768fb1e7",
+      "bytes": 448
+    },
+    {
+      "path": "src/Tests_CtrlGroup.c",
+      "sha256": "c1ee1601e2c79846b75a8bf96b57c849a2bd4cc9fe3f6c896177f1cb276bf4f2",
+      "bytes": 10524
+    },
+    {
+      "path": "src/Tests_CtrlGroup.h",
+      "sha256": "f0d7e66354e0d922351228c2d56d00fef5027607d74384c0bfcaeb77de7ca860",
+      "bytes": 410
+    },
+    {
+      "path": "src/Tests_RosMotoPlusConversionUtils.c",
+      "sha256": "f8da3aca119661a63f28abaf252eb1cb9490a063e1566a169f01aa9fa3d9b001",
+      "bytes": 3180
+    },
+    {
+      "path": "src/Tests_RosMotoPlusConversionUtils.h",
+      "sha256": "2204215d4d6611744134b92dec7dc268b5440a9629a701820e326ef7c5d6c46e",
+      "bytes": 494
+    },
+    {
+      "path": "src/Tests_TestUtils.c",
+      "sha256": "c3767bf4055a3aec29bfbce7ae4749f94e7d3a6f9c02a0342cad16d1a1a58fc9",
+      "bytes": 1543
+    },
+    {
+      "path": "src/Tests_TestUtils.h",
+      "sha256": "62bd0ed0eb6af5f932cdc6d8ca6fc4d43835b2e953e9a79b41bca41764cbd6b8",
+      "bytes": 627
+    },
+    {
+      "path": "src/Tests_TimeConversionUtils.c",
+      "sha256": "4feb7ab39faa6a0c84ef120205fd696b75445264d76f8f5c14c55db474aa31ef",
+      "bytes": 19266
+    },
+    {
+      "path": "src/Tests_TimeConversionUtils.h",
+      "sha256": "e9349fa097009e46ff2c059917fb8084f5216a098789ad02bfdd7a92890d94db",
+      "bytes": 453
+    },
+    {
+      "path": "src/TimeConversionUtils.h",
+      "sha256": "ba0ec24b2643c7224baf349e5037d54ce79f1905a780bd49aaa6b233b9b890d8",
+      "bytes": 2570
+    },
+    {
+      "path": "src/YRC1000_foxyCompilerArguments.mps",
+      "sha256": "b4ae0304337cebac912ae8dac9f4a77d3f83f9a466339e70bed60fc91fc633ad",
+      "bytes": 346
+    },
+    {
+      "path": "src/YRC1000_foxyLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/YRC1000_galacticCompilerArguments.mps",
+      "sha256": "b4ae0304337cebac912ae8dac9f4a77d3f83f9a466339e70bed60fc91fc633ad",
+      "bytes": 346
+    },
+    {
+      "path": "src/YRC1000_galacticLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/YRC1000_humbleCompilerArguments.mps",
+      "sha256": "b4ae0304337cebac912ae8dac9f4a77d3f83f9a466339e70bed60fc91fc633ad",
+      "bytes": 346
+    },
+    {
+      "path": "src/YRC1000_humbleLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/YRC1000_jazzyCompilerArguments.mps",
+      "sha256": "b4ae0304337cebac912ae8dac9f4a77d3f83f9a466339e70bed60fc91fc633ad",
+      "bytes": 346
+    },
+    {
+      "path": "src/YRC1000_jazzyLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/YRC1000u_foxyCompilerArguments.mps",
+      "sha256": "13fddb3a854ac019df4ef69f6b77b7938317d954d75b33b78483e1dc8677c42a",
+      "bytes": 347
+    },
+    {
+      "path": "src/YRC1000u_foxyLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/YRC1000u_galacticCompilerArguments.mps",
+      "sha256": "13fddb3a854ac019df4ef69f6b77b7938317d954d75b33b78483e1dc8677c42a",
+      "bytes": 347
+    },
+    {
+      "path": "src/YRC1000u_galacticLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/YRC1000u_humbleCompilerArguments.mps",
+      "sha256": "13fddb3a854ac019df4ef69f6b77b7938317d954d75b33b78483e1dc8677c42a",
+      "bytes": 347
+    },
+    {
+      "path": "src/YRC1000u_humbleLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/YRC1000u_jazzyCompilerArguments.mps",
+      "sha256": "13fddb3a854ac019df4ef69f6b77b7938317d954d75b33b78483e1dc8677c42a",
+      "bytes": 347
+    },
+    {
+      "path": "src/YRC1000u_jazzyLinkerArguments.mps",
+      "sha256": "a69b2382b4ea7a0120f3e87124571dd8934f979973c3a241db9114facd135a6a",
+      "bytes": 96
+    },
+    {
+      "path": "src/controllers.xml",
+      "sha256": "45a4da6ae0b0bf758f72f7581ef183bccd5759bd28fe3ea03ca432d5897dfe0a",
+      "bytes": 2618
+    },
+    {
+      "path": "src/main.c",
+      "sha256": "46358ca83081b35d1d4627ca554f9a4863e5c3e042523bb85f6acec8c425c350",
+      "bytes": 9357
+    },
+    {
+      "path": "tools/.gitignore",
+      "sha256": "1fd758bd9d530bfca431dbec16f1fc0b8ca1d60fba6ca91105533f140e297c84",
+      "bytes": 175
+    },
+    {
+      "path": "tools/debug_listener.cmd",
+      "sha256": "af28f7dc0b6246acd4b1749d84b06f643209d944df3e17b0c084f9516e2f49d1",
+      "bytes": 244
+    },
+    {
+      "path": "tools/debug_listener.py",
+      "sha256": "0c4515cd6e1be6de739e66300e0c53d527c0d36e19e83b78cae42b0500dcb711",
+      "bytes": 3810
+    }
+  ],
+  "controller_execution": false,
+  "native_driver_interface_pair_qualified": false,
+  "controller_models": {
+    "DX200": "DN2.44.00-00",
+    "YRC1000": "YAS2.80.00-00",
+    "YRC1000micro": "YBS2.45.00-00"
+  },
+  "source_distributions": [
+    "foxy",
+    "galactic",
+    "humble",
+    "jazzy"
+  ],
+  "middleware": "Fast DDS RMW and micro-ROS Agent",
+  "catalog_interface_revision": "24a63cf8a7a582c9fa6744507d605415462c9c17 (motoros2_interfaces 0.2.0)",
+  "trajectory": {
+    "maximum_points": 200,
+    "all_configured_groups_and_joints_required": true,
+    "first_point": "complete current JointState",
+    "terminal_velocity_and_acceleration": "zero",
+    "asynchronous_independent_groups": false
+  },
+  "industrial_legacy_services": "The pinned industrial_core ROS2 CMake export omits six historical service files; keeping those declarations does not establish native type support or a server. A separate explicit compatibility build is required.",
+  "stop_semantics": "start_traj_mode changes mode/drives/job; stop_traj_mode can fail during motion and leaves motors on. Owned FJT cancellation and observed terminal state are separate."
+}

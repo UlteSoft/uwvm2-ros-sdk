@@ -1,0 +1,1785 @@
+{
+  "catalog_sha256": "32971ff714f6e455890911f2c1d21f33204af9613a19d2e34ea17ac870c62940",
+  "default_authority": [],
+  "definitions": [
+    {
+      "bytes": 32,
+      "generation_file": "dobot_msgs_v4/msg/RobotStatus.msg",
+      "git_blob_sha1": "1c8e1331848dfdb749b15462c7d11582d90cd4ad",
+      "kind": "msg",
+      "original_file": "dobot_msgs_v4/msg/RobotStatus.msg",
+      "repository": "ros2",
+      "sha256": "1ec166dc668196f7f34f2cb41726c021019be19328d434c90a5ba85015998bba",
+      "type": "dobot_msgs_v4/msg/RobotStatus"
+    },
+    {
+      "bytes": 62,
+      "generation_file": "dobot_msgs_v4/msg/ToolVectorActual.msg",
+      "git_blob_sha1": "2ec214d6e83230db5de248dd762da5c8c68562f0",
+      "kind": "msg",
+      "original_file": "dobot_msgs_v4/msg/ToolVectorActual.msg",
+      "repository": "ros2",
+      "sha256": "efea2cfebe14ce3bf673ca0b233d4c510f79513e6caabcbe6d17f4d84c1ed917",
+      "type": "dobot_msgs_v4/msg/ToolVectorActual"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/AI.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/AI.srv",
+      "repository": "ros2",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_msgs_v4/srv/AI"
+    },
+    {
+      "bytes": 74,
+      "generation_file": "dobot_msgs_v4/srv/AO.srv",
+      "git_blob_sha1": "eff77fb74ccbc19ff3d59bfcf1cf648b0f04be42",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/AO.srv",
+      "repository": "ros2",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5",
+      "type": "dobot_msgs_v4/srv/AO"
+    },
+    {
+      "bytes": 74,
+      "generation_file": "dobot_msgs_v4/srv/AOInstant.srv",
+      "git_blob_sha1": "eff77fb74ccbc19ff3d59bfcf1cf648b0f04be42",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/AOInstant.srv",
+      "repository": "ros2",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5",
+      "type": "dobot_msgs_v4/srv/AOInstant"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_msgs_v4/srv/AccJ.srv",
+      "git_blob_sha1": "f09e24a02aa260bfd325977eca1de6fea1bc654f",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/AccJ.srv",
+      "repository": "ros2",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710",
+      "type": "dobot_msgs_v4/srv/AccJ"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_msgs_v4/srv/AccL.srv",
+      "git_blob_sha1": "f09e24a02aa260bfd325977eca1de6fea1bc654f",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/AccL.srv",
+      "repository": "ros2",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710",
+      "type": "dobot_msgs_v4/srv/AccL"
+    },
+    {
+      "bytes": 171,
+      "generation_file": "dobot_msgs_v4/srv/Arc.srv",
+      "git_blob_sha1": "9303667c6f10a7f009b13f1745283ad5075cde40",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/Arc.srv",
+      "repository": "ros2",
+      "sha256": "03db06ac5eca73d53a802e9740d365afd7a09a8d514b863a88340558536a4c11",
+      "type": "dobot_msgs_v4/srv/Arc"
+    },
+    {
+      "bytes": 39,
+      "generation_file": "dobot_msgs_v4/srv/BrakeControl.srv",
+      "git_blob_sha1": "c5643628d703658beaba3807175eed64cc53076e",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/BrakeControl.srv",
+      "repository": "ros2",
+      "sha256": "f9ee0a99612ae5d81e6164e17d370b0e45bb004de8b30ba9d20376fb28b3efae",
+      "type": "dobot_msgs_v4/srv/BrakeControl"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_msgs_v4/srv/CP.srv",
+      "git_blob_sha1": "f09e24a02aa260bfd325977eca1de6fea1bc654f",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/CP.srv",
+      "repository": "ros2",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710",
+      "type": "dobot_msgs_v4/srv/CP"
+    },
+    {
+      "bytes": 54,
+      "generation_file": "dobot_msgs_v4/srv/CalcTool.srv",
+      "git_blob_sha1": "b2c78afda9ef93071152ab42bad21d11b4de704f",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/CalcTool.srv",
+      "repository": "ros2",
+      "sha256": "49568bfbacff884a1db9da9370ed080195dbf893698e76cfaf315f4b7b87ae3b",
+      "type": "dobot_msgs_v4/srv/CalcTool"
+    },
+    {
+      "bytes": 55,
+      "generation_file": "dobot_msgs_v4/srv/CalcUser.srv",
+      "git_blob_sha1": "14bcb13ee59a8530efea8f6926260860e110d213",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/CalcUser.srv",
+      "repository": "ros2",
+      "sha256": "8eb8a4452fbd1f3e58413d02ca57606f17e04a7cd41a3b76e3162a0959d05fa4",
+      "type": "dobot_msgs_v4/srv/CalcUser"
+    },
+    {
+      "bytes": 379,
+      "generation_file": "dobot_msgs_v4/srv/CheckOddMovC.srv",
+      "git_blob_sha1": "85b088a1fe2e383fb683109b443300d5171e0195",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/CheckOddMovC.srv",
+      "repository": "ros2",
+      "sha256": "d00f79cedd6ee561907382bec179f1f2ef77b7fadc223ab52dfa53ccf77c3e8a",
+      "type": "dobot_msgs_v4/srv/CheckOddMovC"
+    },
+    {
+      "bytes": 271,
+      "generation_file": "dobot_msgs_v4/srv/CheckOddMovJ.srv",
+      "git_blob_sha1": "24c9cf38c91b09cd3c3eee843c5be811344a9d06",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/CheckOddMovJ.srv",
+      "repository": "ros2",
+      "sha256": "a27429261da37a581988af56854df3ae783e3b68d58a7c588be85223cd09b79c",
+      "type": "dobot_msgs_v4/srv/CheckOddMovJ"
+    },
+    {
+      "bytes": 271,
+      "generation_file": "dobot_msgs_v4/srv/CheckOddMovL.srv",
+      "git_blob_sha1": "24c9cf38c91b09cd3c3eee843c5be811344a9d06",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/CheckOddMovL.srv",
+      "repository": "ros2",
+      "sha256": "a27429261da37a581988af56854df3ae783e3b68d58a7c588be85223cd09b79c",
+      "type": "dobot_msgs_v4/srv/CheckOddMovL"
+    },
+    {
+      "bytes": 182,
+      "generation_file": "dobot_msgs_v4/srv/Circle.srv",
+      "git_blob_sha1": "3a7c67de5eb540637d570fa6247d9515b95062e7",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/Circle.srv",
+      "repository": "ros2",
+      "sha256": "07ba48f81a08dfc803f69ab1fbcd2586db45c1b387a05fc7611ef3fc776d3000",
+      "type": "dobot_msgs_v4/srv/Circle"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/ClearError.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ClearError.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/ClearError"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/Continue.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/Continue.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/Continue"
+    },
+    {
+      "bytes": 45,
+      "generation_file": "dobot_msgs_v4/srv/DI.srv",
+      "git_blob_sha1": "b36cafd421add005f1d3066be05efcff3452bd79",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DI.srv",
+      "repository": "ros2",
+      "sha256": "6f86a242b6942a2a1a3b50a59c3547a95c2c2bfa01afe5edbb91001527ec71e4",
+      "type": "dobot_msgs_v4/srv/DI"
+    },
+    {
+      "bytes": 46,
+      "generation_file": "dobot_msgs_v4/srv/DIGroup.srv",
+      "git_blob_sha1": "5f03193a511e46873d24b0d1ec30942f3845d086",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DIGroup.srv",
+      "repository": "ros2",
+      "sha256": "3390338fdbc59a09797c1f34428f861370c1aefb059b0b36a4bd2791013907f4",
+      "type": "dobot_msgs_v4/srv/DIGroup"
+    },
+    {
+      "bytes": 57,
+      "generation_file": "dobot_msgs_v4/srv/DIGroupDEC.srv",
+      "git_blob_sha1": "adb5735009bff9b4799cd84a4d267b8ea6aeb8b2",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DIGroupDEC.srv",
+      "repository": "ros2",
+      "sha256": "22cc92192d4a6c1344441d1d05f90015ef9e1f3c335376f96661ec8a522a3d70",
+      "type": "dobot_msgs_v4/srv/DIGroupDEC"
+    },
+    {
+      "bytes": 49,
+      "generation_file": "dobot_msgs_v4/srv/DO.srv",
+      "git_blob_sha1": "70f68eac7e2b3469f0e909d80aaa0bd3808b0ef4",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DO.srv",
+      "repository": "ros2",
+      "sha256": "2311b2905316e6e591a22865eca8ef1a931205da6b191cd8a94ce215af827824",
+      "type": "dobot_msgs_v4/srv/DO"
+    },
+    {
+      "bytes": 26,
+      "generation_file": "dobot_msgs_v4/srv/DOGroup.srv",
+      "git_blob_sha1": "5d20459d1ab4cb0d552326e50fa3f022cb0bebc9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DOGroup.srv",
+      "repository": "ros2",
+      "sha256": "02f35d3f23f6ab7e7cce305eedfec4203fdf4de639341abe3030dee7e382f3e4",
+      "type": "dobot_msgs_v4/srv/DOGroup"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_msgs_v4/srv/DOGroupDEC.srv",
+      "git_blob_sha1": "b8de6bba500375c264416e75912a5b38fdf016e6",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DOGroupDEC.srv",
+      "repository": "ros2",
+      "sha256": "f6e0053a133210601561ca811bb77998332b73cab0c7e7734e075372fb1c1e5c",
+      "type": "dobot_msgs_v4/srv/DOGroupDEC"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_msgs_v4/srv/DOInstant.srv",
+      "git_blob_sha1": "bdfebbbe409d17145f4baf6c9fce019131e1c0f3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DOInstant.srv",
+      "repository": "ros2",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09",
+      "type": "dobot_msgs_v4/srv/DOInstant"
+    },
+    {
+      "bytes": 33,
+      "generation_file": "dobot_msgs_v4/srv/DisableRobot.srv",
+      "git_blob_sha1": "f67548203de5fa38f7f1cc43ebddeedcc9222d92",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DisableRobot.srv",
+      "repository": "ros2",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4",
+      "type": "dobot_msgs_v4/srv/DisableRobot"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_msgs_v4/srv/DragSensivity.srv",
+      "git_blob_sha1": "3cb8b50c28cdf5aa5e826287026d05dd5720cb79",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/DragSensivity.srv",
+      "repository": "ros2",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6",
+      "type": "dobot_msgs_v4/srv/DragSensivity"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/EmergencyStop.srv",
+      "git_blob_sha1": "c4c3047b0a0d4e4d5d74d86df0ba779d5be754ff",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/EmergencyStop.srv",
+      "repository": "ros2",
+      "sha256": "9ac2aa5fe5a9da66f3ca2c2a18284f17a2aa75639e815f983fae3cfd81e240cc",
+      "type": "dobot_msgs_v4/srv/EmergencyStop"
+    },
+    {
+      "bytes": 27,
+      "generation_file": "dobot_msgs_v4/srv/EnableFTSensor.srv",
+      "git_blob_sha1": "06f816b1746d0bca3e1a06f1b0b9e7c51c2cbb08",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/EnableFTSensor.srv",
+      "repository": "ros2",
+      "sha256": "0ade3965474be54ecb1665f9ea40bfc11b70b9b5b031d78952bc1cbbb3cd07af",
+      "type": "dobot_msgs_v4/srv/EnableFTSensor"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/EnableRobot.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/EnableRobot.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/EnableRobot"
+    },
+    {
+      "bytes": 26,
+      "generation_file": "dobot_msgs_v4/srv/EnableSafeSkin.srv",
+      "git_blob_sha1": "b3584213babd67524ddfea1df5aa209cd4ba4985",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/EnableSafeSkin.srv",
+      "repository": "ros2",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5",
+      "type": "dobot_msgs_v4/srv/EnableSafeSkin"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/EndRTOffset.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/EndRTOffset.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/EndRTOffset"
+    },
+    {
+      "bytes": 27,
+      "generation_file": "dobot_msgs_v4/srv/FCCollisionSwitch.srv",
+      "git_blob_sha1": "3180aa63aed8bdbc07bf32fa7c2b5311a1588a09",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCCollisionSwitch.srv",
+      "repository": "ros2",
+      "sha256": "6db7179042376efb7ad2ea84cf8afef5a98777e25c511b6d40b02bde0ca963c4",
+      "type": "dobot_msgs_v4/srv/FCCollisionSwitch"
+    },
+    {
+      "bytes": 169,
+      "generation_file": "dobot_msgs_v4/srv/FCForceMode.srv",
+      "git_blob_sha1": "93df742f09bca8d08a2136827a382e0d2ac3562c",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCForceMode.srv",
+      "repository": "ros2",
+      "sha256": "e24efe3853b3f753ed70c6e623700fe8e05241d33ac5dcc86283a838f7c150cd",
+      "type": "dobot_msgs_v4/srv/FCForceMode"
+    },
+    {
+      "bytes": 14,
+      "generation_file": "dobot_msgs_v4/srv/FCOff.srv",
+      "git_blob_sha1": "2718a636b3b36861ef019cac99ac0269a5a2bfc3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCOff.srv",
+      "repository": "ros2",
+      "sha256": "8eb413de12f6a73ee57bb4c94addbac5d7efcd28e83b917fc9a3d873a85510da",
+      "type": "dobot_msgs_v4/srv/FCOff"
+    },
+    {
+      "bytes": 65,
+      "generation_file": "dobot_msgs_v4/srv/FCSetDamping.srv",
+      "git_blob_sha1": "1b36b42675f67742c70c9d97c1e289f346143457",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCSetDamping.srv",
+      "repository": "ros2",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5",
+      "type": "dobot_msgs_v4/srv/FCSetDamping"
+    },
+    {
+      "bytes": 86,
+      "generation_file": "dobot_msgs_v4/srv/FCSetDeviation.srv",
+      "git_blob_sha1": "fa3d34e1165a833bda490514675d0cd01a4a9bc5",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCSetDeviation.srv",
+      "repository": "ros2",
+      "sha256": "90bd4f252277050b1471e106488315824cba08564d7e35a650cc4482287ea7a2",
+      "type": "dobot_msgs_v4/srv/FCSetDeviation"
+    },
+    {
+      "bytes": 65,
+      "generation_file": "dobot_msgs_v4/srv/FCSetForce.srv",
+      "git_blob_sha1": "1b36b42675f67742c70c9d97c1e289f346143457",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCSetForce.srv",
+      "repository": "ros2",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5",
+      "type": "dobot_msgs_v4/srv/FCSetForce"
+    },
+    {
+      "bytes": 65,
+      "generation_file": "dobot_msgs_v4/srv/FCSetForceLimit.srv",
+      "git_blob_sha1": "1b36b42675f67742c70c9d97c1e289f346143457",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCSetForceLimit.srv",
+      "repository": "ros2",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5",
+      "type": "dobot_msgs_v4/srv/FCSetForceLimit"
+    },
+    {
+      "bytes": 65,
+      "generation_file": "dobot_msgs_v4/srv/FCSetForceSpeedLimit.srv",
+      "git_blob_sha1": "1b36b42675f67742c70c9d97c1e289f346143457",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCSetForceSpeedLimit.srv",
+      "repository": "ros2",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5",
+      "type": "dobot_msgs_v4/srv/FCSetForceSpeedLimit"
+    },
+    {
+      "bytes": 65,
+      "generation_file": "dobot_msgs_v4/srv/FCSetMass.srv",
+      "git_blob_sha1": "1b36b42675f67742c70c9d97c1e289f346143457",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCSetMass.srv",
+      "repository": "ros2",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5",
+      "type": "dobot_msgs_v4/srv/FCSetMass"
+    },
+    {
+      "bytes": 65,
+      "generation_file": "dobot_msgs_v4/srv/FCSetStiffness.srv",
+      "git_blob_sha1": "1b36b42675f67742c70c9d97c1e289f346143457",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/FCSetStiffness.srv",
+      "repository": "ros2",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5",
+      "type": "dobot_msgs_v4/srv/FCSetStiffness"
+    },
+    {
+      "bytes": 79,
+      "generation_file": "dobot_msgs_v4/srv/ForceDriveMode.srv",
+      "git_blob_sha1": "568e9f4c0311a46ca5574fc5743bb36ed80940bf",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ForceDriveMode.srv",
+      "repository": "ros2",
+      "sha256": "04468f8aaa8e36a1574779a57f9535b8e988ca4584b3b903408743193833d1a4",
+      "type": "dobot_msgs_v4/srv/ForceDriveMode"
+    },
+    {
+      "bytes": 26,
+      "generation_file": "dobot_msgs_v4/srv/ForceDriveSpeed.srv",
+      "git_blob_sha1": "78415c4b6f982a1762bc81d4dec70ec041a11a5d",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ForceDriveSpeed.srv",
+      "repository": "ros2",
+      "sha256": "ee0a125a493a6e26160f855b66d0e0737111127ab975dc31dbd22788219154f1",
+      "type": "dobot_msgs_v4/srv/ForceDriveSpeed"
+    },
+    {
+      "bytes": 45,
+      "generation_file": "dobot_msgs_v4/srv/GetAO.srv",
+      "git_blob_sha1": "b36cafd421add005f1d3066be05efcff3452bd79",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetAO.srv",
+      "repository": "ros2",
+      "sha256": "6f86a242b6942a2a1a3b50a59c3547a95c2c2bfa01afe5edbb91001527ec71e4",
+      "type": "dobot_msgs_v4/srv/GetAO"
+    },
+    {
+      "bytes": 33,
+      "generation_file": "dobot_msgs_v4/srv/GetAngle.srv",
+      "git_blob_sha1": "f67548203de5fa38f7f1cc43ebddeedcc9222d92",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetAngle.srv",
+      "repository": "ros2",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4",
+      "type": "dobot_msgs_v4/srv/GetAngle"
+    },
+    {
+      "bytes": 68,
+      "generation_file": "dobot_msgs_v4/srv/GetCoils.srv",
+      "git_blob_sha1": "226859971437690884ab59f48e26edc636232b0f",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetCoils.srv",
+      "repository": "ros2",
+      "sha256": "baa1df95e3643f1c131cc1a059c3c5720580c89419c2b643dfdd0d712296c3a4",
+      "type": "dobot_msgs_v4/srv/GetCoils"
+    },
+    {
+      "bytes": 33,
+      "generation_file": "dobot_msgs_v4/srv/GetCurrentCommandId.srv",
+      "git_blob_sha1": "f67548203de5fa38f7f1cc43ebddeedcc9222d92",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetCurrentCommandId.srv",
+      "repository": "ros2",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4",
+      "type": "dobot_msgs_v4/srv/GetCurrentCommandId"
+    },
+    {
+      "bytes": 45,
+      "generation_file": "dobot_msgs_v4/srv/GetDO.srv",
+      "git_blob_sha1": "b36cafd421add005f1d3066be05efcff3452bd79",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetDO.srv",
+      "repository": "ros2",
+      "sha256": "6f86a242b6942a2a1a3b50a59c3547a95c2c2bfa01afe5edbb91001527ec71e4",
+      "type": "dobot_msgs_v4/srv/GetDO"
+    },
+    {
+      "bytes": 53,
+      "generation_file": "dobot_msgs_v4/srv/GetDOGroup.srv",
+      "git_blob_sha1": "aeabc36dd8954bd1c8a9b5d77433ef2a4f16796a",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetDOGroup.srv",
+      "repository": "ros2",
+      "sha256": "52a0ff938c159908b193dd32f03b0b646bbe23bbe146f389efc448db89265a61",
+      "type": "dobot_msgs_v4/srv/GetDOGroup"
+    },
+    {
+      "bytes": 57,
+      "generation_file": "dobot_msgs_v4/srv/GetDOGroupDEC.srv",
+      "git_blob_sha1": "adb5735009bff9b4799cd84a4d267b8ea6aeb8b2",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetDOGroupDEC.srv",
+      "repository": "ros2",
+      "sha256": "22cc92192d4a6c1344441d1d05f90015ef9e1f3c335376f96661ec8a522a3d70",
+      "type": "dobot_msgs_v4/srv/GetDOGroupDEC"
+    },
+    {
+      "bytes": 49,
+      "generation_file": "dobot_msgs_v4/srv/GetError.srv",
+      "git_blob_sha1": "397a832e48e1bf9f4f6c760e50ff9d7df29e668b",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetError.srv",
+      "repository": "ros2",
+      "sha256": "108e8e343ee340723c04c727dc93668ac2ed2a58541ac655e0e053ef091d8ae4",
+      "type": "dobot_msgs_v4/srv/GetError"
+    },
+    {
+      "bytes": 33,
+      "generation_file": "dobot_msgs_v4/srv/GetErrorID.srv",
+      "git_blob_sha1": "f67548203de5fa38f7f1cc43ebddeedcc9222d92",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetErrorID.srv",
+      "repository": "ros2",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4",
+      "type": "dobot_msgs_v4/srv/GetErrorID"
+    },
+    {
+      "bytes": 48,
+      "generation_file": "dobot_msgs_v4/srv/GetForce.srv",
+      "git_blob_sha1": "1d2726cad65c2af4ae02376425c007e5e9c1ba56",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetForce.srv",
+      "repository": "ros2",
+      "sha256": "032009fe48a5e024731b09f573f783ead35f5192e864fa4c7aaf8b8192fa195b",
+      "type": "dobot_msgs_v4/srv/GetForce"
+    },
+    {
+      "bytes": 87,
+      "generation_file": "dobot_msgs_v4/srv/GetHoldRegs.srv",
+      "git_blob_sha1": "9e4bc27e848a1defc95761e4498f930cb838055a",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetHoldRegs.srv",
+      "repository": "ros2",
+      "sha256": "e21956edbebca4651fffbea7c9f39641aafb928b98ac83577df475be19e6b211",
+      "type": "dobot_msgs_v4/srv/GetHoldRegs"
+    },
+    {
+      "bytes": 68,
+      "generation_file": "dobot_msgs_v4/srv/GetInBits.srv",
+      "git_blob_sha1": "226859971437690884ab59f48e26edc636232b0f",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetInBits.srv",
+      "repository": "ros2",
+      "sha256": "baa1df95e3643f1c131cc1a059c3c5720580c89419c2b643dfdd0d712296c3a4",
+      "type": "dobot_msgs_v4/srv/GetInBits"
+    },
+    {
+      "bytes": 91,
+      "generation_file": "dobot_msgs_v4/srv/GetInRegs.srv",
+      "git_blob_sha1": "cf10172049f2bf0793ee96a6cb706a5ab72687bd",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetInRegs.srv",
+      "repository": "ros2",
+      "sha256": "787665c48e74fe7e608a04f674c6855dc45d2cbec3f433965c42e508d99d645c",
+      "type": "dobot_msgs_v4/srv/GetInRegs"
+    },
+    {
+      "bytes": 47,
+      "generation_file": "dobot_msgs_v4/srv/GetInputBool.srv",
+      "git_blob_sha1": "6f3b457b3af09c3209e15bb2262178293a003177",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetInputBool.srv",
+      "repository": "ros2",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55",
+      "type": "dobot_msgs_v4/srv/GetInputBool"
+    },
+    {
+      "bytes": 47,
+      "generation_file": "dobot_msgs_v4/srv/GetInputFloat.srv",
+      "git_blob_sha1": "6f3b457b3af09c3209e15bb2262178293a003177",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetInputFloat.srv",
+      "repository": "ros2",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55",
+      "type": "dobot_msgs_v4/srv/GetInputFloat"
+    },
+    {
+      "bytes": 47,
+      "generation_file": "dobot_msgs_v4/srv/GetInputInt.srv",
+      "git_blob_sha1": "6f3b457b3af09c3209e15bb2262178293a003177",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetInputInt.srv",
+      "repository": "ros2",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55",
+      "type": "dobot_msgs_v4/srv/GetInputInt"
+    },
+    {
+      "bytes": 47,
+      "generation_file": "dobot_msgs_v4/srv/GetOutputBool.srv",
+      "git_blob_sha1": "6f3b457b3af09c3209e15bb2262178293a003177",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetOutputBool.srv",
+      "repository": "ros2",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55",
+      "type": "dobot_msgs_v4/srv/GetOutputBool"
+    },
+    {
+      "bytes": 47,
+      "generation_file": "dobot_msgs_v4/srv/GetOutputFloat.srv",
+      "git_blob_sha1": "6f3b457b3af09c3209e15bb2262178293a003177",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetOutputFloat.srv",
+      "repository": "ros2",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55",
+      "type": "dobot_msgs_v4/srv/GetOutputFloat"
+    },
+    {
+      "bytes": 47,
+      "generation_file": "dobot_msgs_v4/srv/GetOutputInt.srv",
+      "git_blob_sha1": "6f3b457b3af09c3209e15bb2262178293a003177",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetOutputInt.srv",
+      "repository": "ros2",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55",
+      "type": "dobot_msgs_v4/srv/GetOutputInt"
+    },
+    {
+      "bytes": 55,
+      "generation_file": "dobot_msgs_v4/srv/GetPose.srv",
+      "git_blob_sha1": "a4321c5497f6e615558af666340e01bae5b48e64",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetPose.srv",
+      "repository": "ros2",
+      "sha256": "2b52b27c9b39b2045d157bf5755d998f951025140d55b9d11139139b7a28e0b6",
+      "type": "dobot_msgs_v4/srv/GetPose"
+    },
+    {
+      "bytes": 51,
+      "generation_file": "dobot_msgs_v4/srv/GetStartPose.srv",
+      "git_blob_sha1": "dcf8b4a07abe7dbfd3b1bfb705aabe4e1caad8d0",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetStartPose.srv",
+      "repository": "ros2",
+      "sha256": "00c39120d7b2129e61a3290b0e085a7a104acde437c6bda7d008471a677c7db8",
+      "type": "dobot_msgs_v4/srv/GetStartPose"
+    },
+    {
+      "bytes": 45,
+      "generation_file": "dobot_msgs_v4/srv/GetToolDO.srv",
+      "git_blob_sha1": "b36cafd421add005f1d3066be05efcff3452bd79",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/GetToolDO.srv",
+      "repository": "ros2",
+      "sha256": "6f86a242b6942a2a1a3b50a59c3547a95c2c2bfa01afe5edbb91001527ec71e4",
+      "type": "dobot_msgs_v4/srv/GetToolDO"
+    },
+    {
+      "bytes": 165,
+      "generation_file": "dobot_msgs_v4/srv/InverseKin.srv",
+      "git_blob_sha1": "313a1b5c4810dc9fe5fd28e328c16db1b53ca69f",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/InverseKin.srv",
+      "repository": "ros2",
+      "sha256": "e14c9579039dda6aa48e0724964b06b2fd284ffafc6bee9e764c0efc7ca90431",
+      "type": "dobot_msgs_v4/srv/InverseKin"
+    },
+    {
+      "bytes": 30,
+      "generation_file": "dobot_msgs_v4/srv/InverseSolution.srv",
+      "git_blob_sha1": "6d88ed8ee7bb2d6fa21b51850aac94ab33f963bb",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/InverseSolution.srv",
+      "repository": "ros2",
+      "sha256": "0dc6b38298c3f3f6ddceb003174b3bd4cbcf09d6bdbf94d886386a48fbb9a84b",
+      "type": "dobot_msgs_v4/srv/InverseSolution"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/ModbusClose.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ModbusClose.srv",
+      "repository": "ros2",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_msgs_v4/srv/ModbusClose"
+    },
+    {
+      "bytes": 96,
+      "generation_file": "dobot_msgs_v4/srv/ModbusCreate.srv",
+      "git_blob_sha1": "e568034abe39bcc9b8e54ddad514241286889cc6",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ModbusCreate.srv",
+      "repository": "ros2",
+      "sha256": "c0bb9923d4520ec3091b12b85cd248761f76da3f09cde62d48fec86308bbb888",
+      "type": "dobot_msgs_v4/srv/ModbusCreate"
+    },
+    {
+      "bytes": 113,
+      "generation_file": "dobot_msgs_v4/srv/ModbusRTUCreate.srv",
+      "git_blob_sha1": "31d85e75b55fc1ee16cd42fc5ab8dda0d388c1c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ModbusRTUCreate.srv",
+      "repository": "ros2",
+      "sha256": "8602c12aad679685964f0e8fb1b328c724273e55463d3d2f2039c63af57d4769",
+      "type": "dobot_msgs_v4/srv/ModbusRTUCreate"
+    },
+    {
+      "bytes": 124,
+      "generation_file": "dobot_msgs_v4/srv/MovJ.srv",
+      "git_blob_sha1": "c4c7ea049891e0d4cb04872522b1c49df790388c",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/MovJ.srv",
+      "repository": "ros2",
+      "sha256": "fb0e41c70f4b7905dac34744e14cd52d6d4f15652a3888b232157edc1a3d5129",
+      "type": "dobot_msgs_v4/srv/MovJ"
+    },
+    {
+      "bytes": 118,
+      "generation_file": "dobot_msgs_v4/srv/MovJIO.srv",
+      "git_blob_sha1": "c23d89dd8ca51b8d306bfa36f64e5fc3f3167f66",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/MovJIO.srv",
+      "repository": "ros2",
+      "sha256": "3b5e6563cad1730b8855346d83e982975b98c491e526d8608fb1c9ed0c8d8ae2",
+      "type": "dobot_msgs_v4/srv/MovJIO"
+    },
+    {
+      "bytes": 124,
+      "generation_file": "dobot_msgs_v4/srv/MovL.srv",
+      "git_blob_sha1": "c4c7ea049891e0d4cb04872522b1c49df790388c",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/MovL.srv",
+      "repository": "ros2",
+      "sha256": "fb0e41c70f4b7905dac34744e14cd52d6d4f15652a3888b232157edc1a3d5129",
+      "type": "dobot_msgs_v4/srv/MovL"
+    },
+    {
+      "bytes": 118,
+      "generation_file": "dobot_msgs_v4/srv/MovLIO.srv",
+      "git_blob_sha1": "c23d89dd8ca51b8d306bfa36f64e5fc3f3167f66",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/MovLIO.srv",
+      "repository": "ros2",
+      "sha256": "3b5e6563cad1730b8855346d83e982975b98c491e526d8608fb1c9ed0c8d8ae2",
+      "type": "dobot_msgs_v4/srv/MovLIO"
+    },
+    {
+      "bytes": 49,
+      "generation_file": "dobot_msgs_v4/srv/MoveJog.srv",
+      "git_blob_sha1": "7c18386d1cfed3b6615d27d6148a4a45a422ef33",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/MoveJog.srv",
+      "repository": "ros2",
+      "sha256": "46631777536969e5ded2fbaa602ac131d1351d8b9c09e4b55bf5a375e25ac375",
+      "type": "dobot_msgs_v4/srv/MoveJog"
+    },
+    {
+      "bytes": 14,
+      "generation_file": "dobot_msgs_v4/srv/Pause.srv",
+      "git_blob_sha1": "821e795a55a6cee31ac2da62705c26bfcd7eec3e",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/Pause.srv",
+      "repository": "ros2",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970",
+      "type": "dobot_msgs_v4/srv/Pause"
+    },
+    {
+      "bytes": 136,
+      "generation_file": "dobot_msgs_v4/srv/PositiveKin.srv",
+      "git_blob_sha1": "6f6f19d2a6006eca17da1a3e7e851d48112a688c",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/PositiveKin.srv",
+      "repository": "ros2",
+      "sha256": "1ee5356509a49ea0d48e29a6a44d976093a9498241e3d251a5104994938c219a",
+      "type": "dobot_msgs_v4/srv/PositiveKin"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/PowerOn.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/PowerOn.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/PowerOn"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "dobot_msgs_v4/srv/RelJointMovJ.srv",
+      "git_blob_sha1": "b5cdb6c498ed05403258888caca02ea540b921e3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RelJointMovJ.srv",
+      "repository": "ros2",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54",
+      "type": "dobot_msgs_v4/srv/RelJointMovJ"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "dobot_msgs_v4/srv/RelMovJTool.srv",
+      "git_blob_sha1": "b5cdb6c498ed05403258888caca02ea540b921e3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RelMovJTool.srv",
+      "repository": "ros2",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54",
+      "type": "dobot_msgs_v4/srv/RelMovJTool"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "dobot_msgs_v4/srv/RelMovJUser.srv",
+      "git_blob_sha1": "b5cdb6c498ed05403258888caca02ea540b921e3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RelMovJUser.srv",
+      "repository": "ros2",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54",
+      "type": "dobot_msgs_v4/srv/RelMovJUser"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "dobot_msgs_v4/srv/RelMovLTool.srv",
+      "git_blob_sha1": "b5cdb6c498ed05403258888caca02ea540b921e3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RelMovLTool.srv",
+      "repository": "ros2",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54",
+      "type": "dobot_msgs_v4/srv/RelMovLTool"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "dobot_msgs_v4/srv/RelMovLUser.srv",
+      "git_blob_sha1": "b5cdb6c498ed05403258888caca02ea540b921e3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RelMovLUser.srv",
+      "repository": "ros2",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54",
+      "type": "dobot_msgs_v4/srv/RelMovLUser"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/RequestControl.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RequestControl.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/RequestControl"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/ResetRobot.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ResetRobot.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/ResetRobot"
+    },
+    {
+      "bytes": 33,
+      "generation_file": "dobot_msgs_v4/srv/RobotMode.srv",
+      "git_blob_sha1": "f67548203de5fa38f7f1cc43ebddeedcc9222d92",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RobotMode.srv",
+      "repository": "ros2",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4",
+      "type": "dobot_msgs_v4/srv/RobotMode"
+    },
+    {
+      "bytes": 33,
+      "generation_file": "dobot_msgs_v4/srv/RunScript.srv",
+      "git_blob_sha1": "c01dad843c6de5e91f99c852d1f8aea05971ef68",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RunScript.srv",
+      "repository": "ros2",
+      "sha256": "1186eaab87306ae9001ade14c191c404a548fa27b4cae6e2988dc04f2bb9b1ff",
+      "type": "dobot_msgs_v4/srv/RunScript"
+    },
+    {
+      "bytes": 145,
+      "generation_file": "dobot_msgs_v4/srv/RunTo.srv",
+      "git_blob_sha1": "e50f653e63f0b9ea63fb24db4756dfafde1b2848",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/RunTo.srv",
+      "repository": "ros2",
+      "sha256": "4a7995cbe523efe6523c8f29476708c601b2ebd1cdb9fb66877e7b62389545b0",
+      "type": "dobot_msgs_v4/srv/RunTo"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "dobot_msgs_v4/srv/ServoJ.srv",
+      "git_blob_sha1": "b5cdb6c498ed05403258888caca02ea540b921e3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ServoJ.srv",
+      "repository": "ros2",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54",
+      "type": "dobot_msgs_v4/srv/ServoJ"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "dobot_msgs_v4/srv/ServoP.srv",
+      "git_blob_sha1": "b5cdb6c498ed05403258888caca02ea540b921e3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ServoP.srv",
+      "repository": "ros2",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54",
+      "type": "dobot_msgs_v4/srv/ServoP"
+    },
+    {
+      "bytes": 30,
+      "generation_file": "dobot_msgs_v4/srv/SetBackDistance.srv",
+      "git_blob_sha1": "73bcbb05322b59f3b7661a3cc35aae29537f5be5",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetBackDistance.srv",
+      "repository": "ros2",
+      "sha256": "02e1a1a796cbd95aaf8878d9bed6a5780cafcb560b63cbd9a9905d0eae1fdbc3",
+      "type": "dobot_msgs_v4/srv/SetBackDistance"
+    },
+    {
+      "bytes": 74,
+      "generation_file": "dobot_msgs_v4/srv/SetCoils.srv",
+      "git_blob_sha1": "5de8851a072dc961d111f9a2d750b27c0241ae0b",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetCoils.srv",
+      "repository": "ros2",
+      "sha256": "48c2ee76cb48acd8b9029b2d3a55dd8a68db6a83b2f395e25864c823cc833afa",
+      "type": "dobot_msgs_v4/srv/SetCoils"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/SetCollisionLevel.srv",
+      "git_blob_sha1": "d357f3f1caad65cd29263acf588ef8e58add72d2",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetCollisionLevel.srv",
+      "repository": "ros2",
+      "sha256": "27ae0e0a9a1ce83429647f8c1d9b6b2992c2ab54c308c5e286d8e431b049ad79",
+      "type": "dobot_msgs_v4/srv/SetCollisionLevel"
+    },
+    {
+      "bytes": 43,
+      "generation_file": "dobot_msgs_v4/srv/SetFCCollision.srv",
+      "git_blob_sha1": "288593e8e1ab49c722ee670ea25098414ce27190",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetFCCollision.srv",
+      "repository": "ros2",
+      "sha256": "06fa86cc301157249f92247c694a7e67d05e36111a7af7cc31e3863596075adb",
+      "type": "dobot_msgs_v4/srv/SetFCCollision"
+    },
+    {
+      "bytes": 92,
+      "generation_file": "dobot_msgs_v4/srv/SetHoldRegs.srv",
+      "git_blob_sha1": "f903db99ca3be9c169ea7432649de4227cbe9597",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetHoldRegs.srv",
+      "repository": "ros2",
+      "sha256": "79ae54bd84440a5dada2d0f50002e6c3b9836644a32f6f0a896bb79bca9ac8b2",
+      "type": "dobot_msgs_v4/srv/SetHoldRegs"
+    },
+    {
+      "bytes": 39,
+      "generation_file": "dobot_msgs_v4/srv/SetOutputBool.srv",
+      "git_blob_sha1": "5085ce805457a60ffb364859cadcf85ece2a033b",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetOutputBool.srv",
+      "repository": "ros2",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf",
+      "type": "dobot_msgs_v4/srv/SetOutputBool"
+    },
+    {
+      "bytes": 41,
+      "generation_file": "dobot_msgs_v4/srv/SetOutputFloat.srv",
+      "git_blob_sha1": "bb10aa1f83ea2151d18a4a040c6c9c390a659b88",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetOutputFloat.srv",
+      "repository": "ros2",
+      "sha256": "8de6326a303983a47b8006f57a7790d387234510c9de76a20dc5f54e4d39fc46",
+      "type": "dobot_msgs_v4/srv/SetOutputFloat"
+    },
+    {
+      "bytes": 39,
+      "generation_file": "dobot_msgs_v4/srv/SetOutputInt.srv",
+      "git_blob_sha1": "5085ce805457a60ffb364859cadcf85ece2a033b",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetOutputInt.srv",
+      "repository": "ros2",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf",
+      "type": "dobot_msgs_v4/srv/SetOutputInt"
+    },
+    {
+      "bytes": 57,
+      "generation_file": "dobot_msgs_v4/srv/SetPayload.srv",
+      "git_blob_sha1": "138deb68c42ec23d3af34eb8db2d5cbdda3dda6a",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetPayload.srv",
+      "repository": "ros2",
+      "sha256": "8c364eee3d61bc00a1b3179d0c81d8655c24a5aea6ba01e74bdb155f8b70627e",
+      "type": "dobot_msgs_v4/srv/SetPayload"
+    },
+    {
+      "bytes": 24,
+      "generation_file": "dobot_msgs_v4/srv/SetPostCollisionMode.srv",
+      "git_blob_sha1": "e802e1c78551f31b8f4a84c090a12a7320ce4ff2",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetPostCollisionMode.srv",
+      "repository": "ros2",
+      "sha256": "7838512d90223c4e10955dee1a1b22d52f1a254ac3a9c157597beda72d0196e6",
+      "type": "dobot_msgs_v4/srv/SetPostCollisionMode"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_msgs_v4/srv/SetSafeSkin.srv",
+      "git_blob_sha1": "41b5383052a05a3e5f13864b129a979c5f1f82b0",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetSafeSkin.srv",
+      "repository": "ros2",
+      "sha256": "f1359d4a02b230df980d8ff29a461b45b1c0fd3dc528b0b393a6f63a1340464f",
+      "type": "dobot_msgs_v4/srv/SetSafeSkin"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_msgs_v4/srv/SetSafeWallEnable.srv",
+      "git_blob_sha1": "3cb8b50c28cdf5aa5e826287026d05dd5720cb79",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetSafeWallEnable.srv",
+      "repository": "ros2",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6",
+      "type": "dobot_msgs_v4/srv/SetSafeWallEnable"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_msgs_v4/srv/SetTool.srv",
+      "git_blob_sha1": "7b1ed4e7e4f4d5118d2eed44073e712f9749c8da",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetTool.srv",
+      "repository": "ros2",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247",
+      "type": "dobot_msgs_v4/srv/SetTool"
+    },
+    {
+      "bytes": 71,
+      "generation_file": "dobot_msgs_v4/srv/SetTool485.srv",
+      "git_blob_sha1": "d479d67c5f0fa9b51cbd26682b6a30b91b67eb6e",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetTool485.srv",
+      "repository": "ros2",
+      "sha256": "4b1e92876d5385125e35bab4d05aa389e3615089a0d015025a1aa3442145f321",
+      "type": "dobot_msgs_v4/srv/SetTool485"
+    },
+    {
+      "bytes": 35,
+      "generation_file": "dobot_msgs_v4/srv/SetToolMode.srv",
+      "git_blob_sha1": "b8ea9bea90e15996aade48398897ad765e83cee8",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetToolMode.srv",
+      "repository": "ros2",
+      "sha256": "85a497adc59ff51e46ce24081457516ad0071f0fe9feb38981803604ce6ddfeb",
+      "type": "dobot_msgs_v4/srv/SetToolMode"
+    },
+    {
+      "bytes": 26,
+      "generation_file": "dobot_msgs_v4/srv/SetToolPower.srv",
+      "git_blob_sha1": "b3584213babd67524ddfea1df5aa209cd4ba4985",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetToolPower.srv",
+      "repository": "ros2",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5",
+      "type": "dobot_msgs_v4/srv/SetToolPower"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_msgs_v4/srv/SetUser.srv",
+      "git_blob_sha1": "7b1ed4e7e4f4d5118d2eed44073e712f9749c8da",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetUser.srv",
+      "repository": "ros2",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247",
+      "type": "dobot_msgs_v4/srv/SetUser"
+    },
+    {
+      "bytes": 37,
+      "generation_file": "dobot_msgs_v4/srv/SetWorkZoneEnable.srv",
+      "git_blob_sha1": "3cb8b50c28cdf5aa5e826287026d05dd5720cb79",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SetWorkZoneEnable.srv",
+      "repository": "ros2",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6",
+      "type": "dobot_msgs_v4/srv/SetWorkZoneEnable"
+    },
+    {
+      "bytes": 14,
+      "generation_file": "dobot_msgs_v4/srv/SixForceHome.srv",
+      "git_blob_sha1": "2718a636b3b36861ef019cac99ac0269a5a2bfc3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SixForceHome.srv",
+      "repository": "ros2",
+      "sha256": "8eb413de12f6a73ee57bb4c94addbac5d7efcd28e83b917fc9a3d873a85510da",
+      "type": "dobot_msgs_v4/srv/SixForceHome"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/SpeedFactor.srv",
+      "git_blob_sha1": "ae553007d1ff57a44c23aac43a8eccc8a57f1b43",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/SpeedFactor.srv",
+      "repository": "ros2",
+      "sha256": "f5655cbfc3f5b30b3004702f2cacde1f14c8763e243133b7a4fdea1209253476",
+      "type": "dobot_msgs_v4/srv/SpeedFactor"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/StartDrag.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/StartDrag.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/StartDrag"
+    },
+    {
+      "bytes": 52,
+      "generation_file": "dobot_msgs_v4/srv/StartPath.srv",
+      "git_blob_sha1": "cf5720e7357d054dcec0c175b3e3268d764bb46f",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/StartPath.srv",
+      "repository": "ros2",
+      "sha256": "1f84ad5519a1b23940769e96d659b9b4a864f90fe97caab52e4e5297b49a2a68",
+      "type": "dobot_msgs_v4/srv/StartPath"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/StartRTOffset.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/StartRTOffset.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/StartRTOffset"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/Stop.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/Stop.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/Stop"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/StopDrag.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/StopDrag.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/StopDrag"
+    },
+    {
+      "bytes": 13,
+      "generation_file": "dobot_msgs_v4/srv/StopMoveJog.srv",
+      "git_blob_sha1": "b470ec1fa193d59029c61ec7926682664d3c03c9",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/StopMoveJog.srv",
+      "repository": "ros2",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371",
+      "type": "dobot_msgs_v4/srv/StopMoveJog"
+    },
+    {
+      "bytes": 32,
+      "generation_file": "dobot_msgs_v4/srv/TcpDashboard.srv",
+      "git_blob_sha1": "90b401ca380630b6a26fab3900b703c1777a18c7",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/TcpDashboard.srv",
+      "repository": "ros2",
+      "sha256": "f71eb9a763d355d7e99b6a19dd5b4dda3be9e9a4e438b7e2be67ff6e961f643c",
+      "type": "dobot_msgs_v4/srv/TcpDashboard"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/Tool.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/Tool.srv",
+      "repository": "ros2",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_msgs_v4/srv/Tool"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/ToolAI.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ToolAI.srv",
+      "repository": "ros2",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_msgs_v4/srv/ToolAI"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/ToolDI.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ToolDI.srv",
+      "repository": "ros2",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_msgs_v4/srv/ToolDI"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_msgs_v4/srv/ToolDO.srv",
+      "git_blob_sha1": "bdfebbbe409d17145f4baf6c9fce019131e1c0f3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ToolDO.srv",
+      "repository": "ros2",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09",
+      "type": "dobot_msgs_v4/srv/ToolDO"
+    },
+    {
+      "bytes": 38,
+      "generation_file": "dobot_msgs_v4/srv/ToolDOInstant.srv",
+      "git_blob_sha1": "bdfebbbe409d17145f4baf6c9fce019131e1c0f3",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/ToolDOInstant.srv",
+      "repository": "ros2",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09",
+      "type": "dobot_msgs_v4/srv/ToolDOInstant"
+    },
+    {
+      "bytes": 25,
+      "generation_file": "dobot_msgs_v4/srv/User.srv",
+      "git_blob_sha1": "e46fddecf307d3a06c63e3a12fb6290e5c08bdfa",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/User.srv",
+      "repository": "ros2",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a",
+      "type": "dobot_msgs_v4/srv/User"
+    },
+    {
+      "bytes": 21,
+      "generation_file": "dobot_msgs_v4/srv/VelJ.srv",
+      "git_blob_sha1": "d5c8c82aad1c78f8b678d93c9383decc9b50630e",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/VelJ.srv",
+      "repository": "ros2",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a",
+      "type": "dobot_msgs_v4/srv/VelJ"
+    },
+    {
+      "bytes": 21,
+      "generation_file": "dobot_msgs_v4/srv/VelL.srv",
+      "git_blob_sha1": "d5c8c82aad1c78f8b678d93c9383decc9b50630e",
+      "kind": "srv",
+      "original_file": "dobot_msgs_v4/srv/VelL.srv",
+      "repository": "ros2",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a",
+      "type": "dobot_msgs_v4/srv/VelL"
+    }
+  ],
+  "kind": "dobot-selected-complete-original-driver-source-lock-v1",
+  "original_custom_roots": [
+    {
+      "kind": "msg",
+      "type": "dobot_msgs_v4/msg/RobotStatus"
+    },
+    {
+      "kind": "msg",
+      "type": "dobot_msgs_v4/msg/ToolVectorActual"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/AI"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/AO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/AOInstant"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/AccJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/AccL"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/Arc"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/BrakeControl"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/CP"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/CalcTool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/CalcUser"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/CheckOddMovC"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/CheckOddMovJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/CheckOddMovL"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/Circle"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ClearError"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/Continue"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DI"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DIGroup"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DIGroupDEC"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DOGroup"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DOGroupDEC"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DOInstant"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DisableRobot"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/DragSensivity"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/EmergencyStop"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/EnableFTSensor"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/EnableRobot"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/EnableSafeSkin"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/EndRTOffset"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCCollisionSwitch"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCForceMode"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCOff"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCSetDamping"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCSetDeviation"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCSetForce"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCSetForceLimit"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCSetForceSpeedLimit"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCSetMass"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/FCSetStiffness"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ForceDriveMode"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ForceDriveSpeed"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetAO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetAngle"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetCoils"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetCurrentCommandId"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetDO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetDOGroup"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetDOGroupDEC"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetError"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetErrorID"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetForce"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetHoldRegs"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetInBits"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetInRegs"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetInputBool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetInputFloat"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetInputInt"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetOutputBool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetOutputFloat"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetOutputInt"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetPose"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetStartPose"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/GetToolDO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/InverseKin"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/InverseSolution"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ModbusClose"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ModbusCreate"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ModbusRTUCreate"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/MovJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/MovJIO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/MovL"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/MovLIO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/MoveJog"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/Pause"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/PositiveKin"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/PowerOn"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RelJointMovJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RelMovJTool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RelMovJUser"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RelMovLTool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RelMovLUser"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RequestControl"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ResetRobot"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RobotMode"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RunScript"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/RunTo"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ServoJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ServoP"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetBackDistance"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetCoils"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetCollisionLevel"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetFCCollision"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetHoldRegs"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetOutputBool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetOutputFloat"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetOutputInt"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetPayload"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetPostCollisionMode"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetSafeSkin"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetSafeWallEnable"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetTool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetTool485"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetToolMode"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetToolPower"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetUser"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SetWorkZoneEnable"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SixForceHome"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/SpeedFactor"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/StartDrag"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/StartPath"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/StartRTOffset"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/Stop"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/StopDrag"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/StopMoveJog"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/TcpDashboard"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/Tool"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ToolAI"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ToolDI"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ToolDO"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/ToolDOInstant"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/User"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/VelJ"
+    },
+    {
+      "kind": "srv",
+      "type": "dobot_msgs_v4/srv/VelL"
+    }
+  ],
+  "profile": "ros2_v4",
+  "repositories": [
+    {
+      "commit": "ec201c40d5db63185a3593ec9c39f80fe25aa527",
+      "id": "ros2",
+      "repository": "https://github.com/Dobot-Arm/DOBOT_6Axis_ROS2_V4",
+      "tree_git_sha1": "b78c69b88f24f7a47d040810e1b5127b9e44caf9"
+    }
+  ],
+  "ros_version": 2,
+  "scope": "Every declaration in this exact driver interface package; original demo-package copies, other source branches and standard trajectory dependencies are separate domains.",
+  "vendor": "dobot"
+}

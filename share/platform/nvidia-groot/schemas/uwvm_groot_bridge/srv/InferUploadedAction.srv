@@ -1,0 +1,10 @@
+# Full state/language plus all previously uploaded camera tensors. No actuator.
+uint64 application_nonce
+uint64 observation_nonce
+FloatTensor[] state
+TextSequence[] language
+---
+uint32 status
+uint64 application_nonce
+FloatTensor[] action
+bool info_is_empty

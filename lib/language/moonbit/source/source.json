@@ -1,0 +1,42 @@
+{
+  "format": "uwvm-pinned-moonbit-runtime-source-v1",
+  "compiler_version": "v0.10.15+943464bfa (2026-10-12)",
+  "source": "Official MoonBit Linux toolchain runtime.c and include distribution",
+  "upstream_documentation": "https://docs.moonbitlang.com/en/stable/language/ffi.html",
+  "license": "Apache-2.0; original notices retained",
+  "patches": [],
+  "files": [
+    {
+      "path": "include/backtrace.h",
+      "sha256": "d2ac7d5c6910c011f860d04a04a4a6a6fbea2882f23878f1f5f6721831a28acd"
+    },
+    {
+      "path": "include/moonbit-fundamental.h",
+      "sha256": "afd2c5d1ecb6b5cabb6781207d87a1074d9e87b54dfd85367d91e8a45ebbd567"
+    },
+    {
+      "path": "include/moonbit.h",
+      "sha256": "eee8fd5cfe9cd703640cd18bddc210d48e1de5592f19bfca39c9eab8e6e85fdc"
+    },
+    {
+      "path": "include/moonbit_runtime.h",
+      "sha256": "8aa8531211930208ba80aaf920e6d7b9899ad23784356d75bdd8e3ec02f84b14"
+    },
+    {
+      "path": "include/moonbit_simd.h",
+      "sha256": "4995faa31ac633768430bad1b7ea28699ab601e216fb357739a092cbea455022"
+    },
+    {
+      "path": "runtime.c",
+      "sha256": "f6d1fe63742ae1383361a136f0c30534ff3c729674f6ef31d07ce79420ff45fb"
+    },
+    {
+      "path": "wasip1.c",
+      "sha256": "bf801e74ba6fddfd6fb20f95ce3d46e5bd4659f4d59a6ebe26cc84edd85fe837",
+      "authored": true
+    }
+  ],
+  "authored_adapters": [
+    "wasip1.c: official allocator initialization and actual abort; desktop OS services are outside this profile"
+  ]
+}

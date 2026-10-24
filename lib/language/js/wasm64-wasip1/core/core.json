@@ -1,0 +1,101 @@
+{
+  "format": "uwvm-genuine-language-core-v1",
+  "language": "js",
+  "version": "2026-06-04",
+  "target": "wasm64-wasip1",
+  "compiler": "LLVM 23.1.4",
+  "archive": "lib/language/js/wasm64-wasip1/core/libuwvm-engine.a",
+  "include_roots": [
+    "src/language/js/upstream"
+  ],
+  "compile_flags": [],
+  "forced_includes": [],
+  "link_libraries": [
+    "-lm"
+  ],
+  "source_lock_sha256": "0ed6b7740449c41ff717e03cd8782a040259c075e44fa7990027243e25e78c78",
+  "source_build_receipt_sha256": "80e77af5782f323fb4ebc6281965166ea436d135401fd2f179c38b1991705ce4",
+  "input_core_objects": [
+    {
+      "sha256": "d5a413a49a430eb21fe7e895226bd301086a1cb4c4edfcef56417f5e650e83b6"
+    },
+    {
+      "sha256": "fb6472f1bbdc359aafac7fe535df98b6bdb1aa04dadf1f6b446a52ce8bbe11e1"
+    },
+    {
+      "sha256": "c9a43ad8cfc74164a7bf9a6d48591b036949deb36975b058529259f2af6fb0cc"
+    },
+    {
+      "sha256": "e39c8205369f3578a9caa55cdd1dda922bb5cc9c7d6e699a0e8f6635238ab1d5"
+    },
+    {
+      "sha256": "6dae6083156788da97c7469cf765ea040c9779bfd71d52c7cf859696e067215b"
+    }
+  ],
+  "input_core_archives": [],
+  "inputs": [
+    {
+      "path": "lib/language/js/wasm64-wasip1/core/libuwvm-engine.a",
+      "sha256": "2b4b6d13c70cbf980db20705f8fc239dd7c6199213844ac42c3ff07ace75de35",
+      "bytes": 1357404
+    },
+    {
+      "path": "src/language/js/upstream/cutils.h",
+      "bytes": 11277,
+      "sha256": "ae45698aa4f479dad164a573cabd22de01aa42377440ee8e7e81ca6366a95f25"
+    },
+    {
+      "path": "src/language/js/upstream/dtoa.h",
+      "bytes": 3491,
+      "sha256": "344d75304dc6de080c2899caec86607f5879ee7d2d970df9adf8d3e72107e9ed"
+    },
+    {
+      "path": "src/language/js/upstream/libregexp-opcode.h",
+      "bytes": 3317,
+      "sha256": "0f634a4b026c030013cf3048f377c0a031a4ed039f771a15afc6eba4927af966"
+    },
+    {
+      "path": "src/language/js/upstream/libregexp.h",
+      "bytes": 2921,
+      "sha256": "2362311b8693975d869f5cf746340062b8d2346cb732607c328b3ccf2f6a1b18"
+    },
+    {
+      "path": "src/language/js/upstream/libunicode-table.h",
+      "bytes": 265653,
+      "sha256": "649b072c3fee26d5fa778cd140a23bfdd0ff34f532b4b21ce263b7a979cce5bc"
+    },
+    {
+      "path": "src/language/js/upstream/libunicode.h",
+      "bytes": 6066,
+      "sha256": "7aa9cf58be71e877162fbbf169680995c7a853f3d08760cf309f48ae456bff2a"
+    },
+    {
+      "path": "src/language/js/upstream/list.h",
+      "bytes": 3366,
+      "sha256": "4ee9eda6f7eb739a1860fd7c3239943d808619b0464a42c8552d6c695afbbfe8"
+    },
+    {
+      "path": "src/language/js/upstream/quickjs-atom.h",
+      "bytes": 8544,
+      "sha256": "c40bd3c96ba87b09463189a96b80252cfe220641f9b796df4f4e1a080ef35d41"
+    },
+    {
+      "path": "src/language/js/upstream/quickjs-opcode.h",
+      "bytes": 16650,
+      "sha256": "2e0a108da1769e4c10a5bd4aff2753d618929317ebce084b1b76f81ac83924ee"
+    },
+    {
+      "path": "src/language/js/upstream/quickjs.h",
+      "bytes": 53142,
+      "sha256": "971c141dca08ae46cd29380db91902edab3ca08abebfbd73f82331ddfbcfd2d2"
+    },
+    {
+      "path": "src/language/js/upstream/unicode_gen_def.h",
+      "bytes": 8029,
+      "sha256": "8c2916d8df39bc3066eb59ec21e345e7d5412df078641ae7abdab54bee627506"
+    }
+  ],
+  "runtime_grants": [],
+  "source_evaluated_by_host": false,
+  "source_lock_path": "share/language/js/construction-source-lock.json"
+}

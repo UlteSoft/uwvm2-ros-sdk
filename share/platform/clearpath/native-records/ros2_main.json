@@ -1,0 +1,1443 @@
+{
+  "format": "uwvm-native-record-source-v1",
+  "namespace": "clearpath",
+  "profile": "ros2_main",
+  "ros_major": 2,
+  "catalog_sha256": "44dadb927c2c17151863b62b6fa95e7f0b42503e277c2beb4b556142c7a036d6",
+  "record_count": 14,
+  "interface_count": 13,
+  "field_count": 47,
+  "constant_count": 76,
+  "records": [
+    {
+      "type": "builtin_interfaces/msg/Duration",
+      "symbol": "Ros2Builtin_interfacesMsgDuration",
+      "c_symbol": "roswasmc_bounded_2_builtin_interfaces_msg_Duration",
+      "minimum": 8,
+      "maximum": 8,
+      "codec_identity": "UWVMROS1_3804444fae7a82a57907d25c2c3dc54d9a42dcd305f41ca073b1221dca7d36e4",
+      "members": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "symbol": "Ros2Builtin_interfacesMsgTime",
+      "c_symbol": "roswasmc_bounded_2_builtin_interfaces_msg_Time",
+      "minimum": 8,
+      "maximum": 8,
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "members": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Drive",
+      "symbol": "Ros2Clearpath_platform_msgsMsgDrive",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_Drive",
+      "minimum": 9,
+      "maximum": 9,
+      "codec_identity": "UWVMROS1_be8664128ff89a066550f1a2496c30396f39bafd1d96483c545048a328138785",
+      "members": [
+        {
+          "name": "mode",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "drivers",
+          "type": "float32",
+          "array": "array",
+          "count": 2,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": [
+        {
+          "name": "MODE_VELOCITY",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "MODE_PWM",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "MODE_NONE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "-1",
+          "value": "-1"
+        },
+        {
+          "name": "LEFT",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "RIGHT",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/DriveFeedback",
+      "symbol": "Ros2Clearpath_platform_msgsMsgDriveFeedback",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_DriveFeedback",
+      "minimum": 25,
+      "maximum": 25,
+      "codec_identity": "UWVMROS1_008f51d4c8341723ffec72651f93c00db0f9feceb037ee7b6b460ffcafd3f287",
+      "members": [
+        {
+          "name": "current",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "duty_cycle",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "bridge_temperature",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "motor_temperature",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "measured_velocity",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "measured_travel",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "driver_fault",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Fans",
+      "symbol": "Ros2Clearpath_platform_msgsMsgFans",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_Fans",
+      "minimum": 4,
+      "maximum": 6,
+      "codec_identity": "UWVMROS1_addc15a9b6db4f7a0eba3545f02ece0800e48796f71e387b4d249af861f95317",
+      "members": [
+        {
+          "name": "fans",
+          "type": "uint8",
+          "array": "sequence",
+          "count": 2,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": [
+        {
+          "name": "R100_EQUIPMENT_BAY_INTAKE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "R100_EQUIPMENT_BAY_EXHAUST",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "R100_CHARGER_BAY_INTAKE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "R100_CHARGER_BAY_EXHAUST",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "R100_USER_BAY_INTAKE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "4",
+          "value": "4"
+        },
+        {
+          "name": "R100_USER_BAY_EXHAUST",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "5",
+          "value": "5"
+        },
+        {
+          "name": "FAN_OFF",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "FAN_ON_HIGH",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "FAN_ON_LOW",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "symbol": "Ros2Std_msgsMsgHeader",
+      "c_symbol": "roswasmc_bounded_2_std_msgs_msg_Header",
+      "minimum": 12,
+      "maximum": 140,
+      "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+      "members": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "frame_id",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Feedback",
+      "symbol": "Ros2Clearpath_platform_msgsMsgFeedback",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_Feedback",
+      "minimum": 64,
+      "maximum": 192,
+      "codec_identity": "UWVMROS1_15fdfd2e12df38bab09bf083beb61ce23d3c1082e794c34d51eec4c473e29442",
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "drivers",
+          "type": "clearpath_platform_msgs/msg/DriveFeedback",
+          "array": "array",
+          "count": 2,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "commanded_mode",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "actual_mode",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/RGB",
+      "symbol": "Ros2Clearpath_platform_msgsMsgRGB",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_RGB",
+      "minimum": 3,
+      "maximum": 3,
+      "codec_identity": "UWVMROS1_42db8731293054ef44002afc54c16dac45544354932d5353cf749fb376cef1a1",
+      "members": [
+        {
+          "name": "red",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "green",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "blue",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Lights",
+      "symbol": "Ros2Clearpath_platform_msgsMsgLights",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_Lights",
+      "minimum": 4,
+      "maximum": 10,
+      "codec_identity": "UWVMROS1_14da254234c9c897e39bf4ee0db8faad0798d23fe7017195f35f88fb6e0b3332",
+      "members": [
+        {
+          "name": "lights",
+          "type": "clearpath_platform_msgs/msg/RGB",
+          "array": "sequence",
+          "count": 2,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": [
+        {
+          "name": "D100_LIGHTS_REAR_LEFT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "D100_LIGHTS_FRONT_LEFT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "D100_LIGHTS_FRONT_RIGHT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "D100_LIGHTS_REAR_RIGHT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "D150_LIGHTS_REAR_LEFT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "D150_LIGHTS_FRONT_LEFT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "D150_LIGHTS_FRONT_RIGHT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "D150_LIGHTS_REAR_RIGHT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "R100_LIGHTS_FRONT_PORT_UPPER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "R100_LIGHTS_FRONT_PORT_LOWER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "R100_LIGHTS_FRONT_STARBOARD_UPPER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "R100_LIGHTS_FRONT_STARBOARD_LOWER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "R100_LIGHTS_REAR_PORT_UPPER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "4",
+          "value": "4"
+        },
+        {
+          "name": "R100_LIGHTS_REAR_PORT_LOWER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "5",
+          "value": "5"
+        },
+        {
+          "name": "R100_LIGHTS_REAR_STARBOARD_UPPER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "6",
+          "value": "6"
+        },
+        {
+          "name": "R100_LIGHTS_REAR_STARBOARD_LOWER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "7",
+          "value": "7"
+        },
+        {
+          "name": "W200_LIGHTS_FRONT_LEFT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "W200_LIGHTS_FRONT_RIGHT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "W200_LIGHTS_REAR_LEFT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "W200_LIGHTS_REAR_RIGHT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Power",
+      "symbol": "Ros2Clearpath_platform_msgsMsgPower",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_Power",
+      "minimum": 25,
+      "maximum": 169,
+      "codec_identity": "UWVMROS1_e97ba89dea149ff43d0134038985ea45d2f072af592ea128aa5502a053478d22",
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "shore_power_connected",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "battery_connected",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "power_12v_user_nominal",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "charger_connected",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "charging_complete",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "measured_voltages",
+          "type": "float32",
+          "array": "sequence",
+          "count": 2,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "measured_currents",
+          "type": "float32",
+          "array": "sequence",
+          "count": 2,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": [
+        {
+          "name": "NOT_APPLICABLE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "-1",
+          "value": "-1"
+        },
+        {
+          "name": "J100_MEASURED_BATTERY",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "J100_MEASURED_5V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "J100_MEASURED_12V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "D100_MEASURED_BATTERY",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "D100_MEASURED_5V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "D100_MEASURED_12V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "D150_MEASURED_BATTERY",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "D150_MEASURED_5V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "D150_MEASURED_12V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "W200_MEASURED_BATTERY",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "W200_MEASURED_12V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "W200_MEASURED_24V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "W200_MEASURED_48V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "R100_MEASURED_BATTERY",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "R100_MEASURED_5V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "R100_MEASURED_12V",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "R100_MEASURED_INVERTER",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "R100_MEASURED_FRONT_AXLE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "4",
+          "value": "4"
+        },
+        {
+          "name": "R100_MEASURED_REAR_AXLE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "5",
+          "value": "5"
+        },
+        {
+          "name": "R100_MEASURED_LIGHT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "6",
+          "value": "6"
+        },
+        {
+          "name": "A200_BATTERY_VOLTAGE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "A200_LEFT_DRIVER_VOLTAGE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "A200_RIGHT_DRIVER_VOLTAGE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "A200_VOLTAGES_SIZE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "J100_TOTAL_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "J100_COMPUTER_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "J100_DRIVE_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "J100_USER_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "D100_TOTAL_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "D100_COMPUTER_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "D150_TOTAL_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "D150_COMPUTER_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "W200_TOTAL_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "W200_COMPUTER_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "W200_12V_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "W200_24V_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "R100_TOTAL_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "A200_MCU_AND_USER_PORT_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "A200_LEFT_DRIVER_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "A200_RIGHT_DRIVER_CURRENT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "A200_CURRENTS_SIZE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Status",
+      "symbol": "Ros2Clearpath_platform_msgsMsgStatus",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_Status",
+      "minimum": 44,
+      "maximum": 684,
+      "codec_identity": "UWVMROS1_331afb70728e70e0391da1b2a0f2b97fdc8742a363a2b007606121ad778dd5c1",
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "hardware_id",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "firmware_version",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "mcu_uptime",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "connection_uptime",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "pcb_temperature",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "mcu_temperature",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/StopStatus",
+      "symbol": "Ros2Clearpath_platform_msgsMsgStopStatus",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_msg_StopStatus",
+      "minimum": 15,
+      "maximum": 143,
+      "codec_identity": "UWVMROS1_101f96c8d48e7a945a2f94108e7b48393fc9d4bd75507dd709b95180ff4794d2",
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "stop_power_status",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "external_stop_present",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "needs_reset",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "clearpath_platform_msgs/srv/ConfigureMcu_Request",
+      "symbol": "Ros2Clearpath_platform_msgsSrvConfigureMcu_Request",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_srv_ConfigureMcu_Request",
+      "minimum": 5,
+      "maximum": 261,
+      "codec_identity": "UWVMROS1_9c48451b208c4de7a51c5075587dfbe710e7ec6b249c7e1eef519022154023fa",
+      "members": [
+        {
+          "name": "domain_id",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "robot_namespace",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "clearpath_platform_msgs/srv/ConfigureMcu_Response",
+      "symbol": "Ros2Clearpath_platform_msgsSrvConfigureMcu_Response",
+      "c_symbol": "roswasmc_bounded_2_clearpath_platform_msgs_srv_ConfigureMcu_Response",
+      "minimum": 5,
+      "maximum": 261,
+      "codec_identity": "UWVMROS1_552e715f290b5b9aa5dc926519cf2ab5120d6b2ae5eca9902efcc3f8c9e459ad",
+      "members": [
+        {
+          "name": "success",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "builtin_interfaces/msg/Duration",
+      "kind": "message",
+      "components": {
+        "message": "builtin_interfaces/msg/Duration"
+      }
+    },
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "kind": "message",
+      "components": {
+        "message": "builtin_interfaces/msg/Time"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Drive",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/Drive"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/DriveFeedback",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/DriveFeedback"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Fans",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/Fans"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Feedback",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/Feedback"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Lights",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/Lights"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Power",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/Power"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/RGB",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/RGB"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/Status",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/Status"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/msg/StopStatus",
+      "kind": "message",
+      "components": {
+        "message": "clearpath_platform_msgs/msg/StopStatus"
+      }
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "kind": "message",
+      "components": {
+        "message": "std_msgs/msg/Header"
+      }
+    },
+    {
+      "type": "clearpath_platform_msgs/srv/ConfigureMcu",
+      "kind": "service",
+      "components": {
+        "request": "clearpath_platform_msgs/srv/ConfigureMcu_Request",
+        "response": "clearpath_platform_msgs/srv/ConfigureMcu_Response"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "path": "include/platform/clearpath/zig/ros2_main/records.zig",
+      "sha256": "972aa6f128c200efa07dbc10ad032404e1f58bef3e640b8960813d7c092470b8"
+    },
+    {
+      "path": "include/platform/clearpath/d/ros2_main/records.d",
+      "sha256": "75aefdc0cd512edeb7bd7ee9c2baf99d18ca7383e216b1165f3465bb10f5b0f0",
+      "generated_before_formatting_sha256": "41e1409c5048f0f1a8e727394402bc3634411d971b626d9437150a82f6a8990b"
+    },
+    {
+      "path": "include/platform/clearpath/nim/ros2_main/records.nim",
+      "sha256": "a8a7149a240ea1da5caeeabf37d37431a4d8a369ec2465e01d7f34b70fbc26fe"
+    },
+    {
+      "path": "include/platform/clearpath/haskell/Clearpath/Ros2_main/Records.hs",
+      "sha256": "ddf5cd9696d089d7bd810e88dd9afe56edd1a0d054445b59ff2b84e4b978f722"
+    },
+    {
+      "path": "include/platform/clearpath/odin/ros2_main/records.odin",
+      "sha256": "39bdc67b50b096cf9ae61f616963622bcd447d23abc1687d046122bda830a80e"
+    },
+    {
+      "path": "include/platform/clearpath/swift/ros2_main/Records.swift",
+      "sha256": "aa4d14d02b1c9cb47888470a73691028bc05ea9c135e32eb18180b7419253ca8"
+    }
+  ],
+  "source_pins": [],
+  "implemented": true,
+  "built": false,
+  "executed": false,
+  "native_registration": false,
+  "default_authority": [],
+  "shared_native_rules_sha256": "815c0d040d4e94cbaf694e428c559ff425a5dfac0013008142607c8b378092fa",
+  "semantic_contract": "normalized time/duration and all six optional JointState nonempty-array pairs"
+}

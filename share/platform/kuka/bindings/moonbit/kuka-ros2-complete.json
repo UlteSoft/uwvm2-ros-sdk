@@ -1,0 +1,55 @@
+{
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "backend": "ros2",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "domain": "kuka-ros2-complete",
+  "format": "vendor-language-source-inputs-v1",
+  "include_root": "include/platform",
+  "language": "moonbit",
+  "model_module": "kuka",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "moonbit",
+    "moonbit": {
+      "entry_dependencies": [
+        "records"
+      ],
+      "main_package": "kuka/command",
+      "packages": [
+        {
+          "alias": "wire",
+          "dependencies": [
+            "utf8"
+          ],
+          "name": "uwvm/ros/wire",
+          "sources": [
+            "include/platform/ros/moonbit/wire/image.mbt",
+            "include/platform/ros/moonbit/wire/transform.mbt",
+            "include/platform/ros/moonbit/wire/wire.mbt"
+          ]
+        },
+        {
+          "alias": "records",
+          "dependencies": [
+            "wire",
+            "float",
+            "utf8"
+          ],
+          "name": "kuka/ros2/kuka_ros2_complete",
+          "sources": [
+            "include/platform/kuka/moonbit/ros2/kuka-ros2-complete/bounded_records.mbt"
+          ]
+        }
+      ]
+    }
+  },
+  "platform": "kuka",
+  "record_catalog": "share/platform/kuka/domains/kuka-ros2-complete.ir.json",
+  "retained_native_operation_flows": "src/platform/kuka/flows",
+  "source_root": "include/platform/kuka/moonbit/ros2/kuka-ros2-complete",
+  "support_source_roots": [],
+  "target_widths_requested": [
+    32,
+    64
+  ]
+}

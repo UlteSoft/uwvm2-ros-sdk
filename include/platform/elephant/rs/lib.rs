@@ -1,0 +1,20 @@
+//! @file lib.rs
+//! @brief Complete per-profile vendor records; select an explicit ROS feature.
+#[cfg(feature = "ros2")]
+#[path = "ros2/elephant-mycobot-foxy-complete/bounded_records.rs"]
+pub mod foxy;
+#[cfg(feature = "ros2")]
+#[path = "ros2/elephant-mycobot-galactic-complete/bounded_records.rs"]
+pub mod galactic;
+#[cfg(feature = "ros2")]
+#[path = "ros2/elephant-mycobot-humble-complete/bounded_records.rs"]
+pub mod humble;
+#[cfg(feature = "ros1")]
+#[path = "ros1/elephant-mycobot-kinetic-complete/bounded_records.rs"]
+pub mod kinetic;
+#[cfg(feature = "ros1")]
+#[path = "ros1/elephant-mycobot-melodic-complete/bounded_records.rs"]
+pub mod melodic;
+#[cfg(feature = "ros1")]
+#[path = "ros1/elephant-mycobot-noetic-complete/bounded_records.rs"]
+pub mod noetic;

@@ -1,0 +1,30 @@
+{
+  "entry": "run_captured.py",
+  "files": [
+    {
+      "output": "run_captured.py",
+      "source": "src/platform/nvidia-groot/retained-programs/py/run_captured.py"
+    },
+    {
+      "output": "adapters/native_conversion.py",
+      "source": "src/platform/nvidia-groot/py/native_conversion.py"
+    },
+    {
+      "output": "adapters/native_owner.py",
+      "source": "src/platform/nvidia-groot/py/native_owner.py"
+    },
+    {
+      "output": "adapters/owned_sdk_source.py",
+      "source": "src/platform/nvidia-groot/py/owned_sdk_source.py"
+    },
+    {
+      "output": "adapters/staged_video.py",
+      "source": "src/platform/nvidia-groot/py/staged_video.py"
+    },
+    {
+      "output": "sdk-source-inventory.json",
+      "source": "share/platform/nvidia-groot/provenance/sdk-source-inventory.json"
+    }
+  ],
+  "format": "uwvm-nvidia-native-python-source-v2"
+}

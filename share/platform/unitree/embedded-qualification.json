@@ -1,0 +1,393 @@
+{
+  "format": "uwvm-unitree-embedded-qualification-v2",
+  "status": "PASS",
+  "languages": [
+    "py",
+    "js",
+    "lua",
+    "moonbit",
+    "ruby",
+    "php"
+  ],
+  "target": "wasm32-wasip1",
+  "current_publication_qualification": "share/platform/unitree/qualification.json",
+  "complete_record_codec_receipt": {
+    "path": "share/platform/unitree/qualification/embedded-codecs.json",
+    "sha256": "d63c9e19a6b5038bfbe11db19e6c02ff2e4e83423c24e9bf578fcc3a3eddc807",
+    "original_repository_path": "original-review-workspace/unitree-embedded-remaining/sdk/share/platform/unitree/embedded-qualification.json",
+    "bytes": 6649
+  },
+  "engine_cold_source_rebuild": "SEPARATE_UNFINISHED_TASK",
+  "routes": [
+    {
+      "language": "py",
+      "backend": "ros1",
+      "distribution": "noetic",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 11,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 33,
+      "codec_default_constructors": 11,
+      "codec_strict_refusals": 66,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/py/ros1/low_state",
+          "artifact_sha256": "9376bbc24422c4fdd21c452737c3707bf76840684a3fd07621ef34027c08a9bc"
+        },
+        {
+          "project": "unitree/py/ros1/motion_state",
+          "artifact_sha256": "848d696b17e079643f144ebd5c70d99c5f932ae5beb94a8ab1cfeb563bb67e18"
+        },
+        {
+          "project": "unitree/py/ros1/motor_state",
+          "artifact_sha256": "969648a471c64a2795530ad266f24eb7c6e4d6baaf73d3359e43a9963605c3da"
+        }
+      ]
+    },
+    {
+      "language": "py",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 43,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 129,
+      "codec_default_constructors": 43,
+      "codec_strict_refusals": 258,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/py/ros2/low_state",
+          "artifact_sha256": "d474337d7ff9f5961f4bda13b6bdc3f968bcd69a7db357140bf101578481b3f7"
+        },
+        {
+          "project": "unitree/py/ros2/motion_state",
+          "artifact_sha256": "10f19618486a230f5cc2b63f800dd016574a52935e36126c4bfa8312cd2891e6"
+        },
+        {
+          "project": "unitree/py/ros2/wireless_controller",
+          "artifact_sha256": "4c9222bdd135c8744a5d4d503fc632843b5650c67f9e685a0c1151cd0d11d993"
+        }
+      ]
+    },
+    {
+      "language": "js",
+      "backend": "ros1",
+      "distribution": "noetic",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 11,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 33,
+      "codec_default_constructors": 11,
+      "codec_strict_refusals": 66,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/js/ros1/low_state",
+          "artifact_sha256": "b4d52690481a4f117c1390e962be96a74142efeb09a4a84def5e081ed5f753b6"
+        },
+        {
+          "project": "unitree/js/ros1/motion_state",
+          "artifact_sha256": "b91d1616deb1f31c480f83102d52b7ad1794869afaf3a9b829e53d9987571d26"
+        },
+        {
+          "project": "unitree/js/ros1/motor_state",
+          "artifact_sha256": "9cffdcb2133e816fe588c2f3e230ab19b6342d5763b7c32c59e4cd589c2da822"
+        }
+      ]
+    },
+    {
+      "language": "js",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 43,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 129,
+      "codec_default_constructors": 43,
+      "codec_strict_refusals": 258,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/js/ros2/low_state",
+          "artifact_sha256": "a172da63d384aa39c981b0abc32b834b557988a9663fbc3e686b58e9336c77b4"
+        },
+        {
+          "project": "unitree/js/ros2/motion_state",
+          "artifact_sha256": "65aa628228f023b70d70d1b501beb10a2087a6d13b8106079f407ceb437cade5"
+        },
+        {
+          "project": "unitree/js/ros2/wireless_controller",
+          "artifact_sha256": "1cc7812fa8bbecea775de390821ad0a1d23958414e670c0b0863fc967b82a882"
+        }
+      ]
+    },
+    {
+      "language": "lua",
+      "backend": "ros1",
+      "distribution": "noetic",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 11,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 33,
+      "codec_default_constructors": 11,
+      "codec_strict_refusals": 66,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/lua/ros1/low_state",
+          "artifact_sha256": "8eca76174ad494e496688e098bd20806d7589428514335884237f1af1bba2593"
+        },
+        {
+          "project": "unitree/lua/ros1/motion_state",
+          "artifact_sha256": "d5283345815280f2ae886517373218dbf117126aac08c8613c35b0d3137f70d6"
+        },
+        {
+          "project": "unitree/lua/ros1/motor_state",
+          "artifact_sha256": "4a27b4ec38d90a5a0caae7cdfdf8e5409a92fb710e9a64803bf5214844b2d6bb"
+        }
+      ]
+    },
+    {
+      "language": "lua",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 43,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 129,
+      "codec_default_constructors": 43,
+      "codec_strict_refusals": 258,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/lua/ros2/low_state",
+          "artifact_sha256": "9fab70ac64dce0dda2649c3cfe1256465f2c8f1066f3416682f8259e7d2f9b05"
+        },
+        {
+          "project": "unitree/lua/ros2/motion_state",
+          "artifact_sha256": "54288df7e3a67d0e835f053a5e524af3c0f9f01bd8d9db67f35dcc4a40038f0e"
+        },
+        {
+          "project": "unitree/lua/ros2/wireless_controller",
+          "artifact_sha256": "b75904a778ed68b707708399d1a72546cc7016f6ad9df382cf3468692851aaa8"
+        }
+      ]
+    },
+    {
+      "language": "moonbit",
+      "backend": "ros1",
+      "distribution": "noetic",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 11,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 33,
+      "codec_default_constructors": 11,
+      "codec_strict_refusals": 66,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/moonbit/ros1/low_state",
+          "artifact_sha256": "65586b99f3fdfbcedbe641aa3d2627fb6d14f2524288b47d127cdcf37c2d079d"
+        },
+        {
+          "project": "unitree/moonbit/ros1/motion_state",
+          "artifact_sha256": "f85fb7604f6928d54a5669c3751fe1a208a1d6e9d09567b86fa01490312d591a"
+        },
+        {
+          "project": "unitree/moonbit/ros1/motor_state",
+          "artifact_sha256": "4b2dd1db8ddfacb2f96a7823270b3c1541af70eb349a97d02026f7e2dad0bd4b"
+        }
+      ]
+    },
+    {
+      "language": "moonbit",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 43,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 129,
+      "codec_default_constructors": 43,
+      "codec_strict_refusals": 258,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/moonbit/ros2/low_state",
+          "artifact_sha256": "a693c2c42301834e85d392d6d7b0d3aeadba37e6bcc9bbdd7952673e7a0dcde6"
+        },
+        {
+          "project": "unitree/moonbit/ros2/motion_state",
+          "artifact_sha256": "3d697f0ba9f10f7067080d3512bba89ba5562a4f7349e3c9a552d6770813d33f"
+        },
+        {
+          "project": "unitree/moonbit/ros2/wireless_controller",
+          "artifact_sha256": "b3f4d46f8f451ebb00c7f8d0e3415e047c6da6469809c2c26efeecb036e4c230"
+        }
+      ]
+    },
+    {
+      "language": "ruby",
+      "backend": "ros1",
+      "distribution": "noetic",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 11,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 33,
+      "codec_default_constructors": 11,
+      "codec_strict_refusals": 66,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/ruby/ros1/low_state",
+          "artifact_sha256": "835b09659007803ddf56dceca4b8e4ab1e37f124c2703fcda6022b038fc9a393"
+        },
+        {
+          "project": "unitree/ruby/ros1/motion_state",
+          "artifact_sha256": "bb911758e2d4e40e356b0420eb0524121b281f11c3b0011d4e57b2caf9d024d5"
+        },
+        {
+          "project": "unitree/ruby/ros1/motor_state",
+          "artifact_sha256": "3d369af86cb5abe8d1647d905885d531066c9a024f160c17a35ac89e6a5bc578"
+        }
+      ]
+    },
+    {
+      "language": "ruby",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 43,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 129,
+      "codec_default_constructors": 43,
+      "codec_strict_refusals": 258,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/ruby/ros2/low_state",
+          "artifact_sha256": "098cfd68777d468e2de1f90296fe32a36d91be3a8a5819d03d8f437403cea9c2"
+        },
+        {
+          "project": "unitree/ruby/ros2/motion_state",
+          "artifact_sha256": "674896ce37a5be3b72294c32ea1e4ddd6c14fcc19e31fd211f1f9b888d764aba"
+        },
+        {
+          "project": "unitree/ruby/ros2/wireless_controller",
+          "artifact_sha256": "1131ae0ce49ee89e1c793ed8665ef13f0e9fd030f6a3243b628a82afb0e3780f"
+        }
+      ]
+    },
+    {
+      "language": "php",
+      "backend": "ros1",
+      "distribution": "noetic",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 11,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 33,
+      "codec_default_constructors": 11,
+      "codec_strict_refusals": 66,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/php/ros1/low_state",
+          "artifact_sha256": "d23482a7bcbbd6a8193493e7fa9492a57acbf96b2d0bc7983cac90722a91840b"
+        },
+        {
+          "project": "unitree/php/ros1/motion_state",
+          "artifact_sha256": "b07f2d972642c22782e836034f3dcc53f2230b61e6d120cc020e6fdc521755e3"
+        },
+        {
+          "project": "unitree/php/ros1/motor_state",
+          "artifact_sha256": "7eb816193a49771fc00e92e050a41d29c0a00b84af3b6148352ecae93eafcb10"
+        }
+      ]
+    },
+    {
+      "language": "php",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "target": "wasm32-wasip1",
+      "build_host": "linux-x86_64",
+      "complete_record_classes": 43,
+      "cold_examples": 3,
+      "original_native_cli_executions": 6,
+      "cold_codec_guests": 1,
+      "codec_valid_cases": 129,
+      "codec_default_constructors": 43,
+      "codec_strict_refusals": 258,
+      "status": "PASS",
+      "aarch64_status": "PASS: exact current artifact SHA-256 joined to actual ARM execution",
+      "current_artifacts": [
+        {
+          "project": "unitree/php/ros2/low_state",
+          "artifact_sha256": "06a0a75d6e9dbc8cfc28b737c380105546457fd801de67cd0fed58cb5171ff33"
+        },
+        {
+          "project": "unitree/php/ros2/motion_state",
+          "artifact_sha256": "9430a55793dd99198f1f6c2c9df62eaae06c69da4a93003de3d49ac71a459369"
+        },
+        {
+          "project": "unitree/php/ros2/wireless_controller",
+          "artifact_sha256": "8421cf50c981401c4c17cb1297fc6f70a38233799968a16d3e3cc23140205583"
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    "Only Linux x86_64 bundled compiler/VM source production was qualified",
+    "Only wasm32 WASI Preview 1; no memory64, Preview 2, threads or additional compiler hosts",
+    "All 54 records have genuine-language complete codec coverage; six original observation types have live native communication coverage",
+    "No hardware, actuation, robot network, service/action or other ROS distribution qualification",
+    "Fatal traps, unrecoverable allocation failures and process termination require outer instance retirement"
+  ],
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "3bd1507dc503f9422ae3d701c6db5bebd5f38b231b398ee5a0caa81c63fb4190"
+}

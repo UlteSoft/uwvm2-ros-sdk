@@ -1,0 +1,99 @@
+{
+  "Guest_executed": false,
+  "additions": [
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "3a4897c59ebff056538ceb2e64f9fb0c5e579633cbbc026c59b12fa8b56c0fb0"
+      },
+      "bytes": 2551,
+      "generation_file": "control_msgs/action/FollowJointTrajectory.action",
+      "git_blob_sha1": "dd0f809f6d9cf6d35fda4250787ef8f059f831c6",
+      "original_file": "control_msgs/action/FollowJointTrajectory.action",
+      "repository": "control_humble",
+      "sha256": "31a124428ee490da22c15cc70a9ac2c89d07bbbba7d3bf370ca7596b229cb9f0",
+      "type": "control_msgs/action/FollowJointTrajectory",
+      "url": "https://github.com/ros-controls/control_msgs/blob/4418bbf3efda12828795e4bb011742133c67a6e2/control_msgs/action/FollowJointTrajectory.action"
+    },
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "3a4897c59ebff056538ceb2e64f9fb0c5e579633cbbc026c59b12fa8b56c0fb0"
+      },
+      "bytes": 1161,
+      "generation_file": "control_msgs/msg/JointComponentTolerance.msg",
+      "git_blob_sha1": "9c4541ab51f8589cd3808a0cc5a392eb0db1f5e0",
+      "original_file": "control_msgs/msg/JointComponentTolerance.msg",
+      "repository": "control_humble",
+      "sha256": "6b09271d0f74e0a3a701f3ddb997b0ad4a588bdd9ab7d7899ddc70063ba924dd",
+      "type": "control_msgs/msg/JointComponentTolerance",
+      "url": "https://github.com/ros-controls/control_msgs/blob/4418bbf3efda12828795e4bb011742133c67a6e2/control_msgs/msg/JointComponentTolerance.msg"
+    },
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "c9915d5028bf042ec8a15399b8e4f4d8be641584cb11db4ccea099072ad53deb"
+      },
+      "bytes": 485,
+      "generation_file": "trajectory_msgs/msg/MultiDOFJointTrajectory.msg",
+      "git_blob_sha1": "155fdddf0b8db160c34ee85fd2f5916298b5e256",
+      "original_file": "trajectory_msgs/msg/MultiDOFJointTrajectory.msg",
+      "repository": "common_humble",
+      "sha256": "070af6b4c9f4238d9de36621105d78c999dbad2045d0cb2a633f86a17f73f6b7",
+      "type": "trajectory_msgs/msg/MultiDOFJointTrajectory",
+      "url": "https://github.com/ros2/common_interfaces/blob/08434490d3e4abd37ccc5462cdde69b88853b5b8/trajectory_msgs/msg/MultiDOFJointTrajectory.msg"
+    },
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "c9915d5028bf042ec8a15399b8e4f4d8be641584cb11db4ccea099072ad53deb"
+      },
+      "bytes": 427,
+      "generation_file": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg",
+      "git_blob_sha1": "b5f6457f182055098c3b5cf56ec216e5d7d88a8e",
+      "original_file": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg",
+      "repository": "common_humble",
+      "sha256": "7e3a4b150ff7ce8d7d897a480d8d324a244a0afb4a07fdf6241074071170ac7a",
+      "type": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint",
+      "url": "https://github.com/ros2/common_interfaces/blob/08434490d3e4abd37ccc5462cdde69b88853b5b8/trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg"
+    },
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "c9915d5028bf042ec8a15399b8e4f4d8be641584cb11db4ccea099072ad53deb"
+      },
+      "bytes": 118,
+      "generation_file": "geometry_msgs/msg/Transform.msg",
+      "git_blob_sha1": "f605c85ea8ec4c4871bdb7d77db6e7011c63e86d",
+      "original_file": "geometry_msgs/msg/Transform.msg",
+      "repository": "common_humble",
+      "sha256": "c8916279f0a429dd9561158bd2133bc4e2d780277c3c594116b240a27e7a2993",
+      "type": "geometry_msgs/msg/Transform",
+      "url": "https://github.com/ros2/common_interfaces/blob/08434490d3e4abd37ccc5462cdde69b88853b5b8/geometry_msgs/msg/Transform.msg"
+    },
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "c9915d5028bf042ec8a15399b8e4f4d8be641584cb11db4ccea099072ad53deb"
+      },
+      "bytes": 999,
+      "generation_file": "sensor_msgs/msg/JointState.msg",
+      "git_blob_sha1": "ffaa9bfb0059383a6282abee168c72fdc92793ce",
+      "original_file": "sensor_msgs/msg/JointState.msg",
+      "repository": "common_humble",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d",
+      "type": "sensor_msgs/msg/JointState",
+      "url": "https://github.com/ros2/common_interfaces/blob/08434490d3e4abd37ccc5462cdde69b88853b5b8/sensor_msgs/msg/JointState.msg"
+    }
+  ],
+  "base_catalog_sha256": "d5123ac097da1b1e67dc8c3546f25be0521a92bedeeffe618de4236329a13ffe",
+  "base_source_lock_sha256": "16ee401c39b10b7e674296b94b4f0ed2e04693be546f314f2ed6d686451fbdce",
+  "compiled": false,
+  "complete_fields_preserved": true,
+  "complete_platform_support": false,
+  "default_authority": [],
+  "native_bound": false,
+  "original_domains_modified": false,
+  "qualification": "Source only. Task 10 must generate one coherent family, bind real native identities and publish SDK products.",
+  "schema": "ur-complete-standard-trajectory-source-extension-v1"
+}

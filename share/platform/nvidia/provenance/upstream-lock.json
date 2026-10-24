@@ -1,0 +1,290 @@
+{
+  "cache_requirement": "Fresh explicit external maintenance/build cache; no upstream project tree is maintained in the SDK.",
+  "format": "uwvm-nvidia-upstream-lock-v1",
+  "official_suite_cases_run": 0,
+  "repositories": [
+    {
+      "candidate_source_files": 27,
+      "capture_sha256": "305dfeb3bf506ee8d9ad54305bd62c1ec428cca66d3c59c5dbd54c1af446ebd8",
+      "captured_bytes": 51465,
+      "captured_files": [
+        {
+          "bytes": 10808,
+          "git_blob_sha1": "c6b51dc2713a75b943191f5767865b372a3cc80e",
+          "path": "LICENSE",
+          "sha256": "93363510f62ce25ad1a47605b0b06ab335edd82f1a444531c58dd30b6e5a5a0c"
+        },
+        {
+          "bytes": 34759,
+          "git_blob_sha1": "6d86ea8af1a7f303b8cb71e8e281606f71f7a0f3",
+          "path": "README.md",
+          "sha256": "62f6c55a356be039287416f97e03a3b5541052d038a3daec208ea9ff8045a067"
+        },
+        {
+          "bytes": 5898,
+          "git_blob_sha1": "9beb9e504c458fe80d68ba6488ec03a7bf1afeb9",
+          "path": "pyproject.toml",
+          "sha256": "a451af4cf723cc58b710a2f6f3a12a8d7f03850a39cc5ba420a18fcc20e2a3d0"
+        }
+      ],
+      "commit": "dac54b313160c201c450f97df0fd74ebd379c892",
+      "commit_body_sha256": "f9536fd64ff50ec63b2e61c3771fff1700e65bc190c18665b4f9c65205ecbb05",
+      "git_tree_sha1": "f48557342ebb7a346782db8fc13e5951fececeaf",
+      "lane": "groot",
+      "official_example_total": null,
+      "repository": "NVIDIA/Isaac-GR00T",
+      "retrieval_url": "https://github.com/NVIDIA/Isaac-GR00T/tree/dac54b313160c201c450f97df0fd74ebd379c892",
+      "scope": "tree",
+      "tree_body_sha256": "f2da42df857bec51255b7bad914db88f6e2dd4804e80d00948ad3d8668295bd4"
+    },
+    {
+      "candidate_source_files": 4,
+      "capture_sha256": "447688e03fa42554fe301b6c887e7551a783c0d088bcd233aa19f46448ba2ea4",
+      "captured_bytes": 22831,
+      "captured_files": [
+        {
+          "bytes": 11357,
+          "git_blob_sha1": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+          "path": "LICENSE",
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "bytes": 11474,
+          "git_blob_sha1": "05e4b549d1f17059b5126fa104f04219bfb55291",
+          "path": "README.md",
+          "sha256": "68f4f3744fd6d33528fd5be526202eb0db43dfdccc00bb139cc01e9f53330417"
+        }
+      ],
+      "commit": "95df59e5dc9c253b6e8e11471c10fd510b036fdd",
+      "commit_body_sha256": "3c6dbefff6bcadfee52ded802b93a620d19d34bfea753c6a45e3778be5d22ee3",
+      "git_tree_sha1": "a5d6c3884006384443847f97e52185b4ad6066be",
+      "lane": "isaac-ros-apriltag",
+      "official_example_total": null,
+      "repository": "NVIDIA-ISAAC-ROS/isaac_ros_apriltag",
+      "retrieval_url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_apriltag/tree/95df59e5dc9c253b6e8e11471c10fd510b036fdd",
+      "scope": "tree",
+      "tree_body_sha256": "adaeed525f640faa1fa3993258b12e2da9637e1afc683d50e6c8210502797f7d"
+    },
+    {
+      "candidate_source_files": 7,
+      "capture_sha256": "986afe5d78c41a8638cfa02912ee6e5a4df4a44d8a5b2ed37ec0aed2fce3bb7a",
+      "captured_bytes": 16122,
+      "captured_files": [
+        {
+          "bytes": 14844,
+          "git_blob_sha1": "88bc900529cc5540162d3592cfdee4cf0081839c",
+          "path": "LICENSE",
+          "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d"
+        },
+        {
+          "bytes": 1278,
+          "git_blob_sha1": "999814e05568a9852f5cada96d22ebe506e45318",
+          "path": "README.md",
+          "sha256": "539f726bf5743a5ab819f1e55ddba1026776e3c7d6398fe9a6ba38bad4921858"
+        }
+      ],
+      "commit": "7bec6ae5dbb2faa11617f40226e8932a4a94e6e4",
+      "commit_body_sha256": "c1fa7234f8a0fb4a7ae355de102a14eb1b66dda568ba8d96cc158c8214a3718b",
+      "git_tree_sha1": "1e531b569b88cbd31ea15fb8c7b894ddb759125c",
+      "lane": "isaac-ros-common",
+      "official_example_total": null,
+      "repository": "NVIDIA-ISAAC-ROS/isaac_ros_common",
+      "retrieval_url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/tree/7bec6ae5dbb2faa11617f40226e8932a4a94e6e4",
+      "scope": "tree",
+      "tree_body_sha256": "00759804ee21f259bb721f7086db5cb1f76ef148b10ce4f553030f982964d2c6"
+    },
+    {
+      "candidate_source_files": 719,
+      "capture_sha256": "20c96dfdb14ea462e3fc6a7a3d30896fcca025d8052cb5b856c716ddcc70083e",
+      "captured_bytes": 25485,
+      "captured_files": [
+        {
+          "bytes": 10797,
+          "git_blob_sha1": "6c0a478c97f5994906059642e0a8c3bdc879bf5f",
+          "path": "LICENSE",
+          "sha256": "99a1d647e8751407fd965af6733624d96abfc1f2a7e767d09ed528ef414c603e"
+        },
+        {
+          "bytes": 14688,
+          "git_blob_sha1": "09bfd141524c1bd19e9aa664b058ec34b491a5b3",
+          "path": "README.md",
+          "sha256": "6b3c841845c0551e96762543d08b8fb20c5b5f28761eb1322063394652b5ce90"
+        }
+      ],
+      "commit": "87c95274f50836068b44eeb030bf62aa2108bdf8",
+      "commit_body_sha256": "02f71d2b3f6e974298aa8ac50ea44f31e63dcdd59f4edcafab820ad59bf28651",
+      "git_tree_sha1": "2a9f99fbbb93b951cf771fbe99845f7fc9248066",
+      "lane": "isaac-sim",
+      "official_example_total": null,
+      "repository": "isaac-sim/IsaacSim",
+      "retrieval_url": "https://github.com/isaac-sim/IsaacSim/tree/87c95274f50836068b44eeb030bf62aa2108bdf8",
+      "scope": "tree",
+      "tree_body_sha256": "4f019ebc672d323a569c3c430950ff3ffe7ad9d9c931bc53c4daabf8dbede037"
+    },
+    {
+      "candidate_source_files": 719,
+      "capture_sha256": "6e69c8cfd947e0a6f98efdd7a90bd5d5e44daa778cfa1fb81efa70abfeb56fc8",
+      "captured_bytes": 89193,
+      "captured_files": [
+        {
+          "bytes": 10797,
+          "git_blob_sha1": "6c0a478c97f5994906059642e0a8c3bdc879bf5f",
+          "path": "LICENSE",
+          "sha256": "99a1d647e8751407fd965af6733624d96abfc1f2a7e767d09ed528ef414c603e"
+        },
+        {
+          "bytes": 14688,
+          "git_blob_sha1": "09bfd141524c1bd19e9aa664b058ec34b491a5b3",
+          "path": "README.md",
+          "sha256": "6b3c841845c0551e96762543d08b8fb20c5b5f28761eb1322063394652b5ce90"
+        },
+        {
+          "bytes": 1923,
+          "git_blob_sha1": "6a9e76af6cf14a43e7ce22b0b48f03561cc8278c",
+          "path": "source/extensions/isaacsim.core.nodes/nodes/OgnIsaacComputeTransformTree.ogn",
+          "sha256": "b1291b50ccbefd756afd62858e2115502f2184cb73114877f196567549564726"
+        },
+        {
+          "bytes": 1232,
+          "git_blob_sha1": "834645a9aa9ac4fb8ea388b68dd4e01a6641aa5a",
+          "path": "source/extensions/isaacsim.core.nodes/nodes/OgnIsaacReadSimulationTime.ogn",
+          "sha256": "c901cadcb2fa873099164acfe3d340b14fe2fdf334306cd54d1636116fe65405"
+        },
+        {
+          "bytes": 950,
+          "git_blob_sha1": "0cd81f06ca76bae92f72be8d721fdb2165d4b9d7",
+          "path": "source/extensions/isaacsim.core.nodes/nodes/OgnIsaacSimulationGate.ogn",
+          "sha256": "f175eddbaf53cce556bf027f257be41eda9dd16fd78064fb538ecc884f37823e"
+        },
+        {
+          "bytes": 2936,
+          "git_blob_sha1": "aea68b1b2e606e74646ff78f9498c027db2518f7",
+          "path": "source/extensions/isaacsim.core.nodes/python/nodes/OgnIsaacArticulationController.ogn",
+          "sha256": "a9890a13a3aa1e564eea8f25faa5e84655654c8b47e25d19843876e427b3f153"
+        },
+        {
+          "bytes": 1854,
+          "git_blob_sha1": "cdb2d22d3517d583c3e0a3517d5c7476a0299470",
+          "path": "source/extensions/isaacsim.core.nodes/python/nodes/OgnIsaacCreateRenderProduct.ogn",
+          "sha256": "7916b0554f4b1e0aa9f01a9e4521a9abdd79eb5619db8eb4cab31344a69d976b"
+        },
+        {
+          "bytes": 1029,
+          "git_blob_sha1": "0ccee7106849459a4191408805353a824fcaf2f7",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2Context.ogn",
+          "sha256": "f9cc11bb597d75e3f385f20213e84521dbe72e35519d7f56d989a242e6c5438b"
+        },
+        {
+          "bytes": 1912,
+          "git_blob_sha1": "178b9b595cdd6e14129a5a9a45c7192fe3dbec2b",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2PublishClock.ogn",
+          "sha256": "8983fe8736a2df74849d654f379dec693363b6001ee137faea24468f506a5586"
+        },
+        {
+          "bytes": 3854,
+          "git_blob_sha1": "4b1f5a707102be4e86b61627c28429de4f58f1c7",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2PublishImage.ogn",
+          "sha256": "85e2717e9b076350893a46104631fc54ef694d10dd3ff90dbb8d1a80861b2b3f"
+        },
+        {
+          "bytes": 3333,
+          "git_blob_sha1": "62957509b86f9a7b05e9391429dee8616c7e9d9e",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2PublishImu.ogn",
+          "sha256": "034d284615b6b28692c866c9d272030c1f3cd55aa5cb951aa5f826663253e32e"
+        },
+        {
+          "bytes": 3418,
+          "git_blob_sha1": "e51dfce39f1be3552f5f6c5853d1f609a2f1eee0",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2PublishJointState.ogn",
+          "sha256": "c685284aae0adcd0ee0460c706bc3308a07ab728815885d888a3e26a79269a2e"
+        },
+        {
+          "bytes": 5029,
+          "git_blob_sha1": "15a26d7c71770cc1b2659ebd2b6c281d268a7e22",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2PublishLaserScan.ogn",
+          "sha256": "56309b0ef5a49884432de837a0cf4567ce6112b1f907c8feaca8cae4e01fb2b3"
+        },
+        {
+          "bytes": 13769,
+          "git_blob_sha1": "83405ba059584cb12c72639f3647a5e063a73e8c",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2PublishPointCloud.ogn",
+          "sha256": "6613c135c9613e19a3be07a83b494f44c9d26ddf1658b73a2e514ca63c43bbf1"
+        },
+        {
+          "bytes": 3626,
+          "git_blob_sha1": "ebde2e7963ce0a85d27e7771bff15a1d41537ef8",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2PublishTransformTree.ogn",
+          "sha256": "2b635d8ac24ea25c73cb02798ae16ab43f4bd18413457ffa062eff8f152df8d5"
+        },
+        {
+          "bytes": 2717,
+          "git_blob_sha1": "fa01ad4f05af358f07bac8a20d9c1ec3fc74f961",
+          "path": "source/extensions/isaacsim.ros2.nodes/nodes/OgnROS2SubscribeJointState.ogn",
+          "sha256": "21128866fb859c9a1d75ebd310ee006511c2ec5156f7ef85bade9fca0a205e71"
+        },
+        {
+          "bytes": 5522,
+          "git_blob_sha1": "5072cc283153c7d719bed1883a4f7ef01375f7ea",
+          "path": "source/extensions/isaacsim.ros2.nodes/python/nodes/OgnROS2CameraHelper.ogn",
+          "sha256": "2bfc8865e5e255d83a92f819ed0b52e25bebf85e251223186586a7d4ee668f4c"
+        },
+        {
+          "bytes": 5117,
+          "git_blob_sha1": "dabd089259ac81fc8dd22541e11bab50c9b878ca",
+          "path": "source/extensions/isaacsim.ros2.nodes/python/nodes/OgnROS2RtxLidarHelper.ogn",
+          "sha256": "d0e51a618aa4c6967e457411bbef192b3e1e0875a699dfbafb1db0da5d643676"
+        },
+        {
+          "bytes": 3296,
+          "git_blob_sha1": "16730141eb247b24a0d8e55add84d6c75816b392",
+          "path": "source/extensions/isaacsim.sensors.physics.nodes/nodes/OgnIsaacReadIMU.ogn",
+          "sha256": "033a9bc3d39a7abea7f54c844d24848f12f7bbb784bd899992a9c0726c74122f"
+        },
+        {
+          "bytes": 2191,
+          "git_blob_sha1": "05066843b2faf9c6c5d2ef719a6c13176f1d4281",
+          "path": "source/extensions/isaacsim.sensors.physics.nodes/nodes/OgnIsaacReadJointState.ogn",
+          "sha256": "9bbd656d5f1d26cb7db8956009f9f2a9d36e23f6b7f6671e7d575a993ff13c4d"
+        }
+      ],
+      "commit": "87c95274f50836068b44eeb030bf62aa2108bdf8",
+      "commit_body_sha256": "02f71d2b3f6e974298aa8ac50ea44f31e63dcdd59f4edcafab820ad59bf28651",
+      "git_tree_sha1": "2a9f99fbbb93b951cf771fbe99845f7fc9248066",
+      "lane": "isaac-sim-graph",
+      "official_example_total": null,
+      "repository": "isaac-sim/IsaacSim",
+      "retrieval_url": "https://github.com/isaac-sim/IsaacSim/tree/87c95274f50836068b44eeb030bf62aa2108bdf8",
+      "scope": "graph",
+      "tree_body_sha256": "4f019ebc672d323a569c3c430950ff3ffe7ad9d9c931bc53c4daabf8dbede037"
+    },
+    {
+      "candidate_source_files": 3,
+      "capture_sha256": "a8cb9ea9baeac7deb8bec7212b0315b93eec5bbb294db2c60dab4c3ea379bac0",
+      "captured_bytes": 16980,
+      "captured_files": [
+        {
+          "bytes": 14844,
+          "git_blob_sha1": "88bc900529cc5540162d3592cfdee4cf0081839c",
+          "path": "LICENSE",
+          "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d"
+        },
+        {
+          "bytes": 2136,
+          "git_blob_sha1": "5be24d98d38f765dadbe3b7c6009fcb294e82225",
+          "path": "README.md",
+          "sha256": "d5baaec3cb6e4f52c1a7a1aed1ac837295d4590c8e61bbeec534fb5df416e496"
+        }
+      ],
+      "commit": "260cee67e8344db363f7584256ae161d03abfd01",
+      "commit_body_sha256": "edba9a11f0ff5bf7e2791c492f136edc61e4e4de936b1b9ebf13d5a5ca0235ac",
+      "git_tree_sha1": "ce099fe0be62638d36ac67943bd55649f1d7f1f0",
+      "lane": "nitros",
+      "official_example_total": null,
+      "repository": "NVIDIA-ISAAC-ROS/isaac_ros_nitros",
+      "retrieval_url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nitros/tree/260cee67e8344db363f7584256ae161d03abfd01",
+      "scope": "tree",
+      "tree_body_sha256": "78225bc83d84b4e699f157b89ed53e4e2fe156de82a5f8b4f5d4d0309fc41fb8"
+    }
+  ],
+  "retrieval_tool": "tools/platform/nvidia/capture_public_sources.py"
+}

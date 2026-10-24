@@ -1,0 +1,7 @@
+# Authored bridge envelope for AuroraClient.set_move_command.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+MotionRecipe[] moves
+---
+uint32 status
+string error

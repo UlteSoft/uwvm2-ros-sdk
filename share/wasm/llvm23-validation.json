@@ -1,0 +1,3310 @@
+{
+  "schema_version": 1,
+  "cgroup": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0",
+    "path": "/sys/fs/cgroup/system.slice/docker-4dd58ad4560fde2ab9b539e4ef9cab1fac531654e99ad554aff1fce8ae0eae37.scope"
+  },
+  "compiler_version": "clang version 23.1.4 (https://github.com/llvm/llvm-project 7a941dfb2877a0b8cf30323fefa85ad019e0b0f5)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix\nInstalledDir: /hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin",
+  "runtime": "/hostoriginal-review-workspace/runtime-build/uwvm",
+  "targets": [
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "noeh",
+      "modules": [
+        {
+          "language": "c",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "args_get",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "args_sizes_get",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek",
+                "kind": 0,
+                "type_index": 4,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write",
+                "kind": 0,
+                "type_index": 5,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit",
+                "kind": 0,
+                "type_index": 6,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 0,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": false,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 1,
+                "minimum_pages": 5,
+                "maximum_pages": 5,
+                "shared": false,
+                "reference_type": 112,
+                "table64": false
+              }
+            ],
+            "tags": [],
+            "bytes": 28443,
+            "sha256": "ad0b75eebbc5fd43dfad72176030e39e946177fb522446d913c6d1c7e92d3e4a"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "cxx",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_get",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_sizes_get",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_prestat_get",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_prestat_dir_name",
+                "kind": 0,
+                "type_index": 1,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_read",
+                "kind": 0,
+                "type_index": 9,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek",
+                "kind": 0,
+                "type_index": 15,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write",
+                "kind": 0,
+                "type_index": 9,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit",
+                "kind": 0,
+                "type_index": 7,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 0,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": false,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 1,
+                "minimum_pages": 350,
+                "maximum_pages": 350,
+                "shared": false,
+                "reference_type": 112,
+                "table64": false
+              }
+            ],
+            "tags": [],
+            "bytes": 313467,
+            "sha256": "bc226fba052450817fdde73814806a03a16af7827754b0f87186ea1d429cd216"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "soft-float",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek",
+                "kind": 0,
+                "type_index": 4,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write",
+                "kind": 0,
+                "type_index": 5,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit",
+                "kind": 0,
+                "type_index": 6,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 0,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": false,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 1,
+                "minimum_pages": 5,
+                "maximum_pages": 5,
+                "shared": false,
+                "reference_type": 112,
+                "table64": false
+              }
+            ],
+            "tags": [],
+            "bytes": 4946,
+            "sha256": "7f8530bec814bdf56b111c58b2b5828eff8c9ecaef02099b8380e2cfd9c26188"
+          },
+          "runtime_pass": true
+        }
+      ],
+      "gaps": [],
+      "passed": true
+    },
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "eh",
+      "modules": [
+        {
+          "language": "c",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "args_get",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "args_sizes_get",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek",
+                "kind": 0,
+                "type_index": 4,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write",
+                "kind": 0,
+                "type_index": 5,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit",
+                "kind": 0,
+                "type_index": 6,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 0,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": false,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 1,
+                "minimum_pages": 5,
+                "maximum_pages": 5,
+                "shared": false,
+                "reference_type": 112,
+                "table64": false
+              }
+            ],
+            "tags": [],
+            "bytes": 28443,
+            "sha256": "ad0b75eebbc5fd43dfad72176030e39e946177fb522446d913c6d1c7e92d3e4a"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "cxx",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_get",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_sizes_get",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_prestat_get",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_prestat_dir_name",
+                "kind": 0,
+                "type_index": 1,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_read",
+                "kind": 0,
+                "type_index": 9,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek",
+                "kind": 0,
+                "type_index": 15,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write",
+                "kind": 0,
+                "type_index": 9,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit",
+                "kind": 0,
+                "type_index": 7,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 0,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": false,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 1,
+                "minimum_pages": 379,
+                "maximum_pages": 379,
+                "shared": false,
+                "reference_type": 112,
+                "table64": false
+              }
+            ],
+            "tags": [
+              {
+                "attribute": 0,
+                "type_index": 7,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "bytes": 342143,
+            "sha256": "f92bbe87196787778ee0f4b1854e47759f9abe6259645489e526d77992ae84e0"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "soft-float",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek",
+                "kind": 0,
+                "type_index": 4,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write",
+                "kind": 0,
+                "type_index": 5,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit",
+                "kind": 0,
+                "type_index": 6,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 0,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": false,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 1,
+                "minimum_pages": 5,
+                "maximum_pages": 5,
+                "shared": false,
+                "reference_type": 112,
+                "table64": false
+              }
+            ],
+            "tags": [],
+            "bytes": 4946,
+            "sha256": "7f8530bec814bdf56b111c58b2b5828eff8c9ecaef02099b8380e2cfd9c26188"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "exceptions",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_get",
+                "kind": 0,
+                "type_index": 9,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_sizes_get",
+                "kind": 0,
+                "type_index": 9,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close",
+                "kind": 0,
+                "type_index": 1,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek",
+                "kind": 0,
+                "type_index": 10,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write",
+                "kind": 0,
+                "type_index": 11,
+                "signature": {
+                  "parameters": [
+                    127,
+                    127,
+                    127,
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit",
+                "kind": 0,
+                "type_index": 12,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 0,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": false,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 1,
+                "minimum_pages": 29,
+                "maximum_pages": 29,
+                "shared": false,
+                "reference_type": 112,
+                "table64": false
+              }
+            ],
+            "tags": [
+              {
+                "attribute": 0,
+                "type_index": 12,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "bytes": 46026,
+            "sha256": "8e0288ee3614b736a57295bfb8d105292d85d34aee11b48fa7b50a0901d889d8"
+          },
+          "runtime_pass": true
+        }
+      ],
+      "gaps": [],
+      "passed": true
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "noeh",
+      "modules": [
+        {
+          "language": "c",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "args_get_wasm64",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "args_sizes_get_wasm64",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close_wasm64",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get_wasm64",
+                "kind": 0,
+                "type_index": 4,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek_wasm64",
+                "kind": 0,
+                "type_index": 5,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 6,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 7,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 5,
+                "maximum_pages": 5,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [],
+            "bytes": 32656,
+            "sha256": "ef0346e294b65ecabee6e5f2d9dff0d85eab554a630c887e5aece722e38f480d"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "cxx",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_get_wasm64",
+                "kind": 0,
+                "type_index": 20,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_sizes_get_wasm64",
+                "kind": 0,
+                "type_index": 20,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close_wasm64",
+                "kind": 0,
+                "type_index": 21,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get_wasm64",
+                "kind": 0,
+                "type_index": 22,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_prestat_get_wasm64",
+                "kind": 0,
+                "type_index": 22,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_prestat_dir_name_wasm64",
+                "kind": 0,
+                "type_index": 23,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_read_wasm64",
+                "kind": 0,
+                "type_index": 24,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek_wasm64",
+                "kind": 0,
+                "type_index": 25,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 24,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 26,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 350,
+                "maximum_pages": 350,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [],
+            "bytes": 341734,
+            "sha256": "3509334464a89fe9def77b05d125365c6faf769cfbf3e462779791c5f1741659"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "soft-float",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close_wasm64",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get_wasm64",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek_wasm64",
+                "kind": 0,
+                "type_index": 4,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 5,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 6,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 5,
+                "maximum_pages": 5,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [],
+            "bytes": 5465,
+            "sha256": "29e0cc44a53385760808c2db6de7a10e6f502d6d7381326415f1bf71e347d6c7"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "high-address",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 1,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 1,
+                "maximum_pages": 1,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [],
+            "bytes": 1926,
+            "sha256": "bcfcf06835138a9d365465c727909c0d6ed9be5c70e69f26d4bdc5c61be6b33b"
+          },
+          "runtime_pass": true
+        }
+      ],
+      "gaps": [],
+      "passed": true
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "eh",
+      "modules": [
+        {
+          "language": "c",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "args_get_wasm64",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "args_sizes_get_wasm64",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close_wasm64",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get_wasm64",
+                "kind": 0,
+                "type_index": 4,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek_wasm64",
+                "kind": 0,
+                "type_index": 5,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 6,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 7,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 5,
+                "maximum_pages": 5,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [],
+            "bytes": 32656,
+            "sha256": "ef0346e294b65ecabee6e5f2d9dff0d85eab554a630c887e5aece722e38f480d"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "cxx",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_get_wasm64",
+                "kind": 0,
+                "type_index": 22,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_sizes_get_wasm64",
+                "kind": 0,
+                "type_index": 22,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close_wasm64",
+                "kind": 0,
+                "type_index": 23,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get_wasm64",
+                "kind": 0,
+                "type_index": 24,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_prestat_get_wasm64",
+                "kind": 0,
+                "type_index": 24,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_prestat_dir_name_wasm64",
+                "kind": 0,
+                "type_index": 25,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_read_wasm64",
+                "kind": 0,
+                "type_index": 26,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek_wasm64",
+                "kind": 0,
+                "type_index": 27,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 26,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 28,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 379,
+                "maximum_pages": 379,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [
+              {
+                "attribute": 0,
+                "type_index": 9,
+                "signature": {
+                  "parameters": [
+                    126
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "bytes": 370824,
+            "sha256": "6dfc9dee27f2002421ac63088d9247577c077fba84b13982254fed9febc5a8ee"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "soft-float",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close_wasm64",
+                "kind": 0,
+                "type_index": 2,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_fdstat_get_wasm64",
+                "kind": 0,
+                "type_index": 3,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek_wasm64",
+                "kind": 0,
+                "type_index": 4,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 5,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 6,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 5,
+                "maximum_pages": 5,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [],
+            "bytes": 5465,
+            "sha256": "29e0cc44a53385760808c2db6de7a10e6f502d6d7381326415f1bf71e347d6c7"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "exceptions",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_get_wasm64",
+                "kind": 0,
+                "type_index": 10,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "environ_sizes_get_wasm64",
+                "kind": 0,
+                "type_index": 10,
+                "signature": {
+                  "parameters": [
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_close_wasm64",
+                "kind": 0,
+                "type_index": 11,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_seek_wasm64",
+                "kind": 0,
+                "type_index": 12,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    127,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 13,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 14,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 29,
+                "maximum_pages": 29,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [
+              {
+                "attribute": 0,
+                "type_index": 16,
+                "signature": {
+                  "parameters": [
+                    126
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "bytes": 51919,
+            "sha256": "549205f840c1fc5c8d2a6fb74c5389120b8b89c0b954b799a7e91d51f9806d14"
+          },
+          "runtime_pass": true
+        },
+        {
+          "language": "high-address",
+          "abi": {
+            "imports": [
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "fd_write_wasm64",
+                "kind": 0,
+                "type_index": 0,
+                "signature": {
+                  "parameters": [
+                    127,
+                    126,
+                    126,
+                    126
+                  ],
+                  "results": [
+                    127
+                  ]
+                }
+              },
+              {
+                "module": "wasi_snapshot_preview1",
+                "name": "proc_exit_wasm64",
+                "kind": 0,
+                "type_index": 1,
+                "signature": {
+                  "parameters": [
+                    127
+                  ],
+                  "results": []
+                }
+              }
+            ],
+            "memories": [
+              {
+                "flags": 4,
+                "minimum_pages": 2,
+                "maximum_pages": null,
+                "memory64": true,
+                "shared": false
+              }
+            ],
+            "tables": [
+              {
+                "flags": 5,
+                "minimum_pages": 1,
+                "maximum_pages": 1,
+                "shared": false,
+                "reference_type": 112,
+                "table64": true
+              }
+            ],
+            "tags": [],
+            "bytes": 1926,
+            "sha256": "bcfcf06835138a9d365465c727909c0d6ed9be5c70e69f26d4bdc5c61be6b33b"
+          },
+          "runtime_pass": true
+        }
+      ],
+      "gaps": [],
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "wasm32-wasip1-noeh-c-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/hello.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/c.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-c-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/c.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/c.o\nFormat: WASM\nArch: wasm32\nAddressSize: 32bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-c-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/c.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-c-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/c.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA      Type\n  0 TYPE            00000052 0000000a \n  1 IMPORT          000000fa 0000005f \n  2 FUNCTION        00000036 0000015b \n  3 TABLE           00000005 00000193 \n  4 MEMORY          00000003 0000019a \n  5 GLOBAL          0000000d 0000019f \n  6 EXPORT          00000013 000001ae \n  7 ELEM            0000000a 000001c3 \n  8 CODE            00005db4 000001d1 TEXT\n  9 DATA            00000a85 00005f88 DATA\n 10 name            000003f7 00006a10 \n 11 producers       0000006c 00006e0e \n 12 target_features 00000084 00006e87 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-c-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI C hello pointer_bits=32 argc=1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-cxx-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fno-exceptions",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/hello.cpp",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/cxx.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-cxx-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/cxx.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/cxx.o\nFormat: WASM\nArch: wasm32\nAddressSize: 32bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-cxx-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fno-exceptions",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/cxx.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-cxx-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/cxx.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA      Type\n  0 TYPE            00000183 0000000b \n  1 IMPORT          00000176 00000191 \n  2 FUNCTION        00000278 0000030a \n  3 TABLE           00000007 00000584 \n  4 MEMORY          00000003 0000058d \n  5 GLOBAL          0000000d 00000592 \n  6 EXPORT          00000013 000005a1 \n  7 ELEM            0000027d 000005b7 \n  8 CODE            00037789 00000838 TEXT\n  9 DATA            000038e5 00037fc4 DATA\n 10 name            00010eba 0003b8ad \n 11 producers       0000006c 0004c76e \n 12 target_features 00000084 0004c7e7 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-cxx-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI C++ hello pointer_bits=32 sum=5\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-soft-float-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/soft_float.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/soft-float.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-soft-float-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/soft-float.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/soft-float.o\nFormat: WASM\nArch: wasm32\nAddressSize: 32bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-soft-float-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/soft-float.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-soft-float-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/soft-float.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA      Type\n  0 TYPE            0000003d 0000000a \n  1 IMPORT          000000b0 0000004a \n  2 FUNCTION        0000001f 000000fc \n  3 TABLE           00000005 0000011d \n  4 MEMORY          00000003 00000124 \n  5 GLOBAL          0000000d 00000129 \n  6 EXPORT          00000013 00000138 \n  7 ELEM            0000000a 0000014d \n  8 CODE            00000d77 0000015a TEXT\n  9 DATA            000000ae 00000ed4 DATA\n 10 name            000002b9 00000f85 \n 11 producers       0000006c 00001245 \n 12 target_features 00000084 000012be \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-noeh-soft-float-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-noeh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI long_double128 compare\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-c-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/hello.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/c.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-c-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/c.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/c.o\nFormat: WASM\nArch: wasm32\nAddressSize: 32bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-c-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/c.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-c-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/c.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA      Type\n  0 TYPE            00000052 0000000a \n  1 IMPORT          000000fa 0000005f \n  2 FUNCTION        00000036 0000015b \n  3 TABLE           00000005 00000193 \n  4 MEMORY          00000003 0000019a \n  5 GLOBAL          0000000d 0000019f \n  6 EXPORT          00000013 000001ae \n  7 ELEM            0000000a 000001c3 \n  8 CODE            00005db4 000001d1 TEXT\n  9 DATA            00000a85 00005f88 DATA\n 10 name            000003f7 00006a10 \n 11 producers       0000006c 00006e0e \n 12 target_features 00000084 00006e87 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-c-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI C hello pointer_bits=32 argc=1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-cxx-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "-mllvm",
+        "-wasm-use-legacy-eh=false",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/hello.cpp",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/cxx.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-cxx-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/cxx.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/cxx.o\nFormat: WASM\nArch: wasm32\nAddressSize: 32bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-cxx-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/cxx.o",
+        "-rtlib=compiler-rt",
+        "-lunwind",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-cxx-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/cxx.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA      Type\n  0 TYPE            00000183 0000000b \n  1 IMPORT          00000176 00000191 \n  2 FUNCTION        000002de 0000030a \n  3 TABLE           00000007 000005ea \n  4 MEMORY          00000003 000005f3 \n  5 TAG             00000003 000005f8 \n  6 GLOBAL          0000000d 000005fd \n  7 EXPORT          00000013 0000060c \n  8 ELEM            000002c1 00000622 \n  9 CODE            0003c110 000008e7 TEXT\n 10 DATA            00003b65 0003c9fa DATA\n 11 name            000131f4 00040563 \n 12 producers       0000006c 0005375e \n 13 target_features 00000098 000537d7 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-cxx-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI C++ hello pointer_bits=32 sum=5\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-soft-float-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/soft_float.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/soft-float.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-soft-float-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/soft-float.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/soft-float.o\nFormat: WASM\nArch: wasm32\nAddressSize: 32bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-soft-float-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/soft-float.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-soft-float-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/soft-float.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA      Type\n  0 TYPE            0000003d 0000000a \n  1 IMPORT          000000b0 0000004a \n  2 FUNCTION        0000001f 000000fc \n  3 TABLE           00000005 0000011d \n  4 MEMORY          00000003 00000124 \n  5 GLOBAL          0000000d 00000129 \n  6 EXPORT          00000013 00000138 \n  7 ELEM            0000000a 0000014d \n  8 CODE            00000d77 0000015a TEXT\n  9 DATA            000000ae 00000ed4 DATA\n 10 name            000002b9 00000f85 \n 11 producers       0000006c 00001245 \n 12 target_features 00000084 000012be \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-soft-float-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI long_double128 compare\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-exceptions-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "-mllvm",
+        "-wasm-use-legacy-eh=false",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/exceptions.cpp",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/exceptions.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-exceptions-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/exceptions.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/exceptions.o\nFormat: WASM\nArch: wasm32\nAddressSize: 32bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-exceptions-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm32-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm32-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/exceptions.o",
+        "-rtlib=compiler-rt",
+        "-lunwind",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/exceptions.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-exceptions-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/exceptions.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/exceptions.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA      Type\n  0 TYPE            00000085 0000000b \n  1 IMPORT          000000d9 00000093 \n  2 FUNCTION        00000083 0000016f \n  3 TABLE           00000005 000001f4 \n  4 MEMORY          00000003 000001fb \n  5 TAG             00000003 00000200 \n  6 GLOBAL          0000000d 00000205 \n  7 EXPORT          00000013 00000214 \n  8 ELEM            00000022 00000229 \n  9 CODE            00008f56 0000024f TEXT\n 10 DATA            00001075 000091a8 DATA\n 11 name            00001082 0000a220 \n 12 producers       0000006c 0000b2a9 \n 13 target_features 00000098 0000b322 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm32-wasip1-eh-exceptions-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm32-wasip1-eh/exceptions.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-c-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/hello.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/c.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-c-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/c.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/c.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-c-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/c.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-c-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/c.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            000000a0 000000000000000b \n  1 IMPORT          0000012b 00000000000000ae \n  2 FUNCTION        00000037 00000000000001db \n  3 TABLE           00000005 0000000000000214 \n  4 MEMORY          00000003 000000000000021b \n  5 GLOBAL          0000000d 0000000000000220 \n  6 EXPORT          00000013 000000000000022f \n  7 ELEM            0000000a 0000000000000244 \n  8 CODE            00006d00 0000000000000252 TEXT\n  9 DATA            00000b19 0000000000006f55 DATA\n 10 name            00000401 0000000000007a71 \n 11 producers       0000006c 0000000000007e79 \n 12 target_features 0000008e 0000000000007ef2 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-c-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI C hello pointer_bits=64 argc=1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-cxx-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fno-exceptions",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/hello.cpp",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/cxx.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-cxx-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/cxx.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/cxx.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-cxx-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fno-exceptions",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/cxx.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-cxx-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/cxx.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            00000287 000000000000000b \n  1 IMPORT          000001bc 0000000000000295 \n  2 FUNCTION        00000277 0000000000000454 \n  3 TABLE           00000007 00000000000006cd \n  4 MEMORY          00000003 00000000000006d6 \n  5 GLOBAL          0000000d 00000000000006db \n  6 EXPORT          00000013 00000000000006ea \n  7 ELEM            0000027d 0000000000000700 \n  8 CODE            0003d2d7 0000000000000981 TEXT\n  9 DATA            00004b32 000000000003dc5c DATA\n 10 name            00010e36 0000000000042792 \n 11 producers       0000006c 00000000000535cf \n 12 target_features 0000008e 0000000000053648 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-cxx-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI C++ hello pointer_bits=64 sum=5\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-soft-float-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/soft_float.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/soft-float.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-soft-float-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/soft-float.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/soft-float.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-soft-float-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/soft-float.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-soft-float-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/soft-float.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            00000066 000000000000000a \n  1 IMPORT          000000d3 0000000000000073 \n  2 FUNCTION        0000001f 0000000000000148 \n  3 TABLE           00000005 0000000000000169 \n  4 MEMORY          00000003 0000000000000170 \n  5 GLOBAL          0000000d 0000000000000175 \n  6 EXPORT          00000013 0000000000000184 \n  7 ELEM            0000000a 0000000000000199 \n  8 CODE            00000edb 00000000000001a6 TEXT\n  9 DATA            000000fb 0000000000001084 DATA\n 10 name            000002b9 0000000000001182 \n 11 producers       0000006c 0000000000001442 \n 12 target_features 0000008e 00000000000014bb \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-soft-float-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI long_double128 compare\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-high-address-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/memory64_high_address.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/high-address.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/memory64_high_address.c:19:37: warning: initializing 'const uint8_t *' (aka 'const unsigned char *') with an expression of type 'char *const' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]\n   19 |     __wasi_ciovec_t const vector = {message, strlen(message)};\n      |                                     ^~~~~~~\n1 warning generated.\n"
+    },
+    {
+      "name": "wasm64-wasip1-noeh-high-address-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/high-address.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/high-address.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-high-address-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/noeh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/high-address.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/high-address.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-high-address-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/high-address.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/high-address.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            00000019 000000000000000a \n  1 IMPORT          00000054 0000000000000025 \n  2 FUNCTION        0000000a 000000000000007b \n  3 TABLE           00000005 0000000000000087 \n  4 MEMORY          00000003 000000000000008e \n  5 GLOBAL          0000000d 0000000000000093 \n  6 EXPORT          00000013 00000000000000a2 \n  7 CODE            00000447 00000000000000b8 TEXT\n  8 DATA            0000003c 0000000000000501 DATA\n  9 name            00000128 0000000000000540 \n 10 producers       0000006c 000000000000066f \n 11 target_features 0000008e 00000000000006e8 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-noeh-high-address-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-noeh/high-address.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI memory64 address_above_4GiB\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-c-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/hello.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/c.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-c-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/c.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/c.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-c-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/c.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-c-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/c.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            000000a0 000000000000000b \n  1 IMPORT          0000012b 00000000000000ae \n  2 FUNCTION        00000037 00000000000001db \n  3 TABLE           00000005 0000000000000214 \n  4 MEMORY          00000003 000000000000021b \n  5 GLOBAL          0000000d 0000000000000220 \n  6 EXPORT          00000013 000000000000022f \n  7 ELEM            0000000a 0000000000000244 \n  8 CODE            00006d00 0000000000000252 TEXT\n  9 DATA            00000b19 0000000000006f55 DATA\n 10 name            00000401 0000000000007a71 \n 11 producers       0000006c 0000000000007e79 \n 12 target_features 0000008e 0000000000007ef2 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-c-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/c.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI C hello pointer_bits=64 argc=1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-cxx-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "-mllvm",
+        "-wasm-use-legacy-eh=false",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/hello.cpp",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/cxx.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-cxx-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/cxx.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/cxx.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-cxx-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/cxx.o",
+        "-rtlib=compiler-rt",
+        "-lunwind",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-cxx-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/cxx.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            00000299 000000000000000b \n  1 IMPORT          000001bc 00000000000002a7 \n  2 FUNCTION        000002dd 0000000000000466 \n  3 TABLE           00000007 0000000000000745 \n  4 MEMORY          00000003 000000000000074e \n  5 TAG             00000003 0000000000000753 \n  6 GLOBAL          0000000d 0000000000000758 \n  7 EXPORT          00000013 0000000000000767 \n  8 ELEM            000002c1 000000000000077d \n  9 CODE            00041c82 0000000000000a42 TEXT\n 10 DATA            00004f1a 00000000000426c8 DATA\n 11 name            00013170 00000000000475e6 \n 12 producers       0000006c 000000000005a75d \n 13 target_features 000000a2 000000000005a7d6 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-cxx-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/cxx.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI C++ hello pointer_bits=64 sum=5\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-soft-float-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/soft_float.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/soft-float.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-soft-float-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/soft-float.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/soft-float.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-soft-float-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/soft-float.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-soft-float-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/soft-float.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            00000066 000000000000000a \n  1 IMPORT          000000d3 0000000000000073 \n  2 FUNCTION        0000001f 0000000000000148 \n  3 TABLE           00000005 0000000000000169 \n  4 MEMORY          00000003 0000000000000170 \n  5 GLOBAL          0000000d 0000000000000175 \n  6 EXPORT          00000013 0000000000000184 \n  7 ELEM            0000000a 0000000000000199 \n  8 CODE            00000edb 00000000000001a6 TEXT\n  9 DATA            000000fb 0000000000001084 DATA\n 10 name            000002b9 0000000000001182 \n 11 producers       0000006c 0000000000001442 \n 12 target_features 0000008e 00000000000014bb \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-soft-float-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/soft-float.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI long_double128 compare\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-exceptions-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "-mllvm",
+        "-wasm-use-legacy-eh=false",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/exceptions.cpp",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/exceptions.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-exceptions-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/exceptions.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/exceptions.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-exceptions-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang++",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/exceptions.o",
+        "-rtlib=compiler-rt",
+        "-lunwind",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/exceptions.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-exceptions-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/exceptions.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/exceptions.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            000000ee 000000000000000b \n  1 IMPORT          00000103 00000000000000fc \n  2 FUNCTION        00000084 0000000000000202 \n  3 TABLE           00000005 0000000000000288 \n  4 MEMORY          00000003 000000000000028f \n  5 TAG             00000003 0000000000000294 \n  6 GLOBAL          0000000d 0000000000000299 \n  7 EXPORT          00000013 00000000000002a8 \n  8 ELEM            00000022 00000000000002bd \n  9 CODE            0000a406 00000000000002e3 TEXT\n 10 DATA            00001221 000000000000a6ec DATA\n 11 name            0000108d 000000000000b910 \n 12 producers       0000006c 000000000000c9a4 \n 13 target_features 000000a2 000000000000ca1d \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-exceptions-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/exceptions.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-high-address-compile",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "-c",
+        "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/memory64_high_address.c",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/high-address.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/smoke/memory64_high_address.c:19:37: warning: initializing 'const uint8_t *' (aka 'const unsigned char *') with an expression of type 'char *const' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]\n   19 |     __wasi_ciovec_t const vector = {message, strlen(message)};\n      |                                     ^~~~~~~\n1 warning generated.\n"
+    },
+    {
+      "name": "wasm64-wasip1-eh-high-address-object-abi",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-readobj",
+        "--file-headers",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/high-address.o"
+      ],
+      "exit_code": 0,
+      "stdout": "\nFile: /hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/high-address.o\nFormat: WASM\nArch: wasm64\nAddressSize: 64bit\nVersion: 0x1\n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-high-address-link",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+        "--target=wasm64-wasip1",
+        "--sysroot=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/wasm/llvm23/eh/wasm64-wasip1",
+        "-resource-dir=/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/lib/language/cfamily/clang/23",
+        "-O2",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/high-address.o",
+        "-rtlib=compiler-rt",
+        "-Wl,--fatal-warnings",
+        "-o",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/high-address.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-high-address-sections",
+      "argv": [
+        "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/llvm-objdump",
+        "-h",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/high-address.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "\n/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/high-address.wasm:\tfile format wasm\n\nSections:\nIdx Name            Size     VMA              Type\n  0 TYPE            00000019 000000000000000a \n  1 IMPORT          00000054 0000000000000025 \n  2 FUNCTION        0000000a 000000000000007b \n  3 TABLE           00000005 0000000000000087 \n  4 MEMORY          00000003 000000000000008e \n  5 GLOBAL          0000000d 0000000000000093 \n  6 EXPORT          00000013 00000000000000a2 \n  7 CODE            00000447 00000000000000b8 TEXT\n  8 DATA            0000003c 0000000000000501 DATA\n  9 name            00000128 0000000000000540 \n 10 producers       0000006c 000000000000066f \n 11 target_features 0000008e 00000000000006e8 \n",
+      "stderr": ""
+    },
+    {
+      "name": "wasm64-wasip1-eh-high-address-run",
+      "argv": [
+        "/hostoriginal-review-workspace/runtime-build/uwvm",
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasm-feature-enable-exceptions",
+        "--wasip1-global-noinherit-system-environment",
+        "--run",
+        "/hostoriginal-review-workspace/llvm23-sysroots/acceptance-final/wasm64-wasip1-eh/high-address.wasm"
+      ],
+      "exit_code": 0,
+      "stdout": "LLVM23 WASI memory64 address_above_4GiB\n",
+      "stderr": ""
+    }
+  ],
+  "passed": true,
+  "original_provenance_sha256": "b6804fc259d7742edf0da8528db04c4f0fe58c42ed7097bea04ec8ddb36e9e46",
+  "path_scope": "Historical provenance paths are labels, not installation dependencies."
+}

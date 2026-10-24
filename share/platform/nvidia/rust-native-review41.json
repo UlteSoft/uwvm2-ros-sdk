@@ -1,0 +1,203 @@
+{
+  "schema": "nvidia-genuine-Rust-final-source-native-review41-v1",
+  "shared_lock_revision": 6,
+  "final_record_sources": [
+    {
+      "path": "include/platform/nvidia-groot/rs/ros2/complete/records.rs",
+      "bytes": 89415,
+      "sha256": "9f67ef909fbe228c16e89460a4ffc844568309b576e5fe229a03185786059ebf"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/rs/ros2/complete/records.rs",
+      "bytes": 53284,
+      "sha256": "29d8dc295a273713d6bde727e672b90bff6dec89182061d58d376dbcef93b322"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/rs/ros2/complete/records.rs",
+      "bytes": 46125,
+      "sha256": "a54b0d119745ccc14f57bb1a3bbc0b8943c6bf521ae98ee17c754231261b401f"
+    }
+  ],
+  "genuine_compiled_applications": 12,
+  "cold_build_batches": 4,
+  "unique_component_language_graphs": 3,
+  "build_required_native_ROS": false,
+  "frontend": {
+    "version": "1.87.0",
+    "compiler_owned_LLVM_backend": "20.1.1",
+    "external_LLVM_linker": "23.1.4",
+    "archive_sha256": "010f2c8c9e610a73c1fd39f896b626b9e0676716c44aa81b7d31842ca6cada88",
+    "manifest_sha256": "399a188bee4e559bd7ee6c8ae8b5f1c89318c4a4e6d8a649f596a69584a906ae"
+  },
+  "CPU": {
+    "applications": 9,
+    "actual_cases": 30,
+    "positive": 18,
+    "malformed_refusals": 12,
+    "architectures": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "ROS_enabled": false
+  },
+  "native_original_Array": {
+    "applications": 3,
+    "actual_cases": 12,
+    "positive": 6,
+    "permission_refusals": 6,
+    "independent_native_echo_messages": 40,
+    "detections_per_message": 2,
+    "covariance_values_per_message": 72,
+    "architectures": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray",
+    "identity": "RIHS01_45595f343aa66856ae56aee87f959a0b0ceed2132b038a7f6c6d24be707bcbff",
+    "codec_identity": "UWVMROS1_60359e405aedd2a627e60bc35e849989fe5ed1d426afb2a884036aef93bfe0a5"
+  },
+  "manual_WASI_grants": [
+    "monotonic-clock"
+  ],
+  "normal_cleanup": true,
+  "reports": {
+    "CPU_build_sha256": "e34ea63ad8a575102887025b3ced433b837110fa56dde3a9e9c29f469d7b1fcb",
+    "native_build_sha256": "734e4c41c6636c8478b730b57ff53bfb97af8855af22bd4b2498224a84344fd6",
+    "CPU_execution_sha256": "66a2108e315240b882d8f681e35888ea16f877844e4fb18fc9d05fb1e50e0028",
+    "native_execution_sha256": "54ad61df42380137b529e862c2564fdf4f95a819e85cfbf073680b3f3566c572"
+  },
+  "producer_manifests": [
+    "436397ac67d58d2883252a162701f99322b7b7086b0515d97b824b6a528a4d95",
+    "c9b4890d3b67c10bd1115ca51207729c5c0e64ce0c224d963cb67b7910ff2531",
+    "41a56862cef225acf52f16a122e15ed613aeebb7126614e0012d4338e0bd5b22",
+    "caf43601cfeebd7506dcf5d4ac5a702e6f64e3fb6d36e26bea6e16307874dfed"
+  ],
+  "wasm64": "Explicit pinned-action refusal; unqualified",
+  "library_interoperation": "Unqualified",
+  "all_catalog_native_types": false,
+  "GPU_NITROS": false,
+  "ARM_compiler_host": false,
+  "products": [
+    {
+      "component": "nvidia-groot",
+      "operation": "roundtrip",
+      "SDK_project": "example/platform/nvidia-groot/rs/ros2/roundtrip",
+      "architecture": "wasm32",
+      "source_sha256": "4d6f8f17518fbb57884fd4c350cb3174e99ff4f55251a213264c90dc86c51865",
+      "xmake_sha256": "a1d51fbe32929f24677106f5812f14399071c7081bcc76d93d82dcd335f2df5d",
+      "bytes": 1759887,
+      "sha256": "bec179d24d08122dd78510cb7c82a20f52c8e382c5fb270eb12de2576c152070"
+    },
+    {
+      "component": "nvidia-groot",
+      "operation": "decode_argument",
+      "SDK_project": "example/platform/nvidia-groot/rs/ros2/decode_argument",
+      "architecture": "wasm32",
+      "source_sha256": "98f9dd434c5a962fb80cfe3127362a151f0927854a0f5ae0a23353d7871a3e6b",
+      "xmake_sha256": "a1fd1953a7eeec18f5bacdc1e498a54d7666e57ab06afd2ca3e1533d3bfb7282",
+      "bytes": 1759448,
+      "sha256": "48577f3e0f5e70386bacce8cc2a1f8b8c72eafd3c362b2789cb519d9ad82f14f"
+    },
+    {
+      "component": "nvidia-groot",
+      "operation": "malformed_wire",
+      "SDK_project": "example/platform/nvidia-groot/rs/ros2/malformed_wire",
+      "architecture": "wasm32",
+      "source_sha256": "65389c2766c51aac3f178e7e2aeda49779f6549683845aeae952d3fadabae55e",
+      "xmake_sha256": "8bb9a2be6a41167c9aae8f12634c7c3e2480e315f9d43d6f35d1730cc52af3eb",
+      "bytes": 1760774,
+      "sha256": "98cb88efd2db3027cd8eca4e52f3395881f80d6e45b402765969c613131690f8"
+    },
+    {
+      "component": "nvidia-isaac-ros",
+      "operation": "roundtrip",
+      "SDK_project": "example/platform/nvidia-isaac-ros/rs/ros2/roundtrip",
+      "architecture": "wasm32",
+      "source_sha256": "a32a9c2cded1a23480a10d6cf7f0f3d92fb961b4fcc2d80c1a14edc7c1d60717",
+      "xmake_sha256": "4e51296d772d3f4fb0796c95bb499bbd84934dba8c031e442f73e779044f5c05",
+      "bytes": 1773662,
+      "sha256": "f1d6d805ca4e1c6087e4137d7042b85d5a0325e427d759fb9decc673926cbec9"
+    },
+    {
+      "component": "nvidia-isaac-ros",
+      "operation": "decode_argument",
+      "SDK_project": "example/platform/nvidia-isaac-ros/rs/ros2/decode_argument",
+      "architecture": "wasm32",
+      "source_sha256": "ba0c27e27a27f0f8ab83faa25da2890945d8d1821fb9fcbc2ba56dd302905b0e",
+      "xmake_sha256": "10652f816e0ec4589c81cc76344653cf5eafe172b541e8c884ccb47d22866c0a",
+      "bytes": 1768516,
+      "sha256": "a49039dc64ab5ae84e7d490be90ce3d3ced0873d59a961881110fbcc278aacda"
+    },
+    {
+      "component": "nvidia-isaac-ros",
+      "operation": "malformed_wire",
+      "SDK_project": "example/platform/nvidia-isaac-ros/rs/ros2/malformed_wire",
+      "architecture": "wasm32",
+      "source_sha256": "06ad5a42edb723620a8dbd9a17815c4af163f02c30ed7681557527345a92ca71",
+      "xmake_sha256": "763536ccd48063057b876c6c08efd7dc858d504d14dbfdb93882c81c0f228359",
+      "bytes": 1774650,
+      "sha256": "a5df49f5ed9d3b4ca797cdba4abedfdcfd3ff435e70c3a4502d3343a9e2dd38b"
+    },
+    {
+      "component": "nvidia-isaac-sim",
+      "operation": "roundtrip",
+      "SDK_project": "example/platform/nvidia-isaac-sim/rs/ros2/roundtrip",
+      "architecture": "wasm32",
+      "source_sha256": "789c4479fa4cd4fb1a722b28898d0b7cefaada7c0322b9841d55114b6aaef334",
+      "xmake_sha256": "e9917f32c0596fc20bd11e604bbce29c86d591fb63ab6e457ec730c5e3264f6c",
+      "bytes": 1765730,
+      "sha256": "7d436e610322f1bf6ee3141f689da0de616c443cad92ca4f1d6983ec6dfd1fa9"
+    },
+    {
+      "component": "nvidia-isaac-sim",
+      "operation": "decode_argument",
+      "SDK_project": "example/platform/nvidia-isaac-sim/rs/ros2/decode_argument",
+      "architecture": "wasm32",
+      "source_sha256": "d8b4b586eebdb214341ae9addcf0c507c63f44ed74301a8dadc752185660e4f7",
+      "xmake_sha256": "dffab777180681f250625d733765d1648303ef31bf8d46addb570a42cc0350ff",
+      "bytes": 1764811,
+      "sha256": "c154a49f617921130ffa0aa61ad9954837964e302ef921324b0c94b96d6e364f"
+    },
+    {
+      "component": "nvidia-isaac-sim",
+      "operation": "malformed_wire",
+      "SDK_project": "example/platform/nvidia-isaac-sim/rs/ros2/malformed_wire",
+      "architecture": "wasm32",
+      "source_sha256": "d29a2781485159c52450584609c6b93c8ce9baf970b849ed4c8de6f2034841cb",
+      "xmake_sha256": "ebe171a6a7ea3a32a4d126f26f8c723d53507ae6bb3fb66474f4a2ae1a546ab9",
+      "bytes": 1766711,
+      "sha256": "b85214c37daeee6108308edd7b9abc49294b2afe0b7fc380c8c4ae7a439da8cd"
+    },
+    {
+      "component": "nvidia-isaac-ros",
+      "operation": "original_array_receive",
+      "SDK_project": "example/platform/nvidia-isaac-ros/rs/ros2/original_array_receive",
+      "architecture": "wasm32",
+      "source_sha256": "5c335de80fe7aafcfa5640e6fad8b130d8002b855d93b879bb63b0eb8c44f8ff",
+      "xmake_sha256": "116e4b0305223520b9485bd8a02dc1dc851ce0a2a2fb551d71fd18d628b60933",
+      "bytes": 1773014,
+      "sha256": "1735d4ee4d8b342b616c417a6759d66c5d2099803a29e66a89a6a8813bf066ff"
+    },
+    {
+      "component": "nvidia-isaac-ros",
+      "operation": "original_array_echo",
+      "SDK_project": "example/platform/nvidia-isaac-ros/rs/ros2/original_array_echo",
+      "architecture": "wasm32",
+      "source_sha256": "b9057b6321647bab9b79c5619f4fd922341851e3ed7a3f793addedc5a1a38921",
+      "xmake_sha256": "b8c90eadeeb7bb899eb813dff0c2cc1a1a3bfdd78e2b023be9bcbe41d83247aa",
+      "bytes": 1774422,
+      "sha256": "b066cfaedc84d478a5e94fd7a5edf608deaa9e125bb3a5d966bd52d57bd8da38"
+    },
+    {
+      "component": "nvidia-isaac-ros",
+      "operation": "original_array_revoke",
+      "SDK_project": "example/platform/nvidia-isaac-ros/rs/ros2/original_array_revoke",
+      "architecture": "wasm32",
+      "source_sha256": "b027401e5cddc287120ede8834710320bab5884bf2783382b9747376a04755e9",
+      "xmake_sha256": "9963d7c38fea949a95a6116af8cf734efb5ec2881f2343dd90e543c497656d11",
+      "bytes": 1773732,
+      "sha256": "f406b716eae795c0c064f5bf1cb63945b45e1606148ea112b95a1bb20c36a68d"
+    }
+  ],
+  "overall": "partial"
+}

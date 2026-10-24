@@ -1,0 +1,29 @@
+{
+  "schema": "task07-fanuc-original-sine-source-selection-v1",
+  "status": "PRIVATE_PASS_PUBLICATION_PENDING",
+  "upstream_program": {
+    "repository": "FANUC-CORPORATION/fanuc_driver",
+    "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+    "path": "fanuc_hardware_interface/examples/send_trajectory.py",
+    "sha256": "622d2c41f07f061391c868cb34f8d493b1ebbcae360345bd821063a932ea3380"
+  },
+  "source_definition_lock": "../ros2/source-lock.json",
+  "original_definition_bodies_unchanged": true,
+  "existing_eight_point_domain_modified": false,
+  "trajectory_points": 1001,
+  "joint_capacity": 12,
+  "requested_finite_generator_limits": {
+    "wire_bytes": 524288,
+    "nodes_per_record": 65536,
+    "total_nodes": 131072
+  },
+  "public_family_published": false,
+  "private_checks": {
+    "full_sine_r4": "14/14;12012 scalars;arithmetic AST only",
+    "xmake_c_r1": "build/validate/import passed;no native publication"
+  },
+  "native_bound": false,
+  "official_example_parity": false,
+  "default_authority": [],
+  "complete_platform_support": false
+}

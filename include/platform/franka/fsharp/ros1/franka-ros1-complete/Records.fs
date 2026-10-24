@@ -1,0 +1,43 @@
+namespace Franka.ros1
+
+/// @brief Full typed .NET records shared with the selected C# library.
+type Ros1Franka_example_controllersJointTorqueComparison =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_example_controllersJointTorqueComparison
+type Ros1Franka_gripperGraspEpsilon = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperGraspEpsilon
+type Ros1Franka_gripperGraspGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperGraspGoal
+type Ros1Franka_gripperGraspResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperGraspResult
+type Ros1Franka_gripperGraspFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperGraspFeedback
+type Ros1Franka_gripperHomingGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperHomingGoal
+type Ros1Franka_gripperHomingResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperHomingResult
+type Ros1Franka_gripperHomingFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperHomingFeedback
+type Ros1Franka_gripperMoveGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperMoveGoal
+type Ros1Franka_gripperMoveResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperMoveResult
+type Ros1Franka_gripperMoveFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperMoveFeedback
+type Ros1Franka_gripperStopGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperStopGoal
+type Ros1Franka_gripperStopResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperStopResult
+type Ros1Franka_gripperStopFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperStopFeedback
+type Ros1Franka_msgsErrorRecoveryGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsErrorRecoveryGoal
+type Ros1Franka_msgsErrorRecoveryResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsErrorRecoveryResult
+type Ros1Franka_msgsErrorRecoveryFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsErrorRecoveryFeedback
+type Ros1Franka_msgsErrors = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsErrors
+type Ros1Time = Uwvm.Franka.ros1.BoundedRecords._Ros1Time
+type Ros1Std_msgsHeader = Uwvm.Franka.ros1.BoundedRecords._Ros1Std_msgsHeader
+type Ros1Franka_msgsFrankaState = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsFrankaState
+type Ros1Franka_msgsSetCartesianImpedanceRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetCartesianImpedanceRequest
+type Ros1Franka_msgsSetCartesianImpedanceResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetCartesianImpedanceResponse
+type Ros1Franka_msgsSetEEFrameRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetEEFrameRequest
+type Ros1Franka_msgsSetEEFrameResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetEEFrameResponse
+type Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest
+type Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse
+type Ros1Franka_msgsSetFullCollisionBehaviorRequest =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetFullCollisionBehaviorRequest
+type Ros1Franka_msgsSetFullCollisionBehaviorResponse =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetFullCollisionBehaviorResponse
+type Ros1Franka_msgsSetJointImpedanceRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetJointImpedanceRequest
+type Ros1Franka_msgsSetJointImpedanceResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetJointImpedanceResponse
+type Ros1Franka_msgsSetKFrameRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetKFrameRequest
+type Ros1Franka_msgsSetKFrameResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetKFrameResponse
+type Ros1Franka_msgsSetLoadRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetLoadRequest
+type Ros1Franka_msgsSetLoadResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetLoadResponse

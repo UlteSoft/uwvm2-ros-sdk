@@ -1,0 +1,99 @@
+{
+  "id": "ros2_humble",
+  "backend": "ros2",
+  "distribution": "humble",
+  "bundle": "mobile-fjt-humble-complete",
+  "catalog": "share/platform/kinova/catalogs/ros2_humble/catalog.json",
+  "catalog_sha256": "476ca0a912386f1b199d27fa9177e822ff5d1012c2418d31873af48883f1cffc",
+  "records": 17,
+  "interfaces": 15,
+  "fields": 64,
+  "constants": 11,
+  "source_inputs": {
+    "catalog": {
+      "bytes": 4487,
+      "sha256": "476ca0a912386f1b199d27fa9177e822ff5d1012c2418d31873af48883f1cffc"
+    },
+    "definitions": [
+      {
+        "file": "builtin_interfaces/msg/Duration.msg",
+        "bytes": 497,
+        "sha256": "a8f4349a6332f8576f9dfe24cf77a751abb115cfd1310dab9b774e3602516f39"
+      },
+      {
+        "file": "builtin_interfaces/msg/Time.msg",
+        "bytes": 420,
+        "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+      },
+      {
+        "file": "control_msgs/action/FollowJointTrajectory.action",
+        "bytes": 2551,
+        "sha256": "31a124428ee490da22c15cc70a9ac2c89d07bbbba7d3bf370ca7596b229cb9f0"
+      },
+      {
+        "file": "control_msgs/msg/JointComponentTolerance.msg",
+        "bytes": 1161,
+        "sha256": "6b09271d0f74e0a3a701f3ddb997b0ad4a588bdd9ab7d7899ddc70063ba924dd"
+      },
+      {
+        "file": "control_msgs/msg/JointTolerance.msg",
+        "bytes": 724,
+        "sha256": "8208718f17c1b1feb9418c3ed7ca73d029566cbf298ecda819c9e0b78cb379d3"
+      },
+      {
+        "file": "geometry_msgs/msg/Quaternion.msg",
+        "bytes": 116,
+        "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+      },
+      {
+        "file": "geometry_msgs/msg/Transform.msg",
+        "bytes": 118,
+        "sha256": "c8916279f0a429dd9561158bd2133bc4e2d780277c3c594116b240a27e7a2993"
+      },
+      {
+        "file": "geometry_msgs/msg/Twist.msg",
+        "bytes": 116,
+        "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+      },
+      {
+        "file": "geometry_msgs/msg/Vector3.msg",
+        "bytes": 251,
+        "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+      },
+      {
+        "file": "sensor_msgs/msg/JointState.msg",
+        "bytes": 999,
+        "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+      },
+      {
+        "file": "std_msgs/msg/Header.msg",
+        "bytes": 322,
+        "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+      },
+      {
+        "file": "trajectory_msgs/msg/JointTrajectory.msg",
+        "bytes": 465,
+        "sha256": "d63cda4a5ec81824ed4acd737e6b5903449fb1a7e2f5cdcdcc4c49285f01117c"
+      },
+      {
+        "file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+        "bytes": 1176,
+        "sha256": "2358055d26d27c0c302e921f90d5aa59cb5feb3e22937f8ac98314b0c52ba8f4"
+      },
+      {
+        "file": "trajectory_msgs/msg/MultiDOFJointTrajectory.msg",
+        "bytes": 485,
+        "sha256": "070af6b4c9f4238d9de36621105d78c999dbad2045d0cb2a633f86a17f73f6b7"
+      },
+      {
+        "file": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg",
+        "bytes": 427,
+        "sha256": "7e3a4b150ff7ce8d7d897a480d8d324a244a0afb4a07fdf6241074071170ac7a"
+      }
+    ]
+  },
+  "positive_infinity_semantics": false,
+  "native_identity": null,
+  "built": false,
+  "executed": false
+}

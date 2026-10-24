@@ -1,0 +1,2 @@
+import { "moonbitlang/core/env", "moonbitlang/core/encoding/hex", "uwvm/flexiv/ros2_humble_v2_2" @records }
+options("is-main": true)

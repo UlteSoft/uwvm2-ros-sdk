@@ -1,0 +1,8 @@
+# Authored bridge envelope for AuroraClient.get_base_data.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+string key
+---
+uint32 status
+string error
+float64[] values

@@ -1,0 +1,3916 @@
+{
+  "format": "uwvm-platform-complete-schema-v1",
+  "platform": "pal",
+  "profile": "ros2_humble_devel",
+  "backend": "ros2",
+  "records": [
+    {
+      "version": 2,
+      "name": "builtin_interfaces/msg/Duration",
+      "members": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "builtin_interfaces/msg/Duration.msg",
+        "bytes": 497,
+        "sha256": "a8f4349a6332f8576f9dfe24cf77a751abb115cfd1310dab9b774e3602516f39"
+      },
+      "component": "",
+      "owner": "builtin_interfaces/msg/Duration",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 8,
+      "maximum": 8,
+      "nodes": 3,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_3804444fae7a82a57907d25c2c3dc54d9a42dcd305f41ca073b1221dca7d36e4",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 8,
+      "constants": [],
+      "symbol": "Ros2Builtin_interfacesMsgDuration"
+    },
+    {
+      "version": 2,
+      "name": "builtin_interfaces/msg/Time",
+      "members": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "builtin_interfaces/msg/Time.msg",
+        "bytes": 420,
+        "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+      },
+      "component": "",
+      "owner": "builtin_interfaces/msg/Time",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 8,
+      "maximum": 8,
+      "nodes": 3,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 8,
+      "constants": [],
+      "symbol": "Ros2Builtin_interfacesMsgTime"
+    },
+    {
+      "version": 2,
+      "name": "std_msgs/msg/ColorRGBA",
+      "members": [
+        {
+          "name": "r",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "g",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "b",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "a",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "std_msgs/msg/ColorRGBA.msg",
+        "bytes": 40,
+        "sha256": "6a2ce596d968f23d8456ff1e0b1218dec75ce2542614e004c99d29aceb3be697"
+      },
+      "component": "",
+      "owner": "std_msgs/msg/ColorRGBA",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 16,
+      "maximum": 16,
+      "nodes": 5,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_087e0282f02c82a1d8f4580a47ff359ea71b7e72d477da47f49fc6bff61238b2",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 16,
+      "constants": [],
+      "symbol": "Ros2Std_msgsMsgColorRGBA"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedFixedColorParams",
+      "members": [
+        {
+          "name": "color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedFixedColorParams.msg",
+        "bytes": 98,
+        "sha256": "d48729e51a750fba0db188d568a792fb249c0adf02e115185fb4a49377c8eb43"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedFixedColorParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 16,
+      "maximum": 16,
+      "nodes": 6,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_486720194d8ed9dff1b17a2c59382a33cf04cab290115ecda1125481a750feac",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 16,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedFixedColorParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedRainbowParams",
+      "members": [
+        {
+          "name": "transition_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedRainbowParams.msg",
+        "bytes": 74,
+        "sha256": "48f364ba55cbb058dec7eb1e56af41034f9345ef952fba49e9f21aa3fa93f994"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedRainbowParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 8,
+      "maximum": 8,
+      "nodes": 4,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_de1034a751e90f65a6f722cf685ee462b658f71c1d71b49ca7ee81177a9fd2e2",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 8,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedRainbowParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedFadeParams",
+      "members": [
+        {
+          "name": "first_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "second_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "transition_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "reverse_fade",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedFadeParams.msg",
+        "bytes": 318,
+        "sha256": "3fb10b90844637a160cda270edf5ea58b268d43c2f40f37ca8d6b21054468f40"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedFadeParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 41,
+      "maximum": 41,
+      "nodes": 15,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_a1b956d5fbae5ef515a7376ed137b3562722641b7a728ed294f210a1299167e5",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 41,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedFadeParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedBlinkParams",
+      "members": [
+        {
+          "name": "first_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "second_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "first_color_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "second_color_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedBlinkParams.msg",
+        "bytes": 237,
+        "sha256": "d01178f44d5e4b936a64145782f6e8fee69b05abe5d1f62aeabc3eba2d8992b9"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedBlinkParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 48,
+      "maximum": 48,
+      "nodes": 17,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_c1c8148bf78fc5ab210d7aa1498f6f2d84aeab0199ec41362e56054482f349bd",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 48,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedBlinkParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedProgressParams",
+      "members": [
+        {
+          "name": "first_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "second_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "percentage",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "led_offset",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedProgressParams.msg",
+        "bytes": 269,
+        "sha256": "d816d31dfd5c4a57eff486b46d75b778f090e416a265417f5d4866769c1f939e"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedProgressParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 40,
+      "maximum": 40,
+      "nodes": 13,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_db7c705edf5aa8c5512323dec23f75af30b0971c3c26a52a6d2c02ea918d7ab0",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 40,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedProgressParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedFlowParams",
+      "members": [
+        {
+          "name": "first_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "second_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "percentage",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "velocity",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedFlowParams.msg",
+        "bytes": 241,
+        "sha256": "6b8e0126493ba8dcf3444e2c2be7d346f54645c7f1517178858a89dfa065f25e"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedFlowParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 40,
+      "maximum": 40,
+      "nodes": 13,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_6dbf5187ca7c1e7a8c5235832799bf22e3fed9ac7b76f7ce5ee340a5d2b79561",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 40,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedFlowParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedPreProgrammedParams",
+      "members": [
+        {
+          "name": "preprogrammed_id",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedPreProgrammedParams.msg",
+        "bytes": 81,
+        "sha256": "4f5eb8449ddeea473c278412e04abde05dab6dedb0d61b8446e9af4b811c1060"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedPreProgrammedParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 1,
+      "maximum": 1,
+      "nodes": 2,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_219ebe0cb090162e2975ca24ae26cfdfc0226d535b730114058f11749a4905be",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 1,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedPreProgrammedParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedEffectViaTopicParams",
+      "members": [
+        {
+          "name": "topic_name",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedEffectViaTopicParams.msg",
+        "bytes": 76,
+        "sha256": "ab6ab4b9d8c5a4acecd307b5e3a10c282038263c4bfb34830db14b98b53ef171"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedEffectViaTopicParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 4,
+      "maximum": 132,
+      "nodes": 2,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_91ab4bac3cb9685f695a523fc63eb3d7c5c7db9c057f75d2b4685b192b39e485",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 132,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedEffectViaTopicParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedDataArrayParams",
+      "members": [
+        {
+          "name": "data",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "sequence",
+          "count": 4,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedDataArrayParams.msg",
+        "bytes": 198,
+        "sha256": "e3182891bb7ac2b975f646728f2fb01296268ec2dd1004203ec0f25f5388fd2d"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedDataArrayParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 4,
+      "maximum": 68,
+      "nodes": 22,
+      "depth": 4,
+      "codec_identity": "UWVMROS1_f52b27f234be53ae9cfc421d8434f6a9d0e02ca8fc88de7534dac2472a0a4349",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 68,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgLedDataArrayParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedEffectParams",
+      "members": [
+        {
+          "name": "effect_type",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "fixed_color",
+          "type": "pal_device_msgs/msg/LedFixedColorParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "rainbow",
+          "type": "pal_device_msgs/msg/LedRainbowParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "fade",
+          "type": "pal_device_msgs/msg/LedFadeParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "blink",
+          "type": "pal_device_msgs/msg/LedBlinkParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "progress",
+          "type": "pal_device_msgs/msg/LedProgressParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "flow",
+          "type": "pal_device_msgs/msg/LedFlowParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "preprogrammed",
+          "type": "pal_device_msgs/msg/LedPreProgrammedParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "effect_via_topic",
+          "type": "pal_device_msgs/msg/LedEffectViaTopicParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "data_array",
+          "type": "pal_device_msgs/msg/LedDataArrayParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedEffectParams.msg",
+        "bytes": 704,
+        "sha256": "e6d8c96a8e0dca26f3519881104f2721728af0e435536496b3819f41e86385f4"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedEffectParams",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 203,
+      "maximum": 395,
+      "nodes": 96,
+      "depth": 5,
+      "codec_identity": "UWVMROS1_dbaf26734baee7c339c249fb6bd35f42672b48bac23966670f525f5d921f8848",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 395,
+      "constants": [
+        {
+          "name": "FIXED_COLOR",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "RAINBOW",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "FADE",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "BLINK",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "PROGRESS",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "4",
+          "value": "4"
+        },
+        {
+          "name": "FLOW",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "5",
+          "value": "5"
+        },
+        {
+          "name": "PREPROGRAMMED_EFFECT",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "6",
+          "value": "6"
+        },
+        {
+          "name": "EFFECT_VIA_TOPIC",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "7",
+          "value": "7"
+        },
+        {
+          "name": "DATA_ARRAY",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "8",
+          "value": "8"
+        }
+      ],
+      "symbol": "Ros2Pal_device_msgsMsgLedEffectParams"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/action/DoTimedLedEffect_Goal",
+      "members": [
+        {
+          "name": "devices",
+          "type": "uint32",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "params",
+          "type": "pal_device_msgs/msg/LedEffectParams",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "effect_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "priority",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/action/DoTimedLedEffect.action",
+        "bytes": 435,
+        "sha256": "e1d739bfe93af8f16d3c32c43db4568caa34e4f298f713f0c50ad70dcf0bb91a"
+      },
+      "component": "goal",
+      "owner": "pal_device_msgs/action/DoTimedLedEffect",
+      "kind": "action",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 216,
+      "maximum": 472,
+      "nodes": 118,
+      "depth": 6,
+      "codec_identity": "UWVMROS1_a7d6aafeeae03e2122a76727ab8503990df3791f351161c72d75a6ecf868a4f2",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 472,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsActionDoTimedLedEffect_Goal"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/action/DoTimedLedEffect_Result",
+      "members": [],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/action/DoTimedLedEffect.action",
+        "bytes": 435,
+        "sha256": "e1d739bfe93af8f16d3c32c43db4568caa34e4f298f713f0c50ad70dcf0bb91a"
+      },
+      "component": "result",
+      "owner": "pal_device_msgs/action/DoTimedLedEffect",
+      "kind": "action",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 0,
+      "maximum": 0,
+      "nodes": 1,
+      "depth": 1,
+      "codec_identity": "UWVMROS1_2191f5a4810fe2c464b9a346a9615ebc44783f7a03037798b1c38c727db852f9",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 0,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsActionDoTimedLedEffect_Result"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/action/DoTimedLedEffect_Feedback",
+      "members": [],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/action/DoTimedLedEffect.action",
+        "bytes": 435,
+        "sha256": "e1d739bfe93af8f16d3c32c43db4568caa34e4f298f713f0c50ad70dcf0bb91a"
+      },
+      "component": "feedback",
+      "owner": "pal_device_msgs/action/DoTimedLedEffect",
+      "kind": "action",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 0,
+      "maximum": 0,
+      "nodes": 1,
+      "depth": 1,
+      "codec_identity": "UWVMROS1_b82ad14c20ec79d1face7e2ca9c6013f6a48010c88f849fc81eee4a2e120fc6d",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 0,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsActionDoTimedLedEffect_Feedback"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/BatteryState",
+      "members": [
+        {
+          "name": "charge_state",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "battery_percentage",
+          "type": "float32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/BatteryState.msg",
+        "bytes": 126,
+        "sha256": "82ed04a5fcd291b36e755e69fa10301366eb59a3a846186d70bc8333cd103874"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/BatteryState",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 5,
+      "maximum": 5,
+      "nodes": 3,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_a9ea99580734e3ff1f8254e19a2543e049b52bb480642e6b31beda7fff3dc904",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 5,
+      "constants": [
+        {
+          "name": "FULL",
+          "type": "uint8",
+          "native_type": "byte",
+          "literal": "5",
+          "value": "5"
+        },
+        {
+          "name": "HIGH",
+          "type": "uint8",
+          "native_type": "byte",
+          "literal": "4",
+          "value": "4"
+        },
+        {
+          "name": "MEDIUM",
+          "type": "uint8",
+          "native_type": "byte",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "LOW",
+          "type": "uint8",
+          "native_type": "byte",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "CRITICAL_LOW",
+          "type": "uint8",
+          "native_type": "byte",
+          "literal": "1",
+          "value": "1"
+        }
+      ],
+      "symbol": "Ros2Pal_device_msgsMsgBatteryState"
+    },
+    {
+      "version": 2,
+      "name": "std_msgs/msg/Header",
+      "members": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "frame_id",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "std_msgs/msg/Header.msg",
+        "bytes": 322,
+        "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+      },
+      "component": "",
+      "owner": "std_msgs/msg/Header",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 12,
+      "maximum": 140,
+      "nodes": 5,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 140,
+      "constants": [],
+      "symbol": "Ros2Std_msgsMsgHeader"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/Bumper",
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "is_pressed",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/Bumper.msg",
+        "bytes": 90,
+        "sha256": "967cd2ef774d33b2eddfa75ed1918057c494a9df75eaa61db746d954169edd5a"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/Bumper",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 13,
+      "maximum": 141,
+      "nodes": 7,
+      "depth": 4,
+      "codec_identity": "UWVMROS1_3488ad42d9a7cb8a17881026b932b5d9559ecbc1525dc827ce898cd37c69c022",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 141,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsMsgBumper"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedGroup",
+      "members": [
+        {
+          "name": "led_mask",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/msg/LedGroup.msg",
+        "bytes": 84,
+        "sha256": "488b7b9567e18497fbc89e1e4ed1da733cac26c3a21c282e05ce529deb2b33f7"
+      },
+      "component": "",
+      "owner": "pal_device_msgs/msg/LedGroup",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 4,
+      "maximum": 4,
+      "nodes": 2,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_9a08d65251c3a90b87f2013644a3d13080e40edb3b70f9d87a21d0c5421973f0",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 4,
+      "constants": [
+        {
+          "name": "LEFT_EAR",
+          "type": "uint8",
+          "native_type": "byte",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "RIGHT_EAR",
+          "type": "uint8",
+          "native_type": "byte",
+          "literal": "2",
+          "value": "2"
+        }
+      ],
+      "symbol": "Ros2Pal_device_msgsMsgLedGroup"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/CancelEffect_Request",
+      "members": [
+        {
+          "name": "effect_id",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/CancelEffect.srv",
+        "bytes": 157,
+        "sha256": "f90040a4835b1f19e9ecdbfecb8525c464d08f134248a7c587ea61cecd5a8c65"
+      },
+      "component": "request",
+      "owner": "pal_device_msgs/srv/CancelEffect",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 4,
+      "maximum": 4,
+      "nodes": 2,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_120bf0cc7ea1a4b52b66f30b53feabfc144f7d0fa4436f964b4d78c0249af062",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 4,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvCancelEffect_Request"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/CancelEffect_Response",
+      "members": [],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/CancelEffect.srv",
+        "bytes": 157,
+        "sha256": "f90040a4835b1f19e9ecdbfecb8525c464d08f134248a7c587ea61cecd5a8c65"
+      },
+      "component": "response",
+      "owner": "pal_device_msgs/srv/CancelEffect",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 0,
+      "maximum": 0,
+      "nodes": 1,
+      "depth": 1,
+      "codec_identity": "UWVMROS1_c54c991922500d0588c4dba48df2580f4a752fda5bdd175d318ebc1c31aad657",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 0,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvCancelEffect_Response"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/ShutdownAndWakeUpRobot_Request",
+      "members": [
+        {
+          "name": "shutdown_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/ShutdownAndWakeUpRobot.srv",
+        "bytes": 50,
+        "sha256": "d558789552499a11bcc75818b93bd159e7fbcc565d9289b06540fd32d774df3c"
+      },
+      "component": "request",
+      "owner": "pal_device_msgs/srv/ShutdownAndWakeUpRobot",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 8,
+      "maximum": 8,
+      "nodes": 4,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_3aa4e835b4cf21c77bd25b980b022133b5425f4eb8798832d4f8403bfc691166",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 8,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvShutdownAndWakeUpRobot_Request"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/ShutdownAndWakeUpRobot_Response",
+      "members": [],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/ShutdownAndWakeUpRobot.srv",
+        "bytes": 50,
+        "sha256": "d558789552499a11bcc75818b93bd159e7fbcc565d9289b06540fd32d774df3c"
+      },
+      "component": "response",
+      "owner": "pal_device_msgs/srv/ShutdownAndWakeUpRobot",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 0,
+      "maximum": 0,
+      "nodes": 1,
+      "depth": 1,
+      "codec_identity": "UWVMROS1_a3db908cd8f5f47c150070a0e2df18fada891ac05b1492ecbd025ba67d7e46af",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 0,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvShutdownAndWakeUpRobot_Response"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedBlinkEffect_Request",
+      "members": [
+        {
+          "name": "leds",
+          "type": "pal_device_msgs/msg/LedGroup",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "first_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "second_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "first_color_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "second_color_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "effect_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "priority",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/TimedBlinkEffect.srv",
+        "bytes": 757,
+        "sha256": "714c8798df29881d4836db668356b70a3d7325fc382f0b245cde5142fb2e081d"
+      },
+      "component": "request",
+      "owner": "pal_device_msgs/srv/TimedBlinkEffect",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 61,
+      "maximum": 61,
+      "nodes": 23,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_17a50bf4f71fe6d4d3e9d146df74fac1c2d6ed69c5899c51517785cdfcb9b15c",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 61,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvTimedBlinkEffect_Request"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedBlinkEffect_Response",
+      "members": [
+        {
+          "name": "effect_id",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/TimedBlinkEffect.srv",
+        "bytes": 757,
+        "sha256": "714c8798df29881d4836db668356b70a3d7325fc382f0b245cde5142fb2e081d"
+      },
+      "component": "response",
+      "owner": "pal_device_msgs/srv/TimedBlinkEffect",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 4,
+      "maximum": 4,
+      "nodes": 2,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_ea08afa309ccd316b279952de55d50e4d49fe027387ba12e54eba4b488e4d66a",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 4,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvTimedBlinkEffect_Response"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedColourEffect_Request",
+      "members": [
+        {
+          "name": "leds",
+          "type": "pal_device_msgs/msg/LedGroup",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "effect_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "priority",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/TimedColourEffect.srv",
+        "bytes": 465,
+        "sha256": "fb90aa2d8ce3a501ce02ce374adc8195538c867ed5126f69a28440c4046b74ca"
+      },
+      "component": "request",
+      "owner": "pal_device_msgs/srv/TimedColourEffect",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 29,
+      "maximum": 29,
+      "nodes": 12,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_bb25c25962a52120bd8575be65dabd983ac46c7a19794f3793b37c2bf8ccbfa8",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 29,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvTimedColourEffect_Request"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedColourEffect_Response",
+      "members": [
+        {
+          "name": "effect_id",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/TimedColourEffect.srv",
+        "bytes": 465,
+        "sha256": "fb90aa2d8ce3a501ce02ce374adc8195538c867ed5126f69a28440c4046b74ca"
+      },
+      "component": "response",
+      "owner": "pal_device_msgs/srv/TimedColourEffect",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 4,
+      "maximum": 4,
+      "nodes": 2,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_5cd500032cfe7a263100061b2ebda37e8639cbf8a9c6fc978e9525f59d9df1f9",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 4,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvTimedColourEffect_Response"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedFadeEffect_Request",
+      "members": [
+        {
+          "name": "leds",
+          "type": "pal_device_msgs/msg/LedGroup",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "first_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "second_color",
+          "type": "std_msgs/msg/ColorRGBA",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "color_change_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "reverse_fade",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "effect_duration",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "priority",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/TimedFadeEffect.srv",
+        "bytes": 827,
+        "sha256": "5c0dbbaae66b49f5487c3be38ca72d8afb4915c830b1224d9d6e920c9058d42a"
+      },
+      "component": "request",
+      "owner": "pal_device_msgs/srv/TimedFadeEffect",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 54,
+      "maximum": 54,
+      "nodes": 21,
+      "depth": 3,
+      "codec_identity": "UWVMROS1_07c57a457aa0767c766865c5c3b0fdbf5c46e39eac881b452fbc08933c1d3b13",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 54,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvTimedFadeEffect_Request"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedFadeEffect_Response",
+      "members": [
+        {
+          "name": "effect_id",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "pal_device_msgs/srv/TimedFadeEffect.srv",
+        "bytes": 827,
+        "sha256": "5c0dbbaae66b49f5487c3be38ca72d8afb4915c830b1224d9d6e920c9058d42a"
+      },
+      "component": "response",
+      "owner": "pal_device_msgs/srv/TimedFadeEffect",
+      "kind": "service",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 4,
+      "maximum": 4,
+      "nodes": 2,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_2d94870076ef7b1fe03d8ef45d96588fa3850faa0eaf39efd218b21fe947e8f5",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 4,
+      "constants": [],
+      "symbol": "Ros2Pal_device_msgsSrvTimedFadeEffect_Response"
+    }
+  ],
+  "interfaces": [
+    {
+      "version": 2,
+      "name": "builtin_interfaces/msg/Duration",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "builtin_interfaces/msg/Duration",
+          "members": [
+            {
+              "name": "sec",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "nanosec",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "builtin_interfaces/msg/Duration.msg",
+            "bytes": 497,
+            "sha256": "a8f4349a6332f8576f9dfe24cf77a751abb115cfd1310dab9b774e3602516f39"
+          },
+          "component": "",
+          "owner": "builtin_interfaces/msg/Duration",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 8,
+          "maximum": 8,
+          "nodes": 3,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_3804444fae7a82a57907d25c2c3dc54d9a42dcd305f41ca073b1221dca7d36e4",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 8,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_3804444fae7a82a57907d25c2c3dc54d9a42dcd305f41ca073b1221dca7d36e4",
+      "registered": false,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "builtin_interfaces/msg/Time",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "builtin_interfaces/msg/Time",
+          "members": [
+            {
+              "name": "sec",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "nanosec",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "builtin_interfaces/msg/Time.msg",
+            "bytes": 420,
+            "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+          },
+          "component": "",
+          "owner": "builtin_interfaces/msg/Time",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 8,
+          "maximum": 8,
+          "nodes": 3,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 8,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "registered": false,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/action/DoTimedLedEffect",
+      "kind": "action",
+      "identity": null,
+      "components": {
+        "goal": {
+          "version": 2,
+          "name": "pal_device_msgs/action/DoTimedLedEffect_Goal",
+          "members": [
+            {
+              "name": "devices",
+              "type": "uint32",
+              "array": "sequence",
+              "count": 16,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "params",
+              "type": "pal_device_msgs/msg/LedEffectParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "effect_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "priority",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/action/DoTimedLedEffect.action",
+            "bytes": 435,
+            "sha256": "e1d739bfe93af8f16d3c32c43db4568caa34e4f298f713f0c50ad70dcf0bb91a"
+          },
+          "component": "goal",
+          "owner": "pal_device_msgs/action/DoTimedLedEffect",
+          "kind": "action",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 216,
+          "maximum": 472,
+          "nodes": 118,
+          "depth": 6,
+          "codec_identity": "UWVMROS1_a7d6aafeeae03e2122a76727ab8503990df3791f351161c72d75a6ecf868a4f2",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 472,
+          "constants": []
+        },
+        "result": {
+          "version": 2,
+          "name": "pal_device_msgs/action/DoTimedLedEffect_Result",
+          "members": [],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/action/DoTimedLedEffect.action",
+            "bytes": 435,
+            "sha256": "e1d739bfe93af8f16d3c32c43db4568caa34e4f298f713f0c50ad70dcf0bb91a"
+          },
+          "component": "result",
+          "owner": "pal_device_msgs/action/DoTimedLedEffect",
+          "kind": "action",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 0,
+          "maximum": 0,
+          "nodes": 1,
+          "depth": 1,
+          "codec_identity": "UWVMROS1_2191f5a4810fe2c464b9a346a9615ebc44783f7a03037798b1c38c727db852f9",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 0,
+          "constants": []
+        },
+        "feedback": {
+          "version": 2,
+          "name": "pal_device_msgs/action/DoTimedLedEffect_Feedback",
+          "members": [],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/action/DoTimedLedEffect.action",
+            "bytes": 435,
+            "sha256": "e1d739bfe93af8f16d3c32c43db4568caa34e4f298f713f0c50ad70dcf0bb91a"
+          },
+          "component": "feedback",
+          "owner": "pal_device_msgs/action/DoTimedLedEffect",
+          "kind": "action",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 0,
+          "maximum": 0,
+          "nodes": 1,
+          "depth": 1,
+          "codec_identity": "UWVMROS1_b82ad14c20ec79d1face7e2ca9c6013f6a48010c88f849fc81eee4a2e120fc6d",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 0,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_c37c288b347e1fbe568fecf4ebe7c72a601a019826c9415eb2c514c7b61aa2f3",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/BatteryState",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/BatteryState",
+          "members": [
+            {
+              "name": "charge_state",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "battery_percentage",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/BatteryState.msg",
+            "bytes": 126,
+            "sha256": "82ed04a5fcd291b36e755e69fa10301366eb59a3a846186d70bc8333cd103874"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/BatteryState",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 5,
+          "maximum": 5,
+          "nodes": 3,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_a9ea99580734e3ff1f8254e19a2543e049b52bb480642e6b31beda7fff3dc904",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 5,
+          "constants": [
+            {
+              "name": "FULL",
+              "type": "uint8",
+              "native_type": "byte",
+              "literal": "5",
+              "value": "5"
+            },
+            {
+              "name": "HIGH",
+              "type": "uint8",
+              "native_type": "byte",
+              "literal": "4",
+              "value": "4"
+            },
+            {
+              "name": "MEDIUM",
+              "type": "uint8",
+              "native_type": "byte",
+              "literal": "3",
+              "value": "3"
+            },
+            {
+              "name": "LOW",
+              "type": "uint8",
+              "native_type": "byte",
+              "literal": "2",
+              "value": "2"
+            },
+            {
+              "name": "CRITICAL_LOW",
+              "type": "uint8",
+              "native_type": "byte",
+              "literal": "1",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "codec_identity": "UWVMROS1_a9ea99580734e3ff1f8254e19a2543e049b52bb480642e6b31beda7fff3dc904",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/Bumper",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/Bumper",
+          "members": [
+            {
+              "name": "header",
+              "type": "std_msgs/msg/Header",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "is_pressed",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/Bumper.msg",
+            "bytes": 90,
+            "sha256": "967cd2ef774d33b2eddfa75ed1918057c494a9df75eaa61db746d954169edd5a"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/Bumper",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 13,
+          "maximum": 141,
+          "nodes": 7,
+          "depth": 4,
+          "codec_identity": "UWVMROS1_3488ad42d9a7cb8a17881026b932b5d9559ecbc1525dc827ce898cd37c69c022",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 141,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_3488ad42d9a7cb8a17881026b932b5d9559ecbc1525dc827ce898cd37c69c022",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedBlinkParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedBlinkParams",
+          "members": [
+            {
+              "name": "first_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "second_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "first_color_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "second_color_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedBlinkParams.msg",
+            "bytes": 237,
+            "sha256": "d01178f44d5e4b936a64145782f6e8fee69b05abe5d1f62aeabc3eba2d8992b9"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedBlinkParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 48,
+          "maximum": 48,
+          "nodes": 17,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_c1c8148bf78fc5ab210d7aa1498f6f2d84aeab0199ec41362e56054482f349bd",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 48,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_c1c8148bf78fc5ab210d7aa1498f6f2d84aeab0199ec41362e56054482f349bd",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedDataArrayParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedDataArrayParams",
+          "members": [
+            {
+              "name": "data",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "sequence",
+              "count": 4,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedDataArrayParams.msg",
+            "bytes": 198,
+            "sha256": "e3182891bb7ac2b975f646728f2fb01296268ec2dd1004203ec0f25f5388fd2d"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedDataArrayParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 4,
+          "maximum": 68,
+          "nodes": 22,
+          "depth": 4,
+          "codec_identity": "UWVMROS1_f52b27f234be53ae9cfc421d8434f6a9d0e02ca8fc88de7534dac2472a0a4349",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 68,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_f52b27f234be53ae9cfc421d8434f6a9d0e02ca8fc88de7534dac2472a0a4349",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedEffectParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedEffectParams",
+          "members": [
+            {
+              "name": "effect_type",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "fixed_color",
+              "type": "pal_device_msgs/msg/LedFixedColorParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "rainbow",
+              "type": "pal_device_msgs/msg/LedRainbowParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "fade",
+              "type": "pal_device_msgs/msg/LedFadeParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "blink",
+              "type": "pal_device_msgs/msg/LedBlinkParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "progress",
+              "type": "pal_device_msgs/msg/LedProgressParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "flow",
+              "type": "pal_device_msgs/msg/LedFlowParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "preprogrammed",
+              "type": "pal_device_msgs/msg/LedPreProgrammedParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "effect_via_topic",
+              "type": "pal_device_msgs/msg/LedEffectViaTopicParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "data_array",
+              "type": "pal_device_msgs/msg/LedDataArrayParams",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedEffectParams.msg",
+            "bytes": 704,
+            "sha256": "e6d8c96a8e0dca26f3519881104f2721728af0e435536496b3819f41e86385f4"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedEffectParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 203,
+          "maximum": 395,
+          "nodes": 96,
+          "depth": 5,
+          "codec_identity": "UWVMROS1_dbaf26734baee7c339c249fb6bd35f42672b48bac23966670f525f5d921f8848",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 395,
+          "constants": [
+            {
+              "name": "FIXED_COLOR",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "0",
+              "value": "0"
+            },
+            {
+              "name": "RAINBOW",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "1",
+              "value": "1"
+            },
+            {
+              "name": "FADE",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "2",
+              "value": "2"
+            },
+            {
+              "name": "BLINK",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "3",
+              "value": "3"
+            },
+            {
+              "name": "PROGRESS",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "4",
+              "value": "4"
+            },
+            {
+              "name": "FLOW",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "5",
+              "value": "5"
+            },
+            {
+              "name": "PREPROGRAMMED_EFFECT",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "6",
+              "value": "6"
+            },
+            {
+              "name": "EFFECT_VIA_TOPIC",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "7",
+              "value": "7"
+            },
+            {
+              "name": "DATA_ARRAY",
+              "type": "uint8",
+              "native_type": "uint8",
+              "literal": "8",
+              "value": "8"
+            }
+          ]
+        }
+      },
+      "codec_identity": "UWVMROS1_dbaf26734baee7c339c249fb6bd35f42672b48bac23966670f525f5d921f8848",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedEffectViaTopicParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedEffectViaTopicParams",
+          "members": [
+            {
+              "name": "topic_name",
+              "type": "string",
+              "array": "",
+              "count": 0,
+              "string_bound": 128,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedEffectViaTopicParams.msg",
+            "bytes": 76,
+            "sha256": "ab6ab4b9d8c5a4acecd307b5e3a10c282038263c4bfb34830db14b98b53ef171"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedEffectViaTopicParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 4,
+          "maximum": 132,
+          "nodes": 2,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_91ab4bac3cb9685f695a523fc63eb3d7c5c7db9c057f75d2b4685b192b39e485",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 132,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_91ab4bac3cb9685f695a523fc63eb3d7c5c7db9c057f75d2b4685b192b39e485",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedFadeParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedFadeParams",
+          "members": [
+            {
+              "name": "first_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "second_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "transition_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "reverse_fade",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedFadeParams.msg",
+            "bytes": 318,
+            "sha256": "3fb10b90844637a160cda270edf5ea58b268d43c2f40f37ca8d6b21054468f40"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedFadeParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 41,
+          "maximum": 41,
+          "nodes": 15,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_a1b956d5fbae5ef515a7376ed137b3562722641b7a728ed294f210a1299167e5",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 41,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_a1b956d5fbae5ef515a7376ed137b3562722641b7a728ed294f210a1299167e5",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedFixedColorParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedFixedColorParams",
+          "members": [
+            {
+              "name": "color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedFixedColorParams.msg",
+            "bytes": 98,
+            "sha256": "d48729e51a750fba0db188d568a792fb249c0adf02e115185fb4a49377c8eb43"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedFixedColorParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 16,
+          "maximum": 16,
+          "nodes": 6,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_486720194d8ed9dff1b17a2c59382a33cf04cab290115ecda1125481a750feac",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 16,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_486720194d8ed9dff1b17a2c59382a33cf04cab290115ecda1125481a750feac",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedFlowParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedFlowParams",
+          "members": [
+            {
+              "name": "first_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "second_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "percentage",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "velocity",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedFlowParams.msg",
+            "bytes": 241,
+            "sha256": "6b8e0126493ba8dcf3444e2c2be7d346f54645c7f1517178858a89dfa065f25e"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedFlowParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 40,
+          "maximum": 40,
+          "nodes": 13,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_6dbf5187ca7c1e7a8c5235832799bf22e3fed9ac7b76f7ce5ee340a5d2b79561",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 40,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_6dbf5187ca7c1e7a8c5235832799bf22e3fed9ac7b76f7ce5ee340a5d2b79561",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedGroup",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedGroup",
+          "members": [
+            {
+              "name": "led_mask",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedGroup.msg",
+            "bytes": 84,
+            "sha256": "488b7b9567e18497fbc89e1e4ed1da733cac26c3a21c282e05ce529deb2b33f7"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedGroup",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 4,
+          "maximum": 4,
+          "nodes": 2,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_9a08d65251c3a90b87f2013644a3d13080e40edb3b70f9d87a21d0c5421973f0",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 4,
+          "constants": [
+            {
+              "name": "LEFT_EAR",
+              "type": "uint8",
+              "native_type": "byte",
+              "literal": "1",
+              "value": "1"
+            },
+            {
+              "name": "RIGHT_EAR",
+              "type": "uint8",
+              "native_type": "byte",
+              "literal": "2",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "codec_identity": "UWVMROS1_9a08d65251c3a90b87f2013644a3d13080e40edb3b70f9d87a21d0c5421973f0",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedPreProgrammedParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedPreProgrammedParams",
+          "members": [
+            {
+              "name": "preprogrammed_id",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedPreProgrammedParams.msg",
+            "bytes": 81,
+            "sha256": "4f5eb8449ddeea473c278412e04abde05dab6dedb0d61b8446e9af4b811c1060"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedPreProgrammedParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 1,
+          "maximum": 1,
+          "nodes": 2,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_219ebe0cb090162e2975ca24ae26cfdfc0226d535b730114058f11749a4905be",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 1,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_219ebe0cb090162e2975ca24ae26cfdfc0226d535b730114058f11749a4905be",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedProgressParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedProgressParams",
+          "members": [
+            {
+              "name": "first_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "second_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "percentage",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "led_offset",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedProgressParams.msg",
+            "bytes": 269,
+            "sha256": "d816d31dfd5c4a57eff486b46d75b778f090e416a265417f5d4866769c1f939e"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedProgressParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 40,
+          "maximum": 40,
+          "nodes": 13,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_db7c705edf5aa8c5512323dec23f75af30b0971c3c26a52a6d2c02ea918d7ab0",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 40,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_db7c705edf5aa8c5512323dec23f75af30b0971c3c26a52a6d2c02ea918d7ab0",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/msg/LedRainbowParams",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "pal_device_msgs/msg/LedRainbowParams",
+          "members": [
+            {
+              "name": "transition_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/msg/LedRainbowParams.msg",
+            "bytes": 74,
+            "sha256": "48f364ba55cbb058dec7eb1e56af41034f9345ef952fba49e9f21aa3fa93f994"
+          },
+          "component": "",
+          "owner": "pal_device_msgs/msg/LedRainbowParams",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 8,
+          "maximum": 8,
+          "nodes": 4,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_de1034a751e90f65a6f722cf685ee462b658f71c1d71b49ca7ee81177a9fd2e2",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 8,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_de1034a751e90f65a6f722cf685ee462b658f71c1d71b49ca7ee81177a9fd2e2",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/CancelEffect",
+      "kind": "service",
+      "identity": null,
+      "components": {
+        "request": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/CancelEffect_Request",
+          "members": [
+            {
+              "name": "effect_id",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/CancelEffect.srv",
+            "bytes": 157,
+            "sha256": "f90040a4835b1f19e9ecdbfecb8525c464d08f134248a7c587ea61cecd5a8c65"
+          },
+          "component": "request",
+          "owner": "pal_device_msgs/srv/CancelEffect",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 4,
+          "maximum": 4,
+          "nodes": 2,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_120bf0cc7ea1a4b52b66f30b53feabfc144f7d0fa4436f964b4d78c0249af062",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 4,
+          "constants": []
+        },
+        "response": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/CancelEffect_Response",
+          "members": [],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/CancelEffect.srv",
+            "bytes": 157,
+            "sha256": "f90040a4835b1f19e9ecdbfecb8525c464d08f134248a7c587ea61cecd5a8c65"
+          },
+          "component": "response",
+          "owner": "pal_device_msgs/srv/CancelEffect",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 0,
+          "maximum": 0,
+          "nodes": 1,
+          "depth": 1,
+          "codec_identity": "UWVMROS1_c54c991922500d0588c4dba48df2580f4a752fda5bdd175d318ebc1c31aad657",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 0,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_14ebc7b4ca815edec9708b8b102a2451e51354df0d275d1f8c800436bfaafe2d",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/ShutdownAndWakeUpRobot",
+      "kind": "service",
+      "identity": null,
+      "components": {
+        "request": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/ShutdownAndWakeUpRobot_Request",
+          "members": [
+            {
+              "name": "shutdown_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/ShutdownAndWakeUpRobot.srv",
+            "bytes": 50,
+            "sha256": "d558789552499a11bcc75818b93bd159e7fbcc565d9289b06540fd32d774df3c"
+          },
+          "component": "request",
+          "owner": "pal_device_msgs/srv/ShutdownAndWakeUpRobot",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 8,
+          "maximum": 8,
+          "nodes": 4,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_3aa4e835b4cf21c77bd25b980b022133b5425f4eb8798832d4f8403bfc691166",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 8,
+          "constants": []
+        },
+        "response": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/ShutdownAndWakeUpRobot_Response",
+          "members": [],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/ShutdownAndWakeUpRobot.srv",
+            "bytes": 50,
+            "sha256": "d558789552499a11bcc75818b93bd159e7fbcc565d9289b06540fd32d774df3c"
+          },
+          "component": "response",
+          "owner": "pal_device_msgs/srv/ShutdownAndWakeUpRobot",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 0,
+          "maximum": 0,
+          "nodes": 1,
+          "depth": 1,
+          "codec_identity": "UWVMROS1_a3db908cd8f5f47c150070a0e2df18fada891ac05b1492ecbd025ba67d7e46af",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 0,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_6bbaea339fa394cac7e8b3c0fbc6b8e9f94fda75a08e4990a27218a8c8ef9489",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedBlinkEffect",
+      "kind": "service",
+      "identity": null,
+      "components": {
+        "request": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/TimedBlinkEffect_Request",
+          "members": [
+            {
+              "name": "leds",
+              "type": "pal_device_msgs/msg/LedGroup",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "first_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "second_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "first_color_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "second_color_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "effect_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "priority",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/TimedBlinkEffect.srv",
+            "bytes": 757,
+            "sha256": "714c8798df29881d4836db668356b70a3d7325fc382f0b245cde5142fb2e081d"
+          },
+          "component": "request",
+          "owner": "pal_device_msgs/srv/TimedBlinkEffect",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 61,
+          "maximum": 61,
+          "nodes": 23,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_17a50bf4f71fe6d4d3e9d146df74fac1c2d6ed69c5899c51517785cdfcb9b15c",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 61,
+          "constants": []
+        },
+        "response": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/TimedBlinkEffect_Response",
+          "members": [
+            {
+              "name": "effect_id",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/TimedBlinkEffect.srv",
+            "bytes": 757,
+            "sha256": "714c8798df29881d4836db668356b70a3d7325fc382f0b245cde5142fb2e081d"
+          },
+          "component": "response",
+          "owner": "pal_device_msgs/srv/TimedBlinkEffect",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 4,
+          "maximum": 4,
+          "nodes": 2,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_ea08afa309ccd316b279952de55d50e4d49fe027387ba12e54eba4b488e4d66a",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 4,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_8069d1d74b19ef67a87130a2d0afabf8cb49b9f3f49e676c8c92678817875c4d",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedColourEffect",
+      "kind": "service",
+      "identity": null,
+      "components": {
+        "request": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/TimedColourEffect_Request",
+          "members": [
+            {
+              "name": "leds",
+              "type": "pal_device_msgs/msg/LedGroup",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "effect_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "priority",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/TimedColourEffect.srv",
+            "bytes": 465,
+            "sha256": "fb90aa2d8ce3a501ce02ce374adc8195538c867ed5126f69a28440c4046b74ca"
+          },
+          "component": "request",
+          "owner": "pal_device_msgs/srv/TimedColourEffect",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 29,
+          "maximum": 29,
+          "nodes": 12,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_bb25c25962a52120bd8575be65dabd983ac46c7a19794f3793b37c2bf8ccbfa8",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 29,
+          "constants": []
+        },
+        "response": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/TimedColourEffect_Response",
+          "members": [
+            {
+              "name": "effect_id",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/TimedColourEffect.srv",
+            "bytes": 465,
+            "sha256": "fb90aa2d8ce3a501ce02ce374adc8195538c867ed5126f69a28440c4046b74ca"
+          },
+          "component": "response",
+          "owner": "pal_device_msgs/srv/TimedColourEffect",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 4,
+          "maximum": 4,
+          "nodes": 2,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_5cd500032cfe7a263100061b2ebda37e8639cbf8a9c6fc978e9525f59d9df1f9",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 4,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_a3d9f3c368370b53fdc049c8f52ab784f481818cee2e3db43ed765aaed0350d4",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "pal_device_msgs/srv/TimedFadeEffect",
+      "kind": "service",
+      "identity": null,
+      "components": {
+        "request": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/TimedFadeEffect_Request",
+          "members": [
+            {
+              "name": "leds",
+              "type": "pal_device_msgs/msg/LedGroup",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "first_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "second_color",
+              "type": "std_msgs/msg/ColorRGBA",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "color_change_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "reverse_fade",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "effect_duration",
+              "type": "builtin_interfaces/msg/Duration",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "priority",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/TimedFadeEffect.srv",
+            "bytes": 827,
+            "sha256": "5c0dbbaae66b49f5487c3be38ca72d8afb4915c830b1224d9d6e920c9058d42a"
+          },
+          "component": "request",
+          "owner": "pal_device_msgs/srv/TimedFadeEffect",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 54,
+          "maximum": 54,
+          "nodes": 21,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_07c57a457aa0767c766865c5c3b0fdbf5c46e39eac881b452fbc08933c1d3b13",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 54,
+          "constants": []
+        },
+        "response": {
+          "version": 2,
+          "name": "pal_device_msgs/srv/TimedFadeEffect_Response",
+          "members": [
+            {
+              "name": "effect_id",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "pal_device_msgs/srv/TimedFadeEffect.srv",
+            "bytes": 827,
+            "sha256": "5c0dbbaae66b49f5487c3be38ca72d8afb4915c830b1224d9d6e920c9058d42a"
+          },
+          "component": "response",
+          "owner": "pal_device_msgs/srv/TimedFadeEffect",
+          "kind": "service",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 4,
+          "maximum": 4,
+          "nodes": 2,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_2d94870076ef7b1fe03d8ef45d96588fa3850faa0eaf39efd218b21fe947e8f5",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 4,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_9c091fb121f1cf1fa852153bd64d7d97bbd427b774058820ff019e34623ab65a",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "std_msgs/msg/ColorRGBA",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "std_msgs/msg/ColorRGBA",
+          "members": [
+            {
+              "name": "r",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "g",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "b",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "a",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "std_msgs/msg/ColorRGBA.msg",
+            "bytes": 40,
+            "sha256": "6a2ce596d968f23d8456ff1e0b1218dec75ce2542614e004c99d29aceb3be697"
+          },
+          "component": "",
+          "owner": "std_msgs/msg/ColorRGBA",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 16,
+          "maximum": 16,
+          "nodes": 5,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_087e0282f02c82a1d8f4580a47ff359ea71b7e72d477da47f49fc6bff61238b2",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 16,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_087e0282f02c82a1d8f4580a47ff359ea71b7e72d477da47f49fc6bff61238b2",
+      "registered": false,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    },
+    {
+      "version": 2,
+      "name": "std_msgs/msg/Header",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 2,
+          "name": "std_msgs/msg/Header",
+          "members": [
+            {
+              "name": "stamp",
+              "type": "builtin_interfaces/msg/Time",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "frame_id",
+              "type": "string",
+              "array": "",
+              "count": 0,
+              "string_bound": 128,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "std_msgs/msg/Header.msg",
+            "bytes": 322,
+            "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+          },
+          "component": "",
+          "owner": "std_msgs/msg/Header",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 12,
+          "maximum": 140,
+          "nodes": 5,
+          "depth": 3,
+          "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 140,
+          "constants": []
+        }
+      },
+      "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+      "registered": false,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    }
+  ],
+  "original_codec_identities_preserved": true,
+  "source_generation_only": true,
+  "shared_generator_source_delta_sha256": "fa1198aa5a9e934c755dbf85c03723bb8fd52d52dffcf4ef20d6d942cbe3e77b"
+}

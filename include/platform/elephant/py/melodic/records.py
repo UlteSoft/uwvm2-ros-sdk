@@ -1,0 +1,8739 @@
+"""@file records.py
+@brief Complete original vendor values and canonical codecs.
+@details Owned fields preserve widths, quotas and defaults. Native identity remains unbound.
+No constructor or codec opens a ROS resource or grants a capability.
+"""
+from ros.py.wire import Record, Registry
+
+REGISTRY = Registry()
+
+
+class Ros1Mybuddy_communicationMybuddyAngles(Record):
+    """@brief Own all original mybuddy_communication/MybuddyAngles fields.
+    @details 13 ordered fields; 52..52 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_0: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_7: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_8: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_9: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_10: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_11: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_12: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_0',
+     'joint_1',
+     'joint_2',
+     'joint_3',
+     'joint_4',
+     'joint_5',
+     'joint_6',
+     'joint_7',
+     'joint_8',
+     'joint_9',
+     'joint_10',
+     'joint_11',
+     'joint_12')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationMybuddyAngles',
+     'type': 'mybuddy_communication/MybuddyAngles',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/MybuddyAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_f3c510869207e6d72e868ae35ef95d49a1eea5164c7ef1056cb3d335029563e9',
+     'minimum': 52,
+     'maximum': 52,
+     'semantics': '',
+     'fields': [{'name': 'joint_0',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_7',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_8',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_9',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_10',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_11',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_12',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationMybuddyAngles)
+
+class Ros1Mybuddy_communicationMybuddyCoords(Record):
+    """@brief Own all original mybuddy_communication/MybuddyCoords fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationMybuddyCoords',
+     'type': 'mybuddy_communication/MybuddyCoords',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/MybuddyCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_a1df376733f2673e25fed814a038e00f556b82c2b8bce3755644904e50c95384',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationMybuddyCoords)
+
+class Ros1Mybuddy_communicationMybuddyGripperStatus(Record):
+    """@brief Own all original mybuddy_communication/MybuddyGripperStatus fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationMybuddyGripperStatus',
+     'type': 'mybuddy_communication/MybuddyGripperStatus',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/MybuddyGripperStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_86fdaf7d3397b26155c891e15d2ebdd903d5899a0895128e720276eb35a63854',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationMybuddyGripperStatus)
+
+class Ros1Mybuddy_communicationMybuddyPumpStatus(Record):
+    """@brief Own all original mybuddy_communication/MybuddyPumpStatus fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationMybuddyPumpStatus',
+     'type': 'mybuddy_communication/MybuddyPumpStatus',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/MybuddyPumpStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_33b6419700f9baf41b584bb464d0234426a04e1bd86d198fe3d66c06845cd80a',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationMybuddyPumpStatus)
+
+class Ros1Mybuddy_communicationMybuddySetAngles(Record):
+    """@brief Own all original mybuddy_communication/MybuddySetAngles fields.
+    @details 14 ordered fields; 53..53 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_0: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_7: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_8: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_9: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_10: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_11: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_12: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_0',
+     'joint_1',
+     'joint_2',
+     'joint_3',
+     'joint_4',
+     'joint_5',
+     'joint_6',
+     'joint_7',
+     'joint_8',
+     'joint_9',
+     'joint_10',
+     'joint_11',
+     'joint_12',
+     'speed')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationMybuddySetAngles',
+     'type': 'mybuddy_communication/MybuddySetAngles',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/MybuddySetAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_8f41fddfb715bfaa95c90974cf257181a9ae3e2f36969f6fdfdf3ab03b7d4486',
+     'minimum': 53,
+     'maximum': 53,
+     'semantics': '',
+     'fields': [{'name': 'joint_0',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_7',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_8',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_9',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_10',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_11',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_12',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationMybuddySetAngles)
+
+class Ros1Mybuddy_communicationMybuddySetCoords(Record):
+    """@brief Own all original mybuddy_communication/MybuddySetCoords fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationMybuddySetCoords',
+     'type': 'mybuddy_communication/MybuddySetCoords',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/MybuddySetCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_bf9f2ee073928aafabbd532644eb57eec70d4b864a3097e2ab1a37840abd3669',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationMybuddySetCoords)
+
+class Ros1Mybuddy_communicationGetAnglesRequest(Record):
+    """@brief Own all original mybuddy_communication/GetAnglesRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationGetAnglesRequest',
+     'type': 'mybuddy_communication/GetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/GetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_7ba90c12eb91dbcc296c0d61069d0dc12c3ac576c970cd2fe9a0fed29f058e38',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationGetAnglesRequest)
+
+class Ros1Mybuddy_communicationGetAnglesResponse(Record):
+    """@brief Own all original mybuddy_communication/GetAnglesResponse fields.
+    @details 13 ordered fields; 52..52 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_0: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_7: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_8: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_9: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_10: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_11: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_12: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_0',
+     'joint_1',
+     'joint_2',
+     'joint_3',
+     'joint_4',
+     'joint_5',
+     'joint_6',
+     'joint_7',
+     'joint_8',
+     'joint_9',
+     'joint_10',
+     'joint_11',
+     'joint_12')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationGetAnglesResponse',
+     'type': 'mybuddy_communication/GetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/GetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_98085b01a21ae26a74a286d790aab310530fff2a88d7a3c35e071df09abd709d',
+     'minimum': 52,
+     'maximum': 52,
+     'semantics': '',
+     'fields': [{'name': 'joint_0',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_7',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_8',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_9',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_10',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_11',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_12',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationGetAnglesResponse)
+
+class Ros1Mybuddy_communicationGetCoordsRequest(Record):
+    """@brief Own all original mybuddy_communication/GetCoordsRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationGetCoordsRequest',
+     'type': 'mybuddy_communication/GetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/GetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_e5b4bd6f4d17f79bf3477c2577e73355b871523291aace267fea201f5a2b43ef',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationGetCoordsRequest)
+
+class Ros1Mybuddy_communicationGetCoordsResponse(Record):
+    """@brief Own all original mybuddy_communication/GetCoordsResponse fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationGetCoordsResponse',
+     'type': 'mybuddy_communication/GetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/GetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_604a9a58b11d6e51faee74226c4820db7668b2054b2e48949cf9deb5958f5873',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationGetCoordsResponse)
+
+class Ros1Mybuddy_communicationGripperStatusRequest(Record):
+    """@brief Own all original mybuddy_communication/GripperStatusRequest fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationGripperStatusRequest',
+     'type': 'mybuddy_communication/GripperStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/GripperStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_7816f3fa4c8b7068eeb16e74940d2e26401df47b7bc6881d123f94b554523173',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationGripperStatusRequest)
+
+class Ros1Mybuddy_communicationGripperStatusResponse(Record):
+    """@brief Own all original mybuddy_communication/GripperStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationGripperStatusResponse',
+     'type': 'mybuddy_communication/GripperStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/GripperStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_b329fd687ef106ed366d80c5651fc536ad266d2b16dee8f985f1bad32738330b',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationGripperStatusResponse)
+
+class Ros1Mybuddy_communicationPumpStatusRequest(Record):
+    """@brief Own all original mybuddy_communication/PumpStatusRequest fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationPumpStatusRequest',
+     'type': 'mybuddy_communication/PumpStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/PumpStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_4261e7e11f0c6065de868444a0be45d363465b0913246b06b4a2c413714d77e9',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationPumpStatusRequest)
+
+class Ros1Mybuddy_communicationPumpStatusResponse(Record):
+    """@brief Own all original mybuddy_communication/PumpStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationPumpStatusResponse',
+     'type': 'mybuddy_communication/PumpStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/PumpStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_975f537d88c880f8daa3459f6762dc6ec7d7eee1f580c0e79f3cb581b77cabd4',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationPumpStatusResponse)
+
+class Ros1Mybuddy_communicationSetAnglesRequest(Record):
+    """@brief Own all original mybuddy_communication/SetAnglesRequest fields.
+    @details 14 ordered fields; 53..53 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_0: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_7: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_8: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_9: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_10: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_11: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_12: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_0',
+     'joint_1',
+     'joint_2',
+     'joint_3',
+     'joint_4',
+     'joint_5',
+     'joint_6',
+     'joint_7',
+     'joint_8',
+     'joint_9',
+     'joint_10',
+     'joint_11',
+     'joint_12',
+     'speed')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationSetAnglesRequest',
+     'type': 'mybuddy_communication/SetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/SetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_47d19578189892ca10e073d8d250839f1e2b39ebbb3525ed9b03a15af18eb240',
+     'minimum': 53,
+     'maximum': 53,
+     'semantics': '',
+     'fields': [{'name': 'joint_0',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_7',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_8',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_9',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_10',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_11',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_12',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationSetAnglesRequest)
+
+class Ros1Mybuddy_communicationSetAnglesResponse(Record):
+    """@brief Own all original mybuddy_communication/SetAnglesResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationSetAnglesResponse',
+     'type': 'mybuddy_communication/SetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/SetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_7371fa369708af552fd68522d7effdd00bf82bf7e2fe21469ceb210f51582f81',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationSetAnglesResponse)
+
+class Ros1Mybuddy_communicationSetCoordsRequest(Record):
+    """@brief Own all original mybuddy_communication/SetCoordsRequest fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationSetCoordsRequest',
+     'type': 'mybuddy_communication/SetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/SetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_81f7315bebd612a9406a2805b393415b8a1956e49f3d1b8efb21f9e703b0bfe0',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationSetCoordsRequest)
+
+class Ros1Mybuddy_communicationSetCoordsResponse(Record):
+    """@brief Own all original mybuddy_communication/SetCoordsResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mybuddy_communicationSetCoordsResponse',
+     'type': 'mybuddy_communication/SetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mybuddy_communication/SetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_e5c41ea9420e43a5406ddee23cee961347bfad4f83baf9ebac93d16cdb5d0b21',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mybuddy_communicationSetCoordsResponse)
+
+class Ros1Mecharm_communicationMycobotAngles(Record):
+    """@brief Own all original mecharm_communication/MycobotAngles fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationMycobotAngles',
+     'type': 'mecharm_communication/MycobotAngles',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/MycobotAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_4afa3dc66ce6ffe02170c76da688514a04aa7b47008aeb8f79c44f9ff867d189',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationMycobotAngles)
+
+class Ros1Mecharm_communicationMycobotCoords(Record):
+    """@brief Own all original mecharm_communication/MycobotCoords fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationMycobotCoords',
+     'type': 'mecharm_communication/MycobotCoords',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/MycobotCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_a6a82e22cd0a2f24657c0a253ed00bf31c0a266e6ebaab071cfd369780818d35',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationMycobotCoords)
+
+class Ros1Mecharm_communicationMycobotGripperStatus(Record):
+    """@brief Own all original mecharm_communication/MycobotGripperStatus fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationMycobotGripperStatus',
+     'type': 'mecharm_communication/MycobotGripperStatus',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/MycobotGripperStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_07e04dad52b423c371dc5432b68a2f4272cf55328d6f0a10f091dc389d57a4bf',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationMycobotGripperStatus)
+
+class Ros1Mecharm_communicationMycobotPumpStatus(Record):
+    """@brief Own all original mecharm_communication/MycobotPumpStatus fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationMycobotPumpStatus',
+     'type': 'mecharm_communication/MycobotPumpStatus',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/MycobotPumpStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_f559fbf7d5d2c872b3660132eb8c17c79ca3c2d27e975f8fb8fde1d86072a6fa',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationMycobotPumpStatus)
+
+class Ros1Mecharm_communicationMycobotSetAngles(Record):
+    """@brief Own all original mecharm_communication/MycobotSetAngles fields.
+    @details 7 ordered fields; 25..25 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'speed')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationMycobotSetAngles',
+     'type': 'mecharm_communication/MycobotSetAngles',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/MycobotSetAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_bce09b709e806417595c05e0e795d689b8c53008f9916633d934f935f9389de9',
+     'minimum': 25,
+     'maximum': 25,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationMycobotSetAngles)
+
+class Ros1Mecharm_communicationMycobotSetCoords(Record):
+    """@brief Own all original mecharm_communication/MycobotSetCoords fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationMycobotSetCoords',
+     'type': 'mecharm_communication/MycobotSetCoords',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/MycobotSetCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_68ffa6950e0934b845b2b45140612997c8276a3ac7ed4303e43cd70417491913',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationMycobotSetCoords)
+
+class Ros1Mecharm_communicationGetAnglesRequest(Record):
+    """@brief Own all original mecharm_communication/GetAnglesRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationGetAnglesRequest',
+     'type': 'mecharm_communication/GetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/GetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_6a8f60e71495c9944e1e97c308d5c992674bd46060b6f6abf2df3f9748c13123',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationGetAnglesRequest)
+
+class Ros1Mecharm_communicationGetAnglesResponse(Record):
+    """@brief Own all original mecharm_communication/GetAnglesResponse fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationGetAnglesResponse',
+     'type': 'mecharm_communication/GetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/GetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_e792a206903dc49fab725e3b3507af3cf4712f10740e9dcceeb90dedfe6ea6e8',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationGetAnglesResponse)
+
+class Ros1Mecharm_communicationGetCoordsRequest(Record):
+    """@brief Own all original mecharm_communication/GetCoordsRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationGetCoordsRequest',
+     'type': 'mecharm_communication/GetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/GetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_55d4d1b8965ea12f9b15d4bd5a22c43793d04af452fefb84bd98bc3d7d8da8bf',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationGetCoordsRequest)
+
+class Ros1Mecharm_communicationGetCoordsResponse(Record):
+    """@brief Own all original mecharm_communication/GetCoordsResponse fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationGetCoordsResponse',
+     'type': 'mecharm_communication/GetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/GetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_2230e517685ea625507334067ccceb8424ecf782fcd4163c551d09048e900ca8',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationGetCoordsResponse)
+
+class Ros1Mecharm_communicationGripperStatusRequest(Record):
+    """@brief Own all original mecharm_communication/GripperStatusRequest fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationGripperStatusRequest',
+     'type': 'mecharm_communication/GripperStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/GripperStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_98284fbac3bdb61857b9175b1f82adc7265d0ed418088123d79bf75cb04c9a2c',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationGripperStatusRequest)
+
+class Ros1Mecharm_communicationGripperStatusResponse(Record):
+    """@brief Own all original mecharm_communication/GripperStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationGripperStatusResponse',
+     'type': 'mecharm_communication/GripperStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/GripperStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_29cfb0267fbe68d5dafcd3c9d16a8d4dab6b21477921a48ba35135bc0c22bb32',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationGripperStatusResponse)
+
+class Ros1Mecharm_communicationPumpStatusRequest(Record):
+    """@brief Own all original mecharm_communication/PumpStatusRequest fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationPumpStatusRequest',
+     'type': 'mecharm_communication/PumpStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/PumpStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_aa138db91e46b41659dfc5901225aaaae1c1ae0461c35d3f7a90d0cf86c9920d',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationPumpStatusRequest)
+
+class Ros1Mecharm_communicationPumpStatusResponse(Record):
+    """@brief Own all original mecharm_communication/PumpStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationPumpStatusResponse',
+     'type': 'mecharm_communication/PumpStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/PumpStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_876caa88c833bfa180b8747110683c789aa238c0cda162a8e262c66fddefdd8f',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationPumpStatusResponse)
+
+class Ros1Mecharm_communicationSetAnglesRequest(Record):
+    """@brief Own all original mecharm_communication/SetAnglesRequest fields.
+    @details 7 ordered fields; 25..25 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'speed')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationSetAnglesRequest',
+     'type': 'mecharm_communication/SetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/SetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_7ad54edf4730457f2b2124c925b87a99bdbeddd8bfcc1e0d806f7b9dad31507b',
+     'minimum': 25,
+     'maximum': 25,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationSetAnglesRequest)
+
+class Ros1Mecharm_communicationSetAnglesResponse(Record):
+    """@brief Own all original mecharm_communication/SetAnglesResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationSetAnglesResponse',
+     'type': 'mecharm_communication/SetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/SetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_940a294ef91d04afeb65b88bbdd91df3a7db0a07435ced3993db3a9d0f574c6e',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationSetAnglesResponse)
+
+class Ros1Mecharm_communicationSetCoordsRequest(Record):
+    """@brief Own all original mecharm_communication/SetCoordsRequest fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationSetCoordsRequest',
+     'type': 'mecharm_communication/SetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/SetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_68deaf663a1fe2d3d7434935f10161eb444e7ea2f79e4b746fee9bd0383fc929',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationSetCoordsRequest)
+
+class Ros1Mecharm_communicationSetCoordsResponse(Record):
+    """@brief Own all original mecharm_communication/SetCoordsResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mecharm_communicationSetCoordsResponse',
+     'type': 'mecharm_communication/SetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mecharm_communication/SetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_c66a6e14c4c7eba1b52d7ef57802cb6122a120f692bcc1552c51078301b1b409',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mecharm_communicationSetCoordsResponse)
+
+class Ros1Myarm_communicationMyArmAngles(Record):
+    """@brief Own all original myarm_communication/MyArmAngles fields.
+    @details 7 ordered fields; 28..28 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_7: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationMyArmAngles',
+     'type': 'myarm_communication/MyArmAngles',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/MyArmAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_eff11a03e974b4af030c2dc92d0111cf95e0fb3ce004235bada3fe358b63fd4c',
+     'minimum': 28,
+     'maximum': 28,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_7',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationMyArmAngles)
+
+class Ros1Myarm_communicationMyArmCoords(Record):
+    """@brief Own all original myarm_communication/MyArmCoords fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationMyArmCoords',
+     'type': 'myarm_communication/MyArmCoords',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/MyArmCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_f0df1605988924f0263805fb2b27ab7ef9e2296691ed15e03a337606362c983c',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationMyArmCoords)
+
+class Ros1Myarm_communicationMyArmGripperStatus(Record):
+    """@brief Own all original myarm_communication/MyArmGripperStatus fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationMyArmGripperStatus',
+     'type': 'myarm_communication/MyArmGripperStatus',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/MyArmGripperStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_7875df5b50417da1cef60d79c872aff0b40a08f9bbfe80c103729d3c4c892c6f',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationMyArmGripperStatus)
+
+class Ros1Myarm_communicationMyArmPumpStatus(Record):
+    """@brief Own all original myarm_communication/MyArmPumpStatus fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationMyArmPumpStatus',
+     'type': 'myarm_communication/MyArmPumpStatus',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/MyArmPumpStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_58765b94f1ecb3bb131f6480ea6830631cde9c96eeef94fd9b22598ccc9ea928',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationMyArmPumpStatus)
+
+class Ros1Myarm_communicationMyArmSetAngles(Record):
+    """@brief Own all original myarm_communication/MyArmSetAngles fields.
+    @details 8 ordered fields; 29..29 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_7: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'speed')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationMyArmSetAngles',
+     'type': 'myarm_communication/MyArmSetAngles',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/MyArmSetAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_6acbfd19e3864b66e47b9da5c7c0e8890e7336e8d6c9a5657c4f5eaa5285fe42',
+     'minimum': 29,
+     'maximum': 29,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_7',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationMyArmSetAngles)
+
+class Ros1Myarm_communicationMyArmSetCoords(Record):
+    """@brief Own all original myarm_communication/MyArmSetCoords fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationMyArmSetCoords',
+     'type': 'myarm_communication/MyArmSetCoords',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/MyArmSetCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_ce10c29be4cfd832d5076fead55817a0ac7ccde002d5bbbd7a2befd95e9752fd',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationMyArmSetCoords)
+
+class Ros1Myarm_communicationGetAnglesRequest(Record):
+    """@brief Own all original myarm_communication/GetAnglesRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationGetAnglesRequest',
+     'type': 'myarm_communication/GetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/GetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_18ea682d1c475321b67435e9f207a14627113ad237a38c759cfe4e1c92fded37',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationGetAnglesRequest)
+
+class Ros1Myarm_communicationGetAnglesResponse(Record):
+    """@brief Own all original myarm_communication/GetAnglesResponse fields.
+    @details 7 ordered fields; 28..28 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_7: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationGetAnglesResponse',
+     'type': 'myarm_communication/GetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/GetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_0c68b293384d21d06e23d4aba10b4a4c2eff4e1a0eaa81903e026fe28da410c7',
+     'minimum': 28,
+     'maximum': 28,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_7',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationGetAnglesResponse)
+
+class Ros1Myarm_communicationGetCoordsRequest(Record):
+    """@brief Own all original myarm_communication/GetCoordsRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationGetCoordsRequest',
+     'type': 'myarm_communication/GetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/GetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_04d9d79ad983cf4631cf65a48cae60d982cd0f234f0f4ed1afa0cc630bd63d95',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationGetCoordsRequest)
+
+class Ros1Myarm_communicationGetCoordsResponse(Record):
+    """@brief Own all original myarm_communication/GetCoordsResponse fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationGetCoordsResponse',
+     'type': 'myarm_communication/GetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/GetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_752564704c08fb2076df8eea4f6f5b89621041372472f0f99b6627fdfda831b7',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationGetCoordsResponse)
+
+class Ros1Myarm_communicationGripperStatusRequest(Record):
+    """@brief Own all original myarm_communication/GripperStatusRequest fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationGripperStatusRequest',
+     'type': 'myarm_communication/GripperStatusRequest',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/GripperStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_adec2e0fbf48862c2245aea4c31c59ea12abdec26b4727b14005b65006c58976',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationGripperStatusRequest)
+
+class Ros1Myarm_communicationGripperStatusResponse(Record):
+    """@brief Own all original myarm_communication/GripperStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationGripperStatusResponse',
+     'type': 'myarm_communication/GripperStatusResponse',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/GripperStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_d703a0ec6f562f1deb444313e36e6a728b4e521d1196d90a63725753d5fe9659',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationGripperStatusResponse)
+
+class Ros1Myarm_communicationPumpStatusRequest(Record):
+    """@brief Own all original myarm_communication/PumpStatusRequest fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationPumpStatusRequest',
+     'type': 'myarm_communication/PumpStatusRequest',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/PumpStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_eac2f5c006a0fa86df638c52e9cfb7d2c17818ec10e32ad5277af216c6c944f4',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationPumpStatusRequest)
+
+class Ros1Myarm_communicationPumpStatusResponse(Record):
+    """@brief Own all original myarm_communication/PumpStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationPumpStatusResponse',
+     'type': 'myarm_communication/PumpStatusResponse',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/PumpStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_28533ec27c01d85c9a4644959ea8e5c3f2480f5203a9545e96e4242158f08044',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationPumpStatusResponse)
+
+class Ros1Myarm_communicationSetAnglesRequest(Record):
+    """@brief Own all original myarm_communication/SetAnglesRequest fields.
+    @details 8 ordered fields; 29..29 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_7: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'speed')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationSetAnglesRequest',
+     'type': 'myarm_communication/SetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/SetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_c15c81907fbace209686a98578019d893d86cecf4782427ac2c3858da8cd3e0a',
+     'minimum': 29,
+     'maximum': 29,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_7',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationSetAnglesRequest)
+
+class Ros1Myarm_communicationSetAnglesResponse(Record):
+    """@brief Own all original myarm_communication/SetAnglesResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationSetAnglesResponse',
+     'type': 'myarm_communication/SetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/SetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_dbdbcb001f0478a4bba5ae9d7320d8dbfa4e36a5c1c130215ff5ab864c73af0f',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationSetAnglesResponse)
+
+class Ros1Myarm_communicationSetCoordsRequest(Record):
+    """@brief Own all original myarm_communication/SetCoordsRequest fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationSetCoordsRequest',
+     'type': 'myarm_communication/SetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/SetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_86cfc6edb6b86f90a21818e824aea50b697e314687472e1e96e9ce5399ef66c6',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationSetCoordsRequest)
+
+class Ros1Myarm_communicationSetCoordsResponse(Record):
+    """@brief Own all original myarm_communication/SetCoordsResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Myarm_communicationSetCoordsResponse',
+     'type': 'myarm_communication/SetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'myarm_communication/SetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_52a54371663141d4384dae8969b729baf097a0aa6105f263e78593743e44272d',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Myarm_communicationSetCoordsResponse)
+
+class Ros1Mycobot_320_communicationMycobotAngles(Record):
+    """@brief Own all original mycobot_320_communication/MycobotAngles fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationMycobotAngles',
+     'type': 'mycobot_320_communication/MycobotAngles',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/MycobotAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_67ec61da0c2bf7ee461c21abbfcab14d74b84cb6c9a12430e2a306abdc65690a',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationMycobotAngles)
+
+class Ros1Mycobot_320_communicationMycobotCoords(Record):
+    """@brief Own all original mycobot_320_communication/MycobotCoords fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationMycobotCoords',
+     'type': 'mycobot_320_communication/MycobotCoords',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/MycobotCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_1f2ada8331783764a52ed35c81c3ce9a2fdd260e2dffa2990751ce5156c3ad03',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationMycobotCoords)
+
+class Ros1Mycobot_320_communicationMycobotGripperStatus(Record):
+    """@brief Own all original mycobot_320_communication/MycobotGripperStatus fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationMycobotGripperStatus',
+     'type': 'mycobot_320_communication/MycobotGripperStatus',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/MycobotGripperStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_efb4ccdb3ce35d67174700f3d3dd7332d0f7a834c5d76b6153e389e031907984',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationMycobotGripperStatus)
+
+class Ros1Mycobot_320_communicationMycobotPumpStatus(Record):
+    """@brief Own all original mycobot_320_communication/MycobotPumpStatus fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationMycobotPumpStatus',
+     'type': 'mycobot_320_communication/MycobotPumpStatus',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/MycobotPumpStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_bb1d48067f44b7022820a6175afe05d5ba8caed9f750874a4e703389cb0d83f4',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationMycobotPumpStatus)
+
+class Ros1Mycobot_320_communicationMycobotSetAngles(Record):
+    """@brief Own all original mycobot_320_communication/MycobotSetAngles fields.
+    @details 7 ordered fields; 25..25 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'speed')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationMycobotSetAngles',
+     'type': 'mycobot_320_communication/MycobotSetAngles',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/MycobotSetAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_bf04b1bd24ab2f56c1835d1abe44b73fe023407c3ebdd3d35341242116a5d259',
+     'minimum': 25,
+     'maximum': 25,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationMycobotSetAngles)
+
+class Ros1Mycobot_320_communicationMycobotSetCoords(Record):
+    """@brief Own all original mycobot_320_communication/MycobotSetCoords fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationMycobotSetCoords',
+     'type': 'mycobot_320_communication/MycobotSetCoords',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/MycobotSetCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_761235ef96bcc1c687ad8dd3f6d39982d1b0a7a24eaab3bb54feb9780b9e0092',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationMycobotSetCoords)
+
+class Ros1Mycobot_320_communicationGetAnglesRequest(Record):
+    """@brief Own all original mycobot_320_communication/GetAnglesRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationGetAnglesRequest',
+     'type': 'mycobot_320_communication/GetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/GetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_fe13e75d9def5e6f7f831297c771cd4d319e1e9862b5026382fed23747b721b8',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationGetAnglesRequest)
+
+class Ros1Mycobot_320_communicationGetAnglesResponse(Record):
+    """@brief Own all original mycobot_320_communication/GetAnglesResponse fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationGetAnglesResponse',
+     'type': 'mycobot_320_communication/GetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/GetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_c0cb03f21add6e566a30129ed7ce3174fa86786859c472a848c6768678adc80a',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationGetAnglesResponse)
+
+class Ros1Mycobot_320_communicationGetCoordsRequest(Record):
+    """@brief Own all original mycobot_320_communication/GetCoordsRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationGetCoordsRequest',
+     'type': 'mycobot_320_communication/GetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/GetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_82b2ae7ba4bf2aff8cd6c88ae344b376604624612abdd633c930695c1d1650d6',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationGetCoordsRequest)
+
+class Ros1Mycobot_320_communicationGetCoordsResponse(Record):
+    """@brief Own all original mycobot_320_communication/GetCoordsResponse fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationGetCoordsResponse',
+     'type': 'mycobot_320_communication/GetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/GetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_821bac75a42a37fa06f51e57c09839f3557487dc8e883310601cb2e00bb6b05d',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationGetCoordsResponse)
+
+class Ros1Mycobot_320_communicationGripperStatusRequest(Record):
+    """@brief Own all original mycobot_320_communication/GripperStatusRequest fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationGripperStatusRequest',
+     'type': 'mycobot_320_communication/GripperStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/GripperStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_68d072c047f4f026459309282a40c78c5db51571126efb85b7ca9e9f121b5eb5',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationGripperStatusRequest)
+
+class Ros1Mycobot_320_communicationGripperStatusResponse(Record):
+    """@brief Own all original mycobot_320_communication/GripperStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationGripperStatusResponse',
+     'type': 'mycobot_320_communication/GripperStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/GripperStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_9c1387ec1a93d6674ac6dd735b2811957db57359e9e461dcedc70ae6fccc5544',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationGripperStatusResponse)
+
+class Ros1Mycobot_320_communicationPumpStatusRequest(Record):
+    """@brief Own all original mycobot_320_communication/PumpStatusRequest fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationPumpStatusRequest',
+     'type': 'mycobot_320_communication/PumpStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/PumpStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_23a6e68b36341b30ab13026cbddfd01b16d352105bb5faecd7c1ec6ad654ab60',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationPumpStatusRequest)
+
+class Ros1Mycobot_320_communicationPumpStatusResponse(Record):
+    """@brief Own all original mycobot_320_communication/PumpStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationPumpStatusResponse',
+     'type': 'mycobot_320_communication/PumpStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/PumpStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_037f53ebd0750c76a798ff17507759fcf71aa8a55496e5b151b8d977dff2c1c8',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationPumpStatusResponse)
+
+class Ros1Mycobot_320_communicationSetAnglesRequest(Record):
+    """@brief Own all original mycobot_320_communication/SetAnglesRequest fields.
+    @details 7 ordered fields; 25..25 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'speed')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationSetAnglesRequest',
+     'type': 'mycobot_320_communication/SetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/SetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_644a7c29bae881d5f29708b552dcd8fd4102289aa396614590bca33dbda9f7da',
+     'minimum': 25,
+     'maximum': 25,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationSetAnglesRequest)
+
+class Ros1Mycobot_320_communicationSetAnglesResponse(Record):
+    """@brief Own all original mycobot_320_communication/SetAnglesResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationSetAnglesResponse',
+     'type': 'mycobot_320_communication/SetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/SetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_57578e8427fc6a3a89aa595259e03c3498153482afd716dd44c0d09ee9f59f20',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationSetAnglesResponse)
+
+class Ros1Mycobot_320_communicationSetCoordsRequest(Record):
+    """@brief Own all original mycobot_320_communication/SetCoordsRequest fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationSetCoordsRequest',
+     'type': 'mycobot_320_communication/SetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/SetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_f398444b45a64155c410a44da67043cee13993d75beabd6bc104b23ccd1d6656',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationSetCoordsRequest)
+
+class Ros1Mycobot_320_communicationSetCoordsResponse(Record):
+    """@brief Own all original mycobot_320_communication/SetCoordsResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_320_communicationSetCoordsResponse',
+     'type': 'mycobot_320_communication/SetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_320_communication/SetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_3fef1bfe9036381f8ad45bc1490e96b4917df5689ccf3a84d66e5ba5145e56c4',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_320_communicationSetCoordsResponse)
+
+class Ros1Mycobot_communicationMycobotAngles(Record):
+    """@brief Own all original mycobot_communication/MycobotAngles fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationMycobotAngles',
+     'type': 'mycobot_communication/MycobotAngles',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/MycobotAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_4cbda93a13d78e9c592327caa737dfecf33adf6db898015afd56ecf7732f9aa6',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationMycobotAngles)
+
+class Ros1Mycobot_communicationMycobotCoords(Record):
+    """@brief Own all original mycobot_communication/MycobotCoords fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationMycobotCoords',
+     'type': 'mycobot_communication/MycobotCoords',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/MycobotCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_1da0d6342a1f4079244a65ad413d4559047d33b049ce9da04f8ab0bd226410a2',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationMycobotCoords)
+
+class Ros1Mycobot_communicationMycobotGripperStatus(Record):
+    """@brief Own all original mycobot_communication/MycobotGripperStatus fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationMycobotGripperStatus',
+     'type': 'mycobot_communication/MycobotGripperStatus',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/MycobotGripperStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_65edcc278c4e21355c62408ff310598b3dbdf03ed426e3da0f2ee0bc6910e649',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationMycobotGripperStatus)
+
+class Ros1Mycobot_communicationMycobotPumpStatus(Record):
+    """@brief Own all original mycobot_communication/MycobotPumpStatus fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationMycobotPumpStatus',
+     'type': 'mycobot_communication/MycobotPumpStatus',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/MycobotPumpStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_0c0cb3c0fe97b9f9c65769a09f505ff6c27a60723598d656cd5f16255f36bfbd',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationMycobotPumpStatus)
+
+class Ros1Mycobot_communicationMycobotSetAngles(Record):
+    """@brief Own all original mycobot_communication/MycobotSetAngles fields.
+    @details 7 ordered fields; 25..25 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'speed')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationMycobotSetAngles',
+     'type': 'mycobot_communication/MycobotSetAngles',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/MycobotSetAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_0844a6cf5033b27ad5062741c939a7cfff63edeba34f7e56c8178e1fab85b334',
+     'minimum': 25,
+     'maximum': 25,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationMycobotSetAngles)
+
+class Ros1Mycobot_communicationMycobotSetCoords(Record):
+    """@brief Own all original mycobot_communication/MycobotSetCoords fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationMycobotSetCoords',
+     'type': 'mycobot_communication/MycobotSetCoords',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/MycobotSetCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_39376ad94c0c9b213703a373b6a3b12fd0dad0ec20ff312143d30099842747a9',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationMycobotSetCoords)
+
+class Ros1Mycobot_communicationGetAnglesRequest(Record):
+    """@brief Own all original mycobot_communication/GetAnglesRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationGetAnglesRequest',
+     'type': 'mycobot_communication/GetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/GetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_8915949f81b788e5797f3bc4935e33e9e9eae82c5db3a1211129e7ef03cd2c54',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationGetAnglesRequest)
+
+class Ros1Mycobot_communicationGetAnglesResponse(Record):
+    """@brief Own all original mycobot_communication/GetAnglesResponse fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationGetAnglesResponse',
+     'type': 'mycobot_communication/GetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/GetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_482e6b845d6913ab7ea12580a395caf0a9815b56f985eb3a0553263fb7fd4ff3',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationGetAnglesResponse)
+
+class Ros1Mycobot_communicationGetCoordsRequest(Record):
+    """@brief Own all original mycobot_communication/GetCoordsRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationGetCoordsRequest',
+     'type': 'mycobot_communication/GetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/GetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_54acc83a24f2f62d8ba9c14b1cea1703cb6097360720550cc438671282d45876',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationGetCoordsRequest)
+
+class Ros1Mycobot_communicationGetCoordsResponse(Record):
+    """@brief Own all original mycobot_communication/GetCoordsResponse fields.
+    @details 6 ordered fields; 24..24 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationGetCoordsResponse',
+     'type': 'mycobot_communication/GetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/GetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_275b9bec563bb8578112b3680400523000a08a8e194044164e5334336b73d107',
+     'minimum': 24,
+     'maximum': 24,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationGetCoordsResponse)
+
+class Ros1Mycobot_communicationGripperStatusRequest(Record):
+    """@brief Own all original mycobot_communication/GripperStatusRequest fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationGripperStatusRequest',
+     'type': 'mycobot_communication/GripperStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/GripperStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_d2c94d1906d311981c72642d82bbea634cfed4eac8c0aef41219bf4f382d4585',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationGripperStatusRequest)
+
+class Ros1Mycobot_communicationGripperStatusResponse(Record):
+    """@brief Own all original mycobot_communication/GripperStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationGripperStatusResponse',
+     'type': 'mycobot_communication/GripperStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/GripperStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_3a75c0d75882836971ed4c51e50c7b88778fcfeadf9b30df211d5055eb767664',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationGripperStatusResponse)
+
+class Ros1Mycobot_communicationPumpStatusRequest(Record):
+    """@brief Own all original mycobot_communication/PumpStatusRequest fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationPumpStatusRequest',
+     'type': 'mycobot_communication/PumpStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/PumpStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_561f4bb1f74832111672bbfed1ef1266a91914fb1034437199f730f55324c65c',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationPumpStatusRequest)
+
+class Ros1Mycobot_communicationPumpStatusResponse(Record):
+    """@brief Own all original mycobot_communication/PumpStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationPumpStatusResponse',
+     'type': 'mycobot_communication/PumpStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/PumpStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_b5a1672fe12d2e2131034bb6da8751130b64ef6d48ea48ac0a046c506da452dd',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationPumpStatusResponse)
+
+class Ros1Mycobot_communicationSetAnglesRequest(Record):
+    """@brief Own all original mycobot_communication/SetAnglesRequest fields.
+    @details 7 ordered fields; 25..25 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_5: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_6: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'speed')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationSetAnglesRequest',
+     'type': 'mycobot_communication/SetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/SetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_10bcf04e47b743a985ffefc61dff4522f3718d2ac7170960c8ae6857aaa11cbd',
+     'minimum': 25,
+     'maximum': 25,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_5',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_6',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationSetAnglesRequest)
+
+class Ros1Mycobot_communicationSetAnglesResponse(Record):
+    """@brief Own all original mycobot_communication/SetAnglesResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationSetAnglesResponse',
+     'type': 'mycobot_communication/SetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/SetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_d407051eb285975d89ad71f39aede021fb564aecca0e0744126c9a599fe396b2',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationSetAnglesResponse)
+
+class Ros1Mycobot_communicationSetCoordsRequest(Record):
+    """@brief Own all original mycobot_communication/SetCoordsRequest fields.
+    @details 8 ordered fields; 26..26 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original ry: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rz: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'ry', 'rz', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationSetCoordsRequest',
+     'type': 'mycobot_communication/SetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/SetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_7a59a4e31eca60caea9f82142225c890a136c60a9e4c821e9463e89139945f7a',
+     'minimum': 26,
+     'maximum': 26,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'ry',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rz',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationSetCoordsRequest)
+
+class Ros1Mycobot_communicationSetCoordsResponse(Record):
+    """@brief Own all original mycobot_communication/SetCoordsResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mycobot_communicationSetCoordsResponse',
+     'type': 'mycobot_communication/SetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mycobot_communication/SetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_1a936a95cb1bfd0a9158342618c40c587af58388abf3b679eb4bad2518aec6af',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mycobot_communicationSetCoordsResponse)
+
+class Ros1Mypalletizer_communicationMypalAngles(Record):
+    """@brief Own all original mypalletizer_communication/MypalAngles fields.
+    @details 4 ordered fields; 16..16 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationMypalAngles',
+     'type': 'mypalletizer_communication/MypalAngles',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/MypalAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_1d45a33e05e948c1b58988c84afe359138c896119f82da0d737377f0272892d9',
+     'minimum': 16,
+     'maximum': 16,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationMypalAngles)
+
+class Ros1Mypalletizer_communicationMypalCoords(Record):
+    """@brief Own all original mypalletizer_communication/MypalCoords fields.
+    @details 4 ordered fields; 16..16 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationMypalCoords',
+     'type': 'mypalletizer_communication/MypalCoords',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/MypalCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_c542d1a1a71224901044bc38ca2934021d811417c7c6937ca194995f67e59b80',
+     'minimum': 16,
+     'maximum': 16,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationMypalCoords)
+
+class Ros1Mypalletizer_communicationMypalGripperStatus(Record):
+    """@brief Own all original mypalletizer_communication/MypalGripperStatus fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationMypalGripperStatus',
+     'type': 'mypalletizer_communication/MypalGripperStatus',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/MypalGripperStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_e37f608d4499ab2ed49618fc244831d274fadb23bd408d42619e3f8409ad2ee6',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationMypalGripperStatus)
+
+class Ros1Mypalletizer_communicationMypalPumpStatus(Record):
+    """@brief Own all original mypalletizer_communication/MypalPumpStatus fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationMypalPumpStatus',
+     'type': 'mypalletizer_communication/MypalPumpStatus',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/MypalPumpStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_cdf79e610b5d49b7f73857e02c64688a71517f2fe8e3a96739b16a53ad4d0ebc',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationMypalPumpStatus)
+
+class Ros1Mypalletizer_communicationMypalSetAngles(Record):
+    """@brief Own all original mypalletizer_communication/MypalSetAngles fields.
+    @details 5 ordered fields; 17..17 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'speed')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationMypalSetAngles',
+     'type': 'mypalletizer_communication/MypalSetAngles',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/MypalSetAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_8d11ba2c705bd577a329a01d039b831162742efe790c93b6c2c2631699d04f98',
+     'minimum': 17,
+     'maximum': 17,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationMypalSetAngles)
+
+class Ros1Mypalletizer_communicationMypalSetCoords(Record):
+    """@brief Own all original mypalletizer_communication/MypalSetCoords fields.
+    @details 6 ordered fields; 18..18 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationMypalSetCoords',
+     'type': 'mypalletizer_communication/MypalSetCoords',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/MypalSetCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_51a2d485c8d2252f184eb27724e88c1ae06002d54454bd8ebf31962a79f7c448',
+     'minimum': 18,
+     'maximum': 18,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationMypalSetCoords)
+
+class Ros1Mypalletizer_communicationGetAnglesRequest(Record):
+    """@brief Own all original mypalletizer_communication/GetAnglesRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationGetAnglesRequest',
+     'type': 'mypalletizer_communication/GetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/GetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_d0412d8ccc8f724f2a0660d20e24a39f6445f0cb433e775058b6b092fde65de8',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationGetAnglesRequest)
+
+class Ros1Mypalletizer_communicationGetAnglesResponse(Record):
+    """@brief Own all original mypalletizer_communication/GetAnglesResponse fields.
+    @details 4 ordered fields; 16..16 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationGetAnglesResponse',
+     'type': 'mypalletizer_communication/GetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/GetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_cb5a18aec2420c030d8193eb40d25691a2491b98606a7722156984e82f77f745',
+     'minimum': 16,
+     'maximum': 16,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationGetAnglesResponse)
+
+class Ros1Mypalletizer_communicationGetCoordsRequest(Record):
+    """@brief Own all original mypalletizer_communication/GetCoordsRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationGetCoordsRequest',
+     'type': 'mypalletizer_communication/GetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/GetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_47d45419f14ce576d9e8c2bb288c7b67bb161115e7b99a2c4752d09cbb8087b8',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationGetCoordsRequest)
+
+class Ros1Mypalletizer_communicationGetCoordsResponse(Record):
+    """@brief Own all original mypalletizer_communication/GetCoordsResponse fields.
+    @details 4 ordered fields; 16..16 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationGetCoordsResponse',
+     'type': 'mypalletizer_communication/GetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/GetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_7fdad367484b5f89c812c2513e99373844dcd160a115e326fb1c597f221b53fb',
+     'minimum': 16,
+     'maximum': 16,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationGetCoordsResponse)
+
+class Ros1Mypalletizer_communicationGripperStatusRequest(Record):
+    """@brief Own all original mypalletizer_communication/GripperStatusRequest fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationGripperStatusRequest',
+     'type': 'mypalletizer_communication/GripperStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/GripperStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_48d661f8fd6adfcf1703123464fcfb9351f8f831c0779ffad103a63bcf7ea709',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationGripperStatusRequest)
+
+class Ros1Mypalletizer_communicationGripperStatusResponse(Record):
+    """@brief Own all original mypalletizer_communication/GripperStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationGripperStatusResponse',
+     'type': 'mypalletizer_communication/GripperStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/GripperStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_00ab8ceb190b588a9420c2e044da64857cfdb76e709e40e57835ab5732074e2b',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationGripperStatusResponse)
+
+class Ros1Mypalletizer_communicationPumpStatusRequest(Record):
+    """@brief Own all original mypalletizer_communication/PumpStatusRequest fields.
+    @details 3 ordered fields; 3..3 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin1: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original Pin2: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status', 'Pin1', 'Pin2')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationPumpStatusRequest',
+     'type': 'mypalletizer_communication/PumpStatusRequest',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/PumpStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_6dd70636864c4450a066c1d75e67643331fac4c3e1625bce1b94c85ce7a35636',
+     'minimum': 3,
+     'maximum': 3,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin1',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'Pin2',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationPumpStatusRequest)
+
+class Ros1Mypalletizer_communicationPumpStatusResponse(Record):
+    """@brief Own all original mypalletizer_communication/PumpStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationPumpStatusResponse',
+     'type': 'mypalletizer_communication/PumpStatusResponse',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/PumpStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_c2503f89c84c49db8dab2ac9f847ba9d09434d366fd8916a7d5f30ea161bb4c5',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationPumpStatusResponse)
+
+class Ros1Mypalletizer_communicationSetAnglesRequest(Record):
+    """@brief Own all original mypalletizer_communication/SetAnglesRequest fields.
+    @details 5 ordered fields; 17..17 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_4: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'joint_4', 'speed')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationSetAnglesRequest',
+     'type': 'mypalletizer_communication/SetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/SetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_32072510c6deddb3f372b5f300068ea457916a4e0397b30951e421a1da641d5d',
+     'minimum': 17,
+     'maximum': 17,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_4',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationSetAnglesRequest)
+
+class Ros1Mypalletizer_communicationSetAnglesResponse(Record):
+    """@brief Own all original mypalletizer_communication/SetAnglesResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationSetAnglesResponse',
+     'type': 'mypalletizer_communication/SetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/SetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_1472b47adc3171a9f1938e52bc937af6dd6bb720d33e163b70ae066a89a3211c',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationSetAnglesResponse)
+
+class Ros1Mypalletizer_communicationSetCoordsRequest(Record):
+    """@brief Own all original mypalletizer_communication/SetCoordsRequest fields.
+    @details 6 ordered fields; 18..18 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original rx: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original model: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'rx', 'speed', 'model')
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationSetCoordsRequest',
+     'type': 'mypalletizer_communication/SetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/SetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_2d608cac1a7129ca5cd68ff52170ed40258cb6d199f4842a268a1d7570f9bda1',
+     'minimum': 18,
+     'maximum': 18,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'rx',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'model',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationSetCoordsRequest)
+
+class Ros1Mypalletizer_communicationSetCoordsResponse(Record):
+    """@brief Own all original mypalletizer_communication/SetCoordsResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Mypalletizer_communicationSetCoordsResponse',
+     'type': 'mypalletizer_communication/SetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'mypalletizer_communication/SetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_86900f8772e9609e1d2b882b6ab613ce9609be6c589e5b9574a57b8749231308',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Mypalletizer_communicationSetCoordsResponse)
+
+class Ros1Ultraarm_communicationUltraArmAngles(Record):
+    """@brief Own all original ultraarm_communication/ultraArmAngles fields.
+    @details 3 ordered fields; 12..12 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3')
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationUltraArmAngles',
+     'type': 'ultraarm_communication/ultraArmAngles',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/ultraArmAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_8fa11b8169b634ea7c786bef6ee5d8f0d42488b9841f06104ca8fd378c0fa88d',
+     'minimum': 12,
+     'maximum': 12,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationUltraArmAngles)
+
+class Ros1Ultraarm_communicationUltraArmCoords(Record):
+    """@brief Own all original ultraarm_communication/ultraArmCoords fields.
+    @details 3 ordered fields; 12..12 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z')
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationUltraArmCoords',
+     'type': 'ultraarm_communication/ultraArmCoords',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/ultraArmCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_4e540a1f7d66110adec19bcf3114c44bbc8574efbfd05e911de8d56cc64f24fa',
+     'minimum': 12,
+     'maximum': 12,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationUltraArmCoords)
+
+class Ros1Ultraarm_communicationUltraArmGripperStatus(Record):
+    """@brief Own all original ultraarm_communication/ultraArmGripperStatus fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationUltraArmGripperStatus',
+     'type': 'ultraarm_communication/ultraArmGripperStatus',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/ultraArmGripperStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_60d9ded61184b6f51986afe42b42c786ffb71a13ee6af004c3836c6708b41f9c',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationUltraArmGripperStatus)
+
+class Ros1Ultraarm_communicationUltraArmPumpStatus(Record):
+    """@brief Own all original ultraarm_communication/ultraArmPumpStatus fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationUltraArmPumpStatus',
+     'type': 'ultraarm_communication/ultraArmPumpStatus',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/ultraArmPumpStatus',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_f765502e0a7c0a4fe18049032fe9d314512de56bc2d52e4b1a8cbaf01fbc68e1',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationUltraArmPumpStatus)
+
+class Ros1Ultraarm_communicationUltraArmSetAngles(Record):
+    """@brief Own all original ultraarm_communication/ultraArmSetAngles fields.
+    @details 4 ordered fields; 13..13 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'speed')
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationUltraArmSetAngles',
+     'type': 'ultraarm_communication/ultraArmSetAngles',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/ultraArmSetAngles',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_0536de7f7a45a8d0a19b16b78557ec77c4ce5f99e1141df3c617da847cbb079c',
+     'minimum': 13,
+     'maximum': 13,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationUltraArmSetAngles)
+
+class Ros1Ultraarm_communicationUltraArmSetCoords(Record):
+    """@brief Own all original ultraarm_communication/ultraArmSetCoords fields.
+    @details 4 ordered fields; 13..13 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'speed')
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationUltraArmSetCoords',
+     'type': 'ultraarm_communication/ultraArmSetCoords',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/ultraArmSetCoords',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_4e59dd853f51fe18f9401ec6d0fffaa50a00ba7c96a12b8d09c9bfd5ad68f818',
+     'minimum': 13,
+     'maximum': 13,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationUltraArmSetCoords)
+
+class Ros1Ultraarm_communicationGetAnglesRequest(Record):
+    """@brief Own all original ultraarm_communication/GetAnglesRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationGetAnglesRequest',
+     'type': 'ultraarm_communication/GetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/GetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_fd6922aabe6ec7f82731d19efb0963753d86a8f412de96f8bc67ea2615a7c860',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationGetAnglesRequest)
+
+class Ros1Ultraarm_communicationGetAnglesResponse(Record):
+    """@brief Own all original ultraarm_communication/GetAnglesResponse fields.
+    @details 3 ordered fields; 12..12 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3')
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationGetAnglesResponse',
+     'type': 'ultraarm_communication/GetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/GetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_d7048c8ef416139a11a58bd7d5b865f4b6e0b5431c8e80cdd8c4c79de67cc128',
+     'minimum': 12,
+     'maximum': 12,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationGetAnglesResponse)
+
+class Ros1Ultraarm_communicationGetCoordsRequest(Record):
+    """@brief Own all original ultraarm_communication/GetCoordsRequest fields.
+    @details 0 ordered fields; 0..0 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    __slots__ = ()
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationGetCoordsRequest',
+     'type': 'ultraarm_communication/GetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/GetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_40a6535b429baf0bbe0bc642ade7a8048e693633388ccd061bf12b6d795bbbd1',
+     'minimum': 0,
+     'maximum': 0,
+     'semantics': '',
+     'fields': [],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationGetCoordsRequest)
+
+class Ros1Ultraarm_communicationGetCoordsResponse(Record):
+    """@brief Own all original ultraarm_communication/GetCoordsResponse fields.
+    @details 3 ordered fields; 12..12 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z')
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationGetCoordsResponse',
+     'type': 'ultraarm_communication/GetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/GetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_9f19d8d2eb7284c4cbe2587ca0438d4680287759553d908340f5053ae4f4f036',
+     'minimum': 12,
+     'maximum': 12,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationGetCoordsResponse)
+
+class Ros1Ultraarm_communicationGripperStatusRequest(Record):
+    """@brief Own all original ultraarm_communication/GripperStatusRequest fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationGripperStatusRequest',
+     'type': 'ultraarm_communication/GripperStatusRequest',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/GripperStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_c435d39bef04bd7022e048c0cf364d100bf7a92855f04c816d2a22f0e672d586',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationGripperStatusRequest)
+
+class Ros1Ultraarm_communicationGripperStatusResponse(Record):
+    """@brief Own all original ultraarm_communication/GripperStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationGripperStatusResponse',
+     'type': 'ultraarm_communication/GripperStatusResponse',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/GripperStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_fa0c99ff37acea63c5d507174f9725a9341ffaa007e722e21a8e0b93097e56d4',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationGripperStatusResponse)
+
+class Ros1Ultraarm_communicationPumpStatusRequest(Record):
+    """@brief Own all original ultraarm_communication/PumpStatusRequest fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Status: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Status',)
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationPumpStatusRequest',
+     'type': 'ultraarm_communication/PumpStatusRequest',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/PumpStatusRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_03df5de115870b7679c85e5dc64f996694578f1b7b41387e531a49ee6626e8b2',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Status',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationPumpStatusRequest)
+
+class Ros1Ultraarm_communicationPumpStatusResponse(Record):
+    """@brief Own all original ultraarm_communication/PumpStatusResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationPumpStatusResponse',
+     'type': 'ultraarm_communication/PumpStatusResponse',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/PumpStatusResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_693fd1ad36c534188f959fdb72df4f970432946c5706472c0bf41b27d054a4ee',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationPumpStatusResponse)
+
+class Ros1Ultraarm_communicationSetAnglesRequest(Record):
+    """@brief Own all original ultraarm_communication/SetAnglesRequest fields.
+    @details 4 ordered fields; 13..13 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original joint_1: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_2: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original joint_3: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('joint_1', 'joint_2', 'joint_3', 'speed')
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationSetAnglesRequest',
+     'type': 'ultraarm_communication/SetAnglesRequest',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/SetAnglesRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_fe8cdfa565c8aa8b77db9743af57d7c1ba14aa9dd31c8d4ca92bb7aec107bb42',
+     'minimum': 13,
+     'maximum': 13,
+     'semantics': '',
+     'fields': [{'name': 'joint_1',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_2',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'joint_3',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationSetAnglesRequest)
+
+class Ros1Ultraarm_communicationSetAnglesResponse(Record):
+    """@brief Own all original ultraarm_communication/SetAnglesResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationSetAnglesResponse',
+     'type': 'ultraarm_communication/SetAnglesResponse',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/SetAnglesResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_f1ecaff9a60a47ef978b0faf2b9b2b9166ae308b3df718b0536536004dc8a3b4',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationSetAnglesResponse)
+
+class Ros1Ultraarm_communicationSetCoordsRequest(Record):
+    """@brief Own all original ultraarm_communication/SetCoordsRequest fields.
+    @details 4 ordered fields; 13..13 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original x: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original y: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original z: float32, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    # @brief Original speed: int8, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('x', 'y', 'z', 'speed')
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationSetCoordsRequest',
+     'type': 'ultraarm_communication/SetCoordsRequest',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/SetCoordsRequest',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_2a4670c426b6cf566795b0e874018769fb7e852bd104770dff3e735608c3e3d5',
+     'minimum': 13,
+     'maximum': 13,
+     'semantics': '',
+     'fields': [{'name': 'x',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'y',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'z',
+                 'type': 'float32',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None},
+                {'name': 'speed',
+                 'type': 'int8',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationSetCoordsRequest)
+
+class Ros1Ultraarm_communicationSetCoordsResponse(Record):
+    """@brief Own all original ultraarm_communication/SetCoordsResponse fields.
+    @details 1 ordered fields; 1..1 bytes.
+    @return Inherited encode/decode produce whole values or raise CodecError(22/90).
+    """
+    # @brief Original Flag: bool, scalar.
+    # @details Count/quota 0; string byte bound 0; caller owns storage.
+    __slots__ = ('Flag',)
+    SCHEMA = {'symbol': 'Ros1Ultraarm_communicationSetCoordsResponse',
+     'type': 'ultraarm_communication/SetCoordsResponse',
+     'ros_version': 1,
+     'native_type': 'ultraarm_communication/SetCoordsResponse',
+     'native_identity': None,
+     'codec_identity': 'UWVMROS1_02aa6c82612c5ffd43e890bb173a59245e00cd91dbc38303dcbdc0fb30683431',
+     'minimum': 1,
+     'maximum': 1,
+     'semantics': '',
+     'fields': [{'name': 'Flag',
+                 'type': 'bool',
+                 'array': '',
+                 'count': 0,
+                 'string_bound': 0,
+                 'native_string_bound': 0,
+                 'native_sequence_bound': 0,
+                 'native_default': None,
+                 'native_scalar': '',
+                 'string_encoding': 'utf8',
+                 'float_policy': 'finite',
+                 'default': None}],
+     'constants': {}}
+
+REGISTRY.add(Ros1Ultraarm_communicationSetCoordsResponse)

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "source_package": "glibc",
+      "version": "2.43-6",
+      "files": [
+        {
+          "filename": "glibc_2.43-6.dsc",
+          "url": "https://deb.debian.org/debian/pool/main/g/glibc/glibc_2.43-6.dsc",
+          "bytes": 8571,
+          "sha256": "b096f4bcc7af857d147b2e2c76a734a0b32c56ae835eeabbf380332d803eec64"
+        },
+        {
+          "filename": "glibc_2.43.orig.tar.xz",
+          "url": "https://deb.debian.org/debian/pool/main/g/glibc/glibc_2.43.orig.tar.xz",
+          "bytes": 21553420,
+          "sha256": "b8f0d50a7d4255658efe1f608cacdc4be82bb3c009875626df5968cc64c58880"
+        },
+        {
+          "filename": "glibc_2.43-6.debian.tar.xz",
+          "url": "https://deb.debian.org/debian/pool/main/g/glibc/glibc_2.43-6.debian.tar.xz",
+          "bytes": 490948,
+          "sha256": "7cae5fd8fbc8a83809f75fc5e9432bd789191fd8173721c3863df486a9c7d237"
+        }
+      ],
+      "verification": "source file SHA256 values match downloaded Debian .dsc; OpenPGP signature not verified"
+    },
+    {
+      "source_package": "gcc-16",
+      "version": "16.2.0-3",
+      "files": [
+        {
+          "filename": "gcc-16_16.2.0-3.dsc",
+          "url": "https://deb.debian.org/debian/pool/main/g/gcc-16/gcc-16_16.2.0-3.dsc",
+          "bytes": 52568,
+          "sha256": "1531dfb9404d4f549b2276e322df0ed42591ec7b8548b0bca45b632273f1297a"
+        },
+        {
+          "filename": "gcc-16_16.2.0.orig.tar.gz",
+          "url": "https://deb.debian.org/debian/pool/main/g/gcc-16/gcc-16_16.2.0.orig.tar.gz",
+          "bytes": 107365398,
+          "sha256": "1f12db4797c619339c7285ce109b35888cafad2487a388430e62f03b65e9ed64"
+        },
+        {
+          "filename": "gcc-16_16.2.0-3.debian.tar.xz",
+          "url": "https://deb.debian.org/debian/pool/main/g/gcc-16/gcc-16_16.2.0-3.debian.tar.xz",
+          "bytes": 2852628,
+          "sha256": "73a841a978bfef2f066ab124c47b6825c8226320a1eda8d7e66cbee8b588a9c2"
+        }
+      ],
+      "verification": "source file SHA256 values match downloaded Debian .dsc; OpenPGP signature not verified"
+    },
+    {
+      "source_package": "zlib",
+      "version": "1.3.dfsg+really1.3.2-3",
+      "files": [
+        {
+          "filename": "zlib_1.3.dfsg+really1.3.2-3.dsc",
+          "url": "https://deb.debian.org/debian/pool/main/z/zlib/zlib_1.3.dfsg+really1.3.2-3.dsc",
+          "bytes": 2682,
+          "sha256": "46de917397a3bda8c3b812b118e25d38044a9e161fce5e35f850f4159eb0f0de"
+        },
+        {
+          "filename": "zlib_1.3.dfsg+really1.3.2.orig.tar.gz",
+          "url": "https://deb.debian.org/debian/pool/main/z/zlib/zlib_1.3.dfsg+really1.3.2.orig.tar.gz",
+          "bytes": 1295859,
+          "sha256": "7b6903eb019983987b7112eccf90f1703f1c6c0e0cede36564bf611d19ca579d"
+        },
+        {
+          "filename": "zlib_1.3.dfsg+really1.3.2-3.debian.tar.xz",
+          "url": "https://deb.debian.org/debian/pool/main/z/zlib/zlib_1.3.dfsg+really1.3.2-3.debian.tar.xz",
+          "bytes": 17972,
+          "sha256": "48f7309bccf9c81e9f68a7e22cf06e08a1f70b275535b953632fccb525c5439e"
+        }
+      ],
+      "verification": "source file SHA256 values match downloaded Debian .dsc; OpenPGP signature not verified"
+    }
+  ],
+  "cache_policy": "SDK-external original corresponding sources for bundled native runtime"
+}

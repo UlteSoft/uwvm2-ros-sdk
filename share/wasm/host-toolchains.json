@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "hosts": [
+    {
+      "os": "linux",
+      "arch": "x86_64",
+      "llvm_major": 23,
+      "version": "23.1.4",
+      "upstream": {
+        "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/LLVM-23.1.4-Linux-X64.tar.zst",
+        "sha256": "efdd1dbd089b99bfcfcde7b8eb1236163f2e88df5a981cca4f783ec9cb5e0378",
+        "bytes": 1190060068,
+        "archive_root": "LLVM-23.1.4-Linux-X64"
+      },
+      "upstream_xz_alternative": {
+        "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/LLVM-23.1.4-Linux-X64.tar.xz",
+        "sha256": "25d814fda50d5fb0084b42be09605d8b1595d49d5e2e03a3345d7e112ff6f9f3",
+        "bytes": 2017061664,
+        "archive_root": "LLVM-23.1.4-Linux-X64"
+      },
+      "review_cache_package": {
+        "archive": "llvm-23.1.4-linux-x86_64-wasm-host.tar.gz",
+        "sha256": "3f1c121349418dfedf423348710fd41846e802e16c5e737eacff0a06ed010905",
+        "bytes": 196061784,
+        "archive_root": "llvm-23.1.4-linux-x86_64",
+        "published": false
+      },
+      "executables": {
+        "cc": "bin/clang",
+        "cxx": "bin/clang++",
+        "ld": "bin/wasm-ld",
+        "ar": "bin/llvm-ar",
+        "ranlib": "bin/llvm-ranlib"
+      },
+      "required_native_libraries": [
+        "ld-linux-x86-64.so.2",
+        "libc.so.6",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6",
+        "libz.so.1"
+      ],
+      "minimum_symbol_versions": {
+        "GLIBC": "GLIBC_2.34",
+        "GLIBCXX": "GLIBCXX_3.4.30",
+        "CXXABI": "CXXABI_1.3.13"
+      },
+      "preinstalled_compiler_required": false,
+      "guest_compiler_rt": "use each target entry's SDK resource_dir",
+      "review_native_closure": {
+        "schema_version": 1,
+        "llvm_major": 23,
+        "version": "23.1.4",
+        "host_os": "linux",
+        "host_arch": "x86_64",
+        "directory": "llvm-23.1.4-linux-x86_64-closure",
+        "source_artifact": {
+          "schema_version": 1,
+          "name": "LLVM-23.1.4-Linux-X64.tar.zst",
+          "version": "23.1.4",
+          "source": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-23.1.4",
+          "download_url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/LLVM-23.1.4-Linux-X64.tar.zst",
+          "bytes": 1190060068,
+          "sha256": "efdd1dbd089b99bfcfcde7b8eb1236163f2e88df5a981cca4f783ec9cb5e0378",
+          "verification": "SHA-256 matches the digest returned by the official GitHub release API; no GPG or Sigstore verification claimed"
+        },
+        "cgroup": {
+          "memory.max": "68719476736",
+          "memory.swap.max": "0",
+          "path": "/sys/fs/cgroup/system.slice/docker-4dd58ad4560fde2ab9b539e4ef9cab1fac531654e99ad554aff1fce8ae0eae37.scope"
+        },
+        "tools": {
+          "clang": "bin/clang",
+          "clang-23": "bin/clang-23",
+          "clang++": "bin/clang++",
+          "lld": "bin/lld",
+          "wasm-ld": "bin/wasm-ld",
+          "llvm-ar": "bin/llvm-ar",
+          "llvm-ranlib": "bin/llvm-ranlib",
+          "llvm-nm": "bin/llvm-nm",
+          "llvm-readobj": "bin/llvm-readobj",
+          "llvm-objdump": "bin/llvm-objdump",
+          "llvm-config": "bin/llvm-config"
+        },
+        "compiler": "bin/clang",
+        "cxx_compiler": "bin/clang++",
+        "linker": "bin/wasm-ld",
+        "original_tools": {
+          "clang": "original/bin/clang",
+          "clang-23": "original/bin/clang-23",
+          "clang++": "original/bin/clang++",
+          "lld": "original/bin/lld",
+          "wasm-ld": "original/bin/wasm-ld",
+          "llvm-ar": "original/bin/llvm-ar",
+          "llvm-ranlib": "original/bin/llvm-ranlib",
+          "llvm-nm": "original/bin/llvm-nm",
+          "llvm-readobj": "original/bin/llvm-readobj",
+          "llvm-objdump": "original/bin/llvm-objdump",
+          "llvm-config": "original/bin/llvm-config"
+        },
+        "resource_dir": "lib/clang/23",
+        "loader": "lib/host-runtime/ld-linux-x86-64.so.2",
+        "library_path": "lib/host-runtime",
+        "argv_prefix": [
+          "{root}/lib/host-runtime/ld-linux-x86-64.so.2",
+          "--inhibit-cache",
+          "--library-path",
+          "{root}/lib/host-runtime",
+          "--argv0",
+          "{root}/{tool}"
+        ],
+        "argv_executable": "{root}/{tool}",
+        "native_runtime_packages": [
+          {
+            "binary_package": "libc6:amd64",
+            "version": "2.43-6",
+            "source_package": "glibc",
+            "source_version": "2.43-6"
+          },
+          {
+            "binary_package": "libgcc-s1:amd64",
+            "version": "16.2.0-3",
+            "source_package": "gcc-16",
+            "source_version": "16.2.0-3"
+          },
+          {
+            "binary_package": "libstdc++6:amd64",
+            "version": "16.2.0-3",
+            "source_package": "gcc-16",
+            "source_version": "16.2.0-3"
+          },
+          {
+            "binary_package": "zlib1g:amd64",
+            "version": "1:1.3.dfsg+really1.3.2-3",
+            "source_package": "zlib",
+            "source_version": "1:1.3.dfsg+really1.3.2-3"
+          }
+        ],
+        "native_launcher": {
+          "executable": "bin/llvm23-launcher",
+          "static": true,
+          "libc_dependency": false,
+          "source": "share/uwvm/llvm23_host_launcher.c",
+          "source_sha256": "39ff005fb4ed5ab64cd1b28585a5a479fe4a542cc97d1a9115df23355625c298",
+          "sha256": "d1f201f9ba53680be253c9dbdd2640dedeeffb72cb1b6ced6b0b151f033f4787",
+          "build_command": [
+            "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64/bin/clang",
+            "--target=x86_64-unknown-linux-gnu",
+            "-std=c17",
+            "-O2",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-ffreestanding",
+            "-fno-builtin",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-fno-ident",
+            "-nostdlib",
+            "-static",
+            "--ld-path=/hostoriginal-review-workspace/llvm23-sysroots/host-compiler/.llvm23-native-launcher-bootstrap/ld.lld",
+            "-Wl,--build-id=sha1,-z,noexecstack",
+            "/hostoriginal-review-workspace/llvm23-sysroots/source/sdk/src/wasm/host/llvm23_host_launcher.c",
+            "-o",
+            "/hostoriginal-review-workspace/llvm23-sysroots/host-compiler/llvm-23.1.4-linux-x86_64-closure/bin/llvm23-launcher"
+          ],
+          "build_stdout": "",
+          "build_stderr": "",
+          "readelf": "\nElf file type is EXEC (Executable file)\nEntry point 0x201450\nThere are 5 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset             VirtAddr           PhysAddr\n                 FileSiz            MemSiz              Flags  Align\n  PHDR           0x0000000000000040 0x0000000000200040 0x0000000000200040\n                 0x0000000000000118 0x0000000000000118  R      0x8\n  LOAD           0x0000000000000000 0x0000000000200000 0x0000000000200000\n                 0x0000000000000450 0x0000000000000450  R      0x1000\n  LOAD           0x0000000000000450 0x0000000000201450 0x0000000000201450\n                 0x000000000000063e 0x000000000000063e  R E    0x1000\n  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000000000 0x0000000000000000  RW     0x0\n  NOTE           0x0000000000000158 0x0000000000200158 0x0000000000200158\n                 0x0000000000000024 0x0000000000000024  R      0x4\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .note.gnu.build-id .rodata \n   02     .text \n   03     \n   04     .note.gnu.build-id \n\nThere is no dynamic section in this file.\n"
+        },
+        "native_runtime_libraries": {
+          "ld-linux-x86-64.so.2": {
+            "source_path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+            "sha256": "8ba1d385b2689fade277dca3639cf9ef0355722bcb1aabdc5f5f0ace75746ccc"
+          },
+          "libc.so.6": {
+            "source_path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+            "sha256": "5f7640b3c2dd8885f594ff0d55e2891889c7d4adb4e2b2de97c56264c07982cb"
+          },
+          "libgcc_s.so.1": {
+            "source_path": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+            "sha256": "7648d44539f19f2f22178616d5279a48c350edb7756f7075ce8114624f22c821"
+          },
+          "libm.so.6": {
+            "source_path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+            "sha256": "d765d99423b9aba7fc34b7af48d91aeecc70bdc0ae6233a9a7ba60d4c6d3c13d"
+          },
+          "libstdc++.so.6": {
+            "source_path": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.36",
+            "sha256": "ea10cca8a089638b5dffc949955a2d8eabdc03639f843abac3e068f3e7b028c0"
+          },
+          "libz.so.1": {
+            "source_path": "/usr/lib/x86_64-linux-gnu/libz.so.1.3.2",
+            "sha256": "032754aa5f865b32034dbc2e6b70153f29f38cf182dc41fa36aa469143fa53ca"
+          }
+        },
+        "environment": {
+          "LD_LIBRARY_PATH": ""
+        },
+        "compiler_child_policy": {
+          "compile_flags": [
+            "-fintegrated-cc1"
+          ],
+          "driver_link_flags": [
+            "-fuse-ld={root}/bin/wasm-ld"
+          ],
+          "driver_link_children_use_bundled_loader_automatically": true
+        },
+        "source_cache_policy": "corresponding upstream/runtime sources remain outside the SDK",
+        "published": false,
+        "manifest": "share/uwvm/llvm23-host-closure.json",
+        "manifest_sha256": "7e7eb498d8e469f8eac32f804acdeacac9f3b7d9f430dd5f8d2c6e42d9eaf709",
+        "file_count": 362,
+        "retained_bytes": 703381725,
+        "bundled_loader_execution_tested": true,
+        "bundled_dependency_resolution_tested": true,
+        "native_runtime_source_lock": "share/wasm/native-runtime-sources.json",
+        "acceptance_report": "share/wasm/llvm23-native-host-validation.json",
+        "wasm_acceptance_tested": true
+      }
+    }
+  ],
+  "rebuild_dependencies": {
+    "python": ">=3.11",
+    "cmake": ">=3.26",
+    "ninja": true,
+    "llvm23_with_webassembly_backend": true,
+    "pinned_source_cache": true
+  },
+  "prebuilt_guest_consumption": {
+    "python_required": false,
+    "cmake_required": false,
+    "ninja_required": false,
+    "preinstalled_compiler_required": false
+  },
+  "original_provenance_sha256": "851e184617e837558528fd1ddb3bcf7910f074418515e6c3786b5d1e537551b6",
+  "path_scope": "Historical provenance paths are labels, not installation dependencies."
+}

@@ -1,0 +1,6 @@
+# Dependency-free package source lock. Validate with frozen offline Cargo.
+version = 3
+
+[[package]]
+name = "roswasm"
+version = "0.1.0"

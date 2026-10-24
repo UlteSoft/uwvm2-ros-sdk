@@ -1,0 +1,53 @@
+{
+  "profile": "uwvm-ros-vendor-complete-bounded-v1",
+  "status": "SOURCE_BOUND_NOT_NATIVE_OR_HARDWARE_QUALIFIED",
+  "default_authority": [],
+  "source_inputs": {
+    "catalog": {
+      "bytes": 1287,
+      "sha256": "f53b743658e3708ded8168fd8928611de542832f7993f5173d228e6576e6d55f"
+    },
+    "definitions": [
+      {
+        "file": "unitree_go/msg/BmsState.msg",
+        "bytes": 137,
+        "sha256": "0f7ad8e09f8fd02999da9aa222ab0ecb848d9f70136af78a5ec7a10631959828"
+      },
+      {
+        "file": "unitree_go/msg/IMUState.msg",
+        "bytes": 100,
+        "sha256": "95b5b2aa84fbbea748a560f18cc3950a6091c5822aa1dba326aa183327cb8198"
+      },
+      {
+        "file": "unitree_go/msg/LowState.msg",
+        "bytes": 403,
+        "sha256": "927537585595e44ab6753741c78410f43c0fe190f3f2f47825fdb57793ed19e5"
+      },
+      {
+        "file": "unitree_go/msg/MotorState.msg",
+        "bytes": 151,
+        "sha256": "e4c7440b1f096b723e48c626c21ef6b77d828d19af0ce5bd90e28a80590014a0"
+      },
+      {
+        "file": "unitree_go/msg/SportModeState.msg",
+        "bytes": 307,
+        "sha256": "4034e8c6805e002c5ad2327912f52219c712853a51a518378acb1d22764d122c"
+      },
+      {
+        "file": "unitree_go/msg/TimeSpec.msg",
+        "bytes": 212,
+        "sha256": "1bab331c842af6a6847f471cf2aad56ad38139c901b9df436470e7b42f86369f"
+      },
+      {
+        "file": "unitree_go/msg/WirelessController.msg",
+        "bytes": 55,
+        "sha256": "ce175fee57fa89c6edfd0d57e8395e5b75788b62ad6d19a393dc68e0f2fddd6d"
+      }
+    ]
+  },
+  "native_metadata": {
+    "bytes": 25162,
+    "sha256": "8817b178a0e41a8b38a42b3fd90c8bd70f584533a176584405a1df9cd76fa264"
+  },
+  "constant_schema_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+}

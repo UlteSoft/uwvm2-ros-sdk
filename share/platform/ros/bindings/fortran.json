@@ -1,0 +1,36 @@
+{
+  "format": "uwvm-ros-binding-v1",
+  "language": "fortran",
+  "extensions": [
+    ".f",
+    ".F",
+    ".for",
+    ".FOR",
+    ".ftn",
+    ".f90",
+    ".F90",
+    ".f95",
+    ".F95",
+    ".f03",
+    ".F03",
+    ".f08",
+    ".F08",
+    ".f18",
+    ".F18"
+  ],
+  "abi": {
+    "ros1": "uwvm_ros1_v1",
+    "ros2": "uwvm_ros2_v1"
+  },
+  "module_roots": [
+    "include/platform/ros/fortran"
+  ],
+  "backend_roots": {
+    "ros1": "include/platform/ros/fortran/ros1",
+    "ros2": "include/platform/ros/fortran/ros2"
+  },
+  "native_sources": {},
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "common_source_owner": "08",
+  "qualification": "Shared source/module interface only; actual Flang and target runtimes are required."
+}

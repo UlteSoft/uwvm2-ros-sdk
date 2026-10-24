@@ -1,0 +1,136 @@
+{
+  "platform": "doosan",
+  "review_state": "source-review",
+  "examples": 937,
+  "example_languages": {
+    "as": 36,
+    "c": 36,
+    "c_ffi_bridge": 36,
+    "cpp": 37,
+    "csharp": 36,
+    "d": 36,
+    "fsharp": 36,
+    "go": 36,
+    "haskell": 36,
+    "java": 36,
+    "js": 36,
+    "kotlin": 36,
+    "lua": 36,
+    "moonbit": 36,
+    "nim": 36,
+    "objectc": 36,
+    "odin": 36,
+    "php": 36,
+    "py": 36,
+    "r": 36,
+    "rs": 36,
+    "ruby": 36,
+    "swift": 36,
+    "tinygo": 36,
+    "vbnet": 36,
+    "zig": 36
+  },
+  "manuals": {
+    "zh_CN": 57,
+    "en_US": 60
+  },
+  "current_snapshot_build_acceptance": "pending",
+  "current_snapshot_native_ros_acceptance": "pending",
+  "current_snapshot_qemu_aarch64_acceptance": "pending",
+  "static_shared_library_acceptance": "pending",
+  "complete": false,
+  "withheld_source_files": 0,
+  "source_review_revision": "2026-10-23-parent-review-39",
+  "source_owner": "03",
+  "review39_scoped_acceptance": {
+    "real_static_archives": 2,
+    "consumer_executions": 8,
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "ROS_enabled": false,
+    "wasm_widths": [
+      32,
+      64
+    ],
+    "runtime_hosts": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "actual_memory_max": 68719476736,
+    "actual_memory_swap_max": 0,
+    "physical_controller_executed": false,
+    "complete_platform_qualified": false
+  },
+  "source_inventory_review": 44,
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig",
+    "fortran",
+    "wat",
+    "typescript"
+  ],
+  "new_language_work": {
+    "fortran": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_compiler": "LLVM Flang 23.1.4 source candidate",
+      "common_raw_abi_modules": [
+        "uwvm_ros1_v1",
+        "uwvm_ros2_v1"
+      ],
+      "compiled": false,
+      "executed": false
+    },
+    "wat": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_assembler": "WABT wat2wasm source candidate",
+      "compiled": false,
+      "executed": false
+    }
+  },
+  "review43_final_moonbit": {
+    "final_projects": 3,
+    "final_source_rebuilt": true,
+    "width": 32,
+    "byte_identical_retained_runs": 6,
+    "execution_hosts": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "native_ROS_enabled": false,
+    "nondefault_field_oracle_qualified": false,
+    "memory64_or_library_qualified": false,
+    "full_platform_qualified": false
+  },
+  "typescript": {
+    "shared_frontend_available": true,
+    "platform_native_qualification": "pending",
+    "platform_registration_qualified": false,
+    "scope": "Common two-width frontend and scalar libraries; platform native ROS acceptance is separate"
+  }
+}

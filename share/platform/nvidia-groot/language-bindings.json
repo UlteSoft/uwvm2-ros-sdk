@@ -1,0 +1,143 @@
+{
+  "format": "uwvm-platform-language-modules-v1",
+  "platform": "nvidia-groot",
+  "module_map": {
+    "as": {
+      "source_root": "include/platform/nvidia-groot/as/ros2/complete",
+      "public_prefix": "nvidia-groot/as/ros2/complete",
+      "source_only": true
+    },
+    "js": {
+      "source_root": "include/platform/nvidia-groot/js/ros2/complete",
+      "public_prefix": "nvidia-groot/js/ros2/complete",
+      "source_only": true
+    },
+    "go": {
+      "source_root": "include/platform/nvidia-groot/go/ros2/complete",
+      "public_prefix": "nvidia-groot/go/ros2/complete",
+      "source_only": true,
+      "native_action": {
+        "format": "uwvm-native-action-v1",
+        "language": "go",
+        "go": {
+          "modules": [
+            "include/platform/ros/go",
+            "include/platform/nvidia-groot/go"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      },
+      "source_graph_state": "final-documented-source-real-rebuild-and-x86-QEMU-revalidation-qualified",
+      "implemented_target_action": "wasm32-wasip1",
+      "wasm64_action": "explicitly-refused-by-shared-frontend; no-fallback",
+      "qualification": {
+        "proof": "share/platform/nvidia/go-native-review41.json",
+        "CPU_examples": 3,
+        "native_original_Array_examples": 0,
+        "all_catalog_native_types_qualified": false,
+        "library_routes_qualified": false
+      }
+    },
+    "tinygo": {
+      "source_root": "include/platform/nvidia-groot/tinygo/ros2/complete",
+      "public_prefix": "nvidia-groot/tinygo/ros2/complete",
+      "source_only": true
+    },
+    "rs": {
+      "source_root": "include/platform/nvidia-groot/rs/ros2/complete",
+      "public_prefix": "nvidia-groot/rs/ros2/complete",
+      "source_only": true,
+      "crate": "nvidia_groot",
+      "native_action": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros2\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs"
+            },
+            {
+              "name": "nvidia_groot",
+              "source": "include/platform/nvidia-groot/rs/ros2/complete/records.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "nvidia_groot"
+          ]
+        }
+      },
+      "source_graph_state": "final-documented-genuine-cold-build-and-x86-QEMU-CPU-qualified",
+      "implemented_target_action": "wasm32-wasip1",
+      "wasm64_action": "explicitly-refused-by-shared-frontend; no-fallback",
+      "qualification": {
+        "proof": "share/platform/nvidia/rust-native-review41.json",
+        "CPU_examples": 3,
+        "native_original_Array_examples": 0,
+        "library_routes_qualified": false,
+        "all_catalog_native_types_qualified": false
+      }
+    },
+    "py": {
+      "source_root": "include/platform/nvidia-groot/py/ros2/complete",
+      "public_prefix": "nvidia-groot/py/ros2/complete",
+      "source_only": true,
+      "package_alias": "nvidia_groot"
+    },
+    "java": {
+      "source_root": "include/platform/nvidia-groot/java/ros2/complete",
+      "public_prefix": "nvidia-groot/java/ros2/complete",
+      "source_only": true
+    },
+    "csharp": {
+      "source_root": "include/platform/nvidia-groot/csharp/ros2/complete",
+      "public_prefix": "nvidia-groot/csharp/ros2/complete",
+      "source_only": true
+    },
+    "d": {
+      "source_root": "include/platform/nvidia-groot/d/ros2/complete",
+      "public_prefix": "nvidia-groot/d/ros2/complete",
+      "source_only": true
+    },
+    "nim": {
+      "source_root": "include/platform/nvidia-groot/nim/ros2/complete",
+      "public_prefix": "nvidia-groot/nim/ros2/complete",
+      "source_only": true
+    },
+    "odin": {
+      "source_root": "include/platform/nvidia-groot/odin/ros2/complete",
+      "public_prefix": "nvidia-groot/odin/ros2/complete",
+      "source_only": true
+    },
+    "haskell": {
+      "source_root": "include/platform/nvidia-groot/haskell/ros2/complete",
+      "public_prefix": "nvidia-groot/haskell/ros2/complete",
+      "source_only": true
+    },
+    "swift": {
+      "source_root": "include/platform/nvidia-groot/swift/ros2/complete",
+      "public_prefix": "nvidia-groot/swift/ros2/complete",
+      "source_only": true
+    },
+    "moonbit": {
+      "source_root": "include/platform/nvidia-groot/moonbit/ros2/complete",
+      "public_prefix": "nvidia-groot/moonbit/ros2/complete",
+      "source_only": true
+    },
+    "zig": {
+      "source_root": "include/platform/nvidia-groot/zig/ros2/complete",
+      "public_prefix": "nvidia-groot/zig/ros2/complete",
+      "source_only": true
+    }
+  }
+}

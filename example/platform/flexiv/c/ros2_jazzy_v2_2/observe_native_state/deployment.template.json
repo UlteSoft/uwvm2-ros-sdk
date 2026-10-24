@@ -1,0 +1,69 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "connection": {
+    "node-name": "sdk_state_observer",
+    "namespace": "/sdk_fixture",
+    "domain-id": "137",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "observe_native_state": {
+      "arguments": [
+        "sample"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "sample",
+              "operation": "topic.subscribe",
+              "resource": "/sdk_fixture/flexiv/complete_original_state",
+              "type": "flexiv_msgs/msg/RobotStates",
+              "identity": "RIHS01_a32d53d6f65bfab7a8807eed887242d161b3eed6db495dc9b926b3cddfa7a05a",
+              "limits": {
+                "max-message-bytes": "5160",
+                "max-subscribers": "1",
+                "max-rate-hz": "100",
+                "burst": "10",
+                "max-bytes-per-second": "1048576",
+                "max-queue-bytes": "1048576",
+                "overflow-policy": "drop-oldest",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "adapter-codec-identity": "UWVMROS1_3faeb145bd2ce50b6478e44c55400cc484e619eb66783f56a4a0801d51af708a",
+                "max-inflight": "1",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite"
+              }
+            }
+          ],
+          "wasi_grants": [
+            "monotonic-clock"
+          ]
+        }
+      }
+    }
+  }
+}

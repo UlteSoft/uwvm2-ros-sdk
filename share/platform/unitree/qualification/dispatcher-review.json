@@ -1,0 +1,455 @@
+{
+  "format": "uwvm-unitree-final-dispatch-read-only-audit-v1",
+  "status": "PASS",
+  "observed_at_utc": "2026-10-22T07:57:19.072198+00:00",
+  "scope": "Unitree provider, its selected language producers, the seven shared Xmake files and Unitree launcher only",
+  "sdk_files_modified": false,
+  "compilers_or_guests_executed": 0,
+  "new_acceptance_runs": 0,
+  "source_analysis_only": true,
+  "provider": {
+    "public_sha256": "3044ae8ea0526296066abb9424df008e03baa791eaaf17f56346ac29993592c7",
+    "candidate_sha256": "ba9d6637f018732e506e0ff8b131f07547ffec877f43ac64d4af9b02601d463e",
+    "core_languages": [
+      "c",
+      "cpp",
+      "as",
+      "objectc",
+      "c_ffi_bridge",
+      "go",
+      "tinygo",
+      "rs"
+    ],
+    "added_languages": [
+      "d",
+      "haskell",
+      "java",
+      "js",
+      "kotlin",
+      "lua",
+      "moonbit",
+      "nim",
+      "odin",
+      "php",
+      "py",
+      "ruby",
+      "swift",
+      "zig"
+    ],
+    "core8_projection_all_tokens_identical": true,
+    "core8_token_count": 1038,
+    "core8_projection_is_source_analysis_not_an_executed_replacement": true,
+    "core_source_producer_result": "nil; no import and no producer.configure/build invocation",
+    "core_configure_additional_read": "One repeated SDK-root lookup/validation and a local producer-map lookup; no target mutation or compiler discovery on these eight routes",
+    "core_branches": {
+      "c": "existing cfamily provider with unchanged language flags",
+      "cpp": "existing cfamily provider with unchanged language flags",
+      "as": "as provider",
+      "objectc": "existing cfamily provider with unchanged language flags",
+      "c_ffi_bridge": "existing cfamily provider with unchanged language flags",
+      "go": "existing go_rust provider",
+      "tinygo": "existing go_rust provider",
+      "rs": "existing go_rust provider"
+    },
+    "direct_run_tokens_identical_without_projection": true,
+    "functions": {
+      "sdk": {
+        "tokens_identical_after_only_added_dispatch_projection": true,
+        "token_count": 43,
+        "token_sequence_sha256": "5cfaef3b531f07351f55102c7bb426cb9100fbf3b189582625a3c693996a46a4"
+      },
+      "triple": {
+        "tokens_identical_after_only_added_dispatch_projection": true,
+        "token_count": 48,
+        "token_sequence_sha256": "5305048eb43431c3c6da760f38205c230d5f1a17967fd27a113d110650ccff8c"
+      },
+      "provider.configure": {
+        "tokens_identical_after_only_added_dispatch_projection": true,
+        "token_count": 325,
+        "token_sequence_sha256": "7ddd20139fe18ee9d1d7178faf828db03c184f822bd46311cc141c436290a980"
+      },
+      "program": {
+        "tokens_identical_after_only_added_dispatch_projection": true,
+        "token_count": 32,
+        "token_sequence_sha256": "9faf9c1a47921678c26d057f810e4b5a3d26fe80cd1b5a14e68e2521f5c610c6"
+      },
+      "provider.build": {
+        "tokens_identical_after_only_added_dispatch_projection": true,
+        "token_count": 295,
+        "token_sequence_sha256": "4ebf6cb2f8f540a9074f1674a1362f466da93aebb287e3f9876abf2cc5aff163"
+      },
+      "provider.run": {
+        "tokens_identical_after_only_added_dispatch_projection": true,
+        "token_count": 253,
+        "token_sequence_sha256": "2459fd2dc70bee1f03400f21729961edfc836e4c636f67e4e55569f3c04c3529"
+      }
+    },
+    "remove_only_jvm_additions_restores_exact_twenty_route_sha256": "f1f2fb922ae51072aeb313c3d4819e53289338a0262b1ec9bed54c419155c913",
+    "new_twelve_source_producer_routes_unchanged_by_jvm_guard": true
+  },
+  "launcher": {
+    "public_sha256": "249a0073cd98f653a11ee70b3d6aaa84c8d67e488dde5a6b2406026921b4b12d",
+    "candidate_sha256": "00ecdf984479db45fba4784998ef58c68cfa29dcadcf11faf39fa7ba609e6e0d",
+    "entire_ast_equal_after_only_four_optional_exception_integration_points": true,
+    "changes": {
+      "defaulted_feature_assignment": 1,
+      "strict_feature_validation": 1,
+      "feature_receipt_field": 1,
+      "optional_runtime_flag": 1
+    },
+    "default_behavior": "Absent runtime_features becomes []; no added runtime flag, with an additional [] field in the execution receipt",
+    "intentional_changed_behavior": "Malformed explicit runtime_features is refused before a worker starts; ['exceptions'] appends exactly --wasm-feature-enable-exceptions"
+  },
+  "evidence_bridges": {
+    "manifest_pins": {
+      "core8": {
+        "path": "original-review-workspace/aarch64-acceptance/unitree-public-final/evidence/inputs/public-inputs.json",
+        "sha256": "5e8d325643c43ceceef8381e4cddaadcaab8c8989530bb1f4c9e5e404643154b"
+      },
+      "native6": {
+        "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/inputs/producer-source-manifest.json",
+        "sha256": "847ab4645ded15f58a95e96a833147fe8ca3adc97be134f2a21bc6c19b2e8a04"
+      },
+      "embedded6_final_r2": {
+        "path": "original-review-workspace/unitree-embedded-integration/test/inputs.json",
+        "sha256": "2f061a9179af891aa2a3b8d8b82353c244b29ae61c66d73079e592af62b0b693"
+      },
+      "jvm2": {
+        "path": "original-review-workspace/aarch64-acceptance/unitree-jvm-unified/prepared-sdk-inputs.json",
+        "sha256": "b50f5f60dafb951c9113a069c6a977678d48a630d2d35f8f854a432862c205a8"
+      }
+    },
+    "common_xmake_files": [
+      {
+        "path": "tools/xmake/cfamily.lua",
+        "current_public_and_candidate_sha256": "a70a15854736212455294b12dca3a9006480d3bb03dfff6d5f6655eacf292f59",
+        "cohort_manifest_pins": {
+          "core8": "a70a15854736212455294b12dca3a9006480d3bb03dfff6d5f6655eacf292f59",
+          "native6": "a70a15854736212455294b12dca3a9006480d3bb03dfff6d5f6655eacf292f59",
+          "embedded6_final_r2": "a70a15854736212455294b12dca3a9006480d3bb03dfff6d5f6655eacf292f59",
+          "jvm2": null
+        }
+      },
+      {
+        "path": "tools/xmake/dispatch.lua",
+        "current_public_and_candidate_sha256": "375d8110584550b34d1c9f2c6b7eeef71e03dd05f29601f9ab924812bcf42999",
+        "cohort_manifest_pins": {
+          "core8": "375d8110584550b34d1c9f2c6b7eeef71e03dd05f29601f9ab924812bcf42999",
+          "native6": "375d8110584550b34d1c9f2c6b7eeef71e03dd05f29601f9ab924812bcf42999",
+          "embedded6_final_r2": "375d8110584550b34d1c9f2c6b7eeef71e03dd05f29601f9ab924812bcf42999",
+          "jvm2": "375d8110584550b34d1c9f2c6b7eeef71e03dd05f29601f9ab924812bcf42999"
+        }
+      },
+      {
+        "path": "tools/xmake/package_host.lua",
+        "current_public_and_candidate_sha256": "fb964046019e7d8a6a5d9e7deea064244dc01cde07404dbbe0f72169d1408324",
+        "cohort_manifest_pins": {
+          "core8": "fb964046019e7d8a6a5d9e7deea064244dc01cde07404dbbe0f72169d1408324",
+          "native6": "fb964046019e7d8a6a5d9e7deea064244dc01cde07404dbbe0f72169d1408324",
+          "embedded6_final_r2": "fb964046019e7d8a6a5d9e7deea064244dc01cde07404dbbe0f72169d1408324",
+          "jvm2": null
+        }
+      },
+      {
+        "path": "tools/xmake/repository.lua",
+        "current_public_and_candidate_sha256": "3476d13327d21ce2b54165de11ce5b242f393030a64b2ae4c5ae83c03616d34a",
+        "cohort_manifest_pins": {
+          "core8": "3476d13327d21ce2b54165de11ce5b242f393030a64b2ae4c5ae83c03616d34a",
+          "native6": "3476d13327d21ce2b54165de11ce5b242f393030a64b2ae4c5ae83c03616d34a",
+          "embedded6_final_r2": "3476d13327d21ce2b54165de11ce5b242f393030a64b2ae4c5ae83c03616d34a",
+          "jvm2": null
+        }
+      },
+      {
+        "path": "tools/xmake/ros.lua",
+        "current_public_and_candidate_sha256": "182a7639e30f3abc7418452c579bc8a7b537aa8595b4c8d104bbff7f053e2875",
+        "cohort_manifest_pins": {
+          "core8": "182a7639e30f3abc7418452c579bc8a7b537aa8595b4c8d104bbff7f053e2875",
+          "native6": "182a7639e30f3abc7418452c579bc8a7b537aa8595b4c8d104bbff7f053e2875",
+          "embedded6_final_r2": "182a7639e30f3abc7418452c579bc8a7b537aa8595b4c8d104bbff7f053e2875",
+          "jvm2": "182a7639e30f3abc7418452c579bc8a7b537aa8595b4c8d104bbff7f053e2875"
+        }
+      },
+      {
+        "path": "tools/xmake/targets.lua",
+        "current_public_and_candidate_sha256": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d",
+        "cohort_manifest_pins": {
+          "core8": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d",
+          "native6": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d",
+          "embedded6_final_r2": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d",
+          "jvm2": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d"
+        }
+      },
+      {
+        "path": "tools/xmake/tool_bundle.lua",
+        "current_public_and_candidate_sha256": "cd5a6b0aedec09e53a62d7dd34f05e68a35d1d7635a4d976fcdbb39bfed1197e",
+        "cohort_manifest_pins": {
+          "core8": "cd5a6b0aedec09e53a62d7dd34f05e68a35d1d7635a4d976fcdbb39bfed1197e",
+          "native6": "cd5a6b0aedec09e53a62d7dd34f05e68a35d1d7635a4d976fcdbb39bfed1197e",
+          "embedded6_final_r2": "cd5a6b0aedec09e53a62d7dd34f05e68a35d1d7635a4d976fcdbb39bfed1197e",
+          "jvm2": "cd5a6b0aedec09e53a62d7dd34f05e68a35d1d7635a4d976fcdbb39bfed1197e"
+        }
+      }
+    ],
+    "source_producer_helpers": [
+      {
+        "path": "tools/platform/unitree/native_languages.lua",
+        "sha256": "ba86372572329d29eacb885b820f505f61b4bbf3751d05bd84b6e71ceb1df122",
+        "exact_final_cohort": "native6"
+      },
+      {
+        "path": "tools/platform/unitree/interpreted.lua",
+        "sha256": "cf0be9e00ff4bf05d77d7d172a00db6a8b099022c9b89c38d0f3be3a7276925d",
+        "exact_final_cohort": "embedded6_final_r2"
+      },
+      {
+        "path": "tools/platform/unitree/moonbit.lua",
+        "sha256": "8ee108848e49059295f05f984ca71bf224aac4502d226381e30beb6ad42837ae",
+        "exact_final_cohort": "embedded6_final_r2"
+      },
+      {
+        "path": "tools/language/jvm/provider.lua",
+        "sha256": "bea7bc14db273f40d44a709aeb2805fa644bbf657d2c127e0c27b6e5b132b619",
+        "exact_final_cohort": "jvm2"
+      }
+    ],
+    "actual_receipts": [
+      {
+        "cohort": "core8_arm48",
+        "path": "original-review-workspace/aarch64-acceptance/unitree-public-final/evidence/review/final-audit.json",
+        "sha256": "40a4a60291403e2ec078f091724effcb746f1b405b70e2162739970be9d04f37"
+      },
+      {
+        "cohort": "native6_x86_final36cold72run",
+        "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/inputs/producer-final.json",
+        "sha256": "616535c6a9a142d0602484498fd6330c2e294d66ad12a86078fc11baee0181c9"
+      },
+      {
+        "cohort": "native6_new_arm18",
+        "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/review/final-audit.json",
+        "sha256": "365014ffa758acefe7c5ae81dbb9cccb4b76ab46d201a7b687b8fce62ff5bb24"
+      },
+      {
+        "cohort": "native6_prior_arm36",
+        "path": "original-review-workspace/unitree-native-integration/inputs/arm-final.json",
+        "sha256": "045bdd4c3bba9ae30db51dd88fd2fe81e0d22b13efd54e337729213ae34f3dd8"
+      },
+      {
+        "cohort": "embedded6_final36cold72run",
+        "path": "original-review-workspace/unitree-embedded-integration/evidence/receipts/integration-r2.json",
+        "sha256": "4782dfcfa869f51b77f2454395cfb23574cc64aa8977385d7a0fe4f564efc586"
+      },
+      {
+        "cohort": "embedded6_arm36",
+        "path": "original-review-workspace/unitree-embedded-arm/audit.json",
+        "sha256": "7f2f1c12f162f4b373624fdd67e671897e85d9fe62a7593fbad8abf8c580fdf7"
+      },
+      {
+        "cohort": "jvm2_final12cold24run",
+        "path": "original-review-workspace/aarch64-acceptance/unitree-jvm-unified/evidence/final-audit.json",
+        "sha256": "c9a50c778867c11f41f769d7e53daa42f40b2c6623405363ee3a943dc25c4d4d"
+      }
+    ],
+    "exception_feature_refusal_receipt": {
+      "path": "original-review-workspace/unitree-embedded-remaining/evidence/accepted/feature-preflight/matrix.json",
+      "sha256": "3967afdbc5fea5286595a9a853edaddd08c41fc0f2d7c20c187f70b30efc3424"
+    },
+    "exception_feature_launcher_source_pin": {
+      "path": "original-review-workspace/unitree-embedded-remaining/evidence/accepted/owned-sources.json",
+      "sha256": "b3e9095db8850c390c67605a84d75718f8f8dcc6ab5859b31b5c516c9dafedbd"
+    },
+    "exception_arm_admission": {
+      "path": "original-review-workspace/unitree-embedded-arm/inputs/admission.json",
+      "sha256": "e529d2edbf58bb5d121f7786dc9fec948fa6d74e540592a3bd78125dbc20fd07"
+    },
+    "exception_arm_execution": {
+      "path": "original-review-workspace/unitree-embedded-arm/results/final/acceptance.json",
+      "sha256": "c689a83ba19b138eb0043e6038a02c1d1aedeee3ac52ff8e64f88997d40f74cd"
+    },
+    "actual_exception_arm_successes": 6,
+    "malformed_feature_refusals": 12,
+    "native6_changed_modules_new_arm_evidence": {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/review/final-audit.json",
+      "sha256": "365014ffa758acefe7c5ae81dbb9cccb4b76ab46d201a7b687b8fce62ff5bb24"
+    },
+    "native6_exact_prior_and_new_arm_bridge": {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/inputs/producer-arm-bridge.json",
+      "sha256": "7177b91c2a74bfd9574676295a4d93fb2885df48d70e0f47c4f3afc7d488eee4"
+    },
+    "native6_exact_previous_arm_modules": 18,
+    "native6_actual_new_arm_modules": 18,
+    "jvm_minimal_overlay_does_not_contain_unused_xmake_files": [
+      "tools/xmake/cfamily.lua",
+      "tools/xmake/package_host.lua",
+      "tools/xmake/repository.lua"
+    ]
+  },
+  "unverified_functional_changes_found_within_reviewed_entry_paths": [],
+  "historical_core8_not_reexecuted_with_final22_provider": true,
+  "conclusion": "The core eight configure/build branches project token-identically to public; run is directly token-identical. The optional launcher feature is the sole functional extension and is covered by exact-source native execution/refusal evidence.",
+  "input_files": [
+    {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-jvm-unified/evidence/final-audit.json",
+      "bytes": 12191,
+      "sha256": "c9a50c778867c11f41f769d7e53daa42f40b2c6623405363ee3a943dc25c4d4d"
+    },
+    {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-jvm-unified/prepared-sdk-inputs.json",
+      "bytes": 52473,
+      "sha256": "b50f5f60dafb951c9113a069c6a977678d48a630d2d35f8f854a432862c205a8"
+    },
+    {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/inputs/producer-arm-bridge.json",
+      "bytes": 23696,
+      "sha256": "7177b91c2a74bfd9574676295a4d93fb2885df48d70e0f47c4f3afc7d488eee4"
+    },
+    {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/inputs/producer-final.json",
+      "bytes": 3716,
+      "sha256": "616535c6a9a142d0602484498fd6330c2e294d66ad12a86078fc11baee0181c9"
+    },
+    {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/inputs/producer-source-manifest.json",
+      "bytes": 44442,
+      "sha256": "847ab4645ded15f58a95e96a833147fe8ca3adc97be134f2a21bc6c19b2e8a04"
+    },
+    {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-native-integration/review/final-audit.json",
+      "bytes": 76289,
+      "sha256": "365014ffa758acefe7c5ae81dbb9cccb4b76ab46d201a7b687b8fce62ff5bb24"
+    },
+    {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-public-final/evidence/inputs/public-inputs.json",
+      "bytes": 3309857,
+      "sha256": "5e8d325643c43ceceef8381e4cddaadcaab8c8989530bb1f4c9e5e404643154b"
+    },
+    {
+      "path": "original-review-workspace/aarch64-acceptance/unitree-public-final/evidence/review/final-audit.json",
+      "bytes": 20609,
+      "sha256": "40a4a60291403e2ec078f091724effcb746f1b405b70e2162739970be9d04f37"
+    },
+    {
+      "path": "original-review-workspace/unitree-embedded-arm/audit.json",
+      "bytes": 2559,
+      "sha256": "7f2f1c12f162f4b373624fdd67e671897e85d9fe62a7593fbad8abf8c580fdf7"
+    },
+    {
+      "path": "original-review-workspace/unitree-embedded-arm/inputs/admission.json",
+      "bytes": 21407,
+      "sha256": "e529d2edbf58bb5d121f7786dc9fec948fa6d74e540592a3bd78125dbc20fd07"
+    },
+    {
+      "path": "original-review-workspace/unitree-embedded-arm/inputs/launcher.py",
+      "bytes": 14743,
+      "sha256": "00ecdf984479db45fba4784998ef58c68cfa29dcadcf11faf39fa7ba609e6e0d"
+    },
+    {
+      "path": "original-review-workspace/unitree-embedded-arm/results/final/acceptance.json",
+      "bytes": 208184,
+      "sha256": "c689a83ba19b138eb0043e6038a02c1d1aedeee3ac52ff8e64f88997d40f74cd"
+    },
+    {
+      "path": "original-review-workspace/unitree-embedded-integration/evidence/receipts/integration-r2.json",
+      "bytes": 10197,
+      "sha256": "4782dfcfa869f51b77f2454395cfb23574cc64aa8977385d7a0fe4f564efc586"
+    },
+    {
+      "path": "original-review-workspace/unitree-embedded-integration/test/inputs.json",
+      "bytes": 38474,
+      "sha256": "2f061a9179af891aa2a3b8d8b82353c244b29ae61c66d73079e592af62b0b693"
+    },
+    {
+      "path": "original-review-workspace/unitree-embedded-remaining/evidence/accepted/feature-preflight/matrix.json",
+      "bytes": 1488,
+      "sha256": "3967afdbc5fea5286595a9a853edaddd08c41fc0f2d7c20c187f70b30efc3424"
+    },
+    {
+      "path": "original-review-workspace/unitree-embedded-remaining/evidence/accepted/owned-sources.json",
+      "bytes": 17983,
+      "sha256": "b3e9095db8850c390c67605a84d75718f8f8dcc6ab5859b31b5c516c9dafedbd"
+    },
+    {
+      "path": "original-review-workspace/unitree-native-integration/inputs/arm-final.json",
+      "bytes": 3374,
+      "sha256": "045bdd4c3bba9ae30db51dd88fd2fe81e0d22b13efd54e337729213ae34f3dd8"
+    },
+    {
+      "path": "original-review-workspace/unitree-source-publication/sdk/tools/language/jvm/provider.lua",
+      "bytes": 9089,
+      "sha256": "bea7bc14db273f40d44a709aeb2805fa644bbf657d2c127e0c27b6e5b132b619"
+    },
+    {
+      "path": "original-review-workspace/unitree-source-publication/sdk/tools/platform/unitree/interpreted.lua",
+      "bytes": 13205,
+      "sha256": "cf0be9e00ff4bf05d77d7d172a00db6a8b099022c9b89c38d0f3be3a7276925d"
+    },
+    {
+      "path": "original-review-workspace/unitree-source-publication/sdk/tools/platform/unitree/moonbit.lua",
+      "bytes": 8884,
+      "sha256": "8ee108848e49059295f05f984ca71bf224aac4502d226381e30beb6ad42837ae"
+    },
+    {
+      "path": "original-review-workspace/unitree-source-publication/sdk/tools/platform/unitree/native_languages.lua",
+      "bytes": 17598,
+      "sha256": "ba86372572329d29eacb885b820f505f61b4bbf3751d05bd84b6e71ceb1df122"
+    },
+    {
+      "path": "original-review-workspace/unitree-source-publication/sdk/tools/platform/unitree/provider.lua",
+      "bytes": 9910,
+      "sha256": "ba9d6637f018732e506e0ff8b131f07547ffec877f43ac64d4af9b02601d463e"
+    },
+    {
+      "path": "original-review-workspace/unitree-source-publication/sdk/tools/platform/unitree/run.py",
+      "bytes": 14743,
+      "sha256": "00ecdf984479db45fba4784998ef58c68cfa29dcadcf11faf39fa7ba609e6e0d"
+    },
+    {
+      "path": "sdk/tools/platform/unitree/provider.lua",
+      "bytes": 7982,
+      "sha256": "3044ae8ea0526296066abb9424df008e03baa791eaaf17f56346ac29993592c7"
+    },
+    {
+      "path": "sdk/tools/platform/unitree/run.py",
+      "bytes": 14690,
+      "sha256": "249a0073cd98f653a11ee70b3d6aaa84c8d67e488dde5a6b2406026921b4b12d"
+    },
+    {
+      "path": "sdk/tools/xmake/cfamily.lua",
+      "bytes": 7777,
+      "sha256": "a70a15854736212455294b12dca3a9006480d3bb03dfff6d5f6655eacf292f59"
+    },
+    {
+      "path": "sdk/tools/xmake/dispatch.lua",
+      "bytes": 4055,
+      "sha256": "375d8110584550b34d1c9f2c6b7eeef71e03dd05f29601f9ab924812bcf42999"
+    },
+    {
+      "path": "sdk/tools/xmake/package_host.lua",
+      "bytes": 4480,
+      "sha256": "fb964046019e7d8a6a5d9e7deea064244dc01cde07404dbbe0f72169d1408324"
+    },
+    {
+      "path": "sdk/tools/xmake/repository.lua",
+      "bytes": 1401,
+      "sha256": "3476d13327d21ce2b54165de11ce5b242f393030a64b2ae4c5ae83c03616d34a"
+    },
+    {
+      "path": "sdk/tools/xmake/ros.lua",
+      "bytes": 5960,
+      "sha256": "182a7639e30f3abc7418452c579bc8a7b537aa8595b4c8d104bbff7f053e2875"
+    },
+    {
+      "path": "sdk/tools/xmake/targets.lua",
+      "bytes": 2069,
+      "sha256": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d"
+    },
+    {
+      "path": "sdk/tools/xmake/tool_bundle.lua",
+      "bytes": 9107,
+      "sha256": "cd5a6b0aedec09e53a62d7dd34f05e68a35d1d7635a4d976fcdbb39bfed1197e"
+    }
+  ],
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "5e24e6b3b6148151cf2d67c8587f39bc81d2efd223b78f63b839b38d177a6e5e"
+}

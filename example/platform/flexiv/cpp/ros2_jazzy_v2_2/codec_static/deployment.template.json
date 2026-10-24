@@ -1,0 +1,34 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "connection": {
+    "node-name": "sdk_codec_reader",
+    "namespace": "/sdk_fixture",
+    "domain-id": "137",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "codec_static": {
+      "arguments": [
+        "REPLACE_WITH_COMPLETE_ENCODED_VALUE_HEX"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "language": "as",
+      "scenario": "query_mode",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-as-query_mode.log"
+    },
+    {
+      "language": "as",
+      "scenario": "next_motion_state",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-as-next_motion_state.log"
+    },
+    {
+      "language": "as",
+      "scenario": "list_resources",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-as-list_resources.log"
+    },
+    {
+      "language": "c",
+      "scenario": "query_mode",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-c-query_mode.log"
+    },
+    {
+      "language": "c",
+      "scenario": "next_motion_state",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-c-next_motion_state.log"
+    },
+    {
+      "language": "c",
+      "scenario": "list_resources",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-c-list_resources.log"
+    },
+    {
+      "language": "cpp",
+      "scenario": "query_mode",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-cpp-query_mode.log"
+    },
+    {
+      "language": "cpp",
+      "scenario": "next_motion_state",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-cpp-next_motion_state.log"
+    },
+    {
+      "language": "cpp",
+      "scenario": "list_resources",
+      "exit": 0,
+      "log": "/abb-test/logs/public-imports/agibot-cpp-list_resources.log"
+    }
+  ]
+}

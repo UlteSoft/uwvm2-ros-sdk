@@ -1,0 +1,65 @@
+uwvm2-ros \
+  --wasm-set-main-module-name main \
+  --wasip1-single-create main \
+  --wasip1-single-enable main \
+  --wasip1-single-noinherit-system-environment main \
+  --ros2-single-create main \
+  --wasip1-single-create io \
+  --wasip1-single-enable io \
+  --wasip1-single-noinherit-system-environment io \
+  --ros2-single-create io \
+  --wasip1-single-create algorithm \
+  --wasip1-single-enable algorithm \
+  --wasip1-single-noinherit-system-environment algorithm \
+  --ros2-single-create algorithm \
+  --wasip1-single-create ros_comm \
+  --wasip1-single-enable ros_comm \
+  --wasip1-single-noinherit-system-environment ros_comm \
+  --ros2-single-create ros_comm \
+  --wasm-preload-library build/io/io.wasm io \
+  --wasm-set-preload-module-attribute io copy \
+  --wasm-preload-library build/algorithm/algorithm.wasm algorithm \
+  --wasm-set-preload-module-attribute algorithm copy \
+  --wasm-preload-library build/ros_comm/ros_comm.wasm ros_comm \
+  --wasm-set-preload-module-attribute ros_comm copy \
+  --wasip1-single-grant ros_comm realtime-clock \
+  --ros2-single-enable ros_comm \
+  --ros2-single-call-boundary ros_comm module-exports \
+  --ros2-single-node-name ros_comm uwvm_library_gateway \
+  --ros2-single-namespace ros_comm /uwvm_library \
+  --ros2-single-domain-id ros_comm 149 \
+  --ros2-single-rmw-implementation ros_comm rmw_fastrtps_cpp \
+  --ros2-single-security-mode ros_comm disabled-test \
+  --ros2-single-keystore ros_comm not-applicable \
+  --ros2-single-enclave ros_comm not-applicable \
+  --ros2-single-gateway-socket ros_comm /tmp/uwvm-library.sock \
+  --ros2-single-gateway-uid ros_comm $worker_uid \
+  --ros2-single-connect-timeout-ms ros_comm 5000 \
+  --ros2-single-audit-deny-max-rate-hz ros_comm 100 \
+  --ros2-single-audit-deny-burst ros_comm 100 \
+  --ros2-single-audit-deny-max-records ros_comm 10000 \
+  --ros2-single-audit-deny-max-bytes ros_comm 1048576 \
+  --ros2-single-grant ros_comm library_pub topic.publish /uwvm_library/outgoing std_msgs/msg/String RIHS01_df668c740482bbd48fb39d76a70dfd4bd59db1288021743503259e948f6b1a18 \
+  --ros2-single-set ros_comm library_pub max-rate-hz 100 \
+  --ros2-single-set ros_comm library_pub burst 8 \
+  --ros2-single-set ros_comm library_pub max-bytes-per-second 1048576 \
+  --ros2-single-set ros_comm library_pub validator none \
+  --ros2-single-set ros_comm library_pub audit allow-and-deny \
+  --ros2-single-set ros_comm library_pub audit-max-rate-hz 100 \
+  --ros2-single-set ros_comm library_pub audit-burst 100 \
+  --ros2-single-set ros_comm library_pub audit-max-records 10000 \
+  --ros2-single-set ros_comm library_pub audit-max-bytes 1048576 \
+  --ros2-single-set ros_comm library_pub max-message-bytes 256 \
+  --ros2-single-set ros_comm library_pub max-queue-bytes 2048 \
+  --ros2-single-set ros_comm library_pub overflow-policy drop-oldest \
+  --ros2-single-set ros_comm library_pub max-publishers 1 \
+  --ros2-single-set ros_comm library_pub qos.reliability reliable \
+  --ros2-single-set ros_comm library_pub qos.durability volatile \
+  --ros2-single-set ros_comm library_pub qos.history keep-last \
+  --ros2-single-set ros_comm library_pub qos.depth 8 \
+  --ros2-single-set ros_comm library_pub qos.deadline infinite \
+  --ros2-single-set ros_comm library_pub qos.lifespan infinite \
+  --ros2-single-set ros_comm library_pub qos.liveliness automatic \
+  --ros2-single-set ros_comm library_pub qos.liveliness-lease-duration infinite \
+  --ros2-single-set ros_comm library_pub max-inflight 1 \
+  --run build/main/main.wasm 9 granted

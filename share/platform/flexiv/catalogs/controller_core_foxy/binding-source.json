@@ -1,0 +1,69 @@
+{
+  "id": "controller_core_foxy",
+  "backend": "ros2",
+  "distribution": "foxy",
+  "bundle": "flexiv-controller-core-foxy-complete",
+  "catalog": "share/platform/flexiv/catalogs/controller_core_foxy/catalog.json",
+  "catalog_sha256": "5a8eaa88c317bb6bdbcbef9504469db1aea22a4a4a19a34ffb72c5a426646310",
+  "records": 9,
+  "interfaces": 9,
+  "fields": 26,
+  "constants": 0,
+  "source_inputs": {
+    "catalog": {
+      "bytes": 2602,
+      "sha256": "5a8eaa88c317bb6bdbcbef9504469db1aea22a4a4a19a34ffb72c5a426646310"
+    },
+    "definitions": [
+      {
+        "file": "builtin_interfaces/msg/Time.msg",
+        "bytes": 214,
+        "sha256": "c7272024281c14e58a7223fde144efe4d729da0af75c2dd8264f91f52649033c"
+      },
+      {
+        "file": "builtin_interfaces/msg/Duration.msg",
+        "bytes": 268,
+        "sha256": "de2c18a883b94668c69c5cca9dc39c264d2fe56f3a950af8c35641804f4d558d"
+      },
+      {
+        "file": "std_msgs/msg/Header.msg",
+        "bytes": 322,
+        "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+      },
+      {
+        "file": "sensor_msgs/msg/JointState.msg",
+        "bytes": 999,
+        "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+      },
+      {
+        "file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+        "bytes": 1176,
+        "sha256": "2358055d26d27c0c302e921f90d5aa59cb5feb3e22937f8ac98314b0c52ba8f4"
+      },
+      {
+        "file": "trajectory_msgs/msg/JointTrajectory.msg",
+        "bytes": 465,
+        "sha256": "d63cda4a5ec81824ed4acd737e6b5903449fb1a7e2f5cdcdcc4c49285f01117c"
+      },
+      {
+        "file": "std_msgs/msg/MultiArrayDimension.msg",
+        "bytes": 393,
+        "sha256": "94927d0ee40f1a1d9bf7bdddbca803e8b6e6d315d70c7295a9b0d2d6c380abed"
+      },
+      {
+        "file": "std_msgs/msg/MultiArrayLayout.msg",
+        "bytes": 1159,
+        "sha256": "8f059b66610c5fe0532e3f12ff1022a10671caebf773f00816fd4c9303626914"
+      },
+      {
+        "file": "std_msgs/msg/Float64MultiArray.msg",
+        "bytes": 460,
+        "sha256": "344f5d8e6215a6e994659fb272de97c47a02b435db94a6d0f983b1fb467e0775"
+      }
+    ]
+  },
+  "positive_infinity_semantics": false,
+  "native_identity": null,
+  "built": false,
+  "executed": false
+}

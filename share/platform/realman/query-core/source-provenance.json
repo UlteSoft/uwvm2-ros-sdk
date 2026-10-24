@@ -1,0 +1,10 @@
+{
+  "schema": "uwvm-retained-support-source-v1",
+  "type": "std_msgs/Empty",
+  "definition_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "catalog_sha256": "df7370b66c13f82c3d2f8ef08ad634b0d3dc76df8b80ab6476dc2408e70c6205",
+  "native_identity": null,
+  "registered": false,
+  "default_authority": [],
+  "scope": "Retained original ROS1 Empty topic request value; no service or native delivery is inferred."
+}

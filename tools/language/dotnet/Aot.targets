@@ -1,0 +1,278 @@
+<Project>
+  <!-- @brief Keep the fixed upstream native pipeline with direct native processes.
+       Import after Microsoft.NET.Sdk targets.
+       @details The original AOT, IL stripping, bundle generation, metadata and
+       response-file tasks remain upstream. Direct native Clang processes receive
+       the unchanged original source, bitcode and response inputs.
+       The pinned Mono compile-in-child option uses system(3), and temporary-file
+       cleanup can invoke rm. Each upstream MSBuild MonoAOTCompiler invocation is
+       already a separate real compiler process; omit that extra shell launch and
+       retain intermediate files in the application's private build cache. -->
+  <UsingTask TaskName="Uwvm.Ros.Build.DirectLink" AssemblyFile="$(ManagedBuildTask)" />
+  <UsingTask TaskName="Uwvm.Ros.Build.ConfigureRuntimeEhLink" AssemblyFile="$(ManagedBuildTask)" />
+  <UsingTask TaskName="Uwvm.Ros.Build.DirectIcallTable" AssemblyFile="$(ManagedBuildTask)" />
+  <UsingTask TaskName="Uwvm.Ros.Build.DirectCompile" AssemblyFile="$(ManagedBuildTask)" />
+  <UsingTask TaskName="Uwvm.Ros.Build.ValidateManagedLibrary" AssemblyFile="$(ManagedBuildTask)" />
+  <UsingTask TaskName="Uwvm.Ros.Build.ValidateManagedImports" AssemblyFile="$(ManagedBuildTask)" />
+  <UsingTask TaskName="Uwvm.Ros.Build.ConfigureWasiCallbackLookup" AssemblyFile="$(ManagedBuildTask)" />
+  <!-- @brief Check original trimmed scalar imports before genuine native AOT.
+       @details The original SDK still emits every native import declaration;
+       the task reads real metadata and rejects cross-heap reference ABI types. -->
+  <Target Name="ManagedValidateScalarImports" BeforeTargets="_WasmAotCompileApp"
+          Condition="'$(ManagedTargetKind)' == 'binary'">
+    <ItemGroup>
+      <_ManagedImportAssembly Include="@(_WasmAssembliesInternal)"
+                              Condition="'%(_WasmAssembliesInternal.Filename)' == '$(AssemblyName)'" />
+    </ItemGroup>
+    <Error Condition="'@(_ManagedImportAssembly->Count())' != '1'" Text="Select one actual primary scalar-import assembly." />
+    <Uwvm.Ros.Build.ValidateManagedImports AssemblyFile="@(_ManagedImportAssembly)"
+                                          ExpectedAssemblyName="$(AssemblyName)"
+                                          ContractFile="$(ManagedImportContract)" />
+  </Target>
+  <!-- @brief Root a genuine managed library through the original ILLink hook.
+       @details The pinned SDK adds its primary assembly with EntryPoint root
+       metadata even when the explicit output is a library. After the original
+       preparation, update only this library's root mode. ILLink still owns all
+       reachability, metadata and method-body processing. -->
+  <Target Name="ManagedRootSharedLibrary" AfterTargets="PrepareForILLink"
+          Condition="'$(ManagedTargetKind)' == 'shared'">
+    <Error Condition="'$(OutputType)' != 'Library'" Text="A shared managed target must remain a genuine library." />
+    <ItemGroup>
+      <TrimmerRootAssembly Update="$(AssemblyName)" RootMode="library" />
+      <_ManagedLibraryRoot Include="@(TrimmerRootAssembly)"
+                           Condition="'%(TrimmerRootAssembly.Identity)' == '$(AssemblyName)'" />
+    </ItemGroup>
+    <Error Condition="'@(_ManagedLibraryRoot)' == ''" Text="The original ILLink library root is required." />
+    <WriteLinesToFile File="$(IntermediateOutputPath)managed-library-roots.txt"
+                      Lines="@(TrimmerRootAssembly->'%(Identity)|%(RootMode)')"
+                      Overwrite="true" WriteOnlyWhenDifferent="true" />
+  </Target>
+  <!-- @brief Bundle the actual upstream ILStrip output after AOT completes.
+       @details Preview 6 snapshots _WasmBundleItem during native preparation,
+       before the original AOT/ILStrip task updates _WasmAssembliesInternal.
+       Refresh only the managed-assembly item group immediately before the
+       original bundle emitter; ICU/config items and all method bodies stay
+       under their original upstream tasks. No IL bytes are edited here. -->
+  <Target Name="ManagedRefreshAotBundleInputs" BeforeTargets="_GenerateObjectFilesForSingleFileBundle"
+          Condition="'$(WasmSingleFileBundle)' == 'true' And '$(_WasmShouldAOT)' == 'true' And '$(WasmStripILAfterAOT)' == 'true'">
+    <Error Condition="'@(_WasmAssembliesInternal)' == '' Or '@(_UpdatedAssembliesAfterILStrip)' == ''"
+           Text="Actual AOT/ILStrip output assemblies are required before embedding the bundle." />
+    <ItemGroup>
+      <_WasmBundleItem Remove="@(_WasmBundleItem)"
+                       Condition="'%(_WasmBundleItem.BundleRegistrationFunctionName)' == 'mono_register_assemblies_bundle'" />
+      <_WasmBundleItem Include="@(_WasmAssembliesInternal)"
+                       BundleRegistrationFunctionName="mono_register_assemblies_bundle"
+                       BundleFile="wasi_bundled_assemblies.o" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(_WasmIntermediateOutputPath)managed-aot-bundle-inputs.txt"
+                      Lines="@(_WasmBundleItem->'%(BundleRegistrationFunctionName)|%(Identity)')"
+                      Overwrite="true" WriteOnlyWhenDifferent="true" />
+  </Target>
+  <!-- @brief Validate actual trimmed native exports before genuine AOT starts.
+       @details Real library mode removes the command main, uses the reactor
+       CRT, and initializes Mono through its actual native-to-managed callback.
+       Each library owns its embedded runtime/heap. No managed reference ABI is
+       assumed and no user assembly or method body is rewritten. -->
+  <Target Name="ManagedValidateLibraryExports" BeforeTargets="_WasmAotCompileApp"
+          Condition="'$(ManagedTargetKind)' == 'shared'">
+    <Error Condition="'$(OutputType)' != 'Library' Or '$(_IsLibraryMode)' != 'true'
+                      Or !Exists('$(ManagedLibraryInitObject)')"
+           Text="Shared managed modules require the real upstream WASI library mode and initializer." />
+    <ItemGroup>
+      <_ManagedLibraryAssembly Include="@(_WasmAssembliesInternal)"
+                              Condition="'%(_WasmAssembliesInternal.Filename)' == '$(AssemblyName)'" />
+    </ItemGroup>
+    <Error Condition="'@(_ManagedLibraryAssembly->Count())' != '1'"
+           Text="Select exactly one genuine trimmed library assembly for export validation." />
+    <Uwvm.Ros.Build.ValidateManagedLibrary AssemblyFile="@(_ManagedLibraryAssembly)"
+                                          ExpectedAssemblyName="$(AssemblyName)"
+                                          ContractFile="$(ManagedLibraryContract)">
+      <Output TaskParameter="ExportSymbols" ItemName="_ManagedLibraryExport" />
+    </Uwvm.Ros.Build.ValidateManagedLibrary>
+    <ItemGroup>
+      <NativeFileReference Include="$(ManagedLibraryInitObject)" />
+      <_WasiClangLDFlags Include="-mexec-model=reactor" />
+      <_WasiClangXLinkerFlags Include="--no-entry" />
+      <_WasiClangXLinkerFlags Include="@(_ManagedLibraryExport->'--export=%(Identity)')" />
+    </ItemGroup>
+  </Target>
+  <!-- @brief Satisfy the upstream table input using the original Mono executable.
+       @details The original target's conditional shell redirection is skipped
+       because this direct task has already produced its complete real input. -->
+  <Target Name="ManagedGenerateIcallTable" BeforeTargets="_GenerateManagedToNative"
+          Condition="!Exists('$(_WasmRuntimeICallTablePath)')">
+    <Uwvm.Ros.Build.DirectIcallTable Program="$(ManagedMonoAotCompiler)"
+                                    OutputFile="$(_WasmRuntimeICallTablePath)"
+                                    WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
+  <!-- @brief Compile genuine AOT bitcode using the unmodified upstream response inputs. -->
+  <Target Name="_WasmCompileAssemblyBitCodeFilesForAOT"
+          Inputs="@(_BitcodeFile);$(_WasmDefaultFlagsRsp);$(_WasmCompileBitcodeRsp)"
+          Outputs="@(_BitcodeFile->'%(ObjectFile)')"
+          Condition="'$(_WasmShouldAOT)' == 'true' And @(_BitcodeFile->Count()) &gt; 0"
+          DependsOnTargets="_CheckToolchainIsExpectedVersion;_WasmWriteRspForCompilingBitcode"
+          Returns="@(FileWrites)">
+    <Error Condition="'$(_IsToolchainMissing)' == 'true' Or '$(_WasmDefaultFlags)' != ''"
+           Text="The complete fixed native toolchain and response-file flag profile are required." />
+    <Uwvm.Ros.Build.DirectCompile Program="$(WasmClang)"
+                                  SourceFiles="@(_BitcodeFile)"
+                                  ResponseFiles="$(_WasmDefaultFlagsRsp);$(_WasmCompileBitcodeRsp)"
+                                  EnvironmentVariables="@(WasmToolchainEnvVars)"
+                                  WorkingDirectory="$(MSBuildProjectDirectory)">
+      <Output TaskParameter="OutputFiles" ItemName="FileWrites" />
+    </Uwvm.Ros.Build.DirectCompile>
+  </Target>
+  <!-- @brief Compile original Mono runtime C sources with their complete native flags. -->
+  <Target Name="_WasmCompileNativeSourceFiles">
+    <Error Condition="'$(_IsToolchainMissing)' == 'true' Or '$(_EmccDefaultFlags)' != ''"
+           Text="The complete fixed native toolchain and response-file flag profile are required." />
+    <Uwvm.Ros.Build.ConfigureWasiCallbackLookup Sources="@(_WasmRuntimePackSrcFile)"
+                                               ContractFile="$(ManagedLibraryContract)"
+                                               SelectedSource="$(_WasmIntermediateOutputPath)native-callback/runtime.c"
+                                               ReceiptFile="$(_WasmIntermediateOutputPath)managed-callback-lookup.json"
+                                               Condition="'$(ManagedTargetKind)' == 'shared'">
+      <Output TaskParameter="SelectedSources" ItemName="_ManagedCallbackNativeSources" />
+    </Uwvm.Ros.Build.ConfigureWasiCallbackLookup>
+    <ItemGroup>
+      <_WasmSourceFileToCompile Remove="@(_WasmSourceFileToCompile)" />
+      <_WasmSourceFileToCompile Include="@(_WasmRuntimePackSrcFile)" Condition="'$(ManagedTargetKind)' != 'shared'" />
+      <_WasmSourceFileToCompile Include="@(_ManagedCallbackNativeSources)" Condition="'$(ManagedTargetKind)' == 'shared'" />
+    </ItemGroup>
+    <Uwvm.Ros.Build.DirectCompile Program="$(WasmClang)"
+                                  SourceFiles="@(_WasmSourceFileToCompile)"
+                                  ResponseFiles="$(_WasmDefaultFlagsRsp);$(_WasmCompileRsp)"
+                                  EnvironmentVariables="@(WasmToolchainEnvVars)"
+                                  WorkingDirectory="$(MSBuildProjectDirectory)">
+      <Output TaskParameter="OutputFiles" ItemName="FileWrites" />
+    </Uwvm.Ros.Build.DirectCompile>
+    <ItemGroup>
+      <_WasmNativeFileForLinking Include="%(_WasmSourceFileToCompile.ObjectFile)" />
+    </ItemGroup>
+  </Target>
+  <Target Name="ManagedRequireFullAot" BeforeTargets="_GenerateManagedToNative">
+    <Error Condition="'$(ManagedMonoAotCompiler)' == '' Or !Exists('$(ManagedMonoAotCompiler)')"
+           Text="Select the admitted matching native-EH AOT cross compiler." />
+    <Error Condition="'$(RunAOTCompilation)' != 'true' Or '$(_WasmShouldAOT)' != 'true' Or '$(AOTMode)' != 'LLVMOnly'"
+           Text="The genuine full-AOT pipeline was not selected; interpreter fallback is unsupported." />
+    <Error Condition="!Exists('$(ManagedRosObject)') Or !Exists('$(ManagedRawObject)')
+                      Or !Exists('$(ManagedStackObject)') Or !Exists('$(ManagedBuildTask)') Or !Exists('$(ManagedBridgeObject)')"
+           Text="The exact managed FFI, LLVM 23 stack adapter and direct-link task are required." />
+    <ItemGroup>
+      <_WasmPInvokeModules Include="managed_ros" />
+      <_WasmPInvokeModules Include="managed_raw_ros" />
+      <_WasmPInvokeModules Include="roswasm_bridge" />
+    </ItemGroup>
+  </Target>
+  <!-- @brief Compile every selected assembly with the genuine LLVMOnly AOT task.
+       @details This narrow profile follows the fixed Preview 6 SDK task contract.
+       It rejects interpretation, deduplication and partial AOT profiles before
+       touching the assembly list. IL stripping, module registration and LLVM
+       bitcode outputs are produced by the original upstream tasks. -->
+  <Target Name="_WasmAotCompileApp"
+          Condition="'$(_WasmShouldAOT)' == 'true'"
+          Returns="@(_WasmAssembliesInternal);@(_BitcodeFile)">
+    <PropertyGroup>
+      <!-- @brief Use the admitted matching native-EH AOT producer.
+           @details The immutable workload is unchanged; this explicit selection
+           must exist and uses the same unwind policy as the rebuilt core. -->
+      <_MonoAotCrossCompilerPath>$(ManagedMonoAotCompiler)</_MonoAotCrossCompilerPath>
+      <_AOTCompilerCacheFile>$(_WasmIntermediateOutputPath)aot_compiler_cache.json</_AOTCompilerCacheFile>
+    </PropertyGroup>
+    <Error Condition="'$(RunAOTCompilation)' != 'true' Or '$(AOTMode)' != 'LLVMOnly' Or '$(PublishTrimmed)' != 'true'"
+           Text="This profile requires trimmed, complete LLVMOnly AOT." />
+    <Error Condition="'@(_WasmAssembliesInternal)' == '' Or '$(_IsToolchainMissing)' == 'true'"
+           Text="The actual trimmed AOT input assemblies and native toolchain are required." />
+    <Error Condition="'$(_MonoAotCrossCompilerPath)' == '' Or !Exists('$(_MonoAotCrossCompilerPath)')
+                      Or '$(_WasmLLVMPathForAOT)' == ''"
+           Text="The pinned Mono AOT compiler and LLVM 23 inputs are required." />
+    <Error Condition="'@(_AOT_InternalForceInterpretAssemblies)' != '' Or '$(WasmDedup)' == 'true'
+                      Or '$(WasmAotProfilePath)' != '' Or '$(AOTProfilePath)' != ''"
+           Text="This complete-AOT profile does not accept interpreted assemblies, deduplication or partial AOT profiles." />
+    <ItemGroup>
+      <MonoAOTCompilerDefaultAotArguments Remove="@(MonoAOTCompilerDefaultAotArguments)" />
+      <MonoAOTCompilerDefaultProcessArguments Remove="@(MonoAOTCompilerDefaultProcessArguments)" />
+      <MonoAOTCompilerDefaultAotArguments Include="no-opt;static;direct-icalls;deterministic;save-temps" />
+      <MonoAOTCompilerDefaultAotArguments Include="runtime-init-callback=uwvm_ros_managed_library_initialize"
+                                          Condition="'$(ManagedTargetKind)' == 'shared'" />
+      <MonoAOTCompilerDefaultProcessArguments Include="-v"
+                                              Condition="'$(WasmAOTCompilerVerbose)' == 'true'" />
+      <MonoAOTCompilerDefaultProcessArguments Include="--wasm-exceptions"
+                                              Condition="'$(WasmEnableExceptionHandling)' == 'true'" />
+      <_AotInputAssemblies Remove="@(_AotInputAssemblies)" />
+      <_AotInputAssemblies Include="@(_WasmAssembliesInternal)">
+        <AotArguments>@(MonoAOTCompilerDefaultAotArguments, ';')</AotArguments>
+        <ProcessArguments>@(MonoAOTCompilerDefaultProcessArguments, ';')</ProcessArguments>
+        <!-- @brief Preserve the genuine F# method's own AOT initialization.
+             @details Preview 6 can inline F# module state accesses into an
+             external native wrapper whose LLVM-only GOT is not initialized.
+             The original Mono option keeps this library's user methods intact
+             and lets their normal original AOT prologues initialize state.
+             Framework assemblies and the C#/VB profiles retain their options. -->
+        <ProcessArguments Condition="'$(ManagedTargetKind)' == 'shared' And '$(ManagedSourceLanguage)' == 'fsharp'
+                                     And '%(_WasmAssembliesInternal.Filename)' == '$(AssemblyName)'">@(MonoAOTCompilerDefaultProcessArguments, ';');--optimize=-inline</ProcessArguments>
+      </_AotInputAssemblies>
+      <_WasmAssembliesInternal Remove="@(_WasmAssembliesInternal)" />
+      <_WasmAOTSearchPaths Include="$(MicrosoftNetCoreAppRuntimePackRidNativeDir)" />
+      <_WasmAOTSearchPaths Include="$(MicrosoftNetCoreAppRuntimePackRidLibTfmDir)" />
+    </ItemGroup>
+    <Message Text="Full AOT: @(_AotInputAssemblies->Count()) actual assemblies" Importance="High" />
+    <Message Text="Actual Mono input options: @(_AotInputAssemblies->'%(Filename)|%(ProcessArguments)', ' ; ')"
+             Importance="High" Condition="'$(ManagedTargetKind)' == 'shared' And '$(ManagedSourceLanguage)' == 'fsharp'" />
+    <MonoAOTCompiler CompilerBinaryPath="$(_MonoAotCrossCompilerPath)"
+                     OutputDir="$(_WasmIntermediateOutputPath)"
+                     Mode="LLVMOnly"
+                     OutputType="AsmOnly"
+                     Assemblies="@(_AotInputAssemblies)"
+                     AdditionalAssemblySearchPaths="@(_WasmAOTSearchPaths)"
+                     UseAotDataFile="false"
+                     AotModulesTablePath="$(_DriverGenCPath)"
+                     UseLLVM="true"
+                     Profilers="$(WasmProfilers)"
+                     DisableParallelAot="true"
+                     CacheFilePath="$(_AOTCompilerCacheFile)"
+                     LLVMDebug="dwarfdebug"
+                     LLVMPath="$(_WasmLLVMPathForAOT)"
+                     CollectTrimmingEligibleMethods="$(WasmStripILAfterAOT)"
+                     TrimmingEligibleMethodsOutputDirectory="$(_WasmIntermediateOutputPath)tokens"
+                     IntermediateOutputPath="$(_WasmIntermediateOutputPath)">
+      <Output TaskParameter="CompiledAssemblies" ItemName="_WasmAssembliesInternal" />
+      <Output TaskParameter="FileWrites" ItemName="FileWrites" />
+    </MonoAOTCompiler>
+    <ILStrip Condition="'$(WasmStripILAfterAOT)' == 'true'"
+             TrimIndividualMethods="true"
+             IntermediateOutputPath="$(_WasmIntermediateOutputPath)"
+             Assemblies="@(_WasmAssembliesInternal)">
+      <Output TaskParameter="UpdatedAssemblies" ItemName="_UpdatedAssembliesAfterILStrip" />
+    </ILStrip>
+    <ItemGroup Condition="'$(WasmStripILAfterAOT)' == 'true'">
+      <_WasmAssembliesInternal Remove="@(_WasmAssembliesInternal)" />
+      <_WasmAssembliesInternal Include="@(_UpdatedAssembliesAfterILStrip)" />
+    </ItemGroup>
+    <ItemGroup>
+      <_BitcodeFile Include="%(_WasmAssembliesInternal.LlvmBitcodeFile)" />
+      <_BitcodeFile ObjectFile="$(_WasmIntermediateOutputPath)%(FileName).o" />
+    </ItemGroup>
+  </Target>
+  <Target Name="_WasiLinkDotNet"
+          Inputs="@(_WasmLinkDependencies);$(_WasmDefaultsFlagsRsp);$(_WasmDefaultLinkFlagsRsp);
+                  $(_WasmLinkRsp);$(ManagedRosObject);$(ManagedRawObject);$(ManagedStackObject)"
+          Outputs="$(_WasiOutputFileName)"
+          Returns="@(FileWrites)"
+          DependsOnTargets="_WasiWriteRspForLinking">
+    <!-- @brief Link the complete formally configured Mono WASI native-EH core.
+         @details The original response remains intact and every exact library
+         replacement is hashed. No exception symbol wrapper is introduced. -->
+    <Uwvm.Ros.Build.ConfigureRuntimeEhLink ResponseFile="$(_WasmLinkRsp)"
+        RuntimeNativeDirectory="$(MicrosoftNetCoreAppRuntimePackRidNativeDir)"
+        WasiSysroot="$(WasiSysRoot)" RebuiltRuntimeRoot="$(ManagedRuntimeEhRoot)"
+        EhSysroot="$(ManagedEhSysroot)">
+      <Output TaskParameter="RewrittenResponse" PropertyName="_ManagedRuntimeEhResponse" />
+    </Uwvm.Ros.Build.ConfigureRuntimeEhLink>
+    <Uwvm.Ros.Build.DirectLink Program="$(WasiClang)" ResponseFile="$(_ManagedRuntimeEhResponse)"
+                              WorkingDirectory="$(MSBuildProjectDirectory)" />
+    <Copy SourceFiles="$(_WasiOutputFileName)" DestinationFolder="$(WasmAppDir)" />
+    <ItemGroup><FileWrites Include="$(_WasiOutputFileName)" /></ItemGroup>
+  </Target>
+  <Target Name="_GenerateRunWasmtimeScript" />
+  <Target Name="_WasmGenerateNodeScripts" />
+</Project>

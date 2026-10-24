@@ -1,0 +1,16 @@
+# Local path-only lockfile. Offline builds never fetch a registry dependency.
+version = 4
+
+[[package]]
+name = "abb-rs-system_state"
+version = "0.1.0"
+dependencies = ["abb_observation"]
+
+[[package]]
+name = "abb_observation"
+version = "0.1.0"
+dependencies = ["roswasm"]
+
+[[package]]
+name = "roswasm"
+version = "0.1.0"

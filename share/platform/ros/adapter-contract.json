@@ -1,0 +1,51 @@
+{
+  "api_version": 1,
+  "exports": {
+    "build(target, root, request)": "Restore only verified pinned SDK closures, invoke the genuine frontend or engine, produce exactly request.artifact; retain intermediates outside build/.",
+    "configure(target, root, request)": "Validate source/compiler/ABI combination without probing or executing a compiler. No native ROS or runtime dependency.",
+    "describe()": {
+      "api_version": 1,
+      "entry_profiles": [
+        "optional implemented startup modes; command remains the compatibility default"
+      ],
+      "exception_profiles": [
+        "noeh",
+        "eh"
+      ],
+      "features": [
+        "implemented named Wasm Core features"
+      ],
+      "languages": [
+        "exact supported route identifiers"
+      ],
+      "targets": [
+        "exact supported triples"
+      ]
+    }
+  },
+  "format": "uwvm-shared-language-adapter-v1",
+  "request_fields": {
+    "address_bits": "32 or 64.",
+    "artifact": "Absolute sole .wasm output.",
+    "backend": "ros1, ros2 or wasi.",
+    "binding": "Complete platform binding descriptor, including backend_roots and native_definitions.",
+    "distribution": "Explicit native ROS distribution or absent for wasi.",
+    "entry": "command by default; an explicitly requested freestanding startup requires an advertised adapter entry_profiles capability.",
+    "exception_profile": "noeh or eh.",
+    "features": "Dense unique array of requested Core features.",
+    "include_roots": "Absolute global public include roots.",
+    "language": "Actual source route.",
+    "module_roots": "SDK-relative public source-language module roots.",
+    "native_sources": "SDK-relative scalar ABI glue; application records remain in the source language.",
+    "platform": "Provider id for diagnostics only; compiler actions cannot branch on vendor schemas.",
+    "sources": "Real original source paths.",
+    "triple": "Exact requested guest target; no wasm32 fallback."
+  },
+  "restrictions": [
+    "Never infer ROS/WASI permissions while configuring or building.",
+    "Never evaluate source on the build host to precompute application results.",
+    "Never substitute C for another source language.",
+    "Never accept a compiler override with an unpinned identity.",
+    "Run actions are separate and never bootstrap a source compiler."
+  ]
+}

@@ -1,0 +1,589 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {
+        "request.ip": {
+          "string": 256
+        },
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/ConfigCreateModbus.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateModbus"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/ConfigCreateTcp.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateTcp"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/ConfigCreateTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateTool"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/ConfigDeleteModbus.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteModbus"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/ConfigDeleteTcp.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteTcp"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/ConfigDeleteTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteTool"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/DrlPause.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlPause"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/DrlResume.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlResume"
+    },
+    {
+      "bounds": {
+        "request.code": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/DrlStart.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlStart"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/DrlStop.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlStop"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetCtrlBoxAnalogInput.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCtrlBoxAnalogInput"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetCtrlBoxDigitalInput.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCtrlBoxDigitalInput"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetCurrentPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentPose"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetCurrentSolutionSpace.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentSolutionSpace"
+    },
+    {
+      "bounds": {
+        "response.info": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/GetCurrentTcp.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentTcp"
+    },
+    {
+      "bounds": {
+        "response.info": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/GetCurrentTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentTool"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetDrlState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetDrlState"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetExternalTorque.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetExternalTorque"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetJointTorque.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetJointTorque"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetLastAlarm.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetLastAlarm"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/GetModbusInput.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetModbusInput"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetRobotMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotMode"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetRobotSpeedMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotSpeedMode"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetRobotState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotState"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetRobotSystem.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotSystem"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetToolDigitalInput.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetToolDigitalInput"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/GetToolForce.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetToolForce"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/Jog.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/Jog"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/JogMulti.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogMulti"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/msg/JogMultiAxis.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogMultiAxis"
+    },
+    {
+      "bounds": {
+        "param": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/msg/LogAlarm.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/LogAlarm"
+    },
+    {
+      "bounds": {
+        "modbus_symbol": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/msg/ModbusState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/ModbusState"
+    },
+    {
+      "bounds": {
+        "request.segment": {
+          "sequence": 6
+        }
+      },
+      "file": "dsr_msgs/srv/MoveBlending.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveBlending"
+    },
+    {
+      "bounds": {
+        "request.pos": {
+          "sequence": 6
+        }
+      },
+      "file": "dsr_msgs/srv/MoveCircle.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveCircle"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MoveJoint.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveJoint"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MoveJointx.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveJointx"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MoveLine.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveLine"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MovePause.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MovePause"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MovePeriodic.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MovePeriodic"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MoveResume.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveResume"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MoveSpiral.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSpiral"
+    },
+    {
+      "bounds": {
+        "request.pos": {
+          "sequence": 6
+        }
+      },
+      "file": "dsr_msgs/srv/MoveSplineJoint.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSplineJoint"
+    },
+    {
+      "bounds": {
+        "request.pos": {
+          "sequence": 6
+        }
+      },
+      "file": "dsr_msgs/srv/MoveSplineTask.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSplineTask"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MoveStop.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveStop"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/MoveWait.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveWait"
+    },
+    {
+      "bounds": {
+        "msg1": {
+          "string": 256
+        },
+        "msg2": {
+          "string": 256
+        },
+        "msg3": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/msg/RobotError.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotError"
+    },
+    {
+      "bounds": {
+        "modbus_state": {
+          "sequence": 16
+        },
+        "robot_state_str": {
+          "string": 256
+        },
+        "rotation_matrix": {
+          "sequence": 6
+        }
+      },
+      "file": "dsr_msgs/msg/RobotState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotState"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/msg/RobotStop.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotStop"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/Robotiq2FClose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FClose"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/Robotiq2FMove.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FMove"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/Robotiq2FOpen.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FOpen"
+    },
+    {
+      "bounds": {
+        "request.data": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/SerialSendData.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SerialSendData"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetCtrlBoxAnalogInputType.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogInputType"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetCtrlBoxAnalogOutput.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogOutput"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetCtrlBoxAnalogOutputType.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogOutputType"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetCtrlBoxDigitalOutput.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxDigitalOutput"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/SetCurrentTcp.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCurrentTcp"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/SetCurrentTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCurrentTool"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        }
+      },
+      "file": "dsr_msgs/srv/SetModbusOutput.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetModbusOutput"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetRobotMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotMode"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetRobotSpeedMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotSpeedMode"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetRobotSystem.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotSystem"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetSafeStopResetType.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetSafeStopResetType"
+    },
+    {
+      "bounds": {},
+      "file": "dsr_msgs/srv/SetToolDigitalOutput.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetToolDigitalOutput"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 16
+        }
+      },
+      "file": "std_msgs/msg/Float64MultiArray.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Float64MultiArray"
+    },
+    {
+      "bounds": {
+        "label": {
+          "string": 64
+        }
+      },
+      "file": "std_msgs/msg/MultiArrayDimension.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/MultiArrayDimension"
+    },
+    {
+      "bounds": {
+        "dim": {
+          "sequence": 3
+        }
+      },
+      "file": "std_msgs/msg/MultiArrayLayout.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/MultiArrayLayout"
+    }
+  ]
+}

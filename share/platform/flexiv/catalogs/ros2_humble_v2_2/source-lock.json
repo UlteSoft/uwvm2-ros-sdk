@@ -1,0 +1,344 @@
+{
+  "catalog_sha256": "a56290042dd72464642a65960a9e03cba2e97a0af103d786e6853fe83ff9f5b1",
+  "default_authority": [],
+  "definitions": [
+    {
+      "bytes": 420,
+      "generation_file": "builtin_interfaces/msg/Time.msg",
+      "git_blob_sha1": "c61b0b5d40502bb17fce99e2736897bcbb94bee1",
+      "kind": "msg",
+      "original_file": "builtin_interfaces/msg/Time.msg",
+      "repository": "rcl_humble",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae",
+      "type": "builtin_interfaces/msg/Time"
+    },
+    {
+      "bytes": 1287,
+      "generation_file": "flexiv_msgs/action/ErrorRecovery.action",
+      "git_blob_sha1": "690b551a9af37685d61b2a9585e94985f3d47bc0",
+      "kind": "action",
+      "original_file": "flexiv_msgs/action/ErrorRecovery.action",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "0f815cb9d9a61ecab79bd5462f8a402f93565c4ea47b17e1ee3dc1c6c26ef933",
+      "type": "flexiv_msgs/action/ErrorRecovery"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "flexiv_msgs/action/Grasp.action",
+      "git_blob_sha1": "cef5889065bd92a3ecb332f383a4a1ea64bff224",
+      "kind": "action",
+      "original_file": "flexiv_msgs/action/Grasp.action",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c",
+      "type": "flexiv_msgs/action/Grasp"
+    },
+    {
+      "bytes": 161,
+      "generation_file": "flexiv_msgs/action/Move.action",
+      "git_blob_sha1": "5523983266e53166ba0795d77a014bab75cf9c5a",
+      "kind": "action",
+      "original_file": "flexiv_msgs/action/Move.action",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8",
+      "type": "flexiv_msgs/action/Move"
+    },
+    {
+      "bytes": 21,
+      "generation_file": "flexiv_msgs/msg/Digital.msg",
+      "git_blob_sha1": "6183945954e683178d10d2fde80da6ed1d314de9",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/Digital.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b",
+      "type": "flexiv_msgs/msg/Digital"
+    },
+    {
+      "bytes": 17,
+      "generation_file": "flexiv_msgs/msg/GPIOStates.msg",
+      "git_blob_sha1": "f3cbe4119bc5b380eeb10584d80cde9429f4575b",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/GPIOStates.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629",
+      "type": "flexiv_msgs/msg/GPIOStates"
+    },
+    {
+      "bytes": 868,
+      "generation_file": "flexiv_msgs/msg/JointImpedance.msg",
+      "git_blob_sha1": "505bd86b8c4192500d27e6a8f0e47ec920db52b8",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/JointImpedance.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "7031e90c2f705c4031bbf55d32e166353ff31bc719a2d16c5363d601e184c90a",
+      "type": "flexiv_msgs/msg/JointImpedance"
+    },
+    {
+      "bytes": 769,
+      "generation_file": "flexiv_msgs/msg/JointInertiaScale.msg",
+      "git_blob_sha1": "af295301c0ca956877a82a35742f09c12213e20f",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/JointInertiaScale.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "a86cb82f83ef3742ff35444f06af226826e873bf443f8eabf4da29d73a0d845d",
+      "type": "flexiv_msgs/msg/JointInertiaScale"
+    },
+    {
+      "bytes": 41,
+      "generation_file": "flexiv_msgs/msg/JointPosVel.msg",
+      "git_blob_sha1": "102f8fdbe9da82e1b2ecf360fa5bfa34d05f522c",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/JointPosVel.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b",
+      "type": "flexiv_msgs/msg/JointPosVel"
+    },
+    {
+      "bytes": 782,
+      "generation_file": "flexiv_msgs/msg/MaxContactTorque.msg",
+      "git_blob_sha1": "3357fc769d8a213df85b665f60732b271cb01171",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/MaxContactTorque.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "129c29086e1a39807f18dc974e6ee430c6a0860a58998d42ccbdc959cefcfb62",
+      "type": "flexiv_msgs/msg/MaxContactTorque"
+    },
+    {
+      "bytes": 639,
+      "generation_file": "flexiv_msgs/msg/Mode.msg",
+      "git_blob_sha1": "fdd5cb58d5d9bb5e95367c70246adc86b1811891",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/Mode.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "0ebae792cce1ff7c54cb23ca9b95135bd30a83d79ae3ec67385968cebf770a66",
+      "type": "flexiv_msgs/msg/Mode"
+    },
+    {
+      "bytes": 1588,
+      "generation_file": "flexiv_msgs/msg/OperationalStatus.msg",
+      "git_blob_sha1": "1581f34d9b5435ae6436858cbbff066e1c1f676c",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/OperationalStatus.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "fc318a5a0683b2b6e78c5cf5f939a8f2430f3f790c5e9f89ede5cfbc6b818edc",
+      "type": "flexiv_msgs/msg/OperationalStatus"
+    },
+    {
+      "bytes": 626,
+      "generation_file": "flexiv_msgs/msg/RecoveryPolicy.msg",
+      "git_blob_sha1": "4d1422d2361d3b00134190a7300570102e89f069",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/RecoveryPolicy.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "329fb02a248def2bd62b0f4c7cefa7f03fe79a5ff1d44ac93436413c25e38601",
+      "type": "flexiv_msgs/msg/RecoveryPolicy"
+    },
+    {
+      "bytes": 543,
+      "generation_file": "flexiv_msgs/msg/RobotEvent.msg",
+      "git_blob_sha1": "8706d78f0937ece7e2627a2d9290abaa7958edd6",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/RobotEvent.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "da04febf57ecf1da890c4b2698638684d14d35412baf144c57588f27e219bb39",
+      "type": "flexiv_msgs/msg/RobotEvent"
+    },
+    {
+      "bytes": 1461,
+      "generation_file": "flexiv_msgs/msg/RobotStates.msg",
+      "git_blob_sha1": "daa05740b01622a55a1d8947e21cdbe980e8feca",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/RobotStates.msg",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "594a95c740af75bea6ad93b90772b04947251123ef502165db1b666cd1de9cd8",
+      "type": "flexiv_msgs/msg/RobotStates"
+    },
+    {
+      "bytes": 96,
+      "generation_file": "flexiv_msgs/srv/GetOperationalStatus.srv",
+      "git_blob_sha1": "89bb0ca80746d075bd953d1042ccc8750958eda3",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/GetOperationalStatus.srv",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "f11651848b7cc8fa448ac022c78b61541612f63a6f87e8318b2fe1c455480245",
+      "type": "flexiv_msgs/srv/GetOperationalStatus"
+    },
+    {
+      "bytes": 1325,
+      "generation_file": "flexiv_msgs/srv/SetJointImpedance.srv",
+      "git_blob_sha1": "c4700fca854fa2c187ade240ae41a63006cc2946",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetJointImpedance.srv",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "178ba8e6d9c86c19cb776b253dc79cfc651810973618a4919a69a1326ec02c8f",
+      "type": "flexiv_msgs/srv/SetJointImpedance"
+    },
+    {
+      "bytes": 1149,
+      "generation_file": "flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "git_blob_sha1": "9c9eaf28b1ee512b15556ed37bc16412c5e830c8",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "1f5080d88387b8ff08a2a4ab624aac5a949a7e7bf5a45cedc7235bb9ff8ac1ca",
+      "type": "flexiv_msgs/srv/SetJointInertiaScale"
+    },
+    {
+      "bytes": 1187,
+      "generation_file": "flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "git_blob_sha1": "c9633da8902bb7f2fe45a0e2c75a47778c182203",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "repository": "ros2_humble_v2_2",
+      "sha256": "5253488e28ba2e20ce0e1a842a7385c8c4ae869b8a7e38a8df09d9f28fe5b31f",
+      "type": "flexiv_msgs/srv/SetMaxContactTorque"
+    },
+    {
+      "bytes": 84,
+      "generation_file": "geometry_msgs/msg/Point.msg",
+      "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Point.msg",
+      "repository": "common_humble",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+      "type": "geometry_msgs/msg/Point"
+    },
+    {
+      "bytes": 119,
+      "generation_file": "geometry_msgs/msg/Pose.msg",
+      "git_blob_sha1": "277e2f0179a64cd3e17e31502e3d8a074ace7064",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Pose.msg",
+      "repository": "common_humble",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de",
+      "type": "geometry_msgs/msg/Pose"
+    },
+    {
+      "bytes": 89,
+      "generation_file": "geometry_msgs/msg/PoseStamped.msg",
+      "git_blob_sha1": "2b43935ed33b384937142aaf3aae085cdcb9ea5e",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/PoseStamped.msg",
+      "repository": "common_humble",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5",
+      "type": "geometry_msgs/msg/PoseStamped"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Quaternion.msg",
+      "git_blob_sha1": "96d392779a286cc3f4c83d80962236f5ea42c884",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Quaternion.msg",
+      "repository": "common_humble",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+      "type": "geometry_msgs/msg/Quaternion"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Twist.msg",
+      "git_blob_sha1": "ede73597b9025238af28f55c275ddb02a8ed2f94",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Twist.msg",
+      "repository": "common_humble",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0",
+      "type": "geometry_msgs/msg/Twist"
+    },
+    {
+      "bytes": 92,
+      "generation_file": "geometry_msgs/msg/TwistStamped.msg",
+      "git_blob_sha1": "2dcbeac1b07c1a9a2db84ca496b91d2a6345c6f4",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/TwistStamped.msg",
+      "repository": "common_humble",
+      "sha256": "ffc9d5925412410b28d601c55cf386a0b3e4d5dba00920fbafb98d7201f582ca",
+      "type": "geometry_msgs/msg/TwistStamped"
+    },
+    {
+      "bytes": 251,
+      "generation_file": "geometry_msgs/msg/Vector3.msg",
+      "git_blob_sha1": "b54588e117c4632f551c221fbc33df8f958804bf",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Vector3.msg",
+      "repository": "common_humble",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d",
+      "type": "geometry_msgs/msg/Vector3"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Wrench.msg",
+      "git_blob_sha1": "0b8efccbe338bf5aba4e28be5552f6f933aeef08",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Wrench.msg",
+      "repository": "common_humble",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25",
+      "type": "geometry_msgs/msg/Wrench"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "geometry_msgs/msg/WrenchStamped.msg",
+      "git_blob_sha1": "0d5ebd9674a7d50ba96c8f06084b9bae53ca8b83",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/WrenchStamped.msg",
+      "repository": "common_humble",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162",
+      "type": "geometry_msgs/msg/WrenchStamped"
+    },
+    {
+      "bytes": 322,
+      "generation_file": "std_msgs/msg/Header.msg",
+      "git_blob_sha1": "6966bb98863c237131a2bd2822298df9511ce948",
+      "kind": "msg",
+      "original_file": "std_msgs/msg/Header.msg",
+      "repository": "common_humble",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+      "type": "std_msgs/msg/Header"
+    }
+  ],
+  "kind": "flexiv-complete-original-source-lock-v1",
+  "original_custom_roots": [
+    "flexiv_msgs/action/ErrorRecovery",
+    "flexiv_msgs/action/Grasp",
+    "flexiv_msgs/action/Move",
+    "flexiv_msgs/msg/Digital",
+    "flexiv_msgs/msg/GPIOStates",
+    "flexiv_msgs/msg/JointImpedance",
+    "flexiv_msgs/msg/JointInertiaScale",
+    "flexiv_msgs/msg/JointPosVel",
+    "flexiv_msgs/msg/MaxContactTorque",
+    "flexiv_msgs/msg/Mode",
+    "flexiv_msgs/msg/OperationalStatus",
+    "flexiv_msgs/msg/RecoveryPolicy",
+    "flexiv_msgs/msg/RobotEvent",
+    "flexiv_msgs/msg/RobotStates",
+    "flexiv_msgs/srv/GetOperationalStatus",
+    "flexiv_msgs/srv/SetJointImpedance",
+    "flexiv_msgs/srv/SetJointInertiaScale",
+    "flexiv_msgs/srv/SetMaxContactTorque"
+  ],
+  "profile": "ros2_humble_v2_2",
+  "repositories": [
+    {
+      "branch": "release/humble-v2.2",
+      "commit": "f212b63b2dd707eea76badee72665a0695304ab0",
+      "id": "ros2_humble_v2_2",
+      "repository": "flexivrobotics/flexiv_ros2",
+      "tree_git_sha1": "a039af9db75d3f9b015cf4abf89beb56f839d908"
+    },
+    {
+      "branch": "humble",
+      "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+      "id": "common_humble",
+      "repository": "ros2/common_interfaces",
+      "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46"
+    },
+    {
+      "branch": "humble",
+      "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+      "id": "rcl_humble",
+      "repository": "ros2/rcl_interfaces",
+      "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e"
+    }
+  ],
+  "ros_version": 2,
+  "scope": "Every original Flexiv msg/srv/action in this exact source tree, plus every reached unchanged core definition. No native RDK identity, controller, model or release acceptance is inferred.",
+  "vendor": "flexiv"
+}

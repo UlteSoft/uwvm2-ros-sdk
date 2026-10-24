@@ -1,0 +1,69 @@
+{
+  "format": "uwvm-genuine-library-example-identities-v1",
+  "language": "lua",
+  "examples": [
+    {
+      "name": "static_same",
+      "measured_fixture": "lua-lua-32-static",
+      "sources": [
+        {
+          "path": "example/language/lua/static_same/algorithm.lua",
+          "sha256": "2559e2383bfd3a63580e8e987a6c789e3ea13788fb0b1ff748adca4dd43d0487"
+        },
+        {
+          "path": "example/language/lua/static_same/consumer.lua",
+          "sha256": "8200f54742357ae02e2c8926f97aefb28fda8d21894347fd81fe7b269ef20961"
+        },
+        {
+          "path": "example/language/lua/static_same/xmake.lua",
+          "sha256": "163dbf87bd0b36eb6c47f1839cc81bfb32010e8b07cb7b54f55e8a88207eb0b5"
+        }
+      ],
+      "public_kind_vm_qualified_by_exact_source_identity": true,
+      "actual_packaged_directory_built": false
+    },
+    {
+      "name": "shared_same",
+      "measured_fixture": "lua-lua-32-shared",
+      "sources": [
+        {
+          "path": "example/language/lua/shared_same/algorithm.lua",
+          "sha256": "2559e2383bfd3a63580e8e987a6c789e3ea13788fb0b1ff748adca4dd43d0487"
+        },
+        {
+          "path": "example/language/lua/shared_same/consumer.lua",
+          "sha256": "8200f54742357ae02e2c8926f97aefb28fda8d21894347fd81fe7b269ef20961"
+        },
+        {
+          "path": "example/language/lua/shared_same/xmake.lua",
+          "sha256": "96b0b9922d138183bf6f3f9aa50263e9be64b2b34b94c1e2479a0ef2fcfab8e6"
+        }
+      ],
+      "public_kind_vm_qualified_by_exact_source_identity": true,
+      "actual_packaged_directory_built": false
+    },
+    {
+      "name": "shared_javascript",
+      "measured_fixture": "js-lua-32-shared",
+      "sources": [
+        {
+          "path": "example/language/lua/shared_javascript/algorithm.mjs",
+          "sha256": "54f865c91d1f2b0837b469f3c924adbd3358e21de30fd87c919cbbd7e5db8193"
+        },
+        {
+          "path": "example/language/lua/shared_javascript/consumer.lua",
+          "sha256": "8200f54742357ae02e2c8926f97aefb28fda8d21894347fd81fe7b269ef20961"
+        },
+        {
+          "path": "example/language/lua/shared_javascript/xmake.lua",
+          "sha256": "c6a26703388cd4541a187acdcf423df1a34948c77bc250c81a0166fe81b78c99"
+        }
+      ],
+      "public_kind_vm_qualified_by_exact_source_identity": true,
+      "actual_packaged_directory_built": false
+    }
+  ],
+  "wasm64_source_fixture_matrix_present": true,
+  "native_ros_qualified": false,
+  "aarch64_qualified": false
+}

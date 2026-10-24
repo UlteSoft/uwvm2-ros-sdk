@@ -1,0 +1,75 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "name": "ros/js/transport",
+      "file": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "name": "uwvm/js/observation",
+      "file": "src/language/js/modules/observation.mjs",
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "name": "dobot/js/ros2/dobot-ros2-v4-complete/bounded_records",
+      "file": "include/platform/dobot/js/ros2/dobot-ros2-v4-complete/bounded_records.mjs",
+      "sha256": "0864767e4d2aa2e53bec3af5dfda585eecad579d5c71f13092db9a0c16bdd5f8"
+    },
+    {
+      "name": "dobot/js/ros2/dobot-ros2-v4-complete/bounded_interfaces",
+      "file": "include/platform/dobot/js/ros2/dobot-ros2-v4-complete/bounded_interfaces.mjs",
+      "sha256": "20201f86191d87cac7c09234d2922b29cd265ff36c0d18c90598c5037dbccec3"
+    },
+    {
+      "name": "ros/js/events.mjs",
+      "file": "include/platform/ros/js/events.mjs",
+      "sha256": "bd5aa8e7ede943b36040144accbd29d4ba5aa1147a81cd55e351e5b46e21942b"
+    },
+    {
+      "name": "ros/js/roswasm.mjs",
+      "file": "include/platform/ros/js/roswasm.mjs",
+      "sha256": "24ae75c07bcae869c86d2956a85bf6337efb5e9669431c4b7d0bca6975481150"
+    },
+    {
+      "name": "ros/js/raw.mjs",
+      "file": "include/platform/ros/js/raw.mjs",
+      "sha256": "5dac974e99c812d9ea6f7904af0c3965ed641c69d1ecc5fd5855396969b7b6a8"
+    },
+    {
+      "name": "ros/js/codecs.mjs",
+      "file": "include/platform/ros/js/codecs.mjs",
+      "sha256": "4793789410ec944f208c05714d9479b3a4562075eab9ad22365803a63ef07227"
+    },
+    {
+      "name": "ros/js/scheduling.mjs",
+      "file": "include/platform/ros/js/scheduling.mjs",
+      "sha256": "f5f58eb7b216044d9a1cac8d33a5f7922e77d9dd437bb0efebbd6b0a96a76b7a"
+    },
+    {
+      "name": "ros/js/copied_transport.mjs",
+      "file": "include/platform/ros/js/copied_transport.mjs",
+      "sha256": "8fd1b56c12a0c2ab03cf5d90aca1188858d7ccadecaf7f723ab4119ca0b53f51"
+    },
+    {
+      "name": "ros/js/ownership.mjs",
+      "file": "include/platform/ros/js/ownership.mjs",
+      "sha256": "563d8be2f6476124a8e10c5712d552d8ded80fc282c0c0b5ad41713028f8eea8"
+    },
+    {
+      "name": "ros/js/abi.mjs",
+      "file": "include/platform/ros/js/abi.mjs",
+      "sha256": "16cd533ff7db44f40159ca4bd30a4fde9871164b79bd3328c119aefec2b92172"
+    }
+  ],
+  "default_authority": [],
+  "vendor_profile": "ros2_v4",
+  "complete_original_records_and_rpc_source": true
+}

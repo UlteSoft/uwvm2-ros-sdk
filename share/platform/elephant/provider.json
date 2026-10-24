@@ -1,0 +1,812 @@
+{
+  "schema": "uwvm-ros-vendor-provider-consumer-v1",
+  "vendor": "elephant",
+  "profiles": [
+    {
+      "id": "foxy",
+      "ros_version": 2,
+      "catalog": "share/platform/elephant/catalogs/foxy/catalog.json",
+      "source_lock_sha256": "65c31a2a0a9ebba634b356ecbce3afe6c37e00feadde0b6f52da3fc75935f654",
+      "catalog_sha256": "cc4298d89339a4aac20854fdc6c73f411c686dfbc00f5bc88058735aac8a576f",
+      "repositories": [
+        {
+          "id": "foxy",
+          "repository": "elephantrobotics/mycobot_ros2",
+          "commit": "98f77f4827dcdd082a3c5037a71aa15698181b34",
+          "tree_git_sha1": "e7f7bd2bcfa54d28cad82a21631ce7b09f5be468"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/elephant/c/ros2/elephant-mycobot-foxy-complete",
+        "include/platform/elephant/cpp/ros2/elephant-mycobot-foxy-complete"
+      ],
+      "operations": {
+        "msg": 23,
+        "srv": 24,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/elephant/objectc/foxy/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "elephant",
+          "profile": "foxy",
+          "scenario": "observe_mycobot_angles",
+          "type": "mycobot_interfaces/msg/MycobotAngles",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotAngles",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "foxy",
+          "scenario": "observe_mycobot_coords",
+          "type": "mycobot_interfaces/msg/MycobotCoords",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotCoords",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "foxy",
+          "scenario": "observe_mycobot_gripper_status",
+          "type": "mycobot_interfaces/msg/MycobotGripperStatus",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotGripperStatus",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "galactic",
+      "ros_version": 2,
+      "catalog": "share/platform/elephant/catalogs/galactic/catalog.json",
+      "source_lock_sha256": "c5c2fb06a9bcd1cdecf982c8bc44afe852bdf8504b6940846da1ed12b29a9f53",
+      "catalog_sha256": "cc4298d89339a4aac20854fdc6c73f411c686dfbc00f5bc88058735aac8a576f",
+      "repositories": [
+        {
+          "id": "galactic",
+          "repository": "elephantrobotics/mycobot_ros2",
+          "commit": "83d4d10db552edf8940e4d79bec186aeaa880b4a",
+          "tree_git_sha1": "e7f7bd2bcfa54d28cad82a21631ce7b09f5be468"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/elephant/c/ros2/elephant-mycobot-galactic-complete",
+        "include/platform/elephant/cpp/ros2/elephant-mycobot-galactic-complete"
+      ],
+      "operations": {
+        "msg": 23,
+        "srv": 24,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/elephant/objectc/galactic/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "elephant",
+          "profile": "galactic",
+          "scenario": "observe_mycobot_angles",
+          "type": "mycobot_interfaces/msg/MycobotAngles",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotAngles",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "galactic",
+          "scenario": "observe_mycobot_coords",
+          "type": "mycobot_interfaces/msg/MycobotCoords",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotCoords",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "galactic",
+          "scenario": "observe_mycobot_gripper_status",
+          "type": "mycobot_interfaces/msg/MycobotGripperStatus",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotGripperStatus",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "humble",
+      "ros_version": 2,
+      "catalog": "share/platform/elephant/catalogs/humble/catalog.json",
+      "source_lock_sha256": "632676c2b5e110262969f7f2b9b09b056a27ac9142e884936739713c66ab67dc",
+      "catalog_sha256": "8326c015b67e36dac0fdf8b0f194c1c5f479d8ad2ebc5c34405b4a288204796a",
+      "repositories": [
+        {
+          "id": "humble",
+          "repository": "elephantrobotics/mycobot_ros2",
+          "commit": "d42ff61a78122c79246623391540d75738b03b23",
+          "tree_git_sha1": "d01c98a67c04f3bc7cbb495f14752a45350a2618"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/elephant/c/ros2/elephant-mycobot-humble-complete",
+        "include/platform/elephant/cpp/ros2/elephant-mycobot-humble-complete"
+      ],
+      "operations": {
+        "msg": 28,
+        "srv": 30,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/elephant/objectc/humble/records.m"
+        ],
+        "java": [
+          "include/platform/elephant/java/humble/elephant/humble/BoundedRecords.java"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "elephant",
+          "profile": "humble",
+          "scenario": "observe_mycobot_angles",
+          "type": "mycobot_interfaces/msg/MycobotAngles",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotAngles",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "humble",
+          "scenario": "observe_mycobot_coords",
+          "type": "mycobot_interfaces/msg/MycobotCoords",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotCoords",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "humble",
+          "scenario": "observe_mycobot_gripper_status",
+          "type": "mycobot_interfaces/msg/MycobotGripperStatus",
+          "operation": "topic.subscribe",
+          "response": "mycobot_interfaces/msg/MycobotGripperStatus",
+          "request": null
+        }
+      ],
+      "source_graph_v1": {
+        "java": {
+          "format": "uwvm-vendor-source-graph-v1",
+          "language": "java",
+          "sources": [
+            "include/platform/elephant/java/humble/elephant/humble/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "js": {
+          "format": "uwvm-vendor-source-graph-v1",
+          "language": "js",
+          "bundle_manifest": "share/platform/elephant/bundles/js/humble.json",
+          "module_count": 13,
+          "native_definition_catalog": "share/platform/elephant/catalogs/humble/catalog.json"
+        }
+      }
+    },
+    {
+      "id": "kinetic",
+      "ros_version": 1,
+      "catalog": "share/platform/elephant/catalogs/kinetic/catalog.json",
+      "source_lock_sha256": "de4b66a9ac8f182b16df1f7d3e41aed66148245f8e2d2c297652fd98079689ab",
+      "catalog_sha256": "31bf2ef74bbb4ec74d55f59052b22a6278f16b8e592aca65c747782bbc60a6a7",
+      "repositories": [
+        {
+          "id": "kinetic",
+          "repository": "elephantrobotics/mycobot_ros",
+          "commit": "9ec3e2ec29024a55150e7f3893b3d6e344f1caff",
+          "tree_git_sha1": "dc8263b63e2476874c6596ed1fefd5745b104c57"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/elephant/c/ros1/elephant-mycobot-kinetic-complete",
+        "include/platform/elephant/cpp/ros1/elephant-mycobot-kinetic-complete"
+      ],
+      "operations": {
+        "msg": 12,
+        "srv": 12,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/elephant/objectc/kinetic/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "elephant",
+          "profile": "kinetic",
+          "scenario": "observe_mycobot_angles",
+          "type": "mycobot_communication/MycobotAngles",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotAngles",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "kinetic",
+          "scenario": "observe_mycobot_coords",
+          "type": "mycobot_communication/MycobotCoords",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotCoords",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "kinetic",
+          "scenario": "observe_mycobot_gripper_status",
+          "type": "mycobot_communication/MycobotGripperStatus",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotGripperStatus",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "melodic",
+      "ros_version": 1,
+      "catalog": "share/platform/elephant/catalogs/melodic/catalog.json",
+      "source_lock_sha256": "dcefa089680f7ae676a0aed658536303a9652f94a8caa6099b8044cf8f7dc58f",
+      "catalog_sha256": "7825c508708c1622bdb3d6abf10877e40064c39acc99daff906d2503b0f23c99",
+      "repositories": [
+        {
+          "id": "melodic",
+          "repository": "elephantrobotics/mycobot_ros",
+          "commit": "3a0357d2afec2706c299f6d51ac46b6b128067f8",
+          "tree_git_sha1": "5c16cbaeee887b140c5d45232b3005d488bf6330"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/elephant/c/ros1/elephant-mycobot-melodic-complete",
+        "include/platform/elephant/cpp/ros1/elephant-mycobot-melodic-complete"
+      ],
+      "operations": {
+        "msg": 42,
+        "srv": 42,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/elephant/objectc/melodic/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "elephant",
+          "profile": "melodic",
+          "scenario": "observe_mycobot_angles",
+          "type": "mycobot_communication/MycobotAngles",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotAngles",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "melodic",
+          "scenario": "observe_mycobot_coords",
+          "type": "mycobot_communication/MycobotCoords",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotCoords",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "melodic",
+          "scenario": "observe_mycobot_gripper_status",
+          "type": "mycobot_communication/MycobotGripperStatus",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotGripperStatus",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "noetic",
+      "ros_version": 1,
+      "catalog": "share/platform/elephant/catalogs/noetic/catalog.json",
+      "source_lock_sha256": "9a313d4fcf630f8dba0eaa9a265f034533ce282283685fb8b5bec471785081f4",
+      "catalog_sha256": "9f8d6480b861af19c48347a7d4624244a6518c8efc7a01bd29c1bc9016a6d161",
+      "repositories": [
+        {
+          "id": "noetic",
+          "repository": "elephantrobotics/mycobot_ros",
+          "commit": "c0d6fbe8f7d9b18b46a9fcb0b041e5bc2d66196b",
+          "tree_git_sha1": "a4d94c58e785a4493d461c2cda3ccccf8def6720"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/elephant/c/ros1/elephant-mycobot-noetic-complete",
+        "include/platform/elephant/cpp/ros1/elephant-mycobot-noetic-complete"
+      ],
+      "operations": {
+        "msg": 55,
+        "srv": 54,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/elephant/objectc/noetic/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "elephant",
+          "profile": "noetic",
+          "scenario": "observe_mycobot_angles",
+          "type": "mycobot_communication/MycobotAngles",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotAngles",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "noetic",
+          "scenario": "observe_mycobot_coords",
+          "type": "mycobot_communication/MycobotCoords",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotCoords",
+          "request": null
+        },
+        {
+          "vendor": "elephant",
+          "profile": "noetic",
+          "scenario": "observe_mycobot_gripper_status",
+          "type": "mycobot_communication/MycobotGripperStatus",
+          "operation": "topic.subscribe",
+          "response": "mycobot_communication/MycobotGripperStatus",
+          "request": null
+        }
+      ]
+    }
+  ],
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "default_authority": [],
+  "transports": [
+    "native-ros"
+  ],
+  "requested_targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "target_qualification": "per-language-produced-and-executed-module-required",
+  "distributions": {
+    "ros1": [
+      "kinetic",
+      "melodic",
+      "noetic"
+    ],
+    "ros2": [
+      "foxy",
+      "galactic",
+      "humble",
+      "jazzy",
+      "rolling"
+    ]
+  },
+  "model_selections": [
+    {
+      "selection": "kinetic_mycobot",
+      "profile": "kinetic",
+      "model": "mycobot",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 1
+      }
+    },
+    {
+      "selection": "kinetic_mypalletizer",
+      "profile": "kinetic",
+      "model": "mypalletizer",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 2
+      }
+    },
+    {
+      "selection": "melodic_mecharm",
+      "profile": "melodic",
+      "model": "mecharm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 3
+      }
+    },
+    {
+      "selection": "melodic_myarm",
+      "profile": "melodic",
+      "model": "myarm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 4
+      }
+    },
+    {
+      "selection": "melodic_mybuddy",
+      "profile": "melodic",
+      "model": "mybuddy",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 5
+      }
+    },
+    {
+      "selection": "melodic_mycobot320",
+      "profile": "melodic",
+      "model": "mycobot320",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 6
+      }
+    },
+    {
+      "selection": "melodic_mycobot",
+      "profile": "melodic",
+      "model": "mycobot",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 7
+      }
+    },
+    {
+      "selection": "melodic_mypalletizer",
+      "profile": "melodic",
+      "model": "mypalletizer",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 8
+      }
+    },
+    {
+      "selection": "melodic_ultraarm",
+      "profile": "melodic",
+      "model": "ultraarm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 9
+      }
+    },
+    {
+      "selection": "noetic_mecharm",
+      "profile": "noetic",
+      "model": "mecharm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 10
+      }
+    },
+    {
+      "selection": "noetic_myarm",
+      "profile": "noetic",
+      "model": "myarm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 11
+      }
+    },
+    {
+      "selection": "noetic_mybuddy",
+      "profile": "noetic",
+      "model": "mybuddy",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 12
+      }
+    },
+    {
+      "selection": "noetic_mycobot320",
+      "profile": "noetic",
+      "model": "mycobot320",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 13
+      }
+    },
+    {
+      "selection": "noetic_mycobot",
+      "profile": "noetic",
+      "model": "mycobot",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 14
+      }
+    },
+    {
+      "selection": "noetic_pro450",
+      "profile": "noetic",
+      "model": "pro450",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 15
+      }
+    },
+    {
+      "selection": "noetic_mypalletizer",
+      "profile": "noetic",
+      "model": "mypalletizer",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 16
+      }
+    },
+    {
+      "selection": "noetic_ultraarm",
+      "profile": "noetic",
+      "model": "ultraarm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 17
+      }
+    },
+    {
+      "selection": "foxy_mecharm",
+      "profile": "foxy",
+      "model": "mecharm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 18
+      }
+    },
+    {
+      "selection": "foxy_mycobot",
+      "profile": "foxy",
+      "model": "mycobot",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 19
+      }
+    },
+    {
+      "selection": "foxy_pro450",
+      "profile": "foxy",
+      "model": "pro450",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 20
+      }
+    },
+    {
+      "selection": "foxy_mypalletizer",
+      "profile": "foxy",
+      "model": "mypalletizer",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 21
+      }
+    },
+    {
+      "selection": "galactic_mecharm",
+      "profile": "galactic",
+      "model": "mecharm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 22
+      }
+    },
+    {
+      "selection": "galactic_mycobot",
+      "profile": "galactic",
+      "model": "mycobot",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 23
+      }
+    },
+    {
+      "selection": "galactic_pro450",
+      "profile": "galactic",
+      "model": "pro450",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 24
+      }
+    },
+    {
+      "selection": "galactic_mypalletizer",
+      "profile": "galactic",
+      "model": "mypalletizer",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 25
+      }
+    },
+    {
+      "selection": "humble_mecharm",
+      "profile": "humble",
+      "model": "mecharm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 26
+      }
+    },
+    {
+      "selection": "humble_mycobot",
+      "profile": "humble",
+      "model": "mycobot",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 27
+      }
+    },
+    {
+      "selection": "humble_pro450",
+      "profile": "humble",
+      "model": "pro450",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 28
+      }
+    },
+    {
+      "selection": "humble_mypalletizer",
+      "profile": "humble",
+      "model": "mypalletizer",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 29
+      }
+    },
+    {
+      "selection": "humble_ultraarm",
+      "profile": "humble",
+      "model": "ultraarm",
+      "legacy_defines": {
+        "UWVM_ELEPHANT_SELECTION": 30
+      }
+    }
+  ],
+  "configuration": {
+    "profile": "ros.sdk.provider.profile",
+    "model": "ros.sdk.provider.model",
+    "transport": "ros.sdk.provider.transport",
+    "distribution": "ros.sdk.distribution",
+    "catalog_version": "immutable per-profile source_lock_sha256; not controller firmware",
+    "abi": "uwvm ROS ABI v1 plus the exact selected canonical type catalog",
+    "wasm_features": "Exact common target manifest; no implicit threads/EH/preview/address-width substitution",
+    "model_source": "share/platform/elephant/models.json"
+  },
+  "shared_producer_contract": "tools/xmake/language_adapter.lua api_version=1 with the complete request/source graph",
+  "format": "uwvm-ros-provider-v1",
+  "api_version": 1,
+  "id": "elephant",
+  "module": "tools/platform/elephant/provider.lua",
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "kinetic",
+        "melodic",
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "foxy",
+        "galactic",
+        "humble",
+        "jazzy",
+        "rolling"
+      ]
+    }
+  },
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "go",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "objectc",
+    "php",
+    "py",
+    "rs",
+    "ruby",
+    "tinygo"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {
+    "profile": {
+      "values": [
+        "foxy",
+        "galactic",
+        "humble",
+        "kinetic",
+        "melodic",
+        "noetic"
+      ]
+    },
+    "catalog_version": {
+      "values": [
+        "632676c2b5e110262969f7f2b9b09b056a27ac9142e884936739713c66ab67dc",
+        "65c31a2a0a9ebba634b356ecbce3afe6c37e00feadde0b6f52da3fc75935f654",
+        "9a313d4fcf630f8dba0eaa9a265f034533ce282283685fb8b5bec471785081f4",
+        "c5c2fb06a9bcd1cdecf982c8bc44afe852bdf8504b6940846da1ed12b29a9f53",
+        "dcefa089680f7ae676a0aed658536303a9652f94a8caa6099b8044cf8f7dc58f",
+        "de4b66a9ac8f182b16df1f7d3e41aed66148245f8e2d2c297652fd98079689ab"
+      ]
+    },
+    "abi": {
+      "values": [
+        "uwvm-ros-v1"
+      ],
+      "default": "uwvm-ros-v1"
+    },
+    "transport": {
+      "values": [
+        "native-ros"
+      ],
+      "default": "native-ros"
+    },
+    "model": {
+      "values": [
+        "kinetic_mycobot",
+        "kinetic_mypalletizer",
+        "melodic_mecharm",
+        "melodic_myarm",
+        "melodic_mybuddy",
+        "melodic_mycobot320",
+        "melodic_mycobot",
+        "melodic_mypalletizer",
+        "melodic_ultraarm",
+        "noetic_mecharm",
+        "noetic_myarm",
+        "noetic_mybuddy",
+        "noetic_mycobot320",
+        "noetic_mycobot",
+        "noetic_pro450",
+        "noetic_mypalletizer",
+        "noetic_ultraarm",
+        "foxy_mecharm",
+        "foxy_mycobot",
+        "foxy_pro450",
+        "foxy_mypalletizer",
+        "galactic_mecharm",
+        "galactic_mycobot",
+        "galactic_pro450",
+        "galactic_mypalletizer",
+        "humble_mecharm",
+        "humble_mycobot",
+        "humble_pro450",
+        "humble_mypalletizer",
+        "humble_ultraarm"
+      ]
+    }
+  },
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  }
+}

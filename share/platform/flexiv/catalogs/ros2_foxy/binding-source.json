@@ -1,0 +1,69 @@
+{
+  "id": "ros2_foxy",
+  "backend": "ros2",
+  "distribution": "foxy",
+  "bundle": "flexiv-ros2-foxy-complete",
+  "catalog": "share/platform/flexiv/catalogs/ros2_foxy/catalog.json",
+  "catalog_sha256": "0bb7c7508a31f8cb8e15bfd808e0ab3c62cd0bd257d7ef5b4f95bd15e92e6942",
+  "records": 9,
+  "interfaces": 9,
+  "fields": 35,
+  "constants": 11,
+  "source_inputs": {
+    "catalog": {
+      "bytes": 1613,
+      "sha256": "0bb7c7508a31f8cb8e15bfd808e0ab3c62cd0bd257d7ef5b4f95bd15e92e6942"
+    },
+    "definitions": [
+      {
+        "file": "flexiv_msgs/msg/JointPosVel.msg",
+        "bytes": 43,
+        "sha256": "89d55d9135207d6b07739cabdf753d1cfe1dfe7d9d6cce6898b695407aa5dd10"
+      },
+      {
+        "file": "flexiv_msgs/msg/Mode.msg",
+        "bytes": 528,
+        "sha256": "549fac75da9f7797e779ea8e8a055efa7a71b739dfdb999b44fa1bac912e5697"
+      },
+      {
+        "file": "flexiv_msgs/msg/RobotStates.msg",
+        "bytes": 400,
+        "sha256": "e7f122e3058f1db32521ed50cb460c479910dd57c13282dbc6cc9fa64e2255e3"
+      },
+      {
+        "file": "geometry_msgs/msg/Accel.msg",
+        "bytes": 119,
+        "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+      },
+      {
+        "file": "geometry_msgs/msg/Point.msg",
+        "bytes": 84,
+        "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+      },
+      {
+        "file": "geometry_msgs/msg/Pose.msg",
+        "bytes": 119,
+        "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+      },
+      {
+        "file": "geometry_msgs/msg/Quaternion.msg",
+        "bytes": 116,
+        "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+      },
+      {
+        "file": "geometry_msgs/msg/Vector3.msg",
+        "bytes": 251,
+        "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+      },
+      {
+        "file": "geometry_msgs/msg/Wrench.msg",
+        "bytes": 116,
+        "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+      }
+    ]
+  },
+  "positive_infinity_semantics": false,
+  "native_identity": null,
+  "built": false,
+  "executed": false
+}

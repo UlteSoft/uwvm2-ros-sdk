@@ -1,0 +1,2 @@
+import { "moonbitlang/core/env", "moonbitlang/core/encoding/hex", "uwvm/flexiv/ros2_foxy" @records }
+options("is-main": true)

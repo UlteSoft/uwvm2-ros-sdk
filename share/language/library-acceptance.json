@@ -1,0 +1,407 @@
+{
+  "format": "uwvm-sdk-scoped-library-acceptance-v1",
+  "status": "PASS_FOR_LISTED_COHORT",
+  "languages": [
+    "js",
+    "py",
+    "lua",
+    "c",
+    "cpp"
+  ],
+  "widths": [
+    32,
+    64
+  ],
+  "build_host": "linux-x86_64",
+  "actual_xmake_only_projects": 20,
+  "actual_consumer_executions": 22,
+  "artifacts": 42,
+  "private_static_archives": 8,
+  "cgroup": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "deployable_extension": ".wasm",
+  "static_archive_directory": ".uwvm-ros/archives",
+  "native_ros_qualified": false,
+  "qemu_aarch64_qualified": false,
+  "all_platform_language_routes_qualified": false,
+  "attempt_1_receipt_sha256": "11783b7f42d4bb337594bcc6413406dce690f748ea10fc7afa292900a31172a5",
+  "correction_receipt_sha256": "2732a763a48f3c18bfcd26752bd0568fdf9e5ec373eb947efd4b3867a64ae023",
+  "retained_failure_causes": [
+    "Missing QuickJS headers in reduced input closure",
+    "Vendor override of private static-archive output directory"
+  ],
+  "projects": [
+    {
+      "id": "example-language-lua-shared_same-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "a45b495e7d3fc316453cc25732044b0b58bd0928d0a5414e7268135c43218797",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "a2f25a8bc37d536e7f740b27ef992d5a662f6f27cba3c32c08edbf16e641826d",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-lua-shared_same-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "9be5651d7b734e09e7938a66fbbe6c537fdd96604e64d099b04fd8f7d3132922",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "e5d35166223a38b68f4540e19878af13cc2fe6ae14c5b4c24f55bf26cb1e14b5",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-lua-static_same-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "60a6e0ee2eb7750d9b909c3d4bb09e969e1738d59f90572477413e52bdc0a07f",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.a",
+          "sha256": "d9bbe3724841abfcb1e38a05b30f230dfcf12bde7773714a4460ca853fb59876",
+          "private_link_input": true
+        }
+      ]
+    },
+    {
+      "id": "example-language-lua-static_same-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "064588bba71d013ee6a25d557f6de9f178d9a7330a014510144a889bf4f1de74",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.a",
+          "sha256": "f97031688445c7d8ab27f257dc99272d82edc400f4d9c8f8b75247827fd35493",
+          "private_link_input": true
+        }
+      ]
+    },
+    {
+      "id": "example-language-py-shared_lua-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "bcaae82740dc557b93395a6f3db12709c061ae025d5826c511d938703cb0394c",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "a2f25a8bc37d536e7f740b27ef992d5a662f6f27cba3c32c08edbf16e641826d",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-py-shared_lua-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "3cb1806306a29864f02458797259fe33b6c99525ff9ac104d6ae63e64008ada9",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "e5d35166223a38b68f4540e19878af13cc2fe6ae14c5b4c24f55bf26cb1e14b5",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-py-shared_same-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "a6ff486b46d3cb84c966686b073df2966451f7a779979c65c89542afeb417a88",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "348734d209bfa5c5e0d43cb8d5ae7aff303be16b09eaa0c79be374ff58fa3079",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-py-shared_same-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "33a7aa70ee7a32b10f58fbe2bad01737d96c81d4e113d0be5124e80e60a8fa6b",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "ce570c13e27ac4bdccc052a565055c59e41bd696c297deba21a9267961bb0e1e",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-py-static_same-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "8eecf66ef6ba61720544afacb7e347da0e44661c1cde99466a2c65db3abe7755",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.a",
+          "sha256": "b59c2d869dcf3fa5c9499a1110632136cc4635471e2116ac02c26916bdff6c29",
+          "private_link_input": true
+        }
+      ]
+    },
+    {
+      "id": "example-language-py-static_same-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "1eb01154dde03e3b1d90870c9597062054e8d13bb2f301264c3f940cb4c28514",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.a",
+          "sha256": "d9274f6372e42ae63bc1235340e805bb237ceaebb9dde0d4bbc94d9d73d7a29b",
+          "private_link_input": true
+        }
+      ]
+    },
+    {
+      "id": "example-language-js-shared_python-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "010ee031a1f985e698933a4edeeba0ec65be113794226c4e29ea14aa8cf21391",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "348734d209bfa5c5e0d43cb8d5ae7aff303be16b09eaa0c79be374ff58fa3079",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-js-shared_python-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "04ce3074d0b1da9509ecc7ef18afb70503a91cc9cf1f290028721e7445044be1",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "ce570c13e27ac4bdccc052a565055c59e41bd696c297deba21a9267961bb0e1e",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-js-shared_same-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "010ee031a1f985e698933a4edeeba0ec65be113794226c4e29ea14aa8cf21391",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "cb53e19a566dac05c83fb0360efccdf09f6b9b8f5636aa42f499189d610a5193",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-js-shared_same-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "04ce3074d0b1da9509ecc7ef18afb70503a91cc9cf1f290028721e7445044be1",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "53f23c3efe8d192d79061e6526bf31b27db3e7c1ad0b44b2fbbbcd216ec4db00",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-js-static_same-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "fcb9cba542e385cf00940a8fba7752142f2e982726a659538a78f54ffe06f28d",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.a",
+          "sha256": "19b99793e4209ad3218bd9057d48c43ecaf2d18a07538ee9b24aeec305e68b97",
+          "private_link_input": true
+        }
+      ]
+    },
+    {
+      "id": "example-language-js-static_same-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "2abf3df5131a395a4f7f87bad841ba2615d5d2d89a958ebcf8f535c0ea702697",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.a",
+          "sha256": "8c4694180c1c5f9bfb7dc4341213699a850e06e94c7370398612685813f3f5e6",
+          "private_link_input": true
+        }
+      ]
+    },
+    {
+      "id": "example-language-lua-shared_javascript-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "a45b495e7d3fc316453cc25732044b0b58bd0928d0a5414e7268135c43218797",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "cb53e19a566dac05c83fb0360efccdf09f6b9b8f5636aa42f499189d610a5193",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "example-language-lua-shared_javascript-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "consumer.wasm",
+          "sha256": "9be5651d7b734e09e7938a66fbbe6c537fdd96604e64d099b04fd8f7d3132922",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.wasm",
+          "sha256": "53f23c3efe8d192d79061e6526bf31b27db3e7c1ad0b44b2fbbbcd216ec4db00",
+          "private_link_input": false
+        }
+      ]
+    },
+    {
+      "id": "kuka-c-cpp-32",
+      "bits": 32,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "static_cpp_consumer.wasm",
+          "sha256": "a3948eaad43852fb3a06af612d59f6105dc89e72727e7e294504550b227dfb95",
+          "private_link_input": false
+        },
+        {
+          "filename": "static_c_consumer.wasm",
+          "sha256": "5e690fd9663a540335be1f1173c2ab324d94c8e3ad325e6db7a126caf7ea3938",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.a",
+          "sha256": "73ecc44b21b29b88d84cef4ecda23455e06643fc32e54b55d7f80c44c8f693af",
+          "private_link_input": true
+        }
+      ]
+    },
+    {
+      "id": "kuka-c-cpp-64",
+      "bits": 64,
+      "status": "PASS",
+      "artifacts": [
+        {
+          "filename": "static_cpp_consumer.wasm",
+          "sha256": "8c38a0c868cc854168688b489524ebdab358c1c112e60a16c1303b1432e082cb",
+          "private_link_input": false
+        },
+        {
+          "filename": "static_c_consumer.wasm",
+          "sha256": "af1c8582687d82d6d3e9fd7e447cde79f048ee6c3ca8f5d56a43775821431598",
+          "private_link_input": false
+        },
+        {
+          "filename": "algorithm.a",
+          "sha256": "4f61592949fecd32e9a6faba7535658174b13f4f3172562ec8fddf7f1c689aba",
+          "private_link_input": true
+        }
+      ]
+    }
+  ],
+  "complete_record_library_cohort": {
+    "vendors": [
+      "franka",
+      "flexiv"
+    ],
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "widths": [
+      32,
+      64
+    ],
+    "projects": 16,
+    "consumer_executions": 64,
+    "status": "PASS",
+    "native_ROS": false,
+    "QEMU_AArch64": false,
+    "receipt_sha256": "6f80177206420851b7dc7f77ff33cd5a82fab041a9cdf7852f2da873116fe11d"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Duration",
+      "file": "builtin_interfaces/msg/Duration.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time",
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "std_msgs/msg/Header",
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "bounds": {
+        "frame_id": {
+          "string": 64
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "sensor_msgs/msg/JointState",
+      "file": "sensor_msgs/msg/JointState.msg",
+      "registered": true,
+      "bounds": {
+        "name": {
+          "sequence": 12,
+          "string": 64
+        },
+        "position": {
+          "sequence": 12
+        },
+        "velocity": {
+          "sequence": 12
+        },
+        "effort": {
+          "sequence": 12
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+      "file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "registered": false,
+      "bounds": {
+        "positions": {
+          "sequence": 12
+        },
+        "velocities": {
+          "sequence": 12
+        },
+        "accelerations": {
+          "sequence": 12
+        },
+        "effort": {
+          "sequence": 12
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "trajectory_msgs/msg/JointTrajectory",
+      "file": "trajectory_msgs/msg/JointTrajectory.msg",
+      "registered": true,
+      "bounds": {
+        "joint_names": {
+          "sequence": 12,
+          "string": 64
+        },
+        "points": {
+          "sequence": 1001
+        }
+      }
+    }
+  ]
+}

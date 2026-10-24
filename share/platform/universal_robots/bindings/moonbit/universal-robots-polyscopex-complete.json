@@ -1,0 +1,55 @@
+{
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "backend": "ros2",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "domain": "universal-robots-polyscopex-complete",
+  "format": "vendor-language-source-inputs-v1",
+  "include_root": "include/platform",
+  "language": "moonbit",
+  "model_module": "universal_robots",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "moonbit",
+    "moonbit": {
+      "entry_dependencies": [
+        "records"
+      ],
+      "main_package": "universal_robots/command",
+      "packages": [
+        {
+          "alias": "wire",
+          "dependencies": [
+            "utf8"
+          ],
+          "name": "uwvm/ros/wire",
+          "sources": [
+            "include/platform/ros/moonbit/wire/image.mbt",
+            "include/platform/ros/moonbit/wire/transform.mbt",
+            "include/platform/ros/moonbit/wire/wire.mbt"
+          ]
+        },
+        {
+          "alias": "records",
+          "dependencies": [
+            "wire",
+            "float",
+            "utf8"
+          ],
+          "name": "universal_robots/ros2/universal_robots_polyscopex_complete",
+          "sources": [
+            "include/platform/universal_robots/moonbit/ros2/universal-robots-polyscopex-complete/bounded_records.mbt"
+          ]
+        }
+      ]
+    }
+  },
+  "platform": "universal_robots",
+  "record_catalog": "share/platform/universal_robots/domains/universal-robots-polyscopex-complete.ir.json",
+  "retained_native_operation_flows": "src/platform/universal_robots/flows",
+  "source_root": "include/platform/universal_robots/moonbit/ros2/universal-robots-polyscopex-complete",
+  "support_source_roots": [],
+  "target_widths_requested": [
+    32,
+    64
+  ]
+}

@@ -1,0 +1,581 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {
+        "properties": {
+          "sequence": 4
+        }
+      },
+      "file": "aimdk_msgs/msg/AgentProperties.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/AgentProperties"
+    },
+    {
+      "bounds": {
+        "value": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/AgentPropertiesValue.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/AgentPropertiesValue"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/AgentPropertyIdType.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/AgentPropertyIdType"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/AudioVadStateType.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/AudioVadStateType"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/CommonRequest.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonRequest"
+    },
+    {
+      "bounds": {
+        "message": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/CommonResponse.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonResponse"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/CommonState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonState"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/CommonTaskResponse.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonTaskResponse"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/DomainErrorState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/DomainErrorState"
+    },
+    {
+      "bounds": {
+        "e_path": {
+          "string": 128
+        },
+        "e_path_list": {
+          "sequence": 16,
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/FaceEmojiStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/FaceEmojiStatus"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/HandCommand.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/HandCommand"
+    },
+    {
+      "bounds": {
+        "left_hands": {
+          "sequence": 4
+        },
+        "right_hands": {
+          "sequence": 4
+        }
+      },
+      "file": "aimdk_msgs/msg/HandCommandArray.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/HandCommandArray"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/HandState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/HandState"
+    },
+    {
+      "bounds": {
+        "left_hands": {
+          "sequence": 4
+        },
+        "right_hands": {
+          "sequence": 4
+        }
+      },
+      "file": "aimdk_msgs/msg/HandStateArray.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/HandStateArray"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/HandType.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/HandType"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/JointCommand.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/JointCommand"
+    },
+    {
+      "bounds": {
+        "joints": {
+          "sequence": 64
+        }
+      },
+      "file": "aimdk_msgs/msg/JointCommandArray.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/JointCommandArray"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/JointState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/JointState"
+    },
+    {
+      "bounds": {
+        "joints": {
+          "sequence": 64
+        }
+      },
+      "file": "aimdk_msgs/msg/JointStateArray.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/JointStateArray"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McAction.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McAction"
+    },
+    {
+      "bounds": {
+        "action_desc": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/McActionCommand.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McActionCommand"
+    },
+    {
+      "bounds": {
+        "action_desc": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/McActionInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McActionInfo"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McActionStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McActionStatus"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McControlArea.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McControlArea"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McInputAction.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McInputAction"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/McInputSource.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McInputSource"
+    },
+    {
+      "bounds": {
+        "source": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/McLocomotionVelocity.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McLocomotionVelocity"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/McPresetMotion.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/McPresetMotion"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/MessageHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/MessageHeader"
+    },
+    {
+      "bounds": {
+        "domain": {
+          "string": 128
+        },
+        "file_name": {
+          "string": 128
+        },
+        "trace_id": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/PlayMediaFileRequest.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/PlayMediaFileRequest"
+    },
+    {
+      "bounds": {
+        "domain": {
+          "string": 128
+        },
+        "text": {
+          "string": 128
+        },
+        "trace_id": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/PlayTtsRequest.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/PlayTtsRequest"
+    },
+    {
+      "bounds": {
+        "domain": {
+          "string": 128
+        },
+        "error_message": {
+          "string": 128
+        },
+        "text": {
+          "string": 128
+        },
+        "trace_id": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/PlayTtsResponse.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/PlayTtsResponse"
+    },
+    {
+      "bounds": {
+        "bms_hardware_version": {
+          "string": 128
+        },
+        "bms_manufacturer": {
+          "string": 128
+        },
+        "bms_serial_number": {
+          "string": 128
+        },
+        "bms_software_version": {
+          "string": 128
+        },
+        "pmu_hardware_version": {
+          "string": 128
+        },
+        "pmu_protocol_version": {
+          "string": 128
+        },
+        "pmu_software_version": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/PmuState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/PmuState"
+    },
+    {
+      "bounds": {
+        "audio_data": {
+          "sequence": 256
+        }
+      },
+      "file": "aimdk_msgs/msg/ProcessedAudioOutput.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ProcessedAudioOutput"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/RequestHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/RequestHeader"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/ResponseHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ResponseHeader"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/TouchState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/TouchState"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/TtsPriorityLevel.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/TtsPriorityLevel"
+    },
+    {
+      "bounds": {
+        "response.arm_joints": {
+          "sequence": 4
+        },
+        "response.head_joints": {
+          "sequence": 4
+        },
+        "response.leg_joints": {
+          "sequence": 4
+        },
+        "response.waist_joints": {
+          "sequence": 4
+        }
+      },
+      "file": "aimdk_msgs/srv/GetAllJointState.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/GetAllJointState"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/GetCurrentInputSource.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/GetCurrentInputSource"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/GetHandType.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/GetHandType"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/GetMcAction.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/GetMcAction"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/GetMute.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/GetMute"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/GetVolume.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/GetVolume"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/LedStripCommand.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/LedStripCommand"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/srv/PlayEmoji.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/PlayEmoji"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/PlayMediaFile.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/PlayMediaFile"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/PlayTts.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/PlayTts"
+    },
+    {
+      "bounds": {
+        "request.video_path": {
+          "string": 128
+        },
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/srv/PlayVideo.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/PlayVideo"
+    },
+    {
+      "bounds": {
+        "request.video_path_list": {
+          "sequence": 16,
+          "string": 128
+        },
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/srv/PlayVideoGroup.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/PlayVideoGroup"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/SetAgentPropertiesRequest.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/SetAgentPropertiesRequest"
+    },
+    {
+      "bounds": {
+        "request.source": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/srv/SetMcAction.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/SetMcAction"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/SetMcInputSource.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/SetMcInputSource"
+    },
+    {
+      "bounds": {
+        "request.ani_path": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/srv/SetMcPresetMotion.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/SetMcPresetMotion"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/SetMute.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/SetMute"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/srv/SetVolume.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/srv/SetVolume"
+    },
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time"
+    }
+  ]
+}

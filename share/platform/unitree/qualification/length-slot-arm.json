@@ -1,0 +1,36 @@
+{
+  "format": "unitree-output-fix-arm-final-v1",
+  "status": "PASS",
+  "actual_guest_executions": 12,
+  "language_counts": {
+    "lua": 6,
+    "moonbit": 6
+  },
+  "backend_counts": {
+    "ros1": 6,
+    "ros2": 6
+  },
+  "complete_native_byte_matches": 12,
+  "independent_cleanup_successes": 12,
+  "producer_source_files_verified": 374,
+  "source_manifest_sha256": "7817a8f48920d124f24cb2ce62c9195d7e6e3d236a4c7cdc3c3f4ea42746079a",
+  "producer_manifest_sha256": "8eddc4252ddf0f67fe5a87319c831075fbf2ef55d4f90b97dc5df06ec441cbec",
+  "producer_final_sha256": "c37f5b0da6f7efd25f70eee5b1a43a5d3f33d4fea772f0e5677a669c9a95307d",
+  "producer_artifact_catalog_sha256": "b2d27357926bf158d1351519a9106d67491ef801a4902214b95c1f152a19646b",
+  "actual_execution_receipt_sha256": "131a5308f070789878c482c1f53e1d381b3b4e9040f699f5fde93560260badb4",
+  "independent_review_sha256": "448cbd95053d1dd17df04036c79018b64e2be4babdee93493d655b76091bb501",
+  "runtime_features": [
+    "exceptions"
+  ],
+  "memory_max": 68719476736,
+  "swap_max": 0,
+  "ros2_domain": 220,
+  "ros1_master_port": 12417,
+  "hardware_qualified": false,
+  "arm_kernel_qualified": false,
+  "arm_compiler_host_qualified": false,
+  "physical_robot": false,
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "9b0087740db021533805fee714d437d3dd1dbcbb3ba96c81407eb5ee7c829fd5"
+}

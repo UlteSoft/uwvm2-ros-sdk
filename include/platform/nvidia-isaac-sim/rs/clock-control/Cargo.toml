@@ -1,0 +1,16 @@
+[package]
+name = "roswasm-isaac-sim-clock"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+publish = false
+license = "Apache-2.0"
+description = "Finite original Isaac Sim clock program over the shared retained ROS2 service SDK"
+
+# Paths are relative to include/platform/nvidia-isaac-sim/rs/clock-control.
+[dependencies]
+roswasm = { path = "../../../ros2/rs", features = ["alloc", "ros2"] }
+roswasm-owned-service = { path = "../../../ros2/rs/owned_service" }
+
+[lib]
+path = "lib.rs"

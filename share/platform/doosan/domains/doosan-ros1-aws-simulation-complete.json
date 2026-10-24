@@ -1,0 +1,6450 @@
+{
+  "platform": "doosan",
+  "id": "doosan-ros1-aws-simulation-complete",
+  "backend": "ros1",
+  "catalog": "share/platform/doosan/catalogs/ros1_aws_simulation/catalog.json",
+  "source_catalog_sha256": "97d3406bbe20c02be518fed9dbfa167b6183e464d94354d414510dd0e527afe1",
+  "source_generation_sha256": "6a95015a2e052a0d80e93b38bb21b4d6ca3ca057ba95252484597be2131f1f05",
+  "historical_catalog_pin_matches": true,
+  "historical_catalog_pin": {
+    "bytes": 13505,
+    "sha256": "97d3406bbe20c02be518fed9dbfa167b6183e464d94354d414510dd0e527afe1"
+  },
+  "records": [
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 531,
+      "codec_identity": "UWVMROS1_67fe218ec3ea51f74df38d696c95b24f4f64dcdeb6652b618ec327133a1fc29f",
+      "expanded_nodes": 8,
+      "maximum_wire_bytes": 531,
+      "minimum_wire_bytes": 19,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateModbusRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_13243e4aeefdebf38671fc24f7059daf3597cdebcbc1a6ffd315d3edab3dfc2f",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateModbusResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 308,
+      "codec_identity": "UWVMROS1_afd19140176d214b18610297e53a7606a78cefd366dc01bb6baf05d72795e744",
+      "expanded_nodes": 9,
+      "maximum_wire_bytes": 308,
+      "minimum_wire_bytes": 52,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateTcpRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_768b2341613afaecf36342ebe26060e2c41ebd8fd4404d0394065c0d0ea6c948",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateTcpResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 340,
+      "codec_identity": "UWVMROS1_ade17ea7096f6309da57a5d9e0be362562551da27bbc1508aac8e2d3c3afcd44",
+      "expanded_nodes": 14,
+      "maximum_wire_bytes": 340,
+      "minimum_wire_bytes": 84,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateToolRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_6ed584718ae8c0b9d3946007cfcc713e58f867d3b6b6bfdcabc7ffc126f98a9b",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateToolResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_d2007f4aa533a46244a6924762b701f84c31f5c9d19495a745e35c6fdd55d96b",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteModbusRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_e3f8b3da769c249f0064ee118d26d7154a31e2dd5e65417d01f1524baa317c4e",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteModbusResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_096510681530cdda07b413a426fcf0ad5ca98e657a5d7612c1f497893fa96de4",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteTcpRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_5842def73643bf4621c17fbfa2ecd19cfec7a5c9c4ce9b954c72e0be846cebe5",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteTcpResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_be7ab4ae62ab38dd1c31f4cb96303edf98511e369ef64476f835e23b7b6168f3",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteToolRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_0e0708c161ba1aeeb9c7e96e77434eb7ba7c9c77eba230e5488f59b34fd8f780",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteToolResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_e8e6c075432920d6650a5dddc31fd33f7a1688ce99264113be7d0675378eb120",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlPauseRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_9a448d82cb77115d43abe062d8f1bbb904ab680a98cf4d95b025eedd3deca0bb",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlPauseResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_11d5e8618dacde2d4f9ee2b9e7ee6306396e7495003bc31d9bd02a2438232713",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlResumeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_40fdc65739450e3c8e0af52f69623624dac33620feda55065587e8e8a1d9a05a",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlResumeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 261,
+      "codec_identity": "UWVMROS1_1f5f908c63b09780c6b68ef280f87328590e5eec3be18d98916137c0d2c42a65",
+      "expanded_nodes": 3,
+      "maximum_wire_bytes": 261,
+      "minimum_wire_bytes": 5,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlStartRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_2e39df1817ac076c895b43f565515db035ba300f4433b8635976b20713d98d76",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlStartResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_5be1c9f2284e5244660cfcb60632921bb5db1440536a5030e8d4c93c15704f9b",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlStopRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_0f2cf2aff2ce20b984c602673fdf51ec38ef81820171e1c08e8c9c07d536a988",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlStopResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_0cfaa9f68b92deff18c68d7def4dda13dcd1082065218cc0af1ef8909a35898a",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCtrlBoxAnalogInputRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 8,
+      "codec_identity": "UWVMROS1_53fc14db79f9c63ee04e5e055961e397d6ceefa553e0912c4c944f858376b4b2",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 8,
+      "minimum_wire_bytes": 8,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCtrlBoxAnalogInputResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_43410710b24f4ef8aeb4533a0d45babb2adf93890d72c08ec45b1062e0d83f7e",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCtrlBoxDigitalInputRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_b24172ba7a1d82456b33bcbfccde50c1e0a40d4ce870dae704c00a553591a6a2",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCtrlBoxDigitalInputResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_674feef59812a37871c3022be9d588ffa67178430be01f47a4e3bca86766b72b",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentPoseRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 48,
+      "codec_identity": "UWVMROS1_cae2a551df6b2c548e171cdb181bbbe1fcbfe9fc3039b68f4edab2043ef8b9d6",
+      "expanded_nodes": 8,
+      "maximum_wire_bytes": 48,
+      "minimum_wire_bytes": 48,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentPoseResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_303fe75ff690897d18296dfb34aad4b0482e372656ed5c85bf9d60bb1832af78",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentSolutionSpaceRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_57e390c7f039b26fc69fe35d07420ee94084ce9d9531e7e8c6d6a09729b5986f",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentSolutionSpaceResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_f2a902cbf141335bb559f739861860de93f07d3ed3200ba91833b831389eb3b8",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentTcpRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_8076cd565188d0adcda508a0637b240969a434a924daeed7cf3b7e442b901ee3",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentTcpResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_0d86dff574728cebfb33a873845e9563665d4173267adbc6fd7f542d26b15970",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentToolRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_8afef46263fd34fe71e4c33d9add7d71672cb9d95aa237a60e17c3c3cdd58e43",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentToolResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_425ce8ba966c52337c8d06a8436d593e8333a33cdb21ecdb983df3db9980d51f",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetDrlStateRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_d8238b34c53f1da07057059fadfc1bbc767be38453b0410a90bccb84d99d1a94",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetDrlStateResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_601bfc2f1283520f2dd76e3f0eee05c02e584873e22b2188f6206cc22d96ee11",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetExternalTorqueRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 48,
+      "codec_identity": "UWVMROS1_52c063acee790649e0e439390ee3c8bd4e7ac2a124911093ba0fd00f06a07ff2",
+      "expanded_nodes": 8,
+      "maximum_wire_bytes": 48,
+      "minimum_wire_bytes": 48,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetExternalTorqueResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_63dee3592e81bf9c2442ba8f01660710ef80c01c3ab55a73c35404da2d6da149",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetJointTorqueRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 48,
+      "codec_identity": "UWVMROS1_25bda80075428cb48858ba2ab3d38b52d4fe631596e919c001cf1a4f96391bf1",
+      "expanded_nodes": 8,
+      "maximum_wire_bytes": 48,
+      "minimum_wire_bytes": 48,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetJointTorqueResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_4ff39c1f6b320245fd73e84755fe876eb12177c4a7b3ac3888d870ec5a761bdf",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetLastAlarmRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 792,
+      "codec_identity": "UWVMROS1_39a6ecc178ed79ab41cd3948b6efb9666f66b0c33b6abe7845b1d16a17f9700f",
+      "expanded_nodes": 8,
+      "maximum_wire_bytes": 792,
+      "minimum_wire_bytes": 24,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/LogAlarm"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 792,
+      "codec_identity": "UWVMROS1_cbf970486efc6fc6dbda7ecfd673f3642f228b27e1a406156d2592d71467995c",
+      "expanded_nodes": 9,
+      "maximum_wire_bytes": 792,
+      "minimum_wire_bytes": 24,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetLastAlarmResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_812e7d2d259db6a466dd304239aee910848a1fb9059c431f3495825d8ebe800c",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetModbusInputRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 4,
+      "codec_identity": "UWVMROS1_5a9baa85959370b7562c32510a9ebe6bd48ccb01b5d71d3898126e69fe60afb3",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 4,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetModbusInputResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_228237c16ea308e25d1a5fb7f74713a31a67e6e1e6b0a94f06c30264ed90af90",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotModeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_3049e13cf2157e75860253953231b258ac495b2fc424aa2c6343fcf0f91044b5",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotModeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_ff02ad740851d4dc6955206ffa3556f6564854bd6edd6a8190ce44f8ba9709d4",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotSpeedModeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_e67a5a94c55ea30657ecdf83201cac431e89c11817bb12831d31023d4fd2cec1",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotSpeedModeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_b773b6fe4f08ade05cc0bac7e0d70cb7edcfa763f83608d944bf072da4ad08bc",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotStateRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_2fdea6418150a77db99b9e1bcecb11a9a10f826690b18853d6adfbdc2b6f8d4d",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotStateResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_43cc52a8d4b5e36ace679eb3f5bad943b3052bb0dec9f8af6f58f2d5c7deb203",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotSystemRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_ecdbadad1fa8a9e22bf20bbb5c7aa489b739a6d0ef725ea20e37d50feb92a570",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotSystemResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_a8fa1714fc6c5d9082f6909ad8562c87e1bd95e40168701c1dc670e614b5dd70",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetToolDigitalInputRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_ee2a97dbab5eb6f818d5165e68ebc9077f8ebae391f79445f35205158e0d7f92",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetToolDigitalInputResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_27ccf47d48432cce678c6dad5ecff2aac258f4b17e4172556fa05183bc5111b7",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetToolForceRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 48,
+      "codec_identity": "UWVMROS1_752d1690a4d3b7b6842ce45d1ae599de4cbfdde9bf7da96193cbf3a9e4205026",
+      "expanded_nodes": 8,
+      "maximum_wire_bytes": 48,
+      "minimum_wire_bytes": 48,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetToolForceResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 10,
+      "codec_identity": "UWVMROS1_28c6930998059030e74613930bd86066b3a37a490f7f438395eed15570617f7a",
+      "expanded_nodes": 4,
+      "maximum_wire_bytes": 10,
+      "minimum_wire_bytes": 10,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_f87fba5fb96bd9ae52d16a519b20ca7ea2c17560b15bd8543a9484282e1967d7",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 57,
+      "codec_identity": "UWVMROS1_f24271474302516dfce0dde848b2420490c35800b12d2fbdf5250ebbffc25cea",
+      "expanded_nodes": 10,
+      "maximum_wire_bytes": 57,
+      "minimum_wire_bytes": 57,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogMultiRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_fecf5222e690c35fe0503c56d12e06b375d55ffab9ea0bbef96270729305a64a",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogMultiResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 57,
+      "codec_identity": "UWVMROS1_ee64c6ccdfa3726ebbfc0b3779f878cbbece6fe878cbfbc14fa45eed4486de02",
+      "expanded_nodes": 10,
+      "maximum_wire_bytes": 57,
+      "minimum_wire_bytes": 57,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogMultiAxis"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 264,
+      "codec_identity": "UWVMROS1_e107e7ff86b98e9c58565f3a2889ac50ea49ecc6efb9c982d29b075086fe3ae9",
+      "expanded_nodes": 3,
+      "maximum_wire_bytes": 264,
+      "minimum_wire_bytes": 8,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ModbusState"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 76,
+      "codec_identity": "UWVMROS1_0a279c83cc8c73db2472e3768c8e17d877bb15d72d41f4056568a279b5352444",
+      "expanded_nodes": 4,
+      "maximum_wire_bytes": 76,
+      "minimum_wire_bytes": 12,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "std_msgs/MultiArrayDimension"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 236,
+      "codec_identity": "UWVMROS1_602f6ec018f567486b5ea052944a24b0d798fdad5910915337ab6a76c966603e",
+      "expanded_nodes": 15,
+      "maximum_wire_bytes": 236,
+      "minimum_wire_bytes": 8,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "std_msgs/MultiArrayLayout"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 368,
+      "codec_identity": "UWVMROS1_e75045efb9b80cdc278940f799d16f3b6f49ca4eeb67b4c095d1df4db133bdf8",
+      "expanded_nodes": 33,
+      "maximum_wire_bytes": 368,
+      "minimum_wire_bytes": 12,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "std_msgs/Float64MultiArray"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 2256,
+      "codec_identity": "UWVMROS1_70b7fb3501e9677b76ed8f893883090e500be36ff8175edce8fd6d6d4f23e4e6",
+      "expanded_nodes": 211,
+      "maximum_wire_bytes": 2256,
+      "minimum_wire_bytes": 48,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveBlendingRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_9c5697b77eaad084e9870d5ca1a1a960e22bd87137f2a1035daa9f014cc28eb6",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveBlendingResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 2280,
+      "codec_identity": "UWVMROS1_39c6ea4c3b15ae9866db805863a5c5c542bbf7b104adcd81a13425719fd994f4",
+      "expanded_nodes": 214,
+      "maximum_wire_bytes": 2280,
+      "minimum_wire_bytes": 72,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveCircleRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_a5950bd2e98ce04a5b2261eec3c95f65613f3fb60d8d1779c6a8bcbb28fa42f3",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveCircleResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 83,
+      "codec_identity": "UWVMROS1_b244b9d86649987111dd94846a98260a464ac54b9074025689028be9a1ed6a03",
+      "expanded_nodes": 15,
+      "maximum_wire_bytes": 83,
+      "minimum_wire_bytes": 83,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveJointRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_66e1e0f7cf2043211218cd9d1c58bfb89ffaf7480a4adddb375c002321a3fcc4",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveJointResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 85,
+      "codec_identity": "UWVMROS1_d3a91ad268c65b3f4967c281c53301ec61b6aebdc4a55324103aac4d3ed392db",
+      "expanded_nodes": 17,
+      "maximum_wire_bytes": 85,
+      "minimum_wire_bytes": 85,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveJointxRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_9286ce396d98df17fa6cab04cd10ab449be09a07134799f09ae19082921103cc",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveJointxResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 100,
+      "codec_identity": "UWVMROS1_ef69f202700bbcfb829e8eedbb7189489f4c30a6f08702f368c5e7f9493b206e",
+      "expanded_nodes": 20,
+      "maximum_wire_bytes": 100,
+      "minimum_wire_bytes": 100,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveLineRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_0d316d575a341637b3cbe5a2ee68734670ca6f3f9f5035b383194b8457afe82c",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveLineResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_a25b42c1e8819548bfff8d108ec661b4a1137eeafd19d8805cfecdc4d14c5f19",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MovePauseRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_148a3cc895846afa55520af770f76bc6118c313b5cfbf4d83d0f161b22171aed",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MovePauseResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 107,
+      "codec_identity": "UWVMROS1_73ffac70af9558b1be99d969ee99cf992816cf84ce97f29ef81036963fbd2d69",
+      "expanded_nodes": 19,
+      "maximum_wire_bytes": 107,
+      "minimum_wire_bytes": 107,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MovePeriodicRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_97f5baff448319a629f79ea38696662bfca6960af28150b8dfa07902cd7393b3",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MovePeriodicResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_313ed9fb87f75b7a010a658e734390145b46050b1f554f863cf6c2afb7e60f1f",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveResumeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_072287041c0e4462d8994d15ad03c5c36db00c754565d99cf9d30a215100937a",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveResumeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 67,
+      "codec_identity": "UWVMROS1_5b5a4a14ecc3021b9f98e44891c3c87011ba825fb6399e1ae5ef179257a4565c",
+      "expanded_nodes": 14,
+      "maximum_wire_bytes": 67,
+      "minimum_wire_bytes": 67,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSpiralRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_be420ead496b05aafd3aa152a89bd04cc6dc1e584e700019a568f0dcae3a7691",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSpiralResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 2239,
+      "codec_identity": "UWVMROS1_6e386632864f2315ba8737001727f9c03bb17a0e70b8eb990ce39fed669aac33",
+      "expanded_nodes": 206,
+      "maximum_wire_bytes": 2239,
+      "minimum_wire_bytes": 31,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSplineJointRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_b6fe363893f83066cfbf079aedf9fd6161316fe698b1a02713761aa46adb6e68",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSplineJointResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 2257,
+      "codec_identity": "UWVMROS1_fa8ee3b180d331309471cb20a1dbe4b46a3493cc0c7298222017200d2ff65e5a",
+      "expanded_nodes": 212,
+      "maximum_wire_bytes": 2257,
+      "minimum_wire_bytes": 49,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSplineTaskRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_3d19b8f693f665703fc8b8ee151ee49ed94100de85668164f953095f718cdb7a",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSplineTaskResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 4,
+      "codec_identity": "UWVMROS1_8591a7188be1a528bbbb4b62f134825e0bf0f41517709604ac06c537f01423e4",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 4,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveStopRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_25580dd85be376dcb588ebe62a49394f0f9c92abd7b094c2552df86b64f87427",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveStopResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_ca59fcddb15dd63fcf0481cb2e81be6a338d63167a15ad66585335eee1922a39",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveWaitRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_764dd1fba59b88d4baae818b06b9c735f62f156e67842013d95d55381d32f232",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveWaitResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 792,
+      "codec_identity": "UWVMROS1_86d4b7b2d131374e05e7fe9d53988f0ed6713deb337a37182ac4998951ca5641",
+      "expanded_nodes": 7,
+      "maximum_wire_bytes": 792,
+      "minimum_wire_bytes": 24,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotError"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 7595,
+      "codec_identity": "UWVMROS1_67691d32d7b73ab123439c6f14dca8f626ad9e9a6f09f9ecb0e631b5f63d2574",
+      "expanded_nodes": 441,
+      "maximum_wire_bytes": 7595,
+      "minimum_wire_bytes": 907,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotState"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 4,
+      "codec_identity": "UWVMROS1_fd77182b171cc0c4eea28c26c78310584b38e47a3c7d987783648a9f230b6323",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 4,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotStop"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_208edddefb1fee08c3ba285600357951edca6b0328a14ea3cca56ec5b2c4d3b4",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FCloseRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_21a215db4729d55b86ae1f56d932984a38c5c7093f09623a5a5cee1e5647a09d",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FCloseResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 8,
+      "codec_identity": "UWVMROS1_81cbba3bf5cd634b8c30fe914123d67da1294352a6e1a70a5c8a58259a79d6a2",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 8,
+      "minimum_wire_bytes": 8,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FMoveRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_90f90a7486c727afb08f0e09f76f0bfa7f5b0d057be653258b6bdf1e935e7183",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FMoveResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 0,
+      "codec_identity": "UWVMROS1_64576393afca9ec6bd2e76eaf57324b5e625e62f5899d77762dc041dc1fbdda2",
+      "expanded_nodes": 1,
+      "maximum_wire_bytes": 0,
+      "minimum_wire_bytes": 0,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FOpenRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_83448b0daee950113e41814fe398efbb5624568e812f5989dd26cec24f24742a",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FOpenResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_19253624f5870830126073f19daa4e4f42dcdd10c4d3154989aa619ce2749498",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SerialSendDataRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_0bb4f5a2bfcf02e9febe7846d2616c99141a8860f62d83b59ebb56da6c89dc43",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SerialSendDataResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 2,
+      "codec_identity": "UWVMROS1_934735469130eef5a4e4599d3033242f0dacf467b2d413d607f733bcdebb7f5b",
+      "expanded_nodes": 3,
+      "maximum_wire_bytes": 2,
+      "minimum_wire_bytes": 2,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogInputTypeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_a1e73687962235470a5f55d1fa4abd910001dfae2b05aa7779fce0ad93137400",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogInputTypeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 9,
+      "codec_identity": "UWVMROS1_1ea5fd673a691bc7a51cf3c65c9a3b30352539155e6d7007181990c9a227efb4",
+      "expanded_nodes": 3,
+      "maximum_wire_bytes": 9,
+      "minimum_wire_bytes": 9,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogOutputRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_f0df03f3603b7ec2c0ef5f1e5d126b718ad8ca432130e32184dc87497bf707a5",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogOutputResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 2,
+      "codec_identity": "UWVMROS1_71aaf5f279052ba620d9cd13fa1751f96629c19d60e4030086b51e316ceab14f",
+      "expanded_nodes": 3,
+      "maximum_wire_bytes": 2,
+      "minimum_wire_bytes": 2,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogOutputTypeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_a175ae12517731f2c2e4de021b1921920bd543d9c81469876b50b51b62ad8cc2",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogOutputTypeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 2,
+      "codec_identity": "UWVMROS1_82a2c083195f7adc4fd3104cb05039cf109e9779920e36b4d3966edb819f83db",
+      "expanded_nodes": 3,
+      "maximum_wire_bytes": 2,
+      "minimum_wire_bytes": 2,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxDigitalOutputRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_dc0411c903a4350c81130d3343615212c4e3a9c259f7b193bff92c95b7039657",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxDigitalOutputResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_6a403e6eb4e86aab4d76913e5dd679425f68c6e4c9b38c82af1eaa180dc65f00",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCurrentTcpRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_29c09f17453ac9fa413922b023f1a54ae253cecbbdea211202da551187bbf7ab",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCurrentTcpResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 260,
+      "codec_identity": "UWVMROS1_d5d71101193ff28fe86d6ba22de9922fda0c806bbd8cd5bfdb8ef3688f5bacb4",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 260,
+      "minimum_wire_bytes": 4,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCurrentToolRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_89937411059cec969c42c90bdb4c81fa15dc645b627d10d376dc5ded2c56e1de",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCurrentToolResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 264,
+      "codec_identity": "UWVMROS1_3482041cfb90233b59433f4749d9e8f422fc73cdb26525bdbc60370e73c7827f",
+      "expanded_nodes": 3,
+      "maximum_wire_bytes": 264,
+      "minimum_wire_bytes": 8,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetModbusOutputRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_763789f569991b2ba44844586d51b20f2c439e9b22ace4bc72b1bce7b23e0491",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetModbusOutputResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_295575a2df0f007254f9aa7eac220e99fcae85ecb085181d5a3ca4e4e86f23fe",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotModeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_bbf3bda8cd2e9afbda89023639013686ecd7612a9323a6d4180b8ac092caaad1",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotModeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_68f9a7f019ddfa1015de6c7e3115d632eb44ec794f364e6a0617fed34f70531c",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotSpeedModeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_6434538e8bf60b1b900aba530ed3e027eb13d854591eab5e0e93cc407e90c94b",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotSpeedModeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_75ffa8e1e77ea59a3b7a27151404682cfdef7226d32d3b78b6d67e562536eeee",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotSystemRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_38f3915ccf71872a966f2f511e73782a79df1923c76e6134ea8d72f0b96f6c27",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotSystemResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_8a9961395d960217a4f867ee0d2994ea40afe83c4a33a7dcc5b348a85a7fff42",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetSafeStopResetTypeRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_2227553731ecf10a55eda31cd8735f90bd4539777661e3723f712a7a456cd4db",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetSafeStopResetTypeResponse"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 2,
+      "codec_identity": "UWVMROS1_6b384924cefbae3dfe50e02b8fb26ed9e228d2ada5c63070feb0375c125a2123",
+      "expanded_nodes": 3,
+      "maximum_wire_bytes": 2,
+      "minimum_wire_bytes": 2,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetToolDigitalOutputRequest"
+    },
+    {
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum_wire_bytes": 1,
+      "codec_identity": "UWVMROS1_4e0acd035740d1e47b42128818528aa3aa33736d979f46ada511ad0e6230ae94",
+      "expanded_nodes": 2,
+      "maximum_wire_bytes": 1,
+      "minimum_wire_bytes": 1,
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetToolDigitalOutputResponse"
+    }
+  ],
+  "types": [
+    {
+      "adapter_codec_identity": "UWVMROS1_4b90df735ea59b83921ef23c10dc2e1e9bfc98a1df5407fa0f53ff0682b05858",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_67fe218ec3ea51f74df38d696c95b24f4f64dcdeb6652b618ec327133a1fc29f",
+          "expanded_nodes": 8,
+          "maximum_wire_bytes": 531,
+          "minimum_wire_bytes": 19,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigCreateModbusRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_13243e4aeefdebf38671fc24f7059daf3597cdebcbc1a6ffd315d3edab3dfc2f",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigCreateModbusResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateModbus"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_78cbf4fa4434d183f56faad90ef97cfbba17ff620128b0be0dcd6113a171eeb7",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_afd19140176d214b18610297e53a7606a78cefd366dc01bb6baf05d72795e744",
+          "expanded_nodes": 9,
+          "maximum_wire_bytes": 308,
+          "minimum_wire_bytes": 52,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigCreateTcpRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_768b2341613afaecf36342ebe26060e2c41ebd8fd4404d0394065c0d0ea6c948",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigCreateTcpResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateTcp"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_2720295aac811856f0a8c0d8662afda537abe132023a15e4809520673f29e06e",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_ade17ea7096f6309da57a5d9e0be362562551da27bbc1508aac8e2d3c3afcd44",
+          "expanded_nodes": 14,
+          "maximum_wire_bytes": 340,
+          "minimum_wire_bytes": 84,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigCreateToolRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_6ed584718ae8c0b9d3946007cfcc713e58f867d3b6b6bfdcabc7ffc126f98a9b",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigCreateToolResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigCreateTool"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_e31bf4919e0515171def1be0f361ee0934eea5ec1a25de6029c6041630e9d6e3",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_d2007f4aa533a46244a6924762b701f84c31f5c9d19495a745e35c6fdd55d96b",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigDeleteModbusRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_e3f8b3da769c249f0064ee118d26d7154a31e2dd5e65417d01f1524baa317c4e",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigDeleteModbusResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteModbus"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_b55c2c82c4340f3a230b366e04147c6db521d51c175ebd9e0b2206b58cceba07",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_096510681530cdda07b413a426fcf0ad5ca98e657a5d7612c1f497893fa96de4",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigDeleteTcpRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_5842def73643bf4621c17fbfa2ecd19cfec7a5c9c4ce9b954c72e0be846cebe5",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigDeleteTcpResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteTcp"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_7ccc923663771c52fd46f811f38242dc9e3ba8b866a0c8965986eea33a034a12",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_be7ab4ae62ab38dd1c31f4cb96303edf98511e369ef64476f835e23b7b6168f3",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigDeleteToolRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_0e0708c161ba1aeeb9c7e96e77434eb7ba7c9c77eba230e5488f59b34fd8f780",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/ConfigDeleteToolResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ConfigDeleteTool"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_c75121a69c9a6a776ee6729dd066af1e8af30c6905676ea770e5f1b425a8adde",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_e8e6c075432920d6650a5dddc31fd33f7a1688ce99264113be7d0675378eb120",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/DrlPauseRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_9a448d82cb77115d43abe062d8f1bbb904ab680a98cf4d95b025eedd3deca0bb",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/DrlPauseResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlPause"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_85b0571049ab73edd6355ee8d7cdb6de4218b9298e96c8989a1f6ce1073d8a0e",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_11d5e8618dacde2d4f9ee2b9e7ee6306396e7495003bc31d9bd02a2438232713",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/DrlResumeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_40fdc65739450e3c8e0af52f69623624dac33620feda55065587e8e8a1d9a05a",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/DrlResumeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlResume"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_a8ecf187168e2a83c506af3150669c9530914323aa5ae1070a322d423e37fef1",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_1f5f908c63b09780c6b68ef280f87328590e5eec3be18d98916137c0d2c42a65",
+          "expanded_nodes": 3,
+          "maximum_wire_bytes": 261,
+          "minimum_wire_bytes": 5,
+          "native_identity": null,
+          "type": "dsr_msgs/DrlStartRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_2e39df1817ac076c895b43f565515db035ba300f4433b8635976b20713d98d76",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/DrlStartResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlStart"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_15019bdab61f76eeffd269a050f8f15b798a26e8bd866d8a263e9da46a1d877a",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_5be1c9f2284e5244660cfcb60632921bb5db1440536a5030e8d4c93c15704f9b",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/DrlStopRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_0f2cf2aff2ce20b984c602673fdf51ec38ef81820171e1c08e8c9c07d536a988",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/DrlStopResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/DrlStop"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_fd5061182c5cea3695bc6b11553c09054bc3a029e3fd745b1262dc0ff00d39d1",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_0cfaa9f68b92deff18c68d7def4dda13dcd1082065218cc0af1ef8909a35898a",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCtrlBoxAnalogInputRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_53fc14db79f9c63ee04e5e055961e397d6ceefa553e0912c4c944f858376b4b2",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 8,
+          "minimum_wire_bytes": 8,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCtrlBoxAnalogInputResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCtrlBoxAnalogInput"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_6726d9b90978501191e128a553011048630509eedb469b0ef13158bba401402d",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_43410710b24f4ef8aeb4533a0d45babb2adf93890d72c08ec45b1062e0d83f7e",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCtrlBoxDigitalInputRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_b24172ba7a1d82456b33bcbfccde50c1e0a40d4ce870dae704c00a553591a6a2",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCtrlBoxDigitalInputResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCtrlBoxDigitalInput"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_60385930f4612aefc6ed242775e7061f9ff7527613835f78065a7e94b1748fc7",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_674feef59812a37871c3022be9d588ffa67178430be01f47a4e3bca86766b72b",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCurrentPoseRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_cae2a551df6b2c548e171cdb181bbbe1fcbfe9fc3039b68f4edab2043ef8b9d6",
+          "expanded_nodes": 8,
+          "maximum_wire_bytes": 48,
+          "minimum_wire_bytes": 48,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCurrentPoseResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentPose"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_683cf788451187ca666a8ceddc07043784f5743b7c28375be49d8b54f39f4aa1",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_303fe75ff690897d18296dfb34aad4b0482e372656ed5c85bf9d60bb1832af78",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCurrentSolutionSpaceRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_57e390c7f039b26fc69fe35d07420ee94084ce9d9531e7e8c6d6a09729b5986f",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCurrentSolutionSpaceResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentSolutionSpace"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_6c129af89a96d71fcfdf9a1f3b31a5f01e8218faaeb6e88d6cd8ea563a852c60",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_f2a902cbf141335bb559f739861860de93f07d3ed3200ba91833b831389eb3b8",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCurrentTcpRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_8076cd565188d0adcda508a0637b240969a434a924daeed7cf3b7e442b901ee3",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCurrentTcpResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentTcp"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_03222d280682ea47134005906f8a3be4ab09c12cb53488406d4ce99aa0cbbf90",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_0d86dff574728cebfb33a873845e9563665d4173267adbc6fd7f542d26b15970",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCurrentToolRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_8afef46263fd34fe71e4c33d9add7d71672cb9d95aa237a60e17c3c3cdd58e43",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/GetCurrentToolResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetCurrentTool"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_5b1fa48465163ba729528a0ba508158e3b6467e3ada21c9180dd598a703a7e88",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_425ce8ba966c52337c8d06a8436d593e8333a33cdb21ecdb983df3db9980d51f",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetDrlStateRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_d8238b34c53f1da07057059fadfc1bbc767be38453b0410a90bccb84d99d1a94",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetDrlStateResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetDrlState"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_df8b3c051bcd991aeaa42e8150709938f28c601a73266377b0ba2886359962f5",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_601bfc2f1283520f2dd76e3f0eee05c02e584873e22b2188f6206cc22d96ee11",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetExternalTorqueRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_52c063acee790649e0e439390ee3c8bd4e7ac2a124911093ba0fd00f06a07ff2",
+          "expanded_nodes": 8,
+          "maximum_wire_bytes": 48,
+          "minimum_wire_bytes": 48,
+          "native_identity": null,
+          "type": "dsr_msgs/GetExternalTorqueResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetExternalTorque"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_5d2f9ac028566f5d827d0d08ba48a2ed5b6e442932674b0c36c884a15034bcaa",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_63dee3592e81bf9c2442ba8f01660710ef80c01c3ab55a73c35404da2d6da149",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetJointTorqueRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_25bda80075428cb48858ba2ab3d38b52d4fe631596e919c001cf1a4f96391bf1",
+          "expanded_nodes": 8,
+          "maximum_wire_bytes": 48,
+          "minimum_wire_bytes": 48,
+          "native_identity": null,
+          "type": "dsr_msgs/GetJointTorqueResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetJointTorque"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_82e5abd1b6c08accb80bd177c2c34d5577c98968b6e88d50a14f8468ccd72bde",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_4ff39c1f6b320245fd73e84755fe876eb12177c4a7b3ac3888d870ec5a761bdf",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetLastAlarmRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_cbf970486efc6fc6dbda7ecfd673f3642f228b27e1a406156d2592d71467995c",
+          "expanded_nodes": 9,
+          "maximum_wire_bytes": 792,
+          "minimum_wire_bytes": 24,
+          "native_identity": null,
+          "type": "dsr_msgs/GetLastAlarmResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetLastAlarm"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_fa8081a53bebd166fecfc24d3de59d7bd5d7d15f7ec2c217a2348f677fe6a45e",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_812e7d2d259db6a466dd304239aee910848a1fb9059c431f3495825d8ebe800c",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/GetModbusInputRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_5a9baa85959370b7562c32510a9ebe6bd48ccb01b5d71d3898126e69fe60afb3",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 4,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/GetModbusInputResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetModbusInput"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_c71e9b131f68c814784c56df6150accae3729cd105e6bee2a963a5f1c91be60d",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_228237c16ea308e25d1a5fb7f74713a31a67e6e1e6b0a94f06c30264ed90af90",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetRobotModeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_3049e13cf2157e75860253953231b258ac495b2fc424aa2c6343fcf0f91044b5",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetRobotModeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotMode"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_92ad8175b5ba4978c34df504918da142125305a28ab373af431d920898ab7d8a",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_ff02ad740851d4dc6955206ffa3556f6564854bd6edd6a8190ce44f8ba9709d4",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetRobotSpeedModeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_e67a5a94c55ea30657ecdf83201cac431e89c11817bb12831d31023d4fd2cec1",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetRobotSpeedModeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotSpeedMode"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_01d0e2d743d5f4febc32ce9e69511582bde4ba5a6482e1b78ea3224966e75441",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_b773b6fe4f08ade05cc0bac7e0d70cb7edcfa763f83608d944bf072da4ad08bc",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetRobotStateRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_2fdea6418150a77db99b9e1bcecb11a9a10f826690b18853d6adfbdc2b6f8d4d",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetRobotStateResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotState"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_5d02c80624271e18be962f53b4e21f6270941475554fdcdf634a8e1ed3d08d61",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_43cc52a8d4b5e36ace679eb3f5bad943b3052bb0dec9f8af6f58f2d5c7deb203",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetRobotSystemRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_ecdbadad1fa8a9e22bf20bbb5c7aa489b739a6d0ef725ea20e37d50feb92a570",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetRobotSystemResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetRobotSystem"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_de164a4148ba05b1833c8d4686eed02e0c64cc4851058a06e6871077e2116cb1",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_a8fa1714fc6c5d9082f6909ad8562c87e1bd95e40168701c1dc670e614b5dd70",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetToolDigitalInputRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_ee2a97dbab5eb6f818d5165e68ebc9077f8ebae391f79445f35205158e0d7f92",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/GetToolDigitalInputResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetToolDigitalInput"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_53a976d32e7fb2962bd89043aead253c848b05b5dc81aab4ba909107a0d89ac8",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_27ccf47d48432cce678c6dad5ecff2aac258f4b17e4172556fa05183bc5111b7",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/GetToolForceRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_752d1690a4d3b7b6842ce45d1ae599de4cbfdde9bf7da96193cbf3a9e4205026",
+          "expanded_nodes": 8,
+          "maximum_wire_bytes": 48,
+          "minimum_wire_bytes": 48,
+          "native_identity": null,
+          "type": "dsr_msgs/GetToolForceResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/GetToolForce"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_ad589185d5e02a36f4ef580bdc4de90343875f318949a24bf4f79fda79b1c408",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_28c6930998059030e74613930bd86066b3a37a490f7f438395eed15570617f7a",
+          "expanded_nodes": 4,
+          "maximum_wire_bytes": 10,
+          "minimum_wire_bytes": 10,
+          "native_identity": null,
+          "type": "dsr_msgs/JogRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_f87fba5fb96bd9ae52d16a519b20ca7ea2c17560b15bd8543a9484282e1967d7",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/JogResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Jog"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_efb906d79119c7ec5830fa85990df55ec9b9f24fd9b0bb324c41183177a3f4db",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_f24271474302516dfce0dde848b2420490c35800b12d2fbdf5250ebbffc25cea",
+          "expanded_nodes": 10,
+          "maximum_wire_bytes": 57,
+          "minimum_wire_bytes": 57,
+          "native_identity": null,
+          "type": "dsr_msgs/JogMultiRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_fecf5222e690c35fe0503c56d12e06b375d55ffab9ea0bbef96270729305a64a",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/JogMultiResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogMulti"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_ee64c6ccdfa3726ebbfc0b3779f878cbbece6fe878cbfbc14fa45eed4486de02",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_ee64c6ccdfa3726ebbfc0b3779f878cbbece6fe878cbfbc14fa45eed4486de02",
+          "expanded_nodes": 10,
+          "maximum_wire_bytes": 57,
+          "minimum_wire_bytes": 57,
+          "native_identity": null,
+          "type": "dsr_msgs/JogMultiAxis"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/JogMultiAxis"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_39a6ecc178ed79ab41cd3948b6efb9666f66b0c33b6abe7845b1d16a17f9700f",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_39a6ecc178ed79ab41cd3948b6efb9666f66b0c33b6abe7845b1d16a17f9700f",
+          "expanded_nodes": 8,
+          "maximum_wire_bytes": 792,
+          "minimum_wire_bytes": 24,
+          "native_identity": null,
+          "type": "dsr_msgs/LogAlarm"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/LogAlarm"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_e107e7ff86b98e9c58565f3a2889ac50ea49ecc6efb9c982d29b075086fe3ae9",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_e107e7ff86b98e9c58565f3a2889ac50ea49ecc6efb9c982d29b075086fe3ae9",
+          "expanded_nodes": 3,
+          "maximum_wire_bytes": 264,
+          "minimum_wire_bytes": 8,
+          "native_identity": null,
+          "type": "dsr_msgs/ModbusState"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/ModbusState"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_45ddd5e18a531a812946a86a285f9acb3c76189f8b85bf245ce03bea64bdf86a",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_70b7fb3501e9677b76ed8f893883090e500be36ff8175edce8fd6d6d4f23e4e6",
+          "expanded_nodes": 211,
+          "maximum_wire_bytes": 2256,
+          "minimum_wire_bytes": 48,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveBlendingRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_9c5697b77eaad084e9870d5ca1a1a960e22bd87137f2a1035daa9f014cc28eb6",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveBlendingResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveBlending"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_a50f0c28ebd489e8dcdedd24635c233ad0d9ffbc506ca9c285765c16af82fe29",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_39c6ea4c3b15ae9866db805863a5c5c542bbf7b104adcd81a13425719fd994f4",
+          "expanded_nodes": 214,
+          "maximum_wire_bytes": 2280,
+          "minimum_wire_bytes": 72,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveCircleRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_a5950bd2e98ce04a5b2261eec3c95f65613f3fb60d8d1779c6a8bcbb28fa42f3",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveCircleResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveCircle"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_bc00c2375fa69a4abb583469da531b832cbc9e0ec39983e8694b04757c5fd0b8",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_b244b9d86649987111dd94846a98260a464ac54b9074025689028be9a1ed6a03",
+          "expanded_nodes": 15,
+          "maximum_wire_bytes": 83,
+          "minimum_wire_bytes": 83,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveJointRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_66e1e0f7cf2043211218cd9d1c58bfb89ffaf7480a4adddb375c002321a3fcc4",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveJointResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveJoint"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_4cadc5ff0470290600a3c5b611b15fcba1f4d5a4fb09b95b09c446ff88907872",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_d3a91ad268c65b3f4967c281c53301ec61b6aebdc4a55324103aac4d3ed392db",
+          "expanded_nodes": 17,
+          "maximum_wire_bytes": 85,
+          "minimum_wire_bytes": 85,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveJointxRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_9286ce396d98df17fa6cab04cd10ab449be09a07134799f09ae19082921103cc",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveJointxResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveJointx"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_51930acc572b6d80e17b60b4847d4166eaa6444dbe9d4697a43ddd133d9563b5",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_ef69f202700bbcfb829e8eedbb7189489f4c30a6f08702f368c5e7f9493b206e",
+          "expanded_nodes": 20,
+          "maximum_wire_bytes": 100,
+          "minimum_wire_bytes": 100,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveLineRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_0d316d575a341637b3cbe5a2ee68734670ca6f3f9f5035b383194b8457afe82c",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveLineResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveLine"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_d2e960318f34ade66bb5c276db05b79aa94386aeb7b562ca983b70cf5ceae386",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_a25b42c1e8819548bfff8d108ec661b4a1137eeafd19d8805cfecdc4d14c5f19",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/MovePauseRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_148a3cc895846afa55520af770f76bc6118c313b5cfbf4d83d0f161b22171aed",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MovePauseResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MovePause"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_c2b083a229d2a45226f5607bae42fbae3ea0ef4e622abba708ffebd605029443",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_73ffac70af9558b1be99d969ee99cf992816cf84ce97f29ef81036963fbd2d69",
+          "expanded_nodes": 19,
+          "maximum_wire_bytes": 107,
+          "minimum_wire_bytes": 107,
+          "native_identity": null,
+          "type": "dsr_msgs/MovePeriodicRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_97f5baff448319a629f79ea38696662bfca6960af28150b8dfa07902cd7393b3",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MovePeriodicResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MovePeriodic"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_376ea43321cb0eea17ac79257f79de5f48da8693f6518755c5aa75452fd692dc",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_313ed9fb87f75b7a010a658e734390145b46050b1f554f863cf6c2afb7e60f1f",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveResumeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_072287041c0e4462d8994d15ad03c5c36db00c754565d99cf9d30a215100937a",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveResumeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveResume"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_595c005e543b0158f50d18dd645368b8e6d2c5ce755579b8df5f71c9fa1bf5a3",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_5b5a4a14ecc3021b9f98e44891c3c87011ba825fb6399e1ae5ef179257a4565c",
+          "expanded_nodes": 14,
+          "maximum_wire_bytes": 67,
+          "minimum_wire_bytes": 67,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveSpiralRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_be420ead496b05aafd3aa152a89bd04cc6dc1e584e700019a568f0dcae3a7691",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveSpiralResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSpiral"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_537190990cdf3adc7776e4c1f0bf07831b9b29c4a55f84c9fe2421302f305dd5",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_6e386632864f2315ba8737001727f9c03bb17a0e70b8eb990ce39fed669aac33",
+          "expanded_nodes": 206,
+          "maximum_wire_bytes": 2239,
+          "minimum_wire_bytes": 31,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveSplineJointRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_b6fe363893f83066cfbf079aedf9fd6161316fe698b1a02713761aa46adb6e68",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveSplineJointResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSplineJoint"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_d9556be543976b2016456ea8dc28c86c2a4e76d443abf4cd270fa90c7b697cc4",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_fa8ee3b180d331309471cb20a1dbe4b46a3493cc0c7298222017200d2ff65e5a",
+          "expanded_nodes": 212,
+          "maximum_wire_bytes": 2257,
+          "minimum_wire_bytes": 49,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveSplineTaskRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_3d19b8f693f665703fc8b8ee151ee49ed94100de85668164f953095f718cdb7a",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveSplineTaskResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveSplineTask"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_152a30cc63cb53134faa453e7b4053a4be6d2cee9d8438f92ba7b422ff0bee3b",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_8591a7188be1a528bbbb4b62f134825e0bf0f41517709604ac06c537f01423e4",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 4,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveStopRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_25580dd85be376dcb588ebe62a49394f0f9c92abd7b094c2552df86b64f87427",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveStopResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveStop"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_1c9e8a6933842b5e95ea952654ee4d57dafba9d9b8f9ad906e1fadb70aa224ce",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_ca59fcddb15dd63fcf0481cb2e81be6a338d63167a15ad66585335eee1922a39",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveWaitRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_764dd1fba59b88d4baae818b06b9c735f62f156e67842013d95d55381d32f232",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/MoveWaitResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/MoveWait"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_86d4b7b2d131374e05e7fe9d53988f0ed6713deb337a37182ac4998951ca5641",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_86d4b7b2d131374e05e7fe9d53988f0ed6713deb337a37182ac4998951ca5641",
+          "expanded_nodes": 7,
+          "maximum_wire_bytes": 792,
+          "minimum_wire_bytes": 24,
+          "native_identity": null,
+          "type": "dsr_msgs/RobotError"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotError"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_67691d32d7b73ab123439c6f14dca8f626ad9e9a6f09f9ecb0e631b5f63d2574",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_67691d32d7b73ab123439c6f14dca8f626ad9e9a6f09f9ecb0e631b5f63d2574",
+          "expanded_nodes": 441,
+          "maximum_wire_bytes": 7595,
+          "minimum_wire_bytes": 907,
+          "native_identity": null,
+          "type": "dsr_msgs/RobotState"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotState"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_fd77182b171cc0c4eea28c26c78310584b38e47a3c7d987783648a9f230b6323",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_fd77182b171cc0c4eea28c26c78310584b38e47a3c7d987783648a9f230b6323",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 4,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/RobotStop"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/RobotStop"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_dabd9f997f88b349fbfebb823f28a303ef0af620998c18d00cb466bdeb79b4cb",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_208edddefb1fee08c3ba285600357951edca6b0328a14ea3cca56ec5b2c4d3b4",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/Robotiq2FCloseRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_21a215db4729d55b86ae1f56d932984a38c5c7093f09623a5a5cee1e5647a09d",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/Robotiq2FCloseResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FClose"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_672187c9808c744e7b07b7f7154b288b0c5203de3ecc5f320e3fb25195c1ff6d",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_81cbba3bf5cd634b8c30fe914123d67da1294352a6e1a70a5c8a58259a79d6a2",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 8,
+          "minimum_wire_bytes": 8,
+          "native_identity": null,
+          "type": "dsr_msgs/Robotiq2FMoveRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_90f90a7486c727afb08f0e09f76f0bfa7f5b0d057be653258b6bdf1e935e7183",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/Robotiq2FMoveResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FMove"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_e4739fba25681a87bd15fc9430b6958af893d4766ee95dabf3f7d7aa42e64bea",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_64576393afca9ec6bd2e76eaf57324b5e625e62f5899d77762dc041dc1fbdda2",
+          "expanded_nodes": 1,
+          "maximum_wire_bytes": 0,
+          "minimum_wire_bytes": 0,
+          "native_identity": null,
+          "type": "dsr_msgs/Robotiq2FOpenRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_83448b0daee950113e41814fe398efbb5624568e812f5989dd26cec24f24742a",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/Robotiq2FOpenResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/Robotiq2FOpen"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_6f96a8fba58e3a20355e3ab6b09bdc535c934908be94aa9f5ec8038bf0067e7a",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_19253624f5870830126073f19daa4e4f42dcdd10c4d3154989aa619ce2749498",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/SerialSendDataRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_0bb4f5a2bfcf02e9febe7846d2616c99141a8860f62d83b59ebb56da6c89dc43",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SerialSendDataResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SerialSendData"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_65ac4304956e6452b4200568422ccc5f2f21a96a81441ef4293dc4a0ba36ec17",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_934735469130eef5a4e4599d3033242f0dacf467b2d413d607f733bcdebb7f5b",
+          "expanded_nodes": 3,
+          "maximum_wire_bytes": 2,
+          "minimum_wire_bytes": 2,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCtrlBoxAnalogInputTypeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_a1e73687962235470a5f55d1fa4abd910001dfae2b05aa7779fce0ad93137400",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCtrlBoxAnalogInputTypeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogInputType"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_3d6f8ef2a99cd79118ce02350ddb0baca5271da23995b93e6e295362f576519d",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_1ea5fd673a691bc7a51cf3c65c9a3b30352539155e6d7007181990c9a227efb4",
+          "expanded_nodes": 3,
+          "maximum_wire_bytes": 9,
+          "minimum_wire_bytes": 9,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCtrlBoxAnalogOutputRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_f0df03f3603b7ec2c0ef5f1e5d126b718ad8ca432130e32184dc87497bf707a5",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCtrlBoxAnalogOutputResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogOutput"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_4254b68958d3d51e4b4582e9eaa3a09c897da109c2f33cf2c52c05af6d6faa6b",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_71aaf5f279052ba620d9cd13fa1751f96629c19d60e4030086b51e316ceab14f",
+          "expanded_nodes": 3,
+          "maximum_wire_bytes": 2,
+          "minimum_wire_bytes": 2,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCtrlBoxAnalogOutputTypeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_a175ae12517731f2c2e4de021b1921920bd543d9c81469876b50b51b62ad8cc2",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCtrlBoxAnalogOutputTypeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxAnalogOutputType"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_28af70fbe7a061687d8512aea7fa1f1df5ee8626224fc1d95f0f808cb1345f1c",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_82a2c083195f7adc4fd3104cb05039cf109e9779920e36b4d3966edb819f83db",
+          "expanded_nodes": 3,
+          "maximum_wire_bytes": 2,
+          "minimum_wire_bytes": 2,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCtrlBoxDigitalOutputRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_dc0411c903a4350c81130d3343615212c4e3a9c259f7b193bff92c95b7039657",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCtrlBoxDigitalOutputResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCtrlBoxDigitalOutput"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_2883eefd7806e664e317357720257af2f3303b5e0026c531dad5611cdb46a17f",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_6a403e6eb4e86aab4d76913e5dd679425f68c6e4c9b38c82af1eaa180dc65f00",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCurrentTcpRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_29c09f17453ac9fa413922b023f1a54ae253cecbbdea211202da551187bbf7ab",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCurrentTcpResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCurrentTcp"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_b99b5f5f1bf87f3b678887aac33ddec7532b647a3b146203aaf5c6eb846eee60",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_d5d71101193ff28fe86d6ba22de9922fda0c806bbd8cd5bfdb8ef3688f5bacb4",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 260,
+          "minimum_wire_bytes": 4,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCurrentToolRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_89937411059cec969c42c90bdb4c81fa15dc645b627d10d376dc5ded2c56e1de",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetCurrentToolResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetCurrentTool"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_83d9d5b1e6d64360e9fad7f0d06afce46be0121c3b3093aa61ce26c70e54d6be",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_3482041cfb90233b59433f4749d9e8f422fc73cdb26525bdbc60370e73c7827f",
+          "expanded_nodes": 3,
+          "maximum_wire_bytes": 264,
+          "minimum_wire_bytes": 8,
+          "native_identity": null,
+          "type": "dsr_msgs/SetModbusOutputRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_763789f569991b2ba44844586d51b20f2c439e9b22ace4bc72b1bce7b23e0491",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetModbusOutputResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetModbusOutput"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_9e673afe0257032d73fb0f9bb9c0b4fceae737519636e83b3b92cd578a688555",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_295575a2df0f007254f9aa7eac220e99fcae85ecb085181d5a3ca4e4e86f23fe",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetRobotModeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_bbf3bda8cd2e9afbda89023639013686ecd7612a9323a6d4180b8ac092caaad1",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetRobotModeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotMode"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_3b05266d030f944d1f5d8bf48bd4eb0cc86c03cca187f3e37a249362939f1109",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_68f9a7f019ddfa1015de6c7e3115d632eb44ec794f364e6a0617fed34f70531c",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetRobotSpeedModeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_6434538e8bf60b1b900aba530ed3e027eb13d854591eab5e0e93cc407e90c94b",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetRobotSpeedModeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotSpeedMode"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_b500a1b6c1b7f4a8bcdf41d2db2f6f25415287a163140ad50cca35c43f2d13a6",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_75ffa8e1e77ea59a3b7a27151404682cfdef7226d32d3b78b6d67e562536eeee",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetRobotSystemRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_38f3915ccf71872a966f2f511e73782a79df1923c76e6134ea8d72f0b96f6c27",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetRobotSystemResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetRobotSystem"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_6c9e730340ff92c52e1cc7d0290dc0085b4f3c992a020444ee9023fbe489951a",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_8a9961395d960217a4f867ee0d2994ea40afe83c4a33a7dcc5b348a85a7fff42",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetSafeStopResetTypeRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_2227553731ecf10a55eda31cd8735f90bd4539777661e3723f712a7a456cd4db",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetSafeStopResetTypeResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetSafeStopResetType"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_76c8644ae29db3a797517bee64d60806df90bf921f0ba66705f8a39bab4cb8d9",
+      "components": {
+        "request": {
+          "adapter_codec_identity": "UWVMROS1_6b384924cefbae3dfe50e02b8fb26ed9e228d2ada5c63070feb0375c125a2123",
+          "expanded_nodes": 3,
+          "maximum_wire_bytes": 2,
+          "minimum_wire_bytes": 2,
+          "native_identity": null,
+          "type": "dsr_msgs/SetToolDigitalOutputRequest"
+        },
+        "response": {
+          "adapter_codec_identity": "UWVMROS1_4e0acd035740d1e47b42128818528aa3aa33736d979f46ada511ad0e6230ae94",
+          "expanded_nodes": 2,
+          "maximum_wire_bytes": 1,
+          "minimum_wire_bytes": 1,
+          "native_identity": null,
+          "type": "dsr_msgs/SetToolDigitalOutputResponse"
+        }
+      },
+      "kind": "service",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "dsr_msgs/SetToolDigitalOutput"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_e75045efb9b80cdc278940f799d16f3b6f49ca4eeb67b4c095d1df4db133bdf8",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_e75045efb9b80cdc278940f799d16f3b6f49ca4eeb67b4c095d1df4db133bdf8",
+          "expanded_nodes": 33,
+          "maximum_wire_bytes": 368,
+          "minimum_wire_bytes": 12,
+          "native_identity": null,
+          "type": "std_msgs/Float64MultiArray"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "std_msgs/Float64MultiArray"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_0a279c83cc8c73db2472e3768c8e17d877bb15d72d41f4056568a279b5352444",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_0a279c83cc8c73db2472e3768c8e17d877bb15d72d41f4056568a279b5352444",
+          "expanded_nodes": 4,
+          "maximum_wire_bytes": 76,
+          "minimum_wire_bytes": 12,
+          "native_identity": null,
+          "type": "std_msgs/MultiArrayDimension"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "std_msgs/MultiArrayDimension"
+    },
+    {
+      "adapter_codec_identity": "UWVMROS1_602f6ec018f567486b5ea052944a24b0d798fdad5910915337ab6a76c966603e",
+      "components": {
+        "message": {
+          "adapter_codec_identity": "UWVMROS1_602f6ec018f567486b5ea052944a24b0d798fdad5910915337ab6a76c966603e",
+          "expanded_nodes": 15,
+          "maximum_wire_bytes": 236,
+          "minimum_wire_bytes": 8,
+          "native_identity": null,
+          "type": "std_msgs/MultiArrayLayout"
+        }
+      },
+      "kind": "message",
+      "native_identity": null,
+      "ros_version": 1,
+      "type": "std_msgs/MultiArrayLayout"
+    }
+  ],
+  "member_map": {
+    "dsr_msgs/ConfigCreateModbusRequest": {
+      "assemblyscript": {
+        "index": "index",
+        "ip": "ip",
+        "name": "name",
+        "port": "port",
+        "reg_type": "reg_type",
+        "slave_id": "slave_id",
+        "value": "value"
+      },
+      "c": {
+        "index": "index",
+        "ip": "ip",
+        "name": "name",
+        "port": "port",
+        "reg_type": "reg_type",
+        "slave_id": "slave_id",
+        "value": "value"
+      },
+      "cpp": {
+        "index": "index",
+        "ip": "ip",
+        "name": "name",
+        "port": "port",
+        "reg_type": "reg_type",
+        "slave_id": "slave_id",
+        "value": "value"
+      },
+      "javascript": {
+        "index": "index",
+        "ip": "ip",
+        "name": "name",
+        "port": "port",
+        "reg_type": "reg_type",
+        "slave_id": "slave_id",
+        "value": "value"
+      },
+      "rust": {
+        "index": "index",
+        "ip": "ip",
+        "name": "name",
+        "port": "port",
+        "reg_type": "reg_type",
+        "slave_id": "slave_id",
+        "value": "value"
+      },
+      "tinygo": {
+        "index": "Index",
+        "ip": "Ip",
+        "name": "Name",
+        "port": "Port",
+        "reg_type": "Reg_type",
+        "slave_id": "Slave_id",
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/ConfigCreateModbusResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/ConfigCreateTcpRequest": {
+      "assemblyscript": {
+        "name": "name",
+        "pos": "pos"
+      },
+      "c": {
+        "name": "name",
+        "pos": "pos"
+      },
+      "cpp": {
+        "name": "name",
+        "pos": "pos"
+      },
+      "javascript": {
+        "name": "name",
+        "pos": "pos"
+      },
+      "rust": {
+        "name": "name",
+        "pos": "pos"
+      },
+      "tinygo": {
+        "name": "Name",
+        "pos": "Pos"
+      }
+    },
+    "dsr_msgs/ConfigCreateTcpResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/ConfigCreateToolRequest": {
+      "assemblyscript": {
+        "cog": "cog",
+        "inertia": "inertia",
+        "name": "name",
+        "weight": "weight"
+      },
+      "c": {
+        "cog": "cog",
+        "inertia": "inertia",
+        "name": "name",
+        "weight": "weight"
+      },
+      "cpp": {
+        "cog": "cog",
+        "inertia": "inertia",
+        "name": "name",
+        "weight": "weight"
+      },
+      "javascript": {
+        "cog": "cog",
+        "inertia": "inertia",
+        "name": "name",
+        "weight": "weight"
+      },
+      "rust": {
+        "cog": "cog",
+        "inertia": "inertia",
+        "name": "name",
+        "weight": "weight"
+      },
+      "tinygo": {
+        "cog": "Cog",
+        "inertia": "Inertia",
+        "name": "Name",
+        "weight": "Weight"
+      }
+    },
+    "dsr_msgs/ConfigCreateToolResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/ConfigDeleteModbusRequest": {
+      "assemblyscript": {
+        "name": "name"
+      },
+      "c": {
+        "name": "name"
+      },
+      "cpp": {
+        "name": "name"
+      },
+      "javascript": {
+        "name": "name"
+      },
+      "rust": {
+        "name": "name"
+      },
+      "tinygo": {
+        "name": "Name"
+      }
+    },
+    "dsr_msgs/ConfigDeleteModbusResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/ConfigDeleteTcpRequest": {
+      "assemblyscript": {
+        "name": "name"
+      },
+      "c": {
+        "name": "name"
+      },
+      "cpp": {
+        "name": "name"
+      },
+      "javascript": {
+        "name": "name"
+      },
+      "rust": {
+        "name": "name"
+      },
+      "tinygo": {
+        "name": "Name"
+      }
+    },
+    "dsr_msgs/ConfigDeleteTcpResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/ConfigDeleteToolRequest": {
+      "assemblyscript": {
+        "name": "name"
+      },
+      "c": {
+        "name": "name"
+      },
+      "cpp": {
+        "name": "name"
+      },
+      "javascript": {
+        "name": "name"
+      },
+      "rust": {
+        "name": "name"
+      },
+      "tinygo": {
+        "name": "Name"
+      }
+    },
+    "dsr_msgs/ConfigDeleteToolResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/DrlPauseRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/DrlPauseResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/DrlResumeRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/DrlResumeResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/DrlStartRequest": {
+      "assemblyscript": {
+        "code": "code",
+        "robotSystem": "robotSystem"
+      },
+      "c": {
+        "code": "code",
+        "robotSystem": "robotSystem"
+      },
+      "cpp": {
+        "code": "code",
+        "robotSystem": "robotSystem"
+      },
+      "javascript": {
+        "code": "code",
+        "robotSystem": "robotSystem"
+      },
+      "rust": {
+        "code": "code",
+        "robotSystem": "robotSystem"
+      },
+      "tinygo": {
+        "code": "Code",
+        "robotSystem": "RobotSystem"
+      }
+    },
+    "dsr_msgs/DrlStartResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/DrlStopRequest": {
+      "assemblyscript": {
+        "stop_mode": "stop_mode"
+      },
+      "c": {
+        "stop_mode": "stop_mode"
+      },
+      "cpp": {
+        "stop_mode": "stop_mode"
+      },
+      "javascript": {
+        "stop_mode": "stop_mode"
+      },
+      "rust": {
+        "stop_mode": "stop_mode"
+      },
+      "tinygo": {
+        "stop_mode": "Stop_mode"
+      }
+    },
+    "dsr_msgs/DrlStopResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/GetCtrlBoxAnalogInputRequest": {
+      "assemblyscript": {
+        "channel": "channel"
+      },
+      "c": {
+        "channel": "channel"
+      },
+      "cpp": {
+        "channel": "channel"
+      },
+      "javascript": {
+        "channel": "channel"
+      },
+      "rust": {
+        "channel": "channel"
+      },
+      "tinygo": {
+        "channel": "Channel"
+      }
+    },
+    "dsr_msgs/GetCtrlBoxAnalogInputResponse": {
+      "assemblyscript": {
+        "value": "value"
+      },
+      "c": {
+        "value": "value"
+      },
+      "cpp": {
+        "value": "value"
+      },
+      "javascript": {
+        "value": "value"
+      },
+      "rust": {
+        "value": "value"
+      },
+      "tinygo": {
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/GetCtrlBoxDigitalInputRequest": {
+      "assemblyscript": {
+        "index": "index"
+      },
+      "c": {
+        "index": "index"
+      },
+      "cpp": {
+        "index": "index"
+      },
+      "javascript": {
+        "index": "index"
+      },
+      "rust": {
+        "index": "index"
+      },
+      "tinygo": {
+        "index": "Index"
+      }
+    },
+    "dsr_msgs/GetCtrlBoxDigitalInputResponse": {
+      "assemblyscript": {
+        "value": "value"
+      },
+      "c": {
+        "value": "value"
+      },
+      "cpp": {
+        "value": "value"
+      },
+      "javascript": {
+        "value": "value"
+      },
+      "rust": {
+        "value": "value"
+      },
+      "tinygo": {
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/GetCurrentPoseRequest": {
+      "assemblyscript": {
+        "space_type": "space_type"
+      },
+      "c": {
+        "space_type": "space_type"
+      },
+      "cpp": {
+        "space_type": "space_type"
+      },
+      "javascript": {
+        "space_type": "space_type"
+      },
+      "rust": {
+        "space_type": "space_type"
+      },
+      "tinygo": {
+        "space_type": "Space_type"
+      }
+    },
+    "dsr_msgs/GetCurrentPoseResponse": {
+      "assemblyscript": {
+        "pos": "pos"
+      },
+      "c": {
+        "pos": "pos"
+      },
+      "cpp": {
+        "pos": "pos"
+      },
+      "javascript": {
+        "pos": "pos"
+      },
+      "rust": {
+        "pos": "pos"
+      },
+      "tinygo": {
+        "pos": "Pos"
+      }
+    },
+    "dsr_msgs/GetCurrentSolutionSpaceRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetCurrentSolutionSpaceResponse": {
+      "assemblyscript": {
+        "solution_space": "solution_space"
+      },
+      "c": {
+        "solution_space": "solution_space"
+      },
+      "cpp": {
+        "solution_space": "solution_space"
+      },
+      "javascript": {
+        "solution_space": "solution_space"
+      },
+      "rust": {
+        "solution_space": "solution_space"
+      },
+      "tinygo": {
+        "solution_space": "Solution_space"
+      }
+    },
+    "dsr_msgs/GetCurrentTcpRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetCurrentTcpResponse": {
+      "assemblyscript": {
+        "info": "info"
+      },
+      "c": {
+        "info": "info"
+      },
+      "cpp": {
+        "info": "info"
+      },
+      "javascript": {
+        "info": "info"
+      },
+      "rust": {
+        "info": "info"
+      },
+      "tinygo": {
+        "info": "Info"
+      }
+    },
+    "dsr_msgs/GetCurrentToolRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetCurrentToolResponse": {
+      "assemblyscript": {
+        "info": "info"
+      },
+      "c": {
+        "info": "info"
+      },
+      "cpp": {
+        "info": "info"
+      },
+      "javascript": {
+        "info": "info"
+      },
+      "rust": {
+        "info": "info"
+      },
+      "tinygo": {
+        "info": "Info"
+      }
+    },
+    "dsr_msgs/GetDrlStateRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetDrlStateResponse": {
+      "assemblyscript": {
+        "drl_state": "drl_state"
+      },
+      "c": {
+        "drl_state": "drl_state"
+      },
+      "cpp": {
+        "drl_state": "drl_state"
+      },
+      "javascript": {
+        "drl_state": "drl_state"
+      },
+      "rust": {
+        "drl_state": "drl_state"
+      },
+      "tinygo": {
+        "drl_state": "Drl_state"
+      }
+    },
+    "dsr_msgs/GetExternalTorqueRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetExternalTorqueResponse": {
+      "assemblyscript": {
+        "ext_torque": "ext_torque"
+      },
+      "c": {
+        "ext_torque": "ext_torque"
+      },
+      "cpp": {
+        "ext_torque": "ext_torque"
+      },
+      "javascript": {
+        "ext_torque": "ext_torque"
+      },
+      "rust": {
+        "ext_torque": "ext_torque"
+      },
+      "tinygo": {
+        "ext_torque": "Ext_torque"
+      }
+    },
+    "dsr_msgs/GetJointTorqueRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetJointTorqueResponse": {
+      "assemblyscript": {
+        "joint_torque": "joint_torque"
+      },
+      "c": {
+        "joint_torque": "joint_torque"
+      },
+      "cpp": {
+        "joint_torque": "joint_torque"
+      },
+      "javascript": {
+        "joint_torque": "joint_torque"
+      },
+      "rust": {
+        "joint_torque": "joint_torque"
+      },
+      "tinygo": {
+        "joint_torque": "Joint_torque"
+      }
+    },
+    "dsr_msgs/GetLastAlarmRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetLastAlarmResponse": {
+      "assemblyscript": {
+        "log_alarm": "log_alarm"
+      },
+      "c": {
+        "log_alarm": "log_alarm"
+      },
+      "cpp": {
+        "log_alarm": "log_alarm"
+      },
+      "javascript": {
+        "log_alarm": "log_alarm"
+      },
+      "rust": {
+        "log_alarm": "log_alarm"
+      },
+      "tinygo": {
+        "log_alarm": "Log_alarm"
+      }
+    },
+    "dsr_msgs/GetModbusInputRequest": {
+      "assemblyscript": {
+        "name": "name"
+      },
+      "c": {
+        "name": "name"
+      },
+      "cpp": {
+        "name": "name"
+      },
+      "javascript": {
+        "name": "name"
+      },
+      "rust": {
+        "name": "name"
+      },
+      "tinygo": {
+        "name": "Name"
+      }
+    },
+    "dsr_msgs/GetModbusInputResponse": {
+      "assemblyscript": {
+        "value": "value"
+      },
+      "c": {
+        "value": "value"
+      },
+      "cpp": {
+        "value": "value"
+      },
+      "javascript": {
+        "value": "value"
+      },
+      "rust": {
+        "value": "value"
+      },
+      "tinygo": {
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/GetRobotModeRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetRobotModeResponse": {
+      "assemblyscript": {
+        "robot_mode": "robot_mode"
+      },
+      "c": {
+        "robot_mode": "robot_mode"
+      },
+      "cpp": {
+        "robot_mode": "robot_mode"
+      },
+      "javascript": {
+        "robot_mode": "robot_mode"
+      },
+      "rust": {
+        "robot_mode": "robot_mode"
+      },
+      "tinygo": {
+        "robot_mode": "Robot_mode"
+      }
+    },
+    "dsr_msgs/GetRobotSpeedModeRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetRobotSpeedModeResponse": {
+      "assemblyscript": {
+        "speed_mode": "speed_mode"
+      },
+      "c": {
+        "speed_mode": "speed_mode"
+      },
+      "cpp": {
+        "speed_mode": "speed_mode"
+      },
+      "javascript": {
+        "speed_mode": "speed_mode"
+      },
+      "rust": {
+        "speed_mode": "speed_mode"
+      },
+      "tinygo": {
+        "speed_mode": "Speed_mode"
+      }
+    },
+    "dsr_msgs/GetRobotStateRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetRobotStateResponse": {
+      "assemblyscript": {
+        "robot_state": "robot_state"
+      },
+      "c": {
+        "robot_state": "robot_state"
+      },
+      "cpp": {
+        "robot_state": "robot_state"
+      },
+      "javascript": {
+        "robot_state": "robot_state"
+      },
+      "rust": {
+        "robot_state": "robot_state"
+      },
+      "tinygo": {
+        "robot_state": "Robot_state"
+      }
+    },
+    "dsr_msgs/GetRobotSystemRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetRobotSystemResponse": {
+      "assemblyscript": {
+        "robot_system": "robot_system"
+      },
+      "c": {
+        "robot_system": "robot_system"
+      },
+      "cpp": {
+        "robot_system": "robot_system"
+      },
+      "javascript": {
+        "robot_system": "robot_system"
+      },
+      "rust": {
+        "robot_system": "robot_system"
+      },
+      "tinygo": {
+        "robot_system": "Robot_system"
+      }
+    },
+    "dsr_msgs/GetToolDigitalInputRequest": {
+      "assemblyscript": {
+        "index": "index"
+      },
+      "c": {
+        "index": "index"
+      },
+      "cpp": {
+        "index": "index"
+      },
+      "javascript": {
+        "index": "index"
+      },
+      "rust": {
+        "index": "index"
+      },
+      "tinygo": {
+        "index": "Index"
+      }
+    },
+    "dsr_msgs/GetToolDigitalInputResponse": {
+      "assemblyscript": {
+        "value": "value"
+      },
+      "c": {
+        "value": "value"
+      },
+      "cpp": {
+        "value": "value"
+      },
+      "javascript": {
+        "value": "value"
+      },
+      "rust": {
+        "value": "value"
+      },
+      "tinygo": {
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/GetToolForceRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/GetToolForceResponse": {
+      "assemblyscript": {
+        "tool_force": "tool_force"
+      },
+      "c": {
+        "tool_force": "tool_force"
+      },
+      "cpp": {
+        "tool_force": "tool_force"
+      },
+      "javascript": {
+        "tool_force": "tool_force"
+      },
+      "rust": {
+        "tool_force": "tool_force"
+      },
+      "tinygo": {
+        "tool_force": "Tool_force"
+      }
+    },
+    "dsr_msgs/JogMultiAxis": {
+      "assemblyscript": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "c": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "cpp": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "javascript": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "rust": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "tinygo": {
+        "jog_axis": "Jog_axis",
+        "move_reference": "Move_reference",
+        "speed": "Speed"
+      }
+    },
+    "dsr_msgs/JogMultiRequest": {
+      "assemblyscript": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "c": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "cpp": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "javascript": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "rust": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "tinygo": {
+        "jog_axis": "Jog_axis",
+        "move_reference": "Move_reference",
+        "speed": "Speed"
+      }
+    },
+    "dsr_msgs/JogMultiResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/JogRequest": {
+      "assemblyscript": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "c": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "cpp": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "javascript": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "rust": {
+        "jog_axis": "jog_axis",
+        "move_reference": "move_reference",
+        "speed": "speed"
+      },
+      "tinygo": {
+        "jog_axis": "Jog_axis",
+        "move_reference": "Move_reference",
+        "speed": "Speed"
+      }
+    },
+    "dsr_msgs/JogResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/LogAlarm": {
+      "assemblyscript": {
+        "group": "group",
+        "index": "index",
+        "level": "level",
+        "param": "param"
+      },
+      "c": {
+        "group": "group",
+        "index": "index",
+        "level": "level",
+        "param": "param"
+      },
+      "cpp": {
+        "group": "group",
+        "index": "index",
+        "level": "level",
+        "param": "param"
+      },
+      "javascript": {
+        "group": "group",
+        "index": "index",
+        "level": "level",
+        "param": "param"
+      },
+      "rust": {
+        "group": "group",
+        "index": "index",
+        "level": "level",
+        "param": "param"
+      },
+      "tinygo": {
+        "group": "Group",
+        "index": "Index",
+        "level": "Level",
+        "param": "Param"
+      }
+    },
+    "dsr_msgs/ModbusState": {
+      "assemblyscript": {
+        "modbus_symbol": "modbus_symbol",
+        "modbus_value": "modbus_value"
+      },
+      "c": {
+        "modbus_symbol": "modbus_symbol",
+        "modbus_value": "modbus_value"
+      },
+      "cpp": {
+        "modbus_symbol": "modbus_symbol",
+        "modbus_value": "modbus_value"
+      },
+      "javascript": {
+        "modbus_symbol": "modbus_symbol",
+        "modbus_value": "modbus_value"
+      },
+      "rust": {
+        "modbus_symbol": "modbus_symbol",
+        "modbus_value": "modbus_value"
+      },
+      "tinygo": {
+        "modbus_symbol": "Modbus_symbol",
+        "modbus_value": "Modbus_value"
+      }
+    },
+    "dsr_msgs/MoveBlendingRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "mode": "mode",
+        "posCnt": "posCnt",
+        "ref": "ref",
+        "segment": "segment",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "c": {
+        "acc": "acc",
+        "mode": "mode",
+        "posCnt": "posCnt",
+        "ref": "ref",
+        "segment": "segment",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "cpp": {
+        "acc": "acc",
+        "mode": "mode",
+        "posCnt": "posCnt",
+        "ref": "ref",
+        "segment": "segment",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "javascript": {
+        "acc": "acc",
+        "mode": "mode",
+        "posCnt": "posCnt",
+        "ref": "ref",
+        "segment": "segment",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "rust": {
+        "acc": "acc",
+        "mode": "mode",
+        "posCnt": "posCnt",
+        "ref": "r#ref",
+        "segment": "segment",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "mode": "Mode",
+        "posCnt": "PosCnt",
+        "ref": "Ref",
+        "segment": "Segment",
+        "syncType": "SyncType",
+        "time": "Time",
+        "vel": "Vel"
+      }
+    },
+    "dsr_msgs/MoveBlendingResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveCircleRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "angle1": "angle1",
+        "angle2": "angle2",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "c": {
+        "acc": "acc",
+        "angle1": "angle1",
+        "angle2": "angle2",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "cpp": {
+        "acc": "acc",
+        "angle1": "angle1",
+        "angle2": "angle2",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "javascript": {
+        "acc": "acc",
+        "angle1": "angle1",
+        "angle2": "angle2",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "rust": {
+        "acc": "acc",
+        "angle1": "angle1",
+        "angle2": "angle2",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "r#ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "angle1": "Angle1",
+        "angle2": "Angle2",
+        "blendType": "BlendType",
+        "mode": "Mode",
+        "pos": "Pos",
+        "radius": "Radius",
+        "ref": "Ref",
+        "syncType": "SyncType",
+        "time": "Time",
+        "vel": "Vel"
+      }
+    },
+    "dsr_msgs/MoveCircleResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveJointRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "c": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "cpp": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "javascript": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "rust": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "blendType": "BlendType",
+        "mode": "Mode",
+        "pos": "Pos",
+        "radius": "Radius",
+        "syncType": "SyncType",
+        "time": "Time",
+        "vel": "Vel"
+      }
+    },
+    "dsr_msgs/MoveJointResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveJointxRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "sol": "sol",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "c": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "sol": "sol",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "cpp": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "sol": "sol",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "javascript": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "sol": "sol",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "rust": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "r#ref",
+        "sol": "sol",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "blendType": "BlendType",
+        "mode": "Mode",
+        "pos": "Pos",
+        "radius": "Radius",
+        "ref": "Ref",
+        "sol": "Sol",
+        "syncType": "SyncType",
+        "time": "Time",
+        "vel": "Vel"
+      }
+    },
+    "dsr_msgs/MoveJointxResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveLineRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "c": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "cpp": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "javascript": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "rust": {
+        "acc": "acc",
+        "blendType": "blendType",
+        "mode": "mode",
+        "pos": "pos",
+        "radius": "radius",
+        "ref": "r#ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "blendType": "BlendType",
+        "mode": "Mode",
+        "pos": "Pos",
+        "radius": "Radius",
+        "ref": "Ref",
+        "syncType": "SyncType",
+        "time": "Time",
+        "vel": "Vel"
+      }
+    },
+    "dsr_msgs/MoveLineResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MovePauseRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/MovePauseResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MovePeriodicRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "amp": "amp",
+        "periodic": "periodic",
+        "ref": "ref",
+        "repeat": "repeat",
+        "syncType": "syncType"
+      },
+      "c": {
+        "acc": "acc",
+        "amp": "amp",
+        "periodic": "periodic",
+        "ref": "ref",
+        "repeat": "repeat",
+        "syncType": "syncType"
+      },
+      "cpp": {
+        "acc": "acc",
+        "amp": "amp",
+        "periodic": "periodic",
+        "ref": "ref",
+        "repeat": "repeat",
+        "syncType": "syncType"
+      },
+      "javascript": {
+        "acc": "acc",
+        "amp": "amp",
+        "periodic": "periodic",
+        "ref": "ref",
+        "repeat": "repeat",
+        "syncType": "syncType"
+      },
+      "rust": {
+        "acc": "acc",
+        "amp": "amp",
+        "periodic": "periodic",
+        "ref": "r#ref",
+        "repeat": "repeat",
+        "syncType": "syncType"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "amp": "Amp",
+        "periodic": "Periodic",
+        "ref": "Ref",
+        "repeat": "Repeat",
+        "syncType": "SyncType"
+      }
+    },
+    "dsr_msgs/MovePeriodicResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveResumeRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/MoveResumeResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveSpiralRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "maxLength": "maxLength",
+        "maxRadius": "maxRadius",
+        "ref": "ref",
+        "revolution": "revolution",
+        "syncType": "syncType",
+        "taskAxis": "taskAxis",
+        "time": "time",
+        "vel": "vel"
+      },
+      "c": {
+        "acc": "acc",
+        "maxLength": "maxLength",
+        "maxRadius": "maxRadius",
+        "ref": "ref",
+        "revolution": "revolution",
+        "syncType": "syncType",
+        "taskAxis": "taskAxis",
+        "time": "time",
+        "vel": "vel"
+      },
+      "cpp": {
+        "acc": "acc",
+        "maxLength": "maxLength",
+        "maxRadius": "maxRadius",
+        "ref": "ref",
+        "revolution": "revolution",
+        "syncType": "syncType",
+        "taskAxis": "taskAxis",
+        "time": "time",
+        "vel": "vel"
+      },
+      "javascript": {
+        "acc": "acc",
+        "maxLength": "maxLength",
+        "maxRadius": "maxRadius",
+        "ref": "ref",
+        "revolution": "revolution",
+        "syncType": "syncType",
+        "taskAxis": "taskAxis",
+        "time": "time",
+        "vel": "vel"
+      },
+      "rust": {
+        "acc": "acc",
+        "maxLength": "maxLength",
+        "maxRadius": "maxRadius",
+        "ref": "r#ref",
+        "revolution": "revolution",
+        "syncType": "syncType",
+        "taskAxis": "taskAxis",
+        "time": "time",
+        "vel": "vel"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "maxLength": "MaxLength",
+        "maxRadius": "MaxRadius",
+        "ref": "Ref",
+        "revolution": "Revolution",
+        "syncType": "SyncType",
+        "taskAxis": "TaskAxis",
+        "time": "Time",
+        "vel": "Vel"
+      }
+    },
+    "dsr_msgs/MoveSpiralResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveSplineJointRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "mode": "mode",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "c": {
+        "acc": "acc",
+        "mode": "mode",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "cpp": {
+        "acc": "acc",
+        "mode": "mode",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "javascript": {
+        "acc": "acc",
+        "mode": "mode",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "rust": {
+        "acc": "acc",
+        "mode": "mode",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "mode": "Mode",
+        "pos": "Pos",
+        "posCnt": "PosCnt",
+        "syncType": "SyncType",
+        "time": "Time",
+        "vel": "Vel"
+      }
+    },
+    "dsr_msgs/MoveSplineJointResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveSplineTaskRequest": {
+      "assemblyscript": {
+        "acc": "acc",
+        "mode": "mode",
+        "opt": "opt",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "c": {
+        "acc": "acc",
+        "mode": "mode",
+        "opt": "opt",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "cpp": {
+        "acc": "acc",
+        "mode": "mode",
+        "opt": "opt",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "javascript": {
+        "acc": "acc",
+        "mode": "mode",
+        "opt": "opt",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "ref": "ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "rust": {
+        "acc": "acc",
+        "mode": "mode",
+        "opt": "opt",
+        "pos": "pos",
+        "posCnt": "posCnt",
+        "ref": "r#ref",
+        "syncType": "syncType",
+        "time": "time",
+        "vel": "vel"
+      },
+      "tinygo": {
+        "acc": "Acc",
+        "mode": "Mode",
+        "opt": "Opt",
+        "pos": "Pos",
+        "posCnt": "PosCnt",
+        "ref": "Ref",
+        "syncType": "SyncType",
+        "time": "Time",
+        "vel": "Vel"
+      }
+    },
+    "dsr_msgs/MoveSplineTaskResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveStopRequest": {
+      "assemblyscript": {
+        "stop_mode": "stop_mode"
+      },
+      "c": {
+        "stop_mode": "stop_mode"
+      },
+      "cpp": {
+        "stop_mode": "stop_mode"
+      },
+      "javascript": {
+        "stop_mode": "stop_mode"
+      },
+      "rust": {
+        "stop_mode": "stop_mode"
+      },
+      "tinygo": {
+        "stop_mode": "Stop_mode"
+      }
+    },
+    "dsr_msgs/MoveStopResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/MoveWaitRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/MoveWaitResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/RobotError": {
+      "assemblyscript": {
+        "code": "code",
+        "group": "group",
+        "level": "level",
+        "msg1": "msg1",
+        "msg2": "msg2",
+        "msg3": "msg3"
+      },
+      "c": {
+        "code": "code",
+        "group": "group",
+        "level": "level",
+        "msg1": "msg1",
+        "msg2": "msg2",
+        "msg3": "msg3"
+      },
+      "cpp": {
+        "code": "code",
+        "group": "group",
+        "level": "level",
+        "msg1": "msg1",
+        "msg2": "msg2",
+        "msg3": "msg3"
+      },
+      "javascript": {
+        "code": "code",
+        "group": "group",
+        "level": "level",
+        "msg1": "msg1",
+        "msg2": "msg2",
+        "msg3": "msg3"
+      },
+      "rust": {
+        "code": "code",
+        "group": "group",
+        "level": "level",
+        "msg1": "msg1",
+        "msg2": "msg2",
+        "msg3": "msg3"
+      },
+      "tinygo": {
+        "code": "Code",
+        "group": "Group",
+        "level": "Level",
+        "msg1": "Msg1",
+        "msg2": "Msg2",
+        "msg3": "Msg3"
+      }
+    },
+    "dsr_msgs/RobotState": {
+      "assemblyscript": {
+        "access_control": "access_control",
+        "actual_bk": "actual_bk",
+        "actual_bt": "actual_bt",
+        "actual_ejt": "actual_ejt",
+        "actual_ett": "actual_ett",
+        "actual_jts": "actual_jts",
+        "actual_mc": "actual_mc",
+        "actual_mode": "actual_mode",
+        "actual_mt": "actual_mt",
+        "actual_space": "actual_space",
+        "ctrlbox_digital_input": "ctrlbox_digital_input",
+        "ctrlbox_digital_output": "ctrlbox_digital_output",
+        "current_posj": "current_posj",
+        "current_posx": "current_posx",
+        "current_velj": "current_velj",
+        "current_velx": "current_velx",
+        "disconnected": "disconnected",
+        "drl_stopped": "drl_stopped",
+        "dynamic_tor": "dynamic_tor",
+        "flange_digital_input": "flange_digital_input",
+        "flange_digital_output": "flange_digital_output",
+        "homming_completed": "homming_completed",
+        "joint_abs": "joint_abs",
+        "joint_err": "joint_err",
+        "mastering_need": "mastering_need",
+        "modbus_state": "modbus_state",
+        "robot_state": "robot_state",
+        "robot_state_str": "robot_state_str",
+        "rotation_matrix": "rotation_matrix",
+        "solution_space": "solution_space",
+        "sync_time": "sync_time",
+        "target_posj": "target_posj",
+        "target_posx": "target_posx",
+        "target_velj": "target_velj",
+        "target_velx": "target_velx",
+        "task_err": "task_err",
+        "tp_initialized": "tp_initialized"
+      },
+      "c": {
+        "access_control": "access_control",
+        "actual_bk": "actual_bk",
+        "actual_bt": "actual_bt",
+        "actual_ejt": "actual_ejt",
+        "actual_ett": "actual_ett",
+        "actual_jts": "actual_jts",
+        "actual_mc": "actual_mc",
+        "actual_mode": "actual_mode",
+        "actual_mt": "actual_mt",
+        "actual_space": "actual_space",
+        "ctrlbox_digital_input": "ctrlbox_digital_input",
+        "ctrlbox_digital_output": "ctrlbox_digital_output",
+        "current_posj": "current_posj",
+        "current_posx": "current_posx",
+        "current_velj": "current_velj",
+        "current_velx": "current_velx",
+        "disconnected": "disconnected",
+        "drl_stopped": "drl_stopped",
+        "dynamic_tor": "dynamic_tor",
+        "flange_digital_input": "flange_digital_input",
+        "flange_digital_output": "flange_digital_output",
+        "homming_completed": "homming_completed",
+        "joint_abs": "joint_abs",
+        "joint_err": "joint_err",
+        "mastering_need": "mastering_need",
+        "modbus_state": "modbus_state",
+        "robot_state": "robot_state",
+        "robot_state_str": "robot_state_str",
+        "rotation_matrix": "rotation_matrix",
+        "solution_space": "solution_space",
+        "sync_time": "sync_time",
+        "target_posj": "target_posj",
+        "target_posx": "target_posx",
+        "target_velj": "target_velj",
+        "target_velx": "target_velx",
+        "task_err": "task_err",
+        "tp_initialized": "tp_initialized"
+      },
+      "cpp": {
+        "access_control": "access_control",
+        "actual_bk": "actual_bk",
+        "actual_bt": "actual_bt",
+        "actual_ejt": "actual_ejt",
+        "actual_ett": "actual_ett",
+        "actual_jts": "actual_jts",
+        "actual_mc": "actual_mc",
+        "actual_mode": "actual_mode",
+        "actual_mt": "actual_mt",
+        "actual_space": "actual_space",
+        "ctrlbox_digital_input": "ctrlbox_digital_input",
+        "ctrlbox_digital_output": "ctrlbox_digital_output",
+        "current_posj": "current_posj",
+        "current_posx": "current_posx",
+        "current_velj": "current_velj",
+        "current_velx": "current_velx",
+        "disconnected": "disconnected",
+        "drl_stopped": "drl_stopped",
+        "dynamic_tor": "dynamic_tor",
+        "flange_digital_input": "flange_digital_input",
+        "flange_digital_output": "flange_digital_output",
+        "homming_completed": "homming_completed",
+        "joint_abs": "joint_abs",
+        "joint_err": "joint_err",
+        "mastering_need": "mastering_need",
+        "modbus_state": "modbus_state",
+        "robot_state": "robot_state",
+        "robot_state_str": "robot_state_str",
+        "rotation_matrix": "rotation_matrix",
+        "solution_space": "solution_space",
+        "sync_time": "sync_time",
+        "target_posj": "target_posj",
+        "target_posx": "target_posx",
+        "target_velj": "target_velj",
+        "target_velx": "target_velx",
+        "task_err": "task_err",
+        "tp_initialized": "tp_initialized"
+      },
+      "javascript": {
+        "access_control": "access_control",
+        "actual_bk": "actual_bk",
+        "actual_bt": "actual_bt",
+        "actual_ejt": "actual_ejt",
+        "actual_ett": "actual_ett",
+        "actual_jts": "actual_jts",
+        "actual_mc": "actual_mc",
+        "actual_mode": "actual_mode",
+        "actual_mt": "actual_mt",
+        "actual_space": "actual_space",
+        "ctrlbox_digital_input": "ctrlbox_digital_input",
+        "ctrlbox_digital_output": "ctrlbox_digital_output",
+        "current_posj": "current_posj",
+        "current_posx": "current_posx",
+        "current_velj": "current_velj",
+        "current_velx": "current_velx",
+        "disconnected": "disconnected",
+        "drl_stopped": "drl_stopped",
+        "dynamic_tor": "dynamic_tor",
+        "flange_digital_input": "flange_digital_input",
+        "flange_digital_output": "flange_digital_output",
+        "homming_completed": "homming_completed",
+        "joint_abs": "joint_abs",
+        "joint_err": "joint_err",
+        "mastering_need": "mastering_need",
+        "modbus_state": "modbus_state",
+        "robot_state": "robot_state",
+        "robot_state_str": "robot_state_str",
+        "rotation_matrix": "rotation_matrix",
+        "solution_space": "solution_space",
+        "sync_time": "sync_time",
+        "target_posj": "target_posj",
+        "target_posx": "target_posx",
+        "target_velj": "target_velj",
+        "target_velx": "target_velx",
+        "task_err": "task_err",
+        "tp_initialized": "tp_initialized"
+      },
+      "rust": {
+        "access_control": "access_control",
+        "actual_bk": "actual_bk",
+        "actual_bt": "actual_bt",
+        "actual_ejt": "actual_ejt",
+        "actual_ett": "actual_ett",
+        "actual_jts": "actual_jts",
+        "actual_mc": "actual_mc",
+        "actual_mode": "actual_mode",
+        "actual_mt": "actual_mt",
+        "actual_space": "actual_space",
+        "ctrlbox_digital_input": "ctrlbox_digital_input",
+        "ctrlbox_digital_output": "ctrlbox_digital_output",
+        "current_posj": "current_posj",
+        "current_posx": "current_posx",
+        "current_velj": "current_velj",
+        "current_velx": "current_velx",
+        "disconnected": "disconnected",
+        "drl_stopped": "drl_stopped",
+        "dynamic_tor": "dynamic_tor",
+        "flange_digital_input": "flange_digital_input",
+        "flange_digital_output": "flange_digital_output",
+        "homming_completed": "homming_completed",
+        "joint_abs": "joint_abs",
+        "joint_err": "joint_err",
+        "mastering_need": "mastering_need",
+        "modbus_state": "modbus_state",
+        "robot_state": "robot_state",
+        "robot_state_str": "robot_state_str",
+        "rotation_matrix": "rotation_matrix",
+        "solution_space": "solution_space",
+        "sync_time": "sync_time",
+        "target_posj": "target_posj",
+        "target_posx": "target_posx",
+        "target_velj": "target_velj",
+        "target_velx": "target_velx",
+        "task_err": "task_err",
+        "tp_initialized": "tp_initialized"
+      },
+      "tinygo": {
+        "access_control": "Access_control",
+        "actual_bk": "Actual_bk",
+        "actual_bt": "Actual_bt",
+        "actual_ejt": "Actual_ejt",
+        "actual_ett": "Actual_ett",
+        "actual_jts": "Actual_jts",
+        "actual_mc": "Actual_mc",
+        "actual_mode": "Actual_mode",
+        "actual_mt": "Actual_mt",
+        "actual_space": "Actual_space",
+        "ctrlbox_digital_input": "Ctrlbox_digital_input",
+        "ctrlbox_digital_output": "Ctrlbox_digital_output",
+        "current_posj": "Current_posj",
+        "current_posx": "Current_posx",
+        "current_velj": "Current_velj",
+        "current_velx": "Current_velx",
+        "disconnected": "Disconnected",
+        "drl_stopped": "Drl_stopped",
+        "dynamic_tor": "Dynamic_tor",
+        "flange_digital_input": "Flange_digital_input",
+        "flange_digital_output": "Flange_digital_output",
+        "homming_completed": "Homming_completed",
+        "joint_abs": "Joint_abs",
+        "joint_err": "Joint_err",
+        "mastering_need": "Mastering_need",
+        "modbus_state": "Modbus_state",
+        "robot_state": "Robot_state",
+        "robot_state_str": "Robot_state_str",
+        "rotation_matrix": "Rotation_matrix",
+        "solution_space": "Solution_space",
+        "sync_time": "Sync_time",
+        "target_posj": "Target_posj",
+        "target_posx": "Target_posx",
+        "target_velj": "Target_velj",
+        "target_velx": "Target_velx",
+        "task_err": "Task_err",
+        "tp_initialized": "Tp_initialized"
+      }
+    },
+    "dsr_msgs/RobotStop": {
+      "assemblyscript": {
+        "stop_mode": "stop_mode"
+      },
+      "c": {
+        "stop_mode": "stop_mode"
+      },
+      "cpp": {
+        "stop_mode": "stop_mode"
+      },
+      "javascript": {
+        "stop_mode": "stop_mode"
+      },
+      "rust": {
+        "stop_mode": "stop_mode"
+      },
+      "tinygo": {
+        "stop_mode": "Stop_mode"
+      }
+    },
+    "dsr_msgs/Robotiq2FCloseRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/Robotiq2FCloseResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/Robotiq2FMoveRequest": {
+      "assemblyscript": {
+        "width": "width"
+      },
+      "c": {
+        "width": "width"
+      },
+      "cpp": {
+        "width": "width"
+      },
+      "javascript": {
+        "width": "width"
+      },
+      "rust": {
+        "width": "width"
+      },
+      "tinygo": {
+        "width": "Width"
+      }
+    },
+    "dsr_msgs/Robotiq2FMoveResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/Robotiq2FOpenRequest": {
+      "assemblyscript": {},
+      "c": {},
+      "cpp": {},
+      "javascript": {},
+      "rust": {},
+      "tinygo": {}
+    },
+    "dsr_msgs/Robotiq2FOpenResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SerialSendDataRequest": {
+      "assemblyscript": {
+        "data": "data"
+      },
+      "c": {
+        "data": "data"
+      },
+      "cpp": {
+        "data": "data"
+      },
+      "javascript": {
+        "data": "data"
+      },
+      "rust": {
+        "data": "data"
+      },
+      "tinygo": {
+        "data": "Data"
+      }
+    },
+    "dsr_msgs/SerialSendDataResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetCtrlBoxAnalogInputTypeRequest": {
+      "assemblyscript": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "c": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "cpp": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "javascript": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "rust": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "tinygo": {
+        "channel": "Channel",
+        "mode": "Mode"
+      }
+    },
+    "dsr_msgs/SetCtrlBoxAnalogInputTypeResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetCtrlBoxAnalogOutputRequest": {
+      "assemblyscript": {
+        "channel": "channel",
+        "value": "value"
+      },
+      "c": {
+        "channel": "channel",
+        "value": "value"
+      },
+      "cpp": {
+        "channel": "channel",
+        "value": "value"
+      },
+      "javascript": {
+        "channel": "channel",
+        "value": "value"
+      },
+      "rust": {
+        "channel": "channel",
+        "value": "value"
+      },
+      "tinygo": {
+        "channel": "Channel",
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/SetCtrlBoxAnalogOutputResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetCtrlBoxAnalogOutputTypeRequest": {
+      "assemblyscript": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "c": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "cpp": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "javascript": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "rust": {
+        "channel": "channel",
+        "mode": "mode"
+      },
+      "tinygo": {
+        "channel": "Channel",
+        "mode": "Mode"
+      }
+    },
+    "dsr_msgs/SetCtrlBoxAnalogOutputTypeResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetCtrlBoxDigitalOutputRequest": {
+      "assemblyscript": {
+        "index": "index",
+        "value": "value"
+      },
+      "c": {
+        "index": "index",
+        "value": "value"
+      },
+      "cpp": {
+        "index": "index",
+        "value": "value"
+      },
+      "javascript": {
+        "index": "index",
+        "value": "value"
+      },
+      "rust": {
+        "index": "index",
+        "value": "value"
+      },
+      "tinygo": {
+        "index": "Index",
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/SetCtrlBoxDigitalOutputResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetCurrentTcpRequest": {
+      "assemblyscript": {
+        "name": "name"
+      },
+      "c": {
+        "name": "name"
+      },
+      "cpp": {
+        "name": "name"
+      },
+      "javascript": {
+        "name": "name"
+      },
+      "rust": {
+        "name": "name"
+      },
+      "tinygo": {
+        "name": "Name"
+      }
+    },
+    "dsr_msgs/SetCurrentTcpResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetCurrentToolRequest": {
+      "assemblyscript": {
+        "name": "name"
+      },
+      "c": {
+        "name": "name"
+      },
+      "cpp": {
+        "name": "name"
+      },
+      "javascript": {
+        "name": "name"
+      },
+      "rust": {
+        "name": "name"
+      },
+      "tinygo": {
+        "name": "Name"
+      }
+    },
+    "dsr_msgs/SetCurrentToolResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetModbusOutputRequest": {
+      "assemblyscript": {
+        "name": "name",
+        "value": "value"
+      },
+      "c": {
+        "name": "name",
+        "value": "value"
+      },
+      "cpp": {
+        "name": "name",
+        "value": "value"
+      },
+      "javascript": {
+        "name": "name",
+        "value": "value"
+      },
+      "rust": {
+        "name": "name",
+        "value": "value"
+      },
+      "tinygo": {
+        "name": "Name",
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/SetModbusOutputResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetRobotModeRequest": {
+      "assemblyscript": {
+        "robot_mode": "robot_mode"
+      },
+      "c": {
+        "robot_mode": "robot_mode"
+      },
+      "cpp": {
+        "robot_mode": "robot_mode"
+      },
+      "javascript": {
+        "robot_mode": "robot_mode"
+      },
+      "rust": {
+        "robot_mode": "robot_mode"
+      },
+      "tinygo": {
+        "robot_mode": "Robot_mode"
+      }
+    },
+    "dsr_msgs/SetRobotModeResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetRobotSpeedModeRequest": {
+      "assemblyscript": {
+        "speed_mode": "speed_mode"
+      },
+      "c": {
+        "speed_mode": "speed_mode"
+      },
+      "cpp": {
+        "speed_mode": "speed_mode"
+      },
+      "javascript": {
+        "speed_mode": "speed_mode"
+      },
+      "rust": {
+        "speed_mode": "speed_mode"
+      },
+      "tinygo": {
+        "speed_mode": "Speed_mode"
+      }
+    },
+    "dsr_msgs/SetRobotSpeedModeResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetRobotSystemRequest": {
+      "assemblyscript": {
+        "robot_system": "robot_system"
+      },
+      "c": {
+        "robot_system": "robot_system"
+      },
+      "cpp": {
+        "robot_system": "robot_system"
+      },
+      "javascript": {
+        "robot_system": "robot_system"
+      },
+      "rust": {
+        "robot_system": "robot_system"
+      },
+      "tinygo": {
+        "robot_system": "Robot_system"
+      }
+    },
+    "dsr_msgs/SetRobotSystemResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetSafeStopResetTypeRequest": {
+      "assemblyscript": {
+        "reset_type": "reset_type"
+      },
+      "c": {
+        "reset_type": "reset_type"
+      },
+      "cpp": {
+        "reset_type": "reset_type"
+      },
+      "javascript": {
+        "reset_type": "reset_type"
+      },
+      "rust": {
+        "reset_type": "reset_type"
+      },
+      "tinygo": {
+        "reset_type": "Reset_type"
+      }
+    },
+    "dsr_msgs/SetSafeStopResetTypeResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "dsr_msgs/SetToolDigitalOutputRequest": {
+      "assemblyscript": {
+        "index": "index",
+        "value": "value"
+      },
+      "c": {
+        "index": "index",
+        "value": "value"
+      },
+      "cpp": {
+        "index": "index",
+        "value": "value"
+      },
+      "javascript": {
+        "index": "index",
+        "value": "value"
+      },
+      "rust": {
+        "index": "index",
+        "value": "value"
+      },
+      "tinygo": {
+        "index": "Index",
+        "value": "Value"
+      }
+    },
+    "dsr_msgs/SetToolDigitalOutputResponse": {
+      "assemblyscript": {
+        "success": "success"
+      },
+      "c": {
+        "success": "success"
+      },
+      "cpp": {
+        "success": "success"
+      },
+      "javascript": {
+        "success": "success"
+      },
+      "rust": {
+        "success": "success"
+      },
+      "tinygo": {
+        "success": "Success"
+      }
+    },
+    "std_msgs/Float64MultiArray": {
+      "assemblyscript": {
+        "data": "data",
+        "layout": "layout"
+      },
+      "c": {
+        "data": "data",
+        "layout": "layout"
+      },
+      "cpp": {
+        "data": "data",
+        "layout": "layout"
+      },
+      "javascript": {
+        "data": "data",
+        "layout": "layout"
+      },
+      "rust": {
+        "data": "data",
+        "layout": "layout"
+      },
+      "tinygo": {
+        "data": "Data",
+        "layout": "Layout"
+      }
+    },
+    "std_msgs/MultiArrayDimension": {
+      "assemblyscript": {
+        "label": "label",
+        "size": "size",
+        "stride": "stride"
+      },
+      "c": {
+        "label": "label",
+        "size": "size",
+        "stride": "stride"
+      },
+      "cpp": {
+        "label": "label",
+        "size": "size",
+        "stride": "stride"
+      },
+      "javascript": {
+        "label": "label",
+        "size": "size",
+        "stride": "stride"
+      },
+      "rust": {
+        "label": "label",
+        "size": "size",
+        "stride": "stride"
+      },
+      "tinygo": {
+        "label": "Label",
+        "size": "Size",
+        "stride": "Stride"
+      }
+    },
+    "std_msgs/MultiArrayLayout": {
+      "assemblyscript": {
+        "data_offset": "data_offset",
+        "dim": "dim"
+      },
+      "c": {
+        "data_offset": "data_offset",
+        "dim": "dim"
+      },
+      "cpp": {
+        "data_offset": "data_offset",
+        "dim": "dim"
+      },
+      "javascript": {
+        "data_offset": "data_offset",
+        "dim": "dim"
+      },
+      "rust": {
+        "data_offset": "data_offset",
+        "dim": "dim"
+      },
+      "tinygo": {
+        "data_offset": "Data_offset",
+        "dim": "Dim"
+      }
+    }
+  },
+  "declared_constants": {},
+  "declared_defaults": {},
+  "source_definitions": [
+    {
+      "bytes": 593,
+      "file": "dsr_msgs/srv/ConfigCreateModbus.srv",
+      "sha256": "7ae68408eceaaa8bfbeb6abfc6aca379081caf378651fff860a9ad1979726998"
+    },
+    {
+      "bytes": 222,
+      "file": "dsr_msgs/srv/ConfigCreateTcp.srv",
+      "sha256": "29262a70343e469b2f5e5dadbbc46bf70612a4a7d37dd39e3cf84cebbee7fc5e"
+    },
+    {
+      "bytes": 304,
+      "file": "dsr_msgs/srv/ConfigCreateTool.srv",
+      "sha256": "d39ae17db637e0c028035355d203d0f20432e3d8a372c8dc6436078a7ece9e73"
+    },
+    {
+      "bytes": 201,
+      "file": "dsr_msgs/srv/ConfigDeleteModbus.srv",
+      "sha256": "aadd82b05e99846288af845567aa5efc438e29202191cff44cb9198b622d79d6"
+    },
+    {
+      "bytes": 180,
+      "file": "dsr_msgs/srv/ConfigDeleteTcp.srv",
+      "sha256": "7cace78131766d054adbada1539e4366544c09372f999bdfacedb3289cb9035e"
+    },
+    {
+      "bytes": 171,
+      "file": "dsr_msgs/srv/ConfigDeleteTool.srv",
+      "sha256": "552f87970579f8933c6906605f467b5f813df3b322653352dde30931a814f581"
+    },
+    {
+      "bytes": 131,
+      "file": "dsr_msgs/srv/DrlPause.srv",
+      "sha256": "5f0c28c50e3b738be0dc873cea1a196728c321b712371c2c58f83d0595ffbe1d"
+    },
+    {
+      "bytes": 128,
+      "file": "dsr_msgs/srv/DrlResume.srv",
+      "sha256": "829e15025fca9a7b369b7b2f4dd7ca451b9e954810b39237b21ce6352e08dd6b"
+    },
+    {
+      "bytes": 232,
+      "file": "dsr_msgs/srv/DrlStart.srv",
+      "sha256": "db9f27cb7829498bfffe4993030b8f700d318012537a88b233af6e7b729be74a"
+    },
+    {
+      "bytes": 217,
+      "file": "dsr_msgs/srv/DrlStop.srv",
+      "sha256": "5c245a72b5aaefb4377ba17dfa340b3a86ab5e9773b2d7f1077589470b099af7"
+    },
+    {
+      "bytes": 82,
+      "file": "dsr_msgs/srv/GetCtrlBoxAnalogInput.srv",
+      "sha256": "edd42f0f721fedc023cc35642b18fd9d8f208c7d75447a5b33a90cbd69576b27"
+    },
+    {
+      "bytes": 315,
+      "file": "dsr_msgs/srv/GetCtrlBoxDigitalInput.srv",
+      "sha256": "fd4a6559352ea8e9d2c7f1c292723d4fc015cdb42fa6fcc00773f61e60f9418e"
+    },
+    {
+      "bytes": 78,
+      "file": "dsr_msgs/srv/GetCurrentPose.srv",
+      "sha256": "e87ca837d614aad0ec4501757c1d65bfa4ce10f299338d476c7a984b8ac7b7ac"
+    },
+    {
+      "bytes": 24,
+      "file": "dsr_msgs/srv/GetCurrentSolutionSpace.srv",
+      "sha256": "bbb18d1e71b2f7e890d058c02eaca1daaa7760687954381814b91d01abc442f5"
+    },
+    {
+      "bytes": 141,
+      "file": "dsr_msgs/srv/GetCurrentTcp.srv",
+      "sha256": "09347212cc318137d8db3deb997aef0498243fa233a60e768dbf50b810807d2c"
+    },
+    {
+      "bytes": 144,
+      "file": "dsr_msgs/srv/GetCurrentTool.srv",
+      "sha256": "645ede85929ab57b8fbfb70310dafb9e1733143f7404bd391515d9df8bcda36d"
+    },
+    {
+      "bytes": 229,
+      "file": "dsr_msgs/srv/GetDrlState.srv",
+      "sha256": "24236a811a1e33c268a819f3102e4de149d67395b105b33ff22701c9a3e01813"
+    },
+    {
+      "bytes": 109,
+      "file": "dsr_msgs/srv/GetExternalTorque.srv",
+      "sha256": "d9e86b1178b6bba89cc4839a06fda020856cbb088cf38ee29aae195e368c0d04"
+    },
+    {
+      "bytes": 85,
+      "file": "dsr_msgs/srv/GetJointTorque.srv",
+      "sha256": "403b8c1b59897cc88d2e2c13cce00ab3e703ed8d991027855246eed37c420b86"
+    },
+    {
+      "bytes": 44,
+      "file": "dsr_msgs/srv/GetLastAlarm.srv",
+      "sha256": "818174de0416af6fed4efa69370f59303d3304ea33a4f1de0444a80a34303867"
+    },
+    {
+      "bytes": 166,
+      "file": "dsr_msgs/srv/GetModbusInput.srv",
+      "sha256": "55c59a3d308b5a0cbfebae1069c226bd5be848e46da3640ed3b9fd0b4892648c"
+    },
+    {
+      "bytes": 173,
+      "file": "dsr_msgs/srv/GetRobotMode.srv",
+      "sha256": "1cf204ea1c02bf01342cafa341a628da6f1932080a025a11cf2779a428950328"
+    },
+    {
+      "bytes": 89,
+      "file": "dsr_msgs/srv/GetRobotSpeedMode.srv",
+      "sha256": "f0c458df846ab73b222f9c0b4c932ee476a8cb0a7c56bb0bd23bee23c6c2ef9c"
+    },
+    {
+      "bytes": 692,
+      "file": "dsr_msgs/srv/GetRobotState.srv",
+      "sha256": "53125dcaa08d3dbda24f107d9b67ce1b54060180668b119d5e135157db326748"
+    },
+    {
+      "bytes": 96,
+      "file": "dsr_msgs/srv/GetRobotSystem.srv",
+      "sha256": "05d1a66ed887baef14fdeefdbbb8087c0c7112b4f3f51d22f2f2c03bfd7b59b5"
+    },
+    {
+      "bytes": 314,
+      "file": "dsr_msgs/srv/GetToolDigitalInput.srv",
+      "sha256": "e629ea86dec9cc8194c0ee560ce32f10923a1c610d7fd26cad900b81ea4f5a1d"
+    },
+    {
+      "bytes": 84,
+      "file": "dsr_msgs/srv/GetToolForce.srv",
+      "sha256": "2c9f1c03b65fbb673f8a601d1411b894f2ba07382413c81f57ebc2f75688c984"
+    },
+    {
+      "bytes": 323,
+      "file": "dsr_msgs/srv/Jog.srv",
+      "sha256": "d3009141c93ff1245806a8c4b10493bb9063adf67b6edefd4cfb51ae691e4bcc"
+    },
+    {
+      "bytes": 335,
+      "file": "dsr_msgs/srv/JogMulti.srv",
+      "sha256": "d0df7e5c8bb09a19937d4c9bfbd857cacf0821a1c6bc7b404524c8687b40e96e"
+    },
+    {
+      "bytes": 314,
+      "file": "dsr_msgs/msg/JogMultiAxis.msg",
+      "sha256": "0a6d86ec97a1d6e04fdedc4137ed31b1a3cf1cd0599c7bad211df08fa1ed50e0"
+    },
+    {
+      "bytes": 82,
+      "file": "dsr_msgs/msg/LogAlarm.msg",
+      "sha256": "e9d3a01151050c3f917427398a025fc73b1f74b0363b2af6624a57c92093b11f"
+    },
+    {
+      "bytes": 168,
+      "file": "dsr_msgs/msg/ModbusState.msg",
+      "sha256": "5176e7390855e75df2308994c92635d0a61783fb4649e5f88e899367676f1484"
+    },
+    {
+      "bytes": 863,
+      "file": "dsr_msgs/srv/MoveBlending.srv",
+      "sha256": "fe1bb2a94846094b0cd46612eba00af127482dc24ad3531841c4c7e3442ae7e2"
+    },
+    {
+      "bytes": 768,
+      "file": "dsr_msgs/srv/MoveCircle.srv",
+      "sha256": "b655d71895dc7b55ff0bc85a42d6857038de1c0deda487c70f5b520253d5ee1c"
+    },
+    {
+      "bytes": 539,
+      "file": "dsr_msgs/srv/MoveJoint.srv",
+      "sha256": "e86763685423092291b332b40798ba0645d23d0c7b5a483c8fed066b89e26a70"
+    },
+    {
+      "bytes": 636,
+      "file": "dsr_msgs/srv/MoveJointx.srv",
+      "sha256": "63fcd2a54c0ee1f251fc7c8f432dc04bcd01d1fa5647ed2cd2f5d2b27827d49f"
+    },
+    {
+      "bytes": 611,
+      "file": "dsr_msgs/srv/MoveLine.srv",
+      "sha256": "39b98e910322267a54984bf78fb93c4d3c9de642a220d135da49c0d2290664f7"
+    },
+    {
+      "bytes": 17,
+      "file": "dsr_msgs/srv/MovePause.srv",
+      "sha256": "f4b97838614e2e1f2d0182b3fae795d99cbb9e712c2ecf7ef9ed08c42bf1ab76"
+    },
+    {
+      "bytes": 411,
+      "file": "dsr_msgs/srv/MovePeriodic.srv",
+      "sha256": "27a33f00159d171f7478670884cbf170ad49ded9f6c8b901560fd91dd700f3f8"
+    },
+    {
+      "bytes": 17,
+      "file": "dsr_msgs/srv/MoveResume.srv",
+      "sha256": "f4b97838614e2e1f2d0182b3fae795d99cbb9e712c2ecf7ef9ed08c42bf1ab76"
+    },
+    {
+      "bytes": 619,
+      "file": "dsr_msgs/srv/MoveSpiral.srv",
+      "sha256": "3c989ff5e801d13a7d349377ee5e60628f86d334a573c3ed46c6d5b488316d51"
+    },
+    {
+      "bytes": 541,
+      "file": "dsr_msgs/srv/MoveSplineJoint.srv",
+      "sha256": "d03ea8ea9927d74b1e6340e0331a36fc305994306112acee59a518007c990184"
+    },
+    {
+      "bytes": 686,
+      "file": "dsr_msgs/srv/MoveSplineTask.srv",
+      "sha256": "4997016ef277887f075dec679bd437c19d7ee0a3b0abee07acb564dbe36d0225"
+    },
+    {
+      "bytes": 33,
+      "file": "dsr_msgs/srv/MoveStop.srv",
+      "sha256": "af9856b8f7c9ef6fd876e32ca1b8d16c45d69b23c960c5f4859d1e9d05bb1d3b"
+    },
+    {
+      "bytes": 145,
+      "file": "dsr_msgs/srv/MoveWait.srv",
+      "sha256": "751749b674823e3d71363ce6be65b47daa1526f4eac5e1bc9d12cf5480cab59c"
+    },
+    {
+      "bytes": 290,
+      "file": "dsr_msgs/msg/RobotError.msg",
+      "sha256": "473631d3674a1f81afbe99d9581661be38f29421a4bd7fd0d3b26a754c633732"
+    },
+    {
+      "bytes": 2858,
+      "file": "dsr_msgs/msg/RobotState.msg",
+      "sha256": "02a770b518b605035e5036df046eddf5912ac411a8a455e2616c81efadf47ea8"
+    },
+    {
+      "bytes": 155,
+      "file": "dsr_msgs/msg/RobotStop.msg",
+      "sha256": "d8f737d0d07a7d0fe9626ea4217b4ef67c3e9bb63e8febb5239cb1e4624f05d7"
+    },
+    {
+      "bytes": 85,
+      "file": "dsr_msgs/srv/Robotiq2FClose.srv",
+      "sha256": "940c048063a53e28b29ea673b5125edbc0e4226426c6a2bdfdc22b03882e202d"
+    },
+    {
+      "bytes": 143,
+      "file": "dsr_msgs/srv/Robotiq2FMove.srv",
+      "sha256": "ba2e827980b37b65016ca8bf9858aa2375fc2b00bf894a154d860b8e61c9ae43"
+    },
+    {
+      "bytes": 80,
+      "file": "dsr_msgs/srv/Robotiq2FOpen.srv",
+      "sha256": "59a8bf09950c1284a5329e1eaf86f89eaa5729627b85ba7ffbda0dd0ce82bdc0"
+    },
+    {
+      "bytes": 138,
+      "file": "dsr_msgs/srv/SerialSendData.srv",
+      "sha256": "c77d60a8a42d65a870244be36e61ba5772bdd812b01066ef6acfce1c7344e287"
+    },
+    {
+      "bytes": 139,
+      "file": "dsr_msgs/srv/SetCtrlBoxAnalogInputType.srv",
+      "sha256": "e51903e79c00cd934d964d4e48f577538c91276320c8fbb19b1fa0c005054b75"
+    },
+    {
+      "bytes": 109,
+      "file": "dsr_msgs/srv/SetCtrlBoxAnalogOutput.srv",
+      "sha256": "fe132ace66815dc03c6b3652af2507edffe3d649452aab4c486078be05e6c46a"
+    },
+    {
+      "bytes": 140,
+      "file": "dsr_msgs/srv/SetCtrlBoxAnalogOutputType.srv",
+      "sha256": "76e6b50a9e06db2e99eb7fa03b27dc9b359ef9c7ec1b95d1c0ed9dd1a2f31787"
+    },
+    {
+      "bytes": 135,
+      "file": "dsr_msgs/srv/SetCtrlBoxDigitalOutput.srv",
+      "sha256": "3646045903bf549987afba35fe0a21b98865baa15326cbb82c27a80c0eb02f0a"
+    },
+    {
+      "bytes": 155,
+      "file": "dsr_msgs/srv/SetCurrentTcp.srv",
+      "sha256": "08cc68d12b8654011d69f9fe38b76e99e37d244309c3be1e1bf2bd257f979498"
+    },
+    {
+      "bytes": 157,
+      "file": "dsr_msgs/srv/SetCurrentTool.srv",
+      "sha256": "9ce6adb7cd7ba8a7beaa573507f09a1df4a63aa416df90cd65211886955eadfc"
+    },
+    {
+      "bytes": 197,
+      "file": "dsr_msgs/srv/SetModbusOutput.srv",
+      "sha256": "971c8e418fa576c219f7ec20746527c1bd71d017c6abf6a9da5c2fb4db3cf883"
+    },
+    {
+      "bytes": 187,
+      "file": "dsr_msgs/srv/SetRobotMode.srv",
+      "sha256": "c106b23a1dfb1b2f1e0128109bc0d1b55dcec40fa89f1efc68f207f278e10401"
+    },
+    {
+      "bytes": 107,
+      "file": "dsr_msgs/srv/SetRobotSpeedMode.srv",
+      "sha256": "11324a0eea611800e8adf03f1e21ae8229e1050966013385ab8304beebbd508a"
+    },
+    {
+      "bytes": 87,
+      "file": "dsr_msgs/srv/SetRobotSystem.srv",
+      "sha256": "c46c1f926787824c6159fd502dec275e75db3d18f26bedb418287fb3d2fc8bb8"
+    },
+    {
+      "bytes": 149,
+      "file": "dsr_msgs/srv/SetSafeStopResetType.srv",
+      "sha256": "9fa7ea4d5f66e2f408ef304a3b8c0d3100a19d03099037fbc09b67ef90a830f7"
+    },
+    {
+      "bytes": 218,
+      "file": "dsr_msgs/srv/SetToolDigitalOutput.srv",
+      "sha256": "b8f30cf507e459823b3226748aa3c5c59fa63d49100ac9c5d680773af825fe4e"
+    },
+    {
+      "bytes": 210,
+      "file": "std_msgs/msg/Float64MultiArray.msg",
+      "sha256": "9239c0b887425c3b5ac15383c989676e4e54297358e2ade2e58810b282612fad"
+    },
+    {
+      "bytes": 141,
+      "file": "std_msgs/msg/MultiArrayDimension.msg",
+      "sha256": "9a15d2f3d18228fbfbc2749be6a4e97d0faa80d10a60246d0a1c056f64985406"
+    },
+    {
+      "bytes": 911,
+      "file": "std_msgs/msg/MultiArrayLayout.msg",
+      "sha256": "e252aef3fe2e41f9bad0cf3e267801bf658bd12e1869a07e71b445847f0665d9"
+    }
+  ],
+  "native_identity_status": "requires-independent-native-binding",
+  "default_authority": []
+}

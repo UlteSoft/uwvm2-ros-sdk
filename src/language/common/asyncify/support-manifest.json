@@ -1,0 +1,315 @@
+{
+  "format": "uwvm-shared-asyncify-support-v1",
+  "files": [
+    {
+      "path": "src/language/common/asyncify/abi.h",
+      "bytes": 1322,
+      "sha256": "a579c5112910815e94b52a1eda733e6ba3ee35b50b4951f18e357a68b0715601"
+    },
+    {
+      "path": "src/language/common/asyncify/abi_dispatch.h",
+      "bytes": 54233,
+      "sha256": "7d6719ddaf3d8b14486937000b9a58ea539c82d02dd7a8c206f22c778f0bcbfc"
+    },
+    {
+      "path": "src/language/common/asyncify/application.h",
+      "bytes": 1206,
+      "sha256": "e491c324207ecb2f86e1479a15fd0335f209ce479c5cf7d3973070250506e8e5"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/BSDL",
+      "bytes": 1291,
+      "sha256": "36a9a6e7347214bbba599a412617204e65bff065dcbe5c46f5cb454c80de9eb0"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/COPYING",
+      "bytes": 2427,
+      "sha256": "967586d538a28955ec2541910cf63c5ac345fcdea94bfb1f1705a1f6eb36bcbb"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/runtime.c",
+      "bytes": 1976,
+      "sha256": "762a94da75498ed56c577a98a317bab244c4237d7c0dfccf34468e011583693f"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/setjmp.h",
+      "bytes": 321,
+      "sha256": "b8951b6131f221318fdce132032885a40679682cf2ff4bcae0d8aa21ff4b7315"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/ucontext.c",
+      "bytes": 3558,
+      "sha256": "973b9d5c5fe67eb8db6da2662c61a8f6f2521ebeff4d9e9e72e68404165c443c"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/ucontext.h",
+      "bytes": 2439,
+      "sha256": "c45f219bb1724d8992d32bb307340701215a3e2e995616a0afbd3b152ce140de"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm/asyncify.h",
+      "bytes": 3377,
+      "sha256": "a97693f25c0b6ae521e90d1f657d88aa4788e63c70ac61726fe13406eb81c665"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm/fiber.c",
+      "bytes": 4928,
+      "sha256": "618cf18230834e0f5d01acdcfc56b057299a253a289131b7432ca8a160c7bcea"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm/fiber.h",
+      "bytes": 3639,
+      "sha256": "5f5c503d69b193d190d60a3dc374dfcbd74058cac39c1c19e16d5a5f5ba49e39"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm/machine.h",
+      "bytes": 2622,
+      "sha256": "8d5277390575813f7ae5a44616b9d6380cfef452a95783379b21203a23b9992f"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm/machine_core.S",
+      "bytes": 1801,
+      "sha256": "448265fd4037d027d28e6b10a28f33fca6ba26db45a82b4d3a753ccf6e9307df"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm/setjmp.c",
+      "bytes": 11390,
+      "sha256": "d8de4bb7e6698b49d18d44593608e3fd6e257d010fc80f5c3e14d0b9fda5ca55"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm/setjmp.h",
+      "bytes": 5863,
+      "sha256": "db46958b13b0d09da3facabd068c388b0beeda586030a93cce8f5a7acaff5be8"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm/setjmp_core.S",
+      "bytes": 1712,
+      "sha256": "5f521017574f0bec78c2599edac8fe89f0eb724c8e7f4512168741a238cff74e"
+    },
+    {
+      "path": "src/language/php/command.c",
+      "bytes": 7950,
+      "sha256": "3b67f87597676cdd619cd657765a9b42ab15014bf3f1c45c083010a661f2e921"
+    },
+    {
+      "path": "src/language/php/port.json",
+      "bytes": 2453,
+      "sha256": "b082a5ab35dbcdd149e2441df93856bcbbfc96c780d8d650b4143de2cba8c493"
+    },
+    {
+      "path": "src/language/php/port/network/COPYRIGHT",
+      "bytes": 6204,
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "path": "src/language/php/port/network/LICENSE",
+      "bytes": 910,
+      "sha256": "2711a8b5a5cdfef0e639f96c1aca12ae23d7d64a02d0507f1bdf14d2b27bbc3a"
+    },
+    {
+      "path": "src/language/php/port/network/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/language/php/port/network/LICENSE-APACHE-LLVM",
+      "bytes": 12243,
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5"
+    },
+    {
+      "path": "src/language/php/port/network/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/language/php/port/network/include/arpa/ftp.h",
+      "bytes": 1099,
+      "sha256": "39187a40a58314a7cf90eff6eb45f110c5f38c813bd132802a475c78e9b0411e"
+    },
+    {
+      "path": "src/language/php/port/network/include/arpa/inet.h",
+      "bytes": 6816,
+      "sha256": "dca79c439d12b934f9779c7ccffef367933177f24bfbd10d2acd422e39419509"
+    },
+    {
+      "path": "src/language/php/port/network/include/arpa/nameser.h",
+      "bytes": 18186,
+      "sha256": "171e2d8a783a6c65374bd008eba75e476d16387d636e7675ba37c0bcec05fd6b"
+    },
+    {
+      "path": "src/language/php/port/network/include/arpa/nameser_compat.h",
+      "bytes": 351,
+      "sha256": "6bbd5ff5c9c83072b023190ced9046156d67d1315cd6e203b281c1eb26dcadcc"
+    },
+    {
+      "path": "src/language/php/port/network/include/arpa/telnet.h",
+      "bytes": 6521,
+      "sha256": "a3f5b1d9f88451e5e8fe5767a92d80c388daade7951fd97951e7c58df71f0836"
+    },
+    {
+      "path": "src/language/php/port/network/include/arpa/tftp.h",
+      "bytes": 892,
+      "sha256": "410d7f4410efc1d582b83beea3ebab2599e91e520de5969ec670a2aa880980cb"
+    },
+    {
+      "path": "src/language/php/port/network/include/grp.h",
+      "bytes": 6566,
+      "sha256": "08ee39c69f008dc042e9f753276d30190dcf8163ca5611d8e39a4b7172d69858"
+    },
+    {
+      "path": "src/language/php/port/network/include/netdb.h",
+      "bytes": 18314,
+      "sha256": "f8f173afa1105061dc3a7faaddd7f77785ef48f5f742966ff4fcb08c9f3c5fa2"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/ether.h",
+      "bytes": 4314,
+      "sha256": "55d88b637fc62aeeeea727a5123038482ed5d71fb411768ac1a815876251fb9a"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/icmp6.h",
+      "bytes": 8656,
+      "sha256": "f206180d599123b1f56f103d238666614ae7d4b383e5c1c2fd757d104e485d2f"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/if_ether.h",
+      "bytes": 4821,
+      "sha256": "ce11f57900e5f1ce442edba2d468a4c9e8a17c9e8aac690657897b86823fb4c6"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/igmp.h",
+      "bytes": 1323,
+      "sha256": "07df894fa5f05e6766aef4cc44269580715892433cdd1569c6efa57c2897f75e"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/in.h",
+      "bytes": 15201,
+      "sha256": "c8cca312feb83ab1d2a30cbe04e943a369d6ebee1f32accf66c34e37f479f87d"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/in_systm.h",
+      "bytes": 417,
+      "sha256": "cb98284c3b8110a271c064d59db6d1823e78eaebb8fc2232d0bb9939d16f0038"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/ip.h",
+      "bytes": 4909,
+      "sha256": "dfee30f1ec7e1de3aa73522aad81ce21d3358641f3e904c2c3e6c12691971e2d"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/ip6.h",
+      "bytes": 3432,
+      "sha256": "b12773297b9e6c27514fc0cbc19737153cbdc11c790bad80d485679a05bc8f3d"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/ip_icmp.h",
+      "bytes": 5591,
+      "sha256": "2a9cac8c0c8a680511b69829388de20713a2b7637eb51bd5d4965ac9faec57e7"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/tcp.h",
+      "bytes": 7404,
+      "sha256": "33d29e1884e66d43fd0ba5962c0e061e2b926ce9ad193f47b3ffa2dcc327812c"
+    },
+    {
+      "path": "src/language/php/port/network/include/netinet/udp.h",
+      "bytes": 1109,
+      "sha256": "8661534a3b3630515cf369e9229d2fb260f6867ff49a2818aaa38e6c79aa6133"
+    },
+    {
+      "path": "src/language/php/port/network/include/pwd.h",
+      "bytes": 4968,
+      "sha256": "58b6060067337ce40a7892da89893d9215cf95d45c78be5ecc664459774c44da"
+    },
+    {
+      "path": "src/language/php/port/network/include/sys/un.h",
+      "bytes": 2300,
+      "sha256": "381285c7e6aa48bf2f4a4b266f4501775a2c638f5e39343c72f5ca8a280e2bfd"
+    },
+    {
+      "path": "src/language/php/port/network/include/uwvm_network.h",
+      "bytes": 9618,
+      "sha256": "dd458da0b795798c3eb0133f81573e4850c9f5a22c73d01312fe07fa02a559b5"
+    },
+    {
+      "path": "src/language/php/port/network/include/uwvm_syslog_constants.h",
+      "bytes": 3069,
+      "sha256": "3b68f930542059defb3facaad83a6211e3fedf1e6c1d404466df8964b9a1b2f6"
+    },
+    {
+      "path": "src/language/php/port/network/source/htonl.c",
+      "bytes": 832,
+      "sha256": "cd4aa66e3436a735b3cfd91f1cc887d97294d63446074079715c32ade60e16ca"
+    },
+    {
+      "path": "src/language/php/port/network/source/htons.c",
+      "bytes": 832,
+      "sha256": "d40668b2584ee88ed3c00be370187801fe3eccb2a0b192734feddb66d9e54e4e"
+    },
+    {
+      "path": "src/language/php/port/network/source/inet_addr.c",
+      "bytes": 1309,
+      "sha256": "ed08b639ca6d547a14be5f83e4705d577f9bdeb173db7f39feeae72c35c717b6"
+    },
+    {
+      "path": "src/language/php/port/network/source/inet_aton.c",
+      "bytes": 2076,
+      "sha256": "66771669d7ebb72323b29741d98eda648de7668e5856c63306f6c50ed5f1f3f6"
+    },
+    {
+      "path": "src/language/php/port/network/source/inet_ntoa.c",
+      "bytes": 898,
+      "sha256": "e4a9c6b4901995613997744be2f7501cae83441a431bbf8b0e9db368e07de92a"
+    },
+    {
+      "path": "src/language/php/port/network/source/inet_ntop.c",
+      "bytes": 3204,
+      "sha256": "5c5796cad132bcd23c5eb1b86ab45467b3535046d823caace60efc99082e5dbc"
+    },
+    {
+      "path": "src/language/php/port/network/source/inet_pton.c",
+      "bytes": 3242,
+      "sha256": "943a87a2aa3bd3b88c4b7cc54dc99419ad2618dbf5fda49f24dfe5ecde9c883a"
+    },
+    {
+      "path": "src/language/php/port/network/source/loader_unavailable.c",
+      "bytes": 2733,
+      "sha256": "5dca76874e8f56895dfa867d3a1300aaa5edde9984c5490fd386d4df7f3d1934"
+    },
+    {
+      "path": "src/language/php/port/network/source/ntohl.c",
+      "bytes": 832,
+      "sha256": "eaffea3a038917e9ab4e1581927eb0c1beb335746c441540204efc5bba6cf026"
+    },
+    {
+      "path": "src/language/php/port/network/source/ntohs.c",
+      "bytes": 832,
+      "sha256": "2355aa332ca2ec768bac4335ad469f1d16e02c8371652b3a05b32dbb060c49c7"
+    },
+    {
+      "path": "src/language/php/port/network/source/os_unavailable.c",
+      "bytes": 7871,
+      "sha256": "1db584004a8a31305994bb20b7a6b062afa59deb32b834fd44fa456bc7b38803"
+    },
+    {
+      "path": "src/language/php/port/network/source/unavailable.c",
+      "bytes": 12723,
+      "sha256": "a214512341786e37a5ab41317572e969e00cf42661d1893ec72dd7cc511fe772"
+    },
+    {
+      "path": "src/language/ruby/command.c",
+      "bytes": 6657,
+      "sha256": "62d05da8f567033ffe8eb446f778856d5d2193126af61c7ec78f71db28efa64e"
+    },
+    {
+      "path": "src/language/ruby/port.json",
+      "bytes": 1768,
+      "sha256": "c6c3608f1d3efe80f0b137d7499a5296b94946dbcef76980f2632e367fe299c0"
+    },
+    {
+      "path": "tools/language/ruby/generate_abi.py",
+      "bytes": 10261,
+      "sha256": "3cf438a4b88ccbda081993e9d7d07e0bc123ebc58bfb70eb51afa73c41d25b10"
+    }
+  ]
+}

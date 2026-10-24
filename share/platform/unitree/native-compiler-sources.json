@@ -1,0 +1,72 @@
+{
+    "format": "uwvm-native-language-compiler-sources-v1",
+    "host": "linux-x86_64",
+    "status": "Original source closures retained; actual qualification is recorded separately in native-source-qualification.json.",
+    "distribution_frontends": [
+        {
+            "language": "d",
+            "compiler": "LDC 1.41.0 / DMD 2.111.0",
+            "original_backend": "LLVM 19.1.7",
+            "binary_package": "ldc",
+            "binary_version": "1:1.41.0-1ubuntu1",
+            "source_package": "ldc",
+            "source_version": "1:1.41.0-1ubuntu1",
+            "original_file": "/usr/bin/ldc2",
+            "sha256": "d058264cfff73033599701d2322ff86a153c9f4cb5d738f3cc2bdfcaa22ceb37",
+            "closure": "All original D include sources and transitive native ELF libraries/loader are retained; the SDK's generated configuration removes host search paths."
+        },
+        {
+            "language": "nim",
+            "compiler": "Nim 2.2.4",
+            "binary_package": "nim",
+            "binary_version": "2.2.4-2",
+            "source_package": "nim",
+            "source_version": "2.2.4-2",
+            "original_file": "/usr/bin/nim",
+            "sha256": "b3ed03d23690e8f2139e0c77f7b88e341908fbb6287ac5d00e517f579df668b3",
+            "closure": "The complete original Nim library source tree, transitive native ELF libraries and loader are retained. Genuine generated C is compiled with LLVM 23."
+        }
+    ],
+    "archives": [
+        {
+            "language": "zig",
+            "version": "0.14.1",
+            "url": "https://ziglang.org/download/0.14.1/zig-x86_64-linux-0.14.1.tar.xz",
+            "file": "agibot/tooling/zig.tar.xz",
+            "sha256": "24aeeec8af16c381934a6cd7d95c807a8cb2cf7df9fa40d359aa884195c4716c",
+            "tested_backend": "Genuine Zig wasm32-freestanding object backend; LLVM 23 C adapter and final WASI link"
+        },
+        {
+            "language": "odin",
+            "version": "dev-2025-10-05",
+            "release": "https://github.com/odin-lang/Odin/releases/tag/dev-2025-10",
+            "file": "agibot/tooling/odin-linux-amd64-dev-2025-10-05.tar.gz",
+            "sha256": "f1387c4d95545ffa5b60bf3e3ce72f5ad41b61aeaeabe549af35c9b788baa0bf",
+            "tested_backend": "Original static Odin compiler with its own Wasi wasm32 backend and original base/core/vendor trees; LLVM 23 ABI adapter and final link"
+        },
+        {
+            "language": "swift",
+            "version": "6.4.1",
+            "url": "https://download.swift.org/swift-6.4.1-release/ubuntu2404/swift-6.4.1-RELEASE/swift-6.4.1-RELEASE-ubuntu24.04.tar.gz",
+            "file": "swift-6.4.1-RELEASE-ubuntu24.04.tar.gz",
+            "sha256": "7d246c7114077ad01dba4ad897628446ada4c489d6c7dbcf39ae3f25cbe17e8b",
+            "tested_backend": "Swift Embedded wasm32-unknown-none-wasm; LLVM 23 C adapter and final link"
+        },
+        {
+            "language": "haskell",
+            "version": "9.14.1.20260731",
+            "url": "https://github.com/haskell-wasm/ghc-wasm-bindists/releases/download/20260731T193144/wasm32-wasi-ghc-9.14.tar.xz",
+            "file": "wasm32-wasi-ghc-9.14.tar.xz",
+            "sha256": "b7dcc471472e56635c8624e4efa90b21b2491aa0277458a2dd113e04cef703a5",
+            "tested_backend": "GHC native WASI code generator; LLVM 23 assembler, C stubs and final link"
+        },
+        {
+            "language": "haskell",
+            "component": "libffi-wasm",
+            "url": "https://github.com/haskell-wasm/ghc-wasm-bindists/releases/download/20250310T060803/libffi-wasm",
+            "file": "libffi-wasm.zip",
+            "sha256": "526f4672ef732a5d29cc560bdd19809f2149a3338f295a2ad4d9d4da38a5234b"
+        }
+    ],
+    "components": []
+}

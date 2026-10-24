@@ -1,0 +1,152 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "platform": "abb",
+  "version": "complete",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "catalogs": {
+    "ros1": "share/platform/abb/catalogs/ros1/catalog.preparation.json",
+    "ros2": "share/platform/abb/catalogs/ros2/catalog.preparation.json"
+  },
+  "source_ir": "share/platform/abb/records-ir.json",
+  "requested_targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "exceptions"
+  ],
+  "vendor_options": {
+    "version": {
+      "allowed": [
+        "complete"
+      ],
+      "meaning": "exact locked interface catalog, never controller firmware"
+    },
+    "model": {
+      "default": "operator-supplied",
+      "meaning": "actual controller model and joint/group layout; no implicit hardware selection"
+    },
+    "transport": {
+      "allowed": [
+        "native-ros"
+      ],
+      "meaning": "installed uwvm2-ros and independently bound native registry"
+    },
+    "backend": {
+      "allowed": [
+        "ros1",
+        "ros2"
+      ]
+    },
+    "distribution": {
+      "ros1": [
+        "melodic",
+        "noetic"
+      ],
+      "ros2": [
+        "humble",
+        "jazzy"
+      ]
+    },
+    "permissions": {
+      "default": [],
+      "configuration": "operator-owned run configuration only"
+    }
+  },
+  "scenarios": {
+    "read_speed": {
+      "type": "abb_robot_msgs/srv/GetSpeedRatio",
+      "operation": "service_call",
+      "controller_success": "result_code == 1 and speed_ratio <= 100"
+    },
+    "read_io": {
+      "type": "abb_robot_msgs/srv/GetIOSignal",
+      "operation": "service_call",
+      "controller_success": "result_code == 1"
+    },
+    "system_state": {
+      "type": "abb_robot_msgs/msg/SystemState",
+      "operation": "topic_subscribe + event_poll"
+    }
+  },
+  "qualification": {
+    "source": "prepared",
+    "all_languages_executed": false,
+    "memory64_executed": false,
+    "controller_hardware_executed": false
+  },
+  "shared_provider_requirement": "The central catalog provider must consume this full descriptor and delegate each language to its single shared adapter.",
+  "industrial_source_extension_version": 1,
+  "api_version": 1,
+  "id": "abb",
+  "module": "tools/platform/abb/provider.lua",
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "melodic",
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "humble",
+        "jazzy"
+      ]
+    }
+  },
+  "industrial_target_contract": {
+    "wasi": "preview1",
+    "threads": false,
+    "exceptions": "explicit shared toolchain profile",
+    "wasm_core": "3.0"
+  },
+  "options": {
+    "catalog": {
+      "required": true,
+      "default": "complete",
+      "values": [
+        "complete"
+      ]
+    },
+    "transport": {
+      "required": true,
+      "default": "native-ros",
+      "values": [
+        "native-ros"
+      ]
+    }
+  },
+  "scenarios_restricted": false
+}

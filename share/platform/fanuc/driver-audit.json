@@ -1,0 +1,1177 @@
+{
+  "repository": "FANUC-CORPORATION/fanuc_driver",
+  "revision": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+  "archive_sha256": "14dca6fbd1577aacbd8ebdeafe392302cc867acd464d0656699cb95a3b0217d9",
+  "archive_url": "https://codeload.github.com/FANUC-CORPORATION/fanuc_driver/tar.gz/da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+  "audited_text_files": [
+    {
+      "path": ".clang-format",
+      "sha256": "452112d9597569597b97a1fbb295e5f82e67c5d76b9cced0839e918ed2aeb1d7",
+      "bytes": 2054
+    },
+    {
+      "path": ".clang-tidy",
+      "sha256": "f96009ec8e8c4a6c578537918ab3c9e3dd22c2ca14c9ba801c96348475fa8572",
+      "bytes": 2316
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "sha256": "f9c45fd5c5ee1b042d4a1f55d54c5d076072abdbef9abc37acc431765f082f3a",
+      "bytes": 1321
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "sha256": "1a9834d761dab656ed427d2328aa2a0cd3e93eb668ba02856e0e4f69f7b924d9",
+      "bytes": 788
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "sha256": "77f034d859397654d3219cbbbe352bccb944686f39739911d6dd18fb46842206",
+      "bytes": 296
+    },
+    {
+      "path": ".github/workflows/ci.yaml",
+      "sha256": "1b2aa423694a3d1518bd557281e60e4d9153dab13ada86a7ca9cc2d7ca35699f",
+      "bytes": 2306
+    },
+    {
+      "path": ".github/workflows/pre-commit.yaml",
+      "sha256": "622569f37d36f1ded346a1c242e63d04f0b4b204efb8bdfeefcf3243da5b4651",
+      "bytes": 268
+    },
+    {
+      "path": ".github/workflows/sync_main_jazzy.yaml",
+      "sha256": "065d443634b2872aa432a0844b00c6a31fa763caa2c2d19c89cf9798188b0622",
+      "bytes": 354
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "f29071375b3f1cb6b17697c42ea442dd72e64aceeec25709bf3729c013289cca",
+      "bytes": 90
+    },
+    {
+      "path": ".gitmodules",
+      "sha256": "7c50ce770dc2b651d69679f5acf9f13609297f6e8c04312741c43917e4593a93",
+      "bytes": 573
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "sha256": "dcbbb6f17e1ccd5fce44c169da75da38812c6c48a88a425165daffe5f8705dcf",
+      "bytes": 1542
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "3ad3d7173f343c55bbf935c90454fb66b2f25077c4bf0873b69d31ba3aed5364",
+      "bytes": 191
+    },
+    {
+      "path": "LICENSES/Apache-2.0.txt",
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "bytes": 10280
+    },
+    {
+      "path": "LICENSES/BSD-2-Clause.txt",
+      "sha256": "017b5ee48f680e82cba79141c7895a1f02b856df2512225f5c427fe36765ef0b",
+      "bytes": 1266
+    },
+    {
+      "path": "LICENSES/BSD-3-Clause.txt",
+      "sha256": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+      "bytes": 1459
+    },
+    {
+      "path": "LICENSES/MIT.txt",
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "bytes": 1078
+    },
+    {
+      "path": "README.md",
+      "sha256": "3902ebff08b718ffe8b7fb80feae1ef1c46841033e5b6735971998b71ecdbb9c",
+      "bytes": 2239
+    },
+    {
+      "path": "fanuc_controllers/CMakeLists.txt",
+      "sha256": "a83d4f6616c877ee529eb649ebf22db49105c6cc2d302c27e875ed3f2a1e7985",
+      "bytes": 4725
+    },
+    {
+      "path": "fanuc_controllers/fanuc_force_sensor_broadcaster_plugins.xml",
+      "sha256": "31a478d68b3d0627e6adfc9bc896c9d26d1a4d247b8ad777de0a0d2d4021ab36",
+      "bytes": 548
+    },
+    {
+      "path": "fanuc_controllers/fanuc_gpio_controller_plugins.xml",
+      "sha256": "4601a9e60cf4344306249ddaeb5a3be270030d826faf3eaf53a77b1359d5a15c",
+      "bytes": 532
+    },
+    {
+      "path": "fanuc_controllers/fanuc_rmi_controller_plugins.xml",
+      "sha256": "d1e5df059a03519f016a6e548aa186eec3b31d225c028bb6b9f9a1a9fe1ab9b7",
+      "bytes": 492
+    },
+    {
+      "path": "fanuc_controllers/include/fanuc_controllers/fanuc_force_sensor_broadcaster.hpp",
+      "sha256": "9da8f21441577cb5346114477739f501a92663fa04fa1ca7d7eb64e17acf0572",
+      "bytes": 2178
+    },
+    {
+      "path": "fanuc_controllers/include/fanuc_controllers/fanuc_gpio_controller.hpp",
+      "sha256": "fad86f1c9acb6da0deeddd2b04d7783fd9016e12611dd5b562e943d8ac308fbd",
+      "bytes": 9071
+    },
+    {
+      "path": "fanuc_controllers/include/fanuc_controllers/fanuc_rmi_controller.hpp",
+      "sha256": "6538425f5db87d2b56b58d12ae5f088386f2115356b67cc1406d690d5fb30d96",
+      "bytes": 3165
+    },
+    {
+      "path": "fanuc_controllers/include/fanuc_controllers/scaled_joint_trajectory_controller.hpp",
+      "sha256": "45ae052bef6b7c6a8eff9e86342f9a182404ea59be13160f0afe72fc89eb14cc",
+      "bytes": 1922
+    },
+    {
+      "path": "fanuc_controllers/package.xml",
+      "sha256": "975b392912cebb67c0797a5442f3554a1fe5d5b18a712d27e03904d609724c78",
+      "bytes": 1293
+    },
+    {
+      "path": "fanuc_controllers/scaled_joint_trajectory_controller_plugins.xml",
+      "sha256": "8665c395412662ef559bbc59434024bac33579834ec245dca544a0f005dcf00d",
+      "bytes": 628
+    },
+    {
+      "path": "fanuc_controllers/src/fanuc_force_sensor_broadcaster.cpp",
+      "sha256": "a3fe497c851577cbec855fc535972c9abbf68369b67d5b6e912a001b7b66c52f",
+      "bytes": 5798
+    },
+    {
+      "path": "fanuc_controllers/src/fanuc_gpio_controller.cpp",
+      "sha256": "48539d407b73c341f587570f93e047de4c05b199a577695d408658362d625f95",
+      "bytes": 61183
+    },
+    {
+      "path": "fanuc_controllers/src/fanuc_rmi_controller.cpp",
+      "sha256": "2b41a2da091c11fd894011cee043924e34d3d153602416bad0421bb90d207aec",
+      "bytes": 24206
+    },
+    {
+      "path": "fanuc_controllers/src/scaled_joint_trajectory_controller.cpp",
+      "sha256": "b18b199f1fd1e848eec1b5d0cc7e2a9e6afbaa53313f943f79a2ba52c8e8025f",
+      "bytes": 17153
+    },
+    {
+      "path": "fanuc_controllers/test/CMakeLists.txt",
+      "sha256": "441979544a8e735b0dbf67c8fbdb56b099d4a940484d39a3a491fbe52eba2991",
+      "bytes": 497
+    },
+    {
+      "path": "fanuc_controllers/test/fanuc_gpio_controller_test.cpp",
+      "sha256": "308cd86620d64d63e859093a12eb6d67d12242a4da2c07bf7b96a9189f08f480",
+      "bytes": 9269
+    },
+    {
+      "path": "fanuc_controllers/test/test_config.yaml",
+      "sha256": "551c9a0cbc1ce46a9982afcea7e27ba22fa61136feb6b19871d444ea055d59ba",
+      "bytes": 410
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/CMakeLists.txt",
+      "sha256": "17b6c046e9ae22709f242f100e58c559723b59b44cf1379718851f03924c731f",
+      "bytes": 603
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/README.md",
+      "sha256": "b65e7e4d30c43c28d8ec8a72acaa6a0d97833504925423ef0b529383f4745b80",
+      "bytes": 1635
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/config/joint_limits.yaml",
+      "sha256": "05332dd9545b3faa4bef2efc9edbbb76519bf2e213d8ed902732128bd66a2d75",
+      "bytes": 1808
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/config/kinematics.yaml",
+      "sha256": "26462a6b0c1caa306e6377701aa8027d35616f95e937e0f7f7dc5ad60aa0b040",
+      "bytes": 512
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/config/moveit_controllers.yaml",
+      "sha256": "96c204e9c3ce663844e469159f5560c1df700e359feea310ab62ac7eb6e6de64",
+      "bytes": 573
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/fanuc_dual_arm_example/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/launch/fanuc_moveit.launch.py",
+      "sha256": "a342ef9053ac15e9445a3211cc0d597682372510554f9f01f93687cace56c6ca",
+      "bytes": 16257
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/package.xml",
+      "sha256": "6f1dcfba87faf2a4129416694f5aaf6ad3adee172394a1f13cf47769192b4e27",
+      "bytes": 1397
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/scripts/joint_state_merger.py",
+      "sha256": "562c2052daee67af5e634d0ea1dcbe0cd366d6098380c1f3d5c90d3b6b8b8655",
+      "bytes": 1532
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/srdf/dual_arm.srdf",
+      "sha256": "f44c3b5416d13ae7b84d744f2911fed13393f82be6ee59c4e5fd01a67fb53892",
+      "bytes": 5796
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/urdf/dual_arm.urdf.xacro",
+      "sha256": "36689405ca276d6c29bbf9d5d8785df0e14f108672540892c9d75bb244c43602",
+      "bytes": 721
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/CMakeLists.txt",
+      "sha256": "ca7ebd5d2e1fcd5f40cf38ba89ec9d9d2aad4ed67a136b2ab17cb6809cbbde14",
+      "bytes": 544
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/README.md",
+      "sha256": "35c082b50d6c99220d36e2aee2982a164d3dfea2fba2526acf782d36cf959e2d",
+      "bytes": 3763
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/gpio_topic_config.yaml",
+      "sha256": "acf3295d3aa703c84c9d79b030e3980fd69a439b36ef8f0f91a6e3d22c2b07dc",
+      "bytes": 202
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/moveit_controllers.yaml",
+      "sha256": "43c2cf0f4eecd26a139640666d224b50cb676ec2ea51d98eec6b614ff2770298",
+      "bytes": 457
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/moveit_py.yaml",
+      "sha256": "ef637f73d3c38bbbcd690d31901bcedd7c021af8efddfa8799e15797c2b6b3ff",
+      "bytes": 1748
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/ompl_planning.yaml",
+      "sha256": "5f80fef9848c61e7e9e8b1ed3aa9babc25bb947748d18779ec3054b8b26825f7",
+      "bytes": 1730
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/pick_and_place.yaml",
+      "sha256": "d07672dbaab61028f6ed67377bfa249ffce9eadae4ef31cbdc5ab4b5cf5e865d",
+      "bytes": 6392
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/pilz_cartesian_limits.yaml",
+      "sha256": "d4d95c6272f8e680e6db49c4db32bd99cfe0ab30eb8a98a95fc3581f80cd3302",
+      "bytes": 145
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/ros2_controllers.yaml",
+      "sha256": "5cf8fc8b003b8d083cc402cbef407aa90847522f2398837eeafa979379ca7d5d",
+      "bytes": 1094
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/fanuc_pick_and_place_example/__init__.py",
+      "sha256": "60011ddca4b785de3702523c6fce620a932dc26009a20738a272236d35c521c2",
+      "bytes": 146
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/launch/fanuc_pick_and_place_example.launch.py",
+      "sha256": "05c7569463c7f7949b1660a01981908cd1fe62701218994fcbf130b6d22d05f6",
+      "bytes": 17333
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/package.xml",
+      "sha256": "4793e3721c9c73300e09780905b66b9b035540c431b951e7f19c3dec0cb180d4",
+      "bytes": 2076
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/rviz/pick_and_place.rviz",
+      "sha256": "cbcc5098d21df8903c6bc21dc41c531b839a47ed90eb186d33ca43630a374bc4",
+      "bytes": 7583
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/scripts/fanuc_pick_and_place_example.py",
+      "sha256": "30c3b7ed75e8be2f1ad6c5763120210af847230156b3af80bb241962d5937edf",
+      "bytes": 123330
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/CMakeLists.txt",
+      "sha256": "dfb2a69b258d54670610b539aa66857e6825426faf46cf4dbe10e6dd67c42bd0",
+      "bytes": 467
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/README.md",
+      "sha256": "d2693360a2cb7f8276af2d0c6951b072c29b72d51a13413b816107463f30d345",
+      "bytes": 1061
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/fanuc_rmi_controller_example/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/package.xml",
+      "sha256": "3b62813a9d06f7b4af2387d77bb21c1a667db7f831b489b763a2f7052d5aea39",
+      "bytes": 1072
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/scripts/rmi_example.py",
+      "sha256": "af2eb21424669f8995bf203ec6b4cc8c4c805a8c1a75e94fba2a7f22a6941588",
+      "bytes": 22144
+    },
+    {
+      "path": "fanuc_forward_command/CMakeLists.txt",
+      "sha256": "01fa1d79ba8fb6443a3235f916de7e22ae33ea4656f391dde79e6aa40a785b18",
+      "bytes": 988
+    },
+    {
+      "path": "fanuc_forward_command/README.md",
+      "sha256": "71036029ff1893b26bfefac3809eb9a360475f63c1ebcac0e299401674241979",
+      "bytes": 2611
+    },
+    {
+      "path": "fanuc_forward_command/launch/fanuc_forward_command.launch.py",
+      "sha256": "c1c62998f9abc15cd9d0a41d045202dba85c8c30ff066b155a325cd29cb1b0e6",
+      "bytes": 7083
+    },
+    {
+      "path": "fanuc_forward_command/launch/fanuc_sine_wave_demo.launch.py",
+      "sha256": "d1307b90cc8bccf740a7083ee08204605a81bf277fe98532abce581a3ae3565b",
+      "bytes": 2937
+    },
+    {
+      "path": "fanuc_forward_command/package.xml",
+      "sha256": "45c79f0b44ca7b0049d8f6c1866449396498464296da5b2f1051df7c2143eca4",
+      "bytes": 1113
+    },
+    {
+      "path": "fanuc_forward_command/scripts/sine_wave_publisher.py",
+      "sha256": "e50f8eab61a6625c6693ffb683739ba09b55da3b3ce4d7894733d6e1f0efc89d",
+      "bytes": 3502
+    },
+    {
+      "path": "fanuc_hardware_interface/CMakeLists.txt",
+      "sha256": "2feb75b8e3bcb96ecbc2c514a529b8e985b1a6b9edf119c2e9e59e6bedb7c70d",
+      "bytes": 2499
+    },
+    {
+      "path": "fanuc_hardware_interface/config/6dof_robot_mock_ros2_control_macro.xacro",
+      "sha256": "730e2e66cbdf4cc2c33f07cd2b8892a1832905483b356fb4e2b30dbe06d48161",
+      "bytes": 7220
+    },
+    {
+      "path": "fanuc_hardware_interface/config/6dof_robot_physical_ros2_control_macro.xacro",
+      "sha256": "03565dfcaa79699d3e0df9f0be9cb788054778367fa9fe87567311fd03798ef1",
+      "bytes": 2012
+    },
+    {
+      "path": "fanuc_hardware_interface/config/crx_mock_ros2_control_macro.xacro",
+      "sha256": "211fd39bc4612631ece92bf30de6408d87b104204d2b63227bb3f0798b42b197",
+      "bytes": 7218
+    },
+    {
+      "path": "fanuc_hardware_interface/config/crx_physical_ros2_control_macro.xacro",
+      "sha256": "2af2a82c16486a1bb72ef02f7cb86919455b338df2c37d09896529082c0ced0e",
+      "bytes": 2003
+    },
+    {
+      "path": "fanuc_hardware_interface/config/example_gpio_config.yaml",
+      "sha256": "2753311cb6f1bf71e408660615cc8ab7753ce843304d45f26e32664b58fc2063",
+      "bytes": 512
+    },
+    {
+      "path": "fanuc_hardware_interface/config/example_gpio_config_small.yaml",
+      "sha256": "f38a763e497dae47ac1672e13b359635d244e46055ce9a36c182d8f852fe944e",
+      "bytes": 225
+    },
+    {
+      "path": "fanuc_hardware_interface/config/example_ros2_controllers.yaml",
+      "sha256": "b88327f9a8792a006d4d60f331ed6309697ffab6e1bb22351e36f38a1b98b67f",
+      "bytes": 2197
+    },
+    {
+      "path": "fanuc_hardware_interface/config/ros2_controllers.yaml",
+      "sha256": "c72cae62ff9db942ee6fc5298f48c0b11e44ecba59e69717321922cddd4857df",
+      "bytes": 2195
+    },
+    {
+      "path": "fanuc_hardware_interface/examples/send_trajectory.py",
+      "sha256": "622d2c41f07f061391c868cb34f8d493b1ebbcae360345bd821063a932ea3380",
+      "bytes": 2607
+    },
+    {
+      "path": "fanuc_hardware_interface/hardware_interface_plugin.xml",
+      "sha256": "8229894e8d9266a1f5a1c7b2c31619d74ba43f212d87ef3c49e2471a69153e13",
+      "bytes": 473
+    },
+    {
+      "path": "fanuc_hardware_interface/include/fanuc_robot_driver/constants.hpp",
+      "sha256": "8199cca3222bd67f175ba70679ab42f57374934a8f506186dc6d9ba06c54a993",
+      "bytes": 1429
+    },
+    {
+      "path": "fanuc_hardware_interface/include/fanuc_robot_driver/hardware_interface.hpp",
+      "sha256": "610a8596a1817c6322c5014944fbc0570dcbd9213e3598e78e8adfc39be873f9",
+      "bytes": 4303
+    },
+    {
+      "path": "fanuc_hardware_interface/launch/fanuc_mock_control.launch.py",
+      "sha256": "34ea177e6e1495bed63806b6f7e9263fe92f6c808da015b5a7054da26f84cbd8",
+      "bytes": 8599
+    },
+    {
+      "path": "fanuc_hardware_interface/launch/fanuc_physical_control.launch.py",
+      "sha256": "3161415aef1c369cca72f873117f77855035b685efbff380b70268037fbc53a6",
+      "bytes": 11589
+    },
+    {
+      "path": "fanuc_hardware_interface/package.xml",
+      "sha256": "4b6ee4942b0ba80ef8e5484f8053eb2b5ba18491fbda14ce0ec8648f30bd94f5",
+      "bytes": 971
+    },
+    {
+      "path": "fanuc_hardware_interface/robot/6dof_robot.urdf.xacro",
+      "sha256": "52d107401e3c011e37eb39aeed29e2c315cd6de71abd0e50dcbf88d58440b72d",
+      "bytes": 1889
+    },
+    {
+      "path": "fanuc_hardware_interface/robot/crx10ia.urdf.xacro",
+      "sha256": "3d7aa551768c19f6f99b565ccbfc5199bd3b5be866efc5dcc27e2e4bbac380c6",
+      "bytes": 1589
+    },
+    {
+      "path": "fanuc_hardware_interface/robot/crx10ia_l.urdf.xacro",
+      "sha256": "5d987037edde109831150fb8134c59786f7f0743dfaab2af8d35b2acf08dd658",
+      "bytes": 1598
+    },
+    {
+      "path": "fanuc_hardware_interface/robot/crx20ia_l.urdf.xacro",
+      "sha256": "4744a6b01fa67e61ffa38144257191886463d627ef4557ada91d26581719939d",
+      "bytes": 1599
+    },
+    {
+      "path": "fanuc_hardware_interface/robot/crx30ia.urdf.xacro",
+      "sha256": "a6ace2cbe8280c427fd0036e04a0bd152b36bd1ba0b04500ec95a7d1122c2194",
+      "bytes": 1589
+    },
+    {
+      "path": "fanuc_hardware_interface/robot/crx3ia.urdf.xacro",
+      "sha256": "336abf341e733ec379caec55ef376925a72177293126dba6ab7a4096d4da492f",
+      "bytes": 1583
+    },
+    {
+      "path": "fanuc_hardware_interface/robot/crx5ia.urdf.xacro",
+      "sha256": "1d773969b2f5ed42c683078ec58b3563288263a7e491426049393137ad56b383",
+      "bytes": 1583
+    },
+    {
+      "path": "fanuc_hardware_interface/src/hardware_interface.cpp",
+      "sha256": "16c7f50e640f37afb0e5c14aec565907ce236367c7ec8d0ab91d96a6de5dfc99",
+      "bytes": 29556
+    },
+    {
+      "path": "fanuc_libs/CMakeLists.txt",
+      "sha256": "399e7c5b8db7bab2748c13e74814c66416eeee864617b56e531a51f36542bb86",
+      "bytes": 4262
+    },
+    {
+      "path": "fanuc_libs/README.md",
+      "sha256": "9b9abae24d55b1ec38ae8b13576eb92fb17d6e3df712bb43f4f7af805093ed9e",
+      "bytes": 1967
+    },
+    {
+      "path": "fanuc_libs/dependencies/apply_patch.bash",
+      "sha256": "ba8e4af0a51307f146614ab77a60f6e89fbf968bff982688b02b46d96cf8f310",
+      "bytes": 77
+    },
+    {
+      "path": "fanuc_libs/dependencies/readerwriterqueue.patch",
+      "sha256": "8ec1935dfe1a35f5287d85753c244a8283222dc2b4ce40bca841f4793cf1f270",
+      "bytes": 1633
+    },
+    {
+      "path": "fanuc_libs/dependencies/reflectcpp.patch",
+      "sha256": "46551928cc709c44b8d70d8b4d013a890e3019c3e9b13ade5cc9f08fe90fcd5e",
+      "bytes": 341
+    },
+    {
+      "path": "fanuc_libs/dependencies/sockpp.patch",
+      "sha256": "253b4efbbc9e5ca7c35309c23cfb701517a489422077e5eece89761d9d4388d1",
+      "bytes": 1163
+    },
+    {
+      "path": "fanuc_libs/examples/CMakeLists.txt",
+      "sha256": "c7f51ab813d99d8a84f9567fec42ae7e5995201529a74f94177263a0f1e8238d",
+      "bytes": 533
+    },
+    {
+      "path": "fanuc_libs/examples/fanuc_client_example.cpp",
+      "sha256": "ccecb3e5688bb0ac4c82090f70fa410c6d80d3c4803ba4584f8f4eadb8871d4b",
+      "bytes": 2756
+    },
+    {
+      "path": "fanuc_libs/examples/rmi_connection_example.cpp",
+      "sha256": "9cf386a0fb427f85365ae008b5df55a2fca9524e7af2a5cb00ce08e098d4299a",
+      "bytes": 4849
+    },
+    {
+      "path": "fanuc_libs/examples/stream_motion_example.cpp",
+      "sha256": "86c976bdfc4d21b4b07517d8576f2c03797e2c5c73f1dc7254843cb6c976ad38",
+      "bytes": 5246
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/CMakeLists.txt",
+      "sha256": "df9582474dd65aff95406dd41376d2b391f9a4fbfea792e93dc5d108847ddeb0",
+      "bytes": 803
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/include/fanuc_client/fanuc_client.hpp",
+      "sha256": "a1c173a9fc4ab0c254164aeec0cd4b208195f0963339846a76b818141aa5ea5c",
+      "bytes": 6573
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/include/fanuc_client/gpio_buffer.hpp",
+      "sha256": "29440fbeddf884a38aa4bdcb6873655cf5318292118541d4f360925d0e1580b6",
+      "bytes": 5232
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/src/fanuc_client.cpp",
+      "sha256": "deafc71e37afb328877cd55b30f8ec7fa77ffac54e2ca06460ff1a335e581576",
+      "bytes": 25234
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/src/gpio_buffer.cpp",
+      "sha256": "9f930a385ac25a723843d78625d2e064ae0e10f726acbf9488e67c36f1536d8a",
+      "bytes": 12377
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/src/rmi_singleton.cpp",
+      "sha256": "c0e3f872a024f672b1aa62977b8c7c07e30a295b6f2de53336dca3963ea2458a",
+      "bytes": 1706
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/test/CMakeLists.txt",
+      "sha256": "8fa121cd774c1d6aa6ac8b556968b5d5a8b8af5770451579dd03d06b1d5430e8",
+      "bytes": 534
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/test/fanuc_client_test.cpp",
+      "sha256": "e5c845ea0854e9a850853c9e75c02212fb41ed274d85e45f5bdb69649573764e",
+      "bytes": 16939
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/test/gpio_buffer_test.cpp",
+      "sha256": "4cf5300ac4c59387e4e1244cd00acbff87f83240d4f4c7527c274de4d935d70e",
+      "bytes": 10831
+    },
+    {
+      "path": "fanuc_libs/fanuc_libsConfig.cmake.in",
+      "sha256": "499da08d3900fb66ef9bc07c602117c39363dfe21a52b6664c91e7f83f5cb42e",
+      "bytes": 108
+    },
+    {
+      "path": "fanuc_libs/gpio_config/CMakeLists.txt",
+      "sha256": "1c98ed39f4fe8583920a13445bf8178846509de6659167033be86ceccd944a9e",
+      "bytes": 578
+    },
+    {
+      "path": "fanuc_libs/gpio_config/include/gpio_config/gpio_config.hpp",
+      "sha256": "dee08f696d91bc29566163c0944dfd8ae93461c21b02c0410d6d0692b1063662",
+      "bytes": 1604
+    },
+    {
+      "path": "fanuc_libs/gpio_config/src/gpio_config.cpp",
+      "sha256": "60413a601e1a00c23a4cca4e519a32b7d0213a9da8b1d67444f9ee1d63dba79e",
+      "bytes": 689
+    },
+    {
+      "path": "fanuc_libs/gpio_config/test/CMakeLists.txt",
+      "sha256": "df56b1e7447b98d4107fbf07e0a6b6b6462727e5dbeec5223a695741a5879406",
+      "bytes": 443
+    },
+    {
+      "path": "fanuc_libs/gpio_config/test/data/bad_config.yaml",
+      "sha256": "d17f745d0125b0436032985565ddce56449f3c530a4c8dbad6bc88485a3543b1",
+      "bytes": 14
+    },
+    {
+      "path": "fanuc_libs/gpio_config/test/data/good_config.yaml",
+      "sha256": "3c1d1ac4993d6ae460d1032c796350f7d3f01edcebaaad7083ed9245a8039721",
+      "bytes": 744
+    },
+    {
+      "path": "fanuc_libs/gpio_config/test/gpio_config_test.cpp",
+      "sha256": "601492951bc83e568f964fc753092b939e72bf948b46dcd5a64ba7132c33186e",
+      "bytes": 2076
+    },
+    {
+      "path": "fanuc_libs/package.xml",
+      "sha256": "2e42be36d23d34f6e542b886b73118e3ff3ee7d62955c1e2066b3873e10a8182",
+      "bytes": 872
+    },
+    {
+      "path": "fanuc_libs/rmi/CMakeLists.txt",
+      "sha256": "0f2ceb972bf8a1b7c77925c36d3d2c1837e3563bcd05715e1446822d529f578c",
+      "bytes": 590
+    },
+    {
+      "path": "fanuc_libs/rmi/include/rmi/packets.hpp",
+      "sha256": "63cf741ef2870c974f092c311c664ee49ebe9d23754131c27f1e8286b5e7386a",
+      "bytes": 29991
+    },
+    {
+      "path": "fanuc_libs/rmi/include/rmi/rmi.hpp",
+      "sha256": "b66add9da0b235846a0f54d89250d510ccbf035ef721ce54059c41660da9780f",
+      "bytes": 20966
+    },
+    {
+      "path": "fanuc_libs/rmi/include/rmi/serialization.hpp",
+      "sha256": "fd57dcd3cdcc19b1d05aeaf5fc61ed076227670ad88b93d6479d25c91267487c",
+      "bytes": 489
+    },
+    {
+      "path": "fanuc_libs/rmi/include/rmi/struct.hpp",
+      "sha256": "776ae305f6aae0e1369e21b154621c3c124f278d7e546784cf25b22c1b11a9c5",
+      "bytes": 447
+    },
+    {
+      "path": "fanuc_libs/rmi/src/deserialization.cpp",
+      "sha256": "6fb6cb12b15dcc95c65e4cf9a0202b2b9625a65769b1426052d11f7e8ec506da",
+      "bytes": 8014
+    },
+    {
+      "path": "fanuc_libs/rmi/src/rmi.cpp",
+      "sha256": "4437ef6858d7a983d42b29ad9bec48d4cf9babdd505e2ac2119aea0be40b648a",
+      "bytes": 45642
+    },
+    {
+      "path": "fanuc_libs/rmi/src/serialization.cpp",
+      "sha256": "b9c0ebcc62549f55f7e7ea314a9606a5760a00eb67f8fcc411053fb9a00cebb0",
+      "bytes": 5729
+    },
+    {
+      "path": "fanuc_libs/rmi/test/CMakeLists.txt",
+      "sha256": "6f07e61fdecb5975eb530629be5849a2fd772314336382f53af2c09a0523d939",
+      "bytes": 350
+    },
+    {
+      "path": "fanuc_libs/rmi/test/rmi_test.cpp",
+      "sha256": "53c3b1d6f2441d78560d462e7dd741204aa7b2486dfba7afe3fad141c85374be",
+      "bytes": 1658
+    },
+    {
+      "path": "fanuc_libs/stream_motion/CMakeLists.txt",
+      "sha256": "1dd697e5af4abf2ec1b3003fc332ac5a90856df63af34e5b3c89add953a5cf8f",
+      "bytes": 648
+    },
+    {
+      "path": "fanuc_libs/stream_motion/include/stream_motion/byte_ops.hpp",
+      "sha256": "3fd96048ee25df11f72765efcb94de205b2053042830380f499ae0375026c606",
+      "bytes": 1241
+    },
+    {
+      "path": "fanuc_libs/stream_motion/include/stream_motion/packets.hpp",
+      "sha256": "4e9a39a2cc04de5e959ed0c8cd788d26393f1028063965e36a82ee9c3a589793",
+      "bytes": 6624
+    },
+    {
+      "path": "fanuc_libs/stream_motion/include/stream_motion/stream.hpp",
+      "sha256": "7b30f8710e7900ffec856315a67ec30032859ece522933b34bcf264a066d72c6",
+      "bytes": 5031
+    },
+    {
+      "path": "fanuc_libs/stream_motion/src/byte_ops.cpp",
+      "sha256": "f069cbd710f2a4b670d93a133234288615f2f9a4a2ee5e000d8b2e81c6accd14",
+      "bytes": 451
+    },
+    {
+      "path": "fanuc_libs/stream_motion/src/stream.cpp",
+      "sha256": "ea6fa6b80f64f326455819587cff591bf13cae43424032c829b2517e8b5dd757",
+      "bytes": 20817
+    },
+    {
+      "path": "fanuc_libs/stream_motion/test/CMakeLists.txt",
+      "sha256": "ae6fc0a1ac03c1cd69a276fcd2921a05cecb35a5cdb294aec77b045b50ed5f1c",
+      "bytes": 338
+    },
+    {
+      "path": "fanuc_libs/stream_motion/test/stream_test.cpp",
+      "sha256": "78645270f558e74f4303524b0294c5110c8af4f3b246ff23ec9c64802108032c",
+      "bytes": 16001
+    },
+    {
+      "path": "fanuc_moveit_config/CMakeLists.txt",
+      "sha256": "385e8e1a4b3da0ac977bb581b7ab264499856011616d3d5473a6bebab15f5ed4",
+      "bytes": 1064
+    },
+    {
+      "path": "fanuc_moveit_config/config/initial_positions.yaml",
+      "sha256": "ccbb71259db74bda65a7d3ce59c633711d24c4cd18d2ec2a79e74bcdf2a4a4fd",
+      "bytes": 284
+    },
+    {
+      "path": "fanuc_moveit_config/config/joint_limits.yaml",
+      "sha256": "d6c4ad0d49171222597fa981c9d52999db3b5f78864b1f7249e340224382796c",
+      "bytes": 1323
+    },
+    {
+      "path": "fanuc_moveit_config/config/kinematics.yaml",
+      "sha256": "68f306ef4d6b1c0c511a002a0b59a1b72ba975664377ab5d6b51891ffb311597",
+      "bytes": 337
+    },
+    {
+      "path": "fanuc_moveit_config/config/moveit_controllers.yaml",
+      "sha256": "58e54cbf39843beb6c8798d1810819d938dc0403d77a5fd10f1cf63d5c750cdb",
+      "bytes": 568
+    },
+    {
+      "path": "fanuc_moveit_config/config/ompl_planning.yaml",
+      "sha256": "061053771a3d6cb0377c2cf26fc5bf75cf7ee3caadd6af61517ff82f3c806de2",
+      "bytes": 10129
+    },
+    {
+      "path": "fanuc_moveit_config/config/servo.yaml",
+      "sha256": "0d8882a690e4d21925d45e14b7602494b6f2ee81e13d80272aa9ee12fc7386be",
+      "bytes": 3565
+    },
+    {
+      "path": "fanuc_moveit_config/fanuc_controllers_moveit_trajectory_plugin.xml",
+      "sha256": "775b0a513bd16a8c2f40469d5aeb2e605cf94d870edff93ee155272afe726184",
+      "bytes": 539
+    },
+    {
+      "path": "fanuc_moveit_config/launch/fanuc_moveit.launch.py",
+      "sha256": "e9b1c55d96201a551e03abb733c715a559ec5e83826c8f7a9a7c4530e707caa6",
+      "bytes": 7640
+    },
+    {
+      "path": "fanuc_moveit_config/launch/fanuc_moveit_template.launch.py",
+      "sha256": "2b281e005b0bb20527d8c9c8506b050a5dd839ccd4c02540a08f2071f37eb3aa",
+      "bytes": 7970
+    },
+    {
+      "path": "fanuc_moveit_config/package.xml",
+      "sha256": "de68220569f0a7fe88e4ae5fa418671f0ad78a1f941801973bb5d4e9508cd082",
+      "bytes": 1350
+    },
+    {
+      "path": "fanuc_moveit_config/rviz/view_robot.rviz",
+      "sha256": "37e1044c95588c21edaee5ca401762321704bf083cd22ef93e7d82c202e52131",
+      "bytes": 10263
+    },
+    {
+      "path": "fanuc_moveit_config/src/fanuc_controllers_moveit_trajectory_plugin.cpp",
+      "sha256": "8bde79eeb73435d0f81690d70e7a095ed67e25395dcc6befcf44f2fd3213bba0",
+      "bytes": 1579
+    },
+    {
+      "path": "fanuc_moveit_config/srdf/crx10ia.srdf",
+      "sha256": "1a0357b97216ddcee107d4cb3670d8448ff94abefcfbcbcb96746cfba793bc4e",
+      "bytes": 3646
+    },
+    {
+      "path": "fanuc_moveit_config/srdf/crx10ia_l.srdf",
+      "sha256": "5f5169f57736faf9c56afa833edc2af85349afa37db80e7cb38268ac701822c0",
+      "bytes": 3648
+    },
+    {
+      "path": "fanuc_moveit_config/srdf/crx20ia_l.srdf",
+      "sha256": "ca3fd22f37011a57e9faca4cb06eb7ab04d9f6e5ad5df88d3ce5422266f23f41",
+      "bytes": 3648
+    },
+    {
+      "path": "fanuc_moveit_config/srdf/crx30ia.srdf",
+      "sha256": "ec621f1fb64b1dd286b52ac91642e7146ce1975d7fe5d528124637cbb2848709",
+      "bytes": 3646
+    },
+    {
+      "path": "fanuc_moveit_config/srdf/crx3ia.srdf",
+      "sha256": "5eb2c4918b5878ae83193ad03b30983a6c0d2fe00f1bcac6b07730dc5473248c",
+      "bytes": 3645
+    },
+    {
+      "path": "fanuc_moveit_config/srdf/crx5ia.srdf",
+      "sha256": "4193a6c2ddffa8aa0d4ade1ef8eff47ee75a8918298b533957a0adba9d9c51bf",
+      "bytes": 3645
+    },
+    {
+      "path": "fanuc_msgs/CMakeLists.txt",
+      "sha256": "c2942a672e2fa3ffcd46575d2d823979f7e5dbdd896eda417f1da81d4cafdd0a",
+      "bytes": 1489
+    },
+    {
+      "path": "fanuc_msgs/msg/AnalogIO.msg",
+      "sha256": "8f7cf68549bfcd423021829e894a31c4d960f43a5706c2a6241a73aa12125066",
+      "bytes": 222
+    },
+    {
+      "path": "fanuc_msgs/msg/AnalogIOCmd.msg",
+      "sha256": "d247dcf995453b9e82a2a3180d56e33eb6d886590cdbf7d7cfcfa436053ea56c",
+      "bytes": 200
+    },
+    {
+      "path": "fanuc_msgs/msg/AnalogIOState.msg",
+      "sha256": "b8ca9c77f13c3fd2c5d5a4fa93eab69f672fc611d5fb8182c56ddae0b236c108",
+      "bytes": 206
+    },
+    {
+      "path": "fanuc_msgs/msg/BoolIO.msg",
+      "sha256": "fb621f18381070c83ecd4fee87d84089cb9e880d4b38bd374de11defac918c83",
+      "bytes": 236
+    },
+    {
+      "path": "fanuc_msgs/msg/CollaborativeSpeedScaling.msg",
+      "sha256": "9598b8bd7e8fddcc0d689677f12b37515167076f4473fe98b412484b53cd4ed2",
+      "bytes": 185
+    },
+    {
+      "path": "fanuc_msgs/msg/ConnectionStatus.msg",
+      "sha256": "d4e22ad130ed4d33ad87879835493f35116905b4d925e19902ee403717fd9f93",
+      "bytes": 167
+    },
+    {
+      "path": "fanuc_msgs/msg/ForceSensor.msg",
+      "sha256": "9c1fbfff859e53e1d9e12c8ec7dc6fad4644897dcbecbdd9b880a6a95d880bb3",
+      "bytes": 393
+    },
+    {
+      "path": "fanuc_msgs/msg/Frame.msg",
+      "sha256": "25cbf84ed3bb26abe688f250a6470572b518021e73cc99bf00c4086ca568d193",
+      "bytes": 209
+    },
+    {
+      "path": "fanuc_msgs/msg/IOCmd.msg",
+      "sha256": "8f75500e57b5a369a7e2c3a2ec63843b65765c35f98c317894786bad0e12bcda",
+      "bytes": 208
+    },
+    {
+      "path": "fanuc_msgs/msg/IOState.msg",
+      "sha256": "2b1948a9d31eec5de6f51ca81755d549cfc440180edc4057cd109e1611ac9440",
+      "bytes": 219
+    },
+    {
+      "path": "fanuc_msgs/msg/IOType.msg",
+      "sha256": "87ac9f60b5ce60b2d0f0196d00dfc1723a92277718968aa3a3cc53c515fbc2e7",
+      "bytes": 396
+    },
+    {
+      "path": "fanuc_msgs/msg/NumReg.msg",
+      "sha256": "bf40b714a4eac265b246781c5c6eece4bca644458c2189af916e42dc4e2cc9e6",
+      "bytes": 176
+    },
+    {
+      "path": "fanuc_msgs/msg/NumRegCmd.msg",
+      "sha256": "ceff165ed9baec1ca208429e56803db322e99fdf8b9a22dc57f69fad77e10a2c",
+      "bytes": 165
+    },
+    {
+      "path": "fanuc_msgs/msg/NumRegState.msg",
+      "sha256": "ceff165ed9baec1ca208429e56803db322e99fdf8b9a22dc57f69fad77e10a2c",
+      "bytes": 165
+    },
+    {
+      "path": "fanuc_msgs/msg/RMIStatus.msg",
+      "sha256": "cab50a0cc4381d48930a6e99eb8227ee0dd3776f12a0f9f83347aa3bd172f921",
+      "bytes": 344
+    },
+    {
+      "path": "fanuc_msgs/msg/RobotStatus.msg",
+      "sha256": "c5da65bb4f9c46fe79233c489cf1a634e565214471a678fccbfb6f697788883a",
+      "bytes": 405
+    },
+    {
+      "path": "fanuc_msgs/msg/RobotStatusExt.msg",
+      "sha256": "c95adb6e0d24331f364d53c164ff5df40850c5d7c04e47c2646fdd8ac9b42935",
+      "bytes": 267
+    },
+    {
+      "path": "fanuc_msgs/package.xml",
+      "sha256": "bbb22cc4cc9570bb26c7cddd0c4747b2d06807ba52604f01cfc0747aa4250347",
+      "bytes": 876
+    },
+    {
+      "path": "fanuc_msgs/srv/CfgForceSensor.srv",
+      "sha256": "30aa21fdcd32d952756aaff8d9fd8013363ba9aa7fb439ecb1b91083301b0751",
+      "bytes": 275
+    },
+    {
+      "path": "fanuc_msgs/srv/GetAnalogIO.srv",
+      "sha256": "9ad7c74b2c59f728d22ef8b977e0987804e215c84aee79dfdd8fd68643d34f92",
+      "bytes": 239
+    },
+    {
+      "path": "fanuc_msgs/srv/GetBoolIO.srv",
+      "sha256": "950049bda31fda0ac558d0411cfd9f123f87454b657913df3d80970d46595711",
+      "bytes": 253
+    },
+    {
+      "path": "fanuc_msgs/srv/GetCartesianPosition.srv",
+      "sha256": "d9c2d055c9f52cff4e4503836de2402db7d5fc76cb00aeb78c5010bbad39120b",
+      "bytes": 404
+    },
+    {
+      "path": "fanuc_msgs/srv/GetGroupIO.srv",
+      "sha256": "7515205f0990799c23d4bc30d4ab8a9db571ccab0638b9029a3e78870c2bdea4",
+      "bytes": 238
+    },
+    {
+      "path": "fanuc_msgs/srv/GetNumReg.srv",
+      "sha256": "3fef6514e42f6a7370a6fd9fd181fb8bb24e8edf7f791808429f0258f6f24f1b",
+      "bytes": 193
+    },
+    {
+      "path": "fanuc_msgs/srv/GetPayloadComp.srv",
+      "sha256": "4bf7d46b2e457d6cffe42aea05218d40024427d1e84661d21752c6e0ff490376",
+      "bytes": 361
+    },
+    {
+      "path": "fanuc_msgs/srv/GetPayloadID.srv",
+      "sha256": "1d9bb0c4e7300b384a936ce2b79070957dc162f28058a1afd49f95bf1388cb6d",
+      "bytes": 193
+    },
+    {
+      "path": "fanuc_msgs/srv/GetPayloadValue.srv",
+      "sha256": "4bf7d46b2e457d6cffe42aea05218d40024427d1e84661d21752c6e0ff490376",
+      "bytes": 361
+    },
+    {
+      "path": "fanuc_msgs/srv/GetPosReg.srv",
+      "sha256": "20e2597692796351470042398f8918d29d1095dc53095f5cb7355ef289b84039",
+      "bytes": 500
+    },
+    {
+      "path": "fanuc_msgs/srv/GetTCPSpeed.srv",
+      "sha256": "fa7a02cd275d1b108fb33aca230281d604e42ed38e1b6e1b26740cacfd6c3b5a",
+      "bytes": 218
+    },
+    {
+      "path": "fanuc_msgs/srv/GetUFrameData.srv",
+      "sha256": "1a540d3ce32d53a7a401e120b9528d6464e8cd53bcd8116e4f869f619d7cc41c",
+      "bytes": 242
+    },
+    {
+      "path": "fanuc_msgs/srv/GetUFrameUTool.srv",
+      "sha256": "0b27a12614c052f114cb5bb6fdbeb6c15f6133cd95c1ef3b075a5bf646a864c2",
+      "bytes": 229
+    },
+    {
+      "path": "fanuc_msgs/srv/GetUToolData.srv",
+      "sha256": "9884c4e53053c7fe0dadbaad4def4256d302698f10a13bca86cc02f0bc762fb7",
+      "bytes": 240
+    },
+    {
+      "path": "fanuc_msgs/srv/ReadError.srv",
+      "sha256": "dcf430a1f888cb75351b0358f193ab859d003dc7677614fb9e2d3eb7d2d657b5",
+      "bytes": 213
+    },
+    {
+      "path": "fanuc_msgs/srv/Reset.srv",
+      "sha256": "668cd8ccc307f1074548679e9e94eb47ffae9528cd5e28f17eee28a776e8f240",
+      "bytes": 166
+    },
+    {
+      "path": "fanuc_msgs/srv/SetAnalogIO.srv",
+      "sha256": "e733721d8f26e9987306c719100e9be5ca90949d17efd3850c5efcd681d2649d",
+      "bytes": 233
+    },
+    {
+      "path": "fanuc_msgs/srv/SetBoolIO.srv",
+      "sha256": "a6ae049ba0b3c5279f07726a00bf4b0481546d6416518b5500e6818356ce0486",
+      "bytes": 241
+    },
+    {
+      "path": "fanuc_msgs/srv/SetGenOverride.srv",
+      "sha256": "5f3f708d415ea6258f50b28e4afc00450df93168dad3f6362799bb17bdf1c3c0",
+      "bytes": 177
+    },
+    {
+      "path": "fanuc_msgs/srv/SetGroupIO.srv",
+      "sha256": "c4b3a464d662c4a0757a5b78cbf2861b629b07d44aa5e0d85d42416fcf9d6ad4",
+      "bytes": 232
+    },
+    {
+      "path": "fanuc_msgs/srv/SetNumReg.srv",
+      "sha256": "dea33bad4c31f4c88fa858e64a8fd1a6859aa55840e2c3a67cf9f476f7e37592",
+      "bytes": 193
+    },
+    {
+      "path": "fanuc_msgs/srv/SetPayloadComp.srv",
+      "sha256": "9aac7062facfbb38b124529aee48377484607da21ce434f54212e6450c791a91",
+      "bytes": 361
+    },
+    {
+      "path": "fanuc_msgs/srv/SetPayloadID.srv",
+      "sha256": "a2dfc5f491387529bbd6ecdf2786b124f68cb7b2341d38c5f8c5d3e27e336a8d",
+      "bytes": 193
+    },
+    {
+      "path": "fanuc_msgs/srv/SetPayloadValue.srv",
+      "sha256": "91d71dff08dbb724ad8057144c05bbaf4884f1107bfdf4e16f4a6ed09e73118e",
+      "bytes": 479
+    },
+    {
+      "path": "fanuc_msgs/srv/SetPosReg.srv",
+      "sha256": "4165513ac7fbe1031df6d31074ee11cb6bf845ebb2d9e1e8a5fc94c5695ff6f4",
+      "bytes": 500
+    },
+    {
+      "path": "fanuc_msgs/srv/SetUFrameData.srv",
+      "sha256": "8d572d18b49e92b7ca52ab4270acb248c99a2cde5e25c24eda61505471853558",
+      "bytes": 222
+    },
+    {
+      "path": "fanuc_msgs/srv/SetUFrameUTool.srv",
+      "sha256": "5933d70b2d2e29e02aec25aed95e735b27dc0c9e52dff74c86b66f2cc4e6300e",
+      "bytes": 229
+    },
+    {
+      "path": "fanuc_msgs/srv/SetUToolData.srv",
+      "sha256": "e664d8bf45ea25ea2a166edfbebcd900e8a2167c795a9c527a61181c2dd3331f",
+      "bytes": 221
+    },
+    {
+      "path": "fanuc_msgs/srv/SwitchControlState.srv",
+      "sha256": "e2a34d3dc582065e47dbb49cc7a60a2d1b4cf09316bb168b45fef721cd389b68",
+      "bytes": 210
+    },
+    {
+      "path": "rmi_msgs/CMakeLists.txt",
+      "sha256": "556597025ac5184433146aef1628f63253a4f5309c1071f00aa215e9615eb2f7",
+      "bytes": 837
+    },
+    {
+      "path": "rmi_msgs/msg/CallParam.msg",
+      "sha256": "3e6f25212f72d9585ad789eb83a3e1a27933dbe975d0385feb6364ac34600fbc",
+      "bytes": 414
+    },
+    {
+      "path": "rmi_msgs/msg/Cartesian.msg",
+      "sha256": "5fc8adf7abe8582a313ec6dc68ea577fe29eea44e71c9d4b0ff603d34e90acf6",
+      "bytes": 400
+    },
+    {
+      "path": "rmi_msgs/msg/Command.msg",
+      "sha256": "c31aebdf828e448dc5f99a931ee1b083f397bc0aeb43f6880695f0c24ee5f5f9",
+      "bytes": 286
+    },
+    {
+      "path": "rmi_msgs/msg/CommandOptions.msg",
+      "sha256": "8dd8ee68d5b7eac58e0c9fac04d0414c1f8346616f22d3d6313662400225ab24",
+      "bytes": 511
+    },
+    {
+      "path": "rmi_msgs/msg/Joint.msg",
+      "sha256": "7f169ee786ae70eb4c1b3e7324fa3997d3d4bc387c01f0c5594497e27ecd5600",
+      "bytes": 181
+    },
+    {
+      "path": "rmi_msgs/msg/MotionInstructionOptions.msg",
+      "sha256": "1318ae32f0ab14ae22fc0042f93ebae9522ef2e1964d62677c06e1af8be734c5",
+      "bytes": 991
+    },
+    {
+      "path": "rmi_msgs/msg/MotionType.msg",
+      "sha256": "4f2828afe0a0ecc8ebaeca6ada39e440e24abbd41ed78f41fb6c290b5fd38556",
+      "bytes": 294
+    },
+    {
+      "path": "rmi_msgs/msg/Representation.msg",
+      "sha256": "1637de1c261cb51b3fa24fea99712e6076a2a8454a35c02b8d7b189604988dd7",
+      "bytes": 292
+    },
+    {
+      "path": "rmi_msgs/msg/SpeedType.msg",
+      "sha256": "5192d03dcafbfcf2740161ed76aa39b2c7026f311435de82c25ab193e86ee01b",
+      "bytes": 444
+    },
+    {
+      "path": "rmi_msgs/msg/TermType.msg",
+      "sha256": "03098e5b5a79011001991d29409748ee128742b46d22294b174c1c7fbc763ed3",
+      "bytes": 235
+    },
+    {
+      "path": "rmi_msgs/package.xml",
+      "sha256": "a2eaa367ebe44388338e8566fac437cb9263d49fc246379789f7e44538faf893",
+      "bytes": 872
+    },
+    {
+      "path": "rmi_msgs/srv/AddCall.srv",
+      "sha256": "b1bed0fc8a0a81028b69ea488a58de7397506f1172f7b89853b8184803c6466b",
+      "bytes": 225
+    },
+    {
+      "path": "rmi_msgs/srv/AddMotionInstruction.srv",
+      "sha256": "ad4b02de9c2cc00365d88979bf8dce5c0dfe1704aa330a6f2a58bc193e8535ab",
+      "bytes": 504
+    },
+    {
+      "path": "rmi_msgs/srv/AddSetPayload.srv",
+      "sha256": "9d64de667d3e9773d94ea1c3e46dac463c3c7fd6b0156540841e01e84d232c85",
+      "bytes": 208
+    },
+    {
+      "path": "rmi_msgs/srv/AddSetUFrame.srv",
+      "sha256": "bd493659eafccbf067858cc829c058da867db23e37c29c4604589b43f5d69196",
+      "bytes": 205
+    },
+    {
+      "path": "rmi_msgs/srv/AddSetUTool.srv",
+      "sha256": "1dfae6dd7f47a557e3c10389ad14b3cb15144b938c8ad2492e02b5e7b9f4e804",
+      "bytes": 204
+    },
+    {
+      "path": "rmi_msgs/srv/AddWaitDIN.srv",
+      "sha256": "50a93d6811291111602806dfcfc8cfabd7189328dbe26f62bb81fecc5c452a03",
+      "bytes": 223
+    },
+    {
+      "path": "rmi_msgs/srv/AddWaitTime.srv",
+      "sha256": "0bf9f0d1061ae890c2612754ce6c283c9d2cfc186c5ff0656bfc54d413db90fb",
+      "bytes": 199
+    },
+    {
+      "path": "rmi_msgs/srv/CallCommand.srv",
+      "sha256": "4fb2c59f7d3dc9942ffea39af7fea67255f8a9df981c53dbede8446dd14f07a9",
+      "bytes": 206
+    },
+    {
+      "path": "slider_publisher/CMakeLists.txt",
+      "sha256": "aa11f238ce192fcc4c2411ada6c2c3b8d6d8f61b04d93c8bc83da815d7c25caa",
+      "bytes": 1011
+    },
+    {
+      "path": "slider_publisher/launch/slider_gui_launch.py",
+      "sha256": "00242ecb03be30cb482b6286b714cbae3871dd35d1963ef1a95f5bf0a0b9100c",
+      "bytes": 511
+    },
+    {
+      "path": "slider_publisher/package.xml",
+      "sha256": "d1e845633f5077df7f5f82a53ec31437bbaefc64c89831f13f3ad03d694404d3",
+      "bytes": 922
+    },
+    {
+      "path": "slider_publisher/src/slider_gui_node.cpp",
+      "sha256": "873e6a17423a65aeffc035d4bb86700d93ea69fa2529e019013b47348ce573ed",
+      "bytes": 1851
+    }
+  ],
+  "controller_execution": false,
+  "native_driver_interface_pair_qualified": false,
+  "distribution": {
+    "pinned_main": "jazzy",
+    "humble_requires_distinct_upstream_branch": true
+  },
+  "sine_program": {
+    "samples": 1001,
+    "duration_seconds": 3,
+    "amplitude_degrees": 20,
+    "profile": "ros2_sine_trajectory",
+    "partial_truncation_permitted": false
+  },
+  "controller_semantics": "SwitchControlState STOP/START are driver control states; complete FJT ownership, result and configured joint order remain independent."
+}

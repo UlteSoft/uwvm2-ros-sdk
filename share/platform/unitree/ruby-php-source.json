@@ -1,0 +1,106 @@
+{
+  "format": "uwvm-platform-language-modules-v1",
+  "platform": "unitree",
+  "modules": {
+    "ruby": {
+      "ros1": [
+        {
+          "name": "roswasm/wire",
+          "path": "include/platform/ros/ruby/roswasm/wire.rb"
+        },
+        {
+          "name": "roswasm/transport",
+          "path": "include/platform/ros/ruby/roswasm/transport.rb"
+        },
+        {
+          "name": "unitree/ruby/ros1/records",
+          "path": "include/platform/unitree/ruby/ros1/records.rb"
+        },
+        {
+          "name": "unitree/ruby/observation",
+          "path": "include/platform/unitree/ruby/observation.rb"
+        },
+        {
+          "name": "unitree/ruby/ros1/observation",
+          "path": "include/platform/unitree/ruby/ros1/observation.rb"
+        }
+      ],
+      "ros2": [
+        {
+          "name": "roswasm/wire",
+          "path": "include/platform/ros/ruby/roswasm/wire.rb"
+        },
+        {
+          "name": "roswasm/transport",
+          "path": "include/platform/ros/ruby/roswasm/transport.rb"
+        },
+        {
+          "name": "unitree/ruby/ros2/records",
+          "path": "include/platform/unitree/ruby/ros2/records.rb"
+        },
+        {
+          "name": "unitree/ruby/observation",
+          "path": "include/platform/unitree/ruby/observation.rb"
+        },
+        {
+          "name": "unitree/ruby/ros2/observation",
+          "path": "include/platform/unitree/ruby/ros2/observation.rb"
+        }
+      ]
+    },
+    "php": {
+      "ros1": [
+        {
+          "name": "RosWasm/Word",
+          "path": "include/platform/ros/php/RosWasm/Word.php"
+        },
+        {
+          "name": "RosWasm/Wire",
+          "path": "include/platform/ros/php/RosWasm/Wire.php"
+        },
+        {
+          "name": "RosWasm/Transport",
+          "path": "include/platform/ros/php/RosWasm/Transport.php"
+        },
+        {
+          "name": "unitree/php/ros1/records",
+          "path": "include/platform/unitree/php/ros1/records.php"
+        },
+        {
+          "name": "unitree/php/Observation",
+          "path": "include/platform/unitree/php/Observation.php"
+        },
+        {
+          "name": "unitree/php/ros1/Observation",
+          "path": "include/platform/unitree/php/ros1/Observation.php"
+        }
+      ],
+      "ros2": [
+        {
+          "name": "RosWasm/Word",
+          "path": "include/platform/ros/php/RosWasm/Word.php"
+        },
+        {
+          "name": "RosWasm/Wire",
+          "path": "include/platform/ros/php/RosWasm/Wire.php"
+        },
+        {
+          "name": "RosWasm/Transport",
+          "path": "include/platform/ros/php/RosWasm/Transport.php"
+        },
+        {
+          "name": "unitree/php/ros2/records",
+          "path": "include/platform/unitree/php/ros2/records.php"
+        },
+        {
+          "name": "unitree/php/Observation",
+          "path": "include/platform/unitree/php/Observation.php"
+        },
+        {
+          "name": "unitree/php/ros2/Observation",
+          "path": "include/platform/unitree/php/ros2/Observation.php"
+        }
+      ]
+    }
+  }
+}

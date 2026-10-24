@@ -1,0 +1,72 @@
+{
+  "format": "uwvm-unitree-portable-historical-baseline-v1",
+  "scope": "Original eight-route acceptance; current routes and target profiles are defined separately.",
+  "current_publication": "share/platform/unitree/publication.json",
+  "original_qualification": "share/platform/unitree/qualification/wasm32-eight-route-baseline.json",
+  "original_qualification_sha256": "6c64aa2b9de74c9181fbd226cb09b2c292db29ee07be92e8a63c5639067e269a",
+  "original_acceptance_sha256": "c6cd07adec8ffd0646f952d65f95d6a871887060294b370ead3922b499649b53",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "go",
+    "objectc",
+    "rs",
+    "tinygo"
+  ],
+  "example_count": 48,
+  "target": "wasm32-wasip1",
+  "build": {
+    "host": "linux-x86_64",
+    "cases": 48,
+    "preinstalled_programs": [
+      "xmake"
+    ],
+    "network": "none",
+    "initial_sdk_tool_cache": "empty",
+    "command": "xmake",
+    "compiler_source": "SHA-256-pinned offline SDK bundles",
+    "runtime_or_ros_installed": false
+  },
+  "native_execution": {
+    "x86_64": {
+      "ros1_noetic": 24,
+      "ros2_jazzy": 24,
+      "entry": "xmake run"
+    },
+    "qemu_aarch64": {
+      "ros1_noetic": 24,
+      "ros2_jazzy": 24,
+      "entry": "published SDK launcher",
+      "native_runtime_and_gateway_elf": "AArch64"
+    },
+    "oracle": "Complete original native ROS callback bytes, exact status, and normal owner cleanup",
+    "same_wasm_artifact_sha256_as_build": true
+  },
+  "native_adapter_probes": {
+    "ros1_noetic": 11,
+    "ros2_jazzy": 43,
+    "checks": [
+      "complete default round trip",
+      "truncated record refused",
+      "trailing bytes refused"
+    ],
+    "transport_test": false
+  },
+  "resource_limits": {
+    "memory.max": 68719476736,
+    "memory.swap.max": 0
+  },
+  "limits": {
+    "physical_robot_tested": false,
+    "physical_arm_hardware_tested": false,
+    "arm_native_compiler_host_tested": false,
+    "wasm64_admitted": false,
+    "robot_control_qualified": false,
+    "transport_record_types": 6,
+    "other_ros_distributions_qualified": false
+  },
+  "raw_evidence": "Original machine-specific commands, paths and environment records are retained outside the SDK distribution.",
+  "library_or_runtime_dependency": false
+}

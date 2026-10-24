@@ -1,0 +1,4359 @@
+{
+  "format": "uwvm-complete-platform-ir-v1",
+  "families": [
+    {
+      "backend": 2,
+      "record_count": 27,
+      "interface_count": 25,
+      "records": [
+        {
+          "type": "booster_interface/msg/BoosterApiReqMsg",
+          "symbol": "Ros2Booster_interfaceMsgBoosterApiReqMsg",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_e2f9b66467bcb40a8194c744694f314e7fca56061f1cf3121eed565f724edd40",
+          "minimum": 12,
+          "maximum": 4108,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "api_id",
+              "type": "int64",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "body",
+              "type": "string",
+              "array": "",
+              "count": 0,
+              "string_bound": 4096,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/BoosterApiRespMsg",
+          "symbol": "Ros2Booster_interfaceMsgBoosterApiRespMsg",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_21ce208a51f60843eecb72edbc408e926353b1a6f178424c0b691ac237fed11f",
+          "minimum": 12,
+          "maximum": 4108,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "status",
+              "type": "int64",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "body",
+              "type": "string",
+              "array": "",
+              "count": 0,
+              "string_bound": 4096,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/ButtonEventMsg",
+          "symbol": "Ros2Booster_interfaceMsgButtonEventMsg",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_b61682fd9c35bd54c52000224411f4373b8620e16587b31d8a683076e0d14fe4",
+          "minimum": 5,
+          "maximum": 5,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "event",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "button",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": [
+            {
+              "name": "PRESS_DOWN",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "0",
+              "value": "0"
+            },
+            {
+              "name": "PRESS_UP",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "1",
+              "value": "1"
+            },
+            {
+              "name": "SINGLE_CLICK",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "0",
+              "value": "0"
+            },
+            {
+              "name": "DOUBLE_CLICK",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "1",
+              "value": "1"
+            },
+            {
+              "name": "TRIPLE_CLICK",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "0",
+              "value": "0"
+            },
+            {
+              "name": "LONG_PRESS_START",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "1",
+              "value": "1"
+            },
+            {
+              "name": "LONG_PRESS_HOLD",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "0",
+              "value": "0"
+            },
+            {
+              "name": "LONG_PRESS_END",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "1",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "type": "booster_interface/msg/FallDownState",
+          "symbol": "Ros2Booster_interfaceMsgFallDownState",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_8bf168ccefac72eda6070704c70e12e62776d29ad3db908095cc01220f4b533f",
+          "minimum": 5,
+          "maximum": 5,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "fall_down_state",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "is_recovery_available",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": [
+            {
+              "name": "IS_READY",
+              "type": "uint32",
+              "native_type": "uint32",
+              "literal": "0",
+              "value": "0"
+            },
+            {
+              "name": "IS_FALLING",
+              "type": "uint32",
+              "native_type": "uint32",
+              "literal": "1",
+              "value": "1"
+            },
+            {
+              "name": "HAS_FALLEN",
+              "type": "uint32",
+              "native_type": "uint32",
+              "literal": "2",
+              "value": "2"
+            },
+            {
+              "name": "IS_GETTING_UP",
+              "type": "uint32",
+              "native_type": "uint32",
+              "literal": "3",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "type": "booster_interface/msg/HandParam",
+          "symbol": "Ros2Booster_interfaceMsgHandParam",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_3b91722e751e7c00c773335bb42af34850190ecc26a029e8792c49d912def158",
+          "minimum": 16,
+          "maximum": 16,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "angle",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "force",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "speed",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "seq",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/HandCommand",
+          "symbol": "Ros2Booster_interfaceMsgHandCommand",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_06f3d6c0e9bef1da409330038aadbfacfe60b02e099f2ae0c4dcb92a632b20a0",
+          "minimum": 16,
+          "maximum": 528,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "hand_param",
+              "type": "booster_interface/msg/HandParam",
+              "array": "sequence",
+              "count": 32,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "force_mode",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hand_index",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hand_type",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/HandDdsMsg",
+          "symbol": "Ros2Booster_interfaceMsgHandDdsMsg",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_55af9d6f272a72e75e86e1a6164d235aca5f2ce99c2529749c0d5e33d6091397",
+          "minimum": 4,
+          "maximum": 1060,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "hands_vec",
+              "type": "booster_interface/msg/HandCommand",
+              "array": "sequence",
+              "count": 2,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/ImuState",
+          "symbol": "Ros2Booster_interfaceMsgImuState",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_838ee8d4b93b0c3673e0b535fd3905913e94be24d6d21a01504dedaaaaa81092",
+          "minimum": 36,
+          "maximum": 36,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "rpy",
+              "type": "float32",
+              "array": "array",
+              "count": 3,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "gyro",
+              "type": "float32",
+              "array": "array",
+              "count": 3,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "acc",
+              "type": "float32",
+              "array": "array",
+              "count": 3,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/MotorCmd",
+          "symbol": "Ros2Booster_interfaceMsgMotorCmd",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_69d814e13595d53dcf44f2a5ccb19df0f8f2be0908c310c3b60cec33bcf27392",
+          "minimum": 25,
+          "maximum": 25,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "mode",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "q",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "dq",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "tau",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "kp",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "kd",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "weight",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/LowCmd",
+          "symbol": "Ros2Booster_interfaceMsgLowCmd",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_845726a14e61d211b493041f4dda56e1556b76b9d30337a2ee5f6319a3d1e870",
+          "minimum": 5,
+          "maximum": 730,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "cmd_type",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "motor_cmd",
+              "type": "booster_interface/msg/MotorCmd",
+              "array": "sequence",
+              "count": 29,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": [
+            {
+              "name": "CMD_TYPE_PARALLEL",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "0",
+              "value": "0"
+            },
+            {
+              "name": "CMD_TYPE_SERIAL",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "1",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "type": "booster_interface/msg/MotorState",
+          "symbol": "Ros2Booster_interfaceMsgMotorState",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_6b19c0e8865e796fff5a498cff731ba268fa92ea2944e6c2c5869009b3aa066b",
+          "minimum": 30,
+          "maximum": 30,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "mode",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "q",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "dq",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ddq",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "tau_est",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "temperature",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "lost",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "reserve",
+              "type": "uint32",
+              "array": "array",
+              "count": 2,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/LowState",
+          "symbol": "Ros2Booster_interfaceMsgLowState",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_811db19cab7b790ed48506bca3e3ef512c1a661dc3ac99cbce6234efb6de631f",
+          "minimum": 44,
+          "maximum": 1784,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "imu_state",
+              "type": "booster_interface/msg/ImuState",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "motor_state_parallel",
+              "type": "booster_interface/msg/MotorState",
+              "array": "sequence",
+              "count": 29,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "motor_state_serial",
+              "type": "booster_interface/msg/MotorState",
+              "array": "sequence",
+              "count": 29,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/Odometer",
+          "symbol": "Ros2Booster_interfaceMsgOdometer",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_4fea33e3e2ae186dbeaf49c6068019b702e742266541087a5d280b9ce42c671a",
+          "minimum": 12,
+          "maximum": 12,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "x",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "y",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "theta",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/RawBytesMsg",
+          "symbol": "Ros2Booster_interfaceMsgRawBytesMsg",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_557e8e79f206c9cc8b820ed7c2ad8cc01e9b01327197b745709993d958b4578c",
+          "minimum": 4,
+          "maximum": 2052,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "msg",
+              "type": "uint8",
+              "array": "sequence",
+              "count": 2048,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "char",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "builtin_interfaces/msg/Time",
+          "symbol": "Ros2Builtin_interfacesMsgTime",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+          "minimum": 8,
+          "maximum": 8,
+          "semantics": "normalized-time",
+          "fields": [
+            {
+              "name": "sec",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "nanosec",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "std_msgs/msg/Header",
+          "symbol": "Ros2Std_msgsMsgHeader",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+          "minimum": 12,
+          "maximum": 140,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "stamp",
+              "type": "builtin_interfaces/msg/Time",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "frame_id",
+              "type": "string",
+              "array": "",
+              "count": 0,
+              "string_bound": 128,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/RawBytesStamped",
+          "symbol": "Ros2Booster_interfaceMsgRawBytesStamped",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_27cddd472b2d8c41c39effb87a8a53261aff309500dbb68df6ebd69a19c7720e",
+          "minimum": 16,
+          "maximum": 2192,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "header",
+              "type": "std_msgs/msg/Header",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "msg",
+              "type": "uint8",
+              "array": "sequence",
+              "count": 2048,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "char",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/msg/RemoteControllerState",
+          "symbol": "Ros2Booster_interfaceMsgRemoteControllerState",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_f8a21705728862632c27b71d98c044a12bf1f9f9e0c1729fec27afe2c60c48a7",
+          "minimum": 42,
+          "maximum": 42,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "event",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "lx",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ly",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "rx",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ry",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "a",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "b",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "x",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "y",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "lb",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "rb",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "lt",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "rt",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ls",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "rs",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "back",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "start",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_c",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_u",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_d",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_l",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_r",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_lu",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_ld",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_ru",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_rd",
+              "type": "bool",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "hat_pos",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/srv/AgentService_Request",
+          "symbol": "Ros2Booster_interfaceSrvAgentService_Request",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_d8b972ee6c7f82ee948c03b22354d1073f120ad2616a9e833b578348775404e8",
+          "minimum": 4,
+          "maximum": 4100,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "body",
+              "type": "string",
+              "array": "",
+              "count": 0,
+              "string_bound": 4096,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/srv/AgentService_Response",
+          "symbol": "Ros2Booster_interfaceSrvAgentService_Response",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_86aecf9ee8652016b5c74e30d2dd4100e8b547542a81a98e7795942b47b87520",
+          "minimum": 4,
+          "maximum": 4100,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "body",
+              "type": "string",
+              "array": "",
+              "count": 0,
+              "string_bound": 4096,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/srv/RpcService_Request",
+          "symbol": "Ros2Booster_interfaceSrvRpcService_Request",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_cc8eb67d80bdf131f1878a1be998d68560e235ffef6a539876410dfcd6c00150",
+          "minimum": 12,
+          "maximum": 4108,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "msg",
+              "type": "booster_interface/msg/BoosterApiReqMsg",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "booster_interface/srv/RpcService_Response",
+          "symbol": "Ros2Booster_interfaceSrvRpcService_Response",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_7aeb7b45542f9f594e1f61be2f715abcde54b1e55efdde15100b0c553ae96322",
+          "minimum": 12,
+          "maximum": 4108,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "msg",
+              "type": "booster_interface/msg/BoosterApiRespMsg",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "uwvm_booster_sdk_bridge/msg/ImuState",
+          "symbol": "Ros2Uwvm_booster_sdk_bridgeMsgImuState",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_858ad4a47d2409da6b4e2513178d7d3b0d4568d6ce488729de0b9a220a100f04",
+          "minimum": 36,
+          "maximum": 36,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "rpy",
+              "type": "float32",
+              "array": "array",
+              "count": 3,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "gyro",
+              "type": "float32",
+              "array": "array",
+              "count": 3,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "acc",
+              "type": "float32",
+              "array": "array",
+              "count": 3,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "uwvm_booster_sdk_bridge/msg/MotorCmd",
+          "symbol": "Ros2Uwvm_booster_sdk_bridgeMsgMotorCmd",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_66fec912031dfbd29b8e4e747dcdc2dc465506bd003323bc929929bf6a9d31a4",
+          "minimum": 25,
+          "maximum": 25,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "mode",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "q",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "dq",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "tau",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "kp",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "kd",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "weight",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "uwvm_booster_sdk_bridge/msg/MotorState",
+          "symbol": "Ros2Uwvm_booster_sdk_bridgeMsgMotorState",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_958168dc1e32d50827f255080117a82421d7fb6ae4ad6a05763ce2d3173a30af",
+          "minimum": 30,
+          "maximum": 30,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "mode",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "q",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "dq",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ddq",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "tau_est",
+              "type": "float32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "temperature",
+              "type": "uint8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "lost",
+              "type": "uint32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "reserve",
+              "type": "uint32",
+              "array": "array",
+              "count": 2,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "uwvm_booster_sdk_bridge/msg/LowCmd",
+          "symbol": "Ros2Uwvm_booster_sdk_bridgeMsgLowCmd",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_3324a161b056f9282ffa8dce3254a1456b75f6eae5f4a067e844e125e94cba3a",
+          "minimum": 8,
+          "maximum": 733,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "cmd_type",
+              "type": "int32",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "motor_cmd",
+              "type": "uwvm_booster_sdk_bridge/msg/MotorCmd",
+              "array": "sequence",
+              "count": 29,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        },
+        {
+          "type": "uwvm_booster_sdk_bridge/msg/LowState",
+          "symbol": "Ros2Uwvm_booster_sdk_bridgeMsgLowState",
+          "native_identity": null,
+          "codec_identity": "UWVMROS1_ca4bcb79077b0e026cf45a389981622ff9c80570ee813ff5633c605fe5021a58",
+          "minimum": 44,
+          "maximum": 1784,
+          "semantics": "",
+          "fields": [
+            {
+              "name": "imu_state",
+              "type": "uwvm_booster_sdk_bridge/msg/ImuState",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "motor_state_parallel",
+              "type": "uwvm_booster_sdk_bridge/msg/MotorState",
+              "array": "sequence",
+              "count": 29,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "motor_state_serial",
+              "type": "uwvm_booster_sdk_bridge/msg/MotorState",
+              "array": "sequence",
+              "count": 29,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "constants": []
+        }
+      ],
+      "interfaces": [
+        {
+          "version": 2,
+          "name": "booster_interface/msg/BoosterApiReqMsg",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/BoosterApiReqMsg",
+              "members": [
+                {
+                  "name": "api_id",
+                  "type": "int64",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "body",
+                  "type": "string",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 4096,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/BoosterApiReqMsg.msg",
+                "bytes": 24,
+                "sha256": "bf5a63bf482c32ec4c9d933727a7e27ab2e4a774cf2c496ed32568544ed204a3"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/BoosterApiReqMsg",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 12,
+              "maximum": 4108,
+              "nodes": 3,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_e2f9b66467bcb40a8194c744694f314e7fca56061f1cf3121eed565f724edd40",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 4108,
+              "constants": [],
+              "original_section": "int64 api_id\nstring body"
+            }
+          },
+          "codec_identity": "UWVMROS1_e2f9b66467bcb40a8194c744694f314e7fca56061f1cf3121eed565f724edd40",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/BoosterApiRespMsg",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/BoosterApiRespMsg",
+              "members": [
+                {
+                  "name": "status",
+                  "type": "int64",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "body",
+                  "type": "string",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 4096,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/BoosterApiRespMsg.msg",
+                "bytes": 24,
+                "sha256": "8027a61dbaea29ab5f4744fbd74e1859244d741e330729a2533ec276bc3edcbc"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/BoosterApiRespMsg",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 12,
+              "maximum": 4108,
+              "nodes": 3,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_21ce208a51f60843eecb72edbc408e926353b1a6f178424c0b691ac237fed11f",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 4108,
+              "constants": [],
+              "original_section": "int64 status\nstring body"
+            }
+          },
+          "codec_identity": "UWVMROS1_21ce208a51f60843eecb72edbc408e926353b1a6f178424c0b691ac237fed11f",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/ButtonEventMsg",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/ButtonEventMsg",
+              "members": [
+                {
+                  "name": "event",
+                  "type": "int8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "button",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/ButtonEventMsg.msg",
+                "bytes": 209,
+                "sha256": "e3adc5a8527112149ac79f95b42963b487fc07d100d9ff8ed1e89dc9f01884a2"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/ButtonEventMsg",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 5,
+              "maximum": 5,
+              "nodes": 3,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_b61682fd9c35bd54c52000224411f4373b8620e16587b31d8a683076e0d14fe4",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 5,
+              "constants": [
+                {
+                  "name": "PRESS_DOWN",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "0",
+                  "value": "0"
+                },
+                {
+                  "name": "PRESS_UP",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "1",
+                  "value": "1"
+                },
+                {
+                  "name": "SINGLE_CLICK",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "0",
+                  "value": "0"
+                },
+                {
+                  "name": "DOUBLE_CLICK",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "1",
+                  "value": "1"
+                },
+                {
+                  "name": "TRIPLE_CLICK",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "0",
+                  "value": "0"
+                },
+                {
+                  "name": "LONG_PRESS_START",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "1",
+                  "value": "1"
+                },
+                {
+                  "name": "LONG_PRESS_HOLD",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "0",
+                  "value": "0"
+                },
+                {
+                  "name": "LONG_PRESS_END",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "1",
+                  "value": "1"
+                }
+              ],
+              "original_section": "# constants\nint8 PRESS_DOWN=0\nint8 PRESS_UP=1\nint8 SINGLE_CLICK=0\nint8 DOUBLE_CLICK=1\nint8 TRIPLE_CLICK=0\nint8 LONG_PRESS_START=1\nint8 LONG_PRESS_HOLD=0\nint8 LONG_PRESS_END=1\n\n\n# fields\nint8 event\nint32 button"
+            }
+          },
+          "codec_identity": "UWVMROS1_b61682fd9c35bd54c52000224411f4373b8620e16587b31d8a683076e0d14fe4",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/FallDownState",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/FallDownState",
+              "members": [
+                {
+                  "name": "fall_down_state",
+                  "type": "uint32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "is_recovery_available",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/FallDownState.msg",
+                "bytes": 131,
+                "sha256": "0636d77c3e4cd500a4b69c79a762d12755da1788ba79b3196e525d416c2182d9"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/FallDownState",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 5,
+              "maximum": 5,
+              "nodes": 3,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_8bf168ccefac72eda6070704c70e12e62776d29ad3db908095cc01220f4b533f",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 5,
+              "constants": [
+                {
+                  "name": "IS_READY",
+                  "type": "uint32",
+                  "native_type": "uint32",
+                  "literal": "0",
+                  "value": "0"
+                },
+                {
+                  "name": "IS_FALLING",
+                  "type": "uint32",
+                  "native_type": "uint32",
+                  "literal": "1",
+                  "value": "1"
+                },
+                {
+                  "name": "HAS_FALLEN",
+                  "type": "uint32",
+                  "native_type": "uint32",
+                  "literal": "2",
+                  "value": "2"
+                },
+                {
+                  "name": "IS_GETTING_UP",
+                  "type": "uint32",
+                  "native_type": "uint32",
+                  "literal": "3",
+                  "value": "3"
+                }
+              ],
+              "original_section": "uint32 IS_READY=0\nuint32 IS_FALLING=1\nuint32 HAS_FALLEN=2\nuint32 IS_GETTING_UP=3\n\nuint32 fall_down_state\nbool is_recovery_available"
+            }
+          },
+          "codec_identity": "UWVMROS1_8bf168ccefac72eda6070704c70e12e62776d29ad3db908095cc01220f4b533f",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/HandCommand",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/HandCommand",
+              "members": [
+                {
+                  "name": "hand_param",
+                  "type": "booster_interface/msg/HandParam",
+                  "array": "sequence",
+                  "count": 32,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "force_mode",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hand_index",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hand_type",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/HandCommand.msg",
+                "bytes": 72,
+                "sha256": "05c8dfb8939429f36b3db859ac5975669533a29992aab406bc3ce2a47cd62017"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/HandCommand",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 16,
+              "maximum": 528,
+              "nodes": 165,
+              "depth": 4,
+              "codec_identity": "UWVMROS1_06f3d6c0e9bef1da409330038aadbfacfe60b02e099f2ae0c4dcb92a632b20a0",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 528,
+              "constants": [],
+              "original_section": "HandParam[] hand_param\nint32 force_mode\nint32 hand_index\nint32 hand_type"
+            }
+          },
+          "codec_identity": "UWVMROS1_06f3d6c0e9bef1da409330038aadbfacfe60b02e099f2ae0c4dcb92a632b20a0",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/HandDdsMsg",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/HandDdsMsg",
+              "members": [
+                {
+                  "name": "hands_vec",
+                  "type": "booster_interface/msg/HandCommand",
+                  "array": "sequence",
+                  "count": 2,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/HandDdsMsg.msg",
+                "bytes": 23,
+                "sha256": "44f8779000296c7383bb4e16b15fa692de691925f4853f5cafdf1b61c0b00d0d"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/HandDdsMsg",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 4,
+              "maximum": 1060,
+              "nodes": 332,
+              "depth": 6,
+              "codec_identity": "UWVMROS1_55af9d6f272a72e75e86e1a6164d235aca5f2ce99c2529749c0d5e33d6091397",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 1060,
+              "constants": [],
+              "original_section": "HandCommand[] hands_vec"
+            }
+          },
+          "codec_identity": "UWVMROS1_55af9d6f272a72e75e86e1a6164d235aca5f2ce99c2529749c0d5e33d6091397",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/HandParam",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/HandParam",
+              "members": [
+                {
+                  "name": "angle",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "force",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "speed",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "seq",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/HandParam.msg",
+                "bytes": 45,
+                "sha256": "8ddb515b8d97e9a19f3fdbf5e476e5a5b2431a21823015dbc170bc1bc7af1500"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/HandParam",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 16,
+              "maximum": 16,
+              "nodes": 5,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_3b91722e751e7c00c773335bb42af34850190ecc26a029e8792c49d912def158",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 16,
+              "constants": [],
+              "original_section": "int32 angle\nint32 force\nint32 speed\nint32 seq"
+            }
+          },
+          "codec_identity": "UWVMROS1_3b91722e751e7c00c773335bb42af34850190ecc26a029e8792c49d912def158",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/ImuState",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/ImuState",
+              "members": [
+                {
+                  "name": "rpy",
+                  "type": "float32",
+                  "array": "array",
+                  "count": 3,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "gyro",
+                  "type": "float32",
+                  "array": "array",
+                  "count": 3,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "acc",
+                  "type": "float32",
+                  "array": "array",
+                  "count": 3,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/ImuState.msg",
+                "bytes": 147,
+                "sha256": "aab374da59a0ad77db57eb3d55bed5a5ba2080a100a592e88dcf2d9866dfa00a"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/ImuState",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 36,
+              "maximum": 36,
+              "nodes": 13,
+              "depth": 3,
+              "codec_identity": "UWVMROS1_838ee8d4b93b0c3673e0b535fd3905913e94be24d6d21a01504dedaaaaa81092",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 36,
+              "constants": [],
+              "original_section": "# \uff080 -> roll ,1 -> pitch ,2 -> yaw\uff09\nfloat32[3] rpy\n# \uff080 -> x ,1 -> y ,2 -> z\uff09\nfloat32[3] gyro\n# \uff080 -> x ,1 -> y ,2 -> z\uff09\nfloat32[3] acc"
+            }
+          },
+          "codec_identity": "UWVMROS1_838ee8d4b93b0c3673e0b535fd3905913e94be24d6d21a01504dedaaaaa81092",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/LowCmd",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/LowCmd",
+              "members": [
+                {
+                  "name": "cmd_type",
+                  "type": "int8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "motor_cmd",
+                  "type": "booster_interface/msg/MotorCmd",
+                  "array": "sequence",
+                  "count": 29,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/LowCmd.msg",
+                "bytes": 147,
+                "sha256": "975a2ef70dfc4156cd0529d05c23afa8612e47d12d1d51b06cea5513130d6883"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/LowCmd",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 5,
+              "maximum": 730,
+              "nodes": 235,
+              "depth": 4,
+              "codec_identity": "UWVMROS1_845726a14e61d211b493041f4dda56e1556b76b9d30337a2ee5f6319a3d1e870",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 730,
+              "constants": [
+                {
+                  "name": "CMD_TYPE_PARALLEL",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "0",
+                  "value": "0"
+                },
+                {
+                  "name": "CMD_TYPE_SERIAL",
+                  "type": "int8",
+                  "native_type": "int8",
+                  "literal": "1",
+                  "value": "1"
+                }
+              ],
+              "original_section": "# constants\nint8 CMD_TYPE_PARALLEL=0\nint8 CMD_TYPE_SERIAL=1\n\n# fields\n# use CMD_TYPE_PARALLEL or CMD_TYPE_SERIAL\nint8 cmd_type\nMotorCmd[] motor_cmd"
+            }
+          },
+          "codec_identity": "UWVMROS1_845726a14e61d211b493041f4dda56e1556b76b9d30337a2ee5f6319a3d1e870",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/LowState",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/LowState",
+              "members": [
+                {
+                  "name": "imu_state",
+                  "type": "booster_interface/msg/ImuState",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "motor_state_parallel",
+                  "type": "booster_interface/msg/MotorState",
+                  "array": "sequence",
+                  "count": 29,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "motor_state_serial",
+                  "type": "booster_interface/msg/MotorState",
+                  "array": "sequence",
+                  "count": 29,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/LowState.msg",
+                "bytes": 84,
+                "sha256": "0ada3e9ed1da3a0ea1a280854d1c845abcd502f89465b680fac6263bad8c3dda"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/LowState",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 44,
+              "maximum": 1784,
+              "nodes": 654,
+              "depth": 5,
+              "codec_identity": "UWVMROS1_811db19cab7b790ed48506bca3e3ef512c1a661dc3ac99cbce6234efb6de631f",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 1784,
+              "constants": [],
+              "original_section": "ImuState imu_state\nMotorState[] motor_state_parallel\nMotorState[] motor_state_serial"
+            }
+          },
+          "codec_identity": "UWVMROS1_811db19cab7b790ed48506bca3e3ef512c1a661dc3ac99cbce6234efb6de631f",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/MotorCmd",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/MotorCmd",
+              "members": [
+                {
+                  "name": "mode",
+                  "type": "int8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "q",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "dq",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "tau",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "kp",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "kd",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "weight",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/MotorCmd.msg",
+                "bytes": 79,
+                "sha256": "d44c3e5e31451cab66c73212f58482f831e23878c2c745e4feac1dd33f4fdf06"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/MotorCmd",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 25,
+              "maximum": 25,
+              "nodes": 8,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_69d814e13595d53dcf44f2a5ccb19df0f8f2be0908c310c3b60cec33bcf27392",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 25,
+              "constants": [],
+              "original_section": "int8 mode\nfloat32 q\nfloat32 dq\nfloat32 tau\nfloat32 kp\nfloat32 kd\nfloat32 weight"
+            }
+          },
+          "codec_identity": "UWVMROS1_69d814e13595d53dcf44f2a5ccb19df0f8f2be0908c310c3b60cec33bcf27392",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/MotorState",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/MotorState",
+              "members": [
+                {
+                  "name": "mode",
+                  "type": "int8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "q",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "dq",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "ddq",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "tau_est",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "temperature",
+                  "type": "int8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "lost",
+                  "type": "uint32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "reserve",
+                  "type": "uint32",
+                  "array": "array",
+                  "count": 2,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/MotorState.msg",
+                "bytes": 367,
+                "sha256": "0a2e5a6438911eb6a920fec0661ac678f71a4bedc6ec037e66d14277eada9a5c"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/MotorState",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 30,
+              "maximum": 30,
+              "nodes": 11,
+              "depth": 3,
+              "codec_identity": "UWVMROS1_6b19c0e8865e796fff5a498cff731ba268fa92ea2944e6c2c5869009b3aa066b",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 30,
+              "constants": [],
+              "original_section": "int8 mode\nfloat32 q\nfloat32 dq\nfloat32 ddq\nfloat32 tau_est\n# Motor temperature (int8): actual value, range -100 to 150.\nint8 temperature\n# Motor packet loss count (uint32): actual value, range 0 to 9999999999.\nuint32 lost\n# Motor communication info: array of two uint32s.\n#   index 0 = error flags (0-255), index 1 = communication frequency (0-800).\nuint32[2] reserve"
+            }
+          },
+          "codec_identity": "UWVMROS1_6b19c0e8865e796fff5a498cff731ba268fa92ea2944e6c2c5869009b3aa066b",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/Odometer",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/Odometer",
+              "members": [
+                {
+                  "name": "x",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "y",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "theta",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/Odometer.msg",
+                "bytes": 33,
+                "sha256": "b89064fa0e79c23dcc2533dbc2021e844214cc6a1cac66f2eac8532d8da2e73d"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/Odometer",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 12,
+              "maximum": 12,
+              "nodes": 4,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_4fea33e3e2ae186dbeaf49c6068019b702e742266541087a5d280b9ce42c671a",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 12,
+              "constants": [],
+              "original_section": "float32 x\nfloat32 y\nfloat32 theta"
+            }
+          },
+          "codec_identity": "UWVMROS1_4fea33e3e2ae186dbeaf49c6068019b702e742266541087a5d280b9ce42c671a",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/RawBytesMsg",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/RawBytesMsg",
+              "members": [
+                {
+                  "name": "msg",
+                  "type": "uint8",
+                  "array": "sequence",
+                  "count": 2048,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "char",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/RawBytesMsg.msg",
+                "bytes": 10,
+                "sha256": "eb336916401c98875b6ad0951ed07646f5b58cd3804d4735d2ef041a46c0b80b"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/RawBytesMsg",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 4,
+              "maximum": 2052,
+              "nodes": 3,
+              "depth": 3,
+              "codec_identity": "UWVMROS1_557e8e79f206c9cc8b820ed7c2ad8cc01e9b01327197b745709993d958b4578c",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 2052,
+              "constants": [],
+              "original_section": "char[] msg"
+            }
+          },
+          "codec_identity": "UWVMROS1_557e8e79f206c9cc8b820ed7c2ad8cc01e9b01327197b745709993d958b4578c",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/RawBytesStamped",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/RawBytesStamped",
+              "members": [
+                {
+                  "name": "header",
+                  "type": "std_msgs/msg/Header",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "msg",
+                  "type": "uint8",
+                  "array": "sequence",
+                  "count": 2048,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "char",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/RawBytesStamped.msg",
+                "bytes": 34,
+                "sha256": "b3a39ce57a443512402e9a13511532432142675449ad04dcb1f940dd0f4b0bf9"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/RawBytesStamped",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 16,
+              "maximum": 2192,
+              "nodes": 8,
+              "depth": 4,
+              "codec_identity": "UWVMROS1_27cddd472b2d8c41c39effb87a8a53261aff309500dbb68df6ebd69a19c7720e",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 2192,
+              "constants": [],
+              "original_section": "std_msgs/Header header\nchar[] msg\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_27cddd472b2d8c41c39effb87a8a53261aff309500dbb68df6ebd69a19c7720e",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/msg/RemoteControllerState",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "booster_interface/msg/RemoteControllerState",
+              "members": [
+                {
+                  "name": "event",
+                  "type": "uint32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "lx",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "ly",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "rx",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "ry",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "a",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "b",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "x",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "y",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "lb",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "rb",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "lt",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "rt",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "ls",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "rs",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "back",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "start",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_c",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_u",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_d",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_l",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_r",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_lu",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_ld",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_ru",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_rd",
+                  "type": "bool",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "hat_pos",
+                  "type": "uint8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/msg/RemoteControllerState.msg",
+                "bytes": 775,
+                "sha256": "225935fa2a752dbb51fdcbae579fa1cc4bd2822b2d45094e82359f73680fec42"
+              },
+              "component": "",
+              "owner": "booster_interface/msg/RemoteControllerState",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 42,
+              "maximum": 42,
+              "nodes": 28,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_f8a21705728862632c27b71d98c044a12bf1f9f9e0c1729fec27afe2c60c48a7",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 42,
+              "constants": [],
+              "original_section": "uint32 event  # SDL_EventType, value reference from SDL2/SDL_events.h\nfloat32 lx # left stick horizontal direction, push left to -1, push right to 1\nfloat32 ly # left stick vertical direction, push front to -1, push back to 1\nfloat32 rx # right stick horizontal direction, push left to -1, push right to 1\nfloat32 ry # right stick vertical direction, push front to -1, push back to 1\nbool a\nbool b\nbool x\nbool y\nbool lb\nbool rb\nbool lt\nbool rt\nbool ls\nbool rs\nbool back\nbool start\n\nbool hat_c # Hat centered\nbool hat_u # Hat up\nbool hat_d # Hat down\nbool hat_l # Hat left\nbool hat_r # Hat right\nbool hat_lu # Hat left up\nbool hat_ld # Hat left down\nbool hat_ru # Hat right up\nbool hat_rd # Hat right down\nuint8 hat_pos # Hat position, value reference from SDL2/SDL_joystick.h"
+            }
+          },
+          "codec_identity": "UWVMROS1_f8a21705728862632c27b71d98c044a12bf1f9f9e0c1729fec27afe2c60c48a7",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/srv/AgentService",
+          "kind": "service",
+          "identity": null,
+          "components": {
+            "request": {
+              "version": 2,
+              "name": "booster_interface/srv/AgentService_Request",
+              "members": [
+                {
+                  "name": "body",
+                  "type": "string",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 4096,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/srv/AgentService.srv",
+                "bytes": 27,
+                "sha256": "be56b80fe7d977a71de37109a89f127931be5c4217cf3d30973672e6b25aaf7b"
+              },
+              "component": "request",
+              "owner": "booster_interface/srv/AgentService",
+              "kind": "service",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 4,
+              "maximum": 4100,
+              "nodes": 2,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_d8b972ee6c7f82ee948c03b22354d1073f120ad2616a9e833b578348775404e8",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 4100,
+              "constants": [],
+              "original_section": "string body\n"
+            },
+            "response": {
+              "version": 2,
+              "name": "booster_interface/srv/AgentService_Response",
+              "members": [
+                {
+                  "name": "body",
+                  "type": "string",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 4096,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/srv/AgentService.srv",
+                "bytes": 27,
+                "sha256": "be56b80fe7d977a71de37109a89f127931be5c4217cf3d30973672e6b25aaf7b"
+              },
+              "component": "response",
+              "owner": "booster_interface/srv/AgentService",
+              "kind": "service",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 4,
+              "maximum": 4100,
+              "nodes": 2,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_86aecf9ee8652016b5c74e30d2dd4100e8b547542a81a98e7795942b47b87520",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 4100,
+              "constants": [],
+              "original_section": "\nstring body"
+            }
+          },
+          "codec_identity": "UWVMROS1_3a612d975894437a954b8d197895c1dc07d1cab3a35b8912d63b0308a0fd9bd3",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "booster_interface/srv/RpcService",
+          "kind": "service",
+          "identity": null,
+          "components": {
+            "request": {
+              "version": 2,
+              "name": "booster_interface/srv/RpcService_Request",
+              "members": [
+                {
+                  "name": "msg",
+                  "type": "booster_interface/msg/BoosterApiReqMsg",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/srv/RpcService.srv",
+                "bytes": 84,
+                "sha256": "41c795277cb0d48de5fa389da029899c6d22b61aac858ea4812ccef80f1201c4"
+              },
+              "component": "request",
+              "owner": "booster_interface/srv/RpcService",
+              "kind": "service",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 12,
+              "maximum": 4108,
+              "nodes": 4,
+              "depth": 3,
+              "codec_identity": "UWVMROS1_cc8eb67d80bdf131f1878a1be998d68560e235ffef6a539876410dfcd6c00150",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 4108,
+              "constants": [],
+              "original_section": "booster_interface/BoosterApiReqMsg msg\n"
+            },
+            "response": {
+              "version": 2,
+              "name": "booster_interface/srv/RpcService_Response",
+              "members": [
+                {
+                  "name": "msg",
+                  "type": "booster_interface/msg/BoosterApiRespMsg",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "booster_interface/srv/RpcService.srv",
+                "bytes": 84,
+                "sha256": "41c795277cb0d48de5fa389da029899c6d22b61aac858ea4812ccef80f1201c4"
+              },
+              "component": "response",
+              "owner": "booster_interface/srv/RpcService",
+              "kind": "service",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 12,
+              "maximum": 4108,
+              "nodes": 4,
+              "depth": 3,
+              "codec_identity": "UWVMROS1_7aeb7b45542f9f594e1f61be2f715abcde54b1e55efdde15100b0c553ae96322",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 4108,
+              "constants": [],
+              "original_section": "\nbooster_interface/BoosterApiRespMsg msg\n\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_08c19ac1f3b5280e9d1fc4662e19a56d3c2512e8b63127e92c4676cd7b32b04f",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "std_msgs/msg/Header",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "std_msgs/msg/Header",
+              "members": [
+                {
+                  "name": "stamp",
+                  "type": "builtin_interfaces/msg/Time",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "frame_id",
+                  "type": "string",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 128,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "std_msgs/msg/Header.msg",
+                "bytes": 322,
+                "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+              },
+              "component": "",
+              "owner": "std_msgs/msg/Header",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 12,
+              "maximum": 140,
+              "nodes": 5,
+              "depth": 3,
+              "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 140,
+              "constants": [],
+              "original_section": "# Standard metadata for higher-level stamped data types.\n# This is generally used to communicate timestamped data\n# in a particular coordinate frame.\n\n# Two-integer timestamp that is expressed as seconds and nanoseconds.\nbuiltin_interfaces/Time stamp\n\n# Transform frame with which this data is associated.\nstring frame_id\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+          "registered": false,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "builtin_interfaces/msg/Time",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "builtin_interfaces/msg/Time",
+              "members": [
+                {
+                  "name": "sec",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "nanosec",
+                  "type": "uint32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "builtin_interfaces/msg/Time.msg",
+                "bytes": 421,
+                "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+              },
+              "component": "",
+              "owner": "builtin_interfaces/msg/Time",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 8,
+              "maximum": 8,
+              "nodes": 3,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 8,
+              "constants": [],
+              "original_section": "# This message communicates ROS Time defined here:\n# https://design.ros2.org/articles/clock_and_time.html\n\n# The seconds component, valid over all int32 values.\nint32 sec\n\n# The nanoseconds component, valid in the range [0, 1e9), to be added to the seconds component. \n# e.g.\n# The time -1.7 seconds is represented as {sec: -2, nanosec: 3e8}\n# The time 1.7 seconds is represented as {sec: 1, nanosec: 7e8}\nuint32 nanosec\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+          "registered": false,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "uwvm_booster_sdk_bridge/msg/ImuState",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "uwvm_booster_sdk_bridge/msg/ImuState",
+              "members": [
+                {
+                  "name": "rpy",
+                  "type": "float32",
+                  "array": "array",
+                  "count": 3,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "gyro",
+                  "type": "float32",
+                  "array": "array",
+                  "count": 3,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "acc",
+                  "type": "float32",
+                  "array": "array",
+                  "count": 3,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "uwvm_booster_sdk_bridge/msg/ImuState.msg",
+                "bytes": 153,
+                "sha256": "524085b74c19d69f4665cd03877aad3b223cf9f871d3d67c8d0edbded8840cfc"
+              },
+              "component": "",
+              "owner": "uwvm_booster_sdk_bridge/msg/ImuState",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 36,
+              "maximum": 36,
+              "nodes": 13,
+              "depth": 3,
+              "codec_identity": "UWVMROS1_858ad4a47d2409da6b4e2513178d7d3b0d4568d6ce488729de0b9a220a100f04",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 36,
+              "constants": [],
+              "original_section": "# Authored exact-value bridge of selected official Booster SDK types; not the older official ROS2 message.\nfloat32[3] rpy\nfloat32[3] gyro\nfloat32[3] acc\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_858ad4a47d2409da6b4e2513178d7d3b0d4568d6ce488729de0b9a220a100f04",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "uwvm_booster_sdk_bridge/msg/MotorCmd",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "uwvm_booster_sdk_bridge/msg/MotorCmd",
+              "members": [
+                {
+                  "name": "mode",
+                  "type": "uint8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "q",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "dq",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "tau",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "kp",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "kd",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "weight",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "uwvm_booster_sdk_bridge/msg/MotorCmd.msg",
+                "bytes": 188,
+                "sha256": "6b965ee3a4349c4a9e39fd5c2453f1ec2374939cef3589d55f170dedad4bb2d9"
+              },
+              "component": "",
+              "owner": "uwvm_booster_sdk_bridge/msg/MotorCmd",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 25,
+              "maximum": 25,
+              "nodes": 8,
+              "depth": 2,
+              "codec_identity": "UWVMROS1_66fec912031dfbd29b8e4e747dcdc2dc465506bd003323bc929929bf6a9d31a4",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 25,
+              "constants": [],
+              "original_section": "# Authored exact-value bridge of selected official Booster SDK types; not the older official ROS2 message.\nuint8 mode\nfloat32 q\nfloat32 dq\nfloat32 tau\nfloat32 kp\nfloat32 kd\nfloat32 weight\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_66fec912031dfbd29b8e4e747dcdc2dc465506bd003323bc929929bf6a9d31a4",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "uwvm_booster_sdk_bridge/msg/MotorState",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "uwvm_booster_sdk_bridge/msg/MotorState",
+              "members": [
+                {
+                  "name": "mode",
+                  "type": "uint8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "q",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "dq",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "ddq",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "tau_est",
+                  "type": "float32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "temperature",
+                  "type": "uint8",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "lost",
+                  "type": "uint32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "reserve",
+                  "type": "uint32",
+                  "array": "array",
+                  "count": 2,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "uwvm_booster_sdk_bridge/msg/MotorState.msg",
+                "bytes": 215,
+                "sha256": "adbffcf5acfe4654b837b1abc157dc9664d119b042dddbec0e6c8dd235ed6078"
+              },
+              "component": "",
+              "owner": "uwvm_booster_sdk_bridge/msg/MotorState",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 30,
+              "maximum": 30,
+              "nodes": 11,
+              "depth": 3,
+              "codec_identity": "UWVMROS1_958168dc1e32d50827f255080117a82421d7fb6ae4ad6a05763ce2d3173a30af",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 30,
+              "constants": [],
+              "original_section": "# Authored exact-value bridge of selected official Booster SDK types; not the older official ROS2 message.\nuint8 mode\nfloat32 q\nfloat32 dq\nfloat32 ddq\nfloat32 tau_est\nuint8 temperature\nuint32 lost\nuint32[2] reserve\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_958168dc1e32d50827f255080117a82421d7fb6ae4ad6a05763ce2d3173a30af",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "uwvm_booster_sdk_bridge/msg/LowCmd",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "uwvm_booster_sdk_bridge/msg/LowCmd",
+              "members": [
+                {
+                  "name": "cmd_type",
+                  "type": "int32",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "motor_cmd",
+                  "type": "uwvm_booster_sdk_bridge/msg/MotorCmd",
+                  "array": "sequence",
+                  "count": 29,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "uwvm_booster_sdk_bridge/msg/LowCmd.msg",
+                "bytes": 143,
+                "sha256": "463da602d1586dadcdc3a5f46bb63716095bb8443447fa216425f9ec9cff11c9"
+              },
+              "component": "",
+              "owner": "uwvm_booster_sdk_bridge/msg/LowCmd",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 8,
+              "maximum": 733,
+              "nodes": 235,
+              "depth": 4,
+              "codec_identity": "UWVMROS1_3324a161b056f9282ffa8dce3254a1456b75f6eae5f4a067e844e125e94cba3a",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 733,
+              "constants": [],
+              "original_section": "# Authored exact-value bridge of selected official Booster SDK types; not the older official ROS2 message.\nint32 cmd_type\nMotorCmd[] motor_cmd\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_3324a161b056f9282ffa8dce3254a1456b75f6eae5f4a067e844e125e94cba3a",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        },
+        {
+          "version": 2,
+          "name": "uwvm_booster_sdk_bridge/msg/LowState",
+          "kind": "message",
+          "identity": null,
+          "components": {
+            "message": {
+              "version": 2,
+              "name": "uwvm_booster_sdk_bridge/msg/LowState",
+              "members": [
+                {
+                  "name": "imu_state",
+                  "type": "uwvm_booster_sdk_bridge/msg/ImuState",
+                  "array": "",
+                  "count": 0,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "motor_state_parallel",
+                  "type": "uwvm_booster_sdk_bridge/msg/MotorState",
+                  "array": "sequence",
+                  "count": 29,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                },
+                {
+                  "name": "motor_state_serial",
+                  "type": "uwvm_booster_sdk_bridge/msg/MotorState",
+                  "array": "sequence",
+                  "count": 29,
+                  "string_bound": 0,
+                  "native_string_bound": 0,
+                  "native_sequence_bound": 0,
+                  "native_default": null,
+                  "native_scalar": "",
+                  "string_encoding": "utf8",
+                  "float_policy": "finite"
+                }
+              ],
+              "identity": null,
+              "source": {
+                "file": "uwvm_booster_sdk_bridge/msg/LowState.msg",
+                "bytes": 192,
+                "sha256": "4165c2f4805e1c6aa014285542e879f3c024b5898ef6a0536f9ff8e71dd44330"
+              },
+              "component": "",
+              "owner": "uwvm_booster_sdk_bridge/msg/LowState",
+              "kind": "message",
+              "profile": "uwvm-ros-vendor-complete-bounded-v1",
+              "minimum": 44,
+              "maximum": 1784,
+              "nodes": 654,
+              "depth": 5,
+              "codec_identity": "UWVMROS1_ca4bcb79077b0e026cf45a389981622ff9c80570ee813ff5633c605fe5021a58",
+              "has_native_defaults": false,
+              "aggregate_wire_bytes": 0,
+              "cartesian_maximum": 1784,
+              "constants": [],
+              "original_section": "# Authored exact-value bridge of selected official Booster SDK types; not the older official ROS2 message.\nImuState imu_state\nMotorState[] motor_state_parallel\nMotorState[] motor_state_serial\n"
+            }
+          },
+          "codec_identity": "UWVMROS1_ca4bcb79077b0e026cf45a389981622ff9c80570ee813ff5633c605fe5021a58",
+          "registered": true,
+          "profile": "uwvm-ros-vendor-complete-bounded-v1"
+        }
+      ],
+      "source_pins": {
+        "catalog": {
+          "bytes": 5765,
+          "sha256": "bb061ac0e912d0a3d9d0b1b4ffeb083b5ecdba200e3ec03eb92a752d4b9b8915"
+        },
+        "definitions": [
+          {
+            "file": "booster_interface/msg/BoosterApiReqMsg.msg",
+            "bytes": 24,
+            "sha256": "bf5a63bf482c32ec4c9d933727a7e27ab2e4a774cf2c496ed32568544ed204a3"
+          },
+          {
+            "file": "booster_interface/msg/BoosterApiRespMsg.msg",
+            "bytes": 24,
+            "sha256": "8027a61dbaea29ab5f4744fbd74e1859244d741e330729a2533ec276bc3edcbc"
+          },
+          {
+            "file": "booster_interface/msg/ButtonEventMsg.msg",
+            "bytes": 209,
+            "sha256": "e3adc5a8527112149ac79f95b42963b487fc07d100d9ff8ed1e89dc9f01884a2"
+          },
+          {
+            "file": "booster_interface/msg/FallDownState.msg",
+            "bytes": 131,
+            "sha256": "0636d77c3e4cd500a4b69c79a762d12755da1788ba79b3196e525d416c2182d9"
+          },
+          {
+            "file": "booster_interface/msg/HandCommand.msg",
+            "bytes": 72,
+            "sha256": "05c8dfb8939429f36b3db859ac5975669533a29992aab406bc3ce2a47cd62017"
+          },
+          {
+            "file": "booster_interface/msg/HandDdsMsg.msg",
+            "bytes": 23,
+            "sha256": "44f8779000296c7383bb4e16b15fa692de691925f4853f5cafdf1b61c0b00d0d"
+          },
+          {
+            "file": "booster_interface/msg/HandParam.msg",
+            "bytes": 45,
+            "sha256": "8ddb515b8d97e9a19f3fdbf5e476e5a5b2431a21823015dbc170bc1bc7af1500"
+          },
+          {
+            "file": "booster_interface/msg/ImuState.msg",
+            "bytes": 147,
+            "sha256": "aab374da59a0ad77db57eb3d55bed5a5ba2080a100a592e88dcf2d9866dfa00a"
+          },
+          {
+            "file": "booster_interface/msg/LowCmd.msg",
+            "bytes": 147,
+            "sha256": "975a2ef70dfc4156cd0529d05c23afa8612e47d12d1d51b06cea5513130d6883"
+          },
+          {
+            "file": "booster_interface/msg/LowState.msg",
+            "bytes": 84,
+            "sha256": "0ada3e9ed1da3a0ea1a280854d1c845abcd502f89465b680fac6263bad8c3dda"
+          },
+          {
+            "file": "booster_interface/msg/MotorCmd.msg",
+            "bytes": 79,
+            "sha256": "d44c3e5e31451cab66c73212f58482f831e23878c2c745e4feac1dd33f4fdf06"
+          },
+          {
+            "file": "booster_interface/msg/MotorState.msg",
+            "bytes": 367,
+            "sha256": "0a2e5a6438911eb6a920fec0661ac678f71a4bedc6ec037e66d14277eada9a5c"
+          },
+          {
+            "file": "booster_interface/msg/Odometer.msg",
+            "bytes": 33,
+            "sha256": "b89064fa0e79c23dcc2533dbc2021e844214cc6a1cac66f2eac8532d8da2e73d"
+          },
+          {
+            "file": "booster_interface/msg/RawBytesMsg.msg",
+            "bytes": 10,
+            "sha256": "eb336916401c98875b6ad0951ed07646f5b58cd3804d4735d2ef041a46c0b80b"
+          },
+          {
+            "file": "booster_interface/msg/RawBytesStamped.msg",
+            "bytes": 34,
+            "sha256": "b3a39ce57a443512402e9a13511532432142675449ad04dcb1f940dd0f4b0bf9"
+          },
+          {
+            "file": "booster_interface/msg/RemoteControllerState.msg",
+            "bytes": 775,
+            "sha256": "225935fa2a752dbb51fdcbae579fa1cc4bd2822b2d45094e82359f73680fec42"
+          },
+          {
+            "file": "booster_interface/srv/AgentService.srv",
+            "bytes": 27,
+            "sha256": "be56b80fe7d977a71de37109a89f127931be5c4217cf3d30973672e6b25aaf7b"
+          },
+          {
+            "file": "booster_interface/srv/RpcService.srv",
+            "bytes": 84,
+            "sha256": "41c795277cb0d48de5fa389da029899c6d22b61aac858ea4812ccef80f1201c4"
+          },
+          {
+            "file": "std_msgs/msg/Header.msg",
+            "bytes": 322,
+            "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+          },
+          {
+            "file": "builtin_interfaces/msg/Time.msg",
+            "bytes": 421,
+            "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+          },
+          {
+            "file": "uwvm_booster_sdk_bridge/msg/ImuState.msg",
+            "bytes": 153,
+            "sha256": "524085b74c19d69f4665cd03877aad3b223cf9f871d3d67c8d0edbded8840cfc"
+          },
+          {
+            "file": "uwvm_booster_sdk_bridge/msg/MotorCmd.msg",
+            "bytes": 188,
+            "sha256": "6b965ee3a4349c4a9e39fd5c2453f1ec2374939cef3589d55f170dedad4bb2d9"
+          },
+          {
+            "file": "uwvm_booster_sdk_bridge/msg/MotorState.msg",
+            "bytes": 215,
+            "sha256": "adbffcf5acfe4654b837b1abc157dc9664d119b042dddbec0e6c8dd235ed6078"
+          },
+          {
+            "file": "uwvm_booster_sdk_bridge/msg/LowCmd.msg",
+            "bytes": 143,
+            "sha256": "463da602d1586dadcdc3a5f46bb63716095bb8443447fa216425f9ec9cff11c9"
+          },
+          {
+            "file": "uwvm_booster_sdk_bridge/msg/LowState.msg",
+            "bytes": 192,
+            "sha256": "4165c2f4805e1c6aa014285542e879f3c024b5898ef6a0536f9ff8e71dd44330"
+          }
+        ]
+      }
+    }
+  ],
+  "source_variants": [
+    "ros2_official",
+    "ros2_sdk_bridge"
+  ],
+  "native_qualification": false
+}

@@ -1,0 +1,47 @@
+{
+    "format": "uwvm-real-interpreter-v1",
+    "language": "py",
+    "implementation": "CPython",
+    "version": "3.14.8",
+    "filename": "cpython.wasm",
+    "sha256": "e24a19e98c2105fbc86d67353bf72328f864fa882bb58e5651d2977380e481ff",
+    "bytes": 32543071,
+    "compiler": "LLVM 23.1.4",
+    "license": "PSF-2.0 and retained bundled component licenses",
+    "target": "wasm32-wasip1",
+    "ros_backend": "ros2",
+    "native_distribution": "jazzy",
+    "source_manifest": "src/language/python/source.json",
+    "maintenance_recipe": "tools/language/build_interpreters.py",
+    "application_packer": "tools/platform/abb/pack_interpreter.lua",
+    "application_capacity": 4194304,
+    "supported_native_observations": [
+        "read_speed",
+        "read_io",
+        "system_state"
+    ],
+    "full_catalog_native_acceptance": false,
+    "source_catalogs": {
+        "ros1": {
+            "records": 79,
+            "interfaces": 53
+        },
+        "ros2": {
+            "records": 88,
+            "interfaces": 63
+        }
+    },
+    "qualifications": {
+        "all_catalog_codec_checks": 507,
+        "native_ros_cases": 6,
+        "abi_fixture_cases": 45,
+        "xmake_only_examples": 3
+    },
+    "adapter_sources": {
+        "src/language/common/abi.h": "d78fd838ed157531d04e151bb75e2116eeff5ebbe7341be8d997a708c3252a8b",
+        "src/language/common/application.h": "200a615a7a2f6c71a72bebbd6b5d1e1d940752659e06deea280784fb97e94dda",
+        "src/language/python/command.c": "f5609b8011c47cebc038229bd8c5bcbfc34aada765d67ff7df6a28ae8acd0a18",
+        "src/language/python/Setup.local": "cfbbfd691862b152172dc2cb09bc8f3bc3a165ca1e3180689b774a50695153ad"
+    },
+    "source_manifest_sha256": "435a12f2e2342e35632f3af5546964c07eedd37db34246d92dbe86f626416e03"
+}

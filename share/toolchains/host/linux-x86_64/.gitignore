@@ -1,0 +1,7 @@
+# All pinned .xmz bundles and their manifests are shipped through Git/Git LFS.
+# These names are temporary products of the bundle packager and installer.
+*.uncompressed
+*.partial
+*.lock
+*.tmp
+*.temp

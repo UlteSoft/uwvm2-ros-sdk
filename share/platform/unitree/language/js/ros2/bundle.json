@@ -1,0 +1,38 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "name": "ros/js/transport",
+      "file": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "name": "uwvm/js/observation",
+      "file": "src/language/js/modules/observation.mjs",
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "name": "unitree/js/ros2/records",
+      "file": "include/platform/unitree/js/ros2/records.mjs",
+      "sha256": "936677507348bf0772c50994edef7873a472e2aec669af33a05255655bf20037"
+    },
+    {
+      "name": "unitree/js/observation",
+      "file": "include/platform/unitree/js/observation.mjs",
+      "sha256": "dcd994b350fe897c287a1c1e1388e547830cf6200f9c78c36f42b1391ab51cf8"
+    },
+    {
+      "name": "unitree/js/ros2/observation",
+      "file": "include/platform/unitree/js/ros2/observation.mjs",
+      "sha256": "bfc5dd792937943502aa9dd4706ac3621ce1a1fefcdebdc65be5ee18cc48b195"
+    }
+  ],
+  "default_authority": []
+}

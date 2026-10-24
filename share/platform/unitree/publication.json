@@ -1,0 +1,98 @@
+{
+  "format": "uwvm-unitree-publication-v1",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "d",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "zig"
+  ],
+  "example_count": 132,
+  "per_language": {
+    "ros1": 3,
+    "ros2": 3
+  },
+  "output_extension": ".wasm",
+  "build_host": "linux-x86_64",
+  "preinstalled_build_programs": [
+    "xmake"
+  ],
+  "qualified_native_ros": [
+    "noetic",
+    "jazzy"
+  ],
+  "physical_robot_tested": false,
+  "target": "wasm32-wasip1",
+  "source_format_policy": "Readable Uwvm2-style block layout and professional English Doxygen contracts; C-family uses tools/language/c/.clang-format, with language-specific formatters for other sources.",
+  "integration_status": "QUALIFIED_WASM32_ROUTES_AND_CFAMILY_MEMORY64",
+  "baseline": "share/platform/unitree/historical-baseline.json",
+  "build_versions": {
+    "as": "AssemblyScript 0.28.20 / Node 22.17.0",
+    "c": "Clang 23.1.4",
+    "c_ffi_bridge": "Clang 23.1.4",
+    "cpp": "Clang++ 23.1.4",
+    "d": "LDC 1.41.0 / DMD 2.111.0 / original LLVM 19.1.7 backend; LLVM 23 adapter and final link",
+    "go": "Go 1.24.2",
+    "haskell": "GHC wasm32-wasi 9.14.1.20260731; LLVM 23 assembler, C stubs and final link",
+    "java": "JDK 21.0.10 / Java 17 bytecode / TeaVM 0.13.1 WEBASSEMBLY_WASI AOT",
+    "js": "QuickJS 2026-06-04 embedded WASI engine",
+    "kotlin": "Kotlin 2.1.20 / JVM 17 bytecode / TeaVM 0.13.1 WEBASSEMBLY_WASI AOT",
+    "lua": "Lua 5.4.8 embedded WASI engine; Wasm exceptions required",
+    "moonbit": "MoonBit 0.10.16+b1a0e846e Wasm linear-memory command backend",
+    "nim": "Nim 2.2.4 generated C; LLVM 23 compilation and final link",
+    "objectc": "Clang 23.1.4",
+    "odin": "Odin dev-2025-10-05; LLVM 23 ABI adapter and final link",
+    "php": "Zend PHP 8.4.13 embedded WASI engine",
+    "py": "CPython 3.14.8 embedded WASI engine",
+    "rs": "Rust 1.87.0 / LLVM 23 linker",
+    "ruby": "CRuby 3.4.7 embedded WASI engine",
+    "swift": "Swift Embedded 6.4.1; LLVM 23 C adapter and final link",
+    "tinygo": "TinyGo 0.38.0 / Go 1.24.2 / LLVM 23 linker",
+    "zig": "Zig 0.14.1 wasm32-freestanding; LLVM 23 C adapter and final WASI link"
+  },
+  "qualification": "share/platform/unitree/qualification.json",
+  "qualified_execution_hosts": [
+    "linux-x86_64",
+    "linux-aarch64-via-qemu"
+  ],
+  "source_language_count": 21,
+  "abi_bridge_route_count": 1,
+  "engine_cold_source_rebuild_status": "SEPARATE_UNFINISHED_TASK",
+  "qualification_sha256": "0cbb6387acadcb938411e926989385083f608ad381a1df167d98f9ec5db79843",
+  "default_target": "wasm32-wasip1",
+  "additional_target_profiles": {
+    "wasm64-wasip1": {
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "exception_profile": "noeh",
+      "platform": "wasm-wasip1",
+      "architecture": "wasm64",
+      "abi": "Uwvm Preview 1 memory64 extension",
+      "qualified_examples": 12,
+      "qualification": "share/platform/unitree/memory64-qualification.json",
+      "qualification_sha256": "8977b35a77c3bc13700f18ce2a34011b12a8b9f544268deff58214d7ae418c7d",
+      "whole_54_record_codec_matrix_qualified": false,
+      "successful_allocation_above_4GiB_qualified": false
+    }
+  },
+  "raw_audit_records_in_distribution": false
+}

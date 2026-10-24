@@ -1,0 +1,26 @@
+{
+  "default_authority": [],
+  "profiles": [
+    {
+      "admitted_roots": 21,
+      "branch": "main",
+      "command": "JointsDataCmd",
+      "command_type": "drdds/msg/JointsDataCmd",
+      "complete_definitions": 26,
+      "display": "DEEP Robotics",
+      "excluded_roots": 0,
+      "family": "deep-robotics-ros2-main-complete",
+      "has_protocols": true,
+      "id": "ros2_main",
+      "original_roots": 21,
+      "package": "drdds",
+      "ros_version": 2,
+      "source_max_total_nodes": 65536,
+      "source_only": false,
+      "state": "RobotStatus",
+      "state_type": "drdds/msg/RobotStatus",
+      "vendor": "deep_robotics"
+    }
+  ],
+  "vendor": "deep_robotics"
+}

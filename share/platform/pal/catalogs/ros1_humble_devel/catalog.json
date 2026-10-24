@@ -1,0 +1,1923 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Accel.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Accel"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Point.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Point"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Point32.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Point32"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/PointStamped.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PointStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Pose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Pose"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Pose2D.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Pose2D"
+    },
+    {
+      "bounds": {
+        "poses": {
+          "sequence": 4
+        }
+      },
+      "file": "geometry_msgs/PoseArray.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PoseArray"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/PoseStamped.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PoseStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/PoseWithCovariance.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PoseWithCovariance"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/PoseWithCovarianceStamped.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PoseWithCovarianceStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Quaternion.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Quaternion"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Transform.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Transform"
+    },
+    {
+      "bounds": {
+        "child_frame_id": {
+          "string": 128
+        }
+      },
+      "file": "geometry_msgs/TransformStamped.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/TransformStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Twist.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Twist"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Vector3.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Vector3"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/Wrench.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Wrench"
+    },
+    {
+      "bounds": {},
+      "file": "humanoid_nav_msgs/StepTarget.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "humanoid_nav_msgs/StepTarget"
+    },
+    {
+      "bounds": {},
+      "file": "nav_msgs/MapMetaData.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "nav_msgs/MapMetaData"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 256
+        }
+      },
+      "file": "nav_msgs/OccupancyGrid.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "nav_msgs/OccupancyGrid"
+    },
+    {
+      "bounds": {
+        "key": {
+          "string": 128
+        },
+        "value": {
+          "string": 128
+        }
+      },
+      "file": "pal_behaviour_msgs/BehaviourArgument.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_behaviour_msgs/BehaviourArgument"
+    },
+    {
+      "bounds": {
+        "request.arguments": {
+          "sequence": 4
+        },
+        "request.name": {
+          "string": 128
+        },
+        "response.response": {
+          "string": 128
+        }
+      },
+      "file": "pal_behaviour_msgs/BehaviourEvent.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_behaviour_msgs/BehaviourEvent"
+    },
+    {
+      "bounds": {
+        "goal.arguments": {
+          "sequence": 4
+        },
+        "goal.taskName": {
+          "string": 128
+        }
+      },
+      "file": "pal_behaviour_msgs/BehaviourTask.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_behaviour_msgs/BehaviourTask"
+    },
+    {
+      "bounds": {
+        "goal.presentationFile": {
+          "string": 128
+        }
+      },
+      "file": "pal_behaviour_msgs/Presentation.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_behaviour_msgs/Presentation"
+    },
+    {
+      "bounds": {},
+      "file": "pal_common_msgs/Disable.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_common_msgs/Disable"
+    },
+    {
+      "bounds": {},
+      "file": "pal_common_msgs/Empty.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_common_msgs/Empty"
+    },
+    {
+      "bounds": {
+        "response.data": {
+          "string": 128
+        }
+      },
+      "file": "pal_common_msgs/GetString.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_common_msgs/GetString"
+    },
+    {
+      "bounds": {
+        "joints": {
+          "string": 128
+        }
+      },
+      "file": "pal_common_msgs/JointCurrent.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_common_msgs/JointCurrent"
+    },
+    {
+      "bounds": {
+        "request.data": {
+          "string": 128
+        }
+      },
+      "file": "pal_common_msgs/SetString.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_common_msgs/SetString"
+    },
+    {
+      "bounds": {
+        "actuator_names": {
+          "sequence": 16,
+          "string": 128
+        },
+        "current_limits": {
+          "sequence": 16
+        }
+      },
+      "file": "pal_control_msgs/ActuatorCurrentLimit.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_control_msgs/ActuatorCurrentLimit"
+    },
+    {
+      "bounds": {
+        "request.actuator_name": {
+          "string": 128
+        },
+        "response.status": {
+          "string": 128
+        }
+      },
+      "file": "pal_control_msgs/CurrentLimit.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_control_msgs/CurrentLimit"
+    },
+    {
+      "bounds": {
+        "goal.filename": {
+          "string": 128
+        },
+        "result.message": {
+          "string": 128
+        }
+      },
+      "file": "pal_control_msgs/MotionManager.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_control_msgs/MotionManager"
+    },
+    {
+      "bounds": {},
+      "file": "pal_control_msgs/OperationalSpaceGoal.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_control_msgs/OperationalSpaceGoal"
+    },
+    {
+      "bounds": {
+        "goal.trajectory": {
+          "sequence": 4
+        },
+        "result.message": {
+          "string": 128
+        }
+      },
+      "file": "pal_control_msgs/RigidBodyTrajectory.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_control_msgs/RigidBodyTrajectory"
+    },
+    {
+      "bounds": {},
+      "file": "pal_control_msgs/RigidBodyTrajectoryPoint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_control_msgs/RigidBodyTrajectoryPoint"
+    },
+    {
+      "bounds": {
+        "request.fullPathFileName": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/AddTexturedObject.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/AddTexturedObject"
+    },
+    {
+      "bounds": {
+        "request.model_name": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/ChangeObjectRecognizerModel.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/ChangeObjectRecognizerModel"
+    },
+    {
+      "bounds": {},
+      "file": "pal_detection_msgs/Detection2d.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/Detection2d"
+    },
+    {
+      "bounds": {
+        "detections": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_detection_msgs/Detections2d.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/Detections2d"
+    },
+    {
+      "bounds": {
+        "expression": {
+          "string": 128
+        },
+        "gender": {
+          "string": 128
+        },
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/FaceDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/FaceDetection"
+    },
+    {
+      "bounds": {
+        "faces": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_detection_msgs/FaceDetections.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/FaceDetections"
+    },
+    {
+      "bounds": {
+        "faces": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_detection_msgs/FaceThermalDetections.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/FaceThermalDetections"
+    },
+    {
+      "bounds": {
+        "gestureId": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/Gesture.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/Gesture"
+    },
+    {
+      "bounds": {
+        "position3D": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_detection_msgs/LegDetections.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/LegDetections"
+    },
+    {
+      "bounds": {},
+      "file": "pal_detection_msgs/Obstacle.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/Obstacle"
+    },
+    {
+      "bounds": {
+        "obstacles": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_detection_msgs/Obstacles.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/Obstacles"
+    },
+    {
+      "bounds": {},
+      "file": "pal_detection_msgs/PersonDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/PersonDetection"
+    },
+    {
+      "bounds": {
+        "persons": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_detection_msgs/PersonDetections.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/PersonDetections"
+    },
+    {
+      "bounds": {},
+      "file": "pal_detection_msgs/RecognizeObjects.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/RecognizeObjects"
+    },
+    {
+      "bounds": {
+        "action_name": {
+          "sequence": 16,
+          "string": 128
+        },
+        "u": {
+          "sequence": 16
+        },
+        "v": {
+          "sequence": 16
+        }
+      },
+      "file": "pal_detection_msgs/RecognizedActions.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/RecognizedActions"
+    },
+    {
+      "bounds": {
+        "object_class": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/RecognizedObject.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/RecognizedObject"
+    },
+    {
+      "bounds": {
+        "objects": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_detection_msgs/RecognizedObjectArray.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/RecognizedObjectArray"
+    },
+    {
+      "bounds": {},
+      "file": "pal_detection_msgs/Recognizer.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/Recognizer"
+    },
+    {
+      "bounds": {
+        "x": {
+          "sequence": 16
+        },
+        "y": {
+          "sequence": 16
+        }
+      },
+      "file": "pal_detection_msgs/RotatedDetection2d.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/RotatedDetection2d"
+    },
+    {
+      "bounds": {
+        "request.imageFullPathFileName": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/SelectTexturedObject.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/SelectTexturedObject"
+    },
+    {
+      "bounds": {
+        "request.databaseName": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/SetDatabase.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/SetDatabase"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/StartEnrollment.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/StartEnrollment"
+    },
+    {
+      "bounds": {
+        "response.error_msg": {
+          "string": 128
+        }
+      },
+      "file": "pal_detection_msgs/StopEnrollment.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/StopEnrollment"
+    },
+    {
+      "bounds": {},
+      "file": "pal_detection_msgs/TexturedObjectDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/TexturedObjectDetection"
+    },
+    {
+      "bounds": {},
+      "file": "pal_detection_msgs/WaveDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_detection_msgs/WaveDetection"
+    },
+    {
+      "bounds": {},
+      "file": "pal_interaction_msgs/ASRActivation.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASRActivation"
+    },
+    {
+      "bounds": {},
+      "file": "pal_interaction_msgs/ASREvent.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASREvent"
+    },
+    {
+      "bounds": {
+        "goal.file": {
+          "string": 128
+        },
+        "goal.grammar": {
+          "string": 128
+        },
+        "goal.lang_id": {
+          "string": 128
+        },
+        "result.file": {
+          "string": 128
+        },
+        "result.msg": {
+          "string": 128
+        },
+        "result.recognised_utterances": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_interaction_msgs/ASRFile.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASRFile"
+    },
+    {
+      "bounds": {
+        "modelName": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/ASRLangModelMngmt.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASRLangModelMngmt"
+    },
+    {
+      "bounds": {
+        "language": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/ASRLanguage.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASRLanguage"
+    },
+    {
+      "bounds": {},
+      "file": "pal_interaction_msgs/ASRService.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASRService"
+    },
+    {
+      "bounds": {
+        "requests": {
+          "sequence": 256
+        }
+      },
+      "file": "pal_interaction_msgs/ASRSrvRequest.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASRSrvRequest"
+    },
+    {
+      "bounds": {
+        "error_msg": {
+          "string": 128
+        },
+        "warn_msg": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/ASRSrvResponse.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASRSrvResponse"
+    },
+    {
+      "bounds": {
+        "acoustic_env": {
+          "string": 128
+        },
+        "enabled_grammar": {
+          "string": 128
+        },
+        "language": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/ASRStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/ASRStatus"
+    },
+    {
+      "bounds": {
+        "device_name": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/AudioDeviceDescription.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/AudioDeviceDescription"
+    },
+    {
+      "bounds": {
+        "goal.file": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/AudioPlay.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/AudioPlay"
+    },
+    {
+      "bounds": {
+        "msg": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/AudioPlayerState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/AudioPlayerState"
+    },
+    {
+      "bounds": {
+        "metadoa": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/DirectionOfArrival.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/DirectionOfArrival"
+    },
+    {
+      "bounds": {},
+      "file": "pal_interaction_msgs/EnablingSoundLocalisation.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/EnablingSoundLocalisation"
+    },
+    {
+      "bounds": {
+        "response.word_durations": {
+          "sequence": 16
+        },
+        "response.words": {
+          "sequence": 16,
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/GetSpeechDuration.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/GetSpeechDuration"
+    },
+    {
+      "bounds": {
+        "expanded": {
+          "string": 128
+        },
+        "key": {
+          "string": 128
+        },
+        "section": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/I18nArgument.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/I18nArgument"
+    },
+    {
+      "bounds": {
+        "arguments": {
+          "sequence": 4
+        },
+        "key": {
+          "string": 128
+        },
+        "lang_id": {
+          "string": 128
+        },
+        "section": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/I18nText.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/I18nText"
+    },
+    {
+      "bounds": {
+        "action": {
+          "string": 128
+        },
+        "args": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_interaction_msgs/Input.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/Input"
+    },
+    {
+      "bounds": {
+        "key": {
+          "string": 128
+        },
+        "value": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/InputArgument.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/InputArgument"
+    },
+    {
+      "bounds": {
+        "goal.lang_id": {
+          "string": 128
+        },
+        "goal.text": {
+          "string": 128
+        },
+        "result.text": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/Sound.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/Sound"
+    },
+    {
+      "bounds": {},
+      "file": "pal_interaction_msgs/SoundLocalisationService.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/SoundLocalisationService"
+    },
+    {
+      "bounds": {
+        "text": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/TTSstate.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/TTSstate"
+    },
+    {
+      "bounds": {
+        "feedback.next_word": {
+          "string": 128
+        },
+        "feedback.text_said": {
+          "string": 128
+        },
+        "feedback.viseme_id": {
+          "string": 128
+        },
+        "goal.speakerName": {
+          "string": 128
+        },
+        "result.msg": {
+          "string": 128
+        },
+        "result.text": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/Tts.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/Tts"
+    },
+    {
+      "bounds": {
+        "id": {
+          "string": 128
+        },
+        "keys": {
+          "sequence": 16,
+          "string": 128
+        },
+        "value": {
+          "sequence": 16,
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/TtsMark.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/TtsMark"
+    },
+    {
+      "bounds": {
+        "lang_id": {
+          "string": 128
+        },
+        "text": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/TtsText.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/TtsText"
+    },
+    {
+      "bounds": {},
+      "file": "pal_interaction_msgs/VoiceActivity.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/VoiceActivity"
+    },
+    {
+      "bounds": {
+        "arg": {
+          "string": 128
+        },
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/WebGuiEvent.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/WebGuiEvent"
+    },
+    {
+      "bounds": {
+        "key": {
+          "string": 128
+        },
+        "value": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/actiontag.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/actiontag"
+    },
+    {
+      "bounds": {
+        "tags": {
+          "sequence": 4
+        },
+        "text": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/asrresult.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/asrresult"
+    },
+    {
+      "bounds": {
+        "acousticenv": {
+          "string": 128
+        },
+        "disable_grammar": {
+          "string": 128
+        },
+        "enable_grammar": {
+          "string": 128
+        },
+        "language": {
+          "string": 128
+        }
+      },
+      "file": "pal_interaction_msgs/asrupdate.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/asrupdate"
+    },
+    {
+      "bounds": {
+        "channel0": {
+          "sequence": 16
+        },
+        "channel1": {
+          "sequence": 16
+        }
+      },
+      "file": "pal_interaction_msgs/audiosignal.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/audiosignal"
+    },
+    {
+      "bounds": {},
+      "file": "pal_interaction_msgs/recognizerService.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_interaction_msgs/recognizerService"
+    },
+    {
+      "bounds": {},
+      "file": "pal_motion_model_msgs/GetMotionMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_motion_model_msgs/GetMotionMap"
+    },
+    {
+      "bounds": {},
+      "file": "pal_motion_model_msgs/MotionModel.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_motion_model_msgs/MotionModel"
+    },
+    {
+      "bounds": {
+        "models": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_motion_model_msgs/MotionModelList.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_motion_model_msgs/MotionModelList"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_motion_model_msgs/MotionModelMap.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_motion_model_msgs/MotionModelMap"
+    },
+    {
+      "bounds": {
+        "id": {
+          "string": 128
+        }
+      },
+      "file": "pal_multirobot_msgs/WifiServiceDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_multirobot_msgs/WifiServiceDetection"
+    },
+    {
+      "bounds": {
+        "request.input": {
+          "string": 128
+        },
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/Acknowledgment.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/Acknowledgment"
+    },
+    {
+      "bounds": {
+        "map_names": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_navigation_msgs/AvailableMaps.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/AvailableMaps"
+    },
+    {
+      "bounds": {
+        "request.building_name": {
+          "string": 128
+        },
+        "request.floor_name": {
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/ChangeBuilding.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/ChangeBuilding"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/ChangeMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/ChangeMap"
+    },
+    {
+      "bounds": {
+        "request.map_name": {
+          "string": 128
+        },
+        "request.sources": {
+          "sequence": 16,
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/ChangeSyncMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/ChangeSyncMap"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/DisableEmergency.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/DisableEmergency"
+    },
+    {
+      "bounds": {
+        "msgs": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_navigation_msgs/Emergency.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/Emergency"
+    },
+    {
+      "bounds": {
+        "sequence": {
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/EulerAngles.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/EulerAngles"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/EulerAnglesStamped.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/EulerAnglesStamped"
+    },
+    {
+      "bounds": {
+        "goal.source_frame": {
+          "string": 128
+        },
+        "goal.target_frame": {
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/ExecuteParking.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/ExecuteParking"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/FinalApproachPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/FinalApproachPose"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/GetMapConfiguration.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/GetMapConfiguration"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/GetNodes.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/GetNodes"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/GetPOI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/GetPOI"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/GetSubMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/GetSubMap"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/GoTo.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/GoTo"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/GoToPOI.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/GoToPOI"
+    },
+    {
+      "bounds": {
+        "points": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_navigation_msgs/Highways.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/Highways"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/JoyPriority.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/JoyPriority"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/JoyTurbo.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/JoyTurbo"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/LaserImage.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/LaserImage"
+    },
+    {
+      "bounds": {
+        "response.maps": {
+          "sequence": 16,
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/ListMaps.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/ListMaps"
+    },
+    {
+      "bounds": {
+        "highways": {
+          "sequence": 4
+        },
+        "poigroups": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_navigation_msgs/MapConfiguration.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/MapConfiguration"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/NavigationStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/NavigationStatus"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/NiceMapTransformation.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/NiceMapTransformation"
+    },
+    {
+      "bounds": {
+        "ids": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_navigation_msgs/POI.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/POI"
+    },
+    {
+      "bounds": {
+        "poi_names": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_navigation_msgs/POIGroup.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/POIGroup"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/PolarReading.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/PolarReading"
+    },
+    {
+      "bounds": {
+        "readings": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_navigation_msgs/PolarReadingScan.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/PolarReadingScan"
+    },
+    {
+      "bounds": {
+        "request.current_map_name": {
+          "string": 128
+        },
+        "request.new_map_name": {
+          "string": 128
+        },
+        "response.message": {
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/RenameMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/RenameMap"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/SafetyZone.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/SafetyZone"
+    },
+    {
+      "bounds": {
+        "request.directory": {
+          "string": 128
+        },
+        "response.full_path": {
+          "string": 128
+        },
+        "response.message": {
+          "string": 128
+        },
+        "response.name": {
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/SaveMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/SaveMap"
+    },
+    {
+      "bounds": {
+        "serviceName": {
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/ServiceStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/ServiceStatus"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/SetMapConfiguration.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/SetMapConfiguration"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/SetPOI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/SetPOI"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/SetSubMapFloor.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/SetSubMapFloor"
+    },
+    {
+      "bounds": {
+        "IDs": {
+          "sequence": 4
+        },
+        "POIs": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_navigation_msgs/TabletPOI.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/TabletPOI"
+    },
+    {
+      "bounds": {
+        "documents": {
+          "sequence": 256
+        },
+        "tree": {
+          "sequence": 256
+        },
+        "weights": {
+          "sequence": 256
+        }
+      },
+      "file": "pal_navigation_msgs/VisualLocDB.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/VisualLocDB"
+    },
+    {
+      "bounds": {},
+      "file": "pal_navigation_msgs/VisualLocRecognize.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/VisualLocRecognize"
+    },
+    {
+      "bounds": {
+        "goal.database_path": {
+          "string": 128
+        }
+      },
+      "file": "pal_navigation_msgs/VisualTraining.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_navigation_msgs/VisualTraining"
+    },
+    {
+      "bounds": {
+        "link_name": {
+          "string": 128
+        }
+      },
+      "file": "pal_simulation_msgs/ExternalWrench.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_simulation_msgs/ExternalWrench"
+    },
+    {
+      "bounds": {},
+      "file": "pal_tablet_msgs/FunctionalityStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_tablet_msgs/FunctionalityStatus"
+    },
+    {
+      "bounds": {
+        "messages": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_tablet_msgs/RobotStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_tablet_msgs/RobotStatus"
+    },
+    {
+      "bounds": {},
+      "file": "pal_video_recording_msgs/StartRecording.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_video_recording_msgs/StartRecording"
+    },
+    {
+      "bounds": {},
+      "file": "pal_video_recording_msgs/StopRecording.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_video_recording_msgs/StopRecording"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/DetectedObject.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/DetectedObject"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/DetectedPerson.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/DetectedPerson"
+    },
+    {
+      "bounds": {
+        "hog": {
+          "sequence": 16
+        }
+      },
+      "file": "pal_vision_msgs/FaceDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/FaceDetection"
+    },
+    {
+      "bounds": {
+        "faces": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_vision_msgs/FaceDetections.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/FaceDetections"
+    },
+    {
+      "bounds": {
+        "feedback.confidence": {
+          "sequence": 16
+        },
+        "feedback.names": {
+          "sequence": 16,
+          "string": 128
+        },
+        "goal.order_argument": {
+          "string": 128
+        },
+        "result.confidence": {
+          "sequence": 16
+        },
+        "result.names": {
+          "sequence": 16,
+          "string": 128
+        }
+      },
+      "file": "pal_vision_msgs/FaceRecognition.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/FaceRecognition"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/FaceTrackingStart.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/FaceTrackingStart"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/FaceTrackingStop.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/FaceTrackingStop"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/FollowMeResponse.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/FollowMeResponse"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/FollowMeStart.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/FollowMeStart"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/FollowMeStop.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/FollowMeStop"
+    },
+    {
+      "bounds": {
+        "gestureId": {
+          "string": 128
+        }
+      },
+      "file": "pal_vision_msgs/Gesture.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/Gesture"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/HeadPanTilt.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/HeadPanTilt"
+    },
+    {
+      "bounds": {
+        "hog": {
+          "sequence": 16
+        },
+        "rgbClusterCenters": {
+          "sequence": 4
+        },
+        "rgbDescriptor1": {
+          "sequence": 16
+        },
+        "rgbDescriptor2": {
+          "sequence": 16
+        }
+      },
+      "file": "pal_vision_msgs/HogDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/HogDetection"
+    },
+    {
+      "bounds": {
+        "persons": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_vision_msgs/HogDetections.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/HogDetections"
+    },
+    {
+      "bounds": {
+        "position3D": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_vision_msgs/LegDetections.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/LegDetections"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/LookToPixel.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/LookToPixel"
+    },
+    {
+      "bounds": {},
+      "file": "pal_vision_msgs/Rectangle.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_vision_msgs/Rectangle"
+    },
+    {
+      "bounds": {},
+      "file": "pal_visual_localization_msgs/VisualLocAddPlace.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_visual_localization_msgs/VisualLocAddPlace"
+    },
+    {
+      "bounds": {},
+      "file": "pal_visual_localization_msgs/VisualLocRecognize.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_visual_localization_msgs/VisualLocRecognize"
+    },
+    {
+      "bounds": {},
+      "file": "pal_walking_msgs/ContactState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_walking_msgs/ContactState"
+    },
+    {
+      "bounds": {
+        "request.times_after_previous": {
+          "sequence": 16
+        }
+      },
+      "file": "pal_walking_msgs/MoveHipFeet.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_walking_msgs/MoveHipFeet"
+    },
+    {
+      "bounds": {},
+      "file": "pal_walking_msgs/SMStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_walking_msgs/SMStatus"
+    },
+    {
+      "bounds": {},
+      "file": "pal_walking_msgs/Sit.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_walking_msgs/Sit"
+    },
+    {
+      "bounds": {
+        "response.result": {
+          "string": 128
+        }
+      },
+      "file": "pal_walking_msgs/StepOver.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_walking_msgs/StepOver"
+    },
+    {
+      "bounds": {},
+      "file": "pal_walking_msgs/WalkSteps.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_walking_msgs/WalkSteps"
+    },
+    {
+      "bounds": {},
+      "file": "pal_walking_msgs/WalkingStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_walking_msgs/WalkingStatus"
+    },
+    {
+      "bounds": {},
+      "file": "pal_walking_msgs/WalkingStep.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_walking_msgs/WalkingStep"
+    },
+    {
+      "bounds": {
+        "goal.asr_language": {
+          "string": 128
+        },
+        "goal.valid_asr_inputs": {
+          "sequence": 16,
+          "string": 128
+        }
+      },
+      "file": "pal_web_msgs/GetUserInput.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_web_msgs/GetUserInput"
+    },
+    {
+      "bounds": {
+        "value": {
+          "string": 128
+        }
+      },
+      "file": "pal_web_msgs/WebGoTo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_web_msgs/WebGoTo"
+    },
+    {
+      "bounds": {},
+      "file": "pal_wifi_localization_msgs/GetWifiMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_wifi_localization_msgs/GetWifiMap"
+    },
+    {
+      "bounds": {},
+      "file": "pal_wifi_localization_msgs/WifiSignal.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_wifi_localization_msgs/WifiSignal"
+    },
+    {
+      "bounds": {
+        "networks": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_wifi_localization_msgs/WifiSignalList.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_wifi_localization_msgs/WifiSignalList"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_wifi_localization_msgs/WifiSignalMap.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "pal_wifi_localization_msgs/WifiSignalMap"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        },
+        "values": {
+          "sequence": 16
+        }
+      },
+      "file": "sensor_msgs/ChannelFloat32.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/ChannelFloat32"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4096
+        },
+        "format": {
+          "string": 128
+        }
+      },
+      "file": "sensor_msgs/CompressedImage.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/CompressedImage"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4096
+        },
+        "encoding": {
+          "string": 128
+        }
+      },
+      "file": "sensor_msgs/Image.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/Image"
+    },
+    {
+      "bounds": {
+        "channels": {
+          "sequence": 4
+        },
+        "points": {
+          "sequence": 4
+        }
+      },
+      "file": "sensor_msgs/PointCloud.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/PointCloud"
+    },
+    {
+      "bounds": {},
+      "file": "sensor_msgs/RegionOfInterest.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/RegionOfInterest"
+    },
+    {
+      "bounds": {},
+      "file": "std_msgs/Bool.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Bool"
+    },
+    {
+      "bounds": {},
+      "file": "std_msgs/ColorRGBA.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/ColorRGBA"
+    },
+    {
+      "bounds": {},
+      "file": "std_msgs/Duration.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Duration"
+    },
+    {
+      "bounds": {},
+      "file": "std_msgs/Float32.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Float32"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 128
+        }
+      },
+      "file": "std_msgs/Header.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Header"
+    },
+    {
+      "bounds": {
+        "data": {
+          "string": 128
+        }
+      },
+      "file": "std_msgs/String.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/String"
+    }
+  ]
+}

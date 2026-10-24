@@ -1,0 +1,95 @@
+{
+  "format": "uwvm-unitree-native-source-qualification-v2",
+  "status": "PASS",
+  "languages": [
+    "zig",
+    "d",
+    "nim",
+    "odin",
+    "swift",
+    "haskell"
+  ],
+  "target": "wasm32-wasip1",
+  "original_complete_catalog_qualification": {
+    "format": "uwvm-unitree-native-source-qualification-v1",
+    "status": "PASS",
+    "languages": [
+      "zig",
+      "d",
+      "nim",
+      "odin",
+      "swift",
+      "haskell"
+    ],
+    "host": "linux-x86_64",
+    "target": "wasm32-wasip1",
+    "exception_profile": "noeh",
+    "threads": 1,
+    "source_manifest_sha256": "4cb8a20d49e466de8e5667ddd5bbfae6640d3ff16ea75980743177086866b9cb",
+    "source_records": {
+      "ros1": 11,
+      "ros2": 43
+    },
+    "source_fields": {
+      "ros1": 115,
+      "ros2": 257
+    },
+    "cold_application_builds_pass": 36,
+    "automatic_sdk_discovery_without_environment": true,
+    "complete_catalog_builds_pass": 12,
+    "complete_catalog_runs_pass": 12,
+    "instantiated_complete_records": 324,
+    "record_checks": 972,
+    "native_runs_pass": 72,
+    "consecutive_runs_per_application": 2,
+    "raw_abi_import_checks_pass": 36,
+    "unsupported_profile_refusals_pass": 30,
+    "memory_max": 68719476736,
+    "swap_max": 0,
+    "physical_robot": false,
+    "aarch64_runtime_qualified": false,
+    "native_all_54_transport_types_qualified": false,
+    "evidence": {
+      "producer": {
+        "file": "evidence/cold-build/final-reviewed-format/matrix.json",
+        "sha256": "c4e53c9c26de1ce608251a58cbcb250fb1ee21ce384cec04cfcb1f0a9a4f631b"
+      },
+      "ros1": {
+        "file": "evidence/native/ros1-final-reviewed-format/matrix.json",
+        "sha256": "80a5b524e14d2ca7a285ea16f84d7b4039fab1cbb137682faf3a373b92345288"
+      },
+      "ros2": {
+        "file": "evidence/native/ros2-final-reviewed-format/matrix.json",
+        "sha256": "15e729b916b913c01b5fa51787d1a940184d81fc12395b20a618ad222f816fb3"
+      },
+      "catalog": {
+        "file": "evidence/catalog/final-reviewed-format/matrix.json",
+        "sha256": "c9eb9dcc2c5b1391ad0b3e04d0592a817840220a3ad78710edf77cc9ae48c2f0"
+      },
+      "raw_abi": {
+        "file": "evidence/raw-abi.json",
+        "sha256": "473bd9752c747a69e8c37a52cf1a45e9533654c24a0415933bbffd17cac8bf53"
+      },
+      "target_refusals": {
+        "file": "evidence/selection-refusals/matrix.json",
+        "sha256": "7610f45a29d60639c6a7251ccc3b352c5df3a8e708d7c28272a9e44e1c0365e1"
+      }
+    }
+  },
+  "current_artifact_qualification": {
+    "path": "share/platform/unitree/qualification/native-sources.json",
+    "sha256": "2ec868d9a3609cde9913a4a08e9826eaa2b57821b5938a70bfe60806e81e11db",
+    "original_repository_path": "original-review-workspace/unitree-native-integration/QUALIFICATION.json",
+    "bytes": 30549
+  },
+  "current_publication_qualification": "share/platform/unitree/qualification.json",
+  "cold_application_builds_pass": 36,
+  "native_runs_pass": 72,
+  "aarch64_artifact_coverage": 36,
+  "aarch64_runtime_qualified": true,
+  "physical_robot": false,
+  "native_all_54_transport_types_qualified": false,
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "84d535e41758baf983e397fdd7c36e3018a0d1eeeb173a032dfab6216f058968"
+}

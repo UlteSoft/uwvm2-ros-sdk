@@ -1,0 +1,122 @@
+{
+  "platform": "unitree",
+  "review_state": "source-review",
+  "examples": 132,
+  "example_languages": {
+    "as": 6,
+    "c": 6,
+    "c_ffi_bridge": 6,
+    "cpp": 6,
+    "d": 6,
+    "go": 6,
+    "haskell": 6,
+    "java": 6,
+    "js": 6,
+    "kotlin": 6,
+    "lua": 6,
+    "moonbit": 6,
+    "nim": 6,
+    "objectc": 6,
+    "odin": 6,
+    "php": 6,
+    "py": 6,
+    "rs": 6,
+    "ruby": 6,
+    "swift": 6,
+    "tinygo": 6,
+    "zig": 6
+  },
+  "manuals": {
+    "zh_CN": 44,
+    "en_US": 44
+  },
+  "current_snapshot_build_acceptance": "pending",
+  "current_snapshot_native_ros_acceptance": "pending",
+  "current_snapshot_qemu_aarch64_acceptance": "pending",
+  "static_shared_library_acceptance": "pending",
+  "complete": false,
+  "withheld_source_files": 0,
+  "source_review_revision": "2026-10-23-parent-review-34",
+  "source_owner": "06",
+  "review40_scoped_acceptance": {
+    "review": 40,
+    "shared_engines": {
+      "ruby": "3.4.7",
+      "php": "8.4.13"
+    },
+    "one_common_adapter_implementation": true,
+    "new_platform_native_acceptance": 0,
+    "complete_platform_qualified": false
+  },
+  "source_inventory_review": 44,
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig",
+    "fortran",
+    "wat",
+    "typescript"
+  ],
+  "new_language_work": {
+    "fortran": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_compiler": "LLVM Flang 23.1.4 source candidate",
+      "common_raw_abi_modules": [
+        "uwvm_ros1_v1",
+        "uwvm_ros2_v1"
+      ],
+      "compiled": false,
+      "executed": false
+    },
+    "wat": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_assembler": "WABT wat2wasm source candidate",
+      "compiled": false,
+      "executed": false
+    }
+  },
+  "review42_shared_js_producer": {
+    "final_source_rebuilt": true,
+    "retained_native_Wasm_bytes_unchanged": true,
+    "new_native_runs": 0,
+    "complete_ROS2_imports": 43,
+    "four_module_or_all_vendor_routes_qualified": false,
+    "retained_peer_cleanup_limitation": "One historical x86 native peer cleanup returned exit 1; not relabelled as clean."
+  },
+  "typescript": {
+    "shared_frontend_available": true,
+    "platform_native_qualification": "pending",
+    "platform_registration_qualified": true,
+    "scope": "Common two-width frontend and scalar libraries; platform native ROS acceptance is separate"
+  },
+  "missing_original_languages": [
+    "csharp",
+    "fsharp",
+    "vbnet",
+    "r"
+  ],
+  "Unitree_four_route_status": "Complete bindings authored in owner06; compiled/native acceptance pending. Shared CLR integrated; genuine R engine still pending."
+}

@@ -1,0 +1,72 @@
+{
+  "abi": {
+    "ros1": "uwvm_ros1_v1",
+    "ros2": "uwvm_ros2_v1"
+  },
+  "backend_roots": {
+    "ros1": "include/platform/ros1/objectc",
+    "ros2": "include/platform/ros2/objectc"
+  },
+  "extensions": [
+    ".m"
+  ],
+  "format": "uwvm-ros-binding-v1",
+  "language": "objectc",
+  "module_roots": [
+    "include/platform",
+    "include/platform/ros/objectc"
+  ],
+  "native_sources": {},
+  "operations": {
+    "call_trigger": {
+      "operation": "service.call",
+      "types": {
+        "ros1": "std_srvs/Trigger",
+        "ros2": "std_srvs/srv/Trigger"
+      }
+    },
+    "publish_string": {
+      "operation": "topic.publish",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    },
+    "subscribe_string": {
+      "operation": "topic.subscribe",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    }
+  },
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "native_actions": {
+    "preload_pipeline": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "objectc",
+        "c_sources": [
+          {
+            "source": "src/language/native/abi.c",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ]
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "objectc",
+        "c_sources": [
+          {
+            "source": "src/language/native/abi.c",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

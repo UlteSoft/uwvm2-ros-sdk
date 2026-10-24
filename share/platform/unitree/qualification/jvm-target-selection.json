@@ -1,0 +1,54 @@
+{
+  "format": "uwvm-unitree-jvm-target-selection-qualification-v1",
+  "status": "PASS",
+  "changed_candidate_xmake_files": 12,
+  "changed_public_or_shared_files": 0,
+  "default_configurations_passed": 12,
+  "memory64_refusals": 12,
+  "wasip2_refusals": 12,
+  "wasip1_threads_refusals": 12,
+  "before_jvm_silent_override_configurations_observed": 36,
+  "root_and_target_scope_controls": 8,
+  "default_full_real_target_snapshots_equal": 12,
+  "actual_frozen_frontend_argv_vectors_matched_token_for_token": 30,
+  "actual_compiler_inputs_or_parameters_changed": false,
+  "new_builds": 0,
+  "new_guest_runs": 0,
+  "prior_r2_files_reverified_unchanged": 670,
+  "prior_x86_files_reverified_unchanged": 515,
+  "cgroup": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "kernel_limit_proof": "Actual SSH host container-init PID cgroup membership; Xmake pseudo-file reads are retained as empty observations, not substituted for kernel limits.",
+  "configuration_input_manifest_sha256": "98080c5c4567ad0017cfd966b179c7c2028c9755420854290b158a4f31f0292d",
+  "qualification_input_manifest_sha256": "7befbca7b8bbf211f9ed56b62fb231d250bfe6f1657fdccb1af3d275ed40c46d",
+  "default_build_bridge": {
+    "path": "default-build-bridge.json",
+    "bytes": 217478,
+    "sha256": "e4f66c954ed360cf56c9652eff1794cf131c18a5d7f07a5bf235b1bb94a92fa1"
+  },
+  "explicit_rejection_target_snapshots": {
+    "path": "results/rejected-targets-r3.json",
+    "bytes": 108630,
+    "sha256": "ab1c181350ac4486893fbce46cd9d64e4ef876fd9413370ea743986fde49f9cf"
+  },
+  "patch": {
+    "path": "changes.json",
+    "bytes": 5789,
+    "sha256": "e0b3fb987ef60c960f48cb69d1ccb1dc045966e8ffb5135e2115f080349e922f"
+  },
+  "source_producer_sha256": "bea7bc14db273f40d44a709aeb2805fa644bbf657d2c127e0c27b6e5b132b619",
+  "unitree_dispatch_provider_sha256": "ba9d6637f018732e506e0ff8b131f07547ffec877f43ac64d4af9b02601d463e",
+  "original_jvm_tool_archive_sha256": "71719ce3462b89957f3297e9d8db97004a058ced15f16858293b514c92e7a5aa",
+  "retained_harness_limitations": [
+    "The initial cgroup pseudo-file read and unsupported json.save API preflights stopped before any configuration command.",
+    "The first baseline matrix retained 48 valid JVM configurations but stopped at a separate control whose top-level assert is unavailable in the Xmake DSL. The corrected isolated scope matrix passes all eight cases.",
+    "Refusal snapshots observe real engine-created targets using an otherwise-empty public in-memory before-load hook. The original provider load callback remains intact and must still reject. Earlier hidden-private-API and sandbox-pcall attempts are retained as failed diagnostic setup only.",
+    "The existing Unitree provider rejects unsupported WASI platforms with its existing memory64-oriented diagnostic; this patch changes example selection only.",
+    "Other language examples and their generators are delegated separately; these results qualify only the twelve JVM declarations."
+  ],
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "ed42fccc9b0b1798d95c691d85fdde07069a39649e2199972284ca3f4e252fa2"
+}

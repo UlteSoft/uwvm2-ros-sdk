@@ -1,0 +1,181 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "platform": "pal",
+  "profiles": [
+    {
+      "id": "ros1_humble_devel",
+      "backend": "ros1",
+      "catalog": "share/platform/pal/catalogs/ros1_humble_devel/catalog.json",
+      "records": 275,
+      "services": 46,
+      "actions": 21,
+      "upstream": {
+        "repository": "pal-robotics/pal_msgs",
+        "branch": "humble-devel",
+        "commit": "eb4efdcc80789dc74dfc7a09d1b5c3345e510933"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros1_indigo_devel",
+      "backend": "ros1",
+      "catalog": "share/platform/pal/catalogs/ros1_indigo_devel/catalog.json",
+      "records": 222,
+      "services": 33,
+      "actions": 15,
+      "upstream": {
+        "repository": "pal-robotics/pal_msgs",
+        "branch": "indigo-devel",
+        "commit": "a9b3d52908626e0cf1f230b4dc4a962299d232f3"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros1_noetic_devel",
+      "backend": "ros1",
+      "catalog": "share/platform/pal/catalogs/ros1_noetic_devel/catalog.json",
+      "records": 222,
+      "services": 33,
+      "actions": 15,
+      "upstream": {
+        "repository": "pal-robotics/pal_msgs",
+        "branch": "noetic-devel",
+        "commit": "c2ab0e78edac96413bff73fdf735293e683435c5"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros2_humble_devel",
+      "backend": "ros2",
+      "catalog": "share/platform/pal/catalogs/ros2_humble_devel/catalog.json",
+      "records": 30,
+      "services": 5,
+      "actions": 1,
+      "upstream": {
+        "repository": "pal-robotics/pal_msgs",
+        "branch": "humble-devel",
+        "commit": "eb4efdcc80789dc74dfc7a09d1b5c3345e510933"
+      },
+      "native_identity_qualified": false
+    }
+  ],
+  "configuration": {
+    "vendor_profile": {
+      "type": "enum",
+      "values": [
+        "ros1_humble_devel",
+        "ros1_indigo_devel",
+        "ros1_noetic_devel",
+        "ros2_humble_devel"
+      ]
+    },
+    "backend": {
+      "type": "enum",
+      "values": [
+        "ros1",
+        "ros2"
+      ]
+    },
+    "distribution": {
+      "source": "set_ros1_version/set_ros2_version",
+      "native_registry_must_match": true
+    },
+    "model": {
+      "source": "explicit native deployment facts; not inferred from catalog"
+    },
+    "transport": {
+      "source": "shared permission-preserving native ROS dispatcher"
+    },
+    "abi": {
+      "source": "set_arch/set_plat; compiler must honor exact requested width"
+    },
+    "features": {
+      "source": "explicit runtime configuration; no automatic capability grants"
+    }
+  },
+  "compiler_provider": {
+    "java": "jvm",
+    "kotlin": "jvm",
+    "csharp": "dotnet",
+    "fsharp": "dotnet",
+    "vbnet": "dotnet"
+  },
+  "default_authority": [],
+  "api_version": 1,
+  "id": "pal",
+  "module": "tools/platform/pal/provider.lua",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "simd128",
+    "relaxed-simd",
+    "bulk-memory",
+    "reference-types",
+    "multi-value",
+    "sign-extension",
+    "nontrapping-fptoint",
+    "tail-call",
+    "extended-const",
+    "multi-memory",
+    "gc",
+    "exceptions",
+    "memory64",
+    "table64"
+  ],
+  "scenarios_restricted": false,
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "indigo",
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "humble"
+      ]
+    }
+  },
+  "options": {
+    "vendor_profile": {
+      "required": true,
+      "values": [
+        "ros1_humble_devel",
+        "ros1_indigo_devel",
+        "ros1_noetic_devel",
+        "ros2_humble_devel"
+      ]
+    }
+  },
+  "qualification_note": "Declared requests and source profiles only; each compiler adapter and native deployment validates its exact support separately."
+}

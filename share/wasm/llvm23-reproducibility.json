@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "cgroup": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0",
+    "path": "/sys/fs/cgroup/system.slice/docker-4dd58ad4560fde2ab9b539e4ef9cab1fac531654e99ad554aff1fce8ae0eae37.scope"
+  },
+  "second_build_command": [
+    "/usr/bin/python3",
+    "/hostoriginal-review-workspace/llvm23-sysroots/reproducibility-final/reproduced-sdk/tools/wasm/build_llvm23_sysroots.py",
+    "--sdk",
+    "/hostoriginal-review-workspace/llvm23-sysroots/reproducibility-final/reproduced-sdk",
+    "--work",
+    "/hostoriginal-review-workspace/llvm23-sysroots/reproducibility-final/build-work",
+    "--toolchain",
+    "/hostoriginal-review-workspace/llvm23-sysroots/toolchain/LLVM-23.1.4-Linux-X64",
+    "--source-cache",
+    "/hostoriginal-review-workspace/llvm23-sysroots/source/upstream",
+    "--cmake",
+    "/host/usr/bin/cmake",
+    "--ninja",
+    "/host/usr/bin/ninja",
+    "--jobs",
+    "2",
+    "--targets",
+    "wasm32-wasip1",
+    "wasm64-wasip1",
+    "--profiles",
+    "noeh",
+    "eh"
+  ],
+  "comparisons": [
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "noeh",
+      "kind": "lib_dir",
+      "files": 21,
+      "identical": true,
+      "different_files": []
+    },
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "noeh",
+      "kind": "include_dir",
+      "files": 1885,
+      "identical": true,
+      "different_files": []
+    },
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "noeh",
+      "kind": "compiler_rt",
+      "files": 1,
+      "identical": true
+    },
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "eh",
+      "kind": "lib_dir",
+      "files": 22,
+      "identical": true,
+      "different_files": []
+    },
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "eh",
+      "kind": "include_dir",
+      "files": 1892,
+      "identical": true,
+      "different_files": []
+    },
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "eh",
+      "kind": "compiler_rt",
+      "files": 1,
+      "identical": true
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "noeh",
+      "kind": "lib_dir",
+      "files": 21,
+      "identical": true,
+      "different_files": []
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "noeh",
+      "kind": "include_dir",
+      "files": 1885,
+      "identical": true,
+      "different_files": []
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "noeh",
+      "kind": "compiler_rt",
+      "files": 1,
+      "identical": true
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "eh",
+      "kind": "lib_dir",
+      "files": 22,
+      "identical": true,
+      "different_files": []
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "eh",
+      "kind": "include_dir",
+      "files": 1892,
+      "identical": true,
+      "different_files": []
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "eh",
+      "kind": "compiler_rt",
+      "files": 1,
+      "identical": true
+    }
+  ],
+  "passed": true,
+  "original_provenance_sha256": "b2e9cf1c6bace840c60dbb40c120c09a356e3d82d107fcabdedfecc480af800b",
+  "path_scope": "Historical provenance paths are labels, not installation dependencies."
+}

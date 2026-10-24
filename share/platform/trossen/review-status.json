@@ -1,0 +1,92 @@
+{
+  "platform": "trossen",
+  "review_state": "source-review",
+  "examples": 36,
+  "example_languages": {
+    "c_ffi_bridge": 6,
+    "csharp": 6,
+    "fsharp": 6,
+    "java": 6,
+    "kotlin": 6,
+    "vbnet": 6
+  },
+  "manuals": {
+    "zh_CN": 79,
+    "en_US": 79
+  },
+  "current_snapshot_build_acceptance": "pending",
+  "current_snapshot_native_ros_acceptance": "pending",
+  "current_snapshot_qemu_aarch64_acceptance": "pending",
+  "static_shared_library_acceptance": "pending",
+  "complete": false,
+  "withheld_source_files": 0,
+  "source_review_revision": "2026-10-23-parent-review-34",
+  "source_owner": "09",
+  "source_inventory_review": 44,
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig",
+    "fortran",
+    "wat",
+    "typescript"
+  ],
+  "new_language_work": {
+    "fortran": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_compiler": "LLVM Flang 23.1.4 source candidate",
+      "common_raw_abi_modules": [
+        "uwvm_ros1_v1",
+        "uwvm_ros2_v1"
+      ],
+      "compiled": false,
+      "executed": false
+    },
+    "wat": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_assembler": "WABT wat2wasm source candidate",
+      "compiled": false,
+      "executed": false
+    }
+  },
+  "review41_shared_jvm_selector": {
+    "canonical_common_classes": 25,
+    "duplicate_common_classes_selected": 0,
+    "tested_PAL_java_kotlin_cases": 4,
+    "scoped_codec_executions": 8,
+    "native_standard_preload_runs": 2,
+    "native_peer_architecture": "x86_64",
+    "formatted_existing_vendor_sources_lexically_verified": 1274,
+    "vendor_native_types_qualified": false,
+    "CLR_qualified": false
+  },
+  "typescript": {
+    "shared_frontend_available": true,
+    "platform_native_qualification": "pending",
+    "platform_registration_qualified": false,
+    "scope": "Common two-width frontend and scalar libraries; platform native ROS acceptance is separate"
+  }
+}

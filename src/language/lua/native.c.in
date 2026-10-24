@@ -1,0 +1,456 @@
+/**
+ * @file native.c.in
+ *
+ * @brief Static Lua 5.4.8 WASI binding to the exact selected ROS ABI v1.
+ *
+ * @details All numeric imports come from the exact ABI.
+ * Prepare/root a complete frame before invoking it. Invocation allocates no
+ * Lua value after the import. A frame records entry/result even if a later
+ * Lua allocation fails. Explicit Session retirement owns successful opens;
+ * no finalizer, host script, socket or dynamic library performs ROS work.
+ * Lua values/IDs use signed int64 or exact eight-byte little-endian strings;
+ * no unsigned word passes through a Lua double. All calls are synchronous on
+ * the caller's Lua thread. Build selection confers no resource permissions.
+ *
+ * @see luaopen_roswasm_native
+ */
+#include <lua.h>
+#include <lauxlib.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
+#if !defined(__wasm__)
+#error "The Lua ROS bridge is a real Wasm guest library only"
+#endif
+#if ROSWASM_BACKEND == 1
+#include <ros1/abi.h>
+#define ROS_CLOSE uwvm_ros1_capability_close
+#define ROS_REVOKE uwvm_ros1_capability_revoke
+#elif ROSWASM_BACKEND == 2
+#include <ros2/abi.h>
+#define ROS_CLOSE uwvm_ros2_capability_close
+#define ROS_REVOKE uwvm_ros2_capability_revoke
+#else
+#error "Select exactly one actual ROSWASM_BACKEND, 1 or 2"
+#endif
+_Static_assert(sizeof(lua_Integer) == 8, "Lua must retain signed int64 values");
+#define FRAME_MT "uwvm.roswasm.prepared.frame.v1"
+#define MAX_INPUT 4193786u
+#define MAX_OUTPUT 4194304u
+#define OFFSET(p) ((uint64_t)(uintptr_t)(p))
+
+typedef struct
+{
+    /**
+     * @brief Exact full-width caller handles, correlation and original output slot.
+     */
+    uint64_t handle, other, correlation, slot;
+    /**
+     * @brief Complete input and exclusive output-buffer extents, owned by this frame.
+     */
+    size_t input_size, capacity;
+    /**
+     * @brief Original full unsigned ABI status, independent from protocol validation.
+     */
+    uint32_t code;
+    /**
+     * @brief One-use operation kind, entry, acquired-owner and retirement facts.
+     */
+    int operation, kind, entered, owner, retired, protocol;
+    /**
+     * @brief Exclusive frame-owned response capacity; data() copies accepted bytes.
+     */
+    unsigned char output[];
+} ros_frame;
+
+/**
+ * @brief Decode an exact original u64 word without a Lua numeric conversion.
+ *
+ * @param L Owning synchronous Lua state.
+ *
+ * @param index Borrowed argument slot.
+ *
+ * @return Full original bits; a wrong type or extent raises an ordinary Lua error.
+ */
+static uint64_t word(lua_State* L, int index)
+{
+    size_t size;
+    char const* bytes;
+    uint64_t value = 0;
+    luaL_checktype(L, index, LUA_TSTRING);
+    bytes = lua_tolstring(L, index, &size);
+    luaL_argcheck(L, size == 8, index, "exact eight-byte LE word required");
+    for (unsigned i = 0; i < 8; ++i)
+    {
+        value |= (uint64_t)(unsigned char)bytes[i] << (i * 8);
+    }
+    return value;
+}
+
+/**
+ * @brief Copy all u64 bits to one independent immutable Lua byte string.
+ *
+ * @param L Owning state with stack capacity.
+ *
+ * @param value Original full-width bits.
+ *
+ * @details Performs no import; ordinary Lua allocation failure propagates.
+ *
+ * @return No C value; one owned Lua string is pushed on success.
+ */
+static void push_word(lua_State* L, uint64_t value)
+{
+    unsigned char bytes[8];
+    for (unsigned i = 0; i < 8; ++i)
+    {
+        bytes[i] = (unsigned char)(value >> (i * 8));
+    }
+    lua_pushlstring(L, (char const*)bytes, 8);
+}
+
+/**
+ * @brief Borrow one exact protected frame userdata during a synchronous call.
+ *
+ * @param L Owning state with the frame at argument one.
+ *
+ * @return Borrowed frame pointer; foreign userdata raises an ordinary Lua error.
+ */
+static ros_frame* frame(lua_State* L)
+{
+    return (ros_frame*)luaL_checkudata(L, 1, FRAME_MT);
+}
+
+/**
+ * @brief Allocate one rooted, one-use Lua import frame before any ROS effect.
+ *
+ * @details Lua signature: prepare(operation, handle, input, capacity, other,
+ * correlation). operation is an exact name from this backend; all three words
+ * are immutable eight-byte LE strings, input is at most 4193786 bytes, and
+ * capacity is an exact Lua integer 0..4194304 bytes. capability_open additionally
+ * requires 1..255 alias bytes; event_ready requires capacity32. The high-level
+ * Session enforces UTF-8/NUL rules for aliases. Unknown operations or malformed
+ * arguments raise Lua errors before importing; allocation failures propagate.
+ * The userdata retains input bytes in a uservalue and initializes all output
+ * storage. It grants no rights and has no ROS finalizer. Retain it until reading
+ * the result and, for a successful capability open, explicit retirement.
+ *
+ * @param[in,out] L Lua VM with the six arguments on its stack.
+ *
+ * @return One Lua result: the caller-owned prepared-frame userdata.
+ *
+ * @see invoke
+ */
+static int prepare(lua_State* L)
+{
+    size_t name_size, input_size;
+    char const* name;
+    int operation = -1, kind = 0, owner = 0;
+    luaL_checktype(L, 1, LUA_TSTRING);
+    name = lua_tolstring(L, 1, &name_size);
+    luaL_argcheck(L, name_size && strlen(name) == name_size, 1, "exact operation name without NUL required");
+    uint64_t handle = word(L, 2), other = word(L, 5), correlation = word(L, 6);
+    luaL_checktype(L, 3, LUA_TSTRING);
+    lua_tolstring(L, 3, &input_size);
+    luaL_argcheck(L, lua_isinteger(L, 4), 4, "exact integer output capacity required");
+    lua_Integer capacity = lua_tointeger(L, 4);
+    luaL_argcheck(L, input_size <= MAX_INPUT, 3, "ROS input byte bound");
+    luaL_argcheck(L, capacity >= 0 && (uint64_t)capacity <= MAX_OUTPUT, 4, "ROS output byte bound");
+    /* @SELECT@ */
+    luaL_argcheck(L, operation >= 0, 1, "operation absent from this backend");
+    ros_frame* value = (ros_frame*)lua_newuserdatauv(L, sizeof(ros_frame) + (size_t)capacity, 1);
+    memset(value, 0, sizeof(ros_frame));
+    if (capacity)
+    {
+        memset(value->output, 0, (size_t)capacity);
+    }
+    value->handle = handle;
+    value->other = other;
+    value->correlation = correlation;
+    value->operation = operation;
+    value->kind = kind;
+    value->owner = owner;
+    value->input_size = input_size;
+    value->capacity = (size_t)capacity;
+    value->slot = (kind == 2) ? 0 : UINT64_MAX;
+    luaL_setmetatable(L, FRAME_MT);
+    lua_pushvalue(L, 3);
+    lua_setiuservalue(L, -2, 1);
+    return 1;
+}
+
+/**
+ * @brief Enter a prepared frame's selected ABI import exactly once.
+ *
+ * @details Lua signature: invoke(frame). Reserves result stack before entering
+ * the import, roots the input, marks entry, and records the native scalar status
+ * without allocating a result object after the effect. Re-entry raises a Lua
+ * error; there is no retry on timeout110, disconnect107 or quota90. Native alias,
+ * endpoint/type/QoS/operation permissions remain mandatory. Error13 means denied.
+ * The special abi_version form returns status0 and stores the ABI version in
+ * value(); it does not interpret that version as an errno. Check valid() before
+ * consuming success data. Host effects may persist after a timeout.
+ *
+ * @param[in,out] L Lua VM with a prepared frame at argument1; same caller thread.
+ *
+ * @return One Lua integer: the exact native ABI error code (0 for abi_version).
+ *
+ * @see valid
+ */
+static int invoke(lua_State* L)
+{
+    ros_frame* value = frame(L);
+    luaL_argcheck(L, !value->entered, 1, "prepared import frame is one-use; no replay");
+    luaL_checkstack(L, 2, "reserve result stack before ROS effect");
+    lua_getiuservalue(L, 1, 1);
+    char const* input = lua_tolstring(L, -1, NULL);
+    value->entered = 1;
+    switch (value->operation)
+    {
+            /* @DISPATCH@ */
+        default:
+            return luaL_error(L, "invalid prepared operation");
+    }
+    if (!value->code && ((value->kind == 1 && (value->slot == UINT64_MAX || value->slot > value->capacity)) ||
+                         (value->kind == 2 && !value->slot)))
+    {
+        value->protocol = 1;
+    }
+    lua_pushinteger(L, (lua_Integer)value->code);
+    return 1;
+}
+
+/**
+ * @brief Return the recorded import status through Lua frame:error().
+ *
+ * @details Performs no I/O or replay. An unentered frame raises a Lua error.
+ * abi_version reports0 here; its version is available through value(). A status
+ * alone does not validate a successful output slot; also inspect valid().
+ *
+ * @param[in,out] L Lua VM with this frame at argument1.
+ *
+ * @return One Lua integer, the unchanged ABI error code.
+ *
+ * @see valid
+ */
+static int error_code(lua_State* L)
+{
+    ros_frame* v = frame(L);
+    luaL_argcheck(L, v->entered, 1, "unentered frame has no import result");
+    lua_pushinteger(L, (lua_Integer)v->code);
+    return 1;
+}
+
+/**
+ * @brief Inspect entry/output protocol through Lua frame:valid().
+ *
+ * @details True means the frame was entered and no successful reply violated
+ * its nonzero-handle or output-length/capacity contract. It may be true for a
+ * nonzero error such as13, so this is not a success or permission predicate.
+ * Performs only local inspection and raises on a foreign userdata.
+ *
+ * @param[in,out] L Lua VM with this frame at argument1.
+ *
+ * @return One Lua boolean; false before entry or on an invalid success reply.
+ *
+ * @see error_code
+ */
+static int valid(lua_State* L)
+{
+    ros_frame* v = frame(L);
+    lua_pushboolean(L, v->entered && !v->protocol);
+    return 1;
+}
+
+/**
+ * @brief Copy a valid result's bytes through Lua frame:data().
+ *
+ * @details Requires an entered frame without protocol failure; otherwise raises
+ * a Lua error. Successful poll/rpc returns the recorded length up to capacity;
+ * event_ready returns exactly32 bytes. Errors and non-buffer forms return an
+ * empty string. The newly allocated immutable Lua string is independent of
+ * frame lifetime; allocation failure can occur after the original host effect.
+ *
+ * @param[in,out] L Lua VM with this frame at argument1; no import is entered.
+ *
+ * @return One caller-owned Lua string; inspect error() before treating it as data.
+ *
+ * @see required
+ */
+static int data(lua_State* L)
+{
+    ros_frame* v = frame(L);
+    luaL_argcheck(L, v->entered && !v->protocol, 1, "complete valid returned frame required");
+    size_t size = (!v->code && v->kind == 1) ? (size_t)v->slot : (!v->code && v->kind == 3) ? 32 : 0;
+    lua_pushlstring(L, (char const*)v->output, size);
+    return 1;
+}
+
+/**
+ * @brief Read a returned handle/ID/version through Lua frame:value().
+ *
+ * @details Requires entered, protocol-valid state. On successful open/submit or
+ * ABI-version query, copies the slot to exactly eight LE bytes, including high
+ * unsigned bits. Other forms and native errors yield nil. The result is a new
+ * immutable Lua string; it does not transfer authority to another Instance.
+ *
+ * @param[in,out] L Lua VM with this frame at argument1.
+ *
+ * @return One Lua eight-byte string or nil; allocation may raise after the effect.
+ *
+ * @see owns
+ */
+static int value_word(lua_State* L)
+{
+    ros_frame* v = frame(L);
+    luaL_argcheck(L, v->entered && !v->protocol, 1, "complete valid returned frame required");
+    if (!v->code && (v->kind == 2 || v->kind == 4))
+    {
+        push_word(L, v->slot);
+    }
+    else
+    {
+        lua_pushnil(L);
+    }
+    return 1;
+}
+
+/**
+ * @brief Inspect a written capacity-error slot through Lua frame:required().
+ *
+ * @details Returns an eight-byte LE required-length word only for an entered
+ * buffer-returning form with status90 whose UINT64_MAX sentinel was overwritten.
+ * Otherwise returns nil; status90 alone cannot establish a required length.
+ * The original operation may have consumed data; this accessor never retries.
+ *
+ * @param[in,out] L Lua VM with this frame at argument1; no import is entered.
+ *
+ * @return One caller-owned eight-byte string or nil.
+ *
+ * @see data
+ */
+static int required(lua_State* L)
+{
+    ros_frame* v = frame(L);
+    if (v->entered && v->kind == 1 && v->code == 90 && v->slot != UINT64_MAX)
+    {
+        push_word(L, v->slot);
+    }
+    else
+    {
+        lua_pushnil(L);
+    }
+    return 1;
+}
+
+/**
+ * @brief Preserve the exact original full-width length slot after a buffer import.
+ *
+ * @param L Owning Lua state with a prepared frame at argument one.
+ *
+ * @return One independent eight-byte little-endian length word, including sentinel.
+ *
+ * @details A frame must have entered a buffer-returning import. The original
+ * slot is available independently of RPC error and success-protocol validation;
+ * this accessor performs no ROS I/O and never exposes output-buffer bytes.
+ */
+static int length_word(lua_State* L)
+{
+    ros_frame* value = frame(L);
+    luaL_argcheck(L, value->entered && value->kind == 1, 1, "entered buffer import required");
+    push_word(L, value->slot);
+    return 1;
+}
+
+/**
+ * @brief Inspect successful unretired open ownership through Lua frame:owns().
+ *
+ * @details True only for an entered capability_open frame with status0, a
+ * nonzero returned handle and no previous retirement. Submit-result IDs are not
+ * capability owners. This is local bookkeeping, not proof that a remote alias
+ * remains live; another revoke/disconnect may already have invalidated it.
+ *
+ * @param[in,out] L Lua VM with this frame at argument1; no allocation or I/O effect.
+ *
+ * @return One Lua boolean. Foreign userdata raises a Lua type error.
+ *
+ * @see retire
+ */
+static int owns(lua_State* L)
+{
+    ros_frame* v = frame(L);
+    lua_pushboolean(L, v->entered && v->owner && !v->code && v->slot && !v->retired);
+    return 1;
+}
+
+/**
+ * @brief Close or revoke one successful open frame at most once.
+ *
+ * @details Lua signature: retire(frame, revoke). Lua truthiness of revoke
+ * selects capability_revoke; false/nil selects capability_close. Reserves result
+ * stack and marks retirement before entering the import. Failed, unentered,
+ * non-owner or already retired frames return9 without entering an import.
+ * Native errors are returned unchanged and never replayed. This low-level call
+ * has no callback lease guard; use Session/Capability retirement for that guard.
+ * Cleanup does not grant rights, cancel unrelated requests or stop actuators.
+ *
+ * @param[in,out] L Lua VM with the owner frame and retirement selector.
+ *
+ * @return One exact Lua integer ABI status, or9 for an ineligible local frame.
+ *
+ * @see owns
+ */
+static int retire(lua_State* L)
+{
+    ros_frame* v = frame(L);
+    int revoke = lua_toboolean(L, 2);
+    luaL_checkstack(L, 1, "reserve retirement result before import");
+    if (!v->entered || !v->owner || v->code || !v->slot || v->retired)
+    {
+        lua_pushinteger(L, 9);
+        return 1;
+    }
+    v->retired = 1;
+    uint32_t code = revoke ? ROS_REVOKE(v->slot) : ROS_CLOSE(v->slot);
+    lua_pushinteger(L, (lua_Integer)code);
+    return 1;
+}
+
+/**
+ * @brief Register the static roswasm_native Lua module and frame methods.
+ *
+ * @details Requires Lua5.4 with signed64-bit lua_Integer and one explicitly
+ * compiled backend1/2. Registers prepare/invoke/retire, read-only-by-contract
+ * backend (1=ROS1,2=ROS2), and frame error/data/value/required/owns/valid methods.
+ * The frame metatable is protected and has no __gc I/O. Registration allocates
+ * Lua values but opens no resource. Call on the VM's owning thread before using
+ * the module; there is no host FFI/dynamic-library fallback.
+ *
+ * @param[in,out] L Initialized caller-owned Lua state; it outlives all frames.
+ *
+ * @return One Lua module table; allocation/type failures use ordinary Lua errors.
+ *
+ * @see prepare
+ */
+int luaopen_roswasm_native(lua_State* L)
+{
+    static luaL_Reg const methods[] = {{"error", error_code},
+                                       {"data", data},
+                                       {"value", value_word},
+                                       {"required", required},
+                                       {"length", length_word},
+                                       {"owns", owns},
+                                       {"valid", valid},
+                                       {NULL, NULL}};
+    static luaL_Reg const functions[] = {{"prepare", prepare}, {"invoke", invoke}, {"retire", retire}, {NULL, NULL}};
+    luaL_newmetatable(L, FRAME_MT);
+    lua_pushvalue(L, -1);
+    lua_setfield(L, -2, "__index");
+    luaL_setfuncs(L, methods, 0);
+    lua_pushliteral(L, "private prepared ROS frame");
+    lua_setfield(L, -2, "__metatable");
+    lua_pop(L, 1);
+    luaL_newlib(L, functions);
+    lua_pushinteger(L, ROSWASM_BACKEND);
+    lua_setfield(L, -2, "backend");
+    return 1;
+}

@@ -1,0 +1,6 @@
+# Nonces identify observations within ONE peer-bound native service owner.
+uint64 observation_nonce
+RGBDescriptor[] video
+---
+uint32 status
+uint64 observation_nonce

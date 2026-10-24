@@ -1,0 +1,676 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time",
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Point",
+      "file": "geometry_msgs/msg/Point.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Pose",
+      "file": "geometry_msgs/msg/Pose.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Quaternion",
+      "file": "geometry_msgs/msg/Quaternion.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "std_msgs/msg/Header",
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "bounds": {
+        "frame_id": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/msg/CIOState",
+      "file": "xarm_msgs/msg/CIOState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/msg/IOState",
+      "file": "xarm_msgs/msg/IOState.msg",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/msg/RobotMsg",
+      "file": "xarm_msgs/msg/RobotMsg.msg",
+      "registered": true,
+      "bounds": {
+        "angle": {
+          "sequence": 7
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/BioGripperCtrl",
+      "file": "xarm_msgs/srv/BioGripperCtrl.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/BioGripperEnable",
+      "file": "xarm_msgs/srv/BioGripperEnable.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/Call",
+      "file": "xarm_msgs/srv/Call.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/FtCaliLoad",
+      "file": "xarm_msgs/srv/FtCaliLoad.srv",
+      "registered": true,
+      "bounds": {
+        "request.datas": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/FtForceConfig",
+      "file": "xarm_msgs/srv/FtForceConfig.srv",
+      "registered": true,
+      "bounds": {
+        "request.c_axis": {
+          "sequence": 32
+        },
+        "request.ref": {
+          "sequence": 32
+        },
+        "request.limits": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/FtForcePid",
+      "file": "xarm_msgs/srv/FtForcePid.srv",
+      "registered": true,
+      "bounds": {
+        "request.kp": {
+          "sequence": 32
+        },
+        "request.ki": {
+          "sequence": 32
+        },
+        "request.kd": {
+          "sequence": 32
+        },
+        "request.xe_limit": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/FtImpedance",
+      "file": "xarm_msgs/srv/FtImpedance.srv",
+      "registered": true,
+      "bounds": {
+        "request.c_axis": {
+          "sequence": 32
+        },
+        "request.m": {
+          "sequence": 32
+        },
+        "request.k": {
+          "sequence": 32
+        },
+        "request.b": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetAnalogIO",
+      "file": "xarm_msgs/srv/GetAnalogIO.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetDigitalIO",
+      "file": "xarm_msgs/srv/GetDigitalIO.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.digitals": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetFloat32",
+      "file": "xarm_msgs/srv/GetFloat32.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetFloat32List",
+      "file": "xarm_msgs/srv/GetFloat32List.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.datas": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetInt16",
+      "file": "xarm_msgs/srv/GetInt16.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetInt16List",
+      "file": "xarm_msgs/srv/GetInt16List.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.datas": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetInt32",
+      "file": "xarm_msgs/srv/GetInt32.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetInt32ByType",
+      "file": "xarm_msgs/srv/GetInt32ByType.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GetSetModbusData",
+      "file": "xarm_msgs/srv/GetSetModbusData.srv",
+      "registered": true,
+      "bounds": {
+        "request.modbus_data": {
+          "sequence": 4096
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.ret_data": {
+          "sequence": 4096
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/GripperMove",
+      "file": "xarm_msgs/srv/GripperMove.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/IdenLoad",
+      "file": "xarm_msgs/srv/IdenLoad.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.datas": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/LinearTrackBackOrigin",
+      "file": "xarm_msgs/srv/LinearTrackBackOrigin.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/LinearTrackSetPos",
+      "file": "xarm_msgs/srv/LinearTrackSetPos.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/MoveCartesian",
+      "file": "xarm_msgs/srv/MoveCartesian.srv",
+      "registered": true,
+      "bounds": {
+        "request.pose": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/MoveCircle",
+      "file": "xarm_msgs/srv/MoveCircle.srv",
+      "registered": true,
+      "bounds": {
+        "request.pose1": {
+          "sequence": 32
+        },
+        "request.pose2": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/MoveHome",
+      "file": "xarm_msgs/srv/MoveHome.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/MoveJoint",
+      "file": "xarm_msgs/srv/MoveJoint.srv",
+      "registered": true,
+      "bounds": {
+        "request.angles": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/MoveVelocity",
+      "file": "xarm_msgs/srv/MoveVelocity.srv",
+      "registered": true,
+      "bounds": {
+        "request.speeds": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/PlanExec",
+      "file": "xarm_msgs/srv/PlanExec.srv",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/PlanJoint",
+      "file": "xarm_msgs/srv/PlanJoint.srv",
+      "registered": true,
+      "bounds": {
+        "request.target": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/PlanPose",
+      "file": "xarm_msgs/srv/PlanPose.srv",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/PlanSingleStraight",
+      "file": "xarm_msgs/srv/PlanSingleStraight.srv",
+      "registered": true,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/RobotiqActivate",
+      "file": "xarm_msgs/srv/RobotiqActivate.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.ret_data": {
+          "sequence": 4096
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/RobotiqGetStatus",
+      "file": "xarm_msgs/srv/RobotiqGetStatus.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.ret_data": {
+          "sequence": 4096
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/RobotiqMove",
+      "file": "xarm_msgs/srv/RobotiqMove.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.ret_data": {
+          "sequence": 4096
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/RobotiqReset",
+      "file": "xarm_msgs/srv/RobotiqReset.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.ret_data": {
+          "sequence": 4096
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetAnalogIO",
+      "file": "xarm_msgs/srv/SetAnalogIO.srv",
+      "registered": true,
+      "bounds": {
+        "request.xyz": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetDigitalIO",
+      "file": "xarm_msgs/srv/SetDigitalIO.srv",
+      "registered": true,
+      "bounds": {
+        "request.xyz": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetFloat32",
+      "file": "xarm_msgs/srv/SetFloat32.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetFloat32List",
+      "file": "xarm_msgs/srv/SetFloat32List.srv",
+      "registered": true,
+      "bounds": {
+        "request.datas": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetInt16",
+      "file": "xarm_msgs/srv/SetInt16.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetInt16ById",
+      "file": "xarm_msgs/srv/SetInt16ById.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetInt16List",
+      "file": "xarm_msgs/srv/SetInt16List.srv",
+      "registered": true,
+      "bounds": {
+        "request.datas": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetInt32",
+      "file": "xarm_msgs/srv/SetInt32.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetInt32ByType",
+      "file": "xarm_msgs/srv/SetInt32ByType.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetModbusTimeout",
+      "file": "xarm_msgs/srv/SetModbusTimeout.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/SetTcpLoad",
+      "file": "xarm_msgs/srv/SetTcpLoad.srv",
+      "registered": true,
+      "bounds": {
+        "request.center_of_gravity": {
+          "sequence": 32
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/TrajCtrl",
+      "file": "xarm_msgs/srv/TrajCtrl.srv",
+      "registered": true,
+      "bounds": {
+        "request.filename": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/TrajPlay",
+      "file": "xarm_msgs/srv/TrajPlay.srv",
+      "registered": true,
+      "bounds": {
+        "request.filename": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "xarm_msgs/srv/VacuumGripperCtrl",
+      "file": "xarm_msgs/srv/VacuumGripperCtrl.srv",
+      "registered": true,
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      }
+    }
+  ]
+}

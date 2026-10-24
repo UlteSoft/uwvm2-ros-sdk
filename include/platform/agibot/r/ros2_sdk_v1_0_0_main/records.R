@@ -1,0 +1,8115 @@
+# @file records.R
+# @brief All 120 complete original ROS 2 vendor values.
+# @details The module exposes only an ordinary owned namespace list.
+UwvmAgibotRos2SdkV100Main <- local({
+    schemas <- list(
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAgentPropertyIdType",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d46b7979d687f30a04b2d96d2cfde9efeedb18a3b311e43fd3af362d7323102c",
+            `minimum` = 1,
+            `maximum` = 1,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AgentPropertyIdType",
+            `constants` = list(
+                `AGENT_PROPERTY_UNDEFINED` = 0,
+                `AGENT_PROPERTY_LANGUAGE` = 1,
+                `AGENT_PROPERTY_RUN_MODE` = 2,
+                `AGENT_PROPERTY_GREET` = 3,
+                `AGENT_PROPERTY_HEAD_FOLLOW` = 4,
+                `AGENT_PROPERTY_DUPLEX_TIMEOUT` = 5,
+                `AGENT_PROPERTY_ENVIRONMENT_SWITCH` = 6,
+                `AGENT_PROPERTY_WELCOME_STATUS` = 7,
+                `AGENT_PROPERTY_SITE_SWITCH` = 8,
+                `AGENT_PROPERTY_LANGUAGE_LIST` = 9
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAgentPropertiesValue",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_f5886bcdffa17bde1622e0441b0e05562826ea27c5e393a85e255d4dd6ac32bb",
+            `minimum` = 5,
+            `maximum` = 133,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AgentPropertiesValue",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "key",
+                    `type` = "Ros2Aimdk_msgsMsgAgentPropertyIdType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "value",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAgentProperties",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_5c1d34cab6d73c22fa0c9555ff67309d3ad05002b19d814ea03e576a1298f4aa",
+            `minimum` = 4,
+            `maximum` = 536,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AgentProperties",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "properties",
+                    `type` = "Ros2Aimdk_msgsMsgAgentPropertiesValue",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 5
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Builtin_interfacesMsgTime",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "normalized-time",
+            `ros_version` = 2,
+            `native_type` = "builtin_interfaces/msg/Time",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "sec",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "nanosec",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAudioInfo",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_c58c89e03376e7f8beb8df02fe189fb1f6059825c5ff6924c4199b24fdb440be",
+            `minimum` = 17,
+            `maximum` = 273,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AudioInfo",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "channels",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "sample_rate",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "size",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "sample_format",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "coding_format",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAudioData",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_547da1b39105416d63222ff082398cfeec0804a7c7ad28199168f1107c6844e8",
+            `minimum` = 4,
+            `maximum` = 260,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AudioData",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "data",
+                    `type` = "uint8",
+                    `array` = "sequence",
+                    `count` = 256,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAudioCapture",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_de7db19093964d4783811019e6cc12c952a58364561be2a0a81ae874766e937c",
+            `minimum` = 35,
+            `maximum` = 675,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AudioCapture",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "stamps",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "mic_channels",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "ref_channels",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "info",
+                    `type` = "Ros2Aimdk_msgsMsgAudioInfo",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 17
+                ),
+                list(
+                    `name` = "data",
+                    `type` = "Ros2Aimdk_msgsMsgAudioData",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "pkg_name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAudioFile",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ed9aeffc24c98e014fe431b9e5e814bf21a474a777f70cf3ac989537b431995d",
+            `minimum` = 37,
+            `maximum` = 677,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AudioFile",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "pkg_name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "file_name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "file_path",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "info",
+                    `type` = "Ros2Aimdk_msgsMsgAudioInfo",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 17
+                ),
+                list(
+                    `name` = "priority",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "priority_weight",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAudioPlayback",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_1262b4dd07b332e6d10c5968292f29928e43fd6f6ea2faa2be1f48482e2dc499",
+            `minimum` = 37,
+            `maximum` = 805,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AudioPlayback",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "stamps",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "info",
+                    `type` = "Ros2Aimdk_msgsMsgAudioInfo",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 17
+                ),
+                list(
+                    `name` = "data",
+                    `type` = "Ros2Aimdk_msgsMsgAudioData",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "pkg_name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "token_id",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgAudioVadStateType",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_edd7a6f6ad81c2c6479d3331d9e87a2fc66eedfb73f789caf0b888eeb9480526",
+            `minimum` = 1,
+            `maximum` = 1,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/AudioVadStateType",
+            `constants` = list(
+                `AUDIO_VAD_STATE_NONE` = 0,
+                `AUDIO_VAD_STATE_BEGIN` = 1,
+                `AUDIO_VAD_STATE_PROCESSING` = 2,
+                `AUDIO_VAD_STATE_END` = 3
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgRequestHeader",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_743efde912144cd1db5072b5a1d26b943c3fb882612b07c1883400784947b000",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/RequestHeader",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "stamp",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgCommonRequest",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d4dd21dc3b43faa42396e4c4aa0f1ad35a507b6bd313f5d197268e79d67dd9d7",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/CommonRequest",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgRequestHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgResponseHeader",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_1aff5b9cfbca54f9091a6295e28034b45d22481e0dbd8a75b1759cda18b57b90",
+            `minimum` = 16,
+            `maximum` = 16,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/ResponseHeader",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "stamp",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "code",
+                    `type` = "int64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgCommonState",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_263f2829cf13b7b12ceda8109834fa333d2da5828cd7a302a1818c044be4699e",
+            `minimum` = 4,
+            `maximum` = 4,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/CommonState",
+            `constants` = list(
+                `UNKNOWN` = 0,
+                `SUCCESS` = 1,
+                `FAILURE` = 2,
+                `ABORTED` = 3,
+                `TIMEOUT` = 4,
+                `INVALID` = 5,
+                `IN_MANUAL` = 6,
+                `NOT_READY` = 100,
+                `PENDING` = 200,
+                `CREATED` = 300,
+                `RUNNING` = 400
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgCommonResponse",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_03f4cf42f82eef5064c9b0563dcfe07bb9e918e8a8d81e71c4d89490bf66afb6",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/CommonResponse",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgResponseHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 16
+                ),
+                list(
+                    `name` = "status",
+                    `type` = "Ros2Aimdk_msgsMsgCommonState",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "message",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgCommonTaskResponse",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6e0f13b88f5320fecc86125c92ef073379d31a439c1b8de3a87466c98f1b9ae2",
+            `minimum` = 28,
+            `maximum` = 28,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/CommonTaskResponse",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgResponseHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 16
+                ),
+                list(
+                    `name` = "task_id",
+                    `type` = "uint64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "state",
+                    `type` = "Ros2Aimdk_msgsMsgCommonState",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgCurrentVersion",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0a8226d6e3af0a098ee88498274e2a166f40df85162a67d38ebcb1fcba5e87cd",
+            `minimum` = 20,
+            `maximum` = 2388,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/CurrentVersion",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "version",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "files",
+                    `type` = "string",
+                    `array` = "sequence",
+                    `count` = 16,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "download_timestamp_seconds",
+                    `type` = "uint64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgDomainErrorState",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b8ba44e26d3df3c4c71f1ca9d4e91e967c8d8e1d95042ac7433a9a3294e9e231",
+            `minimum` = 1,
+            `maximum` = 1,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/DomainErrorState",
+            `constants` = list(
+                `NONE` = 0,
+                `DAMPING` = 1,
+                `POWERDOWN` = 2,
+                `DISABLE` = 3,
+                `DISCONNECT` = 4
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMessageHeader",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6d8d9a27611d419d618f848c44ebe2c30d5393995d1f4fa7ecd70c34ded52496",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/MessageHeader",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "stamp",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "frame_id",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "sequence",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "meas_stamp",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgFaceEmojiStatus",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_3200d2686ea5f26668f00d0249e774572668b4a36b3f8067dae4f93182af89f7",
+            `minimum` = 47,
+            `maximum` = 2415,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/FaceEmojiStatus",
+            `constants` = list(
+                `STATUS_IDLE` = 0,
+                `STATUS_START` = 1,
+                `STATUS_RUNNING` = 2,
+                `STATUS_FINISHED` = 3,
+                `STATUS_STOPPED` = 4
+            ),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgMessageHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "e_path",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "e_path_list",
+                    `type` = "string",
+                    `array` = "sequence",
+                    `count` = 16,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "e_id",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "mode",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "priority",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "status",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "time_to_end_ms",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgFocusRequester",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9b41f0b3a3cafa6b190ede3107f8cf802c1cbacf1eb81e075a376ceaf37fa186",
+            `minimum` = 12,
+            `maximum` = 140,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/FocusRequester",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "pkg_name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "priority",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "priority_weight",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgFocusResponse",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_16047b8b9e9f131f8aa44fc4e0960ce81446788d557b055be1f6b2542db3a87c",
+            `minimum` = 5,
+            `maximum` = 133,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/FocusResponse",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "pkg_name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "focus_gain",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Geometry_msgsMsgPoint",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616",
+            `minimum` = 24,
+            `maximum` = 24,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "geometry_msgs/msg/Point",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "x",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "y",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "z",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Geometry_msgsMsgQuaternion",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672",
+            `minimum` = 32,
+            `maximum` = 32,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "geometry_msgs/msg/Quaternion",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "x",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = "0.0",
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8,
+                    `default` = 0.0
+                ),
+                list(
+                    `name` = "y",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = "0.0",
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8,
+                    `default` = 0.0
+                ),
+                list(
+                    `name` = "z",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = "0.0",
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8,
+                    `default` = 0.0
+                ),
+                list(
+                    `name` = "w",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = "1.0",
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8,
+                    `default` = 1.0
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Geometry_msgsMsgPose",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777",
+            `minimum` = 56,
+            `maximum` = 56,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "geometry_msgs/msg/Pose",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "position",
+                    `type` = "Ros2Geometry_msgsMsgPoint",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "orientation",
+                    `type` = "Ros2Geometry_msgsMsgQuaternion",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 32
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgQRCode",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_51293e3c7ee25b1a265c4a57539a11060563e89005ceaf4aaa0891481ab803cd",
+            `minimum` = 60,
+            `maximum` = 60,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/QRCode",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "code",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "pose",
+                    `type` = "Ros2Geometry_msgsMsgPose",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 56
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgHRPoint",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_070874f4fea77298b6d66d02ee40026e86b4f48ee03e6d9acffcaddb387b3645",
+            `minimum` = 65,
+            `maximum` = 305,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/HRPoint",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "point_id",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "pose",
+                    `type` = "Ros2Geometry_msgsMsgPose",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 56
+                ),
+                list(
+                    `name` = "qr_list",
+                    `type` = "Ros2Aimdk_msgsMsgQRCode",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 60
+                ),
+                list(
+                    `name` = "use_head",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgHandCommand",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_910f3d9c0907c60b2613097cc4c1426727987e2ab83f8bcc41787feb472dc4e8",
+            `minimum` = 44,
+            `maximum` = 172,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/HandCommand",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "position",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "velocity",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "acceleration",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "deceleration",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "effort",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgHandType",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_be593e2d647a922b02f6f81e52fbfaa805837d6ef6a156de500d4dc40f1fc5bb",
+            `minimum` = 1,
+            `maximum` = 1,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/HandType",
+            `constants` = list(
+                `NONE` = 0,
+                `NIMBLE_HANDS` = 1,
+                `CLAW` = 2,
+                `LEISAI_NIMBLE_HANDS` = 3,
+                `ERROR` = 255
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgHandCommandArray",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d7f46a8aa55d6ef296aa86d6522b7add84f4c8e7e3009d1454d573a8af1d17d5",
+            `minimum` = 34,
+            `maximum` = 1538,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/HandCommandArray",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgMessageHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "left_hand_type",
+                    `type` = "Ros2Aimdk_msgsMsgHandType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "left_hands",
+                    `type` = "Ros2Aimdk_msgsMsgHandCommand",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 44
+                ),
+                list(
+                    `name` = "right_hand_type",
+                    `type` = "Ros2Aimdk_msgsMsgHandType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "right_hands",
+                    `type` = "Ros2Aimdk_msgsMsgHandCommand",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 44
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgHandState",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9cfb695f97c9e314103a224bcb6b321de5f279cdae85d5eef7bec0c7968a875c",
+            `minimum` = 36,
+            `maximum` = 164,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/HandState",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "position",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "velocity",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "effort",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "state",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "faultcode",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgHandTouchSensorData",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_573ab7611c65bde831172350c3cf49dd73cf4bfcbefabff7aa874845b828e4a0",
+            `minimum` = 152,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/HandTouchSensorData",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "palm_touch_data",
+                    `type` = "uint8",
+                    `array` = "array",
+                    `count` = 36,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "back_of_hand_touch_data",
+                    `type` = "uint8",
+                    `array` = "array",
+                    `count` = 36,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "thumb_touch_data",
+                    `type` = "uint8",
+                    `array` = "array",
+                    `count` = 16,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "index_finger_touch_data",
+                    `type` = "uint8",
+                    `array` = "array",
+                    `count` = 16,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "middle_finger_touch_data",
+                    `type` = "uint8",
+                    `array` = "array",
+                    `count` = 16,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "ring_finger_touch_data",
+                    `type` = "uint8",
+                    `array` = "array",
+                    `count` = 16,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "little_finger_touch_data",
+                    `type` = "uint8",
+                    `array` = "array",
+                    `count` = 16,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgHandStateArray",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0ea5f872d42818af468d20b20670067c07631691b5988e45dc5e87caf137efb3",
+            `minimum` = 338,
+            `maximum` = 1778,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/HandStateArray",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgMessageHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "left_hand_type",
+                    `type` = "Ros2Aimdk_msgsMsgHandType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "left_hands",
+                    `type` = "Ros2Aimdk_msgsMsgHandState",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 36
+                ),
+                list(
+                    `name` = "left_touch_sensors",
+                    `type` = "Ros2Aimdk_msgsMsgHandTouchSensorData",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 152
+                ),
+                list(
+                    `name` = "right_hand_type",
+                    `type` = "Ros2Aimdk_msgsMsgHandType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "right_hands",
+                    `type` = "Ros2Aimdk_msgsMsgHandState",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 36
+                ),
+                list(
+                    `name` = "right_touch_sensors",
+                    `type` = "Ros2Aimdk_msgsMsgHandTouchSensorData",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 152
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgJointCommand",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_32c4e24dc7ea567136fc811efc68eea5b8d1072a5ed58e1c4b67b4d705a9fc3f",
+            `minimum` = 44,
+            `maximum` = 172,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/JointCommand",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "position",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "velocity",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "effort",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "stiffness",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "damping",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgJointCommandArray",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b8f8d9b00f02524cfdd21f81d7e683290e92ba0b00d086d4506fd3600123d9d6",
+            `minimum` = 28,
+            `maximum` = 11164,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/JointCommandArray",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgMessageHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "joints",
+                    `type` = "Ros2Aimdk_msgsMsgJointCommand",
+                    `array` = "sequence",
+                    `count` = 64,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 44
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgJointState",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_00a7d9637f691d224a78c967343dd16161b29e12ca6f9fafadc0af5d7e405a53",
+            `minimum` = 30,
+            `maximum` = 158,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/JointState",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "position",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "velocity",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "effort",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "error_code",
+                    `type` = "uint16",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 2
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgJointStateArray",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_4768076ae2f8c344f4030e7ca926d311e7706042187a2f9864a8a63f289f297e",
+            `minimum` = 29,
+            `maximum` = 10269,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/JointStateArray",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgMessageHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "state",
+                    `type` = "Ros2Aimdk_msgsMsgDomainErrorState",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "joints",
+                    `type` = "Ros2Aimdk_msgsMsgJointState",
+                    `array` = "sequence",
+                    `count` = 64,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 30
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcAction",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a43927486ae637ff4e5b8d60e1f45c91a9e3cf07b4505ea00550c6dc58e9354b",
+            `minimum` = 4,
+            `maximum` = 4,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McAction",
+            `constants` = list(
+                `PASSIVE_DEFAULT` = 1,
+                `SOFT_EMERGENCY_STOP` = 2,
+                `DAMPING_DEFAULT` = 3,
+                `ZERO_TORQUE_DEFAULT` = 4,
+                `JOINT_DEFAULT` = 100,
+                `JOINT_FREEZE` = 101,
+                `STAND_DEFAULT` = 200,
+                `STAND_BODY_CONTROL` = 201,
+                `LOCOMOTION_DEFAULT` = 300,
+                `RUN_DEFAULT` = 301,
+                `LOCOMOTION_STEP` = 302,
+                `VR_REMOTE_CONTROLLER` = 400,
+                `SIT_DOWN_DEFAULT` = 2000,
+                `CROUCH_DOWN_DEFAULT` = 2002,
+                `LIE_DOWN_DEFAULT` = 2004,
+                `STAND_UP_DEFAULT` = 2005,
+                `ASCEND_STAIRS` = 2006,
+                `DESCEND_STAIRS` = 2008
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcActionCommand",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9a529c7988535cbc65c36425ffb0935b210a806906598baa3a2f1f717df4f648",
+            `minimum` = 8,
+            `maximum` = 136,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McActionCommand",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "action",
+                    `type` = "Ros2Aimdk_msgsMsgMcAction",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "action_desc",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcActionStatus",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8c05e9540004b968b042b32ed0164af4857574186776f311be9b3ecde209ad48",
+            `minimum` = 4,
+            `maximum` = 4,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McActionStatus",
+            `constants` = list(
+                `IDLE` = 0,
+                `RUNNING` = 100,
+                `TRANSITION` = 200
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcActionInfo",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9c3c209060709befea26f340e6a607f4c6ddb00c638d1dedf5dd0cfa23f2e5e9",
+            `minimum` = 12,
+            `maximum` = 140,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McActionInfo",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "current_action",
+                    `type` = "Ros2Aimdk_msgsMsgMcAction",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "action_desc",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "status",
+                    `type` = "Ros2Aimdk_msgsMsgMcActionStatus",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcControlArea",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ca241b8a191674136f0eeb0deee84b5e284de71f384038c9a5d6083eb4fc75c9",
+            `minimum` = 4,
+            `maximum` = 4,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McControlArea",
+            `constants` = list(
+                `NONE` = 0,
+                `LEFT_HAND` = 1,
+                `RIGHT_HAND` = 2,
+                `HEAD` = 4,
+                `WAIST` = 8
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcInputAction",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_7016737845145fd03a104665957b475c512400775b93981573a40d0da30e15d9",
+            `minimum` = 4,
+            `maximum` = 4,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McInputAction",
+            `constants` = list(
+                `INPUTACTION_ADD` = 1001,
+                `INPUTACTION_MODIFY` = 1002,
+                `INPUTACTION_DELETE` = 1003,
+                `INPUTACTION_ENABLE` = 2001,
+                `INPUTACTION_DISABLE` = 2002
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcInputSource",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_4909fe165c71d1104207b393ba76d55347aa02836ebac251f6b57259ced1d1dd",
+            `minimum` = 12,
+            `maximum` = 140,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McInputSource",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "priority",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "timeout",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcLocomotionVelocity",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a3c45cd56bc3098af00eefba2b2fc5c34c6439228d3429ab077d80b60ef8ca00",
+            `minimum` = 52,
+            `maximum` = 308,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McLocomotionVelocity",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgMessageHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "source",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "forward_velocity",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "lateral_velocity",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "angular_velocity",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgMcPresetMotion",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_7421ee5b50a30799907e6f521dd97874158a945019f09cecf168a8f3130c9153",
+            `minimum` = 4,
+            `maximum` = 4,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/McPresetMotion",
+            `constants` = list(
+                `RAISE_HAND` = 1001,
+                `WAVE_HAND` = 1002,
+                `SHAKE_HAND` = 1003,
+                `FLYING_KISS_HAND` = 1004,
+                `CLAP_HAND` = 1008,
+                `TURN_WAVE_HAND` = 2001,
+                `INTERACTION_BOW` = 3001,
+                `INTERACTION_LIKE` = 3002,
+                `INTERACTION_YE` = 3003,
+                `INTERACTION_SWEATHEART` = 3004,
+                `SALUTE` = 1013,
+                `INTERACTION_SAD` = 3006,
+                `INTERACTION_LIGHTWAVE` = 3007,
+                `INTERACTION_HUG` = 3008,
+                `INTERACTION_HANDX` = 3009,
+                `INTERACTION_CHESTWAVE` = 3010,
+                `INTERACTION_CHEER` = 3011,
+                `INTERACTION_BLOWKISS` = 3012,
+                `INTERACTION_BASSDANCE1` = 3013,
+                `INTERACTION_BASSDANCE2` = 3014,
+                `HITCLAP` = 3015,
+                `INTERACTION_SPEAK` = 3016,
+                `CLIPFIST` = 1009,
+                `INTERACTION_PHOTOPOSTURE` = 3018,
+                `INTERACTION_PHOTOTRIPPLEPOSTURE` = 3019,
+                `POINT_HEAD` = 4001,
+                `SHAKE_HEAD` = 4002
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Geometry_msgsMsgPose2D",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_5926ccd43f868ca13520625e24e283abe2e6f6418dacaa136eed5951064d8bce",
+            `minimum` = 24,
+            `maximum` = 24,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "geometry_msgs/msg/Pose2D",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "x",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "y",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "theta",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgNaviPoint",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_e1613f1cc3f2e23dffba8c4b2414f5eaba7ef8909aa4d032f13f6f514484694e",
+            `minimum` = 28,
+            `maximum` = 28,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/NaviPoint",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "point_id",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "navi_point",
+                    `type` = "Ros2Geometry_msgsMsgPose2D",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgPath",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_88efeee6a105a4a88d155242fcd6f5be0866f4c0eadfc0b90243ca0eb020f27d",
+            `minimum` = 8,
+            `maximum` = 104,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/Path",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "path_id",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "points",
+                    `type` = "Ros2Geometry_msgsMsgPose2D",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgPlayStateType",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a103f60f1b75030272dea3bcf7da76ac8fdc214c3a38721fa2b09c507cc47946",
+            `minimum` = 1,
+            `maximum` = 1,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/PlayStateType",
+            `constants` = list(
+                `PLAYER_STATE_CLOSED` = 0,
+                `PLAYER_STATE_PLAYING` = 1,
+                `PLAYER_STATE_STOPED` = 2
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgPlayStateChange",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_62c2a232fb57ebab6a0fce42a84e12d8a25dc21e40fb5420201ef6337894f41c",
+            `minimum` = 5,
+            `maximum` = 133,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/PlayStateChange",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "pkg_name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "state",
+                    `type` = "Ros2Aimdk_msgsMsgPlayStateType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgTtsPriorityLevel",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6e19302f3df2152dabda478d48e0506d483427f946a552d364a206fee9687507",
+            `minimum` = 1,
+            `maximum` = 1,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/TtsPriorityLevel",
+            `constants` = list(
+                `UNKNOWN` = 0,
+                `BACKGROUND_L1` = 1,
+                `SERVICE_L2` = 2,
+                `MISSION_L4` = 4,
+                `INTERACTION_L6` = 6,
+                `SYSTEM_L7` = 7,
+                `WARNING_L8` = 8,
+                `SAFETY_L10` = 10
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgPlayTtsRequest",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_f5c7b9646cefc4c4d7a3a2ddac3e1ebed6d6aa789c03be06d89ffdf6fd023b72",
+            `minimum` = 18,
+            `maximum` = 402,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/PlayTtsRequest",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "text",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "priority_level",
+                    `type` = "Ros2Aimdk_msgsMsgTtsPriorityLevel",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "priority_weight",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "domain",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "trace_id",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "is_interrupted",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgPlayTtsResponse",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ace6fc9356d764c1f456687c3a05c24f514167cc2b48787bda62413353b8ec82",
+            `minimum` = 26,
+            `maximum` = 538,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/PlayTtsResponse",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "text",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "priority_level",
+                    `type` = "Ros2Aimdk_msgsMsgTtsPriorityLevel",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "priority_weight",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "domain",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "trace_id",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "is_success",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "error_message",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "estimated_duration",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgPmuState",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_bb828bf3667ae8a8909a7e98b20e789d9dfc6b954fe2ab7fc3adbc306c9ebbbd",
+            `minimum` = 218,
+            `maximum` = 1114,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/PmuState",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "pmu_software_version",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "pmu_hardware_version",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "pmu_protocol_version",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "pmu_bool_status",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "head_power_current",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "output_48v_current",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "rk3588_current",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "output_12v_current",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "bus_48v_current",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "orin_current",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "bus_48v_pmos_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "battery_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "fan_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "output_12v_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "output_48v_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "bus_48v_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "head_power_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "orin_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "rk3588_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "fan_speed",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "fan_pecentage",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "pmu_temperature",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "bms_manufacturer",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "bms_serial_number",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "bms_hardware_version",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "bms_software_version",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "bms_status_bits",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "battery_balance_line_resistance",
+                    `type` = "uint16",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 2
+                ),
+                list(
+                    `name` = "battery_pack_voltage",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "battery_current",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "battery_output_power",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "battery_temperature",
+                    `type` = "float64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "battery_remaining_capacity",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "battery_remaining_capacity_percentage",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "battery_cycle_count",
+                    `type` = "uint16",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 2
+                ),
+                list(
+                    `name` = "battery_cycle_total_capacity",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgProcessedAudioOutput",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8b0ea5b4fc3db2efe41730f74a261ee6ea94ad34ee35ff42ae5288ddf501cc30",
+            `minimum` = 33,
+            `maximum` = 417,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/ProcessedAudioOutput",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgMessageHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "stream_id",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "audio_vad_state",
+                    `type` = "Ros2Aimdk_msgsMsgAudioVadStateType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "audio_data",
+                    `type` = "uint8",
+                    `array` = "sequence",
+                    `count` = 256,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgQRPoint",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b158d016b9e3607a1345df207459476cf88c9817dfd3ee7560b5635c7a81863e",
+            `minimum` = 64,
+            `maximum` = 64,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/QRPoint",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "point_id",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "qr_code",
+                    `type` = "Ros2Aimdk_msgsMsgQRCode",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 60
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Geometry_msgsMsgPoint32",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8ca11f8b9c00af9c95e3eebbeb6073227af8dee04b57f84e120a024e7f8539f9",
+            `minimum` = 12,
+            `maximum` = 12,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "geometry_msgs/msg/Point32",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "x",
+                    `type` = "float32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "y",
+                    `type` = "float32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "z",
+                    `type` = "float32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Geometry_msgsMsgPolygon",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b5492d33b802b68eea062a74ffe7f336b1f392161b183e67c3bf24bb0a7d0aa8",
+            `minimum` = 4,
+            `maximum` = 52,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "geometry_msgs/msg/Polygon",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "points",
+                    `type` = "Ros2Geometry_msgsMsgPoint32",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 12
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgRegion",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_161bb9787ae2df5a45015946bc386a2c4cf310701fa4970cf447c6445c85f1ce",
+            `minimum` = 10,
+            `maximum` = 186,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/Region",
+            `constants` = list(
+                `REGION_UNDEFINED` = 0,
+                `REGION_WORKING_SPACE` = 1,
+                `REGION_VIRTUAL_WALL` = 2,
+                `REGION_DRAWING_UNDEFINED` = 0,
+                `REGION_DRAWING_CLOSURE` = 1,
+                `REGION_DRAWING_LINES` = 2
+            ),
+            `fields` = list(
+                list(
+                    `name` = "type",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "drawing_type",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "polygon",
+                    `type` = "Ros2Geometry_msgsMsgPolygon",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgRobotResource",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_abc49dc6dd4cc0b0c59cd0ddb01d19897a51018752e3d9eb39aa6bcc684ad34d",
+            `minimum` = 24,
+            `maximum` = 2520,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/RobotResource",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "resource_key",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "current_version",
+                    `type` = "Ros2Aimdk_msgsMsgCurrentVersion",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 20
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgSlaveDevice",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_36af580c9887ea808824106a14966193c9a639f6825a2cb3f94cbde369bd3255",
+            `minimum` = 4,
+            `maximum` = 132,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/SlaveDevice",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "ip",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgSystemStatus",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_94275d3d0a1e83e4cc8e45b166b2cb111c9eccd4eabfe7410795b9c1fd69c6f1",
+            `minimum` = 1,
+            `maximum` = 1,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/SystemStatus",
+            `constants` = list(
+                `IN_INITIAL` = 0,
+                `IN_READY` = 1,
+                `IN_MOVE` = 2,
+                `IN_ROLLBACK` = 3,
+                `IN_FALLBACK` = 4,
+                `IN_FALLBACK_MOVE` = 5
+            ),
+            `fields` = list(
+                list(
+                    `name` = "value",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsMsgTouchState",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_90d5626f09f2254a102224e74c1f8a4d8db63910b7e5eeafa519afd79c7b1564",
+            `minimum` = 97,
+            `maximum` = 225,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/msg/TouchState",
+            `constants` = list(
+                `UNKNOWN` = 0,
+                `IDLE` = 1,
+                `TOUCH` = 2,
+                `SLIDE` = 3,
+                `PAT_ONCE` = 4,
+                `PAT_TWICE` = 5,
+                `PAT_TRIPLE` = 6
+            ),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgMessageHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "event_type",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "data",
+                    `type` = "uint32",
+                    `array` = "array",
+                    `count` = 8,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "threshold",
+                    `type` = "uint32",
+                    `array` = "array",
+                    `count` = 8,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "is_touched",
+                    `type` = "bool",
+                    `array` = "array",
+                    `count` = 8,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvAbandonAudioFocus_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_c49f508915d7e28b09d6b4e21da757ec4457f96f7bced6861caecf00b5e68ce5",
+            `minimum` = 20,
+            `maximum` = 148,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/AbandonAudioFocus_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "focus_requester",
+                    `type` = "Ros2Aimdk_msgsMsgFocusRequester",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 12
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvAbandonAudioFocus_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6a26581d66d35c5e6d04720935a163a6f527c036cb9c774e130bce242e47f376",
+            `minimum` = 29,
+            `maximum` = 285,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/AbandonAudioFocus_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "focus_response",
+                    `type` = "Ros2Aimdk_msgsMsgFocusResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 5
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvExecuteActionResource_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_4fa82b039bfd5804bf1591c04cf4c874c78a8f2b25d2a39cd55e8ce877f6ce56",
+            `minimum` = 24,
+            `maximum` = 936,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/ExecuteActionResource_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "resource_key",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "resource_version",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "slaves",
+                    `type` = "Ros2Aimdk_msgsMsgSlaveDevice",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "meta",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvExecuteActionResource_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_40e147ad6f1534415f232269043f52e6566a1023f728ad31851bbd6aa8651011",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/ExecuteActionResource_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetAllJointState_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6ebdd4b2a15c8d5f3089fa93003d73adb818d92b51ecb65ea817b72e0ee90260",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetAllJointState_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetAllJointState_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_7b5d2c7e0d8c1f9a7beb98289b933a2f4466c4d08e9340a816e9e65d7a8151f2",
+            `minimum` = 40,
+            `maximum` = 2696,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetAllJointState_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "head_joints",
+                    `type` = "Ros2Aimdk_msgsMsgJointState",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 30
+                ),
+                list(
+                    `name` = "arm_joints",
+                    `type` = "Ros2Aimdk_msgsMsgJointState",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 30
+                ),
+                list(
+                    `name` = "waist_joints",
+                    `type` = "Ros2Aimdk_msgsMsgJointState",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 30
+                ),
+                list(
+                    `name` = "leg_joints",
+                    `type` = "Ros2Aimdk_msgsMsgJointState",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 30
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetCurrentInputSource_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d5b73ba9bc2ea2f864884a0e278e2a3e327e0af405594a5e7aac7d3884e7143a",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetCurrentInputSource_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetCurrentInputSource_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_74952e748930b62ef98f8837c39e3925425b6f3a715fadb0d01339104bafbe5e",
+            `minimum` = 40,
+            `maximum` = 168,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetCurrentInputSource_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "response",
+                    `type` = "Ros2Aimdk_msgsMsgCommonTaskResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 28
+                ),
+                list(
+                    `name` = "input_source",
+                    `type` = "Ros2Aimdk_msgsMsgMcInputSource",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 12
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetHandType_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d286d9ff63fa2191490e6aa526330d2a448b37fc47231d9e42d61a3b4ddca470",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetHandType_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetHandType_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_23332f9f7853b7c67f0263a4cbfc9e6f3df2aa4a7c540906f0cf304e06ec9555",
+            `minimum` = 26,
+            `maximum` = 154,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetHandType_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "left_hands_type",
+                    `type` = "Ros2Aimdk_msgsMsgHandType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "right_hands_type",
+                    `type` = "Ros2Aimdk_msgsMsgHandType",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetMcAction_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_f6dc5b72271fc51bfb1950b67d671619b65dfabc7931e12889a237fe47d18cfe",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetMcAction_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetMcAction_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_e2518bce930bc6f8e195b638d9eb5c132dffa93449c94b6f044e6192843df18f",
+            `minimum` = 28,
+            `maximum` = 156,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetMcAction_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgResponseHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 16
+                ),
+                list(
+                    `name` = "info",
+                    `type` = "Ros2Aimdk_msgsMsgMcActionInfo",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 12
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetMicSourceRequest_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_da81fa95ff0da422aaabb2412f11371452bac4c9b658682884b91fece94171cc",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetMicSourceRequest_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetMicSourceRequest_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_86637a091357add483c69aa331eb4305632f3701ff9d77dc8e00e8bc19b6f1f6",
+            `minimum` = 28,
+            `maximum` = 156,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetMicSourceRequest_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "mic_source",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetMute_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0f3d2a1679b2af2dca96bcdba69e8f076e9a333d4166a53501de40594c723ca5",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetMute_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetMute_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_c1beb5c0c269083a0be2c3a4718043ec92639b6ac58cf1d74bae051bec2d8a42",
+            `minimum` = 25,
+            `maximum` = 153,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetMute_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "is_mute",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetRobotResources_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0d086d105a54d7feea306182350c962ecebe145b8f9c45ca1216a88e6aaec86b",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetRobotResources_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetRobotResources_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ec4e3d0e6c502b60e70a3ba18f41d885e108fd4fe530ef2a9136ca0b32edda91",
+            `minimum` = 28,
+            `maximum` = 10236,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetRobotResources_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "robot_resources",
+                    `type` = "Ros2Aimdk_msgsMsgRobotResource",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Std_msgsMsgHeader",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+            `minimum` = 12,
+            `maximum` = 140,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "std_msgs/msg/Header",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "stamp",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "frame_id",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetStoredMapByName_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_4c33fbe7dbfe4cb2c06345046eb36d470530ff775ae5eee9b89f69fa5ec2fbc3",
+            `minimum` = 16,
+            `maximum` = 272,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetStoredMapByName_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Std_msgsMsgHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 12
+                ),
+                list(
+                    `name` = "map_name",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Nav_msgsMsgMapMetaData",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_494874ea5dbbb03876e0405f6d06b5d7cc5b1727e61dcb8ff9e449735b800009",
+            `minimum` = 76,
+            `maximum` = 76,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "nav_msgs/msg/MapMetaData",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "map_load_time",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "resolution",
+                    `type` = "float32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "width",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "height",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "origin",
+                    `type` = "Ros2Geometry_msgsMsgPose",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 56
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetStoredMapByName_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_66ba1fb25a02dc55b4c5f46bdb5e090d134ea5fa9ff2a47f4934b0af382c61fb",
+            `minimum` = 140,
+            `maximum` = 3400,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetStoredMapByName_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "code",
+                    `type` = "uint64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Std_msgsMsgHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 12
+                ),
+                list(
+                    `name` = "map_info",
+                    `type` = "Ros2Nav_msgsMsgMapMetaData",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 76
+                ),
+                list(
+                    `name` = "map_version",
+                    `type` = "uint64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "map_path",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "data",
+                    `type` = "int8",
+                    `array` = "sequence",
+                    `count` = 256,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "navi_points",
+                    `type` = "Ros2Aimdk_msgsMsgNaviPoint",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 28
+                ),
+                list(
+                    `name` = "qr_points",
+                    `type` = "Ros2Aimdk_msgsMsgQRPoint",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 64
+                ),
+                list(
+                    `name` = "hr_points",
+                    `type` = "Ros2Aimdk_msgsMsgHRPoint",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 65
+                ),
+                list(
+                    `name` = "paths",
+                    `type` = "Ros2Aimdk_msgsMsgPath",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "regions",
+                    `type` = "Ros2Aimdk_msgsMsgRegion",
+                    `array` = "sequence",
+                    `count` = 4,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 10
+                ),
+                list(
+                    `name` = "map_id",
+                    `type` = "uint64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetSystemState_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_abc62c31fea241d08d99a5a726199b29b995c0cadb688e5aa480ab70d173bf1f",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetSystemState_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetSystemState_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8ea41f1383183b566d3c4457bee27191c9ac986a7c42e0b98aab05ab500c9039",
+            `minimum` = 29,
+            `maximum` = 285,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetSystemState_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "cur_state",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "curr_status",
+                    `type` = "Ros2Aimdk_msgsMsgSystemStatus",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetVolume_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6e0d1472098c746f350535d30a3281758480e8e7c7b8ef54485310dae16dfc2b",
+            `minimum` = 8,
+            `maximum` = 8,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetVolume_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvGetVolume_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_24a04a12d640be4e17e24d372b0bbb2f65a89bd56e4ee1448e252db2c833c266",
+            `minimum` = 28,
+            `maximum` = 156,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/GetVolume_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "audio_volume",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvMigrateSystemState_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_02131f85cee3462c507bef0c8f54e75adbb1c8318551cfaef8efc59d693a415b",
+            `minimum` = 12,
+            `maximum` = 140,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/MigrateSystemState_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "state",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvMigrateSystemState_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_7d4901fe8d9ab86c9f42b643604809a73e07ea77877b955764b4311d6f585802",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/MigrateSystemState_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayAudioFile_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_710a4db7c9c3792601fd958615acbd3e413ed1b1ca98aec0a7b04aff79c59cb1",
+            `minimum` = 53,
+            `maximum` = 693,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayAudioFile_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "file",
+                    `type` = "Ros2Aimdk_msgsMsgAudioFile",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 37
+                ),
+                list(
+                    `name` = "play_stamps",
+                    `type` = "Ros2Builtin_interfacesMsgTime",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayAudioFile_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_988d360e84f041bc5a53a6d085709ba31e7e3836115e40d890534f44e62b0b85",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayAudioFile_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayEmoji_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ba31bdc232369e170ee9fb00ac8e51639d81a657de8f6e61f9acfccc2a083d43",
+            `minimum` = 14,
+            `maximum` = 14,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayEmoji_Request",
+            `constants` = list(
+                `EMOTION_UNKNOWN` = 0,
+                `EMOTION_IDLE_BLINK` = 1,
+                `EMOTION_IDLE_CALM_1` = 10,
+                `EMOTION_IDLE_CALM_2` = 11,
+                `EMOTION_IDLE_GAME` = 20,
+                `EMOTION_IDLE_CUTE_1` = 30,
+                `EMOTION_IDLE_CUTE_2` = 31,
+                `EMOTION_IDLE_CUTE_3` = 32,
+                `EMOTION_IDLE_CUTE_4` = 33,
+                `EMOTION_EYE_CLOSE` = 40,
+                `EMOTION_EYE_OPEN` = 50,
+                `EMOTION_EYE_BORING_1` = 60,
+                `EMOTION_EYE_ABNORMAL` = 70,
+                `EMOTION_EYE_SLEEPY` = 80,
+                `EMOTION_EYE_HAPPY` = 90,
+                `EMOTION_EYE_EXTREMEHAPPY_1` = 100,
+                `EMOTION_EYE_EXTREMEHAPPY_2` = 101,
+                `EMOTION_EYE_SAD` = 110,
+                `EMOTION_EYE_SYMPATHY` = 120,
+                `EMOTION_EYE_CONFUSE` = 130,
+                `EMOTION_EYE_SHOCK` = 140,
+                `EMOTION_EYE_ACTCUTE` = 150,
+                `EMOTION_EYE_SERIOUS` = 160,
+                `EMOTION_EYE_THINKING` = 170,
+                `EMOTION_EYE_ANGRY` = 180,
+                `EMOTION_EYE_EXTREMEANGRY` = 190,
+                `EMOTION_EYE_ADORE` = 200,
+                `EMOTION_EYE_EXTREMEADORE` = 210,
+                `EMOTION_EYE_CHARGE` = 220,
+                `EMOTION_MODE_ONCE` = 1,
+                `EMOTION_MODE_LOOP` = 2
+            ),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "emotion_id",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "mode",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "priority",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayEmoji_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_5e5ba0082cf9bf5d9b9c7eae034efd76bd44503306bb4994e06862a802cfb6b9",
+            `minimum` = 29,
+            `maximum` = 285,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayEmoji_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "success",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "message",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayTts_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_33f223039d43b52c64efebade4db48eb23c734f57094ed9f354a624927326989",
+            `minimum` = 26,
+            `maximum` = 410,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayTts_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "tts_req",
+                    `type` = "Ros2Aimdk_msgsMsgPlayTtsRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 18
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayTts_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_80d6f75ec35cccce215b1ab1321eabeae2e6668eb29a7249c8f8fad77e59bcc6",
+            `minimum` = 50,
+            `maximum` = 690,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayTts_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "tts_resp",
+                    `type` = "Ros2Aimdk_msgsMsgPlayTtsResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 26
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayVideo_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a42348160bfed67c90f9ddc96beaca7b37e6099ba67c8c025d6ac0f95e6bc878",
+            `minimum` = 17,
+            `maximum` = 145,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayVideo_Request",
+            `constants` = list(
+                `EMOTION_MODE_ONCE` = 1,
+                `EMOTION_MODE_LOOP` = 2
+            ),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "video_path",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "mode",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "priority",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayVideo_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_f714873f193ca3ee0d02c822dbc3262033a2fe7913748ba177136a24d5b7f627",
+            `minimum` = 29,
+            `maximum` = 285,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayVideo_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "success",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "message",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayVideoGroup_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_3c55649a41758dca0eeb22b090ae63a38bb4720d6b55342ac5204ec1a3696473",
+            `minimum` = 17,
+            `maximum` = 2129,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayVideoGroup_Request",
+            `constants` = list(
+                `EMOTION_MODE_ONCE` = 1,
+                `EMOTION_MODE_LOOP` = 2
+            ),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "video_path_list",
+                    `type` = "string",
+                    `array` = "sequence",
+                    `count` = 16,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "mode",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "priority",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvPlayVideoGroup_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_eb57edaed02ddee9424ba10f7c783e9e6147fa0990043059f2b4102d0d0a5a19",
+            `minimum` = 29,
+            `maximum` = 285,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/PlayVideoGroup_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "success",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "message",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvRequestAudioFocus_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b6354e6109618f66c9c52fc67351c687e60ad1bf5f4b77a8e326755deca7ae8a",
+            `minimum` = 20,
+            `maximum` = 148,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/RequestAudioFocus_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "focus_requester",
+                    `type` = "Ros2Aimdk_msgsMsgFocusRequester",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 12
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvRequestAudioFocus_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_41f9d4bcd2021b66e092897b1c587be4359d28b9bac69ea4058d429c5cf88180",
+            `minimum` = 29,
+            `maximum` = 285,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/RequestAudioFocus_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "focus_response",
+                    `type` = "Ros2Aimdk_msgsMsgFocusResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 5
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b05248c104afdd5331b9afb7a029923b03d3a984ba53633b0e42a70395f96fb8",
+            `minimum` = 12,
+            `maximum` = 544,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetAgentPropertiesRequest_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "contents",
+                    `type` = "Ros2Aimdk_msgsMsgAgentProperties",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_193eace6181c5da860dd9fa0d274415bdcb2246f7054acece8ae925414b0a81b",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetAgentPropertiesRequest_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMcAction_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ba4bc79d2f30a969feb655cc441955119aee8c5d0dc56be32639c9c3e682e246",
+            `minimum` = 20,
+            `maximum` = 276,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMcAction_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgRequestHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "source",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "command",
+                    `type` = "Ros2Aimdk_msgsMsgMcActionCommand",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMcAction_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_64c336314ea7d3635494d1e3f9da9b23442653033e3ddfb0936440520141d24f",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMcAction_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "response",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMcInputSource_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_853ae368291aa7e14c665d3d47caad66ba626c086ad759180c31223a9785b021",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMcInputSource_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "action",
+                    `type` = "Ros2Aimdk_msgsMsgMcInputAction",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "input_source",
+                    `type` = "Ros2Aimdk_msgsMsgMcInputSource",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 12
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMcInputSource_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0c0764d24b86f57f3c2f1a59966a787113cf9411cf89f40d29a7708bf03650cb",
+            `minimum` = 28,
+            `maximum` = 28,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMcInputSource_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "response",
+                    `type` = "Ros2Aimdk_msgsMsgCommonTaskResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 28
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMcPresetMotion_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d16880d0ae7ae0801056a3e9632a8a272813d0e206420199c9463987586b2547",
+            `minimum` = 29,
+            `maximum` = 157,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMcPresetMotion_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgRequestHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "area",
+                    `type` = "Ros2Aimdk_msgsMsgMcControlArea",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "motion",
+                    `type` = "Ros2Aimdk_msgsMsgMcPresetMotion",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "interrupt",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "ani_path",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "play_timestamp",
+                    `type` = "uint64",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMcPresetMotion_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9534060f44b6d36c7f0c585e7ce1f1e8b06a2561a2161a29fe6d0e4d22c77e85",
+            `minimum` = 28,
+            `maximum` = 28,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMcPresetMotion_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "response",
+                    `type` = "Ros2Aimdk_msgsMsgCommonTaskResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 28
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMicSourceRequest_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_01f1bcb54c816c25f1a88eb4392e8bedc4943d39a5b09974d7859c20ad1ca5e5",
+            `minimum` = 12,
+            `maximum` = 12,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMicSourceRequest_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "mic_source",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMicSourceRequest_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ee6caccf202dae100928dacc71303c536144d76458cf7c9b4facc6b88405ba02",
+            `minimum` = 24,
+            `maximum` = 152,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMicSourceRequest_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMute_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a37f6b638f226a9d150315baa5b11e6994422ba8f58541ac7b04df11e5c21fe3",
+            `minimum` = 9,
+            `maximum` = 9,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMute_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "is_mute",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetMute_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0ba7d8046b7a0d23deb0b4cdb2ba5d144543a68a2468d657cc0b29f60efdca50",
+            `minimum` = 25,
+            `maximum` = 153,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetMute_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "is_mute",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetPmuLed_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_015ab71547b25baf5658c13781f8e78e5f6ed19692a6a30d191d7f39c962357e",
+            `minimum` = 21,
+            `maximum` = 149,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetPmuLed_Request",
+            `constants` = list(
+                `LED_STRIP_MODE_CONSTANT` = 0,
+                `LED_STRIP_MODE_BREATH` = 1,
+                `LED_STRIP_MODE_FLASH` = 2,
+                `LED_STRIP_MODE_FLOW` = 3,
+                `LED_STRIP_MODE_MAX` = 4
+            ),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "trace_id",
+                    `type` = "string",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 128,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "led_strip_mode",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "r",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "g",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "b",
+                    `type` = "uint8",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                ),
+                list(
+                    `name` = "priority",
+                    `type` = "int32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                ),
+                list(
+                    `name` = "reset_priority",
+                    `type` = "bool",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 1
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetPmuLed_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0408d54ce93e19d7299d79ee7797dc9b3511b3f5c37fd97a3b3d7d193cefcd28",
+            `minimum` = 18,
+            `maximum` = 18,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetPmuLed_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "header",
+                    `type` = "Ros2Aimdk_msgsMsgResponseHeader",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 16
+                ),
+                list(
+                    `name` = "status_code",
+                    `type` = "uint16",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 2
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetVolume_Request",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_09161b7a7ae47ab702190725e42e27cd247f681702de05c4f68fa59581f85aad",
+            `minimum` = 12,
+            `maximum` = 12,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetVolume_Request",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "request",
+                    `type` = "Ros2Aimdk_msgsMsgCommonRequest",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 8
+                ),
+                list(
+                    `name` = "audio_volume",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        ),
+        list(
+            `symbol` = "Ros2Aimdk_msgsSrvSetVolume_Response",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_e5baf36b9fe876cfa8633c769aa7bcf085b813a7174de2bd6dd2026bc3744a1e",
+            `minimum` = 28,
+            `maximum` = 156,
+            `semantics` = "",
+            `ros_version` = 2,
+            `native_type` = "aimdk_msgs/srv/SetVolume_Response",
+            `constants` = list(),
+            `fields` = list(
+                list(
+                    `name` = "reponse",
+                    `type` = "Ros2Aimdk_msgsMsgCommonResponse",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 24
+                ),
+                list(
+                    `name` = "audio_volume",
+                    `type` = "uint32",
+                    `array` = "",
+                    `count` = 0,
+                    `string_bound` = 0,
+                    `native_string_bound` = 0,
+                    `native_sequence_bound` = 0,
+                    `native_default` = NULL,
+                    `native_scalar` = "",
+                    `string_encoding` = "utf8",
+                    `float_policy` = "finite",
+                    `raw` = FALSE,
+                    `element_minimum` = 4
+                )
+            )
+        )
+    )
+    list(records = UwvmRos$records(schemas), interfaces = list(
+        `aimdk_msgs/msg/AgentProperties` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_5c1d34cab6d73c22fa0c9555ff67309d3ad05002b19d814ea03e576a1298f4aa",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAgentProperties"
+            )
+        ),
+        `aimdk_msgs/msg/AgentPropertiesValue` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_f5886bcdffa17bde1622e0441b0e05562826ea27c5e393a85e255d4dd6ac32bb",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAgentPropertiesValue"
+            )
+        ),
+        `aimdk_msgs/msg/AgentPropertyIdType` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d46b7979d687f30a04b2d96d2cfde9efeedb18a3b311e43fd3af362d7323102c",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAgentPropertyIdType"
+            )
+        ),
+        `aimdk_msgs/msg/AudioCapture` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_de7db19093964d4783811019e6cc12c952a58364561be2a0a81ae874766e937c",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAudioCapture"
+            )
+        ),
+        `aimdk_msgs/msg/AudioData` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_547da1b39105416d63222ff082398cfeec0804a7c7ad28199168f1107c6844e8",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAudioData"
+            )
+        ),
+        `aimdk_msgs/msg/AudioFile` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ed9aeffc24c98e014fe431b9e5e814bf21a474a777f70cf3ac989537b431995d",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAudioFile"
+            )
+        ),
+        `aimdk_msgs/msg/AudioInfo` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_c58c89e03376e7f8beb8df02fe189fb1f6059825c5ff6924c4199b24fdb440be",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAudioInfo"
+            )
+        ),
+        `aimdk_msgs/msg/AudioPlayback` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_1262b4dd07b332e6d10c5968292f29928e43fd6f6ea2faa2be1f48482e2dc499",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAudioPlayback"
+            )
+        ),
+        `aimdk_msgs/msg/AudioVadStateType` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_edd7a6f6ad81c2c6479d3331d9e87a2fc66eedfb73f789caf0b888eeb9480526",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgAudioVadStateType"
+            )
+        ),
+        `aimdk_msgs/msg/CommonRequest` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d4dd21dc3b43faa42396e4c4aa0f1ad35a507b6bd313f5d197268e79d67dd9d7",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgCommonRequest"
+            )
+        ),
+        `aimdk_msgs/msg/CommonResponse` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_03f4cf42f82eef5064c9b0563dcfe07bb9e918e8a8d81e71c4d89490bf66afb6",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgCommonResponse"
+            )
+        ),
+        `aimdk_msgs/msg/CommonState` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_263f2829cf13b7b12ceda8109834fa333d2da5828cd7a302a1818c044be4699e",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgCommonState"
+            )
+        ),
+        `aimdk_msgs/msg/CommonTaskResponse` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6e0f13b88f5320fecc86125c92ef073379d31a439c1b8de3a87466c98f1b9ae2",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgCommonTaskResponse"
+            )
+        ),
+        `aimdk_msgs/msg/CurrentVersion` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0a8226d6e3af0a098ee88498274e2a166f40df85162a67d38ebcb1fcba5e87cd",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgCurrentVersion"
+            )
+        ),
+        `aimdk_msgs/msg/DomainErrorState` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b8ba44e26d3df3c4c71f1ca9d4e91e967c8d8e1d95042ac7433a9a3294e9e231",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgDomainErrorState"
+            )
+        ),
+        `aimdk_msgs/msg/FaceEmojiStatus` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_3200d2686ea5f26668f00d0249e774572668b4a36b3f8067dae4f93182af89f7",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgFaceEmojiStatus"
+            )
+        ),
+        `aimdk_msgs/msg/FocusRequester` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9b41f0b3a3cafa6b190ede3107f8cf802c1cbacf1eb81e075a376ceaf37fa186",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgFocusRequester"
+            )
+        ),
+        `aimdk_msgs/msg/FocusResponse` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_16047b8b9e9f131f8aa44fc4e0960ce81446788d557b055be1f6b2542db3a87c",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgFocusResponse"
+            )
+        ),
+        `aimdk_msgs/msg/HRPoint` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_070874f4fea77298b6d66d02ee40026e86b4f48ee03e6d9acffcaddb387b3645",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgHRPoint"
+            )
+        ),
+        `aimdk_msgs/msg/HandCommand` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_910f3d9c0907c60b2613097cc4c1426727987e2ab83f8bcc41787feb472dc4e8",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgHandCommand"
+            )
+        ),
+        `aimdk_msgs/msg/HandCommandArray` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d7f46a8aa55d6ef296aa86d6522b7add84f4c8e7e3009d1454d573a8af1d17d5",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgHandCommandArray"
+            )
+        ),
+        `aimdk_msgs/msg/HandState` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9cfb695f97c9e314103a224bcb6b321de5f279cdae85d5eef7bec0c7968a875c",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgHandState"
+            )
+        ),
+        `aimdk_msgs/msg/HandStateArray` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0ea5f872d42818af468d20b20670067c07631691b5988e45dc5e87caf137efb3",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgHandStateArray"
+            )
+        ),
+        `aimdk_msgs/msg/HandTouchSensorData` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_573ab7611c65bde831172350c3cf49dd73cf4bfcbefabff7aa874845b828e4a0",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgHandTouchSensorData"
+            )
+        ),
+        `aimdk_msgs/msg/HandType` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_be593e2d647a922b02f6f81e52fbfaa805837d6ef6a156de500d4dc40f1fc5bb",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgHandType"
+            )
+        ),
+        `aimdk_msgs/msg/JointCommand` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_32c4e24dc7ea567136fc811efc68eea5b8d1072a5ed58e1c4b67b4d705a9fc3f",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgJointCommand"
+            )
+        ),
+        `aimdk_msgs/msg/JointCommandArray` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b8f8d9b00f02524cfdd21f81d7e683290e92ba0b00d086d4506fd3600123d9d6",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgJointCommandArray"
+            )
+        ),
+        `aimdk_msgs/msg/JointState` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_00a7d9637f691d224a78c967343dd16161b29e12ca6f9fafadc0af5d7e405a53",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgJointState"
+            )
+        ),
+        `aimdk_msgs/msg/JointStateArray` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_4768076ae2f8c344f4030e7ca926d311e7706042187a2f9864a8a63f289f297e",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgJointStateArray"
+            )
+        ),
+        `aimdk_msgs/msg/McAction` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a43927486ae637ff4e5b8d60e1f45c91a9e3cf07b4505ea00550c6dc58e9354b",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcAction"
+            )
+        ),
+        `aimdk_msgs/msg/McActionCommand` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9a529c7988535cbc65c36425ffb0935b210a806906598baa3a2f1f717df4f648",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcActionCommand"
+            )
+        ),
+        `aimdk_msgs/msg/McActionInfo` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9c3c209060709befea26f340e6a607f4c6ddb00c638d1dedf5dd0cfa23f2e5e9",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcActionInfo"
+            )
+        ),
+        `aimdk_msgs/msg/McActionStatus` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8c05e9540004b968b042b32ed0164af4857574186776f311be9b3ecde209ad48",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcActionStatus"
+            )
+        ),
+        `aimdk_msgs/msg/McControlArea` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ca241b8a191674136f0eeb0deee84b5e284de71f384038c9a5d6083eb4fc75c9",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcControlArea"
+            )
+        ),
+        `aimdk_msgs/msg/McInputAction` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_7016737845145fd03a104665957b475c512400775b93981573a40d0da30e15d9",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcInputAction"
+            )
+        ),
+        `aimdk_msgs/msg/McInputSource` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_4909fe165c71d1104207b393ba76d55347aa02836ebac251f6b57259ced1d1dd",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcInputSource"
+            )
+        ),
+        `aimdk_msgs/msg/McLocomotionVelocity` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a3c45cd56bc3098af00eefba2b2fc5c34c6439228d3429ab077d80b60ef8ca00",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcLocomotionVelocity"
+            )
+        ),
+        `aimdk_msgs/msg/McPresetMotion` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_7421ee5b50a30799907e6f521dd97874158a945019f09cecf168a8f3130c9153",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMcPresetMotion"
+            )
+        ),
+        `aimdk_msgs/msg/MessageHeader` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6d8d9a27611d419d618f848c44ebe2c30d5393995d1f4fa7ecd70c34ded52496",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgMessageHeader"
+            )
+        ),
+        `aimdk_msgs/msg/NaviPoint` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_e1613f1cc3f2e23dffba8c4b2414f5eaba7ef8909aa4d032f13f6f514484694e",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgNaviPoint"
+            )
+        ),
+        `aimdk_msgs/msg/Path` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_88efeee6a105a4a88d155242fcd6f5be0866f4c0eadfc0b90243ca0eb020f27d",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgPath"
+            )
+        ),
+        `aimdk_msgs/msg/PlayStateChange` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_62c2a232fb57ebab6a0fce42a84e12d8a25dc21e40fb5420201ef6337894f41c",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgPlayStateChange"
+            )
+        ),
+        `aimdk_msgs/msg/PlayStateType` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a103f60f1b75030272dea3bcf7da76ac8fdc214c3a38721fa2b09c507cc47946",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgPlayStateType"
+            )
+        ),
+        `aimdk_msgs/msg/PlayTtsRequest` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_f5c7b9646cefc4c4d7a3a2ddac3e1ebed6d6aa789c03be06d89ffdf6fd023b72",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgPlayTtsRequest"
+            )
+        ),
+        `aimdk_msgs/msg/PlayTtsResponse` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ace6fc9356d764c1f456687c3a05c24f514167cc2b48787bda62413353b8ec82",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgPlayTtsResponse"
+            )
+        ),
+        `aimdk_msgs/msg/PmuState` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_bb828bf3667ae8a8909a7e98b20e789d9dfc6b954fe2ab7fc3adbc306c9ebbbd",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgPmuState"
+            )
+        ),
+        `aimdk_msgs/msg/ProcessedAudioOutput` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8b0ea5b4fc3db2efe41730f74a261ee6ea94ad34ee35ff42ae5288ddf501cc30",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgProcessedAudioOutput"
+            )
+        ),
+        `aimdk_msgs/msg/QRCode` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_51293e3c7ee25b1a265c4a57539a11060563e89005ceaf4aaa0891481ab803cd",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgQRCode"
+            )
+        ),
+        `aimdk_msgs/msg/QRPoint` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b158d016b9e3607a1345df207459476cf88c9817dfd3ee7560b5635c7a81863e",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgQRPoint"
+            )
+        ),
+        `aimdk_msgs/msg/Region` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_161bb9787ae2df5a45015946bc386a2c4cf310701fa4970cf447c6445c85f1ce",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgRegion"
+            )
+        ),
+        `aimdk_msgs/msg/RequestHeader` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_743efde912144cd1db5072b5a1d26b943c3fb882612b07c1883400784947b000",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgRequestHeader"
+            )
+        ),
+        `aimdk_msgs/msg/ResponseHeader` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_1aff5b9cfbca54f9091a6295e28034b45d22481e0dbd8a75b1759cda18b57b90",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgResponseHeader"
+            )
+        ),
+        `aimdk_msgs/msg/RobotResource` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_abc49dc6dd4cc0b0c59cd0ddb01d19897a51018752e3d9eb39aa6bcc684ad34d",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgRobotResource"
+            )
+        ),
+        `aimdk_msgs/msg/SlaveDevice` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_36af580c9887ea808824106a14966193c9a639f6825a2cb3f94cbde369bd3255",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgSlaveDevice"
+            )
+        ),
+        `aimdk_msgs/msg/SystemStatus` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_94275d3d0a1e83e4cc8e45b166b2cb111c9eccd4eabfe7410795b9c1fd69c6f1",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgSystemStatus"
+            )
+        ),
+        `aimdk_msgs/msg/TouchState` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_90d5626f09f2254a102224e74c1f8a4d8db63910b7e5eeafa519afd79c7b1564",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgTouchState"
+            )
+        ),
+        `aimdk_msgs/msg/TtsPriorityLevel` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_6e19302f3df2152dabda478d48e0506d483427f946a552d364a206fee9687507",
+            `registered` = TRUE,
+            `components` = list(
+                `message` = "Ros2Aimdk_msgsMsgTtsPriorityLevel"
+            )
+        ),
+        `aimdk_msgs/srv/AbandonAudioFocus` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_15dc050a42c9fda25e98b52ee6a5d6816e82788df5f8ae6d52bb0f0a1617f886",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvAbandonAudioFocus_Request",
+                `response` = "Ros2Aimdk_msgsSrvAbandonAudioFocus_Response"
+            )
+        ),
+        `aimdk_msgs/srv/ExecuteActionResource` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_97b23a8e88704f45fbd065993108902d3f6c66b7ae33db18da77ea6fd5dc40b9",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvExecuteActionResource_Request",
+                `response` = "Ros2Aimdk_msgsSrvExecuteActionResource_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetAllJointState` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ddd22803fe0445f38e81e7201a390ce7a7491c188a1fd0332f9a94b64a82ba6c",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetAllJointState_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetAllJointState_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetCurrentInputSource` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8182a9c156b777821b4cde19692040de0cf2cca8ac05be57ed0738c921023539",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetCurrentInputSource_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetCurrentInputSource_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetHandType` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_408db57ccd694d08a000c3cc3ba970c71c2d38fc55c08b13730be2b9fea08ebc",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetHandType_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetHandType_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetMcAction` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_a95b95476db13d3d218d20b48025bd6bee4a0b1e77c019f20edf589b804a96cc",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetMcAction_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetMcAction_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetMicSourceRequest` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_7b33c041d0fe8cf6c5ddbd35716dc6f7620c2d68355ea0b0e438e0e5f64eb7ef",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetMicSourceRequest_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetMicSourceRequest_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetMute` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8f6bb870876a102805f90896a06f238f053e6dba7712e7a1140e8a8d39baf192",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetMute_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetMute_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetRobotResources` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_4f800287064e682dbb0b8a90e6092437de52f19cf2b8112051c8f5810a9c414a",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetRobotResources_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetRobotResources_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetStoredMapByName` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_93a7e6c19226cf1a5fcd1ba48326e537dc8f1de89500d9ff286ead567c7866f0",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetStoredMapByName_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetStoredMapByName_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetSystemState` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0fcc613f64e47fd0ad666480d7909034fef1014a64b771035d960238ee088277",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetSystemState_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetSystemState_Response"
+            )
+        ),
+        `aimdk_msgs/srv/GetVolume` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_d6e35b0432ba2584c9e62ce2c3535a227a09442672da9349c725767e516508a4",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvGetVolume_Request",
+                `response` = "Ros2Aimdk_msgsSrvGetVolume_Response"
+            )
+        ),
+        `aimdk_msgs/srv/MigrateSystemState` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_fd4cbcce3eec87425f469f22893aad27c08e1dc3fa66d7a461dc7bca604b7f4d",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvMigrateSystemState_Request",
+                `response` = "Ros2Aimdk_msgsSrvMigrateSystemState_Response"
+            )
+        ),
+        `aimdk_msgs/srv/PlayAudioFile` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_2f51b7c3700ad380fdac773fe678bfb4dfea6c465fc0c59642cf56fd8f0dd5a1",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvPlayAudioFile_Request",
+                `response` = "Ros2Aimdk_msgsSrvPlayAudioFile_Response"
+            )
+        ),
+        `aimdk_msgs/srv/PlayEmoji` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_aa4c9e8e12aa8f62320d39cb315eeb53ddda7a2d04720ff7a4ffdbcd8027bbe6",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvPlayEmoji_Request",
+                `response` = "Ros2Aimdk_msgsSrvPlayEmoji_Response"
+            )
+        ),
+        `aimdk_msgs/srv/PlayTts` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_c0da2d56221a5b56fe461acef98d473541c789d3139f9a9bf4b48ae0d2ff85d4",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvPlayTts_Request",
+                `response` = "Ros2Aimdk_msgsSrvPlayTts_Response"
+            )
+        ),
+        `aimdk_msgs/srv/PlayVideo` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_5a50ce7cb64d8e95e2ee00bfa153579a059313a28ab904a648d96d7fc74df26e",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvPlayVideo_Request",
+                `response` = "Ros2Aimdk_msgsSrvPlayVideo_Response"
+            )
+        ),
+        `aimdk_msgs/srv/PlayVideoGroup` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b301c9a66002ed17f73c1e3ac60c85d7b309f51661f7a73022ded03b3893de97",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvPlayVideoGroup_Request",
+                `response` = "Ros2Aimdk_msgsSrvPlayVideoGroup_Response"
+            )
+        ),
+        `aimdk_msgs/srv/RequestAudioFocus` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_e7182a287e85dab2549122c157e58bc1027614a0352eb34a4d8e16c008ff8676",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvRequestAudioFocus_Request",
+                `response` = "Ros2Aimdk_msgsSrvRequestAudioFocus_Response"
+            )
+        ),
+        `aimdk_msgs/srv/SetAgentPropertiesRequest` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0c14d9869283d236f85842640e880ab733c13f7e745905ec84ff1364e1379808",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Request",
+                `response` = "Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Response"
+            )
+        ),
+        `aimdk_msgs/srv/SetMcAction` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_e2e77df91c6978b2194525ec2e19d158de4c8d74c853b73c551bd84691023e00",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvSetMcAction_Request",
+                `response` = "Ros2Aimdk_msgsSrvSetMcAction_Response"
+            )
+        ),
+        `aimdk_msgs/srv/SetMcInputSource` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_5cb41d592f88d74e0171cd8cb631101431a797d03c58d68232b0dc2c5065e189",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvSetMcInputSource_Request",
+                `response` = "Ros2Aimdk_msgsSrvSetMcInputSource_Response"
+            )
+        ),
+        `aimdk_msgs/srv/SetMcPresetMotion` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_1aaa4dd92828248c075b191f0b34bf9381af64c3cf046a379375a61119231610",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvSetMcPresetMotion_Request",
+                `response` = "Ros2Aimdk_msgsSrvSetMcPresetMotion_Response"
+            )
+        ),
+        `aimdk_msgs/srv/SetMicSourceRequest` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_e1ae214212614dfd2d49464811454033662e98156c47aa80a3e1aa78c9b29cf9",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvSetMicSourceRequest_Request",
+                `response` = "Ros2Aimdk_msgsSrvSetMicSourceRequest_Response"
+            )
+        ),
+        `aimdk_msgs/srv/SetMute` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_4f26d16c45e77ca37aa7d391b85e93b0c10b266ee66a962da7f059233d2c1bd1",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvSetMute_Request",
+                `response` = "Ros2Aimdk_msgsSrvSetMute_Response"
+            )
+        ),
+        `aimdk_msgs/srv/SetPmuLed` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_e2fc1fdf49bbe2b0a46f7d27a171e56851d60acf85cf466a7c533ed12971e391",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvSetPmuLed_Request",
+                `response` = "Ros2Aimdk_msgsSrvSetPmuLed_Response"
+            )
+        ),
+        `aimdk_msgs/srv/SetVolume` = list(
+            `kind` = "service",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b26c304f3fb37e96b3ab6512311e12d5b7cc9f382d2e39e0a279a46223feb567",
+            `registered` = TRUE,
+            `components` = list(
+                `request` = "Ros2Aimdk_msgsSrvSetVolume_Request",
+                `response` = "Ros2Aimdk_msgsSrvSetVolume_Response"
+            )
+        ),
+        `builtin_interfaces/msg/Time` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Builtin_interfacesMsgTime"
+            )
+        ),
+        `geometry_msgs/msg/Point` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Geometry_msgsMsgPoint"
+            )
+        ),
+        `geometry_msgs/msg/Point32` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_8ca11f8b9c00af9c95e3eebbeb6073227af8dee04b57f84e120a024e7f8539f9",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Geometry_msgsMsgPoint32"
+            )
+        ),
+        `geometry_msgs/msg/Polygon` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_b5492d33b802b68eea062a74ffe7f336b1f392161b183e67c3bf24bb0a7d0aa8",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Geometry_msgsMsgPolygon"
+            )
+        ),
+        `geometry_msgs/msg/Pose` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Geometry_msgsMsgPose"
+            )
+        ),
+        `geometry_msgs/msg/Pose2D` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_5926ccd43f868ca13520625e24e283abe2e6f6418dacaa136eed5951064d8bce",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Geometry_msgsMsgPose2D"
+            )
+        ),
+        `geometry_msgs/msg/Quaternion` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Geometry_msgsMsgQuaternion"
+            )
+        ),
+        `nav_msgs/msg/MapMetaData` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_494874ea5dbbb03876e0405f6d06b5d7cc5b1727e61dcb8ff9e449735b800009",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Nav_msgsMsgMapMetaData"
+            )
+        ),
+        `std_msgs/msg/Header` = list(
+            `kind` = "message",
+            `native_identity` = NULL,
+            `codec_identity` = "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+            `registered` = FALSE,
+            `components` = list(
+                `message` = "Ros2Std_msgsMsgHeader"
+            )
+        )
+    ))
+})

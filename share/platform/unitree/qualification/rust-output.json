@@ -1,0 +1,62 @@
+{
+  "format": "unitree-rust-output-fix-complete-v1",
+  "status": "PASS",
+  "source_input_manifest_sha256": "c233bc5b7a620b4e7c050c68ec97fbade37e5ef4e3b6a9f1123634f8f76bff77",
+  "immutable_x86_checkpoint_sha256": "9dbdba721800e0b76bd08d01b645a1f17c2331a68f941902b046adb988ded76a",
+  "cold_application_builds_pass": 6,
+  "native_runs_pass": 12,
+  "production_wasm_stdout_error_cases_pass": 30,
+  "separate_wasm_status_boundary_cases_pass": 27,
+  "raw_abi_checks_pass": 6,
+  "actual_aarch64_native_runs_pass": 6,
+  "aarch64_frozen_manifest_sha256": "92f36ddf6f5d61e87abea4a4a4bf306c40608b893130ed6e8d9589cf2ed61eb9",
+  "aarch64_files_verified": 95,
+  "aarch64_final_sha256": "79505e1cab08e22700611c0a7be15a3494447a1798840a606cfa10124461bcb2",
+  "aarch64_independent_review_sha256": "b7f2d1bb1ece21db9614c8a6053ef6539d236aeda64656acf61bcfca73511282",
+  "artifact_catalog_sha256": "a7ff0830382cb39f450c924e84f0b6480f9b6c569fe67aa3476f93de668c2a0d",
+  "production_changes": {
+    "format": "unitree-rust-output-fix-v1",
+    "files": [
+      {
+        "path": "example/platform/unitree/rs/ros1/low_state/main.rs",
+        "before_sha256": "4a94e5f5fd8d3454ec31f4567924af3a160aa311ab1dfd74c204fad44ea669b8",
+        "sha256": "08bec60d2f3146ce0abbac059d3945e5fe4993562d619ed7a4e65041020d331a"
+      },
+      {
+        "path": "example/platform/unitree/rs/ros1/motion_state/main.rs",
+        "before_sha256": "932c7701a31888f4fe1c14307af6e06192bd4ff3093fcbe4d12d4594996c9b67",
+        "sha256": "5e10c6c7a25415358d679d426d8396a43129a102fae0a8c286d958753c038fa9"
+      },
+      {
+        "path": "example/platform/unitree/rs/ros1/motor_state/main.rs",
+        "before_sha256": "1d134becea029bbfceec4c7d1188d3e5f8da250dbdb9f0909f129c74d30f343a",
+        "sha256": "2441b8539fc7282bfc17b830742b5e0a30b2706f9a2e9790d06e45d5cd0d2cdf"
+      },
+      {
+        "path": "example/platform/unitree/rs/ros2/low_state/main.rs",
+        "before_sha256": "4456dd89de483849a9f1008e8766dd6cb25c285965e57561707a8a498db0fc73",
+        "sha256": "a9b8ba0844bcc87d680014cd5ef42936710ed6012f8f7e724c991fb576dd4f81"
+      },
+      {
+        "path": "example/platform/unitree/rs/ros2/motion_state/main.rs",
+        "before_sha256": "314bf632ca4eeb2153084b7126f21c6bbcd68b5ffb9b45f2d9f2a2aac83df888",
+        "sha256": "e0a9102a7b97fe6703dd4616c40329a13eb2664947c8806338186b8b320a718d"
+      },
+      {
+        "path": "example/platform/unitree/rs/ros2/wireless_controller/main.rs",
+        "before_sha256": "edd6ad54ed8344250ec2ccc51dfa1b53362b0def9e547c10ad61040d4b8e6662",
+        "sha256": "aa02c38ec7a716ca7222c4a1c8d098b7ba6bb89274ed118abbfb096c5b174560"
+      },
+      {
+        "path": "tools/platform/unitree/go_rust_sources.py",
+        "sha256": "22b36ee9b709029747cc48d7339dddd4b679e9f19ed08fb2604d537751e6a521"
+      }
+    ]
+  },
+  "physical_robot": false,
+  "arm_kernel_qualified": false,
+  "arm_compiler_host_qualified": false,
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "e6785508799dc4b4e94723306c52b54e09b31ec350d163841f5d70c7107f8132"
+}

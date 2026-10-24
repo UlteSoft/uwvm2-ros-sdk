@@ -1,0 +1,452 @@
+{
+  "format": "vendor-language-source-inputs-v1",
+  "platform": "universal_robots",
+  "language": "c_ffi_bridge",
+  "domain": "universal-robots-polyscopex-complete",
+  "backend": "ros2",
+  "include_root": "include/platform",
+  "source_root": "include/platform/universal_robots/c_ffi_bridge/ros2/universal-robots-polyscopex-complete",
+  "model_module": "universal_robots",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "record_catalog": "share/platform/universal_robots/domains/universal-robots-polyscopex-complete.ir.json",
+  "target_widths_requested": [
+    32,
+    64
+  ],
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "typed_interface_delegations": [
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_action_SetMode_send",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_action_SetMode_send",
+      "arguments": "roswasmc_action_bundle* bundle, roswasmc_bounded_2_urinterfaces_action_SetMode_Goal const* goal, uint64_t* id",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_action_SetMode_Goal const*",
+          "goal"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_action_SetMode_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_action_SetMode_feedback",
+      "arguments": "roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_2_urinterfaces_action_SetMode_Feedback* feedback",
+      "parameters": [
+        [
+          "roswasmc_action_bundle const*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_action_SetMode_Feedback*",
+          "feedback"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_action_SetMode_result",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_action_SetMode_result",
+      "arguments": "roswasmc_action_bundle* bundle, uint64_t id, uint8_t* kind, roswasmc_bounded_2_urinterfaces_action_SetMode_Result* result",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t*",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_action_SetMode_Result*",
+          "result"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_action_SetMode_poll",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_action_SetMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_urinterfaces_action_SetMode_Goal* goal",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_action_SetMode_Goal*",
+          "goal"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_action_SetMode_respond_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_action_SetMode_respond_feedback",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, roswasmc_bounded_2_urinterfaces_action_SetMode_Feedback const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_action_SetMode_Feedback const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_action_SetMode_respond_result",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_action_SetMode_respond_result",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, uint8_t kind, roswasmc_bounded_2_urinterfaces_action_SetMode_Result const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_action_SetMode_Result const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_call",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_Request const* request, roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_poll",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_respond",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetAnalogOutput_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_call",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_Request const* request, roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_poll",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_respond",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetDigitalOutput_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_call",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_Request const* request, roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_poll",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_respond",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SetSpeedFraction_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_call",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_Request const* request, roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_poll",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_respond",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_SharedVariablesEditor_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_call",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_Request const* request, roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_poll",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_respond",
+      "export": "universal_robots_roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_urinterfaces_srv_VariablesViewer_Response const*",
+          "response"
+        ]
+      ]
+    }
+  ],
+  "semantics": "Exact existing C owner/service/action operations; no private transport or permission implementation.",
+  "support_source_roots": [
+    "src/platform"
+  ],
+  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+}

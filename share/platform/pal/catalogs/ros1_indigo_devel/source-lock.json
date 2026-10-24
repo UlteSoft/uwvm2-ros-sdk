@@ -1,0 +1,779 @@
+{
+  "repository": "pal-robotics/pal_msgs",
+  "branch": "indigo-devel",
+  "commit": "a9b3d52908626e0cf1f230b4dc4a962299d232f3",
+  "tree": "2f59aef3c674631200f11c12b78b64f7368aa80f",
+  "ros_version": 1,
+  "vendor": "pal",
+  "profile": "ros1_indigo_devel",
+  "admitted_custom_roots": [
+    "pal_behaviour_msgs/BehaviourArgument",
+    "pal_behaviour_msgs/BehaviourEvent",
+    "pal_behaviour_msgs/BehaviourTask",
+    "pal_behaviour_msgs/Presentation",
+    "pal_common_msgs/Disable",
+    "pal_common_msgs/Empty",
+    "pal_common_msgs/GetString",
+    "pal_common_msgs/JointCurrent",
+    "pal_common_msgs/SetString",
+    "pal_control_msgs/ActuatorCurrentLimit",
+    "pal_control_msgs/CurrentLimit",
+    "pal_control_msgs/MotionManager",
+    "pal_control_msgs/OperationalSpaceGoal",
+    "pal_control_msgs/RigidBodyTrajectory",
+    "pal_control_msgs/RigidBodyTrajectoryPoint",
+    "pal_detection_msgs/AddTexturedObject",
+    "pal_detection_msgs/ChangeObjectRecognizerModel",
+    "pal_detection_msgs/Detection2d",
+    "pal_detection_msgs/Detections2d",
+    "pal_detection_msgs/FaceDetection",
+    "pal_detection_msgs/FaceDetections",
+    "pal_detection_msgs/FaceThermalDetections",
+    "pal_detection_msgs/Gesture",
+    "pal_detection_msgs/LegDetections",
+    "pal_detection_msgs/Obstacle",
+    "pal_detection_msgs/Obstacles",
+    "pal_detection_msgs/PersonDetection",
+    "pal_detection_msgs/PersonDetections",
+    "pal_detection_msgs/RecognizeObjects",
+    "pal_detection_msgs/RecognizedActions",
+    "pal_detection_msgs/RecognizedObject",
+    "pal_detection_msgs/RecognizedObjectArray",
+    "pal_detection_msgs/Recognizer",
+    "pal_detection_msgs/RotatedDetection2d",
+    "pal_detection_msgs/SelectTexturedObject",
+    "pal_detection_msgs/SetDatabase",
+    "pal_detection_msgs/StartEnrollment",
+    "pal_detection_msgs/StopEnrollment",
+    "pal_detection_msgs/TexturedObjectDetection",
+    "pal_detection_msgs/WaveDetection",
+    "pal_device_msgs/BatteryState",
+    "pal_device_msgs/Bumper",
+    "pal_device_msgs/CancelEffect",
+    "pal_device_msgs/DoTimedLedEffect",
+    "pal_device_msgs/LedBlinkParams",
+    "pal_device_msgs/LedDataArrayParams",
+    "pal_device_msgs/LedEffectParams",
+    "pal_device_msgs/LedEffectViaTopicParams",
+    "pal_device_msgs/LedFadeParams",
+    "pal_device_msgs/LedFixedColorParams",
+    "pal_device_msgs/LedFlowParams",
+    "pal_device_msgs/LedGroup",
+    "pal_device_msgs/LedPreProgrammedParams",
+    "pal_device_msgs/LedProgressParams",
+    "pal_device_msgs/LedRainbowParams",
+    "pal_device_msgs/ShutdownAndWakeUpRobot",
+    "pal_device_msgs/TimedBlinkEffect",
+    "pal_device_msgs/TimedColourEffect",
+    "pal_device_msgs/TimedFadeEffect",
+    "pal_interaction_msgs/ASRActivation",
+    "pal_interaction_msgs/ASREvent",
+    "pal_interaction_msgs/ASRFile",
+    "pal_interaction_msgs/ASRLangModelMngmt",
+    "pal_interaction_msgs/ASRLanguage",
+    "pal_interaction_msgs/ASRService",
+    "pal_interaction_msgs/ASRSrvRequest",
+    "pal_interaction_msgs/ASRSrvResponse",
+    "pal_interaction_msgs/ASRStatus",
+    "pal_interaction_msgs/AudioDeviceDescription",
+    "pal_interaction_msgs/AudioPlay",
+    "pal_interaction_msgs/AudioPlayerState",
+    "pal_interaction_msgs/DirectionOfArrival",
+    "pal_interaction_msgs/EnablingSoundLocalisation",
+    "pal_interaction_msgs/GetSpeechDuration",
+    "pal_interaction_msgs/I18nArgument",
+    "pal_interaction_msgs/I18nText",
+    "pal_interaction_msgs/Input",
+    "pal_interaction_msgs/InputArgument",
+    "pal_interaction_msgs/Sound",
+    "pal_interaction_msgs/SoundLocalisationService",
+    "pal_interaction_msgs/TTSstate",
+    "pal_interaction_msgs/Tts",
+    "pal_interaction_msgs/TtsMark",
+    "pal_interaction_msgs/TtsText",
+    "pal_interaction_msgs/VoiceActivity",
+    "pal_interaction_msgs/WebGuiEvent",
+    "pal_interaction_msgs/actiontag",
+    "pal_interaction_msgs/asrresult",
+    "pal_interaction_msgs/asrupdate",
+    "pal_interaction_msgs/audiosignal",
+    "pal_interaction_msgs/recognizerService",
+    "pal_motion_model_msgs/GetMotionMap",
+    "pal_motion_model_msgs/MotionModel",
+    "pal_motion_model_msgs/MotionModelList",
+    "pal_motion_model_msgs/MotionModelMap",
+    "pal_multirobot_msgs/WifiServiceDetection",
+    "pal_simulation_msgs/ExternalWrench",
+    "pal_tablet_msgs/FunctionalityStatus",
+    "pal_tablet_msgs/RobotStatus",
+    "pal_video_recording_msgs/StartRecording",
+    "pal_video_recording_msgs/StopRecording",
+    "pal_vision_msgs/DetectedObject",
+    "pal_vision_msgs/DetectedPerson",
+    "pal_vision_msgs/FaceDetection",
+    "pal_vision_msgs/FaceDetections",
+    "pal_vision_msgs/FaceRecognition",
+    "pal_vision_msgs/FaceTrackingStart",
+    "pal_vision_msgs/FaceTrackingStop",
+    "pal_vision_msgs/FollowMeResponse",
+    "pal_vision_msgs/FollowMeStart",
+    "pal_vision_msgs/FollowMeStop",
+    "pal_vision_msgs/Gesture",
+    "pal_vision_msgs/HeadPanTilt",
+    "pal_vision_msgs/HogDetection",
+    "pal_vision_msgs/HogDetections",
+    "pal_vision_msgs/LegDetections",
+    "pal_vision_msgs/LookToPixel",
+    "pal_vision_msgs/Rectangle",
+    "pal_visual_localization_msgs/VisualLocAddPlace",
+    "pal_visual_localization_msgs/VisualLocRecognize",
+    "pal_walking_msgs/ContactState",
+    "pal_walking_msgs/MoveHipFeet",
+    "pal_walking_msgs/SMStatus",
+    "pal_walking_msgs/Sit",
+    "pal_walking_msgs/StepOver",
+    "pal_walking_msgs/WalkSteps",
+    "pal_walking_msgs/WalkingStatus",
+    "pal_walking_msgs/WalkingStep",
+    "pal_wifi_localization_msgs/GetWifiMap",
+    "pal_wifi_localization_msgs/WifiSignal",
+    "pal_wifi_localization_msgs/WifiSignalList",
+    "pal_wifi_localization_msgs/WifiSignalMap"
+  ],
+  "excluded_original_roots": [],
+  "format": "uwvm-platform-source-lock-v1",
+  "original_catalog_sha256": "9761d3eb5025f9409e71f68222aa0ed044f64c293c6b385bdc5d77f104417cd8",
+  "catalog_sha256": "9febc578dbc5dc4c16c8cb91fec93377773db85c1209da3d2ac9e9b11ce41514",
+  "definitions": [
+    {
+      "file": "geometry_msgs/Accel.msg",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+    },
+    {
+      "file": "geometry_msgs/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "file": "geometry_msgs/Point32.msg",
+      "sha256": "4f95b75598cbff8a96d06bb00f1625b83ed7e9753849bdf856328791924cb738"
+    },
+    {
+      "file": "geometry_msgs/PointStamped.msg",
+      "sha256": "246dbd5032967dae20cfad1c65f5e79b5b813888ffbcd87f034ef2e05d6a9e03"
+    },
+    {
+      "file": "geometry_msgs/Pose.msg",
+      "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5"
+    },
+    {
+      "file": "geometry_msgs/Pose2D.msg",
+      "sha256": "b6781b0518ccaeb8b66106293f1b351fa83c51cf03b72f86672ced80ba67dffb"
+    },
+    {
+      "file": "geometry_msgs/PoseArray.msg",
+      "sha256": "d8745b3fc49107d74ebc771c33f14cb159489640cf0050b2057a181159dbc37c"
+    },
+    {
+      "file": "geometry_msgs/PoseWithCovariance.msg",
+      "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94"
+    },
+    {
+      "file": "geometry_msgs/PoseWithCovarianceStamped.msg",
+      "sha256": "8ec670e5a50a5e50446df9b6a1c050237e8721efa52c200b156c08c9855dec82"
+    },
+    {
+      "file": "geometry_msgs/Quaternion.msg",
+      "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e"
+    },
+    {
+      "file": "geometry_msgs/Transform.msg",
+      "sha256": "c8916279f0a429dd9561158bd2133bc4e2d780277c3c594116b240a27e7a2993"
+    },
+    {
+      "file": "geometry_msgs/TransformStamped.msg",
+      "sha256": "63432c40ac19428894910e7a43b4209c347d4c0b5d07b8ea545dc00192b5c16a"
+    },
+    {
+      "file": "geometry_msgs/Twist.msg",
+      "sha256": "623b98db7d37911a50ef002a97973709c20441426c68d1134de352a2d022767b"
+    },
+    {
+      "file": "geometry_msgs/Vector3.msg",
+      "sha256": "fa1d5b56a10a940afcfd312936dde90864a398aa2a35598f36943c570d391296"
+    },
+    {
+      "file": "geometry_msgs/Wrench.msg",
+      "sha256": "2a6eef4f4afa2da2e076fe3bfd16732e74074bb5d48a70eef5214e2b8caa8fe2"
+    },
+    {
+      "file": "humanoid_nav_msgs/StepTarget.msg",
+      "sha256": "307441445b1647d804d0ef9e04c3c7cf7ef83dc727b520e13a97a9fadb0fc437"
+    },
+    {
+      "file": "nav_msgs/MapMetaData.msg",
+      "sha256": "bf2cdb225fef69982e9ed4bc56afe21e5e4a9ab066b008d65345d6271b94c901"
+    },
+    {
+      "file": "pal_behaviour_msgs/BehaviourArgument.msg",
+      "sha256": "85829127e8a40cdecf195c94fba827429a5279e058bdccf909f6d3d40fe0aaa0"
+    },
+    {
+      "file": "pal_behaviour_msgs/BehaviourEvent.srv",
+      "sha256": "b85d651c20ba8415511fc251011716db70418f1d15ffd66af35ed53e640c5f72"
+    },
+    {
+      "file": "pal_behaviour_msgs/BehaviourTask.action",
+      "sha256": "2fd8c5a67bf8b2428244bdb99254d8c5184b1c49626fd03605d72c337a6732a5"
+    },
+    {
+      "file": "pal_behaviour_msgs/Presentation.action",
+      "sha256": "8d7bfbaaca8578ee8d28a05a5428c448de4c833de6e826d79e907d91813337d2"
+    },
+    {
+      "file": "pal_common_msgs/Disable.action",
+      "sha256": "f3419595e6c4803755b154aa2de62e52344de007d092c3c75c69b34ab7e993b3"
+    },
+    {
+      "file": "pal_common_msgs/Empty.action",
+      "sha256": "d487269d2de0655a9ed127c83b0d1006d724e600385b32f4f4b39893c1e0164b"
+    },
+    {
+      "file": "pal_common_msgs/GetString.srv",
+      "sha256": "b25e61a8a30c83761e32aca8e937e0542a63fbd2414e86f49fd5454a79ab426f"
+    },
+    {
+      "file": "pal_common_msgs/JointCurrent.msg",
+      "sha256": "e8db50b2f04bb3311bcf8c12f945334f9bfdd765d8cb9d5adce49f54fe9f9a5f"
+    },
+    {
+      "file": "pal_common_msgs/SetString.srv",
+      "sha256": "6cc892cbb98a52367d96b91cd7dc6c8d9511591d9d8ca94c270dbb7e3c236692"
+    },
+    {
+      "file": "pal_control_msgs/ActuatorCurrentLimit.msg",
+      "sha256": "3965993d171cdc81009cbdea3d1a772f8c6ae004ee3bb088338d52b35298367d"
+    },
+    {
+      "file": "pal_control_msgs/CurrentLimit.srv",
+      "sha256": "9af85acc6bbb137aad0814d44d34473e994dab554f18e72c33d3d5baf81192d0"
+    },
+    {
+      "file": "pal_control_msgs/MotionManager.action",
+      "sha256": "180e0760fd0feba5cb48cffe7285ba1d45087c07b932cd9bf146ebbb56af2108"
+    },
+    {
+      "file": "pal_control_msgs/OperationalSpaceGoal.msg",
+      "sha256": "53405d2096b196c49def705e3058820c3ad0cfb4f8e49bd58879a7b2333bb33c"
+    },
+    {
+      "file": "pal_control_msgs/RigidBodyTrajectory.action",
+      "sha256": "ed26524c2a2a63d69c398caeca4b27a923de9abd3063f63396b0c8d55ecf825d"
+    },
+    {
+      "file": "pal_control_msgs/RigidBodyTrajectoryPoint.msg",
+      "sha256": "c03b6eb99511cb04431f11f51fc34ab3e3cc98d2df6acb74ef98faf1bbe5d4e6"
+    },
+    {
+      "file": "pal_detection_msgs/AddTexturedObject.srv",
+      "sha256": "5b5efe531f26ef75ea535e680940a11c8709bf6e63a7a72ed90c9b0f303893b5"
+    },
+    {
+      "file": "pal_detection_msgs/ChangeObjectRecognizerModel.srv",
+      "sha256": "00c6e7bd05ef735c4621ed8990ea6e6eb1e3853f48edbe31e61ce7f8cd26fee2"
+    },
+    {
+      "file": "pal_detection_msgs/Detection2d.msg",
+      "sha256": "3edf06c876a1a7fed2154598c1f5994c2b99120761fa6f9bea7d45c4f8f1cb79"
+    },
+    {
+      "file": "pal_detection_msgs/Detections2d.msg",
+      "sha256": "d3b3d6b6e65de4b85d27041d01d454f1ffd5f51c7334a6b544532d5a0847453c"
+    },
+    {
+      "file": "pal_detection_msgs/FaceDetection.msg",
+      "sha256": "31729c0ae05dc19f8c6a4b2bdc3e8b612b6c72e19d4804282db98659ce29737f"
+    },
+    {
+      "file": "pal_detection_msgs/FaceDetections.msg",
+      "sha256": "5a47f7c6df6e9acbaea75f3091f8093260c2f8d7d425f6c9d98a17ae815f994f"
+    },
+    {
+      "file": "pal_detection_msgs/FaceThermalDetections.msg",
+      "sha256": "70efc03c7e198f48643a663c4f9a797173f24508461d842d8594b222a6705292"
+    },
+    {
+      "file": "pal_detection_msgs/Gesture.msg",
+      "sha256": "72e83e162ac7dcc9ec999bfe4fca98964d0d6c3b783c2d7a6be1d9b3de3ca2a1"
+    },
+    {
+      "file": "pal_detection_msgs/LegDetections.msg",
+      "sha256": "cb157bb9fbdb7fbe22805d274347ad6661faf31cc29683fde6adb10049e1d9b5"
+    },
+    {
+      "file": "pal_detection_msgs/Obstacle.msg",
+      "sha256": "9c179c01bc60e3f5dcbae68d935e5c5011abb3a767b949ce5ce8eea8c06f982b"
+    },
+    {
+      "file": "pal_detection_msgs/Obstacles.msg",
+      "sha256": "a58562f865aa5ffa8ba418a12b7019cbe893c9d418bf347c8e8e5901ce197804"
+    },
+    {
+      "file": "pal_detection_msgs/PersonDetection.msg",
+      "sha256": "67c37e8fb5c94f4d72c34f3f52355768b7155974e452eb18954c07b8a9c26cc4"
+    },
+    {
+      "file": "pal_detection_msgs/PersonDetections.msg",
+      "sha256": "15120b4e53c517e445142b909c0bde98287fe0f0899a50e4aba134de845feb59"
+    },
+    {
+      "file": "pal_detection_msgs/RecognizeObjects.action",
+      "sha256": "fe78a2e6a952c9b63969ed27f665b9bb8b779401fdaee02d83db906f683318a5"
+    },
+    {
+      "file": "pal_detection_msgs/RecognizedActions.msg",
+      "sha256": "b9a1fef068ee4464636903ea615f63dd58ab21e6ad70e467555adf4607667e2c"
+    },
+    {
+      "file": "pal_detection_msgs/RecognizedObject.msg",
+      "sha256": "e73963e7aa57712c1e6206b2907c647422f6dcd7c220e753197d9e4ebde303d8"
+    },
+    {
+      "file": "pal_detection_msgs/RecognizedObjectArray.msg",
+      "sha256": "84a2ebb929cad35b669ef00261202a828e2836b77bafb35c67fe4e054f6681fb"
+    },
+    {
+      "file": "pal_detection_msgs/Recognizer.srv",
+      "sha256": "4a21534cf851a916dfaa8d092042ec40860aa7705c082f6d2e69cb40071e0855"
+    },
+    {
+      "file": "pal_detection_msgs/RotatedDetection2d.msg",
+      "sha256": "362a7804c2c3ad5cbed46cb566e0aa8154edd8e719de88ec585dc642d8b5dec5"
+    },
+    {
+      "file": "pal_detection_msgs/SelectTexturedObject.srv",
+      "sha256": "b1089aae6392f94eb87951a281939855f81b4f1231f24e397ab9659283ab7bcc"
+    },
+    {
+      "file": "pal_detection_msgs/SetDatabase.srv",
+      "sha256": "92bb4caaa47b357787133e9c0725d5304535a19a15baf2c45d4abf6ff68b6f66"
+    },
+    {
+      "file": "pal_detection_msgs/StartEnrollment.srv",
+      "sha256": "73eb327c04ee8e027290e4b0ca4283994efa09f019fbcb92e0f3685bff48c5e7"
+    },
+    {
+      "file": "pal_detection_msgs/StopEnrollment.srv",
+      "sha256": "d7d64a66cb21b02c67d0e15c229d0bb85a0af24dbd0f81c30df7c1e8005bbead"
+    },
+    {
+      "file": "pal_detection_msgs/TexturedObjectDetection.msg",
+      "sha256": "43050b112af988c0094fbdb5b89fe186ae89e171220caa62b1dac1bb89837215"
+    },
+    {
+      "file": "pal_detection_msgs/WaveDetection.msg",
+      "sha256": "9de6d0b87893696472ec35ad2a3f79261186052b08d6283c247d4b87696da255"
+    },
+    {
+      "file": "pal_device_msgs/BatteryState.msg",
+      "sha256": "e255c9d5705957dfbcedbdb2c39c3c664c09479adf6bc9c6ea6959b9d1ddb9e2"
+    },
+    {
+      "file": "pal_device_msgs/Bumper.msg",
+      "sha256": "fb9825bb955669d0b6e63e7a5292da7221dd2305419d25cad18870cf656c36d7"
+    },
+    {
+      "file": "pal_device_msgs/CancelEffect.srv",
+      "sha256": "1e8835404cfc95cdfa94e5314251b973bf07a6b44c776b8ee7bd0c0a5e64987a"
+    },
+    {
+      "file": "pal_device_msgs/DoTimedLedEffect.action",
+      "sha256": "df255ecbf3831c8720effa0663b68b01daf3c222f43706cc223094d73118e7eb"
+    },
+    {
+      "file": "pal_device_msgs/LedBlinkParams.msg",
+      "sha256": "b719d9ddf0edb405d0cff85eaf597bc7c31af7fd3d9600009a428c0fffd15b8e"
+    },
+    {
+      "file": "pal_device_msgs/LedDataArrayParams.msg",
+      "sha256": "b6ff576f586b06cb87a595e8bc6446479822edb63287e7bfa1a7e5487d2c17d4"
+    },
+    {
+      "file": "pal_device_msgs/LedEffectParams.msg",
+      "sha256": "65f48d3b7035ddf40b6c3b6b60dea7a3f1367dd2723df23d60cf5cff2fc7561c"
+    },
+    {
+      "file": "pal_device_msgs/LedEffectViaTopicParams.msg",
+      "sha256": "ab6ab4b9d8c5a4acecd307b5e3a10c282038263c4bfb34830db14b98b53ef171"
+    },
+    {
+      "file": "pal_device_msgs/LedFadeParams.msg",
+      "sha256": "bb4c0fd6e0204a8d1b171bb3c865ce81dd600f71af607a9f85bbf70e316a05e7"
+    },
+    {
+      "file": "pal_device_msgs/LedFixedColorParams.msg",
+      "sha256": "d48729e51a750fba0db188d568a792fb249c0adf02e115185fb4a49377c8eb43"
+    },
+    {
+      "file": "pal_device_msgs/LedFlowParams.msg",
+      "sha256": "7a3a027fe30f8901bff3379676305824afd38e9e762c934fb35acbc77e567d28"
+    },
+    {
+      "file": "pal_device_msgs/LedGroup.msg",
+      "sha256": "c918d0bd72137e32ad67ca9bd180e51bef5d71398b1468f4f5e379cf55285e4b"
+    },
+    {
+      "file": "pal_device_msgs/LedPreProgrammedParams.msg",
+      "sha256": "4f5eb8449ddeea473c278412e04abde05dab6dedb0d61b8446e9af4b811c1060"
+    },
+    {
+      "file": "pal_device_msgs/LedProgressParams.msg",
+      "sha256": "4e845d5ca3d87f8156b778cf1f4dea99027591c351ce4f664e00774cd66789ca"
+    },
+    {
+      "file": "pal_device_msgs/LedRainbowParams.msg",
+      "sha256": "4ba1f3adfa27e8d15ff80bc0d90fd568e7a516eda17f5c4b025e2593472001fc"
+    },
+    {
+      "file": "pal_device_msgs/ShutdownAndWakeUpRobot.srv",
+      "sha256": "1f5317922425ccee9d4fa81bd39c0af06c85bfede44e34a59c1c46cb212ee442"
+    },
+    {
+      "file": "pal_device_msgs/TimedBlinkEffect.srv",
+      "sha256": "0bc401ee050246d37ff02beb23dfe7aa2c610c7bbb7d3b84e2c44fcb5717620e"
+    },
+    {
+      "file": "pal_device_msgs/TimedColourEffect.srv",
+      "sha256": "ef271bccf4616b7116d78825647151cfba2a89ec34746c43825d1becc453dfea"
+    },
+    {
+      "file": "pal_device_msgs/TimedFadeEffect.srv",
+      "sha256": "1e6ec62e29ae02783a6a41f2c178cd306521cbc36e9c736d690231d697f7a964"
+    },
+    {
+      "file": "pal_interaction_msgs/ASRActivation.msg",
+      "sha256": "c555811579d57efe73252b5d80836434f8211a57376a19d694003da0d5d0871f"
+    },
+    {
+      "file": "pal_interaction_msgs/ASREvent.msg",
+      "sha256": "66eda489cee31d2f82f52f9c65d254e4a7c78e90fed6e3ccd49884315d894dad"
+    },
+    {
+      "file": "pal_interaction_msgs/ASRFile.action",
+      "sha256": "11dabe931cbafc4c8f143004cc4e4e1fb86a1e5ab5bcac84569c0b15353432d1"
+    },
+    {
+      "file": "pal_interaction_msgs/ASRLangModelMngmt.msg",
+      "sha256": "ccbe666dffc755a316a54826620b7ac78cf37cd557268eb924fd67f5d28817ed"
+    },
+    {
+      "file": "pal_interaction_msgs/ASRLanguage.msg",
+      "sha256": "20d8ab1e82d504f6765258c1846996d441c4d8828e43a215ccacb0fe419ef57a"
+    },
+    {
+      "file": "pal_interaction_msgs/ASRService.srv",
+      "sha256": "0a6a21608046128c7896063c627151f3c762e1a0e4fec0fd8f338de4dde7195d"
+    },
+    {
+      "file": "pal_interaction_msgs/ASRSrvRequest.msg",
+      "sha256": "dda8754fd2b47c735843a3246a0a8d03e3997d646dc66d953771e1d9b2f944b7"
+    },
+    {
+      "file": "pal_interaction_msgs/ASRSrvResponse.msg",
+      "sha256": "7bbf4adb15baebc2786a91e1e93594599c3d2d49dfd14e27954a373c8b9c7a45"
+    },
+    {
+      "file": "pal_interaction_msgs/ASRStatus.msg",
+      "sha256": "2b939b4e4faedb1eeb475a13e7df8f1012debc2b36c2dbcedc1139ff999ca026"
+    },
+    {
+      "file": "pal_interaction_msgs/AudioDeviceDescription.msg",
+      "sha256": "39b71df9ea0d536061a953468eb22867a01347fea56db3244c1d0984d56e6d8e"
+    },
+    {
+      "file": "pal_interaction_msgs/AudioPlay.action",
+      "sha256": "4d0631d86fa296f5923c7a1fb7e95e354b930d7ad1f11e5d1f4b1d18498e018c"
+    },
+    {
+      "file": "pal_interaction_msgs/AudioPlayerState.msg",
+      "sha256": "1a55b1259d0deb5bad0d2f01d15c58db26584a8b8655f78ef293bd546dbb9273"
+    },
+    {
+      "file": "pal_interaction_msgs/DirectionOfArrival.msg",
+      "sha256": "40719c6d6fe23657e84efa91c73849826a70e51eed8aa748f49825ebecb29401"
+    },
+    {
+      "file": "pal_interaction_msgs/EnablingSoundLocalisation.msg",
+      "sha256": "2120e763231cec5401eab11f9e02b3786e3593c62f7952a3e8bb38125f811737"
+    },
+    {
+      "file": "pal_interaction_msgs/GetSpeechDuration.srv",
+      "sha256": "85b5f56b2f572947740eb5aefa2f721244c475dd0f1d83c42d5953d2f35798e4"
+    },
+    {
+      "file": "pal_interaction_msgs/I18nArgument.msg",
+      "sha256": "c1034a98653f512cdeb8ff4a3a3aa9ebcd0f6c1c30ba70bff60cb4094ebcb088"
+    },
+    {
+      "file": "pal_interaction_msgs/I18nText.msg",
+      "sha256": "909a21634ab6516aca02b1c34c27dfd7dd38b16916f9bfce2633ee6a4d69f031"
+    },
+    {
+      "file": "pal_interaction_msgs/Input.msg",
+      "sha256": "6b62bd1ca1ccb932810ec825353d5c4d8accb3da895cf5ed11e851d0de76b85e"
+    },
+    {
+      "file": "pal_interaction_msgs/InputArgument.msg",
+      "sha256": "6eb70a9757f27cb25ba3d2f0b24408c4ad80359e376943c92449813fd76c47f7"
+    },
+    {
+      "file": "pal_interaction_msgs/Sound.action",
+      "sha256": "db0111643f9f25924e41100ae1ef408314a33c2a43af18b3e095d2f363649d6e"
+    },
+    {
+      "file": "pal_interaction_msgs/SoundLocalisationService.srv",
+      "sha256": "cf7b82e52ae8cbec7da675852b32b1068611e2f627fdb2cf31a641beb985fd5d"
+    },
+    {
+      "file": "pal_interaction_msgs/TTSstate.msg",
+      "sha256": "aae2a18913794307258ec6fe118e11690f66d9e8ef0edcb11cf30fcc72dad1b7"
+    },
+    {
+      "file": "pal_interaction_msgs/Tts.action",
+      "sha256": "6855006618065f60c493c90cdf35a648d272482ed462ce4af131660ef04ccf16"
+    },
+    {
+      "file": "pal_interaction_msgs/TtsMark.msg",
+      "sha256": "ae67a80a147c7d86b823a9caf8f00f5675185b7e3262ceeea823c4988f27526f"
+    },
+    {
+      "file": "pal_interaction_msgs/TtsText.msg",
+      "sha256": "90713b543e0dce309bf25c63928fafc7bf12e8c53c006cf0a1c1bd93a33005ca"
+    },
+    {
+      "file": "pal_interaction_msgs/VoiceActivity.msg",
+      "sha256": "4cf3fca2a650541f67813b5cabe39e205fed1d2ede39d81979388a5e6bec00e7"
+    },
+    {
+      "file": "pal_interaction_msgs/WebGuiEvent.msg",
+      "sha256": "95f62dec2fbb922618967fbf827e887aa0f1374e34a70c0443062fd9e463fc4a"
+    },
+    {
+      "file": "pal_interaction_msgs/actiontag.msg",
+      "sha256": "524bcf06953a46e5b68b868420c2a65f2e79d6976185c966d655f7af500bc0b2"
+    },
+    {
+      "file": "pal_interaction_msgs/asrresult.msg",
+      "sha256": "4a62eaf8269532b837cf23537da150dde6fed64792d2570ebe05a9c7271e3066"
+    },
+    {
+      "file": "pal_interaction_msgs/asrupdate.msg",
+      "sha256": "f02da7a035cf0abdfdd81cdfa63f19eff280d6b93f41a760c3dada787c855c2a"
+    },
+    {
+      "file": "pal_interaction_msgs/audiosignal.msg",
+      "sha256": "5210321e31ac03938d26fd337525e7dd0f7c407c86b627bf5322fed14949c537"
+    },
+    {
+      "file": "pal_interaction_msgs/recognizerService.srv",
+      "sha256": "fc0b33197466daac081b60e89e85767c6d915b5eacdfc6ed2f17bec9eb602071"
+    },
+    {
+      "file": "pal_motion_model_msgs/GetMotionMap.srv",
+      "sha256": "0d55287f4290a76e7e38d827c9d6b03f873aa0d20cabca10f1719094232ffaff"
+    },
+    {
+      "file": "pal_motion_model_msgs/MotionModel.msg",
+      "sha256": "d0365b616096dd3a7fd13d150d775cd71f40c1f176c7e8ce25df085891187c4a"
+    },
+    {
+      "file": "pal_motion_model_msgs/MotionModelList.msg",
+      "sha256": "3c7d12c16cedf03442de4079a6593cb857b5552187b6c95faec7ba0cd4c92b19"
+    },
+    {
+      "file": "pal_motion_model_msgs/MotionModelMap.msg",
+      "sha256": "a74b2f341f09821e840f3221faf839eda87e224c699072243361f4353a3f151d"
+    },
+    {
+      "file": "pal_multirobot_msgs/WifiServiceDetection.msg",
+      "sha256": "757f3558188304e8e7517b8f14ac3caf0ed0ac00c2a08432ad461aa8f0ee9eed"
+    },
+    {
+      "file": "pal_simulation_msgs/ExternalWrench.msg",
+      "sha256": "9019f075b60d3ce132099a1af6aba29c52be55600537f743ba3422183efedad7"
+    },
+    {
+      "file": "pal_tablet_msgs/FunctionalityStatus.msg",
+      "sha256": "82a8743ae4c70fafc67344d6bb8bacf731e3f694b586e3c453104bfec2f19c20"
+    },
+    {
+      "file": "pal_tablet_msgs/RobotStatus.msg",
+      "sha256": "84a8a8b66239fc232b0f07f9ff67591392ea7ce531a665c11441b8fc96e5a2d1"
+    },
+    {
+      "file": "pal_video_recording_msgs/StartRecording.srv",
+      "sha256": "fb9f586eb6a7d7113a63492f0f563b1b46c410e47f561c4fd527ca2e35f232fe"
+    },
+    {
+      "file": "pal_video_recording_msgs/StopRecording.srv",
+      "sha256": "fb9f586eb6a7d7113a63492f0f563b1b46c410e47f561c4fd527ca2e35f232fe"
+    },
+    {
+      "file": "pal_vision_msgs/DetectedObject.msg",
+      "sha256": "21528a1cdb79597c4351e2ce242e9b23b335a2dbbd067b6be63403910c516e89"
+    },
+    {
+      "file": "pal_vision_msgs/DetectedPerson.msg",
+      "sha256": "9dcaa580c59a52c88de75c6a4eea2b0611e645d8a13185ec50e06e10652a3d55"
+    },
+    {
+      "file": "pal_vision_msgs/FaceDetection.msg",
+      "sha256": "97ce143ce5a5696b1d6c348147b7ff86f4b6c9a9a348b60b7ca12b092c23deeb"
+    },
+    {
+      "file": "pal_vision_msgs/FaceDetections.msg",
+      "sha256": "c5d84eaf16441439ea1a1c5b0a5160432e1d7454c89afb8fce8356eecec52e75"
+    },
+    {
+      "file": "pal_vision_msgs/FaceRecognition.action",
+      "sha256": "6a785c110f337a111a9ff116f7b1206eca1fe85b6da322e005c5e3219e7106aa"
+    },
+    {
+      "file": "pal_vision_msgs/FaceTrackingStart.srv",
+      "sha256": "51498aa6e4e993c5879e8b212a63226535e18b547bbe5dd2091b6f4287cf7ff9"
+    },
+    {
+      "file": "pal_vision_msgs/FaceTrackingStop.srv",
+      "sha256": "f73ff3b2444b28734780a17331ce3cd858aeb022ea863fdbe2008435f1b1c558"
+    },
+    {
+      "file": "pal_vision_msgs/FollowMeResponse.msg",
+      "sha256": "5a3c473d96ec0e427c1ddd1e2ad902159fee1cd2f2a80b9d87e0a2f6b8c73268"
+    },
+    {
+      "file": "pal_vision_msgs/FollowMeStart.srv",
+      "sha256": "16e40c94a68bff921301f695fc229e1d38d26ee4a48c091bcee4203c3ccb4198"
+    },
+    {
+      "file": "pal_vision_msgs/FollowMeStop.srv",
+      "sha256": "add4dd0ff7f5989da642d8225bf20e71c679e3e3f0af3a92814b9d322b585ddd"
+    },
+    {
+      "file": "pal_vision_msgs/Gesture.msg",
+      "sha256": "72e83e162ac7dcc9ec999bfe4fca98964d0d6c3b783c2d7a6be1d9b3de3ca2a1"
+    },
+    {
+      "file": "pal_vision_msgs/HeadPanTilt.msg",
+      "sha256": "a1969af162c241a29317b920d7e1f05866ae7ac7029a705994dc780b19d2dfa4"
+    },
+    {
+      "file": "pal_vision_msgs/HogDetection.msg",
+      "sha256": "46298d3fe0300bc594e86c77385ea9c77ea537bcd4eca85f4ed62af8b89e6d5c"
+    },
+    {
+      "file": "pal_vision_msgs/HogDetections.msg",
+      "sha256": "1b8e9ed40ca54674a63349310f71c6504255fa581c3b5f21673c7280aa3939fc"
+    },
+    {
+      "file": "pal_vision_msgs/LegDetections.msg",
+      "sha256": "4372da2369d5e344c60f401c4b5abd9047ed81404dfca22b7c6d0ae07972e142"
+    },
+    {
+      "file": "pal_vision_msgs/LookToPixel.srv",
+      "sha256": "095419659ff1360c752d600ed20623ed415e3b40c7ee098aad798b292c53bd11"
+    },
+    {
+      "file": "pal_vision_msgs/Rectangle.msg",
+      "sha256": "23c89056b06dd5f5baf3600d7d56442ec13bee8e1a49225051d7794418fed7bf"
+    },
+    {
+      "file": "pal_visual_localization_msgs/VisualLocAddPlace.action",
+      "sha256": "0406c972de7b14b3605e62855a03a0631c902a64109d719fff612900028b7b12"
+    },
+    {
+      "file": "pal_visual_localization_msgs/VisualLocRecognize.action",
+      "sha256": "6c43983443365d1c97ff793264112e5cfa77c60cbabe13093e2d11c449318567"
+    },
+    {
+      "file": "pal_walking_msgs/ContactState.msg",
+      "sha256": "2882b706dedf91cc4f7efae07f9f7300817f520c423d75e65dcccf9bf8c90d9b"
+    },
+    {
+      "file": "pal_walking_msgs/MoveHipFeet.srv",
+      "sha256": "a378379d68dc55d8b8bd641270dc96b786bd484f3adcdd97cf5fd80a99d3b3e9"
+    },
+    {
+      "file": "pal_walking_msgs/SMStatus.msg",
+      "sha256": "4949199e95ce3a62baeb8b4c9ec68513a17f7d0be5f32634e3144f8fe240117e"
+    },
+    {
+      "file": "pal_walking_msgs/Sit.srv",
+      "sha256": "8999932733636631e1d207c59bd8c37f6f72077ae58e05cc2093a18080b99d8f"
+    },
+    {
+      "file": "pal_walking_msgs/StepOver.srv",
+      "sha256": "d0d55e8b83e719264db8cb9546901511fd2eefa3c1a0876ecb76666a34493f4f"
+    },
+    {
+      "file": "pal_walking_msgs/WalkSteps.srv",
+      "sha256": "f08ad7703953bb144b413f2d277ce6f9fa091e61a00a5394068f01f221b25946"
+    },
+    {
+      "file": "pal_walking_msgs/WalkingStatus.msg",
+      "sha256": "25881002f4e050d3d68d8f835cc1acfedb64bb94822b10c1843b9d3810a3fe3e"
+    },
+    {
+      "file": "pal_walking_msgs/WalkingStep.msg",
+      "sha256": "9a0b2e1c4c8a0573a100bc5706615c1ffcc8d2476d24a87441602e645f22f5ee"
+    },
+    {
+      "file": "pal_wifi_localization_msgs/GetWifiMap.srv",
+      "sha256": "86bd70909949ceff359e9d3c743397f828830240b8960daaf586ea7057573d2a"
+    },
+    {
+      "file": "pal_wifi_localization_msgs/WifiSignal.msg",
+      "sha256": "e23ba8ab0dc4b56477166951e5966f528c3e285635ce85ee68b2814d95d5f6a8"
+    },
+    {
+      "file": "pal_wifi_localization_msgs/WifiSignalList.msg",
+      "sha256": "7c7b6466ff0da81b2243ec63d0be29d8832413f96c11658a099f7f226bee620b"
+    },
+    {
+      "file": "pal_wifi_localization_msgs/WifiSignalMap.msg",
+      "sha256": "f723237a288f92521ca528dc172eb8940ebb50de02942f2d5fd7a9186692092b"
+    },
+    {
+      "file": "sensor_msgs/CompressedImage.msg",
+      "sha256": "084eb9fb6f698c9e560dde11c1a8d858e8d6d4433251e86d58addaa7c5db8295"
+    },
+    {
+      "file": "sensor_msgs/Image.msg",
+      "sha256": "6686b6f5c5e3b90c4a5149792cc39fd179041ce57f6fd90ecfcf0b7ef7d3b10a"
+    },
+    {
+      "file": "sensor_msgs/RegionOfInterest.msg",
+      "sha256": "9c07010ab5ffddd1202876a778b44c99cafa780bc0503041c3fd935870a14c6a"
+    },
+    {
+      "file": "std_msgs/Bool.msg",
+      "sha256": "fd6e6b1dcf9e2ba3f5237aaa07829e3b8493c60d27e333ab2470e10d301fb207"
+    },
+    {
+      "file": "std_msgs/ColorRGBA.msg",
+      "sha256": "6a2ce596d968f23d8456ff1e0b1218dec75ce2542614e004c99d29aceb3be697"
+    },
+    {
+      "file": "std_msgs/Duration.msg",
+      "sha256": "c66c9d680d0e2c2eed1bce220d9c334f732a0c33813a6d1f8315f5d4eefbbe36"
+    },
+    {
+      "file": "std_msgs/Header.msg",
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693"
+    },
+    {
+      "file": "std_msgs/String.msg",
+      "sha256": "8d7bb56baf93c614a97f38518ec46615ad1265c4ee5f4e84173d86fcf4130b6e"
+    }
+  ],
+  "native_identity_qualified": false,
+  "hardware_executed": false
+}

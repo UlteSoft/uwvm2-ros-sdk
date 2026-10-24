@@ -1,0 +1,92 @@
+{
+  "schema": "uwvm-vendor-provider-v1",
+  "vendor": "franka",
+  "version_selector": "ros.vendor.profile",
+  "default_authority": [],
+  "profiles": [
+    {
+      "id": "ros1",
+      "backend": "ros1",
+      "distribution": "noetic",
+      "bundle": "franka-ros1-complete",
+      "catalog": "share/platform/franka/catalogs/ros1/catalog.json",
+      "catalog_sha256": "5c95e9d2355ca851b905ea8da6b7bc61517fe945d54f24a8259080af54220c3e",
+      "defines": [
+        "UWVM_FRANKA_ROS_VERSION=1"
+      ]
+    },
+    {
+      "id": "ros2",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "bundle": "franka-ros2-complete",
+      "catalog": "share/platform/franka/catalogs/ros2/catalog.json",
+      "catalog_sha256": "27199564a9e5a5b469d314599f7fb15a1fd8c7c40ba6c52cd241c56621b9a69f",
+      "defines": [
+        "UWVM_FRANKA_ROS_VERSION=2"
+      ]
+    }
+  ],
+  "language_adapters": "central SDK owner implementations; no vendor engine",
+  "hardware_qualified": false,
+  "format": "uwvm-ros-provider-v1",
+  "api_version": 1,
+  "id": "franka",
+  "module": "tools/platform/franka/provider.lua",
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "jazzy"
+      ]
+    }
+  },
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {},
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  },
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ]
+}

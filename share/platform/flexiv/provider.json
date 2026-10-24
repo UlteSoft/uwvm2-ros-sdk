@@ -1,0 +1,190 @@
+{
+  "schema": "uwvm-vendor-provider-v1",
+  "vendor": "flexiv",
+  "version_selector": "ros.vendor.profile",
+  "default_authority": [],
+  "profiles": [
+    {
+      "id": "ros1_noetic",
+      "backend": "ros1",
+      "distribution": "noetic",
+      "bundle": "flexiv-ros1-noetic-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros1_noetic/catalog.json",
+      "catalog_sha256": "783758847488c49afff9e78525f71fea4b89b576cdf8b63f8f573a3d58664e25",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=1"
+      ]
+    },
+    {
+      "id": "ros2_foxy",
+      "backend": "ros2",
+      "distribution": "foxy",
+      "bundle": "flexiv-ros2-foxy-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros2_foxy/catalog.json",
+      "catalog_sha256": "0bb7c7508a31f8cb8e15bfd808e0ab3c62cd0bd257d7ef5b4f95bd15e92e6942",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=2"
+      ]
+    },
+    {
+      "id": "ros2_humble_v1",
+      "backend": "ros2",
+      "distribution": "humble",
+      "bundle": "flexiv-ros2-humble-v1-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros2_humble_v1/catalog.json",
+      "catalog_sha256": "a30b3ef676effa6d91be7844827b3b0e1775b75b290c6c8b875d3b93618ffc78",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=3"
+      ]
+    },
+    {
+      "id": "ros2_humble_v2",
+      "backend": "ros2",
+      "distribution": "humble",
+      "bundle": "flexiv-ros2-humble-v2-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros2_humble_v2/catalog.json",
+      "catalog_sha256": "b903c05ee06afd4478b3241db41d78853642f5b4904ef15a1a5bb1bb525f8570",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=5"
+      ]
+    },
+    {
+      "id": "ros2_humble_v2_2",
+      "backend": "ros2",
+      "distribution": "humble",
+      "bundle": "flexiv-ros2-humble-v2-2-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros2_humble_v2_2/catalog.json",
+      "catalog_sha256": "a56290042dd72464642a65960a9e03cba2e97a0af103d786e6853fe83ff9f5b1",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=7"
+      ]
+    },
+    {
+      "id": "ros2_jazzy_v1",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "bundle": "flexiv-ros2-jazzy-v1-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros2_jazzy_v1/catalog.json",
+      "catalog_sha256": "a30b3ef676effa6d91be7844827b3b0e1775b75b290c6c8b875d3b93618ffc78",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=4"
+      ]
+    },
+    {
+      "id": "ros2_jazzy_v2",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "bundle": "flexiv-ros2-jazzy-v2-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros2_jazzy_v2/catalog.json",
+      "catalog_sha256": "b903c05ee06afd4478b3241db41d78853642f5b4904ef15a1a5bb1bb525f8570",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=6"
+      ]
+    },
+    {
+      "id": "ros2_jazzy_v2_2",
+      "backend": "ros2",
+      "distribution": "jazzy",
+      "bundle": "flexiv-ros2-jazzy-v2-2-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/catalog.json",
+      "catalog_sha256": "a56290042dd72464642a65960a9e03cba2e97a0af103d786e6853fe83ff9f5b1",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=8"
+      ]
+    },
+    {
+      "id": "ros2_lyrical_v1",
+      "backend": "ros2",
+      "distribution": "lyrical",
+      "bundle": "flexiv-ros2-lyrical-v1-complete",
+      "catalog": "share/platform/flexiv/catalogs/ros2_lyrical_v1/catalog.json",
+      "catalog_sha256": "a30b3ef676effa6d91be7844827b3b0e1775b75b290c6c8b875d3b93618ffc78",
+      "defines": [
+        "UWVM_FLEXIV_PROFILE=9"
+      ]
+    },
+    {
+      "id": "controller_core_foxy",
+      "backend": "ros2",
+      "distribution": "foxy",
+      "bundle": "flexiv-controller-core-foxy-complete",
+      "catalog": "share/platform/flexiv/catalogs/controller_core_foxy/catalog.json",
+      "catalog_sha256": "5a8eaa88c317bb6bdbcbef9504469db1aea22a4a4a19a34ffb72c5a426646310",
+      "defines": []
+    },
+    {
+      "id": "controller_core_humble",
+      "backend": "ros2",
+      "distribution": "humble",
+      "bundle": "flexiv-controller-core-humble-complete",
+      "catalog": "share/platform/flexiv/catalogs/controller_core_humble/catalog.json",
+      "catalog_sha256": "5a8eaa88c317bb6bdbcbef9504469db1aea22a4a4a19a34ffb72c5a426646310",
+      "defines": []
+    }
+  ],
+  "language_adapters": "central SDK owner implementations; no vendor engine",
+  "hardware_qualified": false,
+  "format": "uwvm-ros-provider-v1",
+  "api_version": 1,
+  "id": "flexiv",
+  "module": "tools/platform/flexiv/provider.lua",
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "foxy",
+        "humble",
+        "jazzy",
+        "lyrical"
+      ]
+    }
+  },
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {},
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  },
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ]
+}

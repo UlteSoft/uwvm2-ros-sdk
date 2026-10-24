@@ -1,0 +1,8 @@
+{
+  "default_authority": [],
+  "language": "moonbit",
+  "module_root": ".",
+  "platform": "ros1",
+  "producer_required": false,
+  "source_only": true
+}

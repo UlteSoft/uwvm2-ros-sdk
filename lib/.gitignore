@@ -1,0 +1,8 @@
+# This directory ships development inputs, including .wasm, .a and .o files.
+# Never blanket-ignore those formats here. Only transient local files are ignored.
+.DS_Store
+__pycache__/
+*.py[cod]
+*.tmp
+*.temp
+*.partial

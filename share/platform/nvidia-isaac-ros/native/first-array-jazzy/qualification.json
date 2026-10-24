@@ -1,0 +1,229 @@
+{
+  "format": "qualified-original-NVIDIA-native-scope-v1",
+  "original_type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray",
+  "operation": "topic.subscribe",
+  "language": "c",
+  "target_kind": "binary",
+  "widths": [
+    32,
+    64
+  ],
+  "hosts": [
+    "x86_64",
+    "aarch64-qemu"
+  ],
+  "cases": 52,
+  "registry_sha256": "1586e539ebac14a44ac05df9e38a32afd09577499be4323c4b52853fc44803f9",
+  "source_commit": "7bec6ae5dbb2faa11617f40226e8932a4a94e6e4",
+  "evidence_sha256": "ef1f2818cb0651f4930475b6034511a2c8a12a7df2970813893b1d1646cdac2e",
+  "GPU_NITROS_other_languages_libraries": false,
+  "default_authority": [],
+  "historical_accepted_scope": {
+    "format": "qualified-original-NVIDIA-native-scope-v1",
+    "original_type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray",
+    "operation": "topic.subscribe",
+    "language": "c",
+    "target_kind": "binary",
+    "widths": [
+      32,
+      64
+    ],
+    "hosts": [
+      "x86_64",
+      "aarch64-qemu"
+    ],
+    "cases": 16,
+    "registry_sha256": "ddce9b9e80a9d2173bf7c66c0a974c49f68ff51043b156e0758f2769cccde898",
+    "source_commit": "7bec6ae5dbb2faa11617f40226e8932a4a94e6e4",
+    "evidence_sha256": "ee6696dee85f0f4634b1e214fd1d068a4845f79ede1d5e11563303ba64ae9f58",
+    "GPU_NITROS_other_languages_libraries": false,
+    "default_authority": []
+  },
+  "current_layout_qualified": true,
+  "native_provider_sha256": "cd5d21527366d848dbea8d9173b0db50477010f2f5c67df802ea26ffd57299a9",
+  "generation": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/generation.vendor.json",
+  "bound_catalog": "share/platform/nvidia-isaac-ros/schemas/ros2/catalog.first-array.native.json",
+  "current_entrypoint": "UWVM_ROS_RUN_CONFIG=/absolute/deployment.json xmake run original-nvidia-array",
+  "historical_transport_cases_accepted": 16,
+  "corrected_layout_Xmake16": {
+    "sha256": "ef1f2818cb0651f4930475b6034511a2c8a12a7df2970813893b1d1646cdac2e",
+    "passed": 16
+  },
+  "four_module_Xmake20": {
+    "sha256": "ac93f98d40089c0e7fe5b825aa20dbdac1267abba7b081261df53793b2679051",
+    "passed": 20,
+    "source_languages": [
+      "c",
+      "cpp"
+    ],
+    "shared_module_builds": 6,
+    "main_builds": 2,
+    "complete_library_catalog": false,
+    "only_ROS_module": "ros_comm"
+  },
+  "current_entrypoints": [
+    "UWVM_ROS_RUN_CONFIG=... xmake run original-nvidia-array",
+    "UWVM_ROS_RUN_CONFIG=... xmake run main"
+  ],
+  "qualification_scope": "One original Array root: C receive/publish and a narrow C/C++ four-module receive/computation path; all broad routes remain partial.",
+  "installed_registry_sha256": "65d2b2f14a63b8dc02706f8fef8f9bb98eb72dd2a0f6cc68b774ff64b3f5dd00",
+  "installed_native_provider_sha256": "1e9bf8672aedc0ba268dbc5b2458c954d23e700e1b824219e73cb3e01440d1f8",
+  "installed_formatted_bytes_recompiled": false,
+  "source_correspondence": {
+    "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/source-layout-proof.json",
+    "bytes": 19974,
+    "sha256": "2a593416eaaf8dea6085fad10099a9ab0fabd4d60c781c35adee3c92e07bc3b1"
+  },
+  "guest_publish": {
+    "cases": 16,
+    "guest_language": "c",
+    "target_kind": "binary",
+    "operation": "topic.publish",
+    "widths": [
+      32,
+      64
+    ],
+    "hosts": [
+      "x86_64",
+      "aarch64-qemu"
+    ],
+    "evidence_sha256": "df918e3f116649e007628f177a044a76e9d461e527f6f79323e7117d8b9a08f8",
+    "source_packet_manifest_sha256": "cb2fad0862932c99bfa8a891903e224d8406835fed8d1d9a6fdcb9e32ee959e8",
+    "every_native_sample_compared_in_full": true,
+    "covariance_entries_per_sample": 72,
+    "same_exact_Wasm_per_width": true,
+    "poisoned_publication_never_observed": true,
+    "original_executed_registry_sha256": "1586e539ebac14a44ac05df9e38a32afd09577499be4323c4b52853fc44803f9",
+    "original_executed_native_provider_sha256": "cd5d21527366d848dbea8d9173b0db50477010f2f5c67df802ea26ffd57299a9",
+    "formatted_native_VM_gateway_recompiled": false,
+    "GPU_NITROS_qualified": false
+  },
+  "qualified_cases_by_flow": {
+    "corrected_receive": 16,
+    "four_module_receive": 20,
+    "guest_publish": 16
+  },
+  "review38_guest_byte_comparison": {
+    "passed": true,
+    "guest_products_rebuilt": 12,
+    "all_original_Wasm_bytes_identical": true,
+    "artifacts": [
+      {
+        "scenario": "original_array",
+        "width": 32,
+        "role": "main",
+        "original_execution_Wasm_sha256": "bc0b2234908149fa575941ac304c27df4a28e95a1d4f2824b4b47d1fbd9e8d4f",
+        "formatted_rebuilt_Wasm_sha256": "bc0b2234908149fa575941ac304c27df4a28e95a1d4f2824b4b47d1fbd9e8d4f",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array",
+        "width": 64,
+        "role": "main",
+        "original_execution_Wasm_sha256": "7ded1f41205b686a617c27970c0f52e30db05cbad3073ab77d481bb0dfb4a9fd",
+        "formatted_rebuilt_Wasm_sha256": "7ded1f41205b686a617c27970c0f52e30db05cbad3073ab77d481bb0dfb4a9fd",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_modules",
+        "width": 32,
+        "role": "algorithm",
+        "original_execution_Wasm_sha256": "55fdccbf9bbe4971ab84805b43a355c04c6424618c0b157a50d7be2c25af25b9",
+        "formatted_rebuilt_Wasm_sha256": "55fdccbf9bbe4971ab84805b43a355c04c6424618c0b157a50d7be2c25af25b9",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_modules",
+        "width": 32,
+        "role": "io",
+        "original_execution_Wasm_sha256": "dbc2e3d991f0564ba0334e35182c5a8c5b82d909cdb88a68950500faa20c517f",
+        "formatted_rebuilt_Wasm_sha256": "dbc2e3d991f0564ba0334e35182c5a8c5b82d909cdb88a68950500faa20c517f",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_modules",
+        "width": 32,
+        "role": "main",
+        "original_execution_Wasm_sha256": "34dcd75ecdc84087500eecb07f73e1998296fdbea5d2aaa87527a01f91e233ba",
+        "formatted_rebuilt_Wasm_sha256": "34dcd75ecdc84087500eecb07f73e1998296fdbea5d2aaa87527a01f91e233ba",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_modules",
+        "width": 32,
+        "role": "ros_comm",
+        "original_execution_Wasm_sha256": "c12a13fba1d074cd8e331ac69878cc1bf40817d4805ddb0c66142e23ef2135e2",
+        "formatted_rebuilt_Wasm_sha256": "c12a13fba1d074cd8e331ac69878cc1bf40817d4805ddb0c66142e23ef2135e2",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_modules",
+        "width": 64,
+        "role": "algorithm",
+        "original_execution_Wasm_sha256": "f8a5114d2497767f33073fe535fab1fd187599d0709b6570437e8fccf3720e77",
+        "formatted_rebuilt_Wasm_sha256": "f8a5114d2497767f33073fe535fab1fd187599d0709b6570437e8fccf3720e77",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_modules",
+        "width": 64,
+        "role": "io",
+        "original_execution_Wasm_sha256": "4df8c0258fd53c01c1e920aabccee6a74ab78505b9da044483bdec505c8f4e51",
+        "formatted_rebuilt_Wasm_sha256": "4df8c0258fd53c01c1e920aabccee6a74ab78505b9da044483bdec505c8f4e51",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_modules",
+        "width": 64,
+        "role": "main",
+        "original_execution_Wasm_sha256": "1301bf12d7798ab1154df573d56d374dd5b4e7f5a2761928aefd280a0c4f85ac",
+        "formatted_rebuilt_Wasm_sha256": "1301bf12d7798ab1154df573d56d374dd5b4e7f5a2761928aefd280a0c4f85ac",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_modules",
+        "width": 64,
+        "role": "ros_comm",
+        "original_execution_Wasm_sha256": "7d511360d74cef040873889e370c2b6eee7d614aabcd778dd22180f8426cceaa",
+        "formatted_rebuilt_Wasm_sha256": "7d511360d74cef040873889e370c2b6eee7d614aabcd778dd22180f8426cceaa",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_publish",
+        "width": 32,
+        "role": "publisher",
+        "original_execution_Wasm_sha256": "f906db5e4f153d8d933d0f27011b7587d756b1c454b57ec7c73e1b40ecab8321",
+        "formatted_rebuilt_Wasm_sha256": "f906db5e4f153d8d933d0f27011b7587d756b1c454b57ec7c73e1b40ecab8321",
+        "byte_identical": true
+      },
+      {
+        "scenario": "original_array_publish",
+        "width": 64,
+        "role": "publisher",
+        "original_execution_Wasm_sha256": "f19fa68fc5a79bc948fd33a8be452e85e8a6a1a2f0af976d767427eba7212dfb",
+        "formatted_rebuilt_Wasm_sha256": "f19fa68fc5a79bc948fd33a8be452e85e8a6a1a2f0af976d767427eba7212dfb",
+        "byte_identical": true
+      }
+    ],
+    "producer_manifest_sha256": "12343c3d279fee9421c2a52904bb6002ebf8357ad05e4dce9ebc88d48cfaafcb",
+    "build_receipt_sha256": "cc6d917f2b5be487fad17b758595e266026a61a16b8bd7af3a6aed1176918bd0",
+    "old_execution_index_hashes_unchanged": {
+      "current-NVIDIA-corrected-layout-16-snapshot.json": "ef1f2818cb0651f4930475b6034511a2c8a12a7df2970813893b1d1646cdac2e",
+      "current-NVIDIA-four-module-20-snapshot.json": "ac93f98d40089c0e7fe5b825aa20dbdac1267abba7b081261df53793b2679051",
+      "current-NVIDIA-guest-publish-16-snapshot.json": "df918e3f116649e007628f177a044a76e9d461e527f6f79323e7117d8b9a08f8"
+    },
+    "new_native_executions": 0,
+    "native_VM_gateway_recompiled": false
+  },
+  "final_native_source_closure": {
+    "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/native-header-review39.json",
+    "bytes": 4557,
+    "sha256": "6eb62104960136d8bc267370476568200b8215a342605e112451c2cc1a3467d1"
+  },
+  "cross_library": {
+    "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/cross-library-review38.json",
+    "bytes": 7240,
+    "sha256": "2d582195d3ed673d2da5e762b51829c5415325ff27cb88b984b771331b93ed2d"
+  },
+  "original_experiment_source_hashes_relabelled": false
+}

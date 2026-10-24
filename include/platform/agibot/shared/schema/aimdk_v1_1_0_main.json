@@ -1,0 +1,850 @@
+{
+  "format": "agibot-complete-observation-schema-v1",
+  "sdk_version": "1.1.0",
+  "variant": "main",
+  "sources": [
+    {
+      "file": "aimdk_msgs/msg/CommonRequest.msg",
+      "sha256": "4a6cb4e09e314c68a8daccfd82eae36ad85c30b366061ff1b5fd5ebba44340e5"
+    },
+    {
+      "file": "aimdk_msgs/msg/CommonResponse.msg",
+      "sha256": "bb33cf169353fa4ac412d85e54785fcf0e6d91d53dfe658f0ca728d555ff8382"
+    },
+    {
+      "file": "aimdk_msgs/msg/CommonState.msg",
+      "sha256": "2dfa028420c9906499bd489dc3761f36503f33920302ae14b112c9bf457489d7"
+    },
+    {
+      "file": "aimdk_msgs/msg/CurrentVersion.msg",
+      "sha256": "574fb48e322f428b73870f6a2e7e093c24d0d336ab8a57f3268928419d86f4c7"
+    },
+    {
+      "file": "aimdk_msgs/msg/McAction.msg",
+      "sha256": "6e7c7e279a2d94c435044678e9e3bd93e5ced61cd1d6ba9eb50fbedea9c5d7ad"
+    },
+    {
+      "file": "aimdk_msgs/msg/McActionInfo.msg",
+      "sha256": "d486071df385595095cc4f5098509548693bf1ed940bfdfadc6fb4050dd4bf4c"
+    },
+    {
+      "file": "aimdk_msgs/msg/McActionStatus.msg",
+      "sha256": "449daa669493202bb11969699acfabebd997006e8c0541caf95ef2f3a9ff7b06"
+    },
+    {
+      "file": "aimdk_msgs/msg/McBodyPoseStatus.msg",
+      "sha256": "aa69803bc3afe0970cbc35c840d77c275d093a01dc4675a235d6eee996784743"
+    },
+    {
+      "file": "aimdk_msgs/msg/McCommonState.msg",
+      "sha256": "ca75ce7ec40a7947c3cd67e7b37da53b194e71509ec8f15dfecbd2e78bcb1fc0"
+    },
+    {
+      "file": "aimdk_msgs/msg/McControlArea.msg",
+      "sha256": "7ecef6b3c48d43b19c9f5da8ae28613e42890a1bd579d91fcdd9214192e7ac8d"
+    },
+    {
+      "file": "aimdk_msgs/msg/McFsmState.msg",
+      "sha256": "da8a0370cba82d5d2955004a9b68489ee150f557e4c520dcd085bf58600cf6cf"
+    },
+    {
+      "file": "aimdk_msgs/msg/McHandStatus.msg",
+      "sha256": "ed9a91ef655c4fbd516a90eae800dbdf8955d1ae53f2fcc5754d3afa7f8baf96"
+    },
+    {
+      "file": "aimdk_msgs/msg/McInputSource.msg",
+      "sha256": "d1740a334177927074534c7bb9474a229154f25b69b8f107992afa960616ef8e"
+    },
+    {
+      "file": "aimdk_msgs/msg/McLocomotionSpeedBounds.msg",
+      "sha256": "84974a7f1e17cfcc92cb864c4b61facdc19c480f7cb870923b1eb7002b7dbda7"
+    },
+    {
+      "file": "aimdk_msgs/msg/McLocomotionSpeedMode.msg",
+      "sha256": "5161b40ac218d7f1d42a54f9f7f2b6e5a9e96b23db44057626b694e557a70a24"
+    },
+    {
+      "file": "aimdk_msgs/msg/McLocomotionSpeedStatus.msg",
+      "sha256": "5ea0680f804c436f0d46822b3d91ee42ca9641ed5a62deb91fc5babf4b2230c9"
+    },
+    {
+      "file": "aimdk_msgs/msg/McMotionStatus.msg",
+      "sha256": "46feceb3e45785a775d1e6ecd90cd53e21f92d0bf8f9db553945abad5abab4f1"
+    },
+    {
+      "file": "aimdk_msgs/msg/McMotionType.msg",
+      "sha256": "611b362b9851a774551389494de9e577b19eb76c004ecf91e6835c6f27427da9"
+    },
+    {
+      "file": "aimdk_msgs/msg/McPlayerState.msg",
+      "sha256": "79f992417b2819d2b201eb238dc9139953c509a272ca3eae6ea0d24c33eaa6ff"
+    },
+    {
+      "file": "aimdk_msgs/msg/McRuntimeModel.msg",
+      "sha256": "d715b0bb1c5d1a13f48ec03b9a7660779d1a103aead957e4fe16428575b511d8"
+    },
+    {
+      "file": "aimdk_msgs/msg/McServoStatus.msg",
+      "sha256": "f4768deea22f78813ea06de992ea19bba81a4375d23b6f45713b1586d09b3898"
+    },
+    {
+      "file": "aimdk_msgs/msg/MessageHeader.msg",
+      "sha256": "ea70387167120925f14373d1ac9030ac529b1c44c49503db6c2ac012d5a3efb4"
+    },
+    {
+      "file": "aimdk_msgs/msg/RequestHeader.msg",
+      "sha256": "48a9467857fa698ba1de18236f9f80741406e5d4bfedfffd36be6fa50fb10664"
+    },
+    {
+      "file": "aimdk_msgs/msg/ResponseHeader.msg",
+      "sha256": "d5d78dddcee2ab78e32c4ad81cac5d69b078a99fc637ba4a08fb9a03ba52d87f"
+    },
+    {
+      "file": "aimdk_msgs/msg/RobotResource.msg",
+      "sha256": "f1164ac24c6509460b860442f775a1f59559ed0aa554940997a5fd3b68d0a114"
+    },
+    {
+      "file": "aimdk_msgs/srv/GetMcAction.srv",
+      "sha256": "a3bd4cc6e0eb2dcdafdccf1aef0dae0162de4e64f6dc8687812aadf7e447d222"
+    },
+    {
+      "file": "aimdk_msgs/srv/GetRobotResources.srv",
+      "sha256": "b7c53ea0a8d1420fd88253dcd755257985bdc0f9b5f44a58c86f4da6a3743b7d"
+    },
+    {
+      "file": "builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    }
+  ],
+  "records": {
+    "aimdk_msgs/msg/CommonRequest": {
+      "fields": [
+        {
+          "name": "header",
+          "type": "aimdk_msgs/msg/RequestHeader"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/CommonResponse": {
+      "fields": [
+        {
+          "name": "header",
+          "type": "aimdk_msgs/msg/ResponseHeader"
+        },
+        {
+          "name": "status",
+          "type": "aimdk_msgs/msg/CommonState"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "string": 128
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/CommonState": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "int32"
+        }
+      ],
+      "constants": {
+        "UNKNOWN": {
+          "type": "int32",
+          "literal": "0"
+        },
+        "SUCCESS": {
+          "type": "int32",
+          "literal": "1"
+        },
+        "FAILURE": {
+          "type": "int32",
+          "literal": "2"
+        },
+        "ABORTED": {
+          "type": "int32",
+          "literal": "3"
+        },
+        "TIMEOUT": {
+          "type": "int32",
+          "literal": "4"
+        },
+        "INVALID": {
+          "type": "int32",
+          "literal": "5"
+        },
+        "IN_MANUAL": {
+          "type": "int32",
+          "literal": "6"
+        },
+        "NOT_READY": {
+          "type": "int32",
+          "literal": "100"
+        },
+        "PENDING": {
+          "type": "int32",
+          "literal": "200"
+        },
+        "CREATED": {
+          "type": "int32",
+          "literal": "300"
+        },
+        "RUNNING": {
+          "type": "int32",
+          "literal": "400"
+        }
+      }
+    },
+    "aimdk_msgs/msg/CurrentVersion": {
+      "fields": [
+        {
+          "name": "version",
+          "type": "string",
+          "string": 128
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "string": 128
+        },
+        {
+          "name": "files",
+          "type": "string",
+          "sequence": 16,
+          "string": 128
+        },
+        {
+          "name": "download_timestamp_seconds",
+          "type": "uint64"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/McAction": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "int32"
+        }
+      ],
+      "constants": {
+        "PASSIVE_DEFAULT": {
+          "type": "int32",
+          "literal": "1"
+        },
+        "SOFT_EMERGENCY_STOP": {
+          "type": "int32",
+          "literal": "2"
+        },
+        "DAMPING_DEFAULT": {
+          "type": "int32",
+          "literal": "3"
+        },
+        "ZERO_TORQUE_DEFAULT": {
+          "type": "int32",
+          "literal": "4"
+        },
+        "JOINT_DEFAULT": {
+          "type": "int32",
+          "literal": "100"
+        },
+        "JOINT_FREEZE": {
+          "type": "int32",
+          "literal": "101"
+        },
+        "STAND_DEFAULT": {
+          "type": "int32",
+          "literal": "200"
+        },
+        "STAND_BODY_CONTROL": {
+          "type": "int32",
+          "literal": "201"
+        },
+        "LOCOMOTION_DEFAULT": {
+          "type": "int32",
+          "literal": "300"
+        },
+        "RUN_DEFAULT": {
+          "type": "int32",
+          "literal": "301"
+        },
+        "LOCOMOTION_STEP": {
+          "type": "int32",
+          "literal": "302"
+        },
+        "VR_REMOTE_CONTROLLER": {
+          "type": "int32",
+          "literal": "400"
+        },
+        "SIT_DOWN_DEFAULT": {
+          "type": "int32",
+          "literal": "2000"
+        },
+        "CROUCH_DOWN_DEFAULT": {
+          "type": "int32",
+          "literal": "2002"
+        },
+        "LIE_DOWN_DEFAULT": {
+          "type": "int32",
+          "literal": "2004"
+        },
+        "STAND_UP_DEFAULT": {
+          "type": "int32",
+          "literal": "2005"
+        },
+        "ASCEND_STAIRS": {
+          "type": "int32",
+          "literal": "2006"
+        },
+        "DESCEND_STAIRS": {
+          "type": "int32",
+          "literal": "2008"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McActionInfo": {
+      "fields": [
+        {
+          "name": "current_action",
+          "type": "aimdk_msgs/msg/McAction"
+        },
+        {
+          "name": "action_desc",
+          "type": "string",
+          "string": 128
+        },
+        {
+          "name": "status",
+          "type": "aimdk_msgs/msg/McActionStatus"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/McActionStatus": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "int32"
+        }
+      ],
+      "constants": {
+        "IDLE": {
+          "type": "int32",
+          "literal": "0"
+        },
+        "RUNNING": {
+          "type": "int32",
+          "literal": "100"
+        },
+        "TRANSITION": {
+          "type": "int32",
+          "literal": "200"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McBodyPoseStatus": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "int32"
+        }
+      ],
+      "constants": {
+        "MC_BODY_POSE_UNKOWN": {
+          "type": "int32",
+          "literal": "0"
+        },
+        "MC_BODY_POSE_STAND": {
+          "type": "int32",
+          "literal": "1"
+        },
+        "MC_BODY_POSE_LIE_FACE_UP": {
+          "type": "int32",
+          "literal": "2"
+        },
+        "MC_BODY_POSE_LIE_FACE_DOWN": {
+          "type": "int32",
+          "literal": "3"
+        },
+        "MC_BODY_POSE_SIT": {
+          "type": "int32",
+          "literal": "4"
+        },
+        "MC_BODY_POSE_SQUAT": {
+          "type": "int32",
+          "literal": "5"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McCommonState": {
+      "fields": [
+        {
+          "name": "header",
+          "type": "aimdk_msgs/msg/MessageHeader"
+        },
+        {
+          "name": "input_source",
+          "type": "aimdk_msgs/msg/McInputSource"
+        },
+        {
+          "name": "action_info",
+          "type": "aimdk_msgs/msg/McActionInfo"
+        },
+        {
+          "name": "runtime_model",
+          "type": "aimdk_msgs/msg/McRuntimeModel"
+        },
+        {
+          "name": "motion_status",
+          "type": "aimdk_msgs/msg/McMotionStatus"
+        },
+        {
+          "name": "servo_status",
+          "type": "aimdk_msgs/msg/McServoStatus"
+        },
+        {
+          "name": "fsm_state",
+          "type": "aimdk_msgs/msg/McFsmState"
+        },
+        {
+          "name": "body_status",
+          "type": "aimdk_msgs/msg/McBodyPoseStatus"
+        },
+        {
+          "name": "speed_status",
+          "type": "aimdk_msgs/msg/McLocomotionSpeedStatus"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/McControlArea": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "int32"
+        }
+      ],
+      "constants": {
+        "NONE": {
+          "type": "int32",
+          "literal": "0"
+        },
+        "LEFT_HAND": {
+          "type": "int32",
+          "literal": "1"
+        },
+        "RIGHT_HAND": {
+          "type": "int32",
+          "literal": "2"
+        },
+        "HEAD": {
+          "type": "int32",
+          "literal": "4"
+        },
+        "WAIST": {
+          "type": "int32",
+          "literal": "8"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McFsmState": {
+      "fields": [
+        {
+          "name": "current_state",
+          "type": "uint32"
+        }
+      ],
+      "constants": {
+        "UNKNOWN": {
+          "type": "uint32",
+          "literal": "0"
+        },
+        "STARTING": {
+          "type": "uint32",
+          "literal": "1"
+        },
+        "STABLE": {
+          "type": "uint32",
+          "literal": "2"
+        },
+        "MOVING": {
+          "type": "uint32",
+          "literal": "3"
+        },
+        "SAFE": {
+          "type": "uint32",
+          "literal": "4"
+        },
+        "SPECIAL": {
+          "type": "uint32",
+          "literal": "5"
+        },
+        "TEST": {
+          "type": "uint32",
+          "literal": "6"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McHandStatus": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "int32"
+        }
+      ],
+      "constants": {
+        "OMNI_HAND": {
+          "type": "int32",
+          "literal": "1000"
+        },
+        "OMNI_PICKER": {
+          "type": "int32",
+          "literal": "2000"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McInputSource": {
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "string": 128
+        },
+        {
+          "name": "priority",
+          "type": "int32"
+        },
+        {
+          "name": "timeout",
+          "type": "int32"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/McLocomotionSpeedBounds": {
+      "fields": [
+        {
+          "name": "min_value",
+          "type": "float64"
+        },
+        {
+          "name": "max_value",
+          "type": "float64"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/McLocomotionSpeedMode": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "int32"
+        }
+      ],
+      "constants": {
+        "MC_LOCOMOTION_NONE_SPEED": {
+          "type": "int32",
+          "literal": "0"
+        },
+        "MC_LOCOMOTION_LOW_SPEED": {
+          "type": "int32",
+          "literal": "1"
+        },
+        "MC_LOCOMOTION_MEIDUM_SPEED": {
+          "type": "int32",
+          "literal": "2"
+        },
+        "MC_LOCOMOTION_HIGH_SPEED": {
+          "type": "int32",
+          "literal": "3"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McLocomotionSpeedStatus": {
+      "fields": [
+        {
+          "name": "speed_mode",
+          "type": "aimdk_msgs/msg/McLocomotionSpeedMode"
+        },
+        {
+          "name": "forward_bounds",
+          "type": "aimdk_msgs/msg/McLocomotionSpeedBounds"
+        },
+        {
+          "name": "lateral_bounds",
+          "type": "aimdk_msgs/msg/McLocomotionSpeedBounds"
+        },
+        {
+          "name": "angular_bounds",
+          "type": "aimdk_msgs/msg/McLocomotionSpeedBounds"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/McMotionStatus": {
+      "fields": [
+        {
+          "name": "player_state",
+          "type": "aimdk_msgs/msg/McPlayerState"
+        },
+        {
+          "name": "control_area",
+          "type": "aimdk_msgs/msg/McControlArea"
+        },
+        {
+          "name": "motion",
+          "type": "string",
+          "string": 128
+        },
+        {
+          "name": "type",
+          "type": "aimdk_msgs/msg/McMotionType"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/McMotionType": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "int32"
+        }
+      ],
+      "constants": {
+        "NONE": {
+          "type": "int32",
+          "literal": "0"
+        },
+        "ANIMATION": {
+          "type": "int32",
+          "literal": "1"
+        },
+        "MIMIC": {
+          "type": "int32",
+          "literal": "2"
+        },
+        "FOUNDATION": {
+          "type": "int32",
+          "literal": "3"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McPlayerState": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "uint32"
+        }
+      ],
+      "constants": {
+        "IDLE": {
+          "type": "uint32",
+          "literal": "0"
+        },
+        "PRE_PLAYING": {
+          "type": "uint32",
+          "literal": "1"
+        },
+        "PLAYING": {
+          "type": "uint32",
+          "literal": "2"
+        },
+        "INTERRUPTING": {
+          "type": "uint32",
+          "literal": "3"
+        },
+        "ERROR": {
+          "type": "uint32",
+          "literal": "4"
+        }
+      }
+    },
+    "aimdk_msgs/msg/McRuntimeModel": {
+      "fields": [
+        {
+          "name": "waist_status",
+          "type": "bool"
+        },
+        {
+          "name": "left_hand_status",
+          "type": "aimdk_msgs/msg/McHandStatus"
+        },
+        {
+          "name": "right_hand_status",
+          "type": "aimdk_msgs/msg/McHandStatus"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/McServoStatus": {
+      "fields": [
+        {
+          "name": "squat_enable",
+          "type": "bool"
+        },
+        {
+          "name": "squat_offset",
+          "type": "float64"
+        },
+        {
+          "name": "squat_limit",
+          "type": "uint32"
+        },
+        {
+          "name": "head_yaw_offset",
+          "type": "float64"
+        },
+        {
+          "name": "head_pitch_offset",
+          "type": "float64"
+        },
+        {
+          "name": "waist_yaw_offset",
+          "type": "float64"
+        },
+        {
+          "name": "waist_pitch_offset",
+          "type": "float64"
+        },
+        {
+          "name": "waist_roll_offset",
+          "type": "float64"
+        }
+      ],
+      "constants": {
+        "BEFORE_LIMIT": {
+          "type": "uint32",
+          "literal": "0"
+        },
+        "LOWER_LIMIT": {
+          "type": "uint32",
+          "literal": "1"
+        },
+        "UPPER_LIMIT": {
+          "type": "uint32",
+          "literal": "2"
+        }
+      }
+    },
+    "aimdk_msgs/msg/MessageHeader": {
+      "fields": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time"
+        },
+        {
+          "name": "frame_id",
+          "type": "string",
+          "string": 128
+        },
+        {
+          "name": "sequence",
+          "type": "uint32"
+        },
+        {
+          "name": "meas_stamp",
+          "type": "builtin_interfaces/msg/Time"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/RequestHeader": {
+      "fields": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/ResponseHeader": {
+      "fields": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time"
+        },
+        {
+          "name": "code",
+          "type": "int64"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/msg/RobotResource": {
+      "fields": [
+        {
+          "name": "resource_key",
+          "type": "string",
+          "string": 128
+        },
+        {
+          "name": "current_version",
+          "type": "aimdk_msgs/msg/CurrentVersion"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/srv/GetMcAction_Request": {
+      "fields": [
+        {
+          "name": "request",
+          "type": "aimdk_msgs/msg/CommonRequest"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/srv/GetMcAction_Response": {
+      "fields": [
+        {
+          "name": "header",
+          "type": "aimdk_msgs/msg/ResponseHeader"
+        },
+        {
+          "name": "info",
+          "type": "aimdk_msgs/msg/McActionInfo"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/srv/GetRobotResources_Request": {
+      "fields": [
+        {
+          "name": "header",
+          "type": "aimdk_msgs/msg/CommonRequest"
+        }
+      ],
+      "constants": {}
+    },
+    "aimdk_msgs/srv/GetRobotResources_Response": {
+      "fields": [
+        {
+          "name": "header",
+          "type": "aimdk_msgs/msg/CommonResponse"
+        },
+        {
+          "name": "robot_resources",
+          "type": "aimdk_msgs/msg/RobotResource",
+          "sequence": 4
+        }
+      ],
+      "constants": {}
+    },
+    "builtin_interfaces/msg/Time": {
+      "fields": [
+        {
+          "name": "sec",
+          "type": "int32"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32"
+        }
+      ],
+      "constants": {}
+    }
+  },
+  "qualification": "Canonical guest schema only; not an official native identity or runtime result"
+}

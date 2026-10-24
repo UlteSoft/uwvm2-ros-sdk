@@ -1,0 +1,13 @@
+Option Strict On
+Option Explicit On
+' @brief Complete selected .NET record aliases.
+Imports Ros2Builtin_interfacesMsgTime = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Builtin_interfacesMsgTime
+Imports Ros2Builtin_interfacesMsgDuration = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Builtin_interfacesMsgDuration
+Imports Ros2Std_msgsMsgHeader = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Std_msgsMsgHeader
+Imports Ros2Sensor_msgsMsgJointState = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Sensor_msgsMsgJointState
+Imports Ros2Trajectory_msgsMsgJointTrajectoryPoint =
+        Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Trajectory_msgsMsgJointTrajectoryPoint
+Imports Ros2Trajectory_msgsMsgJointTrajectory = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Trajectory_msgsMsgJointTrajectory
+Imports Ros2Std_msgsMsgMultiArrayDimension = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Std_msgsMsgMultiArrayDimension
+Imports Ros2Std_msgsMsgMultiArrayLayout = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Std_msgsMsgMultiArrayLayout
+Imports Ros2Std_msgsMsgFloat64MultiArray = Uwvm.Flexiv.controllercorefoxy.BoundedRecords._Ros2Std_msgsMsgFloat64MultiArray

@@ -1,0 +1,60 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros1-gateway",
+  "backend": "ros1",
+  "distribution": "noetic",
+  "connection": {
+    "master-uri": "http://127.0.0.1:11321",
+    "node-name": "sdk_state_observer",
+    "namespace": "/sdk_fixture",
+    "advertise-host": "127.0.0.1",
+    "transport": "tcpros"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "observe_native_state": {
+      "arguments": [
+        "sample"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "sample",
+              "operation": "topic.subscribe",
+              "resource": "/sdk_fixture/franka/complete_original_state",
+              "type": "franka_msgs/FrankaState",
+              "identity": "431567d5df6caf4e4dd7385f25cb71ee",
+              "limits": {
+                "max-message-bytes": "2619",
+                "max-subscribers": "1",
+                "max-rate-hz": "100",
+                "burst": "10",
+                "max-bytes-per-second": "1048576",
+                "max-queue-bytes": "1048576",
+                "overflow-policy": "drop-oldest",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "adapter-codec-identity": "UWVMROS1_79f22f36ce2c11f519ee29e65a248ec1b67240e27712b2667e9b803a2562ee71",
+                "queue-depth": "10",
+                "transport": "tcpros"
+              }
+            }
+          ],
+          "wasi_grants": [
+            "monotonic-clock"
+          ]
+        }
+      }
+    }
+  }
+}

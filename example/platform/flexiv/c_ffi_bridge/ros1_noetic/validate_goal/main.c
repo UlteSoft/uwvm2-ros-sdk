@@ -1,0 +1,40 @@
+/** @file main.c
+ * @brief validate goal using a complete original vendor value.
+ * @details All bytes come from the actual input or native ROS event. No result is precomputed.
+ * @return Zero on complete success; original errno otherwise. Cleanup is reported separately.
+ */
+#include <stdio.h>
+#include <string.h>
+#include <flexiv/c_ffi_bridge/ros1_noetic/records.h>
+
+int main(int argc, char** argv)
+{
+    static roswasmc_bounded_1_flexiv_msgs_JointPosVel value;
+    static unsigned char bytes[113];
+    size_t length = 0, index;
+    unsigned primary = 0, cleanup = 0;
+    (void)argc;
+    (void)argv;
+    length = fread(bytes, 1, sizeof bytes, stdin);
+    if(ferror(stdin))
+    {
+        return 5;
+    }
+    primary = flexiv_ros1_noetic_Ros1Flexiv_msgsJointPosVel_decode(bytes, length, &value, sizeof value);
+    /* Construction uses the complete decoded original goal; semantic/model admission remains separate. */
+    if(!primary)
+    {
+        primary = flexiv_ros1_noetic_Ros1Flexiv_msgsJointPosVel_encode(&value, sizeof value, bytes, sizeof bytes, &length);
+    }
+    if(!primary)
+    {
+        printf("flexiv_msgs/JointPosVel bytes=%zu\n", length);
+        for(index = 0; index < length; ++index)
+        {
+            printf("%02x", bytes[index]);
+        }
+        puts("");
+    }
+    fprintf(stderr, "primary=%u cleanup=%u\n", primary, cleanup);
+    return primary ? (int)primary : (int)cleanup;
+}

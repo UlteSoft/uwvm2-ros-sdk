@@ -1,0 +1,8 @@
+# Authored bridge envelope for AuroraClient.get_group_motion_state.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+string group
+---
+uint32 status
+string error
+int32 value

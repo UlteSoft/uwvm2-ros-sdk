@@ -1,0 +1,1222 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/msg/RobotStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/msg/RobotStatus"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/msg/ToolVectorActual.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/msg/ToolVectorActual"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/AI.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/AI"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/AO.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/AO"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/AOInstant.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/AOInstant"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/AccJ.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/AccJ"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/AccL.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/AccL"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/Arc.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/Arc"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/BrakeControl.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/BrakeControl"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/CP.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/CP"
+    },
+    {
+      "bounds": {
+        "request.offset": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/CalcTool.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/CalcTool"
+    },
+    {
+      "bounds": {
+        "request.offset": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/CalcUser.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/CalcUser"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/CheckOddMovC.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/CheckOddMovC"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/CheckOddMovJ.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/CheckOddMovJ"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/CheckOddMovL.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/CheckOddMovL"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/Circle.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/Circle"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ClearError.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ClearError"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/Continue.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/Continue"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/DI.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DI"
+    },
+    {
+      "bounds": {
+        "request.args": {
+          "sequence": 16
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/DIGroup.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DIGroup"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/DIGroupDEC.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DIGroupDEC"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/DO.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DO"
+    },
+    {
+      "bounds": {
+        "request.args": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_msgs_v4/srv/DOGroup.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DOGroup"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/DOGroupDEC.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DOGroupDEC"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/DOInstant.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DOInstant"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/DisableRobot.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DisableRobot"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/DragSensivity.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/DragSensivity"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/EmergencyStop.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/EmergencyStop"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/EnableFTSensor.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/EnableFTSensor"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/EnableRobot.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/EnableRobot"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/EnableSafeSkin.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/EnableSafeSkin"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/EndRTOffset.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/EndRTOffset"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCCollisionSwitch.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCCollisionSwitch"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCForceMode.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCForceMode"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCOff.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCOff"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCSetDamping.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCSetDamping"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCSetDeviation.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCSetDeviation"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCSetForce.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCSetForce"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCSetForceLimit.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCSetForceLimit"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCSetForceSpeedLimit.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCSetForceSpeedLimit"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCSetMass.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCSetMass"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/FCSetStiffness.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/FCSetStiffness"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ForceDriveMode.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ForceDriveMode"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ForceDriveSpeed.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ForceDriveSpeed"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetAO.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetAO"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetAngle.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetAngle"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetCoils.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetCoils"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetCurrentCommandId.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetCurrentCommandId"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetDO.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetDO"
+    },
+    {
+      "bounds": {
+        "request.index_group": {
+          "sequence": 16
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetDOGroup.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetDOGroup"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetDOGroupDEC.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetDOGroupDEC"
+    },
+    {
+      "bounds": {
+        "request.language": {
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetError.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetError"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetErrorID.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetErrorID"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetForce.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetForce"
+    },
+    {
+      "bounds": {
+        "request.val_type": {
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetHoldRegs.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetHoldRegs"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetInBits.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetInBits"
+    },
+    {
+      "bounds": {
+        "request.val_type": {
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetInRegs.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetInRegs"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetInputBool.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetInputBool"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetInputFloat.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetInputFloat"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetInputInt.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetInputInt"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetOutputBool.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetOutputBool"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetOutputFloat.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetOutputFloat"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetOutputInt.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetOutputInt"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetPose.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetPose"
+    },
+    {
+      "bounds": {
+        "request.trace_name": {
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetStartPose.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetStartPose"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/GetToolDO.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/GetToolDO"
+    },
+    {
+      "bounds": {
+        "request.joint_near": {
+          "string": 256
+        },
+        "request.tool": {
+          "string": 256
+        },
+        "request.use_joint_near": {
+          "string": 256
+        },
+        "request.user": {
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/InverseKin.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/InverseKin"
+    },
+    {
+      "bounds": {
+        "request.parameter": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/InverseSolution.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/InverseSolution"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ModbusClose.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ModbusClose"
+    },
+    {
+      "bounds": {
+        "request.ip": {
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/ModbusCreate.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ModbusCreate"
+    },
+    {
+      "bounds": {
+        "request.parity": {
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/ModbusRTUCreate.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ModbusRTUCreate"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/MovJ.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/MovJ"
+    },
+    {
+      "bounds": {
+        "request.mdis": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/MovJIO.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/MovJIO"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/MovL.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/MovL"
+    },
+    {
+      "bounds": {
+        "request.mdis": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/MovLIO.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/MovLIO"
+    },
+    {
+      "bounds": {
+        "request.axis_id": {
+          "string": 256
+        },
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/MoveJog.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/MoveJog"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/Pause.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/Pause"
+    },
+    {
+      "bounds": {
+        "request.tool": {
+          "string": 256
+        },
+        "request.user": {
+          "string": 256
+        },
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/PositiveKin.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/PositiveKin"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/PowerOn.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/PowerOn"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/RelJointMovJ.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RelJointMovJ"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/RelMovJTool.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RelMovJTool"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/RelMovJUser.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RelMovJUser"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/RelMovLTool.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RelMovLTool"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/RelMovLUser.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RelMovLUser"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/RequestControl.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RequestControl"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ResetRobot.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ResetRobot"
+    },
+    {
+      "bounds": {
+        "response.robot_return": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/RobotMode.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RobotMode"
+    },
+    {
+      "bounds": {
+        "request.project_name": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/RunScript.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RunScript"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/RunTo.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/RunTo"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/ServoJ.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ServoJ"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/ServoP.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ServoP"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetBackDistance.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetBackDistance"
+    },
+    {
+      "bounds": {
+        "request.val_tab": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/SetCoils.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetCoils"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetCollisionLevel.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetCollisionLevel"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetFCCollision.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetFCCollision"
+    },
+    {
+      "bounds": {
+        "request.val_tab": {
+          "string": 256
+        },
+        "request.val_type": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/SetHoldRegs.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetHoldRegs"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetOutputBool.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetOutputBool"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetOutputFloat.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetOutputFloat"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetOutputInt.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetOutputInt"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetPayload.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetPayload"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetPostCollisionMode.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetPostCollisionMode"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetSafeSkin.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetSafeSkin"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetSafeWallEnable.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetSafeWallEnable"
+    },
+    {
+      "bounds": {
+        "request.value": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/SetTool.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetTool"
+    },
+    {
+      "bounds": {
+        "request.parity": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/SetTool485.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetTool485"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetToolMode.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetToolMode"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetToolPower.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetToolPower"
+    },
+    {
+      "bounds": {
+        "request.value": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/SetUser.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetUser"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SetWorkZoneEnable.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SetWorkZoneEnable"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SixForceHome.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SixForceHome"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/SpeedFactor.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/SpeedFactor"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/StartDrag.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/StartDrag"
+    },
+    {
+      "bounds": {
+        "request.param_value": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.trace_name": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/StartPath.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/StartPath"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/StartRTOffset.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/StartRTOffset"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/Stop.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/Stop"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/StopDrag.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/StopDrag"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/StopMoveJog.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/StopMoveJog"
+    },
+    {
+      "bounds": {
+        "request.command": {
+          "string": 256
+        },
+        "response.result": {
+          "string": 256
+        }
+      },
+      "file": "dobot_msgs_v4/srv/TcpDashboard.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/TcpDashboard"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/Tool.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/Tool"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ToolAI.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ToolAI"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ToolDI.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ToolDI"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ToolDO.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ToolDO"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/ToolDOInstant.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/ToolDOInstant"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/User.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/User"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/VelJ.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/VelJ"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_msgs_v4/srv/VelL.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "dobot_msgs_v4/srv/VelL"
+    }
+  ]
+}

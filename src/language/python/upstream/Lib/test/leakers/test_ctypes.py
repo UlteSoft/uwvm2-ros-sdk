@@ -1,0 +1,18 @@
+# @file
+# @brief Preserve the genuine CPython 3.14.8 module.
+# @details Original PSF source semantics and license are retained.
+
+# Taken from Lib/test/test_ctypes/test_keeprefs.py, PointerToStructure.test().
+
+from ctypes import Structure, c_int, POINTER
+import gc
+
+def leak_inner():
+    class POINT(Structure):
+        _fields_ = [("x", c_int)]
+    class RECT(Structure):
+        _fields_ = [("a", POINTER(POINT))]
+
+def leak():
+    leak_inner()
+    gc.collect()

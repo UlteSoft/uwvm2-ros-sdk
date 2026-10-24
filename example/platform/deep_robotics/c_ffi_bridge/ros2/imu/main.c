@@ -1,0 +1,28 @@
+/**
+ * @file main.c
+ * @brief Observe the complete drdds/msg/ImuDataValue.
+ * @details One explicit fixture alias; all canonical bytes are emitted after cleanup.
+ * No publication, service or physical actuator command is issued.
+ */
+#include <deep_robotics/c/observation.h>
+#include <deep_robotics/support/command.h>
+
+/** @brief Run one bounded complete-value observation.
+ * @param argc Exactly two arguments including the program name.
+ * @param argv Borrowed program and explicitly granted native alias.
+ * @return Primary, cleanup, codec or output status, capped to 125.
+ */
+int main(int argc, char** argv)
+{
+    if(argc != 2)
+    {
+        return 22;
+    }
+    roswasmc_bounded_2_drdds_msg_ImuDataValue value;
+    memset(&value, 0, sizeof value);
+    uwvm_vendor_observation facts = deep_robotics_wait_imu(argv[1], &value);
+    uint8_t wire[36];
+    size_t size = 0;
+    uint32_t encoding = facts.response_present ? roswasmc_bounded_2_drdds_msg_ImuDataValue_encode(&value, wire, sizeof wire, &size) : 0;
+    return uwvm_vendor_output(&facts, wire, size, encoding);
+}

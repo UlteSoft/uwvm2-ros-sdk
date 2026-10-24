@@ -1,0 +1,182 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Duration.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Duration"
+    },
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time"
+    },
+    {
+      "bounds": {
+        "goal.devices": {
+          "sequence": 16
+        }
+      },
+      "file": "pal_device_msgs/action/DoTimedLedEffect.action",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/action/DoTimedLedEffect"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/BatteryState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/BatteryState"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/Bumper.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/Bumper"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedBlinkParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedBlinkParams"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4
+        }
+      },
+      "file": "pal_device_msgs/msg/LedDataArrayParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedDataArrayParams"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedEffectParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedEffectParams"
+    },
+    {
+      "bounds": {
+        "topic_name": {
+          "string": 128
+        }
+      },
+      "file": "pal_device_msgs/msg/LedEffectViaTopicParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedEffectViaTopicParams"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedFadeParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedFadeParams"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedFixedColorParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedFixedColorParams"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedFlowParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedFlowParams"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedGroup.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedGroup"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedPreProgrammedParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedPreProgrammedParams"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedProgressParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedProgressParams"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/msg/LedRainbowParams.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/msg/LedRainbowParams"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/srv/CancelEffect.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/srv/CancelEffect"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/srv/ShutdownAndWakeUpRobot.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/srv/ShutdownAndWakeUpRobot"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/srv/TimedBlinkEffect.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/srv/TimedBlinkEffect"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/srv/TimedColourEffect.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/srv/TimedColourEffect"
+    },
+    {
+      "bounds": {},
+      "file": "pal_device_msgs/srv/TimedFadeEffect.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "pal_device_msgs/srv/TimedFadeEffect"
+    },
+    {
+      "bounds": {},
+      "file": "std_msgs/msg/ColorRGBA.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "std_msgs/msg/ColorRGBA"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 128
+        }
+      },
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "std_msgs/msg/Header"
+    }
+  ]
+}

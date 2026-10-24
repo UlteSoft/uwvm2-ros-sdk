@@ -1,0 +1,673 @@
+{
+  "abi": "share/platform/ros/abi-v1.json",
+  "families": {
+    "as": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/as/api.ts",
+        "include/platform/ros/as/codecs.ts",
+        "include/platform/ros/as/command.ts",
+        "include/platform/ros/as/custom-types/generated-r3/fixed_records.ts",
+        "include/platform/ros/as/events.ts",
+        "include/platform/ros/as/local.ts",
+        "include/platform/ros/as/package.json",
+        "include/platform/ros/as/ros1/raw.ts",
+        "include/platform/ros/as/ros1/roswasm.ts",
+        "include/platform/ros/as/ros2/raw.ts",
+        "include/platform/ros/as/ros2/rmw_service/checked.ts",
+        "include/platform/ros/as/ros2/rmw_service/imports.ts",
+        "include/platform/ros/as/ros2/rmw_service/owned.ts",
+        "include/platform/ros/as/ros2/rmw_service/raw.ts",
+        "include/platform/ros/as/ros2/rmw_service/wire.ts",
+        "include/platform/ros/as/ros2/roswasm.ts",
+        "include/platform/ros/as/roswasm.ts"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "c": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/c/command.h",
+        "include/platform/ros/c/custom-types/generated-r3/fixed_records.h",
+        "include/platform/ros/c/native_command.h",
+        "include/platform/ros/c/roswasm/action_bundle.h",
+        "include/platform/ros/c/roswasm/codec.h",
+        "include/platform/ros/c/roswasm/detail/common/abi.h",
+        "include/platform/ros/c/roswasm/detail/common/c_portability.h",
+        "include/platform/ros/c/roswasm/events.h",
+        "include/platform/ros/c/roswasm/executor.h",
+        "include/platform/ros/c/roswasm/library_profile.h",
+        "include/platform/ros/c/roswasm/node.h",
+        "include/platform/ros/c/roswasm/resources.h",
+        "include/platform/ros/c/roswasm/rmw_publisher_v1.h",
+        "include/platform/ros/c/roswasm/rmw_service_v1.h",
+        "include/platform/ros/c/roswasm/rmw_subscription_v1.h",
+        "include/platform/ros/c/roswasm/roswasm.h",
+        "include/platform/ros/c/roswasm/roswasmc.h",
+        "include/platform/ros/c/roswasm/service_client.h",
+        "include/platform/ros/c/roswasm/service_client_v1.h",
+        "include/platform/ros/c/roswasm/session.h"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "c_ffi_bridge": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/c_ffi_bridge/backend.h",
+        "include/platform/ros/c_ffi_bridge/roswasm_c_ffi.h"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "cpp": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/cpp/custom-types/generated-r3/fixed_records.hpp",
+        "include/platform/ros/cpp/native_command.hpp",
+        "include/platform/ros/cpp/roswasm/codec.hpp",
+        "include/platform/ros/cpp/roswasm/cpp_profile.hpp",
+        "include/platform/ros/cpp/roswasm/detail/common/codec.hpp",
+        "include/platform/ros/cpp/roswasm/detail/cpp11.hpp",
+        "include/platform/ros/cpp/roswasm/detail/industrial_portable.hpp",
+        "include/platform/ros/cpp/roswasm/detail/portable.hpp",
+        "include/platform/ros/cpp/roswasm/detail/portable_service_client.hpp",
+        "include/platform/ros/cpp/roswasm/detail/portable_values.hpp",
+        "include/platform/ros/cpp/roswasm/detail/portable_wire.hpp",
+        "include/platform/ros/cpp/roswasm/detail/raw_owner.hpp",
+        "include/platform/ros/cpp/roswasm/detail/unitree_crc_portable.hpp",
+        "include/platform/ros/cpp/roswasm/fast_io_bridge.hpp",
+        "include/platform/ros/cpp/roswasm/library_profile.hpp",
+        "include/platform/ros/cpp/roswasm/roswasm.hpp",
+        "include/platform/ros/cpp/roswasm/roswasmcpp.hpp",
+        "include/platform/ros/cpp/roswasm/scheduler.hpp",
+        "include/platform/ros/cpp/roswasm/service_client.hpp",
+        "include/platform/ros/cpp/roswasm/vendor.hpp",
+        "include/platform/ros/cpp/roswasm/views.hpp"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "csharp": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/csharp/Directory.Build.props",
+        "include/platform/ros/csharp/NativeBridge.targets",
+        "include/platform/ros/csharp/RosWasm/Actions.cs",
+        "include/platform/ros/csharp/RosWasm/Codecs.cs",
+        "include/platform/ros/csharp/RosWasm/Events.cs",
+        "include/platform/ros/csharp/RosWasm/NativeTransport.cs",
+        "include/platform/ros/csharp/RosWasm/Node.cs",
+        "include/platform/ros/csharp/RosWasm/Result.cs",
+        "include/platform/ros/csharp/RosWasm/Retirement.cs",
+        "include/platform/ros/csharp/RosWasm/SelectedRaw.cs",
+        "include/platform/ros/csharp/RosWasm/Session.cs",
+        "include/platform/ros/csharp/Uwvm.RosWasm.csproj",
+        "include/platform/ros/csharp/owned/ControlWire.cs",
+        "include/platform/ros/csharp/owned/NativeOwned.cs",
+        "include/platform/ros/csharp/owned/NativeOwned.targets",
+        "include/platform/ros/csharp/owned/OwnedGroup.cs",
+        "include/platform/ros/csharp/owned/OwnedWire.cs",
+        "include/platform/ros/csharp/owned/PreparedSession.cs",
+        "include/platform/ros/csharp/owned/Uwvm.RosWasm.Owned.csproj",
+        "include/platform/ros/csharp/owned/roswasm_csharp_owned_bridge.h"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "d": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/d/.gitignore",
+        "include/platform/ros/d/dub.json",
+        "include/platform/ros/d/native_command.d",
+        "include/platform/ros/d/source/roswasm/package.d",
+        "include/platform/ros/d/source/roswasm/raw.d",
+        "include/platform/ros/d/source/roswasm/typed.d",
+        "include/platform/ros/d/source/roswasm/wire.d",
+        "include/platform/ros/d/wire.d"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "fsharp": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/fsharp/Directory.Build.props",
+        "include/platform/ros/fsharp/NativeBridge.targets",
+        "include/platform/ros/fsharp/RosWasm/Actions.cs",
+        "include/platform/ros/fsharp/RosWasm/Codecs.cs",
+        "include/platform/ros/fsharp/RosWasm/Events.cs",
+        "include/platform/ros/fsharp/RosWasm/NativeTransport.cs",
+        "include/platform/ros/fsharp/RosWasm/Node.cs",
+        "include/platform/ros/fsharp/RosWasm/Result.cs",
+        "include/platform/ros/fsharp/RosWasm/Retirement.cs",
+        "include/platform/ros/fsharp/RosWasm/SelectedRaw.cs",
+        "include/platform/ros/fsharp/RosWasm/Session.cs",
+        "include/platform/ros/fsharp/Uwvm.RosWasm.csproj",
+        "include/platform/ros/fsharp/owned/ControlWire.cs",
+        "include/platform/ros/fsharp/owned/NativeOwned.cs",
+        "include/platform/ros/fsharp/owned/NativeOwned.targets",
+        "include/platform/ros/fsharp/owned/OwnedGroup.cs",
+        "include/platform/ros/fsharp/owned/OwnedWire.cs",
+        "include/platform/ros/fsharp/owned/PreparedSession.cs",
+        "include/platform/ros/fsharp/owned/Uwvm.RosWasm.Owned.csproj"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "go": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/go/builtin_codec.go",
+        "include/platform/ros/go/client.go",
+        "include/platform/ros/go/codec.go",
+        "include/platform/ros/go/go.mod",
+        "include/platform/ros/go/native_command/command.go",
+        "include/platform/ros/go/operation.go",
+        "include/platform/ros/go/operation_ros1.go",
+        "include/platform/ros/go/operation_ros2.go",
+        "include/platform/ros/go/raw_ros1.go",
+        "include/platform/ros/go/raw_ros2.go",
+        "include/platform/ros/go/selection_error.go",
+        "include/platform/ros/go/session.go",
+        "include/platform/ros/go/typed.go",
+        "include/platform/ros/go/value_helpers.go",
+        "include/platform/ros/go/values.go"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "haskell": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/haskell/Ros/NativeCommand.hs",
+        "include/platform/ros/haskell/roswasm.cabal",
+        "include/platform/ros/haskell/src/RosWasm/Raw.hs",
+        "include/platform/ros/haskell/src/RosWasm/Typed.hs",
+        "include/platform/ros/haskell/src/RosWasm/Wire.hs",
+        "include/platform/ros/haskell/src/RosWasm.hs"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "java": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/java/pom.xml",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Capability.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codec.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codecs.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Node.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedService.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Result.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RosException.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Session.java",
+        "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Transport.java",
+        "include/platform/ros/java/uwvm/ros/ActionSet.java",
+        "include/platform/ros/java/uwvm/ros/Client.java",
+        "include/platform/ros/java/uwvm/ros/NativeCommand.java",
+        "include/platform/ros/java/uwvm/ros/Owner.java",
+        "include/platform/ros/java/uwvm/ros/Standard.java",
+        "include/platform/ros/java/uwvm/ros/Wasi.java",
+        "include/platform/ros/java/uwvm/ros/Wire.java"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "js": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/js/abi.mjs",
+        "include/platform/ros/js/async.mjs",
+        "include/platform/ros/js/bridge.mjs",
+        "include/platform/ros/js/codecs.mjs",
+        "include/platform/ros/js/copied_transport.mjs",
+        "include/platform/ros/js/custom-types/generated-r3/fixed_records.mjs",
+        "include/platform/ros/js/events.mjs",
+        "include/platform/ros/js/guest/bootstrap.mjs",
+        "include/platform/ros/js/guest/owned_service_native_refusals.mjs",
+        "include/platform/ros/js/guest.mjs",
+        "include/platform/ros/js/native_command.mjs",
+        "include/platform/ros/js/owned_service/bridge.mjs",
+        "include/platform/ros/js/owned_service/control.mjs",
+        "include/platform/ros/js/owned_service/owned.mjs",
+        "include/platform/ros/js/owned_service/wire.mjs",
+        "include/platform/ros/js/ownership.mjs",
+        "include/platform/ros/js/package.json",
+        "include/platform/ros/js/raw.mjs",
+        "include/platform/ros/js/relay.mjs",
+        "include/platform/ros/js/roswasm.mjs",
+        "include/platform/ros/js/scheduling.mjs",
+        "include/platform/ros/js/transport.mjs",
+        "include/platform/ros/js/wire.mjs"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "kotlin": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/kotlin/pom.xml",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Capability.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codec.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codecs.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Node.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedService.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Result.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RosException.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Session.java",
+        "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Transport.java"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "lua": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/lua/native_command.lua",
+        "include/platform/ros/lua/roswasm/init.lua",
+        "include/platform/ros/lua/roswasm/wire.lua"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "moonbit": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/moonbit/linear/linear.mbt",
+        "include/platform/ros/moonbit/linear/moon.pkg",
+        "include/platform/ros/moonbit/linear/owned_reserved.mbt",
+        "include/platform/ros/moonbit/moon.mod",
+        "include/platform/ros/moonbit/native_command/native_command.mbt",
+        "include/platform/ros/moonbit/owned_service/access.mbt",
+        "include/platform/ros/moonbit/owned_service/coverage.mbt",
+        "include/platform/ros/moonbit/owned_service/endpoint.mbt",
+        "include/platform/ros/moonbit/owned_service/expected_qos.mbt",
+        "include/platform/ros/moonbit/owned_service/moon.pkg",
+        "include/platform/ros/moonbit/owned_service/raw.mbt",
+        "include/platform/ros/moonbit/owned_service/wire.mbt",
+        "include/platform/ros/moonbit/ros1/client.mbt",
+        "include/platform/ros/moonbit/ros1/coverage.mbt",
+        "include/platform/ros/moonbit/ros1/image.mbt",
+        "include/platform/ros/moonbit/ros1/moon.pkg",
+        "include/platform/ros/moonbit/ros1/raw.mbt",
+        "include/platform/ros/moonbit/ros1/transform.mbt",
+        "include/platform/ros/moonbit/ros2/client.mbt",
+        "include/platform/ros/moonbit/ros2/coverage.mbt",
+        "include/platform/ros/moonbit/ros2/image.mbt",
+        "include/platform/ros/moonbit/ros2/moon.pkg",
+        "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+        "include/platform/ros/moonbit/ros2/raw.mbt",
+        "include/platform/ros/moonbit/ros2/transform.mbt",
+        "include/platform/ros/moonbit/wire/image.mbt",
+        "include/platform/ros/moonbit/wire/moon.pkg",
+        "include/platform/ros/moonbit/wire/transform.mbt",
+        "include/platform/ros/moonbit/wire/wire.mbt"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "nim": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/nim/native_command.nim",
+        "include/platform/ros/nim/roswasm.nimble",
+        "include/platform/ros/nim/src/roswasm/raw.nim",
+        "include/platform/ros/nim/src/roswasm/typed.nim",
+        "include/platform/ros/nim/src/roswasm/wire.nim",
+        "include/platform/ros/nim/src/roswasm.nim",
+        "include/platform/ros/nim/wire.nim"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "objectc": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [],
+      "qualification": "Separate from source preservation."
+    },
+    "odin": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/odin/native_command/native_command.odin",
+        "include/platform/ros/odin/roswasm/client.odin",
+        "include/platform/ros/odin/roswasm/node.odin",
+        "include/platform/ros/odin/roswasm/raw.odin",
+        "include/platform/ros/odin/roswasm/wire.odin",
+        "include/platform/ros/odin/wire.odin"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "php": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/php/RosWasm/NativeCommand.php",
+        "include/platform/ros/php/RosWasm/Transport.php",
+        "include/platform/ros/php/RosWasm/Wire.php",
+        "include/platform/ros/php/RosWasm/Word.php"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "py": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/py/compat/rclpy/example_interfaces/__init__.py",
+        "include/platform/ros/py/compat/rclpy/example_interfaces/srv/__init__.py",
+        "include/platform/ros/py/compat/rclpy/example_interfaces/srv/_add_two_ints.py",
+        "include/platform/ros/py/compat/rclpy/examples_rclpy_minimal_service/__init__.py",
+        "include/platform/ros/py/compat/rclpy/examples_rclpy_minimal_service/service_member_function.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/__init__.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/_dispatch.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/_service_support.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/client.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/clock.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/context.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/node.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/qos.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/service.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/task.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/time.py",
+        "include/platform/ros/py/compat/rclpy/rclpy/timer.py",
+        "include/platform/ros/py/compat/rclpy/std_msgs/__init__.py",
+        "include/platform/ros/py/compat/rclpy/std_msgs/msg/__init__.py",
+        "include/platform/ros/py/compat/rclpy/std_srvs/__init__.py",
+        "include/platform/ros/py/compat/rclpy/std_srvs/srv/__init__.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/__init__.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/client.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/context.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/exceptions.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/executors.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/node.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/qos.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/service.py",
+        "include/platform/ros/py/compat/rclpy/upstream/service_future/rclpy/files/rclpy/rclpy/task.py",
+        "include/platform/ros/py/ros/__init__.py",
+        "include/platform/ros/py/ros/py/__init__.py",
+        "include/platform/ros/py/ros/py/native_command.py",
+        "include/platform/ros/py/ros/py/transport.py",
+        "include/platform/ros/py/ros/py/wire.py",
+        "include/platform/ros/py/roswasm/__init__.py",
+        "include/platform/ros/py/roswasm/_registry.py",
+        "include/platform/ros/py/roswasm/client.py",
+        "include/platform/ros/py/roswasm/codecs.py",
+        "include/platform/ros/py/roswasm/events.py",
+        "include/platform/ros/py/roswasm/owned_service/__init__.py",
+        "include/platform/ros/py/roswasm/owned_service/applications.py",
+        "include/platform/ros/py/roswasm/owned_service/bridge.py",
+        "include/platform/ros/py/roswasm/owned_service/control.py",
+        "include/platform/ros/py/roswasm/owned_service/drive.py",
+        "include/platform/ros/py/roswasm/owned_service/owned.py",
+        "include/platform/ros/py/roswasm/owned_service/wire.py",
+        "include/platform/ros/py/roswasm/raw.py",
+        "include/platform/ros/py/roswasm/transforms.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/__init__.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/common/__init__.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/common/native_gate.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/kinova/__init__.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/kinova/models.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/kinova/sdk.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/native_trajectory_peer.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/spot/__init__.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/spot/native_provider.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/spot/native_sensors.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/spot/native_sessions.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/stretch/__init__.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/stretch/sdk.py",
+        "include/platform/ros/py/uwvm_mobile_manipulation/trajectory_client.py"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "r": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/r/roswasm/native_command.R",
+        "include/platform/ros/r/roswasm/wire.R"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "rs": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/rs/Cargo.lock",
+        "include/platform/ros/rs/Cargo.toml",
+        "include/platform/ros/rs/LICENSE",
+        "include/platform/ros/rs/custom-types/generated-r3/fixed_records.rs",
+        "include/platform/ros/rs/native_command/lib.rs",
+        "include/platform/ros/rs/owned_service/Cargo.lock",
+        "include/platform/ros/rs/owned_service/Cargo.toml",
+        "include/platform/ros/rs/owned_service/recipe.json",
+        "include/platform/ros/rs/owned_service/src/lib.rs",
+        "include/platform/ros/rs/owned_service/src/raw.rs",
+        "include/platform/ros/rs/owned_service/src/records.rs",
+        "include/platform/ros/rs/owned_service/src/wire.rs",
+        "include/platform/ros/rs/src/callback.rs",
+        "include/platform/ros/rs/src/capability.rs",
+        "include/platform/ros/rs/src/codec.rs",
+        "include/platform/ros/rs/src/events.rs",
+        "include/platform/ros/rs/src/lib.rs",
+        "include/platform/ros/rs/src/local.rs",
+        "include/platform/ros/rs/src/node.rs",
+        "include/platform/ros/rs/src/raw/mod.rs",
+        "include/platform/ros/rs/src/raw/ros1.rs",
+        "include/platform/ros/rs/src/raw/ros2.rs",
+        "include/platform/ros/rs/src/session.rs",
+        "include/platform/ros/rs/src/typed.rs"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "ruby": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [],
+      "qualification": "Separate from source preservation."
+    },
+    "swift": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/swift/NativeCommand.swift",
+        "include/platform/ros/swift/Package.swift",
+        "include/platform/ros/swift/Sources/CRosWasm/module.modulemap",
+        "include/platform/ros/swift/Sources/RosWasm/Owner.swift",
+        "include/platform/ros/swift/Sources/RosWasm/Raw.swift",
+        "include/platform/ros/swift/Sources/RosWasm/Typed.swift",
+        "include/platform/ros/swift/Sources/RosWasm/Wire.swift"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "tinygo": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/tinygo/capability.go",
+        "include/platform/ros/tinygo/codec.go",
+        "include/platform/ros/tinygo/construction.go",
+        "include/platform/ros/tinygo/custom-types/generated-r3/fixed_records.go",
+        "include/platform/ros/tinygo/event_backend_ros1.go",
+        "include/platform/ros/tinygo/event_backend_ros2.go",
+        "include/platform/ros/tinygo/event_client.go",
+        "include/platform/ros/tinygo/event_dispatch.go",
+        "include/platform/ros/tinygo/event_stream.go",
+        "include/platform/ros/tinygo/events.go",
+        "include/platform/ros/tinygo/executor.go",
+        "include/platform/ros/tinygo/go.mod",
+        "include/platform/ros/tinygo/local.go",
+        "include/platform/ros/tinygo/native_command/command.go",
+        "include/platform/ros/tinygo/node.go",
+        "include/platform/ros/tinygo/owner_state.go",
+        "include/platform/ros/tinygo/raw_ros1.go",
+        "include/platform/ros/tinygo/raw_ros2.go",
+        "include/platform/ros/tinygo/rmwservice/endpoint.go",
+        "include/platform/ros/tinygo/rmwservice/group.go",
+        "include/platform/ros/tinygo/rmwservice/raw_ros2.go",
+        "include/platform/ros/tinygo/rmwservice/recipe.json",
+        "include/platform/ros/tinygo/rmwservice/typed.go",
+        "include/platform/ros/tinygo/rmwservice/wire.go",
+        "include/platform/ros/tinygo/selection_error.go",
+        "include/platform/ros/tinygo/server_callbacks.go",
+        "include/platform/ros/tinygo/session.go",
+        "include/platform/ros/tinygo/typed.go",
+        "include/platform/ros/tinygo/types.go"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "vbnet": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/vbnet/Directory.Build.props",
+        "include/platform/ros/vbnet/NativeBridge.targets",
+        "include/platform/ros/vbnet/RosWasm/Actions.cs",
+        "include/platform/ros/vbnet/RosWasm/Codecs.cs",
+        "include/platform/ros/vbnet/RosWasm/Events.cs",
+        "include/platform/ros/vbnet/RosWasm/NativeTransport.cs",
+        "include/platform/ros/vbnet/RosWasm/Node.cs",
+        "include/platform/ros/vbnet/RosWasm/Result.cs",
+        "include/platform/ros/vbnet/RosWasm/Retirement.cs",
+        "include/platform/ros/vbnet/RosWasm/SelectedRaw.cs",
+        "include/platform/ros/vbnet/RosWasm/Session.cs",
+        "include/platform/ros/vbnet/Uwvm.RosWasm.csproj",
+        "include/platform/ros/vbnet/owned/ControlWire.cs",
+        "include/platform/ros/vbnet/owned/NativeOwned.cs",
+        "include/platform/ros/vbnet/owned/NativeOwned.targets",
+        "include/platform/ros/vbnet/owned/OwnedGroup.cs",
+        "include/platform/ros/vbnet/owned/OwnedWire.cs",
+        "include/platform/ros/vbnet/owned/PreparedSession.cs",
+        "include/platform/ros/vbnet/owned/Uwvm.RosWasm.Owned.csproj"
+      ],
+      "qualification": "Separate from source preservation."
+    },
+    "zig": {
+      "examples": [
+        "publish_string",
+        "subscribe_string",
+        "call_trigger"
+      ],
+      "public_sources": [
+        "include/platform/ros/zig/client.zig",
+        "include/platform/ros/zig/native_command.zig",
+        "include/platform/ros/zig/node.zig",
+        "include/platform/ros/zig/ros1.zig",
+        "include/platform/ros/zig/ros2.zig",
+        "include/platform/ros/zig/wire.zig"
+      ],
+      "qualification": "Separate from source preservation."
+    }
+  },
+  "format": "uwvm-complete-ros-source-catalog-v1"
+}

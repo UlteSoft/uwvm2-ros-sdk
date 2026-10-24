@@ -1,0 +1,19 @@
+{
+  "format": "uwvm-jvm-native-closure-v1",
+  "host": "linux-x86_64",
+  "jdk": "21.0.10+7-Ubuntu-125.10",
+  "kotlin": "2.1.20",
+  "teavm": "0.13.1 WEBASSEMBLY_WASI",
+  "archive": "jvm-aot-linux-x86_64.xmz",
+  "archive_sha256": "71719ce3462b89957f3297e9d8db97004a058ced15f16858293b514c92e7a5aa",
+  "file_count": 266,
+  "original_tool_manifest_sha256": "34ff258feee9a75d40214ed238f16d98c3926b24501958eb8f74fd5789e173aa",
+  "original_tool_files_modified": false,
+  "source_and_licenses": "inputs.json and provenance/",
+  "qualified_source_languages": [
+    "java",
+    "kotlin"
+  ],
+  "guest_target": "wasm32-wasip1",
+  "compiler_host_aarch64_qualified": false
+}

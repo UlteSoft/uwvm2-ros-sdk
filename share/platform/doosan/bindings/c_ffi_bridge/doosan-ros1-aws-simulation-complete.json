@@ -1,0 +1,3504 @@
+{
+  "format": "vendor-language-source-inputs-v1",
+  "platform": "doosan",
+  "language": "c_ffi_bridge",
+  "domain": "doosan-ros1-aws-simulation-complete",
+  "backend": "ros1",
+  "include_root": "include/platform",
+  "source_root": "include/platform/doosan/c_ffi_bridge/ros1/doosan-ros1-aws-simulation-complete",
+  "model_module": "doosan",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "record_catalog": "share/platform/doosan/domains/doosan-ros1-aws-simulation-complete.ir.json",
+  "target_widths_requested": [
+    32,
+    64
+  ],
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "typed_interface_delegations": [
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateModbus_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateModbus_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_ConfigCreateModbusRequest const* request, roswasmc_bounded_1_dsr_msgs_ConfigCreateModbusResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateModbusRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateModbusResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateModbus_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateModbus_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_ConfigCreateModbusRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateModbusRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateModbus_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateModbus_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_ConfigCreateModbusResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateModbusResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateTcp_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateTcp_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_ConfigCreateTcpRequest const* request, roswasmc_bounded_1_dsr_msgs_ConfigCreateTcpResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateTcpRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateTcpResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateTcp_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateTcp_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_ConfigCreateTcpRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateTcpRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateTcp_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateTcp_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_ConfigCreateTcpResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateTcpResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateTool_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateTool_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_ConfigCreateToolRequest const* request, roswasmc_bounded_1_dsr_msgs_ConfigCreateToolResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateToolRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateToolResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateTool_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateTool_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_ConfigCreateToolRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateToolRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigCreateTool_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigCreateTool_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_ConfigCreateToolResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigCreateToolResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbus_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbus_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbusRequest const* request, roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbusResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbusRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbusResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbus_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbus_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbusRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbusRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbus_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbus_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbusResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteModbusResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcp_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcp_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcpRequest const* request, roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcpResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcpRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcpResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcp_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcp_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcpRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcpRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcp_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcp_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcpResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTcpResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTool_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteTool_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_ConfigDeleteToolRequest const* request, roswasmc_bounded_1_dsr_msgs_ConfigDeleteToolResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteToolRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteToolResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTool_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteTool_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_ConfigDeleteToolRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteToolRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_ConfigDeleteTool_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_ConfigDeleteTool_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_ConfigDeleteToolResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_ConfigDeleteToolResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlPause_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlPause_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_DrlPauseRequest const* request, roswasmc_bounded_1_dsr_msgs_DrlPauseResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlPauseRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlPauseResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlPause_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlPause_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_DrlPauseRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlPauseRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlPause_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlPause_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_DrlPauseResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlPauseResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlResume_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlResume_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_DrlResumeRequest const* request, roswasmc_bounded_1_dsr_msgs_DrlResumeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlResumeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlResumeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlResume_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlResume_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_DrlResumeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlResumeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlResume_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlResume_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_DrlResumeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlResumeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlStart_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlStart_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_DrlStartRequest const* request, roswasmc_bounded_1_dsr_msgs_DrlStartResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlStartRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlStartResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlStart_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlStart_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_DrlStartRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlStartRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlStart_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlStart_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_DrlStartResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlStartResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlStop_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlStop_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_DrlStopRequest const* request, roswasmc_bounded_1_dsr_msgs_DrlStopResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlStopRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlStopResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlStop_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlStop_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_DrlStopRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlStopRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_DrlStop_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_DrlStop_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_DrlStopResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_DrlStopResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInput_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInputRequest const* request, roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInputResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInputRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInputResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInput_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInputRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInputRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInput_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInputResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxAnalogInputResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInput_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInputRequest const* request, roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInputResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInputRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInputResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInput_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInputRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInputRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInput_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInputResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCtrlBoxDigitalInputResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentPose_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentPose_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetCurrentPoseRequest const* request, roswasmc_bounded_1_dsr_msgs_GetCurrentPoseResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentPoseRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentPoseResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentPose_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentPose_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetCurrentPoseRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentPoseRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentPose_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentPose_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetCurrentPoseResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentPoseResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpace_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpace_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpaceRequest const* request, roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpaceResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpaceRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpaceResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpace_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpace_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpaceRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpaceRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpace_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpace_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpaceResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentSolutionSpaceResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentTcp_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentTcp_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetCurrentTcpRequest const* request, roswasmc_bounded_1_dsr_msgs_GetCurrentTcpResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentTcpRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentTcpResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentTcp_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentTcp_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetCurrentTcpRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentTcpRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentTcp_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentTcp_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetCurrentTcpResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentTcpResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentTool_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentTool_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetCurrentToolRequest const* request, roswasmc_bounded_1_dsr_msgs_GetCurrentToolResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentToolRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentToolResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentTool_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentTool_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetCurrentToolRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentToolRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetCurrentTool_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetCurrentTool_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetCurrentToolResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetCurrentToolResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetDrlState_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetDrlState_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetDrlStateRequest const* request, roswasmc_bounded_1_dsr_msgs_GetDrlStateResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetDrlStateRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetDrlStateResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetDrlState_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetDrlState_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetDrlStateRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetDrlStateRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetDrlState_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetDrlState_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetDrlStateResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetDrlStateResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetExternalTorque_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetExternalTorque_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetExternalTorqueRequest const* request, roswasmc_bounded_1_dsr_msgs_GetExternalTorqueResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetExternalTorqueRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetExternalTorqueResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetExternalTorque_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetExternalTorque_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetExternalTorqueRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetExternalTorqueRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetExternalTorque_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetExternalTorque_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetExternalTorqueResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetExternalTorqueResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetJointTorque_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetJointTorque_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetJointTorqueRequest const* request, roswasmc_bounded_1_dsr_msgs_GetJointTorqueResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetJointTorqueRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetJointTorqueResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetJointTorque_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetJointTorque_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetJointTorqueRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetJointTorqueRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetJointTorque_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetJointTorque_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetJointTorqueResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetJointTorqueResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetLastAlarm_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetLastAlarm_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetLastAlarmRequest const* request, roswasmc_bounded_1_dsr_msgs_GetLastAlarmResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetLastAlarmRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetLastAlarmResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetLastAlarm_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetLastAlarm_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetLastAlarmRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetLastAlarmRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetLastAlarm_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetLastAlarm_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetLastAlarmResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetLastAlarmResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetModbusInput_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetModbusInput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetModbusInputRequest const* request, roswasmc_bounded_1_dsr_msgs_GetModbusInputResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetModbusInputRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetModbusInputResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetModbusInput_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetModbusInput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetModbusInputRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetModbusInputRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetModbusInput_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetModbusInput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetModbusInputResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetModbusInputResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotMode_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetRobotModeRequest const* request, roswasmc_bounded_1_dsr_msgs_GetRobotModeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotModeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotModeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotMode_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetRobotModeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotModeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotMode_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetRobotModeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotModeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotSpeedMode_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotSpeedMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetRobotSpeedModeRequest const* request, roswasmc_bounded_1_dsr_msgs_GetRobotSpeedModeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotSpeedModeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotSpeedModeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotSpeedMode_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotSpeedMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetRobotSpeedModeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotSpeedModeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotSpeedMode_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotSpeedMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetRobotSpeedModeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotSpeedModeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotState_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotState_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetRobotStateRequest const* request, roswasmc_bounded_1_dsr_msgs_GetRobotStateResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotStateRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotStateResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotState_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotState_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetRobotStateRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotStateRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotState_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotState_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetRobotStateResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotStateResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotSystem_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotSystem_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetRobotSystemRequest const* request, roswasmc_bounded_1_dsr_msgs_GetRobotSystemResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotSystemRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotSystemResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotSystem_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotSystem_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetRobotSystemRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotSystemRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetRobotSystem_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetRobotSystem_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetRobotSystemResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetRobotSystemResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetToolDigitalInput_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetToolDigitalInput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetToolDigitalInputRequest const* request, roswasmc_bounded_1_dsr_msgs_GetToolDigitalInputResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetToolDigitalInputRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetToolDigitalInputResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetToolDigitalInput_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetToolDigitalInput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetToolDigitalInputRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetToolDigitalInputRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetToolDigitalInput_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetToolDigitalInput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetToolDigitalInputResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetToolDigitalInputResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetToolForce_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetToolForce_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_GetToolForceRequest const* request, roswasmc_bounded_1_dsr_msgs_GetToolForceResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetToolForceRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetToolForceResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetToolForce_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetToolForce_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_GetToolForceRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetToolForceRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_GetToolForce_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_GetToolForce_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_GetToolForceResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_GetToolForceResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Jog_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Jog_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_JogRequest const* request, roswasmc_bounded_1_dsr_msgs_JogResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_JogRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_JogResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Jog_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Jog_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_JogRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_JogRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Jog_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Jog_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_JogResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_JogResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_JogMulti_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_JogMulti_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_JogMultiRequest const* request, roswasmc_bounded_1_dsr_msgs_JogMultiResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_JogMultiRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_JogMultiResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_JogMulti_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_JogMulti_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_JogMultiRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_JogMultiRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_JogMulti_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_JogMulti_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_JogMultiResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_JogMultiResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveBlending_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveBlending_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveBlendingRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveBlendingResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveBlendingRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveBlendingResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveBlending_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveBlending_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveBlendingRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveBlendingRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveBlending_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveBlending_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveBlendingResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveBlendingResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveCircle_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveCircle_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveCircleRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveCircleResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveCircleRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveCircleResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveCircle_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveCircle_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveCircleRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveCircleRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveCircle_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveCircle_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveCircleResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveCircleResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveJoint_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveJoint_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveJointRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveJointResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveJointRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveJointResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveJoint_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveJoint_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveJointRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveJointRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveJoint_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveJoint_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveJointResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveJointResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveJointx_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveJointx_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveJointxRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveJointxResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveJointxRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveJointxResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveJointx_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveJointx_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveJointxRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveJointxRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveJointx_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveJointx_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveJointxResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveJointxResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveLine_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveLine_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveLineRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveLineResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveLineRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveLineResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveLine_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveLine_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveLineRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveLineRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveLine_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveLine_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveLineResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveLineResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MovePause_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MovePause_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MovePauseRequest const* request, roswasmc_bounded_1_dsr_msgs_MovePauseResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MovePauseRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MovePauseResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MovePause_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MovePause_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MovePauseRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MovePauseRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MovePause_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MovePause_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MovePauseResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MovePauseResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MovePeriodic_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MovePeriodic_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MovePeriodicRequest const* request, roswasmc_bounded_1_dsr_msgs_MovePeriodicResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MovePeriodicRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MovePeriodicResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MovePeriodic_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MovePeriodic_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MovePeriodicRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MovePeriodicRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MovePeriodic_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MovePeriodic_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MovePeriodicResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MovePeriodicResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveResume_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveResume_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveResumeRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveResumeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveResumeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveResumeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveResume_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveResume_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveResumeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveResumeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveResume_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveResume_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveResumeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveResumeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSpiral_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSpiral_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveSpiralRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveSpiralResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSpiralRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSpiralResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSpiral_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSpiral_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveSpiralRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSpiralRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSpiral_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSpiral_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveSpiralResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSpiralResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSplineJoint_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSplineJoint_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveSplineJointRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveSplineJointResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSplineJointRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSplineJointResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSplineJoint_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSplineJoint_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveSplineJointRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSplineJointRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSplineJoint_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSplineJoint_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveSplineJointResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSplineJointResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSplineTask_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSplineTask_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveSplineTaskRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveSplineTaskResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSplineTaskRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSplineTaskResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSplineTask_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSplineTask_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveSplineTaskRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSplineTaskRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveSplineTask_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveSplineTask_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveSplineTaskResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveSplineTaskResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveStop_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveStop_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveStopRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveStopResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveStopRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveStopResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveStop_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveStop_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveStopRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveStopRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveStop_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveStop_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveStopResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveStopResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveWait_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveWait_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_MoveWaitRequest const* request, roswasmc_bounded_1_dsr_msgs_MoveWaitResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveWaitRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveWaitResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveWait_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveWait_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_MoveWaitRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveWaitRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_MoveWait_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_MoveWait_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_MoveWaitResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_MoveWaitResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FClose_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FClose_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_Robotiq2FCloseRequest const* request, roswasmc_bounded_1_dsr_msgs_Robotiq2FCloseResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FCloseRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FCloseResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FClose_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FClose_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_Robotiq2FCloseRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FCloseRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FClose_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FClose_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_Robotiq2FCloseResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FCloseResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FMove_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FMove_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_Robotiq2FMoveRequest const* request, roswasmc_bounded_1_dsr_msgs_Robotiq2FMoveResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FMoveRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FMoveResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FMove_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FMove_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_Robotiq2FMoveRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FMoveRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FMove_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FMove_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_Robotiq2FMoveResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FMoveResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FOpen_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FOpen_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_Robotiq2FOpenRequest const* request, roswasmc_bounded_1_dsr_msgs_Robotiq2FOpenResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FOpenRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FOpenResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FOpen_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FOpen_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_Robotiq2FOpenRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FOpenRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_Robotiq2FOpen_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_Robotiq2FOpen_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_Robotiq2FOpenResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_Robotiq2FOpenResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SerialSendData_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SerialSendData_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SerialSendDataRequest const* request, roswasmc_bounded_1_dsr_msgs_SerialSendDataResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SerialSendDataRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SerialSendDataResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SerialSendData_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SerialSendData_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SerialSendDataRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SerialSendDataRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SerialSendData_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SerialSendData_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SerialSendDataResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SerialSendDataResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputType_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputType_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputTypeRequest const* request, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputTypeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputTypeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputTypeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputType_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputType_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputTypeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputTypeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputType_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputType_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputTypeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogInputTypeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutput_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputRequest const* request, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutput_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutput_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputType_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputType_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputTypeRequest const* request, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputTypeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputTypeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputTypeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputType_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputType_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputTypeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputTypeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputType_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputType_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputTypeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxAnalogOutputTypeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutput_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutputRequest const* request, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutputResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutputRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutputResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutput_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutputRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutputRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutput_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutputResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCtrlBoxDigitalOutputResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCurrentTcp_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCurrentTcp_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetCurrentTcpRequest const* request, roswasmc_bounded_1_dsr_msgs_SetCurrentTcpResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCurrentTcpRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCurrentTcpResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCurrentTcp_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCurrentTcp_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetCurrentTcpRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCurrentTcpRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCurrentTcp_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCurrentTcp_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetCurrentTcpResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCurrentTcpResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCurrentTool_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCurrentTool_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetCurrentToolRequest const* request, roswasmc_bounded_1_dsr_msgs_SetCurrentToolResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCurrentToolRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCurrentToolResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCurrentTool_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCurrentTool_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetCurrentToolRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCurrentToolRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetCurrentTool_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetCurrentTool_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetCurrentToolResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetCurrentToolResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetModbusOutput_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetModbusOutput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetModbusOutputRequest const* request, roswasmc_bounded_1_dsr_msgs_SetModbusOutputResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetModbusOutputRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetModbusOutputResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetModbusOutput_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetModbusOutput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetModbusOutputRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetModbusOutputRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetModbusOutput_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetModbusOutput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetModbusOutputResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetModbusOutputResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotMode_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetRobotModeRequest const* request, roswasmc_bounded_1_dsr_msgs_SetRobotModeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotModeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotModeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotMode_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetRobotModeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotModeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotMode_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetRobotModeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotModeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotSpeedMode_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotSpeedMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetRobotSpeedModeRequest const* request, roswasmc_bounded_1_dsr_msgs_SetRobotSpeedModeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotSpeedModeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotSpeedModeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotSpeedMode_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotSpeedMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetRobotSpeedModeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotSpeedModeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotSpeedMode_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotSpeedMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetRobotSpeedModeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotSpeedModeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotSystem_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotSystem_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetRobotSystemRequest const* request, roswasmc_bounded_1_dsr_msgs_SetRobotSystemResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotSystemRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotSystemResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotSystem_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotSystem_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetRobotSystemRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotSystemRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetRobotSystem_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetRobotSystem_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetRobotSystemResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetRobotSystemResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetSafeStopResetType_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetSafeStopResetType_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetSafeStopResetTypeRequest const* request, roswasmc_bounded_1_dsr_msgs_SetSafeStopResetTypeResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetSafeStopResetTypeRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetSafeStopResetTypeResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetSafeStopResetType_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetSafeStopResetType_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetSafeStopResetTypeRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetSafeStopResetTypeRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetSafeStopResetType_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetSafeStopResetType_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetSafeStopResetTypeResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetSafeStopResetTypeResponse const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutput_call",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutputRequest const* request, roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutputResponse* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutputRequest const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutputResponse*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutput_poll",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutputRequest* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutputRequest*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutput_respond",
+      "export": "doosan_roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutputResponse const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_1_dsr_msgs_SetToolDigitalOutputResponse const*",
+          "response"
+        ]
+      ]
+    }
+  ],
+  "semantics": "Exact existing C owner/service/action operations; no private transport or permission implementation.",
+  "support_source_roots": [
+    "src/platform"
+  ],
+  "retained_native_operation_flows": "src/platform/doosan/flows"
+}

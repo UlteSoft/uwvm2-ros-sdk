@@ -1,0 +1,225 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "api_version": 1,
+  "id": "ubtech",
+  "module": "tools/platform/ubtech/provider.lua",
+  "backends": {
+    "ros2": {
+      "distributions": [
+        "humble",
+        "jazzy"
+      ]
+    }
+  },
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {},
+  "scenarios_restricted": false,
+  "qualification": "Configuration routes only; exact producer and runtime acceptance remain separate.",
+  "platform": "ubtech",
+  "default_authority": [],
+  "profiles": {
+    "ros2_main": {
+      "backend": "ros2",
+      "distributions": [
+        "humble",
+        "jazzy"
+      ],
+      "source_family": "ubtech-ros2-main-complete",
+      "records": 8,
+      "interfaces": 8,
+      "modules": {
+        "ruby": [
+          {
+            "name": "roswasm/wire",
+            "path": "include/platform/ros/ruby/roswasm/wire.rb"
+          },
+          {
+            "name": "roswasm/transport",
+            "path": "include/platform/ros/ruby/roswasm/transport.rb"
+          },
+          {
+            "name": "ubtech/ruby/ros2_main/records",
+            "path": "include/platform/ubtech/ruby/ros2_main/records.rb"
+          },
+          {
+            "name": "uwvm/ruby/observation",
+            "path": "src/language/ruby/observation.rb"
+          }
+        ],
+        "php": [
+          {
+            "name": "RosWasm/Word",
+            "path": "include/platform/ros/php/RosWasm/Word.php"
+          },
+          {
+            "name": "RosWasm/Wire",
+            "path": "include/platform/ros/php/RosWasm/Wire.php"
+          },
+          {
+            "name": "RosWasm/Transport",
+            "path": "include/platform/ros/php/RosWasm/Transport.php"
+          },
+          {
+            "name": "ubtech/php/ros2_main/records",
+            "path": "include/platform/ubtech/php/ros2_main/records.php"
+          },
+          {
+            "name": "uwvm/php/observation",
+            "path": "src/language/php/Observation.php"
+          }
+        ],
+        "py": [
+          {
+            "name": "ros",
+            "path": "include/platform/ros/py/ros/__init__.py",
+            "package": true
+          },
+          {
+            "name": "ros.py",
+            "path": "include/platform/ros/py/ros/py/__init__.py",
+            "package": true
+          },
+          {
+            "name": "ros.py.wire",
+            "path": "include/platform/ros/py/ros/py/wire.py"
+          },
+          {
+            "name": "ros.py.transport",
+            "path": "include/platform/ros/py/ros/py/transport.py"
+          },
+          {
+            "name": "ubtech",
+            "path": "include/platform/ubtech/__init__.py",
+            "package": true
+          },
+          {
+            "name": "ubtech.py",
+            "path": "include/platform/ubtech/py/__init__.py",
+            "package": true
+          },
+          {
+            "name": "ubtech.py.ros2_main",
+            "path": "include/platform/ubtech/py/ros2_main/__init__.py",
+            "package": true
+          },
+          {
+            "name": "ubtech.py.ros2_main.records",
+            "path": "include/platform/ubtech/py/ros2_main/records.py"
+          }
+        ],
+        "js": [
+          {
+            "name": "ros/js/wire",
+            "path": "include/platform/ros/js/wire.mjs"
+          },
+          {
+            "name": "ros/js/transport",
+            "path": "include/platform/ros/js/transport.mjs"
+          },
+          {
+            "name": "ubtech/js/ros2_main/records",
+            "path": "include/platform/ubtech/js/ros2_main/records.mjs"
+          }
+        ],
+        "lua": [
+          {
+            "name": "roswasm",
+            "path": "include/platform/ros/lua/roswasm/init.lua"
+          },
+          {
+            "name": "roswasm/wire",
+            "path": "include/platform/ros/lua/roswasm/wire.lua"
+          },
+          {
+            "name": "ubtech/lua/ros2_main/records",
+            "path": "include/platform/ubtech/lua/ros2_main/records.lua"
+          }
+        ],
+        "r": [
+          {
+            "name": "roswasm/wire",
+            "path": "include/platform/ros/r/roswasm/wire.R"
+          },
+          {
+            "name": "uwvm/r/native",
+            "path": "src/language/r/native.R"
+          },
+          {
+            "name": "ubtech/r/ros2_main/records",
+            "path": "include/platform/ubtech/r/ros2_main/records.R"
+          },
+          {
+            "name": "uwvm/r/observation",
+            "path": "src/language/r/observation.R"
+          }
+        ]
+      },
+      "source_only": true,
+      "native_identity_qualification_required": true,
+      "bindings": {
+        "go": {
+          "module": "ubtech/go/ros2_main",
+          "root": "include/platform/ubtech/go/ros2/ubtech-ros2-main-complete",
+          "shared_module": "uwvm2.local/roswasmgo",
+          "backend_tag": "ros2",
+          "complete_original_records": 8
+        },
+        "tinygo": {
+          "module": "ubtech/tinygo/ros2_main",
+          "root": "include/platform/ubtech/tinygo/ros2/ubtech-ros2-main-complete",
+          "shared_module": "uwvm2.local/roswasm",
+          "backend_tag": "ros2",
+          "complete_original_records": 8
+        },
+        "d": {
+          "module": "ubtech.d.ros2_main.records",
+          "source": "include/platform/ubtech/d/ros2_main/records.d",
+          "shared_imports": [
+            "roswasm",
+            "roswasm.wire"
+          ],
+          "producer": "one shared genuine D/BetterC compiler; consumer integration pending",
+          "extra_sources": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Example sources and xmake.lua are delivery inputs; generated outputs are not.
+build/
+build-*/
+.xmake/
+.uwvm-ros/
+__pycache__/
+*.py[cod]
+*.wasm
+*.a
+*.o
+*.obj
+*.log
+*.stdout
+*.stderr
+*.tmp
+*.temp
+core
+core.*

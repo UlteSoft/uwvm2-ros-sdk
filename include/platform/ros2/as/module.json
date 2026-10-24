@@ -1,0 +1,8 @@
+{
+  "default_authority": [],
+  "language": "as",
+  "module_root": ".",
+  "platform": "ros2",
+  "producer_required": false,
+  "source_only": true
+}

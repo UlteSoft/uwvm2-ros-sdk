@@ -1,0 +1,453 @@
+{
+  "catalog_sha256": "2564b85a978f7ecad0f145d82b3415f68559c9b7dddf658de7aebd55a09e65bd",
+  "default_authority": [],
+  "definitions": [
+    {
+      "bytes": 421,
+      "generation_file": "builtin_interfaces/msg/Time.msg",
+      "git_blob_sha1": "03cc83f8622675b1ce70fcc5b6d260b1dd13d860",
+      "kind": "msg",
+      "original_file": "builtin_interfaces/msg/Time.msg",
+      "repository": "rcl_jazzy",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd",
+      "type": "builtin_interfaces/msg/Time"
+    },
+    {
+      "bytes": 1511,
+      "generation_file": "flexiv_msgs/action/ErrorRecovery.action",
+      "git_blob_sha1": "a5f88456fd2080745d525ad5793f6c02d13e527b",
+      "kind": "action",
+      "original_file": "flexiv_msgs/action/ErrorRecovery.action",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "dc028136a2af814d4ac79da26b6fb69abb8838c6b16d7a9800ea2187d52974e9",
+      "type": "flexiv_msgs/action/ErrorRecovery"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "flexiv_msgs/action/Grasp.action",
+      "git_blob_sha1": "cef5889065bd92a3ecb332f383a4a1ea64bff224",
+      "kind": "action",
+      "original_file": "flexiv_msgs/action/Grasp.action",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c",
+      "type": "flexiv_msgs/action/Grasp"
+    },
+    {
+      "bytes": 161,
+      "generation_file": "flexiv_msgs/action/Move.action",
+      "git_blob_sha1": "5523983266e53166ba0795d77a014bab75cf9c5a",
+      "kind": "action",
+      "original_file": "flexiv_msgs/action/Move.action",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8",
+      "type": "flexiv_msgs/action/Move"
+    },
+    {
+      "bytes": 759,
+      "generation_file": "flexiv_msgs/msg/CartesianMotionForce.msg",
+      "git_blob_sha1": "4c8cbbd3a086b9285068728cb03ce092075b5e2a",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/CartesianMotionForce.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "fc8db2dcf45bbe32790e15c023fdc856dba01aad94b6a2b68b8e6a25a3fbdaf4",
+      "type": "flexiv_msgs/msg/CartesianMotionForce"
+    },
+    {
+      "bytes": 21,
+      "generation_file": "flexiv_msgs/msg/Digital.msg",
+      "git_blob_sha1": "6183945954e683178d10d2fde80da6ed1d314de9",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/Digital.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b",
+      "type": "flexiv_msgs/msg/Digital"
+    },
+    {
+      "bytes": 17,
+      "generation_file": "flexiv_msgs/msg/GPIOStates.msg",
+      "git_blob_sha1": "f3cbe4119bc5b380eeb10584d80cde9429f4575b",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/GPIOStates.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629",
+      "type": "flexiv_msgs/msg/GPIOStates"
+    },
+    {
+      "bytes": 756,
+      "generation_file": "flexiv_msgs/msg/JointImpedance.msg",
+      "git_blob_sha1": "15480f6bb13c16a648f99244ebc007643720c2bf",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/JointImpedance.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "c7ef77c08cb85f57dc1adfd5256ff792632a5c36c5cd338a8a4421462942cd67",
+      "type": "flexiv_msgs/msg/JointImpedance"
+    },
+    {
+      "bytes": 692,
+      "generation_file": "flexiv_msgs/msg/JointInertiaScale.msg",
+      "git_blob_sha1": "81d57a4306af8e9949b02d3db687d10d996af906",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/JointInertiaScale.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "1e1918f58c5ad198a36e1e796185d0353e0e96c0214a7db50be4e0fd6b4ba57c",
+      "type": "flexiv_msgs/msg/JointInertiaScale"
+    },
+    {
+      "bytes": 41,
+      "generation_file": "flexiv_msgs/msg/JointPosVel.msg",
+      "git_blob_sha1": "102f8fdbe9da82e1b2ecf360fa5bfa34d05f522c",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/JointPosVel.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b",
+      "type": "flexiv_msgs/msg/JointPosVel"
+    },
+    {
+      "bytes": 705,
+      "generation_file": "flexiv_msgs/msg/MaxContactTorque.msg",
+      "git_blob_sha1": "77949a1b827fb7596018ef568000acf8af88e39a",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/MaxContactTorque.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "daeb075dd4e3c44c3cc8dc56cd29648fd56aec2eb2f0d70d9c1e2ccdc6a491d7",
+      "type": "flexiv_msgs/msg/MaxContactTorque"
+    },
+    {
+      "bytes": 577,
+      "generation_file": "flexiv_msgs/msg/Mode.msg",
+      "git_blob_sha1": "5695ebcd057ca92742d852ac42ecdb67e34945c0",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/Mode.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "32541d8e8122ff30e21360c65ba9f4a9d7f24d8c526272fa6f76d69f05079a91",
+      "type": "flexiv_msgs/msg/Mode"
+    },
+    {
+      "bytes": 1588,
+      "generation_file": "flexiv_msgs/msg/OperationalStatus.msg",
+      "git_blob_sha1": "ec2c166d14544c3e0a66d111c88a81ad7b22db0e",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/OperationalStatus.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "419c332be71ea5199c63907b81945cfe724f05f56eb7ef88690473e019fd9936",
+      "type": "flexiv_msgs/msg/OperationalStatus"
+    },
+    {
+      "bytes": 626,
+      "generation_file": "flexiv_msgs/msg/RecoveryPolicy.msg",
+      "git_blob_sha1": "4d1422d2361d3b00134190a7300570102e89f069",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/RecoveryPolicy.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "329fb02a248def2bd62b0f4c7cefa7f03fe79a5ff1d44ac93436413c25e38601",
+      "type": "flexiv_msgs/msg/RecoveryPolicy"
+    },
+    {
+      "bytes": 543,
+      "generation_file": "flexiv_msgs/msg/RobotEvent.msg",
+      "git_blob_sha1": "8706d78f0937ece7e2627a2d9290abaa7958edd6",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/RobotEvent.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "da04febf57ecf1da890c4b2698638684d14d35412baf144c57588f27e219bb39",
+      "type": "flexiv_msgs/msg/RobotEvent"
+    },
+    {
+      "bytes": 1482,
+      "generation_file": "flexiv_msgs/msg/RobotStates.msg",
+      "git_blob_sha1": "ae3ac7906cfc6aa9f9fb5add1ebf11e2c90298b7",
+      "kind": "msg",
+      "original_file": "flexiv_msgs/msg/RobotStates.msg",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "1eb53f80f2c3fdfb050df717dea3ff33b4301ae0a5f309355bfe46139f48df3a",
+      "type": "flexiv_msgs/msg/RobotStates"
+    },
+    {
+      "bytes": 96,
+      "generation_file": "flexiv_msgs/srv/GetOperationalStatus.srv",
+      "git_blob_sha1": "89bb0ca80746d075bd953d1042ccc8750958eda3",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/GetOperationalStatus.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "f11651848b7cc8fa448ac022c78b61541612f63a6f87e8318b2fe1c455480245",
+      "type": "flexiv_msgs/srv/GetOperationalStatus"
+    },
+    {
+      "bytes": 696,
+      "generation_file": "flexiv_msgs/srv/SetCartesianImpedance.srv",
+      "git_blob_sha1": "5a12b330b643e9444e825891a175c79fe9472ade",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetCartesianImpedance.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "7fd8b550587dfc0144d17d318a8d4354de93b3d9bae01b220d4946b6e4b67bbf",
+      "type": "flexiv_msgs/srv/SetCartesianImpedance"
+    },
+    {
+      "bytes": 803,
+      "generation_file": "flexiv_msgs/srv/SetCartesianMotionLimits.srv",
+      "git_blob_sha1": "3feda9f46dd66f7e3c5a64cc433d489a87beaad4",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetCartesianMotionLimits.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "eb4d1d503b492d872d90c44642355775ccd2ec28fc5c9b0fe4a83d80cf0ee5d9",
+      "type": "flexiv_msgs/srv/SetCartesianMotionLimits"
+    },
+    {
+      "bytes": 668,
+      "generation_file": "flexiv_msgs/srv/SetForceControlAxis.srv",
+      "git_blob_sha1": "8c14bef61913cd8483fd99fbf85eef366ec3080b",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetForceControlAxis.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "04d6cf9d8feca568faa8edfee0692159ce160731744d7a3f86f97ed9acd47a85",
+      "type": "flexiv_msgs/srv/SetForceControlAxis"
+    },
+    {
+      "bytes": 648,
+      "generation_file": "flexiv_msgs/srv/SetForceControlFrame.srv",
+      "git_blob_sha1": "6ee98ae8d2003491701dadb227bc150c92e7f037",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetForceControlFrame.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "4bcdfde59d8ea2ab8c7dd61a58b20c5fa8aa8b8dbf4692a75a0747247542a7c4",
+      "type": "flexiv_msgs/srv/SetForceControlFrame"
+    },
+    {
+      "bytes": 1056,
+      "generation_file": "flexiv_msgs/srv/SetJointImpedance.srv",
+      "git_blob_sha1": "98df79131edbf5074fe1b40d1bf78a35b04063eb",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetJointImpedance.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "6e3d7659b18e2ed0ca81e25fe765ed030c4e477ac7466ea2a95011365cfc6dee",
+      "type": "flexiv_msgs/srv/SetJointImpedance"
+    },
+    {
+      "bytes": 783,
+      "generation_file": "flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "git_blob_sha1": "17725e3e546881a4186545f291913baa7a6b5cd8",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "df53c223afeae42585d8e859041d0d25874d806ea947683899fba5d1eab7f88b",
+      "type": "flexiv_msgs/srv/SetJointInertiaScale"
+    },
+    {
+      "bytes": 827,
+      "generation_file": "flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "git_blob_sha1": "04183f3fb5caee40df1b5d057e95e90e75526e94",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "814b9a80a9da8d4bc0fe3a6a90d26a65da63c82e36f7b3e5d9680c4aaed3920a",
+      "type": "flexiv_msgs/srv/SetMaxContactTorque"
+    },
+    {
+      "bytes": 485,
+      "generation_file": "flexiv_msgs/srv/SetMaxContactWrench.srv",
+      "git_blob_sha1": "a8a8aaa94d98a99ec06676e51dda86116c6a69b7",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetMaxContactWrench.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "731404d0b6f633969ba26e4954399df71a7714ee8323829588d0de1cedb098c8",
+      "type": "flexiv_msgs/srv/SetMaxContactWrench"
+    },
+    {
+      "bytes": 696,
+      "generation_file": "flexiv_msgs/srv/SetNullSpaceObjectives.srv",
+      "git_blob_sha1": "e168959f409df25929141809fde68b3ed1082434",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetNullSpaceObjectives.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "0d18e8873ce87a22d3f48fdb2ab292fc0e454cd3b92e8999b0a59d76295e2815",
+      "type": "flexiv_msgs/srv/SetNullSpaceObjectives"
+    },
+    {
+      "bytes": 418,
+      "generation_file": "flexiv_msgs/srv/SetNullSpacePosture.srv",
+      "git_blob_sha1": "0bb492353c6a92307a87442c9d740646ea73ff49",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetNullSpacePosture.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "623926fc25ddea3bb81e97173d2590abf6d73e551ca98601b796412de5c785d7",
+      "type": "flexiv_msgs/srv/SetNullSpacePosture"
+    },
+    {
+      "bytes": 417,
+      "generation_file": "flexiv_msgs/srv/SetPassiveForceControl.srv",
+      "git_blob_sha1": "8a992e095d359219ec4371e8aea596276ce2d666",
+      "kind": "srv",
+      "original_file": "flexiv_msgs/srv/SetPassiveForceControl.srv",
+      "repository": "ros2_jazzy_v1",
+      "sha256": "fca5b46f9ad4a3182d272e6bbc05e1766838b0e902abef12b9195a91104275b7",
+      "type": "flexiv_msgs/srv/SetPassiveForceControl"
+    },
+    {
+      "bytes": 119,
+      "generation_file": "geometry_msgs/msg/Accel.msg",
+      "git_blob_sha1": "19fef1411b7704ca358a27ce11111204befa5237",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Accel.msg",
+      "repository": "common_jazzy",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb",
+      "type": "geometry_msgs/msg/Accel"
+    },
+    {
+      "bytes": 92,
+      "generation_file": "geometry_msgs/msg/AccelStamped.msg",
+      "git_blob_sha1": "9283fbbd377b9f24f3f0b64e7ea35aeaa859679d",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/AccelStamped.msg",
+      "repository": "common_jazzy",
+      "sha256": "c46e9fcf5551d2330b63b1efe0626f747bcda24ddcc9e281597a9354b3bd9eea",
+      "type": "geometry_msgs/msg/AccelStamped"
+    },
+    {
+      "bytes": 84,
+      "generation_file": "geometry_msgs/msg/Point.msg",
+      "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Point.msg",
+      "repository": "common_jazzy",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+      "type": "geometry_msgs/msg/Point"
+    },
+    {
+      "bytes": 119,
+      "generation_file": "geometry_msgs/msg/Pose.msg",
+      "git_blob_sha1": "277e2f0179a64cd3e17e31502e3d8a074ace7064",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Pose.msg",
+      "repository": "common_jazzy",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de",
+      "type": "geometry_msgs/msg/Pose"
+    },
+    {
+      "bytes": 89,
+      "generation_file": "geometry_msgs/msg/PoseStamped.msg",
+      "git_blob_sha1": "2b43935ed33b384937142aaf3aae085cdcb9ea5e",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/PoseStamped.msg",
+      "repository": "common_jazzy",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5",
+      "type": "geometry_msgs/msg/PoseStamped"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Quaternion.msg",
+      "git_blob_sha1": "96d392779a286cc3f4c83d80962236f5ea42c884",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Quaternion.msg",
+      "repository": "common_jazzy",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+      "type": "geometry_msgs/msg/Quaternion"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Twist.msg",
+      "git_blob_sha1": "ede73597b9025238af28f55c275ddb02a8ed2f94",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Twist.msg",
+      "repository": "common_jazzy",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0",
+      "type": "geometry_msgs/msg/Twist"
+    },
+    {
+      "bytes": 251,
+      "generation_file": "geometry_msgs/msg/Vector3.msg",
+      "git_blob_sha1": "b54588e117c4632f551c221fbc33df8f958804bf",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Vector3.msg",
+      "repository": "common_jazzy",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d",
+      "type": "geometry_msgs/msg/Vector3"
+    },
+    {
+      "bytes": 116,
+      "generation_file": "geometry_msgs/msg/Wrench.msg",
+      "git_blob_sha1": "0b8efccbe338bf5aba4e28be5552f6f933aeef08",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/Wrench.msg",
+      "repository": "common_jazzy",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25",
+      "type": "geometry_msgs/msg/Wrench"
+    },
+    {
+      "bytes": 95,
+      "generation_file": "geometry_msgs/msg/WrenchStamped.msg",
+      "git_blob_sha1": "0d5ebd9674a7d50ba96c8f06084b9bae53ca8b83",
+      "kind": "msg",
+      "original_file": "geometry_msgs/msg/WrenchStamped.msg",
+      "repository": "common_jazzy",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162",
+      "type": "geometry_msgs/msg/WrenchStamped"
+    },
+    {
+      "bytes": 322,
+      "generation_file": "std_msgs/msg/Header.msg",
+      "git_blob_sha1": "6966bb98863c237131a2bd2822298df9511ce948",
+      "kind": "msg",
+      "original_file": "std_msgs/msg/Header.msg",
+      "repository": "common_jazzy",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+      "type": "std_msgs/msg/Header"
+    }
+  ],
+  "kind": "flexiv-complete-original-source-lock-v1",
+  "original_custom_roots": [
+    "flexiv_msgs/action/ErrorRecovery",
+    "flexiv_msgs/action/Grasp",
+    "flexiv_msgs/action/Move",
+    "flexiv_msgs/msg/CartesianMotionForce",
+    "flexiv_msgs/msg/Digital",
+    "flexiv_msgs/msg/GPIOStates",
+    "flexiv_msgs/msg/JointImpedance",
+    "flexiv_msgs/msg/JointInertiaScale",
+    "flexiv_msgs/msg/JointPosVel",
+    "flexiv_msgs/msg/MaxContactTorque",
+    "flexiv_msgs/msg/Mode",
+    "flexiv_msgs/msg/OperationalStatus",
+    "flexiv_msgs/msg/RecoveryPolicy",
+    "flexiv_msgs/msg/RobotEvent",
+    "flexiv_msgs/msg/RobotStates",
+    "flexiv_msgs/srv/GetOperationalStatus",
+    "flexiv_msgs/srv/SetCartesianImpedance",
+    "flexiv_msgs/srv/SetCartesianMotionLimits",
+    "flexiv_msgs/srv/SetForceControlAxis",
+    "flexiv_msgs/srv/SetForceControlFrame",
+    "flexiv_msgs/srv/SetJointImpedance",
+    "flexiv_msgs/srv/SetJointInertiaScale",
+    "flexiv_msgs/srv/SetMaxContactTorque",
+    "flexiv_msgs/srv/SetMaxContactWrench",
+    "flexiv_msgs/srv/SetNullSpaceObjectives",
+    "flexiv_msgs/srv/SetNullSpacePosture",
+    "flexiv_msgs/srv/SetPassiveForceControl"
+  ],
+  "profile": "ros2_jazzy_v1",
+  "repositories": [
+    {
+      "branch": "jazzy-v1",
+      "commit": "b62e8d1750d84edc1e8de3ca7d2822ee616ee0c9",
+      "id": "ros2_jazzy_v1",
+      "repository": "flexivrobotics/flexiv_ros2",
+      "tree_git_sha1": "5f853bbaf78a6f3cefb60595665f79e8373acb6d"
+    },
+    {
+      "branch": "jazzy",
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "id": "common_jazzy",
+      "repository": "ros2/common_interfaces",
+      "tree_git_sha1": "bbd609d90753abf6e10bdc94f594f36b75921677"
+    },
+    {
+      "branch": "jazzy",
+      "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+      "id": "rcl_jazzy",
+      "repository": "ros2/rcl_interfaces",
+      "tree_git_sha1": "4515d6d00cf6209db404352534818e4199fe33c9"
+    }
+  ],
+  "ros_version": 2,
+  "scope": "Every original Flexiv msg/srv/action in this exact source tree, plus every reached unchanged core definition. No native RDK identity, controller, model or release acceptance is inferred.",
+  "vendor": "flexiv"
+}

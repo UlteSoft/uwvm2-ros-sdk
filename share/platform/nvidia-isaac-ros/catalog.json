@@ -1,0 +1,968 @@
+{
+  "format": "uwvm-nvidia-complete-catalog-v1",
+  "source_only": true,
+  "native_registry_emitted": false,
+  "generator_inputs": {
+    "industrial_adapter": {
+      "bytes": 98328,
+      "sha256": "094381ed7605726f6c8f111e04acfd1b0ad26139658ff1bc32e97a57ce80f003"
+    },
+    "parent": {
+      "bytes": 61461,
+      "sha256": "c35e0208184ae54cbf76246e3faf99dc4807712f30aef0ef212ae2446cc5689b"
+    },
+    "bounded": {
+      "bytes": 231785,
+      "sha256": "96ff9123b74910b9f55b3ad0581757853c2b83664c4e17d8acc6e648a717b903"
+    },
+    "cpp_profile_emitter": {
+      "bytes": 53265,
+      "sha256": "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89"
+    }
+  },
+  "platform_generator_sha256": "30acbeb2257312ea25afa252c73174d091d4804d83cff22f1ad6a3e3662aa064",
+  "source_documentation_sha256": "db133ed13f951e206d9f64cace1d16d8f750f553ae2394a9d0de18aa9f9c50b6",
+  "source_inputs": {
+    "catalog": {
+      "bytes": 1969,
+      "sha256": "7d9aa5ff80d70a210d63aab787d4e490c29dbc94243c8d05a290c996f2e4b09c"
+    },
+    "definitions": [
+      {
+        "file": "builtin_interfaces/msg/Time.msg",
+        "bytes": 421,
+        "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+      },
+      {
+        "file": "std_msgs/msg/Header.msg",
+        "bytes": 322,
+        "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+      },
+      {
+        "file": "geometry_msgs/msg/Point.msg",
+        "bytes": 84,
+        "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+      },
+      {
+        "file": "geometry_msgs/msg/Quaternion.msg",
+        "bytes": 116,
+        "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+      },
+      {
+        "file": "geometry_msgs/msg/Pose.msg",
+        "bytes": 119,
+        "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+      },
+      {
+        "file": "geometry_msgs/msg/PoseWithCovariance.msg",
+        "bytes": 323,
+        "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94"
+      },
+      {
+        "file": "geometry_msgs/msg/PoseWithCovarianceStamped.msg",
+        "bytes": 131,
+        "sha256": "87b6851480902effb5232f87bf68e76f19bf7b26affa11001be9e515542c21fb"
+      },
+      {
+        "file": "isaac_ros_apriltag_interfaces/msg/AprilTagDetection.msg",
+        "bytes": 207,
+        "sha256": "ca1f15f12f565f9e8b0c9ed4b407ef99596424aaedbab3a0398140b6a771fc48"
+      },
+      {
+        "file": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray.msg",
+        "bytes": 54,
+        "sha256": "04265d730aef8b08214eeebf8f820b63954a655b53b464fd1d1a59b017d67ced"
+      }
+    ]
+  },
+  "formatting_inputs": [
+    {
+      "name": "clang-format",
+      "sha256": "3b36b77be1000a490fbd6cbb76615424c27ad34571abaf8c2bdddfcd0e1322c0"
+    },
+    {
+      "name": "gofmt",
+      "sha256": "439a0fd73d88750d641d672079c3f9e2f56855d19f8554090e1e18ef0ed4707e"
+    },
+    {
+      "name": "rustfmt",
+      "sha256": "a802dc92fee4180f8e1b6fbab92178dfb65d7426c1ad9d8cab9075476d6c8b77"
+    }
+  ],
+  "records": [
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "symbol": "Ros2Builtin_interfacesMsgTime",
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "minimum_wire_bytes": 8,
+      "maximum_wire_bytes": 8,
+      "constants": [],
+      "members": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "symbol": "Ros2Std_msgsMsgHeader",
+      "codec_identity": "UWVMROS1_afba9e74be3c5e3321750c1c4c30ba2925269f75b9da43a6d5c1e93d293d7396",
+      "minimum_wire_bytes": 12,
+      "maximum_wire_bytes": 76,
+      "constants": [],
+      "members": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "frame_id",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 64,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "geometry_msgs/msg/Point",
+      "symbol": "Ros2Geometry_msgsMsgPoint",
+      "codec_identity": "UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616",
+      "minimum_wire_bytes": 24,
+      "maximum_wire_bytes": 24,
+      "constants": [],
+      "members": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "geometry_msgs/msg/Quaternion",
+      "symbol": "Ros2Geometry_msgsMsgQuaternion",
+      "codec_identity": "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672",
+      "minimum_wire_bytes": 32,
+      "maximum_wire_bytes": 32,
+      "constants": [],
+      "members": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "w",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "1.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "geometry_msgs/msg/Pose",
+      "symbol": "Ros2Geometry_msgsMsgPose",
+      "codec_identity": "UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777",
+      "minimum_wire_bytes": 56,
+      "maximum_wire_bytes": 56,
+      "constants": [],
+      "members": [
+        {
+          "name": "position",
+          "type": "geometry_msgs/msg/Point",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "orientation",
+          "type": "geometry_msgs/msg/Quaternion",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "geometry_msgs/msg/PoseWithCovariance",
+      "symbol": "Ros2Geometry_msgsMsgPoseWithCovariance",
+      "codec_identity": "UWVMROS1_8eb3e25c45769eb29691011c05315ed50f2b97eff488f9e8ee2dc70bddab4dc2",
+      "minimum_wire_bytes": 344,
+      "maximum_wire_bytes": 344,
+      "constants": [],
+      "members": [
+        {
+          "name": "pose",
+          "type": "geometry_msgs/msg/Pose",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "covariance",
+          "type": "float64",
+          "array": "array",
+          "count": 36,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "geometry_msgs/msg/PoseWithCovarianceStamped",
+      "symbol": "Ros2Geometry_msgsMsgPoseWithCovarianceStamped",
+      "codec_identity": "UWVMROS1_ea380172cde0ee5fef319aff50d92a80c314510e3d12efec45e9ae1f74974af3",
+      "minimum_wire_bytes": 356,
+      "maximum_wire_bytes": 420,
+      "constants": [],
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "pose",
+          "type": "geometry_msgs/msg/PoseWithCovariance",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetection",
+      "symbol": "Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetection",
+      "codec_identity": "UWVMROS1_5d840f0d9239a948ce5d17bbee6e248db8151ff31070667e506e9c1647ac6fe7",
+      "minimum_wire_bytes": 484,
+      "maximum_wire_bytes": 612,
+      "constants": [],
+      "members": [
+        {
+          "name": "family",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 64,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "id",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "center",
+          "type": "geometry_msgs/msg/Point",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "corners",
+          "type": "geometry_msgs/msg/Point",
+          "array": "array",
+          "count": 4,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "pose",
+          "type": "geometry_msgs/msg/PoseWithCovarianceStamped",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray",
+      "symbol": "Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetectionArray",
+      "codec_identity": "UWVMROS1_60359e405aedd2a627e60bc35e849989fe5ed1d426afb2a884036aef93bfe0a5",
+      "minimum_wire_bytes": 16,
+      "maximum_wire_bytes": 9872,
+      "constants": [],
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "detections",
+          "type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetection",
+          "array": "sequence",
+          "count": 16,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Builtin_interfacesMsgTime"
+      }
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Std_msgsMsgHeader"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Point",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgPoint"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Quaternion",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgQuaternion"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Pose",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgPose"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/PoseWithCovariance",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgPoseWithCovariance"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/PoseWithCovarianceStamped",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgPoseWithCovarianceStamped"
+      }
+    },
+    {
+      "type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetection",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetection"
+      }
+    },
+    {
+      "type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetectionArray"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/records.h",
+      "sha256": "f01ba98e447bba523168bcb5ab900f5188e20d9fb7c8b4aad244451b406cf22e",
+      "generator_output_sha256": "7e7d1e27dcaa444ae8f211bfb60ce729d3ae655fb15f351a4717d410fc90b997",
+      "shared_generator_profile": "correction19",
+      "parent_correction_sha256": "ea015814a402fb8d53ed63e227f15440fdd806bd2f70d72a00ce56f4a490b294"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/complete/records.hpp",
+      "sha256": "893706ff8dee37878aa13a457523b067d6d9e8ff4a698e207e2127cfc0c92b36",
+      "generator_output_sha256": "49798239d95d5bbedd37c5dc17f09ed39d2e6807769a8a3e1639184f45be1270",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/rs/ros2/complete/records.rs",
+      "sha256": "29d8dc295a273713d6bde727e672b90bff6dec89182061d58d376dbcef93b322",
+      "generator_output_sha256": "7ffb911fe4c680985746e4b7d574c0edae64277a105eb7da3bcbda9591a5007c",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/js/ros2/complete/records.mjs",
+      "sha256": "739b918183120835253825c7e2ef445457543cf7851071c34fba3a477b431aa6",
+      "generator_output_sha256": "7657e8c1970dc5f0cc10172775cc89ccc0ae4580c9225ded861ca24030efbdd0",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/tinygo/ros2/complete/records.go",
+      "sha256": "1d4805ae131a1dfbec8cbeea155a458269d7cea8ee765cfa5bc650c6e08cf305",
+      "generator_output_sha256": "fecf12224bef4d8a20ebb06a586acf48e32ee12ea83c59cf777f338cc6d388c3",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/as/ros2/complete/records.ts",
+      "sha256": "9000c68c9996b12ecbf725b76621b7907f762f4dc3494e281613ff909fae8d58",
+      "generator_output_sha256": "43dd792ca047744dac29661454f18646e680e9e3bb20d02264e6ddf068698219",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/interfaces.h",
+      "sha256": "e8d66a72978ee696abec7e676b8d756e396a4f2d0477b97d12f8bbf12aec66cf",
+      "generator_output_sha256": "12af2731a75f1e140a1ab6ad9cd2a99473f1893b2568c0eed6cba8b19f91b739",
+      "shared_generator_profile": "correction19",
+      "parent_correction_sha256": "ea015814a402fb8d53ed63e227f15440fdd806bd2f70d72a00ce56f4a490b294"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/complete/interfaces.hpp",
+      "sha256": "d4f98c07a501dcff525104cd7bebbf32d437a7bc723e020a6956967962e70ca5",
+      "generator_output_sha256": "7be1cb767d3a6aac7fb3efbed8396d2c4e3382fb5886eccad139159107d8bf89",
+      "shared_generator_profile": "baseline03",
+      "owned_source_preparation": {
+        "operation": "Map original co-located dependencies to installed C/C++ public include roots",
+        "source_path": "tools/platform/nvidia/generate_catalogs.py",
+        "source_sha256": "30acbeb2257312ea25afa252c73174d091d4804d83cff22f1ad6a3e3662aa064"
+      }
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/go/ros2/complete/records.go",
+      "sha256": "bf3f8403a4d31e9142085372c21d296993f7a39048583b541185c232b45d6bad",
+      "generator_output_sha256": "2adfa9c34255f0afa02cf98a5f7bf585f1477d73754f538a7a7c94bad1056ed1",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/swift/ros2/complete/Records.swift",
+      "sha256": "1dd0ead60b78837c22c3d097e32ae2e664a4c8f442ba9ff03cf49a22afab03c9",
+      "generator_output_sha256": "1dd0ead60b78837c22c3d097e32ae2e664a4c8f442ba9ff03cf49a22afab03c9",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/nim/ros2/complete/records.nim",
+      "sha256": "7639870e124dcf9ec861a466420fe868b942a3feda9142473893a0b788c9576b",
+      "generator_output_sha256": "7639870e124dcf9ec861a466420fe868b942a3feda9142473893a0b788c9576b",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/haskell/ros2/complete/RosWasm/Records.hs",
+      "sha256": "80614b3fe902c8bf6c64f21aa29dca8689a761502979ea8769197c8825cab4bd",
+      "generator_output_sha256": "80614b3fe902c8bf6c64f21aa29dca8689a761502979ea8769197c8825cab4bd",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/d/ros2/complete/records.d",
+      "sha256": "d475961ee1f10acceabd22bd1cfeac59a958803b28d0436bbe6de91ce1d1f3ac",
+      "generator_output_sha256": "d475961ee1f10acceabd22bd1cfeac59a958803b28d0436bbe6de91ce1d1f3ac",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/odin/ros2/complete/records.odin",
+      "sha256": "ea8ecf2d494d36f47bd5350d93152227f0e754892b91a2e250867de8133e5261",
+      "generator_output_sha256": "ea8ecf2d494d36f47bd5350d93152227f0e754892b91a2e250867de8133e5261",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/zig/ros2/complete/records.zig",
+      "sha256": "0f2e07f8fd912b5c34b269975b105c06652c2fae80a02eb21320409e69119359",
+      "generator_output_sha256": "0f2e07f8fd912b5c34b269975b105c06652c2fae80a02eb21320409e69119359",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/py/ros2/complete/bounded_records.py",
+      "sha256": "79d4c069a9ebf8c88c8f80e17d13764afae3bdb5688fd178573f142497326833",
+      "generator_output_sha256": "b454ab3bc3e5c41cc4b6b96c76912c05ea69710aeaa93554c683cb518eaa4d7a",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/java/ros2/complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "0beda74b3c3b98a6a1038e3c941120c8d42e96579319c3752e554f3aa8aceb05",
+      "generator_output_sha256": "38062ccfc32eb038303a1c37968032595ef296a87be0f4eefc5277b9b1c4f895",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/csharp/ros2/complete/csharp/BoundedRecords.cs",
+      "sha256": "c3b80a1dec6ec60c1aa55a1ab793d50a74f566bf761d2fd14890e1a652f87af9",
+      "generator_output_sha256": "2ca97a64e9a5dda6f39688d244a92e9907e2957a9c095ea5330aac6bc18a38e3",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/moonbit/ros2/complete/moonbit/bounded_records.mbt",
+      "sha256": "39c0b552b84db1da0ed5b7fbbdf3e37bc3d4f26f0495e86bdc4a0e96e9c8380e",
+      "generator_output_sha256": "fd13b61f61c0737770499a4ecd73a3960c01be900104dee5ea630df77ffff39e",
+      "shared_generator_profile": "baseline03"
+    }
+  ],
+  "shared_auxiliary_generator_inputs": [
+    {
+      "path": "tools/custom_types.py",
+      "sha256": "c35e0208184ae54cbf76246e3faf99dc4807712f30aef0ef212ae2446cc5689b",
+      "bytes": 61461
+    },
+    {
+      "path": "tools/cpp_profiles.py",
+      "sha256": "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89",
+      "bytes": 53265
+    },
+    {
+      "path": "tools/industrial/vendor_profile.py",
+      "sha256": "094381ed7605726f6c8f111e04acfd1b0ad26139658ff1bc32e97a57ce80f003",
+      "bytes": 98328
+    },
+    {
+      "path": "tools/native_languages/records.py",
+      "sha256": "3e0f1337d9fe7c33889756363f907371e13ac6aedddde814588db6c13a2f368e",
+      "bytes": 43484
+    },
+    {
+      "path": "tools/native_languages/records_native.py",
+      "sha256": "68a618f84f36c74ee9ed2c20c071fe183b6cb82f24883053ad111e4f970f370d",
+      "bytes": 16808
+    },
+    {
+      "path": "tools/native_languages/documentation.py",
+      "sha256": "20103f9630d92627cd22addc60ce0d3a08a00be595ec5f0f87a2f0d96b5712bc",
+      "bytes": 41932
+    },
+    {
+      "path": "tools/platform/ros/py/control_python_emitter.py",
+      "sha256": "7f08e968118700fad7400c71169ea1dc1b85f323020e3ca887df22d75e343de2",
+      "bytes": 19612
+    },
+    {
+      "path": "tools/custom_types/moonbit_runtime.mbt.in",
+      "sha256": "6152884f53105ce867c6b21bbeb91c956b1f2b65dcfcbf0144805bd2cc990cd0",
+      "bytes": 4151
+    },
+    {
+      "path": "tools/custom_types/managed_profile.py",
+      "sha256": "b5464773f6c56b9d16f36c4db38dceb4fc993e4b360ea3a05a02d354db881eef",
+      "bytes": 40581
+    },
+    {
+      "path": "tools/custom_types/managed_csharp.py",
+      "sha256": "b50516d38756ca9e9def6d6a0ae4d18bb39d9d91679115b4061f34c446f8fdcb",
+      "bytes": 14205
+    },
+    {
+      "path": "tools/custom_types/moonbit_profile.py",
+      "sha256": "6cb8dd407626b118a7011001b7d7a3f7a9fe681f249e438c2dd29f5dbe56bb29",
+      "bytes": 27254
+    },
+    {
+      "path": "tools/custom_types/bounded_profile.py",
+      "sha256": "96ff9123b74910b9f55b3ad0581757853c2b83664c4e17d8acc6e648a717b903",
+      "bytes": 231785
+    },
+    {
+      "path": "tools/custom_types/combine_catalogs.py",
+      "sha256": "bb99ab94d7bfeec78d34f58040a4c42a3ec7d67ce13935e6f285322ad048c46f",
+      "bytes": 3858
+    },
+    {
+      "path": "tools/custom_types/interface_templates/bounded_interfaces.go.in",
+      "sha256": "a7ce45ea3f8381d75e2f51fb1d760b2de62dd11863ddec94add8b0b4365c2f9b",
+      "bytes": 9699
+    },
+    {
+      "path": "tools/custom_types/interface_templates/bounded_interfaces.rs.in",
+      "sha256": "063130e797684df0530aa1882f8082a10d5756ceb892677d8082e980c7b29b18",
+      "bytes": 15514
+    },
+    {
+      "path": "tools/custom_types/interface_templates/bounded_interfaces.ts.in",
+      "sha256": "a61a7b7eb3b5464648577f3ab44629a5c6140d04effff6e4099509f68b204ac5",
+      "bytes": 16626
+    },
+    {
+      "path": "tools/custom_types/interface_templates/bounded_interfaces.mjs.in",
+      "sha256": "3c2fde628c63618c1eb5f29747a8b125acba136aef6d19bf42b9ff8aae20cdff",
+      "bytes": 17053
+    }
+  ],
+  "qualification_scope": "Source provenance only; application and native qualification are recorded separately",
+  "shared_generator_profiles": {
+    "baseline03": {
+      "source_manifest_sha256": "fa1198aa5a9e934c755dbf85c03723bb8fd52d52dffcf4ef20d6d942cbe3e77b",
+      "inputs": [
+        {
+          "path": "tools/custom_types.py",
+          "sha256": "c35e0208184ae54cbf76246e3faf99dc4807712f30aef0ef212ae2446cc5689b",
+          "bytes": 61461
+        },
+        {
+          "path": "tools/cpp_profiles.py",
+          "sha256": "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89",
+          "bytes": 53265
+        },
+        {
+          "path": "tools/industrial/vendor_profile.py",
+          "sha256": "094381ed7605726f6c8f111e04acfd1b0ad26139658ff1bc32e97a57ce80f003",
+          "bytes": 98328
+        },
+        {
+          "path": "tools/native_languages/records.py",
+          "sha256": "3e0f1337d9fe7c33889756363f907371e13ac6aedddde814588db6c13a2f368e",
+          "bytes": 43484
+        },
+        {
+          "path": "tools/native_languages/records_native.py",
+          "sha256": "68a618f84f36c74ee9ed2c20c071fe183b6cb82f24883053ad111e4f970f370d",
+          "bytes": 16808
+        },
+        {
+          "path": "tools/native_languages/documentation.py",
+          "sha256": "20103f9630d92627cd22addc60ce0d3a08a00be595ec5f0f87a2f0d96b5712bc",
+          "bytes": 41932
+        },
+        {
+          "path": "tools/platform/ros/py/control_python_emitter.py",
+          "sha256": "7f08e968118700fad7400c71169ea1dc1b85f323020e3ca887df22d75e343de2",
+          "bytes": 19612
+        },
+        {
+          "path": "tools/custom_types/moonbit_runtime.mbt.in",
+          "sha256": "6152884f53105ce867c6b21bbeb91c956b1f2b65dcfcbf0144805bd2cc990cd0",
+          "bytes": 4151
+        },
+        {
+          "path": "tools/custom_types/managed_profile.py",
+          "sha256": "b5464773f6c56b9d16f36c4db38dceb4fc993e4b360ea3a05a02d354db881eef",
+          "bytes": 40581
+        },
+        {
+          "path": "tools/custom_types/managed_csharp.py",
+          "sha256": "b50516d38756ca9e9def6d6a0ae4d18bb39d9d91679115b4061f34c446f8fdcb",
+          "bytes": 14205
+        },
+        {
+          "path": "tools/custom_types/moonbit_profile.py",
+          "sha256": "6cb8dd407626b118a7011001b7d7a3f7a9fe681f249e438c2dd29f5dbe56bb29",
+          "bytes": 27254
+        },
+        {
+          "path": "tools/custom_types/bounded_profile.py",
+          "sha256": "96ff9123b74910b9f55b3ad0581757853c2b83664c4e17d8acc6e648a717b903",
+          "bytes": 231785
+        },
+        {
+          "path": "tools/custom_types/combine_catalogs.py",
+          "sha256": "bb99ab94d7bfeec78d34f58040a4c42a3ec7d67ce13935e6f285322ad048c46f",
+          "bytes": 3858
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.go.in",
+          "sha256": "a7ce45ea3f8381d75e2f51fb1d760b2de62dd11863ddec94add8b0b4365c2f9b",
+          "bytes": 9699
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.rs.in",
+          "sha256": "063130e797684df0530aa1882f8082a10d5756ceb892677d8082e980c7b29b18",
+          "bytes": 15514
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.ts.in",
+          "sha256": "a61a7b7eb3b5464648577f3ab44629a5c6140d04effff6e4099509f68b204ac5",
+          "bytes": 16626
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.mjs.in",
+          "sha256": "3c2fde628c63618c1eb5f29747a8b125acba136aef6d19bf42b9ff8aae20cdff",
+          "bytes": 17053
+        }
+      ]
+    },
+    "correction19": {
+      "source_manifest_sha256": "49866bb2fbc82b581924c3f14887d33e13954eb5305375e6161c3c3ad11bdce9",
+      "inputs": [
+        {
+          "path": "tools/custom_types.py",
+          "sha256": "c35e0208184ae54cbf76246e3faf99dc4807712f30aef0ef212ae2446cc5689b",
+          "bytes": 61461
+        },
+        {
+          "path": "tools/cpp_profiles.py",
+          "sha256": "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89",
+          "bytes": 53265
+        },
+        {
+          "path": "tools/industrial/vendor_profile.py",
+          "sha256": "094381ed7605726f6c8f111e04acfd1b0ad26139658ff1bc32e97a57ce80f003",
+          "bytes": 98328
+        },
+        {
+          "path": "tools/native_languages/records.py",
+          "sha256": "3e0f1337d9fe7c33889756363f907371e13ac6aedddde814588db6c13a2f368e",
+          "bytes": 43484
+        },
+        {
+          "path": "tools/native_languages/records_native.py",
+          "sha256": "68a618f84f36c74ee9ed2c20c071fe183b6cb82f24883053ad111e4f970f370d",
+          "bytes": 16808
+        },
+        {
+          "path": "tools/native_languages/documentation.py",
+          "sha256": "20103f9630d92627cd22addc60ce0d3a08a00be595ec5f0f87a2f0d96b5712bc",
+          "bytes": 41932
+        },
+        {
+          "path": "tools/platform/ros/py/control_python_emitter.py",
+          "sha256": "7f08e968118700fad7400c71169ea1dc1b85f323020e3ca887df22d75e343de2",
+          "bytes": 19612
+        },
+        {
+          "path": "tools/custom_types/moonbit_runtime.mbt.in",
+          "sha256": "6152884f53105ce867c6b21bbeb91c956b1f2b65dcfcbf0144805bd2cc990cd0",
+          "bytes": 4151
+        },
+        {
+          "path": "tools/custom_types/managed_profile.py",
+          "sha256": "b5464773f6c56b9d16f36c4db38dceb4fc993e4b360ea3a05a02d354db881eef",
+          "bytes": 40581
+        },
+        {
+          "path": "tools/custom_types/managed_csharp.py",
+          "sha256": "b50516d38756ca9e9def6d6a0ae4d18bb39d9d91679115b4061f34c446f8fdcb",
+          "bytes": 14205
+        },
+        {
+          "path": "tools/custom_types/moonbit_profile.py",
+          "sha256": "6cb8dd407626b118a7011001b7d7a3f7a9fe681f249e438c2dd29f5dbe56bb29",
+          "bytes": 27254
+        },
+        {
+          "path": "tools/custom_types/bounded_profile.py",
+          "sha256": "ea015814a402fb8d53ed63e227f15440fdd806bd2f70d72a00ce56f4a490b294",
+          "bytes": 232253
+        },
+        {
+          "path": "tools/custom_types/combine_catalogs.py",
+          "sha256": "bb99ab94d7bfeec78d34f58040a4c42a3ec7d67ce13935e6f285322ad048c46f",
+          "bytes": 3858
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.go.in",
+          "sha256": "a7ce45ea3f8381d75e2f51fb1d760b2de62dd11863ddec94add8b0b4365c2f9b",
+          "bytes": 9699
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.rs.in",
+          "sha256": "063130e797684df0530aa1882f8082a10d5756ceb892677d8082e980c7b29b18",
+          "bytes": 15514
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.ts.in",
+          "sha256": "a61a7b7eb3b5464648577f3ab44629a5c6140d04effff6e4099509f68b204ac5",
+          "bytes": 16626
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.mjs.in",
+          "sha256": "3c2fde628c63618c1eb5f29747a8b125acba136aef6d19bf42b9ff8aae20cdff",
+          "bytes": 17053
+        }
+      ]
+    }
+  },
+  "per_output_generator_profiles": true,
+  "generator_inputs_scope": "Baseline03 retained; only qualified C outputs use approved correction19",
+  "Go_documentation_maintenance": {
+    "source_before_sha256": "e9132a7f2bd03d349f1ca4039e1f8745e55040c386c2a1cdc426afcbdd852f06",
+    "source_sha256": "bf3f8403a4d31e9142085372c21d296993f7a39048583b541185c232b45d6bad",
+    "token_ABI_defaults_preserved_by_parent_review": true,
+    "real_source_rebuild_and_same_cases_revalidated": true,
+    "qualification": "share/platform/nvidia/go-native-review41.json"
+  },
+  "Rust_documentation_maintenance": {
+    "source_sha256": "29d8dc295a273713d6bde727e672b90bff6dec89182061d58d376dbcef93b322",
+    "executable_tokens_unchanged": true,
+    "real_build_and_native_qualification": "share/platform/nvidia/rust-native-review41.json"
+  }
+}

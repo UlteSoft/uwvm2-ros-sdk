@@ -1,0 +1,1026 @@
+{
+  "format": "uwvm-nvidia-complete-catalog-v1",
+  "source_only": true,
+  "native_registry_emitted": false,
+  "generator_inputs": {
+    "industrial_adapter": {
+      "bytes": 98328,
+      "sha256": "094381ed7605726f6c8f111e04acfd1b0ad26139658ff1bc32e97a57ce80f003"
+    },
+    "parent": {
+      "bytes": 61461,
+      "sha256": "c35e0208184ae54cbf76246e3faf99dc4807712f30aef0ef212ae2446cc5689b"
+    },
+    "bounded": {
+      "bytes": 231785,
+      "sha256": "96ff9123b74910b9f55b3ad0581757853c2b83664c4e17d8acc6e648a717b903"
+    },
+    "cpp_profile_emitter": {
+      "bytes": 53265,
+      "sha256": "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89"
+    }
+  },
+  "platform_generator_sha256": "30acbeb2257312ea25afa252c73174d091d4804d83cff22f1ad6a3e3662aa064",
+  "source_documentation_sha256": "db133ed13f951e206d9f64cace1d16d8f750f553ae2394a9d0de18aa9f9c50b6",
+  "source_inputs": {
+    "catalog": {
+      "bytes": 1293,
+      "sha256": "08d0f5e52111b574573ad10f30739d28731f70265d78b45e063023a253e67e6b"
+    },
+    "definitions": [
+      {
+        "file": "builtin_interfaces/msg/Time.msg",
+        "bytes": 421,
+        "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+      },
+      {
+        "file": "std_msgs/msg/Header.msg",
+        "bytes": 322,
+        "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+      },
+      {
+        "file": "sensor_msgs/msg/JointState.msg",
+        "bytes": 999,
+        "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+      },
+      {
+        "file": "uwvm_isaac_sim_bridge/msg/ClockEvent.msg",
+        "bytes": 1246,
+        "sha256": "99eda3910e799a005d270b23af4de6def19d6ae303100456afe4ba8b092255cb"
+      },
+      {
+        "file": "uwvm_isaac_sim_bridge/srv/ClockControl.srv",
+        "bytes": 4018,
+        "sha256": "bd874515eb74e71e2919af79b94735cfe2cc771c7d32c123d9dee38173d97c9c"
+      }
+    ]
+  },
+  "formatting_inputs": [
+    {
+      "name": "clang-format",
+      "sha256": "3b36b77be1000a490fbd6cbb76615424c27ad34571abaf8c2bdddfcd0e1322c0"
+    },
+    {
+      "name": "gofmt",
+      "sha256": "439a0fd73d88750d641d672079c3f9e2f56855d19f8554090e1e18ef0ed4707e"
+    },
+    {
+      "name": "rustfmt",
+      "sha256": "a802dc92fee4180f8e1b6fbab92178dfb65d7426c1ad9d8cab9075476d6c8b77"
+    }
+  ],
+  "records": [
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "symbol": "Ros2Builtin_interfacesMsgTime",
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "minimum_wire_bytes": 8,
+      "maximum_wire_bytes": 8,
+      "constants": [],
+      "members": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "symbol": "Ros2Std_msgsMsgHeader",
+      "codec_identity": "UWVMROS1_afba9e74be3c5e3321750c1c4c30ba2925269f75b9da43a6d5c1e93d293d7396",
+      "minimum_wire_bytes": 12,
+      "maximum_wire_bytes": 76,
+      "constants": [],
+      "members": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "frame_id",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 64,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "sensor_msgs/msg/JointState",
+      "symbol": "Ros2Sensor_msgsMsgJointState",
+      "codec_identity": "UWVMROS1_2fe8e1de38676a3880ca61266fb575e3625198e66a1da1708cf8c103cb829cac",
+      "minimum_wire_bytes": 28,
+      "maximum_wire_bytes": 5980,
+      "constants": [],
+      "members": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "array": "sequence",
+          "count": 64,
+          "string_bound": 64,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "position",
+          "type": "float64",
+          "array": "sequence",
+          "count": 64,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "velocity",
+          "type": "float64",
+          "array": "sequence",
+          "count": 64,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "effort",
+          "type": "float64",
+          "array": "sequence",
+          "count": 64,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "uwvm_isaac_sim_bridge/msg/ClockEvent",
+      "symbol": "Ros2Uwvm_isaac_sim_bridgeMsgClockEvent",
+      "codec_identity": "UWVMROS1_78b31f4b219f55bd576134f1b561194cb09c8ec0ac8dedafddd9b03ba6a198d6",
+      "minimum_wire_bytes": 14,
+      "maximum_wire_bytes": 14,
+      "constants": [
+        {
+          "name": "AUTOMATIC",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "MANUAL",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        }
+      ],
+      "members": [
+        {
+          "name": "kind",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "phase",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "frame",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "uwvm_isaac_sim_bridge/srv/ClockControl_Request",
+      "symbol": "Ros2Uwvm_isaac_sim_bridgeSrvClockControl_Request",
+      "codec_identity": "UWVMROS1_8957fd758c2793d355e7356df436ea644a5d5da7ad7e2d179ed4d09936351b19",
+      "minimum_wire_bytes": 22,
+      "maximum_wire_bytes": 22,
+      "constants": [
+        {
+          "name": "START",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "STEP",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "FINISH",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "CANCEL",
+          "type": "uint8",
+          "native_type": "uint8",
+          "literal": "4",
+          "value": "4"
+        }
+      ],
+      "members": [
+        {
+          "name": "operation",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "session_nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "request_sequence",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "phase",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "frame",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "impulse",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "extra_update",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "pacing_milliseconds",
+          "type": "uint16",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    },
+    {
+      "type": "uwvm_isaac_sim_bridge/srv/ClockControl_Response",
+      "symbol": "Ros2Uwvm_isaac_sim_bridgeSrvClockControl_Response",
+      "codec_identity": "UWVMROS1_3b7763445df65d2a26fb54bfe6d41984008b33253cd7a614f5f057832d909502",
+      "minimum_wire_bytes": 48,
+      "maximum_wire_bytes": 48,
+      "constants": [],
+      "members": [
+        {
+          "name": "status",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "session_nonce",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "request_sequence",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "state",
+          "type": "uint8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "actual_app_updates",
+          "type": "uint64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "completed_steps",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "has_event",
+          "type": "bool",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "event",
+          "type": "uwvm_isaac_sim_bridge/msg/ClockEvent",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "cleanup_status",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Builtin_interfacesMsgTime"
+      }
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Std_msgsMsgHeader"
+      }
+    },
+    {
+      "type": "sensor_msgs/msg/JointState",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Sensor_msgsMsgJointState"
+      }
+    },
+    {
+      "type": "uwvm_isaac_sim_bridge/msg/ClockEvent",
+      "kind": "message",
+      "components": {
+        "message": "Ros2Uwvm_isaac_sim_bridgeMsgClockEvent"
+      }
+    },
+    {
+      "type": "uwvm_isaac_sim_bridge/srv/ClockControl",
+      "kind": "service",
+      "components": {
+        "request": "Ros2Uwvm_isaac_sim_bridgeSrvClockControl_Request",
+        "response": "Ros2Uwvm_isaac_sim_bridgeSrvClockControl_Response"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "path": "include/platform/nvidia-isaac-sim/c/ros2/complete/records.h",
+      "sha256": "948a6afaea76b92951fcf72568d00c69d0893ec6a4c63d1b27a461547c7c91b7",
+      "generator_output_sha256": "05ae9a164bf6c21dcf079b3a23f7ff129da136b79cec8d972fcc4f4627283c06",
+      "shared_generator_profile": "correction19",
+      "parent_correction_sha256": "ea015814a402fb8d53ed63e227f15440fdd806bd2f70d72a00ce56f4a490b294"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/cpp/ros2/complete/records.hpp",
+      "sha256": "a946bac8b85838c6b73318d20d58cff37a494de32e27ef89f5d58e91cdb73d7a",
+      "generator_output_sha256": "b857cfdc6c54edb81731284bef488e1aac29212f3a0cf63b5cc857c0c9f0613b",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/rs/ros2/complete/records.rs",
+      "sha256": "a54b0d119745ccc14f57bb1a3bbc0b8943c6bf521ae98ee17c754231261b401f",
+      "generator_output_sha256": "8a4baca324bcc7f783d49ff7f104fe99fe9aa51f753074ddc4a49b1f3606bbb4",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/js/ros2/complete/records.mjs",
+      "sha256": "965e5be4cd9d16c783d0f177ee2f527753579ad555a0815e1189a77f781f4b4f",
+      "generator_output_sha256": "4d542a61327ea8d5756983f7edadc3ff079715991df8c5c1339a27a5aeca2e35",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/tinygo/ros2/complete/records.go",
+      "sha256": "b4463e3b21a945599654f2397370d337c6c3d51f32116f8ff09c244eb811ef76",
+      "generator_output_sha256": "0693af8679aeb31ad944aa5a87c6cc410d04a1570303d07df2896e3f1df35b22",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/as/ros2/complete/records.ts",
+      "sha256": "4933db75be5beaa1e090dd217407e3abf71f425b07c3e3fcd0f7528e47817e88",
+      "generator_output_sha256": "ea6c5c2a25392117f64a35161a2193ddf1901b7ffc70497757b6845ea9d5c457",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/c/ros2/complete/interfaces.h",
+      "sha256": "c0b103e23ec0158173ac061210a19572a3421f8dd31636c3b78776bc59c56721",
+      "generator_output_sha256": "68fe120ae264a38c916b96aa4ab328d56da993739f72e14d2e4a5fa4ac441457",
+      "shared_generator_profile": "correction19",
+      "parent_correction_sha256": "ea015814a402fb8d53ed63e227f15440fdd806bd2f70d72a00ce56f4a490b294"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/cpp/ros2/complete/interfaces.hpp",
+      "sha256": "f4ca3ef2e10913365ed53f1cf5934018822e491f7e2312998343811425db3737",
+      "generator_output_sha256": "cb37373ca1f5bf6cc6cdc6cfd5aeac54ed426cb41e2cc93ac1a21d3a0ca1955d",
+      "shared_generator_profile": "baseline03",
+      "owned_source_preparation": {
+        "operation": "Map original co-located dependencies to installed C/C++ public include roots",
+        "source_path": "tools/platform/nvidia/generate_catalogs.py",
+        "source_sha256": "30acbeb2257312ea25afa252c73174d091d4804d83cff22f1ad6a3e3662aa064"
+      }
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/go/ros2/complete/records.go",
+      "sha256": "26140324d34d2ab06d139839357c370b710a9d532e2156b222dcd459a05fb563",
+      "generator_output_sha256": "61ee96eea80e736096d6ef6f7a30b40b73fef52f9e0a214bad9b788d30ac36a7",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/swift/ros2/complete/Records.swift",
+      "sha256": "64036b3f880fa2dafa15fe0894af59c96bb97b32fca97bfd66d24e37b0302363",
+      "generator_output_sha256": "64036b3f880fa2dafa15fe0894af59c96bb97b32fca97bfd66d24e37b0302363",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/nim/ros2/complete/records.nim",
+      "sha256": "e04d25a2c58cfe3b4215c2445ae1f0084991b9fea71be7a173a619d67fc6dc80",
+      "generator_output_sha256": "e04d25a2c58cfe3b4215c2445ae1f0084991b9fea71be7a173a619d67fc6dc80",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/haskell/ros2/complete/RosWasm/Records.hs",
+      "sha256": "fcfd33a4de6dda10b8dea6b6d1a4ac3555806f535b0c8d9b2d4e23ef08b7232a",
+      "generator_output_sha256": "fcfd33a4de6dda10b8dea6b6d1a4ac3555806f535b0c8d9b2d4e23ef08b7232a",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/d/ros2/complete/records.d",
+      "sha256": "0abe279b32880311b46ee18f1a0c4bf5a701d06e7a1861b88564968575932a75",
+      "generator_output_sha256": "0abe279b32880311b46ee18f1a0c4bf5a701d06e7a1861b88564968575932a75",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/odin/ros2/complete/records.odin",
+      "sha256": "c751c1e259772d3a84e1f486ec7d4cdd685ffd7404b1931c3fff79c922ea54c9",
+      "generator_output_sha256": "c751c1e259772d3a84e1f486ec7d4cdd685ffd7404b1931c3fff79c922ea54c9",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/zig/ros2/complete/records.zig",
+      "sha256": "a5d3dddbc6f698fe137ba61398a83a9c9ddad211601c3e83c3f8992b0d1eeae0",
+      "generator_output_sha256": "a5d3dddbc6f698fe137ba61398a83a9c9ddad211601c3e83c3f8992b0d1eeae0",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/py/ros2/complete/bounded_records.py",
+      "sha256": "d965da3d8b055b7e46120b03546d8905232e913eb2000bf2909b799864e9cf35",
+      "generator_output_sha256": "f219f579c5bf1b0df1a53debc42dcae472d3d12c555d398d097f7507f97e08a8",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/java/ros2/complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "e5fc3be8658f16277762c5c88754d3e9477d6e6ef8d5ff5dda3508748503a8f9",
+      "generator_output_sha256": "b04d59c0535d420d75bc20035286bc376a6fb28eff11087e0e45da0154ae1324",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/csharp/ros2/complete/csharp/BoundedRecords.cs",
+      "sha256": "23d718a37feee3a7e26688dd6f0b506c738cfd93bdba0986d3f1ef03df559fd8",
+      "generator_output_sha256": "458f7b19cca55a5f5132f2ce94682ec4acb6c1cbc0a03dcf8af3bcc765c4f632",
+      "shared_generator_profile": "baseline03"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-sim/moonbit/ros2/complete/moonbit/bounded_records.mbt",
+      "sha256": "59961422f117f50dab280eb877d0045d8d666944eb0b16212e9382ff4e633cee",
+      "generator_output_sha256": "15d145fbdcbbb616b800b97d1b3127df2f6ed555f0d78f12f27931e420287e44",
+      "shared_generator_profile": "baseline03"
+    }
+  ],
+  "shared_auxiliary_generator_inputs": [
+    {
+      "path": "tools/custom_types.py",
+      "sha256": "c35e0208184ae54cbf76246e3faf99dc4807712f30aef0ef212ae2446cc5689b",
+      "bytes": 61461
+    },
+    {
+      "path": "tools/cpp_profiles.py",
+      "sha256": "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89",
+      "bytes": 53265
+    },
+    {
+      "path": "tools/industrial/vendor_profile.py",
+      "sha256": "094381ed7605726f6c8f111e04acfd1b0ad26139658ff1bc32e97a57ce80f003",
+      "bytes": 98328
+    },
+    {
+      "path": "tools/native_languages/records.py",
+      "sha256": "3e0f1337d9fe7c33889756363f907371e13ac6aedddde814588db6c13a2f368e",
+      "bytes": 43484
+    },
+    {
+      "path": "tools/native_languages/records_native.py",
+      "sha256": "68a618f84f36c74ee9ed2c20c071fe183b6cb82f24883053ad111e4f970f370d",
+      "bytes": 16808
+    },
+    {
+      "path": "tools/native_languages/documentation.py",
+      "sha256": "20103f9630d92627cd22addc60ce0d3a08a00be595ec5f0f87a2f0d96b5712bc",
+      "bytes": 41932
+    },
+    {
+      "path": "tools/platform/ros/py/control_python_emitter.py",
+      "sha256": "7f08e968118700fad7400c71169ea1dc1b85f323020e3ca887df22d75e343de2",
+      "bytes": 19612
+    },
+    {
+      "path": "tools/custom_types/moonbit_runtime.mbt.in",
+      "sha256": "6152884f53105ce867c6b21bbeb91c956b1f2b65dcfcbf0144805bd2cc990cd0",
+      "bytes": 4151
+    },
+    {
+      "path": "tools/custom_types/managed_profile.py",
+      "sha256": "b5464773f6c56b9d16f36c4db38dceb4fc993e4b360ea3a05a02d354db881eef",
+      "bytes": 40581
+    },
+    {
+      "path": "tools/custom_types/managed_csharp.py",
+      "sha256": "b50516d38756ca9e9def6d6a0ae4d18bb39d9d91679115b4061f34c446f8fdcb",
+      "bytes": 14205
+    },
+    {
+      "path": "tools/custom_types/moonbit_profile.py",
+      "sha256": "6cb8dd407626b118a7011001b7d7a3f7a9fe681f249e438c2dd29f5dbe56bb29",
+      "bytes": 27254
+    },
+    {
+      "path": "tools/custom_types/bounded_profile.py",
+      "sha256": "96ff9123b74910b9f55b3ad0581757853c2b83664c4e17d8acc6e648a717b903",
+      "bytes": 231785
+    },
+    {
+      "path": "tools/custom_types/combine_catalogs.py",
+      "sha256": "bb99ab94d7bfeec78d34f58040a4c42a3ec7d67ce13935e6f285322ad048c46f",
+      "bytes": 3858
+    },
+    {
+      "path": "tools/custom_types/interface_templates/bounded_interfaces.go.in",
+      "sha256": "a7ce45ea3f8381d75e2f51fb1d760b2de62dd11863ddec94add8b0b4365c2f9b",
+      "bytes": 9699
+    },
+    {
+      "path": "tools/custom_types/interface_templates/bounded_interfaces.rs.in",
+      "sha256": "063130e797684df0530aa1882f8082a10d5756ceb892677d8082e980c7b29b18",
+      "bytes": 15514
+    },
+    {
+      "path": "tools/custom_types/interface_templates/bounded_interfaces.ts.in",
+      "sha256": "a61a7b7eb3b5464648577f3ab44629a5c6140d04effff6e4099509f68b204ac5",
+      "bytes": 16626
+    },
+    {
+      "path": "tools/custom_types/interface_templates/bounded_interfaces.mjs.in",
+      "sha256": "3c2fde628c63618c1eb5f29747a8b125acba136aef6d19bf42b9ff8aae20cdff",
+      "bytes": 17053
+    }
+  ],
+  "qualification_scope": "Source provenance only; application and native qualification are recorded separately",
+  "shared_generator_profiles": {
+    "baseline03": {
+      "source_manifest_sha256": "fa1198aa5a9e934c755dbf85c03723bb8fd52d52dffcf4ef20d6d942cbe3e77b",
+      "inputs": [
+        {
+          "path": "tools/custom_types.py",
+          "sha256": "c35e0208184ae54cbf76246e3faf99dc4807712f30aef0ef212ae2446cc5689b",
+          "bytes": 61461
+        },
+        {
+          "path": "tools/cpp_profiles.py",
+          "sha256": "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89",
+          "bytes": 53265
+        },
+        {
+          "path": "tools/industrial/vendor_profile.py",
+          "sha256": "094381ed7605726f6c8f111e04acfd1b0ad26139658ff1bc32e97a57ce80f003",
+          "bytes": 98328
+        },
+        {
+          "path": "tools/native_languages/records.py",
+          "sha256": "3e0f1337d9fe7c33889756363f907371e13ac6aedddde814588db6c13a2f368e",
+          "bytes": 43484
+        },
+        {
+          "path": "tools/native_languages/records_native.py",
+          "sha256": "68a618f84f36c74ee9ed2c20c071fe183b6cb82f24883053ad111e4f970f370d",
+          "bytes": 16808
+        },
+        {
+          "path": "tools/native_languages/documentation.py",
+          "sha256": "20103f9630d92627cd22addc60ce0d3a08a00be595ec5f0f87a2f0d96b5712bc",
+          "bytes": 41932
+        },
+        {
+          "path": "tools/platform/ros/py/control_python_emitter.py",
+          "sha256": "7f08e968118700fad7400c71169ea1dc1b85f323020e3ca887df22d75e343de2",
+          "bytes": 19612
+        },
+        {
+          "path": "tools/custom_types/moonbit_runtime.mbt.in",
+          "sha256": "6152884f53105ce867c6b21bbeb91c956b1f2b65dcfcbf0144805bd2cc990cd0",
+          "bytes": 4151
+        },
+        {
+          "path": "tools/custom_types/managed_profile.py",
+          "sha256": "b5464773f6c56b9d16f36c4db38dceb4fc993e4b360ea3a05a02d354db881eef",
+          "bytes": 40581
+        },
+        {
+          "path": "tools/custom_types/managed_csharp.py",
+          "sha256": "b50516d38756ca9e9def6d6a0ae4d18bb39d9d91679115b4061f34c446f8fdcb",
+          "bytes": 14205
+        },
+        {
+          "path": "tools/custom_types/moonbit_profile.py",
+          "sha256": "6cb8dd407626b118a7011001b7d7a3f7a9fe681f249e438c2dd29f5dbe56bb29",
+          "bytes": 27254
+        },
+        {
+          "path": "tools/custom_types/bounded_profile.py",
+          "sha256": "96ff9123b74910b9f55b3ad0581757853c2b83664c4e17d8acc6e648a717b903",
+          "bytes": 231785
+        },
+        {
+          "path": "tools/custom_types/combine_catalogs.py",
+          "sha256": "bb99ab94d7bfeec78d34f58040a4c42a3ec7d67ce13935e6f285322ad048c46f",
+          "bytes": 3858
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.go.in",
+          "sha256": "a7ce45ea3f8381d75e2f51fb1d760b2de62dd11863ddec94add8b0b4365c2f9b",
+          "bytes": 9699
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.rs.in",
+          "sha256": "063130e797684df0530aa1882f8082a10d5756ceb892677d8082e980c7b29b18",
+          "bytes": 15514
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.ts.in",
+          "sha256": "a61a7b7eb3b5464648577f3ab44629a5c6140d04effff6e4099509f68b204ac5",
+          "bytes": 16626
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.mjs.in",
+          "sha256": "3c2fde628c63618c1eb5f29747a8b125acba136aef6d19bf42b9ff8aae20cdff",
+          "bytes": 17053
+        }
+      ]
+    },
+    "correction19": {
+      "source_manifest_sha256": "49866bb2fbc82b581924c3f14887d33e13954eb5305375e6161c3c3ad11bdce9",
+      "inputs": [
+        {
+          "path": "tools/custom_types.py",
+          "sha256": "c35e0208184ae54cbf76246e3faf99dc4807712f30aef0ef212ae2446cc5689b",
+          "bytes": 61461
+        },
+        {
+          "path": "tools/cpp_profiles.py",
+          "sha256": "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89",
+          "bytes": 53265
+        },
+        {
+          "path": "tools/industrial/vendor_profile.py",
+          "sha256": "094381ed7605726f6c8f111e04acfd1b0ad26139658ff1bc32e97a57ce80f003",
+          "bytes": 98328
+        },
+        {
+          "path": "tools/native_languages/records.py",
+          "sha256": "3e0f1337d9fe7c33889756363f907371e13ac6aedddde814588db6c13a2f368e",
+          "bytes": 43484
+        },
+        {
+          "path": "tools/native_languages/records_native.py",
+          "sha256": "68a618f84f36c74ee9ed2c20c071fe183b6cb82f24883053ad111e4f970f370d",
+          "bytes": 16808
+        },
+        {
+          "path": "tools/native_languages/documentation.py",
+          "sha256": "20103f9630d92627cd22addc60ce0d3a08a00be595ec5f0f87a2f0d96b5712bc",
+          "bytes": 41932
+        },
+        {
+          "path": "tools/platform/ros/py/control_python_emitter.py",
+          "sha256": "7f08e968118700fad7400c71169ea1dc1b85f323020e3ca887df22d75e343de2",
+          "bytes": 19612
+        },
+        {
+          "path": "tools/custom_types/moonbit_runtime.mbt.in",
+          "sha256": "6152884f53105ce867c6b21bbeb91c956b1f2b65dcfcbf0144805bd2cc990cd0",
+          "bytes": 4151
+        },
+        {
+          "path": "tools/custom_types/managed_profile.py",
+          "sha256": "b5464773f6c56b9d16f36c4db38dceb4fc993e4b360ea3a05a02d354db881eef",
+          "bytes": 40581
+        },
+        {
+          "path": "tools/custom_types/managed_csharp.py",
+          "sha256": "b50516d38756ca9e9def6d6a0ae4d18bb39d9d91679115b4061f34c446f8fdcb",
+          "bytes": 14205
+        },
+        {
+          "path": "tools/custom_types/moonbit_profile.py",
+          "sha256": "6cb8dd407626b118a7011001b7d7a3f7a9fe681f249e438c2dd29f5dbe56bb29",
+          "bytes": 27254
+        },
+        {
+          "path": "tools/custom_types/bounded_profile.py",
+          "sha256": "ea015814a402fb8d53ed63e227f15440fdd806bd2f70d72a00ce56f4a490b294",
+          "bytes": 232253
+        },
+        {
+          "path": "tools/custom_types/combine_catalogs.py",
+          "sha256": "bb99ab94d7bfeec78d34f58040a4c42a3ec7d67ce13935e6f285322ad048c46f",
+          "bytes": 3858
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.go.in",
+          "sha256": "a7ce45ea3f8381d75e2f51fb1d760b2de62dd11863ddec94add8b0b4365c2f9b",
+          "bytes": 9699
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.rs.in",
+          "sha256": "063130e797684df0530aa1882f8082a10d5756ceb892677d8082e980c7b29b18",
+          "bytes": 15514
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.ts.in",
+          "sha256": "a61a7b7eb3b5464648577f3ab44629a5c6140d04effff6e4099509f68b204ac5",
+          "bytes": 16626
+        },
+        {
+          "path": "tools/custom_types/interface_templates/bounded_interfaces.mjs.in",
+          "sha256": "3c2fde628c63618c1eb5f29747a8b125acba136aef6d19bf42b9ff8aae20cdff",
+          "bytes": 17053
+        }
+      ]
+    }
+  },
+  "per_output_generator_profiles": true,
+  "generator_inputs_scope": "Baseline03 retained; only qualified C outputs use approved correction19",
+  "Go_documentation_maintenance": {
+    "source_before_sha256": "6d18f0e0816098d97ed170e2852b84394346b09f7972d17a8941e3122af4f10c",
+    "source_sha256": "26140324d34d2ab06d139839357c370b710a9d532e2156b222dcd459a05fb563",
+    "token_ABI_defaults_preserved_by_parent_review": true,
+    "real_source_rebuild_and_same_cases_revalidated": true,
+    "qualification": "share/platform/nvidia/go-native-review41.json"
+  },
+  "Rust_documentation_maintenance": {
+    "source_sha256": "a54b0d119745ccc14f57bb1a3bbc0b8943c6bf521ae98ee17c754231261b401f",
+    "executable_tokens_unchanged": true,
+    "real_build_and_native_qualification": "share/platform/nvidia/rust-native-review41.json"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "format": "agibot-wasm-interpreter-selection-v1",
+  "ros_backend": "ros2",
+  "ros_distribution": "humble",
+  "target": "wasm32-wasip1",
+  "languages": {
+    "lua": {
+      "directory": "lib/language/lua/ros2/raw-observation-v1",
+      "filename": "lua.wasm",
+      "implementation": "Lua",
+      "version": "5.4.8",
+      "required_wasm_features": [
+        "exceptions"
+      ],
+      "required_wasi_grants": []
+    },
+    "js": {
+      "directory": "lib/language/js/ros2/raw-observation-v1",
+      "filename": "quickjs.wasm",
+      "implementation": "QuickJS",
+      "version": "2026-06-04",
+      "required_wasm_features": [],
+      "required_wasi_grants": []
+    },
+    "py": {
+      "directory": "lib/language/python/ros2/raw-observation-v1",
+      "filename": "cpython.wasm",
+      "implementation": "CPython",
+      "version": "3.14.8",
+      "required_wasm_features": [],
+      "required_wasi_grants": []
+    },
+    "ruby": {
+      "directory": "lib/language/ruby/ros2/raw-observation-v1",
+      "filename": "ruby.wasm",
+      "implementation": "mruby",
+      "version": "3.4.0",
+      "required_wasm_features": [
+        "exceptions"
+      ],
+      "required_wasi_grants": []
+    },
+    "php": {
+      "directory": "lib/language/php/ros2/raw-observation-v1",
+      "filename": "php.wasm",
+      "implementation": "PH7",
+      "version": "2.1.4",
+      "required_wasm_features": [],
+      "required_wasi_grants": [
+        "random"
+      ]
+    }
+  }
+}

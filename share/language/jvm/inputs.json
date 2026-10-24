@@ -1,0 +1,517 @@
+{
+  "format": "uwvm-jvm-original-inputs-v1",
+  "maven_artifacts": [
+    {
+      "file": "annotations-13.0.jar",
+      "bytes": 17536,
+      "sha256": "ace2a10dc8e2d5fd34925ecac03e4988b2c0f851650c94b8cef49ba1bd111478",
+      "source": "https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.jar",
+      "pom_sha256": "965aeb2bedff369819bdde1bf7a0b3b89b8247dd69c88b86375d76163bb8c397"
+    },
+    {
+      "file": "asm-9.8.jar",
+      "bytes": 126113,
+      "sha256": "876eab6a83daecad5ca67eb9fcabb063c97b5aeb8cf1fca7a989ecde17522051",
+      "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.8/asm-9.8.jar",
+      "pom_sha256": "c1367c3bb383d7619e7f797e38df7513885f2eef04ae7b5908f68222657b5baa"
+    },
+    {
+      "file": "asm-analysis-9.8.jar",
+      "bytes": 35151,
+      "sha256": "e640732fbcd3c6271925a504f125e38384688f4dfbbf92c8622dfcee0d09edb9",
+      "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.8/asm-analysis-9.8.jar",
+      "pom_sha256": "c5747e25c72e1b07d5263c75c78ad61a626dd2458fafcafc23f81d3253ee42ed"
+    },
+    {
+      "file": "asm-commons-9.8.jar",
+      "bytes": 73498,
+      "sha256": "3301a1c1cb4c59fcc5292648dac1d7c5aed4c0f067dfbe88873b8cdfe77404f4",
+      "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.8/asm-commons-9.8.jar",
+      "pom_sha256": "f793e78f01f703717d09472e56cdf212fe298970c882e2116e8e549fb6d140c2"
+    },
+    {
+      "file": "asm-tree-9.8.jar",
+      "bytes": 51934,
+      "sha256": "14b7880cb7c85eed101e2710432fc3ffb83275532a6a894dc4c4095d49ad59f1",
+      "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.8/asm-tree-9.8.jar",
+      "pom_sha256": "7149e7faa0e191296f879aeed9209c8942d398f0698d2cca1a9c628f2e2a8f77"
+    },
+    {
+      "file": "asm-util-9.8.jar",
+      "bytes": 94559,
+      "sha256": "8ba0460ecb28fd0e2980e5f3ef3433a513a457bc077f81a53bdc75b587a08d15",
+      "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/9.8/asm-util-9.8.jar",
+      "pom_sha256": "24d0970e171e2917b83a8f0f05d50a1cdb5c82e508555b52dbcc9d3361c4f0ec"
+    },
+    {
+      "file": "commons-io-2.20.0.jar",
+      "bytes": 563971,
+      "sha256": "df90bba0fe3cb586b7f164e78fe8f8f4da3f2dd5c27fa645f888100ccc25dd72",
+      "source": "https://repo.maven.apache.org/maven2/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar",
+      "pom_sha256": "bdbdf81072c190ee9a8b181a5c58f5bd917a750fb13a256debbf53f5dbd33a2a"
+    },
+    {
+      "file": "hppc-0.10.0.jar",
+      "bytes": 1529274,
+      "sha256": "edc83b336476a2b06f7c17d09b17e98bb07678daf968c9825cc14275bdf20a26",
+      "source": "https://repo.maven.apache.org/maven2/com/carrotsearch/hppc/0.10.0/hppc-0.10.0.jar",
+      "pom_sha256": "1c552a8b1da3dba52e10c240cc33bb1ab768e362d860a3ce280386fdb849f60e"
+    },
+    {
+      "file": "joda-time-2.12.2.jar",
+      "bytes": 636782,
+      "sha256": "8d4d807adc8e92a83913d9ccd61e634b4907c78d88f3016d06b3b3d2b4795a02",
+      "source": "https://repo.maven.apache.org/maven2/joda-time/joda-time/2.12.2/joda-time-2.12.2.jar",
+      "pom_sha256": "9a9842bb5569191692e7270766d0282f36706bd4983310edca31bc92f2b2cbcd"
+    },
+    {
+      "file": "jzlib-1.1.3.jar",
+      "bytes": 71976,
+      "sha256": "89b1360f407381bf61fde411019d8cbd009ebb10cff715f3669017a031027560",
+      "source": "https://repo.maven.apache.org/maven2/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar",
+      "pom_sha256": "edb67251608556ad9584d00e46b5ef38ecf1246d571c0f80f24f50b285a9f682"
+    },
+    {
+      "file": "kotlin-compiler-embeddable-2.1.20.jar",
+      "bytes": 56909275,
+      "sha256": "c54a00718c8c0e3ee858bf42771c7f401c5e3c1738861e18e9536371042fa1b3",
+      "source": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.1.20/kotlin-compiler-embeddable-2.1.20.jar",
+      "pom_sha256": "227404eac6d809bc0d94def89336dfdf7d9a7d538792a234d52bdbafc2ae85af"
+    },
+    {
+      "file": "kotlin-daemon-embeddable-2.1.20.jar",
+      "bytes": 345429,
+      "sha256": "d9e83df1d847a201ba3c016a786ced091be9503997d09f6a9cf1796ee489f374",
+      "source": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.1.20/kotlin-daemon-embeddable-2.1.20.jar",
+      "pom_sha256": "b1d38c0afd6e1d15c48c1c5d156ce60578f433136bec523f4eb199f7af3f8229"
+    },
+    {
+      "file": "kotlin-reflect-1.6.10.jar",
+      "bytes": 3038560,
+      "sha256": "3277ac102ae17aad10a55abec75ff5696c8d109790396434b496e75087854203",
+      "source": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.6.10/kotlin-reflect-1.6.10.jar",
+      "pom_sha256": "57905524274a00ae028aaccc27283f6bc5925a934a046c1cc5d06c8ee4d6d5a9"
+    },
+    {
+      "file": "kotlin-script-runtime-2.1.20.jar",
+      "bytes": 43365,
+      "sha256": "ae4397fbb3aa2a1ada09290e753bba99a4114548977c3115526b9958f4cb1a04",
+      "source": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-script-runtime/2.1.20/kotlin-script-runtime-2.1.20.jar",
+      "pom_sha256": "0f83b5a90156c61a6ff109557b2d988e2710ee3fbe9f4a4257a6ea0d8748c3d6"
+    },
+    {
+      "file": "kotlin-stdlib-2.1.20.jar",
+      "bytes": 1724057,
+      "sha256": "1bcc74e8ce84e2c25eaafde10f1248349cce3062b6e36978cbeec610db1e930a",
+      "source": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.20/kotlin-stdlib-2.1.20.jar",
+      "pom_sha256": "6750e1799ee502077dae5c3d599796f667606f60d35e95cb790448dc7912b40b"
+    },
+    {
+      "file": "kotlinx-coroutines-core-jvm-1.8.0.jar",
+      "bytes": 1548360,
+      "sha256": "9860906a1937490bf5f3b06d2f0e10ef451e65b95b269f22daf68a3d1f5065c5",
+      "source": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.8.0/kotlinx-coroutines-core-jvm-1.8.0.jar",
+      "pom_sha256": "a5633abd53467ceb91622d81f2e982080877145e0b76e1b75788715434885d0b"
+    },
+    {
+      "file": "rhino-1.7.15.jar",
+      "bytes": 1407735,
+      "sha256": "2427fdcbc149ca0a25ccfbb7c71b01f39ad42708773a47816cd2342861766b63",
+      "source": "https://repo.maven.apache.org/maven2/org/mozilla/rhino/1.7.15/rhino-1.7.15.jar",
+      "pom_sha256": "fc5cc95ec945d7509f1b36321393d55ecd1e075e62fe993c848bf31e6139030f"
+    },
+    {
+      "file": "teavm-classlib-0.13.1.jar",
+      "bytes": 17768641,
+      "sha256": "a250f7baf877767af72634cd3f19d30f2a6b8a3fb16bd3931b99fde1b17cd12d",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-classlib/0.13.1/teavm-classlib-0.13.1.jar",
+      "pom_sha256": "1d7742bb365e620a41fe58b5177179ec45b32b4c8ec61faee6becdfe605eb041"
+    },
+    {
+      "file": "teavm-core-0.13.1.jar",
+      "bytes": 2950160,
+      "sha256": "b9fe1b008512c8f11ff3efbd9cf2f0565b4bfa76943a9f23910befc0812f7ebf",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-core/0.13.1/teavm-core-0.13.1.jar",
+      "pom_sha256": "9d901497e905afca79e62a389a40533ece0832972849e6af8dc92b7892d6fa13"
+    },
+    {
+      "file": "teavm-interop-0.13.1.jar",
+      "bytes": 13753,
+      "sha256": "f00f983b986d367799570ab482fee89502915213fe347d361e5bcf1e23a8fa04",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-interop/0.13.1/teavm-interop-0.13.1.jar",
+      "pom_sha256": "23d79ce612d3003d9110d76d117493841f846c1dee4ff6f38b2b0528f89e765f"
+    },
+    {
+      "file": "teavm-jso-0.13.1.jar",
+      "bytes": 8391,
+      "sha256": "421b848c79d161c34e9f178d3d37b35e8efaadada487056c3fd3d4d3de1c172c",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-jso/0.13.1/teavm-jso-0.13.1.jar",
+      "pom_sha256": "79abcf57ae3a5a126fd6c59712651d7c0b7ea83b68a66f8e498e4d4e58e938a0"
+    },
+    {
+      "file": "teavm-jso-apis-0.13.1.jar",
+      "bytes": 177707,
+      "sha256": "7a7c211dd03dfbca4445ea5e01b70091226d9e52ce7425d675294ef47a76586b",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-jso-apis/0.13.1/teavm-jso-apis-0.13.1.jar",
+      "pom_sha256": "fbfb1ee5f1d0130ce8b2553066796da024d36d5b69929d80ff6d70e2a9aff621"
+    },
+    {
+      "file": "teavm-jso-impl-0.13.1.jar",
+      "bytes": 198975,
+      "sha256": "335778b447c10a8029d59a413c37b3b499f1c34ef9e25b08d11f2414a511df0a",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-jso-impl/0.13.1/teavm-jso-impl-0.13.1.jar",
+      "pom_sha256": "b70ca7b5a7ccba45fefb77e860de146f6ebd17ca3fc2b6539fd7db326dfbd39e"
+    },
+    {
+      "file": "teavm-metaprogramming-api-0.13.1.jar",
+      "bytes": 9696,
+      "sha256": "c74a51421913054f434a568f4b13cccc6f832cc5af616837332d7caf4a9eed5b",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-metaprogramming-api/0.13.1/teavm-metaprogramming-api-0.13.1.jar",
+      "pom_sha256": "b76eefd3b24fcb555f59a1793e35f67f7c4d2140269fe7dae5dda45ec96198bb"
+    },
+    {
+      "file": "teavm-metaprogramming-impl-0.13.1.jar",
+      "bytes": 112951,
+      "sha256": "56f5536c8287288d823af3ab80874eab2968cda6acbbe3f33c5212c88a4eb890",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-metaprogramming-impl/0.13.1/teavm-metaprogramming-impl-0.13.1.jar",
+      "pom_sha256": "3c94f8e1081948f6715b5522d713d176ab52e10abe0fb3e8d120bc989c909f73"
+    },
+    {
+      "file": "teavm-platform-0.13.1.jar",
+      "bytes": 131492,
+      "sha256": "ca725f27d0be52d1ddc95e11b63bad8cfe0f66dac9977a46d4089c6282ee1f8e",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-platform/0.13.1/teavm-platform-0.13.1.jar",
+      "pom_sha256": "47ad2c32d998a8e6997409c8266c084b2cbd2afa42e4b1d8ef5ef82cdea2202b"
+    },
+    {
+      "file": "teavm-relocated-libs-asm-0.13.1.jar",
+      "bytes": 126383,
+      "sha256": "400496e463dddd878fed2b9b25a66deca2126f71bb68e41f82244b4315006018",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-relocated-libs-asm/0.13.1/teavm-relocated-libs-asm-0.13.1.jar",
+      "pom_sha256": "5c5c43e39507eba2369c7f1c4dbd28b02c784c54be9bbbbf5c428d4694040d2a"
+    },
+    {
+      "file": "teavm-relocated-libs-asm-analysis-0.13.1.jar",
+      "bytes": 34800,
+      "sha256": "6bb5ef62ab00d557061d9b04dc4571f711fbe11d339783e55029b37b75d5159c",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-relocated-libs-asm-analysis/0.13.1/teavm-relocated-libs-asm-analysis-0.13.1.jar",
+      "pom_sha256": "32763a3c06cc9a75c583cdb9847c9d06942be63c0f7b938755c186c073280335"
+    },
+    {
+      "file": "teavm-relocated-libs-asm-commons-0.13.1.jar",
+      "bytes": 73343,
+      "sha256": "d49685681db5039075f2fde01568f2bb6df14a99ef88d39b29df8e701e12e140",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-relocated-libs-asm-commons/0.13.1/teavm-relocated-libs-asm-commons-0.13.1.jar",
+      "pom_sha256": "8b1a695b96dbf0fd9949f8ea52c840e49bee1087886fd55574e69f5973c93994"
+    },
+    {
+      "file": "teavm-relocated-libs-asm-tree-0.13.1.jar",
+      "bytes": 51412,
+      "sha256": "6b475fd62b8ddedfa0808c0c412c311f000a80a13123b6ba07f5da531164fd5b",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-relocated-libs-asm-tree/0.13.1/teavm-relocated-libs-asm-tree-0.13.1.jar",
+      "pom_sha256": "709f6ba136af7cfeb2c63f9da5aecd6e600e57ad067bc8ce863ed4cbe722e02d"
+    },
+    {
+      "file": "teavm-relocated-libs-asm-util-0.13.1.jar",
+      "bytes": 94715,
+      "sha256": "a41247ca7f023959712be0e713d3f2f5687b4dfeda6b112b2d976494d52cdc57",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-relocated-libs-asm-util/0.13.1/teavm-relocated-libs-asm-util-0.13.1.jar",
+      "pom_sha256": "ff3d96a44b551345a275c62b20c70c96676f9b8e40ab2ba8ba7aae84a5719a3a"
+    },
+    {
+      "file": "teavm-relocated-libs-commons-io-0.13.1.jar",
+      "bytes": 563696,
+      "sha256": "5e1a666948a40dada1d3fbce41503bad6ce86035662bf131c8df227b30859a79",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-relocated-libs-commons-io/0.13.1/teavm-relocated-libs-commons-io-0.13.1.jar",
+      "pom_sha256": "063d0c91036ccd58771daf1a085c65d075563285dbcda6ef8cf86f7984d6f09c"
+    },
+    {
+      "file": "teavm-relocated-libs-hppc-0.13.1.jar",
+      "bytes": 1509391,
+      "sha256": "7b82fedf747e0bf5d7a50acece86a8a684901e469165a3c5621c653128df4cd6",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-relocated-libs-hppc/0.13.1/teavm-relocated-libs-hppc-0.13.1.jar",
+      "pom_sha256": "cba51bb77c5094932afc79adda52393b17861b59cb0f55698affdead0c9c95a0"
+    },
+    {
+      "file": "teavm-relocated-libs-rhino-0.13.1.jar",
+      "bytes": 1426826,
+      "sha256": "49cedc9bfcdd44d30b8bc8d1d46d78fb7f8f2044b8c85c9c3f1ece33e94ee7e9",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-relocated-libs-rhino/0.13.1/teavm-relocated-libs-rhino-0.13.1.jar",
+      "pom_sha256": "3d5d1b41ae99608994ef04af4930733aa46d63232708650bc8a146deaf2d8f0c"
+    },
+    {
+      "file": "teavm-tooling-0.13.1.jar",
+      "bytes": 69009,
+      "sha256": "b382fd7c02b48c133d27ed4d89047659006c3e275ab97acf3f9d14e432d4cb1a",
+      "source": "https://repo.maven.apache.org/maven2/org/teavm/teavm-tooling/0.13.1/teavm-tooling-0.13.1.jar",
+      "pom_sha256": "effd295a335882a5d1e8f3d61b41b58aefc1d275754641856b9232a48b3fc821"
+    },
+    {
+      "file": "trove4j-1.0.20200330.jar",
+      "bytes": 572985,
+      "sha256": "c5fd725bffab51846bf3c77db1383c60aaaebfe1b7fe2f00d23fe1b7df0a439d",
+      "source": "https://repo.maven.apache.org/maven2/org/jetbrains/intellij/deps/trove4j/1.0.20200330/trove4j-1.0.20200330.jar",
+      "pom_sha256": "87721cbaa65a3c97d8b1ba9d207840f164c9fe38759fc9ea10ffe26565f8d3e9"
+    }
+  ],
+  "native_packages": [
+    {
+      "binary_package": "libasound2t64:amd64",
+      "version": "1.2.14-1ubuntu1.1",
+      "source_package": "alsa-lib",
+      "source_version": "1.2.14-1ubuntu1.1",
+      "license_sha256": "28615d5f059d212259b6a82f6326daf8753349df8dfbdcd108310460ed2ec04f"
+    },
+    {
+      "binary_package": "libatk-bridge2.0-0t64:amd64",
+      "version": "2.57.1-1",
+      "source_package": "at-spi2-core",
+      "source_version": "2.57.1-1",
+      "license_sha256": "4462f8c0c8b1bad58cb134dcfeecc0a2168089ceaa08993a42ccbce3f7ff7c96"
+    },
+    {
+      "binary_package": "libatk1.0-0t64:amd64",
+      "version": "2.57.1-1",
+      "source_package": "at-spi2-core",
+      "source_version": "2.57.1-1",
+      "license_sha256": "4462f8c0c8b1bad58cb134dcfeecc0a2168089ceaa08993a42ccbce3f7ff7c96"
+    },
+    {
+      "binary_package": "libatomic1:amd64",
+      "version": "16-20260322-1ubuntu1",
+      "source_package": "gcc-16",
+      "source_version": "16-20260322-1ubuntu1",
+      "license_sha256": "d7815dd2364180835891947d96d808878204dea45b8597602a7952332195fbea"
+    },
+    {
+      "binary_package": "libatspi2.0-0t64:amd64",
+      "version": "2.57.1-1",
+      "source_package": "at-spi2-core",
+      "source_version": "2.57.1-1",
+      "license_sha256": "4462f8c0c8b1bad58cb134dcfeecc0a2168089ceaa08993a42ccbce3f7ff7c96"
+    },
+    {
+      "binary_package": "libblkid1:amd64",
+      "version": "2.41-4ubuntu4.2",
+      "source_package": "util-linux",
+      "source_version": "2.41-4ubuntu4.2",
+      "license_sha256": "56b67e2eb8bac5a15d91e261d558d73f1f029113cced229753138194997366b6"
+    },
+    {
+      "binary_package": "libbrotli1:amd64",
+      "version": "1.1.0-2build5",
+      "source_package": "brotli",
+      "source_version": "1.1.0-2build5",
+      "license_sha256": "24a64e5bb83d0960d1835696a1e23c0896ad6055b0ca47c66ab0eb9a766324b1"
+    },
+    {
+      "binary_package": "libbz2-1.0:amd64",
+      "version": "1.0.8-6build1",
+      "source_package": "bzip2",
+      "source_version": "1.0.8-6build1",
+      "license_sha256": "832ed535ff3c3d025a8d2348eb1b697b89addcf2eaadbc17650262040b9145e2"
+    },
+    {
+      "binary_package": "libc6:amd64",
+      "version": "2.43-2ubuntu2",
+      "source_package": "glibc",
+      "source_version": "2.43-2ubuntu2",
+      "license_sha256": "c31d10900fdb95d1889005145a2205bb75e3bc018d3ec8265b81364901748e09"
+    },
+    {
+      "binary_package": "libcap2:amd64",
+      "version": "1:2.75-7ubuntu2.2",
+      "source_package": "libcap2",
+      "source_version": "1:2.75-7ubuntu2.2",
+      "license_sha256": "04f9fb974e10f6ca0cd226811f72b3855f8383daad0e5de7adac8d5b0b7796c3"
+    },
+    {
+      "binary_package": "libdbus-1-3:amd64",
+      "version": "1.16.2-2ubuntu2",
+      "source_package": "dbus",
+      "source_version": "1.16.2-2ubuntu2",
+      "license_sha256": "f5fd0bfcceb21f4c23a517368abcbfe8a4c1cfb3b521757b50fae4898840fe35"
+    },
+    {
+      "binary_package": "libffi8:amd64",
+      "version": "3.5.2-1build1",
+      "source_package": "libffi",
+      "source_version": "3.5.2-1build1",
+      "license_sha256": "25ee86cfccc2b7eb9a156a127f1e1b38c46c231f516ff201912223eaf62ee186"
+    },
+    {
+      "binary_package": "libfreetype6:amd64",
+      "version": "2.13.3+dfsg-1ubuntu0.1",
+      "source_package": "freetype",
+      "source_version": "2.13.3+dfsg-1ubuntu0.1",
+      "license_sha256": "acdab1506824347784d2cc0a634cfa17dbf525c0d5b4902b4ac9d0d4e1fed6c7"
+    },
+    {
+      "binary_package": "libgif7:amd64",
+      "version": "5.2.2-1ubuntu2",
+      "source_package": "giflib",
+      "source_version": "5.2.2-1ubuntu2",
+      "license_sha256": "479e834b17e61f0afe5f4a62e1794a4543208dea955820399e2d9589a1938fb0"
+    },
+    {
+      "binary_package": "libglib2.0-0t64:amd64",
+      "version": "2.88.0-1",
+      "source_package": "glib2.0",
+      "source_version": "2.88.0-1",
+      "license_sha256": "498035c1e93c9d12306f4ba8f37686c2a527657f8b17969ec6d11c1af87e543d"
+    },
+    {
+      "binary_package": "libgraphite2-3:amd64",
+      "version": "1.3.14-2ubuntu1",
+      "source_package": "graphite2",
+      "source_version": "1.3.14-2ubuntu1",
+      "license_sha256": "a33017ba0308c41bdbde4751bff349ab7b26af45fadbb1e3e7ac67c372985572"
+    },
+    {
+      "binary_package": "libharfbuzz0b:amd64",
+      "version": "10.2.0-1",
+      "source_package": "harfbuzz",
+      "source_version": "10.2.0-1",
+      "license_sha256": "9295e101a07824e8ae77c448884bd357a64b831cd4c47f125bf4ac7ea0d8f911"
+    },
+    {
+      "binary_package": "libjpeg-turbo8:amd64",
+      "version": "2.1.5-4ubuntu2",
+      "source_package": "libjpeg-turbo",
+      "source_version": "2.1.5-4ubuntu2",
+      "license_sha256": "3821184e23385bf2cdc01f56bd999b34036fc3aa03d5135d41680374eb81bf8a"
+    },
+    {
+      "binary_package": "liblcms2-2:amd64",
+      "version": "2.16-2ubuntu0.2",
+      "source_package": "lcms2",
+      "source_version": "2.16-2ubuntu0.2",
+      "license_sha256": "420fd2c72204652c08a48548a0d1002edab3d9b180d3c416578c61f74092f460"
+    },
+    {
+      "binary_package": "libmount1:amd64",
+      "version": "2.41-4ubuntu4.2",
+      "source_package": "util-linux",
+      "source_version": "2.41-4ubuntu4.2",
+      "license_sha256": "56b67e2eb8bac5a15d91e261d558d73f1f029113cced229753138194997366b6"
+    },
+    {
+      "binary_package": "libpcre2-8-0:amd64",
+      "version": "10.46-1build1",
+      "source_package": "pcre2",
+      "source_version": "10.46-1build1",
+      "license_sha256": "e915cde4251f96ec6af107ecd2e194440a4e69440893b0c982802f8a1e4ae40a"
+    },
+    {
+      "binary_package": "libpcsclite1:amd64",
+      "version": "2.3.3-1",
+      "source_package": "pcsc-lite",
+      "source_version": "2.3.3-1",
+      "license_sha256": "d887f9b7ab95ec9099296b8d315b9f436b1ff0e21c1621f033ef7f162f5c4a79"
+    },
+    {
+      "binary_package": "libpng16-16t64:amd64",
+      "version": "1.6.50-1ubuntu0.5",
+      "source_package": "libpng1.6",
+      "source_version": "1.6.50-1ubuntu0.5",
+      "license_sha256": "87a011d21b5058f79612975b07e94b2cd4ecfb445d603be58268d1535884e82a"
+    },
+    {
+      "binary_package": "libselinux1:amd64",
+      "version": "3.8.1-1build1",
+      "source_package": "libselinux",
+      "source_version": "3.8.1-1build1",
+      "license_sha256": "864f1bb189f609075d580b8c4aada16d85a44546884f1687989e1cacc8c56751"
+    },
+    {
+      "binary_package": "libssl3t64:amd64",
+      "version": "3.5.3-1ubuntu3.3",
+      "source_package": "openssl",
+      "source_version": "3.5.3-1ubuntu3.3",
+      "license_sha256": "6a7da622fe0637a334d2a8fc470852d2ffb77d9a2b2f930f854e32a41ad6ef35"
+    },
+    {
+      "binary_package": "libsystemd0:amd64",
+      "version": "257.9-0ubuntu2.4",
+      "source_package": "systemd",
+      "source_version": "257.9-0ubuntu2.4",
+      "license_sha256": "a79e4b379cabbd960bb44f6cc1a069081a3778c59a25ee529b68df5a2cb7d27d"
+    },
+    {
+      "binary_package": "libx11-6:amd64",
+      "version": "2:1.8.12-1build1",
+      "source_package": "libx11",
+      "source_version": "2:1.8.12-1build1",
+      "license_sha256": "0b380a7fd5b2228f26e9585e56f14812efd3350f3df307507d2bc055dfd8de3e"
+    },
+    {
+      "binary_package": "libxau6:amd64",
+      "version": "1:1.0.11-1build1",
+      "source_package": "libxau",
+      "source_version": "1:1.0.11-1build1",
+      "license_sha256": "118dd263a7b91c8f21c489f949bf13281dff9e766deea92b829dac4dce66601a"
+    },
+    {
+      "binary_package": "libxcb1:amd64",
+      "version": "1.17.0-2build1",
+      "source_package": "libxcb",
+      "source_version": "1.17.0-2build1",
+      "license_sha256": "4f7cb9db6bf6542f5417e3d674c780d3a5fd12291a54d63054fb576ee0cfae80"
+    },
+    {
+      "binary_package": "libxdmcp6:amd64",
+      "version": "1:1.1.5-1build1",
+      "source_package": "libxdmcp",
+      "source_version": "1:1.1.5-1build1",
+      "license_sha256": "1bcbb50f8603fe8b86d330bfa460b772ea04fbd3c70e4499f0768b5340b9fd6e"
+    },
+    {
+      "binary_package": "libxext6:amd64",
+      "version": "2:1.3.4-1build2",
+      "source_package": "libxext",
+      "source_version": "2:1.3.4-1build2",
+      "license_sha256": "bc57e445ca1d9fe082c8d54189dd411ff26caa8552c9c63d44ea06a982f32124"
+    },
+    {
+      "binary_package": "libxi6:amd64",
+      "version": "2:1.8.2-1",
+      "source_package": "libxi",
+      "source_version": "2:1.8.2-1",
+      "license_sha256": "c812f9c54513ae593aab9580b54a4b18219648df7068d49ca1daa47f522ba3fa"
+    },
+    {
+      "binary_package": "libxrender1:amd64",
+      "version": "1:0.9.12-1",
+      "source_package": "libxrender",
+      "source_version": "1:0.9.12-1",
+      "license_sha256": "ed2a78123a5076b4f11da38cb1ffb85b5cb9fdc26b5746c517b1d7e7a9029704"
+    },
+    {
+      "binary_package": "libxtst6:amd64",
+      "version": "2:1.2.5-1",
+      "source_package": "libxtst",
+      "source_version": "2:1.2.5-1",
+      "license_sha256": "304f78731e1e0e78132fbba4e1909c8642878a3b8c4837b36cb2d38891bf2204"
+    },
+    {
+      "binary_package": "libzstd1:amd64",
+      "version": "1.5.7+dfsg-3",
+      "source_package": "libzstd",
+      "source_version": "1.5.7+dfsg-3",
+      "license_sha256": "2efe51c80ddc473bc2c91faec49dae645bf7f5a04824528fec816320432da2ae"
+    },
+    {
+      "binary_package": "openjdk-21-jre-headless:amd64",
+      "version": "21.0.10+7-1~25.10",
+      "source_package": "openjdk-21",
+      "source_version": "21.0.10+7-1~25.10",
+      "license_sha256": "723521b6fcdd4fe6215dc7a956fb40cd16725de983e11cd5898c8d17cc3b257c"
+    }
+  ],
+  "jdk": {
+    "jdk_source": "/usr/lib/jvm/java-21-openjdk-amd64",
+    "jdk_release": "IMPLEMENTOR=\"Ubuntu\"\nJAVA_RUNTIME_VERSION=\"21.0.10+7-Ubuntu-125.10\"\nJAVA_VERSION=\"21.0.10\"\nJAVA_VERSION_DATE=\"2026-01-20\"\nLIBC=\"gnu\"\nMODULES=\"java.base java.compiler java.datatransfer java.xml java.prefs java.desktop java.instrument java.logging java.management java.security.sasl java.naming java.rmi java.management.rmi java.net.http java.scripting java.security.jgss java.transaction.xa java.sql java.sql.rowset java.xml.crypto java.se java.smartcardio jdk.accessibility jdk.internal.jvmstat jdk.attach jdk.charsets jdk.internal.opt jdk.zipfs jdk.compiler jdk.crypto.ec jdk.crypto.cryptoki jdk.dynalink jdk.internal.ed jdk.editpad jdk.hotspot.agent jdk.httpserver jdk.incubator.vector jdk.internal.le jdk.internal.vm.ci jdk.internal.vm.compiler jdk.internal.vm.compiler.management jdk.jartool jdk.javadoc jdk.jcmd jdk.management jdk.management.agent jdk.jconsole jdk.jdeps jdk.jdwp.agent jdk.jdi jdk.jfr jdk.jlink jdk.jpackage jdk.jshell jdk.jsobject jdk.jstatd jdk.localedata jdk.management.jfr jdk.naming.dns jdk.naming.rmi jdk.net jdk.nio.mapmode jdk.random jdk.sctp jdk.security.auth jdk.security.jgss jdk.unsupported jdk.unsupported.desktop jdk.xml.dom\"\nOS_ARCH=\"x86_64\"\nOS_NAME=\"Linux\"\nSOURCE=\"\"\n"
+  },
+  "consumer_network_required": false,
+  "original_tool_manifest_sha256": "34ff258feee9a75d40214ed238f16d98c3926b24501958eb8f74fd5789e173aa"
+}

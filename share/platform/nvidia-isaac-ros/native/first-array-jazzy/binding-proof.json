@@ -1,0 +1,228 @@
+{
+  "profile": "uwvm-ros-vendor-complete-bounded-v1",
+  "status": "ORIGINAL_NATIVE_ARRAY_DDS_QUALIFIED_NARROW_SCOPE",
+  "default_authority": [],
+  "source_inputs": {
+    "catalog": {
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/catalog.first-array.preparation.json",
+      "bytes": 1975,
+      "sha256": "e8b3d24daa1da01bbce20a7dc9320cbd948f1456b30c3744bf00c58a63055afa"
+    },
+    "definitions": [
+      {
+        "file": "builtin_interfaces/msg/Time.msg",
+        "bytes": 421,
+        "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/builtin_interfaces/msg/Time.msg"
+      },
+      {
+        "file": "std_msgs/msg/Header.msg",
+        "bytes": 322,
+        "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/std_msgs/msg/Header.msg"
+      },
+      {
+        "file": "geometry_msgs/msg/Point.msg",
+        "bytes": 84,
+        "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/Point.msg"
+      },
+      {
+        "file": "geometry_msgs/msg/Quaternion.msg",
+        "bytes": 116,
+        "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/Quaternion.msg"
+      },
+      {
+        "file": "geometry_msgs/msg/Pose.msg",
+        "bytes": 119,
+        "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/Pose.msg"
+      },
+      {
+        "file": "geometry_msgs/msg/PoseWithCovariance.msg",
+        "bytes": 323,
+        "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/PoseWithCovariance.msg"
+      },
+      {
+        "file": "geometry_msgs/msg/PoseWithCovarianceStamped.msg",
+        "bytes": 131,
+        "sha256": "87b6851480902effb5232f87bf68e76f19bf7b26affa11001be9e515542c21fb",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/PoseWithCovarianceStamped.msg"
+      },
+      {
+        "file": "isaac_ros_apriltag_interfaces/msg/AprilTagDetection.msg",
+        "bytes": 207,
+        "sha256": "ca1f15f12f565f9e8b0c9ed4b407ef99596424aaedbab3a0398140b6a771fc48",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/isaac_ros_apriltag_interfaces/msg/AprilTagDetection.msg"
+      },
+      {
+        "file": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray.msg",
+        "bytes": 54,
+        "sha256": "04265d730aef8b08214eeebf8f820b63954a655b53b464fd1d1a59b017d67ced",
+        "path": "share/platform/nvidia-isaac-ros/schemas/ros2/isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray.msg"
+      }
+    ]
+  },
+  "native_metadata": {
+    "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/native-metadata.json",
+    "bytes": 28346,
+    "sha256": "8594f18e3bc89f124f58357e2db6efdfcfe60b37cf1ef32b8b2c5a36c193e7e2"
+  },
+  "constant_schema_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+  "historical_source_only_binding": {
+    "profile": "uwvm-ros-vendor-complete-bounded-v1",
+    "status": "SOURCE_BOUND_NOT_NATIVE_OR_HARDWARE_QUALIFIED",
+    "default_authority": [],
+    "source_inputs": {
+      "catalog": {
+        "bytes": 1975,
+        "sha256": "e8b3d24daa1da01bbce20a7dc9320cbd948f1456b30c3744bf00c58a63055afa"
+      },
+      "definitions": [
+        {
+          "file": "builtin_interfaces/msg/Time.msg",
+          "bytes": 421,
+          "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+        },
+        {
+          "file": "std_msgs/msg/Header.msg",
+          "bytes": 322,
+          "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+        },
+        {
+          "file": "geometry_msgs/msg/Point.msg",
+          "bytes": 84,
+          "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+        },
+        {
+          "file": "geometry_msgs/msg/Quaternion.msg",
+          "bytes": 116,
+          "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+        },
+        {
+          "file": "geometry_msgs/msg/Pose.msg",
+          "bytes": 119,
+          "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+        },
+        {
+          "file": "geometry_msgs/msg/PoseWithCovariance.msg",
+          "bytes": 323,
+          "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94"
+        },
+        {
+          "file": "geometry_msgs/msg/PoseWithCovarianceStamped.msg",
+          "bytes": 131,
+          "sha256": "87b6851480902effb5232f87bf68e76f19bf7b26affa11001be9e515542c21fb"
+        },
+        {
+          "file": "isaac_ros_apriltag_interfaces/msg/AprilTagDetection.msg",
+          "bytes": 207,
+          "sha256": "ca1f15f12f565f9e8b0c9ed4b407ef99596424aaedbab3a0398140b6a771fc48"
+        },
+        {
+          "file": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray.msg",
+          "bytes": 54,
+          "sha256": "04265d730aef8b08214eeebf8f820b63954a655b53b464fd1d1a59b017d67ced"
+        }
+      ]
+    },
+    "native_metadata": {
+      "bytes": 28346,
+      "sha256": "8594f18e3bc89f124f58357e2db6efdfcfe60b37cf1ef32b8b2c5a36c193e7e2"
+    },
+    "constant_schema_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "bound_catalog": {
+    "path": "share/platform/nvidia-isaac-ros/schemas/ros2/catalog.first-array.native.json",
+    "bytes": 2875,
+    "sha256": "592ab1d81d7a93a2b052a357fd03feea75620b6ab17a3f4e507d1002e66e225b"
+  },
+  "current_layout_source_only": false,
+  "source_preparation": "Parent-reviewed directory/format correction plus English Doxygen; no codec or native identity token changed",
+  "source_layout_proof": {
+    "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/source-layout-proof.json",
+    "bytes": 19974,
+    "sha256": "2a593416eaaf8dea6085fad10099a9ab0fabd4d60c781c35adee3c92e07bc3b1"
+  },
+  "native_code": [
+    {
+      "path": "include/platform/nvidia-isaac-ros/native/first-array-jazzy/bounded_records.h",
+      "bytes": 109078,
+      "sha256": "866252c064c488f713a759f2a4275eccc660e4406b482a4e35af5e2b2a083b22"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/native/first-array-jazzy/manifest.hpp",
+      "bytes": 10491,
+      "sha256": "65d2b2f14a63b8dc02706f8fef8f9bb98eb72dd2a0f6cc68b774ff64b3f5dd00"
+    },
+    {
+      "path": "include/platform/nvidia-isaac-ros/native/first-array-jazzy/native_constants.hpp",
+      "bytes": 893,
+      "sha256": "3b37351af9f1707c680f99f7259b9cc8157232344e6778f0c63dfd4a5f7da706"
+    },
+    {
+      "path": "src/platform/nvidia-isaac-ros/native/first-array-jazzy/native_ros2.hpp",
+      "bytes": 149571,
+      "sha256": "1e9bf8672aedc0ba268dbc5b2458c954d23e700e1b824219e73cb3e01440d1f8"
+    }
+  ],
+  "qualified_execution": {
+    "corrected_layout": {
+      "sha256": "ef1f2818cb0651f4930475b6034511a2c8a12a7df2970813893b1d1646cdac2e",
+      "passed": 16
+    },
+    "four_module": {
+      "sha256": "ac93f98d40089c0e7fe5b825aa20dbdac1267abba7b081261df53793b2679051",
+      "passed": 20,
+      "source_languages": [
+        "c",
+        "cpp"
+      ],
+      "shared_module_builds": 6,
+      "main_builds": 2,
+      "complete_library_catalog": false,
+      "only_ROS_module": "ros_comm"
+    },
+    "guest_publish": {
+      "cases": 16,
+      "guest_language": "c",
+      "target_kind": "binary",
+      "operation": "topic.publish",
+      "widths": [
+        32,
+        64
+      ],
+      "hosts": [
+        "x86_64",
+        "aarch64-qemu"
+      ],
+      "evidence_sha256": "df918e3f116649e007628f177a044a76e9d461e527f6f79323e7117d8b9a08f8",
+      "source_packet_manifest_sha256": "cb2fad0862932c99bfa8a891903e224d8406835fed8d1d9a6fdcb9e32ee959e8",
+      "every_native_sample_compared_in_full": true,
+      "covariance_entries_per_sample": 72,
+      "same_exact_Wasm_per_width": true,
+      "poisoned_publication_never_observed": true,
+      "original_executed_registry_sha256": "1586e539ebac14a44ac05df9e38a32afd09577499be4323c4b52853fc44803f9",
+      "original_executed_native_provider_sha256": "cd5d21527366d848dbea8d9173b0db50477010f2f5c67df802ea26ffd57299a9",
+      "formatted_native_VM_gateway_recompiled": false,
+      "GPU_NITROS_qualified": false
+    }
+  },
+  "native_type_support_inputs": {
+    "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/native-type-support-inputs.json",
+    "bytes": 1719,
+    "sha256": "f205a1bf36c9e0028378d8fb9d5023832a440a6a1748c75262b7f0f66f327ef7"
+  },
+  "guest_codec_documentation": {
+    "sha256": "eb0d8667abbda171335bade0f47933c027705969b286277ea43c9cf743c7c35f",
+    "comment_only": true
+  },
+  "installed_byte_qualification": "Token-equivalent C formatting; original execution hashes remain separate. No rerun of the existing36 is claimed.",
+  "final_native_source_closure": {
+    "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/native-header-review39.json",
+    "bytes": 4557,
+    "sha256": "6eb62104960136d8bc267370476568200b8215a342605e112451c2cc1a3467d1"
+  }
+}

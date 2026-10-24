@@ -1,0 +1,864 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/AI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/AI"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/AO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/AO"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/AOInstant.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/AOInstant"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/AccJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/AccJ"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/AccL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/AccL"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/Arc.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/Arc"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/BrakeControl.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/BrakeControl"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/CP.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/CP"
+    },
+    {
+      "bounds": {
+        "request.offset": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/CalcTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/CalcTool"
+    },
+    {
+      "bounds": {
+        "request.offset": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/CalcUser.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/CalcUser"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/Circle.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/Circle"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/ClearError.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ClearError"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/Continue.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/Continue"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/DI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/DI"
+    },
+    {
+      "bounds": {
+        "request.args": {
+          "sequence": 16
+        }
+      },
+      "file": "rosdemo_v4/srv/DIGroup.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/DIGroup"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/DO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/DO"
+    },
+    {
+      "bounds": {
+        "request.args": {
+          "sequence": 16
+        }
+      },
+      "file": "rosdemo_v4/srv/DOGroup.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/DOGroup"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/DOInstant.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/DOInstant"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/DisableRobot.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/DisableRobot"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/DragSensivity.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/DragSensivity"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/EmergencyStop.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/EmergencyStop"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/EnableRobot.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/EnableRobot"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/EnableSafeSkin.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/EnableSafeSkin"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetAO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetAO"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetAngle.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetAngle"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetCoils.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetCoils"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetCurrentCommandId.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetCurrentCommandId"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetDO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetDO"
+    },
+    {
+      "bounds": {
+        "request.index_group": {
+          "sequence": 16
+        }
+      },
+      "file": "rosdemo_v4/srv/GetDOGroup.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetDOGroup"
+    },
+    {
+      "bounds": {
+        "response.error_id": {
+          "sequence": 16
+        }
+      },
+      "file": "rosdemo_v4/srv/GetErrorID.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetErrorID"
+    },
+    {
+      "bounds": {
+        "request.valType": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/GetHoldRegs.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetHoldRegs"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetInBits.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetInBits"
+    },
+    {
+      "bounds": {
+        "request.valType": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/GetInRegs.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetInRegs"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetInputBool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetInputBool"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetInputFloat.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetInputFloat"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetInputInt.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetInputInt"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetOutputBool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetOutputBool"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetOutputFloat.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetOutputFloat"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/GetOutputInt.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetOutputInt"
+    },
+    {
+      "bounds": {
+        "request.tool": {
+          "string": 256
+        },
+        "request.user": {
+          "string": 256
+        },
+        "response.pose": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/GetPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetPose"
+    },
+    {
+      "bounds": {
+        "request.traceName": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/GetStartPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/GetStartPose"
+    },
+    {
+      "bounds": {
+        "request.jointNear": {
+          "string": 256
+        },
+        "request.tool": {
+          "string": 256
+        },
+        "request.useJointNear": {
+          "string": 256
+        },
+        "request.user": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/InverseKin.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/InverseKin"
+    },
+    {
+      "bounds": {
+        "request.parameter": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/InverseSolution.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/InverseSolution"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/ModbusClose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ModbusClose"
+    },
+    {
+      "bounds": {
+        "request.ip": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/ModbusCreate.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ModbusCreate"
+    },
+    {
+      "bounds": {
+        "request.parity": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/ModbusRTUCreate.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ModbusRTUCreate"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/MovJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/MovJ"
+    },
+    {
+      "bounds": {
+        "request.MDIS": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/MovJIO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/MovJIO"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/MovL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/MovL"
+    },
+    {
+      "bounds": {
+        "request.MDIS": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/MovLIO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/MovLIO"
+    },
+    {
+      "bounds": {
+        "request.axisID": {
+          "string": 256
+        },
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/MoveJog.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/MoveJog"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/Pause.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/Pause"
+    },
+    {
+      "bounds": {
+        "request.tool": {
+          "string": 256
+        },
+        "request.user": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/PositiveKin.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/PositiveKin"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/PowerOn.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/PowerOn"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/RelJointMovJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/RelJointMovJ"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/RelMovJTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/RelMovJTool"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/RelMovJUser.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/RelMovJUser"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/RelMovLTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/RelMovLTool"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/RelMovLUser.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/RelMovLUser"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/RobotMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/RobotMode"
+    },
+    {
+      "bounds": {
+        "request.projectName": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/RunScript.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/RunScript"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/ServoJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ServoJ"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/ServoP.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ServoP"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetBackDistance.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetBackDistance"
+    },
+    {
+      "bounds": {
+        "request.valTab": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/SetCoils.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetCoils"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetCollisionLevel.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetCollisionLevel"
+    },
+    {
+      "bounds": {
+        "request.valTab": {
+          "string": 256
+        },
+        "request.valType": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/SetHoldRegs.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetHoldRegs"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetOutputBool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetOutputBool"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetOutputFloat.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetOutputFloat"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetOutputInt.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetOutputInt"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetPayload.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetPayload"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetPostCollisionMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetPostCollisionMode"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetSafeSkin.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetSafeSkin"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetSafeWallEnable.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetSafeWallEnable"
+    },
+    {
+      "bounds": {
+        "request.value": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/SetTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetTool"
+    },
+    {
+      "bounds": {
+        "request.parity": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/SetTool485.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetTool485"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetToolMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetToolMode"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SetToolPower.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetToolPower"
+    },
+    {
+      "bounds": {
+        "request.value": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/SetUser.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SetUser"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/SpeedFactor.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/SpeedFactor"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/StartDrag.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/StartDrag"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.traceName": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/StartPath.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/StartPath"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/Stop.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/Stop"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/StopDrag.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/StopDrag"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/StopMoveJog.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/StopMoveJog"
+    },
+    {
+      "bounds": {
+        "request.command": {
+          "string": 256
+        },
+        "response.result": {
+          "string": 256
+        }
+      },
+      "file": "rosdemo_v4/srv/TcpDashboard.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/TcpDashboard"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/Tool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/Tool"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/ToolAI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ToolAI"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/ToolDI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ToolDI"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/ToolDO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ToolDO"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/ToolDOInstant.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/ToolDOInstant"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/User.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/User"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/VelJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/VelJ"
+    },
+    {
+      "bounds": {},
+      "file": "rosdemo_v4/srv/VelL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rosdemo_v4/VelL"
+    }
+  ]
+}

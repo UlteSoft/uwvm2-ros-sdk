@@ -1,0 +1,143 @@
+{
+  "format": "uwvm-platform-language-modules-v1",
+  "platform": "nvidia-isaac-sim",
+  "module_map": {
+    "as": {
+      "source_root": "include/platform/nvidia-isaac-sim/as/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/as/ros2/complete",
+      "source_only": true
+    },
+    "js": {
+      "source_root": "include/platform/nvidia-isaac-sim/js/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/js/ros2/complete",
+      "source_only": true
+    },
+    "go": {
+      "source_root": "include/platform/nvidia-isaac-sim/go/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/go/ros2/complete",
+      "source_only": true,
+      "native_action": {
+        "format": "uwvm-native-action-v1",
+        "language": "go",
+        "go": {
+          "modules": [
+            "include/platform/ros/go",
+            "include/platform/nvidia-isaac-sim/go"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      },
+      "source_graph_state": "final-documented-source-real-rebuild-and-x86-QEMU-revalidation-qualified",
+      "implemented_target_action": "wasm32-wasip1",
+      "wasm64_action": "explicitly-refused-by-shared-frontend; no-fallback",
+      "qualification": {
+        "proof": "share/platform/nvidia/go-native-review41.json",
+        "CPU_examples": 3,
+        "native_original_Array_examples": 0,
+        "all_catalog_native_types_qualified": false,
+        "library_routes_qualified": false
+      }
+    },
+    "tinygo": {
+      "source_root": "include/platform/nvidia-isaac-sim/tinygo/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/tinygo/ros2/complete",
+      "source_only": true
+    },
+    "rs": {
+      "source_root": "include/platform/nvidia-isaac-sim/rs/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/rs/ros2/complete",
+      "source_only": true,
+      "crate": "nvidia_isaac_sim",
+      "native_action": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros2\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs"
+            },
+            {
+              "name": "nvidia_isaac_sim",
+              "source": "include/platform/nvidia-isaac-sim/rs/ros2/complete/records.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "nvidia_isaac_sim"
+          ]
+        }
+      },
+      "source_graph_state": "final-documented-genuine-cold-build-and-x86-QEMU-CPU-qualified",
+      "implemented_target_action": "wasm32-wasip1",
+      "wasm64_action": "explicitly-refused-by-shared-frontend; no-fallback",
+      "qualification": {
+        "proof": "share/platform/nvidia/rust-native-review41.json",
+        "CPU_examples": 3,
+        "native_original_Array_examples": 0,
+        "library_routes_qualified": false,
+        "all_catalog_native_types_qualified": false
+      }
+    },
+    "py": {
+      "source_root": "include/platform/nvidia-isaac-sim/py/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/py/ros2/complete",
+      "source_only": true,
+      "package_alias": "nvidia_isaac_sim"
+    },
+    "java": {
+      "source_root": "include/platform/nvidia-isaac-sim/java/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/java/ros2/complete",
+      "source_only": true
+    },
+    "csharp": {
+      "source_root": "include/platform/nvidia-isaac-sim/csharp/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/csharp/ros2/complete",
+      "source_only": true
+    },
+    "d": {
+      "source_root": "include/platform/nvidia-isaac-sim/d/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/d/ros2/complete",
+      "source_only": true
+    },
+    "nim": {
+      "source_root": "include/platform/nvidia-isaac-sim/nim/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/nim/ros2/complete",
+      "source_only": true
+    },
+    "odin": {
+      "source_root": "include/platform/nvidia-isaac-sim/odin/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/odin/ros2/complete",
+      "source_only": true
+    },
+    "haskell": {
+      "source_root": "include/platform/nvidia-isaac-sim/haskell/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/haskell/ros2/complete",
+      "source_only": true
+    },
+    "swift": {
+      "source_root": "include/platform/nvidia-isaac-sim/swift/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/swift/ros2/complete",
+      "source_only": true
+    },
+    "moonbit": {
+      "source_root": "include/platform/nvidia-isaac-sim/moonbit/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/moonbit/ros2/complete",
+      "source_only": true
+    },
+    "zig": {
+      "source_root": "include/platform/nvidia-isaac-sim/zig/ros2/complete",
+      "public_prefix": "nvidia-isaac-sim/zig/ros2/complete",
+      "source_only": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// @file moon.pkg
+// @brief Declare the exact ROS 2 ABB package dependencies and local aliases.
+// @details The Xmake producer binds these identities to installed SDK interfaces.
+import {
+  "uwvm/ros/ros2" @ros,
+  "uwvm/ros/linear",
+  "uwvm/ros/wire",
+  "moonbitlang/core/encoding/utf8",
+}

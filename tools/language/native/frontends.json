@@ -1,0 +1,130 @@
+{
+  "format": "uwvm-native-frontends-v1",
+  "lock_revision": 1,
+  "host": "linux-x86_64",
+  "frontends": {
+    "assemblyscript": {
+      "version": "0.28.20",
+      "manifest_sha256": "8d0243d8adf06cd6962d24d85a735066305c6400ccbafb1bd205c1d495c311b9",
+      "archive": "assemblyscript-0.28.20.xmz",
+      "archive_sha256": "7ab966b69ec1020b69df3b3930bc8ddf25626a01aa9a1ea361296898d89ec2b0",
+      "programs": {
+        "loader": "runtime/ld-linux-x86-64.so.2",
+        "node": "bin/node"
+      },
+      "file_count": 162,
+      "payload_copied": false
+    },
+    "moonbit": {
+      "version": "0.10.16+b1a0e846e",
+      "manifest_sha256": "f25f1f69da0ad8f0b7324b062d8cd4ef40591a6e373031c1fbe0bbcd5d24d75d",
+      "archive": "moonbit-0.10.16+b1a0e846e.xmz",
+      "archive_sha256": "0d0526887d025366e402ad298a585bc8db40b9bc74f6df5451b8d6a594f047f3",
+      "programs": {
+        "loader": "runtime/ld-linux-x86-64.so.2",
+        "moonc": "bin/moonc"
+      },
+      "file_count": 1381,
+      "payload_copied": false
+    },
+    "native-d": {
+      "version": "1.41.0",
+      "manifest_sha256": "9335a7ee10bcb076305c8e79e1098ca8f175e015aa0739f71ca248ff474e2628",
+      "archive": "native-d-1.41.0.xmz",
+      "archive_sha256": "3bc9ee00f6d1e2d47cb8017176ee874272f88f7cd9356c73dd8ce8290215eb59",
+      "programs": {
+        "compiler": "bin/ldc2"
+      },
+      "file_count": 742,
+      "payload_copied": false
+    },
+    "native-go": {
+      "version": "1.24.2",
+      "manifest_sha256": "21c6f54ca65464be01617ac69350e3ed2ce199c521613e95ca014666dc64f919",
+      "archive": "native-go-1.24.2.xmz",
+      "archive_sha256": "f50631b4a724c708786fb67512615632946c080eb83c9b435f2f835ff92888ff",
+      "programs": {
+        "compiler": "original/go/bin/go"
+      },
+      "file_count": 14165,
+      "payload_copied": false
+    },
+    "native-haskell": {
+      "version": "9.14.1.20260731",
+      "manifest_sha256": "7928556b1fab515b36963506d627cc2b8b88b7fea4223f8aa3f017b4a9feddca",
+      "archive": "native-haskell-9.14.1.20260731.xmz",
+      "archive_sha256": "312c550d322336ff00b6155318e1753fec5241eb4eb291abc8e167e327b659c7",
+      "programs": {
+        "compiler": "original/haskell/bin/wasm32-wasi-ghc"
+      },
+      "file_count": 9283,
+      "payload_copied": false
+    },
+    "native-nim": {
+      "version": "2.2.4",
+      "manifest_sha256": "6d75b6c953578d1e0d650530261556512a411d32382ba4150e0c1f5ab14cd809",
+      "archive": "native-nim-2.2.4.xmz",
+      "archive_sha256": "074b2842a9d7deb8bfff64c1afe4063b84bd15a28e0171e90a7c154083b0bc48",
+      "programs": {
+        "compiler": "bin/nim"
+      },
+      "file_count": 340,
+      "payload_copied": false
+    },
+    "native-odin": {
+      "version": "dev-2025-10-05",
+      "manifest_sha256": "d9cf18883e395b110f46ce016cc7efbb078959965ec8f6efdeab19bfcac8e3e0",
+      "archive": "native-odin-dev-2025-10-05.xmz",
+      "archive_sha256": "fd3cbc2f9059606687bded10ea71b7be0b13c8130612f7f95f890ec4dc28d0fd",
+      "programs": {
+        "compiler": "original/odin/odin"
+      },
+      "file_count": 1459,
+      "payload_copied": false
+    },
+    "native-rs": {
+      "version": "1.87.0",
+      "manifest_sha256": "399a188bee4e559bd7ee6c8ae8b5f1c89318c4a4e6d8a649f596a69584a906ae",
+      "archive": "native-rs-1.87.0.xmz",
+      "archive_sha256": "010f2c8c9e610a73c1fd39f896b626b9e0676716c44aa81b7d31842ca6cada88",
+      "programs": {
+        "compiler": "bin/rustc"
+      },
+      "file_count": 123,
+      "payload_copied": false
+    },
+    "native-swift": {
+      "version": "6.4.1",
+      "manifest_sha256": "5d8041b6d207d62c987f38af6e5993ccb7c29056263252f8f24f99cdec994162",
+      "archive": "native-swift-6.4.1.xmz",
+      "archive_sha256": "a4f52bee938d716a7ba2a821832799247fe392ef4fc4ddb3f9864e24497a9cc2",
+      "programs": {
+        "compiler": "bin/swift-frontend"
+      },
+      "file_count": 374,
+      "payload_copied": false
+    },
+    "native-tinygo": {
+      "version": "0.38.0",
+      "manifest_sha256": "a28ac94fd623040c87e61de735fb0cdb7aed529aa902a2cfa1eaa905168084da",
+      "archive": "native-tinygo-0.38.0.xmz",
+      "archive_sha256": "ac92387dfdea347c4fdeccd47f660cb9e86af53a3e89f9064e8416982fc69934",
+      "programs": {
+        "compiler": "original/tinygo/bin/tinygo"
+      },
+      "file_count": 10659,
+      "payload_copied": false
+    },
+    "native-zig": {
+      "version": "0.14.1",
+      "manifest_sha256": "424dfb2f773c237e9a0e2d78df058482e8d06a8e2e47052aa3c6e2ab60d227c4",
+      "archive": "native-zig-0.14.1.xmz",
+      "archive_sha256": "6da1af6d532951cbe8ce335e09d54257086260637cc0eb385a61d3b819dac134",
+      "programs": {
+        "compiler": "original/zig/zig"
+      },
+      "file_count": 14674,
+      "payload_copied": false
+    }
+  }
+}

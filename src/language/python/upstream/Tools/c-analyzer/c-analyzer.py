@@ -1,0 +1,10 @@
+# @file
+# @brief Preserve the genuine CPython 3.14.8 module.
+# @details Original PSF source semantics and license are retained.
+from cpython.__main__ import parse_args, main, configure_logger
+
+
+cmd, cmd_kwargs, verbosity, traceback_cm = parse_args()
+configure_logger(verbosity)
+with traceback_cm:
+    main(cmd, cmd_kwargs)

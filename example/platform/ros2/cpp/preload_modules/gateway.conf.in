@@ -1,0 +1,39 @@
+backend ros2
+worker-uid @WORKER_UID@
+worker-pid @WORKER_PID@
+socket @SOCKET@
+timeout-ms 10000
+max-sessions 16
+audit-max-records-per-second 100
+audit-max-records 10000
+audit-max-bytes 1048576
+connection node-name uwvm_preload_gateway
+connection namespace /uwvm_native_sdk
+connection domain-id 197
+connection rmw-implementation rmw_fastrtps_cpp
+connection security-mode disabled-test
+connection keystore not-applicable
+connection enclave not-applicable
+grant sample topic.publish /uwvm_native_sdk/outgoing std_msgs/msg/String RIHS01_df668c740482bbd48fb39d76a70dfd4bd59db1288021743503259e948f6b1a18
+set sample max-rate-hz 100
+set sample burst 8
+set sample max-bytes-per-second 1048576
+set sample validator none
+set sample audit allow-and-deny
+set sample audit-max-rate-hz 100
+set sample audit-burst 100
+set sample audit-max-records 10000
+set sample audit-max-bytes 1048576
+set sample max-message-bytes 256
+set sample max-queue-bytes 2048
+set sample overflow-policy drop-oldest
+set sample max-publishers 1
+set sample qos.reliability reliable
+set sample qos.durability volatile
+set sample qos.history keep-last
+set sample qos.depth 8
+set sample qos.deadline infinite
+set sample qos.lifespan infinite
+set sample qos.liveliness automatic
+set sample qos.liveliness-lease-duration infinite
+set sample max-inflight 1

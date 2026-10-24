@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-mobile-platform-profiles-v1",
+  "platform": "boston_dynamics",
+  "profiles": [
+    {
+      "profile": "ros2",
+      "ros_major": 2,
+      "distribution": "jazzy",
+      "source_lock_sha256": "522dfdda19975e56b369ea3b625a83e94536b2497843517b1802aca4f25eaddc",
+      "legacy_catalog": "spot-bridge-complete"
+    }
+  ],
+  "default_authority": [],
+  "native_registration_qualified": false,
+  "models": [
+    "Spot"
+  ]
+}

@@ -1,0 +1,86 @@
+# Authored allowlisted simulator-clock program operations, not a generic Kit API.
+# @brief Start the one preselected native clock scene.
+# @details This creates no arbitrary path/plugin/model/domain selection interface.
+# @see operation
+uint8 START=1
+# @brief Execute one exact original source frame.
+# @details The SDK client selects the phase/frame and the native owner checks them.
+# @see frame
+uint8 STEP=2
+# @brief Stop playback and retire native Clock readers after all40 frames.
+# @details Final control Context/Kit cleanup is retained in the native evidence.
+# @see cleanup_status
+uint8 FINISH=3
+# @brief Cancel this simulation session without claiming physical stopping.
+# @details This is native simulation retirement, distinct from local transport abandonment.
+# @see operation
+uint8 CANCEL=4
+# @brief One allowlisted operation constant above.
+# @details Unsupported operations return95 without executing another operation.
+# @see request_sequence
+uint8 operation
+# @brief Positive exact uint64 application session correlation.
+# @details Independently preselected by the native owner; not peer authentication.
+# @see request_sequence
+uint64 session_nonce
+# @brief Monotonic complete-operation sequence, START0, STEP1..40, FINISH41.
+# @details Native effect uncertainty never authorizes replay; CANCEL uses next sequence.
+# @see operation
+uint32 request_sequence
+# @brief Original source phase0 or1 for STEP, otherwise0.
+# @details Each phase has20 frames; native owner verifies full sequence agreement.
+# @see frame
+uint8 phase
+# @brief Phase-local source frame0..19 for STEP, otherwise0.
+# @details Retains exact source scheduling, not synthetic simulation time.
+# @see impulse
+uint32 frame
+# @brief Request the original impulse exactly on STEP frames0/10.
+# @details Native owner rejects disagreement with the source frame schedule.
+# @see extra_update
+bool impulse
+# @brief Request the phase0 extra app.update after an impulse.
+# @details It is false in phase1, including impulse frames, matching the original.
+# @see phase
+bool extra_update
+# @brief Real native pacing milliseconds: START1000, STEP100, other operations0.
+# @details Native owner sleeps under its genuine monotonic/process deadline.
+# @see operation
+uint16 pacing_milliseconds
+---
+# @brief Complete original native operation status,0 or explicit failure.
+# @details Independent raw transport/codec/ACK/retire errors are not overwritten.
+# @see cleanup_status
+uint32 status
+# @brief Exact request session correlation, retained even on native refusal.
+# @details It does not authenticate the service writer or grant simulation rights.
+# @see request_sequence
+uint64 session_nonce
+# @brief Exact request sequence echoed after native processing.
+# @details SDK clients reject unmatched responses without replaying the request.
+# @see completed_steps
+uint32 request_sequence
+# @brief Native lifecycle:0 not started,1 active,2 retired,3 failed/uncertain.
+# @details A local transport close is not a returned native retirement result.
+# @see cleanup_status
+uint8 state
+# @brief Actual explicit SimulationApp.update calls made by this owner.
+# @details A call count is not physics elapsed time, callback count or performance proof.
+# @see event
+uint64 actual_app_updates
+# @brief Actual successfully completed source STEP operations,0 through40.
+# @details Includes real native pacing; no unseen response is treated as completion.
+# @see request_sequence
+uint32 completed_steps
+# @brief Whether one actual Clock callback was dispatched by this STEP.
+# @details False exposes no invented clock value; the whole event is then zero-default.
+# @see event
+bool has_event
+# @brief Complete actual callback value when has_event is true.
+# @details Original Clock has only the two Time fields; kind/phase/frame record dispatch.
+# @see has_event
+ClockEvent event
+# @brief Independent graph/reader retirement status,0 or failure.
+# @details Final service Context and Kit closure are separate native evidence outcomes.
+# @see status
+uint32 cleanup_status

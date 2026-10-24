@@ -1,0 +1,11041 @@
+//! @file records.zig
+//! @brief Preserve the complete original elephant/galactic canonical value domain.
+//! @details The selected domain contains 71 complete record/components and 238 original fields. Declared
+//! scalar widths, order, defaults, array/sequence distinctions and finite bounds remain explicit.
+//! Validate the whole value before accepting bytes; partial/trailing data is a refusal. Pure codecs
+//! create no ROS owner, permission, callback, unit conversion or native type binding. Module availability
+//! does not qualify a frontend, target ABI or native ROS transport.
+//! @see The platform's localized language guide and complete API-CATALOG.md.
+//! Generated complete bounded values; all allocation is explicit.
+const std=@import("std");
+const wire=@import("roswire");
+/// @brief Complete ROS 2 mecharm_interfaces/msg/MecharmAngles value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_37d12e0fc3b7bbb50bdcee0ca624a5c637f9554f3c64d640f538aeda57417331.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesMsgMecharmAngles=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/msg/MecharmAngles in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mecharm_interfaces/msg/MecharmAngles.
+ /// @details Exact identity UWVMROS1_37d12e0fc3b7bbb50bdcee0ca624a5c637f9554f3c64d640f538aeda57417331
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_37d12e0fc3b7bbb50bdcee0ca624a5c637f9554f3c64d640f538aeda57417331";
+ /// @brief Original ROS type name for mecharm_interfaces/msg/MecharmAngles.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/msg/MecharmAngles";
+ /// @brief Selected original native identity for mecharm_interfaces/msg/MecharmAngles.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/msg/MecharmAngles.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmAngles.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmAngles.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmAngles.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmAngles.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmAngles.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief Append every canonical field of mecharm_interfaces/msg/MecharmAngles.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/msg/MecharmAngles.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/msg/MecharmAngles value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/msg/MecharmAngles value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/msg/MecharmCoords value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_e1bb96b1908c796e2a89eb4dd2402a6cc02bcc5077c52268bb378a52dd3029ed.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesMsgMecharmCoords=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/msg/MecharmCoords in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mecharm_interfaces/msg/MecharmCoords.
+ /// @details Exact identity UWVMROS1_e1bb96b1908c796e2a89eb4dd2402a6cc02bcc5077c52268bb378a52dd3029ed
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_e1bb96b1908c796e2a89eb4dd2402a6cc02bcc5077c52268bb378a52dd3029ed";
+ /// @brief Original ROS type name for mecharm_interfaces/msg/MecharmCoords.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/msg/MecharmCoords";
+ /// @brief Selected original native identity for mecharm_interfaces/msg/MecharmCoords.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/msg/MecharmCoords.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmCoords.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmCoords.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmCoords.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmCoords.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmCoords.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief Append every canonical field of mecharm_interfaces/msg/MecharmCoords.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/msg/MecharmCoords.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/msg/MecharmCoords value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/msg/MecharmCoords value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/msg/MecharmGripperStatus value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_2123b61d7b9ec218ee074473c26e5ec82fde818f40796047fc369cb84516e046.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesMsgMecharmGripperStatus=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/msg/MecharmGripperStatus in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mecharm_interfaces/msg/MecharmGripperStatus.
+ /// @details Exact identity UWVMROS1_2123b61d7b9ec218ee074473c26e5ec82fde818f40796047fc369cb84516e046
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_2123b61d7b9ec218ee074473c26e5ec82fde818f40796047fc369cb84516e046";
+ /// @brief Original ROS type name for mecharm_interfaces/msg/MecharmGripperStatus.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/msg/MecharmGripperStatus";
+ /// @brief Selected original native identity for mecharm_interfaces/msg/MecharmGripperStatus.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/msg/MecharmGripperStatus.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief Append every canonical field of mecharm_interfaces/msg/MecharmGripperStatus.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/msg/MecharmGripperStatus.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/msg/MecharmGripperStatus value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/msg/MecharmGripperStatus value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/msg/MecharmPumpStatus value.
+/// @details All 3 declared fields are retained in source order. The canonical representation occupies
+/// 3..3 bytes and is identified by
+/// UWVMROS1_4d44c84c1fdd3f4db92d9975545348bfd727320e63c9fbfde5adf0b81ca04add.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesMsgMecharmPumpStatus=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/msg/MecharmPumpStatus in bytes.
+ /// @details The inclusive bound is 3 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=3;
+ /// @brief Canonical codec identity of mecharm_interfaces/msg/MecharmPumpStatus.
+ /// @details Exact identity UWVMROS1_4d44c84c1fdd3f4db92d9975545348bfd727320e63c9fbfde5adf0b81ca04add
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_4d44c84c1fdd3f4db92d9975545348bfd727320e63c9fbfde5adf0b81ca04add";
+ /// @brief Original ROS type name for mecharm_interfaces/msg/MecharmPumpStatus.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/msg/MecharmPumpStatus";
+ /// @brief Selected original native identity for mecharm_interfaces/msg/MecharmPumpStatus.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/msg/MecharmPumpStatus.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief mecharm_interfaces/msg/MecharmPumpStatus.pin1: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_pin1: i8=0,
+ /// @brief mecharm_interfaces/msg/MecharmPumpStatus.pin2: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_pin2: i8=0,
+ /// @brief Append every canonical field of mecharm_interfaces/msg/MecharmPumpStatus.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+  try w.integer(self.field_pin1);
+  try w.integer(self.field_pin2);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/msg/MecharmPumpStatus.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  value.field_pin1=try r.integer(i8);
+  value.field_pin2=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/msg/MecharmPumpStatus value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/msg/MecharmPumpStatus value.
+ /// @details Require the complete 3..3-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<3 or bytes.len>3) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/msg/MecharmSetAngles value.
+/// @details All 7 declared fields are retained in source order. The canonical representation occupies
+/// 25..25 bytes and is identified by
+/// UWVMROS1_54b634e4c5d0bc9fdf04a98d31816e24d3a9c5eb497bb38fb16e2de593cf81f5.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesMsgMecharmSetAngles=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/msg/MecharmSetAngles in bytes.
+ /// @details The inclusive bound is 25 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=25;
+ /// @brief Canonical codec identity of mecharm_interfaces/msg/MecharmSetAngles.
+ /// @details Exact identity UWVMROS1_54b634e4c5d0bc9fdf04a98d31816e24d3a9c5eb497bb38fb16e2de593cf81f5
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_54b634e4c5d0bc9fdf04a98d31816e24d3a9c5eb497bb38fb16e2de593cf81f5";
+ /// @brief Original ROS type name for mecharm_interfaces/msg/MecharmSetAngles.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/msg/MecharmSetAngles";
+ /// @brief Selected original native identity for mecharm_interfaces/msg/MecharmSetAngles.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/msg/MecharmSetAngles.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetAngles.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetAngles.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetAngles.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetAngles.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetAngles.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetAngles.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mecharm_interfaces/msg/MecharmSetAngles.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/msg/MecharmSetAngles.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/msg/MecharmSetAngles value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/msg/MecharmSetAngles value.
+ /// @details Require the complete 25..25-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<25 or bytes.len>25) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/msg/MecharmSetCoords value.
+/// @details All 8 declared fields are retained in source order. The canonical representation occupies
+/// 26..26 bytes and is identified by
+/// UWVMROS1_44944ee22cd4254167083cfdcd7377ee2f59dbe27414932c980670a471a6e7c2.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesMsgMecharmSetCoords=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/msg/MecharmSetCoords in bytes.
+ /// @details The inclusive bound is 26 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=26;
+ /// @brief Canonical codec identity of mecharm_interfaces/msg/MecharmSetCoords.
+ /// @details Exact identity UWVMROS1_44944ee22cd4254167083cfdcd7377ee2f59dbe27414932c980670a471a6e7c2
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_44944ee22cd4254167083cfdcd7377ee2f59dbe27414932c980670a471a6e7c2";
+ /// @brief Original ROS type name for mecharm_interfaces/msg/MecharmSetCoords.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/msg/MecharmSetCoords";
+ /// @brief Selected original native identity for mecharm_interfaces/msg/MecharmSetCoords.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/msg/MecharmSetCoords.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetCoords.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetCoords.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetCoords.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetCoords.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetCoords.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetCoords.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief mecharm_interfaces/msg/MecharmSetCoords.model: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_model: i8=0,
+ /// @brief Append every canonical field of mecharm_interfaces/msg/MecharmSetCoords.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+  try w.integer(self.field_speed);
+  try w.integer(self.field_model);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/msg/MecharmSetCoords.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  value.field_speed=try r.integer(i8);
+  value.field_model=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/msg/MecharmSetCoords value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/msg/MecharmSetCoords value.
+ /// @details Require the complete 26..26-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesMsgMecharmSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<26 or bytes.len>26) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/GetAngles_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_95b1d7786c03c6fec98fec0706088481fe9c7aa48c9f33f4325031d0437d97df.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvGetAngles_Request=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/GetAngles_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/GetAngles_Request.
+ /// @details Exact identity UWVMROS1_95b1d7786c03c6fec98fec0706088481fe9c7aa48c9f33f4325031d0437d97df
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_95b1d7786c03c6fec98fec0706088481fe9c7aa48c9f33f4325031d0437d97df";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/GetAngles_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/GetAngles_Request";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/GetAngles_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mecharm_interfaces/srv/GetAngles_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/GetAngles_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/GetAngles_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/GetAngles_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/GetAngles_Response value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_b1a035847ac7a888053ba8de7494abb6d2cdc01f61e4d0a51cb3ef6f479adf61.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvGetAngles_Response=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/GetAngles_Response in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/GetAngles_Response.
+ /// @details Exact identity UWVMROS1_b1a035847ac7a888053ba8de7494abb6d2cdc01f61e4d0a51cb3ef6f479adf61
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_b1a035847ac7a888053ba8de7494abb6d2cdc01f61e4d0a51cb3ef6f479adf61";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/GetAngles_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/GetAngles_Response";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/GetAngles_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/GetAngles_Response.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mecharm_interfaces/srv/GetAngles_Response.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mecharm_interfaces/srv/GetAngles_Response.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mecharm_interfaces/srv/GetAngles_Response.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mecharm_interfaces/srv/GetAngles_Response.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mecharm_interfaces/srv/GetAngles_Response.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/GetAngles_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/GetAngles_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/GetAngles_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/GetAngles_Response value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/GetCoords_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_353827e7125cfa6c829f1138cc33901099a26cf73a8d045cf806b427994ccef1.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvGetCoords_Request=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/GetCoords_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/GetCoords_Request.
+ /// @details Exact identity UWVMROS1_353827e7125cfa6c829f1138cc33901099a26cf73a8d045cf806b427994ccef1
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_353827e7125cfa6c829f1138cc33901099a26cf73a8d045cf806b427994ccef1";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/GetCoords_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/GetCoords_Request";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/GetCoords_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mecharm_interfaces/srv/GetCoords_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/GetCoords_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/GetCoords_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/GetCoords_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/GetCoords_Response value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_f7fcb8c4fdb47c06e93a8f67613490f7ab0ef2af7efb02092874722670b36c75.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvGetCoords_Response=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/GetCoords_Response in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/GetCoords_Response.
+ /// @details Exact identity UWVMROS1_f7fcb8c4fdb47c06e93a8f67613490f7ab0ef2af7efb02092874722670b36c75
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_f7fcb8c4fdb47c06e93a8f67613490f7ab0ef2af7efb02092874722670b36c75";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/GetCoords_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/GetCoords_Response";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/GetCoords_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/GetCoords_Response.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mecharm_interfaces/srv/GetCoords_Response.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mecharm_interfaces/srv/GetCoords_Response.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mecharm_interfaces/srv/GetCoords_Response.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mecharm_interfaces/srv/GetCoords_Response.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mecharm_interfaces/srv/GetCoords_Response.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/GetCoords_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/GetCoords_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/GetCoords_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/GetCoords_Response value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/GripperStatus_Request value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_044bf47303f5da0d0e17e795b8567b714d55680e8144c8e2e71ff7032859dfbb.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvGripperStatus_Request=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/GripperStatus_Request in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/GripperStatus_Request.
+ /// @details Exact identity UWVMROS1_044bf47303f5da0d0e17e795b8567b714d55680e8144c8e2e71ff7032859dfbb
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_044bf47303f5da0d0e17e795b8567b714d55680e8144c8e2e71ff7032859dfbb";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/GripperStatus_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/GripperStatus_Request";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/GripperStatus_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/GripperStatus_Request.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/GripperStatus_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/GripperStatus_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/GripperStatus_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/GripperStatus_Request value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/GripperStatus_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_5aeee3c79bb6ebe4a4cb77f54552e97dcc155c65151a5965761a360d41acbea3.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvGripperStatus_Response=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/GripperStatus_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/GripperStatus_Response.
+ /// @details Exact identity UWVMROS1_5aeee3c79bb6ebe4a4cb77f54552e97dcc155c65151a5965761a360d41acbea3
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_5aeee3c79bb6ebe4a4cb77f54552e97dcc155c65151a5965761a360d41acbea3";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/GripperStatus_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/GripperStatus_Response";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/GripperStatus_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/GripperStatus_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/GripperStatus_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/GripperStatus_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/GripperStatus_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/GripperStatus_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/PumpStatus_Request value.
+/// @details All 3 declared fields are retained in source order. The canonical representation occupies
+/// 3..3 bytes and is identified by
+/// UWVMROS1_f80774682b7b1d447ff2f8dd7f6ac2f917dd4f71ccd3b1685a57b579fa41d6b9.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvPumpStatus_Request=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/PumpStatus_Request in bytes.
+ /// @details The inclusive bound is 3 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=3;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/PumpStatus_Request.
+ /// @details Exact identity UWVMROS1_f80774682b7b1d447ff2f8dd7f6ac2f917dd4f71ccd3b1685a57b579fa41d6b9
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_f80774682b7b1d447ff2f8dd7f6ac2f917dd4f71ccd3b1685a57b579fa41d6b9";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/PumpStatus_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/PumpStatus_Request";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/PumpStatus_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/PumpStatus_Request.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief mecharm_interfaces/srv/PumpStatus_Request.pin1: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_pin1: i8=0,
+ /// @brief mecharm_interfaces/srv/PumpStatus_Request.pin2: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_pin2: i8=0,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/PumpStatus_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+  try w.integer(self.field_pin1);
+  try w.integer(self.field_pin2);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/PumpStatus_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  value.field_pin1=try r.integer(i8);
+  value.field_pin2=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/PumpStatus_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/PumpStatus_Request value.
+ /// @details Require the complete 3..3-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<3 or bytes.len>3) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/PumpStatus_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_935c0e2aaca3f1e8aad8e4487484292b3d30ccdff180a9aaa50f454f75ecff1b.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvPumpStatus_Response=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/PumpStatus_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/PumpStatus_Response.
+ /// @details Exact identity UWVMROS1_935c0e2aaca3f1e8aad8e4487484292b3d30ccdff180a9aaa50f454f75ecff1b
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_935c0e2aaca3f1e8aad8e4487484292b3d30ccdff180a9aaa50f454f75ecff1b";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/PumpStatus_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/PumpStatus_Response";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/PumpStatus_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/PumpStatus_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/PumpStatus_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/PumpStatus_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/PumpStatus_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/PumpStatus_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/SetAngles_Request value.
+/// @details All 7 declared fields are retained in source order. The canonical representation occupies
+/// 25..25 bytes and is identified by
+/// UWVMROS1_86897875ef9a609098bc1eabba63aec7d960de380db98370e7a67626b2253eeb.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvSetAngles_Request=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/SetAngles_Request in bytes.
+ /// @details The inclusive bound is 25 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=25;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/SetAngles_Request.
+ /// @details Exact identity UWVMROS1_86897875ef9a609098bc1eabba63aec7d960de380db98370e7a67626b2253eeb
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_86897875ef9a609098bc1eabba63aec7d960de380db98370e7a67626b2253eeb";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/SetAngles_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/SetAngles_Request";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/SetAngles_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/SetAngles_Request.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mecharm_interfaces/srv/SetAngles_Request.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mecharm_interfaces/srv/SetAngles_Request.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mecharm_interfaces/srv/SetAngles_Request.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mecharm_interfaces/srv/SetAngles_Request.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mecharm_interfaces/srv/SetAngles_Request.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief mecharm_interfaces/srv/SetAngles_Request.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/SetAngles_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/SetAngles_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/SetAngles_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/SetAngles_Request value.
+ /// @details Require the complete 25..25-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<25 or bytes.len>25) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/SetAngles_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_4782fe6a137dee35bf39d863be0aea118f61dcef092c11b013c44c6f4c129620.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvSetAngles_Response=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/SetAngles_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/SetAngles_Response.
+ /// @details Exact identity UWVMROS1_4782fe6a137dee35bf39d863be0aea118f61dcef092c11b013c44c6f4c129620
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_4782fe6a137dee35bf39d863be0aea118f61dcef092c11b013c44c6f4c129620";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/SetAngles_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/SetAngles_Response";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/SetAngles_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/SetAngles_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/SetAngles_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/SetAngles_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/SetAngles_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/SetAngles_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/SetCoords_Request value.
+/// @details All 8 declared fields are retained in source order. The canonical representation occupies
+/// 26..26 bytes and is identified by
+/// UWVMROS1_a0daefe14076b73f1a64924ffc15a6b9647abe1b1887377e642f41b1a7920916.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvSetCoords_Request=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/SetCoords_Request in bytes.
+ /// @details The inclusive bound is 26 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=26;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/SetCoords_Request.
+ /// @details Exact identity UWVMROS1_a0daefe14076b73f1a64924ffc15a6b9647abe1b1887377e642f41b1a7920916
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_a0daefe14076b73f1a64924ffc15a6b9647abe1b1887377e642f41b1a7920916";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/SetCoords_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/SetCoords_Request";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/SetCoords_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/SetCoords_Request.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mecharm_interfaces/srv/SetCoords_Request.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mecharm_interfaces/srv/SetCoords_Request.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mecharm_interfaces/srv/SetCoords_Request.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mecharm_interfaces/srv/SetCoords_Request.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mecharm_interfaces/srv/SetCoords_Request.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief mecharm_interfaces/srv/SetCoords_Request.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief mecharm_interfaces/srv/SetCoords_Request.model: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_model: i8=0,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/SetCoords_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+  try w.integer(self.field_speed);
+  try w.integer(self.field_model);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/SetCoords_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  value.field_speed=try r.integer(i8);
+  value.field_model=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/SetCoords_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/SetCoords_Request value.
+ /// @details Require the complete 26..26-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<26 or bytes.len>26) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mecharm_interfaces/srv/SetCoords_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_43d02cfe61b6fb08f035e1f8ea78496cdcb488ed4c916f528415dce4ab810b7f.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mecharm_interfacesSrvSetCoords_Response=struct {
+ /// @brief Maximum canonical extent of mecharm_interfaces/srv/SetCoords_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mecharm_interfaces/srv/SetCoords_Response.
+ /// @details Exact identity UWVMROS1_43d02cfe61b6fb08f035e1f8ea78496cdcb488ed4c916f528415dce4ab810b7f
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_43d02cfe61b6fb08f035e1f8ea78496cdcb488ed4c916f528415dce4ab810b7f";
+ /// @brief Original ROS type name for mecharm_interfaces/srv/SetCoords_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mecharm_interfaces/srv/SetCoords_Response";
+ /// @brief Selected original native identity for mecharm_interfaces/srv/SetCoords_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mecharm_interfaces/srv/SetCoords_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mecharm_interfaces/srv/SetCoords_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mecharm_interfaces/srv/SetCoords_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mecharm_interfaces/srv/SetCoords_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mecharm_interfaces/srv/SetCoords_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mecharm_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/msg/MycobotAngles value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_38f099339ed5ee9fe56a5b44c3f0849e2ff7ff721b2a95b5cf49e3b92f6a9d82.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesMsgMycobotAngles=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/msg/MycobotAngles in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mycobot_interfaces/msg/MycobotAngles.
+ /// @details Exact identity UWVMROS1_38f099339ed5ee9fe56a5b44c3f0849e2ff7ff721b2a95b5cf49e3b92f6a9d82
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_38f099339ed5ee9fe56a5b44c3f0849e2ff7ff721b2a95b5cf49e3b92f6a9d82";
+ /// @brief Original ROS type name for mycobot_interfaces/msg/MycobotAngles.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/msg/MycobotAngles";
+ /// @brief Selected original native identity for mycobot_interfaces/msg/MycobotAngles.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/msg/MycobotAngles.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotAngles.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotAngles.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotAngles.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotAngles.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotAngles.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief Append every canonical field of mycobot_interfaces/msg/MycobotAngles.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/msg/MycobotAngles.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/msg/MycobotAngles value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/msg/MycobotAngles value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/msg/MycobotCoords value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_8d9606c561db7680e816f5a19fd148c374f271acee8b261f7d060f370e0399d7.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesMsgMycobotCoords=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/msg/MycobotCoords in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mycobot_interfaces/msg/MycobotCoords.
+ /// @details Exact identity UWVMROS1_8d9606c561db7680e816f5a19fd148c374f271acee8b261f7d060f370e0399d7
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_8d9606c561db7680e816f5a19fd148c374f271acee8b261f7d060f370e0399d7";
+ /// @brief Original ROS type name for mycobot_interfaces/msg/MycobotCoords.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/msg/MycobotCoords";
+ /// @brief Selected original native identity for mycobot_interfaces/msg/MycobotCoords.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/msg/MycobotCoords.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotCoords.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotCoords.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotCoords.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotCoords.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotCoords.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief Append every canonical field of mycobot_interfaces/msg/MycobotCoords.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/msg/MycobotCoords.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/msg/MycobotCoords value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/msg/MycobotCoords value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/msg/MycobotGripperStatus value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_4dc3ab413af3da01e26a3289ef9e5ef39488d00483631d701b4d617d9c9ba33d.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesMsgMycobotGripperStatus=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/msg/MycobotGripperStatus in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_interfaces/msg/MycobotGripperStatus.
+ /// @details Exact identity UWVMROS1_4dc3ab413af3da01e26a3289ef9e5ef39488d00483631d701b4d617d9c9ba33d
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_4dc3ab413af3da01e26a3289ef9e5ef39488d00483631d701b4d617d9c9ba33d";
+ /// @brief Original ROS type name for mycobot_interfaces/msg/MycobotGripperStatus.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/msg/MycobotGripperStatus";
+ /// @brief Selected original native identity for mycobot_interfaces/msg/MycobotGripperStatus.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/msg/MycobotGripperStatus.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief Append every canonical field of mycobot_interfaces/msg/MycobotGripperStatus.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/msg/MycobotGripperStatus.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/msg/MycobotGripperStatus value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/msg/MycobotGripperStatus value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/msg/MycobotPumpStatus value.
+/// @details All 3 declared fields are retained in source order. The canonical representation occupies
+/// 3..3 bytes and is identified by
+/// UWVMROS1_860004dc3975ab44b5a1b0a77a9ff01ab58bfc71d7142d842d3bf9c636365e58.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesMsgMycobotPumpStatus=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/msg/MycobotPumpStatus in bytes.
+ /// @details The inclusive bound is 3 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=3;
+ /// @brief Canonical codec identity of mycobot_interfaces/msg/MycobotPumpStatus.
+ /// @details Exact identity UWVMROS1_860004dc3975ab44b5a1b0a77a9ff01ab58bfc71d7142d842d3bf9c636365e58
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_860004dc3975ab44b5a1b0a77a9ff01ab58bfc71d7142d842d3bf9c636365e58";
+ /// @brief Original ROS type name for mycobot_interfaces/msg/MycobotPumpStatus.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/msg/MycobotPumpStatus";
+ /// @brief Selected original native identity for mycobot_interfaces/msg/MycobotPumpStatus.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/msg/MycobotPumpStatus.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief mycobot_interfaces/msg/MycobotPumpStatus.pin1: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_pin1: i8=0,
+ /// @brief mycobot_interfaces/msg/MycobotPumpStatus.pin2: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_pin2: i8=0,
+ /// @brief Append every canonical field of mycobot_interfaces/msg/MycobotPumpStatus.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+  try w.integer(self.field_pin1);
+  try w.integer(self.field_pin2);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/msg/MycobotPumpStatus.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  value.field_pin1=try r.integer(i8);
+  value.field_pin2=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/msg/MycobotPumpStatus value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/msg/MycobotPumpStatus value.
+ /// @details Require the complete 3..3-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<3 or bytes.len>3) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/msg/MycobotSetAngles value.
+/// @details All 7 declared fields are retained in source order. The canonical representation occupies
+/// 25..25 bytes and is identified by
+/// UWVMROS1_798576c5f0b03e46e5cc5d2edf81bc7042042482ef574643ca136621346d731e.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesMsgMycobotSetAngles=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/msg/MycobotSetAngles in bytes.
+ /// @details The inclusive bound is 25 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=25;
+ /// @brief Canonical codec identity of mycobot_interfaces/msg/MycobotSetAngles.
+ /// @details Exact identity UWVMROS1_798576c5f0b03e46e5cc5d2edf81bc7042042482ef574643ca136621346d731e
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_798576c5f0b03e46e5cc5d2edf81bc7042042482ef574643ca136621346d731e";
+ /// @brief Original ROS type name for mycobot_interfaces/msg/MycobotSetAngles.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/msg/MycobotSetAngles";
+ /// @brief Selected original native identity for mycobot_interfaces/msg/MycobotSetAngles.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/msg/MycobotSetAngles.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetAngles.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetAngles.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetAngles.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetAngles.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetAngles.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetAngles.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mycobot_interfaces/msg/MycobotSetAngles.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/msg/MycobotSetAngles.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/msg/MycobotSetAngles value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/msg/MycobotSetAngles value.
+ /// @details Require the complete 25..25-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<25 or bytes.len>25) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/msg/MycobotSetCoords value.
+/// @details All 8 declared fields are retained in source order. The canonical representation occupies
+/// 26..26 bytes and is identified by
+/// UWVMROS1_462b7629172037a6959d08984896980c8c07ae5b6364c6d848b172dea23cab49.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesMsgMycobotSetCoords=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/msg/MycobotSetCoords in bytes.
+ /// @details The inclusive bound is 26 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=26;
+ /// @brief Canonical codec identity of mycobot_interfaces/msg/MycobotSetCoords.
+ /// @details Exact identity UWVMROS1_462b7629172037a6959d08984896980c8c07ae5b6364c6d848b172dea23cab49
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_462b7629172037a6959d08984896980c8c07ae5b6364c6d848b172dea23cab49";
+ /// @brief Original ROS type name for mycobot_interfaces/msg/MycobotSetCoords.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/msg/MycobotSetCoords";
+ /// @brief Selected original native identity for mycobot_interfaces/msg/MycobotSetCoords.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/msg/MycobotSetCoords.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetCoords.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetCoords.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetCoords.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetCoords.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetCoords.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetCoords.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief mycobot_interfaces/msg/MycobotSetCoords.model: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_model: i8=0,
+ /// @brief Append every canonical field of mycobot_interfaces/msg/MycobotSetCoords.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+  try w.integer(self.field_speed);
+  try w.integer(self.field_model);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/msg/MycobotSetCoords.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  value.field_speed=try r.integer(i8);
+  value.field_model=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/msg/MycobotSetCoords value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/msg/MycobotSetCoords value.
+ /// @details Require the complete 26..26-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<26 or bytes.len>26) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/GetAngles_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_ea433bdb6e3cb77923720a56bec24aaec62c88480248a4ed425370092474d38e.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvGetAngles_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/GetAngles_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/GetAngles_Request.
+ /// @details Exact identity UWVMROS1_ea433bdb6e3cb77923720a56bec24aaec62c88480248a4ed425370092474d38e
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_ea433bdb6e3cb77923720a56bec24aaec62c88480248a4ed425370092474d38e";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/GetAngles_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/GetAngles_Request";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/GetAngles_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mycobot_interfaces/srv/GetAngles_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/GetAngles_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/GetAngles_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/GetAngles_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/GetAngles_Response value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_14d6e2d8a6f7234719fae06d8807c651965387e252160df555ede0a070123b8a.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvGetAngles_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/GetAngles_Response in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/GetAngles_Response.
+ /// @details Exact identity UWVMROS1_14d6e2d8a6f7234719fae06d8807c651965387e252160df555ede0a070123b8a
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_14d6e2d8a6f7234719fae06d8807c651965387e252160df555ede0a070123b8a";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/GetAngles_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/GetAngles_Response";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/GetAngles_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/GetAngles_Response.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mycobot_interfaces/srv/GetAngles_Response.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mycobot_interfaces/srv/GetAngles_Response.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mycobot_interfaces/srv/GetAngles_Response.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mycobot_interfaces/srv/GetAngles_Response.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mycobot_interfaces/srv/GetAngles_Response.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/GetAngles_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/GetAngles_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/GetAngles_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/GetAngles_Response value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/GetCoords_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_31ef03eefc143e9d040572e378a5803f44f68bac6d03fbb44ca27f87fb5fb076.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvGetCoords_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/GetCoords_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/GetCoords_Request.
+ /// @details Exact identity UWVMROS1_31ef03eefc143e9d040572e378a5803f44f68bac6d03fbb44ca27f87fb5fb076
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_31ef03eefc143e9d040572e378a5803f44f68bac6d03fbb44ca27f87fb5fb076";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/GetCoords_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/GetCoords_Request";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/GetCoords_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mycobot_interfaces/srv/GetCoords_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/GetCoords_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/GetCoords_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/GetCoords_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/GetCoords_Response value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_c9886b5cc5f3c48116a1c884f75ab4af49be46e2c0476ffc3aa8167ff96f7787.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvGetCoords_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/GetCoords_Response in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/GetCoords_Response.
+ /// @details Exact identity UWVMROS1_c9886b5cc5f3c48116a1c884f75ab4af49be46e2c0476ffc3aa8167ff96f7787
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_c9886b5cc5f3c48116a1c884f75ab4af49be46e2c0476ffc3aa8167ff96f7787";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/GetCoords_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/GetCoords_Response";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/GetCoords_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/GetCoords_Response.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mycobot_interfaces/srv/GetCoords_Response.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mycobot_interfaces/srv/GetCoords_Response.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mycobot_interfaces/srv/GetCoords_Response.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mycobot_interfaces/srv/GetCoords_Response.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mycobot_interfaces/srv/GetCoords_Response.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/GetCoords_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/GetCoords_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/GetCoords_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/GetCoords_Response value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/GripperStatus_Request value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_6c5ae66e66f12834b7d623e07a5b3ef2b8127cd9cd83cb36d6793a68d921fcd5.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvGripperStatus_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/GripperStatus_Request in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/GripperStatus_Request.
+ /// @details Exact identity UWVMROS1_6c5ae66e66f12834b7d623e07a5b3ef2b8127cd9cd83cb36d6793a68d921fcd5
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_6c5ae66e66f12834b7d623e07a5b3ef2b8127cd9cd83cb36d6793a68d921fcd5";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/GripperStatus_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/GripperStatus_Request";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/GripperStatus_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/GripperStatus_Request.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/GripperStatus_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/GripperStatus_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/GripperStatus_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/GripperStatus_Request value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/GripperStatus_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_530f1e1acaa8cda6b43f8a8c0a38f5376eaebce3e99f7fb194a28143bed2d1ab.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvGripperStatus_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/GripperStatus_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/GripperStatus_Response.
+ /// @details Exact identity UWVMROS1_530f1e1acaa8cda6b43f8a8c0a38f5376eaebce3e99f7fb194a28143bed2d1ab
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_530f1e1acaa8cda6b43f8a8c0a38f5376eaebce3e99f7fb194a28143bed2d1ab";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/GripperStatus_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/GripperStatus_Response";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/GripperStatus_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/GripperStatus_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/GripperStatus_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/GripperStatus_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/GripperStatus_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/GripperStatus_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/PumpStatus_Request value.
+/// @details All 3 declared fields are retained in source order. The canonical representation occupies
+/// 3..3 bytes and is identified by
+/// UWVMROS1_50b7fa285b93dd9e6b3b0eafda0afeb5911ab6e3b79d58f03f1cf1f76e732cd0.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvPumpStatus_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/PumpStatus_Request in bytes.
+ /// @details The inclusive bound is 3 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=3;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/PumpStatus_Request.
+ /// @details Exact identity UWVMROS1_50b7fa285b93dd9e6b3b0eafda0afeb5911ab6e3b79d58f03f1cf1f76e732cd0
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_50b7fa285b93dd9e6b3b0eafda0afeb5911ab6e3b79d58f03f1cf1f76e732cd0";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/PumpStatus_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/PumpStatus_Request";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/PumpStatus_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/PumpStatus_Request.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief mycobot_interfaces/srv/PumpStatus_Request.pin1: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_pin1: i8=0,
+ /// @brief mycobot_interfaces/srv/PumpStatus_Request.pin2: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_pin2: i8=0,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/PumpStatus_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+  try w.integer(self.field_pin1);
+  try w.integer(self.field_pin2);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/PumpStatus_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  value.field_pin1=try r.integer(i8);
+  value.field_pin2=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/PumpStatus_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/PumpStatus_Request value.
+ /// @details Require the complete 3..3-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<3 or bytes.len>3) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/PumpStatus_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_b347313e1d4430f4e78a72fb8c35d53a39d1d391290373f84f1f8b2b44375eb0.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvPumpStatus_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/PumpStatus_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/PumpStatus_Response.
+ /// @details Exact identity UWVMROS1_b347313e1d4430f4e78a72fb8c35d53a39d1d391290373f84f1f8b2b44375eb0
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_b347313e1d4430f4e78a72fb8c35d53a39d1d391290373f84f1f8b2b44375eb0";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/PumpStatus_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/PumpStatus_Response";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/PumpStatus_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/PumpStatus_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/PumpStatus_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/PumpStatus_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/PumpStatus_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/PumpStatus_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/SetAngles_Request value.
+/// @details All 7 declared fields are retained in source order. The canonical representation occupies
+/// 25..25 bytes and is identified by
+/// UWVMROS1_a06efd8b6af878d55c26fda8a7177a0b6c8b687f7e1b9f2e17e2ecd19c440310.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvSetAngles_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/SetAngles_Request in bytes.
+ /// @details The inclusive bound is 25 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=25;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/SetAngles_Request.
+ /// @details Exact identity UWVMROS1_a06efd8b6af878d55c26fda8a7177a0b6c8b687f7e1b9f2e17e2ecd19c440310
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_a06efd8b6af878d55c26fda8a7177a0b6c8b687f7e1b9f2e17e2ecd19c440310";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/SetAngles_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/SetAngles_Request";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/SetAngles_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/SetAngles_Request.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mycobot_interfaces/srv/SetAngles_Request.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mycobot_interfaces/srv/SetAngles_Request.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mycobot_interfaces/srv/SetAngles_Request.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mycobot_interfaces/srv/SetAngles_Request.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mycobot_interfaces/srv/SetAngles_Request.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief mycobot_interfaces/srv/SetAngles_Request.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/SetAngles_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/SetAngles_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/SetAngles_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/SetAngles_Request value.
+ /// @details Require the complete 25..25-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<25 or bytes.len>25) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/SetAngles_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_af4daae72e9ec28c8848b76b556c9387e65ba9698d8f0f6e5ba17522472ab665.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvSetAngles_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/SetAngles_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/SetAngles_Response.
+ /// @details Exact identity UWVMROS1_af4daae72e9ec28c8848b76b556c9387e65ba9698d8f0f6e5ba17522472ab665
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_af4daae72e9ec28c8848b76b556c9387e65ba9698d8f0f6e5ba17522472ab665";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/SetAngles_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/SetAngles_Response";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/SetAngles_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/SetAngles_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/SetAngles_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/SetAngles_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/SetAngles_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/SetAngles_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/SetCoords_Request value.
+/// @details All 8 declared fields are retained in source order. The canonical representation occupies
+/// 26..26 bytes and is identified by
+/// UWVMROS1_76a98d5db6f98255046f13855dc7468049894805d83e3d3a7fbdaace40292213.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvSetCoords_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/SetCoords_Request in bytes.
+ /// @details The inclusive bound is 26 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=26;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/SetCoords_Request.
+ /// @details Exact identity UWVMROS1_76a98d5db6f98255046f13855dc7468049894805d83e3d3a7fbdaace40292213
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_76a98d5db6f98255046f13855dc7468049894805d83e3d3a7fbdaace40292213";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/SetCoords_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/SetCoords_Request";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/SetCoords_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/SetCoords_Request.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mycobot_interfaces/srv/SetCoords_Request.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mycobot_interfaces/srv/SetCoords_Request.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mycobot_interfaces/srv/SetCoords_Request.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mycobot_interfaces/srv/SetCoords_Request.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mycobot_interfaces/srv/SetCoords_Request.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief mycobot_interfaces/srv/SetCoords_Request.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief mycobot_interfaces/srv/SetCoords_Request.model: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_model: i8=0,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/SetCoords_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+  try w.integer(self.field_speed);
+  try w.integer(self.field_model);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/SetCoords_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  value.field_speed=try r.integer(i8);
+  value.field_model=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/SetCoords_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/SetCoords_Request value.
+ /// @details Require the complete 26..26-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<26 or bytes.len>26) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_interfaces/srv/SetCoords_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_75e3ae0e6db60a275b08e450c420969aa1ee05d0f34864e8fb6535d2d13613b9.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_interfacesSrvSetCoords_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_interfaces/srv/SetCoords_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_interfaces/srv/SetCoords_Response.
+ /// @details Exact identity UWVMROS1_75e3ae0e6db60a275b08e450c420969aa1ee05d0f34864e8fb6535d2d13613b9
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_75e3ae0e6db60a275b08e450c420969aa1ee05d0f34864e8fb6535d2d13613b9";
+ /// @brief Original ROS type name for mycobot_interfaces/srv/SetCoords_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_interfaces/srv/SetCoords_Response";
+ /// @brief Selected original native identity for mycobot_interfaces/srv/SetCoords_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_interfaces/srv/SetCoords_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mycobot_interfaces/srv/SetCoords_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_interfaces/srv/SetCoords_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_interfaces/srv/SetCoords_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_interfaces/srv/SetCoords_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/msg/MycobotAngles value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_2351398be27155ac63b8a3d15ffd0d3088dd7cf284182a9b494791b7780aa6da.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesMsgMycobotAngles=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/msg/MycobotAngles in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/msg/MycobotAngles.
+ /// @details Exact identity UWVMROS1_2351398be27155ac63b8a3d15ffd0d3088dd7cf284182a9b494791b7780aa6da
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_2351398be27155ac63b8a3d15ffd0d3088dd7cf284182a9b494791b7780aa6da";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/msg/MycobotAngles.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/msg/MycobotAngles";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/msg/MycobotAngles.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/msg/MycobotAngles.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotAngles.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotAngles.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotAngles.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotAngles.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotAngles.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/msg/MycobotAngles.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/msg/MycobotAngles.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/msg/MycobotAngles value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/msg/MycobotAngles value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/msg/MycobotCoords value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_b8513545b0975757c6b7f756a5cedfe8aa0c5d28d0e573adfde001b452e923de.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesMsgMycobotCoords=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/msg/MycobotCoords in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/msg/MycobotCoords.
+ /// @details Exact identity UWVMROS1_b8513545b0975757c6b7f756a5cedfe8aa0c5d28d0e573adfde001b452e923de
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_b8513545b0975757c6b7f756a5cedfe8aa0c5d28d0e573adfde001b452e923de";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/msg/MycobotCoords.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/msg/MycobotCoords";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/msg/MycobotCoords.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/msg/MycobotCoords.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotCoords.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotCoords.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotCoords.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotCoords.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotCoords.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/msg/MycobotCoords.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/msg/MycobotCoords.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/msg/MycobotCoords value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/msg/MycobotCoords value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/msg/MycobotGripperStatus value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_1d097932f2e6b9b4e73ff838b5223b585b230e4edc5c229b310eb00404f6e784.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/msg/MycobotGripperStatus in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/msg/MycobotGripperStatus.
+ /// @details Exact identity UWVMROS1_1d097932f2e6b9b4e73ff838b5223b585b230e4edc5c229b310eb00404f6e784
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_1d097932f2e6b9b4e73ff838b5223b585b230e4edc5c229b310eb00404f6e784";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/msg/MycobotGripperStatus.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/msg/MycobotGripperStatus";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/msg/MycobotGripperStatus.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/msg/MycobotGripperStatus.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/msg/MycobotGripperStatus.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/msg/MycobotGripperStatus.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/msg/MycobotGripperStatus value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/msg/MycobotGripperStatus value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/msg/MycobotSetAngles value.
+/// @details All 7 declared fields are retained in source order. The canonical representation occupies
+/// 25..25 bytes and is identified by
+/// UWVMROS1_23d208d7fa8f7b7488be7c7db487698db4b227ef65e99c55d996901d27c3e591.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/msg/MycobotSetAngles in bytes.
+ /// @details The inclusive bound is 25 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=25;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/msg/MycobotSetAngles.
+ /// @details Exact identity UWVMROS1_23d208d7fa8f7b7488be7c7db487698db4b227ef65e99c55d996901d27c3e591
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_23d208d7fa8f7b7488be7c7db487698db4b227ef65e99c55d996901d27c3e591";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/msg/MycobotSetAngles.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/msg/MycobotSetAngles";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/msg/MycobotSetAngles.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetAngles.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetAngles.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetAngles.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetAngles.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetAngles.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetAngles.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetAngles.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/msg/MycobotSetAngles.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/msg/MycobotSetAngles.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/msg/MycobotSetAngles value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/msg/MycobotSetAngles value.
+ /// @details Require the complete 25..25-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<25 or bytes.len>25) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/msg/MycobotSetCoords value.
+/// @details All 7 declared fields are retained in source order. The canonical representation occupies
+/// 25..25 bytes and is identified by
+/// UWVMROS1_60f40a2f6a577e5785fd69e0cbe9128b301aeaec6b70fd678c71e7f9a5426cea.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/msg/MycobotSetCoords in bytes.
+ /// @details The inclusive bound is 25 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=25;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/msg/MycobotSetCoords.
+ /// @details Exact identity UWVMROS1_60f40a2f6a577e5785fd69e0cbe9128b301aeaec6b70fd678c71e7f9a5426cea
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_60f40a2f6a577e5785fd69e0cbe9128b301aeaec6b70fd678c71e7f9a5426cea";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/msg/MycobotSetCoords.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/msg/MycobotSetCoords";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/msg/MycobotSetCoords.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetCoords.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetCoords.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetCoords.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetCoords.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetCoords.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetCoords.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief mycobot_pro450_interfaces/msg/MycobotSetCoords.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/msg/MycobotSetCoords.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/msg/MycobotSetCoords.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/msg/MycobotSetCoords value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/msg/MycobotSetCoords value.
+ /// @details Require the complete 25..25-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesMsgMycobotSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<25 or bytes.len>25) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/GetAngles_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_d2d8197675b9dadd50ae1a22b165a84e2e76b293b28cc70bec211225c60626c4.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvGetAngles_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/GetAngles_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/GetAngles_Request.
+ /// @details Exact identity UWVMROS1_d2d8197675b9dadd50ae1a22b165a84e2e76b293b28cc70bec211225c60626c4
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_d2d8197675b9dadd50ae1a22b165a84e2e76b293b28cc70bec211225c60626c4";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/GetAngles_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/GetAngles_Request";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/GetAngles_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/GetAngles_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/GetAngles_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/GetAngles_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/GetAngles_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/GetAngles_Response value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_13056bbe3bdef4feb8488783e1c5cf725d1fb94006f36f2221f61081084227f8.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvGetAngles_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/GetAngles_Response in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/GetAngles_Response.
+ /// @details Exact identity UWVMROS1_13056bbe3bdef4feb8488783e1c5cf725d1fb94006f36f2221f61081084227f8
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_13056bbe3bdef4feb8488783e1c5cf725d1fb94006f36f2221f61081084227f8";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/GetAngles_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/GetAngles_Response";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/GetAngles_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/GetAngles_Response.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetAngles_Response.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetAngles_Response.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetAngles_Response.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetAngles_Response.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetAngles_Response.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/GetAngles_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/GetAngles_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/GetAngles_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/GetAngles_Response value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/GetCoords_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_bda408ece90e671ce58ae428f79f01c1429c3b3aa3c1ef2efe9dc045faa9e3c2.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvGetCoords_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/GetCoords_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/GetCoords_Request.
+ /// @details Exact identity UWVMROS1_bda408ece90e671ce58ae428f79f01c1429c3b3aa3c1ef2efe9dc045faa9e3c2
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_bda408ece90e671ce58ae428f79f01c1429c3b3aa3c1ef2efe9dc045faa9e3c2";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/GetCoords_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/GetCoords_Request";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/GetCoords_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/GetCoords_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/GetCoords_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/GetCoords_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/GetCoords_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/GetCoords_Response value.
+/// @details All 6 declared fields are retained in source order. The canonical representation occupies
+/// 24..24 bytes and is identified by
+/// UWVMROS1_01e8a3ef4c048100af32d92cd027769e32eacd82dba36dc3bde30c70cb44afdf.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvGetCoords_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/GetCoords_Response in bytes.
+ /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=24;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/GetCoords_Response.
+ /// @details Exact identity UWVMROS1_01e8a3ef4c048100af32d92cd027769e32eacd82dba36dc3bde30c70cb44afdf
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_01e8a3ef4c048100af32d92cd027769e32eacd82dba36dc3bde30c70cb44afdf";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/GetCoords_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/GetCoords_Response";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/GetCoords_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/GetCoords_Response.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetCoords_Response.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetCoords_Response.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetCoords_Response.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetCoords_Response.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/GetCoords_Response.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/GetCoords_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/GetCoords_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/GetCoords_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/GetCoords_Response value.
+ /// @details Require the complete 24..24-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<24 or bytes.len>24) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/GetGripperValue_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_17cb5e3826409b661c2ad4bad8fde2b4c826dde95d8600e1a17bcf4908eca125.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/GetGripperValue_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/GetGripperValue_Request.
+ /// @details Exact identity UWVMROS1_17cb5e3826409b661c2ad4bad8fde2b4c826dde95d8600e1a17bcf4908eca125
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_17cb5e3826409b661c2ad4bad8fde2b4c826dde95d8600e1a17bcf4908eca125";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/GetGripperValue_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/GetGripperValue_Request";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/GetGripperValue_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/GetGripperValue_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/GetGripperValue_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/GetGripperValue_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/GetGripperValue_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/GetGripperValue_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_6b210e18d0696735196fb2e166b7168165dba6f03b97759a437fc8dc08ab2676.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/GetGripperValue_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/GetGripperValue_Response.
+ /// @details Exact identity UWVMROS1_6b210e18d0696735196fb2e166b7168165dba6f03b97759a437fc8dc08ab2676
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_6b210e18d0696735196fb2e166b7168165dba6f03b97759a437fc8dc08ab2676";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/GetGripperValue_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/GetGripperValue_Response";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/GetGripperValue_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/GetGripperValue_Response.gripper_angle: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_gripper_angle: i8=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/GetGripperValue_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.integer(self.field_gripper_angle);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/GetGripperValue_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_gripper_angle=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/GetGripperValue_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/GetGripperValue_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGetGripperValue_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/GripperStatus_Request value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_edc3352d37effe3923c55a024d6acac85a3cb49350974ea35934efa41555ccac.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/GripperStatus_Request in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/GripperStatus_Request.
+ /// @details Exact identity UWVMROS1_edc3352d37effe3923c55a024d6acac85a3cb49350974ea35934efa41555ccac
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_edc3352d37effe3923c55a024d6acac85a3cb49350974ea35934efa41555ccac";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/GripperStatus_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/GripperStatus_Request";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/GripperStatus_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/GripperStatus_Request.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/GripperStatus_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/GripperStatus_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/GripperStatus_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/GripperStatus_Request value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/GripperStatus_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_65166c2943fd319555cc1a2dcdaf4475b1e7779960907fe5ab6d1b5dc5536fc2.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/GripperStatus_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/GripperStatus_Response.
+ /// @details Exact identity UWVMROS1_65166c2943fd319555cc1a2dcdaf4475b1e7779960907fe5ab6d1b5dc5536fc2
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_65166c2943fd319555cc1a2dcdaf4475b1e7779960907fe5ab6d1b5dc5536fc2";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/GripperStatus_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/GripperStatus_Response";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/GripperStatus_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/GripperStatus_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/GripperStatus_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/GripperStatus_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/GripperStatus_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/GripperStatus_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/SetAngles_Request value.
+/// @details All 7 declared fields are retained in source order. The canonical representation occupies
+/// 25..25 bytes and is identified by
+/// UWVMROS1_ec2659577304938ca4f78c1b4add50190766d8d1b551397668ef7ad03e2ccb09.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvSetAngles_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/SetAngles_Request in bytes.
+ /// @details The inclusive bound is 25 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=25;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/SetAngles_Request.
+ /// @details Exact identity UWVMROS1_ec2659577304938ca4f78c1b4add50190766d8d1b551397668ef7ad03e2ccb09
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_ec2659577304938ca4f78c1b4add50190766d8d1b551397668ef7ad03e2ccb09";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/SetAngles_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/SetAngles_Request";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/SetAngles_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/SetAngles_Request.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetAngles_Request.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetAngles_Request.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetAngles_Request.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetAngles_Request.joint_5: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_5: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetAngles_Request.joint_6: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_6: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetAngles_Request.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/SetAngles_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.float32(self.field_joint_5);
+  try w.float32(self.field_joint_6);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/SetAngles_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_joint_5=try r.float32();
+  value.field_joint_6=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/SetAngles_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/SetAngles_Request value.
+ /// @details Require the complete 25..25-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<25 or bytes.len>25) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/SetAngles_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_28dc59c06324913c1ccbe286ca05b9f47585653a8f086fc5d99a01f6e9ee08b4.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvSetAngles_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/SetAngles_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/SetAngles_Response.
+ /// @details Exact identity UWVMROS1_28dc59c06324913c1ccbe286ca05b9f47585653a8f086fc5d99a01f6e9ee08b4
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_28dc59c06324913c1ccbe286ca05b9f47585653a8f086fc5d99a01f6e9ee08b4";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/SetAngles_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/SetAngles_Response";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/SetAngles_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/SetAngles_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/SetAngles_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/SetAngles_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/SetAngles_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/SetAngles_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/SetCoords_Request value.
+/// @details All 7 declared fields are retained in source order. The canonical representation occupies
+/// 25..25 bytes and is identified by
+/// UWVMROS1_e0c550200472f77aa582a46a5149c05c95648615a306f254599f820992890c81.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvSetCoords_Request=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/SetCoords_Request in bytes.
+ /// @details The inclusive bound is 25 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=25;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/SetCoords_Request.
+ /// @details Exact identity UWVMROS1_e0c550200472f77aa582a46a5149c05c95648615a306f254599f820992890c81
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_e0c550200472f77aa582a46a5149c05c95648615a306f254599f820992890c81";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/SetCoords_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/SetCoords_Request";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/SetCoords_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/SetCoords_Request.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetCoords_Request.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetCoords_Request.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetCoords_Request.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetCoords_Request.ry: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_ry: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetCoords_Request.rz: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_rz: f32=0,
+ /// @brief mycobot_pro450_interfaces/srv/SetCoords_Request.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/SetCoords_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.float32(self.field_ry);
+  try w.float32(self.field_rz);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/SetCoords_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_ry=try r.float32();
+  value.field_rz=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/SetCoords_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/SetCoords_Request value.
+ /// @details Require the complete 25..25-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<25 or bytes.len>25) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mycobot_pro450_interfaces/srv/SetCoords_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_9a5ee934233519095e1b28568490f8d958c319e2544976fae0b7de53a54a3f51.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mycobot_pro450_interfacesSrvSetCoords_Response=struct {
+ /// @brief Maximum canonical extent of mycobot_pro450_interfaces/srv/SetCoords_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mycobot_pro450_interfaces/srv/SetCoords_Response.
+ /// @details Exact identity UWVMROS1_9a5ee934233519095e1b28568490f8d958c319e2544976fae0b7de53a54a3f51
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_9a5ee934233519095e1b28568490f8d958c319e2544976fae0b7de53a54a3f51";
+ /// @brief Original ROS type name for mycobot_pro450_interfaces/srv/SetCoords_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mycobot_pro450_interfaces/srv/SetCoords_Response";
+ /// @brief Selected original native identity for mycobot_pro450_interfaces/srv/SetCoords_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mycobot_pro450_interfaces/srv/SetCoords_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mycobot_pro450_interfaces/srv/SetCoords_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mycobot_pro450_interfaces/srv/SetCoords_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mycobot_pro450_interfaces/srv/SetCoords_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mycobot_pro450_interfaces/srv/SetCoords_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mycobot_pro450_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/msg/MypalAngles value.
+/// @details All 4 declared fields are retained in source order. The canonical representation occupies
+/// 16..16 bytes and is identified by
+/// UWVMROS1_0a2dc324515448310b0f026fb26c6c5c6da452e5e7067096e315abe3ab86a35d.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesMsgMypalAngles=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/msg/MypalAngles in bytes.
+ /// @details The inclusive bound is 16 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=16;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/msg/MypalAngles.
+ /// @details Exact identity UWVMROS1_0a2dc324515448310b0f026fb26c6c5c6da452e5e7067096e315abe3ab86a35d
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_0a2dc324515448310b0f026fb26c6c5c6da452e5e7067096e315abe3ab86a35d";
+ /// @brief Original ROS type name for mypalletizer_interfaces/msg/MypalAngles.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/msg/MypalAngles";
+ /// @brief Selected original native identity for mypalletizer_interfaces/msg/MypalAngles.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/msg/MypalAngles.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalAngles.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalAngles.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalAngles.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/msg/MypalAngles.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/msg/MypalAngles.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/msg/MypalAngles value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/msg/MypalAngles value.
+ /// @details Require the complete 16..16-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<16 or bytes.len>16) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/msg/MypalCoords value.
+/// @details All 4 declared fields are retained in source order. The canonical representation occupies
+/// 16..16 bytes and is identified by
+/// UWVMROS1_839491548a07528380403fa31c89889ce82f28b2f82e6fd9474835659714b4f7.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesMsgMypalCoords=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/msg/MypalCoords in bytes.
+ /// @details The inclusive bound is 16 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=16;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/msg/MypalCoords.
+ /// @details Exact identity UWVMROS1_839491548a07528380403fa31c89889ce82f28b2f82e6fd9474835659714b4f7
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_839491548a07528380403fa31c89889ce82f28b2f82e6fd9474835659714b4f7";
+ /// @brief Original ROS type name for mypalletizer_interfaces/msg/MypalCoords.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/msg/MypalCoords";
+ /// @brief Selected original native identity for mypalletizer_interfaces/msg/MypalCoords.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/msg/MypalCoords.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalCoords.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalCoords.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalCoords.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/msg/MypalCoords.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/msg/MypalCoords.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/msg/MypalCoords value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/msg/MypalCoords value.
+ /// @details Require the complete 16..16-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<16 or bytes.len>16) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/msg/MypalGripperStatus value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_f6e4ad6193272d6401bbbfcc20c0f38b6a147a81d9de1ad956d7c154f29daeb0.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesMsgMypalGripperStatus=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/msg/MypalGripperStatus in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/msg/MypalGripperStatus.
+ /// @details Exact identity UWVMROS1_f6e4ad6193272d6401bbbfcc20c0f38b6a147a81d9de1ad956d7c154f29daeb0
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_f6e4ad6193272d6401bbbfcc20c0f38b6a147a81d9de1ad956d7c154f29daeb0";
+ /// @brief Original ROS type name for mypalletizer_interfaces/msg/MypalGripperStatus.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/msg/MypalGripperStatus";
+ /// @brief Selected original native identity for mypalletizer_interfaces/msg/MypalGripperStatus.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/msg/MypalGripperStatus.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief Append every canonical field of mypalletizer_interfaces/msg/MypalGripperStatus.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/msg/MypalGripperStatus.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/msg/MypalGripperStatus value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/msg/MypalGripperStatus value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalGripperStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/msg/MypalPumpStatus value.
+/// @details All 3 declared fields are retained in source order. The canonical representation occupies
+/// 3..3 bytes and is identified by
+/// UWVMROS1_008dfd13cad42029330909fb7dc68392ba7f6678ad1baa14a41aad1e759f523c.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesMsgMypalPumpStatus=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/msg/MypalPumpStatus in bytes.
+ /// @details The inclusive bound is 3 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=3;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/msg/MypalPumpStatus.
+ /// @details Exact identity UWVMROS1_008dfd13cad42029330909fb7dc68392ba7f6678ad1baa14a41aad1e759f523c
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_008dfd13cad42029330909fb7dc68392ba7f6678ad1baa14a41aad1e759f523c";
+ /// @brief Original ROS type name for mypalletizer_interfaces/msg/MypalPumpStatus.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/msg/MypalPumpStatus";
+ /// @brief Selected original native identity for mypalletizer_interfaces/msg/MypalPumpStatus.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/msg/MypalPumpStatus.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief mypalletizer_interfaces/msg/MypalPumpStatus.pin1: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_pin1: i8=0,
+ /// @brief mypalletizer_interfaces/msg/MypalPumpStatus.pin2: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ field_pin2: i8=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/msg/MypalPumpStatus.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+  try w.integer(self.field_pin1);
+  try w.integer(self.field_pin2);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/msg/MypalPumpStatus.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  value.field_pin1=try r.integer(i8);
+  value.field_pin2=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/msg/MypalPumpStatus value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/msg/MypalPumpStatus value.
+ /// @details Require the complete 3..3-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalPumpStatus; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<3 or bytes.len>3) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/msg/MypalSetAngles value.
+/// @details All 5 declared fields are retained in source order. The canonical representation occupies
+/// 17..17 bytes and is identified by
+/// UWVMROS1_b9fdd6ac956fdeb4934ff41982e616f7c0c45b11169b6d60ba74fbcc61458bb5.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesMsgMypalSetAngles=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/msg/MypalSetAngles in bytes.
+ /// @details The inclusive bound is 17 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=17;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/msg/MypalSetAngles.
+ /// @details Exact identity UWVMROS1_b9fdd6ac956fdeb4934ff41982e616f7c0c45b11169b6d60ba74fbcc61458bb5
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_b9fdd6ac956fdeb4934ff41982e616f7c0c45b11169b6d60ba74fbcc61458bb5";
+ /// @brief Original ROS type name for mypalletizer_interfaces/msg/MypalSetAngles.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/msg/MypalSetAngles";
+ /// @brief Selected original native identity for mypalletizer_interfaces/msg/MypalSetAngles.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/msg/MypalSetAngles.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalSetAngles.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalSetAngles.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalSetAngles.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalSetAngles.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/msg/MypalSetAngles.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/msg/MypalSetAngles.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/msg/MypalSetAngles value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/msg/MypalSetAngles value.
+ /// @details Require the complete 17..17-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetAngles; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<17 or bytes.len>17) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/msg/MypalSetCoords value.
+/// @details All 5 declared fields are retained in source order. The canonical representation occupies
+/// 17..17 bytes and is identified by
+/// UWVMROS1_0c1b65f543cdd239a5a56a7839ac607c5310cd4145ef6a6da5639a9af8ba4c79.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesMsgMypalSetCoords=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/msg/MypalSetCoords in bytes.
+ /// @details The inclusive bound is 17 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=17;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/msg/MypalSetCoords.
+ /// @details Exact identity UWVMROS1_0c1b65f543cdd239a5a56a7839ac607c5310cd4145ef6a6da5639a9af8ba4c79
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_0c1b65f543cdd239a5a56a7839ac607c5310cd4145ef6a6da5639a9af8ba4c79";
+ /// @brief Original ROS type name for mypalletizer_interfaces/msg/MypalSetCoords.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/msg/MypalSetCoords";
+ /// @brief Selected original native identity for mypalletizer_interfaces/msg/MypalSetCoords.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/msg/MypalSetCoords.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalSetCoords.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalSetCoords.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalSetCoords.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mypalletizer_interfaces/msg/MypalSetCoords.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/msg/MypalSetCoords.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/msg/MypalSetCoords.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/msg/MypalSetCoords value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/msg/MypalSetCoords value.
+ /// @details Require the complete 17..17-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesMsgMypalSetCoords; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<17 or bytes.len>17) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/GetAngles_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_c8124a1063d47b24dae2e279f51d4e48ebf9936a5e305b81b53387a4be344f78.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvGetAngles_Request=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/GetAngles_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/GetAngles_Request.
+ /// @details Exact identity UWVMROS1_c8124a1063d47b24dae2e279f51d4e48ebf9936a5e305b81b53387a4be344f78
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_c8124a1063d47b24dae2e279f51d4e48ebf9936a5e305b81b53387a4be344f78";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/GetAngles_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/GetAngles_Request";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/GetAngles_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/GetAngles_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/GetAngles_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/GetAngles_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/GetAngles_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/GetAngles_Response value.
+/// @details All 4 declared fields are retained in source order. The canonical representation occupies
+/// 16..16 bytes and is identified by
+/// UWVMROS1_33812a320c14891a5bc76a86ccbb0a5507cfbcc3706e01bc304263edabc6f75d.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvGetAngles_Response=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/GetAngles_Response in bytes.
+ /// @details The inclusive bound is 16 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=16;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/GetAngles_Response.
+ /// @details Exact identity UWVMROS1_33812a320c14891a5bc76a86ccbb0a5507cfbcc3706e01bc304263edabc6f75d
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_33812a320c14891a5bc76a86ccbb0a5507cfbcc3706e01bc304263edabc6f75d";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/GetAngles_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/GetAngles_Response";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/GetAngles_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/GetAngles_Response.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mypalletizer_interfaces/srv/GetAngles_Response.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mypalletizer_interfaces/srv/GetAngles_Response.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mypalletizer_interfaces/srv/GetAngles_Response.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/GetAngles_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/GetAngles_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/GetAngles_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/GetAngles_Response value.
+ /// @details Require the complete 16..16-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<16 or bytes.len>16) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/GetCoords_Request value.
+/// @details All 0 declared fields are retained in source order. The canonical representation occupies
+/// 0..0 bytes and is identified by
+/// UWVMROS1_b3db3a0e7d2aed097027798a897caf833f9cc1b8bb027f98c0db016968fa4440.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvGetCoords_Request=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/GetCoords_Request in bytes.
+ /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=0;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/GetCoords_Request.
+ /// @details Exact identity UWVMROS1_b3db3a0e7d2aed097027798a897caf833f9cc1b8bb027f98c0db016968fa4440
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_b3db3a0e7d2aed097027798a897caf833f9cc1b8bb027f98c0db016968fa4440";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/GetCoords_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/GetCoords_Request";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/GetCoords_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/GetCoords_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  _=self; _=w;
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/GetCoords_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  const value: @This()=.{};
+  _=r; _=allocator;
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/GetCoords_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/GetCoords_Request value.
+ /// @details Require the complete 0..0-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<0 or bytes.len>0) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/GetCoords_Response value.
+/// @details All 4 declared fields are retained in source order. The canonical representation occupies
+/// 16..16 bytes and is identified by
+/// UWVMROS1_9d237cfa03c4b3c17d99fe0a9c08d1cafa3e8d0e404191e2169eea8683c54c84.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvGetCoords_Response=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/GetCoords_Response in bytes.
+ /// @details The inclusive bound is 16 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=16;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/GetCoords_Response.
+ /// @details Exact identity UWVMROS1_9d237cfa03c4b3c17d99fe0a9c08d1cafa3e8d0e404191e2169eea8683c54c84
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_9d237cfa03c4b3c17d99fe0a9c08d1cafa3e8d0e404191e2169eea8683c54c84";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/GetCoords_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/GetCoords_Response";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/GetCoords_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/GetCoords_Response.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mypalletizer_interfaces/srv/GetCoords_Response.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mypalletizer_interfaces/srv/GetCoords_Response.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mypalletizer_interfaces/srv/GetCoords_Response.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/GetCoords_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/GetCoords_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/GetCoords_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/GetCoords_Response value.
+ /// @details Require the complete 16..16-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<16 or bytes.len>16) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/GripperStatus_Request value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_b6d4c5991599ec4ac56e5f65dacd5a1ab89f073e9f07dc2b03692f4289fdcc9d.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvGripperStatus_Request=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/GripperStatus_Request in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/GripperStatus_Request.
+ /// @details Exact identity UWVMROS1_b6d4c5991599ec4ac56e5f65dacd5a1ab89f073e9f07dc2b03692f4289fdcc9d
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_b6d4c5991599ec4ac56e5f65dacd5a1ab89f073e9f07dc2b03692f4289fdcc9d";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/GripperStatus_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/GripperStatus_Request";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/GripperStatus_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/GripperStatus_Request.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/GripperStatus_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/GripperStatus_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/GripperStatus_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/GripperStatus_Request value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/GripperStatus_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_bd0c427dc564ff7201019c6d33c7d0c743a65d263c67eb420b5e653d48e4daf4.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvGripperStatus_Response=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/GripperStatus_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/GripperStatus_Response.
+ /// @details Exact identity UWVMROS1_bd0c427dc564ff7201019c6d33c7d0c743a65d263c67eb420b5e653d48e4daf4
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_bd0c427dc564ff7201019c6d33c7d0c743a65d263c67eb420b5e653d48e4daf4";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/GripperStatus_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/GripperStatus_Response";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/GripperStatus_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/GripperStatus_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/GripperStatus_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/GripperStatus_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/GripperStatus_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/GripperStatus_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvGripperStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/PumpStatus_Request value.
+/// @details All 3 declared fields are retained in source order. The canonical representation occupies
+/// 3..3 bytes and is identified by
+/// UWVMROS1_6b14af554cb5c65c9411b2c6a76d49cb7cbe06dedcd26d47804d00d12ccf2e2f.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvPumpStatus_Request=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/PumpStatus_Request in bytes.
+ /// @details The inclusive bound is 3 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=3;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/PumpStatus_Request.
+ /// @details Exact identity UWVMROS1_6b14af554cb5c65c9411b2c6a76d49cb7cbe06dedcd26d47804d00d12ccf2e2f
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_6b14af554cb5c65c9411b2c6a76d49cb7cbe06dedcd26d47804d00d12ccf2e2f";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/PumpStatus_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/PumpStatus_Request";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/PumpStatus_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/PumpStatus_Request.status: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_status: bool=false,
+ /// @brief mypalletizer_interfaces/srv/PumpStatus_Request.pin1: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_pin1: i8=0,
+ /// @brief mypalletizer_interfaces/srv/PumpStatus_Request.pin2: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_pin2: i8=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/PumpStatus_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_status);
+  try w.integer(self.field_pin1);
+  try w.integer(self.field_pin2);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/PumpStatus_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_status=try r.boolean();
+  value.field_pin1=try r.integer(i8);
+  value.field_pin2=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/PumpStatus_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/PumpStatus_Request value.
+ /// @details Require the complete 3..3-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<3 or bytes.len>3) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/PumpStatus_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_187a703ce648bc82a276961d82ed8abd5365d8db7af3bb211e590620e1bb2b45.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvPumpStatus_Response=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/PumpStatus_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/PumpStatus_Response.
+ /// @details Exact identity UWVMROS1_187a703ce648bc82a276961d82ed8abd5365d8db7af3bb211e590620e1bb2b45
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_187a703ce648bc82a276961d82ed8abd5365d8db7af3bb211e590620e1bb2b45";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/PumpStatus_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/PumpStatus_Response";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/PumpStatus_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/PumpStatus_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/PumpStatus_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/PumpStatus_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/PumpStatus_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/PumpStatus_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvPumpStatus_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/SetAngles_Request value.
+/// @details All 5 declared fields are retained in source order. The canonical representation occupies
+/// 17..17 bytes and is identified by
+/// UWVMROS1_3997bb19c183b59fbca1675695ea5ee548a247a34f9682dae3fb68fdf1a155ec.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvSetAngles_Request=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/SetAngles_Request in bytes.
+ /// @details The inclusive bound is 17 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=17;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/SetAngles_Request.
+ /// @details Exact identity UWVMROS1_3997bb19c183b59fbca1675695ea5ee548a247a34f9682dae3fb68fdf1a155ec
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_3997bb19c183b59fbca1675695ea5ee548a247a34f9682dae3fb68fdf1a155ec";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/SetAngles_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/SetAngles_Request";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/SetAngles_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/SetAngles_Request.joint_1: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_1: f32=0,
+ /// @brief mypalletizer_interfaces/srv/SetAngles_Request.joint_2: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_2: f32=0,
+ /// @brief mypalletizer_interfaces/srv/SetAngles_Request.joint_3: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_3: f32=0,
+ /// @brief mypalletizer_interfaces/srv/SetAngles_Request.joint_4: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_joint_4: f32=0,
+ /// @brief mypalletizer_interfaces/srv/SetAngles_Request.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/SetAngles_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_joint_1);
+  try w.float32(self.field_joint_2);
+  try w.float32(self.field_joint_3);
+  try w.float32(self.field_joint_4);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/SetAngles_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_joint_1=try r.float32();
+  value.field_joint_2=try r.float32();
+  value.field_joint_3=try r.float32();
+  value.field_joint_4=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/SetAngles_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/SetAngles_Request value.
+ /// @details Require the complete 17..17-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<17 or bytes.len>17) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/SetAngles_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_a7952f549b35aa140adac4f18bbe8538c0f6230aa884459091cd74720ab757c9.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvSetAngles_Response=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/SetAngles_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/SetAngles_Response.
+ /// @details Exact identity UWVMROS1_a7952f549b35aa140adac4f18bbe8538c0f6230aa884459091cd74720ab757c9
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_a7952f549b35aa140adac4f18bbe8538c0f6230aa884459091cd74720ab757c9";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/SetAngles_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/SetAngles_Response";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/SetAngles_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/SetAngles_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/SetAngles_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/SetAngles_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/SetAngles_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/SetAngles_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetAngles_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/SetCoords_Request value.
+/// @details All 5 declared fields are retained in source order. The canonical representation occupies
+/// 17..17 bytes and is identified by
+/// UWVMROS1_c72f4f1cb71f1ad1076bcc89499abbcfc5eab173fadd19c9a266baf1c32d1541.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvSetCoords_Request=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/SetCoords_Request in bytes.
+ /// @details The inclusive bound is 17 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=17;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/SetCoords_Request.
+ /// @details Exact identity UWVMROS1_c72f4f1cb71f1ad1076bcc89499abbcfc5eab173fadd19c9a266baf1c32d1541
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_c72f4f1cb71f1ad1076bcc89499abbcfc5eab173fadd19c9a266baf1c32d1541";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/SetCoords_Request.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/SetCoords_Request";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/SetCoords_Request.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/SetCoords_Request.x: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_x: f32=0,
+ /// @brief mypalletizer_interfaces/srv/SetCoords_Request.y: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_y: f32=0,
+ /// @brief mypalletizer_interfaces/srv/SetCoords_Request.z: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_z: f32=0,
+ /// @brief mypalletizer_interfaces/srv/SetCoords_Request.rx: float32.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_rx: f32=0,
+ /// @brief mypalletizer_interfaces/srv/SetCoords_Request.speed: int8.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ field_speed: i8=0,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/SetCoords_Request.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.float32(self.field_x);
+  try w.float32(self.field_y);
+  try w.float32(self.field_z);
+  try w.float32(self.field_rx);
+  try w.integer(self.field_speed);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/SetCoords_Request.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_x=try r.float32();
+  value.field_y=try r.float32();
+  value.field_z=try r.float32();
+  value.field_rx=try r.float32();
+  value.field_speed=try r.integer(i8);
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/SetCoords_Request value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/SetCoords_Request value.
+ /// @details Require the complete 17..17-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Request; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<17 or bytes.len>17) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};
+/// @brief Complete ROS 2 mypalletizer_interfaces/srv/SetCoords_Response value.
+/// @details All 1 declared fields are retained in source order. The canonical representation occupies
+/// 1..1 bytes and is identified by
+/// UWVMROS1_0cedaf9087ba0ae3726b9dd0d304665a226fc6df2ee068f6ac2b1c12ce88cb5b.
+/// @native No native identity is established by this source record.
+/// @ownership This is a Guest value, not a native ROS allocation or capability. Copying it creates no
+/// publisher, subscriber, service or Action owner.
+/// @thread Ordinary value access needs caller synchronization. The codec creates no task or callback;
+/// mutable readers/writers must not be shared during a call.
+/// @permissions None for construction or pure encoding; transport needs a separate exact grant.
+/// @version The selected finite schema profile fixes field order, bounds and constants.
+/// @see share/platform/ros/zig/API-CONTRACT.md
+pub const Ros2Mypalletizer_interfacesSrvSetCoords_Response=struct {
+ /// @brief Maximum canonical extent of mypalletizer_interfaces/srv/SetCoords_Response in bytes.
+ /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a
+ /// queue reservation.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const maximum_wire_bytes: usize=1;
+ /// @brief Canonical codec identity of mypalletizer_interfaces/srv/SetCoords_Response.
+ /// @details Exact identity UWVMROS1_0cedaf9087ba0ae3726b9dd0d304665a226fc6df2ee068f6ac2b1c12ce88cb5b
+ /// binds field order, shape and bounds. It does not replace the native type identity.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const codec_identity="UWVMROS1_0cedaf9087ba0ae3726b9dd0d304665a226fc6df2ee068f6ac2b1c12ce88cb5b";
+ /// @brief Original ROS type name for mypalletizer_interfaces/srv/SetCoords_Response.
+ /// @details This exact name is descriptive and cannot select a different alias, endpoint or resource.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_type="mypalletizer_interfaces/srv/SetCoords_Response";
+ /// @brief Selected original native identity for mypalletizer_interfaces/srv/SetCoords_Response.
+ /// @details Absent: this source profile establishes no native identity.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub const native_identity: ?[]const u8=null;
+ /// @brief mypalletizer_interfaces/srv/SetCoords_Response.flag: bool.
+ /// @details The generated initializer supplies the declared zero/empty/nested default. Encoding
+ /// preserves the original field position and signedness; invalid bounds fail instead of truncating the
+ /// value.
+ /// @units Use the units and frame/clock domain of the pinned native definition. The codec performs no
+ /// scaling, frame conversion or normalization.
+ /// @lifetime Retain referenced string/sequence backing storage for each encoding call. Decoded borrowing
+ /// and allocator ownership follow the enclosing decode function.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ field_flag: bool=false,
+ /// @brief Append every canonical field of mypalletizer_interfaces/srv/SetCoords_Response.
+ /// @details Validate profile invariants and finite element bounds while advancing the caller writer.
+ /// This nested operation does not promise rollback of a partially advanced writer.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[in,out] w Exclusive mutable canonical writer; a refused nested write may leave a consumed prefix.
+ /// @return No record value. Success appends all selected fields to the caller writer; the language
+ /// exception/error contract reports refusal.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Managed decoded values retain/copy their required backing storage. Keep input values stable
+ /// during synchronous encoding; do not share mutable cursors during a call.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
+  try w.boolean(self.field_flag);
+ }
+ /// @brief Read the ordered canonical fields of mypalletizer_interfaces/srv/SetCoords_Response.
+ /// @details Advance the caller reader and validate the resulting record. Nested decoding deliberately
+ /// leaves subsequent enclosing fields unread; discard partial values on any failure.
+ /// @param[in,out] r Exclusive mutable canonical reader; nested decoding advances only this record prefix.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn readFields(r: *wire.Reader, allocator: std.mem.Allocator) wire.Error!@This() {
+  var value: @This()=.{};
+  _=allocator;
+  value.field_flag=try r.boolean();
+  return value;
+ }
+ /// @brief Encode one complete mypalletizer_interfaces/srv/SetCoords_Response value.
+ /// @details Preserve every declared field, signed integer and floating-point bit pattern allowed by the
+ /// profile. Validate all finite bounds; never silently truncate or issue a Host call.
+ /// @param[in] self Complete selected record borrowed unchanged during the synchronous codec call.
+ /// @param[out] output Caller-owned writable output bytes; keep alive and exclusive until return.
+ /// @return Initialized immutable caller-buffer prefix through the native error union; the slice borrows
+ /// output.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime The initialized output prefix belongs to the caller output buffer; returned slices borrow
+ /// that buffer. Retain it unchanged while using encoded bytes. Input value/backing storage remains
+ /// stable until synchronous return; no ownership is transferred to Native.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn encode(self: *const @This(), output: []u8) wire.Error![]const u8 {
+  var measure: wire.Writer=.{.bytes=&.{},.measuring=true,.limit=maximum_wire_bytes};
+  try self.writeFields(&measure); if(output.len<measure.position) return error.TooLarge;
+  var writer: wire.Writer=.{.bytes=output,.limit=maximum_wire_bytes};
+  try self.writeFields(&writer); return output[0..writer.position];
+ }
+ /// Arena allocator owns every decoded sequence. Strings borrow bytes.
+ /// On refusal discard the whole arena region, including partial nested values.
+ /// @brief Decode exactly one complete mypalletizer_interfaces/srv/SetCoords_Response value.
+ /// @details Require the complete 1..1-byte canonical representation. Reject truncation, invalid fields
+ /// and trailing bytes before publishing a successful value.
+ /// @param[in] bytes Complete canonical input bytes; keep unchanged while decoded borrowed fields are live.
+ /// @param[in] allocator Caller-owned allocator; retain its allocated sequence/nested regions for the
+ /// decoded value.
+ /// @return A complete decoded record through the native language value/result/exception/error contract.
+ /// @failure Invalid canonical input/bounds or insufficient storage/allocator capacity. Partial cursors,
+ /// buffers and out-values are unusable after refusal. Allocation traps and runtime exceptions follow the
+ /// actual language runtime; not every failure is a recoverable codec status. No Host, network or
+ /// asynchronous side effect is issued.
+ /// @lifetime Decoded strings/raw bytes borrow the input buffer. Decoded sequences and nested allocations
+ /// belong to the caller allocator/arena; keep both alive while using the value. Use an arena region and
+ /// discard it after any failed decode, including partial allocations.
+ /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
+ /// @see Ros2Mypalletizer_interfacesSrvSetCoords_Response; share/platform/ros/zig/API-CONTRACT.md
+ pub fn decode(bytes: []const u8, allocator: std.mem.Allocator) wire.Error!@This() {
+  if(bytes.len<1 or bytes.len>1) return error.Invalid;
+  var reader: wire.Reader=.{.bytes=bytes}; const value=try readFields(&reader,allocator);
+  try reader.finish(); return value;
+ }
+};

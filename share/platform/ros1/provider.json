@@ -1,0 +1,87 @@
+{
+  "api_version": 1,
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "noetic"
+      ]
+    }
+  },
+  "features": [
+    "simd128",
+    "relaxed-simd",
+    "bulk-memory",
+    "reference-types",
+    "multi-value",
+    "sign-extension",
+    "nontrapping-fptoint",
+    "tail-call",
+    "extended-const",
+    "multi-memory",
+    "gc",
+    "exceptions",
+    "memory64",
+    "table64"
+  ],
+  "format": "uwvm-ros-provider-v1",
+  "id": "ros1",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fortran",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "wat",
+    "zig"
+  ],
+  "module": "tools/platform/ros/provider.lua",
+  "options": {},
+  "scenarios": {
+    "call_trigger": {
+      "operation": "service.call",
+      "types": {
+        "ros1": "std_srvs/Trigger",
+        "ros2": "std_srvs/srv/Trigger"
+      }
+    },
+    "publish_string": {
+      "operation": "topic.publish",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    },
+    "subscribe_string": {
+      "operation": "topic.subscribe",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    }
+  },
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/armHandPose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/armHandPose"
+    },
+    {
+      "bounds": {
+        "joint_angles": {
+          "sequence": 16
+        }
+      },
+      "file": "motion_capture_ik/msg/armHandPoseFree.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/armHandPoseFree"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/srv/changeArmCtrlMode.srv",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/changeArmCtrlMode"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/handPose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/handPose"
+    },
+    {
+      "bounds": {
+        "ik_type": {
+          "string": 256
+        }
+      },
+      "file": "motion_capture_ik/msg/ikSolveError.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/ikSolveError"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/ikSolveParam.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/ikSolveParam"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/recordArmHandPose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/recordArmHandPose"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/recordArmHandPoseFree.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/recordArmHandPoseFree"
+    },
+    {
+      "bounds": {
+        "q": {
+          "sequence": 16
+        },
+        "v": {
+          "sequence": 16
+        },
+        "vd": {
+          "sequence": 16
+        }
+      },
+      "file": "motion_capture_ik/msg/robotArmQVVD.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/robotArmQVVD"
+    },
+    {
+      "bounds": {
+        "left_hand_position": {
+          "sequence": 256
+        },
+        "right_hand_position": {
+          "sequence": 256
+        }
+      },
+      "file": "motion_capture_ik/msg/robotHandPosition.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/robotHandPosition"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/twoArmHandPose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/twoArmHandPose"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/twoArmHandPoseCmd.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/twoArmHandPoseCmd"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/twoArmHandPoseCmdFree.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/twoArmHandPoseCmdFree"
+    },
+    {
+      "bounds": {},
+      "file": "motion_capture_ik/msg/twoArmHandPoseFree.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "motion_capture_ik/twoArmHandPoseFree"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 256
+        }
+      },
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Header"
+    }
+  ]
+}

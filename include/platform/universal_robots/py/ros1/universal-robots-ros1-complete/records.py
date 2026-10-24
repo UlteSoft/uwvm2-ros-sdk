@@ -1,0 +1,3651 @@
+"""@file records.py
+@brief Complete source-derived universal_robots values.
+@details All fields, bounds and constants are retained. Pure codecs delegate to
+the central Record/Registry implementation; this module opens no ROS resource.
+"""
+
+from ros.py.wire import Record, Registry
+
+REGISTRY = Registry()
+
+
+class Ros1Geometry_msgsPoint(Record):
+    """@brief Own every geometry_msgs/Point field.
+    @details Canonical extent 24..24 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("x", "y", "z")
+    SCHEMA = {
+        "type": "geometry_msgs/Point",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_b55e2bde60f6cedb426cada54bc7baefc536c7bc731bd49fb152d89a892de62b",
+        "minimum": 24,
+        "maximum": 24,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "x",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "y",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "z",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Geometry_msgsPoint)
+
+
+class Ros1Geometry_msgsQuaternion(Record):
+    """@brief Own every geometry_msgs/Quaternion field.
+    @details Canonical extent 32..32 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("x", "y", "z", "w")
+    SCHEMA = {
+        "type": "geometry_msgs/Quaternion",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_48fe20d5d29a8ca1a630605a58f80baacc52d9a65b1ca87efd50ffdd52882934",
+        "minimum": 32,
+        "maximum": 32,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "x",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "y",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "z",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "w",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Geometry_msgsQuaternion)
+
+
+class Ros1Geometry_msgsPose(Record):
+    """@brief Own every geometry_msgs/Pose field.
+    @details Canonical extent 56..56 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("position", "orientation")
+    SCHEMA = {
+        "type": "geometry_msgs/Pose",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_e49ed287cd0de31a16c8cd49ad8f41f81d44e23306b8dcb61da6e0e789595471",
+        "minimum": 56,
+        "maximum": 56,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "position",
+                "type": "geometry_msgs/Point",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "orientation",
+                "type": "geometry_msgs/Quaternion",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Geometry_msgsPose)
+
+
+class Ros1Time(Record):
+    """@brief Own every time field.
+    @details Canonical extent 8..8 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("sec", "nsec")
+    SCHEMA = {
+        "type": "time",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_90b75571d2bcc21b824eb993b485a001bf97e281adda7907e1b2e3357e4804b0",
+        "minimum": 8,
+        "maximum": 8,
+        "semantics": "normalized-time",
+        "fields": [
+            {
+                "name": "sec",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "nsec",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Time)
+
+
+class Ros1Std_msgsHeader(Record):
+    """@brief Own every std_msgs/Header field.
+    @details Canonical extent 16..144 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("seq", "stamp", "frame_id")
+    SCHEMA = {
+        "type": "std_msgs/Header",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_ee2b4e736d36ebcdb562d3ef7832777233d39d366837e9148a76aa2c36756435",
+        "minimum": 16,
+        "maximum": 144,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "seq",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "stamp",
+                "type": "time",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "frame_id",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 128,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Std_msgsHeader)
+
+
+class Ros1Geometry_msgsPoseStamped(Record):
+    """@brief Own every geometry_msgs/PoseStamped field.
+    @details Canonical extent 72..200 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("header", "pose")
+    SCHEMA = {
+        "type": "geometry_msgs/PoseStamped",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_bb59c4e82f561266c0f10500bfbbd1a809e9c1122ecbf559a812326af3eb2e95",
+        "minimum": 72,
+        "maximum": 200,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "header",
+                "type": "std_msgs/Header",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "pose",
+                "type": "geometry_msgs/Pose",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Geometry_msgsPoseStamped)
+
+
+class Ros1Geometry_msgsVector3(Record):
+    """@brief Own every geometry_msgs/Vector3 field.
+    @details Canonical extent 24..24 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("x", "y", "z")
+    SCHEMA = {
+        "type": "geometry_msgs/Vector3",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_e90efcf4803d82763e0b83f8ef5502b5d042158873fcc91be32543d25d7632bc",
+        "minimum": 24,
+        "maximum": 24,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "x",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "y",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "z",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Geometry_msgsVector3)
+
+
+class Ros1Geometry_msgsTwist(Record):
+    """@brief Own every geometry_msgs/Twist field.
+    @details Canonical extent 48..48 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("linear", "angular")
+    SCHEMA = {
+        "type": "geometry_msgs/Twist",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_d5a69cfff4380fcf3e9c131ddb3dfb6def041cd7308a7ebdbc150b6483dfd921",
+        "minimum": 48,
+        "maximum": 48,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "linear",
+                "type": "geometry_msgs/Vector3",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "angular",
+                "type": "geometry_msgs/Vector3",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Geometry_msgsTwist)
+
+
+class Ros1Geometry_msgsWrench(Record):
+    """@brief Own every geometry_msgs/Wrench field.
+    @details Canonical extent 48..48 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("force", "torque")
+    SCHEMA = {
+        "type": "geometry_msgs/Wrench",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_b0938c4e084df68cf7c46445070ac3e9305d06f678275845aec6055db77617c3",
+        "minimum": 48,
+        "maximum": 48,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "force",
+                "type": "geometry_msgs/Vector3",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "torque",
+                "type": "geometry_msgs/Vector3",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Geometry_msgsWrench)
+
+
+class Ros1Ur_dashboard_msgsAddToLogRequest(Record):
+    """@brief Own every ur_dashboard_msgs/AddToLogRequest field.
+    @details Canonical extent 4..260 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("message",)
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/AddToLogRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_faf6c1ab9c749a05ae3f4e6196cc1c3574560daae1463ebe8684bf13ea938ac4",
+        "minimum": 4,
+        "maximum": 260,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "message",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsAddToLogRequest)
+
+
+class Ros1Ur_dashboard_msgsAddToLogResponse(Record):
+    """@brief Own every ur_dashboard_msgs/AddToLogResponse field.
+    @details Canonical extent 5..261 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("answer", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/AddToLogResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_d495f7609d04abde44cb35ec5114618a2875e0a30986d2f7cc62c8ce99354e7c",
+        "minimum": 5,
+        "maximum": 261,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsAddToLogResponse)
+
+
+class Ros1Ur_dashboard_msgsGetLoadedProgramRequest(Record):
+    """@brief Own every ur_dashboard_msgs/GetLoadedProgramRequest field.
+    @details Canonical extent 0..0 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ()
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/GetLoadedProgramRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_54eecd0b652707f9c16dcbacbef05902112db993500404e1adaf26618e1d3a1a",
+        "minimum": 0,
+        "maximum": 0,
+        "semantics": "",
+        "fields": [],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsGetLoadedProgramRequest)
+
+
+class Ros1Ur_dashboard_msgsGetLoadedProgramResponse(Record):
+    """@brief Own every ur_dashboard_msgs/GetLoadedProgramResponse field.
+    @details Canonical extent 9..521 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("answer", "program_name", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/GetLoadedProgramResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_1680747345d40412a4731c48f08c402ac97fb12dd871fb320c2a9d002453f87a",
+        "minimum": 9,
+        "maximum": 521,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "program_name",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsGetLoadedProgramResponse)
+
+
+class Ros1Ur_dashboard_msgsGetProgramStateRequest(Record):
+    """@brief Own every ur_dashboard_msgs/GetProgramStateRequest field.
+    @details Canonical extent 0..0 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ()
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/GetProgramStateRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_cf14c6f86ef1904f80e88117dc2f2d29a003b52e21bc6569795771f04cf072a2",
+        "minimum": 0,
+        "maximum": 0,
+        "semantics": "",
+        "fields": [],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsGetProgramStateRequest)
+
+
+class Ros1Ur_dashboard_msgsProgramState(Record):
+    """@brief Own every ur_dashboard_msgs/ProgramState field.
+    @details Canonical extent 4..260 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("state",)
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/ProgramState",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_97a57db64f20abcb9929b5296c75d66d994f2e9e26449810197c657694d3850e",
+        "minimum": 4,
+        "maximum": 260,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "state",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+    # @brief Exact original native constant; not a wire field.
+    STOPPED = "STOPPED"
+    # @brief Exact original native constant; not a wire field.
+    PLAYING = "PLAYING"
+    # @brief Exact original native constant; not a wire field.
+    PAUSED = "PAUSED"
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsProgramState)
+
+
+class Ros1Ur_dashboard_msgsGetProgramStateResponse(Record):
+    """@brief Own every ur_dashboard_msgs/GetProgramStateResponse field.
+    @details Canonical extent 13..781 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("state", "program_name", "answer", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/GetProgramStateResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_366caf89303bfff48d3c0f89aa2a640c3d29af5a0c19d76ceccf26d50c3ab2ed",
+        "minimum": 13,
+        "maximum": 781,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "state",
+                "type": "ur_dashboard_msgs/ProgramState",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "program_name",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsGetProgramStateResponse)
+
+
+class Ros1Ur_dashboard_msgsGetRobotModeRequest(Record):
+    """@brief Own every ur_dashboard_msgs/GetRobotModeRequest field.
+    @details Canonical extent 0..0 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ()
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/GetRobotModeRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_b9ffe283d7dbcb85879dbf6964d393f5d44661227bb26e1acc34308edb288609",
+        "minimum": 0,
+        "maximum": 0,
+        "semantics": "",
+        "fields": [],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsGetRobotModeRequest)
+
+
+class Ros1Ur_dashboard_msgsRobotMode(Record):
+    """@brief Own every ur_dashboard_msgs/RobotMode field.
+    @details Canonical extent 1..1 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("mode",)
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/RobotMode",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_b2772853eff2ec9b849b6de4a90ce98487a8eff49d1371283dce503908702066",
+        "minimum": 1,
+        "maximum": 1,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "mode",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+    # @brief Exact original native constant; not a wire field.
+    NO_CONTROLLER = -1
+    # @brief Exact original native constant; not a wire field.
+    DISCONNECTED = 0
+    # @brief Exact original native constant; not a wire field.
+    CONFIRM_SAFETY = 1
+    # @brief Exact original native constant; not a wire field.
+    BOOTING = 2
+    # @brief Exact original native constant; not a wire field.
+    POWER_OFF = 3
+    # @brief Exact original native constant; not a wire field.
+    POWER_ON = 4
+    # @brief Exact original native constant; not a wire field.
+    IDLE = 5
+    # @brief Exact original native constant; not a wire field.
+    BACKDRIVE = 6
+    # @brief Exact original native constant; not a wire field.
+    RUNNING = 7
+    # @brief Exact original native constant; not a wire field.
+    UPDATING_FIRMWARE = 8
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsRobotMode)
+
+
+class Ros1Ur_dashboard_msgsGetRobotModeResponse(Record):
+    """@brief Own every ur_dashboard_msgs/GetRobotModeResponse field.
+    @details Canonical extent 6..262 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("robot_mode", "answer", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/GetRobotModeResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_f6c0d0d03a956a34b00fd63540226b6abb8b106e2a35cb912b4886a5c4cecc3f",
+        "minimum": 6,
+        "maximum": 262,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "robot_mode",
+                "type": "ur_dashboard_msgs/RobotMode",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsGetRobotModeResponse)
+
+
+class Ros1Ur_dashboard_msgsGetSafetyModeRequest(Record):
+    """@brief Own every ur_dashboard_msgs/GetSafetyModeRequest field.
+    @details Canonical extent 0..0 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ()
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/GetSafetyModeRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_f697e2ff2bcd56523563060a46bca2e1b7af487128f05562fcb18bfa73cbca8b",
+        "minimum": 0,
+        "maximum": 0,
+        "semantics": "",
+        "fields": [],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsGetSafetyModeRequest)
+
+
+class Ros1Ur_dashboard_msgsSafetyMode(Record):
+    """@brief Own every ur_dashboard_msgs/SafetyMode field.
+    @details Canonical extent 1..1 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("mode",)
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/SafetyMode",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_5a0c2737166cf2e2bd4c17b46c597f674b8d806b802d4e86ee0d76fc55f29cf7",
+        "minimum": 1,
+        "maximum": 1,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "mode",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+    # @brief Exact original native constant; not a wire field.
+    NORMAL = 1
+    # @brief Exact original native constant; not a wire field.
+    REDUCED = 2
+    # @brief Exact original native constant; not a wire field.
+    PROTECTIVE_STOP = 3
+    # @brief Exact original native constant; not a wire field.
+    RECOVERY = 4
+    # @brief Exact original native constant; not a wire field.
+    SAFEGUARD_STOP = 5
+    # @brief Exact original native constant; not a wire field.
+    SYSTEM_EMERGENCY_STOP = 6
+    # @brief Exact original native constant; not a wire field.
+    ROBOT_EMERGENCY_STOP = 7
+    # @brief Exact original native constant; not a wire field.
+    VIOLATION = 8
+    # @brief Exact original native constant; not a wire field.
+    FAULT = 9
+    # @brief Exact original native constant; not a wire field.
+    VALIDATE_JOINT_ID = 10
+    # @brief Exact original native constant; not a wire field.
+    UNDEFINED_SAFETY_MODE = 11
+    # @brief Exact original native constant; not a wire field.
+    AUTOMATIC_MODE_SAFEGUARD_STOP = 12
+    # @brief Exact original native constant; not a wire field.
+    SYSTEM_THREE_POSITION_ENABLING_STOP = 13
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsSafetyMode)
+
+
+class Ros1Ur_dashboard_msgsGetSafetyModeResponse(Record):
+    """@brief Own every ur_dashboard_msgs/GetSafetyModeResponse field.
+    @details Canonical extent 6..262 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("safety_mode", "answer", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/GetSafetyModeResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_70121af922588eaab9a34855e3da0cde837b1449d2a2d6c28addc70916df1a15",
+        "minimum": 6,
+        "maximum": 262,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "safety_mode",
+                "type": "ur_dashboard_msgs/SafetyMode",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsGetSafetyModeResponse)
+
+
+class Ros1Ur_dashboard_msgsIsInRemoteControlRequest(Record):
+    """@brief Own every ur_dashboard_msgs/IsInRemoteControlRequest field.
+    @details Canonical extent 0..0 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ()
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/IsInRemoteControlRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_4b3c39f36f953904eb582d8c5f91161f2864782d4a4ab209a7dab32a117175da",
+        "minimum": 0,
+        "maximum": 0,
+        "semantics": "",
+        "fields": [],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsIsInRemoteControlRequest)
+
+
+class Ros1Ur_dashboard_msgsIsInRemoteControlResponse(Record):
+    """@brief Own every ur_dashboard_msgs/IsInRemoteControlResponse field.
+    @details Canonical extent 6..262 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("answer", "in_remote_control", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/IsInRemoteControlResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_6c4af27571b48a5b8e8f1f857b2c02a333e7b4b360f8f3645a39630594c1663a",
+        "minimum": 6,
+        "maximum": 262,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "in_remote_control",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsIsInRemoteControlResponse)
+
+
+class Ros1Ur_dashboard_msgsIsProgramRunningRequest(Record):
+    """@brief Own every ur_dashboard_msgs/IsProgramRunningRequest field.
+    @details Canonical extent 0..0 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ()
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/IsProgramRunningRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_0be481297028886e15f07ace4178ca0aec595724cd83ab01d0155e7c6aa6666f",
+        "minimum": 0,
+        "maximum": 0,
+        "semantics": "",
+        "fields": [],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsIsProgramRunningRequest)
+
+
+class Ros1Ur_dashboard_msgsIsProgramRunningResponse(Record):
+    """@brief Own every ur_dashboard_msgs/IsProgramRunningResponse field.
+    @details Canonical extent 6..262 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("answer", "program_running", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/IsProgramRunningResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_4d9de4f7e7071d142c09e3184d4a6f29d4044d003ad11ba3b72e1129ecf144ac",
+        "minimum": 6,
+        "maximum": 262,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "program_running",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsIsProgramRunningResponse)
+
+
+class Ros1Ur_dashboard_msgsIsProgramSavedRequest(Record):
+    """@brief Own every ur_dashboard_msgs/IsProgramSavedRequest field.
+    @details Canonical extent 0..0 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ()
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/IsProgramSavedRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_45ce1466c35adc812096bfb8b2cd84dfa87940109831c9f797b5786afa14f5a8",
+        "minimum": 0,
+        "maximum": 0,
+        "semantics": "",
+        "fields": [],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsIsProgramSavedRequest)
+
+
+class Ros1Ur_dashboard_msgsIsProgramSavedResponse(Record):
+    """@brief Own every ur_dashboard_msgs/IsProgramSavedResponse field.
+    @details Canonical extent 10..522 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("answer", "program_name", "program_saved", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/IsProgramSavedResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_eb53e077fe7b216e27fc57f838666a54a84e479e02e508d41df5cff9f0637a52",
+        "minimum": 10,
+        "maximum": 522,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "program_name",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "program_saved",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsIsProgramSavedResponse)
+
+
+class Ros1Ur_dashboard_msgsLoadRequest(Record):
+    """@brief Own every ur_dashboard_msgs/LoadRequest field.
+    @details Canonical extent 4..260 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("filename",)
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/LoadRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_dfbde7b2376c7c9ba3926e4803f16b22f7ade3b2f768a25886a1490656edd2bd",
+        "minimum": 4,
+        "maximum": 260,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "filename",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsLoadRequest)
+
+
+class Ros1Ur_dashboard_msgsLoadResponse(Record):
+    """@brief Own every ur_dashboard_msgs/LoadResponse field.
+    @details Canonical extent 5..261 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("answer", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/LoadResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_0ed3b3f2a0066248734e64c0706e52ebf07113569a98baf249a99adfff59be02",
+        "minimum": 5,
+        "maximum": 261,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsLoadResponse)
+
+
+class Ros1Ur_dashboard_msgsPopupRequest(Record):
+    """@brief Own every ur_dashboard_msgs/PopupRequest field.
+    @details Canonical extent 4..260 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("message",)
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/PopupRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_11556bfb811a28141b6c5e9c11720920a389d735b8c09ed1a8f47d05f293e90d",
+        "minimum": 4,
+        "maximum": 260,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "message",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsPopupRequest)
+
+
+class Ros1Ur_dashboard_msgsPopupResponse(Record):
+    """@brief Own every ur_dashboard_msgs/PopupResponse field.
+    @details Canonical extent 5..261 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("answer", "success")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/PopupResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_33ac5b2128d6e7c2e562af7e2b8a8e907c16c07034b377920cba4fbd04ca9e14",
+        "minimum": 5,
+        "maximum": 261,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsPopupResponse)
+
+
+class Ros1Ur_dashboard_msgsRawRequestRequest(Record):
+    """@brief Own every ur_dashboard_msgs/RawRequestRequest field.
+    @details Canonical extent 4..260 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("query",)
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/RawRequestRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_ca8e3fdb45888bf4feb3c0f4ed05b7b9499a74493aaa0a8727f9f513922adfb4",
+        "minimum": 4,
+        "maximum": 260,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "query",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsRawRequestRequest)
+
+
+class Ros1Ur_dashboard_msgsRawRequestResponse(Record):
+    """@brief Own every ur_dashboard_msgs/RawRequestResponse field.
+    @details Canonical extent 4..260 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("answer",)
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/RawRequestResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_76dbb0c8d0143bd4d39bbf66c6866b0771013fe67fbad76887c6490c91f39e80",
+        "minimum": 4,
+        "maximum": 260,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "answer",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsRawRequestResponse)
+
+
+class Ros1Ur_dashboard_msgsSetModeGoal(Record):
+    """@brief Own every ur_dashboard_msgs/SetModeGoal field.
+    @details Canonical extent 3..3 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("target_robot_mode", "stop_program", "play_program")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/SetModeGoal",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_27ba58b57af47e8efff15a70fb0562d5904d019c17e39a499bf003730434a528",
+        "minimum": 3,
+        "maximum": 3,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "target_robot_mode",
+                "type": "ur_dashboard_msgs/RobotMode",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "stop_program",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "play_program",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsSetModeGoal)
+
+
+class Ros1Ur_dashboard_msgsSetModeResult(Record):
+    """@brief Own every ur_dashboard_msgs/SetModeResult field.
+    @details Canonical extent 5..261 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("success", "message")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/SetModeResult",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_e558d01061183cabca7022bd66aeb1958e14dfc62226a701c86020e73ffa1114",
+        "minimum": 5,
+        "maximum": 261,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "message",
+                "type": "string",
+                "array": "",
+                "count": 0,
+                "string_bound": 256,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsSetModeResult)
+
+
+class Ros1Ur_dashboard_msgsSetModeFeedback(Record):
+    """@brief Own every ur_dashboard_msgs/SetModeFeedback field.
+    @details Canonical extent 2..2 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("current_robot_mode", "current_safety_mode")
+    SCHEMA = {
+        "type": "ur_dashboard_msgs/SetModeFeedback",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_d29b507dcc5d72ee086c8a5a9a7a762d677ed408ec02dbe661abc17e2de5c7e2",
+        "minimum": 2,
+        "maximum": 2,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "current_robot_mode",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "current_safety_mode",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_dashboard_msgsSetModeFeedback)
+
+
+class Ros1Ur_msgsAnalog(Record):
+    """@brief Own every ur_msgs/Analog field.
+    @details Canonical extent 6..6 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("pin", "domain", "state")
+    SCHEMA = {
+        "type": "ur_msgs/Analog",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_638dc3b30def8193a501b4c1c778792a60c8c683a96880e9fa6db6c01774f6a7",
+        "minimum": 6,
+        "maximum": 6,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "pin",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "domain",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "state",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+    # @brief Exact original native constant; not a wire field.
+    CURRENT = 0
+    # @brief Exact original native constant; not a wire field.
+    VOLTAGE = 1
+
+
+REGISTRY.add(Ros1Ur_msgsAnalog)
+
+
+class Ros1Ur_msgsDigital(Record):
+    """@brief Own every ur_msgs/Digital field.
+    @details Canonical extent 2..2 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("pin", "state")
+    SCHEMA = {
+        "type": "ur_msgs/Digital",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_c5840cfc5e26fe2f18817e46a0322a92e02ca21983920c71ebeb585769f5622c",
+        "minimum": 2,
+        "maximum": 2,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "pin",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "state",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsDigital)
+
+
+class Ros1Ur_msgsGetRobotSoftwareVersionRequest(Record):
+    """@brief Own every ur_msgs/GetRobotSoftwareVersionRequest field.
+    @details Canonical extent 0..0 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ()
+    SCHEMA = {
+        "type": "ur_msgs/GetRobotSoftwareVersionRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_bbcdd98ee8d951a8a4fa873ad1c755f16c5cce14ceb7a614343dd44ccf84b9c8",
+        "minimum": 0,
+        "maximum": 0,
+        "semantics": "",
+        "fields": [],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsGetRobotSoftwareVersionRequest)
+
+
+class Ros1Ur_msgsGetRobotSoftwareVersionResponse(Record):
+    """@brief Own every ur_msgs/GetRobotSoftwareVersionResponse field.
+    @details Canonical extent 16..16 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("major", "minor", "bugfix", "build")
+    SCHEMA = {
+        "type": "ur_msgs/GetRobotSoftwareVersionResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_36ab51ce55e3630f8ca71f364f4c5cc1f4b010f678777e4fd7b03dd480f92e64",
+        "minimum": 16,
+        "maximum": 16,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "major",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "minor",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "bugfix",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "build",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsGetRobotSoftwareVersionResponse)
+
+
+class Ros1Ur_msgsIOStates(Record):
+    """@brief Own every ur_msgs/IOStates field.
+    @details Canonical extent 20..404 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = (
+        "digital_in_states",
+        "digital_out_states",
+        "flag_states",
+        "analog_in_states",
+        "analog_out_states",
+    )
+    SCHEMA = {
+        "type": "ur_msgs/IOStates",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_4b10f6efdd2f129267c407bc1f8caed03776fef6d49f0a1b9dfbf2451ad8f033",
+        "minimum": 20,
+        "maximum": 404,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "digital_in_states",
+                "type": "ur_msgs/Digital",
+                "array": "sequence",
+                "count": 32,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "digital_out_states",
+                "type": "ur_msgs/Digital",
+                "array": "sequence",
+                "count": 32,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "flag_states",
+                "type": "ur_msgs/Digital",
+                "array": "sequence",
+                "count": 32,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_in_states",
+                "type": "ur_msgs/Analog",
+                "array": "sequence",
+                "count": 16,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_out_states",
+                "type": "ur_msgs/Analog",
+                "array": "sequence",
+                "count": 16,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsIOStates)
+
+
+class Ros1Ur_msgsMasterboardDataMsg(Record):
+    """@brief Own every ur_msgs/MasterboardDataMsg field.
+    @details Canonical extent 62..62 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = (
+        "digital_input_bits",
+        "digital_output_bits",
+        "analog_input_range0",
+        "analog_input_range1",
+        "analog_input0",
+        "analog_input1",
+        "analog_output_domain0",
+        "analog_output_domain1",
+        "analog_output0",
+        "analog_output1",
+        "masterboard_temperature",
+        "robot_voltage_48V",
+        "robot_current",
+        "master_io_current",
+        "master_safety_state",
+        "master_onoff_state",
+    )
+    SCHEMA = {
+        "type": "ur_msgs/MasterboardDataMsg",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_f80f92b90cb33dd5b118df81447dfcc33c1ab230a91bb915a1be684401da265f",
+        "minimum": 62,
+        "maximum": 62,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "digital_input_bits",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "digital_output_bits",
+                "type": "uint32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_input_range0",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_input_range1",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_input0",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_input1",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_output_domain0",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_output_domain1",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_output0",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_output1",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "masterboard_temperature",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "robot_voltage_48V",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "robot_current",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "master_io_current",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "master_safety_state",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "master_onoff_state",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsMasterboardDataMsg)
+
+
+class Ros1Ur_msgsRobotModeDataMsg(Record):
+    """@brief Own every ur_msgs/RobotModeDataMsg field.
+    @details Canonical extent 15..15 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = (
+        "timestamp",
+        "is_robot_connected",
+        "is_real_robot_enabled",
+        "is_power_on_robot",
+        "is_emergency_stopped",
+        "is_protective_stopped",
+        "is_program_running",
+        "is_program_paused",
+    )
+    SCHEMA = {
+        "type": "ur_msgs/RobotModeDataMsg",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_64c4247d865e0731b13ca13ce2e355df664cabf7f3d646051d9d3ef48b05a231",
+        "minimum": 15,
+        "maximum": 15,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "timestamp",
+                "type": "uint64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "is_robot_connected",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "is_real_robot_enabled",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "is_power_on_robot",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "is_emergency_stopped",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "is_protective_stopped",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "is_program_running",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "is_program_paused",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsRobotModeDataMsg)
+
+
+class Ros1Ur_msgsRobotStateRTMsg(Record):
+    """@brief Own every ur_msgs/RobotStateRTMsg field.
+    @details Canonical extent 96..768 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = (
+        "time",
+        "q_target",
+        "qd_target",
+        "qdd_target",
+        "i_target",
+        "m_target",
+        "q_actual",
+        "qd_actual",
+        "i_actual",
+        "tool_acc_values",
+        "tcp_force",
+        "tool_vector",
+        "tcp_speed",
+        "digital_input_bits",
+        "motor_temperatures",
+        "controller_timer",
+        "test_value",
+        "robot_mode",
+        "joint_modes",
+    )
+    SCHEMA = {
+        "type": "ur_msgs/RobotStateRTMsg",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_e3d93b6141f749b93c229d8eabebbeb2782a16621fea4d7d39096794e7a67ce7",
+        "minimum": 96,
+        "maximum": 768,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "time",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "q_target",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "qd_target",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "qdd_target",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "i_target",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "m_target",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "q_actual",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "qd_actual",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "i_actual",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tool_acc_values",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tcp_force",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tool_vector",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tcp_speed",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "digital_input_bits",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "motor_temperatures",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "controller_timer",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "test_value",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "robot_mode",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "joint_modes",
+                "type": "float64",
+                "array": "sequence",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsRobotStateRTMsg)
+
+
+class Ros1Ur_msgsSetAnalogOutputRequest(Record):
+    """@brief Own every ur_msgs/SetAnalogOutputRequest field.
+    @details Canonical extent 6..6 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("data",)
+    SCHEMA = {
+        "type": "ur_msgs/SetAnalogOutputRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_1830a63c8853ebe8842f0e8e6870fbdee136dfe78726ba581fd1c54f910c4789",
+        "minimum": 6,
+        "maximum": 6,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "data",
+                "type": "ur_msgs/Analog",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsSetAnalogOutputRequest)
+
+
+class Ros1Ur_msgsSetAnalogOutputResponse(Record):
+    """@brief Own every ur_msgs/SetAnalogOutputResponse field.
+    @details Canonical extent 1..1 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("success",)
+    SCHEMA = {
+        "type": "ur_msgs/SetAnalogOutputResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_bb84c969f904082699f67d385b093b0c6de97bfacc33eab86932f4564a823580",
+        "minimum": 1,
+        "maximum": 1,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsSetAnalogOutputResponse)
+
+
+class Ros1Ur_msgsSetForceModeRequest(Record):
+    """@brief Own every ur_msgs/SetForceModeRequest field.
+    @details Canonical extent 207..335 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = (
+        "task_frame",
+        "selection_vector_x",
+        "selection_vector_y",
+        "selection_vector_z",
+        "selection_vector_rx",
+        "selection_vector_ry",
+        "selection_vector_rz",
+        "wrench",
+        "type",
+        "speed_limits",
+        "deviation_limits",
+        "damping_factor",
+        "gain_scaling",
+    )
+    SCHEMA = {
+        "type": "ur_msgs/SetForceModeRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_c148d6eb37258e10f5d16e76e41c334fc57a3d751c0c35c47be4cabf4c015a6b",
+        "minimum": 207,
+        "maximum": 335,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "task_frame",
+                "type": "geometry_msgs/PoseStamped",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "selection_vector_x",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "selection_vector_y",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "selection_vector_z",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "selection_vector_rx",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "selection_vector_ry",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "selection_vector_rz",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "wrench",
+                "type": "geometry_msgs/Wrench",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "type",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "speed_limits",
+                "type": "geometry_msgs/Twist",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "deviation_limits",
+                "type": "float32",
+                "array": "array",
+                "count": 6,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "damping_factor",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "gain_scaling",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+    # @brief Exact original native constant; not a wire field.
+    TCP_TO_ORIGIN = 1
+    # @brief Exact original native constant; not a wire field.
+    NO_TRANSFORM = 2
+    # @brief Exact original native constant; not a wire field.
+    TCP_VELOCITY_TO_X_Y = 3
+
+
+REGISTRY.add(Ros1Ur_msgsSetForceModeRequest)
+
+
+class Ros1Ur_msgsSetForceModeResponse(Record):
+    """@brief Own every ur_msgs/SetForceModeResponse field.
+    @details Canonical extent 1..1 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("success",)
+    SCHEMA = {
+        "type": "ur_msgs/SetForceModeResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_bb1eeb0b38d81d642066bed1510245423f62d25983a2de89e985d1fd1932308c",
+        "minimum": 1,
+        "maximum": 1,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsSetForceModeResponse)
+
+
+class Ros1Ur_msgsSetIORequest(Record):
+    """@brief Own every ur_msgs/SetIORequest field.
+    @details Canonical extent 6..6 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("fun", "pin", "state")
+    SCHEMA = {
+        "type": "ur_msgs/SetIORequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_3dbd2f05686ddaac16b37dc8ec98303acb672d176be34fc906cf32f2d4cd1872",
+        "minimum": 6,
+        "maximum": 6,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "fun",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "pin",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "state",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+    # @brief Exact original native constant; not a wire field.
+    PIN_AOUT0 = 0
+    # @brief Exact original native constant; not a wire field.
+    PIN_AOUT1 = 1
+    # @brief Exact original native constant; not a wire field.
+    PIN_DOUT0 = 0
+    # @brief Exact original native constant; not a wire field.
+    PIN_DOUT1 = 1
+    # @brief Exact original native constant; not a wire field.
+    PIN_DOUT2 = 2
+    # @brief Exact original native constant; not a wire field.
+    PIN_DOUT3 = 3
+    # @brief Exact original native constant; not a wire field.
+    PIN_DOUT4 = 4
+    # @brief Exact original native constant; not a wire field.
+    PIN_DOUT5 = 5
+    # @brief Exact original native constant; not a wire field.
+    PIN_DOUT6 = 6
+    # @brief Exact original native constant; not a wire field.
+    PIN_DOUT7 = 7
+    # @brief Exact original native constant; not a wire field.
+    PIN_CONF_OUT0 = 8
+    # @brief Exact original native constant; not a wire field.
+    PIN_CONF_OUT1 = 9
+    # @brief Exact original native constant; not a wire field.
+    PIN_CONF_OUT2 = 10
+    # @brief Exact original native constant; not a wire field.
+    PIN_CONF_OUT3 = 11
+    # @brief Exact original native constant; not a wire field.
+    PIN_CONF_OUT4 = 12
+    # @brief Exact original native constant; not a wire field.
+    PIN_CONF_OUT5 = 13
+    # @brief Exact original native constant; not a wire field.
+    PIN_CONF_OUT6 = 14
+    # @brief Exact original native constant; not a wire field.
+    PIN_CONF_OUT7 = 15
+    # @brief Exact original native constant; not a wire field.
+    PIN_TOOL_DOUT0 = 16
+    # @brief Exact original native constant; not a wire field.
+    PIN_TOOL_DOUT1 = 17
+    # @brief Exact original native constant; not a wire field.
+    FUN_SET_DIGITAL_OUT = 1
+    # @brief Exact original native constant; not a wire field.
+    FUN_SET_FLAG = 2
+    # @brief Exact original native constant; not a wire field.
+    FUN_SET_ANALOG_OUT = 3
+    # @brief Exact original native constant; not a wire field.
+    FUN_SET_TOOL_VOLTAGE = 4
+    # @brief Exact original native constant; not a wire field.
+    STATE_OFF = 0
+    # @brief Exact original native constant; not a wire field.
+    STATE_ON = 1
+    # @brief Exact original native constant; not a wire field.
+    STATE_TOOL_VOLTAGE_0V = 0
+    # @brief Exact original native constant; not a wire field.
+    STATE_TOOL_VOLTAGE_12V = 12
+    # @brief Exact original native constant; not a wire field.
+    STATE_TOOL_VOLTAGE_24V = 24
+
+
+REGISTRY.add(Ros1Ur_msgsSetIORequest)
+
+
+class Ros1Ur_msgsSetIOResponse(Record):
+    """@brief Own every ur_msgs/SetIOResponse field.
+    @details Canonical extent 1..1 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("success",)
+    SCHEMA = {
+        "type": "ur_msgs/SetIOResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_7fc137aa3db3178a450b8b2396b7821c911c79656e52bf48814745c261aecf61",
+        "minimum": 1,
+        "maximum": 1,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsSetIOResponse)
+
+
+class Ros1Ur_msgsSetPayloadRequest(Record):
+    """@brief Own every ur_msgs/SetPayloadRequest field.
+    @details Canonical extent 28..28 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("mass", "center_of_gravity")
+    SCHEMA = {
+        "type": "ur_msgs/SetPayloadRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_63ae68b44ce6aaad37cbda779fb51dee78923df27c582b4aab4104b16a307ee3",
+        "minimum": 28,
+        "maximum": 28,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "mass",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "center_of_gravity",
+                "type": "geometry_msgs/Vector3",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsSetPayloadRequest)
+
+
+class Ros1Ur_msgsSetPayloadResponse(Record):
+    """@brief Own every ur_msgs/SetPayloadResponse field.
+    @details Canonical extent 1..1 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("success",)
+    SCHEMA = {
+        "type": "ur_msgs/SetPayloadResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_a3e991f1357f2d3017ccbb7636a6248e8774434d723f5f6c77ff251dd61fce73",
+        "minimum": 1,
+        "maximum": 1,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsSetPayloadResponse)
+
+
+class Ros1Ur_msgsSetSpeedSliderFractionRequest(Record):
+    """@brief Own every ur_msgs/SetSpeedSliderFractionRequest field.
+    @details Canonical extent 8..8 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("speed_slider_fraction",)
+    SCHEMA = {
+        "type": "ur_msgs/SetSpeedSliderFractionRequest",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_f192d6d655b2ed7725bf5afe6977a352870abfd4d07e0c3380a09d280a0a0a32",
+        "minimum": 8,
+        "maximum": 8,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "speed_slider_fraction",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsSetSpeedSliderFractionRequest)
+
+
+class Ros1Ur_msgsSetSpeedSliderFractionResponse(Record):
+    """@brief Own every ur_msgs/SetSpeedSliderFractionResponse field.
+    @details Canonical extent 1..1 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = ("success",)
+    SCHEMA = {
+        "type": "ur_msgs/SetSpeedSliderFractionResponse",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_cb08c6758ce2eeeac93bc579d7895b19b84e74b7e2d19d87831023df579288b0",
+        "minimum": 1,
+        "maximum": 1,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "success",
+                "type": "bool",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            }
+        ],
+    }
+
+
+REGISTRY.add(Ros1Ur_msgsSetSpeedSliderFractionResponse)
+
+
+class Ros1Ur_msgsToolDataMsg(Record):
+    """@brief Own every ur_msgs/ToolDataMsg field.
+    @details Canonical extent 32..32 bytes; errors preserve whole-value framing.
+    @see REGISTRY; source schemas and API.md.
+    """
+
+    __slots__ = (
+        "analog_input_range2",
+        "analog_input_range3",
+        "analog_input2",
+        "analog_input3",
+        "tool_voltage_48v",
+        "tool_output_voltage",
+        "tool_current",
+        "tool_temperature",
+        "tool_mode",
+    )
+    SCHEMA = {
+        "type": "ur_msgs/ToolDataMsg",
+        "native_identity": None,
+        "codec_identity": "UWVMROS1_1fad1aba069bc474306dc421a62950ffeb3a0837668f08a9adf41ac1bc2bb390",
+        "minimum": 32,
+        "maximum": 32,
+        "semantics": "",
+        "fields": [
+            {
+                "name": "analog_input_range2",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_input_range3",
+                "type": "int8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_input2",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "analog_input3",
+                "type": "float64",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tool_voltage_48v",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tool_output_voltage",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tool_current",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tool_temperature",
+                "type": "float32",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+            {
+                "name": "tool_mode",
+                "type": "uint8",
+                "array": "",
+                "count": 0,
+                "string_bound": 0,
+                "native_string_bound": 0,
+                "native_sequence_bound": 0,
+                "native_default": None,
+                "native_scalar": "",
+                "string_encoding": "utf8",
+                "float_policy": "finite",
+                "default": None,
+            },
+        ],
+    }
+    # @brief Exact original native constant; not a wire field.
+    ANALOG_INPUT_RANGE_CURRENT = 0
+    # @brief Exact original native constant; not a wire field.
+    ANALOG_INPUT_RANGE_VOLTAGE = 1
+    # @brief Exact original native constant; not a wire field.
+    TOOL_BOOTLOADER_MODE = 249
+    # @brief Exact original native constant; not a wire field.
+    TOOL_RUNNING_MODE = 253
+    # @brief Exact original native constant; not a wire field.
+    TOOL_IDLE_MODE = 255
+
+
+REGISTRY.add(Ros1Ur_msgsToolDataMsg)

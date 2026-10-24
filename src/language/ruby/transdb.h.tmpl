@@ -1,0 +1,58 @@
+<% #-*- mode: ruby -*-
+# @brief Generate the complete CRuby transcoder registry from reviewed C sources.
+# @details Upstream static rb_transcoder declarations may place their first two
+# string fields on the declaration line or on following lines. Read the entire
+# initializer without consuming the next declaration when this one ends inline.
+# Preserve upstream directory precedence, natural ordering and duplicate checks.
+# This template is adapted from CRuby 3.4.7 template/transdb.h.tmpl; the original
+# source and Ruby/BSD license notices remain in the locked maintenance archive.
+
+converters = {}
+transdirs = ARGV.dup
+transdirs << 'enc/trans' if transdirs.empty?
+
+transdirs = transdirs.sort_by { |directory| -directory.length }.inject([]) do |directories, directory|
+    next directories unless File.directory?(directory)
+    if directories.all? { |existing| !File.identical?(existing, directory) }
+        directories << directory
+    end
+    directories
+end
+
+files = {}
+names_t = []
+transdirs.each do |transdir|
+    names = Dir.entries(transdir)
+    names_t += names.map { |name| name[/.+(?=\.trans\z)/] }.compact
+    names_c = names.map { |name| name[/.+(?=\.c\z)/] }.compact
+    (names_t & names_c).sort_by do |entry|
+        entry.scan(/(\d+)|(\D+)/).map { |number, text| text || [number.size, number.to_i] }.flatten
+    end.each do |name|
+        next if files[name]
+        files[name] = true
+        path = File.join(transdir, "#{name}.c")
+        File.open(path) do |input|
+            input.each_line do |line|
+                next unless /^static const rb_transcoder/ =~ line
+                declaration = line.dup
+                until declaration.include?('};')
+                    following = input.gets
+                    raise EOFError, "#{path}: truncated rb_transcoder declaration" unless following
+                    declaration << following
+                end
+                if /"(.*?)"\s*,\s*"(.*?)"/ =~ declaration
+                    from_to = [$1.freeze, $2.freeze].freeze
+                    if converters[from_to]
+                        raise ArgumentError,
+                              '%s:%d: transcode "%s to %s" is already registered at %s:%d' %
+                              [path, input.lineno, *from_to, *converters[from_to].values_at(1, 2)]
+                    end
+                    converters[from_to] = [name, path, input.lineno]
+                end
+            end
+        end
+    end
+end
+converters.each do |(from, to), (name)|
+%>rb_declare_transcoder("<%=from%>", "<%=to%>", "<%=name%>");
+% end

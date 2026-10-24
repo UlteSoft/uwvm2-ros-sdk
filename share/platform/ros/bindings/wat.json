@@ -1,0 +1,16 @@
+{
+  "format": "uwvm-ros-binding-v1",
+  "language": "wat",
+  "extensions": [
+    ".wat"
+  ],
+  "abi": {
+    "ros1": "uwvm_ros1_v1",
+    "ros2": "uwvm_ros2_v1"
+  },
+  "module_roots": [],
+  "native_sources": {},
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "raw_abi": "share/platform/ros/abi-v1.json",
+  "source_contract": "WAT declares exact named imports and owns its source memory; the common WABT adapter assembles the supplied source unchanged."
+}

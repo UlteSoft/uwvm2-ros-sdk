@@ -1,0 +1,227 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/CommonRequest.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonRequest"
+    },
+    {
+      "bounds": {
+        "message": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/CommonResponse.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonResponse"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/CommonState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonState"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/CommonTaskResponse.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/CommonTaskResponse"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/DomainErrorState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/DomainErrorState"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/JointCommand.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/JointCommand"
+    },
+    {
+      "bounds": {
+        "joints": {
+          "sequence": 64
+        }
+      },
+      "file": "aimdk_msgs/msg/JointCommandArray.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/JointCommandArray"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/JointState.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/JointState"
+    },
+    {
+      "bounds": {
+        "joints": {
+          "sequence": 64
+        }
+      },
+      "file": "aimdk_msgs/msg/JointStateArray.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/JointStateArray"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/MessageHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/MessageHeader"
+    },
+    {
+      "bounds": {
+        "backends": {
+          "sequence": 4,
+          "string": 64
+        },
+        "name": {
+          "string": 128
+        },
+        "type": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/ModuleChannelInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ModuleChannelInfo"
+    },
+    {
+      "bounds": {
+        "module_name": {
+          "string": 128
+        },
+        "pub_channels": {
+          "sequence": 2
+        },
+        "rpc_clients": {
+          "sequence": 2
+        },
+        "rpc_services": {
+          "sequence": 2
+        },
+        "sub_channels": {
+          "sequence": 2
+        }
+      },
+      "file": "aimdk_msgs/msg/ModuleResourceInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ModuleResourceInfo"
+    },
+    {
+      "bounds": {
+        "backends": {
+          "sequence": 4,
+          "string": 64
+        },
+        "name": {
+          "string": 128
+        },
+        "req_type": {
+          "string": 128
+        },
+        "res_type": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/ModuleRpcInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ModuleRpcInfo"
+    },
+    {
+      "bounds": {
+        "app_name": {
+          "string": 128
+        },
+        "modules": {
+          "sequence": 2
+        }
+      },
+      "file": "aimdk_msgs/msg/ProcessInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ProcessInfo"
+    },
+    {
+      "bounds": {
+        "process_name": {
+          "string": 128
+        },
+        "threads": {
+          "sequence": 4
+        }
+      },
+      "file": "aimdk_msgs/msg/ProcessResourceInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ProcessResourceInfo"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/RequestHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/RequestHeader"
+    },
+    {
+      "bounds": {},
+      "file": "aimdk_msgs/msg/ResponseHeader.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ResponseHeader"
+    },
+    {
+      "bounds": {
+        "bounding_cpus": {
+          "sequence": 16
+        },
+        "cpu_sched_policy": {
+          "string": 128
+        },
+        "thread_name": {
+          "string": 128
+        }
+      },
+      "file": "aimdk_msgs/msg/ThreadResourceInfo.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "aimdk_msgs/msg/ThreadResourceInfo"
+    },
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time"
+    }
+  ]
+}

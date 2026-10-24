@@ -1,0 +1,297 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "platform": "trossen",
+  "profiles": [
+    {
+      "id": "ros1_main",
+      "backend": "ros1",
+      "catalog": "share/platform/trossen/catalogs/ros1_main/catalog.json",
+      "records": 61,
+      "services": 23,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_core",
+        "branch": "main",
+        "commit": "172841ffa93f7556fff9c7455ad0e77688fa156e"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros1_manipulators_kinetic",
+      "backend": "ros1",
+      "catalog": "share/platform/trossen/catalogs/ros1_manipulators_kinetic/catalog.json",
+      "records": 1,
+      "services": 0,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_manipulators",
+        "branch": "kinetic",
+        "commit": "f26f5eb73d6bb6f0f6af873afa8c86258a70524c"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros1_manipulators_main",
+      "backend": "ros1",
+      "catalog": "share/platform/trossen/catalogs/ros1_manipulators_main/catalog.json",
+      "records": 1,
+      "services": 0,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_manipulators",
+        "branch": "main",
+        "commit": "0bb2b0e6d0e619bff02cf74dbd5af5681dcf80c9"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros1_manipulators_melodic",
+      "backend": "ros1",
+      "catalog": "share/platform/trossen/catalogs/ros1_manipulators_melodic/catalog.json",
+      "records": 1,
+      "services": 0,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_manipulators",
+        "branch": "melodic",
+        "commit": "120c32a0e557fb1e2142051787b47edeea57d99a"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros1_manipulators_noetic",
+      "backend": "ros1",
+      "catalog": "share/platform/trossen/catalogs/ros1_manipulators_noetic/catalog.json",
+      "records": 1,
+      "services": 0,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_manipulators",
+        "branch": "noetic",
+        "commit": "0bb2b0e6d0e619bff02cf74dbd5af5681dcf80c9"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros1_melodic",
+      "backend": "ros1",
+      "catalog": "share/platform/trossen/catalogs/ros1_melodic/catalog.json",
+      "records": 59,
+      "services": 22,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_core",
+        "branch": "melodic",
+        "commit": "dcaae578db7b41b5d02e0c7548cfc4951cea15bc"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros1_noetic",
+      "backend": "ros1",
+      "catalog": "share/platform/trossen/catalogs/ros1_noetic/catalog.json",
+      "records": 61,
+      "services": 23,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_core",
+        "branch": "noetic",
+        "commit": "172841ffa93f7556fff9c7455ad0e77688fa156e"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros2_galactic",
+      "backend": "ros2",
+      "catalog": "share/platform/trossen/catalogs/ros2_galactic/catalog.json",
+      "records": 25,
+      "services": 6,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_core",
+        "branch": "galactic",
+        "commit": "e77575dae762c312f7b2410db9402209fdf41609"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros2_humble",
+      "backend": "ros2",
+      "catalog": "share/platform/trossen/catalogs/ros2_humble/catalog.json",
+      "records": 30,
+      "services": 8,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_core",
+        "branch": "humble",
+        "commit": "af18d4fe24ba08e09a0f1e92afaca1863e3205de"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros2_iron",
+      "backend": "ros2",
+      "catalog": "share/platform/trossen/catalogs/ros2_iron/catalog.json",
+      "records": 30,
+      "services": 8,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_core",
+        "branch": "iron",
+        "commit": "41ca7357935bb06b3f21f518ad5b0a88529ba395"
+      },
+      "native_identity_qualified": false
+    },
+    {
+      "id": "ros2_jazzy",
+      "backend": "ros2",
+      "catalog": "share/platform/trossen/catalogs/ros2_jazzy/catalog.json",
+      "records": 30,
+      "services": 8,
+      "actions": 0,
+      "upstream": {
+        "repository": "Interbotix/interbotix_ros_core",
+        "branch": "jazzy",
+        "commit": "41ca7357935bb06b3f21f518ad5b0a88529ba395"
+      },
+      "native_identity_qualified": false
+    }
+  ],
+  "configuration": {
+    "vendor_profile": {
+      "type": "enum",
+      "values": [
+        "ros1_main",
+        "ros1_manipulators_kinetic",
+        "ros1_manipulators_main",
+        "ros1_manipulators_melodic",
+        "ros1_manipulators_noetic",
+        "ros1_melodic",
+        "ros1_noetic",
+        "ros2_galactic",
+        "ros2_humble",
+        "ros2_iron",
+        "ros2_jazzy"
+      ]
+    },
+    "backend": {
+      "type": "enum",
+      "values": [
+        "ros1",
+        "ros2"
+      ]
+    },
+    "distribution": {
+      "source": "set_ros1_version/set_ros2_version",
+      "native_registry_must_match": true
+    },
+    "model": {
+      "source": "explicit native deployment facts; not inferred from catalog"
+    },
+    "transport": {
+      "source": "shared permission-preserving native ROS dispatcher"
+    },
+    "abi": {
+      "source": "set_arch/set_plat; compiler must honor exact requested width"
+    },
+    "features": {
+      "source": "explicit runtime configuration; no automatic capability grants"
+    }
+  },
+  "compiler_provider": {
+    "java": "jvm",
+    "kotlin": "jvm",
+    "csharp": "dotnet",
+    "fsharp": "dotnet",
+    "vbnet": "dotnet"
+  },
+  "default_authority": [],
+  "api_version": 1,
+  "id": "trossen",
+  "module": "tools/platform/trossen/provider.lua",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "simd128",
+    "relaxed-simd",
+    "bulk-memory",
+    "reference-types",
+    "multi-value",
+    "sign-extension",
+    "nontrapping-fptoint",
+    "tail-call",
+    "extended-const",
+    "multi-memory",
+    "gc",
+    "exceptions",
+    "memory64",
+    "table64"
+  ],
+  "scenarios_restricted": false,
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "kinetic",
+        "melodic",
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "galactic",
+        "humble",
+        "iron",
+        "jazzy"
+      ]
+    }
+  },
+  "options": {
+    "vendor_profile": {
+      "required": true,
+      "values": [
+        "ros1_main",
+        "ros1_manipulators_kinetic",
+        "ros1_manipulators_main",
+        "ros1_manipulators_melodic",
+        "ros1_manipulators_noetic",
+        "ros1_melodic",
+        "ros1_noetic",
+        "ros2_galactic",
+        "ros2_humble",
+        "ros2_iron",
+        "ros2_jazzy"
+      ]
+    }
+  },
+  "qualification_note": "Declared requests and source profiles only; each compiler adapter and native deployment validates its exact support separately."
+}

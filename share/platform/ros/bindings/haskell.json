@@ -1,0 +1,64 @@
+{
+  "abi": {
+    "ros1": "uwvm_ros1_v1",
+    "ros2": "uwvm_ros2_v1"
+  },
+  "backend_roots": {
+    "ros1": "include/platform/ros1/haskell",
+    "ros2": "include/platform/ros2/haskell"
+  },
+  "extensions": [
+    ".hs"
+  ],
+  "format": "uwvm-ros-binding-v1",
+  "language": "haskell",
+  "module_roots": [
+    "include/platform",
+    "include/platform/ros/haskell",
+    "include/platform/ros/haskell/src"
+  ],
+  "native_definitions": {
+    "ros1": [
+      "UWVM_NATIVE_ROS1=1",
+      "UWVM_NATIVE_HASKELL=1"
+    ],
+    "ros2": [
+      "UWVM_NATIVE_ROS2=1",
+      "UWVM_NATIVE_HASKELL=1"
+    ]
+  },
+  "native_entry_owner": "GHC WASI main; compile scalar bridge with UWVM_NATIVE_HASKELL",
+  "native_object_name": "abi.o",
+  "native_sources": {
+    "ros1": [
+      "src/platform/ros/native_sources/abi.c"
+    ],
+    "ros2": [
+      "src/platform/ros/native_sources/abi.c"
+    ]
+  },
+  "operations": {
+    "call_trigger": {
+      "operation": "service.call",
+      "types": {
+        "ros1": "std_srvs/Trigger",
+        "ros2": "std_srvs/srv/Trigger"
+      }
+    },
+    "publish_string": {
+      "operation": "topic.publish",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    },
+    "subscribe_string": {
+      "operation": "topic.subscribe",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    }
+  },
+  "request_contract": "share/platform/ros/adapter-contract.json"
+}

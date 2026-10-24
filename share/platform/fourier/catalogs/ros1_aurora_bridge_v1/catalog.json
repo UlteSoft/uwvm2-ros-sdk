@@ -1,0 +1,415 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {
+        "request.moves": {
+          "sequence": 8
+        },
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/ExecuteMove.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/ExecuteMove"
+    },
+    {
+      "bounds": {
+        "request.key": {
+          "string": 128
+        },
+        "response.error": {
+          "string": 128
+        },
+        "response.values": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetBaseData.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetBaseData"
+    },
+    {
+      "bounds": {
+        "request.group": {
+          "string": 128
+        },
+        "request.key": {
+          "string": 128
+        },
+        "response.error": {
+          "string": 128
+        },
+        "response.values": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetCartesianState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetCartesianState"
+    },
+    {
+      "bounds": {
+        "request.key": {
+          "string": 128
+        },
+        "response.error": {
+          "string": 128
+        },
+        "response.values": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetContactData.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetContactData"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        },
+        "response.value": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetFsmName.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetFsmName"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetFsmState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetFsmState"
+    },
+    {
+      "bounds": {
+        "request.group": {
+          "string": 128
+        },
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetGroupMotionState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetGroupMotionState"
+    },
+    {
+      "bounds": {
+        "request.group": {
+          "string": 128
+        },
+        "request.key": {
+          "string": 128
+        },
+        "response.error": {
+          "string": 128
+        },
+        "response.values": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetGroupMotorCfg.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetGroupMotorCfg"
+    },
+    {
+      "bounds": {
+        "request.group": {
+          "string": 128
+        },
+        "request.key": {
+          "string": 128
+        },
+        "response.error": {
+          "string": 128
+        },
+        "response.values": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetGroupState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetGroupState"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetSnapshot.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetSnapshot"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        },
+        "response.values": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetStandPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetStandPose"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        },
+        "response.value": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetUpperFsmName.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetUpperFsmName"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetUpperFsmState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetUpperFsmState"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetVelocitySource.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetVelocitySource"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        },
+        "response.value": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/GetVelocitySourceName.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GetVelocitySourceName"
+    },
+    {
+      "bounds": {
+        "effort": {
+          "sequence": 64
+        },
+        "group": {
+          "string": 128
+        },
+        "position": {
+          "sequence": 64
+        },
+        "velocity": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/msg/GroupState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GroupState"
+    },
+    {
+      "bounds": {
+        "group": {
+          "string": 128
+        },
+        "values": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/msg/GroupValues.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/GroupValues"
+    },
+    {
+      "bounds": {
+        "group": {
+          "string": 128
+        },
+        "position": {
+          "sequence": 64
+        },
+        "velocity": {
+          "sequence": 64
+        }
+      },
+      "file": "uwvm_fourier_bridge/msg/MotionRecipe.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/MotionRecipe"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/SetFsmState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/SetFsmState"
+    },
+    {
+      "bounds": {
+        "request.position": {
+          "sequence": 8
+        },
+        "request.torque": {
+          "sequence": 8
+        },
+        "request.velocity": {
+          "sequence": 8
+        },
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/SetGroupCommand.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/SetGroupCommand"
+    },
+    {
+      "bounds": {
+        "request.kd": {
+          "sequence": 8
+        },
+        "request.kp": {
+          "sequence": 8
+        },
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/SetMotorCfgPd.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/SetMotorCfgPd"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/SetStandPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/SetStandPose"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/SetUpperFsmState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/SetUpperFsmState"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/SetVelocity.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/SetVelocity"
+    },
+    {
+      "bounds": {
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/SetVelocitySource.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/SetVelocitySource"
+    },
+    {
+      "bounds": {
+        "fsm_name": {
+          "string": 128
+        },
+        "groups": {
+          "sequence": 8
+        },
+        "stand_pose": {
+          "sequence": 64
+        },
+        "upper_fsm_name": {
+          "string": 128
+        },
+        "velocity_source_name": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/msg/Status.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/Status"
+    },
+    {
+      "bounds": {},
+      "file": "uwvm_fourier_bridge/msg/VelocityCommand.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/VelocityCommand"
+    },
+    {
+      "bounds": {
+        "request.groups": {
+          "sequence": 8,
+          "string": 128
+        },
+        "response.error": {
+          "string": 128
+        }
+      },
+      "file": "uwvm_fourier_bridge/srv/WaitGroupsMotionComplete.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "uwvm_fourier_bridge/WaitGroupsMotionComplete"
+    }
+  ]
+}

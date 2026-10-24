@@ -1,0 +1,2307 @@
+{
+  "schema": "uwvm-ros-vendor-provider-consumer-v1",
+  "vendor": "ufactory",
+  "profiles": [
+    {
+      "id": "ros1_kinetic",
+      "ros_version": 1,
+      "catalog": "share/platform/ufactory/catalogs/ros1_kinetic/catalog.json",
+      "source_lock_sha256": "6b6c5fc51200d12719a0d197cd11211f12f8a9f0160523f615e19107f5398f7c",
+      "catalog_sha256": "0a9b811bbd6b051ff059bc16d6e58a061df520bd8c818eb455d8f0dbd2eec757",
+      "repositories": [
+        {
+          "id": "ros1_kinetic",
+          "repository": "xArm-Developer/xarm_ros",
+          "branch": "kinetic",
+          "commit": "7319ef78abc309d30102bee1de3fe9ece56023b3",
+          "tree_git_sha1": "d48de3aaf0a2429176fb134a56fb3a71d040187d"
+        },
+        {
+          "id": "std_kinetic",
+          "repository": "ros/std_msgs",
+          "branch": "kinetic-devel",
+          "commit": "f3554d4182c057f7b9c9ddb1911629126148ae7e",
+          "tree_git_sha1": "e39ce89d9bfd2c30b932573122e88969920f74a5",
+          "files": {
+            "CMakeLists.txt": {
+              "bytes": 899,
+              "sha256": "ec97e8f728da57a0fc2d88d8e4925a3b133d919f95899951b24ae065f614eac0",
+              "git_blob_sha1": "77d1d7a44650d6fe248125050c3fc7d29b35723d"
+            },
+            "msg/Header.msg": {
+              "bytes": 551,
+              "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693",
+              "git_blob_sha1": "2b3866d2cbcaa7c84d8341e541986da1d5a485a1"
+            },
+            "package.xml": {
+              "bytes": 1069,
+              "sha256": "7be84c8ff308703226f2bb113f15127b7f334781a9a50703e503fc04993dcb90",
+              "git_blob_sha1": "c64d9a18629e5a3cae3342a93aaccda74df11059"
+            }
+          },
+          "default_authority": []
+        },
+        {
+          "id": "common_kinetic",
+          "repository": "ros/common_msgs",
+          "branch": "jade-devel",
+          "commit": "cb1dc920803679800de84d35edd70a86754fffbb",
+          "tree_git_sha1": "894f5450e846b246e9367a0236e6be4ed5b9ef11",
+          "files": {
+            "geometry_msgs/CMakeLists.txt": {
+              "bytes": 833,
+              "sha256": "fb1a3248d61ece53a05f750a27b812e53f54f30018091b49f02d86fb36225021",
+              "git_blob_sha1": "5dc4e37ae020b617480e639fe2b53bc27dd33bc1"
+            },
+            "geometry_msgs/msg/Point.msg": {
+              "bytes": 84,
+              "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+              "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0"
+            },
+            "geometry_msgs/msg/Pose.msg": {
+              "bytes": 119,
+              "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5",
+              "git_blob_sha1": "763708f7a98d12e0e27894bea3bdd0b085602f2f"
+            },
+            "geometry_msgs/msg/Quaternion.msg": {
+              "bytes": 108,
+              "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e",
+              "git_blob_sha1": "9f4fde2bf4c13dc86a95688e4b5254aaec186e2a"
+            },
+            "geometry_msgs/package.xml": {
+              "bytes": 825,
+              "sha256": "22b8fe1dbc93cdadb67cfdf8debd68cd5322e30c79d7d6fdf97a8dd1e2a83ff8",
+              "git_blob_sha1": "ccbc932a1546a324dffa1d3c83e281f5e25eab28"
+            }
+          },
+          "default_authority": []
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros1/ufactory-xarm-ros1-kinetic-complete",
+        "include/platform/ufactory/cpp/ros1/ufactory-xarm-ros1-kinetic-complete"
+      ],
+      "operations": {
+        "msg": 8,
+        "srv": 36,
+        "action": 1
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros1_kinetic/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_kinetic",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_kinetic",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_kinetic",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/CIOState",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros1_legacy",
+      "ros_version": 1,
+      "catalog": "share/platform/ufactory/catalogs/ros1_legacy/catalog.json",
+      "source_lock_sha256": "9df740b076963c4931bb031c3a7d2119c03f3c7632af46b936e5ba817bb8ae57",
+      "catalog_sha256": "d1b6129b54608d762d84c2ebb95c7158643293670f24c9c03033906b9b7c30bc",
+      "repositories": [
+        {
+          "id": "ros1_legacy",
+          "repository": "xArm-Developer/xarm_ros",
+          "branch": "legacy",
+          "commit": "3bc6c4da51769d90ce2a6d1419a0b65446d177e3",
+          "tree_git_sha1": "eb1d008b9b16e5c40a5497fbddeeac48d088394a"
+        },
+        {
+          "id": "common_kinetic",
+          "repository": "ros/common_msgs",
+          "branch": "jade-devel",
+          "commit": "cb1dc920803679800de84d35edd70a86754fffbb",
+          "tree_git_sha1": "894f5450e846b246e9367a0236e6be4ed5b9ef11",
+          "files": {
+            "geometry_msgs/CMakeLists.txt": {
+              "bytes": 833,
+              "sha256": "fb1a3248d61ece53a05f750a27b812e53f54f30018091b49f02d86fb36225021",
+              "git_blob_sha1": "5dc4e37ae020b617480e639fe2b53bc27dd33bc1"
+            },
+            "geometry_msgs/msg/Point.msg": {
+              "bytes": 84,
+              "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+              "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0"
+            },
+            "geometry_msgs/msg/Pose.msg": {
+              "bytes": 119,
+              "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5",
+              "git_blob_sha1": "763708f7a98d12e0e27894bea3bdd0b085602f2f"
+            },
+            "geometry_msgs/msg/Quaternion.msg": {
+              "bytes": 108,
+              "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e",
+              "git_blob_sha1": "9f4fde2bf4c13dc86a95688e4b5254aaec186e2a"
+            },
+            "geometry_msgs/package.xml": {
+              "bytes": 825,
+              "sha256": "22b8fe1dbc93cdadb67cfdf8debd68cd5322e30c79d7d6fdf97a8dd1e2a83ff8",
+              "git_blob_sha1": "ccbc932a1546a324dffa1d3c83e281f5e25eab28"
+            }
+          },
+          "default_authority": []
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros1/ufactory-xarm-ros1-legacy-complete",
+        "include/platform/ufactory/cpp/ros1/ufactory-xarm-ros1-legacy-complete"
+      ],
+      "operations": {
+        "msg": 5,
+        "srv": 12,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros1_legacy/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_legacy",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_legacy",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_legacy",
+          "scenario": "query_get_analog_i_o",
+          "type": "xarm_msgs/GetAnalogIO",
+          "operation": "service.call",
+          "response": "xarm_msgs/GetAnalogIOResponse",
+          "request": "xarm_msgs/GetAnalogIORequest"
+        }
+      ]
+    },
+    {
+      "id": "ros1_master",
+      "ros_version": 1,
+      "catalog": "share/platform/ufactory/catalogs/ros1_master/catalog.json",
+      "source_lock_sha256": "3a8c6e0a44c843e93f1957c369b5e7c2179df3d813aef05b8aa12c5bf9ec2cc9",
+      "catalog_sha256": "0a9b811bbd6b051ff059bc16d6e58a061df520bd8c818eb455d8f0dbd2eec757",
+      "repositories": [
+        {
+          "id": "ros1_master",
+          "repository": "xArm-Developer/xarm_ros",
+          "branch": "master",
+          "commit": "aad7e1611c9c46eb719045414394bfdd42dcb0f8",
+          "tree_git_sha1": "8bfc4d190357d47890be3c9689392a88811da72e"
+        },
+        {
+          "id": "std_ros1",
+          "repository": "ros/std_msgs",
+          "url": "https://github.com/ros/std_msgs",
+          "branch": "noetic-devel",
+          "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+          "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+        },
+        {
+          "id": "common_ros1",
+          "repository": "ros/common_msgs",
+          "url": "https://github.com/ros/common_msgs",
+          "branch": "noetic-devel",
+          "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+          "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros1/ufactory-xarm-ros1-master-complete",
+        "include/platform/ufactory/cpp/ros1/ufactory-xarm-ros1-master-complete"
+      ],
+      "operations": {
+        "msg": 8,
+        "srv": 36,
+        "action": 1
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros1_master/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_master",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_master",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros1_master",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/CIOState",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros2_foxy",
+      "ros_version": 2,
+      "catalog": "share/platform/ufactory/catalogs/ros2_foxy/catalog.json",
+      "source_lock_sha256": "3907724b0fd12dd2ca9375be894820f0106afa9e9182fc34e7ad40131587e812",
+      "catalog_sha256": "3d5c572de129f08e56282b7b461a4e4b3ebb808a464ae0d4b4804e1f94547102",
+      "repositories": [
+        {
+          "id": "ros2_foxy",
+          "repository": "xArm-Developer/xarm_ros2",
+          "branch": "foxy",
+          "commit": "8f1ee67368bb4c89dccb37f72c836e6e466b0a6f",
+          "tree_git_sha1": "de715b939e4e9e6b008158490c83de5695a4db0c"
+        },
+        {
+          "id": "common_foxy",
+          "repository": "ros2/common_interfaces",
+          "branch": "foxy",
+          "commit": "6356bc82f3a034f5d2c61c6760df0007a6cadfb0",
+          "tree_git_sha1": "e8d7302c3b89dcf535fe0ef5f1b0836b9790d411",
+          "files": {
+            "LICENSE": {
+              "bytes": 11358,
+              "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+              "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+            },
+            "README.md": {
+              "bytes": 92,
+              "sha256": "b4c5921f0559c595152d5eff990aa52262000516ec99f0008c4e7cb4094ebb2d",
+              "git_blob_sha1": "26324ae24cf0bcd4f9fd3096c301ac1bb914577a"
+            },
+            "geometry_msgs/CMakeLists.txt": {
+              "bytes": 1307,
+              "sha256": "34e7d61ff4f22ffc0f54767e261b46b891c72ab4c1327278f750c0cee9c24613",
+              "git_blob_sha1": "678f678ae1d25bf3d2246bc5c1b189e10c86628e"
+            },
+            "geometry_msgs/msg/Point.msg": {
+              "bytes": 84,
+              "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+              "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0"
+            },
+            "geometry_msgs/msg/Pose.msg": {
+              "bytes": 119,
+              "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de",
+              "git_blob_sha1": "277e2f0179a64cd3e17e31502e3d8a074ace7064"
+            },
+            "geometry_msgs/msg/Quaternion.msg": {
+              "bytes": 116,
+              "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+              "git_blob_sha1": "96d392779a286cc3f4c83d80962236f5ea42c884"
+            },
+            "geometry_msgs/package.xml": {
+              "bytes": 867,
+              "sha256": "af1fb23dfb6c7a8415f5c3e8f33c0da8b8603c85a5903dfd8b87a645c464e272",
+              "git_blob_sha1": "43b3de7cacec38d2ccb2707d6b9df1bd237eb6ab"
+            },
+            "std_msgs/CMakeLists.txt": {
+              "bytes": 1279,
+              "sha256": "1ba36cb32a0f7d7a193939baed9804fd4f4b9dd256a30fd6059427d6abbd4657",
+              "git_blob_sha1": "354f1a9f1e8243ee8c16eb749c3084cc2c3e7f55"
+            },
+            "std_msgs/msg/Header.msg": {
+              "bytes": 322,
+              "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+              "git_blob_sha1": "6966bb98863c237131a2bd2822298df9511ce948"
+            },
+            "std_msgs/package.xml": {
+              "bytes": 870,
+              "sha256": "5d5139f600e4eb481d65a31be04e117a1e0770f1921468300654738dc6900bf5",
+              "git_blob_sha1": "a49aab8101e9e4eb3868a6d32ebc030c4d0c4293"
+            }
+          },
+          "default_authority": []
+        },
+        {
+          "id": "rcl_foxy",
+          "repository": "ros2/rcl_interfaces",
+          "branch": "foxy",
+          "commit": "ee04e046132be9d9fdcdaeff8dd54a5d0d9aa022",
+          "tree_git_sha1": "8d5deda9abcbbcad705c2f3deb1e4574769978a6",
+          "files": {
+            "LICENSE": {
+              "bytes": 11358,
+              "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+              "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+            },
+            "README.md": {
+              "bytes": 941,
+              "sha256": "63d13936d4433bb35a2ee8c2a3cbdff9dcec05c333f5014f55b2411aff8763e4",
+              "git_blob_sha1": "948c43e84251bbca08cbd7712aaf472713933555"
+            },
+            "builtin_interfaces/CMakeLists.txt": {
+              "bytes": 531,
+              "sha256": "3864f878bcbca9e4855a971f675222d4cae5f328041a45c9ea236e60d9898ddf",
+              "git_blob_sha1": "23741d57ea495cdf49fc23f8ee035bd479fc7e7e"
+            },
+            "builtin_interfaces/msg/Time.msg": {
+              "bytes": 214,
+              "sha256": "c7272024281c14e58a7223fde144efe4d729da0af75c2dd8264f91f52649033c",
+              "git_blob_sha1": "bf710f149c1e21627e20c8be562375d238685847"
+            },
+            "builtin_interfaces/package.xml": {
+              "bytes": 836,
+              "sha256": "8763dbed6fd1fbabb95ef8d2331108a9ab55c17f41d12bccf6b9a375f0aba258",
+              "git_blob_sha1": "f79b0176b1a9148c0eeaddd8e21d0e4aa9a05d4a"
+            }
+          },
+          "default_authority": []
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros2/ufactory-xarm-ros2-foxy-complete",
+        "include/platform/ufactory/cpp/ros2/ufactory-xarm-ros2-foxy-complete"
+      ],
+      "operations": {
+        "msg": 9,
+        "srv": 51,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros2_foxy/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_foxy",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/msg/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_foxy",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/msg/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_foxy",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/msg/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/CIOState",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros2_galactic",
+      "ros_version": 2,
+      "catalog": "share/platform/ufactory/catalogs/ros2_galactic/catalog.json",
+      "source_lock_sha256": "a43a6f2749231806ed44c8134fca150ea5537a8b47af97d6d3a33d07e8e815f1",
+      "catalog_sha256": "3d5c572de129f08e56282b7b461a4e4b3ebb808a464ae0d4b4804e1f94547102",
+      "repositories": [
+        {
+          "id": "ros2_galactic",
+          "repository": "xArm-Developer/xarm_ros2",
+          "branch": "galactic",
+          "commit": "c7d0cc84a79909d5e782484db5c79505fcffe414",
+          "tree_git_sha1": "b52dc7c5fccf6ec4af4d39047b93b4a36da4d88a"
+        },
+        {
+          "id": "common_galactic",
+          "repository": "ros2/common_interfaces",
+          "branch": "galactic",
+          "commit": "969a56b0b59f7f70b5c4561185ea34aaa2b74e1d",
+          "tree_git_sha1": "eb552e6610c3c1a766deab9f107b08ecfb77f446",
+          "files": {
+            "LICENSE": {
+              "bytes": 11358,
+              "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+              "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+            },
+            "README.md": {
+              "bytes": 92,
+              "sha256": "b4c5921f0559c595152d5eff990aa52262000516ec99f0008c4e7cb4094ebb2d",
+              "git_blob_sha1": "26324ae24cf0bcd4f9fd3096c301ac1bb914577a"
+            },
+            "geometry_msgs/CMakeLists.txt": {
+              "bytes": 1307,
+              "sha256": "34e7d61ff4f22ffc0f54767e261b46b891c72ab4c1327278f750c0cee9c24613",
+              "git_blob_sha1": "678f678ae1d25bf3d2246bc5c1b189e10c86628e"
+            },
+            "geometry_msgs/msg/Point.msg": {
+              "bytes": 84,
+              "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+              "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0"
+            },
+            "geometry_msgs/msg/Pose.msg": {
+              "bytes": 119,
+              "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de",
+              "git_blob_sha1": "277e2f0179a64cd3e17e31502e3d8a074ace7064"
+            },
+            "geometry_msgs/msg/Quaternion.msg": {
+              "bytes": 116,
+              "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+              "git_blob_sha1": "96d392779a286cc3f4c83d80962236f5ea42c884"
+            },
+            "geometry_msgs/package.xml": {
+              "bytes": 1008,
+              "sha256": "7270ed3fbe15a13b554c9ebcac6291ee3801bb0351d1faa7b8607f8a69bb4829",
+              "git_blob_sha1": "7e1cf05a0eb909cbdc644892070781a224c3e880"
+            },
+            "std_msgs/CMakeLists.txt": {
+              "bytes": 1279,
+              "sha256": "1ba36cb32a0f7d7a193939baed9804fd4f4b9dd256a30fd6059427d6abbd4657",
+              "git_blob_sha1": "354f1a9f1e8243ee8c16eb749c3084cc2c3e7f55"
+            },
+            "std_msgs/msg/Header.msg": {
+              "bytes": 322,
+              "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+              "git_blob_sha1": "6966bb98863c237131a2bd2822298df9511ce948"
+            },
+            "std_msgs/package.xml": {
+              "bytes": 1011,
+              "sha256": "6d5a7f1fb577c2e838b6f1d32a12be5258641599604c3e99aaa9c1077e0f0a07",
+              "git_blob_sha1": "75295288734ed28726390289ae7bd1dcd52e92f7"
+            }
+          },
+          "default_authority": []
+        },
+        {
+          "id": "rcl_galactic",
+          "repository": "ros2/rcl_interfaces",
+          "branch": "galactic",
+          "commit": "c5d0a20150533a6cb93d5dcbd6e27cea9300aa6e",
+          "tree_git_sha1": "6c55fdb564908d114b6994a6ceff7b852cbd0444",
+          "files": {
+            "LICENSE": {
+              "bytes": 11358,
+              "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+              "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+            },
+            "README.md": {
+              "bytes": 941,
+              "sha256": "63d13936d4433bb35a2ee8c2a3cbdff9dcec05c333f5014f55b2411aff8763e4",
+              "git_blob_sha1": "948c43e84251bbca08cbd7712aaf472713933555"
+            },
+            "builtin_interfaces/CMakeLists.txt": {
+              "bytes": 531,
+              "sha256": "3864f878bcbca9e4855a971f675222d4cae5f328041a45c9ea236e60d9898ddf",
+              "git_blob_sha1": "23741d57ea495cdf49fc23f8ee035bd479fc7e7e"
+            },
+            "builtin_interfaces/msg/Time.msg": {
+              "bytes": 246,
+              "sha256": "de44df4db63cb7ed6871c4603bfed97c9edc1a8b714ffcbe1363a1f38cb7f2d3",
+              "git_blob_sha1": "874f15e08ee1f74c22e4de69d2bab8dda73a5a5a"
+            },
+            "builtin_interfaces/package.xml": {
+              "bytes": 981,
+              "sha256": "3389ae5e378609a0d278180ca7f5735a4cfa77dfb37573ae937cc8f194a76b5c",
+              "git_blob_sha1": "e889a0e481dc0c10b9d4f76f1f3d1ad8971a494f"
+            }
+          },
+          "default_authority": []
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros2/ufactory-xarm-ros2-galactic-complete",
+        "include/platform/ufactory/cpp/ros2/ufactory-xarm-ros2-galactic-complete"
+      ],
+      "operations": {
+        "msg": 9,
+        "srv": 51,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros2_galactic/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_galactic",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/msg/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_galactic",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/msg/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_galactic",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/msg/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/CIOState",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros2_humble",
+      "ros_version": 2,
+      "catalog": "share/platform/ufactory/catalogs/ros2_humble/catalog.json",
+      "source_lock_sha256": "088749cb296be3194ef6882eb5d7ec47086257df4bef3b8d02de8c3e2ed3228c",
+      "catalog_sha256": "3d5c572de129f08e56282b7b461a4e4b3ebb808a464ae0d4b4804e1f94547102",
+      "repositories": [
+        {
+          "id": "ros2_humble",
+          "repository": "xArm-Developer/xarm_ros2",
+          "branch": "humble",
+          "commit": "62936f7ea1846a85f7350de2c4c18f39e6d19715",
+          "tree_git_sha1": "b8d062cae80c706e90d1751691b5e3ee677747af"
+        },
+        {
+          "id": "common_humble",
+          "repository": "ros2/common_interfaces",
+          "url": "https://github.com/ros2/common_interfaces",
+          "branch": "humble",
+          "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+          "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "diagnostic_msgs/srv/AddDiagnostics.srv",
+                "bytes": 1458,
+                "sha256": "e88df6a6769a9ee85480aa2b1adac052fa368b4a00016f1a9b8422fdacdf1767",
+                "git_blob_sha1": "413c4019d73e3860dd09c51b5d6a078bf57a7bcb"
+              },
+              {
+                "path": "diagnostic_msgs/srv/SelfTest.srv",
+                "bytes": 52,
+                "sha256": "3a95f0dfd99d48a34b58608a80443e9bcd343ebd76d8865f58f8b9b312b6d38f",
+                "git_blob_sha1": "ee2974d4270d5c37aedd4b2253d0075b91582f74"
+              },
+              {
+                "path": "nav_msgs/srv/GetMap.srv",
+                "bytes": 110,
+                "sha256": "b4bdbb1875bfd2b22596e238cb9571f0baec6505032f7df8cc7e5cd47bfd3adc",
+                "git_blob_sha1": "91be6a7bdf5593b58a1815be2e5f2096f654d68d"
+              },
+              {
+                "path": "nav_msgs/srv/GetPlan.srv",
+                "bytes": 400,
+                "sha256": "84582c21447bd35286bbf93b9ca80de69e964cad577fa6ac44aabdbba43cba2e",
+                "git_blob_sha1": "689290a632bef9aff8f5186211b387e03f237b64"
+              },
+              {
+                "path": "nav_msgs/srv/LoadMap.srv",
+                "bytes": 473,
+                "sha256": "301ea2a2226e8723ae8a421eefc4dfbc0e3ed7819402583bd13c034f0802d3aa",
+                "git_blob_sha1": "3b9caaad47004e34d800ef84aae0553a8e2e5077"
+              },
+              {
+                "path": "nav_msgs/srv/SetMap.srv",
+                "bytes": 280,
+                "sha256": "14b58f196f2eafdeb75d2b913af3687665cce880aef970e03e6a6c014cd6fbed",
+                "git_blob_sha1": "5270d458bd409ad922289e457388af8930afd2f5"
+              },
+              {
+                "path": "sensor_msgs/srv/SetCameraInfo.srv",
+                "bytes": 597,
+                "sha256": "d7e720e522387083ff70c0b9e8aacec379c416d8d04f3cdca55de2008beba1f3",
+                "git_blob_sha1": "98b5b261d409d1b44fd7b50586777d380ed46249"
+              },
+              {
+                "path": "std_srvs/srv/Empty.srv",
+                "bytes": 4,
+                "sha256": "f52d711103d50a437830c6fbcd04fb4bab49a0f82f6d26d1c791c6e8488dd090",
+                "git_blob_sha1": "ed97d539c095cf1413af30cc23dea272095b97dd"
+              },
+              {
+                "path": "std_srvs/srv/SetBool.srv",
+                "bytes": 173,
+                "sha256": "a36d99cd5f0467a58a5b06b1443e9ffc0fcb59977190def5ef677fd16f05a664",
+                "git_blob_sha1": "93003477744daee97782eeafe272eccece948b7b"
+              },
+              {
+                "path": "std_srvs/srv/Trigger.srv",
+                "bytes": 122,
+                "sha256": "81e80d26771d0c0af8783938720c763cacc429e68d9d6b9c1f912474db0d8dca",
+                "git_blob_sha1": "371dfd22e1508994dacdf1fa93290f46d138fcaa"
+              },
+              {
+                "path": "visualization_msgs/srv/GetInteractiveMarkers.srv",
+                "bytes": 287,
+                "sha256": "a5291d771d7568d176844b2322c5d91b389370e8c25015a5ae00d63fac4471ea",
+                "git_blob_sha1": "493e885ec305e7d0beadda281c3297ea341fdfba"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        },
+        {
+          "id": "rcl_humble",
+          "repository": "ros2/rcl_interfaces",
+          "url": "https://github.com/ros2/rcl_interfaces",
+          "branch": "humble",
+          "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+          "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "action_msgs/srv/CancelGoal.srv",
+                "bytes": 1453,
+                "sha256": "5f4dc57f41cab2fd1987a61d5821282ece5075e38e5044f90126ab62c98fac20",
+                "git_blob_sha1": "86afbdbf4eacb2c55c1faf8da3a17946c5f0fa9b"
+              },
+              {
+                "path": "composition_interfaces/srv/ListNodes.srv",
+                "bytes": 167,
+                "sha256": "7b01c631b25d12e91315098748bb526f19101c70041613704ac8f09b7482db63",
+                "git_blob_sha1": "4b1421eb4031b37e38cd90f614cd303e66b5d9e3"
+              },
+              {
+                "path": "composition_interfaces/srv/LoadNode.srv",
+                "bytes": 1253,
+                "sha256": "db83f2776f37bf2cbe94ba8d3e8fefb0bca5b3edaa978e2b151c16f41bb47f11",
+                "git_blob_sha1": "ffd243f3a518362e11ccf059417b5a6bd037a8d1"
+              },
+              {
+                "path": "composition_interfaces/srv/UnloadNode.srv",
+                "bytes": 221,
+                "sha256": "6b6106bb2ba8ec9c8fd3812ab57a57775da388d12754bc6b266e1a883618f4d9",
+                "git_blob_sha1": "0fa36a516759a491a799a7f15a84a54f30ff5189"
+              },
+              {
+                "path": "lifecycle_msgs/srv/ChangeState.srv",
+                "bytes": 217,
+                "sha256": "a724c2437f5dc7eda1120f79ac30f945fea1475ac62654936f0d04530b1aef23",
+                "git_blob_sha1": "1bad3d1012bcd67269d05c893770be9b4dfa48d5"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableStates.srv",
+                "bytes": 85,
+                "sha256": "ab291560449fc5914c35cb9a9ec14cedfa67f6b643d4b7abb6c98cfb29e76f0d",
+                "git_blob_sha1": "2faa79b03d1f094781b03ced38e553fe984196e2"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableTransitions.srv",
+                "bytes": 112,
+                "sha256": "b6081c35e61f405e999e10044e9a68f862347da3c133070fe04dad9b54f2ecea",
+                "git_blob_sha1": "a7f4e506626903c8b90d1297415e51004ada8a17"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetState.srv",
+                "bytes": 71,
+                "sha256": "fc5e96531728baa4fcbc78d79b93e4c84e5787e288cc49d8c76ce8fcfef67292",
+                "git_blob_sha1": "b2569fa65ba13d3de35c482587332bd8fcb98458"
+              },
+              {
+                "path": "rcl_interfaces/srv/DescribeParameters.srv",
+                "bytes": 278,
+                "sha256": "6047a59261d6c19a4e8e921f06702cc0672e0e8b6a6854fe601b30edf02e5981",
+                "git_blob_sha1": "a8f0b9162c4bb92b0eb003ef9d8248394c53bec7"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameterTypes.srv",
+                "bytes": 322,
+                "sha256": "e5745ed79201f3ea515c13917f8d28780d16ed53c35f1b8d0f27c89945777bbe",
+                "git_blob_sha1": "cdf0e78d8727c6304d0baab30fc3c8ee886046fe"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameters.srv",
+                "bytes": 518,
+                "sha256": "3ae49531812d8813350fad5261905a88939f8352f8a08fd238dcae19a08e59f7",
+                "git_blob_sha1": "1822479bca1c947446fda9b4a158cfdb723b8e61"
+              },
+              {
+                "path": "rcl_interfaces/srv/ListParameters.srv",
+                "bytes": 369,
+                "sha256": "8254b67551049b2dc477d2fad286b645588227188482436d1b3bc0041731ed8b",
+                "git_blob_sha1": "ee1b7a6ffa6f40d27f59d369e24e4eccca9c378f"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParameters.srv",
+                "bytes": 158,
+                "sha256": "6a0dcce330e51f954350e4ca3095fff7a7c0a0fa1c9d986b1dad340afb05f70a",
+                "git_blob_sha1": "97d11796b67e2c6deb0deafb12dbadc87546cd9e"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParametersAtomically.srv",
+                "bytes": 238,
+                "sha256": "8593b435156b70299a4664839dc1b799ff22a7b7c0c27cec7b33bcc336389954",
+                "git_blob_sha1": "2df928a4fddd5a2accd9363821ca1bf9abe9b956"
+              },
+              {
+                "path": "test_msgs/action/NestedMessage.action",
+                "bytes": 381,
+                "sha256": "cb976305a0af5bc92868e74e9d0e9d088285608c668b09195c8e7d53089ae835",
+                "git_blob_sha1": "f0c7cf279cfbfe5210212cd3f3297bd605792d16"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros2/ufactory-xarm-ros2-humble-complete",
+        "include/platform/ufactory/cpp/ros2/ufactory-xarm-ros2-humble-complete"
+      ],
+      "operations": {
+        "msg": 9,
+        "srv": 51,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros2_humble/records.m"
+        ],
+        "java": [
+          "include/platform/ufactory/java/ros2_humble/ufactory/ros2_humble/BoundedRecords.java"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_humble",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/msg/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_humble",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/msg/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_humble",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/msg/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/CIOState",
+          "request": null
+        }
+      ],
+      "source_graph_v1": {
+        "java": {
+          "format": "uwvm-vendor-source-graph-v1",
+          "language": "java",
+          "sources": [
+            "include/platform/ufactory/java/ros2_humble/ufactory/ros2_humble/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "js": {
+          "format": "uwvm-vendor-source-graph-v1",
+          "language": "js",
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_humble.json",
+          "module_count": 13,
+          "native_definition_catalog": "share/platform/ufactory/catalogs/ros2_humble/catalog.json"
+        }
+      }
+    },
+    {
+      "id": "ros2_humble_gz",
+      "ros_version": 2,
+      "catalog": "share/platform/ufactory/catalogs/ros2_humble_gz/catalog.json",
+      "source_lock_sha256": "1561adf5c3bdd65e878b3dd48db892aa5cb7a7e0f11d2f14c8a248d245d858ae",
+      "catalog_sha256": "3d5c572de129f08e56282b7b461a4e4b3ebb808a464ae0d4b4804e1f94547102",
+      "repositories": [
+        {
+          "id": "ros2_humble_gz",
+          "repository": "xArm-Developer/xarm_ros2",
+          "branch": "humble_gz",
+          "commit": "5e126d492e04beb887f8bfee3a30c2c93d9f4d19",
+          "tree_git_sha1": "d34bf8dfc9ee77040a84de30cf8ff72a14252f00"
+        },
+        {
+          "id": "common_humble",
+          "repository": "ros2/common_interfaces",
+          "url": "https://github.com/ros2/common_interfaces",
+          "branch": "humble",
+          "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+          "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "diagnostic_msgs/srv/AddDiagnostics.srv",
+                "bytes": 1458,
+                "sha256": "e88df6a6769a9ee85480aa2b1adac052fa368b4a00016f1a9b8422fdacdf1767",
+                "git_blob_sha1": "413c4019d73e3860dd09c51b5d6a078bf57a7bcb"
+              },
+              {
+                "path": "diagnostic_msgs/srv/SelfTest.srv",
+                "bytes": 52,
+                "sha256": "3a95f0dfd99d48a34b58608a80443e9bcd343ebd76d8865f58f8b9b312b6d38f",
+                "git_blob_sha1": "ee2974d4270d5c37aedd4b2253d0075b91582f74"
+              },
+              {
+                "path": "nav_msgs/srv/GetMap.srv",
+                "bytes": 110,
+                "sha256": "b4bdbb1875bfd2b22596e238cb9571f0baec6505032f7df8cc7e5cd47bfd3adc",
+                "git_blob_sha1": "91be6a7bdf5593b58a1815be2e5f2096f654d68d"
+              },
+              {
+                "path": "nav_msgs/srv/GetPlan.srv",
+                "bytes": 400,
+                "sha256": "84582c21447bd35286bbf93b9ca80de69e964cad577fa6ac44aabdbba43cba2e",
+                "git_blob_sha1": "689290a632bef9aff8f5186211b387e03f237b64"
+              },
+              {
+                "path": "nav_msgs/srv/LoadMap.srv",
+                "bytes": 473,
+                "sha256": "301ea2a2226e8723ae8a421eefc4dfbc0e3ed7819402583bd13c034f0802d3aa",
+                "git_blob_sha1": "3b9caaad47004e34d800ef84aae0553a8e2e5077"
+              },
+              {
+                "path": "nav_msgs/srv/SetMap.srv",
+                "bytes": 280,
+                "sha256": "14b58f196f2eafdeb75d2b913af3687665cce880aef970e03e6a6c014cd6fbed",
+                "git_blob_sha1": "5270d458bd409ad922289e457388af8930afd2f5"
+              },
+              {
+                "path": "sensor_msgs/srv/SetCameraInfo.srv",
+                "bytes": 597,
+                "sha256": "d7e720e522387083ff70c0b9e8aacec379c416d8d04f3cdca55de2008beba1f3",
+                "git_blob_sha1": "98b5b261d409d1b44fd7b50586777d380ed46249"
+              },
+              {
+                "path": "std_srvs/srv/Empty.srv",
+                "bytes": 4,
+                "sha256": "f52d711103d50a437830c6fbcd04fb4bab49a0f82f6d26d1c791c6e8488dd090",
+                "git_blob_sha1": "ed97d539c095cf1413af30cc23dea272095b97dd"
+              },
+              {
+                "path": "std_srvs/srv/SetBool.srv",
+                "bytes": 173,
+                "sha256": "a36d99cd5f0467a58a5b06b1443e9ffc0fcb59977190def5ef677fd16f05a664",
+                "git_blob_sha1": "93003477744daee97782eeafe272eccece948b7b"
+              },
+              {
+                "path": "std_srvs/srv/Trigger.srv",
+                "bytes": 122,
+                "sha256": "81e80d26771d0c0af8783938720c763cacc429e68d9d6b9c1f912474db0d8dca",
+                "git_blob_sha1": "371dfd22e1508994dacdf1fa93290f46d138fcaa"
+              },
+              {
+                "path": "visualization_msgs/srv/GetInteractiveMarkers.srv",
+                "bytes": 287,
+                "sha256": "a5291d771d7568d176844b2322c5d91b389370e8c25015a5ae00d63fac4471ea",
+                "git_blob_sha1": "493e885ec305e7d0beadda281c3297ea341fdfba"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        },
+        {
+          "id": "rcl_humble",
+          "repository": "ros2/rcl_interfaces",
+          "url": "https://github.com/ros2/rcl_interfaces",
+          "branch": "humble",
+          "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+          "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "action_msgs/srv/CancelGoal.srv",
+                "bytes": 1453,
+                "sha256": "5f4dc57f41cab2fd1987a61d5821282ece5075e38e5044f90126ab62c98fac20",
+                "git_blob_sha1": "86afbdbf4eacb2c55c1faf8da3a17946c5f0fa9b"
+              },
+              {
+                "path": "composition_interfaces/srv/ListNodes.srv",
+                "bytes": 167,
+                "sha256": "7b01c631b25d12e91315098748bb526f19101c70041613704ac8f09b7482db63",
+                "git_blob_sha1": "4b1421eb4031b37e38cd90f614cd303e66b5d9e3"
+              },
+              {
+                "path": "composition_interfaces/srv/LoadNode.srv",
+                "bytes": 1253,
+                "sha256": "db83f2776f37bf2cbe94ba8d3e8fefb0bca5b3edaa978e2b151c16f41bb47f11",
+                "git_blob_sha1": "ffd243f3a518362e11ccf059417b5a6bd037a8d1"
+              },
+              {
+                "path": "composition_interfaces/srv/UnloadNode.srv",
+                "bytes": 221,
+                "sha256": "6b6106bb2ba8ec9c8fd3812ab57a57775da388d12754bc6b266e1a883618f4d9",
+                "git_blob_sha1": "0fa36a516759a491a799a7f15a84a54f30ff5189"
+              },
+              {
+                "path": "lifecycle_msgs/srv/ChangeState.srv",
+                "bytes": 217,
+                "sha256": "a724c2437f5dc7eda1120f79ac30f945fea1475ac62654936f0d04530b1aef23",
+                "git_blob_sha1": "1bad3d1012bcd67269d05c893770be9b4dfa48d5"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableStates.srv",
+                "bytes": 85,
+                "sha256": "ab291560449fc5914c35cb9a9ec14cedfa67f6b643d4b7abb6c98cfb29e76f0d",
+                "git_blob_sha1": "2faa79b03d1f094781b03ced38e553fe984196e2"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableTransitions.srv",
+                "bytes": 112,
+                "sha256": "b6081c35e61f405e999e10044e9a68f862347da3c133070fe04dad9b54f2ecea",
+                "git_blob_sha1": "a7f4e506626903c8b90d1297415e51004ada8a17"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetState.srv",
+                "bytes": 71,
+                "sha256": "fc5e96531728baa4fcbc78d79b93e4c84e5787e288cc49d8c76ce8fcfef67292",
+                "git_blob_sha1": "b2569fa65ba13d3de35c482587332bd8fcb98458"
+              },
+              {
+                "path": "rcl_interfaces/srv/DescribeParameters.srv",
+                "bytes": 278,
+                "sha256": "6047a59261d6c19a4e8e921f06702cc0672e0e8b6a6854fe601b30edf02e5981",
+                "git_blob_sha1": "a8f0b9162c4bb92b0eb003ef9d8248394c53bec7"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameterTypes.srv",
+                "bytes": 322,
+                "sha256": "e5745ed79201f3ea515c13917f8d28780d16ed53c35f1b8d0f27c89945777bbe",
+                "git_blob_sha1": "cdf0e78d8727c6304d0baab30fc3c8ee886046fe"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameters.srv",
+                "bytes": 518,
+                "sha256": "3ae49531812d8813350fad5261905a88939f8352f8a08fd238dcae19a08e59f7",
+                "git_blob_sha1": "1822479bca1c947446fda9b4a158cfdb723b8e61"
+              },
+              {
+                "path": "rcl_interfaces/srv/ListParameters.srv",
+                "bytes": 369,
+                "sha256": "8254b67551049b2dc477d2fad286b645588227188482436d1b3bc0041731ed8b",
+                "git_blob_sha1": "ee1b7a6ffa6f40d27f59d369e24e4eccca9c378f"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParameters.srv",
+                "bytes": 158,
+                "sha256": "6a0dcce330e51f954350e4ca3095fff7a7c0a0fa1c9d986b1dad340afb05f70a",
+                "git_blob_sha1": "97d11796b67e2c6deb0deafb12dbadc87546cd9e"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParametersAtomically.srv",
+                "bytes": 238,
+                "sha256": "8593b435156b70299a4664839dc1b799ff22a7b7c0c27cec7b33bcc336389954",
+                "git_blob_sha1": "2df928a4fddd5a2accd9363821ca1bf9abe9b956"
+              },
+              {
+                "path": "test_msgs/action/NestedMessage.action",
+                "bytes": 381,
+                "sha256": "cb976305a0af5bc92868e74e9d0e9d088285608c668b09195c8e7d53089ae835",
+                "git_blob_sha1": "f0c7cf279cfbfe5210212cd3f3297bd605792d16"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros2/ufactory-xarm-ros2-humble-gz-complete",
+        "include/platform/ufactory/cpp/ros2/ufactory-xarm-ros2-humble-gz-complete"
+      ],
+      "operations": {
+        "msg": 9,
+        "srv": 51,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros2_humble_gz/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_humble_gz",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/msg/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_humble_gz",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/msg/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_humble_gz",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/msg/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/CIOState",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros2_jazzy",
+      "ros_version": 2,
+      "catalog": "share/platform/ufactory/catalogs/ros2_jazzy/catalog.json",
+      "source_lock_sha256": "89d280c10ab21d69d02d718ce13b4e15df040a8fb9b71e29f7f6fa29f7bc2a5b",
+      "catalog_sha256": "3d5c572de129f08e56282b7b461a4e4b3ebb808a464ae0d4b4804e1f94547102",
+      "repositories": [
+        {
+          "id": "ros2_jazzy",
+          "repository": "xArm-Developer/xarm_ros2",
+          "branch": "jazzy",
+          "commit": "3dc2b5e8294758d96b54b15fa5920d581b7cbb3d",
+          "tree_git_sha1": "90a3084249c0302e31b9449230003450890d192f"
+        },
+        {
+          "id": "common_jazzy",
+          "url": "https://github.com/ros2/common_interfaces",
+          "branch": "jazzy",
+          "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+          "tree_git_sha1": "bbd609d90753abf6e10bdc94f594f36b75921677",
+          "archive": {
+            "url": "https://codeload.github.com/ros2/common_interfaces/tar.gz/a941f14bb318d8d904505ed935ccbb97f24a70a4",
+            "bytes": 150460,
+            "sha256": "4140cc780aec296bcd88c3049ba541783d40fbb7dd0e5919e621a85e314416ba"
+          },
+          "default_authority": [],
+          "scope": "Unchanged selected original interfaces/source and complete original acquisition archive; no compilation, native or robot execution.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "diagnostic_msgs/srv/AddDiagnostics.srv",
+                "bytes": 1458,
+                "sha256": "e88df6a6769a9ee85480aa2b1adac052fa368b4a00016f1a9b8422fdacdf1767",
+                "git_blob_sha1": "413c4019d73e3860dd09c51b5d6a078bf57a7bcb"
+              },
+              {
+                "path": "diagnostic_msgs/srv/SelfTest.srv",
+                "bytes": 52,
+                "sha256": "3a95f0dfd99d48a34b58608a80443e9bcd343ebd76d8865f58f8b9b312b6d38f",
+                "git_blob_sha1": "ee2974d4270d5c37aedd4b2253d0075b91582f74"
+              },
+              {
+                "path": "nav_msgs/srv/GetMap.srv",
+                "bytes": 110,
+                "sha256": "b4bdbb1875bfd2b22596e238cb9571f0baec6505032f7df8cc7e5cd47bfd3adc",
+                "git_blob_sha1": "91be6a7bdf5593b58a1815be2e5f2096f654d68d"
+              },
+              {
+                "path": "nav_msgs/srv/GetPlan.srv",
+                "bytes": 400,
+                "sha256": "84582c21447bd35286bbf93b9ca80de69e964cad577fa6ac44aabdbba43cba2e",
+                "git_blob_sha1": "689290a632bef9aff8f5186211b387e03f237b64"
+              },
+              {
+                "path": "nav_msgs/srv/LoadMap.srv",
+                "bytes": 473,
+                "sha256": "301ea2a2226e8723ae8a421eefc4dfbc0e3ed7819402583bd13c034f0802d3aa",
+                "git_blob_sha1": "3b9caaad47004e34d800ef84aae0553a8e2e5077"
+              },
+              {
+                "path": "nav_msgs/srv/SetMap.srv",
+                "bytes": 280,
+                "sha256": "14b58f196f2eafdeb75d2b913af3687665cce880aef970e03e6a6c014cd6fbed",
+                "git_blob_sha1": "5270d458bd409ad922289e457388af8930afd2f5"
+              },
+              {
+                "path": "sensor_msgs/srv/SetCameraInfo.srv",
+                "bytes": 597,
+                "sha256": "d7e720e522387083ff70c0b9e8aacec379c416d8d04f3cdca55de2008beba1f3",
+                "git_blob_sha1": "98b5b261d409d1b44fd7b50586777d380ed46249"
+              },
+              {
+                "path": "std_srvs/srv/Empty.srv",
+                "bytes": 4,
+                "sha256": "f52d711103d50a437830c6fbcd04fb4bab49a0f82f6d26d1c791c6e8488dd090",
+                "git_blob_sha1": "ed97d539c095cf1413af30cc23dea272095b97dd"
+              },
+              {
+                "path": "std_srvs/srv/SetBool.srv",
+                "bytes": 173,
+                "sha256": "a36d99cd5f0467a58a5b06b1443e9ffc0fcb59977190def5ef677fd16f05a664",
+                "git_blob_sha1": "93003477744daee97782eeafe272eccece948b7b"
+              },
+              {
+                "path": "std_srvs/srv/Trigger.srv",
+                "bytes": 122,
+                "sha256": "81e80d26771d0c0af8783938720c763cacc429e68d9d6b9c1f912474db0d8dca",
+                "git_blob_sha1": "371dfd22e1508994dacdf1fa93290f46d138fcaa"
+              },
+              {
+                "path": "visualization_msgs/srv/GetInteractiveMarkers.srv",
+                "bytes": 287,
+                "sha256": "a5291d771d7568d176844b2322c5d91b389370e8c25015a5ae00d63fac4471ea",
+                "git_blob_sha1": "493e885ec305e7d0beadda281c3297ea341fdfba"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        },
+        {
+          "id": "rcl_jazzy",
+          "url": "https://github.com/ros2/rcl_interfaces",
+          "branch": "jazzy",
+          "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+          "tree_git_sha1": "4515d6d00cf6209db404352534818e4199fe33c9",
+          "archive": {
+            "url": "https://codeload.github.com/ros2/rcl_interfaces/tar.gz/7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+            "bytes": 48039,
+            "sha256": "d984942035cd4df4f60c92d6038cecbfc3f5a01a1977c1b3199cee45cd67281c"
+          },
+          "default_authority": [],
+          "scope": "Unchanged selected original interfaces/source and complete original acquisition archive; no compilation, native or robot execution.",
+          "retained_archive_augmentation": {
+            "files": [
+              {
+                "path": "action_msgs/srv/CancelGoal.srv",
+                "bytes": 1453,
+                "sha256": "5f4dc57f41cab2fd1987a61d5821282ece5075e38e5044f90126ab62c98fac20",
+                "git_blob_sha1": "86afbdbf4eacb2c55c1faf8da3a17946c5f0fa9b"
+              },
+              {
+                "path": "composition_interfaces/srv/ListNodes.srv",
+                "bytes": 167,
+                "sha256": "7b01c631b25d12e91315098748bb526f19101c70041613704ac8f09b7482db63",
+                "git_blob_sha1": "4b1421eb4031b37e38cd90f614cd303e66b5d9e3"
+              },
+              {
+                "path": "composition_interfaces/srv/LoadNode.srv",
+                "bytes": 1253,
+                "sha256": "db83f2776f37bf2cbe94ba8d3e8fefb0bca5b3edaa978e2b151c16f41bb47f11",
+                "git_blob_sha1": "ffd243f3a518362e11ccf059417b5a6bd037a8d1"
+              },
+              {
+                "path": "composition_interfaces/srv/UnloadNode.srv",
+                "bytes": 221,
+                "sha256": "6b6106bb2ba8ec9c8fd3812ab57a57775da388d12754bc6b266e1a883618f4d9",
+                "git_blob_sha1": "0fa36a516759a491a799a7f15a84a54f30ff5189"
+              },
+              {
+                "path": "lifecycle_msgs/srv/ChangeState.srv",
+                "bytes": 217,
+                "sha256": "a724c2437f5dc7eda1120f79ac30f945fea1475ac62654936f0d04530b1aef23",
+                "git_blob_sha1": "1bad3d1012bcd67269d05c893770be9b4dfa48d5"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableStates.srv",
+                "bytes": 85,
+                "sha256": "ab291560449fc5914c35cb9a9ec14cedfa67f6b643d4b7abb6c98cfb29e76f0d",
+                "git_blob_sha1": "2faa79b03d1f094781b03ced38e553fe984196e2"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetAvailableTransitions.srv",
+                "bytes": 112,
+                "sha256": "b6081c35e61f405e999e10044e9a68f862347da3c133070fe04dad9b54f2ecea",
+                "git_blob_sha1": "a7f4e506626903c8b90d1297415e51004ada8a17"
+              },
+              {
+                "path": "lifecycle_msgs/srv/GetState.srv",
+                "bytes": 71,
+                "sha256": "fc5e96531728baa4fcbc78d79b93e4c84e5787e288cc49d8c76ce8fcfef67292",
+                "git_blob_sha1": "b2569fa65ba13d3de35c482587332bd8fcb98458"
+              },
+              {
+                "path": "rcl_interfaces/srv/DescribeParameters.srv",
+                "bytes": 278,
+                "sha256": "6047a59261d6c19a4e8e921f06702cc0672e0e8b6a6854fe601b30edf02e5981",
+                "git_blob_sha1": "a8f0b9162c4bb92b0eb003ef9d8248394c53bec7"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetLoggerLevels.srv",
+                "bytes": 220,
+                "sha256": "80d7c2ffe896e3b8d0ee228b78a5783d544887bbd3bd4549ef9d2a83403bae3c",
+                "git_blob_sha1": "3c0884e53b8f19bb7a67357ec172f0f6fa31085a"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameterTypes.srv",
+                "bytes": 322,
+                "sha256": "e5745ed79201f3ea515c13917f8d28780d16ed53c35f1b8d0f27c89945777bbe",
+                "git_blob_sha1": "cdf0e78d8727c6304d0baab30fc3c8ee886046fe"
+              },
+              {
+                "path": "rcl_interfaces/srv/GetParameters.srv",
+                "bytes": 518,
+                "sha256": "3ae49531812d8813350fad5261905a88939f8352f8a08fd238dcae19a08e59f7",
+                "git_blob_sha1": "1822479bca1c947446fda9b4a158cfdb723b8e61"
+              },
+              {
+                "path": "rcl_interfaces/srv/ListParameters.srv",
+                "bytes": 369,
+                "sha256": "8254b67551049b2dc477d2fad286b645588227188482436d1b3bc0041731ed8b",
+                "git_blob_sha1": "ee1b7a6ffa6f40d27f59d369e24e4eccca9c378f"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetLoggerLevels.srv",
+                "bytes": 152,
+                "sha256": "f418e17d4db720944d1edae8073ae6df1499677c8f1a11ca19b0bcba6a19d44d",
+                "git_blob_sha1": "7a83b1b01c605bf6906449c1741d68de0926907d"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParameters.srv",
+                "bytes": 158,
+                "sha256": "6a0dcce330e51f954350e4ca3095fff7a7c0a0fa1c9d986b1dad340afb05f70a",
+                "git_blob_sha1": "97d11796b67e2c6deb0deafb12dbadc87546cd9e"
+              },
+              {
+                "path": "rcl_interfaces/srv/SetParametersAtomically.srv",
+                "bytes": 238,
+                "sha256": "8593b435156b70299a4664839dc1b799ff22a7b7c0c27cec7b33bcc336389954",
+                "git_blob_sha1": "2df928a4fddd5a2accd9363821ca1bf9abe9b956"
+              },
+              {
+                "path": "test_msgs/action/NestedMessage.action",
+                "bytes": 381,
+                "sha256": "cb976305a0af5bc92868e74e9d0e9d088285608c668b09195c8e7d53089ae835",
+                "git_blob_sha1": "f0c7cf279cfbfe5210212cd3f3297bd605792d16"
+              },
+              {
+                "path": "type_description_interfaces/srv/GetTypeDescription.srv",
+                "bytes": 1182,
+                "sha256": "3e26a2ac0c055cc8c1b6bd50c4b5c9cdd750a5604027c20cc23519a1905b4f5f",
+                "git_blob_sha1": "9d34d0d0b4139a85499793c83aa7fb102f68e8c3"
+              }
+            ],
+            "scope": "Unchanged bodies recovered from the previously verified original archive, not newly downloaded."
+          }
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros2/ufactory-xarm-ros2-jazzy-complete",
+        "include/platform/ufactory/cpp/ros2/ufactory-xarm-ros2-jazzy-complete"
+      ],
+      "operations": {
+        "msg": 9,
+        "srv": 51,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros2_jazzy/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_jazzy",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/msg/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_jazzy",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/msg/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_jazzy",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/msg/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/CIOState",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros2_master",
+      "ros_version": 2,
+      "catalog": "share/platform/ufactory/catalogs/ros2_master/catalog.json",
+      "source_lock_sha256": "5b0a47e1aad73ff2ab53a9112880b15cdc3534f4ad6d6ba73821ca8b08569bb0",
+      "catalog_sha256": "9b3ee7fbea4aa954c6bf81e9b689cfcaa3ac4ce51966945522d675e9633eaac5",
+      "repositories": [
+        {
+          "id": "ros2_master",
+          "repository": "xArm-Developer/xarm_ros2",
+          "branch": "master",
+          "commit": "3654ba7bb2a0e502088251728d07263ea399d4a4",
+          "tree_git_sha1": "8ce327a9b567e71d4db81fdb06644a93b90e6063"
+        },
+        {
+          "id": "common_foxy",
+          "repository": "ros2/common_interfaces",
+          "branch": "foxy",
+          "commit": "6356bc82f3a034f5d2c61c6760df0007a6cadfb0",
+          "tree_git_sha1": "e8d7302c3b89dcf535fe0ef5f1b0836b9790d411",
+          "files": {
+            "LICENSE": {
+              "bytes": 11358,
+              "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+              "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+            },
+            "README.md": {
+              "bytes": 92,
+              "sha256": "b4c5921f0559c595152d5eff990aa52262000516ec99f0008c4e7cb4094ebb2d",
+              "git_blob_sha1": "26324ae24cf0bcd4f9fd3096c301ac1bb914577a"
+            },
+            "geometry_msgs/CMakeLists.txt": {
+              "bytes": 1307,
+              "sha256": "34e7d61ff4f22ffc0f54767e261b46b891c72ab4c1327278f750c0cee9c24613",
+              "git_blob_sha1": "678f678ae1d25bf3d2246bc5c1b189e10c86628e"
+            },
+            "geometry_msgs/msg/Point.msg": {
+              "bytes": 84,
+              "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+              "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0"
+            },
+            "geometry_msgs/msg/Pose.msg": {
+              "bytes": 119,
+              "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de",
+              "git_blob_sha1": "277e2f0179a64cd3e17e31502e3d8a074ace7064"
+            },
+            "geometry_msgs/msg/Quaternion.msg": {
+              "bytes": 116,
+              "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+              "git_blob_sha1": "96d392779a286cc3f4c83d80962236f5ea42c884"
+            },
+            "geometry_msgs/package.xml": {
+              "bytes": 867,
+              "sha256": "af1fb23dfb6c7a8415f5c3e8f33c0da8b8603c85a5903dfd8b87a645c464e272",
+              "git_blob_sha1": "43b3de7cacec38d2ccb2707d6b9df1bd237eb6ab"
+            },
+            "std_msgs/CMakeLists.txt": {
+              "bytes": 1279,
+              "sha256": "1ba36cb32a0f7d7a193939baed9804fd4f4b9dd256a30fd6059427d6abbd4657",
+              "git_blob_sha1": "354f1a9f1e8243ee8c16eb749c3084cc2c3e7f55"
+            },
+            "std_msgs/msg/Header.msg": {
+              "bytes": 322,
+              "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+              "git_blob_sha1": "6966bb98863c237131a2bd2822298df9511ce948"
+            },
+            "std_msgs/package.xml": {
+              "bytes": 870,
+              "sha256": "5d5139f600e4eb481d65a31be04e117a1e0770f1921468300654738dc6900bf5",
+              "git_blob_sha1": "a49aab8101e9e4eb3868a6d32ebc030c4d0c4293"
+            }
+          },
+          "default_authority": []
+        },
+        {
+          "id": "rcl_foxy",
+          "repository": "ros2/rcl_interfaces",
+          "branch": "foxy",
+          "commit": "ee04e046132be9d9fdcdaeff8dd54a5d0d9aa022",
+          "tree_git_sha1": "8d5deda9abcbbcad705c2f3deb1e4574769978a6",
+          "files": {
+            "LICENSE": {
+              "bytes": 11358,
+              "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+              "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+            },
+            "README.md": {
+              "bytes": 941,
+              "sha256": "63d13936d4433bb35a2ee8c2a3cbdff9dcec05c333f5014f55b2411aff8763e4",
+              "git_blob_sha1": "948c43e84251bbca08cbd7712aaf472713933555"
+            },
+            "builtin_interfaces/CMakeLists.txt": {
+              "bytes": 531,
+              "sha256": "3864f878bcbca9e4855a971f675222d4cae5f328041a45c9ea236e60d9898ddf",
+              "git_blob_sha1": "23741d57ea495cdf49fc23f8ee035bd479fc7e7e"
+            },
+            "builtin_interfaces/msg/Time.msg": {
+              "bytes": 214,
+              "sha256": "c7272024281c14e58a7223fde144efe4d729da0af75c2dd8264f91f52649033c",
+              "git_blob_sha1": "bf710f149c1e21627e20c8be562375d238685847"
+            },
+            "builtin_interfaces/package.xml": {
+              "bytes": 836,
+              "sha256": "8763dbed6fd1fbabb95ef8d2331108a9ab55c17f41d12bccf6b9a375f0aba258",
+              "git_blob_sha1": "f79b0176b1a9148c0eeaddd8e21d0e4aa9a05d4a"
+            }
+          },
+          "default_authority": []
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros2/ufactory-xarm-ros2-master-complete",
+        "include/platform/ufactory/cpp/ros2/ufactory-xarm-ros2-master-complete"
+      ],
+      "operations": {
+        "msg": 8,
+        "srv": 47,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros2_master/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_master",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/msg/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_master",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/msg/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_master",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/msg/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/CIOState",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros2_rolling",
+      "ros_version": 2,
+      "catalog": "share/platform/ufactory/catalogs/ros2_rolling/catalog.json",
+      "source_lock_sha256": "41b6a27d60e97660e465192168e3164f8ce6278f19f1bc0bfee1c37a03ccf153",
+      "catalog_sha256": "3d5c572de129f08e56282b7b461a4e4b3ebb808a464ae0d4b4804e1f94547102",
+      "repositories": [
+        {
+          "id": "ros2_rolling",
+          "repository": "xArm-Developer/xarm_ros2",
+          "branch": "rolling",
+          "commit": "01c145407e563aacb4b8edab309b23fbaeb25b87",
+          "tree_git_sha1": "3b09f2f1540291c34d60b6fd3eeff85eda889484"
+        },
+        {
+          "id": "common_rolling",
+          "url": "https://github.com/ros2/common_interfaces",
+          "branch": "rolling",
+          "commit": "56be9f336d3ed54d18b3821d3b2b183123ec17d8",
+          "tree_git_sha1": "0371125c5a3b409d8ae32fff3e66ce9b8f3a6961",
+          "archive": {
+            "url": "https://codeload.github.com/ros2/common_interfaces/tar.gz/56be9f336d3ed54d18b3821d3b2b183123ec17d8",
+            "bytes": 151445,
+            "sha256": "5fc6947ff1fcdedc73d3a454b21e827d2a4a2233a900c15e8bdc78ddc95e2c85"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        },
+        {
+          "id": "rcl_rolling",
+          "url": "https://github.com/ros2/rcl_interfaces",
+          "branch": "rolling",
+          "commit": "614f3c4942e1a67a568546cb805ff3e0ff7777f5",
+          "tree_git_sha1": "1fc8125d7a10587a81e083994142d313ad1903db",
+          "archive": {
+            "url": "https://codeload.github.com/ros2/rcl_interfaces/tar.gz/614f3c4942e1a67a568546cb805ff3e0ff7777f5",
+            "bytes": 49809,
+            "sha256": "42c8ecac42e99b2a68f3eda231a99be0e8511cb690be84a94e64e99959081bb2"
+          },
+          "default_authority": [],
+          "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/ufactory/c/ros2/ufactory-xarm-ros2-rolling-complete",
+        "include/platform/ufactory/cpp/ros2/ufactory-xarm-ros2-rolling-complete"
+      ],
+      "operations": {
+        "msg": 9,
+        "srv": 51,
+        "action": 0
+      },
+      "legacy_defines": {},
+      "language_sources": {
+        "objectc": [
+          "src/platform/ufactory/objectc/ros2_rolling/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_rolling",
+          "scenario": "observe_robot_msg",
+          "type": "xarm_msgs/msg/RobotMsg",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/RobotMsg",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_rolling",
+          "scenario": "observe_i_o_state",
+          "type": "xarm_msgs/msg/IOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/IOState",
+          "request": null
+        },
+        {
+          "vendor": "ufactory",
+          "profile": "ros2_rolling",
+          "scenario": "observe_c_i_o_state",
+          "type": "xarm_msgs/msg/CIOState",
+          "operation": "topic.subscribe",
+          "response": "xarm_msgs/msg/CIOState",
+          "request": null
+        }
+      ]
+    }
+  ],
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "default_authority": [],
+  "transports": [
+    "native-ros"
+  ],
+  "requested_targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "target_qualification": "per-language-produced-and-executed-module-required",
+  "distributions": {
+    "ros1": [
+      "kinetic",
+      "melodic",
+      "noetic"
+    ],
+    "ros2": [
+      "foxy",
+      "galactic",
+      "humble",
+      "jazzy",
+      "rolling"
+    ]
+  },
+  "model_selections": [
+    {
+      "selection": "ros1_kinetic_xarm5",
+      "profile": "ros1_kinetic",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 1
+      }
+    },
+    {
+      "selection": "ros1_kinetic_xarm6",
+      "profile": "ros1_kinetic",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 2
+      }
+    },
+    {
+      "selection": "ros1_kinetic_xarm7",
+      "profile": "ros1_kinetic",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 3
+      }
+    },
+    {
+      "selection": "ros1_kinetic_xarm7_mirror",
+      "profile": "ros1_kinetic",
+      "model": "xarm7_mirror",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 4
+      }
+    },
+    {
+      "selection": "ros1_kinetic_lite6",
+      "profile": "ros1_kinetic",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 5
+      }
+    },
+    {
+      "selection": "ros1_kinetic_uf850",
+      "profile": "ros1_kinetic",
+      "model": "uf850",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 6
+      }
+    },
+    {
+      "selection": "ros1_legacy_xarm5",
+      "profile": "ros1_legacy",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 7
+      }
+    },
+    {
+      "selection": "ros1_legacy_xarm6",
+      "profile": "ros1_legacy",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 8
+      }
+    },
+    {
+      "selection": "ros1_legacy_xarm7",
+      "profile": "ros1_legacy",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 9
+      }
+    },
+    {
+      "selection": "ros1_master_xarm5",
+      "profile": "ros1_master",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 10
+      }
+    },
+    {
+      "selection": "ros1_master_xarm6",
+      "profile": "ros1_master",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 11
+      }
+    },
+    {
+      "selection": "ros1_master_xarm7",
+      "profile": "ros1_master",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 12
+      }
+    },
+    {
+      "selection": "ros1_master_xarm7_mirror",
+      "profile": "ros1_master",
+      "model": "xarm7_mirror",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 13
+      }
+    },
+    {
+      "selection": "ros1_master_lite6",
+      "profile": "ros1_master",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 14
+      }
+    },
+    {
+      "selection": "ros1_master_uf850",
+      "profile": "ros1_master",
+      "model": "uf850",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 15
+      }
+    },
+    {
+      "selection": "ros2_foxy_xarm5",
+      "profile": "ros2_foxy",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 16
+      }
+    },
+    {
+      "selection": "ros2_foxy_xarm6",
+      "profile": "ros2_foxy",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 17
+      }
+    },
+    {
+      "selection": "ros2_foxy_xarm7",
+      "profile": "ros2_foxy",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 18
+      }
+    },
+    {
+      "selection": "ros2_foxy_xarm7_mirror",
+      "profile": "ros2_foxy",
+      "model": "xarm7_mirror",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 19
+      }
+    },
+    {
+      "selection": "ros2_foxy_lite6",
+      "profile": "ros2_foxy",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 20
+      }
+    },
+    {
+      "selection": "ros2_foxy_uf850",
+      "profile": "ros2_foxy",
+      "model": "uf850",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 21
+      }
+    },
+    {
+      "selection": "ros2_galactic_xarm5",
+      "profile": "ros2_galactic",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 22
+      }
+    },
+    {
+      "selection": "ros2_galactic_xarm6",
+      "profile": "ros2_galactic",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 23
+      }
+    },
+    {
+      "selection": "ros2_galactic_xarm7",
+      "profile": "ros2_galactic",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 24
+      }
+    },
+    {
+      "selection": "ros2_galactic_xarm7_mirror",
+      "profile": "ros2_galactic",
+      "model": "xarm7_mirror",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 25
+      }
+    },
+    {
+      "selection": "ros2_galactic_lite6",
+      "profile": "ros2_galactic",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 26
+      }
+    },
+    {
+      "selection": "ros2_galactic_uf850",
+      "profile": "ros2_galactic",
+      "model": "uf850",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 27
+      }
+    },
+    {
+      "selection": "ros2_humble_gz_xarm5",
+      "profile": "ros2_humble_gz",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 28
+      }
+    },
+    {
+      "selection": "ros2_humble_gz_xarm6",
+      "profile": "ros2_humble_gz",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 29
+      }
+    },
+    {
+      "selection": "ros2_humble_gz_xarm7",
+      "profile": "ros2_humble_gz",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 30
+      }
+    },
+    {
+      "selection": "ros2_humble_gz_xarm7_mirror",
+      "profile": "ros2_humble_gz",
+      "model": "xarm7_mirror",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 31
+      }
+    },
+    {
+      "selection": "ros2_humble_gz_lite6",
+      "profile": "ros2_humble_gz",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 32
+      }
+    },
+    {
+      "selection": "ros2_humble_gz_uf850",
+      "profile": "ros2_humble_gz",
+      "model": "uf850",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 33
+      }
+    },
+    {
+      "selection": "ros2_humble_xarm5",
+      "profile": "ros2_humble",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 34
+      }
+    },
+    {
+      "selection": "ros2_humble_xarm6",
+      "profile": "ros2_humble",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 35
+      }
+    },
+    {
+      "selection": "ros2_humble_xarm7",
+      "profile": "ros2_humble",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 36
+      }
+    },
+    {
+      "selection": "ros2_humble_xarm7_mirror",
+      "profile": "ros2_humble",
+      "model": "xarm7_mirror",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 37
+      }
+    },
+    {
+      "selection": "ros2_humble_lite6",
+      "profile": "ros2_humble",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 38
+      }
+    },
+    {
+      "selection": "ros2_humble_uf850",
+      "profile": "ros2_humble",
+      "model": "uf850",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 39
+      }
+    },
+    {
+      "selection": "ros2_jazzy_xarm5",
+      "profile": "ros2_jazzy",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 40
+      }
+    },
+    {
+      "selection": "ros2_jazzy_xarm6",
+      "profile": "ros2_jazzy",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 41
+      }
+    },
+    {
+      "selection": "ros2_jazzy_xarm7",
+      "profile": "ros2_jazzy",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 42
+      }
+    },
+    {
+      "selection": "ros2_jazzy_xarm7_mirror",
+      "profile": "ros2_jazzy",
+      "model": "xarm7_mirror",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 43
+      }
+    },
+    {
+      "selection": "ros2_jazzy_lite6",
+      "profile": "ros2_jazzy",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 44
+      }
+    },
+    {
+      "selection": "ros2_jazzy_uf850",
+      "profile": "ros2_jazzy",
+      "model": "uf850",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 45
+      }
+    },
+    {
+      "selection": "ros2_master_xarm5",
+      "profile": "ros2_master",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 46
+      }
+    },
+    {
+      "selection": "ros2_master_xarm6",
+      "profile": "ros2_master",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 47
+      }
+    },
+    {
+      "selection": "ros2_master_xarm7",
+      "profile": "ros2_master",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 48
+      }
+    },
+    {
+      "selection": "ros2_master_lite6",
+      "profile": "ros2_master",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 49
+      }
+    },
+    {
+      "selection": "ros2_rolling_xarm5",
+      "profile": "ros2_rolling",
+      "model": "xarm5",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 50
+      }
+    },
+    {
+      "selection": "ros2_rolling_xarm6",
+      "profile": "ros2_rolling",
+      "model": "xarm6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 51
+      }
+    },
+    {
+      "selection": "ros2_rolling_xarm7",
+      "profile": "ros2_rolling",
+      "model": "xarm7",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 52
+      }
+    },
+    {
+      "selection": "ros2_rolling_xarm7_mirror",
+      "profile": "ros2_rolling",
+      "model": "xarm7_mirror",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 53
+      }
+    },
+    {
+      "selection": "ros2_rolling_lite6",
+      "profile": "ros2_rolling",
+      "model": "lite6",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 54
+      }
+    },
+    {
+      "selection": "ros2_rolling_uf850",
+      "profile": "ros2_rolling",
+      "model": "uf850",
+      "legacy_defines": {
+        "UWVM_XARM_SELECTION": 55
+      }
+    }
+  ],
+  "configuration": {
+    "profile": "ros.sdk.provider.profile",
+    "model": "ros.sdk.provider.model",
+    "transport": "ros.sdk.provider.transport",
+    "distribution": "ros.sdk.distribution",
+    "catalog_version": "immutable per-profile source_lock_sha256; not controller firmware",
+    "abi": "uwvm ROS ABI v1 plus the exact selected canonical type catalog",
+    "wasm_features": "Exact common target manifest; no implicit threads/EH/preview/address-width substitution",
+    "model_source": "share/platform/ufactory/models.json"
+  },
+  "shared_producer_contract": "tools/xmake/language_adapter.lua api_version=1 with the complete request/source graph",
+  "format": "uwvm-ros-provider-v1",
+  "api_version": 1,
+  "id": "ufactory",
+  "module": "tools/platform/ufactory/provider.lua",
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "kinetic",
+        "melodic",
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "foxy",
+        "galactic",
+        "humble",
+        "jazzy",
+        "rolling"
+      ]
+    }
+  },
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "go",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "objectc",
+    "php",
+    "py",
+    "rs",
+    "ruby",
+    "tinygo"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {
+    "profile": {
+      "values": [
+        "ros1_kinetic",
+        "ros1_legacy",
+        "ros1_master",
+        "ros2_foxy",
+        "ros2_galactic",
+        "ros2_humble",
+        "ros2_humble_gz",
+        "ros2_jazzy",
+        "ros2_master",
+        "ros2_rolling"
+      ]
+    },
+    "catalog_version": {
+      "values": [
+        "088749cb296be3194ef6882eb5d7ec47086257df4bef3b8d02de8c3e2ed3228c",
+        "1561adf5c3bdd65e878b3dd48db892aa5cb7a7e0f11d2f14c8a248d245d858ae",
+        "3907724b0fd12dd2ca9375be894820f0106afa9e9182fc34e7ad40131587e812",
+        "3a8c6e0a44c843e93f1957c369b5e7c2179df3d813aef05b8aa12c5bf9ec2cc9",
+        "41b6a27d60e97660e465192168e3164f8ce6278f19f1bc0bfee1c37a03ccf153",
+        "5b0a47e1aad73ff2ab53a9112880b15cdc3534f4ad6d6ba73821ca8b08569bb0",
+        "6b6c5fc51200d12719a0d197cd11211f12f8a9f0160523f615e19107f5398f7c",
+        "89d280c10ab21d69d02d718ce13b4e15df040a8fb9b71e29f7f6fa29f7bc2a5b",
+        "9df740b076963c4931bb031c3a7d2119c03f3c7632af46b936e5ba817bb8ae57",
+        "a43a6f2749231806ed44c8134fca150ea5537a8b47af97d6d3a33d07e8e815f1"
+      ]
+    },
+    "abi": {
+      "values": [
+        "uwvm-ros-v1"
+      ],
+      "default": "uwvm-ros-v1"
+    },
+    "transport": {
+      "values": [
+        "native-ros"
+      ],
+      "default": "native-ros"
+    },
+    "model": {
+      "values": [
+        "ros1_kinetic_xarm5",
+        "ros1_kinetic_xarm6",
+        "ros1_kinetic_xarm7",
+        "ros1_kinetic_xarm7_mirror",
+        "ros1_kinetic_lite6",
+        "ros1_kinetic_uf850",
+        "ros1_legacy_xarm5",
+        "ros1_legacy_xarm6",
+        "ros1_legacy_xarm7",
+        "ros1_master_xarm5",
+        "ros1_master_xarm6",
+        "ros1_master_xarm7",
+        "ros1_master_xarm7_mirror",
+        "ros1_master_lite6",
+        "ros1_master_uf850",
+        "ros2_foxy_xarm5",
+        "ros2_foxy_xarm6",
+        "ros2_foxy_xarm7",
+        "ros2_foxy_xarm7_mirror",
+        "ros2_foxy_lite6",
+        "ros2_foxy_uf850",
+        "ros2_galactic_xarm5",
+        "ros2_galactic_xarm6",
+        "ros2_galactic_xarm7",
+        "ros2_galactic_xarm7_mirror",
+        "ros2_galactic_lite6",
+        "ros2_galactic_uf850",
+        "ros2_humble_gz_xarm5",
+        "ros2_humble_gz_xarm6",
+        "ros2_humble_gz_xarm7",
+        "ros2_humble_gz_xarm7_mirror",
+        "ros2_humble_gz_lite6",
+        "ros2_humble_gz_uf850",
+        "ros2_humble_xarm5",
+        "ros2_humble_xarm6",
+        "ros2_humble_xarm7",
+        "ros2_humble_xarm7_mirror",
+        "ros2_humble_lite6",
+        "ros2_humble_uf850",
+        "ros2_jazzy_xarm5",
+        "ros2_jazzy_xarm6",
+        "ros2_jazzy_xarm7",
+        "ros2_jazzy_xarm7_mirror",
+        "ros2_jazzy_lite6",
+        "ros2_jazzy_uf850",
+        "ros2_master_xarm5",
+        "ros2_master_xarm6",
+        "ros2_master_xarm7",
+        "ros2_master_lite6",
+        "ros2_rolling_xarm5",
+        "ros2_rolling_xarm6",
+        "ros2_rolling_xarm7",
+        "ros2_rolling_xarm7_mirror",
+        "ros2_rolling_lite6",
+        "ros2_rolling_uf850"
+      ]
+    }
+  },
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  }
+}

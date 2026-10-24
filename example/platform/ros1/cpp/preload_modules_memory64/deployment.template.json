@@ -1,0 +1,89 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros1-gateway",
+  "backend": "ros1",
+  "distribution": "noetic",
+  "connection": {
+    "node-name": "uwvm_preload_gateway",
+    "namespace": "/uwvm_native_sdk",
+    "master-uri": "http://127.0.0.1:11397",
+    "advertise-host": "127.0.0.1",
+    "transport": "tcpros"
+  },
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "preload_modules": {
+      "arguments": [],
+      "main_module": "main",
+      "preloads": [
+        {
+          "module": "io",
+          "path": "build/io/io.wasm",
+          "attribute": "none"
+        },
+        {
+          "module": "algorithm",
+          "path": "build/algorithm/algorithm.wasm",
+          "attribute": "none"
+        },
+        {
+          "module": "ros_comm",
+          "path": "build/ros_comm/ros_comm.wasm",
+          "attribute": "none"
+        }
+      ],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        },
+        "io": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [
+            "monotonic-clock"
+          ]
+        },
+        "algorithm": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        },
+        "ros_comm": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "sample",
+              "operation": "topic.publish",
+              "resource": "/uwvm_native_sdk/outgoing",
+              "type": "std_msgs/String",
+              "identity": "992ce8a1687cec8c8bd883ec73ca41d1",
+              "limits": {
+                "max-rate-hz": "100",
+                "burst": "8",
+                "max-bytes-per-second": "1048576",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "max-message-bytes": "256",
+                "max-queue-bytes": "2048",
+                "overflow-policy": "drop-oldest",
+                "max-publishers": "1",
+                "queue-depth": "8",
+                "transport": "tcpros",
+                "latch": "false"
+              }
+            }
+          ],
+          "wasi_grants": [],
+          "call_boundary": "module-exports"
+        }
+      }
+    }
+  }
+}

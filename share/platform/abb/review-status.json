@@ -1,0 +1,138 @@
+{
+  "platform": "abb",
+  "review_state": "source-review",
+  "examples": 164,
+  "example_languages": {
+    "as": 7,
+    "c": 7,
+    "c_ffi_bridge": 7,
+    "cpp": 7,
+    "csharp": 6,
+    "d": 6,
+    "fsharp": 6,
+    "go": 7,
+    "haskell": 6,
+    "java": 6,
+    "js": 6,
+    "kotlin": 6,
+    "lua": 6,
+    "moonbit": 6,
+    "nim": 6,
+    "objectc": 7,
+    "odin": 6,
+    "php": 6,
+    "py": 6,
+    "r": 6,
+    "rs": 7,
+    "ruby": 6,
+    "swift": 6,
+    "tinygo": 7,
+    "vbnet": 6,
+    "zig": 6
+  },
+  "manuals": {
+    "zh_CN": 64,
+    "en_US": 64
+  },
+  "current_snapshot_build_acceptance": "pending",
+  "current_snapshot_native_ros_acceptance": "pending",
+  "current_snapshot_qemu_aarch64_acceptance": "pending",
+  "static_shared_library_acceptance": "pending",
+  "complete": false,
+  "withheld_source_files": 0,
+  "integration_regression": {
+    "guest_targets": [
+      "wasm32-wasip1",
+      "wasm64-wasip1"
+    ],
+    "abb_real_builds": 24,
+    "abb_argument_error_executions": 24,
+    "abb_argument_preserving_denials": 4,
+    "native_abb_positive_exchanges": 0,
+    "only_xmake_in_producer": true,
+    "compiler_major": 23,
+    "memory_max": 68719476736,
+    "memory_swap_max": 0
+  },
+  "source_review_revision": "2026-10-23-parent-review-34",
+  "source_owner": "02",
+  "reviewed_original_native_cohort": {
+    "cases": 56,
+    "native_hosts": [
+      "x86_64",
+      "aarch64-qemu"
+    ],
+    "positive": 12,
+    "permission_denied": 12,
+    "controller_refusal": 8,
+    "close": 12,
+    "revoke": 12,
+    "original_scenarios": [
+      "read_speed",
+      "read_io",
+      "system_state"
+    ],
+    "physical_hardware": false,
+    "guest_widths": [
+      32,
+      64
+    ],
+    "all_languages_qualified": false
+  },
+  "source_inventory_review": 44,
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig",
+    "fortran",
+    "wat",
+    "typescript"
+  ],
+  "new_language_work": {
+    "fortran": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_compiler": "LLVM Flang 23.1.4 source candidate",
+      "common_raw_abi_modules": [
+        "uwvm_ros1_v1",
+        "uwvm_ros2_v1"
+      ],
+      "compiled": false,
+      "executed": false
+    },
+    "wat": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_assembler": "WABT wat2wasm source candidate",
+      "compiled": false,
+      "executed": false
+    }
+  },
+  "typescript": {
+    "shared_frontend_available": true,
+    "platform_native_qualification": "pending",
+    "platform_registration_qualified": false,
+    "scope": "Common two-width frontend and scalar libraries; platform native ROS acceptance is separate"
+  }
+}

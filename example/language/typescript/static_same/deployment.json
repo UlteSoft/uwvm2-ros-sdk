@@ -1,0 +1,10 @@
+{
+  "format": "uwvm-ros-command-run-v1",
+  "target": "wasm32-wasip1",
+  "backend": "wasi",
+  "runtime": "uwvm2-ros",
+  "runtime_arguments": [
+    "--wasip1-global-noinherit-system-environment"
+  ],
+  "application_arguments": []
+}

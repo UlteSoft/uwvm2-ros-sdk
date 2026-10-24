@@ -1,0 +1,2 @@
+import { "moonbitlang/core/env", "moonbitlang/core/encoding/hex", "uwvm/flexiv/controller_core_humble" @records }
+options("is-main": true)

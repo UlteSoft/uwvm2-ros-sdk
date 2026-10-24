@@ -1,0 +1,53 @@
+package flexiv.ros2jazzyv22
+
+/** @brief Exact Kotlin aliases of the full selected JVM record classes. */
+typealias Ros2Builtin_interfacesMsgTime = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Builtin_interfacesMsgTime
+typealias Ros2Flexiv_msgsActionErrorRecovery_Goal =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionErrorRecovery_Goal
+typealias Ros2Flexiv_msgsActionErrorRecovery_Result =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionErrorRecovery_Result
+typealias Ros2Flexiv_msgsActionErrorRecovery_Feedback =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionErrorRecovery_Feedback
+typealias Ros2Flexiv_msgsActionGrasp_Goal = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionGrasp_Goal
+typealias Ros2Flexiv_msgsActionGrasp_Result = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionGrasp_Result
+typealias Ros2Flexiv_msgsActionGrasp_Feedback = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionGrasp_Feedback
+typealias Ros2Flexiv_msgsActionMove_Goal = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionMove_Goal
+typealias Ros2Flexiv_msgsActionMove_Result = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionMove_Result
+typealias Ros2Flexiv_msgsActionMove_Feedback = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsActionMove_Feedback
+typealias Ros2Flexiv_msgsMsgDigital = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgDigital
+typealias Ros2Flexiv_msgsMsgGPIOStates = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgGPIOStates
+typealias Ros2Std_msgsMsgHeader = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Std_msgsMsgHeader
+typealias Ros2Flexiv_msgsMsgJointImpedance = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgJointImpedance
+typealias Ros2Flexiv_msgsMsgJointInertiaScale = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgJointInertiaScale
+typealias Ros2Flexiv_msgsMsgJointPosVel = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgJointPosVel
+typealias Ros2Flexiv_msgsMsgMaxContactTorque = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgMaxContactTorque
+typealias Ros2Flexiv_msgsMsgMode = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgMode
+typealias Ros2Flexiv_msgsMsgRobotEvent = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgRobotEvent
+typealias Ros2Flexiv_msgsMsgOperationalStatus = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgOperationalStatus
+typealias Ros2Flexiv_msgsMsgRecoveryPolicy = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgRecoveryPolicy
+typealias Ros2Geometry_msgsMsgPoint = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgPoint
+typealias Ros2Geometry_msgsMsgQuaternion = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgQuaternion
+typealias Ros2Geometry_msgsMsgPose = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgPose
+typealias Ros2Geometry_msgsMsgPoseStamped = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgPoseStamped
+typealias Ros2Geometry_msgsMsgVector3 = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgVector3
+typealias Ros2Geometry_msgsMsgTwist = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgTwist
+typealias Ros2Geometry_msgsMsgTwistStamped = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgTwistStamped
+typealias Ros2Geometry_msgsMsgWrench = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgWrench
+typealias Ros2Geometry_msgsMsgWrenchStamped = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Geometry_msgsMsgWrenchStamped
+typealias Ros2Flexiv_msgsMsgRobotStates = org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsMsgRobotStates
+typealias Ros2Flexiv_msgsSrvGetOperationalStatus_Request =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsSrvGetOperationalStatus_Request
+typealias Ros2Flexiv_msgsSrvGetOperationalStatus_Response =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsSrvGetOperationalStatus_Response
+typealias Ros2Flexiv_msgsSrvSetJointImpedance_Request =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsSrvSetJointImpedance_Request
+typealias Ros2Flexiv_msgsSrvSetJointImpedance_Response =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsSrvSetJointImpedance_Response
+typealias Ros2Flexiv_msgsSrvSetJointInertiaScale_Request =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsSrvSetJointInertiaScale_Request
+typealias Ros2Flexiv_msgsSrvSetJointInertiaScale_Response =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsSrvSetJointInertiaScale_Response
+typealias Ros2Flexiv_msgsSrvSetMaxContactTorque_Request =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsSrvSetMaxContactTorque_Request
+typealias Ros2Flexiv_msgsSrvSetMaxContactTorque_Response =
+        org.uwvm.flexiv.ros2jazzyv22.BoundedRecords.Ros2Flexiv_msgsSrvSetMaxContactTorque_Response

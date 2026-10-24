@@ -1,0 +1,31 @@
+backend ros1
+worker-uid @WORKER_UID@
+worker-pid @WORKER_PID@
+socket @SOCKET@
+timeout-ms 10000
+max-sessions 16
+audit-max-records-per-second 100
+audit-max-records 10000
+audit-max-bytes 1048576
+connection node-name uwvm_preload_gateway
+connection namespace /uwvm_native_sdk
+connection master-uri http://127.0.0.1:11397
+connection advertise-host 127.0.0.1
+connection transport tcpros
+grant sample topic.publish /uwvm_native_sdk/outgoing std_msgs/String 992ce8a1687cec8c8bd883ec73ca41d1
+set sample max-rate-hz 100
+set sample burst 8
+set sample max-bytes-per-second 1048576
+set sample validator none
+set sample audit allow-and-deny
+set sample audit-max-rate-hz 100
+set sample audit-burst 100
+set sample audit-max-records 10000
+set sample audit-max-bytes 1048576
+set sample max-message-bytes 256
+set sample max-queue-bytes 2048
+set sample overflow-policy drop-oldest
+set sample max-publishers 1
+set sample queue-depth 8
+set sample transport tcpros
+set sample latch false

@@ -1,0 +1,69 @@
+{
+  "format": "uwvm-genuine-library-example-identities-v1",
+  "language": "js",
+  "examples": [
+    {
+      "name": "static_same",
+      "measured_fixture": "js-js-32-static",
+      "sources": [
+        {
+          "path": "example/language/js/static_same/algorithm.mjs",
+          "sha256": "54f865c91d1f2b0837b469f3c924adbd3358e21de30fd87c919cbbd7e5db8193"
+        },
+        {
+          "path": "example/language/js/static_same/consumer.mjs",
+          "sha256": "e9bbd6285cd1f6e20c20f3c3435d9c9c5aaa7094f6caab32c26af19320f1d0bd"
+        },
+        {
+          "path": "example/language/js/static_same/xmake.lua",
+          "sha256": "f86ce2f620c6e8655fccf8c101eacf70eb855ee79fd573b060f6400753a283ea"
+        }
+      ],
+      "public_kind_vm_qualified_by_exact_source_identity": true,
+      "actual_packaged_directory_built": false
+    },
+    {
+      "name": "shared_same",
+      "measured_fixture": "js-js-32-shared",
+      "sources": [
+        {
+          "path": "example/language/js/shared_same/algorithm.mjs",
+          "sha256": "54f865c91d1f2b0837b469f3c924adbd3358e21de30fd87c919cbbd7e5db8193"
+        },
+        {
+          "path": "example/language/js/shared_same/consumer.mjs",
+          "sha256": "e9bbd6285cd1f6e20c20f3c3435d9c9c5aaa7094f6caab32c26af19320f1d0bd"
+        },
+        {
+          "path": "example/language/js/shared_same/xmake.lua",
+          "sha256": "efc432d5069140e8e86fb9206dffa85fecf555e843c5ea73c42cdf8d6e9425fc"
+        }
+      ],
+      "public_kind_vm_qualified_by_exact_source_identity": true,
+      "actual_packaged_directory_built": false
+    },
+    {
+      "name": "shared_python",
+      "measured_fixture": "py-js-32-shared",
+      "sources": [
+        {
+          "path": "example/language/js/shared_python/algorithm.py",
+          "sha256": "0ca5229306818a5ae83a4fab8a66a5c3eed0cb817b630baeef18b3cd514a2d96"
+        },
+        {
+          "path": "example/language/js/shared_python/consumer.mjs",
+          "sha256": "e9bbd6285cd1f6e20c20f3c3435d9c9c5aaa7094f6caab32c26af19320f1d0bd"
+        },
+        {
+          "path": "example/language/js/shared_python/xmake.lua",
+          "sha256": "3066fd23276d3d79193db2b03bd5dbcd1dcb53ca8de168cfa72773ec9898c1be"
+        }
+      ],
+      "public_kind_vm_qualified_by_exact_source_identity": true,
+      "actual_packaged_directory_built": false
+    }
+  ],
+  "wasm64_source_fixture_matrix_present": true,
+  "native_ros_qualified": false,
+  "aarch64_qualified": false
+}

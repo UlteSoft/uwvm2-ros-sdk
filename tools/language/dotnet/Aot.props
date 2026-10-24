@@ -1,0 +1,58 @@
+<Project>
+  <!-- @brief Select the actual fixed Mono P1 full-AOT pipeline.
+       @details This historical Preview 6 runtime is an explicit compatibility
+       route. Stable .NET 9/10 WASIp2 components are different products. -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
+    <RuntimeFrameworkVersion>9.0.0-preview.6.24327.7</RuntimeFrameworkVersion>
+    <OutputType>Exe</OutputType>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunAOTCompilation>true</RunAOTCompilation>
+    <AOTMode>LLVMOnly</AOTMode>
+    <WasmEnableExceptionHandling>true</WasmEnableExceptionHandling>
+    <WasmBuildNative>true</WasmBuildNative>
+    <WasmSingleFileBundle>true</WasmSingleFileBundle>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>full</TrimMode>
+    <WasmStripILAfterAOT>true</WasmStripILAfterAOT>
+    <WasmDedup>false</WasmDedup>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <InvariantTimezone>true</InvariantTimezone>
+    <WasmRunWasmOpt>false</WasmRunWasmOpt>
+    <WasmEnableThreads>false</WasmEnableThreads>
+    <WasmEnableSIMD>false</WasmEnableSIMD>
+    <WasmNativeStrip>false</WasmNativeStrip>
+    <DisableParallelAot>true</DisableParallelAot>
+    <DisableParallelEmccCompile>true</DisableParallelEmccCompile>
+    <BuildInParallel>false</BuildInParallel>
+    <UseSharedCompilation>false</UseSharedCompilation>
+    <NuGetAudit>false</NuGetAudit>
+    <WasiClangVerbose>false</WasiClangVerbose>
+    <ManagedLLVMResourceDir>$(WasiSdkRoot)/lib/clang/23</ManagedLLVMResourceDir>
+    <WasiClangFlags>
+      --target=wasm32-wasip1
+      -fexceptions -fwasm-exceptions -mllvm -wasm-use-legacy-eh=false
+      -resource-dir=&quot;$(ManagedLLVMResourceDir)&quot;
+      -isystem &quot;$(WasiSdkRoot)/share/wasi-sysroot/include/wasm32-wasip1&quot;
+    </WasiClangFlags>
+    <WasiClangExtraCFlags>
+      --target=wasm32-wasip1
+      -fexceptions -fwasm-exceptions -mllvm -wasm-use-legacy-eh=false
+      --sysroot=&quot;$(WasiSdkRoot)/share/wasi-sysroot&quot;
+      -resource-dir=&quot;$(ManagedLLVMResourceDir)&quot;
+      -isystem &quot;$(WasiSdkRoot)/share/wasi-sysroot/include/wasm32-wasip1&quot;
+    </WasiClangExtraCFlags>
+  </PropertyGroup>
+  <ItemGroup>
+    <NativeFileReference Include="$(ManagedRosObject)" />
+    <NativeFileReference Include="$(ManagedRawObject)" />
+    <NativeFileReference Include="$(ManagedBridgeObject)" />
+    <NativeFileReference Include="$(ManagedStackObject)" />
+    <_WasiClangXLinkerFlags Include="--wrap=get_wasm_data_end" />
+    <_WasiClangXLinkerFlags Include="--wrap=get_wasm_heap_base" />
+  </ItemGroup>
+</Project>

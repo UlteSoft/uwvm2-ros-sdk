@@ -1,0 +1,259 @@
+{
+  "branch": "beta",
+  "catalog_sha256": "2893e79ffa8440d23e11d8c607e66a9e2a883f526d9035f15caa4cefec6453e2",
+  "commit": "2634d9fa891bb9b4987cddc7977599922342a316",
+  "current_unregistered_ik_files": [
+    {
+      "git_blob": "963db3f2196d01dda9360b05a2af383aea495838",
+      "kind": "msg",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/msg/armHandPoseFree.msg",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/armHandPoseFree"
+    },
+    {
+      "git_blob": "77b647d942191a893cbc10ad9ebddeefde50e6eb",
+      "kind": "msg",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/msg/recordArmHandPoseFree.msg",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/recordArmHandPoseFree"
+    },
+    {
+      "git_blob": "01e00a4f1063611731a915d1c82acb82da8384e7",
+      "kind": "msg",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/msg/twoArmHandPoseCmdFree.msg",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/twoArmHandPoseCmdFree"
+    },
+    {
+      "git_blob": "39d553ba89c24992e8d8580436ef146b116ed9ea",
+      "kind": "msg",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/msg/twoArmHandPoseFree.msg",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/twoArmHandPoseFree"
+    },
+    {
+      "git_blob": "b5b5128a866ee20f65e297eb3d7957ef9bdd1b17",
+      "kind": "srv",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/srv/fkSrvFree.srv",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/fkSrvFree"
+    },
+    {
+      "git_blob": "b87da882b4cc0bc9da50adbf16fbdd77bada9aa4",
+      "kind": "srv",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/srv/twoArmHandPoseCmdFreeSrv.srv",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/twoArmHandPoseCmdFreeSrv"
+    }
+  ],
+  "default_authority": [],
+  "definitions": [
+    {
+      "generation_file": "motion_capture_ik/msg/armHandPose.msg",
+      "git_blob": "c64d8dd5a86efab0d9e58c3ed556643d1fedda32",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/armHandPose.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "d6f9d6b40f28612d5b0724cff4a95d8503a66f1aec809f38a7a41bdb3eed9d01",
+      "type": "motion_capture_ik/armHandPose"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/armHandPoseFree.msg",
+      "git_blob": "963db3f2196d01dda9360b05a2af383aea495838",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/armHandPoseFree.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "8b8da29a546f62ebd91d6d131d7342b5bb96d5b9d9db6e1ceef3c9f7a60be1b2",
+      "type": "motion_capture_ik/armHandPoseFree"
+    },
+    {
+      "generation_file": "motion_capture_ik/srv/changeArmCtrlMode.srv",
+      "git_blob": "549df17f1133021e6e91f9784431fba313569ba8",
+      "kind": "srv",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/srv/changeArmCtrlMode.srv",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "447fb5436f631ae482debfeb055ce750d31f8644bf30fa484de91837aa21401c",
+      "type": "motion_capture_ik/changeArmCtrlMode"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/handPose.msg",
+      "git_blob": "0c098226f1ad0c26d87ea7d407634bdd78844854",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/handPose.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "f4e2b72afb304878ebdecba932ea03dd8f91624f885364d697e397cb98d40dac",
+      "type": "motion_capture_ik/handPose"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/ikSolveError.msg",
+      "git_blob": "ac5236fa9aa8e9513281b14e8365a27daaa8b691",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/ikSolveError.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "e38398dda65dfa795a08e9bb8ccd9c5fac8be6a5b0ddf2173e28d7ae1bdd41ed",
+      "type": "motion_capture_ik/ikSolveError"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/ikSolveParam.msg",
+      "git_blob": "4ab98c9c5f45c86715edd9802d92de5cd27a4bf9",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/ikSolveParam.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "eb23f777d944eab3aea8d9ee5b50806ecf08bbb794974ab189d4ed9711f8bf0d",
+      "type": "motion_capture_ik/ikSolveParam"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/recordArmHandPose.msg",
+      "git_blob": "caf7cce56cee90ce21aabda7158642caec39df4c",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/recordArmHandPose.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "7ce54fc259b0d78077906594cd40cbe1c99b224a0e6cdcb4d154d0d0ad840820",
+      "type": "motion_capture_ik/recordArmHandPose"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/recordArmHandPoseFree.msg",
+      "git_blob": "77b647d942191a893cbc10ad9ebddeefde50e6eb",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/recordArmHandPoseFree.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "824e476345e3dfe8ed1d5113d4b9df07f8b20b3dc96302a66b5d79083f318f0a",
+      "type": "motion_capture_ik/recordArmHandPoseFree"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/robotArmQVVD.msg",
+      "git_blob": "c807191590e9434a6182270017ed75df4b42898b",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/robotArmQVVD.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "3aeb047c37e0456ebe7c50259cf198e814c5473f672052ba2abe9f52249cc9c6",
+      "type": "motion_capture_ik/robotArmQVVD"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/robotHandPosition.msg",
+      "git_blob": "d13ecc56ca86ef66ffb7f314eaf050fafae84cd2",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/robotHandPosition.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "13dd4fbb8516e11c104ef794ce0e3da3f36d3bda002660acda428e5d563d451d",
+      "type": "motion_capture_ik/robotHandPosition"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/twoArmHandPose.msg",
+      "git_blob": "2585a210e29101abaf522202b45fac0bb576d9a9",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/twoArmHandPose.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "61aaa41aa27327f473414e32b779462aeb7a91bfdf36980285d59b37c42aaf9f",
+      "type": "motion_capture_ik/twoArmHandPose"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/twoArmHandPoseCmd.msg",
+      "git_blob": "b4494896c65cd5cd07f294c83fbac0f702b5f997",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/twoArmHandPoseCmd.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "6a6b7a545c81f71f4ea45d2b03a2c69bcbb7d2113993036ce567a69d9fe0f7bc",
+      "type": "motion_capture_ik/twoArmHandPoseCmd"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/twoArmHandPoseCmdFree.msg",
+      "git_blob": "01e00a4f1063611731a915d1c82acb82da8384e7",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/twoArmHandPoseCmdFree.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "056d68e2769cd3044861e834951d6e97245ffd8a71d62d52f36bfd28f2bf4d72",
+      "type": "motion_capture_ik/twoArmHandPoseCmdFree"
+    },
+    {
+      "generation_file": "motion_capture_ik/msg/twoArmHandPoseFree.msg",
+      "git_blob": "39d553ba89c24992e8d8580436ef146b116ed9ea",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/humanoid-control/humanoid_arm_control/scripts/motion_capture_ik_packaged/msg/twoArmHandPoseFree.msg",
+      "provenance_file": "upstream/beta/source-lock.json",
+      "sha256": "ded2de440718e322f39a6e93fb503659832093b202fc0a6a5c2fa48e9635c50f",
+      "type": "motion_capture_ik/twoArmHandPoseFree"
+    },
+    {
+      "generation_file": "std_msgs/msg/Header.msg",
+      "git_blob": null,
+      "kind": "msg",
+      "origin": "actual_installed_noetic",
+      "original_path": "std_msgs/msg/Header.msg",
+      "provenance_file": "upstream/core/installed/capture.json",
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693",
+      "type": "std_msgs/Header"
+    }
+  ],
+  "kind": "leju-explicit-complete-selected-source-lock-v1",
+  "native_driver_qualified": false,
+  "original_custom_roots": [
+    "motion_capture_ik/armHandPose",
+    "motion_capture_ik/armHandPoseFree",
+    "motion_capture_ik/changeArmCtrlMode",
+    "motion_capture_ik/handPose",
+    "motion_capture_ik/ikSolveError",
+    "motion_capture_ik/ikSolveParam",
+    "motion_capture_ik/recordArmHandPose",
+    "motion_capture_ik/recordArmHandPoseFree",
+    "motion_capture_ik/robotArmQVVD",
+    "motion_capture_ik/robotHandPosition",
+    "motion_capture_ik/twoArmHandPose",
+    "motion_capture_ik/twoArmHandPoseCmd",
+    "motion_capture_ik/twoArmHandPoseCmdFree",
+    "motion_capture_ik/twoArmHandPoseFree"
+  ],
+  "profile": "ros1_beta_packaged_ik",
+  "ros_version": 1,
+  "scope": "packaged_ik",
+  "source_only_empty_topics": [],
+  "source_only_profile": true,
+  "tree": "310d55ad29e1c014e26e2c30b1a99b7802ccf5c0",
+  "unresolved_old_kuavo_sdk_declarations": [
+    {
+      "git_blob": "77b647d942191a893cbc10ad9ebddeefde50e6eb",
+      "kind": "msg",
+      "original_path": "src/kuavo_sdk/msg/recordArmHandPoseFree.msg",
+      "package": "kuavo_sdk",
+      "package_root": "src/kuavo_sdk",
+      "type": "kuavo_sdk/recordArmHandPoseFree"
+    },
+    {
+      "git_blob": "b5b5128a866ee20f65e297eb3d7957ef9bdd1b17",
+      "kind": "srv",
+      "original_path": "src/kuavo_sdk/srv/fkSrvFree.srv",
+      "package": "kuavo_sdk",
+      "package_root": "src/kuavo_sdk",
+      "type": "kuavo_sdk/fkSrvFree"
+    },
+    {
+      "git_blob": "b87da882b4cc0bc9da50adbf16fbdd77bada9aa4",
+      "kind": "srv",
+      "original_path": "src/kuavo_sdk/srv/twoArmHandPoseCmdFreeSrv.srv",
+      "package": "kuavo_sdk",
+      "package_root": "src/kuavo_sdk",
+      "type": "kuavo_sdk/twoArmHandPoseCmdFreeSrv"
+    }
+  ],
+  "unsupported_not_renamed": true
+}

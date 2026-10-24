@@ -1,0 +1,156 @@
+{
+  "kind": "kinova-selected-original-source-lock-v1",
+  "vendor": "kinova",
+  "variant": "ros2_humble",
+  "ros_version": 2,
+  "default_authority": [],
+  "repositories": [
+    {
+      "id": "control_humble",
+      "repository": "ros-controls/control_msgs",
+      "url": "https://github.com/ros-controls/control_msgs",
+      "branch": "humble",
+      "commit": "4418bbf3efda12828795e4bb011742133c67a6e2",
+      "tree_git_sha1": "9e655261e019801059195e6edff98e933f276cf2"
+    },
+    {
+      "id": "common_humble",
+      "repository": "ros2/common_interfaces",
+      "url": "https://github.com/ros2/common_interfaces",
+      "branch": "humble",
+      "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+      "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46"
+    },
+    {
+      "id": "rcl_humble",
+      "repository": "ros2/rcl_interfaces",
+      "url": "https://github.com/ros2/rcl_interfaces",
+      "branch": "humble",
+      "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+      "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e"
+    }
+  ],
+  "definitions": [
+    {
+      "type": "builtin_interfaces/msg/Duration",
+      "repository": "rcl_humble",
+      "original_file": "builtin_interfaces/msg/Duration.msg",
+      "generation_file": "builtin_interfaces/msg/Duration.msg",
+      "sha256": "a8f4349a6332f8576f9dfe24cf77a751abb115cfd1310dab9b774e3602516f39",
+      "git_blob_sha1": "d604335d61634728fdf7984ac9ed4baa8ba65b17"
+    },
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "repository": "rcl_humble",
+      "original_file": "builtin_interfaces/msg/Time.msg",
+      "generation_file": "builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae",
+      "git_blob_sha1": "c61b0b5d40502bb17fce99e2736897bcbb94bee1"
+    },
+    {
+      "type": "control_msgs/action/FollowJointTrajectory",
+      "repository": "control_humble",
+      "original_file": "control_msgs/action/FollowJointTrajectory.action",
+      "generation_file": "control_msgs/action/FollowJointTrajectory.action",
+      "sha256": "31a124428ee490da22c15cc70a9ac2c89d07bbbba7d3bf370ca7596b229cb9f0",
+      "git_blob_sha1": "dd0f809f6d9cf6d35fda4250787ef8f059f831c6"
+    },
+    {
+      "type": "control_msgs/msg/JointComponentTolerance",
+      "repository": "control_humble",
+      "original_file": "control_msgs/msg/JointComponentTolerance.msg",
+      "generation_file": "control_msgs/msg/JointComponentTolerance.msg",
+      "sha256": "6b09271d0f74e0a3a701f3ddb997b0ad4a588bdd9ab7d7899ddc70063ba924dd",
+      "git_blob_sha1": "9c4541ab51f8589cd3808a0cc5a392eb0db1f5e0"
+    },
+    {
+      "type": "control_msgs/msg/JointTolerance",
+      "repository": "control_humble",
+      "original_file": "control_msgs/msg/JointTolerance.msg",
+      "generation_file": "control_msgs/msg/JointTolerance.msg",
+      "sha256": "8208718f17c1b1feb9418c3ed7ca73d029566cbf298ecda819c9e0b78cb379d3",
+      "git_blob_sha1": "43767db5478710016304148f50e27f54be965cba"
+    },
+    {
+      "type": "geometry_msgs/msg/Quaternion",
+      "repository": "common_humble",
+      "original_file": "geometry_msgs/msg/Quaternion.msg",
+      "generation_file": "geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed",
+      "git_blob_sha1": "96d392779a286cc3f4c83d80962236f5ea42c884"
+    },
+    {
+      "type": "geometry_msgs/msg/Transform",
+      "repository": "common_humble",
+      "original_file": "geometry_msgs/msg/Transform.msg",
+      "generation_file": "geometry_msgs/msg/Transform.msg",
+      "sha256": "c8916279f0a429dd9561158bd2133bc4e2d780277c3c594116b240a27e7a2993",
+      "git_blob_sha1": "f605c85ea8ec4c4871bdb7d77db6e7011c63e86d"
+    },
+    {
+      "type": "geometry_msgs/msg/Twist",
+      "repository": "common_humble",
+      "original_file": "geometry_msgs/msg/Twist.msg",
+      "generation_file": "geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0",
+      "git_blob_sha1": "ede73597b9025238af28f55c275ddb02a8ed2f94"
+    },
+    {
+      "type": "geometry_msgs/msg/Vector3",
+      "repository": "common_humble",
+      "original_file": "geometry_msgs/msg/Vector3.msg",
+      "generation_file": "geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d",
+      "git_blob_sha1": "b54588e117c4632f551c221fbc33df8f958804bf"
+    },
+    {
+      "type": "sensor_msgs/msg/JointState",
+      "repository": "common_humble",
+      "original_file": "sensor_msgs/msg/JointState.msg",
+      "generation_file": "sensor_msgs/msg/JointState.msg",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d",
+      "git_blob_sha1": "ffaa9bfb0059383a6282abee168c72fdc92793ce"
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "repository": "common_humble",
+      "original_file": "std_msgs/msg/Header.msg",
+      "generation_file": "std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+      "git_blob_sha1": "6966bb98863c237131a2bd2822298df9511ce948"
+    },
+    {
+      "type": "trajectory_msgs/msg/JointTrajectory",
+      "repository": "common_humble",
+      "original_file": "trajectory_msgs/msg/JointTrajectory.msg",
+      "generation_file": "trajectory_msgs/msg/JointTrajectory.msg",
+      "sha256": "d63cda4a5ec81824ed4acd737e6b5903449fb1a7e2f5cdcdcc4c49285f01117c",
+      "git_blob_sha1": "a5d219880f72f5f219fbd0d44b64ba7922a4b2e6"
+    },
+    {
+      "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+      "repository": "common_humble",
+      "original_file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "generation_file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "sha256": "2358055d26d27c0c302e921f90d5aa59cb5feb3e22937f8ac98314b0c52ba8f4",
+      "git_blob_sha1": "01e38a4562e00a236a6bfcf5f7c347157ff6f848"
+    },
+    {
+      "type": "trajectory_msgs/msg/MultiDOFJointTrajectory",
+      "repository": "common_humble",
+      "original_file": "trajectory_msgs/msg/MultiDOFJointTrajectory.msg",
+      "generation_file": "trajectory_msgs/msg/MultiDOFJointTrajectory.msg",
+      "sha256": "070af6b4c9f4238d9de36621105d78c999dbad2045d0cb2a633f86a17f73f6b7",
+      "git_blob_sha1": "155fdddf0b8db160c34ee85fd2f5916298b5e256"
+    },
+    {
+      "type": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint",
+      "repository": "common_humble",
+      "original_file": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg",
+      "generation_file": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg",
+      "sha256": "7e3a4b150ff7ce8d7d897a480d8d324a244a0afb4a07fdf6241074071170ac7a",
+      "git_blob_sha1": "b5f6457f182055098c3b5cf56ec216e5d7d88a8e"
+    }
+  ],
+  "scope": "Complete original Humble FJT, JointState and reached dependencies. Official immutable GitHub trees independently match all 15 source blobs. No controller firmware or Wasm/native runtime qualification is implied."
+}

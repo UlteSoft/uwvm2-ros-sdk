@@ -1,0 +1,65 @@
+{
+  "abi": {
+    "ros1": "uwvm_ros1_v1",
+    "ros2": "uwvm_ros2_v1"
+  },
+  "backend_roots": {
+    "ros1": "include/platform/ros1/fsharp",
+    "ros2": "include/platform/ros2/fsharp"
+  },
+  "extensions": [
+    ".fs"
+  ],
+  "format": "uwvm-ros-binding-v1",
+  "language": "fsharp",
+  "library_sources": {
+    "Uwvm.RosWasm": [
+      "include/platform/ros/csharp/RosWasm/*.cs",
+      "include/platform/ros/dotnet/NativeCommand.cs"
+    ]
+  },
+  "module_roots": [
+    "include/platform",
+    "include/platform/ros/fsharp"
+  ],
+  "native_definitions": {
+    "ros1": [
+      "UWVM_ROS1=1"
+    ],
+    "ros2": [
+      "UWVM_ROS2=1"
+    ]
+  },
+  "native_sources": {
+    "ros1": [
+      "src/platform/ros/csharp/roswasm_bridge.c"
+    ],
+    "ros2": [
+      "src/platform/ros/csharp/roswasm_bridge.c"
+    ]
+  },
+  "operations": {
+    "call_trigger": {
+      "operation": "service.call",
+      "types": {
+        "ros1": "std_srvs/Trigger",
+        "ros2": "std_srvs/srv/Trigger"
+      }
+    },
+    "publish_string": {
+      "operation": "topic.publish",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    },
+    "subscribe_string": {
+      "operation": "topic.subscribe",
+      "types": {
+        "ros1": "std_msgs/String",
+        "ros2": "std_msgs/msg/String"
+      }
+    }
+  },
+  "request_contract": "share/platform/ros/adapter-contract.json"
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "uwvm-fourier-python-entry-review-v1",
+  "repository": "FFTAI/fourier_aurora_sdk",
+  "commit": "b434869719ae256d02d8285e88ea2b22c1515602",
+  "scope": "The eleven captured python/example scripts without a main guard, at this exact revision",
+  "review_kind": "Static original-source entry and operational-requirement review; no script execution",
+  "all_repository_official_program_total": null,
+  "complete_Wasm_ports": 0,
+  "native_provider": "The exact AuroraClient and MoveCommandManager implementation/runtime remains a required external dependency. The authored ROS bridge is a distinct adapter, not the original native SDK.",
+  "variant_policy": "Keep exact model/path identities and group related stems; do not add model variants to a separate unique-algorithm count.",
+  "roles": {
+    "demo_joint_command": {
+      "purpose": "Interactive complete grouped-joint PD configuration and two interpolated position moves",
+      "entry_evidence": "Module-level AuroraClient.get_instance followed by input gates, state/configuration calls, interpolation loops and client.close",
+      "preservation_requirements": [
+        "The selected robot_name, domain_id123, FSM10 and original interactive ordering",
+        "Every model-specific kp/kd vector, its group keys and complete gain readback",
+        "All current/target/zero joint arrays and their exact model-specific lengths",
+        "Both inclusive0..200 interpolation loops with0.01-second explicit native cadence",
+        "Final complete group reads and software close; no generic scalar message substitution",
+        "An explicit bounded scheduling/timeout adaptation with unknown delivery retained and no automatic replay"
+      ],
+      "original_cleanup": "client.close on normal completion; no general exception-finally cleanup in this source",
+      "required_client_methods": ["set_fsm_state", "set_motor_cfg_pd", "get_group_motor_cfg", "get_group_state", "set_group_cmd", "close"]
+    },
+    "demo_motion_command": {
+      "purpose": "Interactive FSM, stand-pose, velocity-source and timed multi-segment locomotion commands",
+      "entry_evidence": "Module-level client construction and directly invoked native commands, sleeps and input gates",
+      "preservation_requirements": [
+        "FSM2, stand-pose adjustment/readback/reset, then FSM3 and velocity source2 in original order",
+        "Complete three-component stand-pose and velocity values, each explicit duration and all input gates",
+        "Forward and lateral0.2m/s segments and0.4rad/s yaw segment for5 seconds each, followed by the explicit zero-velocity1-second segment",
+        "The original native call/result model and timing; preparing a request or publishing one record is not this whole program",
+        "Explicit software cleanup and bounded cancellation/timeout behavior without claiming a physical stop"
+      ],
+      "original_cleanup": "client.close on normal completion; no general exception-finally cleanup in this source",
+      "required_client_methods": ["set_fsm_state", "set_stand_pose", "get_stand_pose", "set_velocity_source", "set_velocity", "close"]
+    },
+    "demo_robot_status": {
+      "purpose": "Repeated complete base/contact/joint/cartesian observations with formatted status output",
+      "entry_evidence": "Module-level client construction and a try/while loop; KeyboardInterrupt handler closes the client",
+      "preservation_requirements": [
+        "Both rpy and world-velocity reads, the complete contact-probability vector and the strict probability>0.5 display rule",
+        "The complete left-manipulator joint vector and cartesian pose; preserve source joint count and first-three-position display",
+        "Original timestamp/status presentation and0.5-second polling cadence as explicit scheduler inputs",
+        "KeyboardInterrupt-equivalent local termination and checked software cleanup; a bounded port must expose its termination condition",
+        "No observation-only program gains command authority or fabricates native values"
+      ],
+      "original_cleanup": "client.close only in the KeyboardInterrupt handler; other exceptions have no cleanup guarantee in this source",
+      "required_client_methods": ["get_base_data", "get_contact_data", "get_group_state", "get_cartesian_state", "close"]
+    },
+    "demo_move_command": {
+      "purpose": "Cooperating AuroraClient and MoveCommandManager for joint, cartesian-joint and cartesian-line moves with completion waits",
+      "entry_evidence": "Both native owners are constructed at module level; three command batches and completion waits are directly invoked",
+      "preservation_requirements": [
+        "Both selected model owners, FSM3 then upper FSM4, original input gates and occupied group set",
+        "Every complete model-specific left/right arm target and all seven cartesian pose components",
+        "Move type0 joint, type1 cartesian-joint and type2 cartesian-line batches with original expect_vel300 native units",
+        "Manager get_move_command, client set_move_command and wait_groups_motion_complete cooperation for each batch",
+        "Original readbacks,0.3-second wait print interval and complete status/error behavior",
+        "A separately bounded completion-wait adaptation must preserve unknown outcomes; no timeout-triggered replay or fabricated completion"
+      ],
+      "original_cleanup": "client.close on normal completion; the manager has no explicit close call here and exceptions have no finally cleanup",
+      "required_client_methods": ["set_fsm_state", "set_upper_fsm_state", "set_move_command", "wait_groups_motion_complete", "get_group_state", "get_cartesian_state", "close"],
+      "required_manager_methods": ["joint_move_command", "cartesian_move_command", "get_move_command"]
+    }
+  },
+  "entries": [
+    {"path": "python/example/fouriern1/demo_joint_command.py", "model": "fouriern1", "role": "demo_joint_command", "sha256": "23016c4a9b02df683a0db28436abdc1a34b2894da927819f71942434007197d1"},
+    {"path": "python/example/fouriern1/demo_motion_command.py", "model": "fouriern1", "role": "demo_motion_command", "sha256": "ed826a78b3c499e96a81b181f4881e789b7841f2c07fd9963caeaf70b319e41d"},
+    {"path": "python/example/fouriern1/demo_robot_status.py", "model": "fouriern1", "role": "demo_robot_status", "sha256": "64822063aca0e170cfcd4e01273fa2508d3179715d3386d1f3ec28ebf873bcb9"},
+    {"path": "python/example/gr2/demo_joint_command.py", "model": "gr2", "role": "demo_joint_command", "sha256": "1f9cf1fa002955111b0fc02b8d39174141d6a41e1569651b35bfe404d31d3294"},
+    {"path": "python/example/gr2/demo_motion_command.py", "model": "gr2", "role": "demo_motion_command", "sha256": "d310b449a588d8b57579e4739f6904962de79a966ec0c23b04250e027311edc9"},
+    {"path": "python/example/gr2/demo_move_command.py", "model": "gr2", "role": "demo_move_command", "sha256": "98482bec0b52a5009622883ddf3b465213a3763d9f60aa22188e07abe124570c"},
+    {"path": "python/example/gr2/demo_robot_status.py", "model": "gr2", "role": "demo_robot_status", "sha256": "b5c45912bf60c84ecd5a12192190950d29e08356db6a8120e33dcd0eccdfebb8"},
+    {"path": "python/example/gr3/demo_joint_command.py", "model": "gr3", "role": "demo_joint_command", "sha256": "ec451b5b87980e77f8c7fba2f719fa5dfb1fd3d9f53a0f25bc04b87b87fed233"},
+    {"path": "python/example/gr3/demo_motion_command.py", "model": "gr3", "role": "demo_motion_command", "sha256": "007522982c716bba831a32d9413dff560adc234c33568b0d1ad58022122134aa"},
+    {"path": "python/example/gr3/demo_move_command.py", "model": "gr3", "role": "demo_move_command", "sha256": "ad5fd9fad14233f3d636be0f1b08b4c3683aeb6373c17c58fddf962129eae359"},
+    {"path": "python/example/gr3/demo_robot_status.py", "model": "gr3", "role": "demo_robot_status", "sha256": "cb75992daac471c73bb2bc0b9b9ab7fb18e12f439de90fa453ec2b8bf83790ea"}
+  ]
+}

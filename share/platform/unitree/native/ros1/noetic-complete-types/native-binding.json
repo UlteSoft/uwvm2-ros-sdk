@@ -1,0 +1,73 @@
+{
+  "profile": "uwvm-ros-vendor-complete-bounded-v1",
+  "status": "SOURCE_BOUND_NOT_NATIVE_OR_HARDWARE_QUALIFIED",
+  "default_authority": [],
+  "source_inputs": {
+    "catalog": {
+      "bytes": 2051,
+      "sha256": "9a68ac2323f6262e401c5ef407194cef9b6ec361a001788cb78d8d2c585e6676"
+    },
+    "definitions": [
+      {
+        "file": "unitree_legged_msgs/msg/BmsCmd.msg",
+        "bytes": 48,
+        "sha256": "27fb6f7506dea1bdb64f67428ac1b10471fe7b874066a6d0e6a45a272399ecd2"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/BmsState.msg",
+        "bytes": 280,
+        "sha256": "983f9f6b89aaa22f2bd276b0a47c4aae444efb59d645664c4b6673c805845bb2"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/Cartesian.msg",
+        "bytes": 29,
+        "sha256": "655ba746820eb8d51108feba96950738cfa9146b014344b2ca4b106f057779f6"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/HighCmd.msg",
+        "bytes": 366,
+        "sha256": "25c94f0f6e6d6c21eb7363c7fdc107f447633be8b4a613fee83f30f866cddee9"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/HighState.msg",
+        "bytes": 490,
+        "sha256": "65d43eafa99cffb22481dd78236309d8bbb55db090f61a96af8a20ec63a00d62"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/IMU.msg",
+        "bytes": 99,
+        "sha256": "8592dac6be50ed4dc06a1a601bb139e0d17e641b62c912c23fe0c7dc1193dd64"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/LED.msg",
+        "bytes": 23,
+        "sha256": "0123ebbfa35f57cba882f49119571774a51a838ba11dacef05f6e949835a3429"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/LowCmd.msg",
+        "bytes": 183,
+        "sha256": "d8cae6ff55e5f7f6f9915499f5fcf5ba6e4acdcc7d320e285c15b6570217652d"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/LowState.msg",
+        "bytes": 560,
+        "sha256": "a5fc3a6a7f54d05439f352b3dfc9e5078d25d04691abd1dd5264a51ee20c89e3"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/MotorCmd.msg",
+        "bytes": 322,
+        "sha256": "9a675cdb66ea59ff255bc3b59ccef4f953b6dc0148661e53829434cda5fc9fb4"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/MotorState.msg",
+        "bytes": 540,
+        "sha256": "0d94cb503bdfa1ee7fe38527fc8efa0aa7e2fc4c3361279615585caf9ec92f8e"
+      }
+    ]
+  },
+  "native_metadata": {
+    "bytes": 10556,
+    "sha256": "228fc79f89169fd5471c5adb97ac7a899f440b17edeeb48b9f80db619c6e46c2"
+  },
+  "constant_schema_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+}

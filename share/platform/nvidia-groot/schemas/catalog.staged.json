@@ -1,0 +1,12 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {"ros_version": 2, "type": "uwvm_groot_bridge/msg/RGBDescriptor", "file": "uwvm_groot_bridge/msg/RGBDescriptor.msg", "bounds": {"key": {"string": 64}}, "registered": true},
+    {"ros_version": 2, "type": "uwvm_groot_bridge/msg/FloatTensor", "file": "uwvm_groot_bridge/msg/FloatTensor.msg", "bounds": {"key": {"string": 64}, "values": {"sequence": 320}}, "registered": true},
+    {"ros_version": 2, "type": "uwvm_groot_bridge/msg/TextSequence", "file": "uwvm_groot_bridge/msg/TextSequence.msg", "bounds": {"key": {"string": 64}, "texts": {"sequence": 4, "string": 256}}, "registered": true},
+    {"ros_version": 2, "type": "uwvm_groot_bridge/srv/BeginObservation", "file": "uwvm_groot_bridge/srv/BeginObservation.srv", "bounds": {"request.video": {"sequence": 3}}, "registered": true},
+    {"ros_version": 2, "type": "uwvm_groot_bridge/srv/WriteRGBChunk", "file": "uwvm_groot_bridge/srv/WriteRGBChunk.srv", "bounds": {"request.key": {"string": 64}, "request.pixels": {"sequence": 768}}, "registered": true},
+    {"ros_version": 2, "type": "uwvm_groot_bridge/srv/ReleaseObservation", "file": "uwvm_groot_bridge/srv/ReleaseObservation.srv", "bounds": {}, "registered": true},
+    {"ros_version": 2, "type": "uwvm_groot_bridge/srv/InferUploadedAction", "file": "uwvm_groot_bridge/srv/InferUploadedAction.srv", "bounds": {"request.state": {"sequence": 4}, "request.language": {"sequence": 2}, "response.action": {"sequence": 8}}, "registered": true}
+  ]
+}

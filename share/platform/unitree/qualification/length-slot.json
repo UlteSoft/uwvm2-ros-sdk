@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "bare_xmake_cold_builds": 12,
+  "real_native_runs": 24,
+  "genuine_wasm_slot_boundary_cases": 48,
+  "artifact_identities": 12,
+  "runtime_engine_rebuild": "NOT_RUN; existing qualified Lua VM retained",
+  "native_ros_domain": 218,
+  "native_ros1_master_port": 12415,
+  "native_create_close_each": 1,
+  "consecutive_runs_without_rebuild": 2,
+  "artifact_archive": {
+    "bytes": 159404,
+    "sha256": "7048a11b4754bcee4cdd7018c6e12b0b0b2f001c8d2a78520d250a69b3c65b25"
+  },
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "c37f5b0da6f7efd25f70eee5b1a43a5d3f33d4fea772f0e5677a669c9a95307d"
+}

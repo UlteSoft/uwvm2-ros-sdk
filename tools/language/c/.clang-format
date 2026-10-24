@@ -1,0 +1,25 @@
+# @file .clang-format
+# @brief Keep maintained SDK C-family and managed sources readable.
+# @details Four-space indentation and Allman braces follow the Uwvm2 source
+# layout. Short functions and control-flow bodies remain on separate lines so
+# ownership, validation and cleanup can be reviewed without packed statements.
+BasedOnStyle: LLVM
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 120
+BreakBeforeBraces: Allman
+NamespaceIndentation: All
+IndentCaseLabels: true
+PointerAlignment: Left
+SortIncludes: Never
+SortUsingDeclarations: Never
+AllowShortFunctionsOnASingleLine: None
+AllowShortBlocksOnASingleLine: Never
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortLambdasOnASingleLine: None
+BinPackArguments: false
+BinPackParameters: false
+SeparateDefinitionBlocks: Always
+BreakStringLiterals: false
+InsertBraces: false

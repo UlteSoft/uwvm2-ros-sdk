@@ -1,0 +1,12 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "interbotix_uxarm_joy/ArmJoy.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "interbotix_uxarm_joy/ArmJoy"
+    }
+  ]
+}

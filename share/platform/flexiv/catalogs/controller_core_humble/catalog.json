@@ -1,0 +1,119 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time",
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Duration",
+      "file": "builtin_interfaces/msg/Duration.msg",
+      "registered": false,
+      "bounds": {}
+    },
+    {
+      "ros_version": 2,
+      "type": "std_msgs/msg/Header",
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "bounds": {
+        "frame_id": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "sensor_msgs/msg/JointState",
+      "file": "sensor_msgs/msg/JointState.msg",
+      "registered": true,
+      "bounds": {
+        "name": {
+          "sequence": 32,
+          "string": 256
+        },
+        "position": {
+          "sequence": 32
+        },
+        "velocity": {
+          "sequence": 32
+        },
+        "effort": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+      "file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "registered": false,
+      "bounds": {
+        "positions": {
+          "sequence": 32
+        },
+        "velocities": {
+          "sequence": 32
+        },
+        "accelerations": {
+          "sequence": 32
+        },
+        "effort": {
+          "sequence": 32
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "trajectory_msgs/msg/JointTrajectory",
+      "file": "trajectory_msgs/msg/JointTrajectory.msg",
+      "registered": true,
+      "bounds": {
+        "joint_names": {
+          "sequence": 32,
+          "string": 256
+        },
+        "points": {
+          "sequence": 8
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "std_msgs/msg/MultiArrayDimension",
+      "file": "std_msgs/msg/MultiArrayDimension.msg",
+      "registered": false,
+      "bounds": {
+        "label": {
+          "string": 256
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "std_msgs/msg/MultiArrayLayout",
+      "file": "std_msgs/msg/MultiArrayLayout.msg",
+      "registered": false,
+      "bounds": {
+        "dim": {
+          "sequence": 8
+        }
+      }
+    },
+    {
+      "ros_version": 2,
+      "type": "std_msgs/msg/Float64MultiArray",
+      "file": "std_msgs/msg/Float64MultiArray.msg",
+      "registered": true,
+      "bounds": {
+        "data": {
+          "sequence": 32
+        }
+      }
+    }
+  ]
+}

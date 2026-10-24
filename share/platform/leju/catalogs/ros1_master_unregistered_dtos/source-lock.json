@@ -1,0 +1,117 @@
+{
+  "branch": "master",
+  "catalog_sha256": "046d680c5c0242f2905e05e49342645a34120af46c6e237453df04e13b80c311",
+  "commit": "757cac6a12f67f2925c7afb05f1c0513677f209c",
+  "current_unregistered_ik_files": [
+    {
+      "git_blob": "963db3f2196d01dda9360b05a2af383aea495838",
+      "kind": "msg",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/msg/armHandPoseFree.msg",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/armHandPoseFree"
+    },
+    {
+      "git_blob": "77b647d942191a893cbc10ad9ebddeefde50e6eb",
+      "kind": "msg",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/msg/recordArmHandPoseFree.msg",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/recordArmHandPoseFree"
+    },
+    {
+      "git_blob": "01e00a4f1063611731a915d1c82acb82da8384e7",
+      "kind": "msg",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/msg/twoArmHandPoseCmdFree.msg",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/twoArmHandPoseCmdFree"
+    },
+    {
+      "git_blob": "39d553ba89c24992e8d8580436ef146b116ed9ea",
+      "kind": "msg",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/msg/twoArmHandPoseFree.msg",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/twoArmHandPoseFree"
+    },
+    {
+      "git_blob": "b5b5128a866ee20f65e297eb3d7957ef9bdd1b17",
+      "kind": "srv",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/srv/fkSrvFree.srv",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/fkSrvFree"
+    },
+    {
+      "git_blob": "b87da882b4cc0bc9da50adbf16fbdd77bada9aa4",
+      "kind": "srv",
+      "original_path": "src/manipulation_nodes/motion_capture_ik/srv/twoArmHandPoseCmdFreeSrv.srv",
+      "package": "motion_capture_ik",
+      "package_root": "src/manipulation_nodes/motion_capture_ik",
+      "type": "motion_capture_ik/twoArmHandPoseCmdFreeSrv"
+    }
+  ],
+  "default_authority": [],
+  "definitions": [
+    {
+      "generation_file": "kuavo_sdk/msg/fullBodyTargetTrajectories.msg",
+      "git_blob": "8222efda1a84f89d941a994f09463d15e9d42c1d",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/kuavo_sdk/msg/fullBodyTargetTrajectories.msg",
+      "provenance_file": "upstream/master/source-lock.json",
+      "sha256": "d03bf48a73fb61f48c571bb848a43abb8a62ac76b1cd882ffc5ab93efd96b3a8",
+      "type": "kuavo_sdk/fullBodyTargetTrajectories"
+    },
+    {
+      "generation_file": "kuavo_sdk/msg/qv.msg",
+      "git_blob": "8e7ff2ae14af32c9bca321b11deff29b6b2f807a",
+      "kind": "msg",
+      "origin": "exact_leju_original",
+      "original_path": "src/kuavo_sdk/msg/qv.msg",
+      "provenance_file": "upstream/master/source-lock.json",
+      "sha256": "54e423b76253cb56295697b7d926e83c232dc793768eaec8085c828e99247f53",
+      "type": "kuavo_sdk/qv"
+    }
+  ],
+  "kind": "leju-explicit-complete-selected-source-lock-v1",
+  "native_driver_qualified": false,
+  "original_custom_roots": [
+    "kuavo_sdk/fullBodyTargetTrajectories",
+    "kuavo_sdk/qv"
+  ],
+  "profile": "ros1_master_unregistered_dtos",
+  "ros_version": 1,
+  "scope": "unregistered_dtos",
+  "source_only_empty_topics": [],
+  "source_only_profile": true,
+  "tree": "1ea857c4313143b38153f6f9aee06277068213f6",
+  "unresolved_old_kuavo_sdk_declarations": [
+    {
+      "git_blob": "77b647d942191a893cbc10ad9ebddeefde50e6eb",
+      "kind": "msg",
+      "original_path": "src/kuavo_sdk/msg/recordArmHandPoseFree.msg",
+      "package": "kuavo_sdk",
+      "package_root": "src/kuavo_sdk",
+      "type": "kuavo_sdk/recordArmHandPoseFree"
+    },
+    {
+      "git_blob": "b5b5128a866ee20f65e297eb3d7957ef9bdd1b17",
+      "kind": "srv",
+      "original_path": "src/kuavo_sdk/srv/fkSrvFree.srv",
+      "package": "kuavo_sdk",
+      "package_root": "src/kuavo_sdk",
+      "type": "kuavo_sdk/fkSrvFree"
+    },
+    {
+      "git_blob": "b87da882b4cc0bc9da50adbf16fbdd77bada9aa4",
+      "kind": "srv",
+      "original_path": "src/kuavo_sdk/srv/twoArmHandPoseCmdFreeSrv.srv",
+      "package": "kuavo_sdk",
+      "package_root": "src/kuavo_sdk",
+      "type": "kuavo_sdk/twoArmHandPoseCmdFreeSrv"
+    }
+  ],
+  "unsupported_not_renamed": true
+}

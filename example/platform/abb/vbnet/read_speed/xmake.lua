@@ -1,0 +1,62 @@
+-- @file xmake.lua
+-- @brief Build the actual source-language command as one deployable Wasm.
+-- @details SDK discovery and public imports are independent of directory depth.
+-- @brief Locate the installed SDK without parent-depth imports.
+-- @details UWVM_ROS_SDK_ROOT selects the installed SDK. An explicit invalid
+-- path is diagnosed rather than replaced by another installation.
+local root = os.getenv("UWVM_ROS_SDK_ROOT")
+local installation_error
+if root then
+    if not os.isfile(path.join(root, "tools/xmake/ros.lua")) then
+        installation_error = "The configured SDK root does not contain tools/xmake/ros.lua"
+    end
+else
+    local current = path.absolute(os.scriptdir())
+    local visited = {}
+    while current and not visited[current] do
+        visited[current] = true
+        if os.isfile(path.join(current, "tools/xmake/ros.lua")) then
+            root = current
+            break
+        end
+        local parent = path.directory(current)
+        if parent == current or parent == "." or parent == "" then
+            break
+        end
+        current = path.absolute(parent)
+    end
+    if not root then
+        installation_error = "Set UWVM_ROS_SDK_ROOT to the installed SDK"
+    end
+end
+if installation_error then
+    -- Diagnostics run in Xmake's script domain, where raise is available.
+    -- Returning here prevents declarations from using an unavailable SDK API.
+    target("sdk-installation-required")
+        set_kind("phony")
+        on_load(function()
+            raise(installation_error)
+        end)
+    target_end()
+    return
+end
+includes(path.join(root, "tools/xmake/ros.lua"))
+
+local sdk = root
+set_policy("run.autobuild", false)
+
+target("abb-vbnet-read_speed")
+    set_language("vbnet")
+    -- @brief Select the managed engine's explicit native-EH ABI without host grants.
+    set_wasm_exceptions("eh")
+    set_wasm_features({"exceptions"})
+    set_ros_platform("abb")
+    set_ros2_version("jazzy")
+    set_plat("wasm-wasip1")
+    -- Preserve an explicit xmake f -a selection; wasm32 is the default.
+    set_arch(get_config("arch") or "wasm32")
+    set_ros_scenario("read_speed")
+    -- @brief Select the immutable complete interface catalog, not robot firmware.
+    set_abb_version("complete")
+    add_files("Main.vb")
+target_end()

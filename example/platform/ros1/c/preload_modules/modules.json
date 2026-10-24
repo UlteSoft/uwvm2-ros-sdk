@@ -1,0 +1,28 @@
+{
+  "format": "uwvm-core-preload-example-v1",
+  "backend": "ros1",
+  "distribution": "noetic",
+  "address_bits": 32,
+  "consumer_language": "c",
+  "producer_language": "cpp",
+  "modules": {
+    "io": "build/io/io.wasm",
+    "algorithm": "build/algorithm/algorithm.wasm",
+    "ros_comm": "build/ros_comm/ros_comm.wasm",
+    "main": "build/main/main.wasm"
+  },
+  "permissions": {
+    "io": [
+      "WASI monotonic-clock (manual)"
+    ],
+    "algorithm": [
+      "default WASI; no extra grants"
+    ],
+    "ros_comm": [
+      "ROS1 Single sample topic.publish (manual)"
+    ]
+  },
+  "shared_memory": false,
+  "pointers_cross_module_abi": false,
+  "acceptance": "fresh native x86 and QEMU execution pending"
+}

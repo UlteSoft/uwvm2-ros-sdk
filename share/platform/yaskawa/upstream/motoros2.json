@@ -1,0 +1,100 @@
+{
+  "platform": "yaskawa",
+  "repository": "Yaskawa-Global/motoros2",
+  "commit": "41ac074a879bb9f75fd1f96618ce54b4899cfd1a",
+  "tree": "ab94edb4c3e413507947636034e506775e14e09b",
+  "archive_url": "https://codeload.github.com/Yaskawa-Global/motoros2/tar.gz/41ac074a879bb9f75fd1f96618ce54b4899cfd1a",
+  "archive_sha256": "536e9cb662b297de3c8eef07d82a0bf259b8c6144962d19bd03fded62647e93a",
+  "archive_bytes": 677411,
+  "source_candidates": [
+    {
+      "path": "robot_jobs/README.md",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/README.md",
+      "sha256": "7155143dddb117a869d0d293929900858ca67efaa7de06d5d7d518b7ec7a5430",
+      "git_blob_sha1": "78501a913a033218042ad8012ed67371e58ac8eb",
+      "bytes": 394,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "robot_jobs/sda_dual_arm/INIT_ROS.JBI",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/sda_dual_arm/INIT_ROS.JBI",
+      "sha256": "4248060b19831a4006b23d6d1f9502e103fbf0af0de876bf284c5ac60e795fc0",
+      "git_blob_sha1": "c81f0a58814153a92976fb60df30783dc94f17b7",
+      "bytes": 256,
+      "role": "controller_inform_job"
+    },
+    {
+      "path": "robot_jobs/sda_dual_arm/IONAME.DAT",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/sda_dual_arm/IONAME.DAT",
+      "sha256": "b8b422afd7f2bed766aa59108e6f499ad8db37245086c37cb90a8d1cc2b1f012",
+      "git_blob_sha1": "469984c32aabc627e033ceecf1668a21ab35b3d1",
+      "bytes": 2283,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "robot_jobs/single_arm/INIT_ROS.JBI",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/single_arm/INIT_ROS.JBI",
+      "sha256": "755feed5f3d8bba31f67357eda68eeefd8d09240e828f84329d068e66c9185a0",
+      "git_blob_sha1": "cdb81be71dd7a63c4263131a8130ca0b56940624",
+      "bytes": 234,
+      "role": "controller_inform_job"
+    },
+    {
+      "path": "robot_jobs/single_arm/IONAME.DAT",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/single_arm/IONAME.DAT",
+      "sha256": "b8b422afd7f2bed766aa59108e6f499ad8db37245086c37cb90a8d1cc2b1f012",
+      "git_blob_sha1": "469984c32aabc627e033ceecf1668a21ab35b3d1",
+      "bytes": 2283,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "robot_jobs/single_arm_with_base_axis/INIT_ROS.JBI",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/single_arm_with_base_axis/INIT_ROS.JBI",
+      "sha256": "1cab681c45a63a8ceea46d2bb15b4692f0509f1e4ca94df385b44093f8d99c2a",
+      "git_blob_sha1": "1b7fe77ed9b1896ff2c859c9c4658372dcef26a1",
+      "bytes": 238,
+      "role": "controller_inform_job"
+    },
+    {
+      "path": "robot_jobs/single_arm_with_base_axis/IONAME.DAT",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/single_arm_with_base_axis/IONAME.DAT",
+      "sha256": "b8b422afd7f2bed766aa59108e6f499ad8db37245086c37cb90a8d1cc2b1f012",
+      "git_blob_sha1": "469984c32aabc627e033ceecf1668a21ab35b3d1",
+      "bytes": 2283,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "robot_jobs/single_arm_with_ext_axis/INIT_ROS.JBI",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/single_arm_with_ext_axis/INIT_ROS.JBI",
+      "sha256": "5f55370f58efd08582a404887ef04d9cafd52d82f2de1eeaeb9e36c3926f5585",
+      "git_blob_sha1": "20283bf2407decea6a0a5a079493c08c5436beb8",
+      "bytes": 248,
+      "role": "controller_inform_job"
+    },
+    {
+      "path": "robot_jobs/single_arm_with_ext_axis/IONAME.DAT",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/single_arm_with_ext_axis/IONAME.DAT",
+      "sha256": "b8b422afd7f2bed766aa59108e6f499ad8db37245086c37cb90a8d1cc2b1f012",
+      "git_blob_sha1": "469984c32aabc627e033ceecf1668a21ab35b3d1",
+      "bytes": 2283,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "robot_jobs/two_arms/INIT_ROS.JBI",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/two_arms/INIT_ROS.JBI",
+      "sha256": "f8264c177394f1376340913b49d3d0531f8556fffa5d432246e85685c3a31f72",
+      "git_blob_sha1": "bbd67429ceb0e12a8950099e75a810027ad2f671",
+      "bytes": 248,
+      "role": "controller_inform_job"
+    },
+    {
+      "path": "robot_jobs/two_arms/IONAME.DAT",
+      "url": "https://github.com/Yaskawa-Global/motoros2/blob/41ac074a879bb9f75fd1f96618ce54b4899cfd1a/robot_jobs/two_arms/IONAME.DAT",
+      "sha256": "b8b422afd7f2bed766aa59108e6f499ad8db37245086c37cb90a8d1cc2b1f012",
+      "git_blob_sha1": "469984c32aabc627e033ceecf1668a21ab35b3d1",
+      "bytes": 2283,
+      "role": "helper_or_configuration_candidate"
+    }
+  ],
+  "review_status": "source inventory preserved; see controller audit and this delivery's independent evidence"
+}

@@ -1,0 +1,21 @@
+{
+  "format": "vendor-language-source-inputs-v1",
+  "platform": "kuka",
+  "language": "odin",
+  "domain": "kuka-ros2-complete",
+  "backend": "ros2",
+  "include_root": "include/platform",
+  "source_root": "include/platform/kuka/odin/ros2/kuka-ros2-complete",
+  "model_module": "kuka",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "record_catalog": "share/platform/kuka/domains/kuka-ros2-complete.ir.json",
+  "target_widths_requested": [
+    32,
+    64
+  ],
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "support_source_roots": [
+    "src/platform"
+  ],
+  "retained_native_operation_flows": "src/platform/kuka/flows"
+}

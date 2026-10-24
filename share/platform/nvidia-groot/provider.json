@@ -1,0 +1,82 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "platform": "nvidia-groot",
+  "source_revisions": {
+    "nvidia-groot": "dac54b313160c201c450f97df0fd74ebd379c892"
+  },
+  "ros": {
+    "backend": "ros2",
+    "distribution": "jazzy",
+    "transport": [
+      "dds",
+      "cpu-value"
+    ]
+  },
+  "configuration": {
+    "ros.vendor.component": {
+      "required": false,
+      "enum": [
+        "nvidia-groot",
+        "nvidia-isaac-ros",
+        "nvidia-isaac-sim"
+      ]
+    },
+    "ros.vendor.version": {
+      "meaning": "Exact immutable upstream source commit; does not select firmware"
+    },
+    "ros.vendor.transport": {
+      "default": "dds",
+      "enum": [
+        "dds",
+        "cpu-value"
+      ]
+    },
+    "ros.sdk.run_argv": {
+      "type": "explicit-string-array",
+      "default": [],
+      "meaning": "Operator-supplied runtime flags; no capability is added"
+    }
+  },
+  "gpu_scope": {
+    "groot": "Separate pinned native GR00T, model, PyTorch/CUDA and device owner",
+    "isaac_ros": "Separate actual AprilTag detector and CPU-visible result profile",
+    "isaac_sim": "Separate Kit/USD/physics renderer process; ROS fixture does not qualify simulation"
+  },
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  },
+  "catalog_format": "uwvm-platform-provider-schema-v1",
+  "api_version": 1,
+  "id": "nvidia-groot",
+  "module": "tools/platform/nvidia-groot/provider.lua",
+  "backends": {
+    "ros2": {
+      "distributions": [
+        "jazzy"
+      ]
+    }
+  },
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "go",
+    "js",
+    "rs",
+    "tinygo"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {}
+}

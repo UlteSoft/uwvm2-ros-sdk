@@ -1,0 +1,6 @@
+version = "0.1.0"
+author = "uwvm2 ROS SDK contributors"
+description = "Bounded wasm32 ROS Guest source SDK; no implicit capabilities"
+license = "Apache-2.0"
+srcDir = "src"
+requires "nim >= 2.2.0 & < 2.3.0"

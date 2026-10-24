@@ -1,0 +1,10 @@
+// @file moon.pkg
+// @brief Declare complete ROS 2 observation and command-helper dependencies.
+// @details Package aliases match the explicit Xmake compiler interface map.
+import {
+  "uwvm/abb/ros2" @abb_ros2,
+  "uwvm/ros/ros2" @ros,
+  "uwvm/ros/linear",
+  "uwvm/ros/wire",
+  "moonbitlang/core/encoding/utf8",
+}

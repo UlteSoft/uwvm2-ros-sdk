@@ -1,0 +1,88 @@
+{
+  "format": "industrial-full-original-program-profile-v1",
+  "points": 1001,
+  "source_limits": {
+    "wire_bytes": 1048576,
+    "nodes_per_record": 1048576,
+    "total_nodes": 1048576
+  },
+  "catalog_sha256": "b456d1a8652222e485bea0f7e4b496a3ee4efff5a48f7932e123da4020d91ae0",
+  "source_inputs": {
+    "catalog": {
+      "bytes": 1211,
+      "sha256": "b456d1a8652222e485bea0f7e4b496a3ee4efff5a48f7932e123da4020d91ae0"
+    },
+    "definitions": [
+      {
+        "file": "builtin_interfaces/msg/Duration.msg",
+        "bytes": 498,
+        "sha256": "57da13a4201e7d258a2931323145b953e47e46967494e62ba66c2faca4fbade2"
+      },
+      {
+        "file": "builtin_interfaces/msg/Time.msg",
+        "bytes": 421,
+        "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+      },
+      {
+        "file": "std_msgs/msg/Header.msg",
+        "bytes": 322,
+        "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+      },
+      {
+        "file": "sensor_msgs/msg/JointState.msg",
+        "bytes": 999,
+        "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+      },
+      {
+        "file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+        "bytes": 1176,
+        "sha256": "2358055d26d27c0c302e921f90d5aa59cb5feb3e22937f8ac98314b0c52ba8f4"
+      },
+      {
+        "file": "trajectory_msgs/msg/JointTrajectory.msg",
+        "bytes": 465,
+        "sha256": "d63cda4a5ec81824ed4acd737e6b5903449fb1a7e2f5cdcdcc4c49285f01117c"
+      }
+    ]
+  },
+  "records": [
+    {
+      "type": "builtin_interfaces/msg/Duration",
+      "symbol": "Ros2Builtin_interfacesMsgDuration",
+      "minimum": 8,
+      "maximum": 8
+    },
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "symbol": "Ros2Builtin_interfacesMsgTime",
+      "minimum": 8,
+      "maximum": 8
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "symbol": "Ros2Std_msgsMsgHeader",
+      "minimum": 12,
+      "maximum": 76
+    },
+    {
+      "type": "sensor_msgs/msg/JointState",
+      "symbol": "Ros2Sensor_msgsMsgJointState",
+      "minimum": 28,
+      "maximum": 1196
+    },
+    {
+      "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+      "symbol": "Ros2Trajectory_msgsMsgJointTrajectoryPoint",
+      "minimum": 24,
+      "maximum": 408
+    },
+    {
+      "type": "trajectory_msgs/msg/JointTrajectory",
+      "symbol": "Ros2Trajectory_msgsMsgJointTrajectory",
+      "minimum": 20,
+      "maximum": 409308
+    }
+  ],
+  "physical_controller_admitted": false,
+  "native_ros_executed": false
+}

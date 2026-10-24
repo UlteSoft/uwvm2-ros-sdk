@@ -1,0 +1,332 @@
+{
+  "format": "vendor-language-source-inputs-v1",
+  "platform": "kuka",
+  "language": "c_ffi_bridge",
+  "domain": "kuka-ros2-complete",
+  "backend": "ros2",
+  "include_root": "include/platform",
+  "source_root": "include/platform/kuka/c_ffi_bridge/ros2/kuka-ros2-complete",
+  "model_module": "kuka",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "record_catalog": "share/platform/kuka/domains/kuka-ros2-complete.ir.json",
+  "target_widths_requested": [
+    32,
+    64
+  ],
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "typed_interface_delegations": [
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_send",
+      "export": "kuka_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_send",
+      "arguments": "roswasmc_action_bundle* bundle, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal const* goal, uint64_t* id",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal const*",
+          "goal"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_feedback",
+      "export": "kuka_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_feedback",
+      "arguments": "roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback* feedback",
+      "parameters": [
+        [
+          "roswasmc_action_bundle const*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback*",
+          "feedback"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_result",
+      "export": "kuka_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_result",
+      "arguments": "roswasmc_action_bundle* bundle, uint64_t id, uint8_t* kind, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result* result",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t*",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result*",
+          "result"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_poll",
+      "export": "kuka_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal* goal",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal*",
+          "goal"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_respond_feedback",
+      "export": "kuka_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_respond_feedback",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_respond_result",
+      "export": "kuka_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_respond_result",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, uint8_t kind, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_call",
+      "export": "kuka_roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_Request const* request, roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_poll",
+      "export": "kuka_roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_respond",
+      "export": "kuka_roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_lifecycle_msgs_srv_ChangeState_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_lifecycle_msgs_srv_GetState_call",
+      "export": "kuka_roswasmc_bounded_2_lifecycle_msgs_srv_GetState_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_lifecycle_msgs_srv_GetState_Request const* request, roswasmc_bounded_2_lifecycle_msgs_srv_GetState_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_lifecycle_msgs_srv_GetState_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_lifecycle_msgs_srv_GetState_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_lifecycle_msgs_srv_GetState_poll",
+      "export": "kuka_roswasmc_bounded_2_lifecycle_msgs_srv_GetState_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_lifecycle_msgs_srv_GetState_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_lifecycle_msgs_srv_GetState_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_lifecycle_msgs_srv_GetState_respond",
+      "export": "kuka_roswasmc_bounded_2_lifecycle_msgs_srv_GetState_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_lifecycle_msgs_srv_GetState_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_lifecycle_msgs_srv_GetState_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_std_srvs_srv_Trigger_call",
+      "export": "kuka_roswasmc_bounded_2_std_srvs_srv_Trigger_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_std_srvs_srv_Trigger_Request const* request, roswasmc_bounded_2_std_srvs_srv_Trigger_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_std_srvs_srv_Trigger_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_std_srvs_srv_Trigger_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_std_srvs_srv_Trigger_poll",
+      "export": "kuka_roswasmc_bounded_2_std_srvs_srv_Trigger_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_std_srvs_srv_Trigger_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_std_srvs_srv_Trigger_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_std_srvs_srv_Trigger_respond",
+      "export": "kuka_roswasmc_bounded_2_std_srvs_srv_Trigger_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_std_srvs_srv_Trigger_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_std_srvs_srv_Trigger_Response const*",
+          "response"
+        ]
+      ]
+    }
+  ],
+  "semantics": "Exact existing C owner/service/action operations; no private transport or permission implementation.",
+  "support_source_roots": [
+    "src/platform"
+  ],
+  "retained_native_operation_flows": "src/platform/kuka/flows"
+}

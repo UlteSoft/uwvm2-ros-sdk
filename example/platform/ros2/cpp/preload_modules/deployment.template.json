@@ -1,0 +1,97 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "connection": {
+    "node-name": "uwvm_preload_gateway",
+    "namespace": "/uwvm_native_sdk",
+    "domain-id": "197",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "preload_modules": {
+      "arguments": [],
+      "main_module": "main",
+      "preloads": [
+        {
+          "module": "io",
+          "path": "build/io/io.wasm",
+          "attribute": "none"
+        },
+        {
+          "module": "algorithm",
+          "path": "build/algorithm/algorithm.wasm",
+          "attribute": "none"
+        },
+        {
+          "module": "ros_comm",
+          "path": "build/ros_comm/ros_comm.wasm",
+          "attribute": "none"
+        }
+      ],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        },
+        "io": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [
+            "monotonic-clock"
+          ]
+        },
+        "algorithm": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        },
+        "ros_comm": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "sample",
+              "operation": "topic.publish",
+              "resource": "/uwvm_native_sdk/outgoing",
+              "type": "std_msgs/msg/String",
+              "identity": "RIHS01_df668c740482bbd48fb39d76a70dfd4bd59db1288021743503259e948f6b1a18",
+              "limits": {
+                "max-rate-hz": "100",
+                "burst": "8",
+                "max-bytes-per-second": "1048576",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "max-message-bytes": "256",
+                "max-queue-bytes": "2048",
+                "overflow-policy": "drop-oldest",
+                "max-publishers": "1",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "8",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite",
+                "max-inflight": "1"
+              }
+            }
+          ],
+          "wasi_grants": [],
+          "call_boundary": "module-exports"
+        }
+      }
+    }
+  }
+}

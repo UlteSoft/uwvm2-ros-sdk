@@ -1,0 +1,2644 @@
+{
+  "format": "vendor-language-source-inputs-v1",
+  "platform": "universal_robots",
+  "language": "objectc",
+  "domain": "universal-robots-ros2-trajectory-complete",
+  "backend": "ros2",
+  "include_root": "include/platform",
+  "source_root": "include/platform/universal_robots/objectc/ros2/universal-robots-ros2-trajectory-complete",
+  "model_module": "universal_robots",
+  "dependency_policy": "Only shared pinned compiler/engine versions; no vendor runtime copy.",
+  "record_catalog": "share/platform/universal_robots/domains/universal-robots-ros2-trajectory-complete.ir.json",
+  "target_widths_requested": [
+    32,
+    64
+  ],
+  "acceptance": "requires-real-compiler-and-runtime-receipts",
+  "typed_interface_delegations": [
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_send",
+      "export": "universal_robots_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_send",
+      "arguments": "roswasmc_action_bundle* bundle, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal const* goal, uint64_t* id",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal const*",
+          "goal"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_feedback",
+      "arguments": "roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback* feedback",
+      "parameters": [
+        [
+          "roswasmc_action_bundle const*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback*",
+          "feedback"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_result",
+      "export": "universal_robots_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_result",
+      "arguments": "roswasmc_action_bundle* bundle, uint64_t id, uint8_t* kind, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result* result",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t*",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result*",
+          "result"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_poll",
+      "export": "universal_robots_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal* goal",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal*",
+          "goal"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_respond_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_respond_feedback",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_respond_result",
+      "export": "universal_robots_roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_respond_result",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, uint8_t kind, roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_send",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_send",
+      "arguments": "roswasmc_action_bundle* bundle, roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Goal const* goal, uint64_t* id",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Goal const*",
+          "goal"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_feedback",
+      "arguments": "roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Feedback* feedback",
+      "parameters": [
+        [
+          "roswasmc_action_bundle const*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Feedback*",
+          "feedback"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_result",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_result",
+      "arguments": "roswasmc_action_bundle* bundle, uint64_t id, uint8_t* kind, roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Result* result",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t*",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Result*",
+          "result"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Goal* goal",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Goal*",
+          "goal"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_respond_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_respond_feedback",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Feedback const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Feedback const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_respond_result",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_respond_result",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, uint8_t kind, roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Result const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_action_SetMode_Result const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_AddToLog_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadProgram_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_DownloadSupportFile_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateFlightReport_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GenerateSupportFile_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetLoadedProgram_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetOperationalMode_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPolyScopeVersion_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetProgramState_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetPrograms_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotMode_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetRobotModel_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyMode_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSafetyStatus_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetSerialNumber_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_GetUserRole_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsInRemoteControl_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramRunning_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_IsProgramSaved_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_Load_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_Popup_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_RawRequest_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetOperationalMode_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_SetUserRole_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_Request const* request, roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_dashboard_msgs_srv_UploadProgram_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_send",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_send",
+      "arguments": "roswasmc_action_bundle* bundle, roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Goal const* goal, uint64_t* id",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Goal const*",
+          "goal"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_feedback",
+      "arguments": "roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Feedback* feedback",
+      "parameters": [
+        [
+          "roswasmc_action_bundle const*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Feedback*",
+          "feedback"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_result",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_result",
+      "arguments": "roswasmc_action_bundle* bundle, uint64_t id, uint8_t* kind, roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Result* result",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t*",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Result*",
+          "result"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Goal* goal",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Goal*",
+          "goal"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_respond_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_respond_feedback",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Feedback const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Feedback const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_respond_result",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_respond_result",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, uint8_t kind, roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Result const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_FollowJointTrajectoryUntil_Result const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_SendScript_send",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_SendScript_send",
+      "arguments": "roswasmc_action_bundle* bundle, roswasmc_bounded_2_ur_msgs_action_SendScript_Goal const* goal, uint64_t* id",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_SendScript_Goal const*",
+          "goal"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_SendScript_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_SendScript_feedback",
+      "arguments": "roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_2_ur_msgs_action_SendScript_Feedback* feedback",
+      "parameters": [
+        [
+          "roswasmc_action_bundle const*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_SendScript_Feedback*",
+          "feedback"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_SendScript_result",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_SendScript_result",
+      "arguments": "roswasmc_action_bundle* bundle, uint64_t id, uint8_t* kind, roswasmc_bounded_2_ur_msgs_action_SendScript_Result* result",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t*",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_SendScript_Result*",
+          "result"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_SendScript_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_SendScript_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_ur_msgs_action_SendScript_Goal* goal",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_SendScript_Goal*",
+          "goal"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_SendScript_respond_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_SendScript_respond_feedback",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, roswasmc_bounded_2_ur_msgs_action_SendScript_Feedback const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_SendScript_Feedback const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_SendScript_respond_result",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_SendScript_respond_result",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, uint8_t kind, roswasmc_bounded_2_ur_msgs_action_SendScript_Result const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_SendScript_Result const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_ToolContact_send",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_ToolContact_send",
+      "arguments": "roswasmc_action_bundle* bundle, roswasmc_bounded_2_ur_msgs_action_ToolContact_Goal const* goal, uint64_t* id",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_ToolContact_Goal const*",
+          "goal"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_ToolContact_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_ToolContact_feedback",
+      "arguments": "roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_2_ur_msgs_action_ToolContact_Feedback* feedback",
+      "parameters": [
+        [
+          "roswasmc_action_bundle const*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_ToolContact_Feedback*",
+          "feedback"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_ToolContact_result",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_ToolContact_result",
+      "arguments": "roswasmc_action_bundle* bundle, uint64_t id, uint8_t* kind, roswasmc_bounded_2_ur_msgs_action_ToolContact_Result* result",
+      "parameters": [
+        [
+          "roswasmc_action_bundle*",
+          "bundle"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t*",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_ToolContact_Result*",
+          "result"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_ToolContact_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_ToolContact_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_ur_msgs_action_ToolContact_Goal* goal",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_ToolContact_Goal*",
+          "goal"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_ToolContact_respond_feedback",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_ToolContact_respond_feedback",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, roswasmc_bounded_2_ur_msgs_action_ToolContact_Feedback const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_ToolContact_Feedback const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_action_ToolContact_respond_result",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_action_ToolContact_respond_result",
+      "arguments": "roswasmc_capability const* cap, uint64_t id, uint8_t kind, roswasmc_bounded_2_ur_msgs_action_ToolContact_Result const* value",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "id"
+        ],
+        [
+          "uint8_t",
+          "kind"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_action_ToolContact_Result const*",
+          "value"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_Request const* request, roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_GetRobotSoftwareVersion_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_Request const* request, roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetAnalogOutput_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetForceMode_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetForceMode_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_msgs_srv_SetForceMode_Request const* request, roswasmc_bounded_2_ur_msgs_srv_SetForceMode_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetForceMode_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetForceMode_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetForceMode_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetForceMode_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_msgs_srv_SetForceMode_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetForceMode_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetForceMode_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetForceMode_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_msgs_srv_SetForceMode_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetForceMode_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_Request const* request, roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetFrictionModelParameters_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetGravity_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetGravity_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_msgs_srv_SetGravity_Request const* request, roswasmc_bounded_2_ur_msgs_srv_SetGravity_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetGravity_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetGravity_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetGravity_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetGravity_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_msgs_srv_SetGravity_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetGravity_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetGravity_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetGravity_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_msgs_srv_SetGravity_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetGravity_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetIO_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetIO_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_msgs_srv_SetIO_Request const* request, roswasmc_bounded_2_ur_msgs_srv_SetIO_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetIO_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetIO_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetIO_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetIO_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_msgs_srv_SetIO_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetIO_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetIO_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetIO_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_msgs_srv_SetIO_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetIO_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetPayload_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetPayload_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_msgs_srv_SetPayload_Request const* request, roswasmc_bounded_2_ur_msgs_srv_SetPayload_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetPayload_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetPayload_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetPayload_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetPayload_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_msgs_srv_SetPayload_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetPayload_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetPayload_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetPayload_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_msgs_srv_SetPayload_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetPayload_Response const*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_call",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_call",
+      "arguments": "roswasmc_capability const* cap, roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Request const* request, roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Response* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Request const*",
+          "request"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Response*",
+          "response"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_poll",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_poll",
+      "arguments": "roswasmc_capability const* cap, uint64_t* ticket, roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Request* request",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t*",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Request*",
+          "request"
+        ]
+      ]
+    },
+    {
+      "return": "roswasmc_result",
+      "native_function": "roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_respond",
+      "export": "universal_robots_roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_respond",
+      "arguments": "roswasmc_capability const* cap, uint64_t ticket, roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Response const* response",
+      "parameters": [
+        [
+          "roswasmc_capability const*",
+          "cap"
+        ],
+        [
+          "uint64_t",
+          "ticket"
+        ],
+        [
+          "roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Response const*",
+          "response"
+        ]
+      ]
+    }
+  ],
+  "semantics": "Exact existing C owner/service/action operations; no private transport or permission implementation.",
+  "support_source_roots": [
+    "src/platform"
+  ],
+  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+}

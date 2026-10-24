@@ -1,0 +1,17 @@
+{
+  "format": "uwvm-ros-command-run-v1",
+  "target": "wasm32-wasip1",
+  "backend": "wasi",
+  "runtime": "uwvm2-ros",
+  "runtime_arguments": [
+    "--wasip1-single-create",
+    "algorithm",
+    "--wasip1-single-noinherit-system-environment",
+    "algorithm",
+    "--wasm-preload-library",
+    "build/targets/616c676f726974686d/algorithm.wasm",
+    "algorithm",
+    "--wasip1-global-noinherit-system-environment"
+  ],
+  "application_arguments": []
+}

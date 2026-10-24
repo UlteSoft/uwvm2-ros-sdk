@@ -1,0 +1,94 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "runtime": "/absolute/native/uwvm2-ros-original-array",
+  "gateway": "/absolute/native/uwvm-ros2-gateway-original-array",
+  "connection": {
+    "node-name": "nvidia_array_gateway",
+    "namespace": "/sdk_fixture",
+    "domain-id": "137",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "original_array_cpp_static": {
+      "arguments": [
+        "sample",
+        "0"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "sample",
+              "operation": "topic.subscribe",
+              "resource": "/sdk_fixture/nvidia/AprilTagDetectionArray",
+              "type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray",
+              "identity": "RIHS01_45595f343aa66856ae56aee87f959a0b0ceed2132b038a7f6c6d24be707bcbff",
+              "limits": {
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "max-rate-hz": "20",
+                "burst": "10",
+                "max-bytes-per-second": "262144",
+                "validator": "none",
+                "adapter-codec-identity": "UWVMROS1_60359e405aedd2a627e60bc35e849989fe5ed1d426afb2a884036aef93bfe0a5",
+                "max-message-bytes": "9872",
+                "max-subscribers": "1",
+                "max-inflight": "1",
+                "max-queue-bytes": "98720",
+                "overflow-policy": "drop-oldest"
+              }
+            }
+          ],
+          "wasi_grants": [
+            "monotonic-clock"
+          ],
+          "connection": {
+            "node-name": "nvidia_array_gateway",
+            "namespace": "/sdk_fixture",
+            "domain-id": "137",
+            "rmw-implementation": "rmw_fastrtps_cpp",
+            "security-mode": "disabled-test",
+            "keystore": "not-applicable",
+            "enclave": "not-applicable"
+          },
+          "worker_limits": {
+            "connect-timeout-ms": "5000",
+            "audit-deny-max-rate-hz": "100",
+            "audit-deny-burst": "100",
+            "audit-deny-max-records": "10000",
+            "audit-deny-max-bytes": "1048576"
+          },
+          "gateway_limits": {
+            "timeout-ms": "10000",
+            "max-sessions": "16",
+            "audit-max-records-per-second": "100",
+            "audit-max-records": "10000",
+            "audit-max-bytes": "1048576"
+          },
+          "call_boundary": "same-module"
+        }
+      }
+    }
+  }
+}

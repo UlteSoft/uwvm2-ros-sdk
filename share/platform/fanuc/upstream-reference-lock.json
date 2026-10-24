@@ -1,0 +1,33 @@
+{
+  "cache_is_optional_explicit_maintainer_input": true,
+  "canonical_schemas": "sdk/share/platform/fanuc/catalogs/",
+  "normal_SDK_depends_on_origin": false,
+  "platform": "fanuc",
+  "repositories": [
+    {
+      "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+      "id": "rcl_interfaces_ros2",
+      "repository": "ros2/rcl_interfaces",
+      "tree": "4515d6d00cf6209db404352534818e4199fe33c9"
+    },
+    {
+      "commit": "2eaaa5440d6dc2291601ea445b83015a663f5f88",
+      "id": "control_ros2",
+      "repository": "ros-controls/control_msgs",
+      "tree": "857d95399e05a5da7b5fd28d94690e5fed4f3f3e"
+    },
+    {
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "id": "fanuc",
+      "repository": "FANUC-CORPORATION/fanuc_driver",
+      "tree": "76d62ffaf43a782bb4e3f54a91661e066785b8de"
+    },
+    {
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "id": "common_ros2",
+      "repository": "ros2/common_interfaces",
+      "tree": "bbd609d90753abf6e10bdc94f594f36b75921677"
+    }
+  ],
+  "schema": "uwvm-upstream-reference-lock-v1"
+}

@@ -1,0 +1,19 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "uwvm_isaac_sim_bridge/msg/ClockEvent.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "uwvm_isaac_sim_bridge/msg/ClockEvent"
+    },
+    {
+      "bounds": {},
+      "file": "uwvm_isaac_sim_bridge/srv/ClockControl.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "uwvm_isaac_sim_bridge/srv/ClockControl"
+    }
+  ]
+}

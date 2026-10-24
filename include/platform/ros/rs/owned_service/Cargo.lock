@@ -1,0 +1,13 @@
+# Source lock for the local roswasm dependency. Validate with frozen offline Cargo.
+version = 3
+
+[[package]]
+name = "roswasm"
+version = "0.1.0"
+
+[[package]]
+name = "roswasm-owned-service"
+version = "0.1.0"
+dependencies = [
+ "roswasm",
+]

@@ -1,0 +1,161 @@
+{
+  "format": "uwvm-unitree-jvm-final12-native-x86-execution-qualification-v1",
+  "status": "PASS",
+  "new_actual_x86_64_xmake_run_successes": 24,
+  "new_actual_x86_64_wasm_failed_attempts_retained": 1,
+  "final_modules": 12,
+  "runs_per_module": 2,
+  "execution_order": "Two consecutive six-module rounds per backend, with no intervening builds.",
+  "earlier_aarch64_qemu_successes_bridged_by_exact_new_sha": 24,
+  "new_builds": 0,
+  "new_boundary_guest_runs": 0,
+  "new_arm_guest_runs": 0,
+  "cgroup": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "ros2_domain": 224,
+  "ros1_master_port": 12421,
+  "native_ros_distributions": {
+    "ros1": "noetic",
+    "ros2": "jazzy"
+  },
+  "x86_native_elf_machine": 62,
+  "arm_native_elf_machine": 183,
+  "qemu_used_for_new_x86_runs": false,
+  "hardware_robot_qualified": false,
+  "physical_arm_hardware_qualified": false,
+  "arm_compiler_host_qualified": false,
+  "memory64_qualified": false,
+  "runtime_host_jvm_or_clr_required": false,
+  "source_changes_to_frozen_r2": [],
+  "frozen_r2_files_read_back_unchanged": 670,
+  "frozen_r2_audit_sha256": "1bdd3a90b984ca0a629e9b5e5a5962d107f4c3dbf06c57c71a3d328050627338",
+  "frozen_r2_inventory_sha256": "3163444d4d96b0687d21cfe0e8057bbf9677cc059595d0fa8a1b6b55c46b1f67",
+  "frozen_r2_cold_build_sha256": "5950783a7e7f2ba75707d213c4ad541d4d32eb526ed699ca9dfb47251180b286",
+  "frozen_r2_arm_execution_sha256": "647359e9bcc8269e115c1cb33fa6df037c7446f2ae842b011d1c6975f503d46b",
+  "source_input_manifest_sha256": "c3ddc72399e4ce0d5a30e3f91c1ac100032bae21270b1f6bbb66d2f431c550ee",
+  "additional_ros2_oracle_manifest_sha256": "4a5640503832e90395645649d8395f47ea4996bf673dc751982a2a7c4dfe8123",
+  "readback_input_manifest_sha256": "6c408ae82cc6f35f0ad6c505fa520d9523b4f0670409be9019f838afb907bd35",
+  "backend_readbacks": [
+    {
+      "path": "results/ros1-review.json",
+      "bytes": 28065,
+      "sha256": "765b868b6079a8f604f06438f0837940377b669dea089b265567e68d88da86cb"
+    },
+    {
+      "path": "results/ros2-review.json",
+      "bytes": 43781,
+      "sha256": "e1319ef64953973ec105ac98f95d073e8c79c5612d14cc82d4147ab0190a4636"
+    }
+  ],
+  "cross_architecture_manifest": {
+    "path": "cross-architecture.json",
+    "bytes": 40798,
+    "sha256": "12a348b924c8548725ae71efedb92108a14d1407b3a88d657b1220f2b27d3a8b"
+  },
+  "retained_failed_attempts": [
+    {
+      "backend": "ros2",
+      "counted_successes": 0,
+      "failed_wasm_attempts": 1,
+      "receipt": {
+        "path": "results/ros2/acceptance.json",
+        "bytes": 31728,
+        "sha256": "80b96db76e13cc7abb0be670d6c1bcc4d0f4d1942381b885c625218e9ace7086"
+      },
+      "execution": {
+        "path": "results/ros2/cases/unitree-java-ros2-low_state-r1/launcher/execution.json",
+        "bytes": 4185,
+        "sha256": "ee3e4057d2d4b6db21c2b05558b3169556d07e2cc9e22c4313967fb92500556f"
+      },
+      "diagnostic": {
+        "path": "results/cdr-padding-diagnostic.json",
+        "bytes": 26222,
+        "sha256": "ddcb4d1fb55d8334909ab5b7fe9b5b8889c40375e2ff6ea444f8e434399c8b5e"
+      },
+      "cause": "The initial independent fixture compared unspecified CDR alignment padding as message data; the callback stopped and the guest timed out with errno 11.",
+      "correction": "Enumerate native metadata alignment padding; require every field byte, complete callback canonical bytes and original deserializer equality. SDK, launcher and Wasm bytes remain unchanged."
+    }
+  ],
+  "elapsed_values_are_wall_time": true,
+  "fixture_pattern_scope": "ROS1 uses the same complete fixture values on both architectures. The frozen ARM ROS2 fixture and this native x86 ROS2 fixture use different deterministic full values; each guest is checked against its own original native callback.",
+  "initial_static_join_assumption_corrected": "The first static finalizer incorrectly required identical fixture payloads across architectures. The retained original finalizer source documents that assumption. No additional guest run or source/module change was made to correct the join.",
+  "modules": [
+    {
+      "project": "unitree/java/ros1/low_state",
+      "path": "work/sdk/example/platform/unitree/java/ros1/low_state/build/unitree-java-ros1-low_state.wasm",
+      "bytes": 259680,
+      "sha256": "f0377e7039133a326d9519218737ae04c5eed0b7ea501a6c3624dc7fc3657829"
+    },
+    {
+      "project": "unitree/java/ros1/motion_state",
+      "path": "work/sdk/example/platform/unitree/java/ros1/motion_state/build/unitree-java-ros1-motion_state.wasm",
+      "bytes": 270741,
+      "sha256": "0f3f8d1d06304ae320b7d22f8d4afd37adf6e925d568f47ae74e1c95f190f323"
+    },
+    {
+      "project": "unitree/java/ros1/motor_state",
+      "path": "work/sdk/example/platform/unitree/java/ros1/motor_state/build/unitree-java-ros1-motor_state.wasm",
+      "bytes": 211604,
+      "sha256": "a3c51a9b7813baa7084355c51d63128a3fdec99db1dd95da565c70b2d5125b0e"
+    },
+    {
+      "project": "unitree/java/ros2/low_state",
+      "path": "work/sdk/example/platform/unitree/java/ros2/low_state/build/unitree-java-ros2-low_state.wasm",
+      "bytes": 258662,
+      "sha256": "95fadf43c2def8db40c9f81979061d629132dcfa210c4e81b7ec7ba9df2f910e"
+    },
+    {
+      "project": "unitree/java/ros2/motion_state",
+      "path": "work/sdk/example/platform/unitree/java/ros2/motion_state/build/unitree-java-ros2-motion_state.wasm",
+      "bytes": 235013,
+      "sha256": "0618e9584d71e0bb0d63c451a9cc8a81a55de945632e251ffe9ae9f10578745d"
+    },
+    {
+      "project": "unitree/java/ros2/wireless_controller",
+      "path": "work/sdk/example/platform/unitree/java/ros2/wireless_controller/build/unitree-java-ros2-wireless_controller.wasm",
+      "bytes": 205707,
+      "sha256": "639d2dae7286df4ef946483445df089390f23dc4c2ae7c3a3bf23b674c51f354"
+    },
+    {
+      "project": "unitree/kotlin/ros1/low_state",
+      "path": "work/sdk/example/platform/unitree/kotlin/ros1/low_state/build/unitree-kotlin-ros1-low_state.wasm",
+      "bytes": 272290,
+      "sha256": "7c481985c11a9bba3e79ec2dc3c8196996a81b1f248d68c6b13c26d38bbc2300"
+    },
+    {
+      "project": "unitree/kotlin/ros1/motion_state",
+      "path": "work/sdk/example/platform/unitree/kotlin/ros1/motion_state/build/unitree-kotlin-ros1-motion_state.wasm",
+      "bytes": 283359,
+      "sha256": "16813f648d9bd317d7c195bf6bd0275a7e91ac2ba33739f4fab0de05c849d451"
+    },
+    {
+      "project": "unitree/kotlin/ros1/motor_state",
+      "path": "work/sdk/example/platform/unitree/kotlin/ros1/motor_state/build/unitree-kotlin-ros1-motor_state.wasm",
+      "bytes": 224217,
+      "sha256": "1a7453c9160e1d56356303157ee2016bf878e7dab1c18593c470d9b80c4dc66c"
+    },
+    {
+      "project": "unitree/kotlin/ros2/low_state",
+      "path": "work/sdk/example/platform/unitree/kotlin/ros2/low_state/build/unitree-kotlin-ros2-low_state.wasm",
+      "bytes": 271275,
+      "sha256": "7cb7bbc801cdc2e9077d4095ae262e845ff649203f10e1c0c03b327c01311334"
+    },
+    {
+      "project": "unitree/kotlin/ros2/motion_state",
+      "path": "work/sdk/example/platform/unitree/kotlin/ros2/motion_state/build/unitree-kotlin-ros2-motion_state.wasm",
+      "bytes": 247626,
+      "sha256": "c5254a8b559e6282259eba3497fde3e11ea6b8776061af3a54eeecb6fdb027dc"
+    },
+    {
+      "project": "unitree/kotlin/ros2/wireless_controller",
+      "path": "work/sdk/example/platform/unitree/kotlin/ros2/wireless_controller/build/unitree-kotlin-ros2-wireless_controller.wasm",
+      "bytes": 218304,
+      "sha256": "c7616993626b10df140bd4b157af1ec8ff17db0d70d00bab8de75f96d8586bcd"
+    }
+  ],
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "42a2f6c9d311385dc3f54f7d9bcc87d8807bd0560c218e9cbe58ec51aafb9f17"
+}

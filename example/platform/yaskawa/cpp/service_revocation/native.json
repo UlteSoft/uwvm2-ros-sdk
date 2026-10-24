@@ -1,0 +1,90 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "runtime": "__RUNTIME__",
+  "gateway": "__GATEWAY__",
+  "connection": {
+    "node-name": "yaskawa_original_service_gateway",
+    "namespace": "/sdk_fixture",
+    "domain-id": "143",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "read_single_io": {
+      "arguments": [
+        "sample"
+      ],
+      "main_module": "yaskawa_main",
+      "preloads": [],
+      "modules": {
+        "yaskawa_main": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "sample",
+              "operation": "service.call",
+              "resource": "/sdk_fixture/yaskawa/ReadSingleIO",
+              "type": "motoros2_interfaces/srv/ReadSingleIO",
+              "identity": "RIHS01_eb0978ae15a04f75e8403975db5a934419ad00ecca0d177cc299ce3cf13beb41",
+              "limits": {
+                "timeout-ms": "5000",
+                "max-inflight": "2",
+                "max-rate-hz": "10",
+                "burst": "10",
+                "max-request-bytes": "4",
+                "max-response-bytes": "525",
+                "max-bytes-per-second": "65536",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite",
+                "adapter-codec-identity": "UWVMROS1_45367596a399144ccce710f19aec8e07af2b937f0358cc533f12454e63167ea4"
+              }
+            }
+          ],
+          "wasi_grants": [],
+          "connection": {
+            "node-name": "yaskawa_original_service_gateway",
+            "namespace": "/sdk_fixture",
+            "domain-id": "143",
+            "rmw-implementation": "rmw_fastrtps_cpp",
+            "security-mode": "disabled-test",
+            "keystore": "not-applicable",
+            "enclave": "not-applicable"
+          },
+          "call_boundary": "same-module",
+          "worker_limits": {
+            "connect-timeout-ms": "5000",
+            "audit-deny-max-rate-hz": "100",
+            "audit-deny-burst": "100",
+            "audit-deny-max-records": "10000",
+            "audit-deny-max-bytes": "1048576"
+          },
+          "gateway_limits": {
+            "timeout-ms": "10000",
+            "max-sessions": "16",
+            "audit-max-records-per-second": "100",
+            "audit-max-records": "10000",
+            "audit-max-bytes": "1048576"
+          }
+        }
+      }
+    }
+  }
+}

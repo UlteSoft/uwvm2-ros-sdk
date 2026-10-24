@@ -1,0 +1,46 @@
+/// @file Observation.swift
+/// @brief Represent the complete original ABB ROS 1 canonical value catalog.
+/// @details The caller owns every record and its finite dynamic backing storage. Codecs retain all
+/// fields, original constants and native defaults; field units and frames follow the retained
+/// definitions. Malformed or out-of-bound wire values are rejected. These are guest values rather than
+/// native ROS objects; importing them grants no transport alias.
+///  @brief Select only complete original Abb ROS 1 message observers.
+///  @details This namespace creates no owner; each actual observation owns its lifecycle.
+public enum AbbRos1 {
+
+  /// @brief Observe every original abb_robot_msgs/SystemState field through one retained owner.
+  /// @param aliasBytes Borrowed exact-type strict UTF-8 subscription alias.
+  /// @param attempts Total finite poll budget in 1..250.
+  /// @return Complete owned original record and independent operation/close facts.
+  /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+  public static func waitSystemState(_ aliasBytes: [UInt8], _ attempts: UInt32)
+    -> RosObservation<Ros1Abb_robot_msgsSystemState>
+  {
+    return rosReceive(
+      aliasBytes, 2331, attempts, Ros1Abb_robot_msgsSystemState.decode, { $0.encode() })
+  }
+
+  /// @brief Observe every original abb_egm_msgs/EGMState field through one retained owner.
+  /// @param aliasBytes Borrowed exact-type strict UTF-8 subscription alias.
+  /// @param attempts Total finite poll budget in 1..250.
+  /// @return Complete owned original record and independent operation/close facts.
+  /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+  public static func waitEgmState(_ aliasBytes: [UInt8], _ attempts: UInt32)
+    -> RosObservation<Ros1Abb_egm_msgsEGMState>
+  {
+    return rosReceive(aliasBytes, 1380, attempts, Ros1Abb_egm_msgsEGMState.decode, { $0.encode() })
+  }
+
+  /// @brief Observe every original abb_rapid_sm_addin_msgs/RuntimeState field through one retained owner.
+  /// @param aliasBytes Borrowed exact-type strict UTF-8 subscription alias.
+  /// @param attempts Total finite poll budget in 1..250.
+  /// @return Complete owned original record and independent operation/close facts.
+  /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
+  public static func waitRuntimeState(_ aliasBytes: [UInt8], _ attempts: UInt32)
+    -> RosObservation<Ros1Abb_rapid_sm_addin_msgsRuntimeState>
+  {
+    return rosReceive(
+      aliasBytes, 8372, attempts, Ros1Abb_rapid_sm_addin_msgsRuntimeState.decode, { $0.encode() })
+  }
+
+}

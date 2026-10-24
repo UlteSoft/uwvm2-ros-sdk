@@ -1,0 +1,151 @@
+{
+  "format": "uwvm-unitree-final-wrapper-qualification-v1",
+  "status": "PASS",
+  "languages": [
+    "ruby",
+    "php"
+  ],
+  "target": "wasm32-wasip1",
+  "cold_builds": 12,
+  "x86_64_native_ros_runs": 24,
+  "qemu_aarch64_native_ros_runs": 12,
+  "cgroup": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "physical_robot_qualified": false,
+  "engine_cold_source_rebuild": "NOT_RUN",
+  "evidence": {
+    "build": {
+      "path": "original-review-workspace/unitree-wrapper-docs/receipts/docs-final-build-ruby-php.json",
+      "sha256": "8d586ac35110e7c066eebf72af73eb83ed51a3e8da353efa9a23d2fcc6379960",
+      "bytes": 23227
+    },
+    "arm": {
+      "path": "original-review-workspace/unitree-wrapper-arm/results/final/acceptance.json",
+      "sha256": "afc00b92e696fe0e87485d390dc79592d855a8790aba21cf61deb5d2122f6dea",
+      "bytes": 137350
+    },
+    "arm_audit": {
+      "path": "original-review-workspace/unitree-wrapper-arm/audit.json",
+      "sha256": "6770d06da37c6377e8343a239673a907486989c690157f3f32e64d2fee85bcf5",
+      "bytes": 2344
+    },
+    "ros1": {
+      "path": "original-review-workspace/unitree-wrapper-docs/receipts/native-ros1-docs-final/matrix.json",
+      "sha256": "5851e477691a65a43527221ffbb14c82fab78570e705b782b081196247cd5253",
+      "bytes": 30008
+    },
+    "ros2": {
+      "path": "original-review-workspace/unitree-wrapper-docs/receipts/native-ros2-docs-final/matrix.json",
+      "sha256": "4211927f37968f1d6a42ea746759b4d83093fe58f3df4a74cb3b0e49dd683586",
+      "bytes": 22923
+    },
+    "source_inputs": {
+      "path": "original-review-workspace/unitree-wrapper-docs/test/inputs.json",
+      "sha256": "e7e519ad87caa88cf441b2533e460d523cba0f270a1c8aed05c91de5e980c8c1",
+      "bytes": 38309
+    }
+  },
+  "cases": [
+    {
+      "project": "php/ros1/low_state",
+      "artifact_sha256": "d23482a7bcbbd6a8193493e7fa9492a57acbf96b2d0bc7983cac90722a91840b",
+      "artifact_bytes": 10569524,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "php/ros1/motion_state",
+      "artifact_sha256": "b07f2d972642c22782e836034f3dcc53f2230b61e6d120cc020e6fdc521755e3",
+      "artifact_bytes": 10569524,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "php/ros1/motor_state",
+      "artifact_sha256": "7eb816193a49771fc00e92e050a41d29c0a00b84af3b6148352ecae93eafcb10",
+      "artifact_bytes": 10569524,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "php/ros2/low_state",
+      "artifact_sha256": "06a0a75d6e9dbc8cfc28b737c380105546457fd801de67cd0fed58cb5171ff33",
+      "artifact_bytes": 10569524,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "php/ros2/motion_state",
+      "artifact_sha256": "9430a55793dd99198f1f6c2c9df62eaae06c69da4a93003de3d49ac71a459369",
+      "artifact_bytes": 10569524,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "php/ros2/wireless_controller",
+      "artifact_sha256": "8421cf50c981401c4c17cb1297fc6f70a38233799968a16d3e3cc23140205583",
+      "artifact_bytes": 10569524,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "ruby/ros1/low_state",
+      "artifact_sha256": "835b09659007803ddf56dceca4b8e4ab1e37f124c2703fcda6022b038fc9a393",
+      "artifact_bytes": 14169520,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "ruby/ros1/motion_state",
+      "artifact_sha256": "bb911758e2d4e40e356b0420eb0524121b281f11c3b0011d4e57b2caf9d024d5",
+      "artifact_bytes": 14169520,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "ruby/ros1/motor_state",
+      "artifact_sha256": "3d369af86cb5abe8d1647d905885d531066c9a024f160c17a35ac89e6a5bc578",
+      "artifact_bytes": 14169520,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "ruby/ros2/low_state",
+      "artifact_sha256": "098cfd68777d468e2de1f90296fe32a36d91be3a8a5819d03d8f437403cea9c2",
+      "artifact_bytes": 14169520,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "ruby/ros2/motion_state",
+      "artifact_sha256": "674896ce37a5be3b72294c32ea1e4ddd6c14fcc19e31fd211f1f9b888d764aba",
+      "artifact_bytes": 14169520,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    },
+    {
+      "project": "ruby/ros2/wireless_controller",
+      "artifact_sha256": "1131ae0ce49ee89e1c793ed8665ef13f0e9fd030f6a3243b628a82afb0e3780f",
+      "artifact_bytes": 14169520,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_runs": 2,
+      "qemu_aarch64_native_ros_runs": 1
+    }
+  ],
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "20f280bb13c173e269eee168fac63601aed13a5d8513f34b3a6bbedbb670be99"
+}

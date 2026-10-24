@@ -1,0 +1,6 @@
+{
+  "system_state": "abb_robot_msgs/msg/SystemState",
+  "mechanical_unit_state": "abb_robot_msgs/msg/MechanicalUnitState",
+  "rapid_task_state": "abb_robot_msgs/msg/RAPIDTaskState",
+  "note": "Additional Ruby/PHP/R message examples do not stand in for the ABB service examples in other routes."
+}

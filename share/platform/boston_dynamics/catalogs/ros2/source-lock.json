@@ -1,0 +1,44 @@
+{
+  "format": "uwvm-spot-project-bridge-source-v1",
+  "official_ros_schema": false,
+  "definitions": [
+    {
+      "type": "uwvm_spot_bridge/srv/State",
+      "generation_file": "uwvm_spot_bridge/srv/State.srv",
+      "sha256": "ab118f0c1bf85c470ff626c139cc1fbffa49be80d213b6994befd5cef8a073aa",
+      "origin": "PROJECT_OWNED_BRIDGE",
+      "bytes": 479
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Lease",
+      "generation_file": "uwvm_spot_bridge/srv/Lease.srv",
+      "sha256": "abb99eebed1d136025a0cec9703cd4400d082a9ea932bb6278f2cd4e306b4cdc",
+      "origin": "PROJECT_OWNED_BRIDGE",
+      "bytes": 293
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Command",
+      "generation_file": "uwvm_spot_bridge/srv/Command.srv",
+      "sha256": "838b8c0ec8e536fd69b9187c3333f0749433f28bb35551eef6b6668ff9ba4e27",
+      "origin": "PROJECT_OWNED_BRIDGE",
+      "bytes": 232
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Velocity",
+      "generation_file": "uwvm_spot_bridge/srv/Velocity.srv",
+      "sha256": "f7fb90e94325908407c3d23f7e0263715aaff898857d50f5aa351938fdc16e66",
+      "origin": "PROJECT_OWNED_BRIDGE",
+      "bytes": 208
+    },
+    {
+      "type": "uwvm_spot_bridge/srv/Feedback",
+      "generation_file": "uwvm_spot_bridge/srv/Feedback.srv",
+      "sha256": "234426bd42d9842372b27cea8e760435fe289f623aae46118d3496cd8bd42006",
+      "origin": "PROJECT_OWNED_BRIDGE",
+      "bytes": 588
+    }
+  ],
+  "spot_sdk": "5.0.1",
+  "spot_commit": "16a98aae3b818082288504c6e53b59a67666aaeb",
+  "default_authority": []
+}

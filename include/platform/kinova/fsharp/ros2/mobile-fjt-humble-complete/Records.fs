@@ -1,0 +1,25 @@
+namespace Kinova.ros2humble
+
+/// @brief Full typed .NET records shared with the selected C# library.
+type Ros2Builtin_interfacesMsgDuration = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Builtin_interfacesMsgDuration
+type Ros2Builtin_interfacesMsgTime = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Builtin_interfacesMsgTime
+type Ros2Std_msgsMsgHeader = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Std_msgsMsgHeader
+type Ros2Trajectory_msgsMsgJointTrajectoryPoint = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Trajectory_msgsMsgJointTrajectoryPoint
+type Ros2Trajectory_msgsMsgJointTrajectory = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Trajectory_msgsMsgJointTrajectory
+type Ros2Geometry_msgsMsgVector3 = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Geometry_msgsMsgVector3
+type Ros2Geometry_msgsMsgQuaternion = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Geometry_msgsMsgQuaternion
+type Ros2Geometry_msgsMsgTransform = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Geometry_msgsMsgTransform
+type Ros2Geometry_msgsMsgTwist = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Geometry_msgsMsgTwist
+type Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint =
+        Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint
+type Ros2Trajectory_msgsMsgMultiDOFJointTrajectory =
+        Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Trajectory_msgsMsgMultiDOFJointTrajectory
+type Ros2Control_msgsMsgJointTolerance = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Control_msgsMsgJointTolerance
+type Ros2Control_msgsMsgJointComponentTolerance = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Control_msgsMsgJointComponentTolerance
+type Ros2Control_msgsActionFollowJointTrajectory_Goal =
+        Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Control_msgsActionFollowJointTrajectory_Goal
+type Ros2Control_msgsActionFollowJointTrajectory_Result =
+        Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Control_msgsActionFollowJointTrajectory_Result
+type Ros2Control_msgsActionFollowJointTrajectory_Feedback =
+        Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Control_msgsActionFollowJointTrajectory_Feedback
+type Ros2Sensor_msgsMsgJointState = Uwvm.Kinova.ros2humble.BoundedRecords._Ros2Sensor_msgsMsgJointState

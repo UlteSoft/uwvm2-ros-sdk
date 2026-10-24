@@ -1,0 +1,134 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "platform": "hello_robot",
+  "profiles": [
+    {
+      "id": "mobile_fjt_humble",
+      "backend": "ros2",
+      "catalog": "share/platform/hello_robot/catalogs/mobile_fjt_humble/catalog.json",
+      "records": 17,
+      "services": 0,
+      "actions": 1,
+      "upstream": {
+        "upstream_sources": [
+          {
+            "repository": "hello-robot/stretch_ros2",
+            "commit": "751e701b87d6f34dd26df1c4abc39229d68e60ff",
+            "branch": "humble"
+          },
+          {
+            "repository": "hello-robot/stretch_body",
+            "commit": "92c9db0cc9ade6535f822e83bbf10cbd0c68136a"
+          }
+        ]
+      },
+      "native_identity_qualified": false
+    }
+  ],
+  "configuration": {
+    "vendor_profile": {
+      "type": "enum",
+      "values": [
+        "mobile_fjt_humble"
+      ]
+    },
+    "backend": {
+      "type": "enum",
+      "values": [
+        "ros2"
+      ]
+    },
+    "distribution": {
+      "source": "set_ros1_version/set_ros2_version",
+      "native_registry_must_match": true
+    },
+    "model": {
+      "source": "explicit native deployment facts; not inferred from catalog"
+    },
+    "transport": {
+      "source": "shared permission-preserving native ROS dispatcher"
+    },
+    "abi": {
+      "source": "set_arch/set_plat; compiler must honor exact requested width"
+    },
+    "features": {
+      "source": "explicit runtime configuration; no automatic capability grants"
+    }
+  },
+  "compiler_provider": {
+    "java": "jvm",
+    "kotlin": "jvm",
+    "csharp": "dotnet",
+    "fsharp": "dotnet",
+    "vbnet": "dotnet"
+  },
+  "default_authority": [],
+  "api_version": 1,
+  "id": "hello_robot",
+  "module": "tools/platform/hello_robot/provider.lua",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "simd128",
+    "relaxed-simd",
+    "bulk-memory",
+    "reference-types",
+    "multi-value",
+    "sign-extension",
+    "nontrapping-fptoint",
+    "tail-call",
+    "extended-const",
+    "multi-memory",
+    "gc",
+    "exceptions",
+    "memory64",
+    "table64"
+  ],
+  "scenarios_restricted": false,
+  "backends": {
+    "ros2": {
+      "distributions": [
+        "humble"
+      ]
+    }
+  },
+  "options": {
+    "vendor_profile": {
+      "required": true,
+      "values": [
+        "mobile_fjt_humble"
+      ]
+    }
+  },
+  "qualification_note": "Declared requests and source profiles only; each compiler adapter and native deployment validates its exact support separately."
+}

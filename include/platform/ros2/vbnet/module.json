@@ -1,0 +1,8 @@
+{
+  "default_authority": [],
+  "language": "vbnet",
+  "module_root": ".",
+  "platform": "ros2",
+  "producer_required": true,
+  "source_only": true
+}

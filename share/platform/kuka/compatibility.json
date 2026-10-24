@@ -1,0 +1,64 @@
+{
+  "schema": "uwvm-vendor-source-compatibility-v1",
+  "platform": "kuka",
+  "scope": "Exact retained source domains, not all releases or driver/controller compatibility.",
+  "domains": [
+    {
+      "domain": "kuka-ros2-complete",
+      "backend": "ros2",
+      "source_fixture_distribution": "jazzy",
+      "source_profile": null,
+      "source_catalog": "share/platform/kuka/catalogs/ros2/catalog.preparation.json",
+      "source_catalog_sha256": "6d5b8a75e08e2f5b6daed37c587f092fafbc99ed56e0ce8fb5f4b66ba98959f4",
+      "complete_expanded_records": 31,
+      "source_definition_occurrences": 26,
+      "native_driver_compatibility": "Not established by retaining or compiling interface declarations."
+    }
+  ],
+  "upstream_source_pins": [
+    {
+      "id": "rcl_interfaces_ros2",
+      "repository": "ros2/rcl_interfaces",
+      "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+      "tree": "4515d6d00cf6209db404352534818e4199fe33c9"
+    },
+    {
+      "id": "control_ros2",
+      "repository": "ros-controls/control_msgs",
+      "commit": "2eaaa5440d6dc2291601ea445b83015a663f5f88",
+      "tree": "857d95399e05a5da7b5fd28d94690e5fed4f3f3e"
+    },
+    {
+      "id": "common_ros2",
+      "repository": "ros2/common_interfaces",
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "tree": "bbd609d90753abf6e10bdc94f594f36b75921677"
+    },
+    {
+      "id": "kuka",
+      "repository": "kuka-ros/kuka_drivers",
+      "commit": "15fbb6941356390c38bbd135a0676dfd96a050c0",
+      "tree": "f07dc71f7c31c1143ec3fb8c82ac5acc8982a408"
+    }
+  ],
+  "independently_captured_metadata": [
+    {
+      "repository": "kuka-ros/kuka_drivers",
+      "commit": "15fbb6941356390c38bbd135a0676dfd96a050c0",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/kuka-ros/kuka_drivers/15fbb6941356390c38bbd135a0676dfd96a050c0/README.md",
+      "sha256": "86f13a1eb67d813c3ebc22771c205fab20dc066396992825b0c5e11e3fc6a84c"
+    },
+    {
+      "repository": "kuka-ros/kuka_drivers",
+      "commit": "15fbb6941356390c38bbd135a0676dfd96a050c0",
+      "path": "kuka_driver_interfaces/package.xml",
+      "url": "https://raw.githubusercontent.com/kuka-ros/kuka_drivers/15fbb6941356390c38bbd135a0676dfd96a050c0/kuka_driver_interfaces/package.xml",
+      "sha256": "4f3633e9ec696345dcf550974149f3cf07e88cb3a86cffc34fdd6d95be2e00dc",
+      "package": "kuka_driver_interfaces",
+      "package_version": "2.0.0"
+    }
+  ],
+  "default_authority": [],
+  "deployment_rule": "Use the exact native schema/identity and manually selected model/controller; no hardware command is implied."
+}

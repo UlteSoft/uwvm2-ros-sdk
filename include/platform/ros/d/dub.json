@@ -1,0 +1,9 @@
+{
+  "name": "roswasm",
+  "description": "Caller-buffer wasm32 ROS Guest SDK; BetterC source library",
+  "license": "Apache-2.0",
+  "targetType": "sourceLibrary",
+  "sourcePaths": ["source"],
+  "buildOptions": ["betterC"],
+  "versions": ["RosWasmGuest"]
+}

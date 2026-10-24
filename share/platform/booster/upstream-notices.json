@@ -1,0 +1,26 @@
+{
+  "format": "uwvm-pinned-platform-upstream-notices-v1",
+  "sources": [
+    {
+      "repository": "https://github.com/BoosterRobotics/robocup_demo",
+      "revision": "fa4f31ccb4428a9e60e90b4f54eb80499caeb0ca",
+      "original_license_url": "https://raw.githubusercontent.com/BoosterRobotics/robocup_demo/fa4f31ccb4428a9e60e90b4f54eb80499caeb0ca/LICENSE",
+      "retained_notice": "licenses/robocup_demo-LICENSE",
+      "notice_sha256": "8f8486efba5cf17196f4e0f4778a52f8bac0b2dee5103c050fc1aa750153cb53",
+      "notice_bytes": 11356,
+      "license_identifier": "Apache-2.0"
+    },
+    {
+      "repository": "https://github.com/BoosterRobotics/booster_robotics_sdk",
+      "revision": "87a9a26d06a94ddd50968e7576f1170f6fa5a80f",
+      "original_license_url": "https://raw.githubusercontent.com/BoosterRobotics/booster_robotics_sdk/87a9a26d06a94ddd50968e7576f1170f6fa5a80f/LICENSE",
+      "retained_notice": "licenses/booster_robotics_sdk-LICENSE",
+      "notice_sha256": "5dc87c1bb19786b7cc23a47bc48ed6be76694634247e692ca7b40b2be27b677f",
+      "notice_bytes": 794,
+      "license_identifier": "Apache-2.0"
+    }
+  ],
+  "source_role": "Full source catalogs and SDK-native bridge definitions remain distinguished by catalog/source-mapping metadata.",
+  "notice_integrity_only": true,
+  "native_ros_identity_qualification": false
+}

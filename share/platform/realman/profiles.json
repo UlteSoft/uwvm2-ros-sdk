@@ -1,0 +1,102 @@
+{
+  "kind": "realman-complete-original-source-domains-v1",
+  "profiles": [
+    {
+      "id": "ros1_develop",
+      "repository": "RealManRobot/rm_robot",
+      "branch": "develop",
+      "commit": "a7e6d446cdced8bbb9778a5be4d8a14317ba585e",
+      "tree": "d9070adc9a7b41cb22431387e67675a3f383e196",
+      "ros_version": 1,
+      "definitions": 96,
+      "packages": {
+        "rm_msgs": 96
+      },
+      "package": "rm_msgs",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ],
+      "state": "ArmState",
+      "command": "JointPos"
+    },
+    {
+      "id": "ros1_main",
+      "repository": "RealManRobot/rm_robot",
+      "branch": "main",
+      "commit": "3d7063025786c4c5ed2db2ebc09f68d89d589539",
+      "tree": "0abf8102d41bde61ead80dcdbf7bd63e98368c60",
+      "ros_version": 1,
+      "definitions": 100,
+      "packages": {
+        "rm_msgs": 100
+      },
+      "package": "rm_msgs",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ],
+      "state": "ArmState",
+      "command": "JointPos"
+    },
+    {
+      "id": "ros2_foxy",
+      "repository": "RealManRobot/ros2_rm_robot",
+      "branch": "foxy",
+      "commit": "68119369176d77c9d0c07bdba5193e71095d8d3a",
+      "tree": "9780e5a288adab4e797edf12d397c2c79e09bed5",
+      "ros_version": 2,
+      "definitions": 77,
+      "packages": {
+        "rm_ros_interfaces": 77
+      },
+      "package": "rm_ros_interfaces",
+      "core": [
+        "common_foxy",
+        "rcl_foxy"
+      ],
+      "state": "Armstate",
+      "command": "Jointpos"
+    },
+    {
+      "id": "ros2_humble",
+      "repository": "RealManRobot/ros2_rm_robot",
+      "branch": "humble",
+      "commit": "61db3c367e8f5743ee68cee52c5574ec1ac645ca",
+      "tree": "2d86f0f84d79e82c6e2813c624efd4ebc26b9b21",
+      "ros_version": 2,
+      "definitions": 77,
+      "packages": {
+        "rm_ros_interfaces": 77
+      },
+      "package": "rm_ros_interfaces",
+      "core": [
+        "common_humble",
+        "rcl_humble"
+      ],
+      "state": "Armstate",
+      "command": "Jointpos"
+    },
+    {
+      "id": "ros2_jazzy",
+      "repository": "RealManRobot/ros2_rm_robot",
+      "branch": "jazzy",
+      "commit": "5fc226e93358e73c165b2af54b583389f813049e",
+      "tree": "d9a4ac6ec24dea9216472c620c6d96d54cee1ea7",
+      "ros_version": 2,
+      "definitions": 77,
+      "packages": {
+        "rm_ros_interfaces": 77
+      },
+      "package": "rm_ros_interfaces",
+      "core": [
+        "common_jazzy",
+        "rcl_jazzy"
+      ],
+      "state": "Armstate",
+      "command": "Jointpos"
+    }
+  ],
+  "default_authority": [],
+  "selection": "Each published branch observed on 2026-10-20 has an independent immutable domain; a branch name is not native release acceptance."
+}

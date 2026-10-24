@@ -1,0 +1,14 @@
+## @brief Validate a whole original record with the genuine Nim codec.
+import "kinova/nim/ros2/mobile-fjt-humble-complete/records"
+import std/strutils
+var bytes = newSeq[byte](8581)
+let used = stdin.readBuffer(addr bytes[0], bytes.len)
+bytes.setLen(used)
+try:
+    let value = decodeRos2Control_msgsActionFollowJointTrajectory_Goal(bytes)
+    let encoded = encode(value)
+    for item in encoded: stdout.write(toHex(item, 2))
+    stdout.write("\n")
+except CatchableError as failure:
+    stderr.writeLine(failure.msg)
+    quit(22)

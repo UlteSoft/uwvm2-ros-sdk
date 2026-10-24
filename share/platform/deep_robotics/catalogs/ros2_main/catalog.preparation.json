@@ -1,0 +1,234 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4
+        }
+      },
+      "file": "drdds/msg/BatteryData.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/BatteryData"
+    },
+    {
+      "bounds": {
+        "battery_temperature": {
+          "sequence": 16
+        }
+      },
+      "file": "drdds/msg/BatteryDataValue.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/BatteryDataValue"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/GamepadData.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/GamepadData"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/ImuData.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/ImuData"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/ImuDataValue.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/ImuDataValue"
+    },
+    {
+      "bounds": {
+        "name": {
+          "sequence": 256
+        }
+      },
+      "file": "drdds/msg/JointCmdValue.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/JointCmdValue"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/JointData.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/JointData"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/JointDataCmd.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/JointDataCmd"
+    },
+    {
+      "bounds": {
+        "name": {
+          "sequence": 256
+        }
+      },
+      "file": "drdds/msg/JointValue.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/JointValue"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/JointsData.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/JointsData"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/JointsDataCmd.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/JointsDataCmd"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/JointsDataCmdValue.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/JointsDataCmdValue"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/JointsDataValue.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/JointsDataValue"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/MetaType.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/MetaType"
+    },
+    {
+      "bounds": {
+        "command_source": {
+          "string": 128
+        },
+        "current_state": {
+          "string": 128
+        },
+        "requested_state": {
+          "string": 128
+        },
+        "robot": {
+          "string": 128
+        }
+      },
+      "file": "drdds/msg/RobotStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/RobotStatus"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/StdMsgFloat32.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/StdMsgFloat32"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/StdMsgInt32.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/StdMsgInt32"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/StdStatus.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/StdStatus"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/Steer.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/Steer"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/msg/SteerValue.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/msg/SteerValue"
+    },
+    {
+      "bounds": {},
+      "file": "drdds/srv/StdSrvInt32.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "drdds/srv/StdSrvInt32"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Twist.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Twist"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Vector3.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "geometry_msgs/msg/Vector3"
+    },
+    {
+      "bounds": {
+        "effort": {
+          "sequence": 64
+        },
+        "name": {
+          "sequence": 64,
+          "string": 64
+        },
+        "position": {
+          "sequence": 64
+        },
+        "velocity": {
+          "sequence": 64
+        }
+      },
+      "file": "sensor_msgs/msg/JointState.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "sensor_msgs/msg/JointState"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 128
+        }
+      },
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "std_msgs/msg/Header"
+    }
+  ]
+}

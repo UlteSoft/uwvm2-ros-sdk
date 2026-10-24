@@ -1,0 +1,38 @@
+{
+  "format": "uwvm-shared-interpreter-v2",
+  "language": "js",
+  "implementation": "QuickJS",
+  "version": "2026-06-04",
+  "target": "wasm64-wasip1",
+  "ros_backend": "ros2",
+  "filename": "quickjs.wasm",
+  "bytes": 5385473,
+  "sha256": "35414afcfb074cbd2722cc5f84abf6dc6e476ed05e9a8bb48d90049785e1f424",
+  "source_lock_sha256": "0ed6b7740449c41ff717e03cd8782a040259c075e44fa7990027243e25e78c78",
+  "application_capacity": 4194304,
+  "application_marker": "UWVM-SRC-APP-v1!",
+  "compiler": "LLVM 23.1.4",
+  "threads": false,
+  "memory": {
+    "address_bits": 64,
+    "shared": false,
+    "minimum_pages": 194,
+    "maximum_pages": 4096,
+    "tables": [
+      {
+        "address_bits": 64,
+        "minimum": 469,
+        "maximum": 469
+      }
+    ]
+  },
+  "raw_abi_functions": 43,
+  "raw_abi_descriptor_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "exceptions": "none",
+  "wasm_features": [
+    "memory64",
+    "table64"
+  ],
+  "native_ros_qualification": "separate platform acceptance required",
+  "source_lock_path": "share/language/js/construction-source-lock.json"
+}

@@ -1,0 +1,119 @@
+{
+  "platform": "yaskawa",
+  "review_state": "source-review",
+  "examples": 79,
+  "example_languages": {
+    "as": 3,
+    "c": 3,
+    "c_ffi_bridge": 3,
+    "cpp": 4,
+    "csharp": 3,
+    "d": 3,
+    "fsharp": 3,
+    "go": 3,
+    "haskell": 3,
+    "java": 3,
+    "js": 3,
+    "kotlin": 3,
+    "lua": 3,
+    "moonbit": 3,
+    "nim": 3,
+    "objectc": 3,
+    "odin": 3,
+    "php": 3,
+    "py": 3,
+    "r": 3,
+    "rs": 3,
+    "ruby": 3,
+    "swift": 3,
+    "tinygo": 3,
+    "vbnet": 3,
+    "zig": 3
+  },
+  "manuals": {
+    "zh_CN": 55,
+    "en_US": 55
+  },
+  "current_snapshot_build_acceptance": "pending",
+  "current_snapshot_native_ros_acceptance": "pending",
+  "current_snapshot_qemu_aarch64_acceptance": "pending",
+  "static_shared_library_acceptance": "pending",
+  "complete": false,
+  "withheld_source_files": 0,
+  "source_review_revision": "2026-10-23-parent-review-39",
+  "source_owner": "02",
+  "review39_scoped_acceptance": {
+    "service_revocation_cases": 4,
+    "languages": [
+      "cpp"
+    ],
+    "wasm_widths": [
+      32,
+      64
+    ],
+    "runtime_hosts": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "actual_memory_max": 68719476736,
+    "actual_memory_swap_max": 0,
+    "physical_controller_executed": false,
+    "complete_platform_qualified": false
+  },
+  "source_inventory_review": 44,
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig",
+    "fortran",
+    "wat",
+    "typescript"
+  ],
+  "new_language_work": {
+    "fortran": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_compiler": "LLVM Flang 23.1.4 source candidate",
+      "common_raw_abi_modules": [
+        "uwvm_ros1_v1",
+        "uwvm_ros2_v1"
+      ],
+      "compiled": false,
+      "executed": false
+    },
+    "wat": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_assembler": "WABT wat2wasm source candidate",
+      "compiled": false,
+      "executed": false
+    }
+  },
+  "typescript": {
+    "shared_frontend_available": true,
+    "platform_native_qualification": "pending",
+    "platform_registration_qualified": false,
+    "scope": "Common two-width frontend and scalar libraries; platform native ROS acceptance is separate"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "cache_is_optional_explicit_maintainer_input": true,
+  "canonical_schemas": "sdk/share/platform/abb/catalogs/",
+  "normal_SDK_depends_on_origin": false,
+  "platform": "abb",
+  "repositories": [
+    {
+      "commit": "071bb1fc2148a7cd850a1ff550c5987e67da6bdd",
+      "id": "abb_interfaces_ros2",
+      "repository": "gbartyzel/abb_ros2_msgs",
+      "tree": "33f5d3bc44d68b66c3a9782232bf4064dbc72dd7"
+    },
+    {
+      "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+      "id": "rcl_interfaces_ros2",
+      "repository": "ros2/rcl_interfaces",
+      "tree": "4515d6d00cf6209db404352534818e4199fe33c9"
+    },
+    {
+      "commit": "2eaaa5440d6dc2291601ea445b83015a663f5f88",
+      "id": "control_ros2",
+      "repository": "ros-controls/control_msgs",
+      "tree": "857d95399e05a5da7b5fd28d94690e5fed4f3f3e"
+    },
+    {
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "id": "common_ros2",
+      "repository": "ros2/common_interfaces",
+      "tree": "bbd609d90753abf6e10bdc94f594f36b75921677"
+    },
+    {
+      "commit": "da809cd0bb6f270c0814fca07d7d4a5c0385fc39",
+      "id": "abb_interfaces_ros1",
+      "repository": "ros-industrial/abb_robot_driver_interfaces",
+      "tree": "b70de607e587d949810d0258dee6d580499b3a27"
+    },
+    {
+      "commit": "36e2e30551e3f2bfd9e55fca553f1ef019f4e4b1",
+      "id": "control_ros1_kinetic",
+      "repository": "ros-controls/control_msgs",
+      "tree": "6c99a727518cae7f7283b96e15e03c2a72b5572f"
+    },
+    {
+      "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+      "id": "common_ros1",
+      "repository": "ros/common_msgs",
+      "tree": "dd72cef60b6f589b398d37934be2971382d4340f"
+    },
+    {
+      "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+      "id": "std_ros1",
+      "repository": "ros/std_msgs",
+      "tree": "c6ce9f1fbbbe6a4310f237726df491359c874519"
+    }
+  ],
+  "schema": "uwvm-upstream-reference-lock-v1"
+}

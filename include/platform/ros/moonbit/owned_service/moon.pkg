@@ -1,0 +1,3 @@
+// Explicit opt-in package. Old ros1/ros2 packages do not depend on this package.
+import { "uwvm/ros/ros2", "uwvm/ros/linear", "uwvm/ros/wire" }
+

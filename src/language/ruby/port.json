@@ -1,0 +1,46 @@
+{
+    "format": "uwvm-language-port-v1",
+    "language": "ruby",
+    "upstream_version": "3.4.7",
+    "target": "wasm32-wasip1",
+    "exception_profile": "official CRuby WASI Asyncify with original VM semantics",
+    "patches": [
+        {
+            "path": "upstream/cont.c",
+            "purpose": "retain reserved fiber guard extent without unavailable WASIp1 page protection"
+        },
+        {
+            "path": "upstream/inits.c",
+            "purpose": "optional maintenance-only initialization diagnostics; disabled in qualified runtime"
+        },
+        {
+            "path": "upstream/tool/lrama/template/bison",
+            "purpose": "preserve mixed ERB template token layout with explicit documentation"
+        },
+        {
+            "path": "upstream/include/ruby",
+            "purpose": "preserve stringized diagnostic-macro spelling during Allman formatting"
+        },
+        {
+            "path": "command.c",
+            "purpose": "genuine embedding and namespace-only static raw ABI; preserve explicit application exit status"
+        },
+        {
+            "path": "upstream/wasm/machine.c",
+            "purpose": "retain genuine conservative GC scanning with an explicitly bounded 256 KiB spill region; upstream 6 KiB is insufficient for complete nested original records"
+        }
+    ],
+    "unsupported": [
+        "memory64",
+        "Preview2",
+        "ROS 1 transport",
+        "native threads",
+        "JIT",
+        "host dynamic extensions",
+        "guard-page protection"
+    ],
+    "gc_scan_stack_bytes": 262144,
+    "production_source_files": 1039,
+    "excluded_upstream_audit_files": 11917,
+    "maintenance_source_isolation": "Upstream generators run on a private source copy inside the derived build cache."
+}

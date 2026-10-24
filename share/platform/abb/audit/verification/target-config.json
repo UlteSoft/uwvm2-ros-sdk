@@ -1,0 +1,183 @@
+{
+  "status": "PASS",
+  "limits": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "cases": [
+    {
+      "name": "default",
+      "command": [
+        "xmake",
+        "f",
+        "-P",
+        "/abb-test/abb-acceptance/target-fixture",
+        "-F",
+        "/abb-test/abb-acceptance/target-fixture/xmake.lua",
+        "-c",
+        "-y"
+      ],
+      "expected_accept": true,
+      "exit": 0,
+      "output": "\u001b[0mchecking for platform ... \u001b[38;5;2;1mwasm-wasip1\u001b[0m\n\u001b[0mchecking for architecture ... \u001b[38;5;2;1mwasm32\u001b[0m\n\u001b[0mchecking for abb-run-config ... \u001b[38;5;1;1mno\u001b[0m\n",
+      "passed": true,
+      "build_exit": 0,
+      "build_log": "\u001b[0mchecking for clang ... \u001b[38;5;2;1m/usr/lib/llvm-22/bin/clang\u001b[0m\n/usr/lib/llvm-22/bin/clang --target=wasm32-wasip1 --sysroot=/abb-test/sdk -B/abb-test/sdk/lib/wasm/wasm32-wasip1 -L/abb-test/sdk/lib/wasm/wasm32-wasip1 -resource-dir=/abb-test/sdk/lib/language/cfamily/clang/22 -std=c11 -O2 -Wall -Wextra -Werror -I/abb-test/sdk/include -I/abb-test/sdk/include/platform -I/abb-test/sdk/include/platform/ros/c -Wl,--stack-first -Wl,-z,stack-size=1048576 -Wl,--max-memory=67108864 -Wl,--threads=1 -isystem /abb-test/sdk/include/wasm/wasm32-wasip1 /abb-test/abb-acceptance/target-fixture/main.c -o /abb-test/abb-acceptance/target-fixture/build/abb-c-read_speed.wasm\n\u001b[0m\u001b[38;5;2mBuilt /abb-test/abb-acceptance/target-fixture/build/abb-c-read_speed.wasm (wasm32-wasip1)\u001b[0m\n\u001b[0m\u001b[38;5;2;1m[100%]:\u001b[0m \u001b[2m\u001b[38;5;2;1mbuild ok, spent 0.127s\u001b[0m\n",
+      "sha256": "87abb9f1d89e00515f112c7aaaae64b11c3435993e3c1ee907be8383ef002461",
+      "bytes": 160072
+    },
+    {
+      "name": "explicit",
+      "command": [
+        "xmake",
+        "f",
+        "-P",
+        "/abb-test/abb-acceptance/target-fixture",
+        "-F",
+        "/abb-test/abb-acceptance/target-fixture/xmake.lua",
+        "-c",
+        "-y",
+        "-p",
+        "wasm-wasip1",
+        "-a",
+        "wasm32",
+        "--ros-target=wasm32-wasip1"
+      ],
+      "expected_accept": true,
+      "exit": 0,
+      "output": "\u001b[0mchecking for abb-run-config ... \u001b[38;5;1;1mno\u001b[0m\n",
+      "passed": true,
+      "build_exit": 0,
+      "build_log": "\u001b[0mchecking for clang ... \u001b[38;5;2;1m/usr/lib/llvm-22/bin/clang\u001b[0m\n/usr/lib/llvm-22/bin/clang --target=wasm32-wasip1 --sysroot=/abb-test/sdk -B/abb-test/sdk/lib/wasm/wasm32-wasip1 -L/abb-test/sdk/lib/wasm/wasm32-wasip1 -resource-dir=/abb-test/sdk/lib/language/cfamily/clang/22 -std=c11 -O2 -Wall -Wextra -Werror -I/abb-test/sdk/include -I/abb-test/sdk/include/platform -I/abb-test/sdk/include/platform/ros/c -Wl,--stack-first -Wl,-z,stack-size=1048576 -Wl,--max-memory=67108864 -Wl,--threads=1 -isystem /abb-test/sdk/include/wasm/wasm32-wasip1 /abb-test/abb-acceptance/target-fixture/main.c -o /abb-test/abb-acceptance/target-fixture/build/abb-c-read_speed.wasm\n\u001b[0m\u001b[38;5;2mBuilt /abb-test/abb-acceptance/target-fixture/build/abb-c-read_speed.wasm (wasm32-wasip1)\u001b[0m\n\u001b[0m\u001b[38;5;2;1m[100%]:\u001b[0m \u001b[2m\u001b[38;5;2;1mbuild ok, spent 0.129s\u001b[0m\n",
+      "sha256": "87abb9f1d89e00515f112c7aaaae64b11c3435993e3c1ee907be8383ef002461",
+      "bytes": 160072
+    },
+    {
+      "name": "host_arch",
+      "command": [
+        "xmake",
+        "f",
+        "-P",
+        "/abb-test/abb-acceptance/target-fixture",
+        "-F",
+        "/abb-test/abb-acceptance/target-fixture/xmake.lua",
+        "-c",
+        "-y",
+        "-p",
+        "wasm-wasip1",
+        "-a",
+        "aarch64"
+      ],
+      "expected_accept": false,
+      "exit": 255,
+      "output": "\u001b[0mchecking for abb-run-config ... \u001b[38;5;1;1mno\u001b[0m\n\u001b[0m\u001b[1;38;5;1;1merror: \u001b[0m`aarch64` is not a valid complation arch for this project, please use one of wasm32\u001b[0m\n",
+      "passed": true
+    },
+    {
+      "name": "triple_is_not_arch",
+      "command": [
+        "xmake",
+        "f",
+        "-P",
+        "/abb-test/abb-acceptance/target-fixture",
+        "-F",
+        "/abb-test/abb-acceptance/target-fixture/xmake.lua",
+        "-c",
+        "-y",
+        "-p",
+        "wasm-wasip1",
+        "-a",
+        "wasm32-wasip1"
+      ],
+      "expected_accept": false,
+      "exit": 255,
+      "output": "\u001b[0mchecking for abb-run-config ... \u001b[38;5;1;1mno\u001b[0m\n\u001b[0m\u001b[1;38;5;1;1merror: \u001b[0m`wasm32-wasip1` is not a valid complation arch for this project, please use one of wasm32\u001b[0m\n",
+      "passed": true
+    },
+    {
+      "name": "memory64",
+      "command": [
+        "xmake",
+        "f",
+        "-P",
+        "/abb-test/abb-acceptance/target-fixture",
+        "-F",
+        "/abb-test/abb-acceptance/target-fixture/xmake.lua",
+        "-c",
+        "-y",
+        "-p",
+        "wasm-wasip1",
+        "-a",
+        "wasm64"
+      ],
+      "expected_accept": false,
+      "exit": 255,
+      "output": "\u001b[0mchecking for abb-run-config ... \u001b[38;5;1;1mno\u001b[0m\n\u001b[0m\u001b[1;38;5;1;1merror: \u001b[0m`wasm64` is not a valid complation arch for this project, please use one of wasm32\u001b[0m\n",
+      "passed": true
+    },
+    {
+      "name": "preview2",
+      "command": [
+        "xmake",
+        "f",
+        "-P",
+        "/abb-test/abb-acceptance/target-fixture",
+        "-F",
+        "/abb-test/abb-acceptance/target-fixture/xmake.lua",
+        "-c",
+        "-y",
+        "-p",
+        "wasm-wasip2",
+        "-a",
+        "wasm32"
+      ],
+      "expected_accept": false,
+      "exit": 255,
+      "output": "\u001b[0mchecking for abb-run-config ... \u001b[38;5;1;1mno\u001b[0m\n\u001b[0m\u001b[1;38;5;1;1merror: \u001b[0m`wasm-wasip2` is not a valid platform for this project, please use one of wasm-wasip1\u001b[0m\n",
+      "passed": true
+    },
+    {
+      "name": "host_platform",
+      "command": [
+        "xmake",
+        "f",
+        "-P",
+        "/abb-test/abb-acceptance/target-fixture",
+        "-F",
+        "/abb-test/abb-acceptance/target-fixture/xmake.lua",
+        "-c",
+        "-y",
+        "-p",
+        "linux",
+        "-a",
+        "wasm32"
+      ],
+      "expected_accept": false,
+      "exit": 255,
+      "output": "\u001b[0mchecking for abb-run-config ... \u001b[38;5;1;1mno\u001b[0m\n\u001b[0m\u001b[1;38;5;1;1merror: \u001b[0m`linux` is not a valid platform for this project, please use one of wasm-wasip1\u001b[0m\n",
+      "passed": true
+    },
+    {
+      "name": "conflicting_triple",
+      "command": [
+        "xmake",
+        "f",
+        "-P",
+        "/abb-test/abb-acceptance/target-fixture",
+        "-F",
+        "/abb-test/abb-acceptance/target-fixture/xmake.lua",
+        "-c",
+        "-y",
+        "-p",
+        "wasm-wasip1",
+        "-a",
+        "wasm32",
+        "--ros-target=wasm64-wasip1"
+      ],
+      "expected_accept": false,
+      "exit": 255,
+      "output": "\u001b[0mchecking for abb-run-config ... \u001b[38;5;1;1mno\u001b[0m\n\u001b[0m\u001b[1;38;5;1;1merror: \u001b[0mattempt to call a nil value (global 'error')\u001b[0m\n",
+      "passed": true
+    }
+  ]
+}

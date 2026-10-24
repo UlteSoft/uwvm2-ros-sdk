@@ -1,0 +1,85 @@
+{
+  "Guest_executed": false,
+  "additions": [
+    {
+      "association": {
+        "source": "retained original ABB standard dependency",
+        "source_lock_sha256": "51c7a7d85771ff5ea8db03b4864ca1384598c6aa51a06f2fdf9133e86ade27f0"
+      },
+      "bytes": 2010,
+      "generation_file": "control_msgs/action/FollowJointTrajectory.action",
+      "git_blob_sha1": "74b10d0e6b42f468834afb179f1931f8adbc1027",
+      "original_file": "control_msgs/action/FollowJointTrajectory.action",
+      "repository": "control_ros1_kinetic",
+      "sha256": "e234e67e1127a79860e5c0ecefccd8685d52c23ddefa0cef7345fb89b83be6bb",
+      "type": "control_msgs/FollowJointTrajectory",
+      "url": "https://github.com/ros-controls/control_msgs/blob/36e2e30551e3f2bfd9e55fca553f1ef019f4e4b1/control_msgs/action/FollowJointTrajectory.action"
+    },
+    {
+      "association": {
+        "source": "retained original ABB standard dependency",
+        "source_lock_sha256": "51c7a7d85771ff5ea8db03b4864ca1384598c6aa51a06f2fdf9133e86ade27f0"
+      },
+      "bytes": 725,
+      "generation_file": "control_msgs/msg/JointTolerance.msg",
+      "git_blob_sha1": "cd99abe66f1443569985baedd264e26e257457c0",
+      "original_file": "control_msgs/msg/JointTolerance.msg",
+      "repository": "control_ros1_kinetic",
+      "sha256": "d98f1d95d8cb81a6882b1a767c806acc6bd5d9c2489330818401c548dd46d7bb",
+      "type": "control_msgs/JointTolerance",
+      "url": "https://github.com/ros-controls/control_msgs/blob/36e2e30551e3f2bfd9e55fca553f1ef019f4e4b1/control_msgs/msg/JointTolerance.msg"
+    },
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "52706625295e70ce603e1c8c9bf1130e374ed93f9bc6795cde84e636f75fe407"
+      },
+      "bytes": 65,
+      "generation_file": "trajectory_msgs/msg/JointTrajectory.msg",
+      "git_blob_sha1": "4982de85cfe414b64595ce062d76c6c2f359eb4b",
+      "original_file": "trajectory_msgs/msg/JointTrajectory.msg",
+      "repository": "common_ros1",
+      "sha256": "c3fd593dfc91e9084316bd8ea8c9c11be65c93dad98609e135ec491574a8f05c",
+      "type": "trajectory_msgs/JointTrajectory",
+      "url": "https://github.com/ros/common_msgs/blob/092bc230c8153dd4cfee0c84c9796cc7e6b09fdb/trajectory_msgs/msg/JointTrajectory.msg"
+    },
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "52706625295e70ce603e1c8c9bf1130e374ed93f9bc6795cde84e636f75fe407"
+      },
+      "bytes": 337,
+      "generation_file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "git_blob_sha1": "55fd3c0ab1bc9c188a707aa2ebd38f6cb2347d6e",
+      "original_file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "repository": "common_ros1",
+      "sha256": "d6bdced3460bf402a86274ccccf7fd7876cae1d70c8610fb6ca684da6057b9a2",
+      "type": "trajectory_msgs/JointTrajectoryPoint",
+      "url": "https://github.com/ros/common_msgs/blob/092bc230c8153dd4cfee0c84c9796cc7e6b09fdb/trajectory_msgs/msg/JointTrajectoryPoint.msg"
+    },
+    {
+      "association": {
+        "source": "complete original body admitted by pinned Git blob/size; retained source preferred",
+        "tree_capture_sha256": "52706625295e70ce603e1c8c9bf1130e374ed93f9bc6795cde84e636f75fe407"
+      },
+      "bytes": 995,
+      "generation_file": "sensor_msgs/msg/JointState.msg",
+      "git_blob_sha1": "f67f4bcf214cbf187cf5ba557f34fcbfb6966cf2",
+      "original_file": "sensor_msgs/msg/JointState.msg",
+      "repository": "common_ros1",
+      "sha256": "31e0c7daefc83de1da036d7c346394d65efe0239591ac718ad0b8f5caa97187a",
+      "type": "sensor_msgs/JointState",
+      "url": "https://github.com/ros/common_msgs/blob/092bc230c8153dd4cfee0c84c9796cc7e6b09fdb/sensor_msgs/msg/JointState.msg"
+    }
+  ],
+  "base_catalog_sha256": "6cc428586464c0cc472e8139c810dd912ffbbf82dc95cc5544ba16beb80bae76",
+  "base_source_lock_sha256": "fdfd631b49515d5a567d205d22b4cbee990ffd358e3671876ee9fae63050d7a5",
+  "compiled": false,
+  "complete_fields_preserved": true,
+  "complete_platform_support": false,
+  "default_authority": [],
+  "native_bound": false,
+  "original_domains_modified": false,
+  "qualification": "Source only. Task 10 must generate one coherent family, bind real native identities and publish SDK products.",
+  "schema": "ur-complete-standard-trajectory-source-extension-v1"
+}

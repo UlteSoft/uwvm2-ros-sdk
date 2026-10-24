@@ -1,0 +1,9 @@
+# Authored bridge envelope for AuroraClient.set_group_cmd.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+GroupValues[] position
+GroupValues[] velocity
+GroupValues[] torque
+---
+uint32 status
+string error

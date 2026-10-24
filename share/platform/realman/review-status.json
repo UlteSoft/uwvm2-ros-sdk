@@ -1,0 +1,177 @@
+{
+  "platform": "realman",
+  "review_state": "source-review",
+  "examples": 225,
+  "example_languages": {
+    "as": 15,
+    "c": 15,
+    "c_ffi_bridge": 15,
+    "cpp": 15,
+    "go": 15,
+    "java": 15,
+    "js": 15,
+    "kotlin": 15,
+    "lua": 15,
+    "objectc": 15,
+    "php": 15,
+    "py": 15,
+    "rs": 15,
+    "ruby": 15,
+    "tinygo": 15
+  },
+  "manuals": {
+    "zh_CN": 28,
+    "en_US": 28
+  },
+  "current_snapshot_build_acceptance": "partial-four-C-Cpp-width-representatives-passed",
+  "current_snapshot_native_ros_acceptance": "pending",
+  "current_snapshot_qemu_aarch64_acceptance": "pending",
+  "static_shared_library_acceptance": "pending",
+  "complete": false,
+  "withheld_source_files": 0,
+  "source_review_revision": "2026-10-23-parent-review-34",
+  "source_owner": "05",
+  "review_guide": "document/REVIEW.04-05.en_US.md",
+  "historical_evidence_scope": "18 current-entrypoint cold builds and actual default-disabled ROS denial runs. Historical cohorts are separate; no native-positive, ARM or library qualification.",
+  "current_snapshot_guest_acceptance": "default-disabled-ROS-denial",
+  "integration_regression": {
+    "revision": "2026-10-23-platform-review-29-r3",
+    "actual_builds": 4,
+    "actual_guest_executions": 4,
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "address_bits": [
+      32,
+      64
+    ],
+    "memory_max": "68719476736",
+    "memory_swap_max": "0",
+    "full_platform_accepted": false,
+    "cases": [
+      {
+        "project": "example/platform/realman/c/ros2_jazzy/observe_armcurrentstatus",
+        "language": "c",
+        "address_bits": 32,
+        "wasm_sha256": "2fe49cd31834274389a0ecdbeb2f57a06d9c2c4187a80ace74eeb2253ca3a868"
+      },
+      {
+        "project": "example/platform/realman/c/ros2_jazzy/observe_armcurrentstatus",
+        "language": "c",
+        "address_bits": 64,
+        "wasm_sha256": "3bc06db7a4c4e31a0051f869ba59ee323acda11f42d0c265e27bf61ad3b714e2"
+      },
+      {
+        "project": "example/platform/realman/cpp/ros2_jazzy/observe_armcurrentstatus",
+        "language": "cpp",
+        "address_bits": 32,
+        "wasm_sha256": "a4b2318f174d29dee3f0924434dd4b0816e8ce4cb5573f3979aa021bdd15d87f"
+      },
+      {
+        "project": "example/platform/realman/cpp/ros2_jazzy/observe_armcurrentstatus",
+        "language": "cpp",
+        "address_bits": 64,
+        "wasm_sha256": "41bb3462866ec9a8e388809dcea23025044b7ca00f49df951c9511fa2468f92d"
+      }
+    ]
+  },
+  "source_inventory_review": 44,
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig",
+    "fortran",
+    "wat",
+    "typescript"
+  ],
+  "new_language_work": {
+    "fortran": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_compiler": "LLVM Flang 23.1.4 source candidate",
+      "common_raw_abi_modules": [
+        "uwvm_ros1_v1",
+        "uwvm_ros2_v1"
+      ],
+      "compiled": false,
+      "executed": false
+    },
+    "wat": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_assembler": "WABT wat2wasm source candidate",
+      "compiled": false,
+      "executed": false
+    }
+  },
+  "review42_java_source_graph": {
+    "genuine_wasm32_build": true,
+    "final_style_rebuild_byte_identical": true,
+    "default_disabled_execution": true,
+    "native_positive_cases": 0,
+    "native_distribution": null,
+    "native_guest_host": null,
+    "humble_or_full_platform_qualified": false
+  },
+  "review43_current_public_js": {
+    "current_public_repack_builds": 1,
+    "positive_native_runs": 2,
+    "disabled_authority_runs": 2,
+    "execution_hosts": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "distribution": "jazzy",
+    "width": 32,
+    "kind": "binary",
+    "same_shared_engine": true,
+    "full_original_fields_verified": true,
+    "new_unique_coverage_from_revalidation": 0,
+    "native_humble_qualified": false,
+    "full_platform_qualified": false
+  },
+  "review43_selected_nonc_native": {
+    "languages": [
+      "as",
+      "java",
+      "js"
+    ],
+    "positive_points": 6,
+    "execution_hosts": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "distribution": "jazzy",
+    "width": 32,
+    "kind": "binary",
+    "full_catalog_or_library_qualified": false
+  },
+  "typescript": {
+    "shared_frontend_available": true,
+    "platform_native_qualification": "pending",
+    "platform_registration_qualified": false,
+    "scope": "Common two-width frontend and scalar libraries; platform native ROS acceptance is separate"
+  }
+}

@@ -1,0 +1,6937 @@
+/**
+ * @file bounded_interfaces.hpp
+ * @brief Own the complete source-paired ABB ROS1 typed RPC roles.
+ * @details Each nonmoving owner keeps stable context and goal storage. The caller retains the immutable
+ * backend and serializes operations. Explicit close/revoke reports must be observed before destruction;
+ * destructors discard best-effort cleanup status. Original fields, finite bounds, ticket roles and native
+ * result kinds remain intact. No grant, thread, retry or physical-stop guarantee is created.
+ */
+#pragma once
+#include <abb/c/ros1/abb-ros1-complete/bounded_interfaces.h>
+#include <abb/cpp/ros1/abb-ros1-complete/bounded_records.hpp>
+#include <array>
+#include <memory>
+#include <functional>
+#include <string_view>
+#include <utility>
+
+namespace uwvm_custom
+{
+
+    /**
+     * @brief Borrow the exact alias byte span without allocating or granting authority.
+     * @details The returned view owns no storage and performs no alias validation. Keep text readable
+     * through its synchronous consumer; endpoint construction performs role-specific validation.
+     * @param text Caller-owned alias bytes, borrowed through the consuming call.
+     * @return A borrowed data/size view.
+     */
+    inline roswasmc_string alias(std::string_view text)
+    {
+        return {text.data(), text.size()};
+    }
+
+    /**
+     * @brief Own the typed endpoint lifecycle for ServerOwners.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class ServerOwners
+    {
+    protected:
+        roswasmc_context context_;
+        roswasmc_capability advertise_{}, respond_{};
+        uint32_t error_{};
+        bool busy_{};
+        roswasmc_cleanup_report rollback_{};
+        std::array<uint32_t, 2> rollback_statuses_{};
+
+        struct Pass
+        {
+            bool& busy;
+
+            explicit Pass(bool& value) : busy{value}
+            {
+                busy = true;
+            }
+
+            ~Pass()
+            {
+                busy = false;
+            }
+        };
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         * @param action Select action roles when true, otherwise service roles.
+         */
+        ServerOwners(roswasmc_context const& context, std::string_view advertise, std::string_view respond, bool action) : context_{context.backend}
+        {
+            roswasmc_capability_init(&advertise_, &context_);
+            roswasmc_capability_init(&respond_, &context_);
+            error_ = roswasmc_check_operation(&context_, action ? ROSWASMC_ACTION_RESPOND : ROSWASMC_SERVICE_RESPOND);
+            if(!error_ && (!roswasmc_action_bundle_alias(alias(advertise)) || !roswasmc_action_bundle_alias(alias(respond)) || advertise == respond))
+            {
+                error_ = 22;
+            }
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_)
+            {
+                error_ = action ? roswasmc_check_operation(&context_, ROSWASMC_ACTION_ADVERTISE) : (context_.backend->advertise_service ? 0 : 95);
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&advertise_, advertise.data(), advertise.size());
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&respond_, respond.data(), respond.size());
+            }
+            if(!error_ && advertise_.handle == respond_.handle)
+            {
+                respond_.handle = 0;
+                error_ = 17;
+            }
+            if(!error_)
+            {
+                if(action)
+                {
+                    auto r = roswasmc_action_advertise(&advertise_, nullptr, 0, nullptr, 0);
+                    error_ = r.error;
+                    if(!error_ && (!r.has_length || r.length))
+                    {
+                        error_ = 22;
+                    }
+                }
+                else
+                {
+                    error_ = roswasmc_service_advertise(&advertise_);
+                }
+            }
+            if(error_)
+            {
+                rollback_ = is_open() ? cleanup(error_, rollback_statuses_, false) : roswasmc_cleanup_init(error_);
+            }
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * The report keeps primary/first cleanup errors and attempt/failure counts separate. Server callback
+         * retirement is refused with 17 before imports. No automatic reopen, stronger cancellation, effect
+         * replay or physical-stop claim occurs.
+         * @param primary Earlier operation error, retained independently from cleanup.
+         * @param statuses Caller-owned per-role results in the declared role order.
+         * @param revoke Use explicit revocation when true, ordinary close otherwise.
+         * @return Saved primary and independent cleanup report.
+         */
+        roswasmc_cleanup_report cleanup(uint32_t primary, std::array<uint32_t, 2>& statuses, bool revoke)
+        {
+            auto r = roswasmc_cleanup_init(primary);
+            if(busy_)
+            {
+                r.cleanup_error = 17;
+                return r;
+            }
+            if(!is_open())
+            {
+                r.cleanup_error = 9;
+                return r;
+            }
+            roswasmc_capability* caps[] = {&advertise_, &respond_};
+            for(size_t i = 2; i > 0; --i)
+            {
+                uint32_t code = 0;
+                if(roswasmc_is_open(caps[i - 1]))
+                {
+                    code = revoke ? roswasmc_revoke(caps[i - 1]) : roswasmc_close(caps[i - 1]);
+                    ++r.attempted;
+                    if(code)
+                    {
+                        ++r.failed;
+                        if(!r.cleanup_error)
+                        {
+                            r.cleanup_error = code;
+                        }
+                    }
+                }
+                statuses[i - 1] = code;
+            }
+            return r;
+        }
+
+    public:
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        ServerOwners(ServerOwners const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        ServerOwners& operator= (ServerOwners const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        ServerOwners(ServerOwners&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close_checked or revoke_checked
+         * explicitly and retain its status before destruction. The immutable backend must remain alive.
+         * Destruction never adds revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~ServerOwners()
+        {
+            if(is_open())
+            {
+                std::array<uint32_t, 2> statuses{};
+                cleanup(0, statuses, false);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&advertise_) || roswasmc_is_open(&respond_);
+        }
+
+        /**
+         * @brief Inspect saved construction rollback without retiring another role.
+         * @details The returned report preserves the original setup error and independent cleanup summary.
+         * The statuses overload copies every saved role result; unopened roles retain zero. Service-server
+         * order is advertise/respond; action order is send/own-cancel/feedback/result/any-cancel.
+         * @return The saved rollback report; no import or retry is performed.
+         */
+        roswasmc_cleanup_report construction_cleanup() const
+        {
+            return rollback_;
+        }
+
+        /**
+         * @brief Inspect saved construction rollback without retiring another role.
+         * @details The returned report preserves the original setup error and independent cleanup summary.
+         * The statuses overload copies every saved role result; unopened roles retain zero. Service-server
+         * order is advertise/respond; action order is send/own-cancel/feedback/result/any-cancel.
+         * @param statuses Caller-owned fixed-size output array for all role statuses.
+         * @return The saved rollback report; no import or retry is performed.
+         */
+        roswasmc_cleanup_report construction_cleanup(std::array<uint32_t, 2>& statuses) const
+        {
+            statuses = rollback_statuses_;
+            return rollback_;
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * The report keeps primary/first cleanup errors and attempt/failure counts separate. Server callback
+         * retirement is refused with 17 before imports. No automatic reopen, stronger cancellation, effect
+         * replay or physical-stop claim occurs.
+         * @param primary Earlier operation error, retained independently from cleanup.
+         * @param statuses Caller-owned per-role results in the declared role order.
+         * @return Saved primary and independent cleanup report.
+         */
+        roswasmc_cleanup_report close_checked(uint32_t primary, std::array<uint32_t, 2>& statuses)
+        {
+            return cleanup(primary, statuses, false);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * The report keeps primary/first cleanup errors and attempt/failure counts separate. Server callback
+         * retirement is refused with 17 before imports. No automatic reopen, stronger cancellation, effect
+         * replay or physical-stop claim occurs.
+         * @param primary Earlier operation error, retained independently from cleanup.
+         * @param statuses Caller-owned per-role results in the declared role order.
+         * @return Saved primary and independent cleanup report.
+         */
+        roswasmc_cleanup_report revoke_checked(uint32_t primary, std::array<uint32_t, 2>& statuses)
+        {
+            return cleanup(primary, statuses, true);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsRequest;
+        using Response = Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient(Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient& operator= (Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient(Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_GetEGMSettings_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsResponse(Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsRequest;
+        using Response = Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_GetEGMSettings_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_GetEGMSettings_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_rapid_sm_addin_msgs_GetEGMSettings_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_GetEGMSettings_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsRequest;
+        using Response = Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient(Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient& operator= (Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient(Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetEGMSettings_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsResponse(Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsRequest;
+        using Response = Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetEGMSettings_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetEGMSettings_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetEGMSettings_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetEGMSettings_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineRequest;
+        using Response = Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient(Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient& operator= (Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient(Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetRAPIDRoutine_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineResponse(Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineRequest;
+        using Response = Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetRAPIDRoutine_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetRAPIDRoutine_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetRAPIDRoutine_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetRAPIDRoutine_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequest;
+        using Response = Ros1Abb_rapid_sm_addin_msgsSetSGCommandResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient(Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient& operator= (Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient(Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_rapid_sm_addin_msgsSetSGCommandClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetSGCommand_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_rapid_sm_addin_msgsSetSGCommandServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_rapid_sm_addin_msgsSetSGCommandServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_rapid_sm_addin_msgsSetSGCommandResponse(Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequest;
+        using Response = Ros1Abb_rapid_sm_addin_msgsSetSGCommandResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_rapid_sm_addin_msgsSetSGCommandServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetSGCommand_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetSGCommand_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetSGCommand_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_rapid_sm_addin_msgs_SetSGCommand_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetFileContentsClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetFileContentsClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetFileContentsRequest;
+        using Response = Ros1Abb_robot_msgsGetFileContentsResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetFileContentsClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetFileContentsClient(Ros1Abb_robot_msgsGetFileContentsClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetFileContentsClient& operator= (Ros1Abb_robot_msgsGetFileContentsClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetFileContentsClient(Ros1Abb_robot_msgsGetFileContentsClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetFileContentsClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetFileContents_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetFileContentsServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetFileContentsServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetFileContentsResponse(Ros1Abb_robot_msgsGetFileContentsRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetFileContentsRequest;
+        using Response = Ros1Abb_robot_msgsGetFileContentsResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetFileContentsServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetFileContents_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetFileContents_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetFileContents_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetFileContents_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetIOSignalClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetIOSignalClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetIOSignalRequest;
+        using Response = Ros1Abb_robot_msgsGetIOSignalResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetIOSignalClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetIOSignalClient(Ros1Abb_robot_msgsGetIOSignalClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetIOSignalClient& operator= (Ros1Abb_robot_msgsGetIOSignalClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetIOSignalClient(Ros1Abb_robot_msgsGetIOSignalClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetIOSignalClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetIOSignal_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetIOSignalServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetIOSignalServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetIOSignalResponse(Ros1Abb_robot_msgsGetIOSignalRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetIOSignalRequest;
+        using Response = Ros1Abb_robot_msgsGetIOSignalResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetIOSignalServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetIOSignal_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetIOSignal_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetIOSignal_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetIOSignal_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDBoolClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDBoolClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDBoolRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDBoolResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetRAPIDBoolClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDBoolClient(Ros1Abb_robot_msgsGetRAPIDBoolClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDBoolClient& operator= (Ros1Abb_robot_msgsGetRAPIDBoolClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDBoolClient(Ros1Abb_robot_msgsGetRAPIDBoolClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetRAPIDBoolClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDBool_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDBoolServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDBoolServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetRAPIDBoolResponse(Ros1Abb_robot_msgsGetRAPIDBoolRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDBoolRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDBoolResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetRAPIDBoolServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDBool_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDBool_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetRAPIDBool_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDBool_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDDnumClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDDnumClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDDnumRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDDnumResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetRAPIDDnumClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDDnumClient(Ros1Abb_robot_msgsGetRAPIDDnumClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDDnumClient& operator= (Ros1Abb_robot_msgsGetRAPIDDnumClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDDnumClient(Ros1Abb_robot_msgsGetRAPIDDnumClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetRAPIDDnumClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDDnum_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDDnumServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDDnumServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetRAPIDDnumResponse(Ros1Abb_robot_msgsGetRAPIDDnumRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDDnumRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDDnumResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetRAPIDDnumServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDDnum_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDDnum_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetRAPIDDnum_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDDnum_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDNumClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDNumClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDNumRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDNumResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetRAPIDNumClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDNumClient(Ros1Abb_robot_msgsGetRAPIDNumClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDNumClient& operator= (Ros1Abb_robot_msgsGetRAPIDNumClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDNumClient(Ros1Abb_robot_msgsGetRAPIDNumClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetRAPIDNumClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDNum_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDNumServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDNumServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetRAPIDNumResponse(Ros1Abb_robot_msgsGetRAPIDNumRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDNumRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDNumResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetRAPIDNumServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDNum_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDNum_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetRAPIDNum_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDNum_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDStringClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDStringClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDStringRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDStringResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetRAPIDStringClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDStringClient(Ros1Abb_robot_msgsGetRAPIDStringClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDStringClient& operator= (Ros1Abb_robot_msgsGetRAPIDStringClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDStringClient(Ros1Abb_robot_msgsGetRAPIDStringClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetRAPIDStringClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDString_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDStringServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDStringServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetRAPIDStringResponse(Ros1Abb_robot_msgsGetRAPIDStringRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDStringRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDStringResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetRAPIDStringServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDString_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDString_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetRAPIDString_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDString_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDSymbolClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDSymbolClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDSymbolRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDSymbolResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetRAPIDSymbolClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDSymbolClient(Ros1Abb_robot_msgsGetRAPIDSymbolClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDSymbolClient& operator= (Ros1Abb_robot_msgsGetRAPIDSymbolClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRAPIDSymbolClient(Ros1Abb_robot_msgsGetRAPIDSymbolClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetRAPIDSymbolClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDSymbol_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRAPIDSymbolServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRAPIDSymbolServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetRAPIDSymbolResponse(Ros1Abb_robot_msgsGetRAPIDSymbolRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRAPIDSymbolRequest;
+        using Response = Ros1Abb_robot_msgsGetRAPIDSymbolResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetRAPIDSymbolServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDSymbol_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDSymbol_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetRAPIDSymbol_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetRAPIDSymbol_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRobotControllerDescriptionClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRobotControllerDescriptionClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRobotControllerDescriptionRequest;
+        using Response = Ros1Abb_robot_msgsGetRobotControllerDescriptionResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetRobotControllerDescriptionClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRobotControllerDescriptionClient(Ros1Abb_robot_msgsGetRobotControllerDescriptionClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRobotControllerDescriptionClient& operator= (Ros1Abb_robot_msgsGetRobotControllerDescriptionClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetRobotControllerDescriptionClient(Ros1Abb_robot_msgsGetRobotControllerDescriptionClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetRobotControllerDescriptionClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRobotControllerDescription_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetRobotControllerDescriptionServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetRobotControllerDescriptionServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetRobotControllerDescriptionResponse(Ros1Abb_robot_msgsGetRobotControllerDescriptionRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetRobotControllerDescriptionRequest;
+        using Response = Ros1Abb_robot_msgsGetRobotControllerDescriptionResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetRobotControllerDescriptionServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetRobotControllerDescription_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetRobotControllerDescription_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetRobotControllerDescription_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetRobotControllerDescription_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetSpeedRatioClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetSpeedRatioClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetSpeedRatioRequest;
+        using Response = Ros1Abb_robot_msgsGetSpeedRatioResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsGetSpeedRatioClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetSpeedRatioClient(Ros1Abb_robot_msgsGetSpeedRatioClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetSpeedRatioClient& operator= (Ros1Abb_robot_msgsGetSpeedRatioClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsGetSpeedRatioClient(Ros1Abb_robot_msgsGetSpeedRatioClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsGetSpeedRatioClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetSpeedRatio_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsGetSpeedRatioServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsGetSpeedRatioServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsGetSpeedRatioResponse(Ros1Abb_robot_msgsGetSpeedRatioRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsGetSpeedRatioRequest;
+        using Response = Ros1Abb_robot_msgsGetSpeedRatioResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsGetSpeedRatioServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_GetSpeedRatio_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_GetSpeedRatio_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_GetSpeedRatio_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_GetSpeedRatio_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetFileContentsClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetFileContentsClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetFileContentsRequest;
+        using Response = Ros1Abb_robot_msgsSetFileContentsResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsSetFileContentsClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetFileContentsClient(Ros1Abb_robot_msgsSetFileContentsClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetFileContentsClient& operator= (Ros1Abb_robot_msgsSetFileContentsClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetFileContentsClient(Ros1Abb_robot_msgsSetFileContentsClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsSetFileContentsClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetFileContents_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetFileContentsServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetFileContentsServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsSetFileContentsResponse(Ros1Abb_robot_msgsSetFileContentsRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetFileContentsRequest;
+        using Response = Ros1Abb_robot_msgsSetFileContentsResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsSetFileContentsServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_SetFileContents_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetFileContents_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_SetFileContents_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_SetFileContents_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetIOSignalClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetIOSignalClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetIOSignalRequest;
+        using Response = Ros1Abb_robot_msgsSetIOSignalResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsSetIOSignalClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetIOSignalClient(Ros1Abb_robot_msgsSetIOSignalClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetIOSignalClient& operator= (Ros1Abb_robot_msgsSetIOSignalClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetIOSignalClient(Ros1Abb_robot_msgsSetIOSignalClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsSetIOSignalClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetIOSignal_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetIOSignalServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetIOSignalServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsSetIOSignalResponse(Ros1Abb_robot_msgsSetIOSignalRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetIOSignalRequest;
+        using Response = Ros1Abb_robot_msgsSetIOSignalResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsSetIOSignalServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_SetIOSignal_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetIOSignal_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_SetIOSignal_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_SetIOSignal_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDBoolClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDBoolClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDBoolRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDBoolResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsSetRAPIDBoolClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDBoolClient(Ros1Abb_robot_msgsSetRAPIDBoolClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDBoolClient& operator= (Ros1Abb_robot_msgsSetRAPIDBoolClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDBoolClient(Ros1Abb_robot_msgsSetRAPIDBoolClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsSetRAPIDBoolClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDBool_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDBoolServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDBoolServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsSetRAPIDBoolResponse(Ros1Abb_robot_msgsSetRAPIDBoolRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDBoolRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDBoolResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsSetRAPIDBoolServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDBool_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDBool_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_SetRAPIDBool_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDBool_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDDnumClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDDnumClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDDnumRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDDnumResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsSetRAPIDDnumClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDDnumClient(Ros1Abb_robot_msgsSetRAPIDDnumClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDDnumClient& operator= (Ros1Abb_robot_msgsSetRAPIDDnumClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDDnumClient(Ros1Abb_robot_msgsSetRAPIDDnumClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsSetRAPIDDnumClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDDnum_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDDnumServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDDnumServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsSetRAPIDDnumResponse(Ros1Abb_robot_msgsSetRAPIDDnumRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDDnumRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDDnumResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsSetRAPIDDnumServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDDnum_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDDnum_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_SetRAPIDDnum_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDDnum_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDNumClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDNumClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDNumRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDNumResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsSetRAPIDNumClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDNumClient(Ros1Abb_robot_msgsSetRAPIDNumClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDNumClient& operator= (Ros1Abb_robot_msgsSetRAPIDNumClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDNumClient(Ros1Abb_robot_msgsSetRAPIDNumClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsSetRAPIDNumClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDNum_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDNumServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDNumServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsSetRAPIDNumResponse(Ros1Abb_robot_msgsSetRAPIDNumRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDNumRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDNumResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsSetRAPIDNumServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDNum_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDNum_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_SetRAPIDNum_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDNum_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDStringClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDStringClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDStringRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDStringResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsSetRAPIDStringClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDStringClient(Ros1Abb_robot_msgsSetRAPIDStringClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDStringClient& operator= (Ros1Abb_robot_msgsSetRAPIDStringClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDStringClient(Ros1Abb_robot_msgsSetRAPIDStringClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsSetRAPIDStringClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDString_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDStringServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDStringServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsSetRAPIDStringResponse(Ros1Abb_robot_msgsSetRAPIDStringRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDStringRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDStringResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsSetRAPIDStringServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDString_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDString_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_SetRAPIDString_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDString_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDSymbolClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDSymbolClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDSymbolRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDSymbolResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsSetRAPIDSymbolClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDSymbolClient(Ros1Abb_robot_msgsSetRAPIDSymbolClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDSymbolClient& operator= (Ros1Abb_robot_msgsSetRAPIDSymbolClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetRAPIDSymbolClient(Ros1Abb_robot_msgsSetRAPIDSymbolClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsSetRAPIDSymbolClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDSymbol_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetRAPIDSymbolServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetRAPIDSymbolServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsSetRAPIDSymbolResponse(Ros1Abb_robot_msgsSetRAPIDSymbolRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetRAPIDSymbolRequest;
+        using Response = Ros1Abb_robot_msgsSetRAPIDSymbolResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsSetRAPIDSymbolServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDSymbol_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDSymbol_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_SetRAPIDSymbol_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_SetRAPIDSymbol_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetSpeedRatioClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetSpeedRatioClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetSpeedRatioRequest;
+        using Response = Ros1Abb_robot_msgsSetSpeedRatioResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsSetSpeedRatioClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetSpeedRatioClient(Ros1Abb_robot_msgsSetSpeedRatioClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetSpeedRatioClient& operator= (Ros1Abb_robot_msgsSetSpeedRatioClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsSetSpeedRatioClient(Ros1Abb_robot_msgsSetSpeedRatioClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsSetSpeedRatioClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetSpeedRatio_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsSetSpeedRatioServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsSetSpeedRatioServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsSetSpeedRatioResponse(Ros1Abb_robot_msgsSetSpeedRatioRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsSetSpeedRatioRequest;
+        using Response = Ros1Abb_robot_msgsSetSpeedRatioResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsSetSpeedRatioServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_SetSpeedRatio_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_SetSpeedRatio_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_SetSpeedRatio_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_SetSpeedRatio_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsTriggerWithResultCodeClient.
+     * @details This object owns the single service-call capabilities and borrows only the immutable backend.
+     * It cannot be copied or moved; context/goal storage stays stable through every call. The caller
+     * serializes access and observes explicit cleanup reports before destruction. Callbacks borrow values
+     * only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsTriggerWithResultCodeClient
+    {
+        roswasmc_context context_;
+        roswasmc_capability cap_{};
+        uint32_t error_{};
+
+    public:
+        using Request = Ros1Abb_robot_msgsTriggerWithResultCodeRequest;
+        using Response = Ros1Abb_robot_msgsTriggerWithResultCodeResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param selected Exact operator-granted alias bytes, borrowed through this synchronous open.
+         */
+        Ros1Abb_robot_msgsTriggerWithResultCodeClient(roswasmc_context const& context, std::string_view selected) : context_{context.backend}
+        {
+            roswasmc_capability_init(&cap_, &context_);
+            error_ = roswasmc_check_operation(&context_, ROSWASMC_SERVICE_CALL);
+            if(!error_ && (!context_.backend->abi_version || context_.backend->abi_version() != 1))
+            {
+                error_ = 95;
+            }
+            if(!error_ && !roswasmc_action_bundle_alias(alias(selected)))
+            {
+                error_ = UWVM_ROS_INVALID;
+            }
+            if(!error_)
+            {
+                error_ = roswasmc_open(&cap_, selected.data(), selected.size());
+            }
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsTriggerWithResultCodeClient(Ros1Abb_robot_msgsTriggerWithResultCodeClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsTriggerWithResultCodeClient& operator= (Ros1Abb_robot_msgsTriggerWithResultCodeClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Abb_robot_msgsTriggerWithResultCodeClient(Ros1Abb_robot_msgsTriggerWithResultCodeClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close or revoke explicitly and retain
+         * its status before destruction. The immutable backend must remain alive. Destruction never adds
+         * revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Abb_robot_msgsTriggerWithResultCodeClient()
+        {
+            if(roswasmc_is_open(&cap_))
+            {
+                roswasmc_close(&cap_);
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return error_ ? error_ : is_open() ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return roswasmc_is_open(&cap_);
+        }
+
+        /**
+         * @brief Perform one whole typed service request and decode its complete response.
+         * @details Request and response storage are borrowed through this synchronous call. Paired canonical
+         * bounds and all original fields remain intact. On transport success inspect native response fields
+         * for controller refusal. An uncertain timeout or disconnect is not replayed.
+         * @param request Complete initialized request borrowed until return.
+         * @param response Caller-owned complete response; inspect after a successful result.
+         * @return Original transport/codec status and length facts, without replacing controller fields.
+         */
+        roswasmc_result call(Request const& request, Response& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_TriggerWithResultCode_call(&cap_, &request, &response);
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t close()
+        {
+            return roswasmc_close(&cap_);
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * Store this status separately from an earlier operation error. No automatic reopen, stronger
+         * cancellation, effect replay or physical-stop claim occurs.
+         * @return Original retirement status.
+         */
+        uint32_t revoke()
+        {
+            return roswasmc_revoke(&cap_);
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Abb_robot_msgsTriggerWithResultCodeServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Abb_robot_msgsTriggerWithResultCodeServer : public ServerOwners
+    {
+        using Handler = std::function<Ros1Abb_robot_msgsTriggerWithResultCodeResponse(Ros1Abb_robot_msgsTriggerWithResultCodeRequest const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        using Request = Ros1Abb_robot_msgsTriggerWithResultCodeRequest;
+        using Response = Ros1Abb_robot_msgsTriggerWithResultCodeResponse;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Abb_robot_msgsTriggerWithResultCodeServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, false}
+        {
+        }
+
+        /**
+         * @brief Replace the owned service callback for the next executor pass.
+         * @details The current shared functor remains alive through its pass, including mutable state.
+         * Request references are borrowed only during invocation. Allocation and callback exceptions
+         * propagate; the pass guard restores reentrancy state. Registration performs no native request.
+         * @param handler Owned callable moved into shared callback storage; empty disables dispatch.
+         */
+        void on_request(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param ticket Native service ticket output on success.
+         * @param request Complete caller-owned request output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& ticket, Request& request)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_abb_robot_msgs_TriggerWithResultCode_poll(&advertise_, &ticket, &request);
+        }
+
+        /**
+         * @brief Respond once to the exact native service ticket.
+         * @details The complete response is borrowed through encoding and the synchronous import. The host
+         * validates ticket/type/role ownership. Do not repeat an uncertain response or respond again to a
+         * request already completed by process_once().
+         * @param ticket Nonzero pending native service ticket.
+         * @param response Complete initialized response.
+         * @return Original response/codec result.
+         */
+        roswasmc_result respond(uint64_t ticket, Response const& response)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_abb_robot_msgs_TriggerWithResultCode_respond(&respond_, ticket, &response);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t ticket{};
+            Request request{};
+            auto r = roswasmc_bounded_1_abb_robot_msgs_TriggerWithResultCode_poll(&advertise_, &ticket, &request);
+            if(r.error)
+            {
+                return r.error;
+            }
+            Response response = (*handler)(request);
+            return roswasmc_bounded_1_abb_robot_msgs_TriggerWithResultCode_respond(&respond_, ticket, &response).error;
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Control_msgsFollowJointTrajectoryClient.
+     * @details This object owns the action client capabilities and borrows only the immutable backend. It
+     * cannot be copied or moved; context/goal storage stays stable through every call. The caller serializes
+     * access and observes explicit cleanup reports before destruction. Callbacks borrow values only during
+     * invocation; no hidden thread or retry is created. Four required roles and optional any-cancel remain
+     * distinct; goal quota is 1..1024.
+     */
+    class Ros1Control_msgsFollowJointTrajectoryClient
+    {
+        roswasmc_context context_;
+        std::array<uint64_t, 1024> goals_{};
+        roswasmc_action_bundle bundle_{};
+
+    public:
+        using Goal = Ros1Control_msgsFollowJointTrajectoryGoal;
+        using Result = Ros1Control_msgsFollowJointTrajectoryResult;
+        using Feedback = Ros1Control_msgsFollowJointTrajectoryFeedback;
+
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param aliases Four required role aliases and optional independent any-cancel alias.
+         * @param slots Active goal quota in 1..1024 entries; no allocation or truncation.
+         */
+        Ros1Control_msgsFollowJointTrajectoryClient(roswasmc_context const& context, roswasmc_action_aliases const& aliases, size_t slots = 8) :
+            context_{context.backend}
+        {
+            roswasmc_action_bundle_init(&context_, &bundle_, &aliases, goals_.data(), slots);
+        }
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Control_msgsFollowJointTrajectoryClient(Ros1Control_msgsFollowJointTrajectoryClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Control_msgsFollowJointTrajectoryClient& operator= (Ros1Control_msgsFollowJointTrajectoryClient const&) = delete;
+
+        /**
+         * @brief Refuse copying or moving an owning endpoint.
+         * @details Opaque capabilities and stable context/goal storage have one logical owner. Duplicating
+         * handles or relocating their backing object is a compile-time error.
+         */
+        Ros1Control_msgsFollowJointTrajectoryClient(Ros1Control_msgsFollowJointTrajectoryClient&&) = delete;
+
+        /**
+         * @brief Attempt ordinary retirement of remaining owned roles on destruction.
+         * @details The destructor cannot report cleanup errors. Call close_checked or revoke_checked
+         * explicitly and retain its status before destruction. The immutable backend must remain alive.
+         * Destruction never adds revocation, stronger cancellation, retries or a physical-stop guarantee.
+         */
+        ~Ros1Control_msgsFollowJointTrajectoryClient()
+        {
+            if(bundle_.active)
+            {
+                std::array<uint32_t, 5> statuses{};
+                roswasmc_action_bundle_close_checked(&bundle_, 0, statuses.data(), statuses.size());
+            }
+        }
+
+        /**
+         * @brief Read initialization or retired-owner status without an import.
+         * @details This is local owner state rather than native connection health or controller admission. A
+         * closed object is not reopened. Preserve later operation and cleanup errors independently.
+         * @return The first initialization error, zero while locally open, or 9 after retirement.
+         */
+        uint32_t error() const noexcept
+        {
+            return bundle_.error ? bundle_.error : bundle_.active ? 0 : 9;
+        }
+
+        /**
+         * @brief Inspect whether this object still owns a local role.
+         * @details No import, permission lookup or controller health check occurs. A true result does not
+         * prove a goal completed or a physical controller is connected.
+         * @return Local ownership state.
+         */
+        bool is_open() const noexcept
+        {
+            return bundle_.active;
+        }
+
+        /**
+         * @brief Check membership of a nonzero goal ID in this owner's finite table.
+         * @details The table is local bookkeeping, not host authorization. The caller serializes access and
+         * keeps this nonmoving owner alive until result consumption or explicit retirement.
+         * @param id Candidate native goal ID; zero is never an owned goal.
+         * @return True for a tracked local goal.
+         */
+        bool owns(uint64_t id) const
+        {
+            return roswasmc_action_bundle_owns(&bundle_, id);
+        }
+
+        /**
+         * @brief Send one complete goal and retain its returned ID in this owner.
+         * @details The goal is borrowed only for this call and must satisfy its complete codec bounds. The
+         * finite goal quota is never resized or truncated. Preserve uncertain outcomes rather than
+         * resubmitting effects; keep the owner alive for feedback, terminal consumption and cleanup.
+         * @param value Complete original goal in native declared units and frame.
+         * @param id Caller-owned goal-ID output, inspected only after success.
+         * @return Original send/codec result.
+         */
+        roswasmc_result send_goal(Goal const& value, uint64_t& id)
+        {
+            return roswasmc_bounded_1_control_msgs_FollowJointTrajectory_send(&bundle_, &value, &id);
+        }
+
+        /**
+         * @brief Poll one complete feedback value for a locally owned goal.
+         * @details No executor or retry is started. Idle 11 is returned unchanged and does not consume the
+         * goal. Field units, finite bounds and host goal ownership remain the original contract.
+         * @param id Nonzero ID tracked by this owner.
+         * @param value Caller-owned whole feedback output.
+         * @return Original poll/codec result; inspect the output only on success.
+         */
+        roswasmc_result feedback(uint64_t id, Feedback& value)
+        {
+            return roswasmc_bounded_1_control_msgs_FollowJointTrajectory_feedback(&bundle_, id, &value);
+        }
+
+        /**
+         * @brief Consume one validated terminal result for this owner's goal.
+         * @details A valid terminal kind is 2..4. Successful terminal consumption retires that local goal
+         * once; idle or uncertain transport is not an invitation to resend the goal. Native result fields
+         * remain independent from transport errors and do not assert physical stopping.
+         * @param id Nonzero tracked goal ID.
+         * @param kind Caller-owned terminal-kind output.
+         * @param value Caller-owned complete terminal result.
+         * @return Original terminal poll/codec result.
+         */
+        roswasmc_result result(uint64_t id, uint8_t& kind, Result& value)
+        {
+            return roswasmc_bounded_1_control_msgs_FollowJointTrajectory_result(&bundle_, id, &kind, &value);
+        }
+
+        /**
+         * @brief Request cancellation once for a goal tracked by this owner.
+         * @details Zero and foreign IDs are refused. Acceptance is not terminal completion or a physical-
+         * stop guarantee; retain the goal until terminal consumption or explicit checked retirement.
+         * @param id Nonzero locally owned goal ID.
+         * @param accepted Cancellation acceptance output on success.
+         * @return Original owned-cancellation result; no stronger role is substituted.
+         */
+        roswasmc_result cancel_own(uint64_t id, int& accepted)
+        {
+            return roswasmc_action_bundle_cancel_own(&bundle_, id, &accepted);
+        }
+
+        /**
+         * @brief Use the separately granted any-goal cancellation role once.
+         * @details This role is distinct from own cancellation. A zero selector has the ABI's all-goals
+         * meaning only under this independently granted authority. No timeout recovery escalates into it.
+         * @param id Explicit native selector for this separately granted operation.
+         * @param accepted Acceptance output on success, not proof of terminal completion.
+         * @return Original cancellation result.
+         */
+        roswasmc_result cancel_any(uint64_t id, int& accepted)
+        {
+            return roswasmc_action_bundle_cancel_any(&bundle_, id, &accepted);
+        }
+
+        /**
+         * @brief Explicitly request all-goal cancellation through the any-cancel role.
+         * @details The zero selector never broadens an own-cancel capability. The caller must independently
+         * authorize this operation; ordinary close, rollback and destruction never invoke it.
+         * @param accepted Acceptance output on success; physical stopping is not implied.
+         * @return Original cancellation result.
+         */
+        roswasmc_result cancel_all(int& accepted)
+        {
+            return roswasmc_action_bundle_cancel_all(&bundle_, &accepted);
+        }
+
+        /**
+         * @brief Inspect saved construction rollback without retiring another role.
+         * @details The returned report preserves the original setup error and independent cleanup summary.
+         * The statuses overload copies every saved role result; unopened roles retain zero. Service-server
+         * order is advertise/respond; action order is send/own-cancel/feedback/result/any-cancel.
+         * @param statuses Caller-owned fixed-size output array for all role statuses.
+         * @return The saved rollback report; no import or retry is performed.
+         */
+        roswasmc_cleanup_report construction_cleanup(std::array<uint32_t, 5>& statuses) const
+        {
+            for(size_t i = 0; i < statuses.size(); ++i)
+                statuses[i] = bundle_.rollback_status[i];
+            return bundle_.rollback;
+        }
+
+        /**
+         * @brief Retire owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * The report keeps primary/first cleanup errors and attempt/failure counts separate. No automatic
+         * reopen, stronger cancellation, effect replay or physical-stop claim occurs.
+         * @param primary Earlier operation error, retained independently from cleanup.
+         * @param statuses Caller-owned per-role results in the declared role order.
+         * @return Saved primary and independent cleanup report.
+         */
+        roswasmc_cleanup_report close_checked(uint32_t primary, std::array<uint32_t, 5>& statuses)
+        {
+            return roswasmc_action_bundle_close_checked(&bundle_, primary, statuses.data(), statuses.size());
+        }
+
+        /**
+         * @brief Revoke owned resources once and preserve cleanup status.
+         * @details The immutable backend and owner storage must remain alive through synchronous cleanup.
+         * The report keeps primary/first cleanup errors and attempt/failure counts separate. No automatic
+         * reopen, stronger cancellation, effect replay or physical-stop claim occurs.
+         * @param primary Earlier operation error, retained independently from cleanup.
+         * @param statuses Caller-owned per-role results in the declared role order.
+         * @return Saved primary and independent cleanup report.
+         */
+        roswasmc_cleanup_report revoke_checked(uint32_t primary, std::array<uint32_t, 5>& statuses)
+        {
+            return roswasmc_action_bundle_revoke_checked(&bundle_, primary, statuses.data(), statuses.size());
+        }
+    };
+
+    /**
+     * @brief Own the typed endpoint lifecycle for Ros1Control_msgsFollowJointTrajectoryServer.
+     * @details This object owns the separate advertisement/response capabilities and borrows only the
+     * immutable backend. It cannot be copied or moved; context/goal storage stays stable through every call.
+     * The caller serializes access and observes explicit cleanup reports before destruction. Callbacks
+     * borrow values only during invocation; no hidden thread or retry is created.
+     */
+    class Ros1Control_msgsFollowJointTrajectoryServer : public ServerOwners
+    {
+    public:
+        using Goal = Ros1Control_msgsFollowJointTrajectoryGoal;
+        using Result = Ros1Control_msgsFollowJointTrajectoryResult;
+        using Feedback = Ros1Control_msgsFollowJointTrajectoryFeedback;
+
+        /**
+         * @brief Own the complete selected feedback and terminal reply values.
+         * @details The callback returns this value by ownership. Each flag explicitly selects its effect;
+         * terminal kind is 2..4 only when send_result is true. A completed feedback effect is not replayed
+         * if the later terminal send fails. Original message units and frames are preserved.
+         */
+        struct Replies
+        {
+            Feedback feedback{};
+            Result result{};
+            uint8_t kind{2};
+            bool send_feedback{true}, send_result{true};
+        };
+
+    private:
+        using Handler = std::function<Replies(uint64_t, Goal const&)>;
+        std::shared_ptr<Handler> handler_;
+
+    public:
+        /**
+         * @brief Acquire the explicitly selected typed endpoint roles once.
+         * @details The object owns its capabilities and copies only the backend pointer into stable context
+         * storage. Alias views are not retained after synchronous acquisition. Inspect error() before use
+         * and construction_cleanup overloads where exposed for rollback evidence. All operations on this
+         * owner must be serialized by the caller; construction creates no thread, deadline or implicit
+         * grant.
+         * @param context Borrowed for construction; its immutable backend must outlive this owner.
+         * @param advertise Distinct advertisement alias bytes, borrowed through construction.
+         * @param respond Distinct response alias bytes, borrowed through construction.
+         */
+        Ros1Control_msgsFollowJointTrajectoryServer(roswasmc_context const& context, std::string_view advertise, std::string_view respond) :
+            ServerOwners{context, advertise, respond, true}
+        {
+        }
+
+        /**
+         * @brief Replace the owned action callback for the next executor pass.
+         * @details The current functor survives its pass. Goal references are borrowed until callback
+         * return; copy complete values before retaining them. Replies choose feedback/result effects
+         * explicitly. Callback exceptions are not translated into fabricated native terminal results.
+         * @param handler Owned goal callable, or empty to disable dispatch.
+         */
+        void on_goal(Handler handler)
+        {
+            handler_ = handler ? std::make_shared<Handler>(std::move(handler)) : nullptr;
+        }
+
+        /**
+         * @brief Poll one whole native request/goal.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @param id Nonzero native goal-ID output on success.
+         * @param goal Complete caller-owned goal output.
+         * @return Original poll/codec result.
+         */
+        roswasmc_result poll_once(uint64_t& id, Goal& goal)
+        {
+            if(busy_)
+            {
+                return roswasmc_action_bundle_failure(17);
+            }
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            Pass guard{busy_};
+            return roswasmc_bounded_1_control_msgs_FollowJointTrajectory_poll(&advertise_, &id, &goal);
+        }
+
+        /**
+         * @brief Send one complete feedback component for a pending native goal.
+         * @details The server borrows the value through this call; canonical bounds and every field are
+         * validated before the effect. Native goal and response-role authority remain host checks.
+         * @param id Nonzero pending native goal ID.
+         * @param value Complete original feedback value.
+         * @return Original feedback result.
+         */
+        roswasmc_result respond_feedback(uint64_t id, Feedback const& value)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_control_msgs_FollowJointTrajectory_respond_feedback(&respond_, id, &value);
+        }
+
+        /**
+         * @brief Send one explicit terminal component for a pending native goal.
+         * @details Terminal kind 2..4 and the whole result are validated. A terminal effect is consumed
+         * once; an uncertain return never triggers automatic response replay or another cancellation role.
+         * @param id Nonzero pending goal ID.
+         * @param kind Explicit ABI terminal kind in 2..4.
+         * @param value Complete original terminal result.
+         * @return Original terminal response/codec result.
+         */
+        roswasmc_result respond_result(uint64_t id, uint8_t kind, Result const& value)
+        {
+            if(error())
+            {
+                return roswasmc_action_bundle_failure(error());
+            }
+            return roswasmc_bounded_1_control_msgs_FollowJointTrajectory_respond_result(&respond_, id, kind, &value);
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t poll_once()
+        {
+            return process_once();
+        }
+
+        /**
+         * @brief Perform one bounded poll/decode/callback/respond pass.
+         * @details The caller serializes this owner and keeps the backend alive. Idle 11 is returned
+         * unchanged. Nested polling or retirement during a guarded callback is refused with 17. No retry,
+         * timer or background executor is started. Callback arguments are borrowed until return; an
+         * exception restores the guard and propagates. Earlier effects are never replayed after a later
+         * failure.
+         * @return First original operation/codec status, or zero after the selected effects.
+         */
+        uint32_t process_once()
+        {
+            if(busy_)
+            {
+                return 17;
+            }
+            if(error())
+            {
+                return error();
+            }
+            auto handler = handler_;
+            if(!handler)
+            {
+                return 22;
+            }
+            Pass guard{busy_};
+            uint64_t id{};
+            Goal goal{};
+            auto r = roswasmc_bounded_1_control_msgs_FollowJointTrajectory_poll(&advertise_, &id, &goal);
+            if(r.error)
+            {
+                return r.error;
+            }
+            auto replies = (*handler)(id, goal);
+            if(replies.send_result &&
+               (replies.kind < 2 || replies.kind > 4 || !roswasmc_bounded_1_control_msgs_FollowJointTrajectoryResult_valid(&replies.result)))
+            {
+                return 22;
+            }
+            if(replies.send_feedback && !roswasmc_bounded_1_control_msgs_FollowJointTrajectoryFeedback_valid(&replies.feedback))
+            {
+                return 22;
+            }
+            if(replies.send_feedback)
+            {
+                r = roswasmc_bounded_1_control_msgs_FollowJointTrajectory_respond_feedback(&respond_, id, &replies.feedback);
+                if(r.error)
+                {
+                    return r.error;
+                }
+            }
+            return replies.send_result
+                       ? roswasmc_bounded_1_control_msgs_FollowJointTrajectory_respond_result(&respond_, id, replies.kind, &replies.result).error
+                       : 0;
+        }
+    };
+}  // namespace uwvm_custom

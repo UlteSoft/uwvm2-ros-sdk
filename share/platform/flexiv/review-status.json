@@ -1,0 +1,224 @@
+{
+  "platform": "flexiv",
+  "review_state": "source-review",
+  "examples": 753,
+  "example_languages": {
+    "as": 33,
+    "c": 53,
+    "c_ffi_bridge": 33,
+    "cpp": 49,
+    "csharp": 24,
+    "d": 24,
+    "fsharp": 24,
+    "go": 33,
+    "haskell": 24,
+    "java": 24,
+    "js": 33,
+    "kotlin": 24,
+    "lua": 24,
+    "moonbit": 24,
+    "nim": 24,
+    "objectc": 33,
+    "odin": 24,
+    "php": 24,
+    "py": 33,
+    "r": 24,
+    "rs": 33,
+    "ruby": 24,
+    "swift": 24,
+    "tinygo": 33,
+    "vbnet": 24,
+    "zig": 27
+  },
+  "manuals": {
+    "zh_CN": 34,
+    "en_US": 34
+  },
+  "current_snapshot_build_acceptance": "partial-four-C-Cpp-width-representatives-passed",
+  "current_snapshot_native_ros_acceptance": "pending",
+  "current_snapshot_qemu_aarch64_acceptance": "pending",
+  "static_shared_library_acceptance": "pending",
+  "complete": false,
+  "withheld_source_files": 0,
+  "source_review_revision": "2026-10-23-parent-review-39",
+  "source_owner": "04",
+  "review_guide": "document/REVIEW.04-05.en_US.md",
+  "historical_evidence_scope": "210 Wasm builds; 204 guest applications; 1550 codec checks on the exact captured common snapshot. No native bridge, ARM or library qualification.",
+  "current_snapshot_guest_acceptance": "malformed-input-refusal",
+  "integration_regression": {
+    "revision": "2026-10-23-platform-review-29-r3",
+    "actual_builds": 4,
+    "actual_guest_executions": 4,
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "address_bits": [
+      32,
+      64
+    ],
+    "memory_max": "68719476736",
+    "memory_swap_max": "0",
+    "full_platform_accepted": false,
+    "cases": [
+      {
+        "project": "example/platform/flexiv/c/ros2_jazzy_v1/decode_state",
+        "language": "c",
+        "address_bits": 32,
+        "wasm_sha256": "3c407e9961f05d00d643f843fac7779f15005c53096dcfadf9bff05beb1f8a33"
+      },
+      {
+        "project": "example/platform/flexiv/c/ros2_jazzy_v1/decode_state",
+        "language": "c",
+        "address_bits": 64,
+        "wasm_sha256": "48473d68a04d67aae79b06e5a4c39826beff62ff5684f0ed60c0c2445db44ad5"
+      },
+      {
+        "project": "example/platform/flexiv/cpp/ros2_jazzy_v1/decode_state",
+        "language": "cpp",
+        "address_bits": 32,
+        "wasm_sha256": "ce423e32065d0935069ac75bafe531f2006c25dc58512b70a150b3a2b8442869"
+      },
+      {
+        "project": "example/platform/flexiv/cpp/ros2_jazzy_v1/decode_state",
+        "language": "cpp",
+        "address_bits": 64,
+        "wasm_sha256": "bcb145d530cdcfe765b8529e2e8ba224666deecadfcb16bad8ff8ed6e8eab49c"
+      }
+    ]
+  },
+  "reviewed_native_state_cohort": {
+    "original_type": "flexiv_msgs/msg/RobotStates",
+    "guest_language": "c",
+    "widths": [
+      32,
+      64
+    ],
+    "native_host": "x86_64",
+    "positive": 2,
+    "permission_denied": 2,
+    "subscription_retirement_observed": true,
+    "qemu_aarch64": false,
+    "service_action_qualification": false
+  },
+  "actual_xmake_run_acceptance": {
+    "entry": "UWVM_ROS_RUN_CONFIG=deployment.json xmake run main",
+    "language": "c",
+    "architecture": "x86_64",
+    "address_bits": [
+      32,
+      64
+    ],
+    "cases": 4,
+    "complete_original_fields": true,
+    "allowed_and_denied": true,
+    "manual_policy_unchanged": true,
+    "compiler_cache_required": false,
+    "qemu_aarch64": false,
+    "native_service_action": false
+  },
+  "review39_scoped_acceptance": {
+    "original_native_server_cases": 16,
+    "ROS_distribution": "jazzy",
+    "languages": [
+      "c"
+    ],
+    "terminal_kind": 3,
+    "native_abort_status": 6,
+    "cancel_lifecycle_qualified": false,
+    "wasm_widths": [
+      32,
+      64
+    ],
+    "runtime_hosts": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "actual_memory_max": 68719476736,
+    "actual_memory_swap_max": 0,
+    "physical_controller_executed": false,
+    "complete_platform_qualified": false
+  },
+  "review40_scoped_acceptance": {
+    "review": 40,
+    "wasm_widths": [
+      32,
+      64
+    ],
+    "runtime_hosts": [
+      "x86_64",
+      "QEMU AArch64"
+    ],
+    "actual_memory_max": 68719476736,
+    "actual_memory_swap_max": 0,
+    "complete_platform_qualified": false,
+    "physical_controller_executed": false,
+    "original_cancel_cases": 8,
+    "distribution": "jazzy",
+    "native_cancel_terminal": "CANCELED",
+    "exact_Humble_qualified": false
+  },
+  "source_inventory_review": 44,
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig",
+    "fortran",
+    "wat",
+    "typescript"
+  ],
+  "new_language_work": {
+    "fortran": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_compiler": "LLVM Flang 23.1.4 source candidate",
+      "common_raw_abi_modules": [
+        "uwvm_ros1_v1",
+        "uwvm_ros2_v1"
+      ],
+      "compiled": false,
+      "executed": false
+    },
+    "wat": {
+      "state": "implementation-in-progress-not-qualified",
+      "common_assembler": "WABT wat2wasm source candidate",
+      "compiled": false,
+      "executed": false
+    }
+  },
+  "typescript": {
+    "shared_frontend_available": true,
+    "platform_native_qualification": "pending",
+    "platform_registration_qualified": false,
+    "scope": "Common two-width frontend and scalar libraries; platform native ROS acceptance is separate"
+  },
+  "review44_final_zig": {
+    "source_files": 48,
+    "raw_receipt_entries_verified": 2975,
+    "selected_actual_runs": 48,
+    "new_functional_coverage_credit": 0,
+    "scope": "Final-source ROS1/ROS2 grasp and Flexiv cancellation cases; x86_64/QEMU, two Wasm widths, granted and denied. Exact Humble remains unqualified."
+  }
+}

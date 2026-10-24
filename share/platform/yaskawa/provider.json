@@ -1,0 +1,149 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "platform": "yaskawa",
+  "version": "complete",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "catalogs": {
+    "ros2": "share/platform/yaskawa/catalogs/ros2/catalog.preparation.json"
+  },
+  "source_ir": "share/platform/yaskawa/records-ir.json",
+  "requested_targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "exceptions"
+  ],
+  "vendor_options": {
+    "version": {
+      "allowed": [
+        "complete"
+      ],
+      "meaning": "exact locked interface catalog, never controller firmware"
+    },
+    "model": {
+      "default": "operator-supplied",
+      "meaning": "actual controller model and joint/group layout; no implicit hardware selection"
+    },
+    "transport": {
+      "allowed": [
+        "native-ros"
+      ],
+      "meaning": "installed uwvm2-ros and independently bound native registry"
+    },
+    "backend": {
+      "allowed": [
+        "ros2"
+      ]
+    },
+    "distribution": {
+      "ros1": [],
+      "ros2": [
+        "foxy",
+        "galactic",
+        "humble",
+        "jazzy"
+      ]
+    },
+    "permissions": {
+      "default": [],
+      "configuration": "operator-owned run configuration only"
+    }
+  },
+  "scenarios": {
+    "robot_status": {
+      "type": "industrial_msgs/msg/RobotStatus",
+      "operation": "topic_subscribe + event_poll",
+      "kind": "message"
+    },
+    "joint_state": {
+      "type": "sensor_msgs/msg/JointState",
+      "operation": "topic_subscribe + event_poll",
+      "kind": "message"
+    },
+    "alarm_info": {
+      "type": "motoros2_interfaces/msg/AlarmInfo",
+      "operation": "topic_subscribe + event_poll",
+      "kind": "message"
+    }
+  },
+  "qualification": {
+    "source": "prepared",
+    "all_languages_executed": false,
+    "memory64_executed": false,
+    "controller_hardware_executed": false
+  },
+  "shared_provider_requirement": "The central catalog provider must consume this full descriptor and delegate each language to its single shared adapter.",
+  "industrial_source_extension_version": 1,
+  "api_version": 1,
+  "id": "yaskawa",
+  "module": "tools/platform/yaskawa/provider.lua",
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "backends": {
+    "ros1": {
+      "distributions": []
+    },
+    "ros2": {
+      "distributions": [
+        "foxy",
+        "galactic",
+        "humble",
+        "jazzy"
+      ]
+    }
+  },
+  "industrial_target_contract": {
+    "wasi": "preview1",
+    "threads": false,
+    "exceptions": "explicit shared toolchain profile",
+    "wasm_core": "3.0"
+  },
+  "options": {
+    "catalog": {
+      "required": true,
+      "default": "complete",
+      "values": [
+        "complete"
+      ]
+    },
+    "transport": {
+      "required": true,
+      "default": "native-ros",
+      "values": [
+        "native-ros"
+      ]
+    }
+  },
+  "scenarios_restricted": false
+}

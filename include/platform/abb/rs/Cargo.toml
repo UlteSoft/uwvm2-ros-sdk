@@ -1,0 +1,13 @@
+# @brief Public ABB Rust observation crate; Xmake resolves its installed location.
+[package]
+name = "abb_observation"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+path = "observation.rs"
+
+[dependencies]
+# @details This internal dependency stays within the same SDK installation.
+roswasm = { path = "../../ros/rs", default-features = false, features = ["alloc", "ros2"] }

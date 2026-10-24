@@ -1,0 +1,15 @@
+# Private work, build caches and editor state.
+/.tmp/
+/.git/
+.DS_Store
+__pycache__/
+*.py[cod]
+.xmake/
+.uwvm-ros/
+.cache/
+build/
+build-*/
+node_modules/
+.vscode/
+.idea/
+# Precompiled development inputs in lib/ and share/ are deliberately retained.

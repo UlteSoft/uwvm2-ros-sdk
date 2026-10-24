@@ -1,0 +1,191 @@
+{
+  "repository": "Interbotix/interbotix_ros_core",
+  "branch": "melodic",
+  "commit": "dcaae578db7b41b5d02e0c7548cfc4951cea15bc",
+  "tree": "e368cfcc18ac98ace002cfb82d1ed24342db3114",
+  "ros_version": 1,
+  "vendor": "trossen",
+  "profile": "ros1_melodic",
+  "admitted_custom_roots": [
+    "interbotix_xs_msgs/ArmJoy",
+    "interbotix_xs_msgs/HexJoy",
+    "interbotix_xs_msgs/JointGroupCommand",
+    "interbotix_xs_msgs/JointSingleCommand",
+    "interbotix_xs_msgs/JointTemps",
+    "interbotix_xs_msgs/JointTrajectoryCommand",
+    "interbotix_xs_msgs/LocobotJoy",
+    "interbotix_xs_msgs/MotorGains",
+    "interbotix_xs_msgs/OperatingModes",
+    "interbotix_xs_msgs/Reboot",
+    "interbotix_xs_msgs/RegisterValues",
+    "interbotix_xs_msgs/RobotInfo",
+    "interbotix_xs_msgs/TorqueEnable",
+    "interbotix_xs_msgs/TurretJoy",
+    "xarm_msgs/ClearErr",
+    "xarm_msgs/ConfigToolModbus",
+    "xarm_msgs/GetAnalogIO",
+    "xarm_msgs/GetControllerDigitalIO",
+    "xarm_msgs/GetDigitalIO",
+    "xarm_msgs/GetErr",
+    "xarm_msgs/GripperConfig",
+    "xarm_msgs/GripperMove",
+    "xarm_msgs/GripperState",
+    "xarm_msgs/IOState",
+    "xarm_msgs/Move",
+    "xarm_msgs/RobotMsg",
+    "xarm_msgs/SetAxis",
+    "xarm_msgs/SetDigitalIO",
+    "xarm_msgs/SetInt16",
+    "xarm_msgs/SetLoad",
+    "xarm_msgs/SetToolModbus",
+    "xarm_msgs/TCPOffset"
+  ],
+  "excluded_original_roots": [],
+  "format": "uwvm-platform-source-lock-v1",
+  "original_catalog_sha256": "fbdd4254113456d398bbf64766e84329f233e135efcaa73a1101219fd5f925c7",
+  "catalog_sha256": "3c38248e82702867c3321a1f7e02c727d9da96aedd1d9b4fa86e7c19a02d672b",
+  "definitions": [
+    {
+      "file": "interbotix_xs_msgs/ArmJoy.msg",
+      "sha256": "dc1c79a173d9802da2313e12152fea0457a1b2f81b3332131a46ad2fb3fb71c3"
+    },
+    {
+      "file": "interbotix_xs_msgs/HexJoy.msg",
+      "sha256": "e1082530c48ce50c208518d4b40f641c8fd38726e76832572e2c336c6ebfe267"
+    },
+    {
+      "file": "interbotix_xs_msgs/JointGroupCommand.msg",
+      "sha256": "b85955c32e0fcaca05feeabe663b495e93ba5e85d26d4becf91d72dd09b04d44"
+    },
+    {
+      "file": "interbotix_xs_msgs/JointSingleCommand.msg",
+      "sha256": "bbe2faaa92bcffd29c5f1e449f3e1aaaf68938f85bb1ab77cb228fe99806b77b"
+    },
+    {
+      "file": "interbotix_xs_msgs/JointTemps.msg",
+      "sha256": "e0798d4b96836b4836a540161fefb8071998ef948e5fb09b5e29a8bb3d9a4622"
+    },
+    {
+      "file": "interbotix_xs_msgs/JointTrajectoryCommand.msg",
+      "sha256": "185e5828609989f3732b76e3f80adb0ffc800e808a4064c6e6751db986970502"
+    },
+    {
+      "file": "interbotix_xs_msgs/LocobotJoy.msg",
+      "sha256": "e0ce8e86d9cc6dcb240c696a5ab24ed8e29df7a5f295183e8aec606b0b74e559"
+    },
+    {
+      "file": "interbotix_xs_msgs/MotorGains.srv",
+      "sha256": "3d278e42154a1620e4a496c76b345b59bc183bd833ba5aefb6d797bf9c8abe67"
+    },
+    {
+      "file": "interbotix_xs_msgs/OperatingModes.srv",
+      "sha256": "b8b5344f61f82d8d1264d5510d72bc092f7c5b35d11f001e9d3d7739c6f8b060"
+    },
+    {
+      "file": "interbotix_xs_msgs/Reboot.srv",
+      "sha256": "d2a065332528676c8c5378cc41cbd8c611e8c6e479b7bfa1c75e19053d38d17e"
+    },
+    {
+      "file": "interbotix_xs_msgs/RegisterValues.srv",
+      "sha256": "ff04d128d88437e0f50f452a4a9cfe98b36346179614b0255fc917aeabbdf513"
+    },
+    {
+      "file": "interbotix_xs_msgs/RobotInfo.srv",
+      "sha256": "5953ba2fdd8f7cd3d858dd002e7e7ec2de6960d4c9c82ce1ddc5c6177e6ce163"
+    },
+    {
+      "file": "interbotix_xs_msgs/TorqueEnable.srv",
+      "sha256": "0f382d2c2c46af302521729c73400427bd8d6a35000c3a310e78913e78b59c9f"
+    },
+    {
+      "file": "interbotix_xs_msgs/TurretJoy.msg",
+      "sha256": "8918e08d1f7b602fde321996f484e1aa2c5a620430eb0be95ca690e5276d1f8b"
+    },
+    {
+      "file": "std_msgs/Header.msg",
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693"
+    },
+    {
+      "file": "trajectory_msgs/JointTrajectory.msg",
+      "sha256": "c3fd593dfc91e9084316bd8ea8c9c11be65c93dad98609e135ec491574a8f05c"
+    },
+    {
+      "file": "trajectory_msgs/JointTrajectoryPoint.msg",
+      "sha256": "d6bdced3460bf402a86274ccccf7fd7876cae1d70c8610fb6ca684da6057b9a2"
+    },
+    {
+      "file": "xarm_msgs/ClearErr.srv",
+      "sha256": "628c788bacb726db5a6041035cde0f64d3e65abc94014f33155146ab9defc096"
+    },
+    {
+      "file": "xarm_msgs/ConfigToolModbus.srv",
+      "sha256": "b24ed91b77d7b6fd0b611fc52a5e18fa5171ff2240150f0c8b015342b78bc052"
+    },
+    {
+      "file": "xarm_msgs/GetAnalogIO.srv",
+      "sha256": "919b9927ab303b93997651a29573632fd85017e12e107e453b2c490518ffe9d1"
+    },
+    {
+      "file": "xarm_msgs/GetControllerDigitalIO.srv",
+      "sha256": "cccdba67406fe93d1edc89b7788d69dd64a61bb80199b1df53f8bfb6b815dd1b"
+    },
+    {
+      "file": "xarm_msgs/GetDigitalIO.srv",
+      "sha256": "ffd42a0f96df19af0f8ec2368e7b09c9fdae85eaa8f2e738cfd7f7b93baf371e"
+    },
+    {
+      "file": "xarm_msgs/GetErr.srv",
+      "sha256": "9e243ab06b15441e64d215fcc93906a2c0bc0f99fc6ca8d80ada2d6b7a0f1891"
+    },
+    {
+      "file": "xarm_msgs/GripperConfig.srv",
+      "sha256": "a8931c1d78b7c9bdbaaf88d7bfb39e0bfe0278243c0fb56ca54daeec287800a7"
+    },
+    {
+      "file": "xarm_msgs/GripperMove.srv",
+      "sha256": "ce9c3036fe1c3f582a8a35f1acdcbb10f7856a380082008b3209d0da4a4f29d7"
+    },
+    {
+      "file": "xarm_msgs/GripperState.srv",
+      "sha256": "45a766584b32919c5988f428518e244684174aadd06526c3d16ce443afaf4595"
+    },
+    {
+      "file": "xarm_msgs/IOState.msg",
+      "sha256": "c3d02e687885003c4a9bbab24d5a256f1eb6ee05bd0ff777230cdb90dd568106"
+    },
+    {
+      "file": "xarm_msgs/Move.srv",
+      "sha256": "0678f5c17aa82f1f8c63d2a6b4ff1d1258d5162c7031752d7c5519c12cb9df48"
+    },
+    {
+      "file": "xarm_msgs/RobotMsg.msg",
+      "sha256": "c262d81f5340df7fac964ec63ab28853eec3b8c3d9566772c57009e4a07b6133"
+    },
+    {
+      "file": "xarm_msgs/SetAxis.srv",
+      "sha256": "a9b014f610e35c528393dc98bc7fefc405660a63c96266abaab5d70cf1e92fc4"
+    },
+    {
+      "file": "xarm_msgs/SetDigitalIO.srv",
+      "sha256": "7502a8224c9e1be1d1499152888a8d149435e3f259d9f9dd12888cab578aa285"
+    },
+    {
+      "file": "xarm_msgs/SetInt16.srv",
+      "sha256": "58f944f7e2d1fe44d2faccb923ec6313bf4374014f56c51ad2e164c38b091cb7"
+    },
+    {
+      "file": "xarm_msgs/SetLoad.srv",
+      "sha256": "07b20a42f946c734967d47051d81d6ac9823d59870671f5fe079a7e48ee7fad8"
+    },
+    {
+      "file": "xarm_msgs/SetToolModbus.srv",
+      "sha256": "347d778e26bc59f41d3a8021931eff5c63223a6960de22bf206fa76b1eca6662"
+    },
+    {
+      "file": "xarm_msgs/TCPOffset.srv",
+      "sha256": "b718883494cc3cb5d0d51483e9cedce4204a617dd529e5b607e1527605f07335"
+    }
+  ],
+  "native_identity_qualified": false,
+  "hardware_executed": false
+}

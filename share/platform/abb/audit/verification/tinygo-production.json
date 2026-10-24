@@ -1,0 +1,73 @@
+{
+  "format": "uwvm-abb-production-matrix-v1",
+  "status": "PASS",
+  "limits": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "cases": [
+    {
+      "language": "tinygo",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.3928608180012816,
+      "evidence": "sdk/example/platform/abb/tinygo/read_speed/.xmake/abb-run/read_speed-tsnrw8xf/execution.json",
+      "artifact_sha256": "0fd2ce711b4b630fb78d6e138b3f143309077bd8ce982b982c230f11519e2136"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.41117882399885275,
+      "evidence": "sdk/example/platform/abb/tinygo/read_io/.xmake/abb-run/read_io-d9ouzouv/execution.json",
+      "artifact_sha256": "95851db035e8085e35f9d2aab0c5b8c858bee9aed176e54d4340545d8d50d535"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.5291793899996264,
+      "evidence": "sdk/example/platform/abb/tinygo/system_state/.xmake/abb-run/system_state-kq7i7y12/execution.json",
+      "artifact_sha256": "16330b1c2a108997631eab5ed0319aabd26fa5e335f8e711863c2d28c9b186d3"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.7560399220001273,
+      "evidence": "sdk/example/platform/abb/tinygo/read_speed/.xmake/abb-run/read_speed-4tbxiop6/execution.json",
+      "artifact_sha256": "0fd2ce711b4b630fb78d6e138b3f143309077bd8ce982b982c230f11519e2136"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.48606159200062393,
+      "evidence": "sdk/example/platform/abb/tinygo/read_speed/.xmake/abb-run/read_speed-tpjpi8m1/execution.json",
+      "artifact_sha256": "0fd2ce711b4b630fb78d6e138b3f143309077bd8ce982b982c230f11519e2136"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.49549195500003407,
+      "evidence": "sdk/example/platform/abb/tinygo/read_io/.xmake/abb-run/read_io-u2yywsve/execution.json",
+      "artifact_sha256": "95851db035e8085e35f9d2aab0c5b8c858bee9aed176e54d4340545d8d50d535"
+    }
+  ],
+  "runtime": "actual uwvm2 interpreter and production ROS2 gateway",
+  "physical_controller_executed": false,
+  "case_count": 6
+}

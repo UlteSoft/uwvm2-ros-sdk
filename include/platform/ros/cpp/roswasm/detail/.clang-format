@@ -1,0 +1,7 @@
+# Preserve the declared C++98 syntax of the shared portable foundation.
+BasedOnStyle: InheritParentConfig
+Standard: Cpp03
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortBlocksOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false

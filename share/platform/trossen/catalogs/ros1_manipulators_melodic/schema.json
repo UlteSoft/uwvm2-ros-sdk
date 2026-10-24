@@ -1,0 +1,725 @@
+{
+  "format": "uwvm-platform-complete-schema-v1",
+  "platform": "trossen",
+  "profile": "ros1_manipulators_melodic",
+  "backend": "ros1",
+  "records": [
+    {
+      "version": 1,
+      "name": "interbotix_uxarm_joy/ArmJoy",
+      "members": [
+        {
+          "name": "ee_x_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "ee_y_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "ee_z_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "ee_yaw_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "ee_pitch_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "waist_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "gripper_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "pose_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "speed_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "speed_toggle_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "gripper_speed_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "mode_cmd",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "identity": null,
+      "source": {
+        "file": "interbotix_uxarm_joy/ArmJoy.msg",
+        "bytes": 1818,
+        "sha256": "894621088d83c7f4363ca32d1277fc5540527a97d5c1fe82cc53fa3579c33797"
+      },
+      "component": "",
+      "owner": "interbotix_uxarm_joy/ArmJoy",
+      "kind": "message",
+      "profile": "uwvm-ros-vendor-complete-bounded-v1",
+      "minimum": 12,
+      "maximum": 12,
+      "nodes": 13,
+      "depth": 2,
+      "codec_identity": "UWVMROS1_70a9d567a462413c9a5c6ec9f44e79ee772a9327c22a2dc308fe6446fdb27d53",
+      "has_native_defaults": false,
+      "aggregate_wire_bytes": 0,
+      "cartesian_maximum": 12,
+      "constants": [
+        {
+          "name": "EE_X_INC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "EE_X_DEC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "EE_Y_INC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "EE_Y_DEC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "4",
+          "value": "4"
+        },
+        {
+          "name": "EE_Z_INC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "5",
+          "value": "5"
+        },
+        {
+          "name": "EE_Z_DEC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "6",
+          "value": "6"
+        },
+        {
+          "name": "EE_YAW_CCW",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "7",
+          "value": "7"
+        },
+        {
+          "name": "EE_YAW_CW",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "8",
+          "value": "8"
+        },
+        {
+          "name": "EE_PITCH_UP",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "9",
+          "value": "9"
+        },
+        {
+          "name": "EE_PITCH_DOWN",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "10",
+          "value": "10"
+        },
+        {
+          "name": "WAIST_CCW",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "11",
+          "value": "11"
+        },
+        {
+          "name": "WAIST_CW",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "12",
+          "value": "12"
+        },
+        {
+          "name": "GRIPPER_OPEN",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "13",
+          "value": "13"
+        },
+        {
+          "name": "GRIPPER_CLOSE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "14",
+          "value": "14"
+        },
+        {
+          "name": "HOME_POSE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "15",
+          "value": "15"
+        },
+        {
+          "name": "HOLDUP_POSE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "16",
+          "value": "16"
+        },
+        {
+          "name": "SPEED_INC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "17",
+          "value": "17"
+        },
+        {
+          "name": "SPEED_DEC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "18",
+          "value": "18"
+        },
+        {
+          "name": "SPEED_COARSE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "19",
+          "value": "19"
+        },
+        {
+          "name": "SPEED_FINE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "20",
+          "value": "20"
+        },
+        {
+          "name": "GRIPPER_SPEED_INC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "21",
+          "value": "21"
+        },
+        {
+          "name": "GRIPPER_SPEED_DEC",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "22",
+          "value": "22"
+        },
+        {
+          "name": "MODE_SERVO",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "23",
+          "value": "23"
+        },
+        {
+          "name": "MODE_TEACH",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "24",
+          "value": "24"
+        }
+      ],
+      "symbol": "Ros1Interbotix_uxarm_joyArmJoy"
+    }
+  ],
+  "interfaces": [
+    {
+      "version": 1,
+      "name": "interbotix_uxarm_joy/ArmJoy",
+      "kind": "message",
+      "identity": null,
+      "components": {
+        "message": {
+          "version": 1,
+          "name": "interbotix_uxarm_joy/ArmJoy",
+          "members": [
+            {
+              "name": "ee_x_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ee_y_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ee_z_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ee_yaw_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "ee_pitch_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "waist_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "gripper_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "pose_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "speed_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "speed_toggle_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "gripper_speed_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            },
+            {
+              "name": "mode_cmd",
+              "type": "int8",
+              "array": "",
+              "count": 0,
+              "string_bound": 0,
+              "native_string_bound": 0,
+              "native_sequence_bound": 0,
+              "native_default": null,
+              "native_scalar": "",
+              "string_encoding": "utf8",
+              "float_policy": "finite"
+            }
+          ],
+          "identity": null,
+          "source": {
+            "file": "interbotix_uxarm_joy/msg/ArmJoy.msg",
+            "bytes": 1818,
+            "sha256": "894621088d83c7f4363ca32d1277fc5540527a97d5c1fe82cc53fa3579c33797"
+          },
+          "component": "",
+          "owner": "interbotix_uxarm_joy/ArmJoy",
+          "kind": "message",
+          "profile": "uwvm-ros-vendor-complete-bounded-v1",
+          "minimum": 12,
+          "maximum": 12,
+          "nodes": 13,
+          "depth": 2,
+          "codec_identity": "UWVMROS1_70a9d567a462413c9a5c6ec9f44e79ee772a9327c22a2dc308fe6446fdb27d53",
+          "has_native_defaults": false,
+          "aggregate_wire_bytes": 0,
+          "cartesian_maximum": 12,
+          "constants": [
+            {
+              "name": "EE_X_INC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "1",
+              "value": "1"
+            },
+            {
+              "name": "EE_X_DEC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "2",
+              "value": "2"
+            },
+            {
+              "name": "EE_Y_INC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "3",
+              "value": "3"
+            },
+            {
+              "name": "EE_Y_DEC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "4",
+              "value": "4"
+            },
+            {
+              "name": "EE_Z_INC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "5",
+              "value": "5"
+            },
+            {
+              "name": "EE_Z_DEC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "6",
+              "value": "6"
+            },
+            {
+              "name": "EE_YAW_CCW",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "7",
+              "value": "7"
+            },
+            {
+              "name": "EE_YAW_CW",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "8",
+              "value": "8"
+            },
+            {
+              "name": "EE_PITCH_UP",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "9",
+              "value": "9"
+            },
+            {
+              "name": "EE_PITCH_DOWN",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "10",
+              "value": "10"
+            },
+            {
+              "name": "WAIST_CCW",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "11",
+              "value": "11"
+            },
+            {
+              "name": "WAIST_CW",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "12",
+              "value": "12"
+            },
+            {
+              "name": "GRIPPER_OPEN",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "13",
+              "value": "13"
+            },
+            {
+              "name": "GRIPPER_CLOSE",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "14",
+              "value": "14"
+            },
+            {
+              "name": "HOME_POSE",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "15",
+              "value": "15"
+            },
+            {
+              "name": "HOLDUP_POSE",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "16",
+              "value": "16"
+            },
+            {
+              "name": "SPEED_INC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "17",
+              "value": "17"
+            },
+            {
+              "name": "SPEED_DEC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "18",
+              "value": "18"
+            },
+            {
+              "name": "SPEED_COARSE",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "19",
+              "value": "19"
+            },
+            {
+              "name": "SPEED_FINE",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "20",
+              "value": "20"
+            },
+            {
+              "name": "GRIPPER_SPEED_INC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "21",
+              "value": "21"
+            },
+            {
+              "name": "GRIPPER_SPEED_DEC",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "22",
+              "value": "22"
+            },
+            {
+              "name": "MODE_SERVO",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "23",
+              "value": "23"
+            },
+            {
+              "name": "MODE_TEACH",
+              "type": "int8",
+              "native_type": "int8",
+              "literal": "24",
+              "value": "24"
+            }
+          ]
+        }
+      },
+      "codec_identity": "UWVMROS1_70a9d567a462413c9a5c6ec9f44e79ee772a9327c22a2dc308fe6446fdb27d53",
+      "registered": true,
+      "profile": "uwvm-ros-vendor-complete-bounded-v1"
+    }
+  ],
+  "original_codec_identities_preserved": true,
+  "source_generation_only": true,
+  "shared_generator_source_delta_sha256": "fa1198aa5a9e934c755dbf85c03723bb8fd52d52dffcf4ef20d6d942cbe3e77b"
+}

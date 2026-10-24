@@ -1,0 +1,892 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "dobot_bringup/msg/RobotStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RobotStatus"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/msg/ToolVectorActual.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ToolVectorActual"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/AI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/AI"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/AO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/AO"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/AOExecute.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/AOExecute"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/AccJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/AccJ"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/AccL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/AccL"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/Arc.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/Arc"
+    },
+    {
+      "bounds": {
+        "request.cpValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/Arch.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/Arch"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/BrakeControl.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/BrakeControl"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/CP.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/CP"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/Circle.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/Circle"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ClearError.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ClearError"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ContinueScript.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ContinueScript"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/Continues.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/Continues"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/DI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/DI"
+    },
+    {
+      "bounds": {
+        "request.args": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_bringup/srv/DIGroup.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/DIGroup"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/DO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/DO"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/DOExecute.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/DOExecute"
+    },
+    {
+      "bounds": {
+        "request.args": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_bringup/srv/DOGroup.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/DOGroup"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/DigitalOutputs.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/DigitalOutputs"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/DisableRobot.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/DisableRobot"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/EmergencyStop.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/EmergencyStop"
+    },
+    {
+      "bounds": {
+        "request.args": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_bringup/srv/EnableRobot.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/EnableRobot"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/GetAngle.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetAngle"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/GetCoils.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetCoils"
+    },
+    {
+      "bounds": {
+        "response.errorID": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_bringup/srv/GetErrorID.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetErrorID"
+    },
+    {
+      "bounds": {
+        "request.valtype": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/GetHoldRegs.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetHoldRegs"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/GetInBits.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetInBits"
+    },
+    {
+      "bounds": {
+        "request.valType": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/GetInRegs.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetInRegs"
+    },
+    {
+      "bounds": {
+        "request.traceName": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/GetPathStartPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetPathStartPose"
+    },
+    {
+      "bounds": {
+        "request.tool": {
+          "sequence": 16
+        },
+        "request.user": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_bringup/srv/GetPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetPose"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/GetSixForceData.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetSixForceData"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/GetTerminal485.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetTerminal485"
+    },
+    {
+      "bounds": {
+        "request.traceName": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/GetTraceStartPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/GetTraceStartPose"
+    },
+    {
+      "bounds": {
+        "request.traceName": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/HandleTrajPoints.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/HandleTrajPoints"
+    },
+    {
+      "bounds": {
+        "request.JointNear": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/InverseSolution.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/InverseSolution"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/JointMovJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/JointMovJ"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/Jump.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/Jump"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/LimZ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/LimZ"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/LoadSwitch.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/LoadSwitch"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ModbusClose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ModbusClose"
+    },
+    {
+      "bounds": {
+        "request.ip": {
+          "string": 256
+        },
+        "request.is_rtu": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_bringup/srv/ModbusCreate.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ModbusCreate"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/MovJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/MovJ"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/MovJExt.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/MovJExt"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/MovJIO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/MovJIO"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/MovL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/MovL"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/MovLIO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/MovLIO"
+    },
+    {
+      "bounds": {
+        "request.axisID": {
+          "string": 256
+        },
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/MoveJog.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/MoveJog"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/PauseScript.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/PauseScript"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/PayLoad.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/PayLoad"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/PositiveSolution.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/PositiveSolution"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/PowerOn.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/PowerOn"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/RelJointMovJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RelJointMovJ"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/RelMovJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RelMovJ"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/RelMovJTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RelMovJTool"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/RelMovJUser.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RelMovJUser"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/RelMovL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RelMovL"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/RelMovLTool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RelMovLTool"
+    },
+    {
+      "bounds": {
+        "request.paramValue": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/RelMovLUser.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RelMovLUser"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ResetRobot.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ResetRobot"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/RobotMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RobotMode"
+    },
+    {
+      "bounds": {
+        "request.projectName": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/RunScript.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/RunScript"
+    },
+    {
+      "bounds": {
+        "request.gain": {
+          "sequence": 16
+        },
+        "request.lookahead_time": {
+          "sequence": 16
+        },
+        "request.t": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_bringup/srv/ServoJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ServoJ"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ServoJParam.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ServoJParam"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ServoP.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ServoP"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SetArmOrientation.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetArmOrientation"
+    },
+    {
+      "bounds": {
+        "request.valTab": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/SetCoils.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetCoils"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SetCollideDrag.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetCollideDrag"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SetCollisionLevel.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetCollisionLevel"
+    },
+    {
+      "bounds": {
+        "request.valTab": {
+          "string": 256
+        },
+        "request.valtype": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/SetHoldRegs.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetHoldRegs"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SetObstacleAvoid.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetObstacleAvoid"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SetPayload.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetPayload"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SetSafeSkin.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetSafeSkin"
+    },
+    {
+      "bounds": {
+        "request.parityBit": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/SetTerminal485.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetTerminal485"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SetTerminalKeys.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SetTerminalKeys"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SpeedFactor.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SpeedFactor"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SpeedJ.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SpeedJ"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SpeedL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SpeedL"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/StartDrag.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/StartDrag"
+    },
+    {
+      "bounds": {
+        "request.trace_name": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/StartFCTrace.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/StartFCTrace"
+    },
+    {
+      "bounds": {
+        "request.trace_name": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/StartPath.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/StartPath"
+    },
+    {
+      "bounds": {
+        "request.trace_name": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/StartTrace.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/StartTrace"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/StopDrag.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/StopDrag"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/StopScript.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/StopScript"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/StopmoveJog.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/StopmoveJog"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/Sync.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/Sync"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/SyncAll.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/SyncAll"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/TCPSpeed.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/TCPSpeed"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/TCPSpeedEnd.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/TCPSpeedEnd"
+    },
+    {
+      "bounds": {
+        "request.command": {
+          "string": 256
+        },
+        "response.result": {
+          "string": 256
+        }
+      },
+      "file": "dobot_bringup/srv/TcpDashboard.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/TcpDashboard"
+    },
+    {
+      "bounds": {
+        "response.real_data": {
+          "sequence": 16
+        }
+      },
+      "file": "dobot_bringup/srv/TcpRealData.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/TcpRealData"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/Tool.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/Tool"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ToolAI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ToolAI"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ToolDI.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ToolDI"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ToolDO.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ToolDO"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/ToolDOExecute.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/ToolDOExecute"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/User.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/User"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/Wait.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/Wait"
+    },
+    {
+      "bounds": {},
+      "file": "dobot_bringup/srv/pause.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "dobot_bringup/pause"
+    }
+  ]
+}

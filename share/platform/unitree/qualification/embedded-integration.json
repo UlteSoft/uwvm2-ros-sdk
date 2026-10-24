@@ -1,0 +1,252 @@
+{
+  "format": "uwvm-unitree-embedded-integration-v1",
+  "status": "PASS",
+  "candidate_inputs": {
+    "path": "inputs.json",
+    "sha256": "2f061a9179af891aa2a3b8d8b82353c244b29ae61c66d73079e592af62b0b693",
+    "files": 210
+  },
+  "bare_xmake_builds": 36,
+  "fresh_compiler_caches": 36,
+  "native_xmake_runs": 72,
+  "artifacts_identical_to_frozen_arm_cohort": 36,
+  "memory_max": 68719476736,
+  "swap_max": 0,
+  "build": {
+    "path": "receipts/integrated-r2-build-py-js-lua-moonbit-ruby-php.json",
+    "sha256": "9892664d44c263d8279cf2eeef8b8d4ad763d665618e82416b20eecaec6699ec"
+  },
+  "native": {
+    "ros1": {
+      "path": "receipts/native-ros1-integrated-r2/matrix.json",
+      "sha256": "aea7d03dac0a271516b84198556f6fc2e71ba98b9263e43fdfa03e3300727844",
+      "runs": 36
+    },
+    "ros2": {
+      "path": "receipts/native-ros2-integrated-r2/matrix.json",
+      "sha256": "9f3f5f7b49df918cd9c1ec82ee94e87d3ba5524265a767a15967c1f70bd4e5ed",
+      "runs": 36
+    }
+  },
+  "cases": [
+    {
+      "project": "example/platform/unitree/js/ros1/low_state",
+      "artifact_sha256": "b4d52690481a4f117c1390e962be96a74142efeb09a4a84def5e081ed5f753b6",
+      "artifact_bytes": 5191835,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/js/ros1/motion_state",
+      "artifact_sha256": "b91d1616deb1f31c480f83102d52b7ad1794869afaf3a9b829e53d9987571d26",
+      "artifact_bytes": 5191835,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/js/ros1/motor_state",
+      "artifact_sha256": "9cffdcb2133e816fe588c2f3e230ab19b6342d5763b7c32c59e4cd589c2da822",
+      "artifact_bytes": 5191835,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/js/ros2/low_state",
+      "artifact_sha256": "a172da63d384aa39c981b0abc32b834b557988a9663fbc3e686b58e9336c77b4",
+      "artifact_bytes": 5191835,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/js/ros2/motion_state",
+      "artifact_sha256": "65aa628228f023b70d70d1b501beb10a2087a6d13b8106079f407ceb437cade5",
+      "artifact_bytes": 5191835,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/js/ros2/wireless_controller",
+      "artifact_sha256": "1cc7812fa8bbecea775de390821ad0a1d23958414e670c0b0863fc967b82a882",
+      "artifact_bytes": 5191835,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/lua/ros1/low_state",
+      "artifact_sha256": "8381b950425a5e083c7764c62e28073302943ecc39c2b8ec8a46c649287a42d1",
+      "artifact_bytes": 2483311,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/lua/ros1/motion_state",
+      "artifact_sha256": "e027e44a4c533acb826bf34e5010b071fdd8ea4d7f9e2a864647d9b7189d2b42",
+      "artifact_bytes": 2483311,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/lua/ros1/motor_state",
+      "artifact_sha256": "38b61e2ae38daa3586535acf553296002888c287f08f05697b2451288e77c32f",
+      "artifact_bytes": 2483311,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/lua/ros2/low_state",
+      "artifact_sha256": "f5dcad3715589622d1972b73e00af09f3f795bd3641460f07452f51f8a06d81d",
+      "artifact_bytes": 2484147,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/lua/ros2/motion_state",
+      "artifact_sha256": "7e3616ec69029ac187f58db69844590c9f0964782fdc386cfcdcbc47168fde41",
+      "artifact_bytes": 2484147,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/lua/ros2/wireless_controller",
+      "artifact_sha256": "f524e7bc296db7d7f69e730674c48a2ca7077d6a23740738c608221052da3c20",
+      "artifact_bytes": 2484147,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/moonbit/ros1/low_state",
+      "artifact_sha256": "d6b2f06d29b2cc09c1a5f983791cc4a638a90612993c2fe785d255ab0bbad9b0",
+      "artifact_bytes": 29821,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/moonbit/ros1/motion_state",
+      "artifact_sha256": "ba35561e35c0c01bd6992ac37e6cc0457add6158bab8de26b2d5847e42d5da47",
+      "artifact_bytes": 31345,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/moonbit/ros1/motor_state",
+      "artifact_sha256": "ceec387e52a09fb107b66eb9d9870d5d54a142b128545eb69ad5ef2b4bc9ab40",
+      "artifact_bytes": 22680,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/moonbit/ros2/low_state",
+      "artifact_sha256": "2ad616f599213afe2ea9d58c103ad5370830a742f244da033602434af3e50c74",
+      "artifact_bytes": 29892,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/moonbit/ros2/motion_state",
+      "artifact_sha256": "cdd0a9e0d2a3fd4b94989e730e0720ee2fa5c76d2a718516307b3bfdbb8ac1dc",
+      "artifact_bytes": 25966,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/moonbit/ros2/wireless_controller",
+      "artifact_sha256": "9b179fc5cbfeb0302ad72b82da9bfed7b6d68c5c0e9a389ee12e519cd96813fe",
+      "artifact_bytes": 21403,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/php/ros1/low_state",
+      "artifact_sha256": "658fec53202b20a62600dc223f7ebc67276cf2d261465aeb3b8f6cf437b67dd2",
+      "artifact_bytes": 10569524,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/php/ros1/motion_state",
+      "artifact_sha256": "38c8efed0c1d10fdb777e9aa610e1cc69d499a426c352d65b5cc67b9e52a4ac2",
+      "artifact_bytes": 10569524,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/php/ros1/motor_state",
+      "artifact_sha256": "5fa075f641366c1f29bc78560b534d85b17d0318d1470344450522a771a64daf",
+      "artifact_bytes": 10569524,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/php/ros2/low_state",
+      "artifact_sha256": "df3a0a1aac648fbc0082535f01fda4dfb8f84fbe5c78e25d6abb04efde20a7d5",
+      "artifact_bytes": 10569524,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/php/ros2/motion_state",
+      "artifact_sha256": "aec69ab0a228d674c174c7c9c9f5af0ceca8fc3cba281608f7800181fac849d4",
+      "artifact_bytes": 10569524,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/php/ros2/wireless_controller",
+      "artifact_sha256": "c90362aea5234d601b54b34a5da844bb26826234d495c5e30725b619cf39bf05",
+      "artifact_bytes": 10569524,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/py/ros1/low_state",
+      "artifact_sha256": "9376bbc24422c4fdd21c452737c3707bf76840684a3fd07621ef34027c08a9bc",
+      "artifact_bytes": 32543071,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/py/ros1/motion_state",
+      "artifact_sha256": "848d696b17e079643f144ebd5c70d99c5f932ae5beb94a8ab1cfeb563bb67e18",
+      "artifact_bytes": 32543071,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/py/ros1/motor_state",
+      "artifact_sha256": "969648a471c64a2795530ad266f24eb7c6e4d6baaf73d3359e43a9963605c3da",
+      "artifact_bytes": 32543071,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/py/ros2/low_state",
+      "artifact_sha256": "d474337d7ff9f5961f4bda13b6bdc3f968bcd69a7db357140bf101578481b3f7",
+      "artifact_bytes": 32543071,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/py/ros2/motion_state",
+      "artifact_sha256": "10f19618486a230f5cc2b63f800dd016574a52935e36126c4bfa8312cd2891e6",
+      "artifact_bytes": 32543071,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/py/ros2/wireless_controller",
+      "artifact_sha256": "4c9222bdd135c8744a5d4d503fc632843b5650c67f9e685a0c1151cd0d11d993",
+      "artifact_bytes": 32543071,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/ruby/ros1/low_state",
+      "artifact_sha256": "8f56bfebe573eec3427c1740976083f8399876c1c8c21260cb91a73005b09e47",
+      "artifact_bytes": 14169520,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/ruby/ros1/motion_state",
+      "artifact_sha256": "29d720c0f1b6e0c7a83aa690b145d948991373b35682b53048aff3ad0eddeec3",
+      "artifact_bytes": 14169520,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/ruby/ros1/motor_state",
+      "artifact_sha256": "d0db7cd72e9a235513a251934f9a2c1f5c085d461a17402235841dcbcf91139b",
+      "artifact_bytes": 14169520,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/ruby/ros2/low_state",
+      "artifact_sha256": "b5e5fa605deaa2db6b9700da199c55605687365e93587f4649f0b2e904cbe9e3",
+      "artifact_bytes": 14169520,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/ruby/ros2/motion_state",
+      "artifact_sha256": "69ec4a53dce4f99e823cd4f8c05e702a1154517c66a58023527d801c141cd5f1",
+      "artifact_bytes": 14169520,
+      "original_frozen_artifact_identical": true
+    },
+    {
+      "project": "example/platform/unitree/ruby/ros2/wireless_controller",
+      "artifact_sha256": "e4d5fe567283441531af58fc77c3f6ecfa643cc7df325a6567125cf2c12a6993",
+      "artifact_bytes": 14169520,
+      "original_frozen_artifact_identical": true
+    }
+  ],
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "4782dfcfa869f51b77f2454395cfb23574cc64aa8977385d7a0fe4f564efc586"
+}

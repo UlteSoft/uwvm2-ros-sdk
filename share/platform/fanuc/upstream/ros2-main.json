@@ -1,0 +1,468 @@
+{
+  "platform": "fanuc",
+  "repository": "FANUC-CORPORATION/fanuc_driver",
+  "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+  "tree": "76d62ffaf43a782bb4e3f54a91661e066785b8de",
+  "archive_url": "https://codeload.github.com/FANUC-CORPORATION/fanuc_driver/tar.gz/da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+  "archive_sha256": "14dca6fbd1577aacbd8ebdeafe392302cc867acd464d0656699cb95a3b0217d9",
+  "archive_bytes": 758693,
+  "source_candidates": [
+    {
+      "path": "fanuc_controllers/test/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_controllers/test/CMakeLists.txt",
+      "sha256": "441979544a8e735b0dbf67c8fbdb56b099d4a940484d39a3a491fbe52eba2991",
+      "git_blob_sha1": "7fe2496588dbcf5797ba938a097498bf20968aab",
+      "bytes": 497,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_controllers/test/fanuc_gpio_controller_test.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_controllers/test/fanuc_gpio_controller_test.cpp",
+      "sha256": "308cd86620d64d63e859093a12eb6d67d12242a4da2c07bf7b96a9189f08f480",
+      "git_blob_sha1": "5662e7606be88e258059ac2fd3d047ee62a05bba",
+      "bytes": 9269,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_controllers/test/test_config.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_controllers/test/test_config.yaml",
+      "sha256": "551c9a0cbc1ce46a9982afcea7e27ba22fa61136feb6b19871d444ea055d59ba",
+      "git_blob_sha1": "05cca0c04460dfdb946d5d7e006fa2da66d40fa9",
+      "bytes": 410,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/CMakeLists.txt",
+      "sha256": "17b6c046e9ae22709f242f100e58c559723b59b44cf1379718851f03924c731f",
+      "git_blob_sha1": "a610d26ef84087130c0b6142d3dd16e11a04fcb6",
+      "bytes": 603,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/README.md",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/README.md",
+      "sha256": "b65e7e4d30c43c28d8ec8a72acaa6a0d97833504925423ef0b529383f4745b80",
+      "git_blob_sha1": "f57f9bc81e80c4fa78ab55132b35f3773d670379",
+      "bytes": 1635,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/config/joint_limits.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/config/joint_limits.yaml",
+      "sha256": "05332dd9545b3faa4bef2efc9edbbb76519bf2e213d8ed902732128bd66a2d75",
+      "git_blob_sha1": "c31495b0a002a8d53ea665fc6f147939b7955d6b",
+      "bytes": 1808,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/config/kinematics.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/config/kinematics.yaml",
+      "sha256": "26462a6b0c1caa306e6377701aa8027d35616f95e937e0f7f7dc5ad60aa0b040",
+      "git_blob_sha1": "801b556d67fb3082f0a024b10d246349cabff5ae",
+      "bytes": 512,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/config/moveit_controllers.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/config/moveit_controllers.yaml",
+      "sha256": "96c204e9c3ce663844e469159f5560c1df700e359feea310ab62ac7eb6e6de64",
+      "git_blob_sha1": "375b2cc8e0b69ee14f5df7b949dacc08e618f6da",
+      "bytes": 573,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/fanuc_dual_arm_example/__init__.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/fanuc_dual_arm_example/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/launch/fanuc_moveit.launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/launch/fanuc_moveit.launch.py",
+      "sha256": "a342ef9053ac15e9445a3211cc0d597682372510554f9f01f93687cace56c6ca",
+      "git_blob_sha1": "689aae8c382ea0bb691e35ed82df5b5995492523",
+      "bytes": 16257,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/package.xml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/package.xml",
+      "sha256": "6f1dcfba87faf2a4129416694f5aaf6ad3adee172394a1f13cf47769192b4e27",
+      "git_blob_sha1": "ed8509c9edff890bb9a7d926fc175753c6b3139e",
+      "bytes": 1397,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/scripts/joint_state_merger.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/scripts/joint_state_merger.py",
+      "sha256": "562c2052daee67af5e634d0ea1dcbe0cd366d6098380c1f3d5c90d3b6b8b8655",
+      "git_blob_sha1": "31ee2d471ee53cd96ffff5b4d63b2f73fcab6e60",
+      "bytes": 1532,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_dual_arm_example/urdf/dual_arm.urdf.xacro",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_dual_arm_example/urdf/dual_arm.urdf.xacro",
+      "sha256": "36689405ca276d6c29bbf9d5d8785df0e14f108672540892c9d75bb244c43602",
+      "git_blob_sha1": "6b5695a1cfb8445e8919bdbaf68b1a54c67a7023",
+      "bytes": 721,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/CMakeLists.txt",
+      "sha256": "ca7ebd5d2e1fcd5f40cf38ba89ec9d9d2aad4ed67a136b2ab17cb6809cbbde14",
+      "git_blob_sha1": "2a378536dcdf8e2732c84e6bce0506d69c96fc3b",
+      "bytes": 544,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/README.md",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/README.md",
+      "sha256": "35c082b50d6c99220d36e2aee2982a164d3dfea2fba2526acf782d36cf959e2d",
+      "git_blob_sha1": "b32c133b33cd5c7651946f5a2d20497db9a67d30",
+      "bytes": 3763,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/gpio_topic_config.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/config/gpio_topic_config.yaml",
+      "sha256": "acf3295d3aa703c84c9d79b030e3980fd69a439b36ef8f0f91a6e3d22c2b07dc",
+      "git_blob_sha1": "310ca07c4f0d2b3a112566615f1bc3f2dc804714",
+      "bytes": 202,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/moveit_controllers.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/config/moveit_controllers.yaml",
+      "sha256": "43c2cf0f4eecd26a139640666d224b50cb676ec2ea51d98eec6b614ff2770298",
+      "git_blob_sha1": "4bf90b7df070c064f71ddc024cb1c229709e27ab",
+      "bytes": 457,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/moveit_py.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/config/moveit_py.yaml",
+      "sha256": "ef637f73d3c38bbbcd690d31901bcedd7c021af8efddfa8799e15797c2b6b3ff",
+      "git_blob_sha1": "5daf8eff73831b23f81e771c8be7a290e99cedcd",
+      "bytes": 1748,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/ompl_planning.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/config/ompl_planning.yaml",
+      "sha256": "5f80fef9848c61e7e9e8b1ed3aa9babc25bb947748d18779ec3054b8b26825f7",
+      "git_blob_sha1": "d2dbc7d30d3119203aef3eec9a7c2eb51ceb6741",
+      "bytes": 1730,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/pick_and_place.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/config/pick_and_place.yaml",
+      "sha256": "d07672dbaab61028f6ed67377bfa249ffce9eadae4ef31cbdc5ab4b5cf5e865d",
+      "git_blob_sha1": "6bdea19be78952f520827fc6fc8db944cebeba95",
+      "bytes": 6392,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/pilz_cartesian_limits.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/config/pilz_cartesian_limits.yaml",
+      "sha256": "d4d95c6272f8e680e6db49c4db32bd99cfe0ab30eb8a98a95fc3581f80cd3302",
+      "git_blob_sha1": "dbf82308217f78bb8242b6b37e093ae82a3bd511",
+      "bytes": 145,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/config/ros2_controllers.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/config/ros2_controllers.yaml",
+      "sha256": "5cf8fc8b003b8d083cc402cbef407aa90847522f2398837eeafa979379ca7d5d",
+      "git_blob_sha1": "ceb9d10df08ae8235508bf083e02b9017536846d",
+      "bytes": 1094,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/fanuc_pick_and_place_example/__init__.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/fanuc_pick_and_place_example/__init__.py",
+      "sha256": "60011ddca4b785de3702523c6fce620a932dc26009a20738a272236d35c521c2",
+      "git_blob_sha1": "587f0f4b6e3533c304472f36dbf96db8d059e664",
+      "bytes": 146,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/launch/fanuc_pick_and_place_example.launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/launch/fanuc_pick_and_place_example.launch.py",
+      "sha256": "05c7569463c7f7949b1660a01981908cd1fe62701218994fcbf130b6d22d05f6",
+      "git_blob_sha1": "bbbffd1c8a928d4331d7e17bd4375d2e07c62d28",
+      "bytes": 17333,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/package.xml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/package.xml",
+      "sha256": "4793e3721c9c73300e09780905b66b9b035540c431b951e7f19c3dec0cb180d4",
+      "git_blob_sha1": "554b1262b3156d42667125101949a283db1dbff9",
+      "bytes": 2076,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_pick_and_place_example/scripts/fanuc_pick_and_place_example.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_pick_and_place_example/scripts/fanuc_pick_and_place_example.py",
+      "sha256": "30c3b7ed75e8be2f1ad6c5763120210af847230156b3af80bb241962d5937edf",
+      "git_blob_sha1": "594d1816265542ffdc791b7e14822344eea9843a",
+      "bytes": 123330,
+      "role": "python_main_entry"
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_rmi_controller_example/CMakeLists.txt",
+      "sha256": "dfb2a69b258d54670610b539aa66857e6825426faf46cf4dbe10e6dd67c42bd0",
+      "git_blob_sha1": "fbd000834f7cb27aeef15a82b6e627a73f3d6f92",
+      "bytes": 467,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/README.md",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_rmi_controller_example/README.md",
+      "sha256": "d2693360a2cb7f8276af2d0c6951b072c29b72d51a13413b816107463f30d345",
+      "git_blob_sha1": "809c067793628484197d9ebffb40e4988165e234",
+      "bytes": 1061,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/fanuc_rmi_controller_example/__init__.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_rmi_controller_example/fanuc_rmi_controller_example/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/package.xml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_rmi_controller_example/package.xml",
+      "sha256": "3b62813a9d06f7b4af2387d77bb21c1a667db7f831b489b763a2f7052d5aea39",
+      "git_blob_sha1": "7c2df672918a4f2496a065ef8476926b3068005e",
+      "bytes": 1072,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_examples/fanuc_rmi_controller_example/scripts/rmi_example.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_examples/fanuc_rmi_controller_example/scripts/rmi_example.py",
+      "sha256": "af2eb21424669f8995bf203ec6b4cc8c4c805a8c1a75e94fba2a7f22a6941588",
+      "git_blob_sha1": "4d119609ac5d69bfbbcbcd58aefd32adba6c802b",
+      "bytes": 22144,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_forward_command/launch/fanuc_forward_command.launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_forward_command/launch/fanuc_forward_command.launch.py",
+      "sha256": "c1c62998f9abc15cd9d0a41d045202dba85c8c30ff066b155a325cd29cb1b0e6",
+      "git_blob_sha1": "ed3ba5d5dfbece83b903069556327a4c0d714e65",
+      "bytes": 7083,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "fanuc_forward_command/launch/fanuc_sine_wave_demo.launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_forward_command/launch/fanuc_sine_wave_demo.launch.py",
+      "sha256": "d1307b90cc8bccf740a7083ee08204605a81bf277fe98532abce581a3ae3565b",
+      "git_blob_sha1": "3b4c4045e41ab8efc69513bdb85e4cb4e967bf58",
+      "bytes": 2937,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "fanuc_hardware_interface/config/example_gpio_config.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_hardware_interface/config/example_gpio_config.yaml",
+      "sha256": "2753311cb6f1bf71e408660615cc8ab7753ce843304d45f26e32664b58fc2063",
+      "git_blob_sha1": "99d062417288d4c52f847dbfde0d83ece464a2ee",
+      "bytes": 512,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_hardware_interface/config/example_gpio_config_small.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_hardware_interface/config/example_gpio_config_small.yaml",
+      "sha256": "f38a763e497dae47ac1672e13b359635d244e46055ce9a36c182d8f852fe944e",
+      "git_blob_sha1": "af275e11ec69cbf2808529ad670e2489cca7acbc",
+      "bytes": 225,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_hardware_interface/config/example_ros2_controllers.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_hardware_interface/config/example_ros2_controllers.yaml",
+      "sha256": "b88327f9a8792a006d4d60f331ed6309697ffab6e1bb22351e36f38a1b98b67f",
+      "git_blob_sha1": "779cb203c371fa29cced3636a0f83719bf465426",
+      "bytes": 2197,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_hardware_interface/examples/send_trajectory.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_hardware_interface/examples/send_trajectory.py",
+      "sha256": "622d2c41f07f061391c868cb34f8d493b1ebbcae360345bd821063a932ea3380",
+      "git_blob_sha1": "ce2483a73d270b5bb82a5612e22281efca19285e",
+      "bytes": 2607,
+      "role": "python_main_entry"
+    },
+    {
+      "path": "fanuc_hardware_interface/launch/fanuc_mock_control.launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_hardware_interface/launch/fanuc_mock_control.launch.py",
+      "sha256": "34ea177e6e1495bed63806b6f7e9263fe92f6c808da015b5a7054da26f84cbd8",
+      "git_blob_sha1": "6ee8094dd365acb4408150ce02bb904e3c8b7899",
+      "bytes": 8599,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "fanuc_hardware_interface/launch/fanuc_physical_control.launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_hardware_interface/launch/fanuc_physical_control.launch.py",
+      "sha256": "3161415aef1c369cca72f873117f77855035b685efbff380b70268037fbc53a6",
+      "git_blob_sha1": "ddc84dd98295d672bc0d2f70a9d186a3a115e7ba",
+      "bytes": 11589,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "fanuc_libs/examples/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/examples/CMakeLists.txt",
+      "sha256": "c7f51ab813d99d8a84f9567fec42ae7e5995201529a74f94177263a0f1e8238d",
+      "git_blob_sha1": "d542df34d279e7c9f1a206663ae431ebabfc7af5",
+      "bytes": 533,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "fanuc_libs/examples/fanuc_client_example.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/examples/fanuc_client_example.cpp",
+      "sha256": "ccecb3e5688bb0ac4c82090f70fa410c6d80d3c4803ba4584f8f4eadb8871d4b",
+      "git_blob_sha1": "2caa9b0b0b0588b124c2f66a658f090a3ae15d3a",
+      "bytes": 2756,
+      "role": "native_main_entry"
+    },
+    {
+      "path": "fanuc_libs/examples/rmi_connection_example.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/examples/rmi_connection_example.cpp",
+      "sha256": "9cf386a0fb427f85365ae008b5df55a2fca9524e7af2a5cb00ce08e098d4299a",
+      "git_blob_sha1": "b645f30fb5b94404ecbe47fe1168f8e2df1d1c6e",
+      "bytes": 4849,
+      "role": "native_main_entry"
+    },
+    {
+      "path": "fanuc_libs/examples/stream_motion_example.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/examples/stream_motion_example.cpp",
+      "sha256": "86c976bdfc4d21b4b07517d8576f2c03797e2c5c73f1dc7254843cb6c976ad38",
+      "git_blob_sha1": "5b98395a6dc465ee280f70e4504d19d799b821a6",
+      "bytes": 5246,
+      "role": "native_main_entry"
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/test/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/fanuc_client/test/CMakeLists.txt",
+      "sha256": "8fa121cd774c1d6aa6ac8b556968b5d5a8b8af5770451579dd03d06b1d5430e8",
+      "git_blob_sha1": "ba2a696b0518260b94777fae4ed898d3e4b999ef",
+      "bytes": 534,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/test/fanuc_client_test.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/fanuc_client/test/fanuc_client_test.cpp",
+      "sha256": "e5c845ea0854e9a850853c9e75c02212fb41ed274d85e45f5bdb69649573764e",
+      "git_blob_sha1": "825752cf21004f578ca989e9f6a4b94e6e7732c0",
+      "bytes": 16939,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/fanuc_client/test/gpio_buffer_test.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/fanuc_client/test/gpio_buffer_test.cpp",
+      "sha256": "4cf5300ac4c59387e4e1244cd00acbff87f83240d4f4c7527c274de4d935d70e",
+      "git_blob_sha1": "d855833992d66b056a951688f70e33dfc6c8f9e0",
+      "bytes": 10831,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/gpio_config/test/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/gpio_config/test/CMakeLists.txt",
+      "sha256": "df56b1e7447b98d4107fbf07e0a6b6b6462727e5dbeec5223a695741a5879406",
+      "git_blob_sha1": "3c616938a07de22b7a4086a30381c237ca5ecc05",
+      "bytes": 443,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/gpio_config/test/data/bad_config.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/gpio_config/test/data/bad_config.yaml",
+      "sha256": "d17f745d0125b0436032985565ddce56449f3c530a4c8dbad6bc88485a3543b1",
+      "git_blob_sha1": "c767cf4be75690e8d4736c6404dc1303254d3626",
+      "bytes": 14,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/gpio_config/test/data/good_config.yaml",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/gpio_config/test/data/good_config.yaml",
+      "sha256": "3c1d1ac4993d6ae460d1032c796350f7d3f01edcebaaad7083ed9245a8039721",
+      "git_blob_sha1": "3f5a1950bf12c987294e45b1e92e8ab91b32a16c",
+      "bytes": 744,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/gpio_config/test/gpio_config_test.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/gpio_config/test/gpio_config_test.cpp",
+      "sha256": "601492951bc83e568f964fc753092b939e72bf948b46dcd5a64ba7132c33186e",
+      "git_blob_sha1": "da609d53bf9b1e6423dd85ed16cf09869efe310d",
+      "bytes": 2076,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/rmi/test/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/rmi/test/CMakeLists.txt",
+      "sha256": "6f07e61fdecb5975eb530629be5849a2fd772314336382f53af2c09a0523d939",
+      "git_blob_sha1": "31f5d7dcc8cfbf9f0ef9a9348e8e1f5badccc267",
+      "bytes": 350,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/rmi/test/rmi_test.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/rmi/test/rmi_test.cpp",
+      "sha256": "53c3b1d6f2441d78560d462e7dd741204aa7b2486dfba7afe3fad141c85374be",
+      "git_blob_sha1": "f2110da3fbfe2726b56a0b3c9ae27be27cfbb581",
+      "bytes": 1658,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/stream_motion/test/CMakeLists.txt",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/stream_motion/test/CMakeLists.txt",
+      "sha256": "ae6fc0a1ac03c1cd69a276fcd2921a05cecb35a5cdb294aec77b045b50ed5f1c",
+      "git_blob_sha1": "f137cd5b23a56695117fc37c2d0f508495f2f84b",
+      "bytes": 338,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_libs/stream_motion/test/stream_test.cpp",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_libs/stream_motion/test/stream_test.cpp",
+      "sha256": "78645270f558e74f4303524b0294c5110c8af4f3b246ff23ec9c64802108032c",
+      "git_blob_sha1": "baead6b1ae3d68effd72477f1d961c61d31790cf",
+      "bytes": 16001,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "fanuc_moveit_config/launch/fanuc_moveit.launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_moveit_config/launch/fanuc_moveit.launch.py",
+      "sha256": "e9b1c55d96201a551e03abb733c715a559ec5e83826c8f7a9a7c4530e707caa6",
+      "git_blob_sha1": "efcc6c99af5b692e8a34d1d3db1d59b2d362bbda",
+      "bytes": 7640,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "fanuc_moveit_config/launch/fanuc_moveit_template.launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/fanuc_moveit_config/launch/fanuc_moveit_template.launch.py",
+      "sha256": "2b281e005b0bb20527d8c9c8506b050a5dd839ccd4c02540a08f2071f37eb3aa",
+      "git_blob_sha1": "fb038a5a54f51d3cc4a41bfb98ce59c3fd0d90cb",
+      "bytes": 7970,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "slider_publisher/launch/slider_gui_launch.py",
+      "url": "https://github.com/FANUC-CORPORATION/fanuc_driver/blob/da5db3f611cdc9dffe687e056c4e79bea584bf5c/slider_publisher/launch/slider_gui_launch.py",
+      "sha256": "00242ecb03be30cb482b6286b714cbae3871dd35d1963ef1a95f5bf0a0b9100c",
+      "git_blob_sha1": "4d7bd0c8352ee465ea92b1181fe1a89f8d550920",
+      "bytes": 511,
+      "role": "ros2_launch_entry"
+    }
+  ],
+  "review_status": "source inventory preserved; see controller audit and this delivery's independent evidence"
+}

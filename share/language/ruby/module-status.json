@@ -1,0 +1,95 @@
+{
+  "format": "uwvm-ruby-scalar-shared-status-v1",
+  "implementation": "CRuby",
+  "version": "3.4.7",
+  "qualified_scope": "Only standard ROS1 String four-module wasm32/noeh cases on x86_64 and QEMU AArch64; same four Wasm per language across hosts",
+  "target": "wasm32-wasip1",
+  "backend": "ros1",
+  "exception_profile": "noeh",
+  "producer_kind": "shared",
+  "consumer_language": "c",
+  "standard_xmake_build": true,
+  "only_xmake_preinstalled": true,
+  "compiler": "LLVM23.1.4",
+  "source_entry": {
+    "module": "Uwvm::Library",
+    "method": "call_i32",
+    "parameter": "Exact signed i32",
+    "result": "Exact signed i32 with separate status"
+  },
+  "template": {
+    "path": "lib/language/ruby/ros1/module/module.wasm",
+    "sha256": "8625a22f50baf7c8c69838f1ec441b47c19b24a1438d73d23486c5ffa9153161"
+  },
+  "example": {
+    "path": "example/platform/leju/ruby/preload_modules",
+    "source_sha256": "7e02edfa10439a4ecf8d53b072e2b32ba4a3c8a39782662a9ab5fc2bcae07ca1"
+  },
+  "public_header": {
+    "path": "include/language/common/module.h",
+    "sha256": "0f880a85103d2c23f347e0519e68e5eca007088a111ae127a43a4209c1498a60"
+  },
+  "actual_products": {
+    "ros_comm": {
+      "sha256": "504a87b364f61b01b0970546fc30105aeadbd2257b98cc01162a5b566f5d78df"
+    },
+    "algorithm": {
+      "sha256": "a3f64ef27fd29fe8554b929fbf9b6cce2fa0e7f47edb7b5c75b99fc8c68b6d8b"
+    },
+    "main": {
+      "sha256": "2752dc722e5f858e75f03ca4a6e2a80420d3bccb2cca69e6dddc78827bfc1a70"
+    },
+    "io": {
+      "sha256": "56602136ed033f19d29a66e16bcaf66896b488977d8967b8157487c7c1d0fd02"
+    }
+  },
+  "execution": {
+    "status": "PASS_CURRENT_ROS1_STANDARD_STRING_SCOPE",
+    "hosts": [
+      "x86_64",
+      "qemu-aarch64"
+    ],
+    "cases": 6,
+    "public_xmake_run": true,
+    "publisher_calls_per_positive_case": 2,
+    "native_wire_hex": "0800000076616c75653d3432",
+    "module_local_denials": 13,
+    "ungranted_timer": 76,
+    "cleanup_verified": true
+  },
+  "open_dimensions": [
+    "static archives",
+    "other ROS/backend profiles",
+    "same-language and other cross-language consumers in the common framework",
+    "memory64",
+    "physical AArch64 host/compiler qualification",
+    "other native effects beyond this standard String example"
+  ],
+  "four_module_native": {
+    "status": "OWNED_RUBY_PHP_CURRENT_COLD_CORE_FOUR_MODULE_ROS1_X86_AND_QEMU_ARM_VERIFIED",
+    "revision": "source-r41",
+    "evidence": "review/four-module-native-current.json in independent review packet",
+    "same_wasm_reused_across_hosts": true,
+    "wasm_sha256": {
+      "ros_comm": "504a87b364f61b01b0970546fc30105aeadbd2257b98cc01162a5b566f5d78df",
+      "algorithm": "a3f64ef27fd29fe8554b929fbf9b6cce2fa0e7f47edb7b5c75b99fc8c68b6d8b",
+      "main": "2752dc722e5f858e75f03ca4a6e2a80420d3bccb2cca69e6dddc78827bfc1a70",
+      "io": "56602136ed033f19d29a66e16bcaf66896b488977d8967b8157487c7c1d0fd02"
+    }
+  },
+  "status": "CURRENT_COLD_REACTOR_STANDARD_ROS1_FOUR_MODULE_NATIVE_SCOPE_PASSED",
+  "current_cold_construction": {
+    "evidence": "review/current-template-r40-integrity.json in independent review packet",
+    "cold_command_sha256": "06dc1ffe3fda936adccb887f402c1cc83c815962432b5019daf8c7ac3eadb2c6",
+    "reactor_sha256": "8625a22f50baf7c8c69838f1ec441b47c19b24a1438d73d23486c5ffa9153161",
+    "scope_note": "Retained unchanged genuine VM source construction; current formatted entries are separately reconstructed."
+  },
+  "formatted_entry_reconstruction": {
+    "status": "SIX_CORE_AND_EIGHT_SAMPLE_PRODUCTS_REBUILT_BYTE_IDENTICAL",
+    "source_lock_sha256": "af3c9a0a7b5b91da9283aa18bad831ddfbac780c31774a8b37539f3b79f6d4d3",
+    "correspondence_sha256": "5c92d87a79f9fc2fc8e32886069c00cd5555aedcb0bdb75076aaab04e6017a2c",
+    "native_cases_repeated": 0,
+    "upstream_vm_recompiled": false,
+    "retained_scope": "Exactly12 retained wasm32/noeh ROS1 standard String cases on x86_64 and QEMU AArch64; same four Wasm per language across hosts"
+  }
+}

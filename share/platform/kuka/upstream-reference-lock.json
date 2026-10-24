@@ -1,0 +1,34 @@
+{
+  "cache_is_optional_explicit_maintainer_input": true,
+  "canonical_schemas": "sdk/share/platform/kuka/catalogs/",
+  "normal_SDK_depends_on_origin": false,
+  "platform": "kuka",
+  "repositories": [
+    {
+      "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+      "id": "rcl_interfaces_ros2",
+      "repository": "ros2/rcl_interfaces",
+      "tree": "4515d6d00cf6209db404352534818e4199fe33c9"
+    },
+    {
+      "commit": "2eaaa5440d6dc2291601ea445b83015a663f5f88",
+      "id": "control_ros2",
+      "repository": "ros-controls/control_msgs",
+      "tree": "857d95399e05a5da7b5fd28d94690e5fed4f3f3e"
+    },
+    {
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "id": "common_ros2",
+      "repository": "ros2/common_interfaces",
+      "tree": "bbd609d90753abf6e10bdc94f594f36b75921677"
+    },
+    {
+      "commit": "15fbb6941356390c38bbd135a0676dfd96a050c0",
+      "id": "kuka",
+      "repository": "kuka-ros/kuka_drivers",
+      "tree": "f07dc71f7c31c1143ec3fb8c82ac5acc8982a408"
+    }
+  ],
+  "schema": "uwvm-upstream-reference-lock-v1",
+  "source_inventory": "test/0073.ros-tests/support/coordination/20261022-sdk-single-source/07-upstream-cache-inputs.jsonl.gz"
+}

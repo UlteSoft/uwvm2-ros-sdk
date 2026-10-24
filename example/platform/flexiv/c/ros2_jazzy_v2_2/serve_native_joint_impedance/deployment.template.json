@@ -1,0 +1,104 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "connection": {
+    "domain-id": "137",
+    "node-name": "sdk_native_rpc_server",
+    "namespace": "/sdk_fixture",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "serve_native_joint_impedance": {
+      "arguments": [
+        "serve",
+        "reply"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "serve",
+              "operation": "service.advertise",
+              "resource": "/sdk_fixture/flexiv/served_joint_impedance",
+              "type": "flexiv_msgs/srv/SetJointImpedance",
+              "identity": "RIHS01_710a643b53381cfd4a982ad8ec3f06e88aafe60933973386674bd37fc85ce027",
+              "limits": {
+                "max-rate-hz": "100",
+                "burst": "10",
+                "max-bytes-per-second": "1048576",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "adapter-codec-identity": "UWVMROS1_04eca38dbf45af2b75f0300867caec8db79acf7950030769ad99fe1977560d12",
+                "timeout-ms": "5000",
+                "max-inflight": "1",
+                "max-request-bytes": "8844",
+                "max-response-bytes": "9634",
+                "max-services": "1",
+                "max-event-queue-depth": "10",
+                "max-event-queue-bytes": "32768",
+                "overflow-policy": "drop-oldest",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite"
+              }
+            },
+            {
+              "alias": "reply",
+              "operation": "service.respond",
+              "resource": "/sdk_fixture/flexiv/served_joint_impedance",
+              "type": "flexiv_msgs/srv/SetJointImpedance",
+              "identity": "RIHS01_710a643b53381cfd4a982ad8ec3f06e88aafe60933973386674bd37fc85ce027",
+              "limits": {
+                "max-rate-hz": "100",
+                "burst": "10",
+                "max-bytes-per-second": "1048576",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "adapter-codec-identity": "UWVMROS1_04eca38dbf45af2b75f0300867caec8db79acf7950030769ad99fe1977560d12",
+                "timeout-ms": "5000",
+                "max-inflight": "1",
+                "max-request-bytes": "8844",
+                "max-response-bytes": "9634",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite"
+              }
+            }
+          ],
+          "wasi_grants": [
+            "monotonic-clock"
+          ]
+        }
+      }
+    }
+  }
+}

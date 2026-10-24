@@ -1,0 +1,12 @@
+{
+  "format": "uwvm-genuine-engine-construction-input-map-v1",
+  "construction_lock": "share/language/js/construction-source-lock.json",
+  "construction_lock_sha256": "0ed6b7740449c41ff717e03cd8782a040259c075e44fa7990027243e25e78c78",
+  "historical_noncompiled_tool_inputs": {
+    "tools/language/js/maintenance.py": "share/language/js/construction-inputs/maintenance.py.txt",
+    "tools/language/js/pack.lua": "share/language/js/construction-inputs/pack.lua.txt"
+  },
+  "interpreter_implementation_inputs_changed": false,
+  "compiler_payloads_changed": false,
+  "note": "Immutable engine construction provenance remains distinct from the current command packer and common compiler metadata pin. Frozen helper text is data, not an alternate active adapter."
+}

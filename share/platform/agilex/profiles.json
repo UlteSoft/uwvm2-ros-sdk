@@ -1,0 +1,111 @@
+{
+  "format": "uwvm-mobile-platform-profiles-v1",
+  "platform": "agilex",
+  "profiles": [
+    {
+      "profile": "ros1",
+      "ros_major": 1,
+      "distribution": "noetic",
+      "legacy_catalog": "agilex-scout-ros1-complete",
+      "source_lock_sha256": "7fe41e1f7890e869af0354026d40fec2ac857a44dfe969fb174b5f61056271c6",
+      "repositories": [
+        {
+          "id": "common_ros1",
+          "repository": "ros/common_msgs",
+          "url": "https://github.com/ros/common_msgs",
+          "branch": "noetic-devel",
+          "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+          "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+        },
+        {
+          "id": "scout_ros1",
+          "repository": "agilexrobotics/scout_ros",
+          "url": "https://github.com/agilexrobotics/scout_ros",
+          "branch": "master",
+          "commit": "01e07881cdc566c3a657e288c59a75577992d13e",
+          "tree_git_sha1": "dc9fb76aa7cd5674d5e4e63fdbf437680f78db4b",
+          "default_authority": [],
+          "qualification": "Actual immutable original source capture, not a build or native/robot result."
+        },
+        {
+          "id": "std_ros1",
+          "repository": "ros/std_msgs",
+          "url": "https://github.com/ros/std_msgs",
+          "branch": "noetic-devel",
+          "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+          "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+        },
+        {
+          "id": "ugv_sdk",
+          "repository": "agilexrobotics/ugv_sdk",
+          "url": "https://github.com/agilexrobotics/ugv_sdk",
+          "branch": "main",
+          "commit": "f2704eacdc90357078cd93ec60aae08bb4baab35",
+          "tree_git_sha1": "db5bfd08a362d0961664b862b31bf14c4dede02d",
+          "default_authority": [],
+          "qualification": "Selected actual SCOUT/protocol source. No complete native SDK build or transport witness."
+        }
+      ]
+    },
+    {
+      "profile": "ros2",
+      "ros_major": 2,
+      "distribution": "humble",
+      "legacy_catalog": "agilex-scout-ros2-complete",
+      "source_lock_sha256": "08e28b26f6ef1dc92bee6cc163632c5f7db951a93fa893d049b201a6040beeb2",
+      "repositories": [
+        {
+          "id": "common_humble",
+          "repository": "ros2/common_interfaces",
+          "url": "https://github.com/ros2/common_interfaces",
+          "branch": "humble",
+          "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+          "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+        },
+        {
+          "id": "rcl_humble",
+          "repository": "ros2/rcl_interfaces",
+          "url": "https://github.com/ros2/rcl_interfaces",
+          "branch": "humble",
+          "commit": "82776fc9068d1e0cd4af11c2e2700195994b2eb1",
+          "tree_git_sha1": "6baa0af441f3f9b1a1c3f6d118373f3c92f5973e",
+          "default_authority": [],
+          "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+        },
+        {
+          "id": "scout_ros2",
+          "repository": "agilexrobotics/scout_ros2",
+          "url": "https://github.com/agilexrobotics/scout_ros2",
+          "branch": "humble",
+          "commit": "bf0110ff44cc70cdda2931d69f0e2669a3e26b9d",
+          "tree_git_sha1": "ac870ba02fa28eccfb13c95820780e54a570b47c",
+          "default_authority": [],
+          "qualification": "Actual immutable original source capture, not a build or native/robot result."
+        },
+        {
+          "id": "ugv_sdk",
+          "repository": "agilexrobotics/ugv_sdk",
+          "url": "https://github.com/agilexrobotics/ugv_sdk",
+          "branch": "main",
+          "commit": "f2704eacdc90357078cd93ec60aae08bb4baab35",
+          "tree_git_sha1": "db5bfd08a362d0961664b862b31bf14c4dede02d",
+          "default_authority": [],
+          "qualification": "Selected actual SCOUT/protocol source. No complete native SDK build or transport witness."
+        }
+      ]
+    }
+  ],
+  "default_authority": [],
+  "native_registration_qualified": false,
+  "models": [
+    "SCOUT",
+    "SCOUT Mini",
+    "SCOUT Mini Omni"
+  ]
+}

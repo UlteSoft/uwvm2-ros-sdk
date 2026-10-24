@@ -1,0 +1,43 @@
+Option Strict On
+Option Explicit On
+' @brief Complete selected .NET record aliases.
+Imports Ros1Franka_example_controllersJointTorqueComparison =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_example_controllersJointTorqueComparison
+Imports Ros1Franka_gripperGraspEpsilon = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperGraspEpsilon
+Imports Ros1Franka_gripperGraspGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperGraspGoal
+Imports Ros1Franka_gripperGraspResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperGraspResult
+Imports Ros1Franka_gripperGraspFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperGraspFeedback
+Imports Ros1Franka_gripperHomingGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperHomingGoal
+Imports Ros1Franka_gripperHomingResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperHomingResult
+Imports Ros1Franka_gripperHomingFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperHomingFeedback
+Imports Ros1Franka_gripperMoveGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperMoveGoal
+Imports Ros1Franka_gripperMoveResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperMoveResult
+Imports Ros1Franka_gripperMoveFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperMoveFeedback
+Imports Ros1Franka_gripperStopGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperStopGoal
+Imports Ros1Franka_gripperStopResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperStopResult
+Imports Ros1Franka_gripperStopFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_gripperStopFeedback
+Imports Ros1Franka_msgsErrorRecoveryGoal = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsErrorRecoveryGoal
+Imports Ros1Franka_msgsErrorRecoveryResult = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsErrorRecoveryResult
+Imports Ros1Franka_msgsErrorRecoveryFeedback = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsErrorRecoveryFeedback
+Imports Ros1Franka_msgsErrors = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsErrors
+Imports Ros1Time = Uwvm.Franka.ros1.BoundedRecords._Ros1Time
+Imports Ros1Std_msgsHeader = Uwvm.Franka.ros1.BoundedRecords._Ros1Std_msgsHeader
+Imports Ros1Franka_msgsFrankaState = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsFrankaState
+Imports Ros1Franka_msgsSetCartesianImpedanceRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetCartesianImpedanceRequest
+Imports Ros1Franka_msgsSetCartesianImpedanceResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetCartesianImpedanceResponse
+Imports Ros1Franka_msgsSetEEFrameRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetEEFrameRequest
+Imports Ros1Franka_msgsSetEEFrameResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetEEFrameResponse
+Imports Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest
+Imports Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse
+Imports Ros1Franka_msgsSetFullCollisionBehaviorRequest =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetFullCollisionBehaviorRequest
+Imports Ros1Franka_msgsSetFullCollisionBehaviorResponse =
+        Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetFullCollisionBehaviorResponse
+Imports Ros1Franka_msgsSetJointImpedanceRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetJointImpedanceRequest
+Imports Ros1Franka_msgsSetJointImpedanceResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetJointImpedanceResponse
+Imports Ros1Franka_msgsSetKFrameRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetKFrameRequest
+Imports Ros1Franka_msgsSetKFrameResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetKFrameResponse
+Imports Ros1Franka_msgsSetLoadRequest = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetLoadRequest
+Imports Ros1Franka_msgsSetLoadResponse = Uwvm.Franka.ros1.BoundedRecords._Ros1Franka_msgsSetLoadResponse

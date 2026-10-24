@@ -1,0 +1,59 @@
+{
+  "format": "uwvm-real-interpreter-module-v1",
+  "language": "php",
+  "version": "8.4.13",
+  "target": "wasm32-wasip1",
+  "ros_backend": "ros1",
+  "entry_profile": "scalar-i32-v1",
+  "exports": {
+    "uwvm_library_abi_version": {
+      "params": [],
+      "results": [
+        "i32"
+      ]
+    },
+    "uwvm_library_init": {
+      "params": [],
+      "results": [
+        "i32"
+      ]
+    },
+    "uwvm_library_call_i32": {
+      "params": [
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ]
+    },
+    "uwvm_library_status": {
+      "params": [],
+      "results": [
+        "i32"
+      ]
+    },
+    "uwvm_library_retire": {
+      "params": [],
+      "results": [
+        "i32"
+      ]
+    }
+  },
+  "sha256": "6fdfa0692688e0f5ca9e6a0504cc9c96e72a18a871ed7cd8ec3c6f769f5501ca",
+  "bytes": 10580866,
+  "maximum_pages": 16384,
+  "abi_profile": "complete-ros-v1",
+  "canonical_abi_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "ros_import_count": 38,
+  "module_source_sha256": "e257aea8d03b04f249a42d389f1be11938edf0646de4d991da847aee73787551",
+  "embedding_source_sha256": "8d9a233f317214f741ece657eee26c30c87f857c89ae8a97d2c72a91271321f5",
+  "public_header_sha256": "0f880a85103d2c23f347e0519e68e5eca007088a111ae127a43a4209c1498a60",
+  "source_lock_sha256": "9b60fbd479d8795fc2cebcdfb357e4ede405f4f251a6df41f1eb2b3b0dcf4677",
+  "source_slot_capacity": 4194304,
+  "qualification": "FORMATTED_ENTRY_RECONSTRUCTED_BYTE_IDENTICAL; retained execution scope is separately recorded",
+  "prior_source_lock_sha256": "35472c4409219deb3c19ff44f2d737afeb1791fd940cbb2e6e7d7c470874ea26",
+  "entry_reconstruction_receipt_sha256": "36013ad194506dfdde415dea39299d1c28d4e3d93430db3a7d3afabba2fdcedb",
+  "entry_reconstruction_scope": "Actual entry compilation/link and Asyncify using unchanged qualified genuine upstream static archives",
+  "entry_reconstruction_source_lock_sha256": "9b60fbd479d8795fc2cebcdfb357e4ede405f4f251a6df41f1eb2b3b0dcf4677",
+  "source_lock_binding_note": "Current checked extra-support binds the exact observed formatted reactor sources; upstream archive payload is unchanged."
+}

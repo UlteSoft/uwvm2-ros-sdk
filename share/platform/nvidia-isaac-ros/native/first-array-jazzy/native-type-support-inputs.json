@@ -1,0 +1,34 @@
+{
+  "format": "original-Array-reproducible-native-TypeSupport-inputs-v1",
+  "original_NVIDIA_commit": "7bec6ae5dbb2faa11617f40226e8932a4a94e6e4",
+  "original_type": "isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray",
+  "native_identity": "RIHS01_45595f343aa66856ae56aee87f959a0b0ceed2132b038a7f6c6d24be707bcbff",
+  "installed_interface_source": [
+    {
+      "path": "src/platform/nvidia-isaac-ros/native/first-array-jazzy/interfaces/CMakeLists.txt",
+      "sha256": "bc1ff4a7573fa47bd298e200cd0107a12b7e948e03ed8382e660259651aaa8c8",
+      "bytes": 727
+    },
+    {
+      "path": "src/platform/nvidia-isaac-ros/native/first-array-jazzy/interfaces/msg/AprilTagDetection.msg",
+      "sha256": "ca1f15f12f565f9e8b0c9ed4b407ef99596424aaedbab3a0398140b6a771fc48",
+      "bytes": 207
+    },
+    {
+      "path": "src/platform/nvidia-isaac-ros/native/first-array-jazzy/interfaces/msg/AprilTagDetectionArray.msg",
+      "sha256": "04265d730aef8b08214eeebf8f820b63954a655b53b464fd1d1a59b017d67ced",
+      "bytes": 54
+    },
+    {
+      "path": "src/platform/nvidia-isaac-ros/native/first-array-jazzy/interfaces/package.xml",
+      "sha256": "0ab9d47f3aea863f2b7fcc3a114c413aacca27f23d2c344c35b541cb793cdd0e",
+      "bytes": 1529
+    }
+  ],
+  "source_definitions": "share/platform/nvidia-isaac-ros/schemas/ros2",
+  "ROSIDL_engine": "official rosidl_default_generators from the selected original ROS2 Jazzy installation",
+  "exact_original_definition_bytes_preserved": true,
+  "historical_driver_sha256": "357c8dfc01da614b69d9ab67a28dc4d71d355ed4ae6f952391d4063772b79a7a",
+  "scope": "Interface type support only; original full NVIDIA packaging helper/detector/GPU owner is not claimed",
+  "GPU_NITROS_qualified": false
+}

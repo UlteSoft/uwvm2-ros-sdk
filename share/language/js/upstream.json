@@ -1,0 +1,99 @@
+{
+    "version": "2026-06-04",
+    "source": "https://bellard.org/quickjs/quickjs-2026-06-04.tar.xz",
+    "archive_sha256": "b376e839b322978313d929fd20663b11ba58b75df5a46c126dd19ea2fa70ad2a",
+    "license": "MIT",
+    "patches": [
+        "English file contracts",
+        "4-space Allman formatting with original include order",
+        "WASI disables unavailable OS atomics threads and uses portable allocator accounting",
+        "dtoa removes unused setjmp include"
+    ],
+    "files": [
+        {
+            "file": "unicode_gen_def.h",
+            "upstream_sha256": "0c30cfd5dd29d7708f6e0045cb2e3ed92207697bb2b5eece39f336db007a055f",
+            "adapted_sha256": "8c2916d8df39bc3066eb59ec21e345e7d5412df078641ae7abdab54bee627506"
+        },
+        {
+            "file": "dtoa.h",
+            "upstream_sha256": "462070f7678a894b9f3612422f280f4dce412eb360a5cc585a513f407fc23114",
+            "adapted_sha256": "344d75304dc6de080c2899caec86607f5879ee7d2d970df9adf8d3e72107e9ed"
+        },
+        {
+            "file": "dtoa.c",
+            "upstream_sha256": "af5abd68fa9806d1a19bdd5f2daef00d5fd0990ae56311382dfed4700343f074",
+            "adapted_sha256": "9a920871bbcc0d17196e51b665475b0d44fa869cb61cc3871a6aa9d8720466ce"
+        },
+        {
+            "file": "libunicode-table.h",
+            "upstream_sha256": "cf782bc7a07549e976f606bd3cb8555858482b279574554dcb8d46412986006c",
+            "adapted_sha256": "649b072c3fee26d5fa778cd140a23bfdd0ff34f532b4b21ce263b7a979cce5bc"
+        },
+        {
+            "file": "libunicode.h",
+            "upstream_sha256": "ce310152bc80d7415dcb657e23abd9a40bf83e393c0d05d325dae384bb01d259",
+            "adapted_sha256": "7aa9cf58be71e877162fbbf169680995c7a853f3d08760cf309f48ae456bff2a"
+        },
+        {
+            "file": "libunicode.c",
+            "upstream_sha256": "26203ae888c0582e7d0e2113f13db0c9b39dc7b0b3836d68fa308c54f7a0898c",
+            "adapted_sha256": "591413a857aa7cd17c6ae000d4d381d3978f67bd33a1279856933ebe82da2eda"
+        },
+        {
+            "file": "libregexp-opcode.h",
+            "upstream_sha256": "2a98d646089f3a72f25480116297c5fdb5b28fd9f815447273951f4ade4a115e",
+            "adapted_sha256": "0f634a4b026c030013cf3048f377c0a031a4ed039f771a15afc6eba4927af966"
+        },
+        {
+            "file": "libregexp.h",
+            "upstream_sha256": "f5c5ef1899f224dcc718422a22c789ef9d8b5b837b622818fcfaf681ae793446",
+            "adapted_sha256": "2362311b8693975d869f5cf746340062b8d2346cb732607c328b3ccf2f6a1b18"
+        },
+        {
+            "file": "libregexp.c",
+            "upstream_sha256": "fdfcf86167029ab2c39c35730d4ae6875b7bbeb9406a0fcc886de4e9b1f5e2ac",
+            "adapted_sha256": "dcc1a0d7919921a08b80f00e85a1901e111df8d9cd2544592db10f22340e9813"
+        },
+        {
+            "file": "list.h",
+            "upstream_sha256": "181c6b25d9d0e4853315d36a6e6fab3b2c3554271693d898a439384ba0f67c2b",
+            "adapted_sha256": "4ee9eda6f7eb739a1860fd7c3239943d808619b0464a42c8552d6c695afbbfe8"
+        },
+        {
+            "file": "cutils.h",
+            "upstream_sha256": "d2da6d06a75b9e6c116c82b7a41df6bcc170c8b1779f374fa953ecf688eda647",
+            "adapted_sha256": "ae45698aa4f479dad164a573cabd22de01aa42377440ee8e7e81ca6366a95f25"
+        },
+        {
+            "file": "cutils.c",
+            "upstream_sha256": "b73a403a59da30726257ddbdf5e399298941c1def997782ee0d4d33f796a80a2",
+            "adapted_sha256": "b266be9ac0d1ce82c7fade36861ef9b59740f8fd2fa43d52b9efae78a4b9062f"
+        },
+        {
+            "file": "quickjs-opcode.h",
+            "upstream_sha256": "a9c60a8c9366820733d9d2acbb805f48b2e9e2778df526e6bcb845fdb6b47834",
+            "adapted_sha256": "2e0a108da1769e4c10a5bd4aff2753d618929317ebce084b1b76f81ac83924ee"
+        },
+        {
+            "file": "quickjs-atom.h",
+            "upstream_sha256": "342194359417664e652f54e7d682ee2ef91dd982e91f74decbde992a2c848236",
+            "adapted_sha256": "c40bd3c96ba87b09463189a96b80252cfe220641f9b796df4f4e1a080ef35d41"
+        },
+        {
+            "file": "quickjs.h",
+            "upstream_sha256": "2165f47772af9faee1798999a599fa9de850d1bf0259502dade1c25d4a588316",
+            "adapted_sha256": "971c141dca08ae46cd29380db91902edab3ca08abebfbd73f82331ddfbcfd2d2"
+        },
+        {
+            "file": "quickjs.c",
+            "upstream_sha256": "a00762d2eee42316cecbc9c15efc4549b715ec500461845cd91b2a6c38190d08",
+            "adapted_sha256": "631c8ae06fee70fe80f39001e4d4a0bcb1cb8507a6a160d584464fac2fbcd4c0"
+        },
+        {
+            "file": "LICENSE",
+            "upstream_sha256": "598fd7fc928e4350abce36e337ba5a1346923c5c692f5be92c3d8e29ddd7c18d",
+            "adapted_sha256": "598fd7fc928e4350abce36e337ba5a1346923c5c692f5be92c3d8e29ddd7c18d"
+        }
+    ]
+}

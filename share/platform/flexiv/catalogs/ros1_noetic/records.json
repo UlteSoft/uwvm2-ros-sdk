@@ -1,0 +1,748 @@
+{
+  "schema": "uwvm-complete-vendor-record-ir-v1",
+  "native_bound": false,
+  "records": [
+    {
+      "type": "flexiv_msgs/JointPosVel",
+      "ros_version": 1,
+      "symbol": "Ros1Flexiv_msgsJointPosVel",
+      "c_symbol": "roswasmc_bounded_1_flexiv_msgs_JointPosVel",
+      "codec_identity": "UWVMROS1_60868295fe1798f349d7f675035bd476f0f6caa8b7568e7a66487c32459fdfaa",
+      "minimum": 112,
+      "maximum": 112,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "positions",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "velocities",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "flexiv_msgs/Mode",
+      "ros_version": 1,
+      "symbol": "Ros1Flexiv_msgsMode",
+      "c_symbol": "roswasmc_bounded_1_flexiv_msgs_Mode",
+      "codec_identity": "UWVMROS1_85789f97962c70edfe4703d5a78ed198655e3ebe300f5a9c588d739bae87f422",
+      "minimum": 1,
+      "maximum": 1,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "mode",
+          "type": "int8",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": [
+        {
+          "name": "MODE_UNKNOWN",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "-1",
+          "value": "-1"
+        },
+        {
+          "name": "MODE_IDLE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "MODE_RT_JOINT_TORQUE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "MODE_RT_JOINT_POSITION",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "MODE_NRT_JOINT_POSITION",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "MODE_NRT_PLAN_EXECUTION",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "4",
+          "value": "4"
+        },
+        {
+          "name": "MODE_NRT_PRIMITIVE_EXECUTION",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "5",
+          "value": "5"
+        },
+        {
+          "name": "MODE_RT_CARTESIAN_MOTION_FORCE_BASE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "6",
+          "value": "6"
+        },
+        {
+          "name": "MODE_RT_CARTESIAN_MOTION_FORCE_TCP",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "7",
+          "value": "7"
+        },
+        {
+          "name": "MODE_NRT_CARTESIAN_MOTION_FORCE_BASE",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "8",
+          "value": "8"
+        },
+        {
+          "name": "MODE_NRT_CARTESIAN_MOTION_FORCE_TCP",
+          "type": "int8",
+          "native_type": "int8",
+          "literal": "9",
+          "value": "9"
+        }
+      ]
+    },
+    {
+      "type": "geometry_msgs/Point",
+      "ros_version": 1,
+      "symbol": "Ros1Geometry_msgsPoint",
+      "c_symbol": "roswasmc_bounded_1_geometry_msgs_Point",
+      "codec_identity": "UWVMROS1_b55e2bde60f6cedb426cada54bc7baefc536c7bc731bd49fb152d89a892de62b",
+      "minimum": 24,
+      "maximum": 24,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/Quaternion",
+      "ros_version": 1,
+      "symbol": "Ros1Geometry_msgsQuaternion",
+      "c_symbol": "roswasmc_bounded_1_geometry_msgs_Quaternion",
+      "codec_identity": "UWVMROS1_48fe20d5d29a8ca1a630605a58f80baacc52d9a65b1ca87efd50ffdd52882934",
+      "minimum": 32,
+      "maximum": 32,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "w",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/Pose",
+      "ros_version": 1,
+      "symbol": "Ros1Geometry_msgsPose",
+      "c_symbol": "roswasmc_bounded_1_geometry_msgs_Pose",
+      "codec_identity": "UWVMROS1_e49ed287cd0de31a16c8cd49ad8f41f81d44e23306b8dcb61da6e0e789595471",
+      "minimum": 56,
+      "maximum": 56,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "position",
+          "type": "geometry_msgs/Point",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "orientation",
+          "type": "geometry_msgs/Quaternion",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/Vector3",
+      "ros_version": 1,
+      "symbol": "Ros1Geometry_msgsVector3",
+      "c_symbol": "roswasmc_bounded_1_geometry_msgs_Vector3",
+      "codec_identity": "UWVMROS1_e90efcf4803d82763e0b83f8ef5502b5d042158873fcc91be32543d25d7632bc",
+      "minimum": 24,
+      "maximum": 24,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/Accel",
+      "ros_version": 1,
+      "symbol": "Ros1Geometry_msgsAccel",
+      "c_symbol": "roswasmc_bounded_1_geometry_msgs_Accel",
+      "codec_identity": "UWVMROS1_3345762fc354a5698d41098276702c7d3cee87fe9a531b0229111b9b3bf700ed",
+      "minimum": 48,
+      "maximum": 48,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "linear",
+          "type": "geometry_msgs/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "angular",
+          "type": "geometry_msgs/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/Wrench",
+      "ros_version": 1,
+      "symbol": "Ros1Geometry_msgsWrench",
+      "c_symbol": "roswasmc_bounded_1_geometry_msgs_Wrench",
+      "codec_identity": "UWVMROS1_b0938c4e084df68cf7c46445070ac3e9305d06f678275845aec6055db77617c3",
+      "minimum": 48,
+      "maximum": 48,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "force",
+          "type": "geometry_msgs/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "torque",
+          "type": "geometry_msgs/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "flexiv_msgs/RobotStates",
+      "ros_version": 1,
+      "symbol": "Ros1Flexiv_msgsRobotStates",
+      "c_symbol": "roswasmc_bounded_1_flexiv_msgs_RobotStates",
+      "codec_identity": "UWVMROS1_a64419da913e6fafce645177a491cc77a1dcee9ef785bc04380e7aebaeeb12a8",
+      "minimum": 864,
+      "maximum": 864,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "q",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "theta",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "dq",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "dtheta",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "tau",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "tau_des",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "tau_dot",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "tau_ext",
+          "type": "float64",
+          "array": "array",
+          "count": 7,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "tcp_pose",
+          "type": "geometry_msgs/Pose",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "tcp_pose_des",
+          "type": "geometry_msgs/Pose",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "tcp_vel",
+          "type": "geometry_msgs/Accel",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "cam_pose",
+          "type": "geometry_msgs/Pose",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "flange_pose",
+          "type": "geometry_msgs/Pose",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "ft_sensor_raw",
+          "type": "geometry_msgs/Wrench",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "ext_wrench_tcp_frame",
+          "type": "geometry_msgs/Wrench",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "ext_wrench_base_frame",
+          "type": "geometry_msgs/Wrench",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "flexiv_msgs/JointPosVel",
+      "kind": "message",
+      "registered": true,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_60868295fe1798f349d7f675035bd476f0f6caa8b7568e7a66487c32459fdfaa",
+      "components": {
+        "message": "Ros1Flexiv_msgsJointPosVel"
+      }
+    },
+    {
+      "type": "flexiv_msgs/Mode",
+      "kind": "message",
+      "registered": true,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_85789f97962c70edfe4703d5a78ed198655e3ebe300f5a9c588d739bae87f422",
+      "components": {
+        "message": "Ros1Flexiv_msgsMode"
+      }
+    },
+    {
+      "type": "flexiv_msgs/RobotStates",
+      "kind": "message",
+      "registered": true,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_a64419da913e6fafce645177a491cc77a1dcee9ef785bc04380e7aebaeeb12a8",
+      "components": {
+        "message": "Ros1Flexiv_msgsRobotStates"
+      }
+    },
+    {
+      "type": "geometry_msgs/Accel",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_3345762fc354a5698d41098276702c7d3cee87fe9a531b0229111b9b3bf700ed",
+      "components": {
+        "message": "Ros1Geometry_msgsAccel"
+      }
+    },
+    {
+      "type": "geometry_msgs/Point",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_b55e2bde60f6cedb426cada54bc7baefc536c7bc731bd49fb152d89a892de62b",
+      "components": {
+        "message": "Ros1Geometry_msgsPoint"
+      }
+    },
+    {
+      "type": "geometry_msgs/Pose",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_e49ed287cd0de31a16c8cd49ad8f41f81d44e23306b8dcb61da6e0e789595471",
+      "components": {
+        "message": "Ros1Geometry_msgsPose"
+      }
+    },
+    {
+      "type": "geometry_msgs/Quaternion",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_48fe20d5d29a8ca1a630605a58f80baacc52d9a65b1ca87efd50ffdd52882934",
+      "components": {
+        "message": "Ros1Geometry_msgsQuaternion"
+      }
+    },
+    {
+      "type": "geometry_msgs/Vector3",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_e90efcf4803d82763e0b83f8ef5502b5d042158873fcc91be32543d25d7632bc",
+      "components": {
+        "message": "Ros1Geometry_msgsVector3"
+      }
+    },
+    {
+      "type": "geometry_msgs/Wrench",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 1,
+      "codec_identity": "UWVMROS1_b0938c4e084df68cf7c46445070ac3e9305d06f678275845aec6055db77617c3",
+      "components": {
+        "message": "Ros1Geometry_msgsWrench"
+      }
+    }
+  ]
+}

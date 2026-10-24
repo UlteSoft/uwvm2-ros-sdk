@@ -1,0 +1,57 @@
+{
+  "format": "uwvm-typescript-qualification-v1",
+  "compiler": "Microsoft TypeScript 5.9.3",
+  "execution_engine": "shared QuickJS 2026-06-04",
+  "llvm": "23.1.4 for scalar-library linking",
+  "compiler_host": "linux-x86_64",
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "final_successful_build_graphs": 18,
+  "strict_type_rejections": 4,
+  "same_product_guest_executions": 36,
+  "library_guest_executions": 16,
+  "execution_hosts": [
+    "x86_64",
+    "QEMU AArch64"
+  ],
+  "memory_max": 68719476736,
+  "memory_swap_max": 0,
+  "coverage": [
+    "generics, enums, discriminated unions",
+    "project static modules",
+    "erased declaration imports",
+    "real JS implementation paired with .d.mts",
+    "complete original Unitree WirelessController independent wire bytes",
+    "real indexed static archive",
+    "ordinary shared Preload",
+    "TypeScript-to-JavaScript and JavaScript-to-TypeScript scalar calls",
+    "guest exceptions, invalid results, close and fresh state"
+  ],
+  "native_ros_peer_executed": false,
+  "all_platforms_qualified": false,
+  "all_Unitree_languages_qualified": false,
+  "host_application_evaluated": false,
+  "application_aot": false,
+  "run_receipt_sha256": "0431d7b5a3fc2879f04384d5a936866882c4882aa368cbc160714632cae97f3c",
+  "build_reports_sha256": {
+    "binary": "96d8bb7d824c28ac6529611b9fcb83aabedcc36d4e3c9db506d521218e5d9868",
+    "shared": "17aaca75a07ebefbb64207fc33bf5935af3d55ff72a9da769a400d4bc25e1ddc",
+    "static": "426f1c3117c368d5183a483f20e94726f6999a57003005a1576c9d13124517a4"
+  },
+  "runtime_identities": {
+    "x86_64": {
+      "sha256": "d9b8f97a255b80969f1c4321119c1c37a05995debfda7f6de69135b14752a78d",
+      "elf_machine": 62
+    },
+    "aarch64": {
+      "sha256": "92d4efc1bae6a99e915951fb8232c9b01052305500cba77d40068620cf4ffd81",
+      "elf_machine": 183
+    }
+  },
+  "qualification_note": "Common adapter registration is installed for exercised Unitree and WASI selections. Other platform registrations stay in parent review until their own final-source tests pass.",
+  "public_xmake_run_executions": 16,
+  "xmake_run_receipt_sha256": "fcaf67b2b90db5e0522b7da7897b581e8a9051128d22eec2beed548c762d25f4",
+  "run_recompiled_applications": false
+}

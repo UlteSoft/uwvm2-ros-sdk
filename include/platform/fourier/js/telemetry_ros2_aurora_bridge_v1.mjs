@@ -1,0 +1,83 @@
+// @file telemetry_ros2_aurora_bridge_v1.mjs
+// @brief Provide the complete fourier telemetry_ros2_aurora_bridge_v1.mjs source contract.
+// @details Complete original fields, scalar widths, canonical quotas and interface roles are retained. Local
+// encoding grants no ROS authority; invalid or partial wire is rejected before a value is exposed.
+/**
+ * Complete original values, one finite operation and explicit cleanup.
+ * readOnce retains the entire state. commandOnce requires a caller-supplied
+ * canonical payload loader; no zero command, native address or retry is added.
+ */
+import {Session} from "ros/js/roswasm.mjs";
+import {
+    Ros2Uwvm_fourier_bridgeMsgStatusCodec as stateCodec,
+    Ros2Uwvm_fourier_bridgeMsgVelocityCommandCodec as commandCodec
+} from "./ros2/fourier-ros2-aurora-bridge-v1-complete/bounded_records.mjs";
+
+function code(e)
+{
+    return Number.isInteger(e?.code) && e.code > 0 ? e.code : 22;
+}
+
+function once(session, alias, load)
+{
+    if(!(session instanceof Session) || session.version !== 2)
+        throw new TypeError("Exact source backend required");
+    if(session.outputCapacity < stateCodec.maxWireBytes)
+        throw new RangeError("Complete state storage required");
+    let cap = null, primary = 0, cleanup = 0, value = null, error = null, cleanupError = null;
+    try
+    {
+        cap = session.open(alias);
+        cap.check();
+        if(load)
+        {
+            const bytes = commandCodec.encode(commandCodec.decode(load()));
+            primary = session.write("topic_publish", cap.handle, bytes);
+        }
+        else
+        {
+            primary = session.raw.topic_subscribe(cap.handle);
+            if(!primary)
+            {
+                const reply = cap.poll();
+                primary = reply.status;
+                if(!primary)
+                    value = stateCodec.decode(reply.bytes);
+            }
+        }
+    }
+    catch(e)
+    {
+        error = e;
+        primary = code(e);
+        value = null;
+    }
+    finally
+    {
+        if(cap)
+        {
+            try
+            {
+                cleanup = cap.close();
+            }
+            catch(e)
+            {
+                cleanupError = e;
+                cleanup = code(e);
+            }
+        }
+    }
+    return {primary, cleanup, value, error, cleanupError};
+}
+
+export function readOnce(session, alias)
+{
+    return once(session, alias, null);
+}
+
+export function commandOnce(session, alias, load)
+{
+    if(typeof load !== "function")
+        throw new TypeError("Explicit payload loader required");
+    return once(session, alias, load);
+}

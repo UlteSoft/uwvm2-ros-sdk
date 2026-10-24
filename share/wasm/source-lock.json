@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "name": "wasi-libc",
+      "revision": "3fb7ebdae8dd8353ec014259039e5c4e31fd651f",
+      "archive": "wasi-libc-3fb7ebdae8dd8353ec014259039e5c4e31fd651f.tar.gz",
+      "sha256": "cd0d1d0e11024acaad2e4e01072d77bb1b73c0890528f366d3bce9d431d1cf3c",
+      "source_url": "https://github.com/WebAssembly/wasi-libc",
+      "contents": [
+        "complete tracked source tree"
+      ],
+      "worktree_changes_included": false
+    },
+    {
+      "name": "llvm-project",
+      "revision": "ca7933e47d3a3451d81e72ac174dcb5aa28b59d1",
+      "archive": "llvm-project-ca7933e47d3a3451d81e72ac174dcb5aa28b59d1.tar.gz",
+      "sha256": "a41bb012ea622dd614df7f53ecf32fbe76242d0772d8bca60fa9d8c70fcc9f52",
+      "source_url": "https://github.com/llvm/llvm-project",
+      "contents": [
+        "LICENSE.TXT",
+        "compiler-rt",
+        "libcxx",
+        "libcxxabi",
+        "libunwind",
+        "runtimes",
+        "cmake",
+        "llvm/cmake",
+        "llvm/include",
+        "third-party/siphash",
+        "libc"
+      ],
+      "worktree_changes_included": false
+    }
+  ]
+}

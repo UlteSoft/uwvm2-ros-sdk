@@ -1,0 +1,81 @@
+{
+  "format": "uwvm-genuine-interpreter-native-library-bridge-v1",
+  "backend": "ros2",
+  "abi_function_count": 43,
+  "abi_descriptor_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "inputs": [
+    {
+      "path": "tools/language/js/abi_dispatch.py",
+      "sha256": "06e08835aecda4af454ad7d078d6e568179380c49eb6ce90eafadfd6a5447b5d"
+    },
+    {
+      "path": "src/language/js/command.c",
+      "sha256": "487e8858983ffb95b170208677e91b5b7700103030f7b1234cc08d44ee44aabe"
+    },
+    {
+      "path": "src/language/js/support/abi.h",
+      "sha256": "b335dece0f2b468ef11aee0e7cb2640eadd75b235e5309dc4ca640854145eded"
+    },
+    {
+      "path": "src/language/js/support/application.h",
+      "sha256": "d0c1a3b869c9624a72fc0e74925a8883a9b7f481dd0d050f6175da13dbfdd5b1"
+    },
+    {
+      "path": "src/language/js/library/native.c",
+      "sha256": "6746d8be8e60c63561f6a2f5eb36dfb2e388654f2a2b6c354b78cb664bc8e8bf"
+    },
+    {
+      "path": "src/language/js/library/native/ros2/uwvm_shared_abi.h",
+      "sha256": "74158d80b39bc563cff45e8c08bde56f3db66553659143b7fcaec1a7e9ef57db"
+    }
+  ],
+  "import_names": [
+    "abi_version",
+    "action_advertise",
+    "action_cancel_any_goal",
+    "action_cancel_own_goal",
+    "action_receive_feedback",
+    "action_receive_result",
+    "action_respond",
+    "action_send_goal",
+    "capability_close",
+    "capability_open",
+    "capability_revoke",
+    "event_poll",
+    "event_poll_v1",
+    "event_ready",
+    "event_watch",
+    "graph_inspect_action",
+    "graph_inspect_node",
+    "graph_inspect_service",
+    "graph_inspect_topic",
+    "graph_list_nodes",
+    "graph_list_services",
+    "graph_list_topics",
+    "lifecycle_change_state",
+    "lifecycle_get_state",
+    "log_write",
+    "parameter_declare",
+    "parameter_describe",
+    "parameter_get",
+    "parameter_list",
+    "parameter_set",
+    "parameter_subscribe_events",
+    "parameter_undeclare",
+    "service_advertise",
+    "service_call",
+    "service_respond",
+    "service_submit",
+    "tf_broadcast",
+    "tf_lookup",
+    "time_read_ros",
+    "time_read_steady",
+    "time_read_system",
+    "topic_publish",
+    "topic_subscribe"
+  ],
+  "host_source_evaluated": false,
+  "build_requires_host_python": false,
+  "permissions_created": false,
+  "scope": "One raw-ABI QuickJS ROS2 wasm32 shared producer; common engine/core binaries unchanged"
+}

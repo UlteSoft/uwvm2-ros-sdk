@@ -1,0 +1,6 @@
+{
+  "name": "agibot",
+  "private": true,
+  "description": "AssemblyScript guest SDK namespace; source modules compile into the Wasm guest.",
+  "ascMain": "."
+}

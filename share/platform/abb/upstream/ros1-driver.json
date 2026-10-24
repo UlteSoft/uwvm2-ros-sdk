@@ -1,0 +1,180 @@
+{
+  "platform": "abb",
+  "repository": "ros-industrial/abb_robot_driver",
+  "commit": "d1678957d3792e6aa54582ff894db62b6a51dac0",
+  "tree": "098c179030fc9b85ac471508ea9fe83e140f7f75",
+  "archive_url": "https://codeload.github.com/ros-industrial/abb_robot_driver/tar.gz/d1678957d3792e6aa54582ff894db62b6a51dac0",
+  "archive_sha256": "249aa3b8afab62f023617e89ea2ea155873c0fb73a26596d61a3b6f7950edd4d",
+  "archive_bytes": 221953,
+  "source_candidates": [
+    {
+      "path": "abb_egm_hardware_interface/config/base_configs_example.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/base_configs_example.yaml",
+      "sha256": "3cf2e7bbe0025897226138cfa2774818722cd0a57d2044a898ee1893633a3a8f",
+      "git_blob_sha1": "46558b540bfa7dc533c322cf8d50180dc9cf14e3",
+      "bytes": 600,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_egm_hardware_interface/config/egm_multiple_mech_units_example.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_multiple_mech_units_example.yaml",
+      "sha256": "e3a57cc8793720251ea073d0ce4c7f8aa60d2b0c341c2ebf8925a9047c22cd89",
+      "git_blob_sha1": "22bae802bf34ac04ac0326b193d03d7e456858f6",
+      "bytes": 495,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_egm_hardware_interface/config/egm_single_mech_unit_example.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_single_mech_unit_example.yaml",
+      "sha256": "a129541b2046b2757d59c0602391fff69e9dba36a0cec0fc097de3e7d4be1ef0",
+      "git_blob_sha1": "7bf338d9234acc3122741371cb8b9bd744495d79",
+      "bytes": 171,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_egm_hardware_interface/config/egm_yumi_mech_units_example.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/config/egm_yumi_mech_units_example.yaml",
+      "sha256": "1979767a6837c458381220364c87aad1e3caed4b3f81cbd45ff25b24eb9e8229",
+      "git_blob_sha1": "c6b2d0858d2360c266181c199a97997de79c4773",
+      "bytes": 371,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_egm_hardware_interface/launch/egm_hardware_interface.launch",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_hardware_interface/launch/egm_hardware_interface.launch",
+      "sha256": "59365f6b5f0b0f55055bb71d2337cc4a60427860349ea9b750473e160541da70",
+      "git_blob_sha1": "d7e68e8da174278194347a5c79bd67a732ee922a",
+      "bytes": 1003,
+      "role": "ros1_launch_entry"
+    },
+    {
+      "path": "abb_egm_state_controller/launch/egm_state_controller.launch",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_egm_state_controller/launch/egm_state_controller.launch",
+      "sha256": "4963b32baa0ea840ae7da6b9374b4cf742cf6712de60e6978cc93c0f9e75d259",
+      "git_blob_sha1": "4b5ba68611b69d274bfdf570657e3a2506159bd9",
+      "bytes": 235,
+      "role": "ros1_launch_entry"
+    },
+    {
+      "path": "abb_robot_bringup_examples/CMakeLists.txt",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/CMakeLists.txt",
+      "sha256": "02e7c628aa7dd7918858b33359f6ead42763931c4e93eff2d816218eaf029757",
+      "git_blob_sha1": "2f223ce23713be5edec4ee24cfdbdbe3be4c277c",
+      "bytes": 2046,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/LICENSE",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "git_blob_sha1": "1aa59051f42af33595fe079046ff05c0242a98a9",
+      "bytes": 1505,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/README.md",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/README.md",
+      "sha256": "26dccf2368a017cef7fc43fb6d4259f23e0a96a3dd67f1cec22a7bcfa7e84546",
+      "git_blob_sha1": "270a7e51247d49bfd7f1bd083cd20b5383f0c5d5",
+      "bytes": 8446,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex2_controllers.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_controllers.yaml",
+      "sha256": "ae07f37de4db604480e4ca34b3ebb28e70ee9982a85efb31e15d54352443526a",
+      "git_blob_sha1": "d9853374ca94b2e13cb86ff7bcf71b508991f9c4",
+      "bytes": 473,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex2_hardware_base.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_hardware_base.yaml",
+      "sha256": "603f64be44bdcea80fa35ddb3d020ed9a4e2077ce167f2afd80bd2340f8e4e74",
+      "git_blob_sha1": "8b079f85545619013eb66b7b74b5973007d6696b",
+      "bytes": 605,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex2_hardware_egm.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex2_hardware_egm.yaml",
+      "sha256": "a7d19f0ef0b95b532ef2c4f1715da667a4800e763cdc83b0f44f6d8f83d1aa27",
+      "git_blob_sha1": "ebfc1e768658d9260ac574b408e283775cda74d4",
+      "bytes": 745,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex3_controllers.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_controllers.yaml",
+      "sha256": "1b3355cb3db69333f139efde7bae6d28a9b732f4259788e41b27854355176567",
+      "git_blob_sha1": "a30e243b5a243985bfb053d4a723839037df8b95",
+      "bytes": 835,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex3_hardware_base.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_hardware_base.yaml",
+      "sha256": "603f64be44bdcea80fa35ddb3d020ed9a4e2077ce167f2afd80bd2340f8e4e74",
+      "git_blob_sha1": "8b079f85545619013eb66b7b74b5973007d6696b",
+      "bytes": 605,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex3_hardware_egm.yaml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/config/ex3_hardware_egm.yaml",
+      "sha256": "672df5db969b3ce36400911b63ffdda6d944e95a7efced7bd35ee5ab7fe1e470",
+      "git_blob_sha1": "8ee2de576e0aeeac0c544b88cd745867f155cdf6",
+      "bytes": 1699,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_robot_bringup_examples/launch/ex1_rws_only.launch",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex1_rws_only.launch",
+      "sha256": "05c9aa3e378507a984273f1ae8149d4f7a168eca1ea6530f478e7a375900562b",
+      "git_blob_sha1": "d6cf07a98334154133398c9ea24a367af4d36dd9",
+      "bytes": 1159,
+      "role": "ros1_launch_entry"
+    },
+    {
+      "path": "abb_robot_bringup_examples/launch/ex2_rws_and_egm_6axis_robot.launch",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex2_rws_and_egm_6axis_robot.launch",
+      "sha256": "ee8c84fca23b209f1f29a33c7e86cc099315a0a6947bf0dc4356192e3f29ded8",
+      "git_blob_sha1": "754ba70b74df5442ee37f9fe8c89bba4064d881d",
+      "bytes": 3087,
+      "role": "ros1_launch_entry"
+    },
+    {
+      "path": "abb_robot_bringup_examples/launch/ex3_rws_and_egm_yumi_robot.launch",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/launch/ex3_rws_and_egm_yumi_robot.launch",
+      "sha256": "de8cfeee1cf25d08bf202c00c0db559234a21c8c1b94147bd06756dd6ab4267a",
+      "git_blob_sha1": "b1c07846c6cb7c30e28d5a3083a13bdcca00dd7e",
+      "bytes": 3568,
+      "role": "ros1_launch_entry"
+    },
+    {
+      "path": "abb_robot_bringup_examples/package.xml",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_robot_bringup_examples/package.xml",
+      "sha256": "458df0fc9744829b384ac02f1cce261ffa91aecbda13c20ccfc607313a845749",
+      "git_blob_sha1": "0aceaea83f9c56b783782a5aee93c1eb7a930bdd",
+      "bytes": 974,
+      "role": "helper_or_configuration_candidate"
+    },
+    {
+      "path": "abb_rws_service_provider/launch/rws_service_provider.launch",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_service_provider/launch/rws_service_provider.launch",
+      "sha256": "c7754a71d59d4bec7e24757ce4216dcaf143b4eda6ddb6dc23e93bf73c94fb1e",
+      "git_blob_sha1": "2de8550fad9ccd4a3bccc7afefa0950e1ded06f0",
+      "bytes": 1068,
+      "role": "ros1_launch_entry"
+    },
+    {
+      "path": "abb_rws_state_publisher/launch/rws_state_publisher.launch",
+      "url": "https://github.com/ros-industrial/abb_robot_driver/blob/d1678957d3792e6aa54582ff894db62b6a51dac0/abb_rws_state_publisher/launch/rws_state_publisher.launch",
+      "sha256": "4065e84ba4b017731c93b1483b61528ab8d67ec53e8885e9824126fd6279e1d7",
+      "git_blob_sha1": "404b255184d408b7a35fb14c52e582361a46e374",
+      "bytes": 1248,
+      "role": "ros1_launch_entry"
+    }
+  ],
+  "review_status": "source inventory preserved; see controller audit and this delivery's independent evidence"
+}

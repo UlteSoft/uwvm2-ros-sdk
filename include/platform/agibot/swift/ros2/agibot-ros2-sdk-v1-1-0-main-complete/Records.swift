@@ -1,0 +1,4995 @@
+// @file Records.swift
+// @brief Full agibot swift codecs and original record metadata.
+// @details Complete agibot ros2_sdk_v1_1_0_main values in swift. 166 original records retain 552 fields and 133
+// interface descriptions. Scalar widths, bounds, units, defaults and identities follow the pinned native
+// definitions. Encoding is local; compiler, guest and native ROS acceptance require separate receipts. See the
+// profile API manual under document/platform/agibot/en_US/catalog/.
+// Generated complete canonical values. No I/O or authority.
+import RosWasm
+
+public struct Ros2Aimdk_msgsMsgAgentPropertyIdType: Canonical {
+  public static let maximumWireBytes = 1
+  public static let codecIdentity =
+    "UWVMROS1_d46b7979d687f30a04b2d96d2cfde9efeedb18a3b311e43fd3af362d7323102c"
+  public static let nativeType = "aimdk_msgs/msg/AgentPropertyIdType"
+  public static let nativeIdentity: String? = nil
+  public static let `AGENT_PROPERTY_UNDEFINED`: UInt8 = 0
+  public static let `AGENT_PROPERTY_LANGUAGE`: UInt8 = 1
+  public static let `AGENT_PROPERTY_RUN_MODE`: UInt8 = 2
+  public static let `AGENT_PROPERTY_GREET`: UInt8 = 3
+  public static let `AGENT_PROPERTY_HEAD_FOLLOW`: UInt8 = 4
+  public static let `AGENT_PROPERTY_DUPLEX_TIMEOUT`: UInt8 = 5
+  public static let `AGENT_PROPERTY_ENVIRONMENT_SWITCH`: UInt8 = 6
+  public static let `AGENT_PROPERTY_WELCOME_STATUS`: UInt8 = 7
+  public static let `AGENT_PROPERTY_SITE_SWITCH`: UInt8 = 8
+  public static let `AGENT_PROPERTY_LANGUAGE_LIST`: UInt8 = 9
+  public var `value`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAgentPropertyIdType {
+    var v = Ros2Aimdk_msgsMsgAgentPropertyIdType()
+    v.`value` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAgentPropertiesValue: Canonical {
+  public static let maximumWireBytes = 133
+  public static let codecIdentity =
+    "UWVMROS1_f5886bcdffa17bde1622e0441b0e05562826ea27c5e393a85e255d4dd6ac32bb"
+  public static let nativeType = "aimdk_msgs/msg/AgentPropertiesValue"
+  public static let nativeIdentity: String? = nil
+  public var `key`: Ros2Aimdk_msgsMsgAgentPropertyIdType = Ros2Aimdk_msgsMsgAgentPropertyIdType()
+  public var `value`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`key`.write(to: &w)
+    try w.string(self.`value`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAgentPropertiesValue
+  {
+    var v = Ros2Aimdk_msgsMsgAgentPropertiesValue()
+    v.`key` = try Ros2Aimdk_msgsMsgAgentPropertyIdType.read(from: &r)
+    v.`value` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAgentProperties: Canonical {
+  public static let maximumWireBytes = 536
+  public static let codecIdentity =
+    "UWVMROS1_5c1d34cab6d73c22fa0c9555ff67309d3ad05002b19d814ea03e576a1298f4aa"
+  public static let nativeType = "aimdk_msgs/msg/AgentProperties"
+  public static let nativeIdentity: String? = nil
+  public var `properties`: [Ros2Aimdk_msgsMsgAgentPropertiesValue] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    guard self.`properties`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`properties`.count))
+    for e in self.`properties` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAgentProperties {
+    var v = Ros2Aimdk_msgsMsgAgentProperties()
+    let rawcount0 = try r.integer(UInt32.self)
+    guard rawcount0 <= 4 else { throw RosError(22) }
+    let count0 = Int(rawcount0)
+    v.`properties` = []
+    v.`properties`.reserveCapacity(count0)
+    for _ in 0..<count0 {
+      v.`properties`.append(try Ros2Aimdk_msgsMsgAgentPropertiesValue.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAlertCode: Canonical {
+  public static let maximumWireBytes = 148
+  public static let codecIdentity =
+    "UWVMROS1_16e0ffe103d1d7761ff440bebfd6aa42c9471006f636c50fcd6acda8c32bc7e5"
+  public static let nativeType = "aimdk_msgs/msg/AlertCode"
+  public static let nativeIdentity: String? = nil
+  public var `timestamp`: UInt64 = 0
+  public var `first_timestamp`: UInt64 = 0
+  public var `code`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`timestamp`)
+    try w.integer(self.`first_timestamp`)
+    try w.string(self.`code`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAlertCode {
+    var v = Ros2Aimdk_msgsMsgAlertCode()
+    v.`timestamp` = try r.integer(UInt64.self)
+    v.`first_timestamp` = try r.integer(UInt64.self)
+    v.`code` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Builtin_interfacesMsgTime: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7"
+  public static let nativeType = "builtin_interfaces/msg/Time"
+  public static let nativeIdentity: String? = nil
+  public var `sec`: Int32 = 0
+  public var `nanosec`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    if self.`nanosec` >= 1_000_000_000 { throw RosError(22) }
+    try w.integer(self.`sec`)
+    try w.integer(self.`nanosec`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Builtin_interfacesMsgTime {
+    var v = Ros2Builtin_interfacesMsgTime()
+    v.`sec` = try r.integer(Int32.self)
+    v.`nanosec` = try r.integer(UInt32.self)
+    if v.`nanosec` >= 1_000_000_000 { throw RosError(22) }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMessageHeader: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_6d8d9a27611d419d618f848c44ebe2c30d5393995d1f4fa7ecd70c34ded52496"
+  public static let nativeType = "aimdk_msgs/msg/MessageHeader"
+  public static let nativeIdentity: String? = nil
+  public var `stamp`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public var `frame_id`: String = ""
+  public var `sequence`: UInt32 = 0
+  public var `meas_stamp`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`stamp`.write(to: &w)
+    try w.string(self.`frame_id`, bound: 128)
+    try w.integer(self.`sequence`)
+    try self.`meas_stamp`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMessageHeader {
+    var v = Ros2Aimdk_msgsMsgMessageHeader()
+    v.`stamp` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    v.`frame_id` = try r.string(bound: 128)
+    v.`sequence` = try r.integer(UInt32.self)
+    v.`meas_stamp` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAlertCodeArray: Canonical {
+  public static let maximumWireBytes = 748
+  public static let codecIdentity =
+    "UWVMROS1_1b63520082b1874bb85d84c6be60d4464a3ce7063422d6db5597c907e70fe261"
+  public static let nativeType = "aimdk_msgs/msg/AlertCodeArray"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `list`: [Ros2Aimdk_msgsMsgAlertCode] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`list`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`list`.count))
+    for e in self.`list` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAlertCodeArray {
+    var v = Ros2Aimdk_msgsMsgAlertCodeArray()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 4 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`list` = []
+    v.`list`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`list`.append(try Ros2Aimdk_msgsMsgAlertCode.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAudioInfo: Canonical {
+  public static let maximumWireBytes = 273
+  public static let codecIdentity =
+    "UWVMROS1_c58c89e03376e7f8beb8df02fe189fb1f6059825c5ff6924c4199b24fdb440be"
+  public static let nativeType = "aimdk_msgs/msg/AudioInfo"
+  public static let nativeIdentity: String? = nil
+  public var `channels`: UInt8 = 0
+  public var `sample_rate`: UInt32 = 0
+  public var `size`: UInt32 = 0
+  public var `sample_format`: String = ""
+  public var `coding_format`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`channels`)
+    try w.integer(self.`sample_rate`)
+    try w.integer(self.`size`)
+    try w.string(self.`sample_format`, bound: 128)
+    try w.string(self.`coding_format`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAudioInfo {
+    var v = Ros2Aimdk_msgsMsgAudioInfo()
+    v.`channels` = try r.integer(UInt8.self)
+    v.`sample_rate` = try r.integer(UInt32.self)
+    v.`size` = try r.integer(UInt32.self)
+    v.`sample_format` = try r.string(bound: 128)
+    v.`coding_format` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAudioData: Canonical {
+  public static let maximumWireBytes = 260
+  public static let codecIdentity =
+    "UWVMROS1_547da1b39105416d63222ff082398cfeec0804a7c7ad28199168f1107c6844e8"
+  public static let nativeType = "aimdk_msgs/msg/AudioData"
+  public static let nativeIdentity: String? = nil
+  public var `data`: [UInt8] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    guard self.`data`.count <= 256 else { throw RosError(22) }
+    try w.integer(UInt32(self.`data`.count))
+    for e in self.`data` {
+      try w.integer(e)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAudioData {
+    var v = Ros2Aimdk_msgsMsgAudioData()
+    let rawcount0 = try r.integer(UInt32.self)
+    guard rawcount0 <= 256 else { throw RosError(22) }
+    let count0 = Int(rawcount0)
+    v.`data` = []
+    v.`data`.reserveCapacity(count0)
+    for _ in 0..<count0 {
+      v.`data`.append(try r.integer(UInt8.self))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAudioCapture: Canonical {
+  public static let maximumWireBytes = 675
+  public static let codecIdentity =
+    "UWVMROS1_de7db19093964d4783811019e6cc12c952a58364561be2a0a81ae874766e937c"
+  public static let nativeType = "aimdk_msgs/msg/AudioCapture"
+  public static let nativeIdentity: String? = nil
+  public var `stamps`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public var `mic_channels`: UInt8 = 0
+  public var `ref_channels`: UInt8 = 0
+  public var `info`: Ros2Aimdk_msgsMsgAudioInfo = Ros2Aimdk_msgsMsgAudioInfo()
+  public var `data`: Ros2Aimdk_msgsMsgAudioData = Ros2Aimdk_msgsMsgAudioData()
+  public var `pkg_name`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`stamps`.write(to: &w)
+    try w.integer(self.`mic_channels`)
+    try w.integer(self.`ref_channels`)
+    try self.`info`.write(to: &w)
+    try self.`data`.write(to: &w)
+    try w.string(self.`pkg_name`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAudioCapture {
+    var v = Ros2Aimdk_msgsMsgAudioCapture()
+    v.`stamps` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    v.`mic_channels` = try r.integer(UInt8.self)
+    v.`ref_channels` = try r.integer(UInt8.self)
+    v.`info` = try Ros2Aimdk_msgsMsgAudioInfo.read(from: &r)
+    v.`data` = try Ros2Aimdk_msgsMsgAudioData.read(from: &r)
+    v.`pkg_name` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAudioFile: Canonical {
+  public static let maximumWireBytes = 677
+  public static let codecIdentity =
+    "UWVMROS1_ed9aeffc24c98e014fe431b9e5e814bf21a474a777f70cf3ac989537b431995d"
+  public static let nativeType = "aimdk_msgs/msg/AudioFile"
+  public static let nativeIdentity: String? = nil
+  public var `pkg_name`: String = ""
+  public var `file_name`: String = ""
+  public var `file_path`: String = ""
+  public var `info`: Ros2Aimdk_msgsMsgAudioInfo = Ros2Aimdk_msgsMsgAudioInfo()
+  public var `priority`: UInt32 = 0
+  public var `priority_weight`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`pkg_name`, bound: 128)
+    try w.string(self.`file_name`, bound: 128)
+    try w.string(self.`file_path`, bound: 128)
+    try self.`info`.write(to: &w)
+    try w.integer(self.`priority`)
+    try w.integer(self.`priority_weight`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAudioFile {
+    var v = Ros2Aimdk_msgsMsgAudioFile()
+    v.`pkg_name` = try r.string(bound: 128)
+    v.`file_name` = try r.string(bound: 128)
+    v.`file_path` = try r.string(bound: 128)
+    v.`info` = try Ros2Aimdk_msgsMsgAudioInfo.read(from: &r)
+    v.`priority` = try r.integer(UInt32.self)
+    v.`priority_weight` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAudioPlayback: Canonical {
+  public static let maximumWireBytes = 805
+  public static let codecIdentity =
+    "UWVMROS1_1262b4dd07b332e6d10c5968292f29928e43fd6f6ea2faa2be1f48482e2dc499"
+  public static let nativeType = "aimdk_msgs/msg/AudioPlayback"
+  public static let nativeIdentity: String? = nil
+  public var `stamps`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public var `info`: Ros2Aimdk_msgsMsgAudioInfo = Ros2Aimdk_msgsMsgAudioInfo()
+  public var `data`: Ros2Aimdk_msgsMsgAudioData = Ros2Aimdk_msgsMsgAudioData()
+  public var `pkg_name`: String = ""
+  public var `token_id`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`stamps`.write(to: &w)
+    try self.`info`.write(to: &w)
+    try self.`data`.write(to: &w)
+    try w.string(self.`pkg_name`, bound: 128)
+    try w.string(self.`token_id`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAudioPlayback {
+    var v = Ros2Aimdk_msgsMsgAudioPlayback()
+    v.`stamps` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    v.`info` = try Ros2Aimdk_msgsMsgAudioInfo.read(from: &r)
+    v.`data` = try Ros2Aimdk_msgsMsgAudioData.read(from: &r)
+    v.`pkg_name` = try r.string(bound: 128)
+    v.`token_id` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgAudioVadStateType: Canonical {
+  public static let maximumWireBytes = 1
+  public static let codecIdentity =
+    "UWVMROS1_edd7a6f6ad81c2c6479d3331d9e87a2fc66eedfb73f789caf0b888eeb9480526"
+  public static let nativeType = "aimdk_msgs/msg/AudioVadStateType"
+  public static let nativeIdentity: String? = nil
+  public static let `AUDIO_VAD_STATE_NONE`: UInt8 = 0
+  public static let `AUDIO_VAD_STATE_BEGIN`: UInt8 = 1
+  public static let `AUDIO_VAD_STATE_PROCESSING`: UInt8 = 2
+  public static let `AUDIO_VAD_STATE_END`: UInt8 = 3
+  public var `value`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgAudioVadStateType {
+    var v = Ros2Aimdk_msgsMsgAudioVadStateType()
+    v.`value` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgRequestHeader: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_743efde912144cd1db5072b5a1d26b943c3fb882612b07c1883400784947b000"
+  public static let nativeType = "aimdk_msgs/msg/RequestHeader"
+  public static let nativeIdentity: String? = nil
+  public var `stamp`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`stamp`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgRequestHeader {
+    var v = Ros2Aimdk_msgsMsgRequestHeader()
+    v.`stamp` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgCommonRequest: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_d4dd21dc3b43faa42396e4c4aa0f1ad35a507b6bd313f5d197268e79d67dd9d7"
+  public static let nativeType = "aimdk_msgs/msg/CommonRequest"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgRequestHeader = Ros2Aimdk_msgsMsgRequestHeader()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgCommonRequest {
+    var v = Ros2Aimdk_msgsMsgCommonRequest()
+    v.`header` = try Ros2Aimdk_msgsMsgRequestHeader.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgResponseHeader: Canonical {
+  public static let maximumWireBytes = 16
+  public static let codecIdentity =
+    "UWVMROS1_1aff5b9cfbca54f9091a6295e28034b45d22481e0dbd8a75b1759cda18b57b90"
+  public static let nativeType = "aimdk_msgs/msg/ResponseHeader"
+  public static let nativeIdentity: String? = nil
+  public var `stamp`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public var `code`: Int64 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`stamp`.write(to: &w)
+    try w.integer(self.`code`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgResponseHeader {
+    var v = Ros2Aimdk_msgsMsgResponseHeader()
+    v.`stamp` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    v.`code` = try r.integer(Int64.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgCommonState: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_263f2829cf13b7b12ceda8109834fa333d2da5828cd7a302a1818c044be4699e"
+  public static let nativeType = "aimdk_msgs/msg/CommonState"
+  public static let nativeIdentity: String? = nil
+  public static let `UNKNOWN`: Int32 = 0
+  public static let `SUCCESS`: Int32 = 1
+  public static let `FAILURE`: Int32 = 2
+  public static let `ABORTED`: Int32 = 3
+  public static let `TIMEOUT`: Int32 = 4
+  public static let `INVALID`: Int32 = 5
+  public static let `IN_MANUAL`: Int32 = 6
+  public static let `NOT_READY`: Int32 = 100
+  public static let `PENDING`: Int32 = 200
+  public static let `CREATED`: Int32 = 300
+  public static let `RUNNING`: Int32 = 400
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgCommonState {
+    var v = Ros2Aimdk_msgsMsgCommonState()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgCommonResponse: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_03f4cf42f82eef5064c9b0563dcfe07bb9e918e8a8d81e71c4d89490bf66afb6"
+  public static let nativeType = "aimdk_msgs/msg/CommonResponse"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgResponseHeader = Ros2Aimdk_msgsMsgResponseHeader()
+  public var `status`: Ros2Aimdk_msgsMsgCommonState = Ros2Aimdk_msgsMsgCommonState()
+  public var `message`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`status`.write(to: &w)
+    try w.string(self.`message`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgCommonResponse {
+    var v = Ros2Aimdk_msgsMsgCommonResponse()
+    v.`header` = try Ros2Aimdk_msgsMsgResponseHeader.read(from: &r)
+    v.`status` = try Ros2Aimdk_msgsMsgCommonState.read(from: &r)
+    v.`message` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgCommonTaskRequest: Canonical {
+  public static let maximumWireBytes = 16
+  public static let codecIdentity =
+    "UWVMROS1_0324951171581259cf0c1bfed23887bdbc0f7328659e5efdfde046612f3d5de5"
+  public static let nativeType = "aimdk_msgs/msg/CommonTaskRequest"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgRequestHeader = Ros2Aimdk_msgsMsgRequestHeader()
+  public var `task_id`: UInt64 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`task_id`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgCommonTaskRequest {
+    var v = Ros2Aimdk_msgsMsgCommonTaskRequest()
+    v.`header` = try Ros2Aimdk_msgsMsgRequestHeader.read(from: &r)
+    v.`task_id` = try r.integer(UInt64.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgCommonTaskResponse: Canonical {
+  public static let maximumWireBytes = 28
+  public static let codecIdentity =
+    "UWVMROS1_6e0f13b88f5320fecc86125c92ef073379d31a439c1b8de3a87466c98f1b9ae2"
+  public static let nativeType = "aimdk_msgs/msg/CommonTaskResponse"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgResponseHeader = Ros2Aimdk_msgsMsgResponseHeader()
+  public var `task_id`: UInt64 = 0
+  public var `state`: Ros2Aimdk_msgsMsgCommonState = Ros2Aimdk_msgsMsgCommonState()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`task_id`)
+    try self.`state`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgCommonTaskResponse {
+    var v = Ros2Aimdk_msgsMsgCommonTaskResponse()
+    v.`header` = try Ros2Aimdk_msgsMsgResponseHeader.read(from: &r)
+    v.`task_id` = try r.integer(UInt64.self)
+    v.`state` = try Ros2Aimdk_msgsMsgCommonState.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgCurrentVersion: Canonical {
+  public static let maximumWireBytes = 2388
+  public static let codecIdentity =
+    "UWVMROS1_0a8226d6e3af0a098ee88498274e2a166f40df85162a67d38ebcb1fcba5e87cd"
+  public static let nativeType = "aimdk_msgs/msg/CurrentVersion"
+  public static let nativeIdentity: String? = nil
+  public var `version`: String = ""
+  public var `name`: String = ""
+  public var `files`: [String] = []
+  public var `download_timestamp_seconds`: UInt64 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`version`, bound: 128)
+    try w.string(self.`name`, bound: 128)
+    guard self.`files`.count <= 16 else { throw RosError(22) }
+    try w.integer(UInt32(self.`files`.count))
+    for e in self.`files` {
+      try w.string(e, bound: 128)
+    }
+    try w.integer(self.`download_timestamp_seconds`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgCurrentVersion {
+    var v = Ros2Aimdk_msgsMsgCurrentVersion()
+    v.`version` = try r.string(bound: 128)
+    v.`name` = try r.string(bound: 128)
+    let rawcount2 = try r.integer(UInt32.self)
+    guard rawcount2 <= 16 else { throw RosError(22) }
+    let count2 = Int(rawcount2)
+    v.`files` = []
+    v.`files`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`files`.append(try r.string(bound: 128))
+    }
+    v.`download_timestamp_seconds` = try r.integer(UInt64.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgDiagnosticType: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_41bcce9c343c12c64f0d2c28282926a734361f5eb02d39be0aae5c98ae926d92"
+  public static let nativeType = "aimdk_msgs/msg/DiagnosticType"
+  public static let nativeIdentity: String? = nil
+  public static let `NORMAL`: Int32 = 0
+  public static let `TRIGGER_APPEAR`: Int32 = 1
+  public static let `TRIGGER_DISAPPEAR`: Int32 = 2
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgDiagnosticType {
+    var v = Ros2Aimdk_msgsMsgDiagnosticType()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgDiagnosticInfo: Canonical {
+  public static let maximumWireBytes = 165
+  public static let codecIdentity =
+    "UWVMROS1_989641e2dd8ef2e5e77f3455355ca8c1f08d1671874f1b920b0ae28352e20afa"
+  public static let nativeType = "aimdk_msgs/msg/DiagnosticInfo"
+  public static let nativeIdentity: String? = nil
+  public var `timestamp`: UInt64 = 0
+  public var `first_timestamp`: UInt64 = 0
+  public var `type`: Ros2Aimdk_msgsMsgDiagnosticType = Ros2Aimdk_msgsMsgDiagnosticType()
+  public var `module_id`: UInt8 = 0
+  public var `code`: UInt32 = 0
+  public var `diag_code`: UInt64 = 0
+  public var `info`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`timestamp`)
+    try w.integer(self.`first_timestamp`)
+    try self.`type`.write(to: &w)
+    try w.integer(self.`module_id`)
+    try w.integer(self.`code`)
+    try w.integer(self.`diag_code`)
+    try w.string(self.`info`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgDiagnosticInfo {
+    var v = Ros2Aimdk_msgsMsgDiagnosticInfo()
+    v.`timestamp` = try r.integer(UInt64.self)
+    v.`first_timestamp` = try r.integer(UInt64.self)
+    v.`type` = try Ros2Aimdk_msgsMsgDiagnosticType.read(from: &r)
+    v.`module_id` = try r.integer(UInt8.self)
+    v.`code` = try r.integer(UInt32.self)
+    v.`diag_code` = try r.integer(UInt64.self)
+    v.`info` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgDiagnosticInfoArray: Canonical {
+  public static let maximumWireBytes = 816
+  public static let codecIdentity =
+    "UWVMROS1_ea9c3022e38d875c94431babc75f890382089d9e2fb1a15573421d475d2d280b"
+  public static let nativeType = "aimdk_msgs/msg/DiagnosticInfoArray"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `diagnostics`: [Ros2Aimdk_msgsMsgDiagnosticInfo] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`diagnostics`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`diagnostics`.count))
+    for e in self.`diagnostics` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgDiagnosticInfoArray {
+    var v = Ros2Aimdk_msgsMsgDiagnosticInfoArray()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 4 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`diagnostics` = []
+    v.`diagnostics`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`diagnostics`.append(try Ros2Aimdk_msgsMsgDiagnosticInfo.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgDomainErrorState: Canonical {
+  public static let maximumWireBytes = 1
+  public static let codecIdentity =
+    "UWVMROS1_b8ba44e26d3df3c4c71f1ca9d4e91e967c8d8e1d95042ac7433a9a3294e9e231"
+  public static let nativeType = "aimdk_msgs/msg/DomainErrorState"
+  public static let nativeIdentity: String? = nil
+  public static let `NONE`: UInt8 = 0
+  public static let `DAMPING`: UInt8 = 1
+  public static let `POWERDOWN`: UInt8 = 2
+  public static let `DISABLE`: UInt8 = 3
+  public static let `DISCONNECT`: UInt8 = 4
+  public var `value`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgDomainErrorState {
+    var v = Ros2Aimdk_msgsMsgDomainErrorState()
+    v.`value` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgFaceEmojiStatus: Canonical {
+  public static let maximumWireBytes = 2552
+  public static let codecIdentity =
+    "UWVMROS1_a2a3346bea421c1c0756e8e74dd05564f2281d15762dd300189563e5bd0d3df4"
+  public static let nativeType = "aimdk_msgs/msg/FaceEmojiStatus"
+  public static let nativeIdentity: String? = nil
+  public static let `STATUS_IDLE`: UInt8 = 0
+  public static let `STATUS_START`: UInt8 = 1
+  public static let `STATUS_RUNNING`: UInt8 = 2
+  public static let `STATUS_FINISHED`: UInt8 = 3
+  public static let `STATUS_STOPPED`: UInt8 = 4
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `e_path`: String = ""
+  public var `e_path_list`: [String] = []
+  public var `e_id`: UInt8 = 0
+  public var `mode`: UInt8 = 0
+  public var `priority`: Int32 = 0
+  public var `status`: UInt8 = 0
+  public var `time_to_end_ms`: Double = 0
+  public var `display_type`: UInt8 = 0
+  public var `trace_id`: String = ""
+  public var `error_code`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`e_path`, bound: 128)
+    guard self.`e_path_list`.count <= 16 else { throw RosError(22) }
+    try w.integer(UInt32(self.`e_path_list`.count))
+    for e in self.`e_path_list` {
+      try w.string(e, bound: 128)
+    }
+    try w.integer(self.`e_id`)
+    try w.integer(self.`mode`)
+    try w.integer(self.`priority`)
+    try w.integer(self.`status`)
+    try w.float64(self.`time_to_end_ms`)
+    try w.integer(self.`display_type`)
+    try w.string(self.`trace_id`, bound: 128)
+    try w.integer(self.`error_code`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgFaceEmojiStatus {
+    var v = Ros2Aimdk_msgsMsgFaceEmojiStatus()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`e_path` = try r.string(bound: 128)
+    let rawcount2 = try r.integer(UInt32.self)
+    guard rawcount2 <= 16 else { throw RosError(22) }
+    let count2 = Int(rawcount2)
+    v.`e_path_list` = []
+    v.`e_path_list`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`e_path_list`.append(try r.string(bound: 128))
+    }
+    v.`e_id` = try r.integer(UInt8.self)
+    v.`mode` = try r.integer(UInt8.self)
+    v.`priority` = try r.integer(Int32.self)
+    v.`status` = try r.integer(UInt8.self)
+    v.`time_to_end_ms` = try r.float64()
+    v.`display_type` = try r.integer(UInt8.self)
+    v.`trace_id` = try r.string(bound: 128)
+    v.`error_code` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgFixLineIntroState: Canonical {
+  public static let maximumWireBytes = 433
+  public static let codecIdentity =
+    "UWVMROS1_f7c7b38331d9b5f0e8268f8373e254d9e9f2becd5388d0efd30927e5c4916384"
+  public static let nativeType = "aimdk_msgs/msg/FixLineIntroState"
+  public static let nativeIdentity: String? = nil
+  public static let `TM_FIX_LINE_INTRO_STATE_NAVI_TO_NEXT_SITE`: UInt8 = 0
+  public static let `TM_FIX_LINE_INTRO_STATE_SITE_ACTIONS`: UInt8 = 1
+  public static let `TM_FIX_LINE_INTRO_STATE_NAVI_RETURN`: UInt8 = 2
+  public static let `TM_FIX_LINE_INTRO_STATE_NAVI_TO_TARGET_POI`: UInt8 = 3
+  public static let `TM_FIX_LINE_INTRO_STATE_POI_ACTIONS`: UInt8 = 4
+  public static let `TM_FIX_LINE_INTRO_STATE_STANDBY_ACTIONS`: UInt8 = 5
+  public var `set_task_id`: UInt64 = 0
+  public var `set_task_name`: String = ""
+  public var `task_name`: String = ""
+  public var `task_id`: UInt64 = 0
+  public var `map_name`: String = ""
+  public var `map_id`: UInt64 = 0
+  public var `rest_site_number`: UInt32 = 0
+  public var `fix_line_intro_state`: UInt8 = 0
+  public var `cur_target_id`: UInt64 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`set_task_id`)
+    try w.string(self.`set_task_name`, bound: 128)
+    try w.string(self.`task_name`, bound: 128)
+    try w.integer(self.`task_id`)
+    try w.string(self.`map_name`, bound: 128)
+    try w.integer(self.`map_id`)
+    try w.integer(self.`rest_site_number`)
+    try w.integer(self.`fix_line_intro_state`)
+    try w.integer(self.`cur_target_id`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgFixLineIntroState {
+    var v = Ros2Aimdk_msgsMsgFixLineIntroState()
+    v.`set_task_id` = try r.integer(UInt64.self)
+    v.`set_task_name` = try r.string(bound: 128)
+    v.`task_name` = try r.string(bound: 128)
+    v.`task_id` = try r.integer(UInt64.self)
+    v.`map_name` = try r.string(bound: 128)
+    v.`map_id` = try r.integer(UInt64.self)
+    v.`rest_site_number` = try r.integer(UInt32.self)
+    v.`fix_line_intro_state` = try r.integer(UInt8.self)
+    v.`cur_target_id` = try r.integer(UInt64.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgFocusRequester: Canonical {
+  public static let maximumWireBytes = 140
+  public static let codecIdentity =
+    "UWVMROS1_9b41f0b3a3cafa6b190ede3107f8cf802c1cbacf1eb81e075a376ceaf37fa186"
+  public static let nativeType = "aimdk_msgs/msg/FocusRequester"
+  public static let nativeIdentity: String? = nil
+  public var `pkg_name`: String = ""
+  public var `priority`: UInt32 = 0
+  public var `priority_weight`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`pkg_name`, bound: 128)
+    try w.integer(self.`priority`)
+    try w.integer(self.`priority_weight`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgFocusRequester {
+    var v = Ros2Aimdk_msgsMsgFocusRequester()
+    v.`pkg_name` = try r.string(bound: 128)
+    v.`priority` = try r.integer(UInt32.self)
+    v.`priority_weight` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgFocusResponse: Canonical {
+  public static let maximumWireBytes = 133
+  public static let codecIdentity =
+    "UWVMROS1_16047b8b9e9f131f8aa44fc4e0960ce81446788d557b055be1f6b2542db3a87c"
+  public static let nativeType = "aimdk_msgs/msg/FocusResponse"
+  public static let nativeIdentity: String? = nil
+  public var `pkg_name`: String = ""
+  public var `focus_gain`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`pkg_name`, bound: 128)
+    try w.boolean(self.`focus_gain`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgFocusResponse {
+    var v = Ros2Aimdk_msgsMsgFocusResponse()
+    v.`pkg_name` = try r.string(bound: 128)
+    v.`focus_gain` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgPoint: Canonical {
+  public static let maximumWireBytes = 24
+  public static let codecIdentity =
+    "UWVMROS1_80f43d054abe333673c940c6d0fd88e8e26cea4a1cff53ff789cccaa38240616"
+  public static let nativeType = "geometry_msgs/msg/Point"
+  public static let nativeIdentity: String? = nil
+  public var `x`: Double = 0
+  public var `y`: Double = 0
+  public var `z`: Double = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.float64(self.`x`)
+    try w.float64(self.`y`)
+    try w.float64(self.`z`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgPoint {
+    var v = Ros2Geometry_msgsMsgPoint()
+    v.`x` = try r.float64()
+    v.`y` = try r.float64()
+    v.`z` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgQuaternion: Canonical {
+  public static let maximumWireBytes = 32
+  public static let codecIdentity =
+    "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672"
+  public static let nativeType = "geometry_msgs/msg/Quaternion"
+  public static let nativeIdentity: String? = nil
+  public var `x`: Double = Double(bitPattern: 0x0)
+  public var `y`: Double = Double(bitPattern: 0x0)
+  public var `z`: Double = Double(bitPattern: 0x0)
+  public var `w`: Double = Double(bitPattern: 0x3ff0_0000_0000_0000)
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.float64(self.`x`)
+    try w.float64(self.`y`)
+    try w.float64(self.`z`)
+    try w.float64(self.`w`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgQuaternion {
+    var v = Ros2Geometry_msgsMsgQuaternion()
+    v.`x` = try r.float64()
+    v.`y` = try r.float64()
+    v.`z` = try r.float64()
+    v.`w` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgPose: Canonical {
+  public static let maximumWireBytes = 56
+  public static let codecIdentity =
+    "UWVMROS1_9468a10b8b2728fe71a370b4348ffe5e81b884ff957533f8700aa16e70b12777"
+  public static let nativeType = "geometry_msgs/msg/Pose"
+  public static let nativeIdentity: String? = nil
+  public var `position`: Ros2Geometry_msgsMsgPoint = Ros2Geometry_msgsMsgPoint()
+  public var `orientation`: Ros2Geometry_msgsMsgQuaternion = Ros2Geometry_msgsMsgQuaternion()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`position`.write(to: &w)
+    try self.`orientation`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgPose {
+    var v = Ros2Geometry_msgsMsgPose()
+    v.`position` = try Ros2Geometry_msgsMsgPoint.read(from: &r)
+    v.`orientation` = try Ros2Geometry_msgsMsgQuaternion.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgQRCode: Canonical {
+  public static let maximumWireBytes = 60
+  public static let codecIdentity =
+    "UWVMROS1_51293e3c7ee25b1a265c4a57539a11060563e89005ceaf4aaa0891481ab803cd"
+  public static let nativeType = "aimdk_msgs/msg/QRCode"
+  public static let nativeIdentity: String? = nil
+  public var `code`: Int32 = 0
+  public var `pose`: Ros2Geometry_msgsMsgPose = Ros2Geometry_msgsMsgPose()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`code`)
+    try self.`pose`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgQRCode {
+    var v = Ros2Aimdk_msgsMsgQRCode()
+    v.`code` = try r.integer(Int32.self)
+    v.`pose` = try Ros2Geometry_msgsMsgPose.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHRPoint: Canonical {
+  public static let maximumWireBytes = 305
+  public static let codecIdentity =
+    "UWVMROS1_070874f4fea77298b6d66d02ee40026e86b4f48ee03e6d9acffcaddb387b3645"
+  public static let nativeType = "aimdk_msgs/msg/HRPoint"
+  public static let nativeIdentity: String? = nil
+  public var `point_id`: Int32 = 0
+  public var `pose`: Ros2Geometry_msgsMsgPose = Ros2Geometry_msgsMsgPose()
+  public var `qr_list`: [Ros2Aimdk_msgsMsgQRCode] = []
+  public var `use_head`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`point_id`)
+    try self.`pose`.write(to: &w)
+    guard self.`qr_list`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`qr_list`.count))
+    for e in self.`qr_list` {
+      try e.write(to: &w)
+    }
+    try w.boolean(self.`use_head`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHRPoint {
+    var v = Ros2Aimdk_msgsMsgHRPoint()
+    v.`point_id` = try r.integer(Int32.self)
+    v.`pose` = try Ros2Geometry_msgsMsgPose.read(from: &r)
+    let rawcount2 = try r.integer(UInt32.self)
+    guard rawcount2 <= 4 else { throw RosError(22) }
+    let count2 = Int(rawcount2)
+    v.`qr_list` = []
+    v.`qr_list`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`qr_list`.append(try Ros2Aimdk_msgsMsgQRCode.read(from: &r))
+    }
+    v.`use_head` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHandCommand: Canonical {
+  public static let maximumWireBytes = 172
+  public static let codecIdentity =
+    "UWVMROS1_910f3d9c0907c60b2613097cc4c1426727987e2ab83f8bcc41787feb472dc4e8"
+  public static let nativeType = "aimdk_msgs/msg/HandCommand"
+  public static let nativeIdentity: String? = nil
+  public var `name`: String = ""
+  public var `position`: Double = 0
+  public var `velocity`: Double = 0
+  public var `acceleration`: Double = 0
+  public var `deceleration`: Double = 0
+  public var `effort`: Double = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`name`, bound: 128)
+    try w.float64(self.`position`)
+    try w.float64(self.`velocity`)
+    try w.float64(self.`acceleration`)
+    try w.float64(self.`deceleration`)
+    try w.float64(self.`effort`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHandCommand {
+    var v = Ros2Aimdk_msgsMsgHandCommand()
+    v.`name` = try r.string(bound: 128)
+    v.`position` = try r.float64()
+    v.`velocity` = try r.float64()
+    v.`acceleration` = try r.float64()
+    v.`deceleration` = try r.float64()
+    v.`effort` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHandType: Canonical {
+  public static let maximumWireBytes = 1
+  public static let codecIdentity =
+    "UWVMROS1_07c4fd4188be6fccafc5808eb58094c528c1c7219f70850d2d77b05e1466daff"
+  public static let nativeType = "aimdk_msgs/msg/HandType"
+  public static let nativeIdentity: String? = nil
+  public static let `NONE`: UInt8 = 0
+  public static let `NIMBLE_HANDS`: UInt8 = 1
+  public static let `CLAW`: UInt8 = 2
+  public static let `LEISAI_NIMBLE_HANDS`: UInt8 = 3
+  public static let `LITE_S_HANDS`: UInt8 = 4
+  public static let `ERROR`: UInt8 = 255
+  public var `value`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHandType {
+    var v = Ros2Aimdk_msgsMsgHandType()
+    v.`value` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHandCommandArray: Canonical {
+  public static let maximumWireBytes = 1538
+  public static let codecIdentity =
+    "UWVMROS1_a120a6c2b4a364c358f2f76227954c9cf5a81345ad812683eea78dfe3e3c29ec"
+  public static let nativeType = "aimdk_msgs/msg/HandCommandArray"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `left_hand_type`: Ros2Aimdk_msgsMsgHandType = Ros2Aimdk_msgsMsgHandType()
+  public var `left_hands`: [Ros2Aimdk_msgsMsgHandCommand] = []
+  public var `right_hand_type`: Ros2Aimdk_msgsMsgHandType = Ros2Aimdk_msgsMsgHandType()
+  public var `right_hands`: [Ros2Aimdk_msgsMsgHandCommand] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`left_hand_type`.write(to: &w)
+    guard self.`left_hands`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`left_hands`.count))
+    for e in self.`left_hands` {
+      try e.write(to: &w)
+    }
+    try self.`right_hand_type`.write(to: &w)
+    guard self.`right_hands`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`right_hands`.count))
+    for e in self.`right_hands` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHandCommandArray {
+    var v = Ros2Aimdk_msgsMsgHandCommandArray()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`left_hand_type` = try Ros2Aimdk_msgsMsgHandType.read(from: &r)
+    let rawcount2 = try r.integer(UInt32.self)
+    guard rawcount2 <= 4 else { throw RosError(22) }
+    let count2 = Int(rawcount2)
+    v.`left_hands` = []
+    v.`left_hands`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`left_hands`.append(try Ros2Aimdk_msgsMsgHandCommand.read(from: &r))
+    }
+    v.`right_hand_type` = try Ros2Aimdk_msgsMsgHandType.read(from: &r)
+    let rawcount4 = try r.integer(UInt32.self)
+    guard rawcount4 <= 4 else { throw RosError(22) }
+    let count4 = Int(rawcount4)
+    v.`right_hands` = []
+    v.`right_hands`.reserveCapacity(count4)
+    for _ in 0..<count4 {
+      v.`right_hands`.append(try Ros2Aimdk_msgsMsgHandCommand.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHandState: Canonical {
+  public static let maximumWireBytes = 164
+  public static let codecIdentity =
+    "UWVMROS1_9cfb695f97c9e314103a224bcb6b321de5f279cdae85d5eef7bec0c7968a875c"
+  public static let nativeType = "aimdk_msgs/msg/HandState"
+  public static let nativeIdentity: String? = nil
+  public var `name`: String = ""
+  public var `position`: Double = 0
+  public var `velocity`: Double = 0
+  public var `effort`: Double = 0
+  public var `state`: Int32 = 0
+  public var `faultcode`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`name`, bound: 128)
+    try w.float64(self.`position`)
+    try w.float64(self.`velocity`)
+    try w.float64(self.`effort`)
+    try w.integer(self.`state`)
+    try w.integer(self.`faultcode`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHandState {
+    var v = Ros2Aimdk_msgsMsgHandState()
+    v.`name` = try r.string(bound: 128)
+    v.`position` = try r.float64()
+    v.`velocity` = try r.float64()
+    v.`effort` = try r.float64()
+    v.`state` = try r.integer(Int32.self)
+    v.`faultcode` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHandTouchSensorData: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_573ab7611c65bde831172350c3cf49dd73cf4bfcbefabff7aa874845b828e4a0"
+  public static let nativeType = "aimdk_msgs/msg/HandTouchSensorData"
+  public static let nativeIdentity: String? = nil
+  public var `palm_touch_data`: [UInt8] = Array(repeating: 0, count: 36)
+  public var `back_of_hand_touch_data`: [UInt8] = Array(repeating: 0, count: 36)
+  public var `thumb_touch_data`: [UInt8] = Array(repeating: 0, count: 16)
+  public var `index_finger_touch_data`: [UInt8] = Array(repeating: 0, count: 16)
+  public var `middle_finger_touch_data`: [UInt8] = Array(repeating: 0, count: 16)
+  public var `ring_finger_touch_data`: [UInt8] = Array(repeating: 0, count: 16)
+  public var `little_finger_touch_data`: [UInt8] = Array(repeating: 0, count: 16)
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    guard self.`palm_touch_data`.count == 36 else { throw RosError(22) }
+    for e in self.`palm_touch_data` {
+      try w.integer(e)
+    }
+    guard self.`back_of_hand_touch_data`.count == 36 else { throw RosError(22) }
+    for e in self.`back_of_hand_touch_data` {
+      try w.integer(e)
+    }
+    guard self.`thumb_touch_data`.count == 16 else { throw RosError(22) }
+    for e in self.`thumb_touch_data` {
+      try w.integer(e)
+    }
+    guard self.`index_finger_touch_data`.count == 16 else { throw RosError(22) }
+    for e in self.`index_finger_touch_data` {
+      try w.integer(e)
+    }
+    guard self.`middle_finger_touch_data`.count == 16 else { throw RosError(22) }
+    for e in self.`middle_finger_touch_data` {
+      try w.integer(e)
+    }
+    guard self.`ring_finger_touch_data`.count == 16 else { throw RosError(22) }
+    for e in self.`ring_finger_touch_data` {
+      try w.integer(e)
+    }
+    guard self.`little_finger_touch_data`.count == 16 else { throw RosError(22) }
+    for e in self.`little_finger_touch_data` {
+      try w.integer(e)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHandTouchSensorData {
+    var v = Ros2Aimdk_msgsMsgHandTouchSensorData()
+    let count0 = 36
+    v.`palm_touch_data` = []
+    v.`palm_touch_data`.reserveCapacity(count0)
+    for _ in 0..<count0 {
+      v.`palm_touch_data`.append(try r.integer(UInt8.self))
+    }
+    let count1 = 36
+    v.`back_of_hand_touch_data` = []
+    v.`back_of_hand_touch_data`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`back_of_hand_touch_data`.append(try r.integer(UInt8.self))
+    }
+    let count2 = 16
+    v.`thumb_touch_data` = []
+    v.`thumb_touch_data`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`thumb_touch_data`.append(try r.integer(UInt8.self))
+    }
+    let count3 = 16
+    v.`index_finger_touch_data` = []
+    v.`index_finger_touch_data`.reserveCapacity(count3)
+    for _ in 0..<count3 {
+      v.`index_finger_touch_data`.append(try r.integer(UInt8.self))
+    }
+    let count4 = 16
+    v.`middle_finger_touch_data` = []
+    v.`middle_finger_touch_data`.reserveCapacity(count4)
+    for _ in 0..<count4 {
+      v.`middle_finger_touch_data`.append(try r.integer(UInt8.self))
+    }
+    let count5 = 16
+    v.`ring_finger_touch_data` = []
+    v.`ring_finger_touch_data`.reserveCapacity(count5)
+    for _ in 0..<count5 {
+      v.`ring_finger_touch_data`.append(try r.integer(UInt8.self))
+    }
+    let count6 = 16
+    v.`little_finger_touch_data` = []
+    v.`little_finger_touch_data`.reserveCapacity(count6)
+    for _ in 0..<count6 {
+      v.`little_finger_touch_data`.append(try r.integer(UInt8.self))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHandStateArray: Canonical {
+  public static let maximumWireBytes = 1778
+  public static let codecIdentity =
+    "UWVMROS1_c577a4f240ca6f9f26d82d8c8ba056b2877af96ab7dd774262637286c0302944"
+  public static let nativeType = "aimdk_msgs/msg/HandStateArray"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `left_hand_type`: Ros2Aimdk_msgsMsgHandType = Ros2Aimdk_msgsMsgHandType()
+  public var `left_hands`: [Ros2Aimdk_msgsMsgHandState] = []
+  public var `left_touch_sensors`: Ros2Aimdk_msgsMsgHandTouchSensorData =
+    Ros2Aimdk_msgsMsgHandTouchSensorData()
+  public var `right_hand_type`: Ros2Aimdk_msgsMsgHandType = Ros2Aimdk_msgsMsgHandType()
+  public var `right_hands`: [Ros2Aimdk_msgsMsgHandState] = []
+  public var `right_touch_sensors`: Ros2Aimdk_msgsMsgHandTouchSensorData =
+    Ros2Aimdk_msgsMsgHandTouchSensorData()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`left_hand_type`.write(to: &w)
+    guard self.`left_hands`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`left_hands`.count))
+    for e in self.`left_hands` {
+      try e.write(to: &w)
+    }
+    try self.`left_touch_sensors`.write(to: &w)
+    try self.`right_hand_type`.write(to: &w)
+    guard self.`right_hands`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`right_hands`.count))
+    for e in self.`right_hands` {
+      try e.write(to: &w)
+    }
+    try self.`right_touch_sensors`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHandStateArray {
+    var v = Ros2Aimdk_msgsMsgHandStateArray()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`left_hand_type` = try Ros2Aimdk_msgsMsgHandType.read(from: &r)
+    let rawcount2 = try r.integer(UInt32.self)
+    guard rawcount2 <= 4 else { throw RosError(22) }
+    let count2 = Int(rawcount2)
+    v.`left_hands` = []
+    v.`left_hands`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`left_hands`.append(try Ros2Aimdk_msgsMsgHandState.read(from: &r))
+    }
+    v.`left_touch_sensors` = try Ros2Aimdk_msgsMsgHandTouchSensorData.read(from: &r)
+    v.`right_hand_type` = try Ros2Aimdk_msgsMsgHandType.read(from: &r)
+    let rawcount5 = try r.integer(UInt32.self)
+    guard rawcount5 <= 4 else { throw RosError(22) }
+    let count5 = Int(rawcount5)
+    v.`right_hands` = []
+    v.`right_hands`.reserveCapacity(count5)
+    for _ in 0..<count5 {
+      v.`right_hands`.append(try Ros2Aimdk_msgsMsgHandState.read(from: &r))
+    }
+    v.`right_touch_sensors` = try Ros2Aimdk_msgsMsgHandTouchSensorData.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHdsEventQuery: Canonical {
+  public static let maximumWireBytes = 4390
+  public static let codecIdentity =
+    "UWVMROS1_bb210b5a804272bcf8eab7b9bd2217471997a8a4446032ddc0f0f0aca2734d29"
+  public static let nativeType = "aimdk_msgs/msg/HdsEventQuery"
+  public static let nativeIdentity: String? = nil
+  public static let `STATE_ALL`: UInt8 = 0
+  public static let `STATE_ACTIVE`: UInt8 = 1
+  public static let `STATE_RECOVERED`: UInt8 = 2
+  public var `start_time`: UInt64 = 0
+  public var `end_time`: UInt64 = 0
+  public var `diag_codes`: [UInt64] = []
+  public var `alert_codes`: [String] = []
+  public var `alert_locations`: [String] = []
+  public var `state`: UInt8 = 0
+  public var `order_desc`: Bool = false
+  public var `offset`: UInt32 = 0
+  public var `limit`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`start_time`)
+    try w.integer(self.`end_time`)
+    guard self.`diag_codes`.count <= 16 else { throw RosError(22) }
+    try w.integer(UInt32(self.`diag_codes`.count))
+    for e in self.`diag_codes` {
+      try w.integer(e)
+    }
+    guard self.`alert_codes`.count <= 16 else { throw RosError(22) }
+    try w.integer(UInt32(self.`alert_codes`.count))
+    for e in self.`alert_codes` {
+      try w.string(e, bound: 128)
+    }
+    guard self.`alert_locations`.count <= 16 else { throw RosError(22) }
+    try w.integer(UInt32(self.`alert_locations`.count))
+    for e in self.`alert_locations` {
+      try w.string(e, bound: 128)
+    }
+    try w.integer(self.`state`)
+    try w.boolean(self.`order_desc`)
+    try w.integer(self.`offset`)
+    try w.integer(self.`limit`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHdsEventQuery {
+    var v = Ros2Aimdk_msgsMsgHdsEventQuery()
+    v.`start_time` = try r.integer(UInt64.self)
+    v.`end_time` = try r.integer(UInt64.self)
+    let rawcount2 = try r.integer(UInt32.self)
+    guard rawcount2 <= 16 else { throw RosError(22) }
+    let count2 = Int(rawcount2)
+    v.`diag_codes` = []
+    v.`diag_codes`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`diag_codes`.append(try r.integer(UInt64.self))
+    }
+    let rawcount3 = try r.integer(UInt32.self)
+    guard rawcount3 <= 16 else { throw RosError(22) }
+    let count3 = Int(rawcount3)
+    v.`alert_codes` = []
+    v.`alert_codes`.reserveCapacity(count3)
+    for _ in 0..<count3 {
+      v.`alert_codes`.append(try r.string(bound: 128))
+    }
+    let rawcount4 = try r.integer(UInt32.self)
+    guard rawcount4 <= 16 else { throw RosError(22) }
+    let count4 = Int(rawcount4)
+    v.`alert_locations` = []
+    v.`alert_locations`.reserveCapacity(count4)
+    for _ in 0..<count4 {
+      v.`alert_locations`.append(try r.string(bound: 128))
+    }
+    v.`state` = try r.integer(UInt8.self)
+    v.`order_desc` = try r.boolean()
+    v.`offset` = try r.integer(UInt32.self)
+    v.`limit` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgHdsEventRecord: Canonical {
+  public static let maximumWireBytes = 313
+  public static let codecIdentity =
+    "UWVMROS1_7fe68df37f67144d462e2c9e1a126dc539d5f7156c923a879d36215145445de4"
+  public static let nativeType = "aimdk_msgs/msg/HdsEventRecord"
+  public static let nativeIdentity: String? = nil
+  public var `id`: UInt64 = 0
+  public var `diag_code`: UInt64 = 0
+  public var `alert_code`: String = ""
+  public var `alert_location`: String = ""
+  public var `first_timestamp`: UInt64 = 0
+  public var `last_timestamp`: UInt64 = 0
+  public var `recover_timestamp`: UInt64 = 0
+  public var `duration_ns`: UInt64 = 0
+  public var `recovered`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`id`)
+    try w.integer(self.`diag_code`)
+    try w.string(self.`alert_code`, bound: 128)
+    try w.string(self.`alert_location`, bound: 128)
+    try w.integer(self.`first_timestamp`)
+    try w.integer(self.`last_timestamp`)
+    try w.integer(self.`recover_timestamp`)
+    try w.integer(self.`duration_ns`)
+    try w.boolean(self.`recovered`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgHdsEventRecord {
+    var v = Ros2Aimdk_msgsMsgHdsEventRecord()
+    v.`id` = try r.integer(UInt64.self)
+    v.`diag_code` = try r.integer(UInt64.self)
+    v.`alert_code` = try r.string(bound: 128)
+    v.`alert_location` = try r.string(bound: 128)
+    v.`first_timestamp` = try r.integer(UInt64.self)
+    v.`last_timestamp` = try r.integer(UInt64.self)
+    v.`recover_timestamp` = try r.integer(UInt64.self)
+    v.`duration_ns` = try r.integer(UInt64.self)
+    v.`recovered` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgJointCommand: Canonical {
+  public static let maximumWireBytes = 172
+  public static let codecIdentity =
+    "UWVMROS1_32c4e24dc7ea567136fc811efc68eea5b8d1072a5ed58e1c4b67b4d705a9fc3f"
+  public static let nativeType = "aimdk_msgs/msg/JointCommand"
+  public static let nativeIdentity: String? = nil
+  public var `name`: String = ""
+  public var `position`: Double = 0
+  public var `velocity`: Double = 0
+  public var `effort`: Double = 0
+  public var `stiffness`: Double = 0
+  public var `damping`: Double = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`name`, bound: 128)
+    try w.float64(self.`position`)
+    try w.float64(self.`velocity`)
+    try w.float64(self.`effort`)
+    try w.float64(self.`stiffness`)
+    try w.float64(self.`damping`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgJointCommand {
+    var v = Ros2Aimdk_msgsMsgJointCommand()
+    v.`name` = try r.string(bound: 128)
+    v.`position` = try r.float64()
+    v.`velocity` = try r.float64()
+    v.`effort` = try r.float64()
+    v.`stiffness` = try r.float64()
+    v.`damping` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgJointCommandArray: Canonical {
+  public static let maximumWireBytes = 11164
+  public static let codecIdentity =
+    "UWVMROS1_b8f8d9b00f02524cfdd21f81d7e683290e92ba0b00d086d4506fd3600123d9d6"
+  public static let nativeType = "aimdk_msgs/msg/JointCommandArray"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `joints`: [Ros2Aimdk_msgsMsgJointCommand] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`joints`.count <= 64 else { throw RosError(22) }
+    try w.integer(UInt32(self.`joints`.count))
+    for e in self.`joints` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgJointCommandArray {
+    var v = Ros2Aimdk_msgsMsgJointCommandArray()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 64 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`joints` = []
+    v.`joints`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`joints`.append(try Ros2Aimdk_msgsMsgJointCommand.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgJointState: Canonical {
+  public static let maximumWireBytes = 158
+  public static let codecIdentity =
+    "UWVMROS1_00a7d9637f691d224a78c967343dd16161b29e12ca6f9fafadc0af5d7e405a53"
+  public static let nativeType = "aimdk_msgs/msg/JointState"
+  public static let nativeIdentity: String? = nil
+  public var `name`: String = ""
+  public var `position`: Double = 0
+  public var `velocity`: Double = 0
+  public var `effort`: Double = 0
+  public var `error_code`: UInt16 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`name`, bound: 128)
+    try w.float64(self.`position`)
+    try w.float64(self.`velocity`)
+    try w.float64(self.`effort`)
+    try w.integer(self.`error_code`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgJointState {
+    var v = Ros2Aimdk_msgsMsgJointState()
+    v.`name` = try r.string(bound: 128)
+    v.`position` = try r.float64()
+    v.`velocity` = try r.float64()
+    v.`effort` = try r.float64()
+    v.`error_code` = try r.integer(UInt16.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgJointStateArray: Canonical {
+  public static let maximumWireBytes = 10269
+  public static let codecIdentity =
+    "UWVMROS1_4768076ae2f8c344f4030e7ca926d311e7706042187a2f9864a8a63f289f297e"
+  public static let nativeType = "aimdk_msgs/msg/JointStateArray"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `state`: Ros2Aimdk_msgsMsgDomainErrorState = Ros2Aimdk_msgsMsgDomainErrorState()
+  public var `joints`: [Ros2Aimdk_msgsMsgJointState] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`state`.write(to: &w)
+    guard self.`joints`.count <= 64 else { throw RosError(22) }
+    try w.integer(UInt32(self.`joints`.count))
+    for e in self.`joints` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgJointStateArray {
+    var v = Ros2Aimdk_msgsMsgJointStateArray()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`state` = try Ros2Aimdk_msgsMsgDomainErrorState.read(from: &r)
+    let rawcount2 = try r.integer(UInt32.self)
+    guard rawcount2 <= 64 else { throw RosError(22) }
+    let count2 = Int(rawcount2)
+    v.`joints` = []
+    v.`joints`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`joints`.append(try Ros2Aimdk_msgsMsgJointState.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcAction: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_a43927486ae637ff4e5b8d60e1f45c91a9e3cf07b4505ea00550c6dc58e9354b"
+  public static let nativeType = "aimdk_msgs/msg/McAction"
+  public static let nativeIdentity: String? = nil
+  public static let `PASSIVE_DEFAULT`: Int32 = 1
+  public static let `SOFT_EMERGENCY_STOP`: Int32 = 2
+  public static let `DAMPING_DEFAULT`: Int32 = 3
+  public static let `ZERO_TORQUE_DEFAULT`: Int32 = 4
+  public static let `JOINT_DEFAULT`: Int32 = 100
+  public static let `JOINT_FREEZE`: Int32 = 101
+  public static let `STAND_DEFAULT`: Int32 = 200
+  public static let `STAND_BODY_CONTROL`: Int32 = 201
+  public static let `LOCOMOTION_DEFAULT`: Int32 = 300
+  public static let `RUN_DEFAULT`: Int32 = 301
+  public static let `LOCOMOTION_STEP`: Int32 = 302
+  public static let `VR_REMOTE_CONTROLLER`: Int32 = 400
+  public static let `SIT_DOWN_DEFAULT`: Int32 = 2000
+  public static let `CROUCH_DOWN_DEFAULT`: Int32 = 2002
+  public static let `LIE_DOWN_DEFAULT`: Int32 = 2004
+  public static let `STAND_UP_DEFAULT`: Int32 = 2005
+  public static let `ASCEND_STAIRS`: Int32 = 2006
+  public static let `DESCEND_STAIRS`: Int32 = 2008
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcAction {
+    var v = Ros2Aimdk_msgsMsgMcAction()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcActionCommand: Canonical {
+  public static let maximumWireBytes = 136
+  public static let codecIdentity =
+    "UWVMROS1_9a529c7988535cbc65c36425ffb0935b210a806906598baa3a2f1f717df4f648"
+  public static let nativeType = "aimdk_msgs/msg/McActionCommand"
+  public static let nativeIdentity: String? = nil
+  public var `action`: Ros2Aimdk_msgsMsgMcAction = Ros2Aimdk_msgsMsgMcAction()
+  public var `action_desc`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`action`.write(to: &w)
+    try w.string(self.`action_desc`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcActionCommand {
+    var v = Ros2Aimdk_msgsMsgMcActionCommand()
+    v.`action` = try Ros2Aimdk_msgsMsgMcAction.read(from: &r)
+    v.`action_desc` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcActionStatus: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_8c05e9540004b968b042b32ed0164af4857574186776f311be9b3ecde209ad48"
+  public static let nativeType = "aimdk_msgs/msg/McActionStatus"
+  public static let nativeIdentity: String? = nil
+  public static let `IDLE`: Int32 = 0
+  public static let `RUNNING`: Int32 = 100
+  public static let `TRANSITION`: Int32 = 200
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcActionStatus {
+    var v = Ros2Aimdk_msgsMsgMcActionStatus()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcActionInfo: Canonical {
+  public static let maximumWireBytes = 140
+  public static let codecIdentity =
+    "UWVMROS1_9c3c209060709befea26f340e6a607f4c6ddb00c638d1dedf5dd0cfa23f2e5e9"
+  public static let nativeType = "aimdk_msgs/msg/McActionInfo"
+  public static let nativeIdentity: String? = nil
+  public var `current_action`: Ros2Aimdk_msgsMsgMcAction = Ros2Aimdk_msgsMsgMcAction()
+  public var `action_desc`: String = ""
+  public var `status`: Ros2Aimdk_msgsMsgMcActionStatus = Ros2Aimdk_msgsMsgMcActionStatus()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`current_action`.write(to: &w)
+    try w.string(self.`action_desc`, bound: 128)
+    try self.`status`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcActionInfo {
+    var v = Ros2Aimdk_msgsMsgMcActionInfo()
+    v.`current_action` = try Ros2Aimdk_msgsMsgMcAction.read(from: &r)
+    v.`action_desc` = try r.string(bound: 128)
+    v.`status` = try Ros2Aimdk_msgsMsgMcActionStatus.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcBodyPoseStatus: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_380976855f8c965a5c79a3688a1a2ce654dff9869441d061b464bda582fc7538"
+  public static let nativeType = "aimdk_msgs/msg/McBodyPoseStatus"
+  public static let nativeIdentity: String? = nil
+  public static let `MC_BODY_POSE_UNKOWN`: Int32 = 0
+  public static let `MC_BODY_POSE_STAND`: Int32 = 1
+  public static let `MC_BODY_POSE_LIE_FACE_UP`: Int32 = 2
+  public static let `MC_BODY_POSE_LIE_FACE_DOWN`: Int32 = 3
+  public static let `MC_BODY_POSE_SIT`: Int32 = 4
+  public static let `MC_BODY_POSE_SQUAT`: Int32 = 5
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcBodyPoseStatus {
+    var v = Ros2Aimdk_msgsMsgMcBodyPoseStatus()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcInputSource: Canonical {
+  public static let maximumWireBytes = 140
+  public static let codecIdentity =
+    "UWVMROS1_4909fe165c71d1104207b393ba76d55347aa02836ebac251f6b57259ced1d1dd"
+  public static let nativeType = "aimdk_msgs/msg/McInputSource"
+  public static let nativeIdentity: String? = nil
+  public var `name`: String = ""
+  public var `priority`: Int32 = 0
+  public var `timeout`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`name`, bound: 128)
+    try w.integer(self.`priority`)
+    try w.integer(self.`timeout`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcInputSource {
+    var v = Ros2Aimdk_msgsMsgMcInputSource()
+    v.`name` = try r.string(bound: 128)
+    v.`priority` = try r.integer(Int32.self)
+    v.`timeout` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcHandStatus: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_7be307301e74f7c3db44fa94093233d8ac8f7f463f1904bee8748bb6fe29c462"
+  public static let nativeType = "aimdk_msgs/msg/McHandStatus"
+  public static let nativeIdentity: String? = nil
+  public static let `OMNI_HAND`: Int32 = 1000
+  public static let `OMNI_PICKER`: Int32 = 2000
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcHandStatus {
+    var v = Ros2Aimdk_msgsMsgMcHandStatus()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcRuntimeModel: Canonical {
+  public static let maximumWireBytes = 9
+  public static let codecIdentity =
+    "UWVMROS1_6a9196eaf82e74b282dfde8e9d7bf2f21712aeb537b0a6c8783445e5941254b4"
+  public static let nativeType = "aimdk_msgs/msg/McRuntimeModel"
+  public static let nativeIdentity: String? = nil
+  public var `waist_status`: Bool = false
+  public var `left_hand_status`: Ros2Aimdk_msgsMsgMcHandStatus = Ros2Aimdk_msgsMsgMcHandStatus()
+  public var `right_hand_status`: Ros2Aimdk_msgsMsgMcHandStatus = Ros2Aimdk_msgsMsgMcHandStatus()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.boolean(self.`waist_status`)
+    try self.`left_hand_status`.write(to: &w)
+    try self.`right_hand_status`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcRuntimeModel {
+    var v = Ros2Aimdk_msgsMsgMcRuntimeModel()
+    v.`waist_status` = try r.boolean()
+    v.`left_hand_status` = try Ros2Aimdk_msgsMsgMcHandStatus.read(from: &r)
+    v.`right_hand_status` = try Ros2Aimdk_msgsMsgMcHandStatus.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcPlayerState: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_a56c1b72e364a1b70243f6280dfea28a63f8533118b491ea67e968c27614a412"
+  public static let nativeType = "aimdk_msgs/msg/McPlayerState"
+  public static let nativeIdentity: String? = nil
+  public static let `IDLE`: UInt32 = 0
+  public static let `PRE_PLAYING`: UInt32 = 1
+  public static let `PLAYING`: UInt32 = 2
+  public static let `INTERRUPTING`: UInt32 = 3
+  public static let `ERROR`: UInt32 = 4
+  public var `value`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcPlayerState {
+    var v = Ros2Aimdk_msgsMsgMcPlayerState()
+    v.`value` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcControlArea: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_ca241b8a191674136f0eeb0deee84b5e284de71f384038c9a5d6083eb4fc75c9"
+  public static let nativeType = "aimdk_msgs/msg/McControlArea"
+  public static let nativeIdentity: String? = nil
+  public static let `NONE`: Int32 = 0
+  public static let `LEFT_HAND`: Int32 = 1
+  public static let `RIGHT_HAND`: Int32 = 2
+  public static let `HEAD`: Int32 = 4
+  public static let `WAIST`: Int32 = 8
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcControlArea {
+    var v = Ros2Aimdk_msgsMsgMcControlArea()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcMotionType: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_85a53e7c11c40212c3a2972b1c36ac4bfe9cc7861985b5966459c71fbc80a9da"
+  public static let nativeType = "aimdk_msgs/msg/McMotionType"
+  public static let nativeIdentity: String? = nil
+  public static let `NONE`: Int32 = 0
+  public static let `ANIMATION`: Int32 = 1
+  public static let `MIMIC`: Int32 = 2
+  public static let `FOUNDATION`: Int32 = 3
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcMotionType {
+    var v = Ros2Aimdk_msgsMsgMcMotionType()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcMotionStatus: Canonical {
+  public static let maximumWireBytes = 144
+  public static let codecIdentity =
+    "UWVMROS1_4f80c178589dc4068c65c3243dbb4bd954bbcd81f1a2f0f8f844c910dea531ea"
+  public static let nativeType = "aimdk_msgs/msg/McMotionStatus"
+  public static let nativeIdentity: String? = nil
+  public var `player_state`: Ros2Aimdk_msgsMsgMcPlayerState = Ros2Aimdk_msgsMsgMcPlayerState()
+  public var `control_area`: Ros2Aimdk_msgsMsgMcControlArea = Ros2Aimdk_msgsMsgMcControlArea()
+  public var `motion`: String = ""
+  public var `type`: Ros2Aimdk_msgsMsgMcMotionType = Ros2Aimdk_msgsMsgMcMotionType()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`player_state`.write(to: &w)
+    try self.`control_area`.write(to: &w)
+    try w.string(self.`motion`, bound: 128)
+    try self.`type`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcMotionStatus {
+    var v = Ros2Aimdk_msgsMsgMcMotionStatus()
+    v.`player_state` = try Ros2Aimdk_msgsMsgMcPlayerState.read(from: &r)
+    v.`control_area` = try Ros2Aimdk_msgsMsgMcControlArea.read(from: &r)
+    v.`motion` = try r.string(bound: 128)
+    v.`type` = try Ros2Aimdk_msgsMsgMcMotionType.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcServoStatus: Canonical {
+  public static let maximumWireBytes = 53
+  public static let codecIdentity =
+    "UWVMROS1_824f5944e9dce34f459ad368cfc37e78e39a0589ff5f278417064773720b1ffa"
+  public static let nativeType = "aimdk_msgs/msg/McServoStatus"
+  public static let nativeIdentity: String? = nil
+  public static let `BEFORE_LIMIT`: UInt32 = 0
+  public static let `LOWER_LIMIT`: UInt32 = 1
+  public static let `UPPER_LIMIT`: UInt32 = 2
+  public var `squat_enable`: Bool = false
+  public var `squat_offset`: Double = 0
+  public var `squat_limit`: UInt32 = 0
+  public var `head_yaw_offset`: Double = 0
+  public var `head_pitch_offset`: Double = 0
+  public var `waist_yaw_offset`: Double = 0
+  public var `waist_pitch_offset`: Double = 0
+  public var `waist_roll_offset`: Double = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.boolean(self.`squat_enable`)
+    try w.float64(self.`squat_offset`)
+    try w.integer(self.`squat_limit`)
+    try w.float64(self.`head_yaw_offset`)
+    try w.float64(self.`head_pitch_offset`)
+    try w.float64(self.`waist_yaw_offset`)
+    try w.float64(self.`waist_pitch_offset`)
+    try w.float64(self.`waist_roll_offset`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcServoStatus {
+    var v = Ros2Aimdk_msgsMsgMcServoStatus()
+    v.`squat_enable` = try r.boolean()
+    v.`squat_offset` = try r.float64()
+    v.`squat_limit` = try r.integer(UInt32.self)
+    v.`head_yaw_offset` = try r.float64()
+    v.`head_pitch_offset` = try r.float64()
+    v.`waist_yaw_offset` = try r.float64()
+    v.`waist_pitch_offset` = try r.float64()
+    v.`waist_roll_offset` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcFsmState: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_2a3f0e37d5f835c8f80adc07e09bc9a162e869f662dc3ce440946b9e0ca9b047"
+  public static let nativeType = "aimdk_msgs/msg/McFsmState"
+  public static let nativeIdentity: String? = nil
+  public static let `UNKNOWN`: UInt32 = 0
+  public static let `STARTING`: UInt32 = 1
+  public static let `STABLE`: UInt32 = 2
+  public static let `MOVING`: UInt32 = 3
+  public static let `SAFE`: UInt32 = 4
+  public static let `SPECIAL`: UInt32 = 5
+  public static let `TEST`: UInt32 = 6
+  public var `current_state`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`current_state`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcFsmState {
+    var v = Ros2Aimdk_msgsMsgMcFsmState()
+    v.`current_state` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcLocomotionSpeedMode: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_52cf8b8e1e9a931076f9ed719deaf02d4b0c15647ff2ab8109579fb29d5fc6d6"
+  public static let nativeType = "aimdk_msgs/msg/McLocomotionSpeedMode"
+  public static let nativeIdentity: String? = nil
+  public static let `MC_LOCOMOTION_NONE_SPEED`: Int32 = 0
+  public static let `MC_LOCOMOTION_LOW_SPEED`: Int32 = 1
+  public static let `MC_LOCOMOTION_MEIDUM_SPEED`: Int32 = 2
+  public static let `MC_LOCOMOTION_HIGH_SPEED`: Int32 = 3
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcLocomotionSpeedMode
+  {
+    var v = Ros2Aimdk_msgsMsgMcLocomotionSpeedMode()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds: Canonical {
+  public static let maximumWireBytes = 16
+  public static let codecIdentity =
+    "UWVMROS1_9ba7b1992f315906d05b9f3850d31cdf1d5c422cbc3224a45b93c76c9368804d"
+  public static let nativeType = "aimdk_msgs/msg/McLocomotionSpeedBounds"
+  public static let nativeIdentity: String? = nil
+  public var `min_value`: Double = 0
+  public var `max_value`: Double = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.float64(self.`min_value`)
+    try w.float64(self.`max_value`)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds
+  {
+    var v = Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds()
+    v.`min_value` = try r.float64()
+    v.`max_value` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus: Canonical {
+  public static let maximumWireBytes = 52
+  public static let codecIdentity =
+    "UWVMROS1_91837c9a2783f2f2cdc09c1efc8d96a5be0bca7e43bf513a3d47162222fc8e79"
+  public static let nativeType = "aimdk_msgs/msg/McLocomotionSpeedStatus"
+  public static let nativeIdentity: String? = nil
+  public var `speed_mode`: Ros2Aimdk_msgsMsgMcLocomotionSpeedMode =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedMode()
+  public var `forward_bounds`: Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds()
+  public var `lateral_bounds`: Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds()
+  public var `angular_bounds`: Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`speed_mode`.write(to: &w)
+    try self.`forward_bounds`.write(to: &w)
+    try self.`lateral_bounds`.write(to: &w)
+    try self.`angular_bounds`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus
+  {
+    var v = Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus()
+    v.`speed_mode` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedMode.read(from: &r)
+    v.`forward_bounds` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds.read(from: &r)
+    v.`lateral_bounds` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds.read(from: &r)
+    v.`angular_bounds` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedBounds.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcCommonState: Canonical {
+  public static let maximumWireBytes = 698
+  public static let codecIdentity =
+    "UWVMROS1_ae0a72b7040926755e1b0542d34b6e928bedc20643ad5af9704ce86648c25558"
+  public static let nativeType = "aimdk_msgs/msg/McCommonState"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `input_source`: Ros2Aimdk_msgsMsgMcInputSource = Ros2Aimdk_msgsMsgMcInputSource()
+  public var `action_info`: Ros2Aimdk_msgsMsgMcActionInfo = Ros2Aimdk_msgsMsgMcActionInfo()
+  public var `runtime_model`: Ros2Aimdk_msgsMsgMcRuntimeModel = Ros2Aimdk_msgsMsgMcRuntimeModel()
+  public var `motion_status`: Ros2Aimdk_msgsMsgMcMotionStatus = Ros2Aimdk_msgsMsgMcMotionStatus()
+  public var `servo_status`: Ros2Aimdk_msgsMsgMcServoStatus = Ros2Aimdk_msgsMsgMcServoStatus()
+  public var `fsm_state`: Ros2Aimdk_msgsMsgMcFsmState = Ros2Aimdk_msgsMsgMcFsmState()
+  public var `body_status`: Ros2Aimdk_msgsMsgMcBodyPoseStatus = Ros2Aimdk_msgsMsgMcBodyPoseStatus()
+  public var `speed_status`: Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`input_source`.write(to: &w)
+    try self.`action_info`.write(to: &w)
+    try self.`runtime_model`.write(to: &w)
+    try self.`motion_status`.write(to: &w)
+    try self.`servo_status`.write(to: &w)
+    try self.`fsm_state`.write(to: &w)
+    try self.`body_status`.write(to: &w)
+    try self.`speed_status`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcCommonState {
+    var v = Ros2Aimdk_msgsMsgMcCommonState()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`input_source` = try Ros2Aimdk_msgsMsgMcInputSource.read(from: &r)
+    v.`action_info` = try Ros2Aimdk_msgsMsgMcActionInfo.read(from: &r)
+    v.`runtime_model` = try Ros2Aimdk_msgsMsgMcRuntimeModel.read(from: &r)
+    v.`motion_status` = try Ros2Aimdk_msgsMsgMcMotionStatus.read(from: &r)
+    v.`servo_status` = try Ros2Aimdk_msgsMsgMcServoStatus.read(from: &r)
+    v.`fsm_state` = try Ros2Aimdk_msgsMsgMcFsmState.read(from: &r)
+    v.`body_status` = try Ros2Aimdk_msgsMsgMcBodyPoseStatus.read(from: &r)
+    v.`speed_status` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcInputAction: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_7016737845145fd03a104665957b475c512400775b93981573a40d0da30e15d9"
+  public static let nativeType = "aimdk_msgs/msg/McInputAction"
+  public static let nativeIdentity: String? = nil
+  public static let `INPUTACTION_ADD`: Int32 = 1001
+  public static let `INPUTACTION_MODIFY`: Int32 = 1002
+  public static let `INPUTACTION_DELETE`: Int32 = 1003
+  public static let `INPUTACTION_ENABLE`: Int32 = 2001
+  public static let `INPUTACTION_DISABLE`: Int32 = 2002
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcInputAction {
+    var v = Ros2Aimdk_msgsMsgMcInputAction()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcLocomotionVelocity: Canonical {
+  public static let maximumWireBytes = 308
+  public static let codecIdentity =
+    "UWVMROS1_a3c45cd56bc3098af00eefba2b2fc5c34c6439228d3429ab077d80b60ef8ca00"
+  public static let nativeType = "aimdk_msgs/msg/McLocomotionVelocity"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `source`: String = ""
+  public var `forward_velocity`: Double = 0
+  public var `lateral_velocity`: Double = 0
+  public var `angular_velocity`: Double = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`source`, bound: 128)
+    try w.float64(self.`forward_velocity`)
+    try w.float64(self.`lateral_velocity`)
+    try w.float64(self.`angular_velocity`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcLocomotionVelocity
+  {
+    var v = Ros2Aimdk_msgsMsgMcLocomotionVelocity()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`source` = try r.string(bound: 128)
+    v.`forward_velocity` = try r.float64()
+    v.`lateral_velocity` = try r.float64()
+    v.`angular_velocity` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgMcPresetMotion: Canonical {
+  public static let maximumWireBytes = 4
+  public static let codecIdentity =
+    "UWVMROS1_7421ee5b50a30799907e6f521dd97874158a945019f09cecf168a8f3130c9153"
+  public static let nativeType = "aimdk_msgs/msg/McPresetMotion"
+  public static let nativeIdentity: String? = nil
+  public static let `RAISE_HAND`: Int32 = 1001
+  public static let `WAVE_HAND`: Int32 = 1002
+  public static let `SHAKE_HAND`: Int32 = 1003
+  public static let `FLYING_KISS_HAND`: Int32 = 1004
+  public static let `CLAP_HAND`: Int32 = 1008
+  public static let `TURN_WAVE_HAND`: Int32 = 2001
+  public static let `INTERACTION_BOW`: Int32 = 3001
+  public static let `INTERACTION_LIKE`: Int32 = 3002
+  public static let `INTERACTION_YE`: Int32 = 3003
+  public static let `INTERACTION_SWEATHEART`: Int32 = 3004
+  public static let `SALUTE`: Int32 = 1013
+  public static let `INTERACTION_SAD`: Int32 = 3006
+  public static let `INTERACTION_LIGHTWAVE`: Int32 = 3007
+  public static let `INTERACTION_HUG`: Int32 = 3008
+  public static let `INTERACTION_HANDX`: Int32 = 3009
+  public static let `INTERACTION_CHESTWAVE`: Int32 = 3010
+  public static let `INTERACTION_CHEER`: Int32 = 3011
+  public static let `INTERACTION_BLOWKISS`: Int32 = 3012
+  public static let `INTERACTION_BASSDANCE1`: Int32 = 3013
+  public static let `INTERACTION_BASSDANCE2`: Int32 = 3014
+  public static let `HITCLAP`: Int32 = 3015
+  public static let `INTERACTION_SPEAK`: Int32 = 3016
+  public static let `CLIPFIST`: Int32 = 1009
+  public static let `INTERACTION_PHOTOPOSTURE`: Int32 = 3018
+  public static let `INTERACTION_PHOTOTRIPPLEPOSTURE`: Int32 = 3019
+  public static let `POINT_HEAD`: Int32 = 4001
+  public static let `SHAKE_HEAD`: Int32 = 4002
+  public var `value`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgMcPresetMotion {
+    var v = Ros2Aimdk_msgsMsgMcPresetMotion()
+    v.`value` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgPose2D: Canonical {
+  public static let maximumWireBytes = 24
+  public static let codecIdentity =
+    "UWVMROS1_5926ccd43f868ca13520625e24e283abe2e6f6418dacaa136eed5951064d8bce"
+  public static let nativeType = "geometry_msgs/msg/Pose2D"
+  public static let nativeIdentity: String? = nil
+  public var `x`: Double = 0
+  public var `y`: Double = 0
+  public var `theta`: Double = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.float64(self.`x`)
+    try w.float64(self.`y`)
+    try w.float64(self.`theta`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgPose2D {
+    var v = Ros2Geometry_msgsMsgPose2D()
+    v.`x` = try r.float64()
+    v.`y` = try r.float64()
+    v.`theta` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgNaviPoint: Canonical {
+  public static let maximumWireBytes = 28
+  public static let codecIdentity =
+    "UWVMROS1_e1613f1cc3f2e23dffba8c4b2414f5eaba7ef8909aa4d032f13f6f514484694e"
+  public static let nativeType = "aimdk_msgs/msg/NaviPoint"
+  public static let nativeIdentity: String? = nil
+  public var `point_id`: Int32 = 0
+  public var `navi_point`: Ros2Geometry_msgsMsgPose2D = Ros2Geometry_msgsMsgPose2D()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`point_id`)
+    try self.`navi_point`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgNaviPoint {
+    var v = Ros2Aimdk_msgsMsgNaviPoint()
+    v.`point_id` = try r.integer(Int32.self)
+    v.`navi_point` = try Ros2Geometry_msgsMsgPose2D.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPath: Canonical {
+  public static let maximumWireBytes = 104
+  public static let codecIdentity =
+    "UWVMROS1_88efeee6a105a4a88d155242fcd6f5be0866f4c0eadfc0b90243ca0eb020f27d"
+  public static let nativeType = "aimdk_msgs/msg/Path"
+  public static let nativeIdentity: String? = nil
+  public var `path_id`: Int32 = 0
+  public var `points`: [Ros2Geometry_msgsMsgPose2D] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`path_id`)
+    guard self.`points`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`points`.count))
+    for e in self.`points` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPath {
+    var v = Ros2Aimdk_msgsMsgPath()
+    v.`path_id` = try r.integer(Int32.self)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 4 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`points` = []
+    v.`points`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`points`.append(try Ros2Geometry_msgsMsgPose2D.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPilotState: Canonical {
+  public static let maximumWireBytes = 421
+  public static let codecIdentity =
+    "UWVMROS1_8d2421a2a13d52ea4ab7af2a6a9e57c145c4b7fb10e59701fcb2f58c421fe31a"
+  public static let nativeType = "aimdk_msgs/msg/PilotState"
+  public static let nativeIdentity: String? = nil
+  public static let `TM_PILOT_STATE_NAVI_TO_TARGET`: UInt8 = 0
+  public static let `TM_PILOT_STATE_TARGET_ACTIONS`: UInt8 = 1
+  public static let `TM_PILOT_STATE_NAVI_RETURN`: UInt8 = 2
+  public static let `TM_PILOT_STATE_STANDBY_ACTIONS`: UInt8 = 3
+  public var `target_name`: String = ""
+  public var `target_id`: UInt64 = 0
+  public var `intro_task_name`: String = ""
+  public var `intro_task_id`: UInt64 = 0
+  public var `map_name`: String = ""
+  public var `map_id`: UInt64 = 0
+  public var `pilot_state`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`target_name`, bound: 128)
+    try w.integer(self.`target_id`)
+    try w.string(self.`intro_task_name`, bound: 128)
+    try w.integer(self.`intro_task_id`)
+    try w.string(self.`map_name`, bound: 128)
+    try w.integer(self.`map_id`)
+    try w.integer(self.`pilot_state`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPilotState {
+    var v = Ros2Aimdk_msgsMsgPilotState()
+    v.`target_name` = try r.string(bound: 128)
+    v.`target_id` = try r.integer(UInt64.self)
+    v.`intro_task_name` = try r.string(bound: 128)
+    v.`intro_task_id` = try r.integer(UInt64.self)
+    v.`map_name` = try r.string(bound: 128)
+    v.`map_id` = try r.integer(UInt64.self)
+    v.`pilot_state` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPlayStateType: Canonical {
+  public static let maximumWireBytes = 1
+  public static let codecIdentity =
+    "UWVMROS1_a103f60f1b75030272dea3bcf7da76ac8fdc214c3a38721fa2b09c507cc47946"
+  public static let nativeType = "aimdk_msgs/msg/PlayStateType"
+  public static let nativeIdentity: String? = nil
+  public static let `PLAYER_STATE_CLOSED`: UInt8 = 0
+  public static let `PLAYER_STATE_PLAYING`: UInt8 = 1
+  public static let `PLAYER_STATE_STOPED`: UInt8 = 2
+  public var `value`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPlayStateType {
+    var v = Ros2Aimdk_msgsMsgPlayStateType()
+    v.`value` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPlayStateChange: Canonical {
+  public static let maximumWireBytes = 133
+  public static let codecIdentity =
+    "UWVMROS1_62c2a232fb57ebab6a0fce42a84e12d8a25dc21e40fb5420201ef6337894f41c"
+  public static let nativeType = "aimdk_msgs/msg/PlayStateChange"
+  public static let nativeIdentity: String? = nil
+  public var `pkg_name`: String = ""
+  public var `state`: Ros2Aimdk_msgsMsgPlayStateType = Ros2Aimdk_msgsMsgPlayStateType()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`pkg_name`, bound: 128)
+    try self.`state`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPlayStateChange {
+    var v = Ros2Aimdk_msgsMsgPlayStateChange()
+    v.`pkg_name` = try r.string(bound: 128)
+    v.`state` = try Ros2Aimdk_msgsMsgPlayStateType.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgTtsPriorityLevel: Canonical {
+  public static let maximumWireBytes = 1
+  public static let codecIdentity =
+    "UWVMROS1_6e19302f3df2152dabda478d48e0506d483427f946a552d364a206fee9687507"
+  public static let nativeType = "aimdk_msgs/msg/TtsPriorityLevel"
+  public static let nativeIdentity: String? = nil
+  public static let `UNKNOWN`: UInt8 = 0
+  public static let `BACKGROUND_L1`: UInt8 = 1
+  public static let `SERVICE_L2`: UInt8 = 2
+  public static let `MISSION_L4`: UInt8 = 4
+  public static let `INTERACTION_L6`: UInt8 = 6
+  public static let `SYSTEM_L7`: UInt8 = 7
+  public static let `WARNING_L8`: UInt8 = 8
+  public static let `SAFETY_L10`: UInt8 = 10
+  public var `value`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgTtsPriorityLevel {
+    var v = Ros2Aimdk_msgsMsgTtsPriorityLevel()
+    v.`value` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPlayTtsRequest: Canonical {
+  public static let maximumWireBytes = 402
+  public static let codecIdentity =
+    "UWVMROS1_f5c7b9646cefc4c4d7a3a2ddac3e1ebed6d6aa789c03be06d89ffdf6fd023b72"
+  public static let nativeType = "aimdk_msgs/msg/PlayTtsRequest"
+  public static let nativeIdentity: String? = nil
+  public var `text`: String = ""
+  public var `priority_level`: Ros2Aimdk_msgsMsgTtsPriorityLevel =
+    Ros2Aimdk_msgsMsgTtsPriorityLevel()
+  public var `priority_weight`: UInt32 = 0
+  public var `domain`: String = ""
+  public var `trace_id`: String = ""
+  public var `is_interrupted`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`text`, bound: 128)
+    try self.`priority_level`.write(to: &w)
+    try w.integer(self.`priority_weight`)
+    try w.string(self.`domain`, bound: 128)
+    try w.string(self.`trace_id`, bound: 128)
+    try w.boolean(self.`is_interrupted`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPlayTtsRequest {
+    var v = Ros2Aimdk_msgsMsgPlayTtsRequest()
+    v.`text` = try r.string(bound: 128)
+    v.`priority_level` = try Ros2Aimdk_msgsMsgTtsPriorityLevel.read(from: &r)
+    v.`priority_weight` = try r.integer(UInt32.self)
+    v.`domain` = try r.string(bound: 128)
+    v.`trace_id` = try r.string(bound: 128)
+    v.`is_interrupted` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPlayTtsResponse: Canonical {
+  public static let maximumWireBytes = 539
+  public static let codecIdentity =
+    "UWVMROS1_859aaa26ebee477f028cd7836e64aeaaabdafbd8ea67fc4b563bc145e4a55dc8"
+  public static let nativeType = "aimdk_msgs/msg/PlayTtsResponse"
+  public static let nativeIdentity: String? = nil
+  public static let `ERROR_NONE`: UInt8 = 0
+  public static let `ERROR_HIGHER_PRIORITY_BUSY`: UInt8 = 1
+  public static let `ERROR_NETWORK_DISCONNECTED`: UInt8 = 2
+  public static let `ERROR_UNKNOWN`: UInt8 = 3
+  public var `text`: String = ""
+  public var `priority_level`: Ros2Aimdk_msgsMsgTtsPriorityLevel =
+    Ros2Aimdk_msgsMsgTtsPriorityLevel()
+  public var `priority_weight`: UInt32 = 0
+  public var `domain`: String = ""
+  public var `trace_id`: String = ""
+  public var `is_success`: Bool = false
+  public var `error_message`: String = ""
+  public var `estimated_duration`: UInt32 = 0
+  public var `error_code`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`text`, bound: 128)
+    try self.`priority_level`.write(to: &w)
+    try w.integer(self.`priority_weight`)
+    try w.string(self.`domain`, bound: 128)
+    try w.string(self.`trace_id`, bound: 128)
+    try w.boolean(self.`is_success`)
+    try w.string(self.`error_message`, bound: 128)
+    try w.integer(self.`estimated_duration`)
+    try w.integer(self.`error_code`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPlayTtsResponse {
+    var v = Ros2Aimdk_msgsMsgPlayTtsResponse()
+    v.`text` = try r.string(bound: 128)
+    v.`priority_level` = try Ros2Aimdk_msgsMsgTtsPriorityLevel.read(from: &r)
+    v.`priority_weight` = try r.integer(UInt32.self)
+    v.`domain` = try r.string(bound: 128)
+    v.`trace_id` = try r.string(bound: 128)
+    v.`is_success` = try r.boolean()
+    v.`error_message` = try r.string(bound: 128)
+    v.`estimated_duration` = try r.integer(UInt32.self)
+    v.`error_code` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPmuLedState: Canonical {
+  public static let maximumWireBytes = 292
+  public static let codecIdentity =
+    "UWVMROS1_ffd9da2c79f63f9a61a4dfcefde97cb58676f61598b76c0435f33ab23e9002dc"
+  public static let nativeType = "aimdk_msgs/msg/PmuLedState"
+  public static let nativeIdentity: String? = nil
+  public static let `LED_STRIP_MODE_CONSTANT`: UInt8 = 0
+  public static let `LED_STRIP_MODE_BREATH`: UInt8 = 1
+  public static let `LED_STRIP_MODE_FLASH`: UInt8 = 2
+  public static let `LED_STRIP_MODE_FLOW`: UInt8 = 3
+  public static let `LED_STRIP_MODE_MAX`: UInt8 = 4
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `trace_id`: String = ""
+  public var `led_strip_mode`: UInt8 = 0
+  public var `r`: UInt8 = 0
+  public var `g`: UInt8 = 0
+  public var `b`: UInt8 = 0
+  public var `priority`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`trace_id`, bound: 128)
+    try w.integer(self.`led_strip_mode`)
+    try w.integer(self.`r`)
+    try w.integer(self.`g`)
+    try w.integer(self.`b`)
+    try w.integer(self.`priority`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPmuLedState {
+    var v = Ros2Aimdk_msgsMsgPmuLedState()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`trace_id` = try r.string(bound: 128)
+    v.`led_strip_mode` = try r.integer(UInt8.self)
+    v.`r` = try r.integer(UInt8.self)
+    v.`g` = try r.integer(UInt8.self)
+    v.`b` = try r.integer(UInt8.self)
+    v.`priority` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPmuState: Canonical {
+  public static let maximumWireBytes = 1114
+  public static let codecIdentity =
+    "UWVMROS1_bb828bf3667ae8a8909a7e98b20e789d9dfc6b954fe2ab7fc3adbc306c9ebbbd"
+  public static let nativeType = "aimdk_msgs/msg/PmuState"
+  public static let nativeIdentity: String? = nil
+  public var `pmu_software_version`: String = ""
+  public var `pmu_hardware_version`: String = ""
+  public var `pmu_protocol_version`: String = ""
+  public var `pmu_bool_status`: UInt32 = 0
+  public var `head_power_current`: Double = 0
+  public var `output_48v_current`: Double = 0
+  public var `rk3588_current`: Double = 0
+  public var `output_12v_current`: Double = 0
+  public var `bus_48v_current`: Double = 0
+  public var `orin_current`: Double = 0
+  public var `bus_48v_pmos_voltage`: Double = 0
+  public var `battery_voltage`: Double = 0
+  public var `fan_voltage`: Double = 0
+  public var `output_12v_voltage`: Double = 0
+  public var `output_48v_voltage`: Double = 0
+  public var `bus_48v_voltage`: Double = 0
+  public var `head_power_voltage`: Double = 0
+  public var `orin_voltage`: Double = 0
+  public var `rk3588_voltage`: Double = 0
+  public var `fan_speed`: Double = 0
+  public var `fan_pecentage`: UInt8 = 0
+  public var `pmu_temperature`: Double = 0
+  public var `bms_manufacturer`: String = ""
+  public var `bms_serial_number`: String = ""
+  public var `bms_hardware_version`: String = ""
+  public var `bms_software_version`: String = ""
+  public var `bms_status_bits`: UInt32 = 0
+  public var `battery_balance_line_resistance`: UInt16 = 0
+  public var `battery_pack_voltage`: Double = 0
+  public var `battery_current`: Double = 0
+  public var `battery_output_power`: Double = 0
+  public var `battery_temperature`: Double = 0
+  public var `battery_remaining_capacity`: UInt32 = 0
+  public var `battery_remaining_capacity_percentage`: UInt8 = 0
+  public var `battery_cycle_count`: UInt16 = 0
+  public var `battery_cycle_total_capacity`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`pmu_software_version`, bound: 128)
+    try w.string(self.`pmu_hardware_version`, bound: 128)
+    try w.string(self.`pmu_protocol_version`, bound: 128)
+    try w.integer(self.`pmu_bool_status`)
+    try w.float64(self.`head_power_current`)
+    try w.float64(self.`output_48v_current`)
+    try w.float64(self.`rk3588_current`)
+    try w.float64(self.`output_12v_current`)
+    try w.float64(self.`bus_48v_current`)
+    try w.float64(self.`orin_current`)
+    try w.float64(self.`bus_48v_pmos_voltage`)
+    try w.float64(self.`battery_voltage`)
+    try w.float64(self.`fan_voltage`)
+    try w.float64(self.`output_12v_voltage`)
+    try w.float64(self.`output_48v_voltage`)
+    try w.float64(self.`bus_48v_voltage`)
+    try w.float64(self.`head_power_voltage`)
+    try w.float64(self.`orin_voltage`)
+    try w.float64(self.`rk3588_voltage`)
+    try w.float64(self.`fan_speed`)
+    try w.integer(self.`fan_pecentage`)
+    try w.float64(self.`pmu_temperature`)
+    try w.string(self.`bms_manufacturer`, bound: 128)
+    try w.string(self.`bms_serial_number`, bound: 128)
+    try w.string(self.`bms_hardware_version`, bound: 128)
+    try w.string(self.`bms_software_version`, bound: 128)
+    try w.integer(self.`bms_status_bits`)
+    try w.integer(self.`battery_balance_line_resistance`)
+    try w.float64(self.`battery_pack_voltage`)
+    try w.float64(self.`battery_current`)
+    try w.float64(self.`battery_output_power`)
+    try w.float64(self.`battery_temperature`)
+    try w.integer(self.`battery_remaining_capacity`)
+    try w.integer(self.`battery_remaining_capacity_percentage`)
+    try w.integer(self.`battery_cycle_count`)
+    try w.integer(self.`battery_cycle_total_capacity`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPmuState {
+    var v = Ros2Aimdk_msgsMsgPmuState()
+    v.`pmu_software_version` = try r.string(bound: 128)
+    v.`pmu_hardware_version` = try r.string(bound: 128)
+    v.`pmu_protocol_version` = try r.string(bound: 128)
+    v.`pmu_bool_status` = try r.integer(UInt32.self)
+    v.`head_power_current` = try r.float64()
+    v.`output_48v_current` = try r.float64()
+    v.`rk3588_current` = try r.float64()
+    v.`output_12v_current` = try r.float64()
+    v.`bus_48v_current` = try r.float64()
+    v.`orin_current` = try r.float64()
+    v.`bus_48v_pmos_voltage` = try r.float64()
+    v.`battery_voltage` = try r.float64()
+    v.`fan_voltage` = try r.float64()
+    v.`output_12v_voltage` = try r.float64()
+    v.`output_48v_voltage` = try r.float64()
+    v.`bus_48v_voltage` = try r.float64()
+    v.`head_power_voltage` = try r.float64()
+    v.`orin_voltage` = try r.float64()
+    v.`rk3588_voltage` = try r.float64()
+    v.`fan_speed` = try r.float64()
+    v.`fan_pecentage` = try r.integer(UInt8.self)
+    v.`pmu_temperature` = try r.float64()
+    v.`bms_manufacturer` = try r.string(bound: 128)
+    v.`bms_serial_number` = try r.string(bound: 128)
+    v.`bms_hardware_version` = try r.string(bound: 128)
+    v.`bms_software_version` = try r.string(bound: 128)
+    v.`bms_status_bits` = try r.integer(UInt32.self)
+    v.`battery_balance_line_resistance` = try r.integer(UInt16.self)
+    v.`battery_pack_voltage` = try r.float64()
+    v.`battery_current` = try r.float64()
+    v.`battery_output_power` = try r.float64()
+    v.`battery_temperature` = try r.float64()
+    v.`battery_remaining_capacity` = try r.integer(UInt32.self)
+    v.`battery_remaining_capacity_percentage` = try r.integer(UInt8.self)
+    v.`battery_cycle_count` = try r.integer(UInt16.self)
+    v.`battery_cycle_total_capacity` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Std_msgsMsgHeader: Canonical {
+  public static let maximumWireBytes = 140
+  public static let codecIdentity =
+    "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96"
+  public static let nativeType = "std_msgs/msg/Header"
+  public static let nativeIdentity: String? = nil
+  public var `stamp`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public var `frame_id`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`stamp`.write(to: &w)
+    try w.string(self.`frame_id`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Std_msgsMsgHeader {
+    var v = Ros2Std_msgsMsgHeader()
+    v.`stamp` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    v.`frame_id` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgPoseStamped: Canonical {
+  public static let maximumWireBytes = 196
+  public static let codecIdentity =
+    "UWVMROS1_71abdc844f18f02f45a354967a5f1c644fb20dc14cbc61c64aa41b927e0712a2"
+  public static let nativeType = "geometry_msgs/msg/PoseStamped"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Std_msgsMsgHeader = Ros2Std_msgsMsgHeader()
+  public var `pose`: Ros2Geometry_msgsMsgPose = Ros2Geometry_msgsMsgPose()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`pose`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgPoseStamped {
+    var v = Ros2Geometry_msgsMsgPoseStamped()
+    v.`header` = try Ros2Std_msgsMsgHeader.read(from: &r)
+    v.`pose` = try Ros2Geometry_msgsMsgPose.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgVector3: Canonical {
+  public static let maximumWireBytes = 24
+  public static let codecIdentity =
+    "UWVMROS1_5adebf211fe375fba92c0628f9b8ebf05bff9ab22ddc4bbf00629167af295d5e"
+  public static let nativeType = "geometry_msgs/msg/Vector3"
+  public static let nativeIdentity: String? = nil
+  public var `x`: Double = 0
+  public var `y`: Double = 0
+  public var `z`: Double = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.float64(self.`x`)
+    try w.float64(self.`y`)
+    try w.float64(self.`z`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgVector3 {
+    var v = Ros2Geometry_msgsMsgVector3()
+    v.`x` = try r.float64()
+    v.`y` = try r.float64()
+    v.`z` = try r.float64()
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgTwist: Canonical {
+  public static let maximumWireBytes = 48
+  public static let codecIdentity =
+    "UWVMROS1_1a6c18d19bb6853a2cff3b775974ba31f8e3674c1bbe566444ccabf0ef9d117e"
+  public static let nativeType = "geometry_msgs/msg/Twist"
+  public static let nativeIdentity: String? = nil
+  public var `linear`: Ros2Geometry_msgsMsgVector3 = Ros2Geometry_msgsMsgVector3()
+  public var `angular`: Ros2Geometry_msgsMsgVector3 = Ros2Geometry_msgsMsgVector3()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`linear`.write(to: &w)
+    try self.`angular`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgTwist {
+    var v = Ros2Geometry_msgsMsgTwist()
+    v.`linear` = try Ros2Geometry_msgsMsgVector3.read(from: &r)
+    v.`angular` = try Ros2Geometry_msgsMsgVector3.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPncTaskRequest: Canonical {
+  public static let maximumWireBytes = 855
+  public static let codecIdentity =
+    "UWVMROS1_70b6f57408c6a09cc52d3ce4aeaab20322737a6c4cfddbd380e87d673050469c"
+  public static let nativeType = "aimdk_msgs/msg/PncTaskRequest"
+  public static let nativeIdentity: String? = nil
+  public static let `TASK_TYPE_NONE`: UInt8 = 0
+  public static let `TASK_TYPE_PLANNING_NAVI_TO_GOAL`: UInt8 = 1
+  public static let `TASK_TYPE_PLANNING_NAVI_TO_POSE_2D`: UInt8 = 2
+  public static let `TASK_TYPE_LINEAR_NAVI_TO_RELATIVE`: UInt8 = 3
+  public static let `TASK_TYPE_LINEAR_NAVI_TO_GOAL`: UInt8 = 4
+  public static let `TASK_TYPE_LINEAR_NAVI_TO_POSE_2D`: UInt8 = 5
+  public static let `TASK_TYPE_DIRECT_NAVI_TO_RELATIVE_GOAL`: UInt8 = 6
+  public static let `TASK_TYPE_DIRECT_NAVI_TO_RELATIVE`: UInt8 = 7
+  public static let `TASK_TYPE_SPIN_TURN_AND_MOVE_FORWARD`: UInt8 = 8
+  public static let `TASK_TYPE_SPIN_TURN`: UInt8 = 9
+  public static let `TASK_TYPE_MOVE_FORWARD`: UInt8 = 10
+  public static let `TASK_TYPE_PRECISE_NAVI_TO_GOAL`: UInt8 = 11
+  public static let `TASK_TYPE_NO_MAP_FOLLOW`: UInt8 = 12
+  public static let `TASK_TYPE_AUTO_EXPLORE`: UInt8 = 13
+  public static let `TASK_TYPE_VOICE_CONTROL`: UInt8 = 14
+  public static let `TASK_TYPE_RELATIVE_TARGET_TRACKING`: UInt8 = 15
+  public static let `TASK_TYPE_PLANNING_NAVI_WITH_RL`: UInt8 = 16
+  public static let `TASK_TYPE_SWARM_CONTROL_NAVI_MODE`: UInt8 = 17
+  public static let `TASK_REQUEST_NONE`: UInt8 = 0
+  public static let `TASK_REQUEST_START`: UInt8 = 1
+  public static let `TASK_REQUEST_STOP`: UInt8 = 2
+  public static let `TASK_REQUEST_PAUSE`: UInt8 = 3
+  public static let `TASK_REQUEST_RESUME`: UInt8 = 4
+  public static let `TASK_REQUEST_STATUS_INQUIRY`: UInt8 = 5
+  public static let `NORMAL`: UInt8 = 0
+  public static let `NO_PERCEPTION`: UInt8 = 1
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `task_type`: UInt8 = 0
+  public var `task_request`: UInt8 = 0
+  public var `pnc_mode`: UInt8 = 0
+  public var `task_id`: UInt64 = 0
+  public var `map_id`: UInt64 = 0
+  public var `target_pose`: Ros2Geometry_msgsMsgPoseStamped = Ros2Geometry_msgsMsgPoseStamped()
+  public var `reference_line`: [Ros2Geometry_msgsMsgPose2D] = []
+  public var `target_pose_radius`: Double = 0
+  public var `max_forward_speed`: Float = 0
+  public var `trajectory_pos`: [Ros2Geometry_msgsMsgPose2D] = []
+  public var `trajectory_vel`: [Ros2Geometry_msgsMsgTwist] = []
+  public var `play_timestamp`: UInt64 = 0
+  public var `time_duration`: UInt64 = 0
+  public var `reserve_info`: [UInt8] = Array(repeating: 0, count: 64)
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`task_type`)
+    try w.integer(self.`task_request`)
+    try w.integer(self.`pnc_mode`)
+    try w.integer(self.`task_id`)
+    try w.integer(self.`map_id`)
+    try self.`target_pose`.write(to: &w)
+    guard self.`reference_line`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`reference_line`.count))
+    for e in self.`reference_line` {
+      try e.write(to: &w)
+    }
+    try w.float64(self.`target_pose_radius`)
+    try w.float32(self.`max_forward_speed`)
+    guard self.`trajectory_pos`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`trajectory_pos`.count))
+    for e in self.`trajectory_pos` {
+      try e.write(to: &w)
+    }
+    guard self.`trajectory_vel`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`trajectory_vel`.count))
+    for e in self.`trajectory_vel` {
+      try e.write(to: &w)
+    }
+    try w.integer(self.`play_timestamp`)
+    try w.integer(self.`time_duration`)
+    guard self.`reserve_info`.count == 64 else { throw RosError(22) }
+    for e in self.`reserve_info` {
+      try w.integer(e)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPncTaskRequest {
+    var v = Ros2Aimdk_msgsMsgPncTaskRequest()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`task_type` = try r.integer(UInt8.self)
+    v.`task_request` = try r.integer(UInt8.self)
+    v.`pnc_mode` = try r.integer(UInt8.self)
+    v.`task_id` = try r.integer(UInt64.self)
+    v.`map_id` = try r.integer(UInt64.self)
+    v.`target_pose` = try Ros2Geometry_msgsMsgPoseStamped.read(from: &r)
+    let rawcount7 = try r.integer(UInt32.self)
+    guard rawcount7 <= 4 else { throw RosError(22) }
+    let count7 = Int(rawcount7)
+    v.`reference_line` = []
+    v.`reference_line`.reserveCapacity(count7)
+    for _ in 0..<count7 {
+      v.`reference_line`.append(try Ros2Geometry_msgsMsgPose2D.read(from: &r))
+    }
+    v.`target_pose_radius` = try r.float64()
+    v.`max_forward_speed` = try r.float32()
+    let rawcount10 = try r.integer(UInt32.self)
+    guard rawcount10 <= 4 else { throw RosError(22) }
+    let count10 = Int(rawcount10)
+    v.`trajectory_pos` = []
+    v.`trajectory_pos`.reserveCapacity(count10)
+    for _ in 0..<count10 {
+      v.`trajectory_pos`.append(try Ros2Geometry_msgsMsgPose2D.read(from: &r))
+    }
+    let rawcount11 = try r.integer(UInt32.self)
+    guard rawcount11 <= 4 else { throw RosError(22) }
+    let count11 = Int(rawcount11)
+    v.`trajectory_vel` = []
+    v.`trajectory_vel`.reserveCapacity(count11)
+    for _ in 0..<count11 {
+      v.`trajectory_vel`.append(try Ros2Geometry_msgsMsgTwist.read(from: &r))
+    }
+    v.`play_timestamp` = try r.integer(UInt64.self)
+    v.`time_duration` = try r.integer(UInt64.self)
+    let count14 = 64
+    v.`reserve_info` = []
+    v.`reserve_info`.reserveCapacity(count14)
+    for _ in 0..<count14 {
+      v.`reserve_info`.append(try r.integer(UInt8.self))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPncTaskResponse: Canonical {
+  public static let maximumWireBytes = 234
+  public static let codecIdentity =
+    "UWVMROS1_b79712144fee059d6b2d3fc74a86a33ca577734d8445b446a4b80db01e87243e"
+  public static let nativeType = "aimdk_msgs/msg/PncTaskResponse"
+  public static let nativeIdentity: String? = nil
+  public static let `TASK_TYPE_NONE`: UInt8 = 0
+  public static let `TASK_TYPE_PLANNING_NAVI_TO_GOAL`: UInt8 = 1
+  public static let `TASK_TYPE_PLANNING_NAVI_TO_POSE_2D`: UInt8 = 2
+  public static let `TASK_TYPE_LINEAR_NAVI_TO_RELATIVE`: UInt8 = 3
+  public static let `TASK_TYPE_LINEAR_NAVI_TO_GOAL`: UInt8 = 4
+  public static let `TASK_TYPE_LINEAR_NAVI_TO_POSE_2D`: UInt8 = 5
+  public static let `TASK_TYPE_DIRECT_NAVI_TO_RELATIVE_GOAL`: UInt8 = 6
+  public static let `TASK_TYPE_DIRECT_NAVI_TO_RELATIVE`: UInt8 = 7
+  public static let `TASK_TYPE_SPIN_TURN_AND_MOVE_FORWARD`: UInt8 = 8
+  public static let `TASK_TYPE_SPIN_TURN`: UInt8 = 9
+  public static let `TASK_TYPE_MOVE_FORWARD`: UInt8 = 10
+  public static let `TASK_TYPE_PRECISE_NAVI_TO_GOAL`: UInt8 = 11
+  public static let `TASK_TYPE_NO_MAP_FOLLOW`: UInt8 = 12
+  public static let `TASK_TYPE_AUTO_EXPLORE`: UInt8 = 13
+  public static let `TASK_TYPE_VOICE_CONTROL`: UInt8 = 14
+  public static let `TASK_TYPE_RELATIVE_TARGET_TRACKING`: UInt8 = 15
+  public static let `TASK_TYPE_PLANNING_NAVI_WITH_RL`: UInt8 = 16
+  public static let `TASK_STATUS_UNKONW`: UInt8 = 0
+  public static let `TASK_STATUS_RUNNING`: UInt8 = 1
+  public static let `TASK_STATUS_FAILED`: UInt8 = 2
+  public static let `TASK_STATUS_PAUSED`: UInt8 = 3
+  public static let `TASK_STATUS_FINISHED`: UInt8 = 4
+  public static let `TASK_STATUS_UNKNOW_BLOCK`: UInt8 = 10
+  public static let `TASK_STATUS_SPIN_BLOCK`: UInt8 = 11
+  public static let `TASK_STATUS_TRAJ_COLLISION_BLOCK`: UInt8 = 12
+  public static let `TASK_STATUS_CONTOLLER_COLLISION_BLOCK`: UInt8 = 13
+  public static let `TASK_STATUS_SPIN_BLOCK_WITH_HUMAN`: UInt8 = 14
+  public static let `TASK_STATUS_TRAJ_COLLISION_BLOCK_WITH_HUMAN`: UInt8 = 15
+  public static let `TASK_STATUS_CONTOLLER_COLLISION_BLOCK_WITH_HUMAN`: UInt8 = 16
+  public static let `TASK_STATUS_LOCAL_OPTIMAL_FAILED`: UInt8 = 17
+  public static let `TASK_STATUS_GOBAL_PATH_BLOCK`: UInt8 = 18
+  public static let `TASK_STATUS_RECOVERY_GLOBAL`: UInt8 = 20
+  public static let `TASK_STATUS_RECOVERY_LOCAL`: UInt8 = 21
+  public static let `TASK_STATUS_RECOVERY_TIMEOUT`: UInt8 = 22
+  public static let `TASK_STATUS_EXPLORE_TO_RECOVERY`: UInt8 = 23
+  public static let `TASK_STATUS_EXPLORE_SUCCESS`: UInt8 = 24
+  public static let `TASK_STATUS_EXPLORE_FAILED`: UInt8 = 25
+  public static let `TASK_STATUS_GOAL_BLOCK_CONTINUE`: UInt8 = 30
+  public static let `TASK_STATUS_GOAL_BLOCK_ABORT`: UInt8 = 31
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `task_type`: UInt8 = 0
+  public var `task_id`: UInt64 = 0
+  public var `map_id`: UInt64 = 0
+  public var `task_status`: UInt8 = 0
+  public var `reserve_info`: [UInt8] = Array(repeating: 0, count: 64)
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`task_type`)
+    try w.integer(self.`task_id`)
+    try w.integer(self.`map_id`)
+    try w.integer(self.`task_status`)
+    guard self.`reserve_info`.count == 64 else { throw RosError(22) }
+    for e in self.`reserve_info` {
+      try w.integer(e)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPncTaskResponse {
+    var v = Ros2Aimdk_msgsMsgPncTaskResponse()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`task_type` = try r.integer(UInt8.self)
+    v.`task_id` = try r.integer(UInt64.self)
+    v.`map_id` = try r.integer(UInt64.self)
+    v.`task_status` = try r.integer(UInt8.self)
+    let count5 = 64
+    v.`reserve_info` = []
+    v.`reserve_info`.reserveCapacity(count5)
+    for _ in 0..<count5 {
+      v.`reserve_info`.append(try r.integer(UInt8.self))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgSigSet: Canonical {
+  public static let maximumWireBytes = 20
+  public static let codecIdentity =
+    "UWVMROS1_24fc701bfd984160280c2b150c2b6accee18cead254009fb4f781341efb5b8ae"
+  public static let nativeType = "aimdk_msgs/msg/SigSet"
+  public static let nativeIdentity: String? = nil
+  public var `robot_sig`: Int32 = 0
+  public var `motion_sig`: UInt8 = 0
+  public var `sound_sig`: UInt8 = 0
+  public var `led_sig`: UInt8 = 0
+  public var `facial_sig`: UInt8 = 0
+  public var `reserve`: UInt32 = 0
+  public var `funcdisable_sig`: UInt64 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`robot_sig`)
+    try w.integer(self.`motion_sig`)
+    try w.integer(self.`sound_sig`)
+    try w.integer(self.`led_sig`)
+    try w.integer(self.`facial_sig`)
+    try w.integer(self.`reserve`)
+    try w.integer(self.`funcdisable_sig`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgSigSet {
+    var v = Ros2Aimdk_msgsMsgSigSet()
+    v.`robot_sig` = try r.integer(Int32.self)
+    v.`motion_sig` = try r.integer(UInt8.self)
+    v.`sound_sig` = try r.integer(UInt8.self)
+    v.`led_sig` = try r.integer(UInt8.self)
+    v.`facial_sig` = try r.integer(UInt8.self)
+    v.`reserve` = try r.integer(UInt32.self)
+    v.`funcdisable_sig` = try r.integer(UInt64.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPostProcSig: Canonical {
+  public static let maximumWireBytes = 36
+  public static let codecIdentity =
+    "UWVMROS1_f6eceb5eb1e64d0b68e1cfac297cec324fc4aa42ea709e1c721aefe4d4feda8b"
+  public static let nativeType = "aimdk_msgs/msg/PostProcSig"
+  public static let nativeIdentity: String? = nil
+  public var `timestamp`: UInt64 = 0
+  public var `diag_code`: UInt64 = 0
+  public var `sig_set`: Ros2Aimdk_msgsMsgSigSet = Ros2Aimdk_msgsMsgSigSet()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`timestamp`)
+    try w.integer(self.`diag_code`)
+    try self.`sig_set`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPostProcSig {
+    var v = Ros2Aimdk_msgsMsgPostProcSig()
+    v.`timestamp` = try r.integer(UInt64.self)
+    v.`diag_code` = try r.integer(UInt64.self)
+    v.`sig_set` = try Ros2Aimdk_msgsMsgSigSet.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgPostProcSigArray: Canonical {
+  public static let maximumWireBytes = 300
+  public static let codecIdentity =
+    "UWVMROS1_5a2202eb697688ee1fe7530df21d462d4a0f1a4e62e986e610e970bf04f64824"
+  public static let nativeType = "aimdk_msgs/msg/PostProcSigArray"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `post_proc_sig`: [Ros2Aimdk_msgsMsgPostProcSig] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`post_proc_sig`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`post_proc_sig`.count))
+    for e in self.`post_proc_sig` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgPostProcSigArray {
+    var v = Ros2Aimdk_msgsMsgPostProcSigArray()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 4 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`post_proc_sig` = []
+    v.`post_proc_sig`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`post_proc_sig`.append(try Ros2Aimdk_msgsMsgPostProcSig.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgProcessedAudioOutput: Canonical {
+  public static let maximumWireBytes = 417
+  public static let codecIdentity =
+    "UWVMROS1_8b0ea5b4fc3db2efe41730f74a261ee6ea94ad34ee35ff42ae5288ddf501cc30"
+  public static let nativeType = "aimdk_msgs/msg/ProcessedAudioOutput"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `stream_id`: UInt32 = 0
+  public var `audio_vad_state`: Ros2Aimdk_msgsMsgAudioVadStateType =
+    Ros2Aimdk_msgsMsgAudioVadStateType()
+  public var `audio_data`: [UInt8] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`stream_id`)
+    try self.`audio_vad_state`.write(to: &w)
+    guard self.`audio_data`.count <= 256 else { throw RosError(22) }
+    try w.integer(UInt32(self.`audio_data`.count))
+    for e in self.`audio_data` {
+      try w.integer(e)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgProcessedAudioOutput
+  {
+    var v = Ros2Aimdk_msgsMsgProcessedAudioOutput()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`stream_id` = try r.integer(UInt32.self)
+    v.`audio_vad_state` = try Ros2Aimdk_msgsMsgAudioVadStateType.read(from: &r)
+    let rawcount3 = try r.integer(UInt32.self)
+    guard rawcount3 <= 256 else { throw RosError(22) }
+    let count3 = Int(rawcount3)
+    v.`audio_data` = []
+    v.`audio_data`.reserveCapacity(count3)
+    for _ in 0..<count3 {
+      v.`audio_data`.append(try r.integer(UInt8.self))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgQRPoint: Canonical {
+  public static let maximumWireBytes = 64
+  public static let codecIdentity =
+    "UWVMROS1_b158d016b9e3607a1345df207459476cf88c9817dfd3ee7560b5635c7a81863e"
+  public static let nativeType = "aimdk_msgs/msg/QRPoint"
+  public static let nativeIdentity: String? = nil
+  public var `point_id`: Int32 = 0
+  public var `qr_code`: Ros2Aimdk_msgsMsgQRCode = Ros2Aimdk_msgsMsgQRCode()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`point_id`)
+    try self.`qr_code`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgQRPoint {
+    var v = Ros2Aimdk_msgsMsgQRPoint()
+    v.`point_id` = try r.integer(Int32.self)
+    v.`qr_code` = try Ros2Aimdk_msgsMsgQRCode.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgPoint32: Canonical {
+  public static let maximumWireBytes = 12
+  public static let codecIdentity =
+    "UWVMROS1_8ca11f8b9c00af9c95e3eebbeb6073227af8dee04b57f84e120a024e7f8539f9"
+  public static let nativeType = "geometry_msgs/msg/Point32"
+  public static let nativeIdentity: String? = nil
+  public var `x`: Float = 0
+  public var `y`: Float = 0
+  public var `z`: Float = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.float32(self.`x`)
+    try w.float32(self.`y`)
+    try w.float32(self.`z`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgPoint32 {
+    var v = Ros2Geometry_msgsMsgPoint32()
+    v.`x` = try r.float32()
+    v.`y` = try r.float32()
+    v.`z` = try r.float32()
+    return v
+  }
+}
+public struct Ros2Geometry_msgsMsgPolygon: Canonical {
+  public static let maximumWireBytes = 52
+  public static let codecIdentity =
+    "UWVMROS1_b5492d33b802b68eea062a74ffe7f336b1f392161b183e67c3bf24bb0a7d0aa8"
+  public static let nativeType = "geometry_msgs/msg/Polygon"
+  public static let nativeIdentity: String? = nil
+  public var `points`: [Ros2Geometry_msgsMsgPoint32] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    guard self.`points`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`points`.count))
+    for e in self.`points` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Geometry_msgsMsgPolygon {
+    var v = Ros2Geometry_msgsMsgPolygon()
+    let rawcount0 = try r.integer(UInt32.self)
+    guard rawcount0 <= 4 else { throw RosError(22) }
+    let count0 = Int(rawcount0)
+    v.`points` = []
+    v.`points`.reserveCapacity(count0)
+    for _ in 0..<count0 {
+      v.`points`.append(try Ros2Geometry_msgsMsgPoint32.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgRegion: Canonical {
+  public static let maximumWireBytes = 186
+  public static let codecIdentity =
+    "UWVMROS1_161bb9787ae2df5a45015946bc386a2c4cf310701fa4970cf447c6445c85f1ce"
+  public static let nativeType = "aimdk_msgs/msg/Region"
+  public static let nativeIdentity: String? = nil
+  public static let `REGION_UNDEFINED`: UInt8 = 0
+  public static let `REGION_WORKING_SPACE`: UInt8 = 1
+  public static let `REGION_VIRTUAL_WALL`: UInt8 = 2
+  public static let `REGION_DRAWING_UNDEFINED`: UInt8 = 0
+  public static let `REGION_DRAWING_CLOSURE`: UInt8 = 1
+  public static let `REGION_DRAWING_LINES`: UInt8 = 2
+  public var `type`: UInt8 = 0
+  public var `drawing_type`: UInt8 = 0
+  public var `name`: String = ""
+  public var `polygon`: Ros2Geometry_msgsMsgPolygon = Ros2Geometry_msgsMsgPolygon()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`type`)
+    try w.integer(self.`drawing_type`)
+    try w.string(self.`name`, bound: 128)
+    try self.`polygon`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgRegion {
+    var v = Ros2Aimdk_msgsMsgRegion()
+    v.`type` = try r.integer(UInt8.self)
+    v.`drawing_type` = try r.integer(UInt8.self)
+    v.`name` = try r.string(bound: 128)
+    v.`polygon` = try Ros2Geometry_msgsMsgPolygon.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgRobotResource: Canonical {
+  public static let maximumWireBytes = 2520
+  public static let codecIdentity =
+    "UWVMROS1_abc49dc6dd4cc0b0c59cd0ddb01d19897a51018752e3d9eb39aa6bcc684ad34d"
+  public static let nativeType = "aimdk_msgs/msg/RobotResource"
+  public static let nativeIdentity: String? = nil
+  public var `resource_key`: String = ""
+  public var `current_version`: Ros2Aimdk_msgsMsgCurrentVersion = Ros2Aimdk_msgsMsgCurrentVersion()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`resource_key`, bound: 128)
+    try self.`current_version`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgRobotResource {
+    var v = Ros2Aimdk_msgsMsgRobotResource()
+    v.`resource_key` = try r.string(bound: 128)
+    v.`current_version` = try Ros2Aimdk_msgsMsgCurrentVersion.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgSlaveDevice: Canonical {
+  public static let maximumWireBytes = 132
+  public static let codecIdentity =
+    "UWVMROS1_36af580c9887ea808824106a14966193c9a639f6825a2cb3f94cbde369bd3255"
+  public static let nativeType = "aimdk_msgs/msg/SlaveDevice"
+  public static let nativeIdentity: String? = nil
+  public var `ip`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.string(self.`ip`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgSlaveDevice {
+    var v = Ros2Aimdk_msgsMsgSlaveDevice()
+    v.`ip` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgSystemStatus: Canonical {
+  public static let maximumWireBytes = 1
+  public static let codecIdentity =
+    "UWVMROS1_94275d3d0a1e83e4cc8e45b166b2cb111c9eccd4eabfe7410795b9c1fd69c6f1"
+  public static let nativeType = "aimdk_msgs/msg/SystemStatus"
+  public static let nativeIdentity: String? = nil
+  public static let `IN_INITIAL`: UInt8 = 0
+  public static let `IN_READY`: UInt8 = 1
+  public static let `IN_MOVE`: UInt8 = 2
+  public static let `IN_ROLLBACK`: UInt8 = 3
+  public static let `IN_FALLBACK`: UInt8 = 4
+  public static let `IN_FALLBACK_MOVE`: UInt8 = 5
+  public var `value`: UInt8 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`value`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgSystemStatus {
+    var v = Ros2Aimdk_msgsMsgSystemStatus()
+    v.`value` = try r.integer(UInt8.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgSmSystemState: Canonical {
+  public static let maximumWireBytes = 285
+  public static let codecIdentity =
+    "UWVMROS1_32df2f2ac235992629e4fd98257feaac52917482d1065071a4513eaf611980ce"
+  public static let nativeType = "aimdk_msgs/msg/SmSystemState"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `cur_state`: String = ""
+  public var `cur_status`: Ros2Aimdk_msgsMsgSystemStatus = Ros2Aimdk_msgsMsgSystemStatus()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`cur_state`, bound: 128)
+    try self.`cur_status`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgSmSystemState {
+    var v = Ros2Aimdk_msgsMsgSmSystemState()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`cur_state` = try r.string(bound: 128)
+    v.`cur_status` = try Ros2Aimdk_msgsMsgSystemStatus.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgTaskMasterState: Canonical {
+  public static let maximumWireBytes = 1129
+  public static let codecIdentity =
+    "UWVMROS1_90307681af8de801b0fac5e757fb89f1d23e33efdbdf939666b884b8d260a7a4"
+  public static let nativeType = "aimdk_msgs/msg/TaskMasterState"
+  public static let nativeIdentity: String? = nil
+  public static let `TM_MAIN_STATE_IDLE`: UInt8 = 0
+  public static let `TM_MAIN_STATE_RELOCALIZATION`: UInt8 = 1
+  public static let `TM_MAIN_STATE_MAPPING`: UInt8 = 2
+  public static let `TM_MAIN_STATE_FIX_LINE_INTRO`: UInt8 = 3
+  public static let `TM_MAIN_STATE_RECORDING_PATH`: UInt8 = 4
+  public static let `TM_MAIN_STATE_PILOT`: UInt8 = 5
+  public static let `TM_SUB_STATE_NONE`: UInt8 = 0
+  public static let `TM_SUB_STATE_RESUME`: UInt8 = 1
+  public static let `TM_SUB_STATE_PAUSE`: UInt8 = 2
+  public static let `SLAM_STATE_IDLE`: UInt8 = 0
+  public static let `SLAM_STATE_RELOCALIZATION`: UInt8 = 1
+  public static let `SLAM_STATE_MAPPING`: UInt8 = 2
+  public static let `SLAM_STATE_LOCALIZATION`: UInt8 = 3
+  public var `main_state`: UInt8 = 0
+  public var `sub_state`: UInt8 = 0
+  public var `slam_state`: UInt8 = 0
+  public var `loc_map_id`: UInt64 = 0
+  public var `loc_map_name`: String = ""
+  public var `fix_line_intro_state`: Ros2Aimdk_msgsMsgFixLineIntroState =
+    Ros2Aimdk_msgsMsgFixLineIntroState()
+  public var `pilot_state`: Ros2Aimdk_msgsMsgPilotState = Ros2Aimdk_msgsMsgPilotState()
+  public var `reserve_info`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`main_state`)
+    try w.integer(self.`sub_state`)
+    try w.integer(self.`slam_state`)
+    try w.integer(self.`loc_map_id`)
+    try w.string(self.`loc_map_name`, bound: 128)
+    try self.`fix_line_intro_state`.write(to: &w)
+    try self.`pilot_state`.write(to: &w)
+    try w.string(self.`reserve_info`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgTaskMasterState {
+    var v = Ros2Aimdk_msgsMsgTaskMasterState()
+    v.`main_state` = try r.integer(UInt8.self)
+    v.`sub_state` = try r.integer(UInt8.self)
+    v.`slam_state` = try r.integer(UInt8.self)
+    v.`loc_map_id` = try r.integer(UInt64.self)
+    v.`loc_map_name` = try r.string(bound: 128)
+    v.`fix_line_intro_state` = try Ros2Aimdk_msgsMsgFixLineIntroState.read(from: &r)
+    v.`pilot_state` = try Ros2Aimdk_msgsMsgPilotState.read(from: &r)
+    v.`reserve_info` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgTouchState: Canonical {
+  public static let maximumWireBytes = 225
+  public static let codecIdentity =
+    "UWVMROS1_90d5626f09f2254a102224e74c1f8a4d8db63910b7e5eeafa519afd79c7b1564"
+  public static let nativeType = "aimdk_msgs/msg/TouchState"
+  public static let nativeIdentity: String? = nil
+  public static let `UNKNOWN`: UInt8 = 0
+  public static let `IDLE`: UInt8 = 1
+  public static let `TOUCH`: UInt8 = 2
+  public static let `SLIDE`: UInt8 = 3
+  public static let `PAT_ONCE`: UInt8 = 4
+  public static let `PAT_TWICE`: UInt8 = 5
+  public static let `PAT_TRIPLE`: UInt8 = 6
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `event_type`: UInt8 = 0
+  public var `data`: [UInt32] = Array(repeating: 0, count: 8)
+  public var `threshold`: [UInt32] = Array(repeating: 0, count: 8)
+  public var `is_touched`: [Bool] = Array(repeating: false, count: 8)
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`event_type`)
+    guard self.`data`.count == 8 else { throw RosError(22) }
+    for e in self.`data` {
+      try w.integer(e)
+    }
+    guard self.`threshold`.count == 8 else { throw RosError(22) }
+    for e in self.`threshold` {
+      try w.integer(e)
+    }
+    guard self.`is_touched`.count == 8 else { throw RosError(22) }
+    for e in self.`is_touched` {
+      try w.boolean(e)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgTouchState {
+    var v = Ros2Aimdk_msgsMsgTouchState()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`event_type` = try r.integer(UInt8.self)
+    let count2 = 8
+    v.`data` = []
+    v.`data`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`data`.append(try r.integer(UInt32.self))
+    }
+    let count3 = 8
+    v.`threshold` = []
+    v.`threshold`.reserveCapacity(count3)
+    for _ in 0..<count3 {
+      v.`threshold`.append(try r.integer(UInt32.self))
+    }
+    let count4 = 8
+    v.`is_touched` = []
+    v.`is_touched`.reserveCapacity(count4)
+    for _ in 0..<count4 {
+      v.`is_touched`.append(try r.boolean())
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsMsgUpperBodyCommandArray: Canonical {
+  public static let maximumWireBytes = 545
+  public static let codecIdentity =
+    "UWVMROS1_7f283521eed5b5febcba3cd0b19e1948749c2898c753e8b57983ec966a4ccbe0"
+  public static let nativeType = "aimdk_msgs/msg/UpperBodyCommandArray"
+  public static let nativeIdentity: String? = nil
+  public static let `HAND_CLAW_OPEN_CLOSE`: UInt8 = 1
+  public static let `HAND_DEXTEROUS_JOINT`: UInt8 = 2
+  public static let `HAND_DEXTEROUS_GESTURE`: UInt8 = 3
+  public var `header`: Ros2Aimdk_msgsMsgMessageHeader = Ros2Aimdk_msgsMsgMessageHeader()
+  public var `source`: String = ""
+  public var `hand_sub_mode`: UInt8 = 0
+  public var `head_pos`: [Double] = Array(repeating: 0, count: 2)
+  public var `arm_pos`: [Double] = Array(repeating: 0, count: 14)
+  public var `hand_pos`: [Double] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`source`, bound: 128)
+    try w.integer(self.`hand_sub_mode`)
+    guard self.`head_pos`.count == 2 else { throw RosError(22) }
+    for e in self.`head_pos` {
+      try w.float64(e)
+    }
+    guard self.`arm_pos`.count == 14 else { throw RosError(22) }
+    for e in self.`arm_pos` {
+      try w.float64(e)
+    }
+    guard self.`hand_pos`.count <= 16 else { throw RosError(22) }
+    try w.integer(UInt32(self.`hand_pos`.count))
+    for e in self.`hand_pos` {
+      try w.float64(e)
+    }
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsMsgUpperBodyCommandArray
+  {
+    var v = Ros2Aimdk_msgsMsgUpperBodyCommandArray()
+    v.`header` = try Ros2Aimdk_msgsMsgMessageHeader.read(from: &r)
+    v.`source` = try r.string(bound: 128)
+    v.`hand_sub_mode` = try r.integer(UInt8.self)
+    let count3 = 2
+    v.`head_pos` = []
+    v.`head_pos`.reserveCapacity(count3)
+    for _ in 0..<count3 {
+      v.`head_pos`.append(try r.float64())
+    }
+    let count4 = 14
+    v.`arm_pos` = []
+    v.`arm_pos`.reserveCapacity(count4)
+    for _ in 0..<count4 {
+      v.`arm_pos`.append(try r.float64())
+    }
+    let rawcount5 = try r.integer(UInt32.self)
+    guard rawcount5 <= 16 else { throw RosError(22) }
+    let count5 = Int(rawcount5)
+    v.`hand_pos` = []
+    v.`hand_pos`.reserveCapacity(count5)
+    for _ in 0..<count5 {
+      v.`hand_pos`.append(try r.float64())
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvAbandonAudioFocus_Request: Canonical {
+  public static let maximumWireBytes = 148
+  public static let codecIdentity =
+    "UWVMROS1_c49f508915d7e28b09d6b4e21da757ec4457f96f7bced6861caecf00b5e68ce5"
+  public static let nativeType = "aimdk_msgs/srv/AbandonAudioFocus_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `focus_requester`: Ros2Aimdk_msgsMsgFocusRequester = Ros2Aimdk_msgsMsgFocusRequester()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+    try self.`focus_requester`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvAbandonAudioFocus_Request
+  {
+    var v = Ros2Aimdk_msgsSrvAbandonAudioFocus_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`focus_requester` = try Ros2Aimdk_msgsMsgFocusRequester.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvAbandonAudioFocus_Response: Canonical {
+  public static let maximumWireBytes = 285
+  public static let codecIdentity =
+    "UWVMROS1_6a26581d66d35c5e6d04720935a163a6f527c036cb9c774e130bce242e47f376"
+  public static let nativeType = "aimdk_msgs/srv/AbandonAudioFocus_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `focus_response`: Ros2Aimdk_msgsMsgFocusResponse = Ros2Aimdk_msgsMsgFocusResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+    try self.`focus_response`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvAbandonAudioFocus_Response
+  {
+    var v = Ros2Aimdk_msgsSrvAbandonAudioFocus_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`focus_response` = try Ros2Aimdk_msgsMsgFocusResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvExecuteActionResource_Request: Canonical {
+  public static let maximumWireBytes = 936
+  public static let codecIdentity =
+    "UWVMROS1_4fa82b039bfd5804bf1591c04cf4c874c78a8f2b25d2a39cd55e8ce877f6ce56"
+  public static let nativeType = "aimdk_msgs/srv/ExecuteActionResource_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `resource_key`: String = ""
+  public var `resource_version`: String = ""
+  public var `slaves`: [Ros2Aimdk_msgsMsgSlaveDevice] = []
+  public var `meta`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`resource_key`, bound: 128)
+    try w.string(self.`resource_version`, bound: 128)
+    guard self.`slaves`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`slaves`.count))
+    for e in self.`slaves` {
+      try e.write(to: &w)
+    }
+    try w.string(self.`meta`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvExecuteActionResource_Request
+  {
+    var v = Ros2Aimdk_msgsSrvExecuteActionResource_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`resource_key` = try r.string(bound: 128)
+    v.`resource_version` = try r.string(bound: 128)
+    let rawcount3 = try r.integer(UInt32.self)
+    guard rawcount3 <= 4 else { throw RosError(22) }
+    let count3 = Int(rawcount3)
+    v.`slaves` = []
+    v.`slaves`.reserveCapacity(count3)
+    for _ in 0..<count3 {
+      v.`slaves`.append(try Ros2Aimdk_msgsMsgSlaveDevice.read(from: &r))
+    }
+    v.`meta` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvExecuteActionResource_Response: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_40e147ad6f1534415f232269043f52e6566a1023f728ad31851bbd6aa8651011"
+  public static let nativeType = "aimdk_msgs/srv/ExecuteActionResource_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvExecuteActionResource_Response
+  {
+    var v = Ros2Aimdk_msgsSrvExecuteActionResource_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetAllJointState_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_6ebdd4b2a15c8d5f3089fa93003d73adb818d92b51ecb65ea817b72e0ee90260"
+  public static let nativeType = "aimdk_msgs/srv/GetAllJointState_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetAllJointState_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetAllJointState_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetAllJointState_Response: Canonical {
+  public static let maximumWireBytes = 2696
+  public static let codecIdentity =
+    "UWVMROS1_7b5d2c7e0d8c1f9a7beb98289b933a2f4466c4d08e9340a816e9e65d7a8151f2"
+  public static let nativeType = "aimdk_msgs/srv/GetAllJointState_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `head_joints`: [Ros2Aimdk_msgsMsgJointState] = []
+  public var `arm_joints`: [Ros2Aimdk_msgsMsgJointState] = []
+  public var `waist_joints`: [Ros2Aimdk_msgsMsgJointState] = []
+  public var `leg_joints`: [Ros2Aimdk_msgsMsgJointState] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+    guard self.`head_joints`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`head_joints`.count))
+    for e in self.`head_joints` {
+      try e.write(to: &w)
+    }
+    guard self.`arm_joints`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`arm_joints`.count))
+    for e in self.`arm_joints` {
+      try e.write(to: &w)
+    }
+    guard self.`waist_joints`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`waist_joints`.count))
+    for e in self.`waist_joints` {
+      try e.write(to: &w)
+    }
+    guard self.`leg_joints`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`leg_joints`.count))
+    for e in self.`leg_joints` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetAllJointState_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetAllJointState_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 4 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`head_joints` = []
+    v.`head_joints`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`head_joints`.append(try Ros2Aimdk_msgsMsgJointState.read(from: &r))
+    }
+    let rawcount2 = try r.integer(UInt32.self)
+    guard rawcount2 <= 4 else { throw RosError(22) }
+    let count2 = Int(rawcount2)
+    v.`arm_joints` = []
+    v.`arm_joints`.reserveCapacity(count2)
+    for _ in 0..<count2 {
+      v.`arm_joints`.append(try Ros2Aimdk_msgsMsgJointState.read(from: &r))
+    }
+    let rawcount3 = try r.integer(UInt32.self)
+    guard rawcount3 <= 4 else { throw RosError(22) }
+    let count3 = Int(rawcount3)
+    v.`waist_joints` = []
+    v.`waist_joints`.reserveCapacity(count3)
+    for _ in 0..<count3 {
+      v.`waist_joints`.append(try Ros2Aimdk_msgsMsgJointState.read(from: &r))
+    }
+    let rawcount4 = try r.integer(UInt32.self)
+    guard rawcount4 <= 4 else { throw RosError(22) }
+    let count4 = Int(rawcount4)
+    v.`leg_joints` = []
+    v.`leg_joints`.reserveCapacity(count4)
+    for _ in 0..<count4 {
+      v.`leg_joints`.append(try Ros2Aimdk_msgsMsgJointState.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetCurrentInputSource_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_d5b73ba9bc2ea2f864884a0e278e2a3e327e0af405594a5e7aac7d3884e7143a"
+  public static let nativeType = "aimdk_msgs/srv/GetCurrentInputSource_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetCurrentInputSource_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetCurrentInputSource_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetCurrentInputSource_Response: Canonical {
+  public static let maximumWireBytes = 168
+  public static let codecIdentity =
+    "UWVMROS1_74952e748930b62ef98f8837c39e3925425b6f3a715fadb0d01339104bafbe5e"
+  public static let nativeType = "aimdk_msgs/srv/GetCurrentInputSource_Response"
+  public static let nativeIdentity: String? = nil
+  public var `response`: Ros2Aimdk_msgsMsgCommonTaskResponse = Ros2Aimdk_msgsMsgCommonTaskResponse()
+  public var `input_source`: Ros2Aimdk_msgsMsgMcInputSource = Ros2Aimdk_msgsMsgMcInputSource()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`response`.write(to: &w)
+    try self.`input_source`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetCurrentInputSource_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetCurrentInputSource_Response()
+    v.`response` = try Ros2Aimdk_msgsMsgCommonTaskResponse.read(from: &r)
+    v.`input_source` = try Ros2Aimdk_msgsMsgMcInputSource.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetHandType_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_d286d9ff63fa2191490e6aa526330d2a448b37fc47231d9e42d61a3b4ddca470"
+  public static let nativeType = "aimdk_msgs/srv/GetHandType_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvGetHandType_Request {
+    var v = Ros2Aimdk_msgsSrvGetHandType_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetHandType_Response: Canonical {
+  public static let maximumWireBytes = 154
+  public static let codecIdentity =
+    "UWVMROS1_a4911dedef84b0d6702905f580cf911b4cde7b14b5beac3b516d3faca3b39726"
+  public static let nativeType = "aimdk_msgs/srv/GetHandType_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `left_hands_type`: Ros2Aimdk_msgsMsgHandType = Ros2Aimdk_msgsMsgHandType()
+  public var `right_hands_type`: Ros2Aimdk_msgsMsgHandType = Ros2Aimdk_msgsMsgHandType()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+    try self.`left_hands_type`.write(to: &w)
+    try self.`right_hands_type`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvGetHandType_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetHandType_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`left_hands_type` = try Ros2Aimdk_msgsMsgHandType.read(from: &r)
+    v.`right_hands_type` = try Ros2Aimdk_msgsMsgHandType.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetHdsEventHistory_Request: Canonical {
+  public static let maximumWireBytes = 4398
+  public static let codecIdentity =
+    "UWVMROS1_9a2916041770f7392e93bdb21736c5b3b218cbbd65b9533451db64efc670e7da"
+  public static let nativeType = "aimdk_msgs/srv/GetHdsEventHistory_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgRequestHeader = Ros2Aimdk_msgsMsgRequestHeader()
+  public var `query`: Ros2Aimdk_msgsMsgHdsEventQuery = Ros2Aimdk_msgsMsgHdsEventQuery()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`query`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetHdsEventHistory_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetHdsEventHistory_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgRequestHeader.read(from: &r)
+    v.`query` = try Ros2Aimdk_msgsMsgHdsEventQuery.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetHdsEventHistory_Response: Canonical {
+  public static let maximumWireBytes = 1277
+  public static let codecIdentity =
+    "UWVMROS1_ce2d51d64e2f318ef7e8cfb294969e3e9267f9355780fd3a45acc7a001783bea"
+  public static let nativeType = "aimdk_msgs/srv/GetHdsEventHistory_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgResponseHeader = Ros2Aimdk_msgsMsgResponseHeader()
+  public var `records`: [Ros2Aimdk_msgsMsgHdsEventRecord] = []
+  public var `total_count`: UInt32 = 0
+  public var `has_more`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`records`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`records`.count))
+    for e in self.`records` {
+      try e.write(to: &w)
+    }
+    try w.integer(self.`total_count`)
+    try w.boolean(self.`has_more`)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetHdsEventHistory_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetHdsEventHistory_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgResponseHeader.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 4 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`records` = []
+    v.`records`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`records`.append(try Ros2Aimdk_msgsMsgHdsEventRecord.read(from: &r))
+    }
+    v.`total_count` = try r.integer(UInt32.self)
+    v.`has_more` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMcAction_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_f6dc5b72271fc51bfb1950b67d671619b65dfabc7931e12889a237fe47d18cfe"
+  public static let nativeType = "aimdk_msgs/srv/GetMcAction_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvGetMcAction_Request {
+    var v = Ros2Aimdk_msgsSrvGetMcAction_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMcAction_Response: Canonical {
+  public static let maximumWireBytes = 156
+  public static let codecIdentity =
+    "UWVMROS1_e2518bce930bc6f8e195b638d9eb5c132dffa93449c94b6f044e6192843df18f"
+  public static let nativeType = "aimdk_msgs/srv/GetMcAction_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgResponseHeader = Ros2Aimdk_msgsMsgResponseHeader()
+  public var `info`: Ros2Aimdk_msgsMsgMcActionInfo = Ros2Aimdk_msgsMsgMcActionInfo()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`info`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvGetMcAction_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetMcAction_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgResponseHeader.read(from: &r)
+    v.`info` = try Ros2Aimdk_msgsMsgMcActionInfo.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMcLocomotionSpeedStatus_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_3ba1d0408e9a60f37a17a790d89bb7f7da0ba8618fc5da56a8d92122989a8b3b"
+  public static let nativeType = "aimdk_msgs/srv/GetMcLocomotionSpeedStatus_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetMcLocomotionSpeedStatus_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetMcLocomotionSpeedStatus_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMcLocomotionSpeedStatus_Response: Canonical {
+  public static let maximumWireBytes = 328
+  public static let codecIdentity =
+    "UWVMROS1_6b27a64e371638dc12d2a469f6dbac32d09d2ecd9d5348b96782d94204056d54"
+  public static let nativeType = "aimdk_msgs/srv/GetMcLocomotionSpeedStatus_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgResponseHeader = Ros2Aimdk_msgsMsgResponseHeader()
+  public var `current_speed_status`: Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus()
+  public var `none_speed_status`: Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus()
+  public var `low_speed_status`: Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus()
+  public var `medium_speed_status`: Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus()
+  public var `high_speed_status`: Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus()
+  public var `step_speed_status`: Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus =
+    Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`current_speed_status`.write(to: &w)
+    try self.`none_speed_status`.write(to: &w)
+    try self.`low_speed_status`.write(to: &w)
+    try self.`medium_speed_status`.write(to: &w)
+    try self.`high_speed_status`.write(to: &w)
+    try self.`step_speed_status`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetMcLocomotionSpeedStatus_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetMcLocomotionSpeedStatus_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgResponseHeader.read(from: &r)
+    v.`current_speed_status` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus.read(from: &r)
+    v.`none_speed_status` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus.read(from: &r)
+    v.`low_speed_status` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus.read(from: &r)
+    v.`medium_speed_status` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus.read(from: &r)
+    v.`high_speed_status` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus.read(from: &r)
+    v.`step_speed_status` = try Ros2Aimdk_msgsMsgMcLocomotionSpeedStatus.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMcPresetMotionState_Request: Canonical {
+  public static let maximumWireBytes = 16
+  public static let codecIdentity =
+    "UWVMROS1_7faee35b0b5a2494d668743b5f21e59bb167c553c5f4b61be97eabb8f044e095"
+  public static let nativeType = "aimdk_msgs/srv/GetMcPresetMotionState_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonTaskRequest = Ros2Aimdk_msgsMsgCommonTaskRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetMcPresetMotionState_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetMcPresetMotionState_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonTaskRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMcPresetMotionState_Response: Canonical {
+  public static let maximumWireBytes = 28
+  public static let codecIdentity =
+    "UWVMROS1_490aef5363792dc0f0148fe1fbb3e6036238341c41de104445d9d35191e76e30"
+  public static let nativeType = "aimdk_msgs/srv/GetMcPresetMotionState_Response"
+  public static let nativeIdentity: String? = nil
+  public var `response`: Ros2Aimdk_msgsMsgCommonTaskResponse = Ros2Aimdk_msgsMsgCommonTaskResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`response`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetMcPresetMotionState_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetMcPresetMotionState_Response()
+    v.`response` = try Ros2Aimdk_msgsMsgCommonTaskResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMicSourceRequest_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_da81fa95ff0da422aaabb2412f11371452bac4c9b658682884b91fece94171cc"
+  public static let nativeType = "aimdk_msgs/srv/GetMicSourceRequest_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetMicSourceRequest_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetMicSourceRequest_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMicSourceRequest_Response: Canonical {
+  public static let maximumWireBytes = 156
+  public static let codecIdentity =
+    "UWVMROS1_86637a091357add483c69aa331eb4305632f3701ff9d77dc8e00e8bc19b6f1f6"
+  public static let nativeType = "aimdk_msgs/srv/GetMicSourceRequest_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `mic_source`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`mic_source`)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetMicSourceRequest_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetMicSourceRequest_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`mic_source` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMute_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_0f3d2a1679b2af2dca96bcdba69e8f076e9a333d4166a53501de40594c723ca5"
+  public static let nativeType = "aimdk_msgs/srv/GetMute_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvGetMute_Request {
+    var v = Ros2Aimdk_msgsSrvGetMute_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetMute_Response: Canonical {
+  public static let maximumWireBytes = 153
+  public static let codecIdentity =
+    "UWVMROS1_c1beb5c0c269083a0be2c3a4718043ec92639b6ac58cf1d74bae051bec2d8a42"
+  public static let nativeType = "aimdk_msgs/srv/GetMute_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `is_mute`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+    try w.boolean(self.`is_mute`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvGetMute_Response {
+    var v = Ros2Aimdk_msgsSrvGetMute_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`is_mute` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetRobotResources_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_0d086d105a54d7feea306182350c962ecebe145b8f9c45ca1216a88e6aaec86b"
+  public static let nativeType = "aimdk_msgs/srv/GetRobotResources_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetRobotResources_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetRobotResources_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetRobotResources_Response: Canonical {
+  public static let maximumWireBytes = 10236
+  public static let codecIdentity =
+    "UWVMROS1_ec4e3d0e6c502b60e70a3ba18f41d885e108fd4fe530ef2a9136ca0b32edda91"
+  public static let nativeType = "aimdk_msgs/srv/GetRobotResources_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `robot_resources`: [Ros2Aimdk_msgsMsgRobotResource] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`robot_resources`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`robot_resources`.count))
+    for e in self.`robot_resources` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetRobotResources_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetRobotResources_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 4 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`robot_resources` = []
+    v.`robot_resources`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`robot_resources`.append(try Ros2Aimdk_msgsMsgRobotResource.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetStoredMapByName_Request: Canonical {
+  public static let maximumWireBytes = 272
+  public static let codecIdentity =
+    "UWVMROS1_4c33fbe7dbfe4cb2c06345046eb36d470530ff775ae5eee9b89f69fa5ec2fbc3"
+  public static let nativeType = "aimdk_msgs/srv/GetStoredMapByName_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Std_msgsMsgHeader = Ros2Std_msgsMsgHeader()
+  public var `map_name`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`map_name`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetStoredMapByName_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetStoredMapByName_Request()
+    v.`header` = try Ros2Std_msgsMsgHeader.read(from: &r)
+    v.`map_name` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Nav_msgsMsgMapMetaData: Canonical {
+  public static let maximumWireBytes = 76
+  public static let codecIdentity =
+    "UWVMROS1_494874ea5dbbb03876e0405f6d06b5d7cc5b1727e61dcb8ff9e449735b800009"
+  public static let nativeType = "nav_msgs/msg/MapMetaData"
+  public static let nativeIdentity: String? = nil
+  public var `map_load_time`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public var `resolution`: Float = 0
+  public var `width`: UInt32 = 0
+  public var `height`: UInt32 = 0
+  public var `origin`: Ros2Geometry_msgsMsgPose = Ros2Geometry_msgsMsgPose()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`map_load_time`.write(to: &w)
+    try w.float32(self.`resolution`)
+    try w.integer(self.`width`)
+    try w.integer(self.`height`)
+    try self.`origin`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Nav_msgsMsgMapMetaData {
+    var v = Ros2Nav_msgsMsgMapMetaData()
+    v.`map_load_time` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    v.`resolution` = try r.float32()
+    v.`width` = try r.integer(UInt32.self)
+    v.`height` = try r.integer(UInt32.self)
+    v.`origin` = try Ros2Geometry_msgsMsgPose.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetStoredMapByName_Response: Canonical {
+  public static let maximumWireBytes = 3400
+  public static let codecIdentity =
+    "UWVMROS1_66ba1fb25a02dc55b4c5f46bdb5e090d134ea5fa9ff2a47f4934b0af382c61fb"
+  public static let nativeType = "aimdk_msgs/srv/GetStoredMapByName_Response"
+  public static let nativeIdentity: String? = nil
+  public var `code`: UInt64 = 0
+  public var `header`: Ros2Std_msgsMsgHeader = Ros2Std_msgsMsgHeader()
+  public var `map_info`: Ros2Nav_msgsMsgMapMetaData = Ros2Nav_msgsMsgMapMetaData()
+  public var `map_version`: UInt64 = 0
+  public var `map_path`: String = ""
+  public var `data`: [Int8] = []
+  public var `navi_points`: [Ros2Aimdk_msgsMsgNaviPoint] = []
+  public var `qr_points`: [Ros2Aimdk_msgsMsgQRPoint] = []
+  public var `hr_points`: [Ros2Aimdk_msgsMsgHRPoint] = []
+  public var `paths`: [Ros2Aimdk_msgsMsgPath] = []
+  public var `regions`: [Ros2Aimdk_msgsMsgRegion] = []
+  public var `map_id`: UInt64 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try w.integer(self.`code`)
+    try self.`header`.write(to: &w)
+    try self.`map_info`.write(to: &w)
+    try w.integer(self.`map_version`)
+    try w.string(self.`map_path`, bound: 128)
+    guard self.`data`.count <= 256 else { throw RosError(22) }
+    try w.integer(UInt32(self.`data`.count))
+    for e in self.`data` {
+      try w.integer(e)
+    }
+    guard self.`navi_points`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`navi_points`.count))
+    for e in self.`navi_points` {
+      try e.write(to: &w)
+    }
+    guard self.`qr_points`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`qr_points`.count))
+    for e in self.`qr_points` {
+      try e.write(to: &w)
+    }
+    guard self.`hr_points`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`hr_points`.count))
+    for e in self.`hr_points` {
+      try e.write(to: &w)
+    }
+    guard self.`paths`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`paths`.count))
+    for e in self.`paths` {
+      try e.write(to: &w)
+    }
+    guard self.`regions`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`regions`.count))
+    for e in self.`regions` {
+      try e.write(to: &w)
+    }
+    try w.integer(self.`map_id`)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetStoredMapByName_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetStoredMapByName_Response()
+    v.`code` = try r.integer(UInt64.self)
+    v.`header` = try Ros2Std_msgsMsgHeader.read(from: &r)
+    v.`map_info` = try Ros2Nav_msgsMsgMapMetaData.read(from: &r)
+    v.`map_version` = try r.integer(UInt64.self)
+    v.`map_path` = try r.string(bound: 128)
+    let rawcount5 = try r.integer(UInt32.self)
+    guard rawcount5 <= 256 else { throw RosError(22) }
+    let count5 = Int(rawcount5)
+    v.`data` = []
+    v.`data`.reserveCapacity(count5)
+    for _ in 0..<count5 {
+      v.`data`.append(try r.integer(Int8.self))
+    }
+    let rawcount6 = try r.integer(UInt32.self)
+    guard rawcount6 <= 4 else { throw RosError(22) }
+    let count6 = Int(rawcount6)
+    v.`navi_points` = []
+    v.`navi_points`.reserveCapacity(count6)
+    for _ in 0..<count6 {
+      v.`navi_points`.append(try Ros2Aimdk_msgsMsgNaviPoint.read(from: &r))
+    }
+    let rawcount7 = try r.integer(UInt32.self)
+    guard rawcount7 <= 4 else { throw RosError(22) }
+    let count7 = Int(rawcount7)
+    v.`qr_points` = []
+    v.`qr_points`.reserveCapacity(count7)
+    for _ in 0..<count7 {
+      v.`qr_points`.append(try Ros2Aimdk_msgsMsgQRPoint.read(from: &r))
+    }
+    let rawcount8 = try r.integer(UInt32.self)
+    guard rawcount8 <= 4 else { throw RosError(22) }
+    let count8 = Int(rawcount8)
+    v.`hr_points` = []
+    v.`hr_points`.reserveCapacity(count8)
+    for _ in 0..<count8 {
+      v.`hr_points`.append(try Ros2Aimdk_msgsMsgHRPoint.read(from: &r))
+    }
+    let rawcount9 = try r.integer(UInt32.self)
+    guard rawcount9 <= 4 else { throw RosError(22) }
+    let count9 = Int(rawcount9)
+    v.`paths` = []
+    v.`paths`.reserveCapacity(count9)
+    for _ in 0..<count9 {
+      v.`paths`.append(try Ros2Aimdk_msgsMsgPath.read(from: &r))
+    }
+    let rawcount10 = try r.integer(UInt32.self)
+    guard rawcount10 <= 4 else { throw RosError(22) }
+    let count10 = Int(rawcount10)
+    v.`regions` = []
+    v.`regions`.reserveCapacity(count10)
+    for _ in 0..<count10 {
+      v.`regions`.append(try Ros2Aimdk_msgsMsgRegion.read(from: &r))
+    }
+    v.`map_id` = try r.integer(UInt64.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetSystemState_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_abc62c31fea241d08d99a5a726199b29b995c0cadb688e5aa480ab70d173bf1f"
+  public static let nativeType = "aimdk_msgs/srv/GetSystemState_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetSystemState_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGetSystemState_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetSystemState_Response: Canonical {
+  public static let maximumWireBytes = 285
+  public static let codecIdentity =
+    "UWVMROS1_8ea41f1383183b566d3c4457bee27191c9ac986a7c42e0b98aab05ab500c9039"
+  public static let nativeType = "aimdk_msgs/srv/GetSystemState_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `cur_state`: String = ""
+  public var `curr_status`: Ros2Aimdk_msgsMsgSystemStatus = Ros2Aimdk_msgsMsgSystemStatus()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`cur_state`, bound: 128)
+    try self.`curr_status`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGetSystemState_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGetSystemState_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`cur_state` = try r.string(bound: 128)
+    v.`curr_status` = try Ros2Aimdk_msgsMsgSystemStatus.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetVolume_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_6e0d1472098c746f350535d30a3281758480e8e7c7b8ef54485310dae16dfc2b"
+  public static let nativeType = "aimdk_msgs/srv/GetVolume_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvGetVolume_Request {
+    var v = Ros2Aimdk_msgsSrvGetVolume_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGetVolume_Response: Canonical {
+  public static let maximumWireBytes = 156
+  public static let codecIdentity =
+    "UWVMROS1_24a04a12d640be4e17e24d372b0bbb2f65a89bd56e4ee1448e252db2c833c266"
+  public static let nativeType = "aimdk_msgs/srv/GetVolume_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `audio_volume`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+    try w.integer(self.`audio_volume`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvGetVolume_Response {
+    var v = Ros2Aimdk_msgsSrvGetVolume_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`audio_volume` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGroupControlTimeSync_Request: Canonical {
+  public static let maximumWireBytes = 540
+  public static let codecIdentity =
+    "UWVMROS1_00f371868d2cf78c68a9824a418f7e3376c959b1f600ee1906b75ea7c6eafedd"
+  public static let nativeType = "aimdk_msgs/srv/GroupControlTimeSync_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `slaves`: [Ros2Aimdk_msgsMsgSlaveDevice] = []
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`slaves`.count <= 4 else { throw RosError(22) }
+    try w.integer(UInt32(self.`slaves`.count))
+    for e in self.`slaves` {
+      try e.write(to: &w)
+    }
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGroupControlTimeSync_Request
+  {
+    var v = Ros2Aimdk_msgsSrvGroupControlTimeSync_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 4 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`slaves` = []
+    v.`slaves`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`slaves`.append(try Ros2Aimdk_msgsMsgSlaveDevice.read(from: &r))
+    }
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvGroupControlTimeSync_Response: Canonical {
+  public static let maximumWireBytes = 288
+  public static let codecIdentity =
+    "UWVMROS1_16bf8f1d44dcecd1263dcd1b48385fe079fa29893a03e5778797d24e361695ec"
+  public static let nativeType = "aimdk_msgs/srv/GroupControlTimeSync_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `error_code`: Int32 = 0
+  public var `error_msg`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`error_code`)
+    try w.string(self.`error_msg`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvGroupControlTimeSync_Response
+  {
+    var v = Ros2Aimdk_msgsSrvGroupControlTimeSync_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`error_code` = try r.integer(Int32.self)
+    v.`error_msg` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvMigrateSystemState_Request: Canonical {
+  public static let maximumWireBytes = 140
+  public static let codecIdentity =
+    "UWVMROS1_02131f85cee3462c507bef0c8f54e75adbb1c8318551cfaef8efc59d693a415b"
+  public static let nativeType = "aimdk_msgs/srv/MigrateSystemState_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `state`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`state`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvMigrateSystemState_Request
+  {
+    var v = Ros2Aimdk_msgsSrvMigrateSystemState_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`state` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvMigrateSystemState_Response: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_7d4901fe8d9ab86c9f42b643604809a73e07ea77877b955764b4311d6f585802"
+  public static let nativeType = "aimdk_msgs/srv/MigrateSystemState_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvMigrateSystemState_Response
+  {
+    var v = Ros2Aimdk_msgsSrvMigrateSystemState_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayAudioFile_Request: Canonical {
+  public static let maximumWireBytes = 693
+  public static let codecIdentity =
+    "UWVMROS1_710a4db7c9c3792601fd958615acbd3e413ed1b1ca98aec0a7b04aff79c59cb1"
+  public static let nativeType = "aimdk_msgs/srv/PlayAudioFile_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `file`: Ros2Aimdk_msgsMsgAudioFile = Ros2Aimdk_msgsMsgAudioFile()
+  public var `play_stamps`: Ros2Builtin_interfacesMsgTime = Ros2Builtin_interfacesMsgTime()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+    try self.`file`.write(to: &w)
+    try self.`play_stamps`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvPlayAudioFile_Request
+  {
+    var v = Ros2Aimdk_msgsSrvPlayAudioFile_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`file` = try Ros2Aimdk_msgsMsgAudioFile.read(from: &r)
+    v.`play_stamps` = try Ros2Builtin_interfacesMsgTime.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayAudioFile_Response: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_988d360e84f041bc5a53a6d085709ba31e7e3836115e40d890534f44e62b0b85"
+  public static let nativeType = "aimdk_msgs/srv/PlayAudioFile_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvPlayAudioFile_Response
+  {
+    var v = Ros2Aimdk_msgsSrvPlayAudioFile_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayEmoji_Request: Canonical {
+  public static let maximumWireBytes = 14
+  public static let codecIdentity =
+    "UWVMROS1_ba31bdc232369e170ee9fb00ac8e51639d81a657de8f6e61f9acfccc2a083d43"
+  public static let nativeType = "aimdk_msgs/srv/PlayEmoji_Request"
+  public static let nativeIdentity: String? = nil
+  public static let `EMOTION_UNKNOWN`: UInt8 = 0
+  public static let `EMOTION_IDLE_BLINK`: UInt8 = 1
+  public static let `EMOTION_IDLE_CALM_1`: UInt8 = 10
+  public static let `EMOTION_IDLE_CALM_2`: UInt8 = 11
+  public static let `EMOTION_IDLE_GAME`: UInt8 = 20
+  public static let `EMOTION_IDLE_CUTE_1`: UInt8 = 30
+  public static let `EMOTION_IDLE_CUTE_2`: UInt8 = 31
+  public static let `EMOTION_IDLE_CUTE_3`: UInt8 = 32
+  public static let `EMOTION_IDLE_CUTE_4`: UInt8 = 33
+  public static let `EMOTION_EYE_CLOSE`: UInt8 = 40
+  public static let `EMOTION_EYE_OPEN`: UInt8 = 50
+  public static let `EMOTION_EYE_BORING_1`: UInt8 = 60
+  public static let `EMOTION_EYE_ABNORMAL`: UInt8 = 70
+  public static let `EMOTION_EYE_SLEEPY`: UInt8 = 80
+  public static let `EMOTION_EYE_HAPPY`: UInt8 = 90
+  public static let `EMOTION_EYE_EXTREMEHAPPY_1`: UInt8 = 100
+  public static let `EMOTION_EYE_EXTREMEHAPPY_2`: UInt8 = 101
+  public static let `EMOTION_EYE_SAD`: UInt8 = 110
+  public static let `EMOTION_EYE_SYMPATHY`: UInt8 = 120
+  public static let `EMOTION_EYE_CONFUSE`: UInt8 = 130
+  public static let `EMOTION_EYE_SHOCK`: UInt8 = 140
+  public static let `EMOTION_EYE_ACTCUTE`: UInt8 = 150
+  public static let `EMOTION_EYE_SERIOUS`: UInt8 = 160
+  public static let `EMOTION_EYE_THINKING`: UInt8 = 170
+  public static let `EMOTION_EYE_ANGRY`: UInt8 = 180
+  public static let `EMOTION_EYE_EXTREMEANGRY`: UInt8 = 190
+  public static let `EMOTION_EYE_ADORE`: UInt8 = 200
+  public static let `EMOTION_EYE_EXTREMEADORE`: UInt8 = 210
+  public static let `EMOTION_EYE_CHARGE`: UInt8 = 220
+  public static let `EMOTION_MODE_ONCE`: UInt8 = 1
+  public static let `EMOTION_MODE_LOOP`: UInt8 = 2
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `emotion_id`: UInt8 = 0
+  public var `mode`: UInt8 = 0
+  public var `priority`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`emotion_id`)
+    try w.integer(self.`mode`)
+    try w.integer(self.`priority`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvPlayEmoji_Request {
+    var v = Ros2Aimdk_msgsSrvPlayEmoji_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`emotion_id` = try r.integer(UInt8.self)
+    v.`mode` = try r.integer(UInt8.self)
+    v.`priority` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayEmoji_Response: Canonical {
+  public static let maximumWireBytes = 285
+  public static let codecIdentity =
+    "UWVMROS1_5e5ba0082cf9bf5d9b9c7eae034efd76bd44503306bb4994e06862a802cfb6b9"
+  public static let nativeType = "aimdk_msgs/srv/PlayEmoji_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `success`: Bool = false
+  public var `message`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.boolean(self.`success`)
+    try w.string(self.`message`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvPlayEmoji_Response {
+    var v = Ros2Aimdk_msgsSrvPlayEmoji_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`success` = try r.boolean()
+    v.`message` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayEmojiGroup_Request: Canonical {
+  public static let maximumWireBytes = 273
+  public static let codecIdentity =
+    "UWVMROS1_c696b5327d31945737301b57784797762832e143c4ccb89fba9228bc47402223"
+  public static let nativeType = "aimdk_msgs/srv/PlayEmojiGroup_Request"
+  public static let nativeIdentity: String? = nil
+  public static let `EMOTION_UNKNOWN`: UInt8 = 0
+  public static let `EMOTION_IDLE_BLINK`: UInt8 = 1
+  public static let `EMOTION_IDLE_CALM_1`: UInt8 = 10
+  public static let `EMOTION_IDLE_CALM_2`: UInt8 = 11
+  public static let `EMOTION_IDLE_GAME`: UInt8 = 20
+  public static let `EMOTION_IDLE_CUTE_1`: UInt8 = 30
+  public static let `EMOTION_IDLE_CUTE_2`: UInt8 = 31
+  public static let `EMOTION_IDLE_CUTE_3`: UInt8 = 32
+  public static let `EMOTION_IDLE_CUTE_4`: UInt8 = 33
+  public static let `EMOTION_EYE_CLOSE`: UInt8 = 40
+  public static let `EMOTION_EYE_OPEN`: UInt8 = 50
+  public static let `EMOTION_EYE_BORING_1`: UInt8 = 60
+  public static let `EMOTION_EYE_ABNORMAL`: UInt8 = 70
+  public static let `EMOTION_EYE_SLEEPY`: UInt8 = 80
+  public static let `EMOTION_EYE_HAPPY`: UInt8 = 90
+  public static let `EMOTION_EYE_EXTREMEHAPPY_1`: UInt8 = 100
+  public static let `EMOTION_EYE_EXTREMEHAPPY_2`: UInt8 = 101
+  public static let `EMOTION_EYE_SAD`: UInt8 = 110
+  public static let `EMOTION_EYE_SYMPATHY`: UInt8 = 120
+  public static let `EMOTION_EYE_CONFUSE`: UInt8 = 130
+  public static let `EMOTION_EYE_SHOCK`: UInt8 = 140
+  public static let `EMOTION_EYE_ACTCUTE`: UInt8 = 150
+  public static let `EMOTION_EYE_SERIOUS`: UInt8 = 160
+  public static let `EMOTION_EYE_THINKING`: UInt8 = 170
+  public static let `EMOTION_EYE_ANGRY`: UInt8 = 180
+  public static let `EMOTION_EYE_EXTREMEANGRY`: UInt8 = 190
+  public static let `EMOTION_EYE_ADORE`: UInt8 = 200
+  public static let `EMOTION_EYE_EXTREMEADORE`: UInt8 = 210
+  public static let `EMOTION_EYE_CHARGE`: UInt8 = 220
+  public static let `EMOTION_MODE_ONCE`: UInt8 = 1
+  public static let `EMOTION_MODE_LOOP`: UInt8 = 2
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `emotion_ids`: [UInt8] = []
+  public var `mode`: UInt8 = 0
+  public var `priority`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`emotion_ids`.count <= 256 else { throw RosError(22) }
+    try w.integer(UInt32(self.`emotion_ids`.count))
+    for e in self.`emotion_ids` {
+      try w.integer(e)
+    }
+    try w.integer(self.`mode`)
+    try w.integer(self.`priority`)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvPlayEmojiGroup_Request
+  {
+    var v = Ros2Aimdk_msgsSrvPlayEmojiGroup_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 256 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`emotion_ids` = []
+    v.`emotion_ids`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`emotion_ids`.append(try r.integer(UInt8.self))
+    }
+    v.`mode` = try r.integer(UInt8.self)
+    v.`priority` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayEmojiGroup_Response: Canonical {
+  public static let maximumWireBytes = 285
+  public static let codecIdentity =
+    "UWVMROS1_e12fb46d3a4912ee89cedafc27fffd1b984d68407e3ae45aef0f8c1e47a4d94d"
+  public static let nativeType = "aimdk_msgs/srv/PlayEmojiGroup_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `success`: Bool = false
+  public var `message`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.boolean(self.`success`)
+    try w.string(self.`message`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvPlayEmojiGroup_Response
+  {
+    var v = Ros2Aimdk_msgsSrvPlayEmojiGroup_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`success` = try r.boolean()
+    v.`message` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayTts_Request: Canonical {
+  public static let maximumWireBytes = 410
+  public static let codecIdentity =
+    "UWVMROS1_33f223039d43b52c64efebade4db48eb23c734f57094ed9f354a624927326989"
+  public static let nativeType = "aimdk_msgs/srv/PlayTts_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `tts_req`: Ros2Aimdk_msgsMsgPlayTtsRequest = Ros2Aimdk_msgsMsgPlayTtsRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`tts_req`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvPlayTts_Request {
+    var v = Ros2Aimdk_msgsSrvPlayTts_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`tts_req` = try Ros2Aimdk_msgsMsgPlayTtsRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayTts_Response: Canonical {
+  public static let maximumWireBytes = 691
+  public static let codecIdentity =
+    "UWVMROS1_1d77e2009a7a486e392cec8aa4a045257140839b22ba4001c1c06d0deffab57d"
+  public static let nativeType = "aimdk_msgs/srv/PlayTts_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `tts_resp`: Ros2Aimdk_msgsMsgPlayTtsResponse = Ros2Aimdk_msgsMsgPlayTtsResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`tts_resp`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvPlayTts_Response {
+    var v = Ros2Aimdk_msgsSrvPlayTts_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`tts_resp` = try Ros2Aimdk_msgsMsgPlayTtsResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayVideo_Request: Canonical {
+  public static let maximumWireBytes = 145
+  public static let codecIdentity =
+    "UWVMROS1_a42348160bfed67c90f9ddc96beaca7b37e6099ba67c8c025d6ac0f95e6bc878"
+  public static let nativeType = "aimdk_msgs/srv/PlayVideo_Request"
+  public static let nativeIdentity: String? = nil
+  public static let `EMOTION_MODE_ONCE`: UInt8 = 1
+  public static let `EMOTION_MODE_LOOP`: UInt8 = 2
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `video_path`: String = ""
+  public var `mode`: UInt8 = 0
+  public var `priority`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`video_path`, bound: 128)
+    try w.integer(self.`mode`)
+    try w.integer(self.`priority`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvPlayVideo_Request {
+    var v = Ros2Aimdk_msgsSrvPlayVideo_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`video_path` = try r.string(bound: 128)
+    v.`mode` = try r.integer(UInt8.self)
+    v.`priority` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayVideo_Response: Canonical {
+  public static let maximumWireBytes = 285
+  public static let codecIdentity =
+    "UWVMROS1_f714873f193ca3ee0d02c822dbc3262033a2fe7913748ba177136a24d5b7f627"
+  public static let nativeType = "aimdk_msgs/srv/PlayVideo_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `success`: Bool = false
+  public var `message`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.boolean(self.`success`)
+    try w.string(self.`message`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvPlayVideo_Response {
+    var v = Ros2Aimdk_msgsSrvPlayVideo_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`success` = try r.boolean()
+    v.`message` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayVideoGroup_Request: Canonical {
+  public static let maximumWireBytes = 2129
+  public static let codecIdentity =
+    "UWVMROS1_3c55649a41758dca0eeb22b090ae63a38bb4720d6b55342ac5204ec1a3696473"
+  public static let nativeType = "aimdk_msgs/srv/PlayVideoGroup_Request"
+  public static let nativeIdentity: String? = nil
+  public static let `EMOTION_MODE_ONCE`: UInt8 = 1
+  public static let `EMOTION_MODE_LOOP`: UInt8 = 2
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `video_path_list`: [String] = []
+  public var `mode`: UInt8 = 0
+  public var `priority`: Int32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    guard self.`video_path_list`.count <= 16 else { throw RosError(22) }
+    try w.integer(UInt32(self.`video_path_list`.count))
+    for e in self.`video_path_list` {
+      try w.string(e, bound: 128)
+    }
+    try w.integer(self.`mode`)
+    try w.integer(self.`priority`)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvPlayVideoGroup_Request
+  {
+    var v = Ros2Aimdk_msgsSrvPlayVideoGroup_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    let rawcount1 = try r.integer(UInt32.self)
+    guard rawcount1 <= 16 else { throw RosError(22) }
+    let count1 = Int(rawcount1)
+    v.`video_path_list` = []
+    v.`video_path_list`.reserveCapacity(count1)
+    for _ in 0..<count1 {
+      v.`video_path_list`.append(try r.string(bound: 128))
+    }
+    v.`mode` = try r.integer(UInt8.self)
+    v.`priority` = try r.integer(Int32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvPlayVideoGroup_Response: Canonical {
+  public static let maximumWireBytes = 285
+  public static let codecIdentity =
+    "UWVMROS1_eb57edaed02ddee9424ba10f7c783e9e6147fa0990043059f2b4102d0d0a5a19"
+  public static let nativeType = "aimdk_msgs/srv/PlayVideoGroup_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `success`: Bool = false
+  public var `message`: String = ""
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.boolean(self.`success`)
+    try w.string(self.`message`, bound: 128)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvPlayVideoGroup_Response
+  {
+    var v = Ros2Aimdk_msgsSrvPlayVideoGroup_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`success` = try r.boolean()
+    v.`message` = try r.string(bound: 128)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvRequestAudioFocus_Request: Canonical {
+  public static let maximumWireBytes = 148
+  public static let codecIdentity =
+    "UWVMROS1_b6354e6109618f66c9c52fc67351c687e60ad1bf5f4b77a8e326755deca7ae8a"
+  public static let nativeType = "aimdk_msgs/srv/RequestAudioFocus_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `focus_requester`: Ros2Aimdk_msgsMsgFocusRequester = Ros2Aimdk_msgsMsgFocusRequester()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+    try self.`focus_requester`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvRequestAudioFocus_Request
+  {
+    var v = Ros2Aimdk_msgsSrvRequestAudioFocus_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`focus_requester` = try Ros2Aimdk_msgsMsgFocusRequester.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvRequestAudioFocus_Response: Canonical {
+  public static let maximumWireBytes = 285
+  public static let codecIdentity =
+    "UWVMROS1_41f9d4bcd2021b66e092897b1c587be4359d28b9bac69ea4058d429c5cf88180"
+  public static let nativeType = "aimdk_msgs/srv/RequestAudioFocus_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `focus_response`: Ros2Aimdk_msgsMsgFocusResponse = Ros2Aimdk_msgsMsgFocusResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+    try self.`focus_response`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvRequestAudioFocus_Response
+  {
+    var v = Ros2Aimdk_msgsSrvRequestAudioFocus_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`focus_response` = try Ros2Aimdk_msgsMsgFocusResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Request: Canonical {
+  public static let maximumWireBytes = 544
+  public static let codecIdentity =
+    "UWVMROS1_b05248c104afdd5331b9afb7a029923b03d3a984ba53633b0e42a70395f96fb8"
+  public static let nativeType = "aimdk_msgs/srv/SetAgentPropertiesRequest_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `contents`: Ros2Aimdk_msgsMsgAgentProperties = Ros2Aimdk_msgsMsgAgentProperties()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`contents`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Request
+  {
+    var v = Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`contents` = try Ros2Aimdk_msgsMsgAgentProperties.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Response: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_193eace6181c5da860dd9fa0d274415bdcb2246f7054acece8ae925414b0a81b"
+  public static let nativeType = "aimdk_msgs/srv/SetAgentPropertiesRequest_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Response
+  {
+    var v = Ros2Aimdk_msgsSrvSetAgentPropertiesRequest_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMcAction_Request: Canonical {
+  public static let maximumWireBytes = 276
+  public static let codecIdentity =
+    "UWVMROS1_ba4bc79d2f30a969feb655cc441955119aee8c5d0dc56be32639c9c3e682e246"
+  public static let nativeType = "aimdk_msgs/srv/SetMcAction_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgRequestHeader = Ros2Aimdk_msgsMsgRequestHeader()
+  public var `source`: String = ""
+  public var `command`: Ros2Aimdk_msgsMsgMcActionCommand = Ros2Aimdk_msgsMsgMcActionCommand()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.string(self.`source`, bound: 128)
+    try self.`command`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvSetMcAction_Request {
+    var v = Ros2Aimdk_msgsSrvSetMcAction_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgRequestHeader.read(from: &r)
+    v.`source` = try r.string(bound: 128)
+    v.`command` = try Ros2Aimdk_msgsMsgMcActionCommand.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMcAction_Response: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_64c336314ea7d3635494d1e3f9da9b23442653033e3ddfb0936440520141d24f"
+  public static let nativeType = "aimdk_msgs/srv/SetMcAction_Response"
+  public static let nativeIdentity: String? = nil
+  public var `response`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`response`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvSetMcAction_Response
+  {
+    var v = Ros2Aimdk_msgsSrvSetMcAction_Response()
+    v.`response` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMcInputSource_Request: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_853ae368291aa7e14c665d3d47caad66ba626c086ad759180c31223a9785b021"
+  public static let nativeType = "aimdk_msgs/srv/SetMcInputSource_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `action`: Ros2Aimdk_msgsMsgMcInputAction = Ros2Aimdk_msgsMsgMcInputAction()
+  public var `input_source`: Ros2Aimdk_msgsMsgMcInputSource = Ros2Aimdk_msgsMsgMcInputSource()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+    try self.`action`.write(to: &w)
+    try self.`input_source`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvSetMcInputSource_Request
+  {
+    var v = Ros2Aimdk_msgsSrvSetMcInputSource_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`action` = try Ros2Aimdk_msgsMsgMcInputAction.read(from: &r)
+    v.`input_source` = try Ros2Aimdk_msgsMsgMcInputSource.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMcInputSource_Response: Canonical {
+  public static let maximumWireBytes = 28
+  public static let codecIdentity =
+    "UWVMROS1_0c0764d24b86f57f3c2f1a59966a787113cf9411cf89f40d29a7708bf03650cb"
+  public static let nativeType = "aimdk_msgs/srv/SetMcInputSource_Response"
+  public static let nativeIdentity: String? = nil
+  public var `response`: Ros2Aimdk_msgsMsgCommonTaskResponse = Ros2Aimdk_msgsMsgCommonTaskResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`response`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvSetMcInputSource_Response
+  {
+    var v = Ros2Aimdk_msgsSrvSetMcInputSource_Response()
+    v.`response` = try Ros2Aimdk_msgsMsgCommonTaskResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMcPresetMotion_Request: Canonical {
+  public static let maximumWireBytes = 297
+  public static let codecIdentity =
+    "UWVMROS1_1bc0bdea042012300548f5d9845b37dfc192d9680bb3beda186a69a11870ca96"
+  public static let nativeType = "aimdk_msgs/srv/SetMcPresetMotion_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgRequestHeader = Ros2Aimdk_msgsMsgRequestHeader()
+  public var `input_source`: Ros2Aimdk_msgsMsgMcInputSource = Ros2Aimdk_msgsMsgMcInputSource()
+  public var `area`: Ros2Aimdk_msgsMsgMcControlArea = Ros2Aimdk_msgsMsgMcControlArea()
+  public var `motion`: Ros2Aimdk_msgsMsgMcPresetMotion = Ros2Aimdk_msgsMsgMcPresetMotion()
+  public var `interrupt`: Bool = false
+  public var `ani_path`: String = ""
+  public var `play_timestamp`: UInt64 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try self.`input_source`.write(to: &w)
+    try self.`area`.write(to: &w)
+    try self.`motion`.write(to: &w)
+    try w.boolean(self.`interrupt`)
+    try w.string(self.`ani_path`, bound: 128)
+    try w.integer(self.`play_timestamp`)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvSetMcPresetMotion_Request
+  {
+    var v = Ros2Aimdk_msgsSrvSetMcPresetMotion_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgRequestHeader.read(from: &r)
+    v.`input_source` = try Ros2Aimdk_msgsMsgMcInputSource.read(from: &r)
+    v.`area` = try Ros2Aimdk_msgsMsgMcControlArea.read(from: &r)
+    v.`motion` = try Ros2Aimdk_msgsMsgMcPresetMotion.read(from: &r)
+    v.`interrupt` = try r.boolean()
+    v.`ani_path` = try r.string(bound: 128)
+    v.`play_timestamp` = try r.integer(UInt64.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMcPresetMotion_Response: Canonical {
+  public static let maximumWireBytes = 28
+  public static let codecIdentity =
+    "UWVMROS1_9534060f44b6d36c7f0c585e7ce1f1e8b06a2561a2161a29fe6d0e4d22c77e85"
+  public static let nativeType = "aimdk_msgs/srv/SetMcPresetMotion_Response"
+  public static let nativeIdentity: String? = nil
+  public var `response`: Ros2Aimdk_msgsMsgCommonTaskResponse = Ros2Aimdk_msgsMsgCommonTaskResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`response`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvSetMcPresetMotion_Response
+  {
+    var v = Ros2Aimdk_msgsSrvSetMcPresetMotion_Response()
+    v.`response` = try Ros2Aimdk_msgsMsgCommonTaskResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMicSourceRequest_Request: Canonical {
+  public static let maximumWireBytes = 12
+  public static let codecIdentity =
+    "UWVMROS1_01f1bcb54c816c25f1a88eb4392e8bedc4943d39a5b09974d7859c20ad1ca5e5"
+  public static let nativeType = "aimdk_msgs/srv/SetMicSourceRequest_Request"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `mic_source`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`mic_source`)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvSetMicSourceRequest_Request
+  {
+    var v = Ros2Aimdk_msgsSrvSetMicSourceRequest_Request()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`mic_source` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMicSourceRequest_Response: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_ee6caccf202dae100928dacc71303c536144d76458cf7c9b4facc6b88405ba02"
+  public static let nativeType = "aimdk_msgs/srv/SetMicSourceRequest_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvSetMicSourceRequest_Response
+  {
+    var v = Ros2Aimdk_msgsSrvSetMicSourceRequest_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMute_Request: Canonical {
+  public static let maximumWireBytes = 9
+  public static let codecIdentity =
+    "UWVMROS1_a37f6b638f226a9d150315baa5b11e6994422ba8f58541ac7b04df11e5c21fe3"
+  public static let nativeType = "aimdk_msgs/srv/SetMute_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `is_mute`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+    try w.boolean(self.`is_mute`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvSetMute_Request {
+    var v = Ros2Aimdk_msgsSrvSetMute_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`is_mute` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetMute_Response: Canonical {
+  public static let maximumWireBytes = 153
+  public static let codecIdentity =
+    "UWVMROS1_0ba7d8046b7a0d23deb0b4cdb2ba5d144543a68a2468d657cc0b29f60efdca50"
+  public static let nativeType = "aimdk_msgs/srv/SetMute_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `is_mute`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+    try w.boolean(self.`is_mute`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvSetMute_Response {
+    var v = Ros2Aimdk_msgsSrvSetMute_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`is_mute` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetPmuLed_Request: Canonical {
+  public static let maximumWireBytes = 149
+  public static let codecIdentity =
+    "UWVMROS1_015ab71547b25baf5658c13781f8e78e5f6ed19692a6a30d191d7f39c962357e"
+  public static let nativeType = "aimdk_msgs/srv/SetPmuLed_Request"
+  public static let nativeIdentity: String? = nil
+  public static let `LED_STRIP_MODE_CONSTANT`: UInt8 = 0
+  public static let `LED_STRIP_MODE_BREATH`: UInt8 = 1
+  public static let `LED_STRIP_MODE_FLASH`: UInt8 = 2
+  public static let `LED_STRIP_MODE_FLOW`: UInt8 = 3
+  public static let `LED_STRIP_MODE_MAX`: UInt8 = 4
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `trace_id`: String = ""
+  public var `led_strip_mode`: UInt8 = 0
+  public var `r`: UInt8 = 0
+  public var `g`: UInt8 = 0
+  public var `b`: UInt8 = 0
+  public var `priority`: Int32 = 0
+  public var `reset_priority`: Bool = false
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+    try w.string(self.`trace_id`, bound: 128)
+    try w.integer(self.`led_strip_mode`)
+    try w.integer(self.`r`)
+    try w.integer(self.`g`)
+    try w.integer(self.`b`)
+    try w.integer(self.`priority`)
+    try w.boolean(self.`reset_priority`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvSetPmuLed_Request {
+    var v = Ros2Aimdk_msgsSrvSetPmuLed_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`trace_id` = try r.string(bound: 128)
+    v.`led_strip_mode` = try r.integer(UInt8.self)
+    v.`r` = try r.integer(UInt8.self)
+    v.`g` = try r.integer(UInt8.self)
+    v.`b` = try r.integer(UInt8.self)
+    v.`priority` = try r.integer(Int32.self)
+    v.`reset_priority` = try r.boolean()
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetPmuLed_Response: Canonical {
+  public static let maximumWireBytes = 18
+  public static let codecIdentity =
+    "UWVMROS1_0408d54ce93e19d7299d79ee7797dc9b3511b3f5c37fd97a3b3d7d193cefcd28"
+  public static let nativeType = "aimdk_msgs/srv/SetPmuLed_Response"
+  public static let nativeIdentity: String? = nil
+  public var `header`: Ros2Aimdk_msgsMsgResponseHeader = Ros2Aimdk_msgsMsgResponseHeader()
+  public var `status_code`: UInt16 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`header`.write(to: &w)
+    try w.integer(self.`status_code`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvSetPmuLed_Response {
+    var v = Ros2Aimdk_msgsSrvSetPmuLed_Response()
+    v.`header` = try Ros2Aimdk_msgsMsgResponseHeader.read(from: &r)
+    v.`status_code` = try r.integer(UInt16.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetVolume_Request: Canonical {
+  public static let maximumWireBytes = 12
+  public static let codecIdentity =
+    "UWVMROS1_09161b7a7ae47ab702190725e42e27cd247f681702de05c4f68fa59581f85aad"
+  public static let nativeType = "aimdk_msgs/srv/SetVolume_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public var `audio_volume`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+    try w.integer(self.`audio_volume`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvSetVolume_Request {
+    var v = Ros2Aimdk_msgsSrvSetVolume_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    v.`audio_volume` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvSetVolume_Response: Canonical {
+  public static let maximumWireBytes = 156
+  public static let codecIdentity =
+    "UWVMROS1_e5baf36b9fe876cfa8633c769aa7bcf085b813a7174de2bd6dd2026bc3744a1e"
+  public static let nativeType = "aimdk_msgs/srv/SetVolume_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public var `audio_volume`: UInt32 = 0
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+    try w.integer(self.`audio_volume`)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvSetVolume_Response {
+    var v = Ros2Aimdk_msgsSrvSetVolume_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    v.`audio_volume` = try r.integer(UInt32.self)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvStopAudioPlay_Request: Canonical {
+  public static let maximumWireBytes = 8
+  public static let codecIdentity =
+    "UWVMROS1_477159e3e8f462376693e7d0051c4b49cf5170520a056be2a2bd5a72d83e24b9"
+  public static let nativeType = "aimdk_msgs/srv/StopAudioPlay_Request"
+  public static let nativeIdentity: String? = nil
+  public var `request`: Ros2Aimdk_msgsMsgCommonRequest = Ros2Aimdk_msgsMsgCommonRequest()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`request`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws -> Ros2Aimdk_msgsSrvStopAudioPlay_Request
+  {
+    var v = Ros2Aimdk_msgsSrvStopAudioPlay_Request()
+    v.`request` = try Ros2Aimdk_msgsMsgCommonRequest.read(from: &r)
+    return v
+  }
+}
+public struct Ros2Aimdk_msgsSrvStopAudioPlay_Response: Canonical {
+  public static let maximumWireBytes = 152
+  public static let codecIdentity =
+    "UWVMROS1_9a21b16e6eb5642e5bf5e0e64b15999a661142a65d2cc8ea68d8c62a2a1fbcb4"
+  public static let nativeType = "aimdk_msgs/srv/StopAudioPlay_Response"
+  public static let nativeIdentity: String? = nil
+  public var `reponse`: Ros2Aimdk_msgsMsgCommonResponse = Ros2Aimdk_msgsMsgCommonResponse()
+  public init() {}
+  public func write(to w: inout WireWriter) throws {
+    try self.`reponse`.write(to: &w)
+  }
+  public static func read(from r: inout WireReader) throws
+    -> Ros2Aimdk_msgsSrvStopAudioPlay_Response
+  {
+    var v = Ros2Aimdk_msgsSrvStopAudioPlay_Response()
+    v.`reponse` = try Ros2Aimdk_msgsMsgCommonResponse.read(from: &r)
+    return v
+  }
+}

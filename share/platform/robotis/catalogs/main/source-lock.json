@@ -1,0 +1,178 @@
+{
+  "ros_version": 2,
+  "vendor": "robotis",
+  "profile": "main",
+  "format": "uwvm-platform-source-lock-v1",
+  "original_catalog_sha256": "09bc0feff7c32b76ca2caa6a7d4142b3fdc6349841e3ec4fa2be83834d2bcf7f",
+  "catalog_sha256": "09bc0feff7c32b76ca2caa6a7d4142b3fdc6349841e3ec4fa2be83834d2bcf7f",
+  "definitions": [
+    {
+      "file": "builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "file": "geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "file": "geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "file": "geometry_msgs/msg/PoseWithCovariance.msg",
+      "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94"
+    },
+    {
+      "file": "geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "file": "geometry_msgs/msg/Transform.msg",
+      "sha256": "c8916279f0a429dd9561158bd2133bc4e2d780277c3c594116b240a27e7a2993"
+    },
+    {
+      "file": "geometry_msgs/msg/TransformStamped.msg",
+      "sha256": "f6e137c205e9187ac1dafdfbace7435de58bb3779a55e9c6b52c2cb513785c42"
+    },
+    {
+      "file": "geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "file": "geometry_msgs/msg/TwistStamped.msg",
+      "sha256": "ffc9d5925412410b28d601c55cf386a0b3e4d5dba00920fbafb98d7201f582ca"
+    },
+    {
+      "file": "geometry_msgs/msg/TwistWithCovariance.msg",
+      "sha256": "5690a1f109d4962c73b5ca7f3673c48052d02f37b6a38fe2fb37c899cf555c45"
+    },
+    {
+      "file": "geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "file": "nav_msgs/msg/Odometry.msg",
+      "sha256": "bb00547ddf498cdbae46fd991d9d85a59f507e12e7cf01fb18a86f1111524f4f"
+    },
+    {
+      "file": "sensor_msgs/msg/BatteryState.msg",
+      "sha256": "ce13430f3c107274fb7123a6d1e79a9f83974d78cb0be1721695129e49240b25"
+    },
+    {
+      "file": "sensor_msgs/msg/Imu.msg",
+      "sha256": "5800b7c2e6d3afed966ae229b1559f6e762c792ad34a88e55ad4288d8bbbd34b"
+    },
+    {
+      "file": "sensor_msgs/msg/JointState.msg",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+    },
+    {
+      "file": "sensor_msgs/msg/LaserScan.msg",
+      "sha256": "bb688599d8787fa1b48393e50064013e58449055eb60e501eb01a07e8bc03357"
+    },
+    {
+      "file": "sensor_msgs/msg/MagneticField.msg",
+      "sha256": "b1bf534a4175055d85ee4630788c67a960733c383a458b86f6dfdfa27786be64"
+    },
+    {
+      "file": "std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "file": "std_srvs/srv/SetBool.srv",
+      "sha256": "a36d99cd5f0467a58a5b06b1443e9ffc0fcb59977190def5ef677fd16f05a664"
+    },
+    {
+      "file": "std_srvs/srv/Trigger.srv",
+      "sha256": "81e80d26771d0c0af8783938720c763cacc429e68d9d6b9c1f912474db0d8dca"
+    },
+    {
+      "file": "turtlebot3_msgs/action/Patrol.action",
+      "sha256": "239de7579be911d34379064c6a5bb53da4beb40dc7371328e3e49d6c5662a82f"
+    },
+    {
+      "file": "turtlebot3_msgs/msg/SensorState.msg",
+      "sha256": "e121d9df6a438a533942236506ee75f71086ecfeaafa6256391638f373962601"
+    },
+    {
+      "file": "turtlebot3_msgs/msg/Sound.msg",
+      "sha256": "eb4861a35e75b7b4a04baf8beb171b527e0d7a382c0db969f5b32a2cb97b8bdf"
+    },
+    {
+      "file": "turtlebot3_msgs/msg/VersionInfo.msg",
+      "sha256": "27497e6e84c079319860ad6444ff2b738a2d75243f46b637559d7c297f38ef68"
+    },
+    {
+      "file": "turtlebot3_msgs/srv/Dqn.srv",
+      "sha256": "163b4fa05097b87400ff94a3925450000665d3f04e4e3db8afbd743bc82cef8b"
+    },
+    {
+      "file": "turtlebot3_msgs/srv/Goal.srv",
+      "sha256": "2ee2d8023fd1c3ae99c80250770ddd0b6ea81ca92d4111a20d1026bd4f5e1e0a"
+    },
+    {
+      "file": "turtlebot3_msgs/srv/Sound.srv",
+      "sha256": "5c98b373291a8270e783e9224be89d1160efa4f9310e617603a079640d01f663"
+    }
+  ],
+  "native_identity_qualified": false,
+  "hardware_executed": false,
+  "repositories": [
+    {
+      "id": "common_rolling",
+      "url": "https://github.com/ros2/common_interfaces",
+      "branch": "rolling",
+      "commit": "56be9f336d3ed54d18b3821d3b2b183123ec17d8",
+      "tree_git_sha1": "0371125c5a3b409d8ae32fff3e66ce9b8f3a6961",
+      "archive": {
+        "url": "https://codeload.github.com/ros2/common_interfaces/tar.gz/56be9f336d3ed54d18b3821d3b2b183123ec17d8",
+        "bytes": 151445,
+        "sha256": "5fc6947ff1fcdedc73d3a454b21e827d2a4a2233a900c15e8bdc78ddc95e2c85"
+      },
+      "default_authority": [],
+      "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+    },
+    {
+      "id": "driver_main",
+      "url": "https://github.com/ROBOTIS-GIT/turtlebot3",
+      "branch": "main",
+      "commit": "fc817ce3073af1d6032397c64504134882af5e9a",
+      "tree_git_sha1": "cdf2659c4c74b1f6868aca21ea099f7daa9e34ae",
+      "archive": {
+        "url": "https://codeload.github.com/ROBOTIS-GIT/turtlebot3/tar.gz/fc817ce3073af1d6032397c64504134882af5e9a",
+        "bytes": 8862242,
+        "sha256": "9b214b265ba17fe7f85d41b25ee26a93bc4820cf0505ebfc2a18261c1f9a772b"
+      },
+      "default_authority": [],
+      "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+    },
+    {
+      "id": "msgs_main",
+      "url": "https://github.com/ROBOTIS-GIT/turtlebot3_msgs",
+      "branch": "main",
+      "commit": "b60833d0224ca9a9136a8581d6b5f18122edef9b",
+      "tree_git_sha1": "c3bb8d19b2af751dd665db6be1aca057ad37abc3",
+      "archive": {
+        "url": "https://codeload.github.com/ROBOTIS-GIT/turtlebot3_msgs/tar.gz/b60833d0224ca9a9136a8581d6b5f18122edef9b",
+        "bytes": 9258,
+        "sha256": "b29755384dcf52f72720188c53089a61ec2675e3c25315334c5b70a5213fe9bb"
+      },
+      "default_authority": [],
+      "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+    },
+    {
+      "id": "rcl_rolling",
+      "url": "https://github.com/ros2/rcl_interfaces",
+      "branch": "rolling",
+      "commit": "614f3c4942e1a67a568546cb805ff3e0ff7777f5",
+      "tree_git_sha1": "1fc8125d7a10587a81e083994142d313ad1903db",
+      "archive": {
+        "url": "https://codeload.github.com/ros2/rcl_interfaces/tar.gz/614f3c4942e1a67a568546cb805ff3e0ff7777f5",
+        "bytes": 49809,
+        "sha256": "42c8ecac42e99b2a68f3eda231a99be0e8511cb690be84a94e64e99959081bb2"
+      },
+      "default_authority": [],
+      "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+    }
+  ]
+}

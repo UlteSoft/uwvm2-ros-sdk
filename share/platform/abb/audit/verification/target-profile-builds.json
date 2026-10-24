@@ -1,0 +1,492 @@
+{
+  "format": "uwvm-abb-tool-layout-acceptance-v1",
+  "status": "PASS",
+  "limits": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "cgroup": "/sys/fs/cgroup/system.slice/docker-4dd58ad4560fde2ab9b539e4ef9cab1fac531654e99ad554aff1fce8ae0eae37.scope",
+  "cases": [
+    {
+      "entry": "as",
+      "source_language": "as",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/as/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/as/read_speed/build/abb-as-read_speed.wasm",
+      "bytes": 37017,
+      "build_directory_entries": [
+        "abb-as-read_speed.wasm"
+      ],
+      "sha256": "80c3e335e3bf90a8a02516acd33337ab0ae36a71b76a9410dd6ede289eb5255a",
+      "log": "/abb-test/logs/tool-layout/as-read_speed.log"
+    },
+    {
+      "entry": "as",
+      "source_language": "as",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/as/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/as/read_io/build/abb-as-read_io.wasm",
+      "bytes": 39993,
+      "build_directory_entries": [
+        "abb-as-read_io.wasm"
+      ],
+      "sha256": "51e2a1f216d306b2effa3c85d233ac46ee30ccbda78bfe284a3398f78134a634",
+      "log": "/abb-test/logs/tool-layout/as-read_io.log"
+    },
+    {
+      "entry": "as",
+      "source_language": "as",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/as/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/as/system_state/build/abb-as-system_state.wasm",
+      "bytes": 41569,
+      "build_directory_entries": [
+        "abb-as-system_state.wasm"
+      ],
+      "sha256": "dfe19baf68ac23d9387ee71b28e2bd37eb815b6f8459b58630531eafc299df53",
+      "log": "/abb-test/logs/tool-layout/as-system_state.log"
+    },
+    {
+      "entry": "c",
+      "source_language": "c",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/c/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/c/read_speed/build/abb-c-read_speed.wasm",
+      "bytes": 133882,
+      "build_directory_entries": [
+        "abb-c-read_speed.wasm"
+      ],
+      "sha256": "25439673dc9b6acd36c719e64369b4323dfd8af72ad480261dcbbc237704b702",
+      "log": "/abb-test/logs/tool-layout/c-read_speed.log"
+    },
+    {
+      "entry": "c",
+      "source_language": "c",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/c/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/c/read_io/build/abb-c-read_io.wasm",
+      "bytes": 135178,
+      "build_directory_entries": [
+        "abb-c-read_io.wasm"
+      ],
+      "sha256": "fc7f0b54b9ac4d873152f3d6cd631d11837fc38a6f28d2f2c0eaa23c01b023d5",
+      "log": "/abb-test/logs/tool-layout/c-read_io.log"
+    },
+    {
+      "entry": "c",
+      "source_language": "c",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/c/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/c/system_state/build/abb-c-system_state.wasm",
+      "bytes": 135622,
+      "build_directory_entries": [
+        "abb-c-system_state.wasm"
+      ],
+      "sha256": "eda952199934e4cdf980959fb605aaf4e62cf9db9123130035ea065ceed3ff61",
+      "log": "/abb-test/logs/tool-layout/c-system_state.log"
+    },
+    {
+      "entry": "cpp",
+      "source_language": "cpp",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/cpp/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/cpp/read_speed/build/abb-cpp-read_speed.wasm",
+      "bytes": 134150,
+      "build_directory_entries": [
+        "abb-cpp-read_speed.wasm"
+      ],
+      "sha256": "84a99c4cd0b444d17d6eba08183c78967042f0b3b56c1fe11e483507b42641ef",
+      "log": "/abb-test/logs/tool-layout/cpp-read_speed.log"
+    },
+    {
+      "entry": "cpp",
+      "source_language": "cpp",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/cpp/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/cpp/read_io/build/abb-cpp-read_io.wasm",
+      "bytes": 135373,
+      "build_directory_entries": [
+        "abb-cpp-read_io.wasm"
+      ],
+      "sha256": "6dd7c4b66ab70d587dee86e2a25b8ebcba5be6022952d95cc9227d473fff3e81",
+      "log": "/abb-test/logs/tool-layout/cpp-read_io.log"
+    },
+    {
+      "entry": "cpp",
+      "source_language": "cpp",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/cpp/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/cpp/system_state/build/abb-cpp-system_state.wasm",
+      "bytes": 137311,
+      "build_directory_entries": [
+        "abb-cpp-system_state.wasm"
+      ],
+      "sha256": "fc3bee5d18a6ed8003e07ca5c7a9ac8b667b96daa9d84d463eaf817a8e07eb12",
+      "log": "/abb-test/logs/tool-layout/cpp-system_state.log"
+    },
+    {
+      "entry": "go",
+      "source_language": "go",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/go/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/go/read_speed/build/abb-go-read_speed.wasm",
+      "bytes": 2983186,
+      "build_directory_entries": [
+        "abb-go-read_speed.wasm"
+      ],
+      "sha256": "e52eac13ab07bdbbbc9da0e3aa9ad7a9e7818391d1e44e048937f7d6748433f7",
+      "log": "/abb-test/logs/tool-layout/go-read_speed.log"
+    },
+    {
+      "entry": "go",
+      "source_language": "go",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/go/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/go/read_io/build/abb-go-read_io.wasm",
+      "bytes": 2988746,
+      "build_directory_entries": [
+        "abb-go-read_io.wasm"
+      ],
+      "sha256": "e1440c399a398af844c3e5325558727996478c0910665079543c63be9bea5fcf",
+      "log": "/abb-test/logs/tool-layout/go-read_io.log"
+    },
+    {
+      "entry": "go",
+      "source_language": "go",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/go/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/go/system_state/build/abb-go-system_state.wasm",
+      "bytes": 3021885,
+      "build_directory_entries": [
+        "abb-go-system_state.wasm"
+      ],
+      "sha256": "ba566887100e114ba4a88c4e97c27a5835731eef631a359e37274bbfe2decbdc",
+      "log": "/abb-test/logs/tool-layout/go-system_state.log"
+    },
+    {
+      "entry": "rs",
+      "source_language": "rs",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/rs/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/rs/read_speed/build/abb-rs-read_speed.wasm",
+      "bytes": 96945,
+      "build_directory_entries": [
+        "abb-rs-read_speed.wasm"
+      ],
+      "sha256": "9632084563e02bc0f219755fda9fbc3ef81104525000b1a5f1c493a2eb9431cb",
+      "log": "/abb-test/logs/tool-layout/rs-read_speed.log"
+    },
+    {
+      "entry": "rs",
+      "source_language": "rs",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/rs/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/rs/read_io/build/abb-rs-read_io.wasm",
+      "bytes": 98072,
+      "build_directory_entries": [
+        "abb-rs-read_io.wasm"
+      ],
+      "sha256": "265713ff34532a4cfb5182321f530fde69e1bae8f52ac93e4eac6ab63fe3270b",
+      "log": "/abb-test/logs/tool-layout/rs-read_io.log"
+    },
+    {
+      "entry": "rs",
+      "source_language": "rs",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/rs/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/rs/system_state/build/abb-rs-system_state.wasm",
+      "bytes": 101493,
+      "build_directory_entries": [
+        "abb-rs-system_state.wasm"
+      ],
+      "sha256": "7a9224f999f3a6bd048ac4683f25b682702a50debf2d8fbac5c9179f6d9e7d92",
+      "log": "/abb-test/logs/tool-layout/rs-system_state.log"
+    },
+    {
+      "entry": "objectc",
+      "source_language": "objectc",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/objectc/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/objectc/read_speed/build/abb-objectc-read_speed.wasm",
+      "bytes": 133882,
+      "build_directory_entries": [
+        "abb-objectc-read_speed.wasm"
+      ],
+      "sha256": "25439673dc9b6acd36c719e64369b4323dfd8af72ad480261dcbbc237704b702",
+      "log": "/abb-test/logs/tool-layout/objectc-read_speed.log"
+    },
+    {
+      "entry": "objectc",
+      "source_language": "objectc",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/objectc/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/objectc/read_io/build/abb-objectc-read_io.wasm",
+      "bytes": 135178,
+      "build_directory_entries": [
+        "abb-objectc-read_io.wasm"
+      ],
+      "sha256": "fc7f0b54b9ac4d873152f3d6cd631d11837fc38a6f28d2f2c0eaa23c01b023d5",
+      "log": "/abb-test/logs/tool-layout/objectc-read_io.log"
+    },
+    {
+      "entry": "objectc",
+      "source_language": "objectc",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/objectc/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/objectc/system_state/build/abb-objectc-system_state.wasm",
+      "bytes": 135622,
+      "build_directory_entries": [
+        "abb-objectc-system_state.wasm"
+      ],
+      "sha256": "eda952199934e4cdf980959fb605aaf4e62cf9db9123130035ea065ceed3ff61",
+      "log": "/abb-test/logs/tool-layout/objectc-system_state.log"
+    },
+    {
+      "entry": "tinygo",
+      "source_language": "tinygo",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/tinygo/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/tinygo/read_speed/build/abb-tinygo-read_speed.wasm",
+      "bytes": 1245311,
+      "build_directory_entries": [
+        "abb-tinygo-read_speed.wasm"
+      ],
+      "sha256": "0fd2ce711b4b630fb78d6e138b3f143309077bd8ce982b982c230f11519e2136",
+      "log": "/abb-test/logs/tool-layout/tinygo-read_speed.log"
+    },
+    {
+      "entry": "tinygo",
+      "source_language": "tinygo",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/tinygo/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/tinygo/read_io/build/abb-tinygo-read_io.wasm",
+      "bytes": 1253478,
+      "build_directory_entries": [
+        "abb-tinygo-read_io.wasm"
+      ],
+      "sha256": "95851db035e8085e35f9d2aab0c5b8c858bee9aed176e54d4340545d8d50d535",
+      "log": "/abb-test/logs/tool-layout/tinygo-read_io.log"
+    },
+    {
+      "entry": "tinygo",
+      "source_language": "tinygo",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/tinygo/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/tinygo/system_state/build/abb-tinygo-system_state.wasm",
+      "bytes": 1271569,
+      "build_directory_entries": [
+        "abb-tinygo-system_state.wasm"
+      ],
+      "sha256": "16330b1c2a108997631eab5ed0319aabd26fa5e335f8e711863c2d28c9b186d3",
+      "log": "/abb-test/logs/tool-layout/tinygo-system_state.log"
+    },
+    {
+      "entry": "c_ffi_bridge",
+      "source_language": "c",
+      "scenario": "read_speed",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/c_ffi_bridge/read_speed",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/c_ffi_bridge/read_speed/build/abb-c_ffi_bridge-read_speed.wasm",
+      "bytes": 134889,
+      "build_directory_entries": [
+        "abb-c_ffi_bridge-read_speed.wasm"
+      ],
+      "sha256": "ab645c5be8d96407937964b067e4c870b42e60b6094734cba5fec9566fd52639",
+      "log": "/abb-test/logs/tool-layout/c_ffi_bridge-read_speed.log"
+    },
+    {
+      "entry": "c_ffi_bridge",
+      "source_language": "c",
+      "scenario": "read_io",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/c_ffi_bridge/read_io",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/c_ffi_bridge/read_io/build/abb-c_ffi_bridge-read_io.wasm",
+      "bytes": 136136,
+      "build_directory_entries": [
+        "abb-c_ffi_bridge-read_io.wasm"
+      ],
+      "sha256": "280165fc99fea4d08a7d4debfa308e0802ac450ea522e1dc80073371a15044f4",
+      "log": "/abb-test/logs/tool-layout/c_ffi_bridge-read_io.log"
+    },
+    {
+      "entry": "c_ffi_bridge",
+      "source_language": "c",
+      "scenario": "system_state",
+      "command": [
+        "xmake",
+        "-y"
+      ],
+      "cwd": "/abb-test/sdk/example/platform/abb/c_ffi_bridge/system_state",
+      "exit": 0,
+      "passed": true,
+      "artifact": "/abb-test/sdk/example/platform/abb/c_ffi_bridge/system_state/build/abb-c_ffi_bridge-system_state.wasm",
+      "bytes": 137841,
+      "build_directory_entries": [
+        "abb-c_ffi_bridge-system_state.wasm"
+      ],
+      "sha256": "850c8e6075a1b5dc4a718703dd1630b405129bd8c7faee9c96c049d98d4c30bc",
+      "log": "/abb-test/logs/tool-layout/c_ffi_bridge-system_state.log"
+    }
+  ],
+  "case_count": 24,
+  "source_languages": [
+    "as",
+    "c",
+    "cpp",
+    "go",
+    "objectc",
+    "rs",
+    "tinygo"
+  ],
+  "bridge_entries": [
+    "c_ffi_bridge"
+  ],
+  "bridge_case_count": 3,
+  "tools": {
+    "tools/platform/abb/README.md": "46a06dd4caa54364054f2df2b95cfffac7af4c130261ca63cfb2b53c5dbf57da",
+    "tools/platform/abb/bindings.py": "fdb9006e7ae5db3bd27be98bcdc95bce0c7cf78affee3b9a794c29ef59d0e8cf",
+    "tools/platform/abb/documents.py": "e5c2e9287a9f9acae38d237c3f36dfc18558a27739f78e68c5f80384a606efd7",
+    "tools/platform/abb/examples.py": "daa7a62b7a9510fd3bf1be835d47b83bb61ffc3f31fb275a312a20bf80e7d5c6",
+    "tools/platform/abb/repository.lua": "cd4e6823660095fd8bb9d90986eea951846356710f56846d190b0c007450dfc6",
+    "tools/platform/abb/run.lua": "3afa35c0143dbfc157fe8ef7f4f6d7002cf57865034a7f36ca6edc8e6263dde1",
+    "tools/platform/abb/run.py": "fb257e7c9db8f66dc96b5fee0e4b54beaf1ceaa17bdce981a700cc49a629815d",
+    "tools/platform/abb/standalone.lua": "c54e241776065fb764e37c241936fbb79e366812bc556c986b6467927d49564b",
+    "tools/platform/abb/target.lua": "a15be8772aaab0113ec5f97329b8fb9bc64c9b713ebf002230ee38969b0b197b"
+  }
+}

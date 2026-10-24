@@ -1,0 +1,68 @@
+{
+  "platform": "abb",
+  "repository": "PickNikRobotics/abb_ros2",
+  "commit": "e6486f7409073cdb2a10d6878bb50191dd50172b",
+  "tree": "2d654c7a7f080ee6f53e28d088222db64fd03eb2",
+  "archive_url": "https://codeload.github.com/PickNikRobotics/abb_ros2/tar.gz/e6486f7409073cdb2a10d6878bb50191dd50172b",
+  "archive_sha256": "28d804fd560589f10d026f8b09665560156841213f0b14e438182b3c4172b2ee",
+  "archive_bytes": 7320032,
+  "source_candidates": [
+    {
+      "path": "abb_bringup/launch/abb_control.launch.py",
+      "url": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/abb_bringup/launch/abb_control.launch.py",
+      "sha256": "56dd442b4a95819ac7c25b85fa5b826be2757c369533cd24995824a2e8cbc159",
+      "git_blob_sha1": "4e282199982c1b86fbd20dff866f95482b2803c3",
+      "bytes": 7173,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "abb_bringup/launch/abb_moveit.launch.py",
+      "url": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/abb_bringup/launch/abb_moveit.launch.py",
+      "sha256": "adda1422a6251f4bb375cc94006267caee737c81815569a7f1ed6db27638e13c",
+      "git_blob_sha1": "02325bbe6a17018de6b6f24eb8beb8951e0ec89e",
+      "bytes": 5353,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "abb_bringup/launch/abb_rws_client.launch.py",
+      "url": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/abb_bringup/launch/abb_rws_client.launch.py",
+      "sha256": "88c04bdc3cc53f2800df083a1a3ab44c9b89cb9bac33b8397aa7d0ba0b578b7e",
+      "git_blob_sha1": "9d9c9f1c51916bdf354a67dbce55bf8eb9eca53a",
+      "bytes": 2169,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "abb_bringup/test/launch/test_command_topics.test.py",
+      "url": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/abb_bringup/test/launch/test_command_topics.test.py",
+      "sha256": "ee77308021e5325440f4a2007f09e0369e5fc917bd06fd0d65d81e68e1a4b9df",
+      "git_blob_sha1": "b5689d9484f389b631ba54b9c28915d3b0f92edc",
+      "bytes": 4319,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "abb_bringup/test/test_command_topics.cpp",
+      "url": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/abb_bringup/test/test_command_topics.cpp",
+      "sha256": "feafdd091ecefa23679b68a67ee2f432aa4f80838811ec102e34954a84a3ebb1",
+      "git_blob_sha1": "4938b18b9ae19c261ef86c741f5cd2f3e523dd0b",
+      "bytes": 1463,
+      "role": "upstream_test_source_or_fixture"
+    },
+    {
+      "path": "robot_specific_config/abb_irb1200_support/launch/view_robot.launch.py",
+      "url": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/robot_specific_config/abb_irb1200_support/launch/view_robot.launch.py",
+      "sha256": "ae6fe12a52da9b2feb367a9a34cd55e0595d856daaf891e7b23c1e4e62294256",
+      "git_blob_sha1": "41f750895bebfd2a9fae9164258a7ed97cdb7dfe",
+      "bytes": 2096,
+      "role": "ros2_launch_entry"
+    },
+    {
+      "path": "robot_specific_config/abb_irb4600_support/launch/view_robot.launch.py",
+      "url": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/robot_specific_config/abb_irb4600_support/launch/view_robot.launch.py",
+      "sha256": "e2102195a9064c07bc297722256a8b48ee148493d4b878de23cbba6eea3fb2e8",
+      "git_blob_sha1": "a1603f01b84080b69183494ee1add79dd212a0ba",
+      "bytes": 2718,
+      "role": "ros2_launch_entry"
+    }
+  ],
+  "review_status": "source inventory preserved; see controller audit and this delivery's independent evidence"
+}

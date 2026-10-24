@@ -1,0 +1,493 @@
+{
+  "format": "uwvm-abb-production-matrix-v1",
+  "status": "PASS",
+  "limits": {
+    "memory.max": "68719476736",
+    "memory.swap.max": "0"
+  },
+  "cases": [
+    {
+      "language": "as",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.3959333839993633,
+      "evidence": "sdk/example/platform/abb/as/read_speed/.xmake/abb-run/read_speed-i0m_v4wk/execution.json",
+      "artifact_sha256": "80c3e335e3bf90a8a02516acd33337ab0ae36a71b76a9410dd6ede289eb5255a"
+    },
+    {
+      "language": "as",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.395263745000193,
+      "evidence": "sdk/example/platform/abb/as/read_io/.xmake/abb-run/read_io-zkk9dp19/execution.json",
+      "artifact_sha256": "51e2a1f216d306b2effa3c85d233ac46ee30ccbda78bfe284a3398f78134a634"
+    },
+    {
+      "language": "as",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.4947586369999044,
+      "evidence": "sdk/example/platform/abb/as/system_state/.xmake/abb-run/system_state-4kkgg8jm/execution.json",
+      "artifact_sha256": "dfe19baf68ac23d9387ee71b28e2bd37eb815b6f8459b58630531eafc299df53"
+    },
+    {
+      "language": "as",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.7507866460000514,
+      "evidence": "sdk/example/platform/abb/as/read_speed/.xmake/abb-run/read_speed-yy8jd8c7/execution.json",
+      "artifact_sha256": "80c3e335e3bf90a8a02516acd33337ab0ae36a71b76a9410dd6ede289eb5255a"
+    },
+    {
+      "language": "as",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.49296359499930986,
+      "evidence": "sdk/example/platform/abb/as/read_speed/.xmake/abb-run/read_speed-1t29gozn/execution.json",
+      "artifact_sha256": "80c3e335e3bf90a8a02516acd33337ab0ae36a71b76a9410dd6ede289eb5255a"
+    },
+    {
+      "language": "as",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.5018564330002846,
+      "evidence": "sdk/example/platform/abb/as/read_io/.xmake/abb-run/read_io-e8b2ynsl/execution.json",
+      "artifact_sha256": "51e2a1f216d306b2effa3c85d233ac46ee30ccbda78bfe284a3398f78134a634"
+    },
+    {
+      "language": "c",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.7966642999999749,
+      "evidence": "sdk/example/platform/abb/c/read_speed/.xmake/abb-run/read_speed-ks2e8jbm/execution.json",
+      "artifact_sha256": "25439673dc9b6acd36c719e64369b4323dfd8af72ad480261dcbbc237704b702"
+    },
+    {
+      "language": "c",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.4851473929993517,
+      "evidence": "sdk/example/platform/abb/c/read_io/.xmake/abb-run/read_io-t4bmecjk/execution.json",
+      "artifact_sha256": "fc7f0b54b9ac4d873152f3d6cd631d11837fc38a6f28d2f2c0eaa23c01b023d5"
+    },
+    {
+      "language": "c",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.49952285200015467,
+      "evidence": "sdk/example/platform/abb/c/system_state/.xmake/abb-run/system_state-bshj1s0u/execution.json",
+      "artifact_sha256": "eda952199934e4cdf980959fb605aaf4e62cf9db9123130035ea065ceed3ff61"
+    },
+    {
+      "language": "c",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.5092769820003014,
+      "evidence": "sdk/example/platform/abb/c/read_speed/.xmake/abb-run/read_speed-eldhws9t/execution.json",
+      "artifact_sha256": "25439673dc9b6acd36c719e64369b4323dfd8af72ad480261dcbbc237704b702"
+    },
+    {
+      "language": "c",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4903487449992099,
+      "evidence": "sdk/example/platform/abb/c/read_speed/.xmake/abb-run/read_speed-e5ksrjpg/execution.json",
+      "artifact_sha256": "25439673dc9b6acd36c719e64369b4323dfd8af72ad480261dcbbc237704b702"
+    },
+    {
+      "language": "c",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4859708710009727,
+      "evidence": "sdk/example/platform/abb/c/read_io/.xmake/abb-run/read_io-z61ap5pe/execution.json",
+      "artifact_sha256": "fc7f0b54b9ac4d873152f3d6cd631d11837fc38a6f28d2f2c0eaa23c01b023d5"
+    },
+    {
+      "language": "cpp",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.7997299080016091,
+      "evidence": "sdk/example/platform/abb/cpp/read_speed/.xmake/abb-run/read_speed-xzpmrl0s/execution.json",
+      "artifact_sha256": "84a99c4cd0b444d17d6eba08183c78967042f0b3b56c1fe11e483507b42641ef"
+    },
+    {
+      "language": "cpp",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.503420945000471,
+      "evidence": "sdk/example/platform/abb/cpp/read_io/.xmake/abb-run/read_io-c_qvpnm2/execution.json",
+      "artifact_sha256": "6dd7c4b66ab70d587dee86e2a25b8ebcba5be6022952d95cc9227d473fff3e81"
+    },
+    {
+      "language": "cpp",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.5046155230011209,
+      "evidence": "sdk/example/platform/abb/cpp/system_state/.xmake/abb-run/system_state-sa314pi0/execution.json",
+      "artifact_sha256": "fc3bee5d18a6ed8003e07ca5c7a9ac8b667b96daa9d84d463eaf817a8e07eb12"
+    },
+    {
+      "language": "cpp",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4878268640004535,
+      "evidence": "sdk/example/platform/abb/cpp/read_speed/.xmake/abb-run/read_speed-uiwqvu63/execution.json",
+      "artifact_sha256": "84a99c4cd0b444d17d6eba08183c78967042f0b3b56c1fe11e483507b42641ef"
+    },
+    {
+      "language": "cpp",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.48620016499990015,
+      "evidence": "sdk/example/platform/abb/cpp/read_speed/.xmake/abb-run/read_speed-qi_8ne1q/execution.json",
+      "artifact_sha256": "84a99c4cd0b444d17d6eba08183c78967042f0b3b56c1fe11e483507b42641ef"
+    },
+    {
+      "language": "cpp",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.5157924659997661,
+      "evidence": "sdk/example/platform/abb/cpp/read_io/.xmake/abb-run/read_io-f5v_qhrf/execution.json",
+      "artifact_sha256": "6dd7c4b66ab70d587dee86e2a25b8ebcba5be6022952d95cc9227d473fff3e81"
+    },
+    {
+      "language": "go",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.7924605769985646,
+      "evidence": "sdk/example/platform/abb/go/read_speed/.xmake/abb-run/read_speed-q2t003yf/execution.json",
+      "artifact_sha256": "e52eac13ab07bdbbbc9da0e3aa9ad7a9e7818391d1e44e048937f7d6748433f7"
+    },
+    {
+      "language": "go",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.495646351000687,
+      "evidence": "sdk/example/platform/abb/go/read_io/.xmake/abb-run/read_io-v1ql0uj4/execution.json",
+      "artifact_sha256": "e1440c399a398af844c3e5325558727996478c0910665079543c63be9bea5fcf"
+    },
+    {
+      "language": "go",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.49006338599974697,
+      "evidence": "sdk/example/platform/abb/go/system_state/.xmake/abb-run/system_state-be__l0b9/execution.json",
+      "artifact_sha256": "ba566887100e114ba4a88c4e97c27a5835731eef631a359e37274bbfe2decbdc"
+    },
+    {
+      "language": "go",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.7865551939994475,
+      "evidence": "sdk/example/platform/abb/go/read_speed/.xmake/abb-run/read_speed-y6_wcwg9/execution.json",
+      "artifact_sha256": "e52eac13ab07bdbbbc9da0e3aa9ad7a9e7818391d1e44e048937f7d6748433f7"
+    },
+    {
+      "language": "go",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4864574740004173,
+      "evidence": "sdk/example/platform/abb/go/read_speed/.xmake/abb-run/read_speed-o7owjx7a/execution.json",
+      "artifact_sha256": "e52eac13ab07bdbbbc9da0e3aa9ad7a9e7818391d1e44e048937f7d6748433f7"
+    },
+    {
+      "language": "go",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4884835659995588,
+      "evidence": "sdk/example/platform/abb/go/read_io/.xmake/abb-run/read_io-anem7ek3/execution.json",
+      "artifact_sha256": "e1440c399a398af844c3e5325558727996478c0910665079543c63be9bea5fcf"
+    },
+    {
+      "language": "rs",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.8092584679998254,
+      "evidence": "sdk/example/platform/abb/rs/read_speed/.xmake/abb-run/read_speed-hlpr6yrl/execution.json",
+      "artifact_sha256": "9632084563e02bc0f219755fda9fbc3ef81104525000b1a5f1c493a2eb9431cb"
+    },
+    {
+      "language": "rs",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.4900129140005447,
+      "evidence": "sdk/example/platform/abb/rs/read_io/.xmake/abb-run/read_io-0m3bhpuc/execution.json",
+      "artifact_sha256": "265713ff34532a4cfb5182321f530fde69e1bae8f52ac93e4eac6ab63fe3270b"
+    },
+    {
+      "language": "rs",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.48365462699985073,
+      "evidence": "sdk/example/platform/abb/rs/system_state/.xmake/abb-run/system_state-p80zrzww/execution.json",
+      "artifact_sha256": "7a9224f999f3a6bd048ac4683f25b682702a50debf2d8fbac5c9179f6d9e7d92"
+    },
+    {
+      "language": "rs",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4528428100002202,
+      "evidence": "sdk/example/platform/abb/rs/read_speed/.xmake/abb-run/read_speed-5w_p9yns/execution.json",
+      "artifact_sha256": "9632084563e02bc0f219755fda9fbc3ef81104525000b1a5f1c493a2eb9431cb"
+    },
+    {
+      "language": "rs",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4890553990007902,
+      "evidence": "sdk/example/platform/abb/rs/read_speed/.xmake/abb-run/read_speed-pk2yed4w/execution.json",
+      "artifact_sha256": "9632084563e02bc0f219755fda9fbc3ef81104525000b1a5f1c493a2eb9431cb"
+    },
+    {
+      "language": "rs",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.49607362400092825,
+      "evidence": "sdk/example/platform/abb/rs/read_io/.xmake/abb-run/read_io-a3hc00qe/execution.json",
+      "artifact_sha256": "265713ff34532a4cfb5182321f530fde69e1bae8f52ac93e4eac6ab63fe3270b"
+    },
+    {
+      "language": "objectc",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.7868596499993146,
+      "evidence": "sdk/example/platform/abb/objectc/read_speed/.xmake/abb-run/read_speed-7621ka4n/execution.json",
+      "artifact_sha256": "25439673dc9b6acd36c719e64369b4323dfd8af72ad480261dcbbc237704b702"
+    },
+    {
+      "language": "objectc",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.5117307679993246,
+      "evidence": "sdk/example/platform/abb/objectc/read_io/.xmake/abb-run/read_io-sd4euxjd/execution.json",
+      "artifact_sha256": "fc7f0b54b9ac4d873152f3d6cd631d11837fc38a6f28d2f2c0eaa23c01b023d5"
+    },
+    {
+      "language": "objectc",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.4953947480007628,
+      "evidence": "sdk/example/platform/abb/objectc/system_state/.xmake/abb-run/system_state-w41au9s6/execution.json",
+      "artifact_sha256": "eda952199934e4cdf980959fb605aaf4e62cf9db9123130035ea065ceed3ff61"
+    },
+    {
+      "language": "objectc",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.49698254500071926,
+      "evidence": "sdk/example/platform/abb/objectc/read_speed/.xmake/abb-run/read_speed-v0vttrdm/execution.json",
+      "artifact_sha256": "25439673dc9b6acd36c719e64369b4323dfd8af72ad480261dcbbc237704b702"
+    },
+    {
+      "language": "objectc",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4979038150013366,
+      "evidence": "sdk/example/platform/abb/objectc/read_speed/.xmake/abb-run/read_speed-wxizoees/execution.json",
+      "artifact_sha256": "25439673dc9b6acd36c719e64369b4323dfd8af72ad480261dcbbc237704b702"
+    },
+    {
+      "language": "objectc",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.49038890799965884,
+      "evidence": "sdk/example/platform/abb/objectc/read_io/.xmake/abb-run/read_io-60gr4898/execution.json",
+      "artifact_sha256": "fc7f0b54b9ac4d873152f3d6cd631d11837fc38a6f28d2f2c0eaa23c01b023d5"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.4871542880009656,
+      "evidence": "sdk/example/platform/abb/tinygo/read_speed/.xmake/abb-run/read_speed-t2t72xxh/execution.json",
+      "artifact_sha256": "0fd2ce711b4b630fb78d6e138b3f143309077bd8ce982b982c230f11519e2136"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.4518108079992089,
+      "evidence": "sdk/example/platform/abb/tinygo/read_io/.xmake/abb-run/read_io-rjy5sl16/execution.json",
+      "artifact_sha256": "95851db035e8085e35f9d2aab0c5b8c858bee9aed176e54d4340545d8d50d535"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.5012115650006308,
+      "evidence": "sdk/example/platform/abb/tinygo/system_state/.xmake/abb-run/system_state-ovorh5le/execution.json",
+      "artifact_sha256": "16330b1c2a108997631eab5ed0319aabd26fa5e335f8e711863c2d28c9b186d3"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.45340292399851023,
+      "evidence": "sdk/example/platform/abb/tinygo/read_speed/.xmake/abb-run/read_speed-4i1_6vaj/execution.json",
+      "artifact_sha256": "0fd2ce711b4b630fb78d6e138b3f143309077bd8ce982b982c230f11519e2136"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4812647759990796,
+      "evidence": "sdk/example/platform/abb/tinygo/read_speed/.xmake/abb-run/read_speed-22l49e4i/execution.json",
+      "artifact_sha256": "0fd2ce711b4b630fb78d6e138b3f143309077bd8ce982b982c230f11519e2136"
+    },
+    {
+      "language": "tinygo",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.4940156280008523,
+      "evidence": "sdk/example/platform/abb/tinygo/read_io/.xmake/abb-run/read_io-rsrvm_xr/execution.json",
+      "artifact_sha256": "95851db035e8085e35f9d2aab0c5b8c858bee9aed176e54d4340545d8d50d535"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "scenario": "read_speed",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.4970731049997994,
+      "evidence": "sdk/example/platform/abb/c_ffi_bridge/read_speed/.xmake/abb-run/read_speed-flb59e0b/execution.json",
+      "artifact_sha256": "ab645c5be8d96407937964b067e4c870b42e60b6094734cba5fec9566fd52639"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "scenario": "read_io",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.47284696499991696,
+      "evidence": "sdk/example/platform/abb/c_ffi_bridge/read_io/.xmake/abb-run/read_io-gqf_1m02/execution.json",
+      "artifact_sha256": "280165fc99fea4d08a7d4debfa308e0802ac450ea522e1dc80073371a15044f4"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "scenario": "system_state",
+      "mode": "success",
+      "guest_exit": 0,
+      "xmake_exit": 0,
+      "elapsed_seconds": 0.5057153230009135,
+      "evidence": "sdk/example/platform/abb/c_ffi_bridge/system_state/.xmake/abb-run/system_state-e_mxbbps/execution.json",
+      "artifact_sha256": "850c8e6075a1b5dc4a718703dd1630b405129bd8c7faee9c96c049d98d4c30bc"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "scenario": "read_speed",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.5050703890010482,
+      "evidence": "sdk/example/platform/abb/c_ffi_bridge/read_speed/.xmake/abb-run/read_speed-celc_rkc/execution.json",
+      "artifact_sha256": "ab645c5be8d96407937964b067e4c870b42e60b6094734cba5fec9566fd52639"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "scenario": "read_speed",
+      "mode": "invalid_ratio",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.5129060260005645,
+      "evidence": "sdk/example/platform/abb/c_ffi_bridge/read_speed/.xmake/abb-run/read_speed-6lc94vw4/execution.json",
+      "artifact_sha256": "ab645c5be8d96407937964b067e4c870b42e60b6094734cba5fec9566fd52639"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "scenario": "read_io",
+      "mode": "controller_refusal",
+      "guest_exit": 5,
+      "xmake_exit": 255,
+      "elapsed_seconds": 0.5016911389993766,
+      "evidence": "sdk/example/platform/abb/c_ffi_bridge/read_io/.xmake/abb-run/read_io-ux6nwsrc/execution.json",
+      "artifact_sha256": "280165fc99fea4d08a7d4debfa308e0802ac450ea522e1dc80073371a15044f4"
+    }
+  ],
+  "runtime": "actual uwvm2 interpreter and production ROS2 gateway",
+  "physical_controller_executed": false,
+  "case_count": 48
+}

@@ -1,0 +1,28 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "uwvm/lua/observation",
+      "file": "src/language/lua/modules/observation.lua",
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "name": "unitree/lua/ros1/records",
+      "file": "include/platform/unitree/lua/ros1/records.lua",
+      "sha256": "d86a400738d2d55a4179f748cc46c9baf1d44433b1743951d2fb98bf19c94105"
+    },
+    {
+      "name": "unitree/lua/observation",
+      "file": "include/platform/unitree/lua/observation.lua",
+      "sha256": "92e71a9ae34c569b0c243e0fe4787b2ad62a3c8457969855fce187c961256dbf"
+    },
+    {
+      "name": "unitree/lua/ros1/observation",
+      "file": "include/platform/unitree/lua/ros1/observation.lua",
+      "sha256": "de7fee3c85ce3174ad8346f4328122e63eec10b664890bfe0c68330b64d821e3"
+    }
+  ],
+  "default_authority": []
+}

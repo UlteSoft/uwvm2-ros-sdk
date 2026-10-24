@@ -1,0 +1,258 @@
+﻿#pragma once
+
+#if defined(__APPLE__) || defined(__DARWIN_C_LEVEL)
+#include <TargetConditionals.h>
+#endif
+
+namespace fast_io
+{
+
+namespace details
+{
+
+#ifndef __wasi__
+inline ::std::byte *posix_pread_bytes_impl(int fd, ::std::byte *first, ::std::byte *last, ::fast_io::intfpos_t off)
+{
+	auto ret{::fast_io::noexcept_call(::pread, fd, first, static_cast<::std::size_t>(last - first), off)};
+	if (ret == -1)
+	{
+		::fast_io::throw_posix_error();
+	}
+	return first + ret;
+}
+
+inline ::std::byte const *posix_pwrite_bytes_impl(int fd, ::std::byte const *first, ::std::byte const *last,
+												  ::fast_io::intfpos_t off)
+{
+	auto ret{::fast_io::noexcept_call(::pwrite, fd, first, static_cast<::std::size_t>(last - first), off)};
+	if (ret == -1)
+	{
+		::fast_io::throw_posix_error();
+	}
+	return first + ret;
+}
+#endif
+
+inline ::fast_io::io_scatter_status_t posix_scatter_pread_bytes_impl(int fd, ::fast_io::io_scatter_t const *pscatter,
+																	 ::std::size_t n, ::fast_io::intfpos_t off)
+{
+	// preadv has the same IOV_MAX contract as readv. In particular, Linux's raw syscall rejects more than UIO_MAXIOV
+	// descriptors even though raw Linux and WASI wrappers transport iovcnt as size_t; libc paths require an int iovcnt.
+	// Treat the cap as one positional "some" prefix. The generic positional read-all loop derives the consumed byte
+	// count from the returned status before advancing both off and the descriptor span, so a following call resumes at
+	// exactly the first unread byte rather than truncating the request at this boundary. If the admitted prefix is all
+	// empty, scatter_size_to_status maps the zero-byte result to {n,0}; advancing n descriptors and zero bytes preserves
+	// off and prevents that legal boundary from being mistaken for EOF.
+	n = ::std::min(n, ::fast_io::details::posix_scatter_maximum_count);
+#if defined(__linux__) && defined(__NR_preadv)
+	auto ret{system_call<__NR_preadv, ::std::ptrdiff_t>(fd, pscatter, n, off)};
+	::fast_io::linux_system_call_throw_error(ret);
+#elif defined(__wasi__)
+	using iovec_may_alias_const_ptr
+#if __has_cpp_attribute(__gnu__::__may_alias__)
+		[[__gnu__::__may_alias__]]
+#endif
+		= __wasi_iovec_t const *;
+	::std::size_t ret;
+	auto val{noexcept_call(__wasi_fd_pread, fd, reinterpret_cast<iovec_may_alias_const_ptr>(pscatter), n,
+						   static_cast<__wasi_filesize_t>(off), __builtin_addressof(ret))};
+	if (val)
+	{
+		::fast_io::throw_posix_error(val);
+	}
+#else
+	using iovec_may_alias_const_ptr
+#if __has_cpp_attribute(__gnu__::__may_alias__)
+		[[__gnu__::__may_alias__]]
+#endif
+		= struct iovec const *;
+
+	::std::ptrdiff_t ret{};
+#if defined(TARGET_OS_VISION) && TARGET_OS_VISION
+	for (::std::size_t i{}; i != n; ++i)
+	{
+		auto const len{pscatter[i].len};
+		if (len == 0)
+		{
+			continue;
+		}
+		auto first{static_cast<::std::byte *>(const_cast<void *>(pscatter[i].base))};
+		ret = ::fast_io::noexcept_call(::pread, fd, first, len, off);
+		if (ret == -1)
+		{
+			::fast_io::throw_posix_error();
+		}
+		auto status{scatter_size_to_status(static_cast<::std::size_t>(ret), pscatter + i, n - i)};
+		status.position += i;
+		return status;
+	}
+	return {n, 0};
+#elif (defined(__APPLE__) || defined(__DARWIN_C_LEVEL)) && FAST_IO_HAS_BUILTIN(__builtin_available)
+	if (__builtin_available(macOS 10.16, iOS 14.0, tvOS 14.0, watchOS 7.0, *)) [[likely]]
+	{
+		ret = ::fast_io::noexcept_call(::preadv, fd, reinterpret_cast<iovec_may_alias_const_ptr>(pscatter),
+										 static_cast<int>(n), off);
+	}
+	else
+	{
+		for (::std::size_t i{}; i != n; ++i)
+		{
+			auto const len{pscatter[i].len};
+			if (len == 0)
+			{
+				continue;
+			}
+			auto first{static_cast<::std::byte *>(const_cast<void *>(pscatter[i].base))};
+			ret = ::fast_io::noexcept_call(::pread, fd, first, len, off);
+			if (ret == -1)
+			{
+				::fast_io::throw_posix_error();
+			}
+			auto status{scatter_size_to_status(static_cast<::std::size_t>(ret), pscatter + i, n - i)};
+			status.position += i;
+			return status;
+		}
+		return {n, 0};
+	}
+#else
+	ret = ::fast_io::noexcept_call(::preadv, fd, reinterpret_cast<iovec_may_alias_const_ptr>(pscatter),
+									 static_cast<int>(n), off);
+#endif
+	if (ret == -1)
+	{
+		::fast_io::throw_posix_error();
+	}
+#endif
+	return scatter_size_to_status(static_cast<::std::size_t>(ret), pscatter, n);
+}
+
+inline ::fast_io::io_scatter_status_t posix_scatter_pwrite_bytes_impl(int fd, ::fast_io::io_scatter_t const *pscatter,
+																		  ::std::size_t n, ::fast_io::intfpos_t off)
+{
+	// Enforce the iovec limit again where pwritev is entered. Although the generic all-operation batches and its
+	// some-operation clamps, syscall adapters are a trust boundary: keeping this guard local prevents an oversized
+	// iovcnt from reaching an int-based libc ABI or the kernel if another adapter bypasses the generic dispatcher.
+	// Clamping descriptors does not alter off; this one positional some-call still describes the legal input prefix.
+	n = ::std::min(n, ::fast_io::details::posix_scatter_maximum_count);
+#if defined(__linux__) && defined(__NR_pwritev)
+	auto ret{system_call<__NR_pwritev, ::std::ptrdiff_t>(fd, pscatter, n, off)};
+	::fast_io::linux_system_call_throw_error(ret);
+#elif defined(__wasi__)
+	using iovec_may_alias_const_ptr
+#if __has_cpp_attribute(__gnu__::__may_alias__)
+		[[__gnu__::__may_alias__]]
+#endif
+		= __wasi_ciovec_t const *;
+	::std::size_t ret;
+	auto val{noexcept_call(__wasi_fd_pwrite, fd, reinterpret_cast<iovec_may_alias_const_ptr>(pscatter), n,
+						   static_cast<__wasi_filesize_t>(off), __builtin_addressof(ret))};
+	if (val)
+	{
+		::fast_io::throw_posix_error(val);
+	}
+#else
+	using iovec_may_alias_const_ptr
+#if __has_cpp_attribute(__gnu__::__may_alias__)
+		[[__gnu__::__may_alias__]]
+#endif
+		= struct iovec const *;
+
+	::std::ptrdiff_t ret{};
+#if defined(TARGET_OS_VISION) && TARGET_OS_VISION
+	for (::std::size_t i{}; i != n; ++i)
+	{
+		auto const len{pscatter[i].len};
+		if (len == 0)
+		{
+			continue;
+		}
+		auto first{static_cast<::std::byte const *>(pscatter[i].base)};
+		ret = ::fast_io::noexcept_call(::pwrite, fd, first, len, off);
+		if (ret == -1)
+		{
+			::fast_io::throw_posix_error();
+		}
+		auto status{scatter_size_to_status(static_cast<::std::size_t>(ret), pscatter + i, n - i)};
+		status.position += i;
+		return status;
+	}
+	return {n, 0};
+#elif (defined(__APPLE__) || defined(__DARWIN_C_LEVEL)) && FAST_IO_HAS_BUILTIN(__builtin_available)
+	if (__builtin_available(macOS 10.16, iOS 14.0, tvOS 14.0, watchOS 7.0, *)) [[likely]]
+	{
+		ret = ::fast_io::noexcept_call(::pwritev, fd, reinterpret_cast<iovec_may_alias_const_ptr>(pscatter),
+										  static_cast<int>(n), off);
+	}
+	else
+	{
+		for (::std::size_t i{}; i != n; ++i)
+		{
+			auto const len{pscatter[i].len};
+			if (len == 0)
+			{
+				continue;
+			}
+			auto first{static_cast<::std::byte const *>(pscatter[i].base)};
+			ret = ::fast_io::noexcept_call(::pwrite, fd, first, len, off);
+			if (ret == -1)
+			{
+				::fast_io::throw_posix_error();
+			}
+			auto status{scatter_size_to_status(static_cast<::std::size_t>(ret), pscatter + i, n - i)};
+			status.position += i;
+			return status;
+		}
+		return {n, 0};
+	}
+#else
+	ret = ::fast_io::noexcept_call(::pwritev, fd, reinterpret_cast<iovec_may_alias_const_ptr>(pscatter),
+									  static_cast<int>(n), off);
+#endif
+	if (ret == -1)
+	{
+		::fast_io::throw_posix_error();
+	}
+#endif
+	return scatter_size_to_status(static_cast<::std::size_t>(ret), pscatter, n);
+}
+
+} // namespace details
+
+#ifndef __wasi__
+
+template <::std::integral char_type>
+inline ::std::byte *pread_some_bytes_underflow_define(::fast_io::basic_posix_io_observer<char_type> piob,
+													  ::std::byte *first, ::std::byte *last, ::fast_io::intfpos_t off)
+{
+	return ::fast_io::details::posix_pread_bytes_impl(piob.fd, first, last, off);
+}
+
+template <::std::integral char_type>
+inline ::std::byte const *pwrite_some_bytes_overflow_define(::fast_io::basic_posix_io_observer<char_type> piob,
+															::std::byte const *first, ::std::byte const *last,
+															::fast_io::intfpos_t off)
+{
+	return ::fast_io::details::posix_pwrite_bytes_impl(piob.fd, first, last, off);
+}
+
+#endif
+
+template <::std::integral char_type>
+inline ::fast_io::io_scatter_status_t
+scatter_pread_some_bytes_underflow_define(::fast_io::basic_posix_io_observer<char_type> piob,
+										  ::fast_io::io_scatter_t const *pscatters, ::std::size_t n,
+										  ::fast_io::intfpos_t fpos)
+{
+	return ::fast_io::details::posix_scatter_pread_bytes_impl(piob.fd, pscatters, n, fpos);
+}
+
+template <::std::integral char_type>
+inline ::fast_io::io_scatter_status_t
+scatter_pwrite_some_bytes_overflow_define(::fast_io::basic_posix_io_observer<char_type> piob,
+										  ::fast_io::io_scatter_t const *pscatters, ::std::size_t n,
+										  ::fast_io::intfpos_t fpos)
+{
+	return ::fast_io::details::posix_scatter_pwrite_bytes_impl(piob.fd, pscatters, n, fpos);
+}
+
+} // namespace fast_io

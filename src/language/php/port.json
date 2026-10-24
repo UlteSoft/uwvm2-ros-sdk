@@ -1,0 +1,60 @@
+{
+    "format": "uwvm-language-port-v1",
+    "language": "php",
+    "upstream_version": "8.4.13",
+    "target": "wasm32-wasip1",
+    "exception_profile": "maintained original CRuby Asyncify jump/fiber control; exact Zend zero-argument ucontext usage",
+    "patches": [
+        {
+            "path": "upstream/Zend/zend_fibers.h",
+            "purpose": "exclude unavailable page protection without removing genuine fibers"
+        },
+        {
+            "path": "upstream/ext/random/random.c",
+            "purpose": "exclude unavailable parent-process fallback while retaining actual WASI entropy"
+        },
+        {
+            "path": "upstream/ext/standard/basic_functions.c",
+            "purpose": "include explicit unsupported syslog constants"
+        },
+        {
+            "path": "upstream/ext/standard/flock_compat.c",
+            "purpose": "refuse unsupported locking instead of false success"
+        },
+        {
+            "path": "upstream/ext/standard/microtime.c",
+            "purpose": "retain supported real resource times without unavailable native counters"
+        },
+        {
+            "path": "upstream/main/php_open_temporary_file.c",
+            "purpose": "explicitly refuse temporary files without ambient directory authority"
+        },
+        {
+            "path": "port/network",
+            "purpose": "genuine local IP conversion plus explicit unavailable native effects; exact paired hashes in support manifest"
+        },
+        {
+            "path": "command.c",
+            "purpose": "genuine Zend embedding and namespace-only static raw ABI with exact typed words"
+        },
+        {
+            "path": "upstream/Zend/zend_alloc.c",
+            "purpose": "retain original Zend MM, GC and limits using real aligned libc chunks; unsupported in-place resize takes the original allocate/copy/free fallback instead of partial emulated munmap"
+        }
+    ],
+    "unsupported": [
+        "memory64",
+        "Preview2",
+        "ROS 1 transport",
+        "native signals",
+        "native threads",
+        "dynamic extensions",
+        "PCRE JIT",
+        "native sockets/DNS",
+        "ambient process/user/syslog/temp-directory services",
+        "guard-page protection"
+    ],
+    "production_source_files": 606,
+    "excluded_upstream_audit_files": 24327,
+    "maintenance_source_isolation": "Original configure/build generators run on a private source copy inside the derived build cache."
+}

@@ -1,0 +1,94 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros1-gateway",
+  "backend": "ros1",
+  "distribution": "noetic",
+  "connection": {
+    "master-uri": "http://127.0.0.1:11321",
+    "node-name": "sdk_native_rpc_server",
+    "namespace": "/sdk_fixture",
+    "advertise-host": "127.0.0.1",
+    "transport": "tcpros"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "serve_native_grasp": {
+      "arguments": [
+        "serve",
+        "reply"
+      ],
+      "main_module": "main",
+      "preloads": [],
+      "modules": {
+        "main": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "serve",
+              "operation": "action.advertise",
+              "resource": "/sdk_fixture/franka/served_grasp",
+              "type": "franka_gripper/Grasp",
+              "identity": "6f89449359949eaf1f0fef57b7e0db2a",
+              "limits": {
+                "max-rate-hz": "100",
+                "burst": "10",
+                "max-bytes-per-second": "1048576",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "adapter-codec-identity": "UWVMROS1_b0d51766859cf5b3cc7fbb7de13be1cb1db81b5deda8f0b770efc8e0df30e9f7",
+                "max-active-goals": "1",
+                "max-actions": "1",
+                "timeout-ms": "5000",
+                "max-goal-bytes": "40",
+                "max-feedback-bytes": "9",
+                "max-result-bytes": "270",
+                "cancel-scope": "not-applicable",
+                "max-event-queue-depth": "10",
+                "max-event-queue-bytes": "4096",
+                "overflow-policy": "drop-oldest"
+              }
+            },
+            {
+              "alias": "reply",
+              "operation": "action.respond",
+              "resource": "/sdk_fixture/franka/served_grasp",
+              "type": "franka_gripper/Grasp",
+              "identity": "6f89449359949eaf1f0fef57b7e0db2a",
+              "limits": {
+                "max-rate-hz": "100",
+                "burst": "10",
+                "max-bytes-per-second": "1048576",
+                "validator": "none",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "100",
+                "audit-burst": "100",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "adapter-codec-identity": "UWVMROS1_b0d51766859cf5b3cc7fbb7de13be1cb1db81b5deda8f0b770efc8e0df30e9f7",
+                "max-active-goals": "1",
+                "max-actions": "1",
+                "timeout-ms": "5000",
+                "max-goal-bytes": "40",
+                "max-feedback-bytes": "9",
+                "max-result-bytes": "270",
+                "cancel-scope": "not-applicable",
+                "max-event-queue-depth": "10",
+                "max-event-queue-bytes": "4096",
+                "overflow-policy": "drop-oldest"
+              }
+            }
+          ],
+          "wasi_grants": [
+            "monotonic-clock"
+          ]
+        }
+      }
+    }
+  }
+}

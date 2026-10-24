@@ -1,0 +1,656 @@
+{
+  "kind": "ufactory-selected-complete-original-source-lock-v1",
+  "vendor": "ufactory",
+  "profile": "ros1_master",
+  "ros_version": 1,
+  "default_authority": [],
+  "definitions": [
+    {
+      "type": "xarm_gripper/Move",
+      "kind": "action",
+      "repository": "ros1_master",
+      "original_file": "xarm_gripper/action/Move.action",
+      "generation_file": "xarm_gripper/action/Move.action",
+      "bytes": 106,
+      "sha256": "35c41d9d7ec612cc18dce10aee9cdd6b6f8bfef4dcc3184dccb67ca3926303d6",
+      "git_blob_sha1": "354ffcf3ee4c02970d36c565bff8f636f60e01d9"
+    },
+    {
+      "type": "xarm_msgs/CIOState",
+      "kind": "msg",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/msg/CIOState.msg",
+      "generation_file": "xarm_msgs/msg/CIOState.msg",
+      "bytes": 1241,
+      "sha256": "9b77234e33d19cec9648962e57ebdbc93ede197940a47689457e29b9dfaa39f4",
+      "git_blob_sha1": "1a562911c6d7a22916ec7904a76a77bad521a7ac"
+    },
+    {
+      "type": "xarm_msgs/IOState",
+      "kind": "msg",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/msg/IOState.msg",
+      "generation_file": "xarm_msgs/msg/IOState.msg",
+      "bytes": 127,
+      "sha256": "c3d02e687885003c4a9bbab24d5a256f1eb6ee05bd0ff777230cdb90dd568106",
+      "git_blob_sha1": "6ebd2e036814122b02471aad2d14e18e71c8e8fc"
+    },
+    {
+      "type": "xarm_msgs/RobotMsg",
+      "kind": "msg",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/msg/RobotMsg.msg",
+      "generation_file": "xarm_msgs/msg/RobotMsg.msg",
+      "bytes": 1334,
+      "sha256": "8fd99f3788a9aadb6e615c26fd3eb1b505fe66069cb96adcd2321b456c6d139c",
+      "git_blob_sha1": "605cf28ccf05e4883774ac3dcabecce8aa8da9d6"
+    },
+    {
+      "type": "xarm_msgs/VeloMoveMsg",
+      "kind": "msg",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/msg/VeloMoveMsg.msg",
+      "generation_file": "xarm_msgs/msg/VeloMoveMsg.msg",
+      "bytes": 1202,
+      "sha256": "95e172246253c7da0c821dcf0c53e4a0890f656f304f3cd58816a58b2369f66c",
+      "git_blob_sha1": "f75737dc24a889f0d71b3ec952769bb818c0fe39"
+    },
+    {
+      "type": "xarm_msgs/Call",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/Call.srv",
+      "generation_file": "xarm_msgs/srv/Call.srv",
+      "bytes": 31,
+      "sha256": "628c788bacb726db5a6041035cde0f64d3e65abc94014f33155146ab9defc096",
+      "git_blob_sha1": "8cf7c5ec42a3ee1d140e951644214bb0fdcfecdf"
+    },
+    {
+      "type": "xarm_msgs/ClearErr",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/ClearErr.srv",
+      "generation_file": "xarm_msgs/srv/ClearErr.srv",
+      "bytes": 31,
+      "sha256": "628c788bacb726db5a6041035cde0f64d3e65abc94014f33155146ab9defc096",
+      "git_blob_sha1": "8cf7c5ec42a3ee1d140e951644214bb0fdcfecdf"
+    },
+    {
+      "type": "xarm_msgs/ConfigToolModbus",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/ConfigToolModbus.srv",
+      "generation_file": "xarm_msgs/srv/ConfigToolModbus.srv",
+      "bytes": 200,
+      "sha256": "b24ed91b77d7b6fd0b611fc52a5e18fa5171ff2240150f0c8b015342b78bc052",
+      "git_blob_sha1": "db2d856e837f03b14663fa0da9701e69abba1a68"
+    },
+    {
+      "type": "xarm_msgs/FtCaliLoad",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/FtCaliLoad.srv",
+      "generation_file": "xarm_msgs/srv/FtCaliLoad.srv",
+      "bytes": 532,
+      "sha256": "1b016316c6f7db234bb893c8a09e81846f2d0948031237bcbbb7a041f9483041",
+      "git_blob_sha1": "268fc0c86f6453d6610ed358f5d33ed7b0154db5"
+    },
+    {
+      "type": "xarm_msgs/FtIdenLoad",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/FtIdenLoad.srv",
+      "generation_file": "xarm_msgs/srv/FtIdenLoad.srv",
+      "bytes": 395,
+      "sha256": "d1c0a6428238892772ec655a14945bde8ae1fcfa1f9ab7ede0ce6f02203c1bc4",
+      "git_blob_sha1": "1fd26ef645bdae0551c2a2b2e7b22c8da21ad14d"
+    },
+    {
+      "type": "xarm_msgs/GetAnalogIO",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GetAnalogIO.srv",
+      "generation_file": "xarm_msgs/srv/GetAnalogIO.srv",
+      "bytes": 148,
+      "sha256": "bb419c55852b261636f192ca6a78681267a739b4d1d99c935d288800116f4189",
+      "git_blob_sha1": "e5bd2bf3ebd4e183f0098ccfd6b11d4dc28da19a"
+    },
+    {
+      "type": "xarm_msgs/GetControllerDigitalIO",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GetControllerDigitalIO.srv",
+      "generation_file": "xarm_msgs/srv/GetControllerDigitalIO.srv",
+      "bytes": 132,
+      "sha256": "deeb1129bb3e3ffb9c360f29d1f89355147429458ca4afe840691878bfeb329f",
+      "git_blob_sha1": "71c7f1b3dd5e15ce0d88fc366235524b41c4f514"
+    },
+    {
+      "type": "xarm_msgs/GetDigitalIO",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GetDigitalIO.srv",
+      "generation_file": "xarm_msgs/srv/GetDigitalIO.srv",
+      "bytes": 123,
+      "sha256": "63c9900e5c150728d6fea05598404410c9b5f5d78e2c8b151b090c3e848d1016",
+      "git_blob_sha1": "015f6583abcc38374c22b0b8829f49858187b080"
+    },
+    {
+      "type": "xarm_msgs/GetErr",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GetErr.srv",
+      "generation_file": "xarm_msgs/srv/GetErr.srv",
+      "bytes": 40,
+      "sha256": "5cfc3660c894fbede07cb2b065a49ba2f66ad18c4800406267eea7bf0aa2c7d7",
+      "git_blob_sha1": "6ddbfcf185d5c31fbee789f4f2399a1af64312b8"
+    },
+    {
+      "type": "xarm_msgs/GetFloat32List",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GetFloat32List.srv",
+      "generation_file": "xarm_msgs/srv/GetFloat32List.srv",
+      "bytes": 163,
+      "sha256": "8e78fda1aedec8071c8d85bfebfc0ea5e40ee18faf3d13425bbd459717696d0b",
+      "git_blob_sha1": "212d123e24f777d3593205d388294c3272e1b1b5"
+    },
+    {
+      "type": "xarm_msgs/GetInt32",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GetInt32.srv",
+      "generation_file": "xarm_msgs/srv/GetInt32.srv",
+      "bytes": 41,
+      "sha256": "b003684bdb350766c9111ae5ccc60b11ff3103053e81a7fcdd5aa72ed31c04a8",
+      "git_blob_sha1": "8f6afa68b0445325391cd0c975e174ce05718e1c"
+    },
+    {
+      "type": "xarm_msgs/GetSetModbusData",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GetSetModbusData.srv",
+      "generation_file": "xarm_msgs/srv/GetSetModbusData.srv",
+      "bytes": 514,
+      "sha256": "ac7121dbcf3d1baf01776aa2ca898e133fd0cd2526d3e088be52d06155172b97",
+      "git_blob_sha1": "a211fc13057db233b29b90abb4459deaf76b6dbe"
+    },
+    {
+      "type": "xarm_msgs/GripperConfig",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GripperConfig.srv",
+      "generation_file": "xarm_msgs/srv/GripperConfig.srv",
+      "bytes": 104,
+      "sha256": "a8931c1d78b7c9bdbaaf88d7bfb39e0bfe0278243c0fb56ca54daeec287800a7",
+      "git_blob_sha1": "f046513a72dd828644347cb5092d49db66c4c2ad"
+    },
+    {
+      "type": "xarm_msgs/GripperMove",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GripperMove.srv",
+      "generation_file": "xarm_msgs/srv/GripperMove.srv",
+      "bytes": 113,
+      "sha256": "ce9c3036fe1c3f582a8a35f1acdcbb10f7856a380082008b3209d0da4a4f29d7",
+      "git_blob_sha1": "ea6104548b7ae14c26ec6dcf9f6149af7a01c9b1"
+    },
+    {
+      "type": "xarm_msgs/GripperState",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/GripperState.srv",
+      "generation_file": "xarm_msgs/srv/GripperState.srv",
+      "bytes": 60,
+      "sha256": "2268dc0a2136d29f9df852d872f53b65d28cf85329aea48bae04dd46999c6667",
+      "git_blob_sha1": "8d0984a29bc3adcd31e5ccb154604f098841992f"
+    },
+    {
+      "type": "xarm_msgs/Move",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/Move.srv",
+      "generation_file": "xarm_msgs/srv/Move.srv",
+      "bytes": 1307,
+      "sha256": "6bb17f823722c700697cf96aaed15a3ca3b0757d54276a9df3864adf2a12eff2",
+      "git_blob_sha1": "2845f844cf739519050876628538b2f919e15f93"
+    },
+    {
+      "type": "xarm_msgs/MoveAxisAngle",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/MoveAxisAngle.srv",
+      "generation_file": "xarm_msgs/srv/MoveAxisAngle.srv",
+      "bytes": 1039,
+      "sha256": "ed1e1a96fe73d8da95f16fdcb080467a7854e7df061e73fa8af96338d946a062",
+      "git_blob_sha1": "7384cbb53920b4fe341e7bf718c98b38adb20bd6"
+    },
+    {
+      "type": "xarm_msgs/MoveVelo",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/MoveVelo.srv",
+      "generation_file": "xarm_msgs/srv/MoveVelo.srv",
+      "bytes": 881,
+      "sha256": "f1f11bbe9f700e96af0cee79147671e80850089cc60ce9d8ec77b8527636e3b6",
+      "git_blob_sha1": "9d16c6f66dd0b637e831ffbca5d955f9fb6cb3cd"
+    },
+    {
+      "type": "xarm_msgs/MoveVelocity",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/MoveVelocity.srv",
+      "generation_file": "xarm_msgs/srv/MoveVelocity.srv",
+      "bytes": 1426,
+      "sha256": "4ddf3ed32824e4f90d1dadd9187436e820e50b0ca2b71856ece36368a1462c83",
+      "git_blob_sha1": "5cc308496012ed33b2551e83df55ebad59e8b291"
+    },
+    {
+      "type": "xarm_msgs/PlayTraj",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/PlayTraj.srv",
+      "generation_file": "xarm_msgs/srv/PlayTraj.srv",
+      "bytes": 520,
+      "sha256": "fe8a40699abb324cb05fd5dd15dc30d72d84628ac3ec576e6c7e612457189d49",
+      "git_blob_sha1": "8f2bedac42fbe3433624d2e43603b7836b4e4d6a"
+    },
+    {
+      "type": "xarm_msgs/SetAxis",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetAxis.srv",
+      "generation_file": "xarm_msgs/srv/SetAxis.srv",
+      "bytes": 413,
+      "sha256": "a9b014f610e35c528393dc98bc7fefc405660a63c96266abaab5d70cf1e92fc4",
+      "git_blob_sha1": "06732f2534546a6be0c653dab61cb5fd7bc7f8a1"
+    },
+    {
+      "type": "xarm_msgs/SetControllerAnalogIO",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetControllerAnalogIO.srv",
+      "generation_file": "xarm_msgs/srv/SetControllerAnalogIO.srv",
+      "bytes": 150,
+      "sha256": "01864372ab1accaa99a7e9a32d15097bd3d26bb1eec0185434ef7ea17daaa2eb",
+      "git_blob_sha1": "1dcffb790c6c4ebfcee29e42d77e0d4e688cee80"
+    },
+    {
+      "type": "xarm_msgs/SetDigitalIO",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetDigitalIO.srv",
+      "generation_file": "xarm_msgs/srv/SetDigitalIO.srv",
+      "bytes": 130,
+      "sha256": "3466d99834cbf235d66be41ca5ff0cb800845812c0c33029c24f538ddf36b75d",
+      "git_blob_sha1": "fc991ceec03fb164b84eb125e3aef4d788b98077"
+    },
+    {
+      "type": "xarm_msgs/SetFloat32",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetFloat32.srv",
+      "generation_file": "xarm_msgs/srv/SetFloat32.srv",
+      "bytes": 308,
+      "sha256": "871d32ccb6bf5e1cf14cb3d1db3abb5be8c9909402a6f7f1fd96442ff44db9fe",
+      "git_blob_sha1": "721c902aa329368056e757814eaf9b33d04233af"
+    },
+    {
+      "type": "xarm_msgs/SetInt16",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetInt16.srv",
+      "generation_file": "xarm_msgs/srv/SetInt16.srv",
+      "bytes": 312,
+      "sha256": "38581edfb63ee1172dca1765a77a462925f192dd7412a4df229df326ab598380",
+      "git_blob_sha1": "065e0e540d1639b188b23f82ea2394ad6bf2b19f"
+    },
+    {
+      "type": "xarm_msgs/SetLoad",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetLoad.srv",
+      "generation_file": "xarm_msgs/srv/SetLoad.srv",
+      "bytes": 243,
+      "sha256": "49b8767ce335071e6e860b74d04aae40cf1162ec137bf3548ded2d7cba10b4e3",
+      "git_blob_sha1": "cf0b6233889fb6d3386304c41edc1d5cc759a623"
+    },
+    {
+      "type": "xarm_msgs/SetModbusTimeout",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetModbusTimeout.srv",
+      "generation_file": "xarm_msgs/srv/SetModbusTimeout.srv",
+      "bytes": 225,
+      "sha256": "cb59c08a87c984d2c5adbedaeef5a30ef94a4af71c6d10839061dd5bc40dd1e7",
+      "git_blob_sha1": "067e4ee9b7cd1269ba786418bfcc6c6bb0fe4837"
+    },
+    {
+      "type": "xarm_msgs/SetMultipleInts",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetMultipleInts.srv",
+      "generation_file": "xarm_msgs/srv/SetMultipleInts.srv",
+      "bytes": 293,
+      "sha256": "03f40349bba1b95f7350928a4a33b56b4b603a7af5f2f9357e9ab619e58d3e8b",
+      "git_blob_sha1": "17fb316eec44461599e63543d885fa6a97572401"
+    },
+    {
+      "type": "xarm_msgs/SetString",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetString.srv",
+      "generation_file": "xarm_msgs/srv/SetString.srv",
+      "bytes": 312,
+      "sha256": "d81ef2b29ea5f5a93f9a177681400a77fa6ce7593c9c4ffae29de65b458bf013",
+      "git_blob_sha1": "ece35876bfcca6c5b8e7372028e39ba3254dacc2"
+    },
+    {
+      "type": "xarm_msgs/SetToolModbus",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/SetToolModbus.srv",
+      "generation_file": "xarm_msgs/srv/SetToolModbus.srv",
+      "bytes": 213,
+      "sha256": "11a74f2f0fad0165d48c8d3a5cb4947be4aa9be731affc50e5627ad684466c3e",
+      "git_blob_sha1": "c1116dd93d9b68050ed81e024654efa48702c5ff"
+    },
+    {
+      "type": "xarm_msgs/TCPOffset",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/TCPOffset.srv",
+      "generation_file": "xarm_msgs/srv/TCPOffset.srv",
+      "bytes": 216,
+      "sha256": "a56f573c9ac41053587ba10eb1581ab7b7d8c543d87c6c2a9043a2a28d6b3d84",
+      "git_blob_sha1": "30b8459456a84a6e54cc5f317c58096269554d00"
+    },
+    {
+      "type": "xarm_msgs/VacuumGripperCtrl",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_msgs/srv/VacuumGripperCtrl.srv",
+      "generation_file": "xarm_msgs/srv/VacuumGripperCtrl.srv",
+      "bytes": 256,
+      "sha256": "a8957b89fee4cc74d5790c748db65b21c77c6593264083e84ace72dd6ddd631c",
+      "git_blob_sha1": "0e9eaec7b40ae2f84a01fa1bca19786d25c87c56"
+    },
+    {
+      "type": "xarm_planner/exec_plan",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_planner/srv/exec_plan.srv",
+      "generation_file": "xarm_planner/srv/exec_plan.srv",
+      "bytes": 26,
+      "sha256": "d205b088c891d57db92c7ace8dd4323fc4d852bb60866b5f635504de48302f9c",
+      "git_blob_sha1": "a3223618fb6f918ba421b92d295c09bee3f4ec48"
+    },
+    {
+      "type": "xarm_planner/joint_plan",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_planner/srv/joint_plan.srv",
+      "generation_file": "xarm_planner/srv/joint_plan.srv",
+      "bytes": 79,
+      "sha256": "fe1ee19c0202630849eaba3b47bd8133651f03e195baa5884a79b8af94e0d208",
+      "git_blob_sha1": "897241fcc7c1015c345f6a6dc3b2fc1c63d125fa"
+    },
+    {
+      "type": "xarm_planner/pose_plan",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_planner/srv/pose_plan.srv",
+      "generation_file": "xarm_planner/srv/pose_plan.srv",
+      "bytes": 44,
+      "sha256": "525c540742d39ea986135f069d015dfdb2342d4b11e6d4fa9c23e4ffab9ec7cf",
+      "git_blob_sha1": "c6fc41eaa4b27a0553fe953740cb1c60e157cfae"
+    },
+    {
+      "type": "xarm_planner/single_straight_plan",
+      "kind": "srv",
+      "repository": "ros1_master",
+      "original_file": "xarm_planner/srv/single_straight_plan.srv",
+      "generation_file": "xarm_planner/srv/single_straight_plan.srv",
+      "bytes": 44,
+      "sha256": "525c540742d39ea986135f069d015dfdb2342d4b11e6d4fa9c23e4ffab9ec7cf",
+      "git_blob_sha1": "c6fc41eaa4b27a0553fe953740cb1c60e157cfae"
+    },
+    {
+      "type": "std_msgs/Header",
+      "kind": "msg",
+      "repository": "std_ros1",
+      "original_file": "msg/Header.msg",
+      "generation_file": "std_msgs/msg/Header.msg",
+      "bytes": 551,
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693",
+      "git_blob_sha1": "2b3866d2cbcaa7c84d8341e541986da1d5a485a1"
+    },
+    {
+      "type": "geometry_msgs/Pose",
+      "kind": "msg",
+      "repository": "common_ros1",
+      "original_file": "geometry_msgs/msg/Pose.msg",
+      "generation_file": "geometry_msgs/msg/Pose.msg",
+      "bytes": 119,
+      "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5",
+      "git_blob_sha1": "763708f7a98d12e0e27894bea3bdd0b085602f2f"
+    },
+    {
+      "type": "geometry_msgs/Point",
+      "kind": "msg",
+      "repository": "common_ros1",
+      "original_file": "geometry_msgs/msg/Point.msg",
+      "generation_file": "geometry_msgs/msg/Point.msg",
+      "bytes": 84,
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+      "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0"
+    },
+    {
+      "type": "geometry_msgs/Quaternion",
+      "kind": "msg",
+      "repository": "common_ros1",
+      "original_file": "geometry_msgs/msg/Quaternion.msg",
+      "generation_file": "geometry_msgs/msg/Quaternion.msg",
+      "bytes": 108,
+      "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e",
+      "git_blob_sha1": "9f4fde2bf4c13dc86a95688e4b5254aaec186e2a"
+    }
+  ],
+  "original_custom_roots": [
+    {
+      "kind": "action",
+      "type": "xarm_gripper/Move"
+    },
+    {
+      "kind": "msg",
+      "type": "xarm_msgs/CIOState"
+    },
+    {
+      "kind": "msg",
+      "type": "xarm_msgs/IOState"
+    },
+    {
+      "kind": "msg",
+      "type": "xarm_msgs/RobotMsg"
+    },
+    {
+      "kind": "msg",
+      "type": "xarm_msgs/VeloMoveMsg"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/Call"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/ClearErr"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/ConfigToolModbus"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/FtCaliLoad"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/FtIdenLoad"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetAnalogIO"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetControllerDigitalIO"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetDigitalIO"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetErr"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetFloat32List"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetInt32"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetSetModbusData"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GripperConfig"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GripperMove"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GripperState"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/Move"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/MoveAxisAngle"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/MoveVelo"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/MoveVelocity"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/PlayTraj"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetAxis"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetControllerAnalogIO"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetDigitalIO"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetFloat32"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetInt16"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetLoad"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetModbusTimeout"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetMultipleInts"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetString"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetToolModbus"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/TCPOffset"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/VacuumGripperCtrl"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_planner/exec_plan"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_planner/joint_plan"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_planner/pose_plan"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_planner/single_straight_plan"
+    }
+  ],
+  "repositories": [
+    {
+      "id": "ros1_master",
+      "repository": "xArm-Developer/xarm_ros",
+      "branch": "master",
+      "commit": "aad7e1611c9c46eb719045414394bfdd42dcb0f8",
+      "tree_git_sha1": "8bfc4d190357d47890be3c9689392a88811da72e"
+    },
+    {
+      "id": "std_ros1",
+      "repository": "ros/std_msgs",
+      "url": "https://github.com/ros/std_msgs",
+      "branch": "noetic-devel",
+      "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+      "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519",
+      "default_authority": [],
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+    },
+    {
+      "id": "common_ros1",
+      "repository": "ros/common_msgs",
+      "url": "https://github.com/ros/common_msgs",
+      "branch": "noetic-devel",
+      "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+      "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f",
+      "default_authority": [],
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+    }
+  ],
+  "catalog_sha256": "0a9b811bbd6b051ff059bc16d6e58a061df520bd8c818eb455d8f0dbd2eec757",
+  "scope": "Every original custom declaration from this exact branch tree, plus every reached original core dependency. Versioned source data only; actual native metadata/installed SDK/driver/controller/releases require independent qualification."
+}

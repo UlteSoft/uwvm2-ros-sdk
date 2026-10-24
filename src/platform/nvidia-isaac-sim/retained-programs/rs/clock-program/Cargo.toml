@@ -1,0 +1,20 @@
+[package]
+name = "isaac-sim-clock-program"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+publish = false
+
+# Installed example/platform/nvidia-isaac-sim/rs/clock-program.
+[dependencies]
+roswasm = { path = "ros2/rs", features = ["alloc", "ros2"] }
+roswasm-isaac-sim-clock = { path = "nvidia-isaac-sim/rs/clock-control" }
+
+[[bin]]
+name = "clock-program"
+path = "main.rs"
+
+[profile.release]
+panic = "abort"
+lto = true
+codegen-units = 1

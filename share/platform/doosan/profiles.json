@@ -1,0 +1,223 @@
+{
+  "kind": "doosan-complete-original-source-domains-v1",
+  "profiles": [
+    {
+      "id": "ros1_aws_robot",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "aws",
+      "ros_version": 1,
+      "commit": "19d520d7df599dc9751f3e8a41337c399c418a47",
+      "tree": "9d361e5e9cae02cba376a25da1f92f44ae5a4462",
+      "mirror_key": "ros1_aws",
+      "source_prefix": "robot_ws/src/dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 64,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_aws_simulation",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "aws",
+      "ros_version": 1,
+      "commit": "19d520d7df599dc9751f3e8a41337c399c418a47",
+      "tree": "9d361e5e9cae02cba376a25da1f92f44ae5a4462",
+      "mirror_key": "ros1_aws",
+      "source_prefix": "simulation_ws/src/dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 64,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_doosan_robotics_patch_1",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "doosan-robotics-patch-1",
+      "ros_version": 1,
+      "commit": "cd0226d777d92422cd8250fe35c18946bc7d24cc",
+      "tree": "60a52575e73a50fb9d3a22539c4bb33664f6e27a",
+      "mirror_key": "ros1_doosan_robotics_patch_1",
+      "source_prefix": "dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 147,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_kinetic_devel_descrepted",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "kinetic-devel(descrepted)",
+      "ros_version": 1,
+      "commit": "60f17b3060136f96b8c6260e1b2dda6ab238e570",
+      "tree": "f051c917452d4f90d111c4402f15a22ca1f752ef",
+      "mirror_key": "ros1_kinetic_devel(descrepted)",
+      "source_prefix": "dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 115,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_main",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "main",
+      "ros_version": 1,
+      "commit": "9c4ecd726d075bc1a8de3fdf639cc4d557d4b9cb",
+      "tree": "71f8da5ee9948944625764790cf4554415818328",
+      "mirror_key": "ros1_main",
+      "source_prefix": "dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 147,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_master",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "master",
+      "ros_version": 1,
+      "commit": "5f87fe520f966ef22a50d456627e802fd2d0b7ce",
+      "tree": "4a741f1f9dd2223380d17f8b409c627727bd07db",
+      "mirror_key": "ros1_master",
+      "source_prefix": "dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 146,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_melodic_devel",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "melodic-devel",
+      "ros_version": 1,
+      "commit": "28b6a17692eec60c27ad89f6fba82239276b750b",
+      "tree": "7e1018bc14ab3057b7a740219fa1c4b9066d5ea7",
+      "mirror_key": "ros1_melodic_devel",
+      "source_prefix": "dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 147,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_noetic_devel",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "noetic-devel",
+      "ros_version": 1,
+      "commit": "2c12e859aed34c492706fa053af5b3304ce33c86",
+      "tree": "97cd7f7b3ae62aa20612e4f4f1842eb7fd29774b",
+      "mirror_key": "ros1_noetic_devel",
+      "source_prefix": "dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 147,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_patch_1",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "patch-1",
+      "ros_version": 1,
+      "commit": "1d14369e6bd52617b5d75e5aa9382a392833053c",
+      "tree": "8593c22c2ae8b7e694aaf1578e173e8586446f15",
+      "mirror_key": "ros1_patch_1",
+      "source_prefix": "dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 147,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros1_song_ms_patch_1",
+      "repository": "DoosanRobotics/doosan-robot",
+      "branch": "song-ms-patch-1",
+      "ros_version": 1,
+      "commit": "5a21f1c52b4d6e48ba3f95c6bc1dd774932ec922",
+      "tree": "71f8da5ee9948944625764790cf4554415818328",
+      "mirror_key": "ros1_song_ms_patch_1",
+      "source_prefix": "dsr_msgs",
+      "package": "dsr_msgs",
+      "definitions": 147,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "std_ros1",
+        "common_ros1"
+      ]
+    },
+    {
+      "id": "ros2_humble",
+      "repository": "DoosanRobotics/doosan-robot2",
+      "branch": "humble",
+      "ros_version": 2,
+      "commit": "6c5f3ba622bfa9d6f9cffebf21fa44f57db55b48",
+      "tree": "4747b97f51450bb5ded75e4af84d90ca44a76171",
+      "mirror_key": "ros2_humble",
+      "source_prefix": "dsr_msgs2",
+      "package": "dsr_msgs2",
+      "definitions": 161,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "common_humble",
+        "rcl_humble"
+      ]
+    },
+    {
+      "id": "ros2_jazzy",
+      "repository": "DoosanRobotics/doosan-robot2",
+      "branch": "jazzy",
+      "ros_version": 2,
+      "commit": "e5e2d7f4fe11865b9ddf4ad658362bc8e73296e0",
+      "tree": "c39cf0684b67a1db14c0dae6933c4f9570c718b1",
+      "mirror_key": "ros2_jazzy",
+      "source_prefix": "dsr_msgs2",
+      "package": "dsr_msgs2",
+      "definitions": 161,
+      "state": "RobotState",
+      "command": "RobotStop",
+      "core": [
+        "common_jazzy",
+        "rcl_jazzy"
+      ]
+    }
+  ],
+  "default_authority": [],
+  "selection": "Every public branch observed on 2026-10-20 is pinned independently. AWS robot/simulation workspaces are separate source domains. Historical source is not native controller/release acceptance."
+}

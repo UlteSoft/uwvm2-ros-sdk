@@ -1,0 +1,35 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "ros_version": 2,
+      "type": "uwvm_spot_bridge/srv/State",
+      "file": "uwvm_spot_bridge/srv/State.srv",
+      "registered": true
+    },
+    {
+      "ros_version": 2,
+      "type": "uwvm_spot_bridge/srv/Lease",
+      "file": "uwvm_spot_bridge/srv/Lease.srv",
+      "registered": true
+    },
+    {
+      "ros_version": 2,
+      "type": "uwvm_spot_bridge/srv/Command",
+      "file": "uwvm_spot_bridge/srv/Command.srv",
+      "registered": true
+    },
+    {
+      "ros_version": 2,
+      "type": "uwvm_spot_bridge/srv/Velocity",
+      "file": "uwvm_spot_bridge/srv/Velocity.srv",
+      "registered": true
+    },
+    {
+      "ros_version": 2,
+      "type": "uwvm_spot_bridge/srv/Feedback",
+      "file": "uwvm_spot_bridge/srv/Feedback.srv",
+      "registered": true
+    }
+  ]
+}

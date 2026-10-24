@@ -1,0 +1,271 @@
+{
+  "format": "uwvm-genuine-language-core-v1",
+  "language": "lua",
+  "version": "5.4.8",
+  "target": "wasm64-wasip1",
+  "compiler": "LLVM 23.1.4",
+  "archive": "lib/language/lua/wasm64-wasip1/core/libuwvm-engine.a",
+  "include_roots": [
+    "src/language/lua/library/headers/wasm64-wasip1"
+  ],
+  "compile_flags": [
+    "-Dl_signalT=int"
+  ],
+  "forced_includes": [
+    "src/language/lua/guest_config.h"
+  ],
+  "link_libraries": [
+    "-lm"
+  ],
+  "source_lock_sha256": "749b2a4cacbc6b21587b24194230dbb5a508287253337190f69f78e975864388",
+  "source_build_receipt_sha256": "3eacff5786dd4498bdf78390bf8b775863bb882b67cf1514d6658899e644fbed",
+  "input_core_objects": [
+    {
+      "sha256": "bed360355636d235267e0dabf6f298062e1c98cb7f5d0d8482fd524719669a93"
+    },
+    {
+      "sha256": "3e11f2700f447a17fc106f8327907792023c7855bf0eb6f4d627ffbb3730c53e"
+    },
+    {
+      "sha256": "4bbfff400b75b85a86fcec7afc3822854c4821536063f3dc8d77640599053b1e"
+    },
+    {
+      "sha256": "f645d9556454fb3478ec250b6675e99fb335e21feca10312230fe3aa9f2a4a9d"
+    },
+    {
+      "sha256": "98f40592ff1bc5242bbcb5a39958e46c1eb5994f488aa7b6250fb4832feb31cb"
+    },
+    {
+      "sha256": "70a09b627b55c4cb39714338bd8f5fdd16d44711fa3fba228ed5d28e3abf74fc"
+    },
+    {
+      "sha256": "7010a9e1e3a2662f9a8ed2661937e279731a27345435cfab4705dbbfe7663650"
+    },
+    {
+      "sha256": "06d2687c790027c9d662899b0ca3f2c2c08586cfd711ca8e5598340b1a43fe71"
+    },
+    {
+      "sha256": "7374f0127519e1740ca6a132ee8419e742aeea36de2cfd78a83fe3f6a5cfaac9"
+    },
+    {
+      "sha256": "aa8705e1868c87854eb2a9cff93d6ee20ca015eade91e150ef2e2500fd7e1dda"
+    },
+    {
+      "sha256": "cb6d1998f8f368532864763da46061444e5c1382a2c25fefafe5896416f949a0"
+    },
+    {
+      "sha256": "9f32502d4c973e2319e444921d0763c035d45fedc031a3abcc7a2065418df8e1"
+    },
+    {
+      "sha256": "ac783d2714de969ab4995c720ba51f2d49df7e6c0caa65755bcae322ee9a81b8"
+    },
+    {
+      "sha256": "b5f57ec09d5350b428100581255e2ae44edb699d07ee1db9d5612d70c35d4133"
+    },
+    {
+      "sha256": "cba06254a1ff45b8466737bd7f34f4c1a0eee98dae4d2da7b9df37746fbe7dee"
+    },
+    {
+      "sha256": "01564d2f9433f4c9d40c8929be7c2c142e1eee706517e491fd07f018a90d27aa"
+    },
+    {
+      "sha256": "5cfda246d322122d7c4eca3b0e6b06a22e1b32d22e5d791931e68ba00e4ea7b8"
+    },
+    {
+      "sha256": "96d00b84f5cbb88700972eae63f6c47412559dacde41bc9a1bb29d405cd48a01"
+    },
+    {
+      "sha256": "d2a8cd71f028836033d5ab53e8340d65ff4f268e89aed294929bcc304c15cc47"
+    },
+    {
+      "sha256": "f71d5309bbdff57e8731dedd2bff5614ce9cae5ee2f44ad5925f7a4b1954dbf9"
+    },
+    {
+      "sha256": "7a703de54b3cc54aa3de3d35ff06af8b8a169e4709c62d35dde8bf332fd6783c"
+    },
+    {
+      "sha256": "b4d84431c8903aef002823650fa4c3b0188bf99428173a708a69f9c2923c333d"
+    },
+    {
+      "sha256": "bed515cee36697421adc1ee7d829a1750332673670392af32db43a69efdf7ca0"
+    },
+    {
+      "sha256": "18929eb78073826266e44127aa863cccfa2083bfde1ee1bf370108f5ed3cfc46"
+    },
+    {
+      "sha256": "bf45ad05c4e65784d07e616f21617cedc25c7e29ad59c9fddcbd5c0844ccdf21"
+    },
+    {
+      "sha256": "4db098ecbcc6dde81c67397876769be824707d36975c080c3d2d34607f779882"
+    },
+    {
+      "sha256": "811a488c149e1fce330e0dd0e96c965025610960edc8fa44537d283bbab23657"
+    },
+    {
+      "sha256": "e351c3e5b4aeb1523f5e4f9c3b34a60be7f852fbf71a9cbcb71f71b97b125b6a"
+    },
+    {
+      "sha256": "0a920d8e810d7cb88b784611ca14aa299f50b234bf02600777c4ea44286adb27"
+    },
+    {
+      "sha256": "43f6884c81b7355d58a3e4c4d83f92543bbb38e860480c3c3f9413bac726d9c2"
+    },
+    {
+      "sha256": "64d160f4795bb1499b5dde6fad77d567a457acc7aa5bc21f798dff007c6ec3c4"
+    },
+    {
+      "sha256": "bed2aa27f4e576fe67ba67c1afeaca6ce9e2fde0aa15b75ece7a6b72c12e9b32"
+    }
+  ],
+  "input_core_archives": [],
+  "inputs": [
+    {
+      "path": "lib/language/lua/wasm64-wasip1/core/libuwvm-engine.a",
+      "sha256": "82b6b3b64ba202104b27e77b1b292d29e3e5323ae29201501646ecfe58aceeee",
+      "bytes": 382142
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lapi.h",
+      "sha256": "152d22cdc7bf1507b3d8bd55af14355e67e1197befe2a28fb36dbc921f2b148a",
+      "bytes": 2726
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lauxlib.h",
+      "sha256": "303e132c2d23619475c01f17e108b1bdeb3824ab69da31d60e5a9c65eb6cfc70",
+      "bytes": 9248
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lcode.h",
+      "sha256": "d87d707162455f1dcb14ee6df4957bd06b2c9ad29b9a26accffd18968ffbf09f",
+      "bytes": 4007
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lctype.h",
+      "sha256": "ec13a0582b1c883889f7b2f713c0f15eff12bfb46fe9e9572b515d138ce75e65",
+      "bytes": 2523
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/ldebug.h",
+      "sha256": "15718f6b5854f89c29dac741c77ab264825ac57ffd9bb24ad908523a3b8249c6",
+      "bytes": 2159
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/ldo.h",
+      "sha256": "0cced8027320988bf306dd361de8b889521f4b9bd4ea91ba0d7c3cdd03e1cd56",
+      "bytes": 5785
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lfunc.h",
+      "sha256": "cfed9c4d2db31612be3b6ceb0ef80b6cd95b451b05a88b5a375cda511ff13028",
+      "bytes": 1996
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lgc.h",
+      "sha256": "70f9752976af3b1645e410811c8f405ca737a17a75e86f64a807b6d90bcd045f",
+      "bytes": 8052
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/ljumptab.h",
+      "sha256": "ffc25870dbd8e3ba8e4c12c6230fff27366edc427456c84fc187a53b78e069ef",
+      "bytes": 2656
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/llex.h",
+      "sha256": "d430e4b8172dce516d6d6922b4345e87f376062e8589ebc7e6eb32bf7f9a5461",
+      "bytes": 3008
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/llimits.h",
+      "sha256": "208babeb9b9ab7b93ea120cd7d9dad171e46cb54839cbabc579d64d1b844f992",
+      "bytes": 13005
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lmem.h",
+      "sha256": "73b14d1a39003aecdc68a83351ee4d6ff4054be87b7f313d2992496ae59b6e4f",
+      "bytes": 3487
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lobject.h",
+      "sha256": "b5a62d5e9342f3416f4e4db8f0da1c9b47907a380419dc5c1db68b55b816d617",
+      "bytes": 38536
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lopcodes.h",
+      "sha256": "e68e4079f190356ffed16fe3d30f9e97e00970b28b37946fe21a5fb5436d38a8",
+      "bytes": 14432
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lopnames.h",
+      "sha256": "e5210587e59894d4b323a545c01c9b2825330cb0dc243eb71d4028e1a99b7406",
+      "bytes": 1653
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lparser.h",
+      "sha256": "e143e6d32d12adadabc6782ec7ec74a69e779dfb89040c03cb6b5db3d154c4af",
+      "bytes": 6811
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lprefix.h",
+      "sha256": "5b86a4a1728dd543d7e78a721db87735f992dcb1aede8800c3bf9059e93a52f9",
+      "bytes": 1223
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lstate.h",
+      "sha256": "e152e97299c1ca359babfe56f15c71ed54d7cacb8db5afef15cf8aef4f0a1bdb",
+      "bytes": 16447
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lstring.h",
+      "sha256": "a1db341e614586d344b29a5ad8e434b487f1b1be897cc4bcd75e298e8c95fedc",
+      "bytes": 1958
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/ltable.h",
+      "sha256": "2576f1793c29b3343dcbd8a97b3c7a3556e017f73df1acfd7aa550f3508a6eca",
+      "bytes": 2243
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/ltm.h",
+      "sha256": "670a8f59fa5abbe6047f41e5921eaf2d0a1d70576d2fb5b13d59c2e8e0ad644a",
+      "bytes": 3021
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lua.h",
+      "sha256": "2b84d9b3f4f54835cba6ba6584d9ea84e2f92b44f7a098f5511ab5ad69cfa323",
+      "bytes": 15816
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/luaconf.h",
+      "sha256": "8d6b17a03556b8cad017bc74f8cb6f8fd290ce4442689044c9eb40289630823c",
+      "bytes": 23135
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lualib.h",
+      "sha256": "13f0e946b95263d51eda77bf569f54b490c58abaab008da087a33fa8a255f7fe",
+      "bytes": 1488
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lundump.h",
+      "sha256": "eda3cc4d3e03d4e781ef3f8b2dbd110e7dd30bcc662ee12c111d4af698d91b01",
+      "bytes": 1185
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lvm.h",
+      "sha256": "b0eb260e86313ee6a7c625f4bb3505992b89d2417648c23e6b1e03aafc279300",
+      "bytes": 5942
+    },
+    {
+      "path": "src/language/lua/library/headers/wasm64-wasip1/lzio.h",
+      "sha256": "e749b760b92cfcaa352dab80b1ee4a867f1fb876a42771c3d4889b29b5fa0ef7",
+      "bytes": 1813
+    },
+    {
+      "path": "src/language/lua/guest_config.h",
+      "sha256": "e34fd79b709d7ade30dd2885e83dbfe4d8c799808656f93f52d4258cba219ff2",
+      "bytes": 4867
+    }
+  ],
+  "runtime_grants": [],
+  "source_evaluated_by_host": false,
+  "source_lock_path": "share/language/lua/construction-source-lock.json"
+}

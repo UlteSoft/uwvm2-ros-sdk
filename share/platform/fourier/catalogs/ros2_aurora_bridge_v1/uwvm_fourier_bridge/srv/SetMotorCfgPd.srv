@@ -1,0 +1,8 @@
+# Authored bridge envelope for AuroraClient.set_motor_cfg_pd.
+# Increasing per-principal sequence; no automatic retry after an unknown result.
+uint64 sequence
+GroupValues[] kp
+GroupValues[] kd
+---
+uint32 status
+string error

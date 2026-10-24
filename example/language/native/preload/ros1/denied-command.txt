@@ -1,0 +1,25 @@
+uwvm2-ros \
+  --wasm-set-main-module-name main \
+  --wasip1-single-create main \
+  --wasip1-single-enable main \
+  --wasip1-single-noinherit-system-environment main \
+  --ros1-single-create main \
+  --wasip1-single-create io \
+  --wasip1-single-enable io \
+  --wasip1-single-noinherit-system-environment io \
+  --ros1-single-create io \
+  --wasip1-single-create algorithm \
+  --wasip1-single-enable algorithm \
+  --wasip1-single-noinherit-system-environment algorithm \
+  --ros1-single-create algorithm \
+  --wasip1-single-create ros_comm \
+  --wasip1-single-enable ros_comm \
+  --wasip1-single-noinherit-system-environment ros_comm \
+  --ros1-single-create ros_comm \
+  --wasm-preload-library build/io/io.wasm io \
+  --wasm-set-preload-module-attribute io copy \
+  --wasm-preload-library build/algorithm/algorithm.wasm algorithm \
+  --wasm-set-preload-module-attribute algorithm copy \
+  --wasm-preload-library build/ros_comm/ros_comm.wasm ros_comm \
+  --wasm-set-preload-module-attribute ros_comm copy \
+  --run build/main/main.wasm 9 denied

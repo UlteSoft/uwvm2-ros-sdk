@@ -1,0 +1,7 @@
+# Preserve readable maintained SDK adapter functions.
+BasedOnStyle: InheritParentConfig
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortBlocksOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+InsertBraces: true

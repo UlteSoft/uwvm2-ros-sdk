@@ -1,0 +1,9 @@
+# Next contiguous row-major bytes only. Unknown delivery must not be replayed.
+uint64 observation_nonce
+string key
+uint32 offset
+uint8[] pixels
+---
+uint32 status
+uint64 observation_nonce
+uint32 accepted_bytes

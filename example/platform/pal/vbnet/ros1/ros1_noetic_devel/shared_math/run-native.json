@@ -1,0 +1,47 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm/bin/uwvm-ros2-gateway",
+  "backend": "ros1",
+  "distribution": "noetic",
+  "connection": {},
+  "runtime_features": [
+    "exceptions"
+  ],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "shared_math": {
+      "arguments": [],
+      "main_module": "main",
+      "preloads": [
+        {
+          "module": "math",
+          "path": "build/targets/6d617468/math.wasm",
+          "attribute": "none"
+        },
+        {
+          "module": "math_peer",
+          "path": "build/targets/6d617468/math.wasm",
+          "attribute": "none"
+        }
+      ],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        },
+        "math": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        },
+        "math_peer": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,539 @@
+{
+  "schema": "uwvm-ros-vendor-provider-consumer-v1",
+  "vendor": "realman",
+  "profiles": [
+    {
+      "id": "ros1_develop",
+      "ros_version": 1,
+      "catalog": "share/platform/realman/catalogs/ros1_develop/catalog.json",
+      "source_lock_sha256": "b253214fdaf4aab6a05a0b80ba9dcd1840390b9c2fc5c929a4dbf23ca2dc855d",
+      "catalog_sha256": "89d5d73b7cbed276c72fcdd37558bbcdd28cc065c5582258683cb8d3eb542a71",
+      "repositories": [
+        {
+          "branch": "develop",
+          "commit": "a7e6d446cdced8bbb9778a5be4d8a14317ba585e",
+          "id": "ros1_develop",
+          "repository": "RealManRobot/rm_robot",
+          "tree_git_sha1": "d9070adc9a7b41cb22431387e67675a3f383e196"
+        },
+        {
+          "branch": "noetic-devel",
+          "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+          "id": "common_ros1",
+          "repository": "ros/common_msgs",
+          "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f"
+        },
+        {
+          "branch": "noetic-devel",
+          "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+          "id": "std_ros1",
+          "repository": "ros/std_msgs",
+          "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/realman/c/ros1/realman-ros1-develop-complete",
+        "include/platform/realman/cpp/ros1/realman-ros1-develop-complete"
+      ],
+      "operations": {
+        "msg": 100,
+        "srv": 0,
+        "action": 0
+      },
+      "legacy_defines": {
+        "UWVM_REALMAN_PROFILE": 1
+      },
+      "language_sources": {
+        "objectc": [
+          "src/platform/realman/objectc/ros1_develop/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "realman",
+          "profile": "ros1_develop",
+          "scenario": "observe_arm__current__status",
+          "type": "rm_msgs/Arm_Current_Status",
+          "operation": "topic.subscribe",
+          "response": "rm_msgs/Arm_Current_Status",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros1_develop",
+          "scenario": "observe_joint__temperature",
+          "type": "rm_msgs/Joint_Temperature",
+          "operation": "topic.subscribe",
+          "response": "rm_msgs/Joint_Temperature",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros1_develop",
+          "scenario": "observe_six__force",
+          "type": "rm_msgs/Six_Force",
+          "operation": "topic.subscribe",
+          "response": "rm_msgs/Six_Force",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros1_main",
+      "ros_version": 1,
+      "catalog": "share/platform/realman/catalogs/ros1_main/catalog.json",
+      "source_lock_sha256": "a6cb0b51416a452cd81d67dc65de4c922def2ff264a117b1cbc8c1e216e29a4e",
+      "catalog_sha256": "abd65107cd572c83195d58f6012b6b657b4cbb5c4ccad4e5822a72b98ba57102",
+      "repositories": [
+        {
+          "branch": "main",
+          "commit": "3d7063025786c4c5ed2db2ebc09f68d89d589539",
+          "id": "ros1_main",
+          "repository": "RealManRobot/rm_robot",
+          "tree_git_sha1": "0abf8102d41bde61ead80dcdbf7bd63e98368c60"
+        },
+        {
+          "branch": "noetic-devel",
+          "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+          "id": "common_ros1",
+          "repository": "ros/common_msgs",
+          "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f"
+        },
+        {
+          "branch": "noetic-devel",
+          "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+          "id": "std_ros1",
+          "repository": "ros/std_msgs",
+          "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/realman/c/ros1/realman-ros1-main-complete",
+        "include/platform/realman/cpp/ros1/realman-ros1-main-complete"
+      ],
+      "operations": {
+        "msg": 104,
+        "srv": 0,
+        "action": 0
+      },
+      "legacy_defines": {
+        "UWVM_REALMAN_PROFILE": 2
+      },
+      "language_sources": {
+        "objectc": [
+          "src/platform/realman/objectc/ros1_main/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "realman",
+          "profile": "ros1_main",
+          "scenario": "observe_arm__current__status",
+          "type": "rm_msgs/Arm_Current_Status",
+          "operation": "topic.subscribe",
+          "response": "rm_msgs/Arm_Current_Status",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros1_main",
+          "scenario": "observe_joint__temperature",
+          "type": "rm_msgs/Joint_Temperature",
+          "operation": "topic.subscribe",
+          "response": "rm_msgs/Joint_Temperature",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros1_main",
+          "scenario": "observe_six__force",
+          "type": "rm_msgs/Six_Force",
+          "operation": "topic.subscribe",
+          "response": "rm_msgs/Six_Force",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros2_foxy",
+      "ros_version": 2,
+      "catalog": "share/platform/realman/catalogs/ros2_foxy/catalog.json",
+      "source_lock_sha256": "70ebcfc0c0eb1a9fbbc0055afcd9c4b7f02273c78351a6a62bfce801eea0bf12",
+      "catalog_sha256": "aabb3a44108d37f5374826674c04bbc462ed698b157a6e52a8ad28b8a8923427",
+      "repositories": [
+        {
+          "branch": "foxy",
+          "commit": "68119369176d77c9d0c07bdba5193e71095d8d3a",
+          "id": "ros2_foxy",
+          "repository": "RealManRobot/ros2_rm_robot",
+          "tree_git_sha1": "9780e5a288adab4e797edf12d397c2c79e09bed5"
+        },
+        {
+          "branch": "foxy",
+          "commit": "6356bc82f3a034f5d2c61c6760df0007a6cadfb0",
+          "id": "common_foxy",
+          "repository": "ros2/common_interfaces",
+          "tree_git_sha1": "e8d7302c3b89dcf535fe0ef5f1b0836b9790d411"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/realman/c/ros2/realman-ros2-foxy-complete",
+        "include/platform/realman/cpp/ros2/realman-ros2-foxy-complete"
+      ],
+      "operations": {
+        "msg": 80,
+        "srv": 0,
+        "action": 0
+      },
+      "legacy_defines": {
+        "UWVM_REALMAN_PROFILE": 3
+      },
+      "language_sources": {
+        "objectc": [
+          "src/platform/realman/objectc/ros2_foxy/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "realman",
+          "profile": "ros2_foxy",
+          "scenario": "observe_armcurrentstatus",
+          "type": "rm_ros_interfaces/msg/Armcurrentstatus",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Armcurrentstatus",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros2_foxy",
+          "scenario": "observe_jointtemperature",
+          "type": "rm_ros_interfaces/msg/Jointtemperature",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Jointtemperature",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros2_foxy",
+          "scenario": "observe_sixforce",
+          "type": "rm_ros_interfaces/msg/Sixforce",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Sixforce",
+          "request": null
+        }
+      ]
+    },
+    {
+      "id": "ros2_humble",
+      "ros_version": 2,
+      "catalog": "share/platform/realman/catalogs/ros2_humble/catalog.json",
+      "source_lock_sha256": "a1e3a9f8d47bd6346bb76dc6df3591c668568141ee0831c24afe74c9f04f72d3",
+      "catalog_sha256": "aabb3a44108d37f5374826674c04bbc462ed698b157a6e52a8ad28b8a8923427",
+      "repositories": [
+        {
+          "branch": "humble",
+          "commit": "61db3c367e8f5743ee68cee52c5574ec1ac645ca",
+          "id": "ros2_humble",
+          "repository": "RealManRobot/ros2_rm_robot",
+          "tree_git_sha1": "2d86f0f84d79e82c6e2813c624efd4ebc26b9b21"
+        },
+        {
+          "branch": "humble",
+          "commit": "08434490d3e4abd37ccc5462cdde69b88853b5b8",
+          "id": "common_humble",
+          "repository": "ros2/common_interfaces",
+          "tree_git_sha1": "c7cb0ba488266ded0627d8b3c96ee19bf5590b46"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/realman/c/ros2/realman-ros2-humble-complete",
+        "include/platform/realman/cpp/ros2/realman-ros2-humble-complete"
+      ],
+      "operations": {
+        "msg": 80,
+        "srv": 0,
+        "action": 0
+      },
+      "legacy_defines": {
+        "UWVM_REALMAN_PROFILE": 4
+      },
+      "language_sources": {
+        "objectc": [
+          "src/platform/realman/objectc/ros2_humble/records.m"
+        ],
+        "java": [
+          "include/platform/realman/java/ros2_humble/realman/ros2_humble/BoundedRecords.java"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "realman",
+          "profile": "ros2_humble",
+          "scenario": "observe_armcurrentstatus",
+          "type": "rm_ros_interfaces/msg/Armcurrentstatus",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Armcurrentstatus",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros2_humble",
+          "scenario": "observe_jointtemperature",
+          "type": "rm_ros_interfaces/msg/Jointtemperature",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Jointtemperature",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros2_humble",
+          "scenario": "observe_sixforce",
+          "type": "rm_ros_interfaces/msg/Sixforce",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Sixforce",
+          "request": null
+        }
+      ],
+      "source_graph_v1": {
+        "java": {
+          "format": "uwvm-vendor-source-graph-v1",
+          "language": "java",
+          "sources": [
+            "include/platform/realman/java/ros2_humble/realman/ros2_humble/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "js": {
+          "format": "uwvm-vendor-source-graph-v1",
+          "language": "js",
+          "bundle_manifest": "share/platform/realman/bundles/js/ros2_humble.json",
+          "module_count": 4,
+          "native_definition_catalog": "share/platform/realman/catalogs/ros2_humble/catalog.json"
+        }
+      }
+    },
+    {
+      "id": "ros2_jazzy",
+      "ros_version": 2,
+      "catalog": "share/platform/realman/catalogs/ros2_jazzy/catalog.json",
+      "source_lock_sha256": "ddd1aded4d5dd5add62075c0a5df52c767b27076f6b9786c41b56264f2684cbf",
+      "catalog_sha256": "aabb3a44108d37f5374826674c04bbc462ed698b157a6e52a8ad28b8a8923427",
+      "repositories": [
+        {
+          "branch": "jazzy",
+          "commit": "5fc226e93358e73c165b2af54b583389f813049e",
+          "id": "ros2_jazzy",
+          "repository": "RealManRobot/ros2_rm_robot",
+          "tree_git_sha1": "d9a4ac6ec24dea9216472c620c6d96d54cee1ea7"
+        },
+        {
+          "branch": "jazzy",
+          "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+          "id": "common_jazzy",
+          "repository": "ros2/common_interfaces",
+          "tree_git_sha1": "bbd609d90753abf6e10bdc94f594f36b75921677"
+        }
+      ],
+      "native_identity_state": "requires-independent-native-binding",
+      "legacy_include_roots": [
+        "include/platform/realman/c/ros2/realman-ros2-jazzy-complete",
+        "include/platform/realman/cpp/ros2/realman-ros2-jazzy-complete"
+      ],
+      "operations": {
+        "msg": 80,
+        "srv": 0,
+        "action": 0
+      },
+      "legacy_defines": {
+        "UWVM_REALMAN_PROFILE": 5
+      },
+      "language_sources": {
+        "objectc": [
+          "src/platform/realman/objectc/ros2_jazzy/records.m"
+        ]
+      },
+      "scenarios": [
+        {
+          "vendor": "realman",
+          "profile": "ros2_jazzy",
+          "scenario": "observe_armcurrentstatus",
+          "type": "rm_ros_interfaces/msg/Armcurrentstatus",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Armcurrentstatus",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros2_jazzy",
+          "scenario": "observe_jointtemperature",
+          "type": "rm_ros_interfaces/msg/Jointtemperature",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Jointtemperature",
+          "request": null
+        },
+        {
+          "vendor": "realman",
+          "profile": "ros2_jazzy",
+          "scenario": "observe_sixforce",
+          "type": "rm_ros_interfaces/msg/Sixforce",
+          "operation": "topic.subscribe",
+          "response": "rm_ros_interfaces/msg/Sixforce",
+          "request": null
+        }
+      ]
+    }
+  ],
+  "requested_languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "default_authority": [],
+  "transports": [
+    "native-ros"
+  ],
+  "requested_targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "target_qualification": "per-language-produced-and-executed-module-required",
+  "distributions": {
+    "ros1": [
+      "kinetic",
+      "melodic",
+      "noetic"
+    ],
+    "ros2": [
+      "foxy",
+      "galactic",
+      "humble",
+      "jazzy",
+      "rolling"
+    ]
+  },
+  "model_selections": [],
+  "configuration": {
+    "profile": "ros.sdk.provider.profile",
+    "model": "ros.sdk.provider.model",
+    "transport": "ros.sdk.provider.transport",
+    "distribution": "ros.sdk.distribution",
+    "catalog_version": "immutable per-profile source_lock_sha256; not controller firmware",
+    "abi": "uwvm ROS ABI v1 plus the exact selected canonical type catalog",
+    "wasm_features": "Exact common target manifest; no implicit threads/EH/preview/address-width substitution",
+    "model_source": "share/platform/realman/profiles.json"
+  },
+  "shared_producer_contract": "tools/xmake/language_adapter.lua api_version=1 with the complete request/source graph",
+  "format": "uwvm-ros-provider-v1",
+  "api_version": 1,
+  "id": "realman",
+  "module": "tools/platform/realman/provider.lua",
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "kinetic",
+        "melodic",
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "foxy",
+        "galactic",
+        "humble",
+        "jazzy",
+        "rolling"
+      ]
+    }
+  },
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "go",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "objectc",
+    "php",
+    "py",
+    "rs",
+    "ruby",
+    "tinygo"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {
+    "profile": {
+      "values": [
+        "ros1_develop",
+        "ros1_main",
+        "ros2_foxy",
+        "ros2_humble",
+        "ros2_jazzy"
+      ]
+    },
+    "catalog_version": {
+      "values": [
+        "70ebcfc0c0eb1a9fbbc0055afcd9c4b7f02273c78351a6a62bfce801eea0bf12",
+        "a1e3a9f8d47bd6346bb76dc6df3591c668568141ee0831c24afe74c9f04f72d3",
+        "a6cb0b51416a452cd81d67dc65de4c922def2ff264a117b1cbc8c1e216e29a4e",
+        "b253214fdaf4aab6a05a0b80ba9dcd1840390b9c2fc5c929a4dbf23ca2dc855d",
+        "ddd1aded4d5dd5add62075c0a5df52c767b27076f6b9786c41b56264f2684cbf"
+      ]
+    },
+    "abi": {
+      "values": [
+        "uwvm-ros-v1"
+      ],
+      "default": "uwvm-ros-v1"
+    },
+    "transport": {
+      "values": [
+        "native-ros"
+      ],
+      "default": "native-ros"
+    }
+  },
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  }
+}

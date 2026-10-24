@@ -1,0 +1,557 @@
+{
+  "format": "uwvm-unitree-public-qualification-v1",
+  "status": "PASS",
+  "date": "2026-10-22",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "go",
+    "objectc",
+    "rs",
+    "tinygo"
+  ],
+  "target": "wasm32-wasip1",
+  "application_output_extension": ".wasm",
+  "example_count": 48,
+  "per_language": {
+    "ros1": 3,
+    "ros2": 3
+  },
+  "build": {
+    "host": "linux-x86_64",
+    "cases": 48,
+    "preinstalled_programs": [
+      "xmake"
+    ],
+    "network": "none",
+    "initial_sdk_tool_cache": "empty",
+    "command": "xmake",
+    "compiler_source": "SHA-256-pinned offline SDK bundles",
+    "runtime_or_ros_installed": false
+  },
+  "native_execution": {
+    "x86_64": {
+      "ros1_noetic": 24,
+      "ros2_jazzy": 24,
+      "entry": "xmake run"
+    },
+    "qemu_aarch64": {
+      "ros1_noetic": 24,
+      "ros2_jazzy": 24,
+      "entry": "published SDK launcher",
+      "native_runtime_and_gateway_elf": "AArch64"
+    },
+    "oracle": "Complete original native ROS callback bytes, exact status, and normal owner cleanup",
+    "same_wasm_artifact_sha256_as_build": true
+  },
+  "native_adapter_probes_after_final_formatting": {
+    "ros1_noetic": 11,
+    "ros2_jazzy": 43,
+    "checks": [
+      "complete default round trip",
+      "truncated record refused",
+      "trailing bytes refused"
+    ],
+    "transport_test": false
+  },
+  "cgroup": {
+    "memory.max": 68719476736,
+    "memory.swap.max": 0
+  },
+  "final_source_edits": {
+    "c_family_files_with_identical_noncomment_tokens": 19,
+    "guest_application_source_unchanged_after_48_case_build": true,
+    "other_changes": "Documentation, generation-only tools, and publication metadata",
+    "note": "The executable acceptance input remains immutable; final source inventory records subsequent formatting."
+  },
+  "limits": {
+    "physical_robot_tested": false,
+    "physical_arm_hardware_tested": false,
+    "arm_native_compiler_host_tested": false,
+    "wasm64_admitted": false,
+    "robot_control_qualified": false,
+    "transport_record_types": 6,
+    "other_ros_distributions_qualified": false
+  },
+  "evidence": {
+    "bare_build": {
+      "repository_path": "original-review-workspace/xmake/unitree-publication/builds.json",
+      "sha256": "66435f8c559494718a39cb7f6a2ba8255b89acc40a2686a1fc1737274b2fa141"
+    },
+    "accepted_build_inputs": {
+      "repository_path": "original-review-workspace/xmake/unitree-publication/public-inputs.json",
+      "sha256": "5e8d325643c43ceceef8381e4cddaadcaab8c8989530bb1f4c9e5e404643154b"
+    },
+    "accepted_input_integrity": {
+      "repository_path": "original-review-workspace/xmake/unitree-publication/input-integrity.json",
+      "sha256": "ca4b767c1c02d92900c7f5d537712c5716a603a528b6fc085e31d8855876aa2d"
+    },
+    "native_ros1": {
+      "repository_path": "original-review-workspace/xmake/unitree-publication/native-ros1.json",
+      "sha256": "e776a3ad40843cbfb976ac2dbbef55d74c14b2568a586bb3f9039c25bbf60239"
+    },
+    "native_ros2": {
+      "repository_path": "original-review-workspace/xmake/unitree-publication/native-ros2.json",
+      "sha256": "55ee0a1a6277df12e7e3d83a407ef1575448d6cc0d66f41ad773d62c79361de5"
+    },
+    "arm_native_execution": {
+      "repository_path": "original-review-workspace/aarch64-acceptance/unitree-public-final/evidence/results/execute-final-r2/acceptance.json",
+      "sha256": "9d762125e6da97e41b63e7c5d02b73aef4fa3586eddcb12c8a7bb33c61d486a3"
+    },
+    "arm_independent_audit": {
+      "repository_path": "original-review-workspace/aarch64-acceptance/unitree-public-final/evidence/review/final-audit.json",
+      "sha256": "40a4a60291403e2ec078f091724effcb746f1b405b70e2162739970be9d04f37"
+    },
+    "source_token_equivalence": {
+      "repository_path": "original-review-workspace/xmake/unitree-publication/native-format-token-equivalence.json",
+      "sha256": "a3cc793acd01a4e2d3f155736246ce3e632bd56e8f9a620964b5d06c1f8f7018"
+    },
+    "ros1_complete_adapter_probe": {
+      "repository_path": "original-review-workspace/xmake/unitree-publication/ros1-results/result.json",
+      "sha256": "53c5777a00172931c75ff5e6bf51bf147508d319944ce570fef5a1a1e509999f"
+    },
+    "ros2_complete_adapter_probe": {
+      "repository_path": "original-review-workspace/xmake/unitree-publication/ros2-final-results/result.json",
+      "sha256": "a2ec34e885a9bc0d9cab468bfb25bba2a3baf9d36ca30d7055d6c9fca7da93bc"
+    }
+  },
+  "cases": [
+    {
+      "project": "unitree/as/ros1/low_state",
+      "artifact_sha256": "8ff615f2ed77bc71a7e692b02e1c6ccc46a312a4412a25b756508b90d02e9705",
+      "artifact_bytes": 34852,
+      "wire_bytes": 1069,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/as/ros1/motion_state",
+      "artifact_sha256": "c36bdf4b6f6b8e59deb62cc302756e7ab4678f214efae2256224133be90be3c6",
+      "artifact_bytes": 36164,
+      "wire_bytes": 1087,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/as/ros1/motor_state",
+      "artifact_sha256": "d013a41e784b3bee850f5f9d4c6fb41f43f145b913623a08cfc11576d5d1a35d",
+      "artifact_bytes": 22968,
+      "wire_bytes": 38,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/as/ros2/low_state",
+      "artifact_sha256": "c3b35dad94ca995f7cd6ebd093ed20c7e3f5ac9f662e93100957a1f5bbb6953b",
+      "artifact_bytes": 39060,
+      "wire_bytes": 1050,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/as/ros2/motion_state",
+      "artifact_sha256": "3213b14a3546f94c004f898cdeb399fee3d05f39b334e5814bd26c1c6fcfe7ca",
+      "artifact_bytes": 34396,
+      "wire_bytes": 227,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/as/ros2/wireless_controller",
+      "artifact_sha256": "d6e14a1834c66473de11738ab2f721b520a70c1584d85cb18091e2bc73174936",
+      "artifact_bytes": 27618,
+      "wire_bytes": 18,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c/ros1/low_state",
+      "artifact_sha256": "6a48f4f534d7226eae444509cd608642b00dc69948ca07e8dde6681c059d4cd3",
+      "artifact_bytes": 38084,
+      "wire_bytes": 1069,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c/ros1/motion_state",
+      "artifact_sha256": "2ba5ae4bb98a2781a50ddea6db1fb86c06514b4a8d08a22013c7d6cf28797740",
+      "artifact_bytes": 38642,
+      "wire_bytes": 1087,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c/ros1/motor_state",
+      "artifact_sha256": "bab7709989052142e8f1c36b0b8b562ee6aaa49fabb37c675a0101b0bb3cc596",
+      "artifact_bytes": 32082,
+      "wire_bytes": 38,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c/ros2/low_state",
+      "artifact_sha256": "b2cb3dd5603013d1da3adfc3f6a3561edef5699cc39bb9df9c3d3addc8a27422",
+      "artifact_bytes": 36382,
+      "wire_bytes": 1050,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c/ros2/motion_state",
+      "artifact_sha256": "e3171eac91232739cd6f309ad3a4c0e151a9d992d19c49177078c7bf32c2fa95",
+      "artifact_bytes": 34568,
+      "wire_bytes": 227,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c/ros2/wireless_controller",
+      "artifact_sha256": "b4e49eec146b56e3820860e2ad2036a3d4387f94d21661a93cc2be0021e7e8a6",
+      "artifact_bytes": 31981,
+      "wire_bytes": 18,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c_ffi_bridge/ros1/low_state",
+      "artifact_sha256": "2cdd9434f8ecb41f24f8b8ab3b9810c845f2db9a38c95127eb3a6940f04bf5bb",
+      "artifact_bytes": 39245,
+      "wire_bytes": 1069,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c_ffi_bridge/ros1/motion_state",
+      "artifact_sha256": "d62a458da97782100d1be098a2eaa465b4d12a007daa9ea10cfabf4cf9d81d33",
+      "artifact_bytes": 39803,
+      "wire_bytes": 1087,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c_ffi_bridge/ros1/motor_state",
+      "artifact_sha256": "3c62936ba355cc4c935c4f7fade7e9023072f448d6e2a3e7fb171f8a6ef8d4e7",
+      "artifact_bytes": 33243,
+      "wire_bytes": 38,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c_ffi_bridge/ros2/low_state",
+      "artifact_sha256": "254ff4e5ddd216e4382fef60cc6181740014474aebe7f3d3a896794fa30311d8",
+      "artifact_bytes": 37650,
+      "wire_bytes": 1050,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c_ffi_bridge/ros2/motion_state",
+      "artifact_sha256": "de4e195a4cb683e269614f34b665f52f504feb5760e7795d32c395bdfcd5b0b4",
+      "artifact_bytes": 35836,
+      "wire_bytes": 227,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/c_ffi_bridge/ros2/wireless_controller",
+      "artifact_sha256": "4aba4fa9a1821bad843a8f89b8d393ed982f29982167634ea6bf0a403fc472da",
+      "artifact_bytes": 33249,
+      "wire_bytes": 18,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/cpp/ros1/low_state",
+      "artifact_sha256": "e64dd86bb3c34da8981411ba8f893008104e31862e23c10ddc2e33932abdcb26",
+      "artifact_bytes": 38249,
+      "wire_bytes": 1069,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/cpp/ros1/motion_state",
+      "artifact_sha256": "9986c04b61d776e28acc6b31228902bd275bc82dfbcbc7bd3641a7fd383ca2dc",
+      "artifact_bytes": 38807,
+      "wire_bytes": 1087,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/cpp/ros1/motor_state",
+      "artifact_sha256": "0424c9346521cd5d6530b462e65fc71a494cd1e4468c9a5007c1743a63f93730",
+      "artifact_bytes": 32196,
+      "wire_bytes": 38,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/cpp/ros2/low_state",
+      "artifact_sha256": "c5622efb0608e3aa04b38bbb0fc0b61f85d87c3de59d35633983cc6d4b2e2bba",
+      "artifact_bytes": 36547,
+      "wire_bytes": 1050,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/cpp/ros2/motion_state",
+      "artifact_sha256": "9d5c8e5a12279426e3dc1a9c5854a62ebc78af471f642c769be5767f3c32ae31",
+      "artifact_bytes": 34733,
+      "wire_bytes": 227,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/cpp/ros2/wireless_controller",
+      "artifact_sha256": "1d4a054bd3e3e1aff6b12594338731ebba5df130812df89e0af9a08a8ebbade8",
+      "artifact_bytes": 31957,
+      "wire_bytes": 18,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/go/ros1/low_state",
+      "artifact_sha256": "d7b16dbdc0d0536cddc53dd876c1adb1c3aab00ce4685397349ed97cef4abd2e",
+      "artifact_bytes": 2994975,
+      "wire_bytes": 1069,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/go/ros1/motion_state",
+      "artifact_sha256": "392d41f1574559e99053bd097fbfa18dfcae09dc83193e2ff9ccddfe6366b898",
+      "artifact_bytes": 3003155,
+      "wire_bytes": 1087,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/go/ros1/motor_state",
+      "artifact_sha256": "d08458c667996f2e307ed48fa9036a2aa63833ffe25c393b0b9493950738557c",
+      "artifact_bytes": 2955256,
+      "wire_bytes": 38,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/go/ros2/low_state",
+      "artifact_sha256": "a1398eb25e74d5dbf68b00aec36197b48476fd268ef56a798ff73304026319d2",
+      "artifact_bytes": 2994133,
+      "wire_bytes": 1050,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/go/ros2/motion_state",
+      "artifact_sha256": "adc135ba883ca76bb5779a21ac518fa38a2fde53f3538caf0245945ba601d510",
+      "artifact_bytes": 2973673,
+      "wire_bytes": 227,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/go/ros2/wireless_controller",
+      "artifact_sha256": "5aaaea44173549c7a9e2d990b4773bb70ea3dd0a59a99a24a66b9742cc199d12",
+      "artifact_bytes": 2950772,
+      "wire_bytes": 18,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/objectc/ros1/low_state",
+      "artifact_sha256": "6a48f4f534d7226eae444509cd608642b00dc69948ca07e8dde6681c059d4cd3",
+      "artifact_bytes": 38084,
+      "wire_bytes": 1069,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/objectc/ros1/motion_state",
+      "artifact_sha256": "2ba5ae4bb98a2781a50ddea6db1fb86c06514b4a8d08a22013c7d6cf28797740",
+      "artifact_bytes": 38642,
+      "wire_bytes": 1087,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/objectc/ros1/motor_state",
+      "artifact_sha256": "bab7709989052142e8f1c36b0b8b562ee6aaa49fabb37c675a0101b0bb3cc596",
+      "artifact_bytes": 32082,
+      "wire_bytes": 38,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/objectc/ros2/low_state",
+      "artifact_sha256": "b2cb3dd5603013d1da3adfc3f6a3561edef5699cc39bb9df9c3d3addc8a27422",
+      "artifact_bytes": 36382,
+      "wire_bytes": 1050,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/objectc/ros2/motion_state",
+      "artifact_sha256": "e3171eac91232739cd6f309ad3a4c0e151a9d992d19c49177078c7bf32c2fa95",
+      "artifact_bytes": 34568,
+      "wire_bytes": 227,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/objectc/ros2/wireless_controller",
+      "artifact_sha256": "b4e49eec146b56e3820860e2ad2036a3d4387f94d21661a93cc2be0021e7e8a6",
+      "artifact_bytes": 31981,
+      "wire_bytes": 18,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/rs/ros1/low_state",
+      "artifact_sha256": "065eb0a4be416bd312899c134d8daef3f061e83d18dcc981b3862af307cdafe7",
+      "artifact_bytes": 1775278,
+      "wire_bytes": 1069,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/rs/ros1/motion_state",
+      "artifact_sha256": "ba17830b56a59ddbec5bcd47f4e97ea7faf7b27efe1e8c166c3fbdfc9c222094",
+      "artifact_bytes": 1775923,
+      "wire_bytes": 1087,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/rs/ros1/motor_state",
+      "artifact_sha256": "905c4d29f8c45a6c4b3ddca90958c953ca58fc3d346223ff9368ddf9ff6a8d9c",
+      "artifact_bytes": 1768563,
+      "wire_bytes": 38,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/rs/ros2/low_state",
+      "artifact_sha256": "acbaeeecbcae22e4594e4771ad989ee0ced5f90365270ab987a158ccb02edeec",
+      "artifact_bytes": 1775048,
+      "wire_bytes": 1050,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/rs/ros2/motion_state",
+      "artifact_sha256": "a2d77112341d5404281c7f3ee118f41bcd24945fbe861a5aa4943098f8801085",
+      "artifact_bytes": 1771363,
+      "wire_bytes": 227,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/rs/ros2/wireless_controller",
+      "artifact_sha256": "3eec90e9e36b96531870bd2d231d6535b6933b8e9c254855d69c54c780196d72",
+      "artifact_bytes": 1767458,
+      "wire_bytes": 18,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/tinygo/ros1/low_state",
+      "artifact_sha256": "7531c90a38d34622d5fcd17eadfa233cddf1ef6f8fb50699470acfd2cfbfda8c",
+      "artifact_bytes": 219523,
+      "wire_bytes": 1069,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/tinygo/ros1/motion_state",
+      "artifact_sha256": "94074fd87f6338cda77b45141ebf83378d5e8f6e9dc426220de72a8ccd6592bd",
+      "artifact_bytes": 225716,
+      "wire_bytes": 1087,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/tinygo/ros1/motor_state",
+      "artifact_sha256": "95bcd81cbf23b065bedee3e1f9f31d16136440150cb1027587338681b5c5b82c",
+      "artifact_bytes": 167559,
+      "wire_bytes": 38,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/tinygo/ros2/low_state",
+      "artifact_sha256": "8db75378fcf4fae9d8dc4bb48d891f2c40e7c4b87f6eefad516227fda6051d89",
+      "artifact_bytes": 219122,
+      "wire_bytes": 1050,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/tinygo/ros2/motion_state",
+      "artifact_sha256": "eebe06b11381d2df5c86bc1a4b8b5b8021081cf84a16a7c39852b191cd81ed10",
+      "artifact_bytes": 181356,
+      "wire_bytes": 227,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    },
+    {
+      "project": "unitree/tinygo/ros2/wireless_controller",
+      "artifact_sha256": "925a0d1370103f66a7238537876415795e56ad458dd5255aaba7007210147ebd",
+      "artifact_bytes": 164827,
+      "wire_bytes": 18,
+      "bare_xmake": "PASS",
+      "x86_64_native_ros_via_xmake_run": "PASS",
+      "qemu_aarch64_native_ros_via_published_launcher": "PASS"
+    }
+  ],
+  "audit_scope": "Historical exact-source evidence; see review-status.json for the current public snapshot.",
+  "current_public_snapshot_qualified": false,
+  "original_receipt_sha256": "6c64aa2b9de74c9181fbd226cb09b2c292db29ee07be92e8a63c5639067e269a"
+}

@@ -1,0 +1,1649 @@
+{
+  "format": "uwvm-unitree-genuine-engines-v1",
+  "reused": [
+    {
+      "path": "lib/language/python/ros1/cpython.wasm",
+      "sha256": "7489401d700dfa88ccdde76b3d2d18a88ee4b37b3f1371a1fb7211ac4ab87abf",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/python/ros1/runtime.json",
+      "sha256": "60a56d461501ebc2238a5d971f0c8dba221eaf286b6ce3aaefeb84d3aa2714d6",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/python/ros1/LICENSE",
+      "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/js/ros1/runtime.json",
+      "sha256": "841a0b1f38cdc03af514f503d4276292ffc2805ffdf76af290414299c48127dc",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/js/ros1/LICENSE",
+      "sha256": "598fd7fc928e4350abce36e337ba5a1346923c5c692f5be92c3d8e29ddd7c18d",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/js/ros1/quickjs.wasm",
+      "sha256": "ffbc7302db06e273b6a8f71ce10ae8d858a1942516f0dd5af72bd3c5559164fc",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/lua/ros1/runtime.json",
+      "sha256": "7a6b36bed1831c9cdfda59d6d358ab5acd17bf5b602187856accf0011110a84b",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/lua/ros1/LICENSE",
+      "sha256": "05980eef8a3ee9b12778219e987a47120501b02481ff344643e2d8bd40ae878e",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/lua/ros1/lua.wasm",
+      "sha256": "9999e22c00e740afb38548a8eb7204bef81a92869ae43f3012da73d02b67ea84",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/lua/ros2/runtime.json",
+      "sha256": "4bbeee52a0b795c1b9f52868cd1837498a786ebf00a9decdeb35ff9dae95b0e8",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/lua/ros2/LICENSE",
+      "sha256": "05980eef8a3ee9b12778219e987a47120501b02481ff344643e2d8bd40ae878e",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    },
+    {
+      "path": "lib/language/lua/ros2/lua.wasm",
+      "sha256": "3c764d3512439ecac2190833e5d03d87a2067569a62c2ec3b23108e0a4beed53",
+      "provenance": "Previously qualified native ROS private stage; application acceptance is separate"
+    }
+  ],
+  "derived": [
+    {
+      "format": "uwvm-unitree-typed-engine-relocation-v1",
+      "language": "ruby",
+      "source_sha256": "a24db22fb18e17980c8cf9cb98c3c672133fcaeadc8dc7d736ce1f00f5cbf057",
+      "sha256": "303c20b84fae6f92a9db56b7ba435269aba9e345836b44c026ec1f450d1ead1a",
+      "bytes": 14169520,
+      "original_namespace": "uwvm_ros2_v1",
+      "selected_namespace": "uwvm_ros1_v1",
+      "relocated_imports": 8,
+      "original_imports": [
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "abi_version",
+          "signature": [
+            [],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            834,
+            846
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "capability_open",
+          "signature": [
+            [
+              "i32",
+              "i64",
+              "i64",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            861,
+            873
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "capability_close",
+          "signature": [
+            [
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            892,
+            904
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "capability_revoke",
+          "signature": [
+            [
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            924,
+            936
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "topic_subscribe",
+          "signature": [
+            [
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            957,
+            969
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "topic_publish",
+          "signature": [
+            [
+              "i64",
+              "i32",
+              "i64",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            988,
+            1000
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "service_call",
+          "signature": [
+            [
+              "i64",
+              "i32",
+              "i64",
+              "i64",
+              "i64",
+              "i64",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1017,
+            1029
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "event_poll",
+          "signature": [
+            [
+              "i64",
+              "i32",
+              "i64",
+              "i64",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1045,
+            1057
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "args_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1071,
+            1093
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "args_sizes_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1105,
+            1127
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "environ_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1145,
+            1167
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "environ_sizes_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1182,
+            1204
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "clock_res_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1225,
+            1247
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "clock_time_get",
+          "signature": [
+            [
+              "i32",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1264,
+            1286
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_advise",
+          "signature": [
+            [
+              "i32",
+              "i64",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1304,
+            1326
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_close",
+          "signature": [
+            [
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1339,
+            1361
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_datasync",
+          "signature": [
+            [
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1373,
+            1395
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_fdstat_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1410,
+            1432
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_fdstat_set_flags",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1449,
+            1471
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_filestat_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1494,
+            1516
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_filestat_set_size",
+          "signature": [
+            [
+              "i32",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1535,
+            1557
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_pread",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1581,
+            1603
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_prestat_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1615,
+            1637
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_prestat_dir_name",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1655,
+            1677
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_pwrite",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1700,
+            1722
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_read",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1735,
+            1757
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_readdir",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1768,
+            1790
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_renumber",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1804,
+            1826
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_seek",
+          "signature": [
+            [
+              "i32",
+              "i64",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1841,
+            1863
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_sync",
+          "signature": [
+            [
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1874,
+            1896
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_tell",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1907,
+            1929
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_write",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1940,
+            1962
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_create_directory",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1974,
+            1996
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_filestat_get",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2021,
+            2043
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_filestat_set_times",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2064,
+            2086
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_link",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2113,
+            2135
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_open",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i64",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2148,
+            2170
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_readlink",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2183,
+            2205
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_remove_directory",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2222,
+            2244
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_rename",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2269,
+            2291
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_symlink",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2306,
+            2328
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_unlink_file",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2344,
+            2366
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "poll_oneoff",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2386,
+            2408
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "proc_exit",
+          "signature": [
+            [
+              "i32"
+            ],
+            []
+          ],
+          "name_extent": [
+            2423,
+            2445
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "random_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2458,
+            2480
+          ]
+        }
+      ],
+      "abi_catalog_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+      "reconstructed_original_exact": true,
+      "unchanged_outside_eight_name_spans": true,
+      "qualification": "Derived real VM; no inherited application or native qualification"
+    },
+    {
+      "format": "uwvm-unitree-typed-engine-relocation-v1",
+      "language": "php",
+      "source_sha256": "46205e865e595e022e8f09eb261c59cff388734a6e94f0f3d2efa128919091ff",
+      "sha256": "28ebdcd0e2f56a00a25915f7de5da2605350e2e84c4f36aa4f95eeb04f98014e",
+      "bytes": 10569524,
+      "original_namespace": "uwvm_ros2_v1",
+      "selected_namespace": "uwvm_ros1_v1",
+      "relocated_imports": 8,
+      "original_imports": [
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "abi_version",
+          "signature": [
+            [],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            742,
+            754
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "capability_open",
+          "signature": [
+            [
+              "i32",
+              "i64",
+              "i64",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            769,
+            781
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "capability_close",
+          "signature": [
+            [
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            800,
+            812
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "capability_revoke",
+          "signature": [
+            [
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            832,
+            844
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "topic_subscribe",
+          "signature": [
+            [
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            865,
+            877
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "topic_publish",
+          "signature": [
+            [
+              "i64",
+              "i32",
+              "i64",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            896,
+            908
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "service_call",
+          "signature": [
+            [
+              "i64",
+              "i32",
+              "i64",
+              "i64",
+              "i64",
+              "i64",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            925,
+            937
+          ]
+        },
+        {
+          "module": "uwvm_ros2_v1",
+          "name": "event_poll",
+          "signature": [
+            [
+              "i64",
+              "i32",
+              "i64",
+              "i64",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            953,
+            965
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "args_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            979,
+            1001
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "args_sizes_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1013,
+            1035
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "environ_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1053,
+            1075
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "environ_sizes_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1090,
+            1112
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "clock_time_get",
+          "signature": [
+            [
+              "i32",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1133,
+            1155
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_close",
+          "signature": [
+            [
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1173,
+            1195
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_datasync",
+          "signature": [
+            [
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1207,
+            1229
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_fdstat_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1244,
+            1266
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_fdstat_set_flags",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1283,
+            1305
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_filestat_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1328,
+            1350
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_filestat_set_size",
+          "signature": [
+            [
+              "i32",
+              "i64"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1369,
+            1391
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_pread",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1415,
+            1437
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_prestat_get",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1449,
+            1471
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_prestat_dir_name",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1489,
+            1511
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_read",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1534,
+            1556
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_readdir",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1567,
+            1589
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_seek",
+          "signature": [
+            [
+              "i32",
+              "i64",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1603,
+            1625
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_sync",
+          "signature": [
+            [
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1636,
+            1658
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_tell",
+          "signature": [
+            [
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1669,
+            1691
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "fd_write",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1702,
+            1724
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_create_directory",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1736,
+            1758
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_filestat_get",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1783,
+            1805
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_filestat_set_times",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i64",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1826,
+            1848
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_link",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1875,
+            1897
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_open",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i64",
+              "i64",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1910,
+            1932
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_readlink",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1945,
+            1967
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_remove_directory",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            1984,
+            2006
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_rename",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2031,
+            2053
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_symlink",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2068,
+            2090
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "path_unlink_file",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2106,
+            2128
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "poll_oneoff",
+          "signature": [
+            [
+              "i32",
+              "i32",
+              "i32",
+              "i32"
+            ],
+            [
+              "i32"
+            ]
+          ],
+          "name_extent": [
+            2148,
+            2170
+          ]
+        },
+        {
+          "module": "wasi_snapshot_preview1",
+          "name": "proc_exit",
+          "signature": [
+            [
+              "i32"
+            ],
+            []
+          ],
+          "name_extent": [
+            2185,
+            2207
+          ]
+        }
+      ],
+      "abi_catalog_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+      "reconstructed_original_exact": true,
+      "unchanged_outside_eight_name_spans": true,
+      "qualification": "Derived real VM; no inherited application or native qualification"
+    }
+  ]
+}

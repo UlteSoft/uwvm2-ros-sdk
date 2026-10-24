@@ -1,0 +1,14 @@
+# Keep maintained development utilities; exclude their local run products.
+build/
+out/
+output/
+results/
+logs/
+__pycache__/
+*.py[cod]
+*.log
+*.stdout
+*.stderr
+*.tmp
+*.temp
+*.uncompressed

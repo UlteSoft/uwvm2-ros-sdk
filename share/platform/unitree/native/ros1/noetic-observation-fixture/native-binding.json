@@ -1,0 +1,48 @@
+{
+  "profile": "uwvm-ros-vendor-complete-bounded-v1",
+  "status": "SOURCE_BOUND_NOT_NATIVE_OR_HARDWARE_QUALIFIED",
+  "default_authority": [],
+  "source_inputs": {
+    "catalog": {
+      "bytes": 1164,
+      "sha256": "8cfdd0f4baccbc5ddea4d51534c43bf274edd715ddd0856389946985e37cb722"
+    },
+    "definitions": [
+      {
+        "file": "unitree_legged_msgs/msg/BmsState.msg",
+        "bytes": 280,
+        "sha256": "983f9f6b89aaa22f2bd276b0a47c4aae444efb59d645664c4b6673c805845bb2"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/Cartesian.msg",
+        "bytes": 29,
+        "sha256": "655ba746820eb8d51108feba96950738cfa9146b014344b2ca4b106f057779f6"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/HighState.msg",
+        "bytes": 490,
+        "sha256": "65d43eafa99cffb22481dd78236309d8bbb55db090f61a96af8a20ec63a00d62"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/IMU.msg",
+        "bytes": 99,
+        "sha256": "8592dac6be50ed4dc06a1a601bb139e0d17e641b62c912c23fe0c7dc1193dd64"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/LowState.msg",
+        "bytes": 560,
+        "sha256": "a5fc3a6a7f54d05439f352b3dfc9e5078d25d04691abd1dd5264a51ee20c89e3"
+      },
+      {
+        "file": "unitree_legged_msgs/msg/MotorState.msg",
+        "bytes": 540,
+        "sha256": "0d94cb503bdfa1ee7fe38527fc8efa0aa7e2fc4c3361279615585caf9ec92f8e"
+      }
+    ]
+  },
+  "native_metadata": {
+    "bytes": 7213,
+    "sha256": "1d329e9469d164cb5a38c205f55ba97b21e4bc547eac0a9a24942fcc04f1e831"
+  },
+  "constant_schema_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+}

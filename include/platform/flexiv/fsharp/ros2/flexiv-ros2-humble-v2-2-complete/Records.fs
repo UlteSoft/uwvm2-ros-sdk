@@ -1,0 +1,51 @@
+namespace Flexiv.ros2humblev22
+
+/// @brief Full typed .NET records shared with the selected C# library.
+type Ros2Builtin_interfacesMsgTime = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Builtin_interfacesMsgTime
+type Ros2Flexiv_msgsActionErrorRecovery_Goal = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionErrorRecovery_Goal
+type Ros2Flexiv_msgsActionErrorRecovery_Result = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionErrorRecovery_Result
+type Ros2Flexiv_msgsActionErrorRecovery_Feedback =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionErrorRecovery_Feedback
+type Ros2Flexiv_msgsActionGrasp_Goal = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionGrasp_Goal
+type Ros2Flexiv_msgsActionGrasp_Result = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionGrasp_Result
+type Ros2Flexiv_msgsActionGrasp_Feedback = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionGrasp_Feedback
+type Ros2Flexiv_msgsActionMove_Goal = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionMove_Goal
+type Ros2Flexiv_msgsActionMove_Result = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionMove_Result
+type Ros2Flexiv_msgsActionMove_Feedback = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsActionMove_Feedback
+type Ros2Flexiv_msgsMsgDigital = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgDigital
+type Ros2Flexiv_msgsMsgGPIOStates = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgGPIOStates
+type Ros2Std_msgsMsgHeader = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Std_msgsMsgHeader
+type Ros2Flexiv_msgsMsgJointImpedance = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgJointImpedance
+type Ros2Flexiv_msgsMsgJointInertiaScale = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgJointInertiaScale
+type Ros2Flexiv_msgsMsgJointPosVel = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgJointPosVel
+type Ros2Flexiv_msgsMsgMaxContactTorque = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgMaxContactTorque
+type Ros2Flexiv_msgsMsgMode = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgMode
+type Ros2Flexiv_msgsMsgRobotEvent = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgRobotEvent
+type Ros2Flexiv_msgsMsgOperationalStatus = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgOperationalStatus
+type Ros2Flexiv_msgsMsgRecoveryPolicy = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgRecoveryPolicy
+type Ros2Geometry_msgsMsgPoint = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgPoint
+type Ros2Geometry_msgsMsgQuaternion = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgQuaternion
+type Ros2Geometry_msgsMsgPose = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgPose
+type Ros2Geometry_msgsMsgPoseStamped = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgPoseStamped
+type Ros2Geometry_msgsMsgVector3 = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgVector3
+type Ros2Geometry_msgsMsgTwist = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgTwist
+type Ros2Geometry_msgsMsgTwistStamped = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgTwistStamped
+type Ros2Geometry_msgsMsgWrench = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgWrench
+type Ros2Geometry_msgsMsgWrenchStamped = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Geometry_msgsMsgWrenchStamped
+type Ros2Flexiv_msgsMsgRobotStates = Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsMsgRobotStates
+type Ros2Flexiv_msgsSrvGetOperationalStatus_Request =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsSrvGetOperationalStatus_Request
+type Ros2Flexiv_msgsSrvGetOperationalStatus_Response =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsSrvGetOperationalStatus_Response
+type Ros2Flexiv_msgsSrvSetJointImpedance_Request =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsSrvSetJointImpedance_Request
+type Ros2Flexiv_msgsSrvSetJointImpedance_Response =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsSrvSetJointImpedance_Response
+type Ros2Flexiv_msgsSrvSetJointInertiaScale_Request =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsSrvSetJointInertiaScale_Request
+type Ros2Flexiv_msgsSrvSetJointInertiaScale_Response =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsSrvSetJointInertiaScale_Response
+type Ros2Flexiv_msgsSrvSetMaxContactTorque_Request =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsSrvSetMaxContactTorque_Request
+type Ros2Flexiv_msgsSrvSetMaxContactTorque_Response =
+        Uwvm.Flexiv.ros2humblev22.BoundedRecords._Ros2Flexiv_msgsSrvSetMaxContactTorque_Response

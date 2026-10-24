@@ -1,0 +1,5 @@
+// @file moon.pkg
+// @brief Declare the exact installed ABB observation namespace.
+// @details Xmake supplies the actual compiled interface and WASI link profile.
+import { "uwvm/abb/observation" @abb }
+options("is-main": true)

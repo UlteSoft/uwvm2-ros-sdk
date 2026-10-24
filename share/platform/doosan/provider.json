@@ -1,0 +1,376 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "catalog_format": "uwvm-vendor-source-provider-v1",
+  "api_version": 1,
+  "id": "doosan",
+  "module": "tools/platform/doosan/provider.lua",
+  "backends": {
+    "ros1": {
+      "distributions": [
+        "kinetic",
+        "melodic",
+        "noetic"
+      ]
+    },
+    "ros2": {
+      "distributions": [
+        "humble",
+        "jazzy"
+      ]
+    }
+  },
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {},
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  },
+  "platform": "doosan",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "domains": [
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-aws-robot-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_aws_robot/catalog.json",
+      "source_catalog_sha256": "97d3406bbe20c02be518fed9dbfa167b6183e464d94354d414510dd0e527afe1",
+      "fixture_distributions": [
+        "noetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-aws-robot-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-aws-robot-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-aws-robot-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-aws-robot-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "1"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-aws-simulation-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_aws_simulation/catalog.json",
+      "source_catalog_sha256": "97d3406bbe20c02be518fed9dbfa167b6183e464d94354d414510dd0e527afe1",
+      "fixture_distributions": [
+        "noetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-aws-simulation-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-aws-simulation-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-aws-simulation-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-aws-simulation-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "2"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-doosan-robotics-patch-1-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_doosan_robotics_patch_1/catalog.json",
+      "source_catalog_sha256": "73aec4c95bea6b68273861df6290ccc3c93f680c5cee66316deafdea98e0cda1",
+      "fixture_distributions": [
+        "noetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-doosan-robotics-patch-1-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-doosan-robotics-patch-1-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-doosan-robotics-patch-1-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-doosan-robotics-patch-1-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "3"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-kinetic-devel-descrepted-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_kinetic_devel_descrepted/catalog.json",
+      "source_catalog_sha256": "b6709e2523c88250ad151f6177d0d1fd343de303fbbfda2738d4ea11fe19eef6",
+      "fixture_distributions": [
+        "kinetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-kinetic-devel-descrepted-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-kinetic-devel-descrepted-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-kinetic-devel-descrepted-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-kinetic-devel-descrepted-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "4"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-main-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_main/catalog.json",
+      "source_catalog_sha256": "73aec4c95bea6b68273861df6290ccc3c93f680c5cee66316deafdea98e0cda1",
+      "fixture_distributions": [
+        "noetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-main-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-main-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-main-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-main-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "5"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-master-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_master/catalog.json",
+      "source_catalog_sha256": "ccddec521ed7acf5f1d3aed061471c794c0a3fc0321cb034c1a0c65faa126eba",
+      "fixture_distributions": [
+        "noetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-master-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-master-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-master-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-master-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "6"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-melodic-devel-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_melodic_devel/catalog.json",
+      "source_catalog_sha256": "73aec4c95bea6b68273861df6290ccc3c93f680c5cee66316deafdea98e0cda1",
+      "fixture_distributions": [
+        "melodic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-melodic-devel-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-melodic-devel-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-melodic-devel-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-melodic-devel-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "7"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-noetic-devel-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_noetic_devel/catalog.json",
+      "source_catalog_sha256": "73aec4c95bea6b68273861df6290ccc3c93f680c5cee66316deafdea98e0cda1",
+      "fixture_distributions": [
+        "noetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-noetic-devel-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-noetic-devel-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-noetic-devel-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-noetic-devel-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "8"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-patch-1-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_patch_1/catalog.json",
+      "source_catalog_sha256": "73aec4c95bea6b68273861df6290ccc3c93f680c5cee66316deafdea98e0cda1",
+      "fixture_distributions": [
+        "noetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-patch-1-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-patch-1-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-patch-1-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-patch-1-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "9"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros1-song-ms-patch-1-complete",
+      "backend": "ros1",
+      "catalog": "share/platform/doosan/catalogs/ros1_song_ms_patch_1/catalog.json",
+      "source_catalog_sha256": "73aec4c95bea6b68273861df6290ccc3c93f680c5cee66316deafdea98e0cda1",
+      "fixture_distributions": [
+        "noetic"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros1/doosan-ros1-song-ms-patch-1-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros1/doosan-ros1-song-ms-patch-1-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros1/doosan-ros1-song-ms-patch-1-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros1/doosan-ros1-song-ms-patch-1-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "10"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros2-humble-complete",
+      "backend": "ros2",
+      "catalog": "share/platform/doosan/catalogs/ros2_humble/catalog.json",
+      "source_catalog_sha256": "5130121cf0aa3be7029ba6d76aaba7e0664061b514eee457861520d8cc0ec385",
+      "fixture_distributions": [
+        "humble"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros2/doosan-ros2-humble-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros2/doosan-ros2-humble-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros2/doosan-ros2-humble-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros2/doosan-ros2-humble-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "11"
+      }
+    },
+    {
+      "platform": "doosan",
+      "id": "doosan-ros2-jazzy-complete",
+      "backend": "ros2",
+      "catalog": "share/platform/doosan/catalogs/ros2_jazzy/catalog.json",
+      "source_catalog_sha256": "5130121cf0aa3be7029ba6d76aaba7e0664061b514eee457861520d8cc0ec385",
+      "fixture_distributions": [
+        "jazzy"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/doosan",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"doosan/c/ros2/doosan-ros2-jazzy-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"doosan/c/ros2/doosan-ros2-jazzy-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"doosan/cpp/ros2/doosan-ros2-jazzy-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"doosan/cpp/ros2/doosan-ros2-jazzy-complete/bounded_interfaces.hpp\"",
+        "UWVM_DOOSAN_PROFILE": "12"
+      }
+    }
+  ],
+  "configuration": {
+    "ros.sdk.vendor_version": "Exact domain id; required.",
+    "ros.sdk.model": "Installed model id; supplied by native deployment, never inferred.",
+    "ros.sdk.controller": "Installed vendor controller route; explicit native deployment input.",
+    "ros.sdk.transport": "Native ROS gateway only; no direct robot TCP transport."
+  },
+  "capabilities": "All effects require explicit manually configured host grants."
+}

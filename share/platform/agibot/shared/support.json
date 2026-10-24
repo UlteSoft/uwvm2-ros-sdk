@@ -1,0 +1,100 @@
+{
+  "format": "agibot-wasm-implementation-scope-v1",
+  "requested_identifiers": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "implemented_identifiers": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "odin",
+    "php",
+    "py",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "not_implemented_identifiers": [
+    "r"
+  ],
+  "operations": [
+    "query_mode",
+    "next_motion_state",
+    "list_resources"
+  ],
+  "profile": {
+    "platform": "agibot",
+    "product": "X2",
+    "sdk_version": "1.1.0",
+    "sdk_variant": "main",
+    "set_ros2_version": "humble"
+  },
+  "target": {
+    "architecture": "wasm32",
+    "platform": "wasm-wasip1",
+    "triple": "wasm32-wasip1"
+  },
+  "qualification": {
+    "all_requested_work_complete": false,
+    "example_builds": 39,
+    "relocated_builds": 13,
+    "x86_startup_denial": 78,
+    "aarch64_qemu_startup_denial": 78,
+    "lua_vm_cases": 4,
+    "successful_ros_communication": "NOT_RUN",
+    "post_open_timeout_and_cleanup": "NOT_RUN",
+    "official_suites": "NOT_RUN",
+    "physical_hardware": "NOT_RUN",
+    "native_arm_performance": "NOT_MEASURED",
+    "final_source_rerun": "IN_PROGRESS"
+  },
+  "evidence": "audit/results/20261022T015146Z/index.json",
+  "lua_runtime": {
+    "path": "sdk/lib/language/lua/lua.wasm",
+    "source": "sdk/lib/language/lua/source",
+    "builder": "sdk/lib/language/lua/build.py",
+    "xmake": "sdk/lib/language/lua/xmake.lua",
+    "producer": "sdk/lib/language/lua/lua.build.json",
+    "sha256": "7f7441622c781469dcf177b8d96ac828320a44014df0257947ab8c2d9a47c1d2",
+    "source_rebuild_reproduced_identical_bytes": true
+  }
+}

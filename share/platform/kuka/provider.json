@@ -1,0 +1,92 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "catalog_format": "uwvm-vendor-source-provider-v1",
+  "api_version": 1,
+  "id": "kuka",
+  "module": "tools/platform/kuka/provider.lua",
+  "backends": {
+    "ros2": {
+      "distributions": [
+        "jazzy"
+      ]
+    }
+  },
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {},
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  },
+  "platform": "kuka",
+  "languages": [
+    "as",
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "csharp",
+    "d",
+    "fsharp",
+    "go",
+    "haskell",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "moonbit",
+    "nim",
+    "objectc",
+    "odin",
+    "php",
+    "py",
+    "r",
+    "rs",
+    "ruby",
+    "swift",
+    "tinygo",
+    "vbnet",
+    "zig"
+  ],
+  "domains": [
+    {
+      "platform": "kuka",
+      "id": "kuka-ros2-complete",
+      "backend": "ros2",
+      "catalog": "share/platform/kuka/catalogs/ros2/catalog.preparation.json",
+      "source_catalog_sha256": "6d5b8a75e08e2f5b6daed37c587f092fafbc99ed56e0ce8fb5f4b66ba98959f4",
+      "fixture_distributions": [
+        "jazzy"
+      ],
+      "native_distribution_acceptance": "not-yet-tested",
+      "catalog_status": "complete-source-pinned",
+      "address_widths": [
+        32,
+        64
+      ],
+      "language_binding_root": "include/platform/kuka",
+      "default_authority": [],
+      "source_defines": {
+        "UWVM_VENDOR_RECORDS_HEADER": "\"kuka/c/ros2/kuka-ros2-complete/bounded_records.h\"",
+        "UWVM_VENDOR_INTERFACES_HEADER": "\"kuka/c/ros2/kuka-ros2-complete/bounded_interfaces.h\"",
+        "UWVM_VENDOR_CPP_RECORDS_HEADER": "\"kuka/cpp/ros2/kuka-ros2-complete/bounded_records.hpp\"",
+        "UWVM_VENDOR_CPP_INTERFACES_HEADER": "\"kuka/cpp/ros2/kuka-ros2-complete/bounded_interfaces.hpp\""
+      }
+    }
+  ],
+  "configuration": {
+    "ros.sdk.vendor_version": "Exact domain id; required.",
+    "ros.sdk.model": "Installed model id; supplied by native deployment, never inferred.",
+    "ros.sdk.controller": "Installed vendor controller route; explicit native deployment input.",
+    "ros.sdk.transport": "Native ROS gateway only; no direct robot TCP transport."
+  },
+  "capabilities": "All effects require explicit manually configured host grants."
+}

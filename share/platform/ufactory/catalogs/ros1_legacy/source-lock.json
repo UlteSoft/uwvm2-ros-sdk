@@ -1,0 +1,283 @@
+{
+  "kind": "ufactory-selected-complete-original-source-lock-v1",
+  "vendor": "ufactory",
+  "profile": "ros1_legacy",
+  "ros_version": 1,
+  "default_authority": [],
+  "definitions": [
+    {
+      "type": "xarm_msgs/IOState",
+      "kind": "msg",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/msg/IOState.msg",
+      "generation_file": "xarm_msgs/msg/IOState.msg",
+      "bytes": 127,
+      "sha256": "c3d02e687885003c4a9bbab24d5a256f1eb6ee05bd0ff777230cdb90dd568106",
+      "git_blob_sha1": "6ebd2e036814122b02471aad2d14e18e71c8e8fc"
+    },
+    {
+      "type": "xarm_msgs/RobotMsg",
+      "kind": "msg",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/msg/RobotMsg.msg",
+      "generation_file": "xarm_msgs/msg/RobotMsg.msg",
+      "bytes": 1243,
+      "sha256": "f9c1778c34783d6c20244fae617f3731f46a2e504576685f4387a869a0c2f9da",
+      "git_blob_sha1": "e76f2dd36752f446d8e72775ecfc81fd09f3c859"
+    },
+    {
+      "type": "xarm_msgs/ClearErr",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/srv/ClearErr.srv",
+      "generation_file": "xarm_msgs/srv/ClearErr.srv",
+      "bytes": 31,
+      "sha256": "628c788bacb726db5a6041035cde0f64d3e65abc94014f33155146ab9defc096",
+      "git_blob_sha1": "8cf7c5ec42a3ee1d140e951644214bb0fdcfecdf"
+    },
+    {
+      "type": "xarm_msgs/GetAnalogIO",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/srv/GetAnalogIO.srv",
+      "generation_file": "xarm_msgs/srv/GetAnalogIO.srv",
+      "bytes": 134,
+      "sha256": "919b9927ab303b93997651a29573632fd85017e12e107e453b2c490518ffe9d1",
+      "git_blob_sha1": "18c8882abcc277d22f6f04012997eede5afd2ea9"
+    },
+    {
+      "type": "xarm_msgs/GetDigitalIO",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/srv/GetDigitalIO.srv",
+      "generation_file": "xarm_msgs/srv/GetDigitalIO.srv",
+      "bytes": 124,
+      "sha256": "ffd42a0f96df19af0f8ec2368e7b09c9fdae85eaa8f2e738cfd7f7b93baf371e",
+      "git_blob_sha1": "83e0a2935c1d536605b7b130e1cebc7289dba49f"
+    },
+    {
+      "type": "xarm_msgs/Move",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/srv/Move.srv",
+      "generation_file": "xarm_msgs/srv/Move.srv",
+      "bytes": 1038,
+      "sha256": "99d47fcfe2510a3b0bce26dca5116257579b1302ab88ca97e2de2e9e99ead9ea",
+      "git_blob_sha1": "14a84bc6c14fa6e8492789877e6535841518068e"
+    },
+    {
+      "type": "xarm_msgs/SetAxis",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/srv/SetAxis.srv",
+      "generation_file": "xarm_msgs/srv/SetAxis.srv",
+      "bytes": 413,
+      "sha256": "a9b014f610e35c528393dc98bc7fefc405660a63c96266abaab5d70cf1e92fc4",
+      "git_blob_sha1": "06732f2534546a6be0c653dab61cb5fd7bc7f8a1"
+    },
+    {
+      "type": "xarm_msgs/SetDigitalIO",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/srv/SetDigitalIO.srv",
+      "generation_file": "xarm_msgs/srv/SetDigitalIO.srv",
+      "bytes": 118,
+      "sha256": "7502a8224c9e1be1d1499152888a8d149435e3f259d9f9dd12888cab578aa285",
+      "git_blob_sha1": "0be9580b1ddbfa60941b9f5d0aa07a38acc6cffb"
+    },
+    {
+      "type": "xarm_msgs/SetInt16",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/srv/SetInt16.srv",
+      "generation_file": "xarm_msgs/srv/SetInt16.srv",
+      "bytes": 314,
+      "sha256": "58f944f7e2d1fe44d2faccb923ec6313bf4374014f56c51ad2e164c38b091cb7",
+      "git_blob_sha1": "8982ee7adb2ea564d753128bf306e394a697954c"
+    },
+    {
+      "type": "xarm_msgs/TCPOffset",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_msgs/srv/TCPOffset.srv",
+      "generation_file": "xarm_msgs/srv/TCPOffset.srv",
+      "bytes": 218,
+      "sha256": "b718883494cc3cb5d0d51483e9cedce4204a617dd529e5b607e1527605f07335",
+      "git_blob_sha1": "e1a63dfbe4f3c0c26d66ced80e981da9ae27db9a"
+    },
+    {
+      "type": "xarm_planner/exec_plan",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_planner/srv/exec_plan.srv",
+      "generation_file": "xarm_planner/srv/exec_plan.srv",
+      "bytes": 26,
+      "sha256": "d205b088c891d57db92c7ace8dd4323fc4d852bb60866b5f635504de48302f9c",
+      "git_blob_sha1": "a3223618fb6f918ba421b92d295c09bee3f4ec48"
+    },
+    {
+      "type": "xarm_planner/joint_plan",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_planner/srv/joint_plan.srv",
+      "generation_file": "xarm_planner/srv/joint_plan.srv",
+      "bytes": 79,
+      "sha256": "fe1ee19c0202630849eaba3b47bd8133651f03e195baa5884a79b8af94e0d208",
+      "git_blob_sha1": "897241fcc7c1015c345f6a6dc3b2fc1c63d125fa"
+    },
+    {
+      "type": "xarm_planner/pose_plan",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_planner/srv/pose_plan.srv",
+      "generation_file": "xarm_planner/srv/pose_plan.srv",
+      "bytes": 44,
+      "sha256": "525c540742d39ea986135f069d015dfdb2342d4b11e6d4fa9c23e4ffab9ec7cf",
+      "git_blob_sha1": "c6fc41eaa4b27a0553fe953740cb1c60e157cfae"
+    },
+    {
+      "type": "xarm_planner/single_straight_plan",
+      "kind": "srv",
+      "repository": "ros1_legacy",
+      "original_file": "xarm_planner/srv/single_straight_plan.srv",
+      "generation_file": "xarm_planner/srv/single_straight_plan.srv",
+      "bytes": 44,
+      "sha256": "525c540742d39ea986135f069d015dfdb2342d4b11e6d4fa9c23e4ffab9ec7cf",
+      "git_blob_sha1": "c6fc41eaa4b27a0553fe953740cb1c60e157cfae"
+    },
+    {
+      "type": "geometry_msgs/Pose",
+      "kind": "msg",
+      "repository": "common_kinetic",
+      "original_file": "geometry_msgs/msg/Pose.msg",
+      "generation_file": "geometry_msgs/msg/Pose.msg",
+      "bytes": 119,
+      "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5",
+      "git_blob_sha1": "763708f7a98d12e0e27894bea3bdd0b085602f2f"
+    },
+    {
+      "type": "geometry_msgs/Point",
+      "kind": "msg",
+      "repository": "common_kinetic",
+      "original_file": "geometry_msgs/msg/Point.msg",
+      "generation_file": "geometry_msgs/msg/Point.msg",
+      "bytes": 84,
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+      "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0"
+    },
+    {
+      "type": "geometry_msgs/Quaternion",
+      "kind": "msg",
+      "repository": "common_kinetic",
+      "original_file": "geometry_msgs/msg/Quaternion.msg",
+      "generation_file": "geometry_msgs/msg/Quaternion.msg",
+      "bytes": 108,
+      "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e",
+      "git_blob_sha1": "9f4fde2bf4c13dc86a95688e4b5254aaec186e2a"
+    }
+  ],
+  "original_custom_roots": [
+    {
+      "kind": "msg",
+      "type": "xarm_msgs/IOState"
+    },
+    {
+      "kind": "msg",
+      "type": "xarm_msgs/RobotMsg"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/ClearErr"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetAnalogIO"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/GetDigitalIO"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/Move"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetAxis"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetDigitalIO"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/SetInt16"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_msgs/TCPOffset"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_planner/exec_plan"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_planner/joint_plan"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_planner/pose_plan"
+    },
+    {
+      "kind": "srv",
+      "type": "xarm_planner/single_straight_plan"
+    }
+  ],
+  "repositories": [
+    {
+      "id": "ros1_legacy",
+      "repository": "xArm-Developer/xarm_ros",
+      "branch": "legacy",
+      "commit": "3bc6c4da51769d90ce2a6d1419a0b65446d177e3",
+      "tree_git_sha1": "eb1d008b9b16e5c40a5497fbddeeac48d088394a"
+    },
+    {
+      "id": "common_kinetic",
+      "repository": "ros/common_msgs",
+      "branch": "jade-devel",
+      "commit": "cb1dc920803679800de84d35edd70a86754fffbb",
+      "tree_git_sha1": "894f5450e846b246e9367a0236e6be4ed5b9ef11",
+      "files": {
+        "geometry_msgs/CMakeLists.txt": {
+          "bytes": 833,
+          "sha256": "fb1a3248d61ece53a05f750a27b812e53f54f30018091b49f02d86fb36225021",
+          "git_blob_sha1": "5dc4e37ae020b617480e639fe2b53bc27dd33bc1"
+        },
+        "geometry_msgs/msg/Point.msg": {
+          "bytes": 84,
+          "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d",
+          "git_blob_sha1": "f1d3a71a853c668f066de795ba5e0f4458f3f1c0"
+        },
+        "geometry_msgs/msg/Pose.msg": {
+          "bytes": 119,
+          "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5",
+          "git_blob_sha1": "763708f7a98d12e0e27894bea3bdd0b085602f2f"
+        },
+        "geometry_msgs/msg/Quaternion.msg": {
+          "bytes": 108,
+          "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e",
+          "git_blob_sha1": "9f4fde2bf4c13dc86a95688e4b5254aaec186e2a"
+        },
+        "geometry_msgs/package.xml": {
+          "bytes": 825,
+          "sha256": "22b8fe1dbc93cdadb67cfdf8debd68cd5322e30c79d7d6fdf97a8dd1e2a83ff8",
+          "git_blob_sha1": "ccbc932a1546a324dffa1d3c83e281f5e25eab28"
+        }
+      },
+      "default_authority": []
+    }
+  ],
+  "catalog_sha256": "d1b6129b54608d762d84c2ebb95c7158643293670f24c9c03033906b9b7c30bc",
+  "scope": "Every original custom declaration from this exact branch tree, plus every reached original core dependency. Versioned source data only; actual native metadata/installed SDK/driver/controller/releases require independent qualification."
+}

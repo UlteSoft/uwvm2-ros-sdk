@@ -1,0 +1,168 @@
+{
+  "ros_version": 1,
+  "vendor": "robotis",
+  "profile": "noetic",
+  "format": "uwvm-platform-source-lock-v1",
+  "original_catalog_sha256": "f1827215219f99709a4e472de90636628647c770c9fd4295031046aa593da402",
+  "catalog_sha256": "812aca86c021404721223d02dfbdfc37805e3d04fb29014950611641361f3cbc",
+  "definitions": [
+    {
+      "file": "geometry_msgs/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "file": "geometry_msgs/Pose.msg",
+      "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5"
+    },
+    {
+      "file": "geometry_msgs/PoseWithCovariance.msg",
+      "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94"
+    },
+    {
+      "file": "geometry_msgs/Quaternion.msg",
+      "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e"
+    },
+    {
+      "file": "geometry_msgs/Transform.msg",
+      "sha256": "c8916279f0a429dd9561158bd2133bc4e2d780277c3c594116b240a27e7a2993"
+    },
+    {
+      "file": "geometry_msgs/TransformStamped.msg",
+      "sha256": "63432c40ac19428894910e7a43b4209c347d4c0b5d07b8ea545dc00192b5c16a"
+    },
+    {
+      "file": "geometry_msgs/Twist.msg",
+      "sha256": "623b98db7d37911a50ef002a97973709c20441426c68d1134de352a2d022767b"
+    },
+    {
+      "file": "geometry_msgs/TwistStamped.msg",
+      "sha256": "4ebc9ceb4303e7b552aaf72fffbdb5cd2f71a321d09198dbe8de5de4de381484"
+    },
+    {
+      "file": "geometry_msgs/TwistWithCovariance.msg",
+      "sha256": "5690a1f109d4962c73b5ca7f3673c48052d02f37b6a38fe2fb37c899cf555c45"
+    },
+    {
+      "file": "geometry_msgs/Vector3.msg",
+      "sha256": "fa1d5b56a10a940afcfd312936dde90864a398aa2a35598f36943c570d391296"
+    },
+    {
+      "file": "nav_msgs/Odometry.msg",
+      "sha256": "26f7566bb04ed1ad1e729679fc334a4deff1048b7b7198f38ddd0ec1df9ffef6"
+    },
+    {
+      "file": "sensor_msgs/BatteryState.msg",
+      "sha256": "ec32ca2e356648bc3b1e128b5ad320241a5c3a7202cdfa671354e5fb6e475e80"
+    },
+    {
+      "file": "sensor_msgs/Imu.msg",
+      "sha256": "50f2420308c7ca63f2f8e18ff1a03166fc7c922b00c7bf33a40c203902242ed9"
+    },
+    {
+      "file": "sensor_msgs/JointState.msg",
+      "sha256": "31e0c7daefc83de1da036d7c346394d65efe0239591ac718ad0b8f5caa97187a"
+    },
+    {
+      "file": "sensor_msgs/LaserScan.msg",
+      "sha256": "856d8888b44aab13da8fab5549922722f806dee07587f96f2d480c5d6a47eb2e"
+    },
+    {
+      "file": "sensor_msgs/MagneticField.msg",
+      "sha256": "2b6b0c0d512a18970e49b2b2617c75a20627f2da5acad5e4c83648373aebe393"
+    },
+    {
+      "file": "std_msgs/Header.msg",
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693"
+    },
+    {
+      "file": "std_srvs/SetBool.srv",
+      "sha256": "a36d99cd5f0467a58a5b06b1443e9ffc0fcb59977190def5ef677fd16f05a664"
+    },
+    {
+      "file": "std_srvs/Trigger.srv",
+      "sha256": "81e80d26771d0c0af8783938720c763cacc429e68d9d6b9c1f912474db0d8dca"
+    },
+    {
+      "file": "turtlebot3_example/Turtlebot3.action",
+      "sha256": "239de7579be911d34379064c6a5bb53da4beb40dc7371328e3e49d6c5662a82f"
+    },
+    {
+      "file": "turtlebot3_msgs/SensorState.msg",
+      "sha256": "1a9e0c633878fbe28695f1a5490a5655acbfaf871df3d58d197b7f2d51ded8c1"
+    },
+    {
+      "file": "turtlebot3_msgs/Sound.msg",
+      "sha256": "eb4861a35e75b7b4a04baf8beb171b527e0d7a382c0db969f5b32a2cb97b8bdf"
+    },
+    {
+      "file": "turtlebot3_msgs/VersionInfo.msg",
+      "sha256": "27497e6e84c079319860ad6444ff2b738a2d75243f46b637559d7c297f38ef68"
+    }
+  ],
+  "native_identity_qualified": false,
+  "hardware_executed": false,
+  "repositories": [
+    {
+      "id": "comm_ros1",
+      "url": "https://github.com/ros/ros_comm_msgs",
+      "branch": "noetic-devel",
+      "commit": "cdfe7c1761c42126e738d3b26722ff2a4a739d6a",
+      "tree_git_sha1": "b4f158b45a56bef3c86009f1fa9065a4cdbff1f1",
+      "archive": {
+        "url": "https://codeload.github.com/ros/ros_comm_msgs/tar.gz/cdfe7c1761c42126e738d3b26722ff2a4a739d6a",
+        "bytes": 2708,
+        "sha256": "5ae65d09e37283f77b8bb990e59658ed149e1961ab3c20da95d2ae1563b69541"
+      },
+      "default_authority": [],
+      "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+    },
+    {
+      "id": "common_ros1",
+      "repository": "ros/common_msgs",
+      "url": "https://github.com/ros/common_msgs",
+      "branch": "noetic-devel",
+      "commit": "092bc230c8153dd4cfee0c84c9796cc7e6b09fdb",
+      "tree_git_sha1": "dd72cef60b6f589b398d37934be2971382d4340f",
+      "default_authority": [],
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+    },
+    {
+      "id": "driver_noetic",
+      "url": "https://github.com/ROBOTIS-GIT/turtlebot3",
+      "branch": "noetic",
+      "commit": "4ae959ea6a52415c90bf752d2b76e3e28f8a87e2",
+      "tree_git_sha1": "3b3dc8f051fdff0e8689ecc10f33ffac31a99cbd",
+      "archive": {
+        "url": "https://codeload.github.com/ROBOTIS-GIT/turtlebot3/tar.gz/4ae959ea6a52415c90bf752d2b76e3e28f8a87e2",
+        "bytes": 6848301,
+        "sha256": "0885f90cead4c876b3e79959189bf4ac28f8def2cddac3d4cb7a42faea5bd15c"
+      },
+      "default_authority": [],
+      "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+    },
+    {
+      "id": "msgs_noetic",
+      "url": "https://github.com/ROBOTIS-GIT/turtlebot3_msgs",
+      "branch": "noetic",
+      "commit": "76e78b0a34e07cf1dd16dafdc54c44f35c5b83eb",
+      "tree_git_sha1": "fe24193f29cd1059779395fb17354d8f11fb8fef",
+      "archive": {
+        "url": "https://codeload.github.com/ROBOTIS-GIT/turtlebot3_msgs/tar.gz/76e78b0a34e07cf1dd16dafdc54c44f35c5b83eb",
+        "bytes": 7641,
+        "sha256": "dd1f4b78c0efdbaf48caf41e882504994cd98958a9b85b1ce85749b1dfef7405"
+      },
+      "default_authority": [],
+      "scope": "Original source and complete acquisition archive only; no compatibility, compiler, Guest, native or physical robot result."
+    },
+    {
+      "id": "std_ros1",
+      "repository": "ros/std_msgs",
+      "url": "https://github.com/ros/std_msgs",
+      "branch": "noetic-devel",
+      "commit": "34198520757d1aab358118a0ef294fe2609fde33",
+      "tree_git_sha1": "c6ce9f1fbbbe6a4310f237726df491359c874519",
+      "default_authority": [],
+      "qualification": "Original standard source capture, no installed ROS or native identity qualification."
+    }
+  ]
+}

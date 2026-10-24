@@ -1,0 +1,92 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "runtime": "__RUNTIME__",
+  "gateway": "__GATEWAY__",
+  "connection": {
+    "node-name": "fanuc_original_service_gateway",
+    "namespace": "/sdk_fixture",
+    "domain-id": "143",
+    "rmw-implementation": "rmw_fastrtps_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "runtime_features": [],
+  "execution_timeout_seconds": 30,
+  "examples": {
+    "get_payload_value": {
+      "arguments": [
+        "ungranted"
+      ],
+      "main_module": "main",
+      "preloads": [
+        {
+          "module": "io",
+          "path": "__IO_WASM__",
+          "attribute": "none"
+        },
+        {
+          "module": "algorithm",
+          "path": "__ALGORITHM_WASM__",
+          "attribute": "none"
+        },
+        {
+          "module": "ros_comm",
+          "path": "__ROS_COMM_WASM__",
+          "attribute": "none"
+        }
+      ],
+      "modules": {
+        "main": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [],
+          "call_boundary": "same-module"
+        },
+        "io": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [],
+          "call_boundary": "same-module"
+        },
+        "algorithm": {
+          "ros_enabled": false,
+          "grants": [],
+          "wasi_grants": [],
+          "call_boundary": "same-module"
+        },
+        "ros_comm": {
+          "ros_enabled": true,
+          "grants": [],
+          "wasi_grants": [],
+          "connection": {
+            "node-name": "fanuc_original_service_gateway",
+            "namespace": "/sdk_fixture",
+            "domain-id": "143",
+            "rmw-implementation": "rmw_fastrtps_cpp",
+            "security-mode": "disabled-test",
+            "keystore": "not-applicable",
+            "enclave": "not-applicable"
+          },
+          "call_boundary": "module-exports",
+          "worker_limits": {
+            "connect-timeout-ms": "5000",
+            "audit-deny-max-rate-hz": "100",
+            "audit-deny-burst": "100",
+            "audit-deny-max-records": "10000",
+            "audit-deny-max-bytes": "1048576"
+          },
+          "gateway_limits": {
+            "timeout-ms": "10000",
+            "max-sessions": "16",
+            "audit-max-records-per-second": "100",
+            "audit-max-records": "10000",
+            "audit-max-bytes": "1048576"
+          }
+        }
+      }
+    }
+  }
+}

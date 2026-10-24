@@ -1,0 +1,22 @@
+{
+  "format": "uwvm-ros-binding-v1",
+  "language": "moonbit",
+  "extensions": [
+    ".mbt"
+  ],
+  "abi": {
+    "ros1": "uwvm_ros1_v1",
+    "ros2": "uwvm_ros2_v1"
+  },
+  "module_roots": [
+    "include/platform",
+    "include/platform/abb/moonbit"
+  ],
+  "native_sources": {},
+  "catalogs": {
+    "ros1": "share/platform/abb/catalogs/ros1/catalog.preparation.json",
+    "ros2": "share/platform/abb/catalogs/ros2/catalog.preparation.json"
+  },
+  "records_ir": "share/platform/abb/records-ir.json",
+  "original_complete_source_fields_retained": true
+}

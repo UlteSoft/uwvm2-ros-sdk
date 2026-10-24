@@ -1,0 +1,546 @@
+{
+  "repository": "ros-industrial/abb_robot_driver",
+  "revision": "d1678957d3792e6aa54582ff894db62b6a51dac0",
+  "archive_sha256": "249aa3b8afab62f023617e89ea2ea155873c0fb73a26596d61a3b6f7950edd4d",
+  "archive_url": "https://codeload.github.com/ros-industrial/abb_robot_driver/tar.gz/d1678957d3792e6aa54582ff894db62b6a51dac0",
+  "audited_text_files": [
+    {
+      "path": ".github/workflows/ci_bionic.yml",
+      "sha256": "ad65f85e0c20e836067a1985d8c40943538f08ff4b55d5e60d6e660d93294c83",
+      "bytes": 1459
+    },
+    {
+      "path": ".github/workflows/ci_focal.yml",
+      "sha256": "d67cfea3ff4cd41a375d01be1c8f5c9f7961e7d1e01ade33928417e45461ac66",
+      "bytes": 1527
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "bytes": 1505
+    },
+    {
+      "path": "README.md",
+      "sha256": "f8dd593fe781bcc4bae1641a6627281d686d5e028e0811a3b5c74401e994f0fc",
+      "bytes": 7035
+    },
+    {
+      "path": "abb_egm_hardware_interface/CMakeLists.txt",
+      "sha256": "bb0199d72e9f9e78d26b4e618723fbe172babffee3452b2108faaf8afa75e85c",
+      "bytes": 7367
+    },
+    {
+      "path": "abb_egm_hardware_interface/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "bytes": 1505
+    },
+    {
+      "path": "abb_egm_hardware_interface/README.md",
+      "sha256": "e99b35ba3dabfdd2425b3f66bb13dae6260e4f8f8a510ddc00d180ae4052ff31",
+      "bytes": 6227
+    },
+    {
+      "path": "abb_egm_hardware_interface/config/base_configs_example.yaml",
+      "sha256": "3cf2e7bbe0025897226138cfa2774818722cd0a57d2044a898ee1893633a3a8f",
+      "bytes": 600
+    },
+    {
+      "path": "abb_egm_hardware_interface/config/egm_multiple_mech_units_example.yaml",
+      "sha256": "e3a57cc8793720251ea073d0ce4c7f8aa60d2b0c341c2ebf8925a9047c22cd89",
+      "bytes": 495
+    },
+    {
+      "path": "abb_egm_hardware_interface/config/egm_single_mech_unit_example.yaml",
+      "sha256": "a129541b2046b2757d59c0602391fff69e9dba36a0cec0fc097de3e7d4be1ef0",
+      "bytes": 171
+    },
+    {
+      "path": "abb_egm_hardware_interface/config/egm_yumi_mech_units_example.yaml",
+      "sha256": "1979767a6837c458381220364c87aad1e3caed4b3f81cbd45ff25b24eb9e8229",
+      "bytes": 371
+    },
+    {
+      "path": "abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_controller_stopper.h",
+      "sha256": "bb946b6f3c6d9105b41d084a4e035756971230fc4536e68eb04800ce220aebd4",
+      "bytes": 5079
+    },
+    {
+      "path": "abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_hardware_interface.h",
+      "sha256": "23b6cf807209d915194220c3063f875e55f74f4a4c4047b70aae57ab2c5f2e5c",
+      "bytes": 8817
+    },
+    {
+      "path": "abb_egm_hardware_interface/include/abb_egm_hardware_interface/egm_state_interface.h",
+      "sha256": "77db10d6e6f8ac2a845754a5b80fe90262162a5da2f8cc11d91055ba42b253cd",
+      "bytes": 3717
+    },
+    {
+      "path": "abb_egm_hardware_interface/launch/egm_hardware_interface.launch",
+      "sha256": "59365f6b5f0b0f55055bb71d2337cc4a60427860349ea9b750473e160541da70",
+      "bytes": 1003
+    },
+    {
+      "path": "abb_egm_hardware_interface/package.xml",
+      "sha256": "5054b3f31a2ff48c91d346a6e955eaa3e397521935a9252f0c9cfe4649dd43bd",
+      "bytes": 1192
+    },
+    {
+      "path": "abb_egm_hardware_interface/src/egm_controller_stopper.cpp",
+      "sha256": "8c16c4a7a45bee4fb5dcb313eaef39f187b3d06db45625e8df92aeb19c31230b",
+      "bytes": 7418
+    },
+    {
+      "path": "abb_egm_hardware_interface/src/egm_controller_stopper_main.cpp",
+      "sha256": "261b85bdbb47babcbe77dd7919d4a549888af52fe7233d42736086c156ec7c74",
+      "bytes": 3451
+    },
+    {
+      "path": "abb_egm_hardware_interface/src/egm_hardware_interface.cpp",
+      "sha256": "006b2aa1b339bc235a8fdf388c98e3792733b798252d469ed8c4a44d41a6b645",
+      "bytes": 26792
+    },
+    {
+      "path": "abb_egm_hardware_interface/src/egm_hardware_interface_main.cpp",
+      "sha256": "bb86b529766c6372b04747c24b59c9d9ba9b5946227f0c17edce663ca88883bd",
+      "bytes": 6894
+    },
+    {
+      "path": "abb_egm_state_controller/CMakeLists.txt",
+      "sha256": "ae4d7d17280c8a76f772127a5ac9395c45b93cde97b2d600ef819e2c6150da9f",
+      "bytes": 3871
+    },
+    {
+      "path": "abb_egm_state_controller/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "bytes": 1505
+    },
+    {
+      "path": "abb_egm_state_controller/README.md",
+      "sha256": "ce92dcff6e1b8cd68d073ed7199126f0e92ed1dc849bc0dde298142f5dec1cf8",
+      "bytes": 1931
+    },
+    {
+      "path": "abb_egm_state_controller/config/egm_state_controller.yaml",
+      "sha256": "2449b38d6b7d995dc75d93cda00d608566d2ecbe298aa554e13aeb0f8b67f29e",
+      "bytes": 104
+    },
+    {
+      "path": "abb_egm_state_controller/egm_state_controller_plugin.xml",
+      "sha256": "7f6799bda0dfe2251c241505ba16b7bdaafda6f6b8a44b898f75265acb3f3fb6",
+      "bytes": 543
+    },
+    {
+      "path": "abb_egm_state_controller/include/abb_egm_state_controller/egm_state_controller.h",
+      "sha256": "3f59e414ebb02bad2fd754db6cc14e012459d404f7e27b13b5da3b91857f2bff",
+      "bytes": 4113
+    },
+    {
+      "path": "abb_egm_state_controller/launch/egm_state_controller.launch",
+      "sha256": "4963b32baa0ea840ae7da6b9374b4cf742cf6712de60e6978cc93c0f9e75d259",
+      "bytes": 235
+    },
+    {
+      "path": "abb_egm_state_controller/package.xml",
+      "sha256": "be25a221f55a14fb65ada0e8216a5d960fe4126063d6d6e6fac8d14ecfaa1aa8",
+      "bytes": 1153
+    },
+    {
+      "path": "abb_egm_state_controller/src/egm_state_controller.cpp",
+      "sha256": "32b432dfcd608782171f77b3013f9a406061f2d6930932e90436c03fdc9b8ff5",
+      "bytes": 6587
+    },
+    {
+      "path": "abb_robot_bringup_examples/CMakeLists.txt",
+      "sha256": "02e7c628aa7dd7918858b33359f6ead42763931c4e93eff2d816218eaf029757",
+      "bytes": 2046
+    },
+    {
+      "path": "abb_robot_bringup_examples/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "bytes": 1505
+    },
+    {
+      "path": "abb_robot_bringup_examples/README.md",
+      "sha256": "26dccf2368a017cef7fc43fb6d4259f23e0a96a3dd67f1cec22a7bcfa7e84546",
+      "bytes": 8446
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex2_controllers.yaml",
+      "sha256": "ae07f37de4db604480e4ca34b3ebb28e70ee9982a85efb31e15d54352443526a",
+      "bytes": 473
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex2_hardware_base.yaml",
+      "sha256": "603f64be44bdcea80fa35ddb3d020ed9a4e2077ce167f2afd80bd2340f8e4e74",
+      "bytes": 605
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex2_hardware_egm.yaml",
+      "sha256": "a7d19f0ef0b95b532ef2c4f1715da667a4800e763cdc83b0f44f6d8f83d1aa27",
+      "bytes": 745
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex3_controllers.yaml",
+      "sha256": "1b3355cb3db69333f139efde7bae6d28a9b732f4259788e41b27854355176567",
+      "bytes": 835
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex3_hardware_base.yaml",
+      "sha256": "603f64be44bdcea80fa35ddb3d020ed9a4e2077ce167f2afd80bd2340f8e4e74",
+      "bytes": 605
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/ex3_hardware_egm.yaml",
+      "sha256": "672df5db969b3ce36400911b63ffdda6d944e95a7efced7bd35ee5ab7fe1e470",
+      "bytes": 1699
+    },
+    {
+      "path": "abb_robot_bringup_examples/config/rosconsole.conf",
+      "sha256": "7a54ee595cd734fbb56b145baabd0afb16a9f7595dd9024ffd433cb219a60a21",
+      "bytes": 192
+    },
+    {
+      "path": "abb_robot_bringup_examples/launch/ex1_rws_only.launch",
+      "sha256": "05c9aa3e378507a984273f1ae8149d4f7a168eca1ea6530f478e7a375900562b",
+      "bytes": 1159
+    },
+    {
+      "path": "abb_robot_bringup_examples/launch/ex2_rws_and_egm_6axis_robot.launch",
+      "sha256": "ee8c84fca23b209f1f29a33c7e86cc099315a0a6947bf0dc4356192e3f29ded8",
+      "bytes": 3087
+    },
+    {
+      "path": "abb_robot_bringup_examples/launch/ex3_rws_and_egm_yumi_robot.launch",
+      "sha256": "de8cfeee1cf25d08bf202c00c0db559234a21c8c1b94147bd06756dd6ab4267a",
+      "bytes": 3568
+    },
+    {
+      "path": "abb_robot_bringup_examples/package.xml",
+      "sha256": "458df0fc9744829b384ac02f1cce261ffa91aecbda13c20ccfc607313a845749",
+      "bytes": 974
+    },
+    {
+      "path": "abb_robot_cpp_utilities/CMakeLists.txt",
+      "sha256": "376a0e7636aebff46e99db632090781aeba631bc2f4bb645dc31638cfde2067d",
+      "bytes": 4444
+    },
+    {
+      "path": "abb_robot_cpp_utilities/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "bytes": 1505
+    },
+    {
+      "path": "abb_robot_cpp_utilities/README.md",
+      "sha256": "5557492bbfbce879e14b883c26a7a3fc141b402a53349143a786adb5902a8847",
+      "bytes": 1885
+    },
+    {
+      "path": "abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/initialization.h",
+      "sha256": "e8cf676729cf659a52f80be4565431732aa474645b4fa64e24699e4314e63103",
+      "bytes": 2929
+    },
+    {
+      "path": "abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/mapping.h",
+      "sha256": "59419fb62e840d6a3ef7c55b583ba2f0ee4f65ad6fc75c53e25d54f618baabd5",
+      "bytes": 7608
+    },
+    {
+      "path": "abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/parameters.h",
+      "sha256": "5947ee2ca58a884b5cdb30c15560f0130cf7ef9342e7eff542d9d42e5d3b76f6",
+      "bytes": 3999
+    },
+    {
+      "path": "abb_robot_cpp_utilities/include/abb_robot_cpp_utilities/verification.h",
+      "sha256": "51910b1fdfbccf7cd6528532f6d8ac659a91aaade863f97f2939eb242caccb76",
+      "bytes": 3375
+    },
+    {
+      "path": "abb_robot_cpp_utilities/package.xml",
+      "sha256": "344e3056cb31d4ef1ea656d3c2eb245ddfe5fcb6ac56cf97764352f46ee8d10e",
+      "bytes": 974
+    },
+    {
+      "path": "abb_robot_cpp_utilities/src/initialization.cpp",
+      "sha256": "30445f1fb9b5431c8c413e0faa225e2c8f6ca941b2607ca19e848b84d6dec481",
+      "bytes": 4001
+    },
+    {
+      "path": "abb_robot_cpp_utilities/src/mapping.cpp",
+      "sha256": "77268cebb9dcea04c3869e7d486accc09bd856ea84e097273b07e2546f636e5e",
+      "bytes": 17107
+    },
+    {
+      "path": "abb_robot_cpp_utilities/src/parameters.cpp",
+      "sha256": "0a0afb5464be935084586defabcd779b27eb58e40ca01e298c9fdf47b8fc7532",
+      "bytes": 6551
+    },
+    {
+      "path": "abb_robot_cpp_utilities/src/verification.cpp",
+      "sha256": "bc801468dbe87f19312a6b0230aa2d9aac3123ff49eb9487d33a78f83b71ac1f",
+      "bytes": 3863
+    },
+    {
+      "path": "abb_rws_service_provider/CMakeLists.txt",
+      "sha256": "f914d1d0d1840ca3dc12fc90e8028f4d52b708da2077b9ac58c229819edd0c80",
+      "bytes": 4726
+    },
+    {
+      "path": "abb_rws_service_provider/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "bytes": 1505
+    },
+    {
+      "path": "abb_rws_service_provider/README.md",
+      "sha256": "a7c7b8b44e4be90e0e4c688dea2a8a77a00f7024ba146c7df01736e3b1ff76ce",
+      "bytes": 5190
+    },
+    {
+      "path": "abb_rws_service_provider/include/abb_rws_service_provider/rws_service_provider.h",
+      "sha256": "152342868f6304c28805b064bd92d213ab08a8c718c9c3c3ef8c33cb2e769e54",
+      "bytes": 23390
+    },
+    {
+      "path": "abb_rws_service_provider/launch/rws_service_provider.launch",
+      "sha256": "c7754a71d59d4bec7e24757ce4216dcaf143b4eda6ddb6dc23e93bf73c94fb1e",
+      "bytes": 1068
+    },
+    {
+      "path": "abb_rws_service_provider/package.xml",
+      "sha256": "fea6718ef67bfd63a7829118b1f8f167e357a4c999693e054a39bebc53ef9d53",
+      "bytes": 1030
+    },
+    {
+      "path": "abb_rws_service_provider/src/main.cpp",
+      "sha256": "e04257a85c62abb3333f2e839740c59df8d84a89ba80fbf6f09aeb05fd1091c9",
+      "bytes": 3421
+    },
+    {
+      "path": "abb_rws_service_provider/src/rws_service_provider.cpp",
+      "sha256": "ea765db459916af00675bf13538bd30e86c346eac224a6f37771ac7764158bca",
+      "bytes": 17706
+    },
+    {
+      "path": "abb_rws_service_provider/src/rws_service_provider_core_srvs.cpp",
+      "sha256": "473b640a95a552f212b76a48bdc6d633017f539a031457cb71b6b2bab12d7747",
+      "bytes": 23952
+    },
+    {
+      "path": "abb_rws_service_provider/src/rws_service_provider_sm_srvs.cpp",
+      "sha256": "41439be149420072e3c46b9b015cce111ac520bea9dcb9d59ee919f97600d223",
+      "bytes": 16485
+    },
+    {
+      "path": "abb_rws_state_publisher/CMakeLists.txt",
+      "sha256": "627e0a8df4869b52c6d67208da21a61e9305dab3807d10855dce5b105e9cd821",
+      "bytes": 4672
+    },
+    {
+      "path": "abb_rws_state_publisher/LICENSE",
+      "sha256": "1b33168f61edcb96c6291078e922d1bd24afc553cb9c826c48105f02a2a6ea76",
+      "bytes": 1505
+    },
+    {
+      "path": "abb_rws_state_publisher/README.md",
+      "sha256": "dc0df2531422bb59e53b68c2f94313d29638cfb3cf37e834e24c4fbf340a3681",
+      "bytes": 3912
+    },
+    {
+      "path": "abb_rws_state_publisher/include/abb_rws_state_publisher/rws_state_publisher.h",
+      "sha256": "10fa6bbd54eea1b12a98a98a78e6bed68e0197b4d44f92a1862663eb5d117dda",
+      "bytes": 5173
+    },
+    {
+      "path": "abb_rws_state_publisher/launch/rws_state_publisher.launch",
+      "sha256": "4065e84ba4b017731c93b1483b61528ab8d67ec53e8885e9824126fd6279e1d7",
+      "bytes": 1248
+    },
+    {
+      "path": "abb_rws_state_publisher/package.xml",
+      "sha256": "75f1f34ef572eb41255a9a23101efb20911f6617138d755c10a5f9b959acfc49",
+      "bytes": 902
+    },
+    {
+      "path": "abb_rws_state_publisher/src/main.cpp",
+      "sha256": "a0f50c4a48cb1191b63ea2e2d0f7f98e437c3dbd9f6b167c84a08db412b6310b",
+      "bytes": 3414
+    },
+    {
+      "path": "abb_rws_state_publisher/src/rws_state_publisher.cpp",
+      "sha256": "cf9c01cab77152126c6619710b0a362d9b99d883282d330215ba6b4ae12cda09",
+      "bytes": 9375
+    },
+    {
+      "path": "pkgs.repos",
+      "sha256": "42f1bab0816d563ec0c34a8fdb249a42020d72e5a01f16c4db5852c3edfd2546",
+      "bytes": 464
+    },
+    {
+      "path": "pkgs_only_sources.repos",
+      "sha256": "6b02b7209de0013a03a76de19736708ae664213e653a308fd76f3c5e546ca4a3",
+      "bytes": 600
+    }
+  ],
+  "controller_execution": false,
+  "native_driver_interface_pair_qualified": false,
+  "resources": {
+    "services": [
+      {
+        "resource": "get_egm_settings",
+        "callback": "getEGMSettings"
+      },
+      {
+        "resource": "get_file_contents",
+        "callback": "getFileContents"
+      },
+      {
+        "resource": "get_io_signal",
+        "callback": "getIOSignal"
+      },
+      {
+        "resource": "get_rapid_bool",
+        "callback": "getRAPIDBool"
+      },
+      {
+        "resource": "get_rapid_dnum",
+        "callback": "getRAPIDDnum"
+      },
+      {
+        "resource": "get_rapid_num",
+        "callback": "getRAPIDNum"
+      },
+      {
+        "resource": "get_rapid_string",
+        "callback": "getRAPIDString"
+      },
+      {
+        "resource": "get_rapid_symbol",
+        "callback": "getRAPIDSymbol"
+      },
+      {
+        "resource": "get_robot_controller_description",
+        "callback": "getRCDescription"
+      },
+      {
+        "resource": "get_speed_ratio",
+        "callback": "getSpeedRatio"
+      },
+      {
+        "resource": "pp_to_main",
+        "callback": "ppToMain"
+      },
+      {
+        "resource": "run_rapid_routine",
+        "callback": "runRAPIDRoutine"
+      },
+      {
+        "resource": "run_sg_routine",
+        "callback": "runSGRoutine"
+      },
+      {
+        "resource": "set_egm_settings",
+        "callback": "setEGMSettings"
+      },
+      {
+        "resource": "set_file_contents",
+        "callback": "setFileContents"
+      },
+      {
+        "resource": "set_io_signal",
+        "callback": "setIOSignal"
+      },
+      {
+        "resource": "set_motors_off",
+        "callback": "setMotorsOff"
+      },
+      {
+        "resource": "set_motors_on",
+        "callback": "setMotorsOn"
+      },
+      {
+        "resource": "set_rapid_bool",
+        "callback": "setRAPIDBool"
+      },
+      {
+        "resource": "set_rapid_dnum",
+        "callback": "setRAPIDDnum"
+      },
+      {
+        "resource": "set_rapid_num",
+        "callback": "setRAPIDNum"
+      },
+      {
+        "resource": "set_rapid_routine",
+        "callback": "setRAPIDRoutine"
+      },
+      {
+        "resource": "set_rapid_string",
+        "callback": "setRAPIDString"
+      },
+      {
+        "resource": "set_rapid_symbol",
+        "callback": "setRAPIDSymbol"
+      },
+      {
+        "resource": "set_sg_command",
+        "callback": "setSGCommand"
+      },
+      {
+        "resource": "set_speed_ratio",
+        "callback": "setSpeedRatio"
+      },
+      {
+        "resource": "start_egm_joint",
+        "callback": "startEGMJoint"
+      },
+      {
+        "resource": "start_egm_pose",
+        "callback": "startEGMPose"
+      },
+      {
+        "resource": "start_egm_stream",
+        "callback": "startEGMStream"
+      },
+      {
+        "resource": "start_rapid",
+        "callback": "startRAPID"
+      },
+      {
+        "resource": "stop_egm",
+        "callback": "stopEGM"
+      },
+      {
+        "resource": "stop_egm_stream",
+        "callback": "stopEGMStream"
+      },
+      {
+        "resource": "stop_rapid",
+        "callback": "stopRAPID"
+      }
+    ],
+    "topics": [
+      {
+        "native_cpp_type": "sensor_msgs::JointState",
+        "resource": "joint_states"
+      },
+      {
+        "native_cpp_type": "abb_robot_msgs::SystemState",
+        "resource": "system_states"
+      },
+      {
+        "native_cpp_type": "abb_rapid_sm_addin_msgs::RuntimeState",
+        "resource": "sm_addin/runtime_states"
+      }
+    ],
+    "state_machine_addin": [
+      "1.0",
+      "1.1"
+    ],
+    "resource_gating": "Base services exist independently; add-in services are gated by detected 1.0/1.1, EGM and smart-gripper indicators in the original source."
+  },
+  "robotware": {
+    "documented_range": "[6.07.01, 7.0)",
+    "actual_rejection_predicate": "major == 6 && minor < 7 && patch < 1",
+    "source": "abb_robot_cpp_utilities/src/verification.cpp",
+    "interpretation": "The source predicate does not enforce the documented interval. SDK metadata must not treat passing that predicate as controller compatibility proof."
+  }
+}

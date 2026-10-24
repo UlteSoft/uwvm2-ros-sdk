@@ -1,0 +1,4385 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "aruco_msgs/msg/Marker.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "aruco_msgs/Marker"
+    },
+    {
+      "bounds": {
+        "markers": {
+          "sequence": 8
+        }
+      },
+      "file": "aruco_msgs/msg/MarkerArray.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "aruco_msgs/MarkerArray"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/srv/CheckStartingPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/CheckStartingPose"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/srv/ComputeCalibration.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/ComputeCalibration"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/srv/EnumerateTargetPoses.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/EnumerateTargetPoses"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/srv/ExecutePlan.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/ExecutePlan"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/msg/HandeyeCalibration.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/HandeyeCalibration"
+    },
+    {
+      "bounds": {
+        "response.algorithms": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.current_algorithm": {
+          "string": 256
+        }
+      },
+      "file": "easy_handeye_msgs/srv/ListAlgorithms.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/ListAlgorithms"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/srv/PlanToSelectedTargetPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/PlanToSelectedTargetPose"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/srv/RemoveSample.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/RemoveSample"
+    },
+    {
+      "bounds": {
+        "camera_marker_samples": {
+          "sequence": 8
+        },
+        "hand_world_samples": {
+          "sequence": 8
+        }
+      },
+      "file": "easy_handeye_msgs/msg/SampleList.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/SampleList"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/srv/SelectTargetPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/SelectTargetPose"
+    },
+    {
+      "bounds": {
+        "request.new_algorithm": {
+          "string": 256
+        }
+      },
+      "file": "easy_handeye_msgs/srv/SetAlgorithm.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/SetAlgorithm"
+    },
+    {
+      "bounds": {},
+      "file": "easy_handeye_msgs/srv/TakeSample.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/TakeSample"
+    },
+    {
+      "bounds": {
+        "target_poses": {
+          "sequence": 8
+        }
+      },
+      "file": "easy_handeye_msgs/msg/TargetPoseList.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "easy_handeye_msgs/TargetPoseList"
+    },
+    {
+      "bounds": {},
+      "file": "geographic_msgs/msg/GeoPoint.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geographic_msgs/GeoPoint"
+    },
+    {
+      "bounds": {},
+      "file": "geographic_msgs/msg/GeoPose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geographic_msgs/GeoPose"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Point.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Point"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/PointStamped.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PointStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Pose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Pose"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/PoseStamped.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PoseStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/PoseWithCovariance.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PoseWithCovariance"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/PoseWithCovarianceStamped.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/PoseWithCovarianceStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Quaternion.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Quaternion"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Transform.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Transform"
+    },
+    {
+      "bounds": {
+        "child_frame_id": {
+          "string": 256
+        }
+      },
+      "file": "geometry_msgs/msg/TransformStamped.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/TransformStamped"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Twist.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Twist"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Vector3.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Vector3"
+    },
+    {
+      "bounds": {
+        "request.frame_id": {
+          "string": 256
+        },
+        "request.layers": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "grid_map_msgs/srv/GetGridMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "grid_map_msgs/GetGridMap"
+    },
+    {
+      "bounds": {},
+      "file": "grid_map_msgs/srv/GetGridMapInfo.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "grid_map_msgs/GetGridMapInfo"
+    },
+    {
+      "bounds": {
+        "basic_layers": {
+          "sequence": 16,
+          "string": 256
+        },
+        "data": {
+          "sequence": 4
+        },
+        "layers": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "grid_map_msgs/msg/GridMap.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "grid_map_msgs/GridMap"
+    },
+    {
+      "bounds": {},
+      "file": "grid_map_msgs/msg/GridMapInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "grid_map_msgs/GridMapInfo"
+    },
+    {
+      "bounds": {
+        "request.file_path": {
+          "string": 256
+        },
+        "request.topic_name": {
+          "string": 256
+        }
+      },
+      "file": "grid_map_msgs/srv/ProcessFile.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "grid_map_msgs/ProcessFile"
+    },
+    {
+      "bounds": {},
+      "file": "grid_map_msgs/srv/SetGridMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "grid_map_msgs/SetGridMap"
+    },
+    {
+      "bounds": {},
+      "file": "h12pro_controller_node/msg/ECJointMotordata.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/ECJointMotordata"
+    },
+    {
+      "bounds": {
+        "request.action_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "h12pro_controller_node/srv/ExecuteArmAction.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/ExecuteArmAction"
+    },
+    {
+      "bounds": {},
+      "file": "h12pro_controller_node/msg/RobotActionState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/RobotActionState"
+    },
+    {
+      "bounds": {
+        "update_msg": {
+          "string": 256
+        }
+      },
+      "file": "h12pro_controller_node/msg/UpdateH12CustomizeConfig.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/UpdateH12CustomizeConfig"
+    },
+    {
+      "bounds": {},
+      "file": "h12pro_controller_node/srv/changeAMBACCtrlMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/changeAMBACCtrlMode"
+    },
+    {
+      "bounds": {},
+      "file": "h12pro_controller_node/srv/changeArmCtrlMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/changeArmCtrlMode"
+    },
+    {
+      "bounds": {
+        "request.config_name": {
+          "string": 256
+        }
+      },
+      "file": "h12pro_controller_node/srv/changeHandArmPosesByConfigName.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/changeHandArmPosesByConfigName"
+    },
+    {
+      "bounds": {
+        "channels": {
+          "sequence": 16
+        }
+      },
+      "file": "h12pro_controller_node/msg/h12proRemoteControllerChannel.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/h12proRemoteControllerChannel"
+    },
+    {
+      "bounds": {
+        "request.music_number": {
+          "string": 256
+        }
+      },
+      "file": "h12pro_controller_node/srv/playmusic.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/playmusic"
+    },
+    {
+      "bounds": {},
+      "file": "h12pro_controller_node/msg/robotPhase.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/robotPhase"
+    },
+    {
+      "bounds": {
+        "q": {
+          "sequence": 16
+        },
+        "tau": {
+          "sequence": 128
+        },
+        "v": {
+          "sequence": 16
+        }
+      },
+      "file": "h12pro_controller_node/msg/robotQVTau.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/robotQVTau"
+    },
+    {
+      "bounds": {},
+      "file": "h12pro_controller_node/msg/robotTorsoState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/robotTorsoState"
+    },
+    {
+      "bounds": {
+        "request.stateReq": {
+          "string": 256
+        },
+        "request.subState": {
+          "string": 256
+        }
+      },
+      "file": "h12pro_controller_node/srv/srvChangePhases.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/srvChangePhases"
+    },
+    {
+      "bounds": {},
+      "file": "h12pro_controller_node/srv/srvClearPositionCMD.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/srvClearPositionCMD"
+    },
+    {
+      "bounds": {},
+      "file": "h12pro_controller_node/srv/srvchangeCtlMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/srvchangeCtlMode"
+    },
+    {
+      "bounds": {
+        "values": {
+          "sequence": 16
+        }
+      },
+      "file": "h12pro_controller_node/msg/walkCommand.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "h12pro_controller_node/walkCommand"
+    },
+    {
+      "bounds": {
+        "left_hand_pose": {
+          "sequence": 16
+        },
+        "right_hand_pose": {
+          "sequence": 16
+        }
+      },
+      "file": "handcontrollerdemorosnode/msg/armPoseWithTimeStamp.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "handcontrollerdemorosnode/armPoseWithTimeStamp"
+    },
+    {
+      "bounds": {},
+      "file": "handcontrollerdemorosnode/srv/changeHandTrackingMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "handcontrollerdemorosnode/changeHandTrackingMode"
+    },
+    {
+      "bounds": {
+        "request.left_hand_position": {
+          "sequence": 256
+        },
+        "request.right_hand_position": {
+          "sequence": 256
+        }
+      },
+      "file": "handcontrollerdemorosnode/srv/controlEndHand.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "handcontrollerdemorosnode/controlEndHand"
+    },
+    {
+      "bounds": {
+        "eulerAngles": {
+          "sequence": 8
+        }
+      },
+      "file": "handcontrollerdemorosnode/msg/handRotationEular.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "handcontrollerdemorosnode/handRotationEular"
+    },
+    {
+      "bounds": {
+        "left_arm_pose": {
+          "sequence": 16
+        },
+        "right_arm_pose": {
+          "sequence": 16
+        }
+      },
+      "file": "handcontrollerdemorosnode/msg/robotArmPose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "handcontrollerdemorosnode/robotArmPose"
+    },
+    {
+      "bounds": {
+        "left_hand_position": {
+          "sequence": 256
+        },
+        "right_hand_position": {
+          "sequence": 256
+        }
+      },
+      "file": "handcontrollerdemorosnode/msg/robotHandPosition.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "handcontrollerdemorosnode/robotHandPosition"
+    },
+    {
+      "bounds": {
+        "request.left_arm_pose": {
+          "sequence": 16
+        },
+        "request.right_arm_pose": {
+          "sequence": 16
+        }
+      },
+      "file": "handcontrollerdemorosnode/srv/srvArmIK.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "handcontrollerdemorosnode/srvArmIK"
+    },
+    {
+      "bounds": {},
+      "file": "hardware_node/msg/horizontalMotionByStep.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "hardware_node/horizontalMotionByStep"
+    },
+    {
+      "bounds": {
+        "target_position": {
+          "sequence": 16
+        }
+      },
+      "file": "hardware_node/msg/robotHeadMotionData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "hardware_node/robotHeadMotionData"
+    },
+    {
+      "bounds": {},
+      "file": "humanoid_arm_control/srv/armControl.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_arm_control/armControl"
+    },
+    {
+      "bounds": {},
+      "file": "humanoid_arm_control/srv/handUpAndGrab.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_arm_control/handUpAndGrab"
+    },
+    {
+      "bounds": {
+        "request.action_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "humanoid_plan_arm_trajectory/srv/ExecuteArmAction.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_plan_arm_trajectory/ExecuteArmAction"
+    },
+    {
+      "bounds": {},
+      "file": "humanoid_plan_arm_trajectory/msg/RobotActionState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_plan_arm_trajectory/RobotActionState"
+    },
+    {
+      "bounds": {
+        "end_point": {
+          "sequence": 16
+        },
+        "left_control_point": {
+          "sequence": 16
+        },
+        "right_control_point": {
+          "sequence": 16
+        }
+      },
+      "file": "humanoid_plan_arm_trajectory/msg/bezierCurveCubicPoint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_plan_arm_trajectory/bezierCurveCubicPoint"
+    },
+    {
+      "bounds": {
+        "bezier_curve_points": {
+          "sequence": 8
+        }
+      },
+      "file": "humanoid_plan_arm_trajectory/msg/jointBezierTrajectory.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_plan_arm_trajectory/jointBezierTrajectory"
+    },
+    {
+      "bounds": {},
+      "file": "humanoid_plan_arm_trajectory/msg/planArmState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_plan_arm_trajectory/planArmState"
+    },
+    {
+      "bounds": {
+        "request.joint_names": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.multi_joint_bezier_trajectory": {
+          "sequence": 8
+        }
+      },
+      "file": "humanoid_plan_arm_trajectory/srv/planArmTrajectoryBezierCurve.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_plan_arm_trajectory/planArmTrajectoryBezierCurve"
+    },
+    {
+      "bounds": {},
+      "file": "humanoid_plan_arm_trajectory/srv/planArmTrajectoryCubicSpline.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "humanoid_plan_arm_trajectory/planArmTrajectoryCubicSpline"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 256
+        },
+        "position_frame_id": {
+          "string": 256
+        }
+      },
+      "file": "kindr_msgs/msg/VectorAtPosition.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kindr_msgs/VectorAtPosition"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_audio_player/srv/audio_status.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_audio_player/audio_status"
+    },
+    {
+      "bounds": {
+        "request.music_number": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_audio_player/srv/playmusic.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_audio_player/playmusic"
+    },
+    {
+      "bounds": {
+        "request.map_name": {
+          "string": 256
+        },
+        "response.map_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/DeleteMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/DeleteMap"
+    },
+    {
+      "bounds": {
+        "request.map_name": {
+          "string": 256
+        },
+        "request.operation": {
+          "string": 256
+        },
+        "request.points": {
+          "sequence": 16
+        },
+        "response.image_data": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/EditMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/EditMap"
+    },
+    {
+      "bounds": {
+        "response.maps": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/GetAllMaps.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/GetAllMaps"
+    },
+    {
+      "bounds": {
+        "response.current_map": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/GetCurrentMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/GetCurrentMap"
+    },
+    {
+      "bounds": {
+        "request.task_point_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/InitialPoseWithTaskPoint.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/InitialPoseWithTaskPoint"
+    },
+    {
+      "bounds": {
+        "request.map_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/LoadMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/LoadMap"
+    },
+    {
+      "bounds": {
+        "request.task_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/NavigateToTaskPoint.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/NavigateToTaskPoint"
+    },
+    {
+      "bounds": {
+        "request.new_name": {
+          "string": 256
+        },
+        "request.old_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.new_name": {
+          "string": 256
+        },
+        "response.old_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/RenameMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/RenameMap"
+    },
+    {
+      "bounds": {
+        "request.map_name": {
+          "string": 256
+        },
+        "response.map_path": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.pcd_path": {
+          "string": 256
+        },
+        "response.pgm_path": {
+          "string": 256
+        },
+        "response.yaml_path": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/SaveMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/SaveMap"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/SetInitialPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/SetInitialPose"
+    },
+    {
+      "bounds": {
+        "request.lidar_type": {
+          "string": 256
+        },
+        "request.map_name": {
+          "string": 256
+        },
+        "response.map_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/StartMapping.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/StartMapping"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/srv/StopMapping.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/StopMapping"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_mapping/msg/TaskPoint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/TaskPoint"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.task_points": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_mapping/srv/TaskPointOperation.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_mapping/TaskPointOperation"
+    },
+    {
+      "bounds": {
+        "id": {
+          "sequence": 16
+        },
+        "size": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/AprilTagDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/AprilTagDetection"
+    },
+    {
+      "bounds": {
+        "detections": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/AprilTagDetectionArray.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/AprilTagDetectionArray"
+    },
+    {
+      "bounds": {
+        "message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/AudioPlaybackStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/AudioPlaybackStatus"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/AudioReceiverData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/AudioReceiverData"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/BatteryInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/BatteryInfo"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/Color.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/Color"
+    },
+    {
+      "bounds": {
+        "from_controller": {
+          "string": 256
+        },
+        "to_controller": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/ControllerSwitchEvent.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/ControllerSwitchEvent"
+    },
+    {
+      "bounds": {
+        "request.path_type": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/CreatePath.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/CreatePath"
+    },
+    {
+      "bounds": {
+        "dance_name": {
+          "string": 256
+        },
+        "state": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/DanceTrajectoryState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/DanceTrajectoryState"
+    },
+    {
+      "bounds": {
+        "request.action_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/ExecuteArmAction.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/ExecuteArmAction"
+    },
+    {
+      "bounds": {
+        "Fx": {
+          "sequence": 16
+        },
+        "Fy": {
+          "sequence": 16
+        },
+        "Fz": {
+          "sequence": 16
+        },
+        "Mx": {
+          "sequence": 16
+        },
+        "My": {
+          "sequence": 16
+        },
+        "Mz": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/FTsensorData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/FTsensorData"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/FaceBoundingBox.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/FaceBoundingBox"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/FallStandCommand.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/FallStandCommand"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/Float32MultiArrayStamped.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/Float32MultiArrayStamped"
+    },
+    {
+      "bounds": {
+        "response.maps": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/GetAllMaps.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/GetAllMaps"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/GetBatteryInfo.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/GetBatteryInfo"
+    },
+    {
+      "bounds": {
+        "response.current_map": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/GetCurrentMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/GetCurrentMap"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/GetPowerBoardStatus.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/GetPowerBoardStatus"
+    },
+    {
+      "bounds": {
+        "response.data": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/GetStringList.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/GetStringList"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/GetTargetPartPoseInCamera.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/GetTargetPartPoseInCamera"
+    },
+    {
+      "bounds": {
+        "request.task_point_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/InitialPoseWithTaskPoint.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/InitialPoseWithTaskPoint"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/JoySticks.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/JoySticks"
+    },
+    {
+      "bounds": {
+        "request.map_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/LoadMap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/LoadMap"
+    },
+    {
+      "bounds": {
+        "json_data": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/Metadata.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/Metadata"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/MmDetectionMsg.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/MmDetectionMsg"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/MocapPoseRetarget.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/MocapPoseRetarget"
+    },
+    {
+      "bounds": {
+        "request.task_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/NavigateToTaskPoint.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/NavigateToTaskPoint"
+    },
+    {
+      "bounds": {
+        "request.music_number": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/PlayMusicImmediate.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/PlayMusicImmediate"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/PowerBoardStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/PowerBoardStatus"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/RelaySelectChannel.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/RelaySelectChannel"
+    },
+    {
+      "bounds": {
+        "request.source_frames": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.target_frame": {
+          "string": 256
+        },
+        "response.topic_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/RepublishTFs.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/RepublishTFs"
+    },
+    {
+      "bounds": {
+        "ids": {
+          "sequence": 16
+        },
+        "names": {
+          "sequence": 16,
+          "string": 256
+        },
+        "offsets": {
+          "sequence": 8
+        },
+        "parent_ids": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/RigidBodyDescription.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/RigidBodyDescription"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/RigidBodyFrame.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/RigidBodyFrame"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/RobotActionState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/RobotActionState"
+    },
+    {
+      "bounds": {
+        "request.fixed_hand": {
+          "string": 256
+        },
+        "request.mode": {
+          "string": 256
+        },
+        "response.current_mode": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/SetHeadControlMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SetHeadControlMode"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/SetIncrementalArmTrajLink.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SetIncrementalArmTrajLink"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/SetInitialPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SetInitialPose"
+    },
+    {
+      "bounds": {
+        "request.topic_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/SetJoyTopic.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SetJoyTopic"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/srv/SetLEDMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SetLEDMode"
+    },
+    {
+      "bounds": {
+        "request.colors": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/srv/SetLEDMode_free.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SetLEDMode_free"
+    },
+    {
+      "bounds": {
+        "request.data": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/SetString.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SetString"
+    },
+    {
+      "bounds": {
+        "rigid_bodies": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/SkeletonFrame.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SkeletonFrame"
+    },
+    {
+      "bounds": {
+        "request.data": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/SpeechSynthesis.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/SpeechSynthesis"
+    },
+    {
+      "bounds": {
+        "transforms": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/TFArray.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/TFArray"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/TaskPoint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/TaskPoint"
+    },
+    {
+      "bounds": {
+        "request.name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.task_points": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/srv/TaskPointOperation.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/TaskPointOperation"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/TransportModeCommand.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/TransportModeCommand"
+    },
+    {
+      "bounds": {
+        "current_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/VMPTrajectoryState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/VMPTrajectoryState"
+    },
+    {
+      "bounds": {
+        "response.qBest": {
+          "sequence": 16
+        },
+        "response.qPosPriorityBest": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/srv/accessIkSolve.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/accessIkSolve"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/adjustZeroPoint.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/adjustZeroPoint"
+    },
+    {
+      "bounds": {
+        "link1_name": {
+          "string": 256
+        },
+        "link2_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/armCollisionCheckInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/armCollisionCheckInfo"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/armHandPose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/armHandPose"
+    },
+    {
+      "bounds": {
+        "joint_angles": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/armHandPoseFree.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/armHandPoseFree"
+    },
+    {
+      "bounds": {
+        "left_hand_pose": {
+          "sequence": 16
+        },
+        "right_hand_pose": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/armPoseWithTimeStamp.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/armPoseWithTimeStamp"
+    },
+    {
+      "bounds": {
+        "times": {
+          "sequence": 16
+        },
+        "values": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/armTargetPoses.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/armTargetPoses"
+    },
+    {
+      "bounds": {
+        "end_point": {
+          "sequence": 16
+        },
+        "left_control_point": {
+          "sequence": 16
+        },
+        "right_control_point": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/bezierCurveCubicPoint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/bezierCurveCubicPoint"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/changeArmCtrlMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/changeArmCtrlMode"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/srv/changeArmCtrlModeKuavo.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/changeArmCtrlModeKuavo"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/changeLbMpcObsUpdateModeSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/changeLbMpcObsUpdateModeSrv"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/changeLbQuickModeSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/changeLbQuickModeSrv"
+    },
+    {
+      "bounds": {
+        "request.data": {
+          "sequence": 8
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/changeMotorParam.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/changeMotorParam"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/changeTorsoCtrlMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/changeTorsoCtrlMode"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/changeWaistCtrlMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/changeWaistCtrlMode"
+    },
+    {
+      "bounds": {
+        "request.duration": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/srv/chassisPoseCmdSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/chassisPoseCmdSrv"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/controlLejuClaw.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/controlLejuClaw"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/dexhandCommand.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/dexhandCommand"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/dexhandTouchState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/dexhandTouchState"
+    },
+    {
+      "bounds": {
+        "response.errVector": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/srv/eePoseReachError.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/eePoseReachError"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/enableHandTouchSensor.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/enableHandTouchSensor"
+    },
+    {
+      "bounds": {
+        "effort": {
+          "sequence": 16
+        },
+        "name": {
+          "sequence": 16,
+          "string": 256
+        },
+        "position": {
+          "sequence": 16
+        },
+        "velocity": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/endEffectorData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/endEffectorData"
+    },
+    {
+      "bounds": {
+        "request.q": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/srv/fkSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/fkSrv"
+    },
+    {
+      "bounds": {
+        "request.base_frame": {
+          "string": 256
+        },
+        "request.end_effector_frame": {
+          "string": 256
+        },
+        "request.q": {
+          "sequence": 16
+        },
+        "response.error_message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/fkSrvWithReferFrame.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/fkSrvWithReferFrame"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/footPose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPose"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/footPose6D.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPose6D"
+    },
+    {
+      "bounds": {
+        "additionalFootPoseTrajectory": {
+          "sequence": 8
+        },
+        "footIndexTrajectory": {
+          "sequence": 16
+        },
+        "footPoseTrajectory": {
+          "sequence": 8
+        },
+        "swingHeightTrajectory": {
+          "sequence": 16
+        },
+        "timeTrajectory": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/footPose6DTargetTrajectories.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPose6DTargetTrajectories"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/srv/footPose6DTargetTrajectoriesSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPose6DTargetTrajectoriesSrv"
+    },
+    {
+      "bounds": {
+        "additionalFootPoseTrajectory": {
+          "sequence": 8
+        },
+        "footIndexTrajectory": {
+          "sequence": 16
+        },
+        "footPoseTrajectory": {
+          "sequence": 8
+        },
+        "swingHeightTrajectory": {
+          "sequence": 16
+        },
+        "timeTrajectory": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/footPoseTargetTrajectories.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPoseTargetTrajectories"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/srv/footPoseTargetTrajectoriesSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPoseTargetTrajectoriesSrv"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/footPoseWithVision.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPoseWithVision"
+    },
+    {
+      "bounds": {
+        "foot_poses": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/footPoseWithVisionArray.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPoseWithVisionArray"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/footPoses.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPoses"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/footPoses6D.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/footPoses6D"
+    },
+    {
+      "bounds": {
+        "footIndexTrajectory": {
+          "sequence": 16
+        },
+        "fullBodyQTrajectory": {
+          "sequence": 8
+        },
+        "fullBodyVTrajectory": {
+          "sequence": 8
+        },
+        "timeTrajectory": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/fullBodyTargetTrajectories.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/fullBodyTargetTrajectories"
+    },
+    {
+      "bounds": {
+        "gait_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/gaitTimeName.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/gaitTimeName"
+    },
+    {
+      "bounds": {
+        "request.gestures": {
+          "sequence": 8
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/gestureExecute.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/gestureExecute"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/gestureExecuteState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/gestureExecuteState"
+    },
+    {
+      "bounds": {
+        "alias": {
+          "sequence": 16,
+          "string": 64
+        },
+        "description": {
+          "string": 256
+        },
+        "gesture_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/gestureInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/gestureInfo"
+    },
+    {
+      "bounds": {
+        "response.gesture_infos": {
+          "sequence": 8
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/gestureList.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/gestureList"
+    },
+    {
+      "bounds": {
+        "gesture_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/gestureTask.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/gestureTask"
+    },
+    {
+      "bounds": {
+        "response.controller_names": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.current_controller": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/getControllerList.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/getControllerList"
+    },
+    {
+      "bounds": {
+        "response.gait_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/getCurrentGaitName.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/getCurrentGaitName"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/getLbTorsoInitialPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/getLbTorsoInitialPose"
+    },
+    {
+      "bounds": {
+        "response.data": {
+          "sequence": 8
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/getMotorParam.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/getMotorParam"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.zero_points": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/srv/getMotorZeroPoints.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/getMotorZeroPoints"
+    },
+    {
+      "bounds": {
+        "request.offset": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/goToZeroPoint.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/goToZeroPoint"
+    },
+    {
+      "bounds": {
+        "response.force_level": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/handForceLevel.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/handForceLevel"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/handPose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/handPose"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/headBodyPose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/headBodyPose"
+    },
+    {
+      "bounds": {
+        "fixed_main_hand": {
+          "string": 256
+        },
+        "mode": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/headCtrlMode.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/headCtrlMode"
+    },
+    {
+      "bounds": {
+        "ik_type": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/ikSolveError.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/ikSolveError"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/ikSolveParam.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/ikSolveParam"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/imuData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/imuData"
+    },
+    {
+      "bounds": {
+        "bezier_curve_points": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/jointBezierTrajectory.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/jointBezierTrajectory"
+    },
+    {
+      "bounds": {
+        "control_modes": {
+          "sequence": 128
+        },
+        "joint_kd": {
+          "sequence": 128
+        },
+        "joint_kp": {
+          "sequence": 128
+        },
+        "joint_q": {
+          "sequence": 128
+        },
+        "joint_v": {
+          "sequence": 128
+        },
+        "tau": {
+          "sequence": 128
+        },
+        "tau_max": {
+          "sequence": 128
+        },
+        "tau_ratio": {
+          "sequence": 128
+        }
+      },
+      "file": "kuavo_msgs/msg/jointCmd.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/jointCmd"
+    },
+    {
+      "bounds": {
+        "joint_q": {
+          "sequence": 128
+        },
+        "joint_torque": {
+          "sequence": 128
+        },
+        "joint_v": {
+          "sequence": 128
+        },
+        "joint_vd": {
+          "sequence": 128
+        }
+      },
+      "file": "kuavo_msgs/msg/jointData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/jointData"
+    },
+    {
+      "bounds": {
+        "request.goal_position": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/jointMoveTo.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/jointMoveTo"
+    },
+    {
+      "bounds": {
+        "eventTimes": {
+          "sequence": 16
+        },
+        "footPoseSequence": {
+          "sequence": 8
+        },
+        "modeSequence": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/kuavoModeSchedule.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/kuavoModeSchedule"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/srv/lbBaseLinkPoseCmdSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lbBaseLinkPoseCmdSrv"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/srv/lbLegControlSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lbLegControlSrv"
+    },
+    {
+      "bounds": {
+        "request.offlineTraj": {
+          "sequence": 8
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/lbMultiTimedOfflineTraj.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lbMultiTimedOfflineTraj"
+    },
+    {
+      "bounds": {
+        "request.timedCmdVec": {
+          "sequence": 8
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/lbMultiTimedPosCmd.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lbMultiTimedPosCmd"
+    },
+    {
+      "bounds": {
+        "timedTraj": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/lbTimedOfflineTraj.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lbTimedOfflineTraj"
+    },
+    {
+      "bounds": {
+        "request.cmdVec": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/lbTimedPosCmd.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lbTimedPosCmd"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/lejuClawCommand.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lejuClawCommand"
+    },
+    {
+      "bounds": {
+        "request.direction": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/lejuClawRecovery.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lejuClawRecovery"
+    },
+    {
+      "bounds": {
+        "state": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/lejuClawState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lejuClawState"
+    },
+    {
+      "bounds": {
+        "kd": {
+          "sequence": 16
+        },
+        "kp": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/lejuClawTarget.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/lejuClawTarget"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/motorParam.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/motorParam"
+    },
+    {
+      "bounds": {
+        "value": {
+          "sequence": 128
+        }
+      },
+      "file": "kuavo_msgs/msg/mpc_input.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/mpc_input"
+    },
+    {
+      "bounds": {
+        "value": {
+          "sequence": 128
+        }
+      },
+      "file": "kuavo_msgs/msg/mpc_state.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/mpc_state"
+    },
+    {
+      "bounds": {
+        "inputTrajectory": {
+          "sequence": 8
+        },
+        "stateTrajectory": {
+          "sequence": 8
+        },
+        "timeTrajectory": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/mpc_target_trajectories.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/mpc_target_trajectories"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/picoPoseInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/picoPoseInfo"
+    },
+    {
+      "bounds": {
+        "poses": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/picoPoseInfoList.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/picoPoseInfoList"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/picoPoseRetarget.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/picoPoseRetarget"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/planArmState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/planArmState"
+    },
+    {
+      "bounds": {
+        "request.joint_names": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.multi_joint_bezier_trajectory": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/srv/planArmTrajectoryBezierCurve.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/planArmTrajectoryBezierCurve"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/srv/planArmTrajectoryCubicSpline.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/planArmTrajectoryCubicSpline"
+    },
+    {
+      "bounds": {
+        "request.music_number": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/playmusic.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/playmusic"
+    },
+    {
+      "bounds": {
+        "value": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/qv.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/qv"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/recordArmHandPose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/recordArmHandPose"
+    },
+    {
+      "bounds": {
+        "request.music_number": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/recordmusic.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/recordmusic"
+    },
+    {
+      "bounds": {
+        "q": {
+          "sequence": 16
+        },
+        "v": {
+          "sequence": 16
+        },
+        "vd": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/robotArmQVVD.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/robotArmQVVD"
+    },
+    {
+      "bounds": {
+        "body_parts": {
+          "sequence": 16,
+          "string": 256
+        },
+        "data_source": {
+          "string": 256
+        },
+        "matrices_data": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/robotBodyMatrices.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/robotBodyMatrices"
+    },
+    {
+      "bounds": {
+        "left_hand_position": {
+          "sequence": 256
+        },
+        "right_hand_position": {
+          "sequence": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/robotHandPosition.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/robotHandPosition"
+    },
+    {
+      "bounds": {
+        "joint_data": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/robotHeadMotionData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/robotHeadMotionData"
+    },
+    {
+      "bounds": {
+        "q": {
+          "sequence": 16
+        },
+        "v": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/robotState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/robotState"
+    },
+    {
+      "bounds": {
+        "request.status": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/robotSwitchPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/robotSwitchPose"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/robotWaistControl.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/robotWaistControl"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/sensorsData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/sensorsData"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/setContactForceInterpParams.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/setContactForceInterpParams"
+    },
+    {
+      "bounds": {
+        "request.q_intial": {
+          "sequence": 16
+        },
+        "request.v_intial": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/setHwIntialState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/setHwIntialState"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/setMmCtrlFrame.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/setMmCtrlFrame"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/setMotorEncoderRoundService.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/setMotorEncoderRoundService"
+    },
+    {
+      "bounds": {
+        "request.acceleration_max": {
+          "sequence": 16
+        },
+        "request.acceleration_min": {
+          "sequence": 16
+        },
+        "request.jerk_max": {
+          "sequence": 16
+        },
+        "request.velocity_max": {
+          "sequence": 16
+        },
+        "request.velocity_min": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/setRuckigPlannerParams.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/setRuckigPlannerParams"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/setTagId.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/setTagId"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/singleStepControl.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/singleStepControl"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/stairAlignmentSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/stairAlignmentSrv"
+    },
+    {
+      "bounds": {
+        "request.controller_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/switchController.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/switchController"
+    },
+    {
+      "bounds": {
+        "gait_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/switchGaitByName.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/switchGaitByName"
+    },
+    {
+      "bounds": {
+        "response.current_controller": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.next_controller": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/srv/switchToNextController.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/switchToNextController"
+    },
+    {
+      "bounds": {
+        "tag_ids": {
+          "sequence": 16
+        },
+        "tag_poses": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/tagDataArray.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/tagDataArray"
+    },
+    {
+      "bounds": {
+        "cmdVec": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/timedPoint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/timedPoint"
+    },
+    {
+      "bounds": {
+        "cmdVec": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/msg/timedSingleCmd.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/timedSingleCmd"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/touchSensorStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/touchSensorStatus"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/twoArmHandPose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/twoArmHandPose"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/twoArmHandPoseCmd.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/twoArmHandPoseCmd"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/twoArmHandPoseCmdFree.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/twoArmHandPoseCmdFree"
+    },
+    {
+      "bounds": {
+        "response.q_arm": {
+          "sequence": 16
+        },
+        "response.q_torso": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/srv/twoArmHandPoseCmdFreeSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/twoArmHandPoseCmdFreeSrv"
+    },
+    {
+      "bounds": {
+        "response.error_reason": {
+          "string": 256
+        },
+        "response.q_arm": {
+          "sequence": 16
+        },
+        "response.q_torso": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_msgs/srv/twoArmHandPoseCmdSrv.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/twoArmHandPoseCmdSrv"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/twoArmHandPoseFree.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/twoArmHandPoseFree"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/xsensePoseInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/xsensePoseInfo"
+    },
+    {
+      "bounds": {
+        "poses": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/xsensePoseInfoList.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/xsensePoseInfoList"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_msgs/msg/xsensePoseRetarget.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/xsensePoseRetarget"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_msgs/msg/yoloDetection.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/yoloDetection"
+    },
+    {
+      "bounds": {
+        "class_name": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_msgs/msg/yoloOutputData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_msgs/yoloOutputData"
+    },
+    {
+      "bounds": {
+        "request.from_controller": {
+          "string": 256
+        },
+        "request.manager_epoch": {
+          "string": 256
+        },
+        "request.to_controller": {
+          "string": 256
+        },
+        "response.manager_epoch": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_pico_gmr/srv/AmpJoyRoute.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_pico_gmr/AmpJoyRoute"
+    },
+    {
+      "bounds": {
+        "times": {
+          "sequence": 16
+        },
+        "values": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_ros_interfaces/msg/armTargetPoses.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/armTargetPoses"
+    },
+    {
+      "bounds": {
+        "end_point": {
+          "sequence": 16
+        },
+        "left_control_point": {
+          "sequence": 16
+        },
+        "right_control_point": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_ros_interfaces/msg/bezierCurveCubicPoint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/bezierCurveCubicPoint"
+    },
+    {
+      "bounds": {
+        "bezier_curve_points": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_ros_interfaces/msg/jointBezierTrajectory.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/jointBezierTrajectory"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "kuavo_ros_interfaces/srv/ocs2ChangeArmCtrlMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/ocs2ChangeArmCtrlMode"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_ros_interfaces/msg/planArmState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/planArmState"
+    },
+    {
+      "bounds": {
+        "request.joint_names": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.multi_joint_bezier_trajectory": {
+          "sequence": 8
+        }
+      },
+      "file": "kuavo_ros_interfaces/srv/planArmTrajectoryBezierCurve.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/planArmTrajectoryBezierCurve"
+    },
+    {
+      "bounds": {
+        "left_hand_position": {
+          "sequence": 256
+        },
+        "right_hand_position": {
+          "sequence": 256
+        }
+      },
+      "file": "kuavo_ros_interfaces/msg/robotHandPosition.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/robotHandPosition"
+    },
+    {
+      "bounds": {
+        "joint_data": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_ros_interfaces/msg/robotHeadMotionData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/robotHeadMotionData"
+    },
+    {
+      "bounds": {},
+      "file": "kuavo_ros_interfaces/srv/stopPlanArmTrajectory.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "kuavo_ros_interfaces/stopPlanArmTrajectory"
+    },
+    {
+      "bounds": {
+        "cell_temperatures": {
+          "sequence": 16
+        },
+        "cell_voltages": {
+          "sequence": 16
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/BMS.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/BMS"
+    },
+    {
+      "bounds": {
+        "description": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/BaseCmdVelStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/BaseCmdVelStatus"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.task_id": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/BaseMove.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/BaseMove"
+    },
+    {
+      "bounds": {},
+      "file": "leju_mobile_base_msgs/msg/Battery.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/Battery"
+    },
+    {
+      "bounds": {
+        "request.task_id": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/CheckArrived.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/CheckArrived"
+    },
+    {
+      "bounds": {
+        "request.enable_publishing": {
+          "sequence": 16
+        },
+        "request.topic_names": {
+          "sequence": 16,
+          "string": 256
+        },
+        "response.current_status": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.updated_topics": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/ControlLaserScan.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/ControlLaserScan"
+    },
+    {
+      "bounds": {
+        "request.target": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.task_id": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/DispatchMove.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/DispatchMove"
+    },
+    {
+      "bounds": {
+        "request.parameters": {
+          "sequence": 16,
+          "string": 256
+        },
+        "request.task_id": {
+          "string": 256
+        },
+        "request.task_name": {
+          "string": 256
+        },
+        "request.waypoints": {
+          "sequence": 8
+        },
+        "response.assigned_task_id": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/ExecTask.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/ExecTask"
+    },
+    {
+      "bounds": {},
+      "file": "leju_mobile_base_msgs/srv/GetGlobalOdometer.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/GetGlobalOdometer"
+    },
+    {
+      "bounds": {
+        "response.is_publishing": {
+          "sequence": 16
+        },
+        "response.message": {
+          "string": 256
+        },
+        "response.topic_names": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/GetLaserScanList.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/GetLaserScanList"
+    },
+    {
+      "bounds": {
+        "camera_fault_code": {
+          "sequence": 16,
+          "string": 64
+        },
+        "camera_fault_message": {
+          "sequence": 16,
+          "string": 128
+        },
+        "driver_fault_code": {
+          "sequence": 16,
+          "string": 64
+        },
+        "driver_fault_message": {
+          "sequence": 16,
+          "string": 128
+        },
+        "imu_fault_code": {
+          "sequence": 16,
+          "string": 64
+        },
+        "imu_fault_message": {
+          "sequence": 16,
+          "string": 128
+        },
+        "laser_fault_code": {
+          "sequence": 16,
+          "string": 64
+        },
+        "laser_fault_message": {
+          "sequence": 16,
+          "string": 128
+        },
+        "odom_fault_code": {
+          "sequence": 16,
+          "string": 64
+        },
+        "odom_fault_message": {
+          "sequence": 16,
+          "string": 128
+        },
+        "robot_fault_code": {
+          "sequence": 16,
+          "string": 64
+        },
+        "robot_fault_message": {
+          "sequence": 16,
+          "string": 128
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/HardwareStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/HardwareStatus"
+    },
+    {
+      "bounds": {
+        "build_date": {
+          "string": 256
+        },
+        "controller_id": {
+          "string": 256
+        },
+        "firmware_version": {
+          "string": 256
+        },
+        "hardware_version": {
+          "string": 256
+        },
+        "param_names": {
+          "sequence": 16,
+          "string": 256
+        },
+        "param_values": {
+          "sequence": 16,
+          "string": 256
+        },
+        "serial_number": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/Information.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/Information"
+    },
+    {
+      "bounds": {},
+      "file": "leju_mobile_base_msgs/msg/LED.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/LED"
+    },
+    {
+      "bounds": {},
+      "file": "leju_mobile_base_msgs/msg/LiftControl3Feedback.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/LiftControl3Feedback"
+    },
+    {
+      "bounds": {},
+      "file": "leju_mobile_base_msgs/msg/LiftControl3Goal.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/LiftControl3Goal"
+    },
+    {
+      "bounds": {
+        "error_msg": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/LiftControl3Result.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/LiftControl3Result"
+    },
+    {
+      "bounds": {
+        "error_msg": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/LiftStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/LiftStatus"
+    },
+    {
+      "bounds": {
+        "goal_id": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/MoveBaseActionGoal.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/MoveBaseActionGoal"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        },
+        "response.task_id": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/MoveToTarget.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/MoveToTarget"
+    },
+    {
+      "bounds": {},
+      "file": "leju_mobile_base_msgs/msg/MoveToTargetOptions.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/MoveToTargetOptions"
+    },
+    {
+      "bounds": {},
+      "file": "leju_mobile_base_msgs/msg/NavigationModeGoal.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/NavigationModeGoal"
+    },
+    {
+      "bounds": {
+        "motor_ratios": {
+          "sequence": 16
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/Parameter.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/Parameter"
+    },
+    {
+      "bounds": {
+        "request.requester": {
+          "string": 256
+        },
+        "request.task_id": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/ResetTemporaryOdometer.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/ResetTemporaryOdometer"
+    },
+    {
+      "bounds": {
+        "error_msg": {
+          "string": 256
+        },
+        "task_id": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/RobotStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/RobotStatus"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/SetDispatchMode.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/SetDispatchMode"
+    },
+    {
+      "bounds": {
+        "request.map_name": {
+          "string": 256
+        },
+        "request.map_path": {
+          "string": 256
+        },
+        "response.active_map_name": {
+          "string": 256
+        },
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/SetMapServer.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/SetMapServer"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/StartLocalization.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/StartLocalization"
+    },
+    {
+      "bounds": {},
+      "file": "leju_mobile_base_msgs/msg/StepControlGoal.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/StepControlGoal"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/srv/SyncCostmap.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/SyncCostmap"
+    },
+    {
+      "bounds": {
+        "error_msg": {
+          "string": 256
+        },
+        "passed_waypoints": {
+          "sequence": 16
+        },
+        "task_id": {
+          "string": 256
+        }
+      },
+      "file": "leju_mobile_base_msgs/msg/TaskDetailStatus.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "leju_mobile_base_msgs/TaskDetailStatus"
+    },
+    {
+      "bounds": {
+        "Fxyz": {
+          "sequence": 16
+        },
+        "xyz": {
+          "sequence": 16
+        }
+      },
+      "file": "motioncapture/msg/ForcePlateData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "motioncapture/ForcePlateData"
+    },
+    {
+      "bounds": {
+        "poses": {
+          "sequence": 8
+        }
+      },
+      "file": "nav_msgs/msg/Path.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "nav_msgs/Path"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "network_monitor/srv/NetworkPing.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "network_monitor/NetworkPing"
+    },
+    {
+      "bounds": {
+        "message": {
+          "string": 256
+        }
+      },
+      "file": "network_monitor/msg/NetworkPingMsg.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "network_monitor/NetworkPingMsg"
+    },
+    {
+      "bounds": {},
+      "file": "nimservos_controller/msg/motor_cmd.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nimservos_controller/motor_cmd"
+    },
+    {
+      "bounds": {
+        "control_mode": {
+          "string": 256
+        },
+        "state": {
+          "string": 256
+        }
+      },
+      "file": "nimservos_controller/msg/motor_state.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nimservos_controller/motor_state"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/IotFrame0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/IotFrame0"
+    },
+    {
+      "bounds": {
+        "user_data": {
+          "string": 256
+        }
+      },
+      "file": "nlink_parser/msg/IotFrame0Node.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/IotFrame0Node"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackAnchorframe0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackAnchorframe0"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/LinktrackAoaNode0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackAoaNode0"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackAoaNodeframe0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackAoaNodeframe0"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 256
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNode0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNode0"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/LinktrackNode1.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNode1"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/LinktrackNode2.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNode2"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/LinktrackNode4Anchor.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNode4Anchor"
+    },
+    {
+      "bounds": {
+        "anchors": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNode4Tag.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNode4Tag"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/LinktrackNode5.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNode5"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 256
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNode6.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNode6"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNodeframe0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNodeframe0"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNodeframe1.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNodeframe1"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNodeframe2.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNodeframe2"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNodeframe3.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNodeframe3"
+    },
+    {
+      "bounds": {
+        "tags": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNodeframe4.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNodeframe4"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNodeframe5.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNodeframe5"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/LinktrackNodeframe6.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackNodeframe6"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/LinktrackTag.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackTag"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/LinktrackTagframe0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/LinktrackTagframe0"
+    },
+    {
+      "bounds": {
+        "nodes": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/TofsenseCascade.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/TofsenseCascade"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/TofsenseFrame0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/TofsenseFrame0"
+    },
+    {
+      "bounds": {
+        "pixels": {
+          "sequence": 8
+        }
+      },
+      "file": "nlink_parser/msg/TofsenseMFrame0.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/TofsenseMFrame0"
+    },
+    {
+      "bounds": {},
+      "file": "nlink_parser/msg/TofsenseMFrame0Pixel.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "nlink_parser/TofsenseMFrame0Pixel"
+    },
+    {
+      "bounds": {},
+      "file": "noitom_hi5_hand_udp_python/msg/JoySticks.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "noitom_hi5_hand_udp_python/JoySticks"
+    },
+    {
+      "bounds": {},
+      "file": "noitom_hi5_hand_udp_python/msg/PoseInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "noitom_hi5_hand_udp_python/PoseInfo"
+    },
+    {
+      "bounds": {
+        "poses": {
+          "sequence": 8
+        }
+      },
+      "file": "noitom_hi5_hand_udp_python/msg/PoseInfoList.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "noitom_hi5_hand_udp_python/PoseInfoList"
+    },
+    {
+      "bounds": {
+        "quaternions": {
+          "sequence": 8
+        }
+      },
+      "file": "noitom_hi5_hand_udp_python/msg/QuaternionArray.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "noitom_hi5_hand_udp_python/QuaternionArray"
+    },
+    {
+      "bounds": {},
+      "file": "noitom_hi5_hand_udp_python/msg/Vector4.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "noitom_hi5_hand_udp_python/Vector4"
+    },
+    {
+      "bounds": {
+        "quaternions": {
+          "sequence": 8
+        }
+      },
+      "file": "noitom_hi5_hand_udp_python/msg/handRotation.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "noitom_hi5_hand_udp_python/handRotation"
+    },
+    {
+      "bounds": {
+        "eulerAngles": {
+          "sequence": 8
+        }
+      },
+      "file": "noitom_hi5_hand_udp_python/msg/handRotationEular.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "noitom_hi5_hand_udp_python/handRotationEular"
+    },
+    {
+      "bounds": {
+        "value": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_msgs/msg/constraint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/constraint"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_msgs/msg/controller_data.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/controller_data"
+    },
+    {
+      "bounds": {
+        "constraint": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_msgs/msg/lagrangian_metrics.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/lagrangian_metrics"
+    },
+    {
+      "bounds": {
+        "eventTimes": {
+          "sequence": 16
+        },
+        "modeSequence": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_msgs/msg/mode_schedule.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/mode_schedule"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4
+        },
+        "inputTrajectory": {
+          "sequence": 4
+        },
+        "postEventIndices": {
+          "sequence": 16
+        },
+        "stateTrajectory": {
+          "sequence": 4
+        },
+        "timeTrajectory": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_msgs/msg/mpc_flattened_controller.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/mpc_flattened_controller"
+    },
+    {
+      "bounds": {
+        "value": {
+          "sequence": 128
+        }
+      },
+      "file": "ocs2_msgs/msg/mpc_input.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/mpc_input"
+    },
+    {
+      "bounds": {},
+      "file": "ocs2_msgs/msg/mpc_observation.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/mpc_observation"
+    },
+    {
+      "bounds": {},
+      "file": "ocs2_msgs/msg/mpc_performance_indices.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/mpc_performance_indices"
+    },
+    {
+      "bounds": {
+        "initState": {
+          "sequence": 16
+        },
+        "swingPlannerMultipliers": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_msgs/msg/mpc_solver_data.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/mpc_solver_data"
+    },
+    {
+      "bounds": {
+        "value": {
+          "sequence": 128
+        }
+      },
+      "file": "ocs2_msgs/msg/mpc_state.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/mpc_state"
+    },
+    {
+      "bounds": {
+        "inputTrajectory": {
+          "sequence": 4
+        },
+        "stateTrajectory": {
+          "sequence": 4
+        },
+        "timeTrajectory": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_msgs/msg/mpc_target_trajectories.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/mpc_target_trajectories"
+    },
+    {
+      "bounds": {
+        "lagrangian": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_msgs/msg/multiplier.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/multiplier"
+    },
+    {
+      "bounds": {},
+      "file": "ocs2_msgs/srv/pause_resume.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/pause_resume"
+    },
+    {
+      "bounds": {},
+      "file": "ocs2_msgs/srv/reset.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_msgs/reset"
+    },
+    {
+      "bounds": {
+        "eventPhases": {
+          "sequence": 16
+        },
+        "modeSequence": {
+          "sequence": 16
+        }
+      },
+      "file": "ocs2_switched_model_msgs/msg/gait.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_switched_model_msgs/gait"
+    },
+    {
+      "bounds": {
+        "gaits": {
+          "sequence": 8
+        }
+      },
+      "file": "ocs2_switched_model_msgs/msg/gait_sequence.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_switched_model_msgs/gait_sequence"
+    },
+    {
+      "bounds": {},
+      "file": "ocs2_switched_model_msgs/msg/scheduled_gait_sequence.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_switched_model_msgs/scheduled_gait_sequence"
+    },
+    {
+      "bounds": {},
+      "file": "ocs2_switched_model_msgs/srv/trajectory_request.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "ocs2_switched_model_msgs/trajectory_request"
+    },
+    {
+      "bounds": {
+        "observations": {
+          "sequence": 1
+        }
+      },
+      "file": "robot_calibration_msgs/msg/CalibrationData.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_calibration_msgs/CalibrationData"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 256
+        }
+      },
+      "file": "robot_calibration_msgs/msg/CameraParameter.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_calibration_msgs/CameraParameter"
+    },
+    {
+      "bounds": {
+        "features": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "robot_calibration_msgs/msg/CaptureConfig.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_calibration_msgs/CaptureConfig"
+    },
+    {
+      "bounds": {
+        "parameters": {
+          "sequence": 8
+        }
+      },
+      "file": "robot_calibration_msgs/msg/ExtendedCameraInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_calibration_msgs/ExtendedCameraInfo"
+    },
+    {
+      "bounds": {},
+      "file": "robot_calibration_msgs/action/GripperLedCommand.action",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_calibration_msgs/GripperLedCommand"
+    },
+    {
+      "bounds": {
+        "features": {
+          "sequence": 8
+        },
+        "sensor_name": {
+          "string": 256
+        }
+      },
+      "file": "robot_calibration_msgs/msg/Observation.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_calibration_msgs/Observation"
+    },
+    {
+      "bounds": {},
+      "file": "robot_localization/srv/FromLL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_localization/FromLL"
+    },
+    {
+      "bounds": {
+        "request.frame_id": {
+          "string": 256
+        }
+      },
+      "file": "robot_localization/srv/GetState.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_localization/GetState"
+    },
+    {
+      "bounds": {},
+      "file": "robot_localization/srv/SetDatum.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_localization/SetDatum"
+    },
+    {
+      "bounds": {},
+      "file": "robot_localization/srv/SetPose.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_localization/SetPose"
+    },
+    {
+      "bounds": {
+        "request.utm_zone": {
+          "string": 256
+        }
+      },
+      "file": "robot_localization/srv/SetUTMZone.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_localization/SetUTMZone"
+    },
+    {
+      "bounds": {},
+      "file": "robot_localization/srv/ToLL.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_localization/ToLL"
+    },
+    {
+      "bounds": {},
+      "file": "robot_localization/srv/ToggleFilterProcessing.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "robot_localization/ToggleFilterProcessing"
+    },
+    {
+      "bounds": {
+        "D": {
+          "sequence": 16
+        },
+        "distortion_model": {
+          "string": 256
+        }
+      },
+      "file": "sensor_msgs/msg/CameraInfo.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/CameraInfo"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4096
+        },
+        "encoding": {
+          "string": 256
+        }
+      },
+      "file": "sensor_msgs/msg/Image.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/Image"
+    },
+    {
+      "bounds": {
+        "effort": {
+          "sequence": 128
+        },
+        "name": {
+          "sequence": 128,
+          "string": 64
+        },
+        "position": {
+          "sequence": 128
+        },
+        "velocity": {
+          "sequence": 128
+        }
+      },
+      "file": "sensor_msgs/msg/JointState.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/JointState"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 4096
+        },
+        "fields": {
+          "sequence": 8
+        }
+      },
+      "file": "sensor_msgs/msg/PointCloud2.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/PointCloud2"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 256
+        }
+      },
+      "file": "sensor_msgs/msg/PointField.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/PointField"
+    },
+    {
+      "bounds": {},
+      "file": "sensor_msgs/msg/RegionOfInterest.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "sensor_msgs/RegionOfInterest"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 128
+        }
+      },
+      "file": "std_msgs/msg/Float32MultiArray.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Float32MultiArray"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 128
+        }
+      },
+      "file": "std_msgs/msg/Float64MultiArray.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Float64MultiArray"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 256
+        }
+      },
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Header"
+    },
+    {
+      "bounds": {
+        "label": {
+          "string": 64
+        }
+      },
+      "file": "std_msgs/msg/MultiArrayDimension.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/MultiArrayDimension"
+    },
+    {
+      "bounds": {
+        "dim": {
+          "sequence": 3
+        }
+      },
+      "file": "std_msgs/msg/MultiArrayLayout.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/MultiArrayLayout"
+    },
+    {
+      "bounds": {
+        "response.message": {
+          "string": 256
+        }
+      },
+      "file": "taiji_trigger_node/srv/PerformTaiji.srv",
+      "registered": true,
+      "ros_version": 1,
+      "type": "taiji_trigger_node/PerformTaiji"
+    },
+    {
+      "bounds": {
+        "joint_names": {
+          "sequence": 16,
+          "string": 256
+        },
+        "points": {
+          "sequence": 8
+        }
+      },
+      "file": "trajectory_msgs/msg/JointTrajectory.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "trajectory_msgs/JointTrajectory"
+    },
+    {
+      "bounds": {
+        "accelerations": {
+          "sequence": 16
+        },
+        "effort": {
+          "sequence": 16
+        },
+        "positions": {
+          "sequence": 16
+        },
+        "velocities": {
+          "sequence": 16
+        }
+      },
+      "file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "trajectory_msgs/JointTrajectoryPoint"
+    },
+    {
+      "bounds": {
+        "objectname": {
+          "string": 256
+        }
+      },
+      "file": "user_pkg/msg/piddebug.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "user_pkg/piddebug"
+    },
+    {
+      "bounds": {},
+      "file": "user_pkg/msg/uwbdebug.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "user_pkg/uwbdebug"
+    },
+    {
+      "bounds": {},
+      "file": "wiimote/msg/IrSourceInfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "wiimote/IrSourceInfo"
+    },
+    {
+      "bounds": {
+        "ir_tracking": {
+          "sequence": 8
+        }
+      },
+      "file": "wiimote/msg/State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "wiimote/State"
+    },
+    {
+      "bounds": {
+        "pulse_pattern": {
+          "sequence": 16
+        }
+      },
+      "file": "wiimote/msg/TimedSwitch.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "wiimote/TimedSwitch"
+    }
+  ]
+}

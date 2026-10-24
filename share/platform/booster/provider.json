@@ -1,0 +1,70 @@
+{
+  "format": "uwvm-ros-provider-v1",
+  "platform": "booster",
+  "default_version": "fa4f31ccb4428a9e60e90b4f54eb80499caeb0ca",
+  "versions": {
+    "fa4f31ccb4428a9e60e90b4f54eb80499caeb0ca": {
+      "repository": "https://github.com/BoosterRobotics/robocup_demo",
+      "revision": "fa4f31ccb4428a9e60e90b4f54eb80499caeb0ca",
+      "catalog_variants": [
+        "ros2_official",
+        "ros2_sdk_bridge"
+      ]
+    }
+  },
+  "models": {
+    "K1": 22,
+    "T1": 23,
+    "T1_7DofArm": 29
+  },
+  "model_selection": "Explicit deployment data; no model inferred when absent.",
+  "firmware_selection": "Explicit actual firmware is deployment-owned, not inferred from source revision.",
+  "description": "Official booster_interface and separately named SDK bridge; SDK revision 87a9a26d06a94ddd50968e7576f1170f6fa5a80f.",
+  "backends": {
+    "ros2": {
+      "distributions": [
+        "jazzy"
+      ]
+    }
+  },
+  "source_distributions": [
+    "humble",
+    "jazzy"
+  ],
+  "transport": "Native ROS ABI v1 with independently bound type identities.",
+  "default_authority": [],
+  "native_identity": null,
+  "native_identity_note": "Require independent installed typesupport export before native runtime deployment.",
+  "catalog_format": "uwvm-platform-provider-v1",
+  "catalog_backends": [
+    "ros2"
+  ],
+  "api_version": 1,
+  "id": "booster",
+  "module": "tools/platform/booster/provider.lua",
+  "languages": [
+    "c",
+    "c_ffi_bridge",
+    "cpp",
+    "js",
+    "lua",
+    "objectc",
+    "py"
+  ],
+  "targets": [
+    "wasm32-wasip1",
+    "wasm64-wasip1"
+  ],
+  "features": [
+    "memory64",
+    "table64",
+    "simd128",
+    "bulk-memory",
+    "exceptions"
+  ],
+  "options": {},
+  "qualification": {
+    "source_review": true,
+    "full_matrix_accepted": false
+  }
+}

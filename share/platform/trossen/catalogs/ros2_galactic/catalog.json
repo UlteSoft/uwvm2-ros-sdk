@@ -1,0 +1,275 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Duration.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Duration"
+    },
+    {
+      "bounds": {},
+      "file": "builtin_interfaces/msg/Time.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "builtin_interfaces/msg/Time"
+    },
+    {
+      "bounds": {},
+      "file": "interbotix_xs_msgs/msg/ArmJoy.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/msg/ArmJoy"
+    },
+    {
+      "bounds": {},
+      "file": "interbotix_xs_msgs/msg/HexJoy.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/msg/HexJoy"
+    },
+    {
+      "bounds": {
+        "cmd": {
+          "sequence": 64
+        },
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/msg/JointGroupCommand.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/msg/JointGroupCommand"
+    },
+    {
+      "bounds": {
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/msg/JointSingleCommand.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/msg/JointSingleCommand"
+    },
+    {
+      "bounds": {
+        "names": {
+          "sequence": 64,
+          "string": 128
+        },
+        "temps": {
+          "sequence": 64
+        }
+      },
+      "file": "interbotix_xs_msgs/msg/JointTemps.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/msg/JointTemps"
+    },
+    {
+      "bounds": {
+        "cmd_type": {
+          "string": 128
+        },
+        "name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/msg/JointTrajectoryCommand.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/msg/JointTrajectoryCommand"
+    },
+    {
+      "bounds": {},
+      "file": "interbotix_xs_msgs/msg/LocobotJoy.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/msg/LocobotJoy"
+    },
+    {
+      "bounds": {},
+      "file": "interbotix_xs_msgs/msg/TurretJoy.msg",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/msg/TurretJoy"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/srv/MotorGains.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/srv/MotorGains"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.mode": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        },
+        "request.profile_type": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/srv/OperatingModes.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/srv/OperatingModes"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/srv/Reboot.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/srv/Reboot"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        },
+        "request.reg": {
+          "string": 128
+        },
+        "response.values": {
+          "sequence": 16
+        }
+      },
+      "file": "interbotix_xs_msgs/srv/RegisterValues.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/srv/RegisterValues"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        },
+        "response.joint_ids": {
+          "sequence": 64
+        },
+        "response.joint_lower_limits": {
+          "sequence": 64
+        },
+        "response.joint_names": {
+          "sequence": 64,
+          "string": 128
+        },
+        "response.joint_sleep_positions": {
+          "sequence": 64
+        },
+        "response.joint_state_indices": {
+          "sequence": 64
+        },
+        "response.joint_upper_limits": {
+          "sequence": 64
+        },
+        "response.joint_velocity_limits": {
+          "sequence": 64
+        },
+        "response.mode": {
+          "string": 128
+        },
+        "response.name": {
+          "sequence": 64,
+          "string": 128
+        },
+        "response.profile_type": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/srv/RobotInfo.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/srv/RobotInfo"
+    },
+    {
+      "bounds": {
+        "request.cmd_type": {
+          "string": 128
+        },
+        "request.name": {
+          "string": 128
+        }
+      },
+      "file": "interbotix_xs_msgs/srv/TorqueEnable.srv",
+      "registered": true,
+      "ros_version": 2,
+      "type": "interbotix_xs_msgs/srv/TorqueEnable"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 128
+        }
+      },
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "std_msgs/msg/Header"
+    },
+    {
+      "bounds": {
+        "joint_names": {
+          "sequence": 16,
+          "string": 128
+        },
+        "points": {
+          "sequence": 4
+        }
+      },
+      "file": "trajectory_msgs/msg/JointTrajectory.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "trajectory_msgs/msg/JointTrajectory"
+    },
+    {
+      "bounds": {
+        "accelerations": {
+          "sequence": 16
+        },
+        "effort": {
+          "sequence": 16
+        },
+        "positions": {
+          "sequence": 16
+        },
+        "velocities": {
+          "sequence": 16
+        }
+      },
+      "file": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "registered": false,
+      "ros_version": 2,
+      "type": "trajectory_msgs/msg/JointTrajectoryPoint"
+    }
+  ]
+}

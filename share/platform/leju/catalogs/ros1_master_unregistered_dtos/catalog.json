@@ -1,0 +1,36 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {
+        "footIndexTrajectory": {
+          "sequence": 16
+        },
+        "fullBodyQTrajectory": {
+          "sequence": 8
+        },
+        "fullBodyVTrajectory": {
+          "sequence": 8
+        },
+        "timeTrajectory": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_sdk/msg/fullBodyTargetTrajectories.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "kuavo_sdk/fullBodyTargetTrajectories"
+    },
+    {
+      "bounds": {
+        "value": {
+          "sequence": 16
+        }
+      },
+      "file": "kuavo_sdk/msg/qv.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "kuavo_sdk/qv"
+    }
+  ]
+}

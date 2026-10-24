@@ -1,0 +1,1058 @@
+{
+  "format": "uwvm-ros-vendor-complete-bounded-v1",
+  "types": [
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Point.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Point"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Pose.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Pose"
+    },
+    {
+      "bounds": {},
+      "file": "geometry_msgs/msg/Quaternion.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "geometry_msgs/Quaternion"
+    },
+    {
+      "bounds": {
+        "err": {
+          "sequence": 16
+        },
+        "joint": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/ArmState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/ArmState"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Arm_Analog_Output.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_Analog_Output"
+    },
+    {
+      "bounds": {
+        "err": {
+          "sequence": 16
+        },
+        "joint": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Arm_Current_State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_Current_State"
+    },
+    {
+      "bounds": {
+        "arm_current_status": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Arm_Current_Status.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_Current_Status"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Arm_Digital_Output.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_Digital_Output"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Arm_IO_State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_IO_State"
+    },
+    {
+      "bounds": {
+        "max_velocity": {
+          "sequence": 16
+        },
+        "name": {
+          "sequence": 16,
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Arm_Joint_Speed_Max.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_Joint_Speed_Max"
+    },
+    {
+      "bounds": {
+        "algorithm_info": {
+          "string": 256
+        },
+        "dynamic_info": {
+          "string": 256
+        },
+        "product_version": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Arm_Softversion_v3.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_Softversion_v3"
+    },
+    {
+      "bounds": {
+        "algorithm_info": {
+          "string": 256
+        },
+        "controller_version": {
+          "string": 256
+        },
+        "product_version": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Arm_Softversion_v4.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_Softversion_v4"
+    },
+    {
+      "bounds": {
+        "algorithm_info": {
+          "string": 256
+        },
+        "controller_version": {
+          "string": 256
+        },
+        "dynamic_info": {
+          "string": 256
+        },
+        "product_version": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Arm_Software_Version.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Arm_Software_Version"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Cabinet.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Cabinet"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/CartePos.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/CartePos"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/CartePosCustom.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/CartePosCustom"
+    },
+    {
+      "bounds": {
+        "toolname": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/ChangeTool_Name.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/ChangeTool_Name"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/ChangeTool_State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/ChangeTool_State"
+    },
+    {
+      "bounds": {
+        "WorkFrame_name": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/ChangeWorkFrame_Name.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/ChangeWorkFrame_Name"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/ChangeWorkFrame_State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/ChangeWorkFrame_State"
+    },
+    {
+      "bounds": {
+        "err": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Err.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Err"
+    },
+    {
+      "bounds": {
+        "modal_id": {
+          "string": 256
+        },
+        "name": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Flowchartrunstate.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Flowchartrunstate"
+    },
+    {
+      "bounds": {
+        "joint": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Force_Position_Move_Joint.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Force_Position_Move_Joint"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Force_Position_Move_Pose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Force_Position_Move_Pose"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Force_Position_Move_Pose_Custom.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Force_Position_Move_Pose_Custom"
+    },
+    {
+      "bounds": {
+        "joint": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Force_Position_State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Force_Position_State"
+    },
+    {
+      "bounds": {
+        "command": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/GetArmState_Command.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/GetArmState_Command"
+    },
+    {
+      "bounds": {
+        "vague_search": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Get_TCP_Master_List_Param.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Get_TCP_Master_List_Param"
+    },
+    {
+      "bounds": {
+        "vague_search": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Gettrajectorylist.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Gettrajectorylist"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Gripper_Pick.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Gripper_Pick"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Gripper_Set.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Gripper_Set"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Hand_Angle.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Hand_Angle"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Hand_Force.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Hand_Force"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Hand_Posture.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Hand_Posture"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Hand_Seq.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Hand_Seq"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Hand_Speed.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Hand_Speed"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Hand_Status.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Hand_Status"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/IO_Update.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/IO_Update"
+    },
+    {
+      "bounds": {
+        "joint": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/JointPos.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/JointPos"
+    },
+    {
+      "bounds": {
+        "joint": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/JointPosCustom.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/JointPosCustom"
+    },
+    {
+      "bounds": {
+        "joint_current": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Joint_Current.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Current"
+    },
+    {
+      "bounds": {
+        "joint_en_flag": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Joint_En_Flag.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_En_Flag"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Joint_Enable.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Enable"
+    },
+    {
+      "bounds": {
+        "joint_error": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Joint_Error_Code.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Error_Code"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Joint_Max_Speed.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Max_Speed"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Joint_PoseEuler.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_PoseEuler"
+    },
+    {
+      "bounds": {
+        "joint_speed": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Joint_Speed.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Speed"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Joint_Step.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Step"
+    },
+    {
+      "bounds": {
+        "direction": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Joint_Teach.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Teach"
+    },
+    {
+      "bounds": {
+        "joint_temperature": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Joint_Temperature.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Temperature"
+    },
+    {
+      "bounds": {
+        "joint_voltage": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Joint_Voltage.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Joint_Voltage"
+    },
+    {
+      "bounds": {
+        "joint_version": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Jointversion.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Jointversion"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/LiftState.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/LiftState"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Lift_Height.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Lift_Height"
+    },
+    {
+      "bounds": {
+        "state": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Lift_In_Position.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Lift_In_Position"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Lift_Speed.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Lift_Speed"
+    },
+    {
+      "bounds": {
+        "joint": {
+          "sequence": 16
+        },
+        "pose": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Manual_Set_Force_Pose.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Manual_Set_Force_Pose"
+    },
+    {
+      "bounds": {
+        "master_name": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Mastername.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Mastername"
+    },
+    {
+      "bounds": {
+        "read_data": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Modbusreaddata.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Modbusreaddata"
+    },
+    {
+      "bounds": {
+        "ip": {
+          "string": 256
+        },
+        "master_name": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Modbustcpmasterinfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Modbustcpmasterinfo"
+    },
+    {
+      "bounds": {
+        "master_list": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Modbustcpmasterlist.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Modbustcpmasterlist"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/MoveC.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/MoveC"
+    },
+    {
+      "bounds": {
+        "joint": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/MoveJ.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/MoveJ"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/MoveJ_P.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/MoveJ_P"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/MoveL.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/MoveL"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Moveloffset.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Moveloffset"
+    },
+    {
+      "bounds": {
+        "direction": {
+          "string": 256
+        },
+        "teach_type": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Ort_Teach.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Ort_Teach"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Plan_State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Plan_State"
+    },
+    {
+      "bounds": {
+        "direction": {
+          "string": 256
+        },
+        "teach_type": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Pos_Teach.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Pos_Teach"
+    },
+    {
+      "bounds": {
+        "loop_cont": {
+          "sequence": 16
+        },
+        "loop_num": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Programrunstate.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Programrunstate"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/RS485_Mode.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/RS485_Mode"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/RS485params.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/RS485params"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Read_ModbusRTU.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Read_ModbusRTU"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Read_Register.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Read_Register"
+    },
+    {
+      "bounds": {
+        "ip": {
+          "string": 256
+        },
+        "master_name": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Read_TCPandRTU.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Read_TCPandRTU"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Register_Data.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Register_Data"
+    },
+    {
+      "bounds": {
+        "angle_low": {
+          "sequence": 16
+        },
+        "angle_up": {
+          "sequence": 16
+        },
+        "bv": {
+          "string": 256
+        },
+        "force_low": {
+          "sequence": 16
+        },
+        "force_up": {
+          "sequence": 16
+        },
+        "hv": {
+          "string": 256
+        },
+        "manu": {
+          "string": 256
+        },
+        "pos_low": {
+          "sequence": 16
+        },
+        "pos_up": {
+          "sequence": 16
+        },
+        "speed_low": {
+          "sequence": 16
+        },
+        "speed_up": {
+          "sequence": 16
+        },
+        "sv": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Rm_Plus_Base.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Rm_Plus_Base"
+    },
+    {
+      "bounds": {
+        "angle": {
+          "sequence": 16
+        },
+        "current": {
+          "sequence": 16
+        },
+        "dof_err": {
+          "sequence": 16
+        },
+        "dof_state": {
+          "sequence": 16
+        },
+        "force": {
+          "sequence": 16
+        },
+        "normal_force": {
+          "sequence": 16
+        },
+        "pos": {
+          "sequence": 16
+        },
+        "speed": {
+          "sequence": 16
+        },
+        "tangential_force": {
+          "sequence": 16
+        },
+        "tangential_force_dir": {
+          "sequence": 16
+        },
+        "tma": {
+          "sequence": 16
+        },
+        "touch_data": {
+          "sequence": 16
+        },
+        "tsa": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Rm_Plus_State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Rm_Plus_State"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Servo_GetAngle.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Servo_GetAngle"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Servo_Move.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Servo_Move"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Set_Force_Position.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Set_Force_Position"
+    },
+    {
+      "bounds": {
+        "ip": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Set_Modbus_Mode.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Set_Modbus_Mode"
+    },
+    {
+      "bounds": {
+        "ip": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Set_Realtime_Push.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Set_Realtime_Push"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Six_Force.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Six_Force"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Socket_Command.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Socket_Command"
+    },
+    {
+      "bounds": {
+        "build_time": {
+          "string": 256
+        },
+        "version": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Softwarebuildinfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Softwarebuildinfo"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Start_Multi_Drag_Teach.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Start_Multi_Drag_Teach"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Stop.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Stop"
+    },
+    {
+      "bounds": {
+        "command": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Stop_Teach.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Stop_Teach"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Tool_Analog_Output.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Tool_Analog_Output"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Tool_Digital_Output.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Tool_Digital_Output"
+    },
+    {
+      "bounds": {},
+      "file": "rm_msgs/msg/Tool_IO_State.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Tool_IO_State"
+    },
+    {
+      "bounds": {
+        "create_time": {
+          "string": 256
+        },
+        "name": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Trajectoryinfo.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Trajectoryinfo"
+    },
+    {
+      "bounds": {
+        "tra_list": {
+          "sequence": 16
+        },
+        "vague_search": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Trajectorylist.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Trajectorylist"
+    },
+    {
+      "bounds": {
+        "message_type": {
+          "string": 256
+        },
+        "robot_mac_address": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Turtle_Driver.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Turtle_Driver"
+    },
+    {
+      "bounds": {
+        "ip": {
+          "string": 256
+        },
+        "master_name": {
+          "string": 256
+        },
+        "new_name": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/UpdateTCPmasterparam.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/UpdateTCPmasterparam"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Write_ModbusRTU.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Write_ModbusRTU"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 16
+        }
+      },
+      "file": "rm_msgs/msg/Write_Register.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Write_Register"
+    },
+    {
+      "bounds": {
+        "data": {
+          "sequence": 16
+        },
+        "ip": {
+          "string": 256
+        },
+        "master_name": {
+          "string": 256
+        }
+      },
+      "file": "rm_msgs/msg/Write_TCPandRTU.msg",
+      "registered": true,
+      "ros_version": 1,
+      "type": "rm_msgs/Write_TCPandRTU"
+    },
+    {
+      "bounds": {
+        "frame_id": {
+          "string": 256
+        }
+      },
+      "file": "std_msgs/msg/Header.msg",
+      "registered": false,
+      "ros_version": 1,
+      "type": "std_msgs/Header"
+    }
+  ]
+}

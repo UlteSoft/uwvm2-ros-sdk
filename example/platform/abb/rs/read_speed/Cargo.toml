@@ -1,0 +1,16 @@
+[package]
+name = "abb-rs-read_speed"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "abb-rs-read_speed"
+path = "main.rs"
+
+[dependencies]
+# The real SDK imports only the explicitly selected ROS 2 namespace.
+abb_observation = "0.1.0"
+
+[profile.release]
+panic = "abort"

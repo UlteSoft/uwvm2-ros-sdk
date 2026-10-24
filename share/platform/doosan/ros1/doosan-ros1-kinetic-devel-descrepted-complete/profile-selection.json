@@ -1,0 +1,66 @@
+{
+  "kind": "doosan-explicit-profile-v1",
+  "profile": "ros1_kinetic_devel_descrepted",
+  "ros_version": 1,
+  "source_lock_sha256": "405e416be26d3384276127ae68de267ec306aab83959b862286260762b5582c9",
+  "catalog_sha256": "b6709e2523c88250ad151f6177d0d1fd343de303fbbfda2738d4ea11fe19eef6",
+  "products": {
+    "bounded_interfaces.go": {
+      "bytes": 633220,
+      "sha256": "d5de0d23d538b0d5a0f6a3c2b9466ed159616e39bbc8db048a8b40e80af79235"
+    },
+    "bounded_interfaces.h": {
+      "bytes": 276201,
+      "sha256": "975dd8d6a82da53986d8d29381fad4b78f20ef10b862b837186505b9952f69eb"
+    },
+    "bounded_interfaces.hpp": {
+      "bytes": 380901,
+      "sha256": "c553c7b1283e256b13cd9ca799f5078f05b2bf118172490a352d910a07c7a42e"
+    },
+    "bounded_interfaces.mjs": {
+      "bytes": 97636,
+      "sha256": "772b22bf2bc43ebb6ba1d85a0c8af4144b2c02167ba6926a66c7dc3e48559702"
+    },
+    "bounded_interfaces.rs": {
+      "bytes": 101197,
+      "sha256": "0bb1b7c2084bd65eaabbc76f52e93f25bcde3799f769c3cd6f4443a67069b0b7"
+    },
+    "bounded_interfaces.ts": {
+      "bytes": 142349,
+      "sha256": "1dcf36ac1a69c4fcb7e32f360e086095e04cfc8cd341a938d7d86a51af11740e"
+    },
+    "bounded_records.go": {
+      "bytes": 641003,
+      "sha256": "3f099b07bf8a79f9b72754261543901791566479e5f02f8b7e323c49fb1b576a"
+    },
+    "bounded_records.h": {
+      "bytes": 968370,
+      "sha256": "669fb06ac6f2e783c457716e823d448d0257bbdb13698a4ad6789d35ead22273"
+    },
+    "bounded_records.hpp": {
+      "bytes": 269241,
+      "sha256": "26a21a827849c6e314ef0756dd8f3d34397d8adcda7aa9398499ea90e2de6e5b"
+    },
+    "bounded_records.mjs": {
+      "bytes": 521433,
+      "sha256": "99a2bc6f19c284897d688aa6b20a404bd9acb30168a1307f1991af3088377031"
+    },
+    "bounded_records.rs": {
+      "bytes": 568952,
+      "sha256": "c92d05dec55d3b50c523cb2524afc532892585e39d5ce813550557110a092884"
+    },
+    "bounded_records.ts": {
+      "bytes": 676170,
+      "sha256": "ab747bc82d4850b355d1ee782b493e74c8dfba1631837db0d5cfcfd45107bf16"
+    },
+    "native_constants.hpp": {
+      "bytes": 267,
+      "sha256": "4700d3bdf5da49f6392540d0487fa661da6f06c15fc817f1cf6e73bd44134b7c"
+    },
+    "native_identity.cc": {
+      "bytes": 64023,
+      "sha256": "0757e82a4a640b101202c8335f5b4c3b98c8c700f3949830fa551089de4338c0"
+    }
+  },
+  "default_authority": []
+}

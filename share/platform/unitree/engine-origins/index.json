@@ -1,0 +1,50 @@
+{
+  "format": "uwvm-unitree-qualified-engine-origins-v1",
+  "engines": [
+    {
+      "language": "py",
+      "backend": "ros2",
+      "runtime": "lib/language/python/ros2/cpython.wasm",
+      "runtime_sha256": "e24a19e98c2105fbc86d67353bf72328f864fa882bb58e5651d2977380e481ff",
+      "origin_metadata": "share/platform/unitree/engine-origins/python-ros2.json",
+      "origin_metadata_sha256": "b238f2c30529335beb8036a10693b1605cf2381f1da0122a00af4c5fb2016307",
+      "current_metadata": "lib/language/python/ros2/runtime.json",
+      "current_metadata_sha256": "e865bd12174330541b7c1d19c3ed8060b872cfb87303f3e4fd50c3bb39d0693d"
+    },
+    {
+      "language": "js",
+      "backend": "ros2",
+      "runtime": "lib/language/js/ros2/quickjs.wasm",
+      "runtime_sha256": "56730d6cef5df60a9c4af2a5a513d195680bb2ac0d026091a01d5381bc5b5a65",
+      "origin_metadata": "share/platform/unitree/engine-origins/js-ros2.json",
+      "origin_metadata_sha256": "6f507578c1a2455cec6f60221a7f19783122a8de35104ab688426bf4fb458bfc",
+      "current_metadata": "lib/language/js/ros2/runtime.json",
+      "current_metadata_sha256": "c104ab611cde78811fbff1ae18c314cfc60835c40e34a0a4b480672d722a4f97"
+    },
+    {
+      "language": "ruby",
+      "backend": "ros2",
+      "runtime": "lib/language/ruby/ros2/cruby.wasm",
+      "runtime_sha256": "a24db22fb18e17980c8cf9cb98c3c672133fcaeadc8dc7d736ce1f00f5cbf057",
+      "origin_metadata": "share/platform/unitree/engine-origins/ruby-ros2.json",
+      "origin_metadata_sha256": "1f1d85e110d86cc9fb585d320d4f3bed024723f0fe9f9f3c1df0480c566a6f86",
+      "current_metadata": "lib/language/ruby/ros2/runtime.json",
+      "current_metadata_sha256": "e348ef15ae38b9731823a33210716dda0c326672b9cfafae743d011ac969670a"
+    },
+    {
+      "language": "php",
+      "backend": "ros2",
+      "runtime": "lib/language/php/ros2/php.wasm",
+      "runtime_sha256": "46205e865e595e022e8f09eb261c59cff388734a6e94f0f3d2efa128919091ff",
+      "origin_metadata": "share/platform/unitree/engine-origins/php-ros2.json",
+      "origin_metadata_sha256": "f667e97cb0fda08a7280a32538d150266a91188787691e521252a6ffe620fa31",
+      "current_metadata": "lib/language/php/ros2/runtime.json",
+      "current_metadata_sha256": "2ae97b072953c3aa567135e1c862ce31e2f93b4ccb1fa05d0a371e2564f01ca7"
+    }
+  ],
+  "role": "Immutable prebuilt VM construction origins; application qualification remains separate",
+  "historical_paths_are_build_dependencies": false,
+  "historical_non_unitree_test_counts_inherited": false,
+  "new_clean_engine_reconstruction_in_current_namespace": "NOT_RUN",
+  "application_build": "Xmake embeds complete genuine-language source into the pinned backend VM"
+}

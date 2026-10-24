@@ -1,0 +1,1292 @@
+{
+  "schema": "uwvm-complete-vendor-record-ir-v1",
+  "native_bound": false,
+  "records": [
+    {
+      "type": "builtin_interfaces/msg/Duration",
+      "ros_version": 2,
+      "symbol": "Ros2Builtin_interfacesMsgDuration",
+      "c_symbol": "roswasmc_bounded_2_builtin_interfaces_msg_Duration",
+      "codec_identity": "UWVMROS1_3804444fae7a82a57907d25c2c3dc54d9a42dcd305f41ca073b1221dca7d36e4",
+      "minimum": 8,
+      "maximum": 8,
+      "semantics": "normalized-time",
+      "fields": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "ros_version": 2,
+      "symbol": "Ros2Builtin_interfacesMsgTime",
+      "c_symbol": "roswasmc_bounded_2_builtin_interfaces_msg_Time",
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "minimum": 8,
+      "maximum": 8,
+      "semantics": "normalized-time",
+      "fields": [
+        {
+          "name": "sec",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "nanosec",
+          "type": "uint32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "ros_version": 2,
+      "symbol": "Ros2Std_msgsMsgHeader",
+      "c_symbol": "roswasmc_bounded_2_std_msgs_msg_Header",
+      "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+      "minimum": 12,
+      "maximum": 140,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "stamp",
+          "type": "builtin_interfaces/msg/Time",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "frame_id",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+      "ros_version": 2,
+      "symbol": "Ros2Trajectory_msgsMsgJointTrajectoryPoint",
+      "c_symbol": "roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint",
+      "codec_identity": "UWVMROS1_a512b971211baa8604440e02a046b586e7970293242607002ceb89196c9d99b1",
+      "minimum": 24,
+      "maximum": 280,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "positions",
+          "type": "float64",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "velocities",
+          "type": "float64",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "accelerations",
+          "type": "float64",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "effort",
+          "type": "float64",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "time_from_start",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "trajectory_msgs/msg/JointTrajectory",
+      "ros_version": 2,
+      "symbol": "Ros2Trajectory_msgsMsgJointTrajectory",
+      "c_symbol": "roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory",
+      "codec_identity": "UWVMROS1_e32bd7016b5fefcab6adeb42072e2d56c45d4b9f7cb372bdb5bfac97abf8cb77",
+      "minimum": 20,
+      "maximum": 1484,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "joint_names",
+          "type": "string",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "points",
+          "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+          "array": "sequence",
+          "count": 1,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/msg/Vector3",
+      "ros_version": 2,
+      "symbol": "Ros2Geometry_msgsMsgVector3",
+      "c_symbol": "roswasmc_bounded_2_geometry_msgs_msg_Vector3",
+      "codec_identity": "UWVMROS1_5adebf211fe375fba92c0628f9b8ebf05bff9ab22ddc4bbf00629167af295d5e",
+      "minimum": 24,
+      "maximum": 24,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/msg/Quaternion",
+      "ros_version": 2,
+      "symbol": "Ros2Geometry_msgsMsgQuaternion",
+      "c_symbol": "roswasmc_bounded_2_geometry_msgs_msg_Quaternion",
+      "codec_identity": "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672",
+      "minimum": 32,
+      "maximum": 32,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "x",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "y",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "z",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "0.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "w",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": "1.0",
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/msg/Transform",
+      "ros_version": 2,
+      "symbol": "Ros2Geometry_msgsMsgTransform",
+      "c_symbol": "roswasmc_bounded_2_geometry_msgs_msg_Transform",
+      "codec_identity": "UWVMROS1_7ddcb1c3fca43f4a0299d43fb6fac1b77a8f26001af809dc13307f4f9c61d65b",
+      "minimum": 56,
+      "maximum": 56,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "translation",
+          "type": "geometry_msgs/msg/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "rotation",
+          "type": "geometry_msgs/msg/Quaternion",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "geometry_msgs/msg/Twist",
+      "ros_version": 2,
+      "symbol": "Ros2Geometry_msgsMsgTwist",
+      "c_symbol": "roswasmc_bounded_2_geometry_msgs_msg_Twist",
+      "codec_identity": "UWVMROS1_1a6c18d19bb6853a2cff3b775974ba31f8e3674c1bbe566444ccabf0ef9d117e",
+      "minimum": 48,
+      "maximum": 48,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "linear",
+          "type": "geometry_msgs/msg/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "angular",
+          "type": "geometry_msgs/msg/Vector3",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint",
+      "ros_version": 2,
+      "symbol": "Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint",
+      "c_symbol": "roswasmc_bounded_2_trajectory_msgs_msg_MultiDOFJointTrajectoryPoint",
+      "codec_identity": "UWVMROS1_4b4b6ba78f11918fcdc138544f7ef1a140d1fc51b385349ab1ad5716472c3daf",
+      "minimum": 20,
+      "maximum": 844,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "transforms",
+          "type": "geometry_msgs/msg/Transform",
+          "array": "sequence",
+          "count": 1,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "velocities",
+          "type": "geometry_msgs/msg/Twist",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "accelerations",
+          "type": "geometry_msgs/msg/Twist",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "time_from_start",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "trajectory_msgs/msg/MultiDOFJointTrajectory",
+      "ros_version": 2,
+      "symbol": "Ros2Trajectory_msgsMsgMultiDOFJointTrajectory",
+      "c_symbol": "roswasmc_bounded_2_trajectory_msgs_msg_MultiDOFJointTrajectory",
+      "codec_identity": "UWVMROS1_b822a2d5db9b83e916dcc9db4932952a314773ef53c9fbaf825902e0eb7c8cb5",
+      "minimum": 20,
+      "maximum": 2048,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "joint_names",
+          "type": "string",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "points",
+          "type": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint",
+          "array": "sequence",
+          "count": 1,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "control_msgs/msg/JointTolerance",
+      "ros_version": 2,
+      "symbol": "Ros2Control_msgsMsgJointTolerance",
+      "c_symbol": "roswasmc_bounded_2_control_msgs_msg_JointTolerance",
+      "codec_identity": "UWVMROS1_3864af88029b3b1f51907b3da63d2d821104c29b9469a146a5a34f73f3598b8a",
+      "minimum": 28,
+      "maximum": 156,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "position",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "velocity",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "acceleration",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "control_msgs/msg/JointComponentTolerance",
+      "ros_version": 2,
+      "symbol": "Ros2Control_msgsMsgJointComponentTolerance",
+      "c_symbol": "roswasmc_bounded_2_control_msgs_msg_JointComponentTolerance",
+      "codec_identity": "UWVMROS1_8a10f659b38feae6dfcf89818d35a164743b02c0e5cfe2d86aae7eda56e914fb",
+      "minimum": 30,
+      "maximum": 158,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "joint_name",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "component",
+          "type": "uint16",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "position",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "velocity",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "acceleration",
+          "type": "float64",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": [
+        {
+          "name": "X_AXIS",
+          "type": "uint16",
+          "native_type": "uint16",
+          "literal": "1",
+          "value": "1"
+        },
+        {
+          "name": "Y_AXIS",
+          "type": "uint16",
+          "native_type": "uint16",
+          "literal": "2",
+          "value": "2"
+        },
+        {
+          "name": "Z_AXIS",
+          "type": "uint16",
+          "native_type": "uint16",
+          "literal": "3",
+          "value": "3"
+        },
+        {
+          "name": "TRANSLATION",
+          "type": "uint16",
+          "native_type": "uint16",
+          "literal": "4",
+          "value": "4"
+        },
+        {
+          "name": "ROTATION",
+          "type": "uint16",
+          "native_type": "uint16",
+          "literal": "5",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "type": "control_msgs/action/FollowJointTrajectory_Goal",
+      "ros_version": 2,
+      "symbol": "Ros2Control_msgsActionFollowJointTrajectory_Goal",
+      "c_symbol": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal",
+      "codec_identity": "UWVMROS1_fa8334eb129cc91c50febaccfebb371f6fbdd82188d6301823344d6664300018",
+      "minimum": 64,
+      "maximum": 8580,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "trajectory",
+          "type": "trajectory_msgs/msg/JointTrajectory",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "multi_dof_trajectory",
+          "type": "trajectory_msgs/msg/MultiDOFJointTrajectory",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "path_tolerance",
+          "type": "control_msgs/msg/JointTolerance",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "component_path_tolerance",
+          "type": "control_msgs/msg/JointComponentTolerance",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "goal_tolerance",
+          "type": "control_msgs/msg/JointTolerance",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "component_goal_tolerance",
+          "type": "control_msgs/msg/JointComponentTolerance",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "goal_time_tolerance",
+          "type": "builtin_interfaces/msg/Duration",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "control_msgs/action/FollowJointTrajectory_Result",
+      "ros_version": 2,
+      "symbol": "Ros2Control_msgsActionFollowJointTrajectory_Result",
+      "c_symbol": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result",
+      "codec_identity": "UWVMROS1_df1e08076a5c725b865cc8807462d9ccf9577df11cbb71fcc0d280d77d0e5649",
+      "minimum": 8,
+      "maximum": 264,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "error_code",
+          "type": "int32",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "error_string",
+          "type": "string",
+          "array": "",
+          "count": 0,
+          "string_bound": 256,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": [
+        {
+          "name": "SUCCESSFUL",
+          "type": "int32",
+          "native_type": "int32",
+          "literal": "0",
+          "value": "0"
+        },
+        {
+          "name": "INVALID_GOAL",
+          "type": "int32",
+          "native_type": "int32",
+          "literal": "-1",
+          "value": "-1"
+        },
+        {
+          "name": "INVALID_JOINTS",
+          "type": "int32",
+          "native_type": "int32",
+          "literal": "-2",
+          "value": "-2"
+        },
+        {
+          "name": "OLD_HEADER_TIMESTAMP",
+          "type": "int32",
+          "native_type": "int32",
+          "literal": "-3",
+          "value": "-3"
+        },
+        {
+          "name": "PATH_TOLERANCE_VIOLATED",
+          "type": "int32",
+          "native_type": "int32",
+          "literal": "-4",
+          "value": "-4"
+        },
+        {
+          "name": "GOAL_TOLERANCE_VIOLATED",
+          "type": "int32",
+          "native_type": "int32",
+          "literal": "-5",
+          "value": "-5"
+        }
+      ]
+    },
+    {
+      "type": "control_msgs/action/FollowJointTrajectory_Feedback",
+      "ros_version": 2,
+      "symbol": "Ros2Control_msgsActionFollowJointTrajectory_Feedback",
+      "c_symbol": "roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback",
+      "codec_identity": "UWVMROS1_ae2175027c3e45997d272b9610d15ef52cc665d23c0a371892d10b3d100e3529",
+      "minimum": 152,
+      "maximum": 4708,
+      "semantics": "",
+      "fields": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "joint_names",
+          "type": "string",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "desired",
+          "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "actual",
+          "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "error",
+          "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "multi_dof_joint_names",
+          "type": "string",
+          "array": "sequence",
+          "count": 1,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "multi_dof_desired",
+          "type": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "multi_dof_actual",
+          "type": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "multi_dof_error",
+          "type": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    },
+    {
+      "type": "sensor_msgs/msg/JointState",
+      "ros_version": 2,
+      "symbol": "Ros2Sensor_msgsMsgJointState",
+      "c_symbol": "roswasmc_bounded_2_sensor_msgs_msg_JointState",
+      "codec_identity": "UWVMROS1_bba20c36db70a98b594ba603d05b8a979038fb95b701221ba3b8689f55b06b11",
+      "minimum": 28,
+      "maximum": 1404,
+      "semantics": "joint-state-optional-equal-length-arrays",
+      "fields": [
+        {
+          "name": "header",
+          "type": "std_msgs/msg/Header",
+          "array": "",
+          "count": 0,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 128,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "position",
+          "type": "float64",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "velocity",
+          "type": "float64",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        },
+        {
+          "name": "effort",
+          "type": "float64",
+          "array": "sequence",
+          "count": 8,
+          "string_bound": 0,
+          "native_string_bound": 0,
+          "native_sequence_bound": 0,
+          "native_default": null,
+          "native_scalar": "",
+          "string_encoding": "utf8",
+          "float_policy": "finite"
+        }
+      ],
+      "constants": []
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "builtin_interfaces/msg/Duration",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_3804444fae7a82a57907d25c2c3dc54d9a42dcd305f41ca073b1221dca7d36e4",
+      "components": {
+        "message": "Ros2Builtin_interfacesMsgDuration"
+      }
+    },
+    {
+      "type": "builtin_interfaces/msg/Time",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
+      "components": {
+        "message": "Ros2Builtin_interfacesMsgTime"
+      }
+    },
+    {
+      "type": "control_msgs/action/FollowJointTrajectory",
+      "kind": "action",
+      "registered": true,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_e797f0f621691bc268c5ff018ce6f91ec9ae89a7ac64d99472cc296f661214a0",
+      "components": {
+        "goal": "Ros2Control_msgsActionFollowJointTrajectory_Goal",
+        "result": "Ros2Control_msgsActionFollowJointTrajectory_Result",
+        "feedback": "Ros2Control_msgsActionFollowJointTrajectory_Feedback"
+      }
+    },
+    {
+      "type": "control_msgs/msg/JointComponentTolerance",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_8a10f659b38feae6dfcf89818d35a164743b02c0e5cfe2d86aae7eda56e914fb",
+      "components": {
+        "message": "Ros2Control_msgsMsgJointComponentTolerance"
+      }
+    },
+    {
+      "type": "control_msgs/msg/JointTolerance",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_3864af88029b3b1f51907b3da63d2d821104c29b9469a146a5a34f73f3598b8a",
+      "components": {
+        "message": "Ros2Control_msgsMsgJointTolerance"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Quaternion",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgQuaternion"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Transform",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_7ddcb1c3fca43f4a0299d43fb6fac1b77a8f26001af809dc13307f4f9c61d65b",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgTransform"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Twist",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_1a6c18d19bb6853a2cff3b775974ba31f8e3674c1bbe566444ccabf0ef9d117e",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgTwist"
+      }
+    },
+    {
+      "type": "geometry_msgs/msg/Vector3",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_5adebf211fe375fba92c0628f9b8ebf05bff9ab22ddc4bbf00629167af295d5e",
+      "components": {
+        "message": "Ros2Geometry_msgsMsgVector3"
+      }
+    },
+    {
+      "type": "sensor_msgs/msg/JointState",
+      "kind": "message",
+      "registered": true,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_bba20c36db70a98b594ba603d05b8a979038fb95b701221ba3b8689f55b06b11",
+      "components": {
+        "message": "Ros2Sensor_msgsMsgJointState"
+      }
+    },
+    {
+      "type": "std_msgs/msg/Header",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_ce081e9caac05e464c4cff0da5e94cad44014652c0ddf244ee6c35ac3b0d1e96",
+      "components": {
+        "message": "Ros2Std_msgsMsgHeader"
+      }
+    },
+    {
+      "type": "trajectory_msgs/msg/JointTrajectory",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_e32bd7016b5fefcab6adeb42072e2d56c45d4b9f7cb372bdb5bfac97abf8cb77",
+      "components": {
+        "message": "Ros2Trajectory_msgsMsgJointTrajectory"
+      }
+    },
+    {
+      "type": "trajectory_msgs/msg/JointTrajectoryPoint",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_a512b971211baa8604440e02a046b586e7970293242607002ceb89196c9d99b1",
+      "components": {
+        "message": "Ros2Trajectory_msgsMsgJointTrajectoryPoint"
+      }
+    },
+    {
+      "type": "trajectory_msgs/msg/MultiDOFJointTrajectory",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_b822a2d5db9b83e916dcc9db4932952a314773ef53c9fbaf825902e0eb7c8cb5",
+      "components": {
+        "message": "Ros2Trajectory_msgsMsgMultiDOFJointTrajectory"
+      }
+    },
+    {
+      "type": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint",
+      "kind": "message",
+      "registered": false,
+      "ros_version": 2,
+      "codec_identity": "UWVMROS1_4b4b6ba78f11918fcdc138544f7ef1a140d1fc51b385349ab1ad5716472c3daf",
+      "components": {
+        "message": "Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint"
+      }
+    }
+  ]
+}

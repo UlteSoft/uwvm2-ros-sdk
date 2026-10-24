@@ -1,0 +1,8 @@
+{
+  "format": "uwvm-typescript-compiler-v1",
+  "version": "5.9.3",
+  "engine": "js",
+  "manifest": "share/toolchains/host/linux-x86_64/typescript.json",
+  "manifest_sha256": "80d998cf60c26f10afff31dabe01709d08415275b4dd13142f2ba3978367c9a5",
+  "node_host": "existing shared assemblyscript closure"
+}
