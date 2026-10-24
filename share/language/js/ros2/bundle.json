@@ -6,7 +6,7 @@
     {
       "name": "ros/js/wire",
       "file": "include/platform/ros/js/wire.mjs",
-      "sha256": "11b7da720d46b35047e233c8ce96b8b8c9abd95d51a822cfd8c0258b512fea1c"
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
     },
     {
       "name": "ros/js/transport",
