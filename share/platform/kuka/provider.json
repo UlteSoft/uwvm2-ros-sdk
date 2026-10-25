@@ -54,7 +54,8 @@
     "swift",
     "tinygo",
     "vbnet",
-    "zig"
+    "zig",
+    "typescript"
   ],
   "domains": [
     {

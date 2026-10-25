@@ -15,7 +15,7 @@
  * 64-bit integers remain BigInt. Strings are strict UTF-8 with no embedded NUL.
  * Owned Service transport is a separate explicit raw12 adapter, not legacy RPC.
  */
-const utf8Encoder = new TextEncoder(), utf8Decoder = new TextDecoder("utf-8", {fatal : true, ignoreBOM : true});
+import {utf8Decode, utf8Encode} from "ros/js/wire";
 
 export class ControlCodecError extends Error
 {
@@ -31,14 +31,15 @@ function bad(code = 22)
     throw new ControlCodecError(code);
 }
 
-const nativeTypedLength = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(Uint8Array.prototype), "length").get, nativeTypedSet = Uint8Array.prototype.set;
+const nativeTypedLength = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(Uint8Array.prototype), "length").get,
+      nativeTypedSet = Uint8Array.prototype.set;
 
 function copyRaw(value, bound, code = 22)
 {
-    if(!(value instanceof Uint8Array))
+    if (!(value instanceof Uint8Array))
         bad();
     const n = nativeTypedLength.call(value);
-    if(n > bound)
+    if (n > bound)
         bad(code);
     const out = new Uint8Array(n);
     nativeTypedSet.call(out, value);
@@ -47,43 +48,53 @@ function copyRaw(value, bound, code = 22)
 
 function addSize(n, m)
 {
-    if(!Number.isSafeInteger(n) || !Number.isSafeInteger(m) || n < 0 || m < 0 || n > 32768 || m > 32768 - n)
+    if (!Number.isSafeInteger(n) || !Number.isSafeInteger(m) || n < 0 || m < 0 || n > 32768 || m > 32768 - n)
         bad(90);
     return n + m;
 }
 
 function textBytes(value, bound)
 {
-    if(typeof value !== "string" || value.length > bound || value.includes("\0"))
+    if (typeof value !== "string" || value.length > bound || value.includes("\0"))
         bad();
-    for(let i = 0; i < value.length; ++i)
+    for (let i = 0; i < value.length; ++i)
     {
         const c = value.charCodeAt(i);
-        if(c >= 0xd800 && c <= 0xdbff)
+        if (c >= 0xd800 && c <= 0xdbff)
         {
-            if(++i === value.length)
+            if (++i === value.length)
                 bad();
             const d = value.charCodeAt(i);
-            if(d < 0xdc00 || d > 0xdfff)
+            if (d < 0xdc00 || d > 0xdfff)
                 bad();
         }
-        else if(c >= 0xdc00 && c <= 0xdfff)
+        else if (c >= 0xdc00 && c <= 0xdfff)
             bad();
     }
-    const b = utf8Encoder.encode(value);
-    if(b.length > bound)
+    let b;
+    try
+    {
+        b = utf8Encode(value, bound);
+    }
+    catch
+    {
+        bad();
+    }
+    if (b.length > bound)
         bad();
     return b;
 }
 
 function integer(value, width, signed)
 {
-    if(width === 8)
+    if (width === 8)
     {
-        if(typeof value !== "bigint" || value < (signed ? -(1n << 63n) : 0n) || value > (signed ? (1n << 63n) - 1n : (1n << 64n) - 1n))
+        if (typeof value !== "bigint" || value < (signed ? -(1n << 63n) : 0n) ||
+            value > (signed ? (1n << 63n) - 1n : (1n << 64n) - 1n))
             bad();
     }
-    else if(!Number.isInteger(value) || value < (signed ? -(2 ** (width * 8 - 1)) : 0) || value > (signed ? 2 ** (width * 8 - 1) - 1 : 2 ** (width * 8) - 1))
+    else if (!Number.isInteger(value) || value < (signed ? -(2 ** (width * 8 - 1)) : 0) ||
+             value > (signed ? 2 ** (width * 8 - 1) - 1 : 2 ** (width * 8) - 1))
         bad();
 }
 
@@ -91,7 +102,7 @@ class Reader
 {
     constructor(bytes)
     {
-        if(!(bytes instanceof Uint8Array) || bytes.length > 32768)
+        if (!(bytes instanceof Uint8Array) || bytes.length > 32768)
             bad();
         this.b = bytes;
         this.v = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
@@ -100,7 +111,7 @@ class Reader
 
     take(n)
     {
-        if(!Number.isInteger(n) || n < 0 || n > this.b.length - this.at)
+        if (!Number.isInteger(n) || n < 0 || n > this.b.length - this.at)
             bad();
         const p = this.at;
         this.at += n;
@@ -115,19 +126,19 @@ class Reader
     text(bound)
     {
         const n = this.u32();
-        if(n > bound)
+        if (n > bound)
             bad();
         const p = this.take(n);
         let s;
         try
         {
-            s = utf8Decoder.decode(this.b.subarray(p, p + n));
+            s = utf8Decode(this.b.subarray(p, p + n));
         }
         catch
         {
             bad();
         }
-        if(s.includes("\0"))
+        if (s.includes("\0"))
             bad();
         return s;
     }
@@ -135,7 +146,7 @@ class Reader
     raw(bound)
     {
         const n = this.u32();
-        if(n > bound)
+        if (n > bound)
             bad();
         const p = this.take(n);
         return this.b.slice(p, p + n);
@@ -146,7 +157,7 @@ class Writer
 {
     constructor(size)
     {
-        if(size > 32768)
+        if (size > 32768)
             bad();
         this.b = new Uint8Array(size);
         this.v = new DataView(this.b.buffer);
@@ -187,18 +198,19 @@ export const Ros2Builtin_interfacesMsgDurationCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Builtin_interfacesMsgDurationCapture(value), n = Ros2Builtin_interfacesMsgDurationSize(owned), w = new Writer(n);
+        const owned = Ros2Builtin_interfacesMsgDurationCapture(value), n = Ros2Builtin_interfacesMsgDurationSize(owned),
+              w = new Writer(n);
         Ros2Builtin_interfacesMsgDurationWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 8, 90);
-        if(owned.length < 8)
+        if (owned.length < 8)
             bad();
         const r = new Reader(owned), value = Ros2Builtin_interfacesMsgDurationRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -217,16 +229,16 @@ export const Ros2Builtin_interfacesMsgDurationCodec = Object.freeze({
 
 function Ros2Builtin_interfacesMsgDurationSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     integer(value["sec"], 4, true);
     n = addSize(n, 4);
     integer(value["nanosec"], 4, false);
     n = addSize(n, 4);
-    if(value["nanosec"] >= 1000000000)
+    if (value["nanosec"] >= 1000000000)
         bad();
-    if(n > 8)
+    if (n > 8)
         bad(90);
     return n;
 }
@@ -250,14 +262,14 @@ function Ros2Builtin_interfacesMsgDurationRead(r)
         const decoded = r.v.getUint32(r.take(4), true);
         value["nanosec"] = decoded;
     }
-    if(value["nanosec"] >= 1000000000)
+    if (value["nanosec"] >= 1000000000)
         bad();
     return value;
 }
 
 function Ros2Builtin_interfacesMsgDurationCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -287,18 +299,19 @@ export const Ros2Builtin_interfacesMsgTimeCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Builtin_interfacesMsgTimeCapture(value), n = Ros2Builtin_interfacesMsgTimeSize(owned), w = new Writer(n);
+        const owned = Ros2Builtin_interfacesMsgTimeCapture(value), n = Ros2Builtin_interfacesMsgTimeSize(owned),
+              w = new Writer(n);
         Ros2Builtin_interfacesMsgTimeWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 8, 90);
-        if(owned.length < 8)
+        if (owned.length < 8)
             bad();
         const r = new Reader(owned), value = Ros2Builtin_interfacesMsgTimeRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -317,16 +330,16 @@ export const Ros2Builtin_interfacesMsgTimeCodec = Object.freeze({
 
 function Ros2Builtin_interfacesMsgTimeSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     integer(value["sec"], 4, true);
     n = addSize(n, 4);
     integer(value["nanosec"], 4, false);
     n = addSize(n, 4);
-    if(value["nanosec"] >= 1000000000)
+    if (value["nanosec"] >= 1000000000)
         bad();
-    if(n > 8)
+    if (n > 8)
         bad(90);
     return n;
 }
@@ -350,14 +363,14 @@ function Ros2Builtin_interfacesMsgTimeRead(r)
         const decoded = r.v.getUint32(r.take(4), true);
         value["nanosec"] = decoded;
     }
-    if(value["nanosec"] >= 1000000000)
+    if (value["nanosec"] >= 1000000000)
         bad();
     return value;
 }
 
 function Ros2Builtin_interfacesMsgTimeCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -389,16 +402,16 @@ export const Ros2Std_msgsMsgHeaderCodec = Object.freeze({
     encode(value) {
         const owned = Ros2Std_msgsMsgHeaderCapture(value), n = Ros2Std_msgsMsgHeaderSize(owned), w = new Writer(n);
         Ros2Std_msgsMsgHeaderWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 76, 90);
-        if(owned.length < 12)
+        if (owned.length < 12)
             bad();
         const r = new Reader(owned), value = Ros2Std_msgsMsgHeaderRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -417,12 +430,12 @@ export const Ros2Std_msgsMsgHeaderCodec = Object.freeze({
 
 function Ros2Std_msgsMsgHeaderSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Builtin_interfacesMsgTimeSize(value["stamp"]));
     n = addSize(n, 4 + textBytes(value["frame_id"], 64).length);
-    if(n > 76)
+    if (n > 76)
         bad(90);
     return n;
 }
@@ -449,7 +462,7 @@ function Ros2Std_msgsMsgHeaderRead(r)
 
 function Ros2Std_msgsMsgHeaderCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -485,18 +498,19 @@ export const Ros2Trajectory_msgsMsgJointTrajectoryPointCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Trajectory_msgsMsgJointTrajectoryPointCapture(value), n = Ros2Trajectory_msgsMsgJointTrajectoryPointSize(owned), w = new Writer(n);
+        const owned = Ros2Trajectory_msgsMsgJointTrajectoryPointCapture(value),
+              n = Ros2Trajectory_msgsMsgJointTrajectoryPointSize(owned), w = new Writer(n);
         Ros2Trajectory_msgsMsgJointTrajectoryPointWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 408, 90);
-        if(owned.length < 24)
+        if (owned.length < 24)
             bad();
         const r = new Reader(owned), value = Ros2Trajectory_msgsMsgJointTrajectoryPointRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -515,47 +529,47 @@ export const Ros2Trajectory_msgsMsgJointTrajectoryPointCodec = Object.freeze({
 
 function Ros2Trajectory_msgsMsgJointTrajectoryPointSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(!Array.isArray(value["positions"]) || value["positions"].length > 12)
+    if (!Array.isArray(value["positions"]) || value["positions"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["positions"])
+    for (const element of value["positions"])
     {
-        if(typeof element !== "number" || !Number.isFinite(element))
+        if (typeof element !== "number" || !Number.isFinite(element))
             bad();
         n = addSize(n, 8);
     }
-    if(!Array.isArray(value["velocities"]) || value["velocities"].length > 12)
+    if (!Array.isArray(value["velocities"]) || value["velocities"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["velocities"])
+    for (const element of value["velocities"])
     {
-        if(typeof element !== "number" || !Number.isFinite(element))
+        if (typeof element !== "number" || !Number.isFinite(element))
             bad();
         n = addSize(n, 8);
     }
-    if(!Array.isArray(value["accelerations"]) || value["accelerations"].length > 12)
+    if (!Array.isArray(value["accelerations"]) || value["accelerations"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["accelerations"])
+    for (const element of value["accelerations"])
     {
-        if(typeof element !== "number" || !Number.isFinite(element))
+        if (typeof element !== "number" || !Number.isFinite(element))
             bad();
         n = addSize(n, 8);
     }
-    if(!Array.isArray(value["effort"]) || value["effort"].length > 12)
+    if (!Array.isArray(value["effort"]) || value["effort"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["effort"])
+    for (const element of value["effort"])
     {
-        if(typeof element !== "number" || !Number.isFinite(element))
+        if (typeof element !== "number" || !Number.isFinite(element))
             bad();
         n = addSize(n, 8);
     }
     n = addSize(n, Ros2Builtin_interfacesMsgDurationSize(value["time_from_start"]));
-    if(n > 408)
+    if (n > 408)
         bad(90);
     return n;
 }
@@ -564,28 +578,28 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointWrite(value, w)
 {
     w.v.setUint32(w.at, value["positions"].length, true);
     w.at += 4;
-    for(const element of value["positions"])
+    for (const element of value["positions"])
     {
         w.v.setFloat64(w.at, element, true);
         w.at += 8;
     }
     w.v.setUint32(w.at, value["velocities"].length, true);
     w.at += 4;
-    for(const element of value["velocities"])
+    for (const element of value["velocities"])
     {
         w.v.setFloat64(w.at, element, true);
         w.at += 8;
     }
     w.v.setUint32(w.at, value["accelerations"].length, true);
     w.at += 4;
-    for(const element of value["accelerations"])
+    for (const element of value["accelerations"])
     {
         w.v.setFloat64(w.at, element, true);
         w.at += 8;
     }
     w.v.setUint32(w.at, value["effort"].length, true);
     w.at += 4;
-    for(const element of value["effort"])
+    for (const element of value["effort"])
     {
         w.v.setFloat64(w.at, element, true);
         w.at += 8;
@@ -599,13 +613,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["positions"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.v.getFloat64(r.take(8), true);
-                if(!Number.isFinite(decoded))
+                if (!Number.isFinite(decoded))
                     bad();
                 value["positions"].push(decoded);
             }
@@ -614,13 +628,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["velocities"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.v.getFloat64(r.take(8), true);
-                if(!Number.isFinite(decoded))
+                if (!Number.isFinite(decoded))
                     bad();
                 value["velocities"].push(decoded);
             }
@@ -629,13 +643,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["accelerations"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.v.getFloat64(r.take(8), true);
-                if(!Number.isFinite(decoded))
+                if (!Number.isFinite(decoded))
                     bad();
                 value["accelerations"].push(decoded);
             }
@@ -644,13 +658,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["effort"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.v.getFloat64(r.take(8), true);
-                if(!Number.isFinite(decoded))
+                if (!Number.isFinite(decoded))
                     bad();
                 value["effort"].push(decoded);
             }
@@ -665,18 +679,18 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointRead(r)
 
 function Ros2Trajectory_msgsMsgJointTrajectoryPointCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
         const field = value["positions"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -685,13 +699,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointCapture(value)
     }
     {
         const field = value["velocities"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -700,13 +714,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointCapture(value)
     }
     {
         const field = value["accelerations"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -715,13 +729,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryPointCapture(value)
     }
     {
         const field = value["effort"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -751,18 +765,19 @@ export const Ros2Trajectory_msgsMsgJointTrajectoryCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Trajectory_msgsMsgJointTrajectoryCapture(value), n = Ros2Trajectory_msgsMsgJointTrajectorySize(owned), w = new Writer(n);
+        const owned = Ros2Trajectory_msgsMsgJointTrajectoryCapture(value),
+              n = Ros2Trajectory_msgsMsgJointTrajectorySize(owned), w = new Writer(n);
         Ros2Trajectory_msgsMsgJointTrajectoryWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 4164, 90);
-        if(owned.length < 20)
+        if (owned.length < 20)
             bad();
         const r = new Reader(owned), value = Ros2Trajectory_msgsMsgJointTrajectoryRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -781,25 +796,25 @@ export const Ros2Trajectory_msgsMsgJointTrajectoryCodec = Object.freeze({
 
 function Ros2Trajectory_msgsMsgJointTrajectorySize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Std_msgsMsgHeaderSize(value["header"]));
-    if(!Array.isArray(value["joint_names"]) || value["joint_names"].length > 12)
+    if (!Array.isArray(value["joint_names"]) || value["joint_names"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["joint_names"])
+    for (const element of value["joint_names"])
     {
         n = addSize(n, 4 + textBytes(element, 64).length);
     }
-    if(!Array.isArray(value["points"]) || value["points"].length > 8)
+    if (!Array.isArray(value["points"]) || value["points"].length > 8)
         bad();
     n = addSize(n, 4);
-    for(const element of value["points"])
+    for (const element of value["points"])
     {
         n = addSize(n, Ros2Trajectory_msgsMsgJointTrajectoryPointSize(element));
     }
-    if(n > 4164)
+    if (n > 4164)
         bad(90);
     return n;
 }
@@ -809,13 +824,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryWrite(value, w)
     Ros2Std_msgsMsgHeaderWrite(value["header"], w);
     w.v.setUint32(w.at, value["joint_names"].length, true);
     w.at += 4;
-    for(const element of value["joint_names"])
+    for (const element of value["joint_names"])
     {
         w.text(element, 64);
     }
     w.v.setUint32(w.at, value["points"].length, true);
     w.at += 4;
-    for(const element of value["points"])
+    for (const element of value["points"])
     {
         Ros2Trajectory_msgsMsgJointTrajectoryPointWrite(element, w);
     }
@@ -831,10 +846,10 @@ function Ros2Trajectory_msgsMsgJointTrajectoryRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["joint_names"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.text(64);
                 value["joint_names"].push(decoded);
@@ -844,10 +859,10 @@ function Ros2Trajectory_msgsMsgJointTrajectoryRead(r)
     {
         {
             const count = r.u32();
-            if(count > 8)
+            if (count > 8)
                 bad();
             value["points"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Trajectory_msgsMsgJointTrajectoryPointRead(r);
                 value["points"].push(decoded);
@@ -859,7 +874,7 @@ function Ros2Trajectory_msgsMsgJointTrajectoryRead(r)
 
 function Ros2Trajectory_msgsMsgJointTrajectoryCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -868,13 +883,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryCapture(value)
     }
     {
         const field = value["joint_names"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -883,13 +898,13 @@ function Ros2Trajectory_msgsMsgJointTrajectoryCapture(value)
     }
     {
         const field = value["points"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 8)
+        if (!Number.isInteger(count) || count < 0 || count > 8)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Trajectory_msgsMsgJointTrajectoryPointCapture(element);
@@ -915,18 +930,19 @@ export const Ros2Geometry_msgsMsgVector3Codec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Geometry_msgsMsgVector3Capture(value), n = Ros2Geometry_msgsMsgVector3Size(owned), w = new Writer(n);
+        const owned = Ros2Geometry_msgsMsgVector3Capture(value), n = Ros2Geometry_msgsMsgVector3Size(owned),
+              w = new Writer(n);
         Ros2Geometry_msgsMsgVector3Write(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 24, 90);
-        if(owned.length < 24)
+        if (owned.length < 24)
             bad();
         const r = new Reader(owned), value = Ros2Geometry_msgsMsgVector3Read(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -945,19 +961,19 @@ export const Ros2Geometry_msgsMsgVector3Codec = Object.freeze({
 
 function Ros2Geometry_msgsMsgVector3Size(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(typeof value["x"] !== "number" || !Number.isFinite(value["x"]))
+    if (typeof value["x"] !== "number" || !Number.isFinite(value["x"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["y"] !== "number" || !Number.isFinite(value["y"]))
+    if (typeof value["y"] !== "number" || !Number.isFinite(value["y"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["z"] !== "number" || !Number.isFinite(value["z"]))
+    if (typeof value["z"] !== "number" || !Number.isFinite(value["z"]))
         bad();
     n = addSize(n, 8);
-    if(n > 24)
+    if (n > 24)
         bad(90);
     return n;
 }
@@ -977,19 +993,19 @@ function Ros2Geometry_msgsMsgVector3Read(r)
     const value = {};
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["x"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["y"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["z"] = decoded;
     }
@@ -998,7 +1014,7 @@ function Ros2Geometry_msgsMsgVector3Read(r)
 
 function Ros2Geometry_msgsMsgVector3Capture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -1032,18 +1048,19 @@ export const Ros2Geometry_msgsMsgQuaternionCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Geometry_msgsMsgQuaternionCapture(value), n = Ros2Geometry_msgsMsgQuaternionSize(owned), w = new Writer(n);
+        const owned = Ros2Geometry_msgsMsgQuaternionCapture(value), n = Ros2Geometry_msgsMsgQuaternionSize(owned),
+              w = new Writer(n);
         Ros2Geometry_msgsMsgQuaternionWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 32, 90);
-        if(owned.length < 32)
+        if (owned.length < 32)
             bad();
         const r = new Reader(owned), value = Ros2Geometry_msgsMsgQuaternionRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -1062,22 +1079,22 @@ export const Ros2Geometry_msgsMsgQuaternionCodec = Object.freeze({
 
 function Ros2Geometry_msgsMsgQuaternionSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(typeof value["x"] !== "number" || !Number.isFinite(value["x"]))
+    if (typeof value["x"] !== "number" || !Number.isFinite(value["x"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["y"] !== "number" || !Number.isFinite(value["y"]))
+    if (typeof value["y"] !== "number" || !Number.isFinite(value["y"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["z"] !== "number" || !Number.isFinite(value["z"]))
+    if (typeof value["z"] !== "number" || !Number.isFinite(value["z"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["w"] !== "number" || !Number.isFinite(value["w"]))
+    if (typeof value["w"] !== "number" || !Number.isFinite(value["w"]))
         bad();
     n = addSize(n, 8);
-    if(n > 32)
+    if (n > 32)
         bad(90);
     return n;
 }
@@ -1099,25 +1116,25 @@ function Ros2Geometry_msgsMsgQuaternionRead(r)
     const value = {};
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["x"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["y"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["z"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["w"] = decoded;
     }
@@ -1126,7 +1143,7 @@ function Ros2Geometry_msgsMsgQuaternionRead(r)
 
 function Ros2Geometry_msgsMsgQuaternionCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -1157,25 +1174,29 @@ export const Ros2Geometry_msgsMsgTransformCodec = Object.freeze({
     aggregateWireBytes : 0,
     constants : Object.freeze({}),
     defaultValue() {
-        return {"translation" : Ros2Geometry_msgsMsgVector3Codec.defaultValue(), "rotation" : Ros2Geometry_msgsMsgQuaternionCodec.defaultValue()};
+        return {
+            "translation" : Ros2Geometry_msgsMsgVector3Codec.defaultValue(),
+            "rotation" : Ros2Geometry_msgsMsgQuaternionCodec.defaultValue()
+        };
     },
     validateValue(value) {
         Ros2Geometry_msgsMsgTransformSize(Ros2Geometry_msgsMsgTransformCapture(value));
         return true;
     },
     encode(value) {
-        const owned = Ros2Geometry_msgsMsgTransformCapture(value), n = Ros2Geometry_msgsMsgTransformSize(owned), w = new Writer(n);
+        const owned = Ros2Geometry_msgsMsgTransformCapture(value), n = Ros2Geometry_msgsMsgTransformSize(owned),
+              w = new Writer(n);
         Ros2Geometry_msgsMsgTransformWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 56, 90);
-        if(owned.length < 56)
+        if (owned.length < 56)
             bad();
         const r = new Reader(owned), value = Ros2Geometry_msgsMsgTransformRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -1194,12 +1215,12 @@ export const Ros2Geometry_msgsMsgTransformCodec = Object.freeze({
 
 function Ros2Geometry_msgsMsgTransformSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Geometry_msgsMsgVector3Size(value["translation"]));
     n = addSize(n, Ros2Geometry_msgsMsgQuaternionSize(value["rotation"]));
-    if(n > 56)
+    if (n > 56)
         bad(90);
     return n;
 }
@@ -1226,7 +1247,7 @@ function Ros2Geometry_msgsMsgTransformRead(r)
 
 function Ros2Geometry_msgsMsgTransformCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -1249,25 +1270,29 @@ export const Ros2Geometry_msgsMsgTwistCodec = Object.freeze({
     aggregateWireBytes : 0,
     constants : Object.freeze({}),
     defaultValue() {
-        return {"linear" : Ros2Geometry_msgsMsgVector3Codec.defaultValue(), "angular" : Ros2Geometry_msgsMsgVector3Codec.defaultValue()};
+        return {
+            "linear" : Ros2Geometry_msgsMsgVector3Codec.defaultValue(),
+            "angular" : Ros2Geometry_msgsMsgVector3Codec.defaultValue()
+        };
     },
     validateValue(value) {
         Ros2Geometry_msgsMsgTwistSize(Ros2Geometry_msgsMsgTwistCapture(value));
         return true;
     },
     encode(value) {
-        const owned = Ros2Geometry_msgsMsgTwistCapture(value), n = Ros2Geometry_msgsMsgTwistSize(owned), w = new Writer(n);
+        const owned = Ros2Geometry_msgsMsgTwistCapture(value), n = Ros2Geometry_msgsMsgTwistSize(owned),
+              w = new Writer(n);
         Ros2Geometry_msgsMsgTwistWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 48, 90);
-        if(owned.length < 48)
+        if (owned.length < 48)
             bad();
         const r = new Reader(owned), value = Ros2Geometry_msgsMsgTwistRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -1286,12 +1311,12 @@ export const Ros2Geometry_msgsMsgTwistCodec = Object.freeze({
 
 function Ros2Geometry_msgsMsgTwistSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Geometry_msgsMsgVector3Size(value["linear"]));
     n = addSize(n, Ros2Geometry_msgsMsgVector3Size(value["angular"]));
-    if(n > 48)
+    if (n > 48)
         bad(90);
     return n;
 }
@@ -1318,7 +1343,7 @@ function Ros2Geometry_msgsMsgTwistRead(r)
 
 function Ros2Geometry_msgsMsgTwistCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -1341,26 +1366,32 @@ export const Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec = Object.fr
     aggregateWireBytes : 0,
     constants : Object.freeze({}),
     defaultValue() {
-        return {"transforms" : [], "velocities" : [], "accelerations" : [], "time_from_start" : Ros2Builtin_interfacesMsgDurationCodec.defaultValue()};
+        return {
+            "transforms" : [],
+            "velocities" : [],
+            "accelerations" : [],
+            "time_from_start" : Ros2Builtin_interfacesMsgDurationCodec.defaultValue()
+        };
     },
     validateValue(value) {
-        Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCapture(value));
+        Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(
+            Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCapture(value));
         return true;
     },
     encode(value) {
-        const owned = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCapture(value), n = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(owned),
-              w = new Writer(n);
+        const owned = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCapture(value),
+              n = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(owned), w = new Writer(n);
         Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 324, 90);
-        if(owned.length < 20)
+        if (owned.length < 20)
             bad();
         const r = new Reader(owned), value = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -1379,32 +1410,32 @@ export const Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec = Object.fr
 
 function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(!Array.isArray(value["transforms"]) || value["transforms"].length > 2)
+    if (!Array.isArray(value["transforms"]) || value["transforms"].length > 2)
         bad();
     n = addSize(n, 4);
-    for(const element of value["transforms"])
+    for (const element of value["transforms"])
     {
         n = addSize(n, Ros2Geometry_msgsMsgTransformSize(element));
     }
-    if(!Array.isArray(value["velocities"]) || value["velocities"].length > 2)
+    if (!Array.isArray(value["velocities"]) || value["velocities"].length > 2)
         bad();
     n = addSize(n, 4);
-    for(const element of value["velocities"])
+    for (const element of value["velocities"])
     {
         n = addSize(n, Ros2Geometry_msgsMsgTwistSize(element));
     }
-    if(!Array.isArray(value["accelerations"]) || value["accelerations"].length > 2)
+    if (!Array.isArray(value["accelerations"]) || value["accelerations"].length > 2)
         bad();
     n = addSize(n, 4);
-    for(const element of value["accelerations"])
+    for (const element of value["accelerations"])
     {
         n = addSize(n, Ros2Geometry_msgsMsgTwistSize(element));
     }
     n = addSize(n, Ros2Builtin_interfacesMsgDurationSize(value["time_from_start"]));
-    if(n > 324)
+    if (n > 324)
         bad(90);
     return n;
 }
@@ -1413,19 +1444,19 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointWrite(value, w)
 {
     w.v.setUint32(w.at, value["transforms"].length, true);
     w.at += 4;
-    for(const element of value["transforms"])
+    for (const element of value["transforms"])
     {
         Ros2Geometry_msgsMsgTransformWrite(element, w);
     }
     w.v.setUint32(w.at, value["velocities"].length, true);
     w.at += 4;
-    for(const element of value["velocities"])
+    for (const element of value["velocities"])
     {
         Ros2Geometry_msgsMsgTwistWrite(element, w);
     }
     w.v.setUint32(w.at, value["accelerations"].length, true);
     w.at += 4;
-    for(const element of value["accelerations"])
+    for (const element of value["accelerations"])
     {
         Ros2Geometry_msgsMsgTwistWrite(element, w);
     }
@@ -1438,10 +1469,10 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointRead(r)
     {
         {
             const count = r.u32();
-            if(count > 2)
+            if (count > 2)
                 bad();
             value["transforms"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Geometry_msgsMsgTransformRead(r);
                 value["transforms"].push(decoded);
@@ -1451,10 +1482,10 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointRead(r)
     {
         {
             const count = r.u32();
-            if(count > 2)
+            if (count > 2)
                 bad();
             value["velocities"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Geometry_msgsMsgTwistRead(r);
                 value["velocities"].push(decoded);
@@ -1464,10 +1495,10 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointRead(r)
     {
         {
             const count = r.u32();
-            if(count > 2)
+            if (count > 2)
                 bad();
             value["accelerations"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Geometry_msgsMsgTwistRead(r);
                 value["accelerations"].push(decoded);
@@ -1483,18 +1514,18 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointRead(r)
 
 function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
         const field = value["transforms"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 2)
+        if (!Number.isInteger(count) || count < 0 || count > 2)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Geometry_msgsMsgTransformCapture(element);
@@ -1503,13 +1534,13 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCapture(value)
     }
     {
         const field = value["velocities"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 2)
+        if (!Number.isInteger(count) || count < 0 || count > 2)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Geometry_msgsMsgTwistCapture(element);
@@ -1518,13 +1549,13 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCapture(value)
     }
     {
         const field = value["accelerations"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 2)
+        if (!Number.isInteger(count) || count < 0 || count > 2)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Geometry_msgsMsgTwistCapture(element);
@@ -1554,19 +1585,19 @@ export const Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec = Object.freeze(
         return true;
     },
     encode(value) {
-        const owned = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCapture(value), n = Ros2Trajectory_msgsMsgMultiDOFJointTrajectorySize(owned),
-              w = new Writer(n);
+        const owned = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCapture(value),
+              n = Ros2Trajectory_msgsMsgMultiDOFJointTrajectorySize(owned), w = new Writer(n);
         Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 1516, 90);
-        if(owned.length < 20)
+        if (owned.length < 20)
             bad();
         const r = new Reader(owned), value = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -1585,25 +1616,25 @@ export const Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec = Object.freeze(
 
 function Ros2Trajectory_msgsMsgMultiDOFJointTrajectorySize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Std_msgsMsgHeaderSize(value["header"]));
-    if(!Array.isArray(value["joint_names"]) || value["joint_names"].length > 2)
+    if (!Array.isArray(value["joint_names"]) || value["joint_names"].length > 2)
         bad();
     n = addSize(n, 4);
-    for(const element of value["joint_names"])
+    for (const element of value["joint_names"])
     {
         n = addSize(n, 4 + textBytes(element, 64).length);
     }
-    if(!Array.isArray(value["points"]) || value["points"].length > 4)
+    if (!Array.isArray(value["points"]) || value["points"].length > 4)
         bad();
     n = addSize(n, 4);
-    for(const element of value["points"])
+    for (const element of value["points"])
     {
         n = addSize(n, Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(element));
     }
-    if(n > 1516)
+    if (n > 1516)
         bad(90);
     return n;
 }
@@ -1613,13 +1644,13 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryWrite(value, w)
     Ros2Std_msgsMsgHeaderWrite(value["header"], w);
     w.v.setUint32(w.at, value["joint_names"].length, true);
     w.at += 4;
-    for(const element of value["joint_names"])
+    for (const element of value["joint_names"])
     {
         w.text(element, 64);
     }
     w.v.setUint32(w.at, value["points"].length, true);
     w.at += 4;
-    for(const element of value["points"])
+    for (const element of value["points"])
     {
         Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointWrite(element, w);
     }
@@ -1635,10 +1666,10 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryRead(r)
     {
         {
             const count = r.u32();
-            if(count > 2)
+            if (count > 2)
                 bad();
             value["joint_names"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.text(64);
                 value["joint_names"].push(decoded);
@@ -1648,10 +1679,10 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryRead(r)
     {
         {
             const count = r.u32();
-            if(count > 4)
+            if (count > 4)
                 bad();
             value["points"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointRead(r);
                 value["points"].push(decoded);
@@ -1663,7 +1694,7 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryRead(r)
 
 function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -1672,13 +1703,13 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCapture(value)
     }
     {
         const field = value["joint_names"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 2)
+        if (!Number.isInteger(count) || count < 0 || count > 2)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -1687,13 +1718,13 @@ function Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCapture(value)
     }
     {
         const field = value["points"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 4)
+        if (!Number.isInteger(count) || count < 0 || count > 4)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCapture(element);
@@ -1719,18 +1750,19 @@ export const Ros2Control_msgsMsgJointToleranceCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Control_msgsMsgJointToleranceCapture(value), n = Ros2Control_msgsMsgJointToleranceSize(owned), w = new Writer(n);
+        const owned = Ros2Control_msgsMsgJointToleranceCapture(value), n = Ros2Control_msgsMsgJointToleranceSize(owned),
+              w = new Writer(n);
         Ros2Control_msgsMsgJointToleranceWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 92, 90);
-        if(owned.length < 28)
+        if (owned.length < 28)
             bad();
         const r = new Reader(owned), value = Ros2Control_msgsMsgJointToleranceRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -1749,20 +1781,20 @@ export const Ros2Control_msgsMsgJointToleranceCodec = Object.freeze({
 
 function Ros2Control_msgsMsgJointToleranceSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, 4 + textBytes(value["name"], 64).length);
-    if(typeof value["position"] !== "number" || !Number.isFinite(value["position"]))
+    if (typeof value["position"] !== "number" || !Number.isFinite(value["position"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["velocity"] !== "number" || !Number.isFinite(value["velocity"]))
+    if (typeof value["velocity"] !== "number" || !Number.isFinite(value["velocity"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["acceleration"] !== "number" || !Number.isFinite(value["acceleration"]))
+    if (typeof value["acceleration"] !== "number" || !Number.isFinite(value["acceleration"]))
         bad();
     n = addSize(n, 8);
-    if(n > 92)
+    if (n > 92)
         bad(90);
     return n;
 }
@@ -1787,19 +1819,19 @@ function Ros2Control_msgsMsgJointToleranceRead(r)
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["position"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["velocity"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["acceleration"] = decoded;
     }
@@ -1808,7 +1840,7 @@ function Ros2Control_msgsMsgJointToleranceRead(r)
 
 function Ros2Control_msgsMsgJointToleranceCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -1846,18 +1878,19 @@ export const Ros2Control_msgsMsgJointComponentToleranceCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Control_msgsMsgJointComponentToleranceCapture(value), n = Ros2Control_msgsMsgJointComponentToleranceSize(owned), w = new Writer(n);
+        const owned = Ros2Control_msgsMsgJointComponentToleranceCapture(value),
+              n = Ros2Control_msgsMsgJointComponentToleranceSize(owned), w = new Writer(n);
         Ros2Control_msgsMsgJointComponentToleranceWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 542, 90);
-        if(owned.length < 30)
+        if (owned.length < 30)
             bad();
         const r = new Reader(owned), value = Ros2Control_msgsMsgJointComponentToleranceRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -1876,22 +1909,22 @@ export const Ros2Control_msgsMsgJointComponentToleranceCodec = Object.freeze({
 
 function Ros2Control_msgsMsgJointComponentToleranceSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, 4 + textBytes(value["joint_name"], 512).length);
     integer(value["component"], 2, false);
     n = addSize(n, 2);
-    if(typeof value["position"] !== "number" || !Number.isFinite(value["position"]))
+    if (typeof value["position"] !== "number" || !Number.isFinite(value["position"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["velocity"] !== "number" || !Number.isFinite(value["velocity"]))
+    if (typeof value["velocity"] !== "number" || !Number.isFinite(value["velocity"]))
         bad();
     n = addSize(n, 8);
-    if(typeof value["acceleration"] !== "number" || !Number.isFinite(value["acceleration"]))
+    if (typeof value["acceleration"] !== "number" || !Number.isFinite(value["acceleration"]))
         bad();
     n = addSize(n, 8);
-    if(n > 542)
+    if (n > 542)
         bad(90);
     return n;
 }
@@ -1922,19 +1955,19 @@ function Ros2Control_msgsMsgJointComponentToleranceRead(r)
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["position"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["velocity"] = decoded;
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["acceleration"] = decoded;
     }
@@ -1943,7 +1976,7 @@ function Ros2Control_msgsMsgJointComponentToleranceRead(r)
 
 function Ros2Control_msgsMsgJointComponentToleranceCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -1989,23 +2022,24 @@ export const Ros2Control_msgsActionFollowJointTrajectory_GoalCodec = Object.free
         };
     },
     validateValue(value) {
-        Ros2Control_msgsActionFollowJointTrajectory_GoalSize(Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value));
+        Ros2Control_msgsActionFollowJointTrajectory_GoalSize(
+            Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value));
         return true;
     },
     encode(value) {
-        const owned = Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value), n = Ros2Control_msgsActionFollowJointTrajectory_GoalSize(owned),
-              w = new Writer(n);
+        const owned = Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value),
+              n = Ros2Control_msgsActionFollowJointTrajectory_GoalSize(owned), w = new Writer(n);
         Ros2Control_msgsActionFollowJointTrajectory_GoalWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 20920, 90);
-        if(owned.length < 64)
+        if (owned.length < 64)
             bad();
         const r = new Reader(owned), value = Ros2Control_msgsActionFollowJointTrajectory_GoalRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -2024,41 +2058,41 @@ export const Ros2Control_msgsActionFollowJointTrajectory_GoalCodec = Object.free
 
 function Ros2Control_msgsActionFollowJointTrajectory_GoalSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Trajectory_msgsMsgJointTrajectorySize(value["trajectory"]));
     n = addSize(n, Ros2Trajectory_msgsMsgMultiDOFJointTrajectorySize(value["multi_dof_trajectory"]));
-    if(!Array.isArray(value["path_tolerance"]) || value["path_tolerance"].length > 12)
+    if (!Array.isArray(value["path_tolerance"]) || value["path_tolerance"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["path_tolerance"])
+    for (const element of value["path_tolerance"])
     {
         n = addSize(n, Ros2Control_msgsMsgJointToleranceSize(element));
     }
-    if(!Array.isArray(value["component_path_tolerance"]) || value["component_path_tolerance"].length > 12)
+    if (!Array.isArray(value["component_path_tolerance"]) || value["component_path_tolerance"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["component_path_tolerance"])
+    for (const element of value["component_path_tolerance"])
     {
         n = addSize(n, Ros2Control_msgsMsgJointComponentToleranceSize(element));
     }
-    if(!Array.isArray(value["goal_tolerance"]) || value["goal_tolerance"].length > 12)
+    if (!Array.isArray(value["goal_tolerance"]) || value["goal_tolerance"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["goal_tolerance"])
+    for (const element of value["goal_tolerance"])
     {
         n = addSize(n, Ros2Control_msgsMsgJointToleranceSize(element));
     }
-    if(!Array.isArray(value["component_goal_tolerance"]) || value["component_goal_tolerance"].length > 12)
+    if (!Array.isArray(value["component_goal_tolerance"]) || value["component_goal_tolerance"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["component_goal_tolerance"])
+    for (const element of value["component_goal_tolerance"])
     {
         n = addSize(n, Ros2Control_msgsMsgJointComponentToleranceSize(element));
     }
     n = addSize(n, Ros2Builtin_interfacesMsgDurationSize(value["goal_time_tolerance"]));
-    if(n > 20920)
+    if (n > 20920)
         bad(90);
     return n;
 }
@@ -2069,25 +2103,25 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalWrite(value, w)
     Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryWrite(value["multi_dof_trajectory"], w);
     w.v.setUint32(w.at, value["path_tolerance"].length, true);
     w.at += 4;
-    for(const element of value["path_tolerance"])
+    for (const element of value["path_tolerance"])
     {
         Ros2Control_msgsMsgJointToleranceWrite(element, w);
     }
     w.v.setUint32(w.at, value["component_path_tolerance"].length, true);
     w.at += 4;
-    for(const element of value["component_path_tolerance"])
+    for (const element of value["component_path_tolerance"])
     {
         Ros2Control_msgsMsgJointComponentToleranceWrite(element, w);
     }
     w.v.setUint32(w.at, value["goal_tolerance"].length, true);
     w.at += 4;
-    for(const element of value["goal_tolerance"])
+    for (const element of value["goal_tolerance"])
     {
         Ros2Control_msgsMsgJointToleranceWrite(element, w);
     }
     w.v.setUint32(w.at, value["component_goal_tolerance"].length, true);
     w.at += 4;
-    for(const element of value["component_goal_tolerance"])
+    for (const element of value["component_goal_tolerance"])
     {
         Ros2Control_msgsMsgJointComponentToleranceWrite(element, w);
     }
@@ -2108,10 +2142,10 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["path_tolerance"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Control_msgsMsgJointToleranceRead(r);
                 value["path_tolerance"].push(decoded);
@@ -2121,10 +2155,10 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["component_path_tolerance"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Control_msgsMsgJointComponentToleranceRead(r);
                 value["component_path_tolerance"].push(decoded);
@@ -2134,10 +2168,10 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["goal_tolerance"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Control_msgsMsgJointToleranceRead(r);
                 value["goal_tolerance"].push(decoded);
@@ -2147,10 +2181,10 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["component_goal_tolerance"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Control_msgsMsgJointComponentToleranceRead(r);
                 value["component_goal_tolerance"].push(decoded);
@@ -2166,7 +2200,7 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalRead(r)
 
 function Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -2179,13 +2213,13 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value)
     }
     {
         const field = value["path_tolerance"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Control_msgsMsgJointToleranceCapture(element);
@@ -2194,13 +2228,13 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value)
     }
     {
         const field = value["component_path_tolerance"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Control_msgsMsgJointComponentToleranceCapture(element);
@@ -2209,13 +2243,13 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value)
     }
     {
         const field = value["goal_tolerance"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Control_msgsMsgJointToleranceCapture(element);
@@ -2224,13 +2258,13 @@ function Ros2Control_msgsActionFollowJointTrajectory_GoalCapture(value)
     }
     {
         const field = value["component_goal_tolerance"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Control_msgsMsgJointComponentToleranceCapture(element);
@@ -2263,23 +2297,24 @@ export const Ros2Control_msgsActionFollowJointTrajectory_ResultCodec = Object.fr
         return {"error_code" : 0, "error_string" : ""};
     },
     validateValue(value) {
-        Ros2Control_msgsActionFollowJointTrajectory_ResultSize(Ros2Control_msgsActionFollowJointTrajectory_ResultCapture(value));
+        Ros2Control_msgsActionFollowJointTrajectory_ResultSize(
+            Ros2Control_msgsActionFollowJointTrajectory_ResultCapture(value));
         return true;
     },
     encode(value) {
-        const owned = Ros2Control_msgsActionFollowJointTrajectory_ResultCapture(value), n = Ros2Control_msgsActionFollowJointTrajectory_ResultSize(owned),
-              w = new Writer(n);
+        const owned = Ros2Control_msgsActionFollowJointTrajectory_ResultCapture(value),
+              n = Ros2Control_msgsActionFollowJointTrajectory_ResultSize(owned), w = new Writer(n);
         Ros2Control_msgsActionFollowJointTrajectory_ResultWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 4104, 90);
-        if(owned.length < 8)
+        if (owned.length < 8)
             bad();
         const r = new Reader(owned), value = Ros2Control_msgsActionFollowJointTrajectory_ResultRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -2298,13 +2333,13 @@ export const Ros2Control_msgsActionFollowJointTrajectory_ResultCodec = Object.fr
 
 function Ros2Control_msgsActionFollowJointTrajectory_ResultSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     integer(value["error_code"], 4, true);
     n = addSize(n, 4);
     n = addSize(n, 4 + textBytes(value["error_string"], 4096).length);
-    if(n > 4104)
+    if (n > 4104)
         bad(90);
     return n;
 }
@@ -2332,7 +2367,7 @@ function Ros2Control_msgsActionFollowJointTrajectory_ResultRead(r)
 
 function Ros2Control_msgsActionFollowJointTrajectory_ResultCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -2368,23 +2403,24 @@ export const Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec = Object.
         };
     },
     validateValue(value) {
-        Ros2Control_msgsActionFollowJointTrajectory_FeedbackSize(Ros2Control_msgsActionFollowJointTrajectory_FeedbackCapture(value));
+        Ros2Control_msgsActionFollowJointTrajectory_FeedbackSize(
+            Ros2Control_msgsActionFollowJointTrajectory_FeedbackCapture(value));
         return true;
     },
     encode(value) {
-        const owned = Ros2Control_msgsActionFollowJointTrajectory_FeedbackCapture(value), n = Ros2Control_msgsActionFollowJointTrajectory_FeedbackSize(owned),
-              w = new Writer(n);
+        const owned = Ros2Control_msgsActionFollowJointTrajectory_FeedbackCapture(value),
+              n = Ros2Control_msgsActionFollowJointTrajectory_FeedbackSize(owned), w = new Writer(n);
         Ros2Control_msgsActionFollowJointTrajectory_FeedbackWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 4128, 90);
-        if(owned.length < 152)
+        if (owned.length < 152)
             bad();
         const r = new Reader(owned), value = Ros2Control_msgsActionFollowJointTrajectory_FeedbackRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -2403,31 +2439,31 @@ export const Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec = Object.
 
 function Ros2Control_msgsActionFollowJointTrajectory_FeedbackSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Std_msgsMsgHeaderSize(value["header"]));
-    if(!Array.isArray(value["joint_names"]) || value["joint_names"].length > 12)
+    if (!Array.isArray(value["joint_names"]) || value["joint_names"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["joint_names"])
+    for (const element of value["joint_names"])
     {
         n = addSize(n, 4 + textBytes(element, 64).length);
     }
     n = addSize(n, Ros2Trajectory_msgsMsgJointTrajectoryPointSize(value["desired"]));
     n = addSize(n, Ros2Trajectory_msgsMsgJointTrajectoryPointSize(value["actual"]));
     n = addSize(n, Ros2Trajectory_msgsMsgJointTrajectoryPointSize(value["error"]));
-    if(!Array.isArray(value["multi_dof_joint_names"]) || value["multi_dof_joint_names"].length > 2)
+    if (!Array.isArray(value["multi_dof_joint_names"]) || value["multi_dof_joint_names"].length > 2)
         bad();
     n = addSize(n, 4);
-    for(const element of value["multi_dof_joint_names"])
+    for (const element of value["multi_dof_joint_names"])
     {
         n = addSize(n, 4 + textBytes(element, 512).length);
     }
     n = addSize(n, Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(value["multi_dof_desired"]));
     n = addSize(n, Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(value["multi_dof_actual"]));
     n = addSize(n, Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointSize(value["multi_dof_error"]));
-    if(n > 4128)
+    if (n > 4128)
         bad(90);
     return n;
 }
@@ -2437,7 +2473,7 @@ function Ros2Control_msgsActionFollowJointTrajectory_FeedbackWrite(value, w)
     Ros2Std_msgsMsgHeaderWrite(value["header"], w);
     w.v.setUint32(w.at, value["joint_names"].length, true);
     w.at += 4;
-    for(const element of value["joint_names"])
+    for (const element of value["joint_names"])
     {
         w.text(element, 64);
     }
@@ -2446,7 +2482,7 @@ function Ros2Control_msgsActionFollowJointTrajectory_FeedbackWrite(value, w)
     Ros2Trajectory_msgsMsgJointTrajectoryPointWrite(value["error"], w);
     w.v.setUint32(w.at, value["multi_dof_joint_names"].length, true);
     w.at += 4;
-    for(const element of value["multi_dof_joint_names"])
+    for (const element of value["multi_dof_joint_names"])
     {
         w.text(element, 512);
     }
@@ -2465,10 +2501,10 @@ function Ros2Control_msgsActionFollowJointTrajectory_FeedbackRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["joint_names"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.text(64);
                 value["joint_names"].push(decoded);
@@ -2490,10 +2526,10 @@ function Ros2Control_msgsActionFollowJointTrajectory_FeedbackRead(r)
     {
         {
             const count = r.u32();
-            if(count > 2)
+            if (count > 2)
                 bad();
             value["multi_dof_joint_names"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.text(512);
                 value["multi_dof_joint_names"].push(decoded);
@@ -2517,7 +2553,7 @@ function Ros2Control_msgsActionFollowJointTrajectory_FeedbackRead(r)
 
 function Ros2Control_msgsActionFollowJointTrajectory_FeedbackCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -2526,13 +2562,13 @@ function Ros2Control_msgsActionFollowJointTrajectory_FeedbackCapture(value)
     }
     {
         const field = value["joint_names"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -2553,13 +2589,13 @@ function Ros2Control_msgsActionFollowJointTrajectory_FeedbackCapture(value)
     }
     {
         const field = value["multi_dof_joint_names"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 2)
+        if (!Number.isInteger(count) || count < 0 || count > 2)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -2607,18 +2643,19 @@ export const Ros2Kuka_driver_interfacesMsgFRIStateCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Kuka_driver_interfacesMsgFRIStateCapture(value), n = Ros2Kuka_driver_interfacesMsgFRIStateSize(owned), w = new Writer(n);
+        const owned = Ros2Kuka_driver_interfacesMsgFRIStateCapture(value),
+              n = Ros2Kuka_driver_interfacesMsgFRIStateSize(owned), w = new Writer(n);
         Ros2Kuka_driver_interfacesMsgFRIStateWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 40, 90);
-        if(owned.length < 40)
+        if (owned.length < 40)
             bad();
         const r = new Reader(owned), value = Ros2Kuka_driver_interfacesMsgFRIStateRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -2637,7 +2674,7 @@ export const Ros2Kuka_driver_interfacesMsgFRIStateCodec = Object.freeze({
 
 function Ros2Kuka_driver_interfacesMsgFRIStateSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     integer(value["session_state"], 4, true);
@@ -2656,10 +2693,10 @@ function Ros2Kuka_driver_interfacesMsgFRIStateSize(value)
     n = addSize(n, 4);
     integer(value["overlay_type"], 4, true);
     n = addSize(n, 4);
-    if(typeof value["tracking_performance"] !== "number" || !Number.isFinite(value["tracking_performance"]))
+    if (typeof value["tracking_performance"] !== "number" || !Number.isFinite(value["tracking_performance"]))
         bad();
     n = addSize(n, 8);
-    if(n > 40)
+    if (n > 40)
         bad(90);
     return n;
 }
@@ -2723,7 +2760,7 @@ function Ros2Kuka_driver_interfacesMsgFRIStateRead(r)
     }
     {
         const decoded = r.v.getFloat64(r.take(8), true);
-        if(!Number.isFinite(decoded))
+        if (!Number.isFinite(decoded))
             bad();
         value["tracking_performance"] = decoded;
     }
@@ -2732,7 +2769,7 @@ function Ros2Kuka_driver_interfacesMsgFRIStateRead(r)
 
 function Ros2Kuka_driver_interfacesMsgFRIStateCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -2790,18 +2827,19 @@ export const Ros2Kuka_driver_interfacesMsgFRIStateArrayCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Kuka_driver_interfacesMsgFRIStateArrayCapture(value), n = Ros2Kuka_driver_interfacesMsgFRIStateArraySize(owned), w = new Writer(n);
+        const owned = Ros2Kuka_driver_interfacesMsgFRIStateArrayCapture(value),
+              n = Ros2Kuka_driver_interfacesMsgFRIStateArraySize(owned), w = new Writer(n);
         Ros2Kuka_driver_interfacesMsgFRIStateArrayWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 1736, 90);
-        if(owned.length < 8)
+        if (owned.length < 8)
             bad();
         const r = new Reader(owned), value = Ros2Kuka_driver_interfacesMsgFRIStateArrayRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -2820,24 +2858,24 @@ export const Ros2Kuka_driver_interfacesMsgFRIStateArrayCodec = Object.freeze({
 
 function Ros2Kuka_driver_interfacesMsgFRIStateArraySize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(!Array.isArray(value["robot_names"]) || value["robot_names"].length > 16)
+    if (!Array.isArray(value["robot_names"]) || value["robot_names"].length > 16)
         bad();
     n = addSize(n, 4);
-    for(const element of value["robot_names"])
+    for (const element of value["robot_names"])
     {
         n = addSize(n, 4 + textBytes(element, 64).length);
     }
-    if(!Array.isArray(value["states"]) || value["states"].length > 16)
+    if (!Array.isArray(value["states"]) || value["states"].length > 16)
         bad();
     n = addSize(n, 4);
-    for(const element of value["states"])
+    for (const element of value["states"])
     {
         n = addSize(n, Ros2Kuka_driver_interfacesMsgFRIStateSize(element));
     }
-    if(n > 1736)
+    if (n > 1736)
         bad(90);
     return n;
 }
@@ -2846,13 +2884,13 @@ function Ros2Kuka_driver_interfacesMsgFRIStateArrayWrite(value, w)
 {
     w.v.setUint32(w.at, value["robot_names"].length, true);
     w.at += 4;
-    for(const element of value["robot_names"])
+    for (const element of value["robot_names"])
     {
         w.text(element, 64);
     }
     w.v.setUint32(w.at, value["states"].length, true);
     w.at += 4;
-    for(const element of value["states"])
+    for (const element of value["states"])
     {
         Ros2Kuka_driver_interfacesMsgFRIStateWrite(element, w);
     }
@@ -2864,10 +2902,10 @@ function Ros2Kuka_driver_interfacesMsgFRIStateArrayRead(r)
     {
         {
             const count = r.u32();
-            if(count > 16)
+            if (count > 16)
                 bad();
             value["robot_names"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.text(64);
                 value["robot_names"].push(decoded);
@@ -2877,10 +2915,10 @@ function Ros2Kuka_driver_interfacesMsgFRIStateArrayRead(r)
     {
         {
             const count = r.u32();
-            if(count > 16)
+            if (count > 16)
                 bad();
             value["states"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Kuka_driver_interfacesMsgFRIStateRead(r);
                 value["states"].push(decoded);
@@ -2892,18 +2930,18 @@ function Ros2Kuka_driver_interfacesMsgFRIStateArrayRead(r)
 
 function Ros2Kuka_driver_interfacesMsgFRIStateArrayCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
         const field = value["robot_names"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 16)
+        if (!Number.isInteger(count) || count < 0 || count > 16)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -2912,13 +2950,13 @@ function Ros2Kuka_driver_interfacesMsgFRIStateArrayCapture(value)
     }
     {
         const field = value["states"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 16)
+        if (!Number.isInteger(count) || count < 0 || count > 16)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Kuka_driver_interfacesMsgFRIStateCapture(element);
@@ -2944,19 +2982,19 @@ export const Ros2Kuka_driver_interfacesMsgFriConfigurationCodec = Object.freeze(
         return true;
     },
     encode(value) {
-        const owned = Ros2Kuka_driver_interfacesMsgFriConfigurationCapture(value), n = Ros2Kuka_driver_interfacesMsgFriConfigurationSize(owned),
-              w = new Writer(n);
+        const owned = Ros2Kuka_driver_interfacesMsgFriConfigurationCapture(value),
+              n = Ros2Kuka_driver_interfacesMsgFriConfigurationSize(owned), w = new Writer(n);
         Ros2Kuka_driver_interfacesMsgFriConfigurationWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 8, 90);
-        if(owned.length < 8)
+        if (owned.length < 8)
             bad();
         const r = new Reader(owned), value = Ros2Kuka_driver_interfacesMsgFriConfigurationRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -2975,14 +3013,14 @@ export const Ros2Kuka_driver_interfacesMsgFriConfigurationCodec = Object.freeze(
 
 function Ros2Kuka_driver_interfacesMsgFriConfigurationSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     integer(value["receive_multiplier"], 4, true);
     n = addSize(n, 4);
     integer(value["send_period_ms"], 4, true);
     n = addSize(n, 4);
-    if(n > 8)
+    if (n > 8)
         bad(90);
     return n;
 }
@@ -3011,7 +3049,7 @@ function Ros2Kuka_driver_interfacesMsgFriConfigurationRead(r)
 
 function Ros2Kuka_driver_interfacesMsgFriConfigurationCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -3041,18 +3079,19 @@ export const Ros2Kuka_driver_interfacesMsgHardwareEventCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Kuka_driver_interfacesMsgHardwareEventCapture(value), n = Ros2Kuka_driver_interfacesMsgHardwareEventSize(owned), w = new Writer(n);
+        const owned = Ros2Kuka_driver_interfacesMsgHardwareEventCapture(value),
+              n = Ros2Kuka_driver_interfacesMsgHardwareEventSize(owned), w = new Writer(n);
         Ros2Kuka_driver_interfacesMsgHardwareEventWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 517, 90);
-        if(owned.length < 5)
+        if (owned.length < 5)
             bad();
         const r = new Reader(owned), value = Ros2Kuka_driver_interfacesMsgHardwareEventRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -3071,13 +3110,13 @@ export const Ros2Kuka_driver_interfacesMsgHardwareEventCodec = Object.freeze({
 
 function Ros2Kuka_driver_interfacesMsgHardwareEventSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, 4 + textBytes(value["robot_name"], 512).length);
     integer(value["event"], 1, false);
     n = addSize(n, 1);
-    if(n > 517)
+    if (n > 517)
         bad(90);
     return n;
 }
@@ -3105,7 +3144,7 @@ function Ros2Kuka_driver_interfacesMsgHardwareEventRead(r)
 
 function Ros2Kuka_driver_interfacesMsgHardwareEventCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -3155,18 +3194,19 @@ export const Ros2Kuka_driver_interfacesMsgKssStatusCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Kuka_driver_interfacesMsgKssStatusCapture(value), n = Ros2Kuka_driver_interfacesMsgKssStatusSize(owned), w = new Writer(n);
+        const owned = Ros2Kuka_driver_interfacesMsgKssStatusCapture(value),
+              n = Ros2Kuka_driver_interfacesMsgKssStatusSize(owned), w = new Writer(n);
         Ros2Kuka_driver_interfacesMsgKssStatusWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 9, 90);
-        if(owned.length < 9)
+        if (owned.length < 9)
             bad();
         const r = new Reader(owned), value = Ros2Kuka_driver_interfacesMsgKssStatusRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -3185,34 +3225,34 @@ export const Ros2Kuka_driver_interfacesMsgKssStatusCodec = Object.freeze({
 
 function Ros2Kuka_driver_interfacesMsgKssStatusSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     integer(value["control_mode"], 1, false);
     n = addSize(n, 1);
     integer(value["cycle_time"], 1, false);
     n = addSize(n, 1);
-    if(typeof value["drives_powered"] !== "boolean")
+    if (typeof value["drives_powered"] !== "boolean")
         bad();
     n = addSize(n, 1);
-    if(typeof value["emergency_stop"] !== "boolean")
+    if (typeof value["emergency_stop"] !== "boolean")
         bad();
     n = addSize(n, 1);
-    if(typeof value["guard_stop"] !== "boolean")
+    if (typeof value["guard_stop"] !== "boolean")
         bad();
     n = addSize(n, 1);
-    if(typeof value["in_motion"] !== "boolean")
+    if (typeof value["in_motion"] !== "boolean")
         bad();
     n = addSize(n, 1);
-    if(typeof value["motion_possible"] !== "boolean")
+    if (typeof value["motion_possible"] !== "boolean")
         bad();
     n = addSize(n, 1);
     integer(value["operation_mode"], 1, false);
     n = addSize(n, 1);
-    if(typeof value["robot_stopped"] !== "boolean")
+    if (typeof value["robot_stopped"] !== "boolean")
         bad();
     n = addSize(n, 1);
-    if(n > 9)
+    if (n > 9)
         bad(90);
     return n;
 }
@@ -3252,31 +3292,31 @@ function Ros2Kuka_driver_interfacesMsgKssStatusRead(r)
     }
     {
         const decoded = r.v.getUint8(r.take(1), true);
-        if(decoded > 1)
+        if (decoded > 1)
             bad();
         value["drives_powered"] = decoded !== 0;
     }
     {
         const decoded = r.v.getUint8(r.take(1), true);
-        if(decoded > 1)
+        if (decoded > 1)
             bad();
         value["emergency_stop"] = decoded !== 0;
     }
     {
         const decoded = r.v.getUint8(r.take(1), true);
-        if(decoded > 1)
+        if (decoded > 1)
             bad();
         value["guard_stop"] = decoded !== 0;
     }
     {
         const decoded = r.v.getUint8(r.take(1), true);
-        if(decoded > 1)
+        if (decoded > 1)
             bad();
         value["in_motion"] = decoded !== 0;
     }
     {
         const decoded = r.v.getUint8(r.take(1), true);
-        if(decoded > 1)
+        if (decoded > 1)
             bad();
         value["motion_possible"] = decoded !== 0;
     }
@@ -3286,7 +3326,7 @@ function Ros2Kuka_driver_interfacesMsgKssStatusRead(r)
     }
     {
         const decoded = r.v.getUint8(r.take(1), true);
-        if(decoded > 1)
+        if (decoded > 1)
             bad();
         value["robot_stopped"] = decoded !== 0;
     }
@@ -3295,7 +3335,7 @@ function Ros2Kuka_driver_interfacesMsgKssStatusRead(r)
 
 function Ros2Kuka_driver_interfacesMsgKssStatusCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -3353,18 +3393,19 @@ export const Ros2Kuka_driver_interfacesMsgKssStatusArrayCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Kuka_driver_interfacesMsgKssStatusArrayCapture(value), n = Ros2Kuka_driver_interfacesMsgKssStatusArraySize(owned), w = new Writer(n);
+        const owned = Ros2Kuka_driver_interfacesMsgKssStatusArrayCapture(value),
+              n = Ros2Kuka_driver_interfacesMsgKssStatusArraySize(owned), w = new Writer(n);
         Ros2Kuka_driver_interfacesMsgKssStatusArrayWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 1240, 90);
-        if(owned.length < 8)
+        if (owned.length < 8)
             bad();
         const r = new Reader(owned), value = Ros2Kuka_driver_interfacesMsgKssStatusArrayRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -3383,24 +3424,24 @@ export const Ros2Kuka_driver_interfacesMsgKssStatusArrayCodec = Object.freeze({
 
 function Ros2Kuka_driver_interfacesMsgKssStatusArraySize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(!Array.isArray(value["robot_names"]) || value["robot_names"].length > 16)
+    if (!Array.isArray(value["robot_names"]) || value["robot_names"].length > 16)
         bad();
     n = addSize(n, 4);
-    for(const element of value["robot_names"])
+    for (const element of value["robot_names"])
     {
         n = addSize(n, 4 + textBytes(element, 64).length);
     }
-    if(!Array.isArray(value["statuses"]) || value["statuses"].length > 16)
+    if (!Array.isArray(value["statuses"]) || value["statuses"].length > 16)
         bad();
     n = addSize(n, 4);
-    for(const element of value["statuses"])
+    for (const element of value["statuses"])
     {
         n = addSize(n, Ros2Kuka_driver_interfacesMsgKssStatusSize(element));
     }
-    if(n > 1240)
+    if (n > 1240)
         bad(90);
     return n;
 }
@@ -3409,13 +3450,13 @@ function Ros2Kuka_driver_interfacesMsgKssStatusArrayWrite(value, w)
 {
     w.v.setUint32(w.at, value["robot_names"].length, true);
     w.at += 4;
-    for(const element of value["robot_names"])
+    for (const element of value["robot_names"])
     {
         w.text(element, 64);
     }
     w.v.setUint32(w.at, value["statuses"].length, true);
     w.at += 4;
-    for(const element of value["statuses"])
+    for (const element of value["statuses"])
     {
         Ros2Kuka_driver_interfacesMsgKssStatusWrite(element, w);
     }
@@ -3427,10 +3468,10 @@ function Ros2Kuka_driver_interfacesMsgKssStatusArrayRead(r)
     {
         {
             const count = r.u32();
-            if(count > 16)
+            if (count > 16)
                 bad();
             value["robot_names"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.text(64);
                 value["robot_names"].push(decoded);
@@ -3440,10 +3481,10 @@ function Ros2Kuka_driver_interfacesMsgKssStatusArrayRead(r)
     {
         {
             const count = r.u32();
-            if(count > 16)
+            if (count > 16)
                 bad();
             value["statuses"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = Ros2Kuka_driver_interfacesMsgKssStatusRead(r);
                 value["statuses"].push(decoded);
@@ -3455,18 +3496,18 @@ function Ros2Kuka_driver_interfacesMsgKssStatusArrayRead(r)
 
 function Ros2Kuka_driver_interfacesMsgKssStatusArrayCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
         const field = value["robot_names"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 16)
+        if (!Number.isInteger(count) || count < 0 || count > 16)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -3475,13 +3516,13 @@ function Ros2Kuka_driver_interfacesMsgKssStatusArrayCapture(value)
     }
     {
         const field = value["statuses"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 16)
+        if (!Number.isInteger(count) || count < 0 || count > 16)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = Ros2Kuka_driver_interfacesMsgKssStatusCapture(element);
@@ -3519,18 +3560,19 @@ export const Ros2Lifecycle_msgsMsgStateCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Lifecycle_msgsMsgStateCapture(value), n = Ros2Lifecycle_msgsMsgStateSize(owned), w = new Writer(n);
+        const owned = Ros2Lifecycle_msgsMsgStateCapture(value), n = Ros2Lifecycle_msgsMsgStateSize(owned),
+              w = new Writer(n);
         Ros2Lifecycle_msgsMsgStateWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 517, 90);
-        if(owned.length < 5)
+        if (owned.length < 5)
             bad();
         const r = new Reader(owned), value = Ros2Lifecycle_msgsMsgStateRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -3549,13 +3591,13 @@ export const Ros2Lifecycle_msgsMsgStateCodec = Object.freeze({
 
 function Ros2Lifecycle_msgsMsgStateSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     integer(value["id"], 1, false);
     n = addSize(n, 1);
     n = addSize(n, 4 + textBytes(value["label"], 512).length);
-    if(n > 517)
+    if (n > 517)
         bad(90);
     return n;
 }
@@ -3583,7 +3625,7 @@ function Ros2Lifecycle_msgsMsgStateRead(r)
 
 function Ros2Lifecycle_msgsMsgStateCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -3644,18 +3686,19 @@ export const Ros2Lifecycle_msgsMsgTransitionCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Lifecycle_msgsMsgTransitionCapture(value), n = Ros2Lifecycle_msgsMsgTransitionSize(owned), w = new Writer(n);
+        const owned = Ros2Lifecycle_msgsMsgTransitionCapture(value), n = Ros2Lifecycle_msgsMsgTransitionSize(owned),
+              w = new Writer(n);
         Ros2Lifecycle_msgsMsgTransitionWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 517, 90);
-        if(owned.length < 5)
+        if (owned.length < 5)
             bad();
         const r = new Reader(owned), value = Ros2Lifecycle_msgsMsgTransitionRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -3674,13 +3717,13 @@ export const Ros2Lifecycle_msgsMsgTransitionCodec = Object.freeze({
 
 function Ros2Lifecycle_msgsMsgTransitionSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     integer(value["id"], 1, false);
     n = addSize(n, 1);
     n = addSize(n, 4 + textBytes(value["label"], 512).length);
-    if(n > 517)
+    if (n > 517)
         bad(90);
     return n;
 }
@@ -3708,7 +3751,7 @@ function Ros2Lifecycle_msgsMsgTransitionRead(r)
 
 function Ros2Lifecycle_msgsMsgTransitionCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -3738,18 +3781,19 @@ export const Ros2Lifecycle_msgsSrvChangeState_RequestCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Lifecycle_msgsSrvChangeState_RequestCapture(value), n = Ros2Lifecycle_msgsSrvChangeState_RequestSize(owned), w = new Writer(n);
+        const owned = Ros2Lifecycle_msgsSrvChangeState_RequestCapture(value),
+              n = Ros2Lifecycle_msgsSrvChangeState_RequestSize(owned), w = new Writer(n);
         Ros2Lifecycle_msgsSrvChangeState_RequestWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 517, 90);
-        if(owned.length < 5)
+        if (owned.length < 5)
             bad();
         const r = new Reader(owned), value = Ros2Lifecycle_msgsSrvChangeState_RequestRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -3768,11 +3812,11 @@ export const Ros2Lifecycle_msgsSrvChangeState_RequestCodec = Object.freeze({
 
 function Ros2Lifecycle_msgsSrvChangeState_RequestSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Lifecycle_msgsMsgTransitionSize(value["transition"]));
-    if(n > 517)
+    if (n > 517)
         bad(90);
     return n;
 }
@@ -3794,7 +3838,7 @@ function Ros2Lifecycle_msgsSrvChangeState_RequestRead(r)
 
 function Ros2Lifecycle_msgsSrvChangeState_RequestCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -3820,18 +3864,19 @@ export const Ros2Lifecycle_msgsSrvChangeState_ResponseCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Lifecycle_msgsSrvChangeState_ResponseCapture(value), n = Ros2Lifecycle_msgsSrvChangeState_ResponseSize(owned), w = new Writer(n);
+        const owned = Ros2Lifecycle_msgsSrvChangeState_ResponseCapture(value),
+              n = Ros2Lifecycle_msgsSrvChangeState_ResponseSize(owned), w = new Writer(n);
         Ros2Lifecycle_msgsSrvChangeState_ResponseWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 1, 90);
-        if(owned.length < 1)
+        if (owned.length < 1)
             bad();
         const r = new Reader(owned), value = Ros2Lifecycle_msgsSrvChangeState_ResponseRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -3850,13 +3895,13 @@ export const Ros2Lifecycle_msgsSrvChangeState_ResponseCodec = Object.freeze({
 
 function Ros2Lifecycle_msgsSrvChangeState_ResponseSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(typeof value["success"] !== "boolean")
+    if (typeof value["success"] !== "boolean")
         bad();
     n = addSize(n, 1);
-    if(n > 1)
+    if (n > 1)
         bad(90);
     return n;
 }
@@ -3872,7 +3917,7 @@ function Ros2Lifecycle_msgsSrvChangeState_ResponseRead(r)
     const value = {};
     {
         const decoded = r.v.getUint8(r.take(1), true);
-        if(decoded > 1)
+        if (decoded > 1)
             bad();
         value["success"] = decoded !== 0;
     }
@@ -3881,7 +3926,7 @@ function Ros2Lifecycle_msgsSrvChangeState_ResponseRead(r)
 
 function Ros2Lifecycle_msgsSrvChangeState_ResponseCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -3907,18 +3952,19 @@ export const Ros2Lifecycle_msgsSrvGetState_RequestCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Lifecycle_msgsSrvGetState_RequestCapture(value), n = Ros2Lifecycle_msgsSrvGetState_RequestSize(owned), w = new Writer(n);
+        const owned = Ros2Lifecycle_msgsSrvGetState_RequestCapture(value),
+              n = Ros2Lifecycle_msgsSrvGetState_RequestSize(owned), w = new Writer(n);
         Ros2Lifecycle_msgsSrvGetState_RequestWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 0, 90);
-        if(owned.length < 0)
+        if (owned.length < 0)
             bad();
         const r = new Reader(owned), value = Ros2Lifecycle_msgsSrvGetState_RequestRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -3937,10 +3983,10 @@ export const Ros2Lifecycle_msgsSrvGetState_RequestCodec = Object.freeze({
 
 function Ros2Lifecycle_msgsSrvGetState_RequestSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(n > 0)
+    if (n > 0)
         bad(90);
     return n;
 }
@@ -3957,7 +4003,7 @@ function Ros2Lifecycle_msgsSrvGetState_RequestRead(r)
 
 function Ros2Lifecycle_msgsSrvGetState_RequestCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     return out;
@@ -3979,18 +4025,19 @@ export const Ros2Lifecycle_msgsSrvGetState_ResponseCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Lifecycle_msgsSrvGetState_ResponseCapture(value), n = Ros2Lifecycle_msgsSrvGetState_ResponseSize(owned), w = new Writer(n);
+        const owned = Ros2Lifecycle_msgsSrvGetState_ResponseCapture(value),
+              n = Ros2Lifecycle_msgsSrvGetState_ResponseSize(owned), w = new Writer(n);
         Ros2Lifecycle_msgsSrvGetState_ResponseWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 517, 90);
-        if(owned.length < 5)
+        if (owned.length < 5)
             bad();
         const r = new Reader(owned), value = Ros2Lifecycle_msgsSrvGetState_ResponseRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -4009,11 +4056,11 @@ export const Ros2Lifecycle_msgsSrvGetState_ResponseCodec = Object.freeze({
 
 function Ros2Lifecycle_msgsSrvGetState_ResponseSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Lifecycle_msgsMsgStateSize(value["current_state"]));
-    if(n > 517)
+    if (n > 517)
         bad(90);
     return n;
 }
@@ -4035,7 +4082,7 @@ function Ros2Lifecycle_msgsSrvGetState_ResponseRead(r)
 
 function Ros2Lifecycle_msgsSrvGetState_ResponseCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -4054,25 +4101,32 @@ export const Ros2Sensor_msgsMsgJointStateCodec = Object.freeze({
     aggregateWireBytes : 0,
     constants : Object.freeze({}),
     defaultValue() {
-        return {"header" : Ros2Std_msgsMsgHeaderCodec.defaultValue(), "name" : [], "position" : [], "velocity" : [], "effort" : []};
+        return {
+            "header" : Ros2Std_msgsMsgHeaderCodec.defaultValue(),
+            "name" : [],
+            "position" : [],
+            "velocity" : [],
+            "effort" : []
+        };
     },
     validateValue(value) {
         Ros2Sensor_msgsMsgJointStateSize(Ros2Sensor_msgsMsgJointStateCapture(value));
         return true;
     },
     encode(value) {
-        const owned = Ros2Sensor_msgsMsgJointStateCapture(value), n = Ros2Sensor_msgsMsgJointStateSize(owned), w = new Writer(n);
+        const owned = Ros2Sensor_msgsMsgJointStateCapture(value), n = Ros2Sensor_msgsMsgJointStateSize(owned),
+              w = new Writer(n);
         Ros2Sensor_msgsMsgJointStateWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 1196, 90);
-        if(owned.length < 28)
+        if (owned.length < 28)
             bad();
         const r = new Reader(owned), value = Ros2Sensor_msgsMsgJointStateRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -4091,52 +4145,57 @@ export const Ros2Sensor_msgsMsgJointStateCodec = Object.freeze({
 
 function Ros2Sensor_msgsMsgJointStateSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
     n = addSize(n, Ros2Std_msgsMsgHeaderSize(value["header"]));
-    if(!Array.isArray(value["name"]) || value["name"].length > 12)
+    if (!Array.isArray(value["name"]) || value["name"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["name"])
+    for (const element of value["name"])
     {
         n = addSize(n, 4 + textBytes(element, 64).length);
     }
-    if(!Array.isArray(value["position"]) || value["position"].length > 12)
+    if (!Array.isArray(value["position"]) || value["position"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["position"])
+    for (const element of value["position"])
     {
-        if(typeof element !== "number" || !Number.isFinite(element))
+        if (typeof element !== "number" || !Number.isFinite(element))
             bad();
         n = addSize(n, 8);
     }
-    if(!Array.isArray(value["velocity"]) || value["velocity"].length > 12)
+    if (!Array.isArray(value["velocity"]) || value["velocity"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["velocity"])
+    for (const element of value["velocity"])
     {
-        if(typeof element !== "number" || !Number.isFinite(element))
+        if (typeof element !== "number" || !Number.isFinite(element))
             bad();
         n = addSize(n, 8);
     }
-    if(!Array.isArray(value["effort"]) || value["effort"].length > 12)
+    if (!Array.isArray(value["effort"]) || value["effort"].length > 12)
         bad();
     n = addSize(n, 4);
-    for(const element of value["effort"])
+    for (const element of value["effort"])
     {
-        if(typeof element !== "number" || !Number.isFinite(element))
+        if (typeof element !== "number" || !Number.isFinite(element))
             bad();
         n = addSize(n, 8);
     }
-    if((value["name"].length != 0 && value["position"].length != 0 && value["name"].length != value["position"].length) ||
-       (value["name"].length != 0 && value["velocity"].length != 0 && value["name"].length != value["velocity"].length) ||
-       (value["name"].length != 0 && value["effort"].length != 0 && value["name"].length != value["effort"].length) ||
-       (value["position"].length != 0 && value["velocity"].length != 0 && value["position"].length != value["velocity"].length) ||
-       (value["position"].length != 0 && value["effort"].length != 0 && value["position"].length != value["effort"].length) ||
-       (value["velocity"].length != 0 && value["effort"].length != 0 && value["velocity"].length != value["effort"].length))
+    if ((value["name"].length != 0 && value["position"].length != 0 &&
+         value["name"].length != value["position"].length) ||
+        (value["name"].length != 0 && value["velocity"].length != 0 &&
+         value["name"].length != value["velocity"].length) ||
+        (value["name"].length != 0 && value["effort"].length != 0 && value["name"].length != value["effort"].length) ||
+        (value["position"].length != 0 && value["velocity"].length != 0 &&
+         value["position"].length != value["velocity"].length) ||
+        (value["position"].length != 0 && value["effort"].length != 0 &&
+         value["position"].length != value["effort"].length) ||
+        (value["velocity"].length != 0 && value["effort"].length != 0 &&
+         value["velocity"].length != value["effort"].length))
         bad();
-    if(n > 1196)
+    if (n > 1196)
         bad(90);
     return n;
 }
@@ -4146,27 +4205,27 @@ function Ros2Sensor_msgsMsgJointStateWrite(value, w)
     Ros2Std_msgsMsgHeaderWrite(value["header"], w);
     w.v.setUint32(w.at, value["name"].length, true);
     w.at += 4;
-    for(const element of value["name"])
+    for (const element of value["name"])
     {
         w.text(element, 64);
     }
     w.v.setUint32(w.at, value["position"].length, true);
     w.at += 4;
-    for(const element of value["position"])
+    for (const element of value["position"])
     {
         w.v.setFloat64(w.at, element, true);
         w.at += 8;
     }
     w.v.setUint32(w.at, value["velocity"].length, true);
     w.at += 4;
-    for(const element of value["velocity"])
+    for (const element of value["velocity"])
     {
         w.v.setFloat64(w.at, element, true);
         w.at += 8;
     }
     w.v.setUint32(w.at, value["effort"].length, true);
     w.at += 4;
-    for(const element of value["effort"])
+    for (const element of value["effort"])
     {
         w.v.setFloat64(w.at, element, true);
         w.at += 8;
@@ -4183,10 +4242,10 @@ function Ros2Sensor_msgsMsgJointStateRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["name"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.text(64);
                 value["name"].push(decoded);
@@ -4196,13 +4255,13 @@ function Ros2Sensor_msgsMsgJointStateRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["position"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.v.getFloat64(r.take(8), true);
-                if(!Number.isFinite(decoded))
+                if (!Number.isFinite(decoded))
                     bad();
                 value["position"].push(decoded);
             }
@@ -4211,13 +4270,13 @@ function Ros2Sensor_msgsMsgJointStateRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["velocity"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.v.getFloat64(r.take(8), true);
-                if(!Number.isFinite(decoded))
+                if (!Number.isFinite(decoded))
                     bad();
                 value["velocity"].push(decoded);
             }
@@ -4226,31 +4285,36 @@ function Ros2Sensor_msgsMsgJointStateRead(r)
     {
         {
             const count = r.u32();
-            if(count > 12)
+            if (count > 12)
                 bad();
             value["effort"] = [];
-            for(let i = 0; i < count; ++i)
+            for (let i = 0; i < count; ++i)
             {
                 const decoded = r.v.getFloat64(r.take(8), true);
-                if(!Number.isFinite(decoded))
+                if (!Number.isFinite(decoded))
                     bad();
                 value["effort"].push(decoded);
             }
         }
     }
-    if((value["name"].length != 0 && value["position"].length != 0 && value["name"].length != value["position"].length) ||
-       (value["name"].length != 0 && value["velocity"].length != 0 && value["name"].length != value["velocity"].length) ||
-       (value["name"].length != 0 && value["effort"].length != 0 && value["name"].length != value["effort"].length) ||
-       (value["position"].length != 0 && value["velocity"].length != 0 && value["position"].length != value["velocity"].length) ||
-       (value["position"].length != 0 && value["effort"].length != 0 && value["position"].length != value["effort"].length) ||
-       (value["velocity"].length != 0 && value["effort"].length != 0 && value["velocity"].length != value["effort"].length))
+    if ((value["name"].length != 0 && value["position"].length != 0 &&
+         value["name"].length != value["position"].length) ||
+        (value["name"].length != 0 && value["velocity"].length != 0 &&
+         value["name"].length != value["velocity"].length) ||
+        (value["name"].length != 0 && value["effort"].length != 0 && value["name"].length != value["effort"].length) ||
+        (value["position"].length != 0 && value["velocity"].length != 0 &&
+         value["position"].length != value["velocity"].length) ||
+        (value["position"].length != 0 && value["effort"].length != 0 &&
+         value["position"].length != value["effort"].length) ||
+        (value["velocity"].length != 0 && value["effort"].length != 0 &&
+         value["velocity"].length != value["effort"].length))
         bad();
     return value;
 }
 
 function Ros2Sensor_msgsMsgJointStateCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
@@ -4259,13 +4323,13 @@ function Ros2Sensor_msgsMsgJointStateCapture(value)
     }
     {
         const field = value["name"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -4274,13 +4338,13 @@ function Ros2Sensor_msgsMsgJointStateCapture(value)
     }
     {
         const field = value["position"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -4289,13 +4353,13 @@ function Ros2Sensor_msgsMsgJointStateCapture(value)
     }
     {
         const field = value["velocity"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -4304,13 +4368,13 @@ function Ros2Sensor_msgsMsgJointStateCapture(value)
     }
     {
         const field = value["effort"];
-        if(!Array.isArray(field))
+        if (!Array.isArray(field))
             bad();
         const count = field.length;
-        if(!Number.isInteger(count) || count < 0 || count > 12)
+        if (!Number.isInteger(count) || count < 0 || count > 12)
             bad();
         const values = new Array(count);
-        for(let i = 0; i < count; ++i)
+        for (let i = 0; i < count; ++i)
         {
             const element = field[i];
             values[i] = element;
@@ -4336,18 +4400,19 @@ export const Ros2Std_srvsSrvTrigger_RequestCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Std_srvsSrvTrigger_RequestCapture(value), n = Ros2Std_srvsSrvTrigger_RequestSize(owned), w = new Writer(n);
+        const owned = Ros2Std_srvsSrvTrigger_RequestCapture(value), n = Ros2Std_srvsSrvTrigger_RequestSize(owned),
+              w = new Writer(n);
         Ros2Std_srvsSrvTrigger_RequestWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 0, 90);
-        if(owned.length < 0)
+        if (owned.length < 0)
             bad();
         const r = new Reader(owned), value = Ros2Std_srvsSrvTrigger_RequestRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -4366,10 +4431,10 @@ export const Ros2Std_srvsSrvTrigger_RequestCodec = Object.freeze({
 
 function Ros2Std_srvsSrvTrigger_RequestSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(n > 0)
+    if (n > 0)
         bad(90);
     return n;
 }
@@ -4386,7 +4451,7 @@ function Ros2Std_srvsSrvTrigger_RequestRead(r)
 
 function Ros2Std_srvsSrvTrigger_RequestCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     return out;
@@ -4408,18 +4473,19 @@ export const Ros2Std_srvsSrvTrigger_ResponseCodec = Object.freeze({
         return true;
     },
     encode(value) {
-        const owned = Ros2Std_srvsSrvTrigger_ResponseCapture(value), n = Ros2Std_srvsSrvTrigger_ResponseSize(owned), w = new Writer(n);
+        const owned = Ros2Std_srvsSrvTrigger_ResponseCapture(value), n = Ros2Std_srvsSrvTrigger_ResponseSize(owned),
+              w = new Writer(n);
         Ros2Std_srvsSrvTrigger_ResponseWrite(owned, w);
-        if(w.at !== n)
+        if (w.at !== n)
             bad();
         return w.b;
     },
     decode(bytes) {
         const owned = copyRaw(bytes, 517, 90);
-        if(owned.length < 5)
+        if (owned.length < 5)
             bad();
         const r = new Reader(owned), value = Ros2Std_srvsSrvTrigger_ResponseRead(r);
-        if(r.at !== owned.length)
+        if (r.at !== owned.length)
             bad();
         return value;
     },
@@ -4438,14 +4504,14 @@ export const Ros2Std_srvsSrvTrigger_ResponseCodec = Object.freeze({
 
 function Ros2Std_srvsSrvTrigger_ResponseSize(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     let n = 0;
-    if(typeof value["success"] !== "boolean")
+    if (typeof value["success"] !== "boolean")
         bad();
     n = addSize(n, 1);
     n = addSize(n, 4 + textBytes(value["message"], 512).length);
-    if(n > 517)
+    if (n > 517)
         bad(90);
     return n;
 }
@@ -4462,7 +4528,7 @@ function Ros2Std_srvsSrvTrigger_ResponseRead(r)
     const value = {};
     {
         const decoded = r.v.getUint8(r.take(1), true);
-        if(decoded > 1)
+        if (decoded > 1)
             bad();
         value["success"] = decoded !== 0;
     }
@@ -4475,7 +4541,7 @@ function Ros2Std_srvsSrvTrigger_ResponseRead(r)
 
 function Ros2Std_srvsSrvTrigger_ResponseCapture(value)
 {
-    if(value === null || typeof value !== "object")
+    if (value === null || typeof value !== "object")
         bad();
     const out = Object.create(null);
     {
