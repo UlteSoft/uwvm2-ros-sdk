@@ -1,6 +1,6 @@
 """Trusted bounded-v2 schema preparation and six-language source emission.
 
-This module is called by sdk/origin/tools/custom_types.py; it does not execute ROS
+This module is called by tools/custom_types.py; it does not execute ROS
 generators, load a native library, obtain a type identity or create a grant.
 The finite profile preserves every declared field and explicitly bounds every
 otherwise dynamic field. Official native type support must independently agree
@@ -2547,6 +2547,51 @@ def js_default(member, record, records):
     )
 
 
+def emit_js_utf8_helpers():
+    """@brief Emit one portable UTF-8 boundary shared by both JS codec profiles.
+
+    @details The imported SDK implementation owns strict scalar UTF-8 behavior.
+    Map its errors through each profile's established local error constructor;
+    neither the import nor these helpers create native ROS authority.
+    """
+    return """import {utf8Decode, utf8Encode} from "ros/js/wire";
+
+/**
+ * @brief Encode a bounded scalar string without browser-provided globals.
+ * @param value Complete JavaScript string; NUL and malformed surrogates fail.
+ * @param bound Maximum UTF-8 byte count, including all multibyte characters.
+ * @return Owned encoded bytes; errors retain this profile's error contract.
+ */
+function textBytes(value, bound)
+{
+    try
+    {
+        return utf8Encode(value, bound);
+    }
+    catch
+    {
+        bad();
+    }
+}
+
+/**
+ * @brief Decode complete scalar UTF-8 while preserving a leading BOM.
+ * @param bytes Bounded bytes already owned by this record's reader.
+ * @return Decoded text; malformed sequences and NUL fail through the profile.
+ */
+function textValue(bytes)
+{
+    try
+    {
+        return utf8Decode(bytes);
+    }
+    catch
+    {
+        bad();
+    }
+}"""
+
+
 def emit_js(parent, records, ordered):
     """Emit complete standalone JavaScript typed codecs with bounded readers."""
     lines = [
@@ -2555,13 +2600,12 @@ def emit_js(parent, records, ordered):
         " * encode validates the complete value before allocating its one wire output.",
         " * 64-bit integers remain BigInt. Strings are strict UTF-8 with no embedded NUL.",
         " * Pass these codec objects to existing SDK typed Node factories explicitly. */",
-        'const utf8Encoder=new TextEncoder(),utf8Decoder=new TextDecoder("utf-8",{fatal:true,ignoreBOM:true});',
+        emit_js_utf8_helpers(),
         'function bad(){throw new TypeError("invalid bounded canonical value");}',
-        'function textBytes(value,bound){if(typeof value!=="string"||value.length>bound||value.includes("\\0"))bad();for(let i=0;i<value.length;++i){const c=value.charCodeAt(i);if(c>=0xd800&&c<=0xdbff){if(++i===value.length)bad();const d=value.charCodeAt(i);if(d<0xdc00||d>0xdfff)bad();}else if(c>=0xdc00&&c<=0xdfff)bad();}const b=utf8Encoder.encode(value);if(b.length>bound)bad();return b;}',
         'function integer(value,width,signed){if(width===8){if(typeof value!=="bigint"||value<(signed?-(1n<<63n):0n)||value>(signed?(1n<<63n)-1n:(1n<<64n)-1n))bad();}else if(!Number.isInteger(value)||value<(signed?-(2**(width*8-1)):0)||value>(signed?2**(width*8-1)-1:2**(width*8)-1))bad();}',
         "class Reader{constructor(bytes){if(!(bytes instanceof Uint8Array)||bytes.length>"
         + str(MAX_WIRE)
-        + ')bad();this.b=bytes;this.v=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);this.at=0;}take(n){if(!Number.isInteger(n)||n<0||n>this.b.length-this.at)bad();const p=this.at;this.at+=n;return p;}u32(){return this.v.getUint32(this.take(4),true);}text(bound){const n=this.u32();if(n>bound)bad();const p=this.take(n),s=utf8Decoder.decode(this.b.subarray(p,p+n));if(s.includes("\\0"))bad();return s;}}',
+        + ')bad();this.b=bytes;this.v=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);this.at=0;}take(n){if(!Number.isInteger(n)||n<0||n>this.b.length-this.at)bad();const p=this.at;this.at+=n;return p;}u32(){return this.v.getUint32(this.take(4),true);}text(bound){const n=this.u32();if(n>bound)bad();const p=this.take(n),s=textValue(this.b.subarray(p,p+n));if(s.includes("\\0"))bad();return s;}}',
         "class Writer{constructor(size){if(size>"
         + str(MAX_WIRE)
         + ")bad();this.b=new Uint8Array(size);this.v=new DataView(this.b.buffer);this.at=0;}text(value,bound){const b=textBytes(value,bound);this.v.setUint32(this.at,b.length,true);this.at+=4;this.b.set(b,this.at);this.at+=b.length;}}",
@@ -5205,7 +5249,7 @@ def emit_control_js(parent, records, ordered):
         " * encode validates the complete value before allocating its one wire output.",
         " * 64-bit integers remain BigInt. Strings are strict UTF-8 with no embedded NUL.",
         " * Owned Service transport is a separate explicit raw12 adapter, not legacy RPC. */",
-        'const utf8Encoder=new TextEncoder(),utf8Decoder=new TextDecoder("utf-8",{fatal:true,ignoreBOM:true});',
+        emit_js_utf8_helpers(),
         'export class ControlCodecError extends Error{constructor(code){super("invalid original-control canonical value");this.code=code;}}',
         "function bad(code=22){throw new ControlCodecError(code);}",
         'const nativeTypedLength=Object.getOwnPropertyDescriptor(Object.getPrototypeOf(Uint8Array.prototype),"length").get,nativeTypedSet=Uint8Array.prototype.set;',
@@ -5215,11 +5259,10 @@ def emit_control_js(parent, records, ordered):
         + "||m>"
         + str(MAX_WIRE)
         + "-n)bad(90);return n+m;}",
-        'function textBytes(value,bound){if(typeof value!=="string"||value.length>bound||value.includes("\\0"))bad();for(let i=0;i<value.length;++i){const c=value.charCodeAt(i);if(c>=0xd800&&c<=0xdbff){if(++i===value.length)bad();const d=value.charCodeAt(i);if(d<0xdc00||d>0xdfff)bad();}else if(c>=0xdc00&&c<=0xdfff)bad();}const b=utf8Encoder.encode(value);if(b.length>bound)bad();return b;}',
         'function integer(value,width,signed){if(width===8){if(typeof value!=="bigint"||value<(signed?-(1n<<63n):0n)||value>(signed?(1n<<63n)-1n:(1n<<64n)-1n))bad();}else if(!Number.isInteger(value)||value<(signed?-(2**(width*8-1)):0)||value>(signed?2**(width*8-1)-1:2**(width*8)-1))bad();}',
         "class Reader{constructor(bytes){if(!(bytes instanceof Uint8Array)||bytes.length>"
         + str(MAX_WIRE)
-        + ')bad();this.b=bytes;this.v=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);this.at=0;}take(n){if(!Number.isInteger(n)||n<0||n>this.b.length-this.at)bad();const p=this.at;this.at+=n;return p;}u32(){return this.v.getUint32(this.take(4),true);}text(bound){const n=this.u32();if(n>bound)bad();const p=this.take(n);let s;try{s=utf8Decoder.decode(this.b.subarray(p,p+n));}catch{bad();}if(s.includes("\\0"))bad();return s;}raw(bound){const n=this.u32();if(n>bound)bad();const p=this.take(n);return this.b.slice(p,p+n);}}',
+        + ')bad();this.b=bytes;this.v=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);this.at=0;}take(n){if(!Number.isInteger(n)||n<0||n>this.b.length-this.at)bad();const p=this.at;this.at+=n;return p;}u32(){return this.v.getUint32(this.take(4),true);}text(bound){const n=this.u32();if(n>bound)bad();const p=this.take(n);let s;try{s=textValue(this.b.subarray(p,p+n));}catch{bad();}if(s.includes("\\0"))bad();return s;}raw(bound){const n=this.u32();if(n>bound)bad();const p=this.take(n);return this.b.slice(p,p+n);}}',
         "class Writer{constructor(size){if(size>"
         + str(MAX_WIRE)
         + ")bad();this.b=new Uint8Array(size);this.v=new DataView(this.b.buffer);this.at=0;}text(value,bound){const b=textBytes(value,bound);this.v.setUint32(this.at,b.length,true);this.at+=4;this.b.set(b,this.at);this.at+=b.length;}raw(value){this.v.setUint32(this.at,value.length,true);this.at+=4;this.b.set(value,this.at);this.at+=value.length;}}",

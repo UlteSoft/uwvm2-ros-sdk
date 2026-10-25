@@ -86,3 +86,8 @@ Use a current uwvm2-ros build containing the AArch64 caller-frame repair for
 memory64 applications. Qualification used paired LLVM
 `23.1.1-uwvm-ros.15`: all six independent Xmake-only cold builds reproduced the
 exact Wasm bytes executed on native x86_64 and full-system QEMU AArch64.
+All six projects also passed literal `xmake run` on native x86_64 with explicit
+stream-only, ROS-disabled deployments. The launcher verified the selected
+runtime and application bytes; no native ROS gateway was started for these
+codec programs. This run-hook qualification is separate from native ROS service
+or controller acceptance.
