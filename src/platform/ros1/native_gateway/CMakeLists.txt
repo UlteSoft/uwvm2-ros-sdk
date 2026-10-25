@@ -1,15 +1,10 @@
+# @file CMakeLists.txt
+# @brief Build the native ROS1 gateway from separate SDK and VM checkouts.
+# @details The caller can select the matching VM checkout explicitly. A sibling
+# checkout is the default; repository separation must not require copying VM
+# implementation headers into the SDK or restoring the removed VM/sdk tree.
 cmake_minimum_required(VERSION 3.10)
 project(uwvm_ros1_gateway LANGUAGES CXX)
-# Locate the repository without encoding an installation depth.
-set(_uwvm_candidate "${CMAKE_CURRENT_LIST_DIR}")
-while(NOT EXISTS "${_uwvm_candidate}/src/uwvm2/imported/ros/common/types.h")
-    get_filename_component(_uwvm_parent "${_uwvm_candidate}" DIRECTORY)
-    if(_uwvm_parent STREQUAL _uwvm_candidate)
-        message(FATAL_ERROR "Cannot locate the matching uwvm2-ros source tree")
-    endif()
-    set(_uwvm_candidate "${_uwvm_parent}")
-endwhile()
-set(UWVM_ROS_SOURCE_ROOT "${_uwvm_candidate}")
 set(_uwvm_sdk_candidate "${CMAKE_CURRENT_LIST_DIR}")
 while(NOT EXISTS "${_uwvm_sdk_candidate}/src/gateway/common/server.h")
     get_filename_component(_uwvm_sdk_parent "${_uwvm_sdk_candidate}" DIRECTORY)
@@ -19,6 +14,11 @@ while(NOT EXISTS "${_uwvm_sdk_candidate}/src/gateway/common/server.h")
     set(_uwvm_sdk_candidate "${_uwvm_sdk_parent}")
 endwhile()
 set(UWVM_ROS_SDK_ROOT "${_uwvm_sdk_candidate}")
+set(UWVM_ROS_SOURCE_ROOT "${UWVM_ROS_SDK_ROOT}/../uwvm2-ros" CACHE PATH
+    "uwvm2-ros VM source checkout providing the gateway protocol headers")
+if(NOT EXISTS "${UWVM_ROS_SOURCE_ROOT}/src/uwvm2/imported/ros/common/types.h")
+    message(FATAL_ERROR "Set UWVM_ROS_SOURCE_ROOT to the matching uwvm2-ros VM checkout")
+endif()
 set(UWVM_ROS1_CXX_STANDARD "17" CACHE STRING "Target C++ standard, at least the adapter's C++17 contract: 17, 20 or 23")
 set_property(CACHE UWVM_ROS1_CXX_STANDARD PROPERTY STRINGS 17 20 23)
 if(NOT UWVM_ROS1_CXX_STANDARD MATCHES "^(17|20|23)$")

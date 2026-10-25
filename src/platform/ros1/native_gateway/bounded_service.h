@@ -17,6 +17,10 @@
 #include <arpa/inet.h>
 #include <array>
 #include <climits>
+#include <memory>
+#include <mutex>
+#include <netinet/tcp.h>
+#include <gateway/common/service_client_pool.h>
 
 namespace uwvm2::ros_gateway::ros1_service
 {
@@ -226,13 +230,44 @@ namespace uwvm2::ros_gateway::ros1_service
         return has_md5 && has_type;
     }
 
+    /**
+     * @brief Own one validated TCPROS stream for an authenticated session alias.
+     * @details Each request retains its complete capability owner and serializes
+     * against this stream using the original absolute deadline. A failed call
+     * closes the stream; an admitted request is never replayed after reconnect.
+     */
+    struct connection
+    {
+        std::timed_mutex mutex;
+        std::unique_ptr<native_io::owned_fd> socket;
+    };
+
+    /** @brief Retire a failed stream before another admitted request can use it. */
+    struct connection_transaction
+    {
+        service_client_pool* pool;
+        std::string const& alias;
+        std::shared_ptr<connection> owner;
+        bool completed{};
+
+        ~connection_transaction()
+        {
+            if(!completed)
+            {
+                owner->socket.reset();
+                if(pool) { pool->discard(alias, owner); }
+            }
+        }
+    };
+
     /** Call one official generated service after the Capability Engine admits
      * it. validate_native_body must verify the complete bounded serialized
      * structure before the official deserializer can allocate any fields.
      * The returned native object is converted to the reviewed canonical codec
      * by the caller; native serialization is never sent directly to a Guest. */
     template <typename Service, typename Validator>
-    std::uint32_t call(ros::capability_spec const& cap, Service& native, std::uint32_t timeout, Validator validate_native_body)
+    std::uint32_t call(ros::capability_spec const& cap, Service& native, std::uint32_t timeout, Validator validate_native_body,
+                       service_client_pool* pool = nullptr)
     {
         auto until{ipc::after(static_cast<std::uint32_t>(std::min<std::uint64_t>(timeout, limit(cap, "timeout-ms"))))};
         auto md5{::ros::service_traits::MD5Sum<Service>::value()};
@@ -241,101 +276,122 @@ namespace uwvm2::ros_gateway::ros1_service
         {
             return 13;
         }
-        sockaddr_storage master{};
-        socklen_t master_size{};
-        auto master_port{::ros::master::getPort()};
-        if(!master_port || master_port > 65535 || !numeric_address(::ros::master::getHost(), static_cast<std::uint16_t>(master_port), master, master_size))
+        // Master and resource spelling are part of the endpoint selection. The
+        // shared pool independently binds every capability field and native type.
+        auto const endpoint_key{::ros::master::getURI() + "\n" + cap.resource};
+        auto active{pool ? pool->acquire<connection>(cap, endpoint_key, [] { return std::make_shared<connection>(); })
+                         : std::make_shared<connection>()};
+        if(!active) { return 13; }
+        std::unique_lock<std::timed_mutex> lock{active->mutex, std::defer_lock};
+        if(!lock.try_lock_until(until)) { return 110; }
+        connection_transaction transaction{pool, cap.alias, active};
+        if(std::chrono::steady_clock::now() >= until) { return 110; }
+        if(!active->socket)
         {
-            return 95;
-        }
-        XmlRpc::XmlRpcValue arguments, result;
-        arguments[0] = ::ros::this_node::getName();
-        arguments[1] = cap.resource;
-        // Discovery may wait for an advertised server within the existing
-        // timeout. Only lookup metadata is repeated, at most five times per
-        // second; an admitted TCPROS request is sent exactly once.
-        for(;;)
-        {
-            auto left{std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count()};
-            if(left <= 0)
+            sockaddr_storage master{};
+            socklen_t master_size{};
+            auto master_port{::ros::master::getPort()};
+            if(!master_port || master_port > 65535 || !numeric_address(::ros::master::getHost(), static_cast<std::uint16_t>(master_port), master, master_size))
             {
-                return 110;
+                return 95;
             }
-            ros1_resources::bounded_xmlrpc lookup{::ros::master::getHost(), static_cast<int>(::ros::master::getPort()), 4096};
-            auto lookup_error{lookup.execute_bounded("lookupService", arguments, result, static_cast<std::uint32_t>(left))};
-            if(lookup_error)
+            XmlRpc::XmlRpcValue arguments, result;
+            arguments[0] = ::ros::this_node::getName();
+            arguments[1] = cap.resource;
+            // Discovery may wait for an advertised server within the existing
+            // timeout. Only lookup metadata is repeated, at most five times per
+            // second; an admitted TCPROS request is sent exactly once.
+            for(;;)
             {
-                return lookup_error;
-            }
-            if(std::chrono::steady_clock::now() >= until)
-            {
-                return 110;
-            }
-            if(result.getType() != XmlRpc::XmlRpcValue::TypeArray || result.size() != 3 || result[0].getType() != XmlRpc::XmlRpcValue::TypeInt)
-            {
-                return 22;
-            }
-            if(static_cast<int>(result[0]) == 1)
-            {
-                if(result[2].getType() != XmlRpc::XmlRpcValue::TypeString)
+                auto left{std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count()};
+                if(left <= 0)
+                {
+                    return 110;
+                }
+                ros1_resources::bounded_xmlrpc lookup{::ros::master::getHost(), static_cast<int>(::ros::master::getPort()), 4096};
+                auto lookup_error{lookup.execute_bounded("lookupService", arguments, result, static_cast<std::uint32_t>(left))};
+                if(lookup_error)
+                {
+                    return lookup_error;
+                }
+                if(std::chrono::steady_clock::now() >= until)
+                {
+                    return 110;
+                }
+                if(result.getType() != XmlRpc::XmlRpcValue::TypeArray || result.size() != 3 || result[0].getType() != XmlRpc::XmlRpcValue::TypeInt)
                 {
                     return 22;
                 }
-                break;
+                if(static_cast<int>(result[0]) == 1)
+                {
+                    if(result[2].getType() != XmlRpc::XmlRpcValue::TypeString)
+                    {
+                        return 22;
+                    }
+                    break;
+                }
+                left = std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count();
+                if(left <= 0)
+                {
+                    return 110;
+                }
+                (void)::poll(nullptr, 0, static_cast<int>(std::min<std::int64_t>(left, 200)));
             }
-            left = std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count();
-            if(left <= 0)
+            auto const& uri{static_cast<std::string&>(result[2])};
+            sockaddr_storage address{};
+            socklen_t address_size{};
+            if(!endpoint(uri, address, address_size))
             {
-                return 110;
+                return 95;
             }
-            (void)::poll(nullptr, 0, static_cast<int>(std::min<std::int64_t>(left, 200)));
+            active->socket = std::make_unique<native_io::owned_fd>(::socket(address.ss_family, SOCK_STREAM | SOCK_CLOEXEC | SOCK_NONBLOCK, 0));
+            auto& socket{*active->socket};
+            if(socket.get() < 0 || !connect_socket(socket.get(), address, address_size, until))
+            {
+                return failure(until);
+            }
+            int const no_delay{1};
+            if(::setsockopt(socket.get(), IPPROTO_TCP, TCP_NODELAY, &no_delay, sizeof no_delay) != 0)
+            {
+                return failure(until);
+            }
+            std::vector<std::uint8_t> header;
+            header.reserve(1024);
+            header_field(header, "callerid", ::ros::this_node::getName());
+            header_field(header, "service", cap.resource);
+            header_field(header, "md5sum", md5);
+            header_field(header, "persistent", pool ? "1" : "0");
+            if(header.size() > 8192)
+            {
+                return 90;
+            }
+            std::array<std::uint8_t, 4> length{};
+            for(unsigned i{}; i != 4; ++i)
+            {
+                length[i] = static_cast<std::uint8_t>(header.size() >> (8 * i));
+            }
+            if(!ipc::transfer(socket.get(), length.data(), length.size(), true, until) || !ipc::transfer(socket.get(), header.data(), header.size(), true, until) ||
+               !ipc::transfer(socket.get(), length.data(), length.size(), false, until))
+            {
+                return failure(until);
+            }
+            auto count{ipc::get(length.data(), 4)};
+            if(!count || count > 8192)
+            {
+                return 90;
+            }
+            header.resize(static_cast<std::size_t>(count));
+            if(!ipc::transfer(socket.get(), header.data(), header.size(), false, until))
+            {
+                return failure(until);
+            }
+            if(!response_header(header, md5, type))
+            {
+                return 13;
+            }
         }
-        auto const& uri{static_cast<std::string&>(result[2])};
-        sockaddr_storage address{};
-        socklen_t address_size{};
-        if(!endpoint(uri, address, address_size))
-        {
-            return 95;
-        }
-        native_io::owned_fd socket{::socket(address.ss_family, SOCK_STREAM | SOCK_CLOEXEC | SOCK_NONBLOCK, 0)};
-        if(socket.get() < 0 || !connect_socket(socket.get(), address, address_size, until))
-        {
-            return failure(until);
-        }
-        std::vector<std::uint8_t> header;
-        header.reserve(1024);
-        header_field(header, "callerid", ::ros::this_node::getName());
-        header_field(header, "service", cap.resource);
-        header_field(header, "md5sum", md5);
-        header_field(header, "persistent", "0");
-        if(header.size() > 8192)
-        {
-            return 90;
-        }
+        auto& socket{*active->socket};
         std::array<std::uint8_t, 4> length{};
-        for(unsigned i{}; i != 4; ++i)
-        {
-            length[i] = static_cast<std::uint8_t>(header.size() >> (8 * i));
-        }
-        if(!ipc::transfer(socket.get(), length.data(), length.size(), true, until) || !ipc::transfer(socket.get(), header.data(), header.size(), true, until) ||
-           !ipc::transfer(socket.get(), length.data(), length.size(), false, until))
-        {
-            return failure(until);
-        }
-        auto count{ipc::get(length.data(), 4)};
-        if(!count || count > 8192)
-        {
-            return 90;
-        }
-        header.resize(static_cast<std::size_t>(count));
-        if(!ipc::transfer(socket.get(), header.data(), header.size(), false, until))
-        {
-            return failure(until);
-        }
-        if(!response_header(header, md5, type))
-        {
-            return 13;
-        }
         std::vector<std::uint8_t> body;
         try
         {
@@ -368,7 +424,7 @@ namespace uwvm2::ros_gateway::ros1_service
         {
             return failure(until);
         }
-        count = ipc::get(response.data() + 1, 4);
+        auto const count{ipc::get(response.data() + 1, 4)};
         if(response[0] > 1)
         {
             return 22;
@@ -403,6 +459,8 @@ namespace uwvm2::ros_gateway::ros1_service
         {
             return 22;
         }
-        return std::chrono::steady_clock::now() < until ? 0u : 110u;
+        if(std::chrono::steady_clock::now() >= until) { return 110; }
+        transaction.completed = true;
+        return 0;
     }
 }  // namespace uwvm2::ros_gateway::ros1_service

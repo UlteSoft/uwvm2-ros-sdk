@@ -80,6 +80,7 @@ namespace uwvm2::ros_gateway::ros1_custom_services
     class adapter
     {
         ::ros::NodeHandle& node_;
+        service_client_pool clients_;
 
         struct endpoint
         {
@@ -124,7 +125,7 @@ namespace uwvm2::ros_gateway::ros1_custom_services
                                           native,
                                           static_cast<std::uint32_t>(remaining),
                                           [item](std::vector<std::uint8_t> const& body)
-                                          { return ipc::validate_custom_topic(*item->response, body.data(), body.size()); })};
+                                          { return ipc::validate_custom_topic(*item->response, body.data(), body.size()); }, &clients_)};
             if(error)
             {
                 return {error, {}};
@@ -279,6 +280,7 @@ namespace uwvm2::ros_gateway::ros1_custom_services
 
         void close(std::string const& alias)
         {
+            clients_.close(alias);
             auto item{servers_.find(alias)};
             if(item != servers_.end())
             {

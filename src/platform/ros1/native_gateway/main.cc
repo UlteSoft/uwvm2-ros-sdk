@@ -163,6 +163,7 @@ namespace
     class ros1_adapter final : public gateway::adapter
     {
         ros::NodeHandle node_;
+        gateway::service_client_pool service_clients_;
         gateway::tf_adapter tf_{node_};
         gateway::ros1_action::adapter actions_{node_};
         std::map<std::string, ros::Publisher> publishers_;
@@ -293,7 +294,7 @@ namespace
                                                    {
                                                        return data.size() >= 5 && data[0] <= 1 && ipc::get(data.data() + 1, 4) == data.size() - 5 &&
                                                               gateway::valid_utf8(data.data() + 5, data.size() - 5);
-                                                   })};
+                                                   }, &service_clients_)};
             if(error)
             {
                 return {error, {}};
@@ -449,6 +450,7 @@ namespace
 
         void close(std::string const& alias) override
         {
+            service_clients_.close(alias);
             auto s{service_states_.find(alias)};
             if(s != service_states_.end())
             {

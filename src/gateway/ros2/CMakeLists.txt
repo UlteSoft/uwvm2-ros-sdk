@@ -72,22 +72,25 @@ if(UWVM_ROS2_BUILD_OWNED_RCL_SERVICE)
     message(FATAL_ERROR "Owned RCL service requires explicitly selected UWVM_ROS2_CXX_STANDARD=20 or23; legacy C++17 is unchanged")
   endif()
   set(_uwvm_owned_root "${UWVM_ROS_SOURCE_ROOT}")
-  foreach(_header third-parties/fast_io/include/fast_io.h sdk/include/platform/ros2/cpp/uwvm_rmw/cpp_codecs.hpp
-      sdk/include/platform/ros2/c/uwvm_rmw/codec.h sdk/include/platform/ros/c/roswasm/codec.h)
-    if(NOT EXISTS "${_uwvm_owned_root}/${_header}")
+  if(NOT EXISTS "${_uwvm_owned_root}/third-parties/fast_io/include/fast_io.h")
+    message(FATAL_ERROR "Selected VM checkout lacks its matching fast_io headers")
+  endif()
+  foreach(_header include/platform/ros2/cpp/uwvm_rmw/cpp_codecs.hpp
+      include/platform/ros2/c/uwvm_rmw/codec.h include/platform/ros/c/roswasm/codec.h)
+    if(NOT EXISTS "${UWVM_ROS_SDK_ROOT}/${_header}")
       message(FATAL_ERROR "Actual complete owned service source dependency missing: ${_header}")
     endif()
   endforeach()
   find_package(OpenSSL REQUIRED COMPONENTS Crypto)
-  include("${_uwvm_owned_root}/sdk/tools/platform/ros/cmake/CppCodecs.cmake")
+  include("${UWVM_ROS_SDK_ROOT}/tools/platform/ros/cmake/CppCodecs.cmake")
   # Keep a new library's keyword signature separate from the actual Gateway's
   # historical plain ament link signature; do not mix CMake link forms.
   add_library(uwvm-owned-service-codecs STATIC)
   target_include_directories(uwvm-owned-service-codecs PUBLIC
-    "${_uwvm_owned_root}/sdk/include" "${_uwvm_owned_root}/sdk/include/platform/ros/c")
+    "${UWVM_ROS_SDK_ROOT}/include" "${UWVM_ROS_SDK_ROOT}/include/platform/ros/c")
   uwvm_rmw_attach_cpp_codecs(uwvm-owned-service-codecs NATIVE_CONTRACT)
   target_include_directories(uwvm-ros2-gateway PRIVATE
-    "${_uwvm_owned_root}/sdk/include" "${_uwvm_owned_root}/sdk/include/platform/ros/c"
+    "${UWVM_ROS_SDK_ROOT}/include" "${UWVM_ROS_SDK_ROOT}/include/platform/ros/c"
     "${_uwvm_owned_root}/third-parties/fast_io/include")
   target_compile_definitions(uwvm-ros2-gateway PRIVATE UWVM_ROS2_OWNED_RCL_SERVICE_PROFILE=1)
   target_link_libraries(uwvm-ros2-gateway uwvm-owned-service-codecs rcl::rcl rmw::rmw OpenSSL::Crypto)
@@ -97,7 +100,7 @@ if(UWVM_ROS2_BUILD_OWNED_RCL_SERVICE)
     add_executable(uwvm-owned-service-gateway-values ${UWVM_ROS_SOURCE_ROOT}/test/0073.ros-tests/support/source/ros2_compat/owned_service_gateway/value_contract.cc)
     target_compile_features(uwvm-owned-service-gateway-values PRIVATE cxx_std_20)
     target_include_directories(uwvm-owned-service-gateway-values PRIVATE "${_uwvm_owned_root}" "${_uwvm_owned_root}/src"
-      "${_uwvm_owned_root}/sdk/include" "${_uwvm_owned_root}/sdk/include/platform/ros/c"
+      "${UWVM_ROS_SDK_ROOT}/include" "${UWVM_ROS_SDK_ROOT}/include/platform/ros/c"
       "${_uwvm_owned_root}/third-parties/fast_io/include" "${CMAKE_CURRENT_BINARY_DIR}")
     uwvm_ros2_dependencies(uwvm-owned-service-gateway-values rclcpp std_srvs example_interfaces)
     target_link_libraries(uwvm-owned-service-gateway-values uwvm-owned-service-codecs rcl::rcl rmw::rmw OpenSSL::Crypto pthread)
@@ -151,7 +154,7 @@ if(UWVM_ROS_CUSTOM_REGISTRY_HEADER OR UWVM_ROS_CUSTOM_ROS2_HEADER OR UWVM_ROS_CU
   target_compile_definitions(uwvm-ros2-gateway PRIVATE
     UWVM_ROS_CUSTOM_TOPIC_MANIFEST="${UWVM_ROS_CUSTOM_REGISTRY_HEADER}"
     UWVM_ROS_CUSTOM_ROS2_HEADER="${UWVM_ROS_CUSTOM_ROS2_HEADER}")
-  target_include_directories(uwvm-ros2-gateway PRIVATE "${UWVM_ROS_SOURCE_ROOT}/sdk/include" "${UWVM_ROS_SOURCE_ROOT}/sdk/include/platform/ros/c")
+  target_include_directories(uwvm-ros2-gateway PRIVATE "${UWVM_ROS_SDK_ROOT}/include" "${UWVM_ROS_SDK_ROOT}/include/platform/ros/c")
   uwvm_ros2_dependencies(uwvm-ros2-gateway ${UWVM_ROS_CUSTOM_ROS2_PACKAGES})
   # Same target definitions, dependencies and Release optimization reach every
   # partition; no separately configured library can drift from main's provider.
@@ -347,7 +350,7 @@ if(UWVM_ROS2_BUILD_DEFAULT_RMW_CONTROL_PROFILE)
   endforeach()
   set(UWVM_DEFAULT_CONTROL_GATEWAY_PROJECT_ROOT "${UWVM_ROS_SOURCE_ROOT}")
   cmake_path(NORMAL_PATH UWVM_DEFAULT_CONTROL_GATEWAY_PROJECT_ROOT)
-  set(UWVM_RMW_INCLUDE_DIR "${UWVM_DEFAULT_CONTROL_GATEWAY_PROJECT_ROOT}/sdk/origin/rmw_wasm/include")
+  set(UWVM_RMW_INCLUDE_DIR "${UWVM_ROS_SDK_ROOT}/include/platform/ros2/c")
   set(UWVM_DEFAULT_CONTROL_GATEWAY_FEATURES_DIR "${CMAKE_CURRENT_BINARY_DIR}")
   add_subdirectory(default_control "${CMAKE_CURRENT_BINARY_DIR}/default-control-native")
   target_compile_definitions(uwvm_default_control_gateway PUBLIC UWVM_ROS2_USE_COMPOSED_NODE=1)
@@ -367,7 +370,7 @@ if(UWVM_ROS2_BUILD_DEFAULT_RMW_CONTROL_PROFILE)
   target_compile_definitions(uwvm-ros2-selected-control-catalog INTERFACE
     UWVM_ROS_ORIGINAL_CONTROL_MANIFEST="${_original_control_manifest}")
   target_include_directories(uwvm-ros2-selected-control-catalog INTERFACE
-    "${UWVM_DEFAULT_CONTROL_GATEWAY_PROJECT_ROOT}/sdk/include" "${UWVM_DEFAULT_CONTROL_GATEWAY_PROJECT_ROOT}/sdk/include/platform/ros/c")
+    "${UWVM_ROS_SDK_ROOT}/include" "${UWVM_ROS_SDK_ROOT}/include/platform/ros/c")
   if(UWVM_ROS_CUSTOM_REGISTRY_HEADER)
     # custom_topics.h requires this original paired common/native selection.
     # Sharing only the common macro would fail its actual paired-header guard.
