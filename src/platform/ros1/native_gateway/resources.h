@@ -8,6 +8,8 @@
  */
 #pragma once
 #include <gateway/common/server.h>
+#include <gateway/common/service_client_pool.h>
+#include <sys/socket.h>
 #include <ros/ros.h>
 #include <ros/master.h>
 #include "compat.h"
@@ -45,6 +47,35 @@ namespace uwvm2::ros_gateway::ros1_resources
     {
         std::size_t maximum_;
         bool failed_{};
+        bool parsed_{};
+        bool reusable_{};
+
+        /** @brief Send each request once, suppressing SIGPIPE without global signal changes. */
+        bool writeRequest() override
+        {
+            if(_bytesWritten < 0 || static_cast<std::size_t>(_bytesWritten) > _request.size())
+            {
+                failed_ = true;
+                close();
+                return false;
+            }
+            auto const left{_request.size() - static_cast<std::size_t>(_bytesWritten)};
+            auto const written{::send(getfd(), _request.data() + _bytesWritten, left, MSG_NOSIGNAL)};
+            if(written < 0 && (errno == EAGAIN || errno == EWOULDBLOCK || errno == EINTR)) { return true; }
+            if(written <= 0)
+            {
+                close();
+                return false;
+            }
+            _bytesWritten += static_cast<int>(written); // generateRequest already bounded the request by INT_MAX.
+            if(static_cast<std::size_t>(_bytesWritten) == _request.size())
+            {
+                _header.clear();
+                _response.clear();
+                _connectionState = READ_HEADER;
+            }
+            return true;
+        }
 
         bool receive(std::string& buffer, std::size_t maximum)
         {
@@ -100,6 +131,17 @@ namespace uwvm2::ros_gateway::ros1_resources
                 return false;
             }
             std::transform(header.begin(), header.end(), header.begin(), [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+            // Retain only unambiguous HTTP/1.1 persistent responses. Other
+            // valid responses remain usable, but their connection is closed.
+            reusable_ = header.rfind("http/1.1 200 ", 0) == 0;
+            std::size_t connection{header.find("\r\nconnection:")};
+            if(connection != std::string::npos)
+            {
+                auto const next{header.find("\r\n", connection + 2)};
+                auto const field{header.substr(connection, next == std::string::npos ? next : next - connection)};
+                reusable_ = reusable_ && field == "\r\nconnection: keep-alive" &&
+                    header.find("\r\nconnection:", connection + 2) == std::string::npos;
+            }
             auto at{header.find("\r\ncontent-length:")};
             if(at == std::string::npos || header.find("\r\ncontent-length:", at + 2) != std::string::npos ||
                header.find("transfer-encoding:") != std::string::npos)
@@ -202,7 +244,8 @@ namespace uwvm2::ros_gateway::ros1_resources
                 }
                 p = end + 1;
             }
-            return !depth && XmlRpc::XmlRpcClient::parseResponse(result);
+            parsed_ = !depth && XmlRpc::XmlRpcClient::parseResponse(result);
+            return parsed_;
         }
 
     public:
@@ -213,8 +256,12 @@ namespace uwvm2::ros_gateway::ros1_resources
         std::uint32_t execute_bounded(char const* method, XmlRpc::XmlRpcValue const& params, XmlRpc::XmlRpcValue& value, std::uint32_t timeout)
         {
             auto deadline{std::chrono::steady_clock::now() + std::chrono::milliseconds(timeout)};
+            failed_ = false;
+            parsed_ = false;
+            reusable_ = false;
             if(!executeNonBlock(method, params))
             {
+                close();
                 return 107;
             }
             while(std::chrono::steady_clock::now() < deadline)
@@ -222,14 +269,65 @@ namespace uwvm2::ros_gateway::ros1_resources
                 _disp.work(0.001);
                 if(executeCheckDone(value))
                 {
-                    close();
-                    return failed_ ? 90 : !value.valid() || isFault() ? 107 : 0;
+                    auto const error{failed_ ? 90u : !parsed_ || !value.valid() || isFault() ? 107u : 0u};
+                    if(error || !reusable_ || _eof) { close(); }
+                    _header.clear();
+                    _response.clear();
+                    return error;
                 }
             }
             close();
             return 110;
         }
     };
+
+    /** @brief Serialize one retained XMLRPC stream under its exact session policy. */
+    struct xmlrpc_connection
+    {
+        std::timed_mutex mutex;
+        bounded_xmlrpc client;
+
+        xmlrpc_connection(std::string const& host, int port, std::size_t maximum) : client{host, port, maximum} {}
+    };
+
+    /**
+     * @brief Reuse transport ownership without caching a ROS result or authority.
+     * @details The full capability, exact Master endpoint and native type bind
+     * this owner. Waiting and all native requests share the original deadline.
+     * A waiting timeout leaves another request's stream intact. Any admitted
+     * failure retires only its own stream; no request is automatically replayed.
+     */
+    template <class Request>
+    ipc::call_result with_xmlrpc(ros::capability_spec const& cap, std::string const& host, int port,
+                                  std::size_t maximum, ipc::deadline deadline, service_client_pool* retained, Request&& request)
+    {
+        auto const endpoint{host + ":" + std::to_string(port)};
+        auto create = [&] { return std::make_shared<xmlrpc_connection>(host, port, maximum); };
+        auto active{retained ? retained->acquire<xmlrpc_connection>(cap, endpoint, create) : create()};
+        if(!active) { return {13, {}}; }
+        std::unique_lock<std::timed_mutex> lock{active->mutex, std::defer_lock};
+        if(!lock.try_lock_until(deadline) || std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+        struct transaction
+        {
+            service_client_pool* retained;
+            std::string const& alias;
+            std::shared_ptr<xmlrpc_connection> owner;
+            bool completed{};
+
+            ~transaction()
+            {
+                if(!completed)
+                {
+                    owner->client.close();
+                    if(retained) { retained->discard(alias, owner); }
+                }
+            }
+        } held{retained, cap.alias, active};
+        auto result{std::forward<Request>(request)(active->client)};
+        if(!result.error && std::chrono::steady_clock::now() >= deadline) { result = {110, {}}; }
+        held.completed = result.error == 0u;
+        return result;
+    }
 
     inline ipc::call_result string_result(std::string const& value, std::uint64_t maximum)
     {
@@ -413,7 +511,8 @@ namespace uwvm2::ros_gateway::ros1_resources
         return error ? ipc::call_result{error, {}} : ipc::call_result{0, std::move(bytes)};
     }
 
-    inline ipc::call_result call(::ros::NodeHandle&, ros::capability_spec const& cap, std::vector<std::uint8_t> const& request, std::uint32_t timeout)
+    inline ipc::call_result call_with_transport(ros::capability_spec const& cap, std::vector<std::uint8_t> const& request,
+                                                 ipc::deadline deadline, bounded_xmlrpc& transport)
     {
         if(!known(cap))
         {
@@ -421,8 +520,6 @@ namespace uwvm2::ros_gateway::ros1_resources
         }
         bool graph{cap.operation.rfind("graph.", 0) == 0};
         auto maximum{limit(cap, graph ? "max-graph-result-bytes" : "max-parameter-bytes")};
-        auto bounded_timeout{std::min(timeout, static_cast<std::uint32_t>(limit(cap, "timeout-ms")))};
-        auto deadline{std::chrono::steady_clock::now() + std::chrono::milliseconds(bounded_timeout)};
         if(cap.operation == "param.search")
         {
             if(!request.empty())
@@ -451,7 +548,7 @@ namespace uwvm2::ros_gateway::ros1_resources
                 XmlRpc::XmlRpcValue search_args, search_response;
                 search_args[0] = ::ros::this_node::getName();
                 search_args[1] = candidate;
-                bounded_xmlrpc search{::ros::master::getHost(), static_cast<int>(::ros::master::getPort()), static_cast<std::size_t>(maximum * 6 + 65536)};
+                auto& search{transport};
                 auto error{search.execute_bounded("hasParam", search_args, search_response, static_cast<std::uint32_t>(left))};
                 if(error)
                 {
@@ -555,7 +652,7 @@ namespace uwvm2::ros_gateway::ros1_resources
                 XmlRpc::XmlRpcValue current_args, current;
                 current_args[0] = ::ros::this_node::getName();
                 current_args[1] = cap.resource;
-                bounded_xmlrpc inspect{::ros::master::getHost(), static_cast<int>(::ros::master::getPort()), static_cast<std::size_t>(maximum * 6 + 65536)};
+                auto& inspect{transport};
                 auto left{std::chrono::duration_cast<std::chrono::milliseconds>(deadline - std::chrono::steady_clock::now()).count()};
                 if(left <= 0)
                 {
@@ -616,7 +713,7 @@ namespace uwvm2::ros_gateway::ros1_resources
         }
         // XML escape growth is bounded by 6x the explicit result limit plus a
         // public 64 KiB envelope ceiling; each recv is bounded before append.
-        bounded_xmlrpc client{::ros::master::getHost(), static_cast<int>(::ros::master::getPort()), static_cast<std::size_t>(maximum * 6 + 65536)};
+        auto& client{transport};
         auto left{std::chrono::duration_cast<std::chrono::milliseconds>(deadline - std::chrono::steady_clock::now()).count()};
         if(left <= 0)
         {
@@ -759,4 +856,16 @@ namespace uwvm2::ros_gateway::ros1_resources
         }
         return string_result(result, maximum);
     }
+    /** @brief Execute the authorized resource query through its retained bounded transport. */
+    inline ipc::call_result call(::ros::NodeHandle&, ros::capability_spec const& cap, std::vector<std::uint8_t> const& request,
+                                 std::uint32_t timeout, service_client_pool* retained = nullptr)
+    {
+        if(!known(cap)) { return {95, {}}; }
+        auto const deadline{ipc::after(std::min(timeout, static_cast<std::uint32_t>(limit(cap, "timeout-ms"))))};
+        auto const maximum{limit(cap, cap.operation.rfind("graph.", 0) == 0 ? "max-graph-result-bytes" : "max-parameter-bytes")};
+        return with_xmlrpc(cap, ::ros::master::getHost(), static_cast<int>(::ros::master::getPort()),
+                           static_cast<std::size_t>(maximum * 6 + 65536), deadline, retained,
+                           [&](bounded_xmlrpc& transport) { return call_with_transport(cap, request, deadline, transport); });
+    }
+
 }  // namespace uwvm2::ros_gateway::ros1_resources

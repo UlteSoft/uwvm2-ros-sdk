@@ -568,7 +568,7 @@ namespace
                 }
                 return {};
             }
-            return gateway::ros1_resources::call(node_, c, d, timeout);
+            return gateway::ros1_resources::call(node_, c, d, timeout, &service_clients_);
         }
     };
 }  // namespace
