@@ -120,11 +120,19 @@ def run(
         backend,
         distribution,
     )
-    if os.environ.get("ROS_DISTRO", distribution) != distribution:
+    # A pure Wasm deployment does not consume a native ROS installation.
+    # Resolve native executables and its sourced distribution only when at
+    # least one explicitly configured module actually enables that backend.
+    native_ros = any(module["ros_enabled"] for module in plan["modules"].values())
+    if native_ros and os.environ.get("ROS_DISTRO", distribution) != distribution:
         raise ValueError("The sourced native ROS distribution differs from deployment")
     base = config_path.resolve().parent
     runtime = executable(base, config["runtime"])
-    gateway = executable(base, config["gateway"])
+    gateway = None
+    if native_ros:
+        if not isinstance(config.get("gateway"), str) or not config["gateway"]:
+            raise ValueError("A ROS-enabled module requires a gateway executable")
+        gateway = executable(base, config["gateway"])
     prefix = []
     if "runtime_loader" in config or "runtime_library_path" in config:
         loader = executable(base, config["runtime_loader"])
@@ -147,7 +155,10 @@ def run(
         "runtime": runtime,
         "gateway": gateway,
         "runtime_sha256": hashlib.sha256(Path(runtime).read_bytes()).hexdigest(),
-        "gateway_sha256": hashlib.sha256(Path(gateway).read_bytes()).hexdigest(),
+        "gateway_sha256": (
+            hashlib.sha256(Path(gateway).read_bytes()).hexdigest()
+            if gateway is not None else None
+        ),
         "gateway_pids": {},
     }
     # Socket names use bounded indices; arbitrary module names never become paths.

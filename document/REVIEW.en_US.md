@@ -1,5 +1,18 @@
 # SDK source review: all platforms
 
+The 2026-10-25 checked-AOT revalidation found a current AArch64 memory64 blocker:
+three retained KUKA TypeScript wasm32 examples passed, but its first wasm64
+example trapped during QuickJS context initialization. All twelve matching
+KUKA example/regression artifacts passed on x86_64. The candidate remains
+unmerged pending repair. Earlier interpreter-mode or small library witnesses
+do not qualify this AOT route. Exact runtime and artifact identities are recorded
+in the VM repository's `documents/toolchain/ros-runtime-qualification.md`.
+
+The common launcher now runs a fully ROS-disabled deployment without an
+installed gateway or matching sourced ROS environment. Eight actual VM checks
+cover output, denied clock/ROS access, and mandatory gateway refusal for an
+enabled preload. See [the deployment guide](native-run.en_US.md).
+
 Review 44 adds the shared TypeScript 5.9.3 frontend and four documented
 ordinary Xmake scalar-library examples. Eighteen final build graphs cover both
 Wasm widths; four semantic errors are rejected. The same products pass 36

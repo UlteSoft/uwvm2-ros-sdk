@@ -1,5 +1,15 @@
 # 全部平台 SDK 人工审查入口
 
+2026-10-25 的 checked-AOT 重验发现当前 AArch64 memory64 阻塞：保留的三个
+KUKA TypeScript wasm32 示例通过，但首个 wasm64 示例在 QuickJS 上下文初始化时
+触发内存越界。同一组十二个示例及回归产物在 x86_64 全部通过。该候选仍未合入，
+须先修复；此前解释执行或小型库用例不能为这一 AOT 路线背书。精确运行时和产物
+身份记录在 VM 仓库的 `documents/toolchain/ros-runtime-qualification.md`。
+
+公共启动器现支持所有模块均禁用 ROS 的部署，无需安装网关或加载匹配的 ROS
+环境。八项真实 VM 检查覆盖输出、时钟及 ROS 拒绝，以及启用预加载模块后必须
+提供网关的拒绝路径。详见 [部署手册](native-run.zh_CN.md)。
+
 第 44 轮接入唯一 TypeScript 5.9.3 公共前端及四个普通 Xmake 库示例。
 最终 18 个构建图覆盖两种 Wasm 位宽，4 个严格语义错误均被拒绝；同一批产物
 通过 x86_64/QEMU 共 36 次 guest 执行，其中 16 次为库生命周期验证。Unitree

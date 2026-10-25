@@ -1,8 +1,9 @@
 # Native ROS execution and module permissions
 
 Building with `xmake` produces the application Wasm. Running with `xmake run`
-requires a separately installed uwvm2-ros runtime, its matching native gateway,
-the selected ROS environment and a manually reviewed deployment JSON. Select
+requires a separately installed uwvm2-ros runtime and a manually reviewed
+deployment JSON. Enabling ROS in any loaded module additionally requires its
+matching native gateway and the selected ROS environment. Select
 that file with `set_ros_run_config`, `--ros-run-config` or
 `UWVM_ROS_RUN_CONFIG`. Compilation grants no ROS or extra WASI permissions.
 
@@ -31,11 +32,19 @@ no unprefixed version setters or alternate scenario setters.
 
 ## Deployment contract
 
-`uwvm-native-ros-run-v2` requires `runtime`, `gateway`, `backend`, `distribution`,
-`connection` and `examples`. Runtime and gateway paths are explicit executable
-paths, resolved relative to the JSON file. An optional `runtime_loader` and
+`uwvm-native-ros-run-v2` requires `runtime`, `backend`, `distribution`,
+`connection` and `examples`. The `gateway` executable is required when any main
+or preload module sets `ros_enabled: true`. Runtime and gateway paths are explicit
+executable paths, resolved relative to the JSON file. An optional `runtime_loader` and
 `runtime_library_path` pair selects a native ELF loader and its library directory.
-The runtime and gateway must use matching source-selected type registries.
+An enabled native deployment must use matching runtime and gateway type registries.
+
+When every loaded module sets `ros_enabled: false`, omit `gateway`. The launcher
+starts only the VM; it neither resolves an unused gateway path nor checks the
+shell's `ROS_DISTRO`. Keep `backend`, `distribution` and `connection` explicit:
+they identify the selected build and policy schema, even for a codec-only program.
+WASI grants remain explicit and ROS grants must be empty. Enabling even one
+preload restores the gateway requirement and the sourced-distribution check.
 
 Each `examples` entry has exactly four fields:
 
@@ -70,7 +79,7 @@ Unknown keys and duplicate JSON keys are errors.
 ## Preload: io, algorithm and ros_comm
 
 The complete editable structure is in
-`sdk/share/platform/ros/native-preload.template.json`. Replace its explicit
+`share/platform/ros/native-preload.template.json`. Replace its explicit
 paths, operation and native identity with the ones belonging to the actual
 compiled library exports. The application must import those exact module names
 and function signatures; a JSON file cannot turn a command into a library.

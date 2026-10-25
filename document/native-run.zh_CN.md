@@ -1,7 +1,8 @@
 # 原生 ROS 运行与模块权限
 
-`xmake` 负责生成应用 Wasm。`xmake run` 另需安装 uwvm2-ros、与它匹配的原生
-网关及所选 ROS 环境，并由操作员提供经过审查的部署 JSON。使用
+`xmake` 负责生成应用 Wasm。`xmake run` 另需安装 uwvm2-ros，并由操作员提供
+经过审查的部署 JSON。任一已加载模块启用 ROS 时，还必须安装匹配的原生网关
+和所选 ROS 环境。使用
 `set_ros_run_config`、`--ros-run-config` 或 `UWVM_ROS_RUN_CONFIG` 选择该文件。
 构建操作不会授予 ROS 权限或额外 WASI 权限。
 
@@ -29,11 +30,18 @@ ROS1 使用 `set_ros1_version`。Agibot 另提供 `set_agibot_version` 和
 
 ## 部署协议
 
-`uwvm-native-ros-run-v2` 必须包含 `runtime`、`gateway`、`backend`、
-`distribution`、`connection` 和 `examples`。运行时和网关均为明确的可执行文件
+`uwvm-native-ros-run-v2` 必须包含 `runtime`、`backend`、`distribution`、
+`connection` 和 `examples`。主模块或任一预加载模块设置 `ros_enabled: true`
+时，必须提供 `gateway`。运行时和网关均为明确的可执行文件
 路径，相对路径以 JSON 所在目录为基准。可选的 `runtime_loader` 与
 `runtime_library_path` 必须成对提供，用于选择原生 ELF loader 及其库目录。
-运行时和网关必须编入相互匹配的原生类型注册表。
+启用原生 ROS 时，运行时和网关必须编入相互匹配的原生类型注册表。
+
+当所有已加载模块均设置 `ros_enabled: false` 时，可以省略 `gateway`。
+启动器只启动 VM，不解析未使用的网关路径，也不检查 shell 的 `ROS_DISTRO`。
+仍须明确填写 `backend`、`distribution` 和 `connection`，以标识所选构建及策略
+格式；这同样适用于仅处理数据编解码的程序。WASI 权限继续显式声明，ROS grants
+必须为空。只要任一预加载模块启用 ROS，就恢复网关要求及已加载发行版的检查。
 
 `examples` 中每个场景必须具有下列四个字段：
 
@@ -63,7 +71,7 @@ native identity。完整消息、服务和动作 adapter 必须进入运行时�
 
 ## Preload：io、algorithm 与 ros_comm
 
-完整可编辑结构位于 `sdk/share/platform/ros/native-preload.template.json`。
+完整可编辑结构位于 `share/platform/ros/native-preload.template.json`。
 必须根据实际编译的库替换路径、操作和原生类型标识；应用的 import 名称及函数
 签名必须与库 export 一致。部署 JSON 不能把普通命令程序变成动态库。
 
