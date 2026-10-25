@@ -32,7 +32,7 @@ function backend(context, request)
     local file = context.fresh("backend-request.json")
     json.savefile(file, request)
     os.execv(context.config.get("sdk-python") or "python3",
-        {"-I", "-S", "-B", path.join(context.sdk_root,"tools/platform/nvidia/examples/build_backend.py"), file})
+        {"-I", "-S", "-B", path.join(context.sdk_root, "tools/platform/nvidia/examples/build_backend.py"), file})
     local receipt = json.loadfile(path.join(request.output_dir, "backend-receipt.json"))
     assert(receipt.status == "BUILT_NOT_EXECUTED" or
         (request.operation == "tinygo-stage" and receipt.status == "SOURCE_PREPARED_NOT_COMPILED"),
@@ -54,7 +54,7 @@ end
 -- @see backend
 -- @see run_empty
 function guest(context, entry, source, target, family)
-    local cpp = import("tools.xmake.cpp", {rootdir=context.sdk_root})
+    local cpp = import("tools.xmake.cpp", {rootdir = context.sdk_root})
     local standard = context.config.get("ros-sdk-cpp-standard") or "20"
     assert(standard == "20" or standard == "23" or standard == "26",
         "These retained complete C++ applications require C++20, C++23 or the real C++26 draft mode")
@@ -62,22 +62,40 @@ function guest(context, entry, source, target, family)
         "This source's checked I/O requires the explicit wasm32 WASIp1 profile")
     assert((context.config.get("sdk-startup") or "command") == "command", "Actual command startup required")
     local resolved_path = context.fresh("resolved.json")
-    local resolved = cpp.resolve(context.sdk_root, standard, resolved_path, {common=context.common})
+    local resolved = cpp.resolve(context.sdk_root, standard, resolved_path, {common = context.common})
     local export_path = context.fresh("clang-export.json")
     local exported = context.common.export_clang(resolved, context.fresh("clang-config"), export_path)
-    local receipt = backend(context, {operation="cmake-guest", source_dir=source,
-        target=target, standard=standard, positive=entry.positive == true,
-        resolved=resolved_path, clang_commands=export_path, bundle=family,
-        family_receipt=path.join(context.sdk_root,"share/platform",context.selection.platform,
-            "ros2",path.filename(family),"generation.vendor.json")})
-    return {artifacts={{name="main",path=receipt.artifact,kind="wasm",startup="command"}},
-        profile={contract=resolved.profile,language=resolved.language_options,
-            toolchain_id=resolved.toolchain_id,manifest=resolved.manifest}}
+    local receipt = backend(context, {
+        operation = "cmake-guest",
+        source_dir = source,
+        target = target,
+        standard = standard,
+        positive = entry.positive == true,
+        resolved = resolved_path,
+        clang_commands = export_path,
+        bundle = family,
+        family_receipt = path.join(
+            context.sdk_root, "share/platform", context.selection.platform,
+            "ros2", path.filename(family), "generation.vendor.json"
+        )
+    })
+    return {
+        artifacts = {
+            {name = "main", path = receipt.artifact, kind = "wasm", startup = "command"}
+        },
+        profile = {
+            contract = resolved.profile,
+            language = resolved.language_options,
+            toolchain_id = resolved.toolchain_id,
+            manifest = resolved.manifest
+        }
+    }
 end
 
 --- @brief Run the actual built command Guest with no additional authority.
 -- @details Requires the exact empty-authority catalog entry and one real Wasm
--- artifact. Uses the selected Runtime, hides host APIs/environment and denies
+-- artifact. The selected Runtime uses AOT with checked native unwind, hides
+-- host APIs/environment and denies
 -- extra clocks/random/signals/scheduler/stdio-full rights. Ordinary stdio is
 -- retained. This does not admit ROS, model, network or device operations.
 -- @param[in] context Bound run context with explicit actual Runtime executable.
@@ -91,14 +109,28 @@ function run_empty(context, entry, receipt)
         "No implicit ROS, network, model or device grant")
     assert(#receipt.artifacts == 1 and receipt.artifacts[1].name == "main" and receipt.artifacts[1].kind == "wasm",
         "One actual command Guest required")
-    local argv={"--runtime-int","-Rct","0","--wasm-set-main-module-name","main",
-        "--wasip1-global-disable","--wasip1-global-noinherit-system-environment",
-        "--wasip1-single-create","main","--wasip1-single-enable","main",
-        "--wasip1-single-hide-host-api","main","--wasip1-single-noinherit-system-environment","main"}
-    for _, right in ipairs({"realtime-clock","monotonic-clock","process-clock","thread-clock",
-        "random","proc-raise","sched-yield","stdio-full-rights"}) do
-        table.insert(argv,"--wasip1-single-deny"); table.insert(argv,"main"); table.insert(argv,right)
+    local argv = {
+        "--runtime-aot",
+        "--runtime-llvm-jit-call-stack", "unwind",
+        "-Rct", "0",
+        "--wasm-set-main-module-name", "main",
+        "--wasip1-global-disable",
+        "--wasip1-global-noinherit-system-environment",
+        "--wasip1-single-create", "main",
+        "--wasip1-single-enable", "main",
+        "--wasip1-single-hide-host-api", "main",
+        "--wasip1-single-noinherit-system-environment", "main"
+    }
+    local denied_rights = {
+        "realtime-clock", "monotonic-clock", "process-clock", "thread-clock",
+        "random", "proc-raise", "sched-yield", "stdio-full-rights"
+    }
+    for _, right in ipairs(denied_rights) do
+        table.insert(argv, "--wasip1-single-deny")
+        table.insert(argv, "main")
+        table.insert(argv, right)
     end
-    table.insert(argv,"--run"); table.insert(argv,receipt.artifacts[1].path)
-    os.execv(context.runtime,argv)
+    table.insert(argv, "--run")
+    table.insert(argv, receipt.artifacts[1].path)
+    os.execv(context.runtime, argv)
 end

@@ -50,7 +50,8 @@ A runtime installation is a separate deployment input. Build explicitly before `
   "target": "wasm32-wasip1",
   "runtime": "/absolute/path/to/uwvm2-ros",
   "runtime_arguments": [
-    "--runtime-int",
+    "--runtime-aot",
+    "--runtime-llvm-jit-call-stack", "unwind",
     "--wasip1-global-noinherit-system-environment"
   ],
   "application_arguments": [

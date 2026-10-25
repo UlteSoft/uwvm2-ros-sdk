@@ -72,7 +72,8 @@ GATEWAY=/absolute/path/to/uwvm-ros1-gateway
 socket=/tmp/uwvm-preload-$$.sock
 # The shell stops before exec; its PID remains the real runtime worker PID.
 sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
-  --runtime-int \
+  --runtime-aot \
+  --runtime-llvm-jit-call-stack unwind \
   --wasm-set-main-module-name main \
   --wasip1-global-noinherit-system-environment \
   --wasm-preload-library "build/io/io.wasm" io \

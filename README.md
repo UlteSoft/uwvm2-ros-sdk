@@ -43,7 +43,11 @@ Building a Wasm module does not require the uwvm2-ros executable. Running a
 module with `xmake run` requires an installed uwvm2-ros, the native ROS resources
 needed by that example, and explicitly configured WASI/ROS permissions. Follow
 the selected example's manual for its architecture, ROS distribution and
-deployment configuration.
+deployment configuration. The current platform-bound runtime uses
+`--runtime-aot --runtime-llvm-jit-call-stack unwind`; the common ROS and
+empty-authority launchers select this checked native mode explicitly. A missing
+or failed native unwind check stops the launch. An embedded Python/JavaScript
+engine remains a Wasm guest; selecting VM AOT does not certify language AOT.
 
 ## Documentation and qualification
 
@@ -88,7 +92,11 @@ products without excluding the shipped precompiled inputs.
 `lib` 中的 Wasm 解释器、静态库及启动对象，以及 `share/toolchains` 中的预编译
 工具链均为正式开发输入，全部保留。已验收示例通过 Xmake 直接构建用户程序，
 无需先从源码构建编译器或解释器。`xmake run` 另需安装 uwvm2-ros，并按示例
-手册手动配置权限和原生 ROS 环境。具体支持范围以双语审查文档为准。
+手册手动配置权限和原生 ROS 环境。当前平台绑定运行时使用
+`--runtime-aot --runtime-llvm-jit-call-stack unwind`，公共 ROS 与空权限启动器
+会显式选择这一模式；原生 Unwind 检查失败时停止运行。嵌入的 Python、JavaScript
+解释器仍作为 Wasm 客体运行，VM 使用 AOT 不代表该语言已通过原生 AOT 验收。
+具体支持范围以双语审查文档为准。
 
 多语言、动静态库及原生 ROS 的回归测试维护在
 [uwvm2-ros 的测试目录](https://github.com/UlteSoft/uwvm2-ros/tree/main/test/0073.ros-tests/sdk)，

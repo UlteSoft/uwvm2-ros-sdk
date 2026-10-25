@@ -345,14 +345,18 @@ def command(plan, runtime_prefix, sockets, uid):
     """@brief Serialize an explicit module plan using the production CLI.
 
     @details Parser features precede immediate preload loading. Every module has
-    an independent Single binding. Global ROS remains disabled; global WASI
+    an independent Single binding. The platform-bound VM uses LLVM AOT and
+    live-checked native unwind; there is no interpreter or instrumentation
+    fallback. Global ROS remains disabled; global WASI
     receives no extra permissions. No environment, directory or socket preopens
     are inherited by any module. Guest arguments follow the sole --run operand.
     """
     backend = plan["backend"]
     argv = [
         *runtime_prefix,
-        "--runtime-int",
+        "--runtime-aot",
+        "--runtime-llvm-jit-call-stack",
+        "unwind",
         "--wasm-set-main-module-name",
         plan["main_module"],
         "--wasip1-global-noinherit-system-environment",

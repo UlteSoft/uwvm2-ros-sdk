@@ -9,7 +9,8 @@ set -eu
 : "${UWVM_ROS_GATEWAY_UID:?Set the explicitly trusted native gateway numeric UID}"
 
 exec "$UWVM_RUNTIME" \
-  --runtime-int \
+  --runtime-aot \
+  --runtime-llvm-jit-call-stack unwind \
   --wasm-set-main-module-name main \
   --wasm-preload-library build/io.wasm io \
   --wasm-preload-library build/algorithm.wasm algorithm \
