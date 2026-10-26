@@ -36,7 +36,6 @@ xmake static_cpp_consumer
   "runtime": "uwvm2-ros",
   "runtime_arguments": [
     "--runtime-aot",
-    "--runtime-llvm-jit-call-stack", "unwind",
     "--wasip1-global-noinherit-system-environment",
     "--ros2-global-disable"
   ],

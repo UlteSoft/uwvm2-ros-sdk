@@ -51,7 +51,6 @@ A runtime installation is a separate deployment input. Build explicitly before `
   "runtime": "/absolute/path/to/uwvm2-ros",
   "runtime_arguments": [
     "--runtime-aot",
-    "--runtime-llvm-jit-call-stack", "unwind",
     "--wasip1-global-noinherit-system-environment"
   ],
   "application_arguments": [

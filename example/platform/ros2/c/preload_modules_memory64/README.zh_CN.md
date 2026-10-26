@@ -55,7 +55,6 @@ socket=/tmp/uwvm-preload-$$.sock
 # The shell stops before exec; its PID remains the real runtime worker PID.
 sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --runtime-aot \
-  --runtime-llvm-jit-call-stack unwind \
   --wasm-feature-enable-memory64 \
   --wasm-feature-enable-table64 \
   --wasm-set-main-module-name main \

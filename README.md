@@ -44,8 +44,8 @@ module with `xmake run` requires an installed uwvm2-ros, the native ROS resource
 needed by that example, and explicitly configured WASI/ROS permissions. Follow
 the selected example's manual for its architecture, ROS distribution and
 deployment configuration. The current platform-bound runtime uses
-`--runtime-aot --runtime-llvm-jit-call-stack unwind`; the common ROS and
-empty-authority launchers select this checked native mode explicitly. A missing
+`--runtime-aot`; checked native unwind is mandatory and has no public control
+option. The common ROS and empty-authority launchers rely on that product contract. A missing
 or failed native unwind check stops the launch. An embedded Python/JavaScript
 engine remains a Wasm guest; selecting VM AOT does not certify language AOT.
 
@@ -93,8 +93,8 @@ products without excluding the shipped precompiled inputs.
 工具链均为正式开发输入，全部保留。已验收示例通过 Xmake 直接构建用户程序，
 无需先从源码构建编译器或解释器。`xmake run` 另需安装 uwvm2-ros，并按示例
 手册手动配置权限和原生 ROS 环境。当前平台绑定运行时使用
-`--runtime-aot --runtime-llvm-jit-call-stack unwind`，公共 ROS 与空权限启动器
-会显式选择这一模式；原生 Unwind 检查失败时停止运行。嵌入的 Python、JavaScript
+`--runtime-aot`；原生 Unwind 自检和崩溃栈恢复为强制产品能力，不提供控制选项。公共 ROS
+与空权限启动器使用这一约定；原生 Unwind 检查失败时停止运行。嵌入的 Python、JavaScript
 解释器仍作为 Wasm 客体运行，VM 使用 AOT 不代表该语言已通过原生 AOT 验收。
 具体支持范围以双语审查文档为准。
 

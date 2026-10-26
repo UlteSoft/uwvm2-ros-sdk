@@ -111,7 +111,6 @@ function run_empty(context, entry, receipt)
         "One actual command Guest required")
     local argv = {
         "--runtime-aot",
-        "--runtime-llvm-jit-call-stack", "unwind",
         "-Rct", "0",
         "--wasm-set-main-module-name", "main",
         "--wasip1-global-disable",

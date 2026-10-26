@@ -355,8 +355,6 @@ def command(plan, runtime_prefix, sockets, uid):
     argv = [
         *runtime_prefix,
         "--runtime-aot",
-        "--runtime-llvm-jit-call-stack",
-        "unwind",
         "--wasm-set-main-module-name",
         plan["main_module"],
         "--wasip1-global-noinherit-system-environment",

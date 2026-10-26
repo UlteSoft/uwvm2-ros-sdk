@@ -42,7 +42,6 @@ The launcher appends the selected application and does not widen this policy.
   "runtime": "uwvm2-ros",
   "runtime_arguments": [
     "--runtime-aot",
-    "--runtime-llvm-jit-call-stack", "unwind",
     "--wasip1-global-noinherit-system-environment",
     "--ros2-global-disable"
   ],
