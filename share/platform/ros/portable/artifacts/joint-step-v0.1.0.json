@@ -1,0 +1,358 @@
+{
+  "format": "uwvm-portable-algorithm-artifact-v1",
+  "id": "joint-step-v0.1.0",
+  "published_utc": "2026-10-26T12:11:02.977165+00:00",
+  "status": "PASS_COMPILED_WASM_STRUCTURE_ONLY",
+  "artifact": {
+    "available": true,
+    "path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "bytes": 4449,
+    "whole_file_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+    "reason": null
+  },
+  "capability": "joint.position.bounded.v1",
+  "target": {
+    "triple": "wasm32-wasip1",
+    "kind": "binary",
+    "source_language": "c",
+    "exception_profile": "noeh",
+    "memory_index": 0,
+    "memories": [
+      {
+        "shared": false,
+        "minimum": 17,
+        "flags": 1,
+        "maximum": 1024,
+        "address_bits": 32
+      }
+    ],
+    "portable_module": "uwvm_portable_robot_v1",
+    "abi_version": 1
+  },
+  "source": {
+    "files": [
+      {
+        "path": "include/platform/ros/portable/v0_1_0/abi.h",
+        "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d",
+        "bytes": 3302
+      },
+      {
+        "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+        "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616",
+        "bytes": 6112
+      },
+      {
+        "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+        "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730",
+        "bytes": 804
+      }
+    ],
+    "original_frozen_source_metadata_sha256": "77f2b7e1c92ad53a9de889ea2e63fa2f42b42de27f17d5eb1a5e14595facb3fc",
+    "current_source_metadata_sha256": "ed178b82496ed45bf8041c18387db9343c3d6b3954aadd190a51c4cf81cc2bbd",
+    "actual_compiler_packet_sha256": "6792b8b8448c2182c9440581d069d03ef745705eceabd2ef469ab2020996e0ac",
+    "actual_sdk_input_manifest_sha256": "bcc365f30fe0b904e396b936807530c9cba0dc74cfcd3db33832cddf7a337431",
+    "abi_json_sha256": "d4063d349ab9e97e28b5c92836812c5e847b3a6ed9a8a3123d02248594a84eba",
+    "wire_json_sha256": "d09c0f919e0eca4fe74e9200b9bcbed1d5499bfdda02fb268543e08b41af137d",
+    "adapter_schema_sha256": "b1b9d0a6cf60cf8d5c1c9f33fdbdee6fb38a796b811045e3b9e0b807ef910248",
+    "algorithm_and_abi_semantics_changed": false
+  },
+  "compiler": {
+    "route": "Existing public Xmake C/WASI LLVM23 route",
+    "version": "23.1.4",
+    "host": {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    "llvm_manifest_sha256": "9dcca4deb56c2bfbbef0f4e8a0fb76529f0bd9525bcce951fc417f2bfca12fea",
+    "llvm_xmz_sha256": "8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522",
+    "clang_elf": {
+      "sha256": "c336d48383874cffaab0dc4c5c359456d871f21380b746520dde5c7f4c125a67",
+      "bytes": 282507120,
+      "executable": true,
+      "path": "original/bin/clang-23"
+    },
+    "lld_elf": {
+      "sha256": "0f8d53acaf6ff4990506a26739c12fb90315fdcc0430ec4c305ca75115774d4b",
+      "bytes": 213124752,
+      "executable": true,
+      "path": "original/bin/lld"
+    },
+    "launcher": {
+      "sha256": "d1f201f9ba53680be253c9dbdd2640dedeeffb72cb1b6ced6b0b151f033f4787",
+      "bytes": 3632,
+      "executable": true,
+      "path": "bin/llvm23-launcher"
+    },
+    "actual_provenance_sha256": "a46ee42aa826833fb758c4c8917a9daf49fcb29e15a1caa2855d1cf911f136a1",
+    "upstream_source_artifact": {
+      "name": "LLVM-23.1.4-Linux-X64.tar.zst",
+      "source": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-23.1.4",
+      "verification": "SHA-256 matches the digest returned by the official GitHub release API; no GPG or Sigstore verification claimed",
+      "version": "23.1.4",
+      "bytes": 1190060068,
+      "sha256": "efdd1dbd089b99bfcfcde7b8eb1236163f2e88df5a981cca4f783ec9cb5e0378",
+      "download_url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/LLVM-23.1.4-Linux-X64.tar.zst",
+      "schema_version": 1
+    },
+    "xmake_binary_sha256": "d24ec7daa11ab5007f33221ba0a883f9c7479afae2a47370773f209047152a1e",
+    "xmake_program_manifest_sha256": "8b1afd5835aecf6ebd749dabf24560197a13a3f7545deecb8c3f2604a24ea094",
+    "immutable_input_manifest_sha256": "22e34cbd45de774d48bf6a4271a3c1391f2cf656d6c731ea6a800def7cfe3c36",
+    "immutable_input_files": 2258,
+    "immutable_input_bytes": 337198104
+  },
+  "actual_commands": [
+    {
+      "argv": [
+        "/tool-bin/xmake",
+        "f",
+        "-y",
+        "-c",
+        "-a",
+        "wasm32"
+      ],
+      "cwd": "/work/compile/sdk/example/platform/ros/portable/v0_1_0/joint_step",
+      "exit_code": 0,
+      "name": "configure",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "764b8d443b3c3573a2ba138978de518980a794fc9e54167f73ed77623d3abd69"
+    },
+    {
+      "argv": [
+        "/tool-bin/xmake",
+        "-vD",
+        "-j2"
+      ],
+      "cwd": "/work/compile/sdk/example/platform/ros/portable/v0_1_0/joint_step",
+      "exit_code": 0,
+      "name": "build",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "858f05010ffd66089532cb3ef3f86d6516e505cc5c44ba141010dcf1e7f5b794"
+    },
+    {
+      "argv": [
+        "/tool-bin/xmake",
+        "l",
+        "/packet/inspect_artifacts.lua",
+        "/work/compile/sdk",
+        "/work/compile/sdk/example/platform/ros/portable/v0_1_0/joint_step/build/portable-joint-step-v0-1-0.wasm",
+        "/work/compile/raw/wasm-structure.json"
+      ],
+      "cwd": "/work/compile/sdk/example/platform/ros/portable/v0_1_0/joint_step",
+      "exit_code": 0,
+      "name": "inspect",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_compiler_argv": [
+    "/work/compile/cache/uwvm-ros/host-tools/8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522/bin/clang",
+    "--target=wasm32-wasip1",
+    "--sysroot=/work/compile/sdk/lib/wasm/llvm23/noeh/wasm32-wasip1",
+    "-resource-dir=/work/compile/sdk/lib/language/cfamily/clang/23",
+    "-no-canonical-prefixes",
+    "-fintegrated-cc1",
+    "-fuse-ld=/work/compile/cache/uwvm-ros/host-tools/8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522/bin/wasm-ld",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I/work/compile/sdk/include",
+    "-I/work/compile/sdk/include/platform",
+    "-I/work/compile/sdk/include/platform/ros/c",
+    "-Wl,--stack-first",
+    "-Wl,-z,stack-size=1048576",
+    "-Wl,--max-memory=67108864",
+    "-Wl,--threads=1",
+    "-ffile-prefix-map=/work/compile/sdk=/sdk",
+    "-fmacro-prefix-map=/work/compile/sdk=/sdk",
+    "-ffile-prefix-map=/work/compile/sdk/example/platform/ros/portable/v0_1_0/joint_step=/application",
+    "-fmacro-prefix-map=/work/compile/sdk/example/platform/ros/portable/v0_1_0/joint_step=/application",
+    "-rtlib=compiler-rt",
+    "-I/work/compile/sdk/include/platform",
+    "-I/work/compile/sdk/include",
+    "/work/compile/sdk/example/platform/ros/portable/v0_1_0/joint_step/main.c",
+    "-o",
+    "/work/compile/sdk/example/platform/ros/portable/v0_1_0/joint_step/build/portable-joint-step-v0-1-0.wasm"
+  ],
+  "actual_portable_imports": [
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "signature": {
+        "parameters": [],
+        "results": [
+          127
+        ]
+      },
+      "name": "abi_version"
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "signature": {
+        "parameters": [
+          127,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      },
+      "name": "open"
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "signature": {
+        "parameters": [
+          126,
+          127,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      },
+      "name": "describe"
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "signature": {
+        "parameters": [
+          126,
+          127,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      },
+      "name": "read_state"
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "signature": {
+        "parameters": [
+          126,
+          127,
+          126,
+          126,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      },
+      "name": "submit"
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "signature": {
+        "parameters": [
+          126,
+          126,
+          127,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      },
+      "name": "wait"
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "signature": {
+        "parameters": [
+          126
+        ],
+        "results": [
+          127
+        ]
+      },
+      "name": "close"
+    }
+  ],
+  "actual_other_imports": [
+    {
+      "kind": 0,
+      "module": "wasi_snapshot_preview1",
+      "signature": {
+        "parameters": [
+          127
+        ],
+        "results": []
+      },
+      "name": "proc_exit"
+    }
+  ],
+  "actual_exports": [
+    {
+      "kind": 2,
+      "name": "memory"
+    },
+    {
+      "kind": 0,
+      "name": "_start",
+      "signature": {
+        "parameters": [],
+        "results": []
+      }
+    }
+  ],
+  "evidence": {
+    "owner": "SDK01",
+    "repository": "uwvm2-ros",
+    "record_root": ".tmp/sdk-validation/platform-chat-01/portable-compile-r652",
+    "result_sha256": "341c3cf05655af36b13dc004714da7c4813755aa41736b3a569fc5e01f58fcbc",
+    "independent_verification_sha256": "91e6314b4e9c69ceddedd89c49a4edf62ddfba439f12745861966ae81924e0aa",
+    "own_two_case_proof_sha256": "6b3fcef8fc63b9412482230463077811ac0b1ef4f451bd87f2390ea94042ee15",
+    "compiler_raw_archive_sha256": "fc1f9140cd1640e96a021326646f8af910b5596101926fa3acac6b7b997d1790",
+    "control_raw_archive_sha256": "6f4e34d9e3d60dfbc4b68ba215132c9ad93185f9f986f9804c6ad0198de45cb9",
+    "actual_project_archive_sha256": "d3e7f9ddc97d3fd1f64dfc58dbb85559d18c47c3f17b0ef19b92265235bcc53c",
+    "guardian_retired": true,
+    "empty_control_leaf": true,
+    "shared_memory_max": 68719476736,
+    "shared_memory_swap_max": 0,
+    "shared_ancestor": "/sys/fs/cgroup/uwvmros.slice",
+    "mac_subject_execution": false
+  },
+  "first_emission": {
+    "revision": "r650",
+    "wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+    "bytes": 4449,
+    "compiler_result_sha256": "2204f9a921fa9faed743c41b3470005ed9cbf85e9514f48295cf59ac61f9e340",
+    "configure_build_and_inspect_commands_exited_zero": true,
+    "overall_inspector_result": "FAIL_PRESERVED: zero-parameter Lua table encoded as JSON object",
+    "r652_change": "Explicit JSON array encoding plus an added assertion requiring the first whole-Wasm SHA; C/header/project/compiler inputs unchanged",
+    "r652_wasm_bytes_identical": true
+  },
+  "qualification": {
+    "compiler": "PASS",
+    "wasm_structure": "PASS",
+    "vm_execution": "NOT_RUN",
+    "native_ros": "NOT_RUN",
+    "official_simulation": "NOT_RUN",
+    "qemu": "NOT_RUN",
+    "native_performance": "NOT_RUN",
+    "cross_platform_unchanged_bytes": "NOT_RUN"
+  },
+  "reuse_rule": "Copy this exact artifact to every applicable platform; SHA256 must match before/after VM execution. Rebuilding from source is not platform reuse evidence. Platform adapters, units, resources and grants remain external.",
+  "physical_hardware_authorized": false,
+  "additional_v0_2_algorithms_qualified": false
+}

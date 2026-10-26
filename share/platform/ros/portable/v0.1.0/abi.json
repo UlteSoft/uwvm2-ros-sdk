@@ -1,0 +1,215 @@
+{
+  "format": "uwvm-portable-robot-abi-v1",
+  "contract_version": "0.1.0",
+  "status": "SOURCE_PREVIEW_HOST_NOT_IMPLEMENTED",
+  "module": "uwvm_portable_robot_v1",
+  "abi_version": 1,
+  "functions": [
+    {
+      "name": "abi_version",
+      "params": [],
+      "results": [
+        "i32"
+      ]
+    },
+    {
+      "name": "open",
+      "params": [
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "alias_offset",
+          "type": "i64"
+        },
+        {
+          "name": "alias_bytes",
+          "type": "i64"
+        },
+        {
+          "name": "handle_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ]
+    },
+    {
+      "name": "describe",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ]
+    },
+    {
+      "name": "read_state",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ]
+    },
+    {
+      "name": "submit",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_bytes",
+          "type": "i64"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ]
+    },
+    {
+      "name": "wait",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "command_id",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ]
+    },
+    {
+      "name": "close",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ]
+    }
+  ],
+  "memory": {
+    "selector": 0,
+    "count": 1,
+    "shared": false,
+    "offset_and_length_bits": 64,
+    "opaque_handle_bits": 64,
+    "canonical_algorithm_address_bits": 32,
+    "bounds": "Validate offset+length without wrap, all output spans and overlap before any native effect; no native address crosses ABI"
+  },
+  "rights": {
+    "describe": 1,
+    "read_state": 2,
+    "submit": 4,
+    "wait": 8
+  },
+  "success": 0,
+  "errors": {
+    "9": "closed/unowned/revoked handle",
+    "11": "no fresh state yet; no implicit retry",
+    "13": "explicit policy denial",
+    "22": "malformed/noncanonical record",
+    "38": "ABI unavailable",
+    "90": "output too small; required length only, no truncation or submit side effect",
+    "95": "unsupported capability/semantic/mapping",
+    "110": "deadline; command may be indeterminate, never replay",
+    "116": "stale mapping/policy/sample epoch; reject before effect"
+  },
+  "rules": [
+    "abi_version grants nothing",
+    "open resolves only explicit alias robot in this caller Instance, backend adapter and policy; returns a nonzero generation only on success",
+    "Each call validates exact contract, caller/module provenance, owner, grants, state freshness and mapping epoch; descriptors never create permissions",
+    "describe and state failures never expose unowned data; length_out is written only on success or size-error 90",
+    "submit validates complete command and output capacity before effect; accepts one unique command_id per owner generation; duplicate command_id is refused, not replayed",
+    "Native goal acceptance is not completion. SUCCEEDED requires a real native result or explicitly declared equivalent plus fresh observed state within tolerance",
+    "wait has a policy-configured finite deadline no greater than 2000ms, never a native callback into Wasm and never a hidden resubmission",
+    "close retires exactly this owner, does not cancel/replay an uncertain command, and remains caller-owned cleanup after revocation",
+    "Mapping or permission updates invalidate old epochs/handles. Cache, debug, rollback and hot update cannot add or restore permissions",
+    "This preview requires a new VM-host implementation by the VM owner. It is not a binding already supported by native21"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "format": "uwvm-portable-robot-source-v1",
+  "version": "0.1.0",
+  "state": "FROZEN_SEMANTIC_SOURCES_CURRENT_ARTIFACT_METADATA",
+  "files": [
+    {
+      "path": "document/platform/ros/en_US/portable/v0_1_0/README.md",
+      "bytes": 3828,
+      "sha256": "0038af28332c32f9b9a88a9887d50be0f2e439c35f5d009212eb6d9c4ab05927"
+    },
+    {
+      "path": "document/platform/ros/zh_CN/portable/v0_1_0/README.md",
+      "bytes": 3181,
+      "sha256": "0751eb028afcc82e4e1720bd786e14aec115f524de8faa46f758a946ca6656cc"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+      "bytes": 6112,
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+      "bytes": 804,
+      "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+    },
+    {
+      "path": "include/platform/ros/portable/v0_1_0/abi.h",
+      "bytes": 3302,
+      "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.1.0/abi.json",
+      "bytes": 5376,
+      "sha256": "d4063d349ab9e97e28b5c92836812c5e847b3a6ed9a8a3123d02248594a84eba"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.1.0/adapter.schema.json",
+      "bytes": 4744,
+      "sha256": "b1b9d0a6cf60cf8d5c1c9f33fdbdee6fb38a796b811045e3b9e0b807ef910248"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.1.0/algorithm.json",
+      "bytes": 3254,
+      "sha256": "79fb0412de6882ec2e8216e33296af56d761f31ad2b9873387d3a2bb2e2e6743"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.1.0/contract.json",
+      "bytes": 4737,
+      "sha256": "181db9c80d42c913cd14a2d7a71a4eb6d99931eedd4dc4f6c94cb411825922ee"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.1.0/wire.json",
+      "bytes": 4765,
+      "sha256": "d09c0f919e0eca4fe74e9200b9bcbed1d5499bfdda02fb268543e08b41af137d"
+    }
+  ],
+  "supersedes_source_metadata_snapshot_sha256": "77f2b7e1c92ad53a9de889ea2e63fa2f42b42de27f17d5eb1a5e14595facb3fc",
+  "metadata_updated_utc": "2026-10-26T12:11:02.977165+00:00",
+  "semantic_algorithm_and_abi_changed": false
+}

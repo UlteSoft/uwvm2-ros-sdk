@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:uwvm:portable-robot:adapter:0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "contract_version",
+    "platform_id",
+    "execution_class",
+    "capability",
+    "official_source",
+    "ros",
+    "frame",
+    "resources",
+    "joints",
+    "policy_sha256",
+    "mapping_epoch"
+  ],
+  "properties": {
+    "format": {
+      "const": "uwvm-portable-robot-adapter-v1"
+    },
+    "contract_version": {
+      "const": "0.1.0"
+    },
+    "platform_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "execution_class": {
+      "const": "software_simulation"
+    },
+    "capability": {
+      "const": "joint.position.bounded.v1"
+    },
+    "frame": {
+      "const": "joint_space"
+    },
+    "official_source": {
+      "type": "object",
+      "required": [
+        "repository",
+        "commit",
+        "license",
+        "mode",
+        "scope"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "license": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ros": {
+      "type": "object",
+      "required": [
+        "release",
+        "os_abi",
+        "rmw",
+        "transport",
+        "security"
+      ],
+      "properties": {
+        "release": {
+          "type": "string",
+          "minLength": 1
+        },
+        "os_abi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rmw": {
+          "type": "string",
+          "minLength": 1
+        },
+        "transport": {
+          "type": "string",
+          "minLength": 1
+        },
+        "security": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "resources": {
+      "type": "object",
+      "required": [
+        "joint_state_topic",
+        "position_action",
+        "controller_status_service"
+      ],
+      "properties": {
+        "joint_state_topic": {
+          "type": "string",
+          "pattern": "^/[A-Za-z0-9_/]+$"
+        },
+        "position_action": {
+          "type": "string",
+          "pattern": "^/[A-Za-z0-9_/]+$"
+        },
+        "controller_status_service": {
+          "type": "string",
+          "pattern": "^/[A-Za-z0-9_/]+$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "joints": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "slot",
+          "native_joint",
+          "kind",
+          "source_unit",
+          "sign",
+          "zero_offset_microrad",
+          "lower_microrad",
+          "upper_microrad",
+          "max_step_microrad",
+          "tolerance_microrad"
+        ],
+        "properties": {
+          "slot": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 15
+          },
+          "native_joint": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "const": "bounded_revolute"
+          },
+          "source_unit": {
+            "const": "rad"
+          },
+          "sign": {
+            "enum": [
+              -1,
+              1
+            ]
+          },
+          "zero_offset_microrad": {
+            "type": "integer",
+            "minimum": -1000000000,
+            "maximum": 1000000000
+          },
+          "lower_microrad": {
+            "type": "integer",
+            "minimum": -1000000000,
+            "maximum": 1000000000
+          },
+          "upper_microrad": {
+            "type": "integer",
+            "minimum": -1000000000,
+            "maximum": 1000000000
+          },
+          "max_step_microrad": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10000
+          },
+          "tolerance_microrad": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+          }
+        }
+      }
+    },
+    "policy_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "mapping_epoch": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "$comment": "Schema validation is necessary, not sufficient: host must enforce slot/name bijection, lower<upper, live native interfaces, exact policy/module/mapping digests and all semantic constraints. No validator or VM support has run yet."
+}

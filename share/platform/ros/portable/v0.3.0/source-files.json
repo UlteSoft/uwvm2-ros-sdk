@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-portable-family-source-v1",
+  "version": "0.3.0",
+  "state": "FROZEN_SOURCE_CONTRACT_CANDIDATE",
+  "files": [
+    {
+      "path": "example/platform/ros/portable/v0_3_0/planar_goal/main.c",
+      "bytes": 4074,
+      "sha256": "f59e3850d7b9cdd640066bdd6cd7e93c261a59d95d8bf58796ff2a6f13bbfd30"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_3_0/planar_goal/xmake.lua",
+      "bytes": 732,
+      "sha256": "89978fb1ebd5b2d79d606f300a45741928a5c410beb969ef88ebc2d980b0d163"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_3_0/sensor_digest/main.c",
+      "bytes": 2931,
+      "sha256": "4db0dd84936ba6776332691d642131df875d85ae1068bd827f4fb4153a8ea4fd"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_3_0/sensor_digest/xmake.lua",
+      "bytes": 736,
+      "sha256": "52d14c8a3af9591f62adc62fe80115884f6c025913f48c24add4a4179a35cf32"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.3.0/adapter.schema.json",
+      "bytes": 17632,
+      "sha256": "a2a1ee8492cf8c1bdc82d9df4d7575ebfb60a444769ef3648df0dbae8f7397ed"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.3.0/algorithms.json",
+      "bytes": 2668,
+      "sha256": "60c61b00d33849a86ffe4bef68845e07fe5188dbf012e22d5062ebd6fcff6743"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.3.0/contract.json",
+      "bytes": 4059,
+      "sha256": "d5af6871a6070dc674d5925a00ca66cb97015d563e5efce7c6a30610f4e78bea"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.3.0/wire.json",
+      "bytes": 4808,
+      "sha256": "e4b1bf368078af68f48280b486a27ac4d49a6cf9d376a47d9fa239bece3c69ca"
+    },
+    {
+      "path": "document/platform/ros/en_US/portable/v0_3_0/README.md",
+      "bytes": 2709,
+      "sha256": "1f078e4b70b2b60fe44d998fdc758d76098c75347f544cc89cd16d2c2265be2f"
+    },
+    {
+      "path": "document/platform/ros/zh_CN/portable/v0_3_0/README.md",
+      "bytes": 2194,
+      "sha256": "069c795e129469dba2ab03759b90128fceff4bc524b7dd3f3441bb7d06b4829e"
+    }
+  ],
+  "generic_header_sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d",
+  "joint_wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+  "semantic_changes_from_preview": [
+    "new planar record kinds and exact turn grid",
+    "sensor output includes epoch/frame identity for real reverse-flow correlation"
+  ],
+  "host_runtime_acceptance": "NOT_RUN"
+}

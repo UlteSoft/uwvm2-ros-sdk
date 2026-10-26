@@ -1,0 +1,69 @@
+{
+  "format": "uwvm-portable-robot-capability-v1",
+  "version": "0.1.0",
+  "status": "SOURCE_PREVIEW_NOT_RUNTIME_QUALIFIED",
+  "capability": "joint.position.bounded.v1",
+  "scope": "One finite software-simulation-only joint-position step with real controller/state confirmation",
+  "required_intersection": [
+    "1..16 finite bounded revolute joint positions",
+    "explicit native position-controller/goal acceptance",
+    "fresh named joint state with finite radians",
+    "native completion and observable state confirmation",
+    "instance-local read/submit/wait grants"
+  ],
+  "explicitly_unsupported": [
+    "physical robot operation in these fixtures",
+    "unbounded continuous or prismatic joints",
+    "Cartesian pose/frame conversion",
+    "torque/force/velocity-only control",
+    "navigation/mobile-base semantics",
+    "coupled-joint or mimic mapping without a reviewed lossless bounded mapping",
+    "completion inferred solely from topic publish or goal acceptance",
+    "DDS security or TLS inferred merely from ROS release"
+  ],
+  "outside_wasm": [
+    "platform selection and official simulator/driver version",
+    "ROS release/Linux ABI/RMW/transport and security configuration",
+    "native resource names and explicit grants",
+    "joint-name permutation/sign/zero offset and radians-to-microradians mapping",
+    "frame declarations, limits, calibration, timing/freshness policy and acknowledgement witness"
+  ],
+  "files": {
+    "abi": "abi.json",
+    "wire": "wire.json",
+    "adapter_schema": "adapter.schema.json",
+    "algorithm": "algorithm.json"
+  },
+  "adapter_requirements": [
+    "Only a bijection between dense slots and distinct named joints, with finite declared bounds and units; duplicate/missing slots or names are refused",
+    "Policy grants are separate deployment inputs tied to exact Wasm SHA, Instance, adapter hash, mapping epoch and native resource provenance; adapter JSON cannot grant",
+    "Native endpoint/controller mismatch, inactive controller, stale state, unauthorized resource, unsupported semantics and mapping changes fail explicitly",
+    "Keep generated-chain checked unwind, crash recovery, paired unwind headers, cache/source/module provenance and permission checks in every process",
+    "Formal evidence records the same complete Wasm SHA before/after all platforms; no recompilation, relink, source-equality or host-precomputed answer can substitute",
+    "Official fake hardware demonstrates its documented software command/state scope, not dynamics, payload/contact safety or real hardware"
+  ],
+  "publication": {
+    "algorithm_wasm_available": false,
+    "algorithm_wasm_sha256": null,
+    "host_vm_support": "BLOCKED_PENDING_VM_OWNER_IMPLEMENTATION",
+    "official_simulation": "NOT_RUN",
+    "two_platform_unchanged_wasm_proof": "NOT_RUN"
+  },
+  "identity_rules": {
+    "mapping_sha256": "SHA256 of the exact bounded UTF-8 adapter JSON file bytes, including whitespace/final newline; do not reserialize before hashing",
+    "policy_sha256": "SHA256 of the exact separately supplied deployment policy bytes; adapter/schema/source metadata never grants",
+    "algorithm_sha256": "SHA256 of the entire immutable .wasm file; not source identity, ELF digest or cache-domain key",
+    "configuration_limits": "Adapter <=32768 bytes, strict UTF-8, no duplicate JSON keys, unknown fields, NUL names or nonfinite numbers",
+    "epoch": "Nonzero owner-local generation bound to exact mapping and permission digests; changes invalidate stale handles/commands, including debug/hot-update/rollback paths"
+  },
+  "ros2_jtc_semantics": {
+    "admission": "Exact mapped joint set must match the active official controller's claimed interfaces; no implicit partial-joint goal or coupled-joint approximation",
+    "submit": "A single native FollowJointTrajectory goal with exact UUID and transformed full joint vector; acceptance -> portable ACCEPTED only",
+    "completion": "Native SUCCEEDED plus FollowJointTrajectory result SUCCESSFUL and a fresh mapped JointState within canonical tolerance -> portable SUCCEEDED",
+    "observability": "Retain full native goal/result/status and independent state witness tied to portable command SHA, owner, epoch, module SHA and real official node/plugin identities",
+    "tolerances": "Do not translate canonical tolerance into a native 'erased/unrestricted' value; canonical post-state comparison remains mandatory",
+    "time": "Freshness is host monotonic receipt time; ROS /clock pause or rewind never manufactures a new sample"
+  },
+  "publication_is_source_seal_snapshot": true,
+  "actual_artifact_and_qualification_status": "Read separately versioned artifact receipts; this source contract never upgrades itself to runtime PASS"
+}

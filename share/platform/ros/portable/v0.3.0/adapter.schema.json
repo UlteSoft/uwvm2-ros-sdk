@@ -1,0 +1,635 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:uwvm:portable-robot:adapter:0.3.0",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "contract_version",
+        "platform_id",
+        "execution_class",
+        "capability",
+        "logical_alias",
+        "official_source",
+        "ros",
+        "policy_sha256",
+        "mapping_epoch",
+        "simulator_binding",
+        "freshness",
+        "frame",
+        "resources",
+        "limits",
+        "completion"
+      ],
+      "properties": {
+        "format": {
+          "const": "uwvm-portable-robot-adapter-v1"
+        },
+        "contract_version": {
+          "const": "0.3.0"
+        },
+        "platform_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "execution_class": {
+          "const": "software_simulation"
+        },
+        "capability": {
+          "const": "planar.pose.goal.v1"
+        },
+        "logical_alias": {
+          "const": "navigation"
+        },
+        "official_source": {
+          "type": "object",
+          "required": [
+            "repository",
+            "commit",
+            "license",
+            "mode",
+            "scope"
+          ],
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "license": {
+              "type": "string"
+            },
+            "mode": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ros": {
+          "type": "object",
+          "required": [
+            "release",
+            "os_abi",
+            "rmw",
+            "transport",
+            "security"
+          ],
+          "properties": {
+            "release": {
+              "type": "string",
+              "minLength": 1
+            },
+            "os_abi": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rmw": {
+              "type": "string",
+              "minLength": 1
+            },
+            "transport": {
+              "type": "string",
+              "minLength": 1
+            },
+            "security": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "policy_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mapping_epoch": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "simulator_binding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "instance_id",
+            "image_sha256",
+            "provider_manifest_sha256",
+            "owned_process_nonce",
+            "source_graph_identity_sha256"
+          ],
+          "properties": {
+            "instance_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "image_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "provider_manifest_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "owned_process_nonce": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$"
+            },
+            "source_graph_identity_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "freshness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "max_host_receipt_age_ns",
+            "deadline_clock",
+            "source_stamp",
+            "restart",
+            "pause"
+          ],
+          "properties": {
+            "max_host_receipt_age_ns": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5000000000
+            },
+            "deadline_clock": {
+              "const": "host_monotonic"
+            },
+            "source_stamp": {
+              "const": "retain_native_simulated_timestamp_separately"
+            },
+            "restart": {
+              "const": "revoke_handles_commands_and_epoch"
+            },
+            "pause": {
+              "const": "reject_stale_state_without_replay"
+            }
+          }
+        },
+        "frame": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fixed_frame",
+            "native_position_unit",
+            "native_heading_unit",
+            "quaternion_convention",
+            "heading_ticks_per_turn",
+            "quantization",
+            "transform_snapshot_sha256",
+            "map_or_odometry_identity_sha256"
+          ],
+          "properties": {
+            "fixed_frame": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "native_position_unit": {
+              "const": "m"
+            },
+            "native_heading_unit": {
+              "const": "rad"
+            },
+            "quaternion_convention": {
+              "const": "ROS_xyzw_ENU"
+            },
+            "heading_ticks_per_turn": {
+              "const": 6283186
+            },
+            "quantization": {
+              "const": "nearest_ties_away_from_zero"
+            },
+            "transform_snapshot_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "map_or_odometry_identity_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "resources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "goal_action",
+            "goal_action_type",
+            "pose_topic",
+            "pose_type"
+          ],
+          "properties": {
+            "goal_action": {
+              "type": "string",
+              "pattern": "^/[A-Za-z0-9_/]+$",
+              "maxLength": 256
+            },
+            "goal_action_type": {
+              "const": "nav2_msgs/action/NavigateToPose"
+            },
+            "pose_topic": {
+              "type": "string",
+              "pattern": "^/[A-Za-z0-9_/]+$",
+              "maxLength": 256
+            },
+            "pose_type": {
+              "enum": [
+                "nav_msgs/msg/Odometry",
+                "geometry_msgs/msg/PoseStamped"
+              ]
+            }
+          }
+        },
+        "limits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "xmin_mm",
+            "xmax_mm",
+            "ymin_mm",
+            "ymax_mm",
+            "max_step_mm",
+            "position_tolerance_mm",
+            "heading_tolerance_ticks",
+            "command_duration_ns"
+          ],
+          "properties": {
+            "xmin_mm": {
+              "type": "integer",
+              "minimum": -1000000000,
+              "maximum": 1000000000
+            },
+            "xmax_mm": {
+              "type": "integer",
+              "minimum": -1000000000,
+              "maximum": 1000000000
+            },
+            "ymin_mm": {
+              "type": "integer",
+              "minimum": -1000000000,
+              "maximum": 1000000000
+            },
+            "ymax_mm": {
+              "type": "integer",
+              "minimum": -1000000000,
+              "maximum": 1000000000
+            },
+            "max_step_mm": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "position_tolerance_mm": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "heading_tolerance_ticks": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100000
+            },
+            "command_duration_ns": {
+              "const": 1000000000
+            }
+          }
+        },
+        "completion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "terminal_status",
+            "release_specific_result_error_fields",
+            "observed_pose",
+            "deadline",
+            "goal_identity"
+          ],
+          "properties": {
+            "terminal_status": {
+              "const": "SUCCEEDED"
+            },
+            "release_specific_result_error_fields": {
+              "const": "all indicate success; absence/meaning checked against exact native type version"
+            },
+            "observed_pose": {
+              "const": "fresh same-instance pose within native SI tolerances before quantization"
+            },
+            "deadline": {
+              "const": "request native cancel at monotonic deadline; require terminal acknowledgement or mark indeterminate and retain resource authority"
+            },
+            "goal_identity": {
+              "const": "same native UUID, owner, instance, epoch and exact command SHA256"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "contract_version",
+        "platform_id",
+        "execution_class",
+        "capability",
+        "logical_alias",
+        "official_source",
+        "ros",
+        "policy_sha256",
+        "mapping_epoch",
+        "simulator_binding",
+        "freshness",
+        "frame",
+        "resources",
+        "limits",
+        "copy_policy"
+      ],
+      "properties": {
+        "format": {
+          "const": "uwvm-portable-robot-adapter-v1"
+        },
+        "contract_version": {
+          "const": "0.3.0"
+        },
+        "platform_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "execution_class": {
+          "const": "software_simulation"
+        },
+        "capability": {
+          "const": "sensor.frame.integrity.v1"
+        },
+        "logical_alias": {
+          "const": "sensor"
+        },
+        "official_source": {
+          "type": "object",
+          "required": [
+            "repository",
+            "commit",
+            "license",
+            "mode",
+            "scope"
+          ],
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "license": {
+              "type": "string"
+            },
+            "mode": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ros": {
+          "type": "object",
+          "required": [
+            "release",
+            "os_abi",
+            "rmw",
+            "transport",
+            "security"
+          ],
+          "properties": {
+            "release": {
+              "type": "string",
+              "minLength": 1
+            },
+            "os_abi": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rmw": {
+              "type": "string",
+              "minLength": 1
+            },
+            "transport": {
+              "type": "string",
+              "minLength": 1
+            },
+            "security": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "policy_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mapping_epoch": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "simulator_binding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "instance_id",
+            "image_sha256",
+            "provider_manifest_sha256",
+            "owned_process_nonce",
+            "source_graph_identity_sha256"
+          ],
+          "properties": {
+            "instance_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "image_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "provider_manifest_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "owned_process_nonce": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$"
+            },
+            "source_graph_identity_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "freshness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "max_host_receipt_age_ns",
+            "deadline_clock",
+            "source_stamp",
+            "restart",
+            "pause"
+          ],
+          "properties": {
+            "max_host_receipt_age_ns": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5000000000
+            },
+            "deadline_clock": {
+              "const": "host_monotonic"
+            },
+            "source_stamp": {
+              "const": "retain_native_simulated_timestamp_separately"
+            },
+            "restart": {
+              "const": "revoke_handles_commands_and_epoch"
+            },
+            "pause": {
+              "const": "reject_stale_state_without_replay"
+            }
+          }
+        },
+        "frame": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "frame_id",
+            "calibration_sha256",
+            "frame_key_sha256",
+            "encoding",
+            "sample_sequence"
+          ],
+          "properties": {
+            "frame_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "calibration_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "frame_key_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "encoding": {
+              "enum": [
+                "mono8",
+                "rgb8"
+              ]
+            },
+            "sample_sequence": {
+              "const": "host-assigned increasing sequence per instance/epoch; not a nonexistent ROS2 Header.seq"
+            }
+          }
+        },
+        "resources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "image_topic",
+            "image_type",
+            "camera_info_topic",
+            "camera_info_type"
+          ],
+          "properties": {
+            "image_topic": {
+              "type": "string",
+              "pattern": "^/[A-Za-z0-9_/]+$",
+              "maxLength": 256
+            },
+            "image_type": {
+              "const": "sensor_msgs/msg/Image"
+            },
+            "camera_info_topic": {
+              "type": "string",
+              "pattern": "^/[A-Za-z0-9_/]+$",
+              "maxLength": 256
+            },
+            "camera_info_type": {
+              "const": "sensor_msgs/msg/CameraInfo"
+            }
+          }
+        },
+        "limits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "max_payload_bytes",
+            "max_width",
+            "max_height"
+          ],
+          "properties": {
+            "max_payload_bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1048576
+            },
+            "max_width": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 512
+            },
+            "max_height": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 512
+            }
+          }
+        },
+        "copy_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "payload",
+            "provenance",
+            "oracle",
+            "rights"
+          ],
+          "properties": {
+            "payload": {
+              "const": "exact original bytes including row padding; no conversion or adapter-supplied digest in place of data"
+            },
+            "provenance": {
+              "const": "correlate native sample SHA256 with actual VM input-copy SHA256 and Wasm epoch/sequence/frame key"
+            },
+            "oracle": {
+              "const": "independent native sample FNV recomputation; no raw image logging by default"
+            },
+            "rights": {
+              "const": "describe/read only; no submit/wait or actuation"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$comment": "Necessary structural schema only. Host must enforce duplicate-key/UTF8/size limits, lower<upper, actual supported release/ABI, exact identities, graph provenance, transforms, owner/rights/epochs, freshness and native completion. Schema source has no host/runtime qualification."
+}

@@ -1,0 +1,255 @@
+{
+  "format": "uwvm-portable-robot-wire-v1",
+  "contract_version": "0.1.0",
+  "records": {
+    "common": [
+      [
+        0,
+        "magic",
+        "4 bytes ASCII URP1"
+      ],
+      [
+        4,
+        "wire_version",
+        "u16=1"
+      ],
+      [
+        6,
+        "kind",
+        "u16"
+      ],
+      [
+        8,
+        "total_bytes",
+        "u32 exact record length"
+      ],
+      [
+        12,
+        "joint_count",
+        "u32"
+      ]
+    ],
+    "descriptor": {
+      "kind": 1,
+      "header_bytes": 64,
+      "joint_bytes": 40,
+      "max_bytes": 704,
+      "fields": [
+        [
+          16,
+          "mapping_epoch",
+          "u64 nonzero"
+        ],
+        [
+          24,
+          "granted_rights",
+          "u32 bit mask"
+        ],
+        [
+          28,
+          "execution_flags",
+          "u32=1 software simulation"
+        ],
+        [
+          32,
+          "mapping_sha256",
+          "32 bytes"
+        ]
+      ],
+      "joint_fields": [
+        [
+          0,
+          "slot",
+          "u32 dense ordinal, not native joint index"
+        ],
+        [
+          4,
+          "joint_kind",
+          "u32=1 finite bounded revolute"
+        ],
+        [
+          8,
+          "lower_microrad",
+          "i64"
+        ],
+        [
+          16,
+          "upper_microrad",
+          "i64"
+        ],
+        [
+          24,
+          "max_step_microrad",
+          "u64 1..10000"
+        ],
+        [
+          32,
+          "observation_tolerance_microrad",
+          "u64 0..1000"
+        ]
+      ]
+    },
+    "state": {
+      "kind": 2,
+      "header_bytes": 64,
+      "joint_bytes": 16,
+      "max_bytes": 320,
+      "fields": [
+        [
+          16,
+          "mapping_epoch",
+          "u64"
+        ],
+        [
+          24,
+          "sample_sequence",
+          "u64 nonzero monotonic in owner generation"
+        ],
+        [
+          32,
+          "host_monotonic_ns",
+          "u64"
+        ],
+        [
+          40,
+          "valid_until_host_monotonic_ns",
+          "u64"
+        ],
+        [
+          48,
+          "reserved",
+          "16 zero bytes"
+        ]
+      ],
+      "joint_fields": [
+        [
+          0,
+          "slot",
+          "u32"
+        ],
+        [
+          4,
+          "validity",
+          "u32=1"
+        ],
+        [
+          8,
+          "position_microrad",
+          "i64"
+        ]
+      ]
+    },
+    "command": {
+      "kind": 3,
+      "header_bytes": 80,
+      "joint_bytes": 16,
+      "max_bytes": 336,
+      "fields": [
+        [
+          16,
+          "mapping_epoch",
+          "u64"
+        ],
+        [
+          24,
+          "command_id",
+          "u64 unique nonzero in owner generation"
+        ],
+        [
+          32,
+          "based_on_sample_sequence",
+          "u64"
+        ],
+        [
+          40,
+          "mapping_sha256",
+          "32 bytes"
+        ],
+        [
+          72,
+          "duration_ns",
+          "u64=1000000000 for canonical fixture"
+        ]
+      ],
+      "joint_fields": [
+        [
+          0,
+          "slot",
+          "u32"
+        ],
+        [
+          4,
+          "reserved",
+          "u32 zero"
+        ],
+        [
+          8,
+          "target_microrad",
+          "i64"
+        ]
+      ]
+    },
+    "receipt": {
+      "kind": 4,
+      "bytes": 96,
+      "joint_count": 0,
+      "fields": [
+        [
+          16,
+          "mapping_epoch",
+          "u64"
+        ],
+        [
+          24,
+          "command_id",
+          "u64"
+        ],
+        [
+          32,
+          "outcome",
+          "u32: 1 accepted,2 succeeded,3 rejected,4 cancelled,5 indeterminate"
+        ],
+        [
+          36,
+          "native_status",
+          "i32 separate from transport status"
+        ],
+        [
+          40,
+          "observed_state_sequence",
+          "u64"
+        ],
+        [
+          48,
+          "host_monotonic_ns",
+          "u64"
+        ],
+        [
+          56,
+          "command_sha256",
+          "32 bytes of exact accepted command"
+        ],
+        [
+          88,
+          "reserved",
+          "8 zero bytes"
+        ]
+      ]
+    },
+    "canonical": {
+      "byte_order": "little",
+      "padding": "none beyond specified zero reserved fields",
+      "integer_range_microrad": [
+        -1000000000,
+        1000000000
+      ],
+      "joint_count": [
+        1,
+        16
+      ],
+      "unknown_flags_or_trailing_data": "reject",
+      "state_mapping": "dense slot order; finite ROS radian values, nearest ties-to-even microradian quantization, explicit sign and zero offset outside Wasm",
+      "authority": "Wire fields never grant a capability. Host revalidates all limits, native resource grants and provenance even for a malicious guest"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "format": "uwvm-portable-family-algorithms-v1",
+  "version": "0.3.0",
+  "availability_is_source_seal_snapshot": true,
+  "algorithms": [
+    {
+      "id": "planar-goal-v0.3.0",
+      "project": "example/platform/ros/portable/v0_3_0/planar_goal",
+      "capability": "planar.pose.goal.v1",
+      "logical_alias": "navigation",
+      "required_imports": [
+        "abi_version",
+        "open",
+        "describe",
+        "read_state",
+        "submit",
+        "wait",
+        "close"
+      ],
+      "source_files": [
+        {
+          "path": "example/platform/ros/portable/v0_3_0/planar_goal/main.c",
+          "bytes": 4074,
+          "sha256": "f59e3850d7b9cdd640066bdd6cd7e93c261a59d95d8bf58796ff2a6f13bbfd30"
+        },
+        {
+          "path": "example/platform/ros/portable/v0_3_0/planar_goal/xmake.lua",
+          "bytes": 732,
+          "sha256": "89978fb1ebd5b2d79d606f300a45741928a5c410beb969ef88ebc2d980b0d163"
+        },
+        {
+          "path": "include/platform/ros/portable/v0_1_0/abi.h",
+          "bytes": 3302,
+          "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+        }
+      ],
+      "target": "wasm32-wasip1",
+      "kind": "binary",
+      "exception_profile": "noeh",
+      "source_seal_availability": "NOT_COMPILED",
+      "actual_artifact_manifest": "share/platform/ros/portable/artifacts/planar-goal-v0.3.0.json"
+    },
+    {
+      "id": "sensor-digest-v0.3.0",
+      "project": "example/platform/ros/portable/v0_3_0/sensor_digest",
+      "capability": "sensor.frame.integrity.v1",
+      "logical_alias": "sensor",
+      "required_imports": [
+        "abi_version",
+        "open",
+        "describe",
+        "read_state",
+        "close"
+      ],
+      "source_files": [
+        {
+          "path": "example/platform/ros/portable/v0_3_0/sensor_digest/main.c",
+          "bytes": 2931,
+          "sha256": "4db0dd84936ba6776332691d642131df875d85ae1068bd827f4fb4153a8ea4fd"
+        },
+        {
+          "path": "example/platform/ros/portable/v0_3_0/sensor_digest/xmake.lua",
+          "bytes": 736,
+          "sha256": "52d14c8a3af9591f62adc62fe80115884f6c025913f48c24add4a4179a35cf32"
+        },
+        {
+          "path": "include/platform/ros/portable/v0_1_0/abi.h",
+          "bytes": 3302,
+          "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+        }
+      ],
+      "target": "wasm32-wasip1",
+      "kind": "binary",
+      "exception_profile": "noeh",
+      "source_seal_availability": "NOT_COMPILED",
+      "actual_artifact_manifest": "share/platform/ros/portable/artifacts/sensor-digest-v0.3.0.json"
+    }
+  ],
+  "host_runtime_qualified": false
+}

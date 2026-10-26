@@ -1,0 +1,353 @@
+{
+  "format": "uwvm-portable-algorithm-artifact-v1",
+  "id": "planar-goal-v0.3.0",
+  "published_utc": "2026-10-26T14:56:52.624675+00:00",
+  "status": "PASS_COMPILED_WASM_STRUCTURE_ONLY",
+  "artifact": {
+    "available": true,
+    "path": "lib/platform/ros/portable/v0.3.0/planar-goal.wasm",
+    "bytes": 3797,
+    "whole_file_sha256": "54884d1513c2e5256450128627a5cc6f4130ca9ed533322a5035f77f81b59ff9",
+    "reason": null
+  },
+  "capability": "planar.pose.goal.v1",
+  "target": {
+    "triple": "wasm32-wasip1",
+    "kind": "binary",
+    "source_language": "c",
+    "exception_profile": "noeh",
+    "memory_index": 0,
+    "memories": [
+      {
+        "address_bits": 32,
+        "flags": 1,
+        "maximum": 1024,
+        "minimum": 17,
+        "shared": false
+      }
+    ],
+    "portable_module": "uwvm_portable_robot_v1",
+    "abi_version": 1
+  },
+  "source": {
+    "files": [
+      {
+        "bytes": 4074,
+        "path": "example/platform/ros/portable/v0_3_0/planar_goal/main.c",
+        "sha256": "f59e3850d7b9cdd640066bdd6cd7e93c261a59d95d8bf58796ff2a6f13bbfd30"
+      },
+      {
+        "bytes": 732,
+        "path": "example/platform/ros/portable/v0_3_0/planar_goal/xmake.lua",
+        "sha256": "89978fb1ebd5b2d79d606f300a45741928a5c410beb969ef88ebc2d980b0d163"
+      },
+      {
+        "bytes": 3302,
+        "path": "include/platform/ros/portable/v0_1_0/abi.h",
+        "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+      }
+    ],
+    "frozen_source_metadata_sha256": "158aa66cafd9d61cb66e3c9879f55060a52617f6528e4cbf71ecf74a86f74228",
+    "contract_sha256": "d5af6871a6070dc674d5925a00ca66cb97015d563e5efce7c6a30610f4e78bea",
+    "wire_sha256": "e4b1bf368078af68f48280b486a27ac4d49a6cf9d376a47d9fa239bece3c69ca",
+    "adapter_schema_sha256": "a2a1ee8492cf8c1bdc82d9df4d7575ebfb60a444769ef3648df0dbae8f7397ed",
+    "actual_compiler_packet_sha256": "97eb003724e2fb05164950cdd81f2752fac0df090da747d73029d286d38d5d02",
+    "actual_sdk_input_manifest_sha256": "80653e97aadb4af03a783bb3d3539dfe3adf8fab20a34dab3d6127d48587978a",
+    "algorithm_and_abi_semantics_changed_since_source_seal": false
+  },
+  "compiler": {
+    "route": "Existing public Xmake C/WASI LLVM23 route",
+    "version": "23.1.4",
+    "host": {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    "llvm_manifest_sha256": "9dcca4deb56c2bfbbef0f4e8a0fb76529f0bd9525bcce951fc417f2bfca12fea",
+    "llvm_xmz_sha256": "8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522",
+    "clang_elf": {
+      "sha256": "c336d48383874cffaab0dc4c5c359456d871f21380b746520dde5c7f4c125a67",
+      "bytes": 282507120,
+      "executable": true,
+      "path": "original/bin/clang-23"
+    },
+    "lld_elf": {
+      "sha256": "0f8d53acaf6ff4990506a26739c12fb90315fdcc0430ec4c305ca75115774d4b",
+      "bytes": 213124752,
+      "executable": true,
+      "path": "original/bin/lld"
+    },
+    "launcher": {
+      "sha256": "d1f201f9ba53680be253c9dbdd2640dedeeffb72cb1b6ced6b0b151f033f4787",
+      "bytes": 3632,
+      "executable": true,
+      "path": "bin/llvm23-launcher"
+    },
+    "actual_provenance_sha256": "a46ee42aa826833fb758c4c8917a9daf49fcb29e15a1caa2855d1cf911f136a1",
+    "upstream_source_artifact": {
+      "name": "LLVM-23.1.4-Linux-X64.tar.zst",
+      "source": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-23.1.4",
+      "verification": "SHA-256 matches the digest returned by the official GitHub release API; no GPG or Sigstore verification claimed",
+      "version": "23.1.4",
+      "bytes": 1190060068,
+      "sha256": "efdd1dbd089b99bfcfcde7b8eb1236163f2e88df5a981cca4f783ec9cb5e0378",
+      "download_url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/LLVM-23.1.4-Linux-X64.tar.zst",
+      "schema_version": 1
+    },
+    "xmake_binary_sha256": "d24ec7daa11ab5007f33221ba0a883f9c7479afae2a47370773f209047152a1e",
+    "xmake_program_manifest_sha256": "8b1afd5835aecf6ebd749dabf24560197a13a3f7545deecb8c3f2604a24ea094",
+    "immutable_input_manifest_sha256": "846c8d1c2ec1f75653a6bad2b62525426ede649dd700255bd63a274de5d57ea2",
+    "immutable_input_files": 4143,
+    "immutable_input_bytes": 350094523
+  },
+  "actual_commands": [
+    {
+      "argv": [
+        "/tool-bin/xmake",
+        "f",
+        "-y",
+        "-c",
+        "-a",
+        "wasm32"
+      ],
+      "cwd": "/work/compile/sdk/example/platform/ros/portable/v0_3_0/planar_goal",
+      "exit_code": 0,
+      "name": "planar-goal-v0.3.0-configure",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "764b8d443b3c3573a2ba138978de518980a794fc9e54167f73ed77623d3abd69"
+    },
+    {
+      "argv": [
+        "/tool-bin/xmake",
+        "-vD",
+        "-j2"
+      ],
+      "cwd": "/work/compile/sdk/example/platform/ros/portable/v0_3_0/planar_goal",
+      "exit_code": 0,
+      "name": "planar-goal-v0.3.0-build",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8238683aba6425531731eaa578a940404e8ef52da9308b469f381016f93f8d79"
+    },
+    {
+      "argv": [
+        "/tool-bin/xmake",
+        "l",
+        "/packet/inspect_artifacts.lua",
+        "/work/compile/sdk",
+        "/work/compile/sdk/example/platform/ros/portable/v0_3_0/planar_goal/build/portable-planar-goal-v0-3-0.wasm",
+        "/work/compile/raw/planar-goal-v0.3.0-structure.json"
+      ],
+      "cwd": "/work/compile/sdk/example/platform/ros/portable/v0_3_0/planar_goal",
+      "exit_code": 0,
+      "name": "planar-goal-v0.3.0-inspect",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_compiler_argv": [
+    "/work/compile/cache/uwvm-ros/host-tools/8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522/bin/clang",
+    "--target=wasm32-wasip1",
+    "--sysroot=/work/compile/sdk/lib/wasm/llvm23/noeh/wasm32-wasip1",
+    "-resource-dir=/work/compile/sdk/lib/language/cfamily/clang/23",
+    "-no-canonical-prefixes",
+    "-fintegrated-cc1",
+    "-fuse-ld=/work/compile/cache/uwvm-ros/host-tools/8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522/bin/wasm-ld",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I/work/compile/sdk/include",
+    "-I/work/compile/sdk/include/platform",
+    "-I/work/compile/sdk/include/platform/ros/c",
+    "-Wl,--stack-first",
+    "-Wl,-z,stack-size=1048576",
+    "-Wl,--max-memory=67108864",
+    "-Wl,--threads=1",
+    "-ffile-prefix-map=/work/compile/sdk=/sdk",
+    "-fmacro-prefix-map=/work/compile/sdk=/sdk",
+    "-ffile-prefix-map=/work/compile/sdk/example/platform/ros/portable/v0_3_0/planar_goal=/application",
+    "-fmacro-prefix-map=/work/compile/sdk/example/platform/ros/portable/v0_3_0/planar_goal=/application",
+    "-rtlib=compiler-rt",
+    "-I/work/compile/sdk/include/platform",
+    "-I/work/compile/sdk/include",
+    "/work/compile/sdk/example/platform/ros/portable/v0_3_0/planar_goal/main.c",
+    "-o",
+    "/work/compile/sdk/example/platform/ros/portable/v0_3_0/planar_goal/build/portable-planar-goal-v0-3-0.wasm"
+  ],
+  "actual_portable_imports": [
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "name": "abi_version",
+      "signature": {
+        "parameters": [],
+        "results": [
+          127
+        ]
+      }
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "name": "open",
+      "signature": {
+        "parameters": [
+          127,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      }
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "name": "describe",
+      "signature": {
+        "parameters": [
+          126,
+          127,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      }
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "name": "read_state",
+      "signature": {
+        "parameters": [
+          126,
+          127,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      }
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "name": "submit",
+      "signature": {
+        "parameters": [
+          126,
+          127,
+          126,
+          126,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      }
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "name": "wait",
+      "signature": {
+        "parameters": [
+          126,
+          126,
+          127,
+          126,
+          126,
+          126
+        ],
+        "results": [
+          127
+        ]
+      }
+    },
+    {
+      "kind": 0,
+      "module": "uwvm_portable_robot_v1",
+      "name": "close",
+      "signature": {
+        "parameters": [
+          126
+        ],
+        "results": [
+          127
+        ]
+      }
+    }
+  ],
+  "actual_other_imports": [
+    {
+      "name": "proc_exit",
+      "module": "wasi_snapshot_preview1",
+      "kind": 0,
+      "signature": {
+        "results": [],
+        "parameters": [
+          127
+        ]
+      }
+    }
+  ],
+  "actual_exports": [
+    {
+      "name": "memory",
+      "kind": 2
+    },
+    {
+      "name": "_start",
+      "signature": {
+        "results": [],
+        "parameters": []
+      },
+      "kind": 0
+    }
+  ],
+  "evidence": {
+    "owner": "SDK01",
+    "repository": "uwvm2-ros",
+    "record_root": ".tmp/sdk-validation/platform-chat-01/portable-families-compile-r658",
+    "result_sha256": "f7266df0b157b719b859adfd9e600b55111cac35ea388fde54c1c279b57cbaa8",
+    "independent_verification_sha256": "021d7c4bc23ddb6f6cda24584cce69fc1423da43dc1b45912c6f96e165758d0b",
+    "own_two_case_proof_sha256": "2a3295236519a0ee0672d53f33dc5db28111cfe36088f46d6fb4343c935b7f4d",
+    "compiler_raw_archive_sha256": "f60e119693d07a2bd03e1618a60b431df0dc639d932c0eddf578fae8524b4d38",
+    "control_raw_archive_sha256": "27d73beb61d7def1770d21933f33d1327d6f54ac28bcad058ab4ba8e75eea1c1",
+    "actual_project_archive_sha256": "8763463ee1b34e619919f7acde543db2a2bd9beb3b93caee1b272f9dac72f378",
+    "guardian_retired": true,
+    "empty_control_leaf": true,
+    "shared_memory_max": 68719476736,
+    "shared_memory_swap_max": 0,
+    "shared_ancestor": "/sys/fs/cgroup/uwvmros.slice",
+    "mac_subject_execution": false
+  },
+  "qualification": {
+    "compiler": "PASS",
+    "wasm_structure": "PASS",
+    "vm_execution": "NOT_RUN",
+    "native_ros": "NOT_RUN",
+    "official_simulation": "NOT_RUN",
+    "qemu": "NOT_RUN",
+    "native_performance": "NOT_RUN",
+    "cross_platform_unchanged_bytes": "NOT_RUN"
+  },
+  "reuse_rule": "Copy this exact artifact to every applicable platform; SHA256 must match before/after VM execution. Rebuilding from source is not platform reuse evidence. Platform adapters, units, resources and grants remain external.",
+  "physical_hardware_authorized": false,
+  "source_seal_availability_rule": "The frozen source seal records availability at sealing time. This immutable artifact manifest records actual build availability; no frozen algorithm source was edited.",
+  "first_emission": {
+    "revision": "r656",
+    "whole_file_sha256": "54884d1513c2e5256450128627a5cc6f4130ca9ed533322a5035f77f81b59ff9",
+    "r658_bytes_identical": true,
+    "r656_overall_batch": "FAIL_OR_BLOCKED_PRESERVED: sensor missing original sysroot headers"
+  }
+}

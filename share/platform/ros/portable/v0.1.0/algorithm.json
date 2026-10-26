@@ -1,0 +1,65 @@
+{
+  "format": "uwvm-portable-algorithm-fixture-v1",
+  "id": "joint-step-v0.1.0",
+  "status": "COMPILED_STRUCTURE_VERIFIED_HOST_INTEGRATION_PENDING",
+  "source_files": [
+    {
+      "path": "include/platform/ros/portable/v0_1_0/abi.h",
+      "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d",
+      "bytes": 3302
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616",
+      "bytes": 6112
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+      "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730",
+      "bytes": 804
+    }
+  ],
+  "target": "wasm32-wasip1",
+  "kind": "binary",
+  "source_language": "c",
+  "exception_profile": "noeh",
+  "memory_shared": false,
+  "build_identity": {
+    "route": "existing public Xmake C/LLVM23; no second provider/compiler",
+    "llvm_manifest_sha256": "9dcca4deb56c2bfbbef0f4e8a0fb76529f0bd9525bcce951fc417f2bfca12fea",
+    "llvm_archive_sha256": "8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522",
+    "actual_compiler_receipt_sha256": "341c3cf05655af36b13dc004714da7c4813755aa41736b3a569fc5e01f58fcbc",
+    "actual_build_command_log_sha256": "858f05010ffd66089532cb3ef3f86d6516e505cc5c44ba141010dcf1e7f5b794",
+    "source_packet_manifest_sha256": "6792b8b8448c2182c9440581d069d03ef745705eceabd2ef469ab2020996e0ac"
+  },
+  "wasm": {
+    "available": true,
+    "path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "bytes": 4449,
+    "whole_file_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+    "reason": null
+  },
+  "algorithm": "Read descriptor/state once; every admitted joint moves by at most its external max_step<=10000 microrad within finite limits, preferring positive direction; submit once with one-second horizon; wait once; require completed receipt and fresh state within declared tolerance; close once",
+  "fixed_role_alias": "robot",
+  "platform_specific_literals_in_algorithm": false,
+  "freeze_rule": "The whole first Linux-emitted Wasm SHA is frozen. Validation-tool corrections must preserve those exact bytes. Every applicable platform consumes this file and checks its SHA before and after execution; recompilation is not cross-platform reuse evidence.",
+  "availability_is_source_seal_snapshot": false,
+  "actual_artifact_manifest": "share/platform/ros/portable/artifacts/joint-step-v0.1.0.json",
+  "source_seal_snapshot_sha256": "77f2b7e1c92ad53a9de889ea2e63fa2f42b42de27f17d5eb1a5e14595facb3fc",
+  "availability_updated_utc": "2026-10-26T12:11:02.977165+00:00",
+  "qualification": {
+    "compiler": "PASS",
+    "wasm_structure": "PASS",
+    "vm_execution": "NOT_RUN",
+    "native_ros": "NOT_RUN",
+    "official_simulation": "NOT_RUN",
+    "qemu": "NOT_RUN",
+    "native_performance": "NOT_RUN",
+    "cross_platform_unchanged_bytes": "NOT_RUN"
+  },
+  "remaining_execution_dependencies": [
+    "VM implementation and qualification of uwvm_portable_robot_v1 imports",
+    "Explicit Wasm/policy/adapter grant and simulator-instance binding",
+    "Native controller result and fresh-state confirmation in each official simulator route"
+  ]
+}

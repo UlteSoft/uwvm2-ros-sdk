@@ -1,0 +1,83 @@
+{
+  "format": "uwvm-portable-capability-contract-v1",
+  "contract_version": "0.3.0",
+  "status": "REVIEW_CANDIDATE_NO_HOST_OR_SIMULATION_ACCEPTANCE",
+  "generic_abi": {
+    "path": "share/platform/ros/portable/v0.1.0/abi.json",
+    "version": 1,
+    "module": "uwvm_portable_robot_v1",
+    "memory": "one defined unshared memory0; all pointer/length/handle parameters remain i64"
+  },
+  "wire": "wire.json",
+  "adapter_schema": "adapter.schema.json",
+  "joint_artifact_unchanged": {
+    "path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "families": [
+    {
+      "id": "planar.pose.goal.v1",
+      "logical_alias": "navigation",
+      "descriptor_kind": 48,
+      "state_kind": 49,
+      "command_kind": 50,
+      "rights_mask": 15,
+      "required_imports": [
+        "abi_version",
+        "open",
+        "describe",
+        "read_state",
+        "submit",
+        "wait",
+        "close"
+      ],
+      "semantics": "One bounded planar goal computed from returned state, native terminal success and fresh resulting pose; no motor/gait/torque/3D semantics",
+      "units": {
+        "position": "millimetre",
+        "heading": "6283186 integer ticks per turn",
+        "duration": "nanosecond"
+      },
+      "native_confirmation": "Native NavigateToPose SUCCEEDED, all release-specific native error/result fields indicating success, correlated UUID and fresh pose within SI-converted tolerances. Goal acceptance alone is insufficient."
+    },
+    {
+      "id": "sensor.frame.integrity.v1",
+      "logical_alias": "sensor",
+      "descriptor_kind": 33,
+      "state_kind": 32,
+      "rights_mask": 3,
+      "required_imports": [
+        "abi_version",
+        "open",
+        "describe",
+        "read_state",
+        "close"
+      ],
+      "semantics": "One actual mono8/RGB8 frame enters Wasm; Wasm validates dimensions/stride and computes FNV-1a-32 over payload including padding",
+      "limits": {
+        "payload_bytes": 1048576,
+        "width": 512,
+        "height": 512
+      },
+      "output": "epoch/sequence/frame-key/encoding/dimensions/stride/byte-count/computed FNV JSON; no raw image capture by default",
+      "native_confirmation": "Official simulator->native ROS Image->authorized VM memory copy->executing Wasm computation. Independently compare exact native sample payload SHA256 to audited input-copy SHA256 and recompute FNV; FNV alone is not a cryptographic provenance proof."
+    }
+  ],
+  "common_requirements": [
+    "software simulation only; no physical robot effects",
+    "strict bounded UTF8 JSON: reject duplicate/unknown keys, NUL, nonfinite numbers and overflow",
+    "adapter identity is SHA256 of exact complete bytes including whitespace; policy and Wasm SHA are separate",
+    "host binds exact Wasm/policy/adapter, actor owner, capability, resource graph, simulator instance and epoch on every call",
+    "host checks monotonic freshness and native sample/result provenance before returning data",
+    "external adapters own resource names, native units, coordinate transforms, calibration and release/ABI mappings",
+    "nonzero unsupported capability or unit conversions are refused; never emulate navigation/image data through joint commands",
+    "replay is not automatic; stale/closed/foreign handles and mismatched epochs must fail without native effects"
+  ],
+  "acceptance": [
+    "each algorithm frozen once per version; exact SHA reused before/after each applicable platform run",
+    "normal/boundary/denial/timeout/cancel/stale/pause/reconnect/restart cases need separate real evidence",
+    "VM/native ROS/official simulator/QEMU/performance and architecture/distro/library/language rows remain independent"
+  ],
+  "source_preview_0_2_0": "Preserved unchanged as history; its planar16/17/18 milliradian frames are not accepted as version0.3.0 navigation frames",
+  "host_status": "NOT_IMPLEMENTED",
+  "algorithm_availability": "See separate immutable artifact receipts after actual Linux compilation"
+}

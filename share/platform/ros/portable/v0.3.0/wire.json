@@ -1,0 +1,152 @@
+{
+  "schema": "uwvm-portable-wire-family-extension-v1",
+  "version": "0.3.0",
+  "status": "VERSIONED_CONTRACT_CANDIDATE_HOST_NOT_IMPLEMENTED",
+  "endianness": "little",
+  "common_header": {
+    "magic_offset": 0,
+    "magic": "URP1",
+    "version_u16_offset": 4,
+    "version": 1,
+    "kind_u16_offset": 6,
+    "exact_bytes_u32_offset": 8,
+    "count_u32_offset": 12
+  },
+  "generic_receipt": "Unchanged kind4/96-byte receipt from v0.1.0/wire.json, including SHA256 of the whole exact submitted command",
+  "common_rules": [
+    "All memory offsets, lengths and opaque handles retain the generic ABI's i64 values even in Wasm32",
+    "Exactly one unshared memory0; reject unsupported memory, overflow, overlap, truncation, epoch, handle or right before native access",
+    "External adapter identity is SHA256 of the whole exact strict UTF-8 adapter JSON bytes; policy and Wasm digests remain distinct",
+    "Host enforces grants, actual simulator instance, epoch, state freshness and native outcome on every call",
+    "Do not reinterpret one family's wire records as another family's commands or observations"
+  ],
+  "frames": [
+    {
+      "name": "planar_descriptor",
+      "kind": 48,
+      "bytes": 128,
+      "count": 1,
+      "fields": {
+        "epoch_u64": 16,
+        "rights_u32_equals15": 24,
+        "simulation_flags_u32_equals1": 28,
+        "adapter_sha256_bytes32": 32,
+        "xmin_i64_mm": 64,
+        "xmax_i64_mm": 72,
+        "ymin_i64_mm": 80,
+        "ymax_i64_mm": 88,
+        "max_step_u64_mm": 96,
+        "position_tolerance_u64_mm": 104,
+        "yaw_tolerance_u64_heading_ticks": 112,
+        "reserved_zero_u64": 120
+      },
+      "bounds": {
+        "coordinate_absolute_max_mm": 1000000000,
+        "max_step_mm": [
+          1,
+          100
+        ],
+        "position_tolerance_mm": [
+          0,
+          20
+        ],
+        "yaw_tolerance_heading_ticks": [
+          0,
+          100000
+        ]
+      }
+    },
+    {
+      "name": "planar_state",
+      "kind": 49,
+      "bytes": 80,
+      "count": 1,
+      "fields": {
+        "epoch_u64": 16,
+        "sample_sequence_u64": 24,
+        "host_stamp_u64_ns": 32,
+        "valid_until_u64_ns": 40,
+        "x_i64_mm": 48,
+        "y_i64_mm": 56,
+        "yaw_i64_heading_ticks": 64,
+        "valid_u32_equals1": 72,
+        "reserved_zero_u32": 76
+      },
+      "yaw_bounds_heading_ticks": [
+        -3141593,
+        3141593
+      ]
+    },
+    {
+      "name": "planar_command",
+      "kind": 50,
+      "bytes": 112,
+      "count": 1,
+      "fields": {
+        "epoch_u64": 16,
+        "command_id_u64": 24,
+        "base_sequence_u64": 32,
+        "adapter_sha256_bytes32": 40,
+        "duration_u64_ns": 72,
+        "target_x_i64_mm": 80,
+        "target_y_i64_mm": 88,
+        "target_yaw_i64_heading_ticks": 96,
+        "reserved_zero_u64": 104
+      },
+      "algorithm_command_id": 1,
+      "algorithm_duration_ns": 1000000000
+    },
+    {
+      "name": "image_descriptor",
+      "kind": 33,
+      "bytes": 96,
+      "count": 0,
+      "fields": {
+        "epoch_u64": 16,
+        "rights_u32_equals3": 24,
+        "simulation_flags_u32_equals1": 28,
+        "adapter_sha256_bytes32": 32,
+        "max_payload_u64_bytes": 64,
+        "max_width_u32": 72,
+        "max_height_u32": 76,
+        "encoding_mask_u32": 80,
+        "reserved_zero_bytes12": 84
+      },
+      "encoding_mask": {
+        "mono8": 1,
+        "rgb8": 2
+      }
+    },
+    {
+      "name": "image_state",
+      "kind": 32,
+      "bytes": "96+payload_bytes",
+      "count": "payload_bytes",
+      "fields": {
+        "epoch_u64": 16,
+        "sample_sequence_u64": 24,
+        "host_stamp_u64_ns": 32,
+        "valid_until_u64_ns": 40,
+        "width_u32": 48,
+        "height_u32": 52,
+        "row_stride_u32_bytes": 56,
+        "encoding_u32": 60,
+        "frame_key_sha256_bytes32": 64,
+        "payload": 96
+      },
+      "encoding": {
+        "mono8": 1,
+        "rgb8": 2
+      },
+      "payload_rule": "payload_bytes=height*row_stride; row_stride>=width*channels; exact original padding bytes retained; bounds checked before access"
+    }
+  ],
+  "supersedes_preview": "v0.2.0; planar record kinds and heading representation are deliberately distinct; old records must be refused",
+  "heading_representation": {
+    "ticks_per_turn": 6283186,
+    "half_turn_ticks": 3141593,
+    "meaning": "Exact integer angular grid;6283186 ticks is one full turn. This is not a claim that2*pi equals6.283186 radians.",
+    "native_conversion": "Adapter rounds normalized native yaw/(2*pi)*6283186 with a pinned tie rule, and converts tolerances externally. Host validates native pose before quantization.",
+    "boundary": "Both signed half-turn endpoints represent the same heading; guest computes min(abs(delta),6283186-abs(delta))."
+  }
+}
