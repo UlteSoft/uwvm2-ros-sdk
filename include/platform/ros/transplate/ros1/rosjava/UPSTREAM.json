@@ -1,0 +1,87 @@
+{
+  "commit": "111c1d109ebb9089ba5dc446de80319d82580e88",
+  "license_text": "Unmodified Apache License 2.0 text; original copyright/license headers retained.",
+  "public_test_sources": [
+    {
+      "adaptations": [
+        "Replace JUnit runner/imports with explicit standalone assertions; no placeholder JUnit implementation.",
+        "Count successful valid-name calls and caught expected exceptions.",
+        "Exclude native-thread testNewAnonymous where present; preserve remaining upstream vectors."
+      ],
+      "adapted_sha256": "3ff542a3dadf04f7612c021181b3fe3b75aa4f282a48d209df60b428b9349a6f",
+      "excluded_methods": [
+        "testNewAnonymous"
+      ],
+      "path": "example/platform/pal/java/ros1/ros1_noetic_devel/namespace_upstream_checks/GraphNameTest.java",
+      "upstream_git_blob_sha1": "ac5217a147efdd2cc607590b21e657a7aae0e01a",
+      "upstream_path": "rosjava/src/test/java/org/ros/namespace/GraphNameTest.java",
+      "upstream_sha256": "db4c7f42b532cb205b6a87a196d9db38fc2b5d560dc81cab4d6447b5045755d2"
+    },
+    {
+      "adaptations": [
+        "Replace JUnit runner/imports with explicit standalone assertions; no placeholder JUnit implementation.",
+        "Count successful valid-name calls and caught expected exceptions.",
+        "Exclude native-thread testNewAnonymous where present; preserve remaining upstream vectors."
+      ],
+      "adapted_sha256": "14723df9aaa62d540bde2ecc92470f2ee6ce8a4d803f942264d51c4d6fff8087",
+      "excluded_methods": [],
+      "path": "example/platform/pal/java/ros1/ros1_noetic_devel/namespace_upstream_checks/NameResolverTest.java",
+      "upstream_git_blob_sha1": "92f3f30636af47eb89b675483eb7d712d749130c",
+      "upstream_path": "rosjava/src/test/java/org/ros/namespace/NameResolverTest.java",
+      "upstream_sha256": "35c412af4b12a6712d5861ae45e091174ded094d047006a63aae983b8eec8bf8"
+    },
+    {
+      "adaptations": [
+        "Replace JUnit runner/imports with explicit standalone assertions; no placeholder JUnit implementation.",
+        "Count successful valid-name calls and caught expected exceptions.",
+        "Exclude native-thread testNewAnonymous where present; preserve remaining upstream vectors."
+      ],
+      "adapted_sha256": "5c6d276493c7007ad83ce9a16147c00864fedd353d7b87fcb3a8cae8dd7b8de8",
+      "excluded_methods": [],
+      "path": "example/platform/pal/java/ros1/ros1_noetic_devel/namespace_upstream_checks/NodeNameResolverTest.java",
+      "upstream_git_blob_sha1": "a8da4b5c5b6c09dce0fcadd7b6afb50744bb89ff",
+      "upstream_path": "rosjava/src/test/java/org/ros/namespace/NodeNameResolverTest.java",
+      "upstream_sha256": "ab900e22f8e8d16703a973ad746bd0c25a82f0602182eb5c16d54bd6c3c604fc"
+    }
+  ],
+  "repository": "https://github.com/rosjava/rosjava_core",
+  "schema": "sdk09-rosjava-namespace-upstream-source-v1",
+  "source_files": [
+    {
+      "exact_adaptations_only": true,
+      "path": "include/platform/ros/transplate/ros1/rosjava/v0_1_0/src/main/java/org/ros/namespace/GraphName.java",
+      "sha256": "b702af7ceba7ac37dd9eef9748e161ab9799c2fc6a82d3e815a7bdf1e71c887a",
+      "upstream_commit": "111c1d109ebb9089ba5dc446de80319d82580e88",
+      "upstream_git_blob_sha1": "bd9bddfa8b8b9ff368bc43ebff1bc0d7a6a0a2b6",
+      "upstream_path": "rosjava/src/main/java/org/ros/namespace/GraphName.java",
+      "upstream_sha256": "0dcec23d064cbd95ec577b7cf12586cee232dcd5ccafc3886da87e1fef595bfa"
+    },
+    {
+      "exact_adaptations_only": true,
+      "path": "include/platform/ros/transplate/ros1/rosjava/v0_1_0/src/main/java/org/ros/namespace/NameResolver.java",
+      "sha256": "3a78f4154b53010bc1801c273844c196780c66c847dc6a6f8d6b80d1d336377d",
+      "upstream_commit": "111c1d109ebb9089ba5dc446de80319d82580e88",
+      "upstream_git_blob_sha1": "e087b65cf9f167acd7d5e371bf6fd7c45ac1017a",
+      "upstream_path": "rosjava/src/main/java/org/ros/namespace/NameResolver.java",
+      "upstream_sha256": "3a78f4154b53010bc1801c273844c196780c66c847dc6a6f8d6b80d1d336377d"
+    },
+    {
+      "exact_adaptations_only": true,
+      "path": "include/platform/ros/transplate/ros1/rosjava/v0_1_0/src/main/java/org/ros/namespace/NodeNameResolver.java",
+      "sha256": "469fa68d95936a7a4af454d8e80cbf23812125ad2ecdcde7fd07264e90cc05ca",
+      "upstream_commit": "111c1d109ebb9089ba5dc446de80319d82580e88",
+      "upstream_git_blob_sha1": "e0e338c549b1f31a283230d6dae158d3d770c5da",
+      "upstream_path": "rosjava/src/main/java/org/ros/namespace/NodeNameResolver.java",
+      "upstream_sha256": "393c222470dd7fbb68efe0effed8b151b1d954902b97abb239071baaf898f7b3"
+    },
+    {
+      "exact_adaptations_only": true,
+      "path": "include/platform/ros/transplate/ros1/rosjava/v0_1_0/src/main/java/org/ros/exception/RosRuntimeException.java",
+      "sha256": "05c8c8ab2f01f9a0a633398389cbbefc89c93709edc23dae5bc4065cabe15a8d",
+      "upstream_commit": "111c1d109ebb9089ba5dc446de80319d82580e88",
+      "upstream_git_blob_sha1": "1951f43b3c5f4e7c277a665efc461615e652c85e",
+      "upstream_path": "rosjava/src/main/java/org/ros/exception/RosRuntimeException.java",
+      "upstream_sha256": "05c8c8ab2f01f9a0a633398389cbbefc89c93709edc23dae5bc4065cabe15a8d"
+    }
+  ]
+}

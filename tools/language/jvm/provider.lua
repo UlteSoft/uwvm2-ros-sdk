@@ -252,7 +252,12 @@ function _jvm(target, root, language, backend, closure, programs)
 	-- namespace roots. Scanning the complete backend tree also selects historical
 	-- mirrors of the shared classes and makes genuine javac reject duplicate types.
 	table.join2(sources, os.files(path.join(root, "include/platform", backend, "java/uwvm/**.java")))
-	table.join2(sources, os.files(path.join(root, "include/platform", backend, "java/compat/**.java")))
+	if backend == "ros1" then
+		-- Select the pinned real rosjava namespace source profile once.
+		table.join2(sources, os.files(path.join(root, "include/platform/ros/transplate/ros1/rosjava/v0_1_0/src/main/java/**.java")))
+	else
+		table.join2(sources, os.files(path.join(root, "include/platform", backend, "java/compat/**.java")))
+	end
 	table.join2(sources, os.files(path.join(platform_root, "java/uwvm/**.java")))
 	table.join2(sources, os.files(path.join(platform_root, "java", backend, "**.java")))
 	table.insert(sources, path.join(root, "tools/language/java/Compile.java"))

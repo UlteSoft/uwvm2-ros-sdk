@@ -1,0 +1,31 @@
+{
+  "adaptations": [
+    "Remove VisibleForTesting annotation/import.",
+    "Replace Guava Preconditions.checkNotNull with Objects.requireNonNull.",
+    "Remove documentation-only Node import/link; no placeholder Node implementation."
+  ],
+  "api_version": 1,
+  "complete_upstream_client_port": false,
+  "excluded_upstream_test": "GraphNameTest.testNewAnonymous: native executor/concurrency is not qualified by a sequential guest test.",
+  "new_generic_abi_invented": false,
+  "ported_source_classes": [
+    "org.ros.namespace.GraphName",
+    "org.ros.namespace.NameResolver",
+    "org.ros.namespace.NodeNameResolver",
+    "org.ros.exception.RosRuntimeException"
+  ],
+  "profile": "rosjava-namespace-source-0.1.0",
+  "public_regression": "example/platform/pal/java/ros1/ros1_noetic_devel/namespace_upstream_checks",
+  "qualification": "Use exact-source external Linux proof/qualification records; source metadata does not assert a test pass.",
+  "schema": "uwvm-sdk-java-legacy-source-profile-v1",
+  "source_root": "v0_1_0/src/main/java",
+  "supported_native_ROS_runtime_releases": [],
+  "transport": "NOT_IMPLEMENTED",
+  "upstream": {
+    "archived": true,
+    "branch": "kinetic",
+    "commit": "111c1d109ebb9089ba5dc446de80319d82580e88",
+    "repository": "https://github.com/rosjava/rosjava_core",
+    "tree": "24969ffc919bd1c1891b45e67861209c3e113be6"
+  }
+}
