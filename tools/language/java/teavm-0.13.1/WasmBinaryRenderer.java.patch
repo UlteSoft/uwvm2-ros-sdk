@@ -1,0 +1,58 @@
+--- upstream/WasmBinaryRenderer.java
++++ patched/WasmBinaryRenderer.java
+@@ -536,6 +536,7 @@
+         WasmBinaryWriter functionsSubsection = new WasmBinaryWriter();
+         var functions = module.functions.stream()
+                 .filter(f -> f.getName() != null)
++                .sorted(java.util.Comparator.comparingInt(module.functions::indexOf))
+                 .collect(Collectors.toList());
+         functionsSubsection.writeLEB(functions.size());
+ 
+@@ -551,6 +552,7 @@
+ 
+         var functionsWithLocalNames = module.functions.stream()
+                 .filter(fn -> fn.getLocalVariables().stream().anyMatch(v -> v.getName() != null))
++                .sorted(java.util.Comparator.comparingInt(module.functions::indexOf))
+                 .collect(Collectors.toList());
+         if (!functionsWithLocalNames.isEmpty()) {
+             var subsection = new WasmBinaryWriter();
+@@ -559,6 +561,7 @@
+                 subsection.writeLEB(module.functions.indexOf(function));
+                 var locals = function.getLocalVariables().stream()
+                         .filter(t -> t.getName() != null)
++                        .sorted(java.util.Comparator.comparingInt(item -> item.getIndex()))
+                         .collect(Collectors.toList());
+                 subsection.writeLEB(locals.size());
+                 for (var local : locals) {
+@@ -575,6 +578,7 @@
+ 
+         var types = module.types.stream()
+                 .filter(t -> t.getName() != null)
++                .sorted(java.util.Comparator.comparingInt(module.types::indexOf))
+                 .collect(Collectors.toList());
+         if (!types.isEmpty()) {
+             var typesSubsection = new WasmBinaryWriter();
+@@ -592,6 +596,7 @@
+ 
+         var globals = module.globals.stream()
+                 .filter(g -> g.getName() != null)
++                .sorted(java.util.Comparator.comparingInt(module.globals::indexOf))
+                 .collect(Collectors.toList());
+         if (!globals.isEmpty()) {
+             var globalsSubsection = new WasmBinaryWriter();
+@@ -610,6 +615,7 @@
+         var typesWithNamedFields = module.types.stream()
+                 .filter(t -> t instanceof WasmStructure)
+                 .filter(t -> ((WasmStructure) t).getFields().stream().anyMatch(f -> f.getName() != null))
++                .sorted(java.util.Comparator.comparingInt(module.types::indexOf))
+                 .collect(Collectors.toList());
+         if (!typesWithNamedFields.isEmpty()) {
+             var subsection = new WasmBinaryWriter();
+@@ -618,6 +624,7 @@
+                 subsection.writeLEB(module.types.indexOf(type));
+                 var fields = ((WasmStructure) type).getFields().stream()
+                         .filter(t -> t.getName() != null)
++                        .sorted(java.util.Comparator.comparingInt(item -> item.getIndex()))
+                         .collect(Collectors.toList());
+                 subsection.writeLEB(fields.size());
+                 for (var field : fields) {

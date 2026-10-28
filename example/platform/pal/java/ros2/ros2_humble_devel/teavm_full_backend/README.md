@@ -1,0 +1,7 @@
+This finite compiler test builds through the ordinary installed SDK Xmake entry and executes its assertions inside genuine wasm32-wasip1 output. It covers terminating catch/return paths, nested finally with i64 results, exact exception identity and the existing canonical String codec. FULL optimization remains enabled; emitted Wasm is never rewritten.
+
+The enclosing admitted Linux executor supplies the exact read-only native JVM/compiler closure, independent full WABT validator and pinned Wasm runtime. Public `xmake test` uses the existing `UWVM_ROS_JAVA_GUEST_TEST_CONFIG` test input format. That file selects test tooling and creates no ROS grant or lifecycle authority. All actor/shared memory, swap, canonical-lock, security, space and physical-retirement checks belong to the enclosing qualification and remain mandatory.
+
+This candidate preserves HEAD708313f7's source layout. It includes the paired native JVM loader as a compiler prerequisite, adds the scoped TeaVM backend sources and their license/provenance, and excludes the later rcljava/rosjava root relocation, service example and R23 migration changes. Finite compiler correctness does not qualify native ROS, full SDK migration, other architectures or complete product releases.
+
+This project is inside the exact HEAD public repository selector example/platform. It declares an absolute scriptdir output directory. Those choices are part of this new test, with no shared repository helper changes.

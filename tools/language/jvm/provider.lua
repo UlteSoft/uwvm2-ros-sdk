@@ -155,6 +155,29 @@ function _tools(target, root)
 	return directory, { java = java }
 end
 
+-- @brief Launch the native development JVM with its own manifest-pinned loader.
+-- @details The bundle includes libc and its paired ld-linux. Mixing that libc
+-- with the image loader can fail before JVM initialization. No application or
+-- ROS client is executed here; this helper only runs the compiler tool closure.
+function _run_java(closure, programs, arguments, environment)
+    assert(os.host() == "linux" and os.arch() == "x86_64",
+        "The installed JVM tool closure is qualified only for Linux x86_64 hosts")
+    local loader = path.join(closure, "lib/host-runtime/ld-linux-x86-64.so.2")
+    assert(os.isfile(loader), "The pinned JVM closure requires its paired native loader")
+    local library_path = assert(environment.LD_LIBRARY_PATH, "The paired loader needs its complete library path")
+    local launcher_environment = {}
+    for name, value in pairs(environment) do
+        launcher_environment[name] = value
+    end
+    -- libjli can re-exec /proc/self/exe when LD_LIBRARY_PATH names lib/server.
+    -- With an explicit ld-linux entry that executable is the loader. Keep the
+    -- full closure in its --library-path and avoid the launcher's re-exec path.
+    launcher_environment.LD_LIBRARY_PATH = ""
+    local argv = {"--library-path", library_path, programs.java}
+    table.join2(argv, arguments)
+    os.vrunv(loader, argv, {envs = launcher_environment})
+end
+
 -- @brief Compile Java/Kotlin IR and invoke the exact TeaVM linear-memory backend.
 -- @param target Current application with its genuine source inputs and main class.
 -- @param root Installed SDK root containing public language namespaces.
@@ -233,6 +256,7 @@ function _jvm(target, root, language, backend, closure, programs)
 	table.join2(sources, os.files(path.join(platform_root, "java/uwvm/**.java")))
 	table.join2(sources, os.files(path.join(platform_root, "java", backend, "**.java")))
 	table.insert(sources, path.join(root, "tools/language/java/Compile.java"))
+	table.join2(sources, os.files(path.join(root, "tools/language/java/teavm-0.13.1/**.java")))
 	if kind == "shared" then
 		-- This compiler-owned Java entry rejects command execution. The real
 		-- user Export methods remain in their genuine Java/Kotlin source class.
@@ -277,7 +301,7 @@ function _jvm(target, root, language, backend, closure, programs)
 		classes,
 	}
 	table.join2(arguments, sources)
-	os.vrunv(programs.java, arguments, { envs = environment })
+	_run_java(closure, programs, arguments, environment)
 	if language == "kotlin" then
 		local kotlin_sources = os.files(path.join(platform_root, "kotlin", backend, "**.kt"))
 		for _, source in ipairs(target:sourcefiles()) do
@@ -299,7 +323,7 @@ function _jvm(target, root, language, backend, closure, programs)
 			classes,
 		}
 		table.join2(kotlin, kotlin_sources)
-		os.vrunv(programs.java, kotlin, { envs = environment })
+		_run_java(closure, programs, kotlin, environment)
 	end
 	local output = path.absolute(target:targetfile())
 	os.mkdir(path.directory(output))
@@ -309,6 +333,7 @@ function _jvm(target, root, language, backend, closure, programs)
 		"-Duwvm.ros.targetKind=" .. kind,
 		"-Duwvm.ros.libraryRoot=" .. root_class,
 		"-Duwvm.ros.exportContract=" .. export_contract,
+		"-Duwvm.ros.backendReceipt=" .. path.join(cache, "native-backend-identity.json"),
 		"-cp",
 		classes .. separator .. compiler_path,
 		"uwvm.ros.build.Compile",
@@ -317,7 +342,7 @@ function _jvm(target, root, language, backend, closure, programs)
 		classes,
 	}
 	table.join2(compile, jars)
-	os.vrunv(programs.java, compile, { envs = environment })
+	_run_java(closure, programs, compile, environment)
 	assert(os.isfile(output), "TeaVM did not produce the requested Wasm command")
 	import("core.base.json")
 	local compiler_inputs = {}
@@ -329,8 +354,17 @@ function _jvm(target, root, language, backend, closure, programs)
 		backend = backend,
 		mode = "TeaVM WEBASSEMBLY_WASI",
 		jdk_launcher_sha256 = hash.sha256(programs.java),
+        native_loader_sha256 = hash.sha256(path.join(closure, "lib/host-runtime/ld-linux-x86-64.so.2")),
+        native_loader_mode = "explicit paired loader; loader-only library path; empty launcher LD_LIBRARY_PATH",
 		compiler_inputs = compiler_inputs,
 		tool_driver_sha256 = hash.sha256(path.join(root, "tools/language/java/Compile.java")),
+		native_backend_identity_sha256 = hash.sha256(path.join(cache, "native-backend-identity.json")),
+		native_backend_sources = {
+			{ name = "WasmGenerationVisitor.java", sha256 = hash.sha256(path.join(root, "tools/language/java/teavm-0.13.1/org/teavm/backend/wasm/generate/WasmGenerationVisitor.java")) },
+			{ name = "WasmBinaryRenderer.java", sha256 = hash.sha256(path.join(root, "tools/language/java/teavm-0.13.1/org/teavm/backend/wasm/render/WasmBinaryRenderer.java")) }
+		},
+		optimization = "FULL",
+		post_generation_Wasm_rewrite = false,
 		artifact_sha256 = hash.sha256(output),
 		target = "wasm32-wasip1",
 		target_kind = kind,

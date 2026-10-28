@@ -1,0 +1,28 @@
+{
+  "commit": "b3a245b7d9034ff35cdfab2def057a3d4f256efb",
+  "guest_TopicEvents_original_multicatch_unchanged": true,
+  "license": "Apache-2.0; full upstream source headers preserved",
+  "modified_sources": "The upstream files retain their original copyright and Apache-2.0 headers. Only the adjacent recorded patches are applied.",
+  "native_compiler_jar_sha256": "b9fe1b008512c8f11ff3efbd9cf2f0565b4bfa76943a9f23910befc0812f7ebf",
+  "optimization": "FULL",
+  "post_generation_Wasm_rewrite": false,
+  "repair": "Explicit unreachable after terminating emulated try body; retain original renderer block policy. Sort debug maps by actual indexes.",
+  "schema": "sdk09-pinned-teavm-native-compiler-backend-source-patch-v1",
+  "sources": [
+    {
+      "patched_sha256": "265e8d170ce2884faf8cc2f91826d1240dca732baedfa01305e14a1173c9cfbd",
+      "path": "tools/language/java/teavm-0.13.1/org/teavm/backend/wasm/render/WasmBinaryRenderer.java",
+      "upstream_git_blob": "0bbee3ba11fdab69745e53e5acea12e9c0682ec9",
+      "upstream_sha256": "ce376326b506e7803e995500674d6e58c1c7b2c6a47de13f0507649148657257",
+      "upstream_url": "https://github.com/konsoletyper/teavm/blob/b3a245b7d9034ff35cdfab2def057a3d4f256efb/core/src/main/java/org/teavm/backend/wasm/render/WasmBinaryRenderer.java"
+    },
+    {
+      "patched_sha256": "616249c08a31d7ed14070bb58958804b63858eace0ca1ea1e7e6b17ac655aa46",
+      "path": "tools/language/java/teavm-0.13.1/org/teavm/backend/wasm/generate/WasmGenerationVisitor.java",
+      "upstream_git_blob": "3ccec0f1e57ce4c8f5d83dc4dae1e3b63d9f7ca8",
+      "upstream_sha256": "f83f067ba4ad16e91ed3917b8901ff431390d1df1f27fe2cb074d08e3b30a75d",
+      "upstream_url": "https://github.com/konsoletyper/teavm/blob/b3a245b7d9034ff35cdfab2def057a3d4f256efb/core/src/main/java/org/teavm/backend/wasm/generate/WasmGenerationVisitor.java"
+    }
+  ],
+  "version": "0.13.1"
+}

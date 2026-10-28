@@ -1,0 +1,14 @@
+--- upstream/WasmGenerationVisitor.java
++++ patched/WasmGenerationVisitor.java
+@@ -974,6 +974,11 @@
+ 
+         if (!bodyBlock.isTerminating()) {
+             bodyBlock.getBody().add(new WasmBreak(outerCatchBlock));
++        } else {
++            // A terminating nested void block does not itself propagate a
++            // polymorphic result through its end. Preserve the absence of
++            // fallthrough before consuming the emulated handler id as i32.
++            bodyBlock.getBody().add(new WasmUnreachable());
+         }
+         var currentBlock = innerCatchBlock;
+         var handlerIdExpr = new WasmIntBinary(WasmIntType.INT32, WasmIntBinaryOperation.SUB,

@@ -7,6 +7,7 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -28,6 +29,45 @@ public final class Compile
     /** @brief Prevent creation of this stateless build entry. */
     private Compile()
     {
+    }
+
+    /** Retain the exact native backend class bytes actually selected before AOT. */
+    private static void backendIdentity() throws Exception
+    {
+        String selected = System.getProperty("uwvm.ros.backendReceipt");
+        if(selected == null)
+            throw new IllegalArgumentException("Retain the native compiler backend identity");
+        URL origin = Compile.class.getProtectionDomain().getCodeSource().getLocation();
+        URL coreOrigin = org.teavm.backend.wasm.model.WasmModule.class.getProtectionDomain().getCodeSource().getLocation();
+        String coreSha = java.util.HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256")
+            .digest(Files.readAllBytes(new File(coreOrigin.toURI()).toPath())));
+        if(!coreSha.equals("b9fe1b008512c8f11ff3efbd9cf2f0565b4bfa76943a9f23910befc0812f7ebf"))
+            throw new IllegalStateException("The native backend patch requires the exact pinned TeaVM 0.13.1 core");
+        String[] names = {
+            "org.teavm.backend.wasm.generate.WasmGenerationVisitor",
+            "org.teavm.backend.wasm.render.WasmBinaryRenderer"
+        };
+        List<String> rows = new ArrayList<>();
+        for(String name: names)
+        {
+            Class<?> type = Class.forName(name, false, Compile.class.getClassLoader());
+            if(!origin.equals(type.getProtectionDomain().getCodeSource().getLocation()))
+                throw new IllegalStateException("Pinned native backend override was not selected: " + name);
+            byte[] bytes;
+            try(var input = type.getResourceAsStream(type.getSimpleName() + ".class"))
+            {
+                if(input == null)
+                    throw new IllegalStateException("Missing native backend class bytes: " + name);
+                bytes = input.readAllBytes();
+            }
+            String sha = java.util.HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes));
+            rows.add("{\"class\":\"" + name + "\",\"sha256\":\"" + sha + "\"}");
+        }
+        Files.writeString(new File(selected).toPath(),
+            "{\"format\":\"uwvm-java-native-backend-identity-v1\",\"optimization\":\"FULL\","
+            + "\"post_generation_Wasm_rewrite\":false,\"core_jar_sha256\":\"" + coreSha
+            + "\",\"classes\":[" + String.join(",", rows) + "]}\n",
+            StandardCharsets.UTF_8);
     }
 
     /**
@@ -90,6 +130,7 @@ public final class Compile
             throw new IllegalArgumentException("main-class output.wasm classpath...");
         }
         File output = new File(args[1]).getAbsoluteFile();
+        backendIdentity();
         List<File> entries = new ArrayList<>();
         List<URL> urls = new ArrayList<>();
         for(int index = 2; index < args.length; index++)
