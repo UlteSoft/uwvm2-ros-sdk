@@ -1,0 +1,148 @@
+{
+  "format": "scout-closed-loop-acceptance-index-v1",
+  "status": "PASS",
+  "origin": "newly developed C application, not an upstream control-application port",
+  "platform": "AgileX SCOUT v2",
+  "language": "C11",
+  "ros": "Humble",
+  "backend": "uwvm2-ros LLVM-AOT",
+  "upstream_native_model_commit": "9d7888affce35321c657c1c8528307f3115b9d41",
+  "application_modules": 1,
+  "library_shape": "one statically linked Wasm executable; not a standalone .a library; no dynamic modules or multi-memory",
+  "wasm_sha256": "31fd6cca99b9ee7c5bf7decc1ac416db841c8727af151af100fee9cdad300803",
+  "memories": [
+    {
+      "imported": false,
+      "limits": {
+        "flags": 1,
+        "maximum": 1024,
+        "shared": false,
+        "minimum": 17,
+        "address_bits": 32
+      },
+      "index": 0
+    }
+  ],
+  "dylink": false,
+  "vm_sha256": "7148d518815226a4961c8d5d453fa4e7c00108350d898d5a91795495bf448248",
+  "native_gateway_sha256": "60ff16b18b7668b0826566c77140872a84d3c11a8449a9910c674c4296831a4e",
+  "task": {
+    "kind": "task_pass",
+    "distance_m": 0.545405293,
+    "yaw_delta_rad": 0.791522325,
+    "unique_feedback": 313,
+    "commands": 204,
+    "elapsed_seconds": 10.647137728
+  },
+  "denials": {
+    "ungranted_alias": 13,
+    "wrong_memory_index": 22,
+    "out_of_bounds": 22,
+    "forged_handle": 9,
+    "publish_with_subscription": 13,
+    "closed_handle": 9
+  },
+  "independently_matched_full_odometry": 313,
+  "independently_matched_full_twist": 204,
+  "journal_operations": 1227,
+  "journal_loss": {
+    "dropped": 0,
+    "suppressed": 0
+  },
+  "cgroup": {
+    "common_memory_max": 68719476736,
+    "swap_max": 0,
+    "leaf_memory_max": 6442450944,
+    "leaf_memory_peak": 334389248,
+    "owned_tree_retired": true,
+    "local_actors_retired": 16
+  },
+  "evidence_bundle": {
+    "name": "scout-closed-loop-r1",
+    "manifest_sha256": "7acc561f179145f0a5913c9fb0f7dbc727f017c8b69b4a6f59d31fd42caf07d8",
+    "run_receipt_sha256": "129a279fdb49d27da12de89655dddac0114131ddbf9ca3cc3fbb6e674012af7a",
+    "queue_receipt_sha256": "2f7b9629ece75a7c058567b6dfea8f049e5e9452c786bce92adce168f57d0abc",
+    "raw_native_sha256": "ed57aaaeb127d7f6ec0b348bf9ea5719b89af9ed92d3f459f39361673715c43d",
+    "vm_journal_sha256": "3c4a3fb8937b01a562397eb526844236389a50df9097e96e479d4e2800c001e6"
+  },
+  "tested_public_sources": [
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/deployment.template.json",
+      "sha256": "9e437264d62b6776eb9e66a34885bebb6dc80361f35a739e358f4b7ef52f0c85"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/exec_gate.py",
+      "sha256": "344a6ba7f1047870631f1d7b2cd962701758317900e106c2c777ef382c8ed968"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/catalog.preparation.json",
+      "sha256": "cbf9e55042c65162e7abb4b57a9461b4bd90e9ef67b1a75217326352bdf60fc0"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/geometry_msgs/msg/PoseWithCovariance.msg",
+      "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/geometry_msgs/msg/TwistWithCovariance.msg",
+      "sha256": "5690a1f109d4962c73b5ca7f3673c48052d02f37b6a38fe2fb37c899cf555c45"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/nav_msgs/msg/Odometry.msg",
+      "sha256": "bb00547ddf498cdbae46fd991d9d85a59f507e12e7cf01fb18a86f1111524f4f"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/interfaces/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/main.c",
+      "sha256": "bce94f9d4b8e171bb436b8d6aebe77336e4bab00ddeccaa390370125ba62e73b"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/observe.py",
+      "sha256": "09213bfcae1b6a18a98cd07148e50bf8033b82673f01906cf7a030fa66656217"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/run_simulation.py",
+      "sha256": "c8bdb5b483aa4083a9a3e0f85ef9d2af03193d9e89880bc14ec3b2574ca35ce5"
+    },
+    {
+      "path": "example/platform/agilex/c/ros2/humble/scout_closed_loop/xmake.lua",
+      "sha256": "2e37b0d2075264e9eddc848c64de377839b51f523fdf80ad13b41cf648253792"
+    }
+  ],
+  "not_qualified": [
+    "production LiveBoundary/source collector enrollment",
+    "Xmake-only cold system installation",
+    "dynamic Wasm libraries",
+    "multi-memory libraries",
+    "cross-module permissions",
+    "hardware",
+    "native ROS vs Wasm performance comparison",
+    "other platforms or languages"
+  ]
+}

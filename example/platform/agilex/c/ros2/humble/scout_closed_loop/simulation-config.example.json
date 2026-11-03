@@ -1,0 +1,8 @@
+{
+  "vm": "/absolute/selected/uwvm2-ros",
+  "gateway": "/absolute/selected/uwvm-ros2-gateway",
+  "native-base-report": "/absolute/native/native-environment.json",
+  "native-closure": "/absolute/scout/native-runtime-closure.json",
+  "native-environment": "/absolute/scout/native-process-environment.json",
+  "native-sources": "/absolute/scout/native-scene-sources.json"
+}

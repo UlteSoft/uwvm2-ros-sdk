@@ -1,0 +1,98 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "humble",
+  "connection": {
+    "node-name": "scout_wasm_gateway",
+    "namespace": "/",
+    "domain-id": "@ADMITTED_ROS_DOMAIN_ID@",
+    "rmw-implementation": "rmw_cyclonedds_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "execution_timeout_seconds": 90,
+  "examples": {
+    "scout_closed_loop": {
+      "arguments": [],
+      "main_module": "scout_control",
+      "preloads": [],
+      "modules": {
+        "scout_control": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "command",
+              "operation": "topic.publish",
+              "resource": "/cmd_vel",
+              "type": "geometry_msgs/msg/Twist",
+              "identity": "RIHS01_9c45bf16fe0983d80e3cfe750d6835843d265a9a6c46bd2e609fcddde6fb8d2a",
+              "limits": {
+                "max-message-bytes": "48",
+                "max-rate-hz": "1000",
+                "burst": "1",
+                "max-bytes-per-second": "96000",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "1000",
+                "audit-burst": "1000",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "4194304",
+                "validator": "none",
+                "max-inflight": "1",
+                "max-queue-bytes": "480",
+                "overflow-policy": "drop-oldest",
+                "max-publishers": "1",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "1",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite"
+              }
+            },
+            {
+              "alias": "odometry",
+              "operation": "topic.subscribe",
+              "resource": "/odom",
+              "type": "nav_msgs/msg/Odometry",
+              "identity": "RIHS01_3cc97dc7fb7502f8714462c526d369e35b603cfc34d946e3f2eda2766dfec6e0",
+              "limits": {
+                "max-message-bytes": "952",
+                "max-rate-hz": "1000",
+                "burst": "10",
+                "max-bytes-per-second": "1904000",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "1000",
+                "audit-burst": "1000",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "4194304",
+                "validator": "none",
+                "max-inflight": "1",
+                "max-queue-bytes": "9520",
+                "overflow-policy": "drop-oldest",
+                "max-subscribers": "1",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite",
+                "adapter-codec-identity": "UWVMROS1_fdfdd74c211c22bfd167c3e33a098fe21198cb095bbd0313fc765f38b1f334ec"
+              }
+            }
+          ],
+          "wasi_grants": [
+            "monotonic-clock"
+          ],
+          "call_boundary": "same-module"
+        }
+      }
+    }
+  }
+}

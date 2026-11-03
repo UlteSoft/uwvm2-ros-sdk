@@ -161,6 +161,7 @@ static inline int roswasmc_bounded_2_builtin_interfaces_msg_Time_valid(roswasmc_
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_builtin_interfaces_msg_Time_wire_size(roswasmc_bounded_2_builtin_interfaces_msg_Time const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     n += 4;
@@ -300,6 +301,7 @@ static inline int roswasmc_bounded_2_geometry_msgs_msg_Point_valid(roswasmc_boun
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_geometry_msgs_msg_Point_wire_size(roswasmc_bounded_2_geometry_msgs_msg_Point const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -480,6 +482,7 @@ static inline int roswasmc_bounded_2_geometry_msgs_msg_Quaternion_valid(roswasmc
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_geometry_msgs_msg_Quaternion_wire_size(roswasmc_bounded_2_geometry_msgs_msg_Quaternion const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -938,6 +941,7 @@ static inline int roswasmc_bounded_2_geometry_msgs_msg_Vector3_valid(roswasmc_bo
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_geometry_msgs_msg_Vector3_wire_size(roswasmc_bounded_2_geometry_msgs_msg_Vector3 const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -1632,6 +1636,7 @@ static inline int roswasmc_bounded_2_scout_msgs_msg_ScoutActuatorState_valid(ros
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_scout_msgs_msg_ScoutActuatorState_wire_size(roswasmc_bounded_2_scout_msgs_msg_ScoutActuatorState const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 2;
     n += 8;
@@ -1810,6 +1815,7 @@ static inline int roswasmc_bounded_2_scout_msgs_msg_ScoutLightCmd_valid(roswasmc
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_scout_msgs_msg_ScoutLightCmd_wire_size(roswasmc_bounded_2_scout_msgs_msg_ScoutLightCmd const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 1;
@@ -1959,6 +1965,7 @@ static inline int roswasmc_bounded_2_scout_msgs_msg_ScoutLightState_valid(roswas
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_scout_msgs_msg_ScoutLightState_wire_size(roswasmc_bounded_2_scout_msgs_msg_ScoutLightState const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 1;
@@ -2093,6 +2100,7 @@ static inline int roswasmc_bounded_2_scout_msgs_msg_ScoutRCState_valid(roswasmc_
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_scout_msgs_msg_ScoutRCState_wire_size(roswasmc_bounded_2_scout_msgs_msg_ScoutRCState const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 1;
