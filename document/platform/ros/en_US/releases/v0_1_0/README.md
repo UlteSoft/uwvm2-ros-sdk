@@ -1,0 +1,9 @@
+# ROS release inventory0.1.0
+
+This versioned inventory distinguishes upstream lifecycle from native SDK/runtime support. It covers13 named ROS1 distributions,12 named stable ROS2 distributions, a fixed Rolling package snapshot and11 alpha/beta history entries found in official release documentation. The current active ROS2 releases are Humble, Jazzy, Kilted and Lyrical. ROS1 is historical compatibility work. Earlier pre-Box-Turtle history still needs primary-source audit.
+
+The public native provider currently selects Noetic, Humble and Jazzy. This inventory changes no support enum. A listed release has no qualified version range until exact native packages, compiler/ABI, libraries, signatures, dependencies, permissions and rollback have actually passed. Binary availability and source-build expectations differ; i386 source expectations in REP3 do not imply a current official binary tier. Linux remains the ROS product target, and QEMU timing is never native performance evidence.
+
+Lifecycle dates use the pinned release page and rosdistro index. REP3/REP2000 target baselines are retained separately. The pinned REP2000 has no Lyrical section and gives a different Kilted planning EOL month; these differences must be resolved with versioned release/installation sources before selecting the native ABI. Rolling is pinned at commit c3c65b52daec7ff56762c0b2d308a1e201059599 and whole distribution-file SHA d8894bba5f7aa8d260d865ec8a7edfbe17e253753205c3d6d9007e42c418f358.
+
+A common portable application uses unchanged whole Wasm bytes and external authorized adapters. Rebuilding a native ROS example with another distribution selector does not demonstrate that portability. Native cross-distribution and cross-RMW wire compatibility must be separately tested. Missing providers, obsolete dependencies, hardware or licences leave rows blocked; none are silently treated as inapplicable.

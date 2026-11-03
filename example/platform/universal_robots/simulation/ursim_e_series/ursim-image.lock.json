@@ -1,0 +1,98 @@
+{
+  "format": "uwvm-official-ursim-image-lock-v1",
+  "registry": "https://registry-1.docker.io",
+  "repository": "universalrobots/ursim_e-series",
+  "manifest_digest": "sha256:c80dfb4ec6b554db6d20ba45fb90d0ec056d0303bd3c7a7040a4e8b503eaaf87",
+  "manifest_content_sha256": "c80dfb4ec6b554db6d20ba45fb90d0ec056d0303bd3c7a7040a4e8b503eaaf87",
+  "config": {
+    "mediaType": "application/vnd.docker.container.image.v1+json",
+    "size": 8254,
+    "digest": "sha256:44c6dabe864693210ea8b547323c08736d696a400ec82a19e75f5a8add616103"
+  },
+  "layers": [
+    {
+      "index": 0,
+      "digest": "sha256:760a0d82ace209164b655c6eba90f2c4453a223873656bb0685b01c8f7a20c6b",
+      "bytes": 49603505,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:760a0d82ace209164b655c6eba90f2c4453a223873656bb0685b01c8f7a20c6b"
+    },
+    {
+      "index": 1,
+      "digest": "sha256:40a3b9f2901e428c337a8a9c074d17123404f9c5e5475e9d603edf5dbf5bd9a9",
+      "bytes": 17498768,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:40a3b9f2901e428c337a8a9c074d17123404f9c5e5475e9d603edf5dbf5bd9a9"
+    },
+    {
+      "index": 2,
+      "digest": "sha256:fd259dc6f7ccc8eaf3f69201ca55185ad7c65ad7844a83b660e061195168426d",
+      "bytes": 138582264,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:fd259dc6f7ccc8eaf3f69201ca55185ad7c65ad7844a83b660e061195168426d"
+    },
+    {
+      "index": 3,
+      "digest": "sha256:f480930f2bed4ad0d16bf15aecf4108dabd589b1ceb5c90412881c6e4595d84c",
+      "bytes": 498835225,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:f480930f2bed4ad0d16bf15aecf4108dabd589b1ceb5c90412881c6e4595d84c"
+    },
+    {
+      "index": 4,
+      "digest": "sha256:1157392698b5b928f3a9219f5cedb028f7e10ca0da0eca8e2713985127680648",
+      "bytes": 706836,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:1157392698b5b928f3a9219f5cedb028f7e10ca0da0eca8e2713985127680648"
+    },
+    {
+      "index": 5,
+      "digest": "sha256:6485df7e163871a33e31b66dd4ca90f03cb9a4f36cc5aa2d63e98b8a85eb387c",
+      "bytes": 40161944,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:6485df7e163871a33e31b66dd4ca90f03cb9a4f36cc5aa2d63e98b8a85eb387c"
+    },
+    {
+      "index": 6,
+      "digest": "sha256:56183ed2ab3ec1c6b95e02c454079a7cb0f3d31d60ee5a9580d226fccc705232",
+      "bytes": 93,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:56183ed2ab3ec1c6b95e02c454079a7cb0f3d31d60ee5a9580d226fccc705232"
+    },
+    {
+      "index": 7,
+      "digest": "sha256:a76c4f2e0cf1901e110c0f360c0a30a7c207fa4f5ee1aa8dbc57cf32131d8917",
+      "bytes": 127292024,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:a76c4f2e0cf1901e110c0f360c0a30a7c207fa4f5ee1aa8dbc57cf32131d8917"
+    },
+    {
+      "index": 8,
+      "digest": "sha256:e61d08cac24771a9f7062e6494dc8d75e1019ccebd35d97e53f63fbfed8eab80",
+      "bytes": 98858867,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:e61d08cac24771a9f7062e6494dc8d75e1019ccebd35d97e53f63fbfed8eab80"
+    },
+    {
+      "index": 9,
+      "digest": "sha256:fa3a79d922da37e91d3194d2879db9e9b13fc8f7d087d5bb76c77b7dcf907abe",
+      "bytes": 1471298,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:fa3a79d922da37e91d3194d2879db9e9b13fc8f7d087d5bb76c77b7dcf907abe"
+    },
+    {
+      "index": 10,
+      "digest": "sha256:39cc86c983f31e18a7732d3d323032d0e9e829c13a144cc517e9a14e5cdb9835",
+      "bytes": 1276,
+      "media_type": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+      "url": "https://registry-1.docker.io/v2/universalrobots/ursim_e-series/blobs/sha256:39cc86c983f31e18a7732d3d323032d0e9e829c13a144cc517e9a14e5cdb9835"
+    }
+  ],
+  "compressed_layer_bytes": 973012100,
+  "runtime": "Official URSim e-Series PolyScope5.26.3, model UR5 mapped to UR5e",
+  "native_image_payload_redistributed": false,
+  "license_scope": "Exact vendor image private download/use only; no source availability or redistribution entitlement inferred",
+  "public_bootstrap_owner": "01",
+  "production_admission": false,
+  "complete_scene_pass": false
+}

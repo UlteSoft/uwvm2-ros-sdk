@@ -1,0 +1,71 @@
+{
+  "api_version": 1,
+  "cases": [
+    {
+      "arguments": [
+        "construct"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "construct",
+        "checks": 5,
+        "failures": 0
+      },
+      "id": "construct"
+    },
+    {
+      "arguments": [
+        "invalid"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "invalid",
+        "checks": 10,
+        "failures": 0
+      },
+      "id": "invalid"
+    },
+    {
+      "arguments": [
+        "alias"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "alias",
+        "checks": 4,
+        "failures": 0
+      },
+      "id": "alias"
+    }
+  ],
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "ur-ros1-request-construction",
+  "public_inputs": [
+    {
+      "path": "include/platform/universal_robots/c/request_builders.h",
+      "scope": "sdk",
+      "sha256": "fcc3194e3c12d1d5d7bc5b030365aa3d7f9c9c893abb1ad20ef3b4e6ff501249"
+    },
+    {
+      "path": "include/platform/universal_robots/c/io.h",
+      "scope": "sdk",
+      "sha256": "6c88d022e32e8b60b00f16f83a08838f339ccefbf87b6839c20b3f3aac97eae2"
+    },
+    {
+      "path": "include/platform/universal_robots/c/ros1/universal-robots-ros1-complete/bounded_records.h",
+      "scope": "sdk",
+      "sha256": "2ff306db95710f7183f4db35553b881d153575df0160412d6cb36608bff3f787"
+    },
+    {
+      "path": "main.c",
+      "scope": "example",
+      "sha256": "99ebd243f02101fad243922e165ae471f7f6801c9800a8da290865aa8bbe4ac1"
+    },
+    {
+      "path": "xmake.lua",
+      "scope": "example",
+      "sha256": "5f4646594e365990a0a7d013191a05c5f89503eafc1839d146edfa66cf59919d"
+    }
+  ],
+  "scope": "Actual Guest request construction and canonical-value assertions only; no ROS service, permissions/isolation or full simulation acceptance"
+}

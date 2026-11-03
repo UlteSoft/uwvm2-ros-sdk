@@ -1,0 +1,482 @@
+{
+  "format": "uwvm-ros-transplate-upstream-source-lock-v0.1.0",
+  "status": "PINNED_REVIEW_SOURCES_ONLY_NO_UPSTREAM_WASM_PORT",
+  "source_refs": [
+    {
+      "id": "rcl-package",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/package.xml",
+      "source_sha256": "ec712235b55f64747fc7afc86a106536ffe0b09130246fe649a129945ecec59c",
+      "bytes": 2053
+    },
+    {
+      "id": "rcl-node",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/src/rcl/node.c",
+      "source_sha256": "003ab527cfd79cd179201cd44a376461a82e6e0f3c5366d9c6ceca7d7679ac97",
+      "bytes": 20724
+    },
+    {
+      "id": "rclcpp-package",
+      "url": "https://raw.githubusercontent.com/ros2/rclcpp/48db30fc6bf269c56688988ea3923ed76bd061c6/rclcpp/package.xml",
+      "source_sha256": "2a44fcf2aa4ac75a95e9268ee6cae97f280276b2247c727e902de1f022d3bb4f",
+      "bytes": 2669
+    },
+    {
+      "id": "rclcpp-executor",
+      "url": "https://raw.githubusercontent.com/ros2/rclcpp/48db30fc6bf269c56688988ea3923ed76bd061c6/rclcpp/src/rclcpp/executor.cpp",
+      "source_sha256": "6f06f679d378db2a15e54bbb787a93312b634fe3ebe339c90ba90d2040834781",
+      "bytes": 31745
+    },
+    {
+      "id": "roscpp-package",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/30483a9f218f1545eec16d3934bf3cb042e2cb5b/clients/roscpp/package.xml",
+      "source_sha256": "f004de08e18bd3f9319a9d389bec6e83abc7135775d302b94792f73402b4e97f",
+      "bytes": 2585
+    },
+    {
+      "id": "roscpp-init",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/30483a9f218f1545eec16d3934bf3cb042e2cb5b/clients/roscpp/src/libros/init.cpp",
+      "source_sha256": "bf3324a0ffe90b8a3e165f54ad03360bf9a0047923f27c15d18fe03d02443a64",
+      "bytes": 15850
+    }
+  ],
+  "client_packages": [
+    {
+      "id": "rcl-package",
+      "package": {
+        "name": "rcl",
+        "version": "9.2.11",
+        "license": "Apache License 2.0",
+        "buildtool_depend": "ament_cmake_ros"
+      },
+      "dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake_ros"
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake_gen_version_h"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "rmw"
+        },
+        {
+          "kind": "depend",
+          "name": "libyaml_vendor"
+        },
+        {
+          "kind": "depend",
+          "name": "rcl_interfaces"
+        },
+        {
+          "kind": "depend",
+          "name": "rcl_logging_interface"
+        },
+        {
+          "kind": "depend",
+          "name": "rcl_logging_spdlog"
+        },
+        {
+          "kind": "depend",
+          "name": "rcl_yaml_param_parser"
+        },
+        {
+          "kind": "depend",
+          "name": "rcutils"
+        },
+        {
+          "kind": "depend",
+          "name": "rmw_implementation"
+        },
+        {
+          "kind": "depend",
+          "name": "rosidl_runtime_c"
+        },
+        {
+          "kind": "depend",
+          "name": "service_msgs"
+        },
+        {
+          "kind": "depend",
+          "name": "tracetools"
+        },
+        {
+          "kind": "depend",
+          "name": "type_description_interfaces"
+        },
+        {
+          "kind": "depend",
+          "name": "yaml"
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_cmake_gtest"
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto"
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common"
+        },
+        {
+          "kind": "test_depend",
+          "name": "launch"
+        },
+        {
+          "kind": "test_depend",
+          "name": "launch_testing"
+        },
+        {
+          "kind": "test_depend",
+          "name": "launch_testing_ament_cmake"
+        },
+        {
+          "kind": "test_depend",
+          "name": "mimick_vendor"
+        },
+        {
+          "kind": "test_depend",
+          "name": "osrf_testing_tools_cpp"
+        },
+        {
+          "kind": "test_depend",
+          "name": "rmw"
+        },
+        {
+          "kind": "test_depend",
+          "name": "rmw_implementation_cmake"
+        },
+        {
+          "kind": "test_depend",
+          "name": "rosidl_runtime_cpp"
+        },
+        {
+          "kind": "test_depend",
+          "name": "test_msgs"
+        },
+        {
+          "kind": "group_depend",
+          "name": "rcl_logging_packages"
+        }
+      ]
+    },
+    {
+      "id": "rclcpp-package",
+      "package": {
+        "name": "rclcpp",
+        "version": "28.1.22",
+        "license": "Apache License 2.0",
+        "buildtool_depend": "ament_cmake_ros"
+      },
+      "dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake_ros"
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake_gen_version_h"
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "python3"
+        },
+        {
+          "kind": "build_depend",
+          "name": "ament_index_cpp"
+        },
+        {
+          "kind": "build_depend",
+          "name": "builtin_interfaces"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rcl_interfaces"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rosgraph_msgs"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rosidl_runtime_c"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rosidl_runtime_cpp"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rosidl_typesupport_c"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rosidl_typesupport_cpp"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "ament_index_cpp"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "builtin_interfaces"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "rcl_interfaces"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "rosgraph_msgs"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "rosidl_runtime_c"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "rosidl_runtime_cpp"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "rosidl_typesupport_c"
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "rosidl_typesupport_cpp"
+        },
+        {
+          "kind": "depend",
+          "name": "libstatistics_collector"
+        },
+        {
+          "kind": "depend",
+          "name": "rcl"
+        },
+        {
+          "kind": "depend",
+          "name": "rcl_logging_interface"
+        },
+        {
+          "kind": "depend",
+          "name": "rcl_yaml_param_parser"
+        },
+        {
+          "kind": "depend",
+          "name": "rcpputils"
+        },
+        {
+          "kind": "depend",
+          "name": "rcutils"
+        },
+        {
+          "kind": "depend",
+          "name": "rmw"
+        },
+        {
+          "kind": "depend",
+          "name": "rosidl_dynamic_typesupport"
+        },
+        {
+          "kind": "depend",
+          "name": "statistics_msgs"
+        },
+        {
+          "kind": "depend",
+          "name": "tracetools"
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_cmake_gmock"
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_cmake_google_benchmark"
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_cmake_gtest"
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto"
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common"
+        },
+        {
+          "kind": "test_depend",
+          "name": "mimick_vendor"
+        },
+        {
+          "kind": "test_depend",
+          "name": "performance_test_fixture"
+        },
+        {
+          "kind": "test_depend",
+          "name": "rmw"
+        },
+        {
+          "kind": "test_depend",
+          "name": "rmw_implementation_cmake"
+        },
+        {
+          "kind": "test_depend",
+          "name": "rosidl_default_generators"
+        },
+        {
+          "kind": "test_depend",
+          "name": "test_msgs"
+        }
+      ]
+    },
+    {
+      "id": "roscpp-package",
+      "package": {
+        "name": "roscpp",
+        "version": "1.17.4",
+        "license": "BSD",
+        "buildtool_depend": "catkin"
+      },
+      "dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "catkin"
+        },
+        {
+          "kind": "build_depend",
+          "name": "cpp_common"
+        },
+        {
+          "kind": "build_depend",
+          "name": "libboost-chrono-dev"
+        },
+        {
+          "kind": "build_depend",
+          "name": "libboost-filesystem-dev"
+        },
+        {
+          "kind": "build_depend",
+          "name": "libboost-system-dev"
+        },
+        {
+          "kind": "build_depend",
+          "name": "message_generation"
+        },
+        {
+          "kind": "build_depend",
+          "name": "pkg-config"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rosconsole"
+        },
+        {
+          "kind": "build_depend",
+          "name": "roscpp_serialization"
+        },
+        {
+          "kind": "build_depend",
+          "name": "roscpp_traits"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rosgraph_msgs"
+        },
+        {
+          "kind": "build_depend",
+          "name": "roslang"
+        },
+        {
+          "kind": "build_depend",
+          "name": "rostime"
+        },
+        {
+          "kind": "build_depend",
+          "name": "std_msgs"
+        },
+        {
+          "kind": "build_depend",
+          "name": "xmlrpcpp"
+        },
+        {
+          "kind": "run_depend",
+          "name": "cpp_common"
+        },
+        {
+          "kind": "run_depend",
+          "name": "libboost-chrono-dev"
+        },
+        {
+          "kind": "run_depend",
+          "name": "libboost-filesystem-dev"
+        },
+        {
+          "kind": "run_depend",
+          "name": "libboost-system-dev"
+        },
+        {
+          "kind": "run_depend",
+          "name": "message_runtime"
+        },
+        {
+          "kind": "run_depend",
+          "name": "libboost-chrono-dev"
+        },
+        {
+          "kind": "run_depend",
+          "name": "libboost-filesystem-dev"
+        },
+        {
+          "kind": "run_depend",
+          "name": "libboost-system-dev"
+        },
+        {
+          "kind": "run_depend",
+          "name": "rosconsole"
+        },
+        {
+          "kind": "run_depend",
+          "name": "roscpp_serialization"
+        },
+        {
+          "kind": "run_depend",
+          "name": "roscpp_traits"
+        },
+        {
+          "kind": "run_depend",
+          "name": "rosgraph_msgs"
+        },
+        {
+          "kind": "run_depend",
+          "name": "rostime"
+        },
+        {
+          "kind": "run_depend",
+          "name": "std_msgs"
+        },
+        {
+          "kind": "run_depend",
+          "name": "xmlrpcpp"
+        }
+      ]
+    }
+  ],
+  "required_ports": {
+    "rcl": "Guest-compiled actual rcl core and controlled rmw operation boundary; rcutils/rmw/message/IDL dependency closure and allocator/context/node ownership remain unimplemented",
+    "rclcpp": "Guest-compiled actual executor/waitset/callback source; native mutex/thread/wait/EH behavior cannot be inferred from headers",
+    "roscpp": "Actual ROS1 init, graph/master/XMLRPC/poll/connection/transport and callback source need a Wasm-safe VM-mediated route; no direct TCPROS/XMLRPC socket tunnel or renamed ROS2 implementation"
+  },
+  "upstream_licenses": {
+    "rcl": "Apache-2.0 as declared by pinned package and source header",
+    "rclcpp": "Apache-2.0 as declared by pinned package and source header",
+    "roscpp": "BSD as declared by pinned package/source; complete source distribution license closure still required"
+  },
+  "complete_source_closure": "NOT_FETCHED_NOT_BUILT",
+  "supported_legacy_profiles": [],
+  "historical_ros1_distributions": "All applicable pinned historical/current rows remain required; this Noetic source pin does not establish them"
+}

@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SDK04 Kinova ordinary official environment inputs; carries no live authority",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "programs",
+    "native_provenance",
+    "environment"
+  ],
+  "properties": {
+    "format": {
+      "const": "sdk04-kinova-official-mock-inputs-v1"
+    },
+    "programs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "python",
+        "controller_manager",
+        "robot_state_publisher",
+        "controller_spawner",
+        "native_joint"
+      ],
+      "properties": {
+        "python": {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "source_identity": {
+              "type": "string"
+            }
+          }
+        },
+        "controller_manager": {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "source_identity": {
+              "type": "string"
+            }
+          }
+        },
+        "robot_state_publisher": {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "source_identity": {
+              "type": "string"
+            }
+          }
+        },
+        "controller_spawner": {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "source_identity": {
+              "type": "string"
+            }
+          }
+        },
+        "native_joint": {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "source_identity": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "native_provenance": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_identity": {
+          "type": "string"
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PATH",
+        "AMENT_PREFIX_PATH",
+        "PYTHONPATH",
+        "LD_LIBRARY_PATH",
+        "RMW_IMPLEMENTATION"
+      ],
+      "properties": {
+        "PATH": {
+          "type": "string"
+        },
+        "AMENT_PREFIX_PATH": {
+          "type": "string"
+        },
+        "PYTHONPATH": {
+          "type": "string"
+        },
+        "LD_LIBRARY_PATH": {
+          "type": "string"
+        },
+        "RMW_IMPLEMENTATION": {
+          "const": "rmw_fastrtps_cpp"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "ROS_distribution": "jazzy",
+  "commit": "4e607c09d624debc39a4ae5405680c06d87fac35",
+  "complete_API_conformance": false,
+  "docs_access": "docs.ros.org Anubis denied; exact accessible official source used, no bypass",
+  "files": [
+    {
+      "accessed_at_utc": "2026-10-29T03:57:31.995331+00:00",
+      "bytes": 11581,
+      "official_blob_sha1": "46b6486d4727cc256513a1e674d8fb9904cebb51",
+      "official_url": "https://raw.githubusercontent.com/ros2/rclpy/4e607c09d624debc39a4ae5405680c06d87fac35/rclpy/rclpy/task.py",
+      "path": "rclpy/rclpy/task.py",
+      "retained_file": "upstream/rclpy/rclpy/task.py",
+      "sha256": "4b645fa767a61f11279150fa169d1eb7f99cfa706ea4afc5f23a211b3b034a77"
+    },
+    {
+      "accessed_at_utc": "2026-10-29T03:57:25.714082+00:00",
+      "bytes": 39804,
+      "official_blob_sha1": "3a54e1ea4e18208a74c50eb0fdd0641dba0a15b5",
+      "official_url": "https://raw.githubusercontent.com/ros2/rclpy/4e607c09d624debc39a4ae5405680c06d87fac35/rclpy/rclpy/executors.py",
+      "path": "rclpy/rclpy/executors.py",
+      "retained_file": "upstream/rclpy/rclpy/executors.py",
+      "sha256": "6a6cd0dde85474270582e64ab1ec2b8847c4bdeb67d2369be8b9de70c30a3930"
+    },
+    {
+      "accessed_at_utc": "2026-10-29T03:57:21.981266+00:00",
+      "bytes": 11358,
+      "official_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "official_url": "https://raw.githubusercontent.com/ros2/rclpy/4e607c09d624debc39a4ae5405680c06d87fac35/LICENSE",
+      "path": "LICENSE",
+      "retained_file": "upstream/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "accessed_at_utc": "2026-10-29T03:57:21.946839+00:00",
+      "bytes": 2590,
+      "official_blob_sha1": "22cbb6cb40f04d7666430af1b9ddba57c5d59585",
+      "official_url": "https://raw.githubusercontent.com/ros2/rclpy/4e607c09d624debc39a4ae5405680c06d87fac35/rclpy/package.xml",
+      "path": "rclpy/package.xml",
+      "retained_file": "upstream/rclpy/package.xml",
+      "sha256": "6367e8f5f30e81867b246a8750ee900d7276f1f52253ba5140c188e360e6cb0f"
+    }
+  ],
+  "migration_ABI": "uwvm_ros2_v1 with existing typed owned handles/copy; no native pointers",
+  "native_C_extension_ABI_compatibility": false,
+  "repository": "https://github.com/ros2/rclpy",
+  "schema": "sdk06-official-rclpy-source-baseline-v1",
+  "tag": "7.1.12",
+  "target": "wasm32-wasip1",
+  "version": "7.1.12"
+}

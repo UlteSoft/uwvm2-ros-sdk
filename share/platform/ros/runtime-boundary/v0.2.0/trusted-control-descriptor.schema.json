@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Actual VM r2 descriptor shape; exact supplementary groups/security are mandatory in its approved whole runtime manifest. Source qualification approval is separate from product/runtime qualification.",
+  "title": "Approved exact external host control descriptor",
+  "type": "object",
+  "required": [
+    "format",
+    "source_manifest_sha256",
+    "runtime_manifest_sha256",
+    "closed_launch_contract_sha256",
+    "security_profile",
+    "roles"
+  ],
+  "properties": {
+    "format": {
+      "const": "uwvm-sdk-approved-host-control-descriptor-v1"
+    },
+    "source_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "runtime_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "closed_launch_contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "security_profile": {
+      "const": "uid1000-pinned-external-control-v1"
+    },
+    "roles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "controller",
+        "guardian"
+      ],
+      "properties": {
+        "controller": {
+          "type": "object",
+          "required": [
+            "entry_relative",
+            "entry_sha256",
+            "interpreter_sha256",
+            "argv_contract_sha256",
+            "source_descriptor_contract_sha256"
+          ],
+          "properties": {
+            "entry_relative": {
+              "type": "string",
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\u0000]+$"
+            },
+            "entry_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "interpreter_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "argv_contract_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "source_descriptor_contract_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "guardian": {
+          "type": "object",
+          "required": [
+            "entry_relative",
+            "entry_sha256",
+            "interpreter_sha256",
+            "argv_contract_sha256",
+            "source_descriptor_contract_sha256"
+          ],
+          "properties": {
+            "entry_relative": {
+              "type": "string",
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\u0000]+$"
+            },
+            "entry_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "interpreter_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "argv_contract_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "source_descriptor_contract_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    },
+    "supplementary_groups": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 128,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  }
+}

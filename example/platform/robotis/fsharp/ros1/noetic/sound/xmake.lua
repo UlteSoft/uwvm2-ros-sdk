@@ -17,6 +17,7 @@ if not root then
     end
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/platform/robotis/xmake/required_guest_tests.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -32,4 +33,6 @@ target("robotis_sound")
     set_ros_scenario("sound")
     set_values("ros.sdk.main_class", "uwvm.robotis.example.Main")
     add_files("Main.fs")
+    uwvm_robotis_required_guest_tests({scenario = "sound",
+        cases = {"guest-contract-normal", "guest-contract-denied", "guest-contract-invalid-input", "guest-contract-cleanup"}})
 target_end()

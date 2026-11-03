@@ -1,0 +1,145 @@
+name: Linux public SDK examples
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sdk-linux-examples-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  xmake:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: xmake-io/xmake
+          ref: 13fc392386960040c3da1ddcbd104423b02fbe1b
+          submodules: recursive
+          persist-credentials: false
+          path: .ci/xmake-source
+      - name: Build fixed upstream Xmake on Linux
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .ci/xmake-install
+          cd .ci/xmake-source
+          ./configure --prefix="$GITHUB_WORKSPACE/.ci/xmake-install"
+          make -j2
+          make install
+          cd "$GITHUB_WORKSPACE/.ci/xmake-install"
+          find . -type f -print0 | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/xmake.sha256"
+          cp "$RUNNER_TEMP/xmake.sha256" ./SHA256SUMS
+          tar -czf "$GITHUB_WORKSPACE/xmake-linux.tar.gz" .
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fixed-linux-xmake
+          path: xmake-linux.tar.gz
+          if-no-files-found: error
+          retention-days: 7
+  examples:
+    needs: xmake
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          lfs: true
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fixed-linux-xmake
+          path: .ci/tool-download
+      - name: Verify and install this run's fixed Xmake
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .ci/xmake-install
+          tar -xzf .ci/tool-download/xmake-linux.tar.gz -C .ci/xmake-install
+          cd .ci/xmake-install
+          sha256sum --check SHA256SUMS
+          echo "$GITHUB_WORKSPACE/.ci/xmake-install/bin" >> "$GITHUB_PATH"
+      - name: Main Xmake bounded child build and test scheduling
+        env:
+          XMAKE_STATS: 'false'
+          PYTHONDONTWRITEBYTECODE: '1'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .uwvm-ros/ci-machine
+          cat /proc/meminfo > .uwvm-ros/ci-machine/meminfo
+          cat /proc/swaps > .uwvm-ros/ci-machine/swaps
+          cat /proc/self/cgroup > .uwvm-ros/ci-machine/cgroup
+          df -B1 . > .uwvm-ros/ci-machine/filesystem
+          xmake --version > .uwvm-ros/ci-machine/xmake-version
+          xmake examples --jobs=2 --shard-index=${{ matrix.shard }} --shard-count=32 --output=.uwvm-ros/linux-ci
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: sdk-linux-examples-${{ matrix.shard }}
+          path: |
+            .uwvm-ros/ci-machine/
+            .uwvm-ros/linux-ci/**/shard.json
+            .uwvm-ros/linux-ci/**/progress.json
+            .uwvm-ros/linux-ci/**/request-*.json
+            .uwvm-ros/linux-ci/**/request-*.json.stdout
+            .uwvm-ros/linux-ci/**/request-*.json.stderr
+            .uwvm-ros/linux-ci/**/admission.stdout
+            .uwvm-ros/linux-ci/**/admission.stderr
+            .uwvm-ros/linux-ci/**/project-*/result.json
+            .uwvm-ros/linux-ci/**/project-*/configure.stdout
+            .uwvm-ros/linux-ci/**/project-*/configure.stderr
+            .uwvm-ros/linux-ci/**/project-*/build.stdout
+            .uwvm-ros/linux-ci/**/project-*/build.stderr
+            .uwvm-ros/linux-ci/**/project-*/test.stdout
+            .uwvm-ros/linux-ci/**/project-*/test.stderr
+            .uwvm-ros/linux-ci/**/capacity.stdout
+            .uwvm-ros/linux-ci/**/capacity.stderr
+            .uwvm-ros/linux-ci/**/project-*/evidence/
+            .uwvm-ros/linux-ci/**/preparation/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  aggregate:
+    if: always()
+    needs: [xmake, examples]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fixed-linux-xmake
+          path: .ci/tool-download
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: sdk-linux-examples-*
+          path: .ci/shard-artifacts
+          merge-multiple: false
+      - name: Verify Xmake and every public catalog row
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .ci/xmake-install
+          tar -xzf .ci/tool-download/xmake-linux.tar.gz -C .ci/xmake-install
+          cd .ci/xmake-install
+          sha256sum --check SHA256SUMS
+          cd "$GITHUB_WORKSPACE"
+          .ci/xmake-install/bin/xmake examples --merge=.ci/shard-artifacts --output=.uwvm-ros/linux-ci-aggregate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: sdk-linux-examples-aggregate
+          path: .uwvm-ros/linux-ci-aggregate/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

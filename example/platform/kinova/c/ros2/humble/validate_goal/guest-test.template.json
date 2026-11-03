@@ -1,0 +1,13 @@
+{
+  "format": "uwvm-ros-command-run-v1",
+  "target": "wasm32-wasip1",
+  "backend": "ros2",
+  "distribution": "humble",
+  "runtime": "uwvm2-ros",
+  "runtime_sha256": null,
+  "runtime_arguments": [
+    "--runtime-aot"
+  ],
+  "application_arguments": [],
+  "state": "EXPLICITLY_FILL_EXACT_QUALIFIED_RUNTIME_AND_REQUIRED_WASI_STDIO_ARGUMENTS"
+}

@@ -1,0 +1,67 @@
+{
+  "format": "uwvm-portable-robot-index-v1",
+  "source_contract": "v0.1.0/contract.json",
+  "source_manifest": "v0.1.0/source-files.json",
+  "source_manifest_sha256": "ed178b82496ed45bf8041c18387db9343c3d6b3954aadd190a51c4cf81cc2bbd",
+  "state": "COMPILED_FIXTURE_HOST_ABI_INTEGRATION_PENDING",
+  "algorithm_wasm": {
+    "path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "bytes": 4449,
+    "whole_file_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+    "artifact_manifest": "share/platform/ros/portable/artifacts/joint-step-v0.1.0.json",
+    "artifact_manifest_sha256": "0870aeac005e003a0bfb52c4834ce46ed45da032247e8dbc23a8a4ade1b48949"
+  },
+  "formal_simulation_qualification": false,
+  "actual_artifact_manifest": "artifacts/joint-step-v0.1.0.json",
+  "capability_families": "share/platform/ros/portable/capability-families.json",
+  "additional_source_preview": {
+    "version": "0.2.0-preview",
+    "profiles": "share/platform/ros/portable/v0.2.0/profiles.json",
+    "source_manifest": "share/platform/ros/portable/v0.2.0/source-files.json",
+    "source_manifest_sha256": "159a942d82f5c2e718e9d59f378f4220f52f45c592e7fb9e1386b794d6c3dc9f",
+    "compiled_artifacts": [],
+    "host_implemented": false
+  },
+  "status": "THREE_COMPILED_CAPABILITY_FIXTURES_AVAILABLE_HOST_INTEGRATION_PENDING",
+  "compiled_artifacts": [
+    {
+      "id": "joint-step-v0.1.0",
+      "path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+      "bytes": 4449,
+      "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+      "manifest": "share/platform/ros/portable/artifacts/joint-step-v0.1.0.json",
+      "manifest_sha256": "0870aeac005e003a0bfb52c4834ce46ed45da032247e8dbc23a8a4ade1b48949",
+      "qualification": "COMPILER_AND_STRUCTURE_ONLY"
+    },
+    {
+      "id": "planar-goal-v0.3.0",
+      "path": "lib/platform/ros/portable/v0.3.0/planar-goal.wasm",
+      "bytes": 3797,
+      "sha256": "54884d1513c2e5256450128627a5cc6f4130ca9ed533322a5035f77f81b59ff9",
+      "manifest": "share/platform/ros/portable/artifacts/planar-goal-v0.3.0.json",
+      "manifest_sha256": "14f4df197e95476046dc2b19a0fddb6fe598d474576785f4067b7084145d849e",
+      "qualification": "COMPILER_AND_STRUCTURE_ONLY"
+    },
+    {
+      "id": "sensor-digest-v0.3.0",
+      "path": "lib/platform/ros/portable/v0.3.0/sensor-digest.wasm",
+      "bytes": 20095,
+      "sha256": "7061f671b91860cca2867d52bc38bca4c12234426598951451b481cf31c69100",
+      "manifest": "share/platform/ros/portable/artifacts/sensor-digest-v0.3.0.json",
+      "manifest_sha256": "191e2a87d72af2a2fffd8878ae271d9907fa7f19770eb92ce0e89d86d9e6c278",
+      "qualification": "COMPILER_AND_STRUCTURE_ONLY"
+    }
+  ],
+  "current_additional_source": {
+    "version": "0.3.0",
+    "contract": "share/platform/ros/portable/v0.3.0/contract.json",
+    "source_manifest": "share/platform/ros/portable/v0.3.0/source-files.json",
+    "source_manifest_sha256": "158aa66cafd9d61cb66e3c9879f55060a52617f6528e4cbf71ecf74a86f74228",
+    "artifact_manifests": [
+      "share/platform/ros/portable/artifacts/planar-goal-v0.3.0.json",
+      "share/platform/ros/portable/artifacts/sensor-digest-v0.3.0.json"
+    ],
+    "host_integration": "NOT_RUN",
+    "official_simulation": "NOT_RUN"
+  }
+}

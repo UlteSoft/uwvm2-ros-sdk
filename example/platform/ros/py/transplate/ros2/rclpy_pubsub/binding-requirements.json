@@ -1,0 +1,97 @@
+{
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "format": "uwvm-python-transplate-binding-requirements-v1",
+  "guest_wasip1_requirements": {
+    "additional_preopens_or_process_network_FFI_grants": false,
+    "module": "main",
+    "monotonic_clock_and_bounded_sleep": "Owner selects source-pinned existing VM permissions; no ambient clock/wait grant inferred.",
+    "read_only_preopen": {
+      "VM_path_create_truncate_and_file_write_must_be_denied": true,
+      "accepted_guest_errors": [
+        1,
+        13,
+        76
+      ],
+      "denied_file": "denied.bin",
+      "guest_path": "/readonly",
+      "native_fixture_is_writable": true
+    },
+    "read_write_preopen": {
+      "guest_path": "/workspace",
+      "required_operations": [
+        "path_open-create-truncate",
+        "fd_write",
+        "fd_read",
+        "fd_filestat_get",
+        "fd_seek-if-CPython-requires"
+      ],
+      "roundtrip_file": "python-wasm-roundtrip.bin"
+    }
+  },
+  "import_module": "uwvm_ros2_v1",
+  "intentionally_ungranted_aliases": [
+    {
+      "grant_must_not_be_created": true,
+      "guest_alias": "migration.denied.publish",
+      "guest_binding_operation": "topic_publish",
+      "native_operation": "topic.publish",
+      "resource": "/migration/denied",
+      "runtime_open_error_required": 13,
+      "type": "std_msgs/msg/String"
+    }
+  ],
+  "native_python_business_fallback": false,
+  "permission_denial_success_requires": "Original runtime permission decisions and evidence of no corresponding unauthorized native effect; guest stdout alone is insufficient",
+  "requested_qos": {
+    "depth": 10,
+    "durability": "VOLATILE",
+    "history": "KEEP_LAST",
+    "reliability": "RELIABLE"
+  },
+  "required_aliases": [
+    {
+      "guest_alias": "migration.string.publish",
+      "guest_binding_operation": "topic_publish",
+      "native_operation": "topic.publish",
+      "resource": "/migration/echo",
+      "type": "std_msgs/msg/String"
+    },
+    {
+      "guest_alias": "migration.string.subscribe",
+      "guest_binding_operation": "topic_subscribe",
+      "guest_output_capacity": 4096,
+      "native_operation": "topic.subscribe",
+      "resource": "/migration/echo",
+      "type": "std_msgs/msg/String"
+    },
+    {
+      "allowed_name_prefix": "/migration",
+      "guest_alias": "migration.graph.topics",
+      "guest_binding_operation": "graph_list_topics",
+      "guest_output_capacity": 65536,
+      "native_operation": "graph.list-topics",
+      "resource": "/",
+      "type": "builtin/graph-list-v1"
+    }
+  ],
+  "required_runtime_assertions": [
+    "The initial denied alias reaches real capability_open and returns13 before any permitted topic endpoint exists.",
+    "The denied file open reaches checked WASIp1 rights; native writable fixture bytes/names remain unchanged.",
+    "The unchanged compiled guest creates and validates a fresh callback nonce and canonical full payload.",
+    "The real graph query returns bounded canonical sorted topic/type rows including /migration/echo std_msgs/msg/String.",
+    "A saved full graph handle is closed, then reused through the raw actual Wasm import; runtime returns9 and forwards no native query.",
+    "Guest Python writes/reads exact roundtrip bytes; native file hash/extent/bytes independently match.",
+    "Cleanup succeeds before the fixed completion JSON is emitted; native actors and inherited canonical FD remain held through physical retirement."
+  ],
+  "runtime_and_official_simulation_qualification": "SOURCE_AUTHORED_NOT_LINUX_VALIDATED",
+  "runtime_owner_must_independently_validate": [
+    "complete application Wasm identity and provenance",
+    "module instance and alias ownership",
+    "native provider and exact message/type-support identity",
+    "operation, resource, QoS, quota, arguments, lifetime and result",
+    "fresh native operation and callback correlations",
+    "explicit WASI clock, wait and output permissions"
+  ],
+  "status": "REQUIREMENTS_ONLY_NO_RUNTIME_GRANTS_CREATED"
+}

@@ -63,6 +63,9 @@ local function command_target(target)
 		"kind",
 		"data",
 		"data_set",
+		"objectdir",
+		"dependir",
+		"targetdir",
 	}) do
 		local method = name
 		view[method] = function(_, ...)

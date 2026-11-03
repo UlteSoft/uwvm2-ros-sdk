@@ -59,6 +59,9 @@ local function module_target(name, language, platform, source, definition)
         set_kind(name == "main" and "binary" or "shared")
         set_language(language)
         set_ros_platform(platform)
+        -- SDK10: example-local object/dependency output for Linux child-Xmake jobs.
+        set_objectdir(path.join(os.scriptdir(), ".uwvm-ros", "objects", "$(plat)", "$(arch)", "$(mode)"))
+        set_dependir(path.join(os.scriptdir(), ".uwvm-ros", "dependencies", "$(plat)", "$(arch)", "$(mode)"))
         if platform ~= "wasi" then
             set_ros2_version("jazzy")
             set_values("ros.vendor.transport", "dds")

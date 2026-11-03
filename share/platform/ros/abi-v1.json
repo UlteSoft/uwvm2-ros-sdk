@@ -3,7 +3,7 @@
   "abi_version": 1,
   "authority_source": {
     "path": "src/uwvm2/uwvm/imported/ros/host.h",
-    "sha256": "9c3a1c08fe7ac77c8a3adaf223a70d4ecf6066e9edc092a68c3feeea55c204e1"
+    "sha256": "438497194ce9fd2f1bf6a59e7a9f97452cb6a51cd6da7986bf75e03dd8ca5f8e"
   },
   "memory_contract": {
     "memory_index": "i32",
@@ -2752,5 +2752,16 @@
         }
       ]
     }
+  },
+  "authority_review": {
+    "contract_version": "1.0.0",
+    "path": "share/platform/ros/runtime-evidence/v1.0.0/manifest.json",
+    "sha256": "220087e8b729df8525bc3fb138896ba6ed63b18656b5dcb328f1d64ba3e807f3",
+    "scope": "Exact unchanged 81 base import declarations and87 finite unprivileged guest assertions on exact R11 ELF only",
+    "previous_sdk_descriptor_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+    "previous_authority_sha256": "9c3a1c08fe7ac77c8a3adaf223a70d4ecf6066e9edc092a68c3feeea55c204e1",
+    "whole_historical_semantic_equivalence": false,
+    "positive_authorized_ROS_operations_qualified": false,
+    "public_sdk_xmake_or_simulation_qualified": false
   }
 }

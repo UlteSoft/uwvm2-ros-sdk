@@ -1,0 +1,622 @@
+{
+  "format": "uwvm-sdk-observation-bounded-parameters-v5",
+  "version": 5,
+  "status": "SCOPED_FINAL_VM_CAPACITY_AND_CURRENT002_SOURCE_REVIEW_PASS_PERFORMANCE_PREFLIGHT_BLOCKED",
+  "tested_identity": {
+    "VM_ELF_sha256": "81838249a42106bb003b7fcaac4df6fc769f7c7c23d99ac3b0141c5f9bff5e05",
+    "source_files": 2492,
+    "current_source_drift": 0,
+    "target": "Linuxx86_64LLVM-AOTWasm32genericvalidcapability/one-defined-unshared-memory",
+    "stable_release_evidence_packaging": "NOT_QUALIFIED; actual source/build/raw evidence retained by private acceptance index, not a published example dependency"
+  },
+  "CLI": {
+    "optional_prefix": [
+      "--ros2-buffer-audit-limits",
+      "payload-bytes",
+      "operation-records",
+      "total-file-bytes",
+      "record-bytes",
+      "profile-sha256"
+    ],
+    "immediately_followed_by": [
+      "--ros2-buffer-audit",
+      "freshASCIIrunID",
+      "privateEmpty0600O_WRONLYInheritedFD"
+    ],
+    "once_before_begin": true,
+    "caller_profile_hash_is_not_authority": true
+  },
+  "defaults": {
+    "payload_bytes_each": 8192,
+    "operation_records": 20000,
+    "total_file_bytes": 67108864,
+    "record_bytes": 32768
+  },
+  "technical_ceilings_not_reservation_or_admission": {
+    "payload_bytes_each": 4194304,
+    "operation_records": 4294967295,
+    "total_file_bytes": 4398046511104,
+    "record_bytes": 33554432
+  },
+  "minima": {
+    "payload_bytes": 1,
+    "operation_records": 1,
+    "total_file_bytes": 8192,
+    "record_bytes": 1024
+  },
+  "scope": "process-global all modules/preloads/libraries; not per module multiplied",
+  "memory": {
+    "selected_record_allocation_bytes": "Exactly selectedrecord_bytes once perVMprocess; <=33554432, default32768; disabledjournalnone.",
+    "detached_input": "At mostselectedpayload_bytes peractiveobservedgenericinput, <=4194304, newnothrowfailure capture_droppedwithoutreplacingROSresult. Actualrequest/reply/runtimebuffers separate.",
+    "count_file_quotas_do_not_allocate_equivalent_RAM": true,
+    "pagecache": "All file/dirty/writeback/cache, runtime/language/collector/nativequeue/guardian/ref/VTune/importand reapedcharges inside common64GiB/swap0; source-boundconcurrency andkernelmemory.current/stat/peak/events stillrequired.",
+    "previous_fixed512KiB_model": "Historicalpre-finalcandidate, superseded for ELF81838249...5e05."
+  },
+  "footer_fields": [
+    "attempted_operations",
+    "emitted_operations",
+    "dropped_records",
+    "suppressed_records",
+    "source_suppressed",
+    "payload_suppressed",
+    "count_suppressed",
+    "record_dropped",
+    "byte_dropped",
+    "io_dropped",
+    "capture_dropped",
+    "bytes_before_footer",
+    "total_file_bytes"
+  ],
+  "footer_reserve_bytes": 4096,
+  "begin_footer_counts_outside_operation_quota": true,
+  "complete_byte_accounting": "total_file_bytes includes footer; bytes_before_footer matches actual preceding records; attempted=emitted+suppressed+dropped while observed; every category loss or missing footer invalidates observation. Open/close/unknownhandle and postIOdisable are outside generic-attempt completeness claim.",
+  "record_sizing": {
+    "formula": "Complete metadata reservation +2*(observedinputmax+observedoutputmax) under currenthexencoding; profile-sourceverify, never truncate.",
+    "selected_metadata_reservation": 4096,
+    "each65536_both_directions_hex_only": 262144,
+    "with4096metadata": 266240,
+    "record256KiB_universal": false,
+    "component4MiB_each": "Actual4MiBinput+4MiBoutput component record>16MiB retained in32MiBrecordallocation; no4MiBROS/guesttransport claim."
+  },
+  "implemented_actual_scope": {
+    "host_component_and_CLI": {
+      "component_cases": 12,
+      "field_refusals": 13,
+      "order_once_refusals": 4,
+      "shortwrite": "4096BpartialmissingfooterINVALID",
+      "preconfiguration_allocation_failure": "Actualemptyfile/configurefalse",
+      "capture_allocation_flag": "Componentcategorytested; sourceactualnothrow pathreviewed, notactualguestOOMqualification"
+    },
+    "generic": [
+      {
+        "mode": "payload",
+        "actual_complete_operations": 3,
+        "file_bytes": 54190,
+        "limits": {
+          "max_payload_bytes": 65536,
+          "max_records": 22000,
+          "max_bytes": 134217728,
+          "max_record_bytes": 524288
+        },
+        "zero_loss": true,
+        "synthetic_IPC_peer": true
+      },
+      {
+        "mode": "count",
+        "actual_complete_operations": 20005,
+        "file_bytes": 25425080,
+        "limits": {
+          "max_payload_bytes": 65536,
+          "max_records": 22000,
+          "max_bytes": 134217728,
+          "max_record_bytes": 524288
+        },
+        "zero_loss": true,
+        "synthetic_IPC_peer": true
+      },
+      {
+        "mode": "bytes",
+        "actual_complete_operations": 5000,
+        "file_bytes": 88228713,
+        "limits": {
+          "max_payload_bytes": 65536,
+          "max_records": 22000,
+          "max_bytes": 134217728,
+          "max_record_bytes": 524288
+        },
+        "zero_loss": true,
+        "synthetic_IPC_peer": true
+      }
+    ],
+    "native": {
+      "operations": 30,
+      "recorded_payload_max": 65537,
+      "real_DDS_String_roundtrips": [
+        8192,
+        8193,
+        8368
+      ],
+      "String8368_is_not_LaserScan": true,
+      "builtin_log65536_success": true,
+      "builtin_log65537_original_denial90_fully_recorded": true,
+      "selected_observation_payload65537": true,
+      "API_grant_log_max_unchanged65536": true,
+      "serialized_native_observer": "Disabled forunsupported8368profile; no newCDRfullwindowclaim"
+    },
+    "unchanged_generic_controls": 6,
+    "unchanged_portable_controls": 5
+  },
+  "original_failure_history": [
+    "host-r1/r2: diagnostic expectations omitted generic lexer/numeric parser errors; exact rejection and empty-file assertions retained in later tests",
+    "generic-r1/r3: historical VM-source metadata pins refused before any guest; new manifests pin current sources, original manifests unchanged",
+    "generic-r2/native-r1: real first-candidate8192detached-input omission, classified source loss; fixed snapshot path, source identity never relaxed",
+    "native-r2: actual successful65536 log retained; rejected65537 input exceeded selected65536 observation quota, correctly unqualified. Final profile explicitly65537 records full denial90; per-interface ROS grants unchanged",
+    "build-r2 experimental copy mistakenly followed4MiB IPC constant on stack. Final bounded optional heap copy supersedes it; documentation and final interface correct earlier65536IPC assumption. Prior binaries retained but not selected"
+  ],
+  "per_instance_planning_parameters": {
+    "Go2_application": {
+      "instance": "unitree_go2_stand",
+      "identity": "Exact VMprocess/wholeELF/guestmoduleSHA+instance+generation, no authority from names",
+      "VM_active_seconds": 570,
+      "operation_records": 5131408,
+      "begin_records": 1,
+      "footer_records": 1,
+      "begin_bytes_reserved": 4096,
+      "footer_bytes_reserved": 4096,
+      "control_and_failure_operation_records_reserved": 128,
+      "process_record_count": 5131410,
+      "total_bytes": 24290072480,
+      "maximum_record_bytes": 8192,
+      "max_input_bytes": 749,
+      "max_output_bytes": 1050,
+      "grants": [
+        {
+          "alias": "unitree-go2-lowcmd",
+          "operation": "topic.publish",
+          "input_max": 749,
+          "output_max": 0,
+          "operation_envelope": 570320,
+          "payload_bytes_envelope": 427169680,
+          "complete_record_bytes_max": 5594,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "unitree-go2-lowstate",
+          "operation": "topic.subscribe",
+          "input_max": 0,
+          "output_max": 1050,
+          "operation_envelope": 1140320,
+          "payload_bytes_envelope": 1197336000,
+          "complete_record_bytes_max": 6196,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "unitree-go2-steady",
+          "operation": "time.read-steady",
+          "input_max": 0,
+          "output_max": 8,
+          "operation_envelope": 1140320,
+          "payload_bytes_envelope": 9122560,
+          "complete_record_bytes_max": 4112,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "unitree-go2-cancel",
+          "operation": "topic.subscribe",
+          "input_max": 0,
+          "output_max": 1,
+          "operation_envelope": 2280320,
+          "payload_bytes_envelope": 2280320,
+          "complete_record_bytes_max": 4098,
+          "required_record_capacity": 8192
+        }
+      ],
+      "limit_scope": "CurrentVMjournalchannel is process-global. Proposed per-instance allocation must SUM across modules/preloads/libraries in the same process and separately enforce each identity; no multiplied20kallowance.",
+      "installed": false,
+      "qualified": false,
+      "source_template": "example/platform/unitree/cpp/ros2/humble/upstream_go2_stand/deployment.template.json"
+    },
+    "Go2_independent_cancel": {
+      "instance": "unitree_go2_cancel",
+      "identity": "Exact VMprocess/wholeELF/guestmoduleSHA+instance+generation, no authority from names",
+      "VM_active_seconds": 570,
+      "operation_records": 129,
+      "begin_records": 1,
+      "footer_records": 1,
+      "begin_bytes_reserved": 4096,
+      "footer_bytes_reserved": 4096,
+      "control_and_failure_operation_records_reserved": 128,
+      "process_record_count": 131,
+      "total_bytes": 536578,
+      "maximum_record_bytes": 8192,
+      "max_input_bytes": 1,
+      "max_output_bytes": 0,
+      "grants": [
+        {
+          "alias": "unitree-go2-stop-request",
+          "operation": "topic.publish",
+          "input_max": 1,
+          "output_max": 0,
+          "operation_envelope": 1,
+          "payload_bytes_envelope": 1,
+          "complete_record_bytes_max": 4098,
+          "required_record_capacity": 8192
+        }
+      ],
+      "limit_scope": "CurrentVMjournalchannel is process-global. Proposed per-instance allocation must SUM across modules/preloads/libraries in the same process and separately enforce each identity; no multiplied20kallowance.",
+      "installed": false,
+      "qualified": false,
+      "source_template": "example/platform/unitree/c/ros2/humble/upstream_go2_cancel/deployment.template.json"
+    },
+    "TB3_application": {
+      "instance": "robotis_obstacle_app",
+      "identity": "Exact VMprocess/wholeELF/guestmoduleSHA+instance+generation, no authority from names",
+      "VM_active_seconds": 695,
+      "operation_records": 19462153,
+      "begin_records": 1,
+      "footer_records": 1,
+      "begin_bytes_reserved": 4096,
+      "footer_bytes_reserved": 4096,
+      "control_and_failure_operation_records_reserved": 128,
+      "process_record_count": 19462155,
+      "total_bytes": 127055293770,
+      "maximum_record_bytes": 262144,
+      "max_input_bytes": 65536,
+      "max_output_bytes": 8368,
+      "grants": [
+        {
+          "alias": "robotis-obstacle-cmd-vel",
+          "operation": "topic.publish",
+          "input_max": 48,
+          "output_max": 0,
+          "operation_envelope": 2780050,
+          "payload_bytes_envelope": 133442400,
+          "complete_record_bytes_max": 4192,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "robotis-obstacle-scan",
+          "operation": "topic.subscribe",
+          "input_max": 0,
+          "output_max": 8368,
+          "operation_envelope": 2780025,
+          "payload_bytes_envelope": 23263249200,
+          "complete_record_bytes_max": 20832,
+          "required_record_capacity": 32768
+        },
+        {
+          "alias": "robotis-obstacle-raw-vel",
+          "operation": "topic.subscribe",
+          "input_max": 0,
+          "output_max": 48,
+          "operation_envelope": 2780025,
+          "payload_bytes_envelope": 133441200,
+          "complete_record_bytes_max": 4192,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "robotis-obstacle-clock",
+          "operation": "time.read-ros",
+          "input_max": 0,
+          "output_max": 8,
+          "operation_envelope": 2780640,
+          "payload_bytes_envelope": 22245120,
+          "complete_record_bytes_max": 4112,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "robotis-obstacle-log",
+          "operation": "log.write",
+          "input_max": 65536,
+          "output_max": 0,
+          "operation_envelope": 2780640,
+          "payload_bytes_envelope": 91750400,
+          "complete_record_bytes_max": 135168,
+          "required_record_capacity": 262144
+        },
+        {
+          "alias": "robotis-obstacle-cancel",
+          "operation": "topic.subscribe",
+          "input_max": 0,
+          "output_max": 1,
+          "operation_envelope": 2780005,
+          "payload_bytes_envelope": 2780005,
+          "complete_record_bytes_max": 4098,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "robotis-obstacle-log-system-clock",
+          "operation": "time.read-system",
+          "input_max": 0,
+          "output_max": 8,
+          "operation_envelope": 2780640,
+          "payload_bytes_envelope": 22245120,
+          "complete_record_bytes_max": 4112,
+          "required_record_capacity": 8192
+        }
+      ],
+      "limit_scope": "CurrentVMjournalchannel is process-global. Proposed per-instance allocation must SUM across modules/preloads/libraries in the same process and separately enforce each identity; no multiplied20kallowance.",
+      "installed": false,
+      "qualified": false,
+      "source_template": "example/platform/robotis/py/ros2/humble/upstream_obstacle_detection/deployment.template.json"
+    },
+    "TB3_scenario": {
+      "instance": "robotis_obstacle_scenario",
+      "identity": "Exact VMprocess/wholeELF/guestmoduleSHA+instance+generation, no authority from names",
+      "VM_active_seconds": 695,
+      "operation_records": 13900283,
+      "begin_records": 1,
+      "footer_records": 1,
+      "begin_bytes_reserved": 4096,
+      "footer_bytes_reserved": 4096,
+      "control_and_failure_operation_records_reserved": 128,
+      "process_record_count": 13900285,
+      "total_bytes": 110006300970,
+      "maximum_record_bytes": 32768,
+      "max_input_bytes": 48,
+      "max_output_bytes": 8368,
+      "grants": [
+        {
+          "alias": "robotis-scenario-odom",
+          "operation": "topic.subscribe",
+          "input_max": 0,
+          "output_max": 1080,
+          "operation_envelope": 2780050,
+          "payload_bytes_envelope": 3002454000,
+          "complete_record_bytes_max": 6256,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "robotis-scenario-scan",
+          "operation": "topic.subscribe",
+          "input_max": 0,
+          "output_max": 8368,
+          "operation_envelope": 2780025,
+          "payload_bytes_envelope": 23263249200,
+          "complete_record_bytes_max": 20832,
+          "required_record_capacity": 32768
+        },
+        {
+          "alias": "robotis-scenario-command",
+          "operation": "topic.subscribe",
+          "input_max": 0,
+          "output_max": 48,
+          "operation_envelope": 2780050,
+          "payload_bytes_envelope": 133442400,
+          "complete_record_bytes_max": 4192,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "robotis-obstacle-raw-input",
+          "operation": "topic.publish",
+          "input_max": 48,
+          "output_max": 0,
+          "operation_envelope": 2780025,
+          "payload_bytes_envelope": 133441200,
+          "complete_record_bytes_max": 4192,
+          "required_record_capacity": 8192
+        },
+        {
+          "alias": "robotis-obstacle-cancel-request",
+          "operation": "topic.publish",
+          "input_max": 1,
+          "output_max": 0,
+          "operation_envelope": 2780005,
+          "payload_bytes_envelope": 2780005,
+          "complete_record_bytes_max": 4098,
+          "required_record_capacity": 8192
+        }
+      ],
+      "limit_scope": "CurrentVMjournalchannel is process-global. Proposed per-instance allocation must SUM across modules/preloads/libraries in the same process and separately enforce each identity; no multiplied20kallowance.",
+      "installed": false,
+      "qualified": false,
+      "source_template": "example/platform/robotis/c/ros2/humble/obstacle_scenario/deployment.template.json"
+    }
+  },
+  "complete_phase_allocations": [
+    {
+      "name": "environment_warmup",
+      "seconds": 30,
+      "VM_active": false,
+      "bound_source": "fixed protocol"
+    },
+    {
+      "name": "startup",
+      "seconds": 30,
+      "VM_active": false,
+      "bound_source": "owner/source deadline approval pending"
+    },
+    {
+      "name": "complete_application_warmup_epoch",
+      "seconds": 90,
+      "VM_active": true,
+      "bound_source": "completeepoch+hold+cancel required; owner source cap pending"
+    },
+    {
+      "name": "normal",
+      "seconds": 120,
+      "VM_active": true,
+      "bound_source": "Go2primary200Hz requiresmax120,ceil1000/200=120; fulltask retained"
+    },
+    {
+      "name": "fault_disconnect",
+      "seconds": 120,
+      "VM_active": true,
+      "bound_source": "owner exact injection/lifecycle source cap pending"
+    },
+    {
+      "name": "stop",
+      "seconds": 60,
+      "VM_active": true,
+      "bound_source": "owner absolute safe-stop oracle/guardian proof pending"
+    },
+    {
+      "name": "reconnect_recovery",
+      "seconds": 180,
+      "VM_active": true,
+      "bound_source": "newsession/fulloriginalepoch source cap pending"
+    },
+    {
+      "name": "drain_retirement",
+      "seconds": 90,
+      "VM_active": false,
+      "bound_source": "allwriterfooter/IPCqueue/ownedtree source cap pending"
+    },
+    {
+      "name": "interepoch_reset",
+      "seconds": 120,
+      "VM_active": false,
+      "bound_source": "resetledger/source cap pending"
+    }
+  ],
+  "complete_Go2_four_arm_example": {
+    "complete_per_arm_wall_seconds": 840,
+    "complete_four_arm_wall_seconds": 3360,
+    "block_setup_export_retirement_seconds": 240,
+    "block_deadline_seconds": 3600,
+    "deadline_preflight": true,
+    "VM_operations_candidate_processes_each": 5131537,
+    "VM_total_bytes_candidate_processes_each": 24290609058,
+    "native_reference_records_each": 11910210,
+    "native_reference_total_bytes_each": 19452207392,
+    "resource_rows_bytes_each": 5505155072,
+    "callback_rows_bytes_each": 109440000,
+    "profiled_worksets_per_on_arm": {
+      "raw_perf": 8589934592,
+      "VTune_import": 8589934592,
+      "symbol_source_working_copies": 2147483648,
+      "reports": 536870912,
+      "collector_logs_and_metadata": 134217728
+    },
+    "two_profiled_worksets_bytes": 39996882944,
+    "all_trace_bytes": 148897983428,
+    "all_worksets_plus_margin_bytes": 208965469016,
+    "disk_GiB_ceil": 195,
+    "ten_blocks_bytes": 2089654690160,
+    "ten_blocks_GiB_ceil": 1947,
+    "fit_existing32GiB": false,
+    "qualification": "Complete-stage prospective reservation, not measured use, not a necessary lowerbound or installed/admitted plan. Referenceeventmapping/resourceformats/profilerrawgrowth/sources still unqualified; exceeding any cap retains invalidrun, never passes. No source stage may be deleted to fit."
+  },
+  "other_scene_budget_gaps": {
+    "TB3_normal_minimum": 200,
+    "TB3_completeepoch_overhang_reserve": 45,
+    "TB3_naive_same_other_phase_allocation_fourarm_wall_seconds": 4100,
+    "TB3_deadline_preflight": false,
+    "SCOUT": "FinalselectedVMinstances/sourceoracle/completephaseandtypes pending",
+    "RRBot": "FinalrealFloat64MultiArrayVMapp/profile/stop pending",
+    "UR": "OriginalActionClientcompleteAPI/typebounds and validprimarycausalstream/sourceHz unknown; do not invent1000 streaming callbacks from sparsegoals"
+  },
+  "source_profile_requirements": {
+    "instance_counters": "Runtimeimplementedquota is processglobalallmodules/preloads/libraries. Per-instanceallocations are source/consumer planningrequirements; sum toprocessquota, notpermodule multiplication or automaticisolatedenforcement.",
+    "planned_negatives": "Observationpayload must cover planned diagnosis extents too, e.g65537 for denial of legal65536 log. Raising observerquota never raisesAPIgrant.",
+    "matching_type_runtime": "EarliergenuineUnitreeproof r22 usedVM5450232e...96f90; thisfinalcapacityproofuses81838249...5e05andString/log. Do not combine differentELFs asoneGo2task/selectorproof; coherentselectedartifact/source enrollment stillrequired.",
+    "reference": "SourceapprovednativeROS application counterpart andequivalentcausalstages required; nativeDDSdatafixture/simulatorisnotreferenceapp.",
+    "keeper": "r7 nonprivileged primitives and r8 singleSSH wrapper exist; privileged install/strictpositive not executed. No renewed SSH prompt or administrative action.05-VM-001BLOCKED."
+  },
+  "example_delivery_policy": {
+    "official_PASS_required_before_case_marking": true,
+    "destination": "Existingexample/platform/<platform>/<language>/... selectedROSversion andc/cpp/rcl/rclcpp/rclpy/rcljava hierarchy",
+    "required": [
+      "source/upstreampatch",
+      "explicitversions",
+      "xmakebuild",
+      "xmaketestfullofficialenvironment",
+      "exactWasmpermissiondeployment",
+      "usage",
+      "actual language/library/width/version PASS scope andstableoriginalevidenceindex"
+    ],
+    "portable_entrypoint_no_local_campaign_tmp_dependency": true,
+    "large_logs": "Retainoriginalartifactandfailures, linkstableauditableindex afterpublicationplanning; notclaimedreadyhere.",
+    "no_push_or_publish_authorized": true
+  },
+  "qualification": {
+    "production_05_VM_001": "BLOCKED",
+    "official_tasks": 0,
+    "formal_performance_comparisons": 0,
+    "complete_native_CDR_windows": false,
+    "complete_multiVM_pagecache_reference_VTune_budget_source_qualified": false,
+    "technical4TiB_is_not_reserved_disk": true,
+    "complete_Go2_example195GiB_is_conservative_not_actual_need_or_lowerbound": true,
+    "all_types_rates_phases_numeric_gates_unchanged": true,
+    "all_journal_loss_or_missing_footer_invalid": true,
+    "scope_36platform_29language_static_dynamic_independent_multi_memory_retained": true,
+    "TB3_current_normal130_cannot_admit_locked200_seconds": true,
+    "whole300_native600_is_not_fit_or_authority": true,
+    "original_app_coldAOT_stage_budget_unqualified": true,
+    "strict_positive_batch41_component_is_not_production": true
+  },
+  "current_TB3_public_source": {
+    "bootstrap_002_files": 8,
+    "application_grants": 7,
+    "whole_single_Context_budget": 300001,
+    "lifetime": "until_shutdown",
+    "bundle_modules": 26,
+    "original3197B_sha256": "ca77972db3f6415dc80f1ed1b32a6c81abd9c11ba561192c704cf1dd1ef79ff6",
+    "RMW_templates": 4,
+    "RMW_TB3_SCOUT": "rmw_cyclonedds_cpp",
+    "old65536_private_bootstrap_gap_closed": true,
+    "original_constructor_ROSinit_task_NOT_RUN": true
+  },
+  "TB3_primary_and_whole_invocation": {
+    "primary": {
+      "source_locked_candidate": "One unique original /scan message at native capture/ready -> actual original Python scan_callback completion; matching nativeROS callback in reference. Rate5Hz from selected native scene.",
+      "native_start_identity": "Endpoint incarnation + capture ordinal + full native/canonical bytes -> queue/dequeue -> request/session -> checked IPC -> VM copy -> original callback ordinal/end; exact causal collector still required.",
+      "why_not_timer10Hz": "Original100ms timer may reuse the same scan. Two decisions on one scan do not create two independent5Hz primary occurrences; timer-ready/decision/publish is a separate locked secondary metric.",
+      "why_not_odom30Hz": "Independent C scenario subscribes /odom; unchanged original Python app does not. Its odom/sample/command counters do not prove original application callback latency.",
+      "actual_primary_stages_enrolled": false,
+      "locked_rate_hz": 5,
+      "minimum_normal_active_seconds": 200,
+      "minimum_samples_per_trial": 1000,
+      "nominal_samples_in120s": 600,
+      "actual_successful_primary_samples_measured": 0,
+      "current_normal_phase_minimum": 120,
+      "current_normal_phase_failure_limit": 130,
+      "single_current_phase_can_satisfy_fixed200s": false,
+      "elapsed_time_is_not_sample_count": true,
+      "do_not_switch_to_secondary_or_duplicate_messages": true,
+      "full_warmup": "Protocol requires one complete unscored original task epoch and reset before measured complete epoch. Initial approach/wall-stop alone does not independently establish this; retain all original phases and source/model resets in the trial plan.",
+      "repeated_epochs": "Only a prelocked trial of complete unchanged paired task epochs may accumulate valid disjoint active intervals and >=1000 unique primary samples; every startup/AOT/reset/full phase/drain retained. No midnormal restart to evade quotas, no automatic current-source approval."
+    },
+    "timing": {
+      "source_phase_failure_cap_sum_without_AOT_or_final_cleanup": 364,
+      "external_whole_VM_failure_seconds": 300,
+      "internal_clock_start": "After guest entry and actual open/subscribe, at now_ns(&start). The C300s clock cannot itself include loading/AOT/owner setup; actual external admitted launcher deadline must start before VM exec and remain through full retirement.",
+      "external_enforcement_implemented_in_this_candidate": false,
+      "WAIT_APPLICATION_invariants": "Stationary actual native state/full scan; fresh .2/0 original command starts full approach;150s is failure guard, no host sleep/fake command/extra grant.",
+      "cold_diagnostic": {
+        "elapsed_seconds": 135.71578456499265,
+        "resource": "4GiB1CPU",
+        "remainder_of300_seconds": 164.28421543500735,
+        "minimum5Hz_primary_normal_seconds": 200,
+        "remainder_shortfall_before_any_other_stage": 35.715784564992646,
+        "WAIT150_remainder_after_same_diagnostic": 14.284215435007354,
+        "preflight_and_real_application_are_distinct_artifacts": true,
+        "actual_full_ROS_application_cold_AOT_not_measured": true,
+        "timing_not_an_app_bound_or_ROS_performance": true
+      },
+      "phase_caps_not_success_durations": true,
+      "normal120_does_not_admit200_required": true,
+      "whole300_budget_does_not_prove_fit": true,
+      "native600_reservation": {
+        "purpose": "Conditional native journal arming/storage envelope, not current endpoint lifetime or installed collector.",
+        "two_serial_VM_failure_envelopes": 600,
+        "three_serial_VM_failure_envelopes": 900,
+        "additional_startup_overlap_reset_drain_guardian_time_source_qualified": false,
+        "current_native_postready300_not_assumed_extended": true,
+        "fresh_generation": "Each recovered PID/birth/session repeats complete startup/warmup+locked primary normal+stop/drain. Normal and fault distributions separate; no credits/reset/restart midnormal.",
+        "admission": false
+      },
+      "no_current_performance_trial_started": true
+    },
+    "long003_source_manifest_sha256": "eda355aba140ff0ff45d8bcbda72e87950ab0549dd0976a3ca0e045f5d0de47b",
+    "diagnostic_preflight64_sha256": "748085313eb8bd146f974fe5eec5fd1c8a4c2cb2edf8c4fde83d043c668e013f",
+    "original_application64_sha256": "ad0736e1044af6d5c4fa52c12e48d1e323579e7f3d2d1ca43b00408d13ba86ff",
+    "old001r52_unique_cause_not_relabelled": true,
+    "source_claim_is_not_enrollment": true
+  },
+  "current_UR_native019": {
+    "public_files": 7,
+    "scope": "Native driverloss/filesystemcleanup/lifecycle; no original Wasmgoal/task",
+    "official_task": false
+  }
+}

@@ -6,23 +6,23 @@
   "target": "wasm32-wasip1",
   "ros_backend": "ros1",
   "filename": "cpython.wasm",
-  "bytes": 31781553,
-  "sha256": "0e599e3af586000a38259308da554250594663cf8f49b75bc42b310d90306997",
-  "source_lock_sha256": "fa53c387ab6b3c7a4824eb42c5683e4a5ac8a0c91b74559a1ba6d5dac434c17f",
-  "application_capacity": 4194304,
+  "bytes": 44371677,
+  "sha256": "faf2848afa326009c94ffeec69f51fd3404dc12ede43ef0cc8ec107899c73737",
+  "source_lock_sha256": "7d4c23fd66be64c329be7b4cd9f293bf58966cd3ab4af4fcee7c475c558c575c",
+  "application_capacity": 16777216,
   "application_marker": "UWVM-SRC-APP-v1!",
   "compiler": "LLVM 23.1.4",
   "threads": false,
   "memory": {
     "address_bits": 32,
     "shared": false,
-    "minimum_pages": 240,
+    "minimum_pages": 432,
     "maximum_pages": 4096,
     "tables": [
       {
         "address_bits": 32,
-        "minimum": 4604,
-        "maximum": 4604
+        "minimum": 4607,
+        "maximum": 4607
       }
     ]
   },
@@ -31,5 +31,24 @@
   "exceptions": "none",
   "wasm_features": [],
   "native_ros_qualification": "separate platform acceptance required",
-  "source_lock_path": "share/language/python/construction-source-lock.json"
+  "source_lock_path": "share/language/python/stdlib-source-lock.json",
+  "compatibility_bridge": [
+    {
+      "path": "src/platform/ros/py/_native.c",
+      "bytes": 52515,
+      "sha256": "e25a651450323243f7a06d167b2254d57eee97c57b37c58f136ae8730cb1ca3d"
+    },
+    {
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "bytes": 12477,
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "path": "include/platform/ros1/c/roswasm/detail/ros1/abi.h",
+      "bytes": 85359,
+      "sha256": "666e50f45ad2b3786abaa858e597b89c4e873cc5214ccd4d11abc7de35c2c991"
+    }
+  ],
+  "bridge_source_lock_path": "share/language/python/bridge-source-lock.json",
+  "bridge_source_lock_sha256": "2763db7595b039a51c610edc46b19f660e97a5d353b13e2f717c6481136a82ca"
 }

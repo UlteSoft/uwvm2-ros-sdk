@@ -1,0 +1,149 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "humble",
+  "connection": {
+    "node-name": "uwvm_go2_original_task_gateway",
+    "namespace": "/",
+    "domain-id": "@ADMITTED_ROS_DOMAIN_ID@",
+    "rmw-implementation": "rmw_cyclonedds_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "execution_timeout_seconds": 240,
+  "examples": {
+    "upstream_go2_stand": {
+      "arguments": [],
+      "main_module": "unitree_go2_stand",
+      "preloads": [],
+      "modules": {
+        "unitree_go2_stand": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "unitree-go2-lowcmd",
+              "operation": "topic.publish",
+              "resource": "/lowcmd",
+              "type": "unitree_go/msg/LowCmd",
+              "identity": "RIHS01_0da1142c994d184f6102948c3acf52b9557836cfe5062b924a1f08ac8b72dc34",
+              "limits": {
+                "max-rate-hz": "1000",
+                "burst": "10",
+                "max-bytes-per-second": "1498000",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "1000",
+                "audit-burst": "128",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "max-message-bytes": "749",
+                "max-queue-bytes": "14980",
+                "overflow-policy": "drop-oldest",
+                "validator": "none",
+                "max-inflight": "1",
+                "max-publishers": "2",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite",
+                "adapter-codec-identity": "UWVMROS1_efd061d06d38ecc686edb95d1a891c26860b16da1e35747fc97eeaf4a5d93d63"
+              }
+            },
+            {
+              "alias": "unitree-go2-lowstate",
+              "operation": "topic.subscribe",
+              "resource": "/lowstate",
+              "type": "unitree_go/msg/LowState",
+              "identity": "RIHS01_db5172cac933e3cfc0e705903343eb4eea42e65e224e9d726d3e672aec0caf0f",
+              "limits": {
+                "max-rate-hz": "2000",
+                "burst": "10",
+                "max-bytes-per-second": "2100000",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "1000",
+                "audit-burst": "128",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "max-message-bytes": "1050",
+                "max-queue-bytes": "21000",
+                "overflow-policy": "drop-oldest",
+                "validator": "none",
+                "max-inflight": "1",
+                "max-subscribers": "2",
+                "qos.reliability": "reliable",
+                "qos.durability": "volatile",
+                "qos.history": "keep-last",
+                "qos.depth": "10",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite",
+                "adapter-codec-identity": "UWVMROS1_56c01d52b26d7b2ef1fa7475fc8a353777ed6952a6f1ceee01da81f1edad3cab"
+              }
+            },
+            {
+              "alias": "unitree-go2-steady",
+              "operation": "time.read-steady",
+              "resource": "/uwvmros/go2_stand/steady",
+              "type": "builtin/time-v1",
+              "identity": "builtin:time-nanoseconds-v1",
+              "limits": {
+                "max-rate-hz": "2000",
+                "burst": "64",
+                "max-bytes-per-second": "16000",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "1000",
+                "audit-burst": "128",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "max-response-bytes": "8",
+                "max-inflight": "1"
+              }
+            },
+            {
+              "alias": "unitree-go2-cancel",
+              "operation": "topic.subscribe",
+              "resource": "/uwvmros/go2_stand/cancel",
+              "type": "std_msgs/msg/Bool",
+              "identity": "RIHS01_feb91e995ff9ebd09c0cb3d2aed18b11077585839fb5db80193b62d74528f6c9",
+              "limits": {
+                "max-rate-hz": "4000",
+                "burst": "1",
+                "max-bytes-per-second": "4000",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "1000",
+                "audit-burst": "128",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "max-message-bytes": "1",
+                "max-queue-bytes": "1",
+                "overflow-policy": "drop-oldest",
+                "validator": "none",
+                "max-inflight": "1",
+                "max-subscribers": "1",
+                "qos.reliability": "reliable",
+                "qos.durability": "transient-local",
+                "qos.history": "keep-last",
+                "qos.depth": "1",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite"
+              }
+            }
+          ],
+          "wasi_grants": [
+            "monotonic-clock"
+          ],
+          "call_boundary": "same-module"
+        }
+      }
+    }
+  }
+}

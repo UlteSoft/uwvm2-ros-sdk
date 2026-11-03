@@ -1,0 +1,91 @@
+{
+  "format": "kinova-joint-feedback-resource-requirements-v0.1.0",
+  "status": "SOURCE_BINDING_NOT_A_GRANT_OR_RUNTIME_QUALIFICATION",
+  "expected_model": "Gen3 7DoF external cable, no gripper",
+  "official_reference": {
+    "repository": "https://github.com/Kinovarobotics/ros2_kortex",
+    "commit": "462dab9aa4732d733be55e1846530dd920c7c7d3",
+    "package": "kortex_description",
+    "version": "0.2.6",
+    "license_declared": "BSD",
+    "mode": "official mock_components/GenericSystem only; no physical hardware"
+  },
+  "current_guest_codec_profile": "ros2_humble/mobile-fjt-humble-complete",
+  "installed_reference_provider": "Jazzy, exact ABI bridge NOT_QUALIFIED; a Humble codec label does not assert native Jazzy compatibility",
+  "roles": [
+    {
+      "argument": 2,
+      "operation": "topic_subscribe/event_poll",
+      "resource": "/joint_states",
+      "type": "sensor_msgs/msg/JointState",
+      "units": "radians",
+      "permission": "read-only subscription and bounded inbound payload"
+    },
+    {
+      "argument": 3,
+      "operation": "action_send_goal",
+      "resource": "/joint_trajectory_controller/follow_joint_trajectory",
+      "type": "control_msgs/action/FollowJointTrajectory",
+      "permission": "bounded software position action only"
+    },
+    {
+      "argument": 4,
+      "operation": "action_receive_feedback",
+      "resource": "same owned action goal",
+      "permission": "receive feedback for current module-owned goal"
+    },
+    {
+      "argument": 5,
+      "operation": "action_receive_result",
+      "resource": "same owned action goal",
+      "permission": "receive terminal result for current module-owned goal"
+    },
+    {
+      "argument": 6,
+      "operation": "action_cancel_own_goal",
+      "resource": "same owned action goal",
+      "permission": "cancel own only; no any-goal authority"
+    }
+  ],
+  "WASI_requirements": [
+    "explicit stdout/stderr writes",
+    "CLOCK_REALTIME read for fresh source/header comparison; official mock use_sim_time:false",
+    "bounded nanosleep/poll clock operation"
+  ],
+  "required_external_VM_binding": [
+    "actual module whole SHA256 and module instance",
+    "current shared ABI and trusted native message/type/codecs",
+    "exact official provider/process/library identity",
+    "separate operation/resource permissions, bounded payloads and lifetimes",
+    "current command/native UUID and reverse module-memory audit producer"
+  ],
+  "native_helper_or_SDK_host_ROS_fallback": false,
+  "mandatory_scenarios": [
+    {
+      "id": "normal",
+      "guest_logic": "IMPLEMENTED_SOURCE_NOT_RUN"
+    },
+    {
+      "id": "permission_denied_no_effect",
+      "guest_logic": "DENIED_ERRNO_PROPAGATION_SOURCE; external no-effect audit NOT_IMPLEMENTED_OR_RUN"
+    },
+    {
+      "id": "boundary_stale_foreign",
+      "guest_logic": "BOUNDARY_COMPONENT_ASSERTIONS_SEPARATE; actual stale/foreign VM cases NOT_IMPLEMENTED_OR_RUN"
+    },
+    {
+      "id": "cancel_timeout_no_replay",
+      "guest_logic": "OWN_CANCEL_RESULT_SOURCE_NOT_RUN; timeout returned without goal replay"
+    },
+    {
+      "id": "restart_rollback_permissions",
+      "guest_logic": "VM_OWNER_LIFECYCLE_API_REQUIRED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "fresh_reverse_callback",
+      "guest_logic": "ACTUAL_INBOUND_DECODE_AND_GUEST_CALLBACK_SOURCE_NOT_RUN"
+    }
+  ],
+  "upstream_rcl_or_rclcpp_compatibility": "NOT_IMPLEMENTED_NOT_ASSERTED",
+  "same_canonical_portable_C0_acceptance": "NOT_RUN; this additional typed guest does not replace the unchanged C0 fixture"
+}

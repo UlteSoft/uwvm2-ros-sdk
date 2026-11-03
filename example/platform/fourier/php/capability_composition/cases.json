@@ -1,0 +1,25 @@
+{
+  "format": "uwvm-sdk-api-composition-required-cases-v1",
+  "language": "php",
+  "required": 14,
+  "cases": [
+    "genuine-zend-runtime",
+    "borrow-full-width-unsigned-owner",
+    "metadata-watch-forwards-other-owner",
+    "original-ready-snapshot",
+    "reject-other-width-before-native-entry",
+    "reject-signed-other-before-native-entry",
+    "reject-correlation-width-before-native-entry",
+    "reject-signed-correlation-before-native-entry",
+    "raw-rejects-unused-high-other-word",
+    "raw-rejects-unused-high-correlation-word",
+    "explicit-source-close",
+    "borrow-after-close-refused",
+    "invoke-after-close-refused",
+    "second-close-is-not-replayed"
+  ],
+  "actual_execution_status": "NOT_RUN",
+  "permission_fixture": "Two separately granted aliases observe and source under current SDK01/VM trusted deployment contract; no default rights",
+  "Stage_A_communication_pass": false,
+  "component_isolation_pass": false
+}

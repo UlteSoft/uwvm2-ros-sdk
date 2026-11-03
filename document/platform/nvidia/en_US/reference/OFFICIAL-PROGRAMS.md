@@ -1,5 +1,7 @@
 # Pinned official program inventory
 
+Current status: this is an upstream source inventory, not executable SDK migration support. SDK-authored native application counterparts have been removed from the public SDK and preserved as historical qualification material. No public target executes those counterparts; guest client/callback/sensor migration and official all-Wasm tests remain BLOCKED. Original official provider sources are unchanged.
+
 This is an application inventory, not a file/launch count. Source inspection used
 the connected GitHub reader at the exact commits below and matched its Git blob
 IDs to the previously captured complete Git trees. No program was executed by
@@ -63,7 +65,7 @@ A current documentation release number is not substituted for this commit.
 | `rtx-lidar` | `rtx_lidar.py` / `37adaa244e8899f779731cf7ecdd2460d85893f1` | Genuine 3D and 2D rotary sensors, scan metadata from prim attributes, PointCloud2/LaserScan native writers and both visualizers. |
 | `rtx-lidar-rclpy` | `rtx_lidar_rclpy.py` / `6833f0d05cc125dae8a442a5159344b0995bce86` | Real GMO sensor data, duplicate-timestamp rejection, all XYZ/intensity arrays, genuine fill_point_cloud2_message layout/storage reuse and rclpy publishing; test must observe a real published cloud. |
 | `rtx-radar` | `rtx_radar.py` / `af1c0379af546a3ece248fd7bef24741bdc0af02` | Motion BVH, BASIC radar channel, two gravity-free PhysX sheets with distinct sinusoidal radial velocities, full radial_velocity_ms point-cloud writer. Transform teleports do not preserve the program. |
-| `cube-subscriber` | `subscriber.py` / `7428ee33902642eed7c33fd5f3e7fbc5d9ffb00a` | Ground/light/red 0.2 m cube; actual Empty subscription callback draws x/y in [0,0.4), z=0.1 m, defers complete pose application to the simulation loop, and preserves playback reset. Source counterpart: native_cube_subscriber.py; build/positive execution remain pending. |
+| `cube-subscriber` | `subscriber.py` / `7428ee33902642eed7c33fd5f3e7fbc5d9ffb00a` | Ground/light/red 0.2 m cube; actual Empty subscription callback draws x/y in [0,0.4), z=0.1 m, defers complete pose application to the simulation loop, and preserves playback reset. Earlier SDK-native counterpart removed from public SDK; build/positive execution remain pending. |
 | `ur10-ros2-control` | `ur10_ros2_control_demo.py` / `800e02e87d9e72a85db5c2fbaa7e8b2b1f501f42` | UR10/background USD, clock and in-process ROS2ControlManager, actual YAML, robot-description publication and FollowJointTrajectory service plus cooperating external ROS launch. JointState-only transport is incomplete. |
 
 `ros2_control_smoke_test.py` (blob

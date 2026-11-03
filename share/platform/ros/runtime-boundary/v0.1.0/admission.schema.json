@@ -1,0 +1,466 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "SDK CONSUMER DRAFT ONLY. VM owner production protocol agreement, Linux syntax and own interruption/lifecycle qualification are NOT_RUN. JSON shape grants no authority. Additional semantic and live kernel checks are mandatory.",
+  "title": "admission SDK consumer draft",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "uwvm-sdk-simulation-admission-v1"
+    },
+    "boundary_protocol": {
+      "const": "uwvm-sdk-live-boundary-v1"
+    },
+    "producer": {
+      "const": "uwvm2-ros/guardian"
+    },
+    "readonly_context": {
+      "type": "string",
+      "pattern": "^/[^\\u0000]+$"
+    },
+    "nonce": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{32}$"
+    },
+    "boot_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "packet_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "sdk_root": {
+      "type": "string",
+      "pattern": "^/[^\\u0000]+$"
+    },
+    "sdk_files": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)\\.tmp(?:/|$))[^\\u0000]+$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 18446744073709551615
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "path",
+          "bytes",
+          "sha256"
+        ]
+      }
+    },
+    "host_proc_view": {
+      "type": "string",
+      "pattern": "^/[^\\u0000]+$"
+    },
+    "shared_ancestor_view": {
+      "type": "string",
+      "pattern": "^/[^\\u0000]+$"
+    },
+    "shared_ancestor_inode": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 18446744073709551615
+    },
+    "shared_ancestor_cpuset": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor_shared_relative_leaf": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)\\.tmp(?:/|$))[^\\u0000]+$"
+    },
+    "cpuset.cpus.effective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_lease": {
+      "type": "object",
+      "properties": {
+        "visible_path": {
+          "type": "string",
+          "pattern": "^/[^\\u0000]+$"
+        },
+        "device": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "inode": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "owner_pid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "owner_birth": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      },
+      "required": [
+        "visible_path",
+        "device",
+        "inode",
+        "owner_pid",
+        "owner_birth"
+      ]
+    },
+    "controller": {
+      "$ref": "#/$defs/actor"
+    },
+    "guardian": {
+      "type": "object",
+      "properties": {
+        "pid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "birth": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "shared_relative_cgroup": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)\\.tmp(?:/|$))[^\\u0000]+$"
+        },
+        "cgroup_inode": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "executable_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "pid",
+        "birth",
+        "shared_relative_cgroup",
+        "cgroup_inode",
+        "executable_sha256"
+      ]
+    },
+    "lease_observations": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)\\.tmp(?:/|$))[^\\u0000]+$"
+    },
+    "own_interruption_proof": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)\\.tmp(?:/|$))[^\\u0000]+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ]
+    }
+  },
+  "required": [
+    "format",
+    "boundary_protocol",
+    "producer",
+    "readonly_context",
+    "nonce",
+    "boot_id",
+    "packet_manifest_sha256",
+    "sdk_root",
+    "sdk_files",
+    "host_proc_view",
+    "shared_ancestor_view",
+    "shared_ancestor_inode",
+    "shared_ancestor_cpuset",
+    "actor_shared_relative_leaf",
+    "cpuset.cpus.effective",
+    "canonical_lease",
+    "controller",
+    "guardian",
+    "lease_observations",
+    "own_interruption_proof"
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "uint64": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)\\.tmp(?:/|$))[^\\u0000]+$"
+    },
+    "absolute_path": {
+      "type": "string",
+      "pattern": "^/[^\\u0000]+$"
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "pid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "birth": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "shared_relative_cgroup": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)\\.tmp(?:/|$))[^\\u0000]+$"
+        },
+        "cgroup_inode": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        }
+      },
+      "required": [
+        "pid",
+        "birth",
+        "shared_relative_cgroup",
+        "cgroup_inode"
+      ]
+    },
+    "fd": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "inode": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "fdinfo": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "device",
+        "inode",
+        "fdinfo"
+      ]
+    },
+    "cgroup": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "inode": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "membership": {
+          "type": "string",
+          "pattern": "^0::/"
+        }
+      },
+      "required": [
+        "device",
+        "inode",
+        "membership"
+      ]
+    },
+    "guardian_self": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "uwvm-guardian-self-lease-observation-v1"
+        },
+        "nonce": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{32}$"
+        },
+        "boot_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "admission_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "monotonic_ns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "controller_pid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "controller_birth": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "guardian_pid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "guardian_birth": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "guardian_executable_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "self_lease_fd": {
+          "$ref": "#/$defs/fd"
+        }
+      },
+      "required": [
+        "format",
+        "nonce",
+        "boot_id",
+        "admission_sha256",
+        "monotonic_ns",
+        "sequence",
+        "controller_pid",
+        "controller_birth",
+        "guardian_pid",
+        "guardian_birth",
+        "guardian_executable_sha256",
+        "self_lease_fd"
+      ]
+    },
+    "host_direct": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "uwvm-host-direct-lease-observation-v1"
+        },
+        "nonce": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{32}$"
+        },
+        "boot_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "admission_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "monotonic_ns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "controller_pid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "controller_birth": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "guardian_pid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "guardian_birth": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "guardian_executable_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "packet_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "host_direct_fd_verified": {
+          "const": true
+        },
+        "direct_keeper_fd": {
+          "$ref": "#/$defs/fd"
+        },
+        "direct_guardian_fd": {
+          "$ref": "#/$defs/fd"
+        },
+        "controller_cgroup": {
+          "$ref": "#/$defs/cgroup"
+        },
+        "guardian_cgroup": {
+          "$ref": "#/$defs/cgroup"
+        }
+      },
+      "required": [
+        "format",
+        "nonce",
+        "boot_id",
+        "admission_sha256",
+        "monotonic_ns",
+        "sequence",
+        "controller_pid",
+        "controller_birth",
+        "guardian_pid",
+        "guardian_birth",
+        "guardian_executable_sha256",
+        "packet_manifest_sha256",
+        "host_direct_fd_verified",
+        "direct_keeper_fd",
+        "direct_guardian_fd",
+        "controller_cgroup",
+        "guardian_cgroup"
+      ]
+    }
+  }
+}

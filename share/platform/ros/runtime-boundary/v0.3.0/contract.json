@@ -1,0 +1,147 @@
+{
+  "format": "uwvm-sdk-kernel-witness-contract-v1",
+  "version": "0.3.0",
+  "boundary_protocol": "uwvm-sdk-live-boundary-v3",
+  "status": "WITHDRAWN_R842_ROOT_ENROLLMENT_FORBIDDEN_AND_CAP0_ROOT_READ_UNPROVED",
+  "fresh_ns": 500000000,
+  "exchange_ns": 250000000,
+  "enrollment_max_ns": 1800000000000,
+  "max_document_bytes": 2097152,
+  "max_delegated_fds": 512,
+  "fds_per_batch": 64,
+  "max_batches": 8,
+  "max_consumer_evidence_bytes": 67108864,
+  "signature": "RSA3072-PSS-SHA256-MGF1-SHA256-SALT32",
+  "signature_domain_hex": "7577766d2d73646b2d6b65726e656c2d7769746e6573732d763300",
+  "enrollment_frame": {
+    "magic_ascii": "UWKWENR3",
+    "length": "u32 little-endian",
+    "payload": "canonical ASCII JSON; unique keys; integers only",
+    "kernel_object": "O_RDONLY non-O_PATH memfd; UID0/GID0 mode0400; F_GET_SEALS exactly15; TMPFS_MAGIC",
+    "authority": "Existing explicitly qualified OS-root resource bootstrap only. Root object authenticity is not actor UID-only approval: complete measured fixed issuer/witness source/runtime/bootstrap profiles and per-job subject are mandatory."
+  },
+  "proof_frame": {
+    "magic_ascii": "UWKWPRO3",
+    "length": "u32 little-endian",
+    "payload": "canonical ASCII JSON; no floats/duplicate keys",
+    "signature_bytes": 384,
+    "signed_bytes": "signature_domain || magic || u32(payload_bytes) || payload",
+    "object": "O_RDONLY sealed15 memfd UID1000/GID1000"
+  },
+  "trust_base": {
+    "os_root_is_trusted": true,
+    "new_privileged_daemon": false,
+    "issuer_must_reuse_existing_authorized_root_bootstrap": true,
+    "new_privileges_or_lsm_exceptions": false,
+    "if_issuer_cannot_use_existing_profile": "BLOCK; no permission/capability/LSM fallback",
+    "producer_supplied_key_or_descriptor_is_authority": false,
+    "source_approval_and_OS_root_enrollment_and_fresh_signature_and_live_FD_validation_all_required": true
+  },
+  "witness_bootstrap": {
+    "uid_gid": 1000,
+    "active_and_bounding_caps": "all0",
+    "no_new_privs": 1,
+    "seccomp": 2,
+    "apparmor": "unconfined; existing host control profiles unchanged",
+    "key": "Fresh per-job ephemeral RSA3072; generate after PR_SET_DUMPABLE0; never persist/export/fork/exec; all key provider/DSO/runtime files individually pinned",
+    "post_lock_policy": "Irreversibly deny exec/fork and PR_SET_DUMPABLE reset; exact filter hash and actual key transition independently measured by fixed root issuer",
+    "retirement": "Key dies with witness; caller/lease/controller/guardian/witness loss stops signing and SDK fails closed; all own actors retire before canonical lease release"
+  },
+  "kernel_measurements": {
+    "roles": [
+      "controller",
+      "guardian"
+    ],
+    "direct_after_receive": [
+      "source/runtime/exe object fstat, readonly flags, complete hashes and source seals",
+      "Actual procfs lease-fdinfo reads plus existing readonly global /proc/locks",
+      "Live PID/birth/current public status and readonly namespace-aware cgroup VFS join"
+    ],
+    "delegated_but_authenticated": [
+      "Current /proc role executable before/after and complete maps/argv/environment",
+      "Original FDinfo and original target FD identity before/after complete source/runtime sampling",
+      "Exact sealed launch/context/current envelope and namespace identity",
+      "Witness own complete immutable source/runtime and pre-key locked bootstrap"
+    ],
+    "prohibited_evidence": [
+      "Mutable JSON as authority",
+      "Historical/copy-only observation as live proof",
+      "Bare source descriptor/public key",
+      "Catching EACCES as acceptance",
+      "Self-written PASS booleans without original kernel measurements"
+    ],
+    "probe_must_read_actual_kernel_not_echo_request_or_bundle": true
+  },
+  "fd_policy": {
+    "allowed": [
+      "Sealed15 source/metadata memfd reopened O_RDONLY",
+      "Root-owned nonwritable runtime/executable regular file reopened O_RDONLY",
+      "Only narrow actual procfs /proc/PID/fdinfo/LEASE_FD reader"
+    ],
+    "forbidden": [
+      "Any canonical lock-owning open-file-description even if O_RDONLY",
+      "Any mutable context/host file FD even if O_RDONLY",
+      "Host root/directory/namespace/pid-control/Docker socket FD",
+      "Unsealed source/copies or O_RDWR/O_PATH descriptor"
+    ],
+    "independent_open_description": "Witness actual kcmp(KCMP_FILE) positive result; errno0, original and delivered sender FD/PID numbers signed. Failure/unsupported probe is BLOCKED; no Boolean fallback."
+  },
+  "subject_binding": [
+    "boot_id",
+    "packet_manifest_sha256",
+    "admission_sha256",
+    "nonce",
+    "control_admission_sha256",
+    "producer_descriptor_sha256",
+    "kernel_witness_descriptor_sha256",
+    "controller PID/birth",
+    "guardian PID/birth",
+    "actual shared ancestor device/inode",
+    "canonical lease device/inode/owner PID/birth/FD",
+    "own interruption proof SHA",
+    "own benign SHA",
+    "actor leaf",
+    "exact application OCI image SHA"
+  ],
+  "caller_binding": "Witness reads actual Unix SO_PEERCRED in host namespace; compare actual stopped-exec/SDK script/image/source and namespace/cgroup to enrolled job. Never trust a PID/type passed by requester. Response caller equals SDK direct self kernel mapping; same time namespace mandatory. Client peer PID may be0 across PID namespace and is not an authority.",
+  "transport": "AF_UNIX SOCK_SEQPACKET at a no-symlink readonly context parent; SO_PEERCRED UID/GID1000 and actual SO_PEERSEC=unconfined are redundant checks only. First packet SCM_RIGHTS carries enrollmentFD, proofFD and <=64 slots; later packets <=64. Exact immutable hashes/request SHA/batch order/slot census; MSG_CMSG_CLOEXEC; any truncation, extra/unexpected FD, EOF or timeout fails and retires.",
+  "live_bundle": "Existing atomic live own/direct v3 view plus fresh signed SHA256 of canonical {guardian_self,host_direct}; views alone never authorize. Existing admission, whole-source, real proof/benign, rootfs readonly, namespace/cgroup and canonical lock gates remain.",
+  "profile_paths": {
+    "control_approval": "share/platform/ros/runtime-boundary/v0.2.0/approved-producers.json: explicit kernel_witness_descriptor_sha256 and kernel_evidence_contract_sha256 required on the exact new producer row",
+    "witness_approval": "share/platform/ros/runtime-boundary/v0.3.0/approved-witnesses.json: approved[] defaults empty",
+    "documents": [
+      "descriptor.json",
+      "source-manifest.json",
+      "runtime-manifest.json",
+      "bootstrap-contract.json",
+      "issuer-profile.json"
+    ]
+  },
+  "acceptance": {
+    "new_subject_own_two_interruptions": true,
+    "own_independent_physical_retirement": true,
+    "own_bounded_benign": true,
+    "actual_minimum_UR_public_positive": true,
+    "required_real_refusal_cases": 12,
+    "all_actual_new_cases_executed": 0,
+    "production_approved": false
+  },
+  "wire_schema_sha256": "5c28898c23b0872194d0ff93ac9a8a171f791de0113bcb65135d8bc06af12196",
+  "bootstrap_state_machine_sha256": "0cfae983fadd0784a915183813f61db956f8bc1508d46cca888af52d8ec01469",
+  "required_negatives_sha256": "ddcf72bec34d0d06b682b8b3fde288929edc3e4b44022cc1d0cc47fc14277a04",
+  "normative_policy_files": [
+    "WIRE_SCHEMA.json",
+    "bootstrap-state-machine.json",
+    "required-negatives.json"
+  ],
+  "runtime_inventory_distinction": "Whole available input closure is fully provisioned/hash-qualified; every role complete actual used/retained closure and all file mappings are measured. No impossible all1346-FDs requirement.",
+  "execution_admissible": false,
+  "withdrawal": {
+    "revision": "r842",
+    "root_proxy_or_new_root_authority_allowed": false,
+    "UID0_is_protected_read_permission": false,
+    "same_existing_root_caps_all0_required": true,
+    "R840_original_preserved": "/Users/liyinan/Documents/MacroModel/src/uwvm2-ros/.tmp/sdk-validation/platform-chat-01/kernel-handle-feasibility-r842/R840_ORIGINAL_PRESERVATION.json",
+    "rootless_alternative": "Conditional v0.4.0 object design only; not registered or executable"
+  }
+}

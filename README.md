@@ -39,6 +39,28 @@ cd example/platform/unitree/c/ros2/low_state
 xmake
 ```
 
+The SDK ancestor also selects child projects under `example/language`. A small
+public command is available at `example/language/c/public_command_closure`:
+
+```sh
+cd "$UWVM_ROS_SDK_ROOT/example/language/c/public_command_closure"
+xmake
+xmake test -j1
+```
+
+For a read-only SDK, first choose a writable `XMAKE_CONFIGDIR`, tool cache and
+test-evidence directory, and configure `xmake f -y -p wasm-wasip1 -a wasm32
+-m release -o /absolute/writable/build`. Build and test remain ordinary commands
+from the example directory. Keep the SDK root and ancestor `xmake.lua` files.
+A successful build requires `sdk-public-child-command.wasm` and its matching
+artifact record. The test declares one guest case; missing VM-owned public
+execution admission fails that case explicitly. It does not establish ROS or
+simulation acceptance. At the SDK root, `xmake` selects SDK headers; use the
+documented `xmake examples` scheduler to select applications from there.
+The bounded one-project root command is `xmake examples
+--group=public-command-closure-v1 --jobs=1`. Its runtime cases still require
+the VM-owned production execution admission.
+
 Building a Wasm module does not require the uwvm2-ros executable. Running a
 module with `xmake run` requires an installed uwvm2-ros, the native ROS resources
 needed by that example, and explicitly configured WASI/ROS permissions. Follow

@@ -11,7 +11,8 @@
     },
     "ros2": {
       "distributions": [
-        "jazzy"
+        "jazzy",
+        "humble"
       ]
     }
   },

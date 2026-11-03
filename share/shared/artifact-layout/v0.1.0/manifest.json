@@ -1,0 +1,71 @@
+{
+  "format": "sdk01-common-artifact-layout-source-review-v1",
+  "version": "0.1.0",
+  "created_utc": "2026-10-28T09:29:25.407839+00:00",
+  "status": "SOURCE_AUTHORED_LINUX_QUALIFICATION_NOT_RUN",
+  "source": [
+    {
+      "path": "tools/xmake/artifact_contract.lua",
+      "before_sha256": "271da84746c6fb86739b606ce63f17c6e47da48b2b85d141d03687cca2225f38",
+      "sha256": "ebbaa84fe69e05b81ea24fe23c38c3106dd96d38a209027f6122c79b1c1210f1",
+      "bytes": 12284,
+      "mode": 420,
+      "qualification": "SOURCE_AUTHORED_NOT_LINUX_EXECUTED"
+    },
+    {
+      "path": "tools/xmake/cfamily.lua",
+      "before_sha256": "b229f93f5412b95e7ee038b3cc6de33e42662b759b770675cc34ece671d87c27",
+      "sha256": "1cc559cb2ac74d2c3d98fe08c817d2000d351da4c2b2a2deb6dc8d2d6fc361d7",
+      "bytes": 18901,
+      "mode": 420,
+      "qualification": "SOURCE_AUTHORED_NOT_LINUX_EXECUTED"
+    },
+    {
+      "path": "tools/platform/ros/provider.lua",
+      "before_sha256": "20be3db985431236a13cacbdbafa773d22ad91ece68f01bd154f25072d178de6",
+      "sha256": "e364c2dd3ffed8885c2ac02183ebecba4d9a19c29f327fc2c0d3fa2a806a5ae4",
+      "bytes": 5791,
+      "mode": 420,
+      "qualification": "SOURCE_AUTHORED_NOT_LINUX_EXECUTED"
+    },
+    {
+      "path": "tools/language/native/provider.lua",
+      "before_sha256": "fa8691e5db820dd7c0b6a496f837507f14f7b433dccc35269f4c3bf4b7e98ad9",
+      "sha256": "d5a66cc0e452bd40daf8d3e62857a3793c9b802d0836c2edb980b249371faa52",
+      "bytes": 11822,
+      "mode": 420,
+      "qualification": "SOURCE_AUTHORED_NOT_LINUX_EXECUTED"
+    },
+    {
+      "path": "tools/language/native/library.lua",
+      "before_sha256": "3f74464fd59f29d359740f6fb3a28f566a455b0fc8f772ff386ef74f814a0dbe",
+      "sha256": "ef22e465f24e2b6433fafcb50076d7c2480c923e4c64f741027cd3d2a4029bad",
+      "bytes": 14262,
+      "mode": 420,
+      "qualification": "SOURCE_AUTHORED_NOT_LINUX_EXECUTED"
+    },
+    {
+      "path": "tools/language/wat/provider.lua",
+      "before_sha256": "f406059ab68fb6f6223ed732e5ac4a973db5f7e8be2f3a106f8ea5676e7a111d",
+      "sha256": "27f7335a247c2580401cebe482b7c93cab13b25694c196d44f547b94af79d9ba",
+      "bytes": 7621,
+      "mode": 420,
+      "qualification": "SOURCE_AUTHORED_NOT_LINUX_EXECUTED"
+    },
+    {
+      "path": "tools/language/typescript/provider.lua",
+      "before_sha256": "20885286efc29fc35509daef641601291e53b694455903803d3c4de3cfacacb4",
+      "sha256": "8912062ec66503412cc5a577314d52e15d8777618c6cea32175e1c320800f6ce",
+      "bytes": 9650,
+      "mode": 420,
+      "qualification": "SOURCE_AUTHORED_NOT_LINUX_EXECUTED"
+    }
+  ],
+  "decision": "Actual Xmake objectdir hosts identity-qualified records. Default deployments and private state are disjoint inside selected config.builddir. Common compiler workspaces no longer use scriptdir. Explicit paths retain their meaning and incompatible overlap fails. Real dependency/ABI/preload/hash/grant checks remain.",
+  "installed_sdk_read_only": true,
+  "source_or_permissions_fallback": false,
+  "runtime_authority_changed": false,
+  "Python_or_Java_implementations_changed": false,
+  "actual_build_test_qualification": "NOT_RUN_CURRENT_BOOT_ADMISSION_ABSENT",
+  "full_assignment_complete": false
+}

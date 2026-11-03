@@ -1,0 +1,86 @@
+--- a/example/src/src/go2/go2_stand_example.cpp
++++ b/example/src/src/go2/go2_stand_example.cpp
+@@ -1,6 +1,10 @@
++#if defined(UWVM_GO2_STAND_OBSERVE_CALLBACKS)
++#include <platform/unitree/cpp/ros2/go2_stand/callback_observation.hpp>
++#endif
+ #include <chrono>
+ #include <cmath>
+ #include <cstring>
++#include <iostream>
+ #include <string>
+ 
+ #include "motor_crc.h"
+@@ -105,6 +109,9 @@
+ }
+ 
+ void LowLevelCmdNode::LowCmdWrite() {
++#if defined(UWVM_GO2_STAND_OBSERVE_CALLBACKS)
++  uwvm_unitree_go2_observation::begin(motiontime_);
++#endif
+   if (percent_4_ < 1) {
+     std::cout << "Read sensor data example: " << std::endl;
+     std::cout << "Joint 0 pos: " << low_state_.motor_state[0].q << std::endl;
+@@ -184,6 +191,9 @@
+     get_crc(low_cmd_);  // Check motor cmd crc
+     low_cmd_pub_->publish(low_cmd_);
+   }
++#if defined(UWVM_GO2_STAND_OBSERVE_CALLBACKS)
++  uwvm_unitree_go2_observation::end(motiontime_, done_, percent_1_, percent_2_, percent_3_, percent_4_);
++#endif
+ }
+ 
+ int main(int argc, char** argv) {
+--- a/example/src/include/common/motor_crc.h
++++ b/example/src/include/common/motor_crc.h
+@@ -9,7 +9,6 @@
+ 
+ #include <array>
+ 
+-#include "rclcpp/rclcpp.hpp"
+ #include "unitree_go/msg/bms_cmd.hpp"
+ #include "unitree_go/msg/low_cmd.hpp"
+ #include "unitree_go/msg/motor_cmd.hpp"
+--- a/example/src/src/common/motor_crc.cpp
++++ b/example/src/src/common/motor_crc.cpp
+@@ -1,7 +1,19 @@
+ #include "motor_crc.h"
++#include <bit>
++#include <cstddef>
++#include <cstring>
++#include <type_traits>
++
++// The manufacturer's raw motor packet has a fixed little-endian layout.
++static_assert(std::endian::native == std::endian::little);
++static_assert(std::is_trivially_copyable_v<LowCmd>);
++static_assert(sizeof(LowCmd) == 812 && alignof(LowCmd) == 4);
++static_assert(offsetof(LowCmd, crc) == 808);
+ 
+ void get_crc(unitree_go::msg::LowCmd& msg) {
+   LowCmd raw{};
++  // Include deterministic zero padding in the original raw-packet CRC.
++  std::memset(&raw, 0, sizeof raw);
+   memcpy(&raw.head[0], &msg.head[0], 2);
+ 
+   raw.levelFlag = msg.level_flag;
+@@ -34,7 +46,10 @@
+ 
+   raw.reserve = msg.reserve;
+ 
+-  raw.crc = crc32_core((uint32_t*)&raw, (sizeof(LowCmd) >> 2) - 1);
++  // Copy object bytes into actual uint32_t objects instead of aliasing a struct.
++  std::array<uint32_t, sizeof(LowCmd) / sizeof(uint32_t)> words{};
++  std::memcpy(words.data(), &raw, sizeof raw);
++  raw.crc = crc32_core(words.data(), words.size() - 1);
+   msg.crc = raw.crc;
+ }
+ 
+@@ -44,7 +59,7 @@
+   uint32_t CRC32 = 0xFFFFFFFF;
+   const uint32_t dwPolynomial = 0x04c11db7;
+   for (uint32_t i = 0; i < len; i++) {
+-    xbit = 1 << 31;
++    xbit = 1U << 31;
+     data = ptr[i];
+     for (uint32_t bits = 0; bits < 32; bits++) {
+       if (CRC32 & 0x80000000) {

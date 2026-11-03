@@ -5,6 +5,7 @@
  *************************************************************/
 #pragma once
 #include "config.h"
+#include "native_observation_types.h"
 #include "owned_rmw_service.h"
 #include <uwvm2/imported/ros/ipc/rmw_publish.h>
 #include <uwvm2/imported/ros/ipc/rmw_subscription.h>
@@ -101,15 +102,24 @@ namespace uwvm2::ros_gateway
     {
         ros::capability_spec capability;
         mutable std::mutex mutex;
-        std::deque<std::vector<std::uint8_t>> events;
-        std::optional<std::vector<std::uint8_t>> pending;
+        struct entry
+        {
+            std::vector<std::uint8_t> payload;
+            std::shared_ptr<native_observation::capture_ref> capture;
+            std::size_t capacity() const noexcept{return payload.capacity();}
+        };
+        std::deque<entry> events;
+        std::optional<entry> pending;
         std::size_t bytes{};
         std::uint64_t dropped{};
         bool active{true};
         bucket quota;
         event_queue_statistics totals{};
         std::shared_ptr<event_stream> observer;
+        std::shared_ptr<native_observation::writer> capture_writer;
+        std::shared_ptr<native_observation::endpoint const> capture_binding;
         explicit event_queue(ros::capability_spec c):capability{std::move(c)} {}
+        ~event_queue(){deactivate();}
         static void bump(std::uint64_t& value) noexcept { if(value!=UINT64_MAX) { ++value; } }
         std::uint64_t depth_limit() const
         { return limit(capability,(capability.operation=="topic.subscribe")?(capability.type.find("/msg/")==std::string::npos?"queue-depth":"qos.depth"):"max-event-queue-depth"); }
@@ -119,10 +129,16 @@ namespace uwvm2::ros_gateway
         void high_water() noexcept
         { totals.high_water_depth=std::max(totals.high_water_depth,std::uint64_t(events.size()+(pending?1:0)));totals.high_water_bytes=std::max(totals.high_water_bytes,std::uint64_t(bytes+(pending?pending->capacity():0))); }
         void promote()
-        { if(pending&&fits(pending->capacity())) { auto size{pending->capacity()};events.push_back(std::move(*pending));pending.reset();bytes+=size; } }
-        bool enqueue(std::vector<std::uint8_t> data)
+        { if(pending&&fits(pending->capacity())) { auto size{pending->capacity()};native_observation::lifecycle(pending->capture,native_observation::phase::promoted);events.push_back(std::move(*pending));pending.reset();bytes+=size; } }
+        bool enqueue(std::vector<std::uint8_t> data,std::shared_ptr<native_observation::capture_ref> capture={})
         {
             std::lock_guard<std::mutex> guard{mutex};
+            // A source/capture association can never be redirected to another
+            // queue. Missing evidence poisons quality without changing the
+            // original canonical-message authorization or queue admission.
+            if(capture&&(capture->source!=capture_binding||capture->output!=capture_writer))
+            {if(capture_writer)capture_writer->lost();capture.reset();}
+            if(capture_binding&&!capture&&capture_writer)capture_writer->lost();
             bool service{capability.operation=="service.advertise"},parameter{capability.operation=="param.subscribe-events"},action{capability.operation=="action.advertise"};
             bool valid{},selected_custom{};
             if(service||action)
@@ -147,35 +163,48 @@ namespace uwvm2::ros_gateway
                 else { ipc::parameter_event event;valid=data.size()<=limit(capability,"max-parameter-bytes")&&ipc::decode_parameter_event(data,event)&&event.node==field(capability,"parameter-node")&&event.name==field(capability,"parameter-name"); }
             }
             else { valid=data.size()<=limit(capability,"max-message-bytes")&&validate_payload(capability,data); }
-            if(!active||!valid||!quota.take(capability,data.size())) { bump(dropped);bump(totals.rejected);return false; }
+            if(!active||!valid||!quota.take(capability,data.size())) { native_observation::lifecycle(capture,native_observation::phase::rejected,!active?125:!valid?22:11);bump(dropped);bump(totals.rejected);return false; }
             if(observer)
             {
+                // This observed serialized profile currently supports the
+                // legacy raw topic queue only. It may not silently discard a
+                // native capture association into the independent event ABI.
+                if(capture_binding&&capture_writer){capture_writer->lost();native_observation::lifecycle(capture,native_observation::phase::rejected,95);return false;}
                 ipc::event_kind kind{};std::uint8_t flags{};if(!ipc::event_source_kind(capability.operation,kind,flags)) { bump(dropped);return false; }
                 auto id{service||action?ipc::get(data.data(),8):std::uint64_t{0}};
                 auto error{observer->enqueue({kind,flags,0,id,std::move(data)})};if(error) { bump(dropped); }return !error;
             }
             promote();auto size{data.capacity()};
-            if(!pending&&fits(size)) { bytes+=size;events.push_back(std::move(data));bump(totals.enqueued);high_water();return true; }
+            if(!pending&&fits(size)) { bytes+=size;native_observation::lifecycle(capture,native_observation::phase::enqueued);events.push_back(entry{std::move(data),std::move(capture)});bump(totals.enqueued);high_water();return true; }
             auto overflow{field(capability,"overflow-policy")};
             if(overflow=="backpressure")
             {
                 bump(totals.backpressured);
-                if(!pending&&size<=limit(capability,"max-pending-event-bytes")) { pending=std::move(data);bump(totals.enqueued);high_water();return true; }
-                bump(totals.admission_refused);bump(dropped);return false;
+                if(!pending&&size<=limit(capability,"max-pending-event-bytes")) { native_observation::lifecycle(capture,native_observation::phase::pending);pending=entry{std::move(data),std::move(capture)};bump(totals.enqueued);high_water();return true; }
+                native_observation::lifecycle(capture,native_observation::phase::rejected,11);bump(totals.admission_refused);bump(dropped);return false;
             }
-            while(!fits(size)&&overflow=="drop-oldest"&&!events.empty()) { bytes-=events.front().capacity();events.pop_front();bump(dropped);bump(totals.dropped_oldest); }
-            if(!fits(size)) { bump(dropped);bump(totals.admission_refused);if(overflow=="drop-newest") { bump(totals.dropped_newest); }else { bump(totals.rejected); }return false; }
-            bytes+=size;events.push_back(std::move(data));bump(totals.enqueued);high_water();return true;
+            while(!fits(size)&&overflow=="drop-oldest"&&!events.empty()) { bytes-=events.front().capacity();native_observation::lifecycle(events.front().capture,native_observation::phase::dropped,11);events.pop_front();bump(dropped);bump(totals.dropped_oldest); }
+            if(!fits(size)) { native_observation::lifecycle(capture,native_observation::phase::rejected,11);bump(dropped);bump(totals.admission_refused);if(overflow=="drop-newest") { bump(totals.dropped_newest); }else { bump(totals.rejected); }return false; }
+            bytes+=size;native_observation::lifecycle(capture,native_observation::phase::enqueued);events.push_back(entry{std::move(data),std::move(capture)});bump(totals.enqueued);high_water();return true;
         }
-        ipc::call_result poll()
+        ipc::call_result poll(native_observation::call const* request=nullptr,
+            std::shared_ptr<native_observation::capture_ref>* receipt=nullptr)
         {
             std::lock_guard<std::mutex> guard{mutex};if(!active) { return {125,{}}; }if(observer) { return {17,{}}; }
-            promote();if(events.empty()) { return {11,{}}; }auto size{events.front().capacity()};auto value{std::move(events.front())};events.pop_front();bytes-=size;bump(totals.dequeued);promote();return {0,std::move(value)};
+            promote();if(events.empty()) { return {11,{}}; }
+            auto size{events.front().capacity()};auto value{std::move(events.front())};events.pop_front();bytes-=size;
+            native_observation::lifecycle(value.capture,native_observation::phase::dequeued,0,request);
+            if(receipt)*receipt=value.capture;
+            else if(capture_binding&&capture_writer)capture_writer->lost();
+            bump(totals.dequeued);promote();return {0,std::move(value.payload)};
         }
         event_queue_statistics statistics() const noexcept
         { std::lock_guard<std::mutex> guard{mutex};auto value{totals};value.depth=events.size();value.bytes=bytes;value.pending_depth=pending?1:0;value.pending_bytes=pending?pending->capacity():0;return value; }
         void deactivate(std::uint32_t reason=125)
-        { std::lock_guard<std::mutex> guard{mutex};active=false;events.clear();pending.reset();bytes=0;bump(totals.closed);if(observer) { observer->seal(reason); } }
+        { std::lock_guard<std::mutex> guard{mutex};active=false;
+          for(auto const& value:events)native_observation::lifecycle(value.capture,native_observation::phase::queue_closed,reason);
+          if(pending)native_observation::lifecycle(pending->capture,native_observation::phase::queue_closed,reason);
+          events.clear();pending.reset();bytes=0;bump(totals.closed);if(observer) { observer->seal(reason); } }
     };
     struct adapter:owned_service_backend
     {
@@ -292,7 +321,7 @@ namespace uwvm2::ros_gateway
         native_io::fixed_text<1024> record;
         bool formatted{record.append("ros_audit timestamp_ns=")&&record.number(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count())&&
             record.append(" backend=")&&record.number(static_cast<unsigned>(cfg.policy.ros_version))&&record.append(" worker_uid=")&&record.number(cfg.worker_uid)&&
-            record.append(" worker_pid=")&&record.number(cfg.worker_pid)&&record.append(" session=")&&record.number(session)&&record.append(" operation=")&&record.append(r.operation)&&
+            record.append(" worker_pid=")&&record.number(cfg.worker_pid)&&record.append(" session_redacted=1")&&record.append(" operation=")&&record.append(r.operation)&&
             record.append(" alias=")&&record.append(r.alias)};
         if(formatted&&c&&c->operation=="service.available"&&
            (r.operation=="service.available-v1"||r.operation=="service.available-retire-v1"||r.operation=="rmw.service-v1"))
@@ -334,6 +363,18 @@ namespace uwvm2::ros_gateway
         // No message content is logged. A stalled supervisor pipe cannot block IPC.
         if(!native_io::write_audit_text(text)) { suppress(); }
     }
+    inline std::shared_ptr<native_observation::endpoint const> capture_endpoint(
+        native_observation::call const& request,ros::capability_spec const& source)
+    {
+        if(!request.output||!request.connection||!request.request_id)return {};
+        auto result=std::make_shared<native_observation::endpoint>();result->owner=request.connection;
+        result->alias=source.alias;result->operation=source.operation;result->resource=source.resource;
+        result->type=source.type;result->identity=source.type_identity;
+        auto codec=source.limits.find("adapter-codec-identity");if(codec!=source.limits.end())result->codec_identity=codec->second;
+        result->incarnation=request.output->next_endpoint();result->activation_request_id=request.request_id;
+        if(!result->incarnation)throw std::overflow_error("native capture endpoint incarnation exhausted");
+        return result;
+    }
     inline void serve_connection(int fd,configuration const& cfg,std::function<std::unique_ptr<adapter>()> const& factory,int worker_pidfd)
     {
         struct fd_guard { int value; ~fd_guard() { ::close(value); } } guard{fd};
@@ -345,6 +386,20 @@ namespace uwvm2::ros_gateway
         auto session{ipc::random_session()}; if(!session) { return; }
         ipc::frame answer; answer.type=ipc::kind::response; answer.backend=f.backend; answer.response_id=f.request_id; answer.session_id=session; answer.timeout_ms=cfg.timeout_ms;
         if(!ipc::write_frame(fd,answer,ipc::after(cfg.timeout_ms),worker_pidfd)) { return; }
+        std::shared_ptr<native_observation::session const> native_session;
+        struct native_session_completion
+        {
+            std::shared_ptr<native_observation::writer> output;
+            std::shared_ptr<native_observation::session const>& connection;
+            int entered{std::uncaught_exceptions()};
+            ~native_session_completion()
+            {
+                if(output&&connection){native_observation::record final;final.event=native_observation::phase::session_closed;
+                    final.connection=connection.get();final.effects_uncertain=std::uncaught_exceptions()>entered;(void)output->emit(final);}
+            }
+        } native_completion{cfg.native_observer,native_session};
+        // This completion guard outlives the backend, all queue entries and
+        // ordinary connection cleanup, including exceptional unwinding.
         std::shared_ptr<adapter> backend;
         // Declared after backend: the table retires while that real owner is alive.
         std::unique_ptr<owned_service_route> owned_services;
@@ -417,6 +472,9 @@ namespace uwvm2::ros_gateway
                 return static_cast<std::uint32_t>(std::min<std::uint64_t>(maximum,static_cast<std::uint64_t>(milliseconds)));
             };
             ipc::call_result result;bool native_invoked{};
+            native_observation::call native_request{cfg.native_observer,native_session,f.request_id};
+            native_observation::call_scope native_scope{native_request};
+            std::shared_ptr<native_observation::capture_ref> native_delivery;
             owned_subscription_delivery subscription_delivery{backend};
             bool subscription_ack_attempted{},subscription_endpoint_reply{};
             auto cap{cfg.policy.capabilities.find(r.alias)}; ros::capability_spec const* c{cap==cfg.policy.capabilities.end()?nullptr:&cap->second};
@@ -425,7 +483,9 @@ namespace uwvm2::ros_gateway
             {
                 if(bound||r.alias!="target"||r.data!=ros::serialize_manifest(cfg.policy)) { result.error=13; }
                 else { backend=factory(); if(!backend)throw std::runtime_error("Adapter factory returned no owner");
-                    if(backend->owned_rmw_service_capacity())owned_services=std::make_unique<owned_service_route>(cfg,*backend,fd,worker_pidfd,&stopping);bound=true; }
+                    if(backend->owned_rmw_service_capacity())owned_services=std::make_unique<owned_service_route>(cfg,*backend,fd,worker_pidfd,&stopping);
+                    if(cfg.native_observer){native_session=cfg.native_observer->begin_session(f.backend,session,pid,uid,r.data);native_request.connection=native_session;}
+                    bound=true; }
             }
             else if(!bound) { result.error=13; }
             else if(!c) { result.error=13; }
@@ -835,7 +895,9 @@ namespace uwvm2::ros_gateway
             else if(r.operation=="event.poll")
             {
                 if((c->operation!="topic.subscribe"&&c->operation!="service.advertise"&&c->operation!="param.subscribe-events"&&c->operation!="action.advertise")||!r.data.empty()) { result.error=13; }
-                else { auto q{queues.find(r.alias)}; result=q==queues.end()?ipc::call_result{9,{}}:q->second->poll(); }
+                else { auto q{queues.find(r.alias)};
+                    if(q==queues.end())result={9,{}};
+                    else{native_request.source=q->second->capture_binding;result=q->second->poll(&native_request,&native_delivery);} }
             }
             else if(r.operation!=c->operation) { result.error=13; }
             // A data watch owns the native goal's receive queue across aliases.
@@ -850,8 +912,14 @@ namespace uwvm2::ros_gateway
                 else if(!queues.count(r.alias))
                 {
                     if(!activation_quotas[r.alias].take(*c,0)) {result.error=11;}
-                    else {auto q{std::make_shared<event_queue>(*c)};native_invoked=true; result=r.operation=="action.advertise"?backend->advertise_action(*c,q):r.operation!="service.advertise"?backend->subscribe(*c,q):backend->advertise(*c,q);
-                    if(!result.error) { queues.emplace(r.alias,std::move(q)); }}
+                    else {auto q{std::make_shared<event_queue>(*c)};
+                    if(c->operation=="topic.subscribe"&&cfg.native_observer&&!cfg.native_observer->type_support_path(c->type).empty())
+                    {q->capture_writer=cfg.native_observer;q->capture_binding=capture_endpoint(native_request,*c);native_request.source=q->capture_binding;}
+                    native_invoked=true; result=r.operation=="action.advertise"?backend->advertise_action(*c,q):r.operation!="service.advertise"?backend->subscribe(*c,q):backend->advertise(*c,q);
+                    if(!result.error) {
+                        if(q->capture_binding&&!q->capture_binding->announced.load(std::memory_order_acquire))
+                        {cfg.native_observer->lost();q->deactivate();backend->close(r.alias);result.error=95;}
+                        else queues.emplace(r.alias,std::move(q)); }}
                 }
             }
             else if(r.operation=="topic.publish"||r.operation=="service.call")
@@ -928,12 +996,33 @@ namespace uwvm2::ros_gateway
                     (void)item.second.stream->enqueue({ipc::event_kind::resource_error,static_cast<std::uint8_t>(native_invoked?ipc::event_external_effects_may_remain:0),result.error,0,{}});
                 }
             }
+            native_observation::record native_result;
+            native_result.event=native_observation::phase::dispatch_result;native_result.connection=native_session.get();
+            native_result.source=native_request.source.get();native_result.request_id=f.request_id;
+            native_result.error=result.error;native_result.native_invoked=native_invoked;native_result.payloads_inline=false;
+            native_result.native_accepted=native_request.rmw_accepted;
+            native_result.effects_uncertain=native_request.effects_uncertain||(result.error&&native_invoked);
+            if(native_delivery)native_result.capture_ordinal=native_delivery->ordinal;
+            if(r.operation=="event.poll"&&!result.error){native_result.canonical=result.payload.data();native_result.canonical_bytes=result.payload.size();}
+            if(cfg.native_observer)(void)cfg.native_observer->emit(native_result);
+            // No native serialized/CDR field is invented here. It comes only
+            // from the real native serializer or serialized receive callback.
             audit(session,r,c,result.error,log_limit,c?grant_logs[r.alias]:log_limit,cfg);
             answer.response_id=f.request_id; answer.error=result.error; answer.payload=std::move(result.payload);
             // A capability deadline limits the operation. Its timeout result
             // can still be delivered within the caller's original IPC budget.
             if(!ipc::write_frame(fd,answer,wire_until,worker_pidfd))
-            {subscription_delivery.fail(errno==ETIMEDOUT?110u:107u);if(owned_services)owned_services->delivery_failed(errno==ETIMEDOUT?110u:107u);break;}
+            {
+                auto wire_error=errno==ETIMEDOUT?110u:107u;
+                native_result.event=native_observation::phase::wire_reply_failed;native_result.error=wire_error;
+                native_result.effects_uncertain=native_invoked||bool(native_delivery);
+                native_result.canonical=answer.payload.data();native_result.canonical_bytes=answer.payload.size();
+                if(cfg.native_observer)(void)cfg.native_observer->emit(native_result);
+                subscription_delivery.fail(wire_error);if(owned_services)owned_services->delivery_failed(wire_error);break;
+            }
+            native_result.event=native_observation::phase::wire_reply;
+            native_result.canonical=answer.payload.data();native_result.canonical_bytes=answer.payload.size();
+            if(cfg.native_observer)(void)cfg.native_observer->emit(native_result);
             auto late_subscription_reply{std::chrono::steady_clock::now()>=until};
             if(late_subscription_reply){subscription_delivery.fail(110);}
             else{subscription_delivery.delivered();}

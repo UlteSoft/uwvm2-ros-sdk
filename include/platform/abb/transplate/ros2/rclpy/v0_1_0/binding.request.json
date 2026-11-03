@@ -1,0 +1,79 @@
+{
+  "format": "sdk02-joint-feedback-binding-request-v1",
+  "status": "UNBOUND_NOT_AUTHORITY_NOT_EXECUTED",
+  "vendor": "abb",
+  "upstream_profile_requested": "rclpy-jazzy-pubsub-v1",
+  "canonical_owned_guest_source": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/joint_feedback.py",
+  "canonical_owned_guest_source_sha256": "52ff146b50aa152d71e4d367e0011cbb287fcb043ec273e12a60e6db1d02117a",
+  "guest_Wasm_sha256": null,
+  "same_complete_future_Wasm_required_across_compatible_vendors": true,
+  "original_mapping_request": "example/platform/abb/c/official_webots/mapping.request.json",
+  "original_mapping_sha256": "eeb71f9dde069aa06e76b98c9288a94e8d43b7f4acfd9ca2f3970a5af9cac511",
+  "official_source": {
+    "repository": "https://github.com/cyberbotics/webots_ros2",
+    "commit": "5f1a18219a6b877c25440a12bdf9056cae299e1d",
+    "mode": "webots_ros2_control::Ros2ControlSystem + joint_trajectory_controller/JointTrajectoryController",
+    "runtime": "Webots R2025a",
+    "runtime_sha256": "c5127fb4206c57a5ae5523f1b7f3da8b670bc8926d9ae08595e139f226f38c38",
+    "model_commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+    "model_path": "projects/robots/abb/irb/protos/Irb4600-40.proto",
+    "model_license": "Licensed for use only with Webots; original source notice retained"
+  },
+  "official_controller_type": "joint_trajectory_controller/JointTrajectoryController",
+  "operation": "topic_subscribe",
+  "message_type": "sensor_msgs/msg/JointState",
+  "topic": "/abb/joint_states",
+  "required_joint_names": [
+    "A motor",
+    "B motor",
+    "C motor",
+    "D motor",
+    "E motor",
+    "F motor",
+    "finger_1_joint_1",
+    "finger_2_joint_1",
+    "finger_middle_joint_1"
+  ],
+  "allowed_extra_joint_names": [],
+  "extra_joint_policy": "Unbound extras fail; original rendered model and explicit native grant must justify any additions. Guest filtering creates no authority.",
+  "position_unit": "rad",
+  "qos_requested_not_qualified": {
+    "history": 1,
+    "depth": 10,
+    "reliability": 1,
+    "durability": 2
+  },
+  "alias": null,
+  "authority_granted": false,
+  "native_or_guest_callbacks_executed": false,
+  "required_full_framework_path": "Frozen application Wasm -> uwvm2-ros permission/audit -> bounded host -> ROS -> exact official provider -> fresh feedback back into same Wasm",
+  "full_framework_simulation_state": "BLOCKED_REQUIRED_NOT_RUN",
+  "blockers": [
+    {
+      "owner": "VM owner",
+      "reason": "New boot has no current fixed admission observed. Published r2 finite URP1 state-copy is not typed JointState callback delivery into this Python guest, and the public live boundary remains incomplete.",
+      "next_action": "Restore common64GiB/0swap/current immutable admission, then qualify actual native JointState type/provenance/permission and post-copy ingress into this exact guest; preserve original vendor joints/controllers."
+    },
+    {
+      "owner": "SDK06",
+      "reason": "Genuine shared rclpy/Python source candidate remains separately unqualified here; installed core/archive/compiler survival must be rechecked after reboot.",
+      "next_action": "Publish restored immutable genuine core/port inputs; new owner proof and actual Python/Wasm callbacks remain required."
+    },
+    {
+      "owner": "SDK02",
+      "reason": "Original six255 failures retained; own128MiB cold compiler defect corrected in source. All old volatile inputs/proofs are invalid for new execution; no current guest build or official loop.",
+      "next_action": "After new fixed current-boot admission, verify complete readonly LLVM/Python/WASI/runtime ELF dependencies, retain full stronger budgets, whole thin SCP/new own2case proofs; real9guest assertions then actual ABB public build/test and normal/deny-no-effect/reverse path."
+    }
+  ],
+  "guest_API_profile": "Jazzy source subset only; does not infer native provider distro or any Humble-source compatibility",
+  "native_provider_distribution": "jazzy",
+  "native_provider_ABI_mapping_state": "BLOCKED_SEPARATE_CONTROLLED_HOST_AND_ORIGINAL_PROVIDER_QUALIFICATION_REQUIRED",
+  "current_boot_binding": "UNBOUND_NOT_EXECUTED_NO_CURRENT_ADMISSION",
+  "published_runtime_delivery_reference": {
+    "manifest_sha256": "7ac1a14feff4e4b4b1d668ef4d759fafcdefdabc13b67ad725327227b0990e94",
+    "source_wire": "portable URP1, qualified finite reference count6",
+    "application_wire": "full canonical sensor_msgs/msg/JointState fields",
+    "interoperability": "NOT_QUALIFIED_NO_AUTOMATIC_WIRE_OR_JOINT_COUNT_SUBSTITUTION",
+    "historical_reference_is_live_authority": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "format": "uwvm-sdk-kernel-object-consumer-proposal-v1",
+  "version": "0.4.0",
+  "candidate_boundary_protocol": "uwvm-sdk-live-boundary-v4",
+  "status": "REJECTED_FIXED_PROC_LEAF_CANDIDATE_ACTUAL_K0_K7_NO_PUBLIC_ADMISSION",
+  "registered_in_public_consumer": false,
+  "execution_admissible": false,
+  "default_decision": "DENY",
+  "supersedes_R840_root_authority_for_future_design": true,
+  "trust_boundary": {
+    "root_enrollment_or_root_proxy": false,
+    "new_root_service": false,
+    "producer_uid_or_public_key_authority": false,
+    "source_approval_is_execution_admission": false,
+    "signed_or_mutable_JSON_replaces_kernel_relation": false,
+    "new_caps_or_LSM_or_dumpability_or_credential_or_permission_exception": false,
+    "application_profile": "Existing docker-default, UID1000, all capabilities0, NNP1/seccomp2 unchanged",
+    "existing_host_roles": "Retain exact original role security/LSM, source/runtime/closed-launch and inherited canonical lease; do not relabel or alter dumpability",
+    "courier": "Existing authorized nonroot host-role code may only transport scoped kernel handles if actual unchanged-kernel permission and safety are proved. Courier identity, header, nonce, version, UID and claimed kcmp value authorize nothing."
+  },
+  "candidate_transport": {
+    "kind": "Bounded AF_UNIX SOCK_SEQPACKET + SCM_RIGHTS of exact readonly kernel objects; proposal only",
+    "request": "Version, current admission/packet/boot/nonce and exact current controller/guardian PID+birth plus a private32-byte challenge; no arbitrary PID/path/read API",
+    "headers": "Untrusted bounded slot routing and exact declared shape only; no timestamp or manifest gains authority by being in a reply",
+    "allowed_object_classes_if_proved": [
+      "Actual narrow procfs leaf readers for exactly approved roles and actual original FD numbers",
+      "Sealed15 readonly source/metadata objects with direct current target binding",
+      "Root-owned nonwritable readonly runtime/executable objects with direct current target/mapping binding"
+    ],
+    "forbidden_object_classes": [
+      "Canonical lock-owning OFD even readonly",
+      "Mutable context or host inode FD even readonly",
+      "Host root/directory/namespace/O_PATH/pid-control/Docker FD",
+      "Copied proc records, arbitrary path handles or unsealed source substitutes"
+    ],
+    "budget": "Keep original512 transport/FD ceiling, <=64 per batch and original250ms exchange/500ms freshness until a complete independently measured bounded-streaming contract is supplied; do not drop census rows to fit",
+    "critical_missing_relations": [
+      "Current executable/address-space binding",
+      "Current namespace identities without forbidden handles",
+      "Current complete FD/runtime census and seq buffer freshness",
+      "Safe independent description/lease-OFD exclusion under unchanged kernel permissions"
+    ]
+  },
+  "consumer_sequence": [
+    "Validate exact installed SDK/app/deployment/producer/runtime/closed-launch pins, readonly mounts, current boot/admission, current own proof/benign and original64GiB/swap0/full-lifetime canonical lease; retain all existing checks.",
+    "Generate a private fresh challenge; receive bounded rights with MSG_CMSG_CLOEXEC and reject ancillary/truncation/unknown or duplicate slots. Treat wire metadata as hints only.",
+    "SDK reads actual kernel objects itself. Verify kernel filesystem/device/path/object type/readonly flags and original role PID/birth before+after, complete source bytes+seals and runtime bytes/maps.",
+    "Require an SDK-compiled, exactly reviewed actual-kernel current-exe/current-namespace/current-census relation for every role. No accepted provider currently exists; stop before any business actor if a relation is missing.",
+    "Independently verify current controller/guardian inherited canonical FLOCK via narrow live fdinfo, global locks and RO inode; no canonical owning OFD crosses the boundary.",
+    "Complete exact census across bounded chunks with verified current generation and original deadlines. Release all received handles on any failure and after validation.",
+    "Only then admit the existing smallest public UR guest/native roundtrip; exact operation/instance/generation/permission, fresh feedback and checked-unwind remain mandatory."
+  ],
+  "activation": {
+    "approved_current_executable_relations": [],
+    "approved_namespace_relations": [],
+    "approved_census_and_freshness_relations": [],
+    "approved_producers": [],
+    "can_be_enabled_by_editing_JSON": false,
+    "must_have_before_public_code_registration": [
+      "VM exact primitive/closed source/runtime/mount/FD contract and full original current-kernel feasibility proof",
+      "SDK01 exact consumer implementation and new source approval with no missing relation",
+      "New complete subject transfer/set/SHA/bytes/modes, own2 actual interruptions, independent retirement review and own bounded benign",
+      "Actual minimum public UR positive and12 actual refusals for acceptance; finite compilation stays separately counted"
+    ],
+    "current_actual_positive": 0,
+    "current_actual_refusals": 0,
+    "whole_original_assignment_complete": false
+  },
+  "required_kernel_evidence_sha256": "d59a7a025572d6927e2d7ecc4e29d6925a23a0b4b1222cb7d387b18e380cd047",
+  "approved_relations_sha256": "44c9732b39105a4866888293be253ab1cf267dc34b99cc59a35723b90ca7b9b3",
+  "actual_candidate_decision_sha256": "77d3b3180a4b8d08757c62dc24e75d693c1cff7f2b3613220b1e4d03c82ddf81",
+  "candidate_boundary_protocol_registered": false,
+  "future_relation_research_is_not_approval": true,
+  "current_boot_recovery_required": true,
+  "retained_original_design_is_not_current_implementation": true
+}

@@ -1,0 +1,93 @@
+{
+  "format": "uwvm-sdk-simulation-example-v1",
+  "frozen_wasm": {
+    "bytes": 4449,
+    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "full_assignment_acceptance": false,
+  "full_required_Stage_A_cases": 4,
+  "profile": {
+    "hardware_plugin": "mock_components/GenericSystem",
+    "id": "jazzy-ur5e-GenericSystem-stage-a-communication",
+    "model": "ur5e",
+    "official_mode": "official-mock-hardware",
+    "release": "jazzy",
+    "vendor": "universal_robots"
+  },
+  "public_inputs": [
+    {
+      "path": "xmake.lua",
+      "scope": "example",
+      "sha256": "1f61221d3a4d5c5be3e151a2aebcfcae264285df6a417de5ac28b7ab9d234a5e"
+    },
+    {
+      "path": "driver.py",
+      "scope": "example",
+      "sha256": "d85c1da8510217f72b2afeee4bcc02686e33f8dd12320eaf49c599119edbd3d6"
+    },
+    {
+      "path": "profile.json",
+      "scope": "example",
+      "sha256": "8c3c2956038364520e5cbe321d20cedaf4789eb0605e1cd4667d90f9e9601bac"
+    },
+    {
+      "path": "context.template.json",
+      "scope": "example",
+      "sha256": "4a91f3a7948b02ee7a64200b8fcce6528b240590994f86b28a59a4c7bc96f458"
+    },
+    {
+      "path": "required-coverage.json",
+      "scope": "example",
+      "sha256": "03362185211a649f4ceca36b5b350a917ceec12968780408616bb33bbf3ebf6c"
+    },
+    {
+      "path": "README.md",
+      "scope": "example",
+      "sha256": "65184b16320a5ced77edfa8d0d5a9696063b147e8de5411af01c978e86463562"
+    },
+    {
+      "path": "include/platform/ros/portable/v0_1_0/abi.h",
+      "scope": "sdk",
+      "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+      "scope": "sdk",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+      "scope": "sdk",
+      "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+    }
+  ],
+  "qualification_scope": "Stage A official ROS communication only",
+  "scenarios": [
+    {
+      "deadline_seconds": 30,
+      "expected_vm_exit": 13,
+      "id": "permission-denied-before-endpoints",
+      "kind": "denied"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": 0,
+      "id": "official-ROS-result-and-fresh-state-in-frozen-Wasm",
+      "kind": "joint"
+    },
+    {
+      "deadline_seconds": 30,
+      "expected_vm_exit": 110,
+      "id": "stale-native-generation-rejected-before-submit",
+      "kind": "stale_reference"
+    },
+    {
+      "deadline_seconds": 30,
+      "expected_vm_exit": 38,
+      "id": "bounded-restricted-Host-disconnect-before-submit",
+      "kind": "disconnect"
+    }
+  ],
+  "source_release": "ur-official-communication-r428"
+}

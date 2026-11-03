@@ -431,8 +431,8 @@
     },
     {
       "path": "tools/language/js/pack.lua",
-      "bytes": 13396,
-      "sha256": "92fd918503bb627a1675f2f402f65d7ab0259cbdabf65dc73cdb0d5daead153a"
+      "bytes": 17494,
+      "sha256": "4c929e48355e8ec21f29b008348fbeac0a2e6eb3e3caf1c2f0eb461fec75c04b"
     },
     {
       "path": "tools/language/js/wasm.py",

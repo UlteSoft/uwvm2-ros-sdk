@@ -1,0 +1,32 @@
+{
+  "format": "uwvm-r-port-status-v1",
+  "language": "r",
+  "version": "4.5.1",
+  "source_complete": true,
+  "runtime_installed": false,
+  "status": "SOURCE_RESTORED_REAL_RUNTIME_NOT_BUILT",
+  "written": [
+    "All5081 maintained GNU R4.5.1 source files restored with exact original manifest and51 unchanged Fortran sources",
+    "Original R_ParseVector/Rf_eval command entry and statically registered six-argument .Call bridge",
+    "Exact raw64-bit R handle/length wrappers",
+    "Version-one public language adapter lifecycle and native_command compatibility source fix"
+  ],
+  "pending": [
+    "fresh complete numerical boundary receipt",
+    "Fortran 90 target lowering and runtime",
+    "WASI dependency/configuration closure",
+    "embedded base-package startup filesystem",
+    "whole-module nonlocal control and genuine interpreter tests",
+    "native ROS and memory64 acceptance"
+  ],
+  "historical_evidence": "Historical f2c/Flang results remain input evidence only; fresh tests have separate receipts",
+  "installed_toy_parser": false,
+  "missing_route_silently_replaced": false,
+  "restored_UTC": "2026-10-27T05:10:23.263514+00:00",
+  "actual_new_boot_guest_cases_executed": 0,
+  "public_xmake_build_qualified": false,
+  "public_xmake_test_qualified": false,
+  "Fortran_originals_unchanged": 51,
+  "new_boot_execution_admission": false,
+  "qualified_execution": "NOT_RUN"
+}

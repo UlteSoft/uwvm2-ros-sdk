@@ -1,0 +1,139 @@
+{
+  "schema": "sdk07-owned-platform-official-ideal-profile-v1",
+  "id": "fourier-jazzy-ubuntu24-x86_64-ideal-v1",
+  "platform": "fourier",
+  "execution_class": "software_simulation",
+  "category": "official_ros_ideal_controller_reference",
+  "official_simulator": "ros-controls mock_components/GenericSystem plus joint_trajectory_controller/JointTrajectoryController",
+  "physics_or_real_hardware": false,
+  "ROS_release": "jazzy",
+  "OS_ABI": "Ubuntu24.04/x86_64",
+  "rmw": "rmw_fastrtps_cpp",
+  "namespace": "uwvm_sim/fourier",
+  "joint": {
+    "slot": 0,
+    "native_joint": "l_knee_pitch",
+    "kind": "bounded_revolute",
+    "source_unit": "rad",
+    "sign": 1,
+    "zero_offset_microrad": 0,
+    "lower_microrad": -90000,
+    "upper_microrad": 1920000,
+    "max_step_microrad": 10000,
+    "tolerance_microrad": 1000
+  },
+  "model": {
+    "path": "models/model.urdf",
+    "bytes": 51932,
+    "sha256": "431c5ec0e19c88d4b18d0c70abfe64bb3fbc9d59a9b7e3b4fb79347d95a3619a",
+    "origin": "models/origin.json",
+    "license": "models/LICENSE.upstream",
+    "license_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+  },
+  "application": {
+    "source": "application/main.c",
+    "source_sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616",
+    "installed_frozen_artifact": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "artifact_manifest": "share/platform/ros/portable/artifacts/joint-step-v0.1.0.json",
+    "bytes": 4449,
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+    "capability": "joint.position.bounded.v1",
+    "recompile_relink_or_rewrite_during_test": false
+  },
+  "native_component": {
+    "public_VM_source_path": "src/uwvm2/imported/ros/portable/native",
+    "source_sha256": "c978f577f9dc5b7e812692131c3f7a10245c3dbf913f3ed867d340f76f5537c5",
+    "source_file": "ros2_joint_main.cc",
+    "build_system": "Unmodified public CMake project; actual strict Release C++23 compiler",
+    "strict_flags": [
+      "-O3",
+      "-DNDEBUG",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fexceptions",
+      "-fasynchronous-unwind-tables"
+    ],
+    "actual_new_build_must_record_whole_ELF_SHA": true,
+    "source_closure": "profiles/native-public-source-v1.json",
+    "source_closure_sha256": "b03f8f6d0a8b3b65c0f38583d42535d57800939f7253cd845f8b44bbfbbd5031"
+  },
+  "runtime": {
+    "whole_SHA256": "1855088a749e686861621df61a97d2cc429615a7b4d26347d8bfd858680eb3c5",
+    "bytes": 90445360,
+    "backend": "AOT paired LLVM23; actual checked generated-code unwind",
+    "public_process_policy": "default; optional cache process seal not requested",
+    "mandatory_log_markers": [
+      "call_stack=unwind",
+      "unwind_backend=unwind.h",
+      "unwind_check=live",
+      "[unwind-check] status=ok",
+      "provider=paired-llvm23",
+      "body-fallback=no"
+    ],
+    "missing_or_mismatched_runtime": "BLOCKED_NONZERO"
+  },
+  "required_finite_scenarios": [
+    {
+      "id": "normal",
+      "VM_exit": 0,
+      "native_status": 4,
+      "native_error": 0,
+      "expected_initial_rad": 0,
+      "expected_final_rad": 0.01,
+      "independent_UUID_and_result_following_fresh_state": true
+    },
+    {
+      "id": "default_deny",
+      "VM_exit": 13,
+      "native_goals": 0,
+      "expected_state_rad": 0
+    },
+    {
+      "id": "ungranted_alias",
+      "VM_exit": 13,
+      "native_goals": 0,
+      "expected_state_rad": 0
+    },
+    {
+      "id": "official_disable_commands",
+      "VM_exit": 5,
+      "native_status": 6,
+      "native_error": -5,
+      "expected_state_rad": 0,
+      "official_parameter": {
+        "disable_commands": true
+      }
+    }
+  ],
+  "missing_required_scenario_result": "BLOCKED_NONZERO",
+  "remaining_original_mandatory_matrix_is_optional": false,
+  "full_vendor_simulator_acceptance": false,
+  "official_installed_component_versions": {
+    "hardware_interface": "4.48.1",
+    "controller_manager": "4.48.1",
+    "joint_state_broadcaster": "4.42.1",
+    "joint_trajectory_controller": "4.42.1",
+    "control_msgs": "5.10.0",
+    "robot_state_publisher": "3.3.4",
+    "rclpy": "7.1.12"
+  },
+  "required_actual_actor_evidence": [
+    "VM",
+    "public-native",
+    "ros2_control_node (official GenericSystem/JTC in process)",
+    "robot_state_publisher"
+  ],
+  "required_actual_actor_fields": [
+    "pid",
+    "birth",
+    "executable_whole_SHA256",
+    "actual_executed_inode",
+    "actual_cgroup_membership",
+    "actual_leaf_memory.max=68719476736",
+    "actual_leaf_memory.swap.max=0",
+    "shared_ancestor64GiB0swap",
+    "limits",
+    "held_canonical_lease_before_and_after"
+  ]
+}

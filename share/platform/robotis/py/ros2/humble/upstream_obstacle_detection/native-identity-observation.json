@@ -1,0 +1,54 @@
+{
+  "format": "robotis-humble-native-sourcegraph-observation-v1",
+  "distribution": "humble",
+  "types": [
+    {
+      "native_type": "sensor_msgs/msg/LaserScan",
+      "source_graph_identity_reference": "RIHS01_64c191398013af96509d518dac71d5164f9382553fce5c1f8cca5be7924bd828",
+      "reference_jazzy_description_sha256": "ad84fa3570aeb0893dfe4d456b252c808904ff9e88e8605a35a792b5ed0c24b9",
+      "actual_humble_source_fields": [
+        {
+          "native_type": "sensor_msgs/msg/LaserScan",
+          "actual_humble_msg_sha256": "bb688599d8787fa1b48393e50064013e58449055eb60e501eb01a07e8bc03357",
+          "actual_jazzy_msg_sha256": "bb688599d8787fa1b48393e50064013e58449055eb60e501eb01a07e8bc03357",
+          "field_signatures_identical": true
+        },
+        {
+          "native_type": "std_msgs/msg/Header",
+          "actual_humble_msg_sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+          "actual_jazzy_msg_sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+          "field_signatures_identical": true
+        },
+        {
+          "native_type": "builtin_interfaces/msg/Time",
+          "actual_humble_msg_sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae",
+          "actual_jazzy_msg_sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd",
+          "field_signatures_identical": true
+        }
+      ],
+      "scope": "InstalledHumble sourcefieldgraphmatch; nativeHumble actualtypesupport/hash/codec/session execution stillunqualified. This is not a relabelledJazzyendpoint."
+    },
+    {
+      "native_type": "geometry_msgs/msg/Twist",
+      "source_graph_identity_reference": "RIHS01_9c45bf16fe0983d80e3cfe750d6835843d265a9a6c46bd2e609fcddde6fb8d2a",
+      "reference_jazzy_description_sha256": "db89e4a85f626ec247824aa4a5942ce4b169a83058d9ab0895c185a7b4c117e7",
+      "actual_humble_source_fields": [
+        {
+          "native_type": "geometry_msgs/msg/Twist",
+          "actual_humble_msg_sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0",
+          "actual_jazzy_msg_sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0",
+          "field_signatures_identical": true
+        },
+        {
+          "native_type": "geometry_msgs/msg/Vector3",
+          "actual_humble_msg_sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d",
+          "actual_jazzy_msg_sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d",
+          "field_signatures_identical": true
+        }
+      ],
+      "scope": "InstalledHumble sourcefieldgraphmatch; nativeHumble actualtypesupport/hash/codec/session execution stillunqualified. This is not a relabelledJazzyendpoint."
+    }
+  ],
+  "native_environment_source": "Actual04Humblelive-endpoint-r1 exactpackage tree",
+  "runtime_interoperation": "NOT RUN"
+}

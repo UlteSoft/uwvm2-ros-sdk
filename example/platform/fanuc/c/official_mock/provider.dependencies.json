@@ -1,0 +1,369 @@
+{
+  "format": "sdk02-source-declared-package-closure-v1",
+  "profile": "fanuc-crx10ia-official-mock-jazzy",
+  "packages": [
+    {
+      "name": "fanuc_controllers",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_controllers/package.xml",
+      "source_sha256": "975b392912cebb67c0797a5442f3554a1fe5d5b18a712d27e03904d609724c78",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "controller_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "fanuc_hardware_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "fanuc_libs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "fanuc_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rmi_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "geometry_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "hardware_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "joint_trajectory_controller",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "lifecycle_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "pluginlib",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rclcpp",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "realtime_tools",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "sensor_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "trajectory_msgs",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "fanuc_hardware_interface",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_hardware_interface/package.xml",
+      "source_sha256": "4b6ee4942b0ba80ef8e5484f8053eb2b5ba18491fbda14ce0ec8648f30bd94f5",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "fanuc_libs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "hardware_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "pluginlib",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "controller_manager",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "fanuc_libs",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_libs/package.xml",
+      "source_sha256": "2e42be36d23d34f6e542b886b73118e3ff3ee7d62955c1e2066b3873e10a8182",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "eigen",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "fanuc_msgs",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_msgs/package.xml",
+      "source_sha256": "bbb22cc4cc9570bb26c7cddd0c4747b2d06807ba52604f01cfc0747aa4250347",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "rmi_msgs",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/rmi_msgs/package.xml",
+      "source_sha256": "a2eaa367ebe44388338e8566fac437cb9263d49fc246379789f7e44538faf893",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "slider_publisher",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/slider_publisher/package.xml",
+      "source_sha256": "d1e845633f5077df7f5f82a53ec31437bbaefc64c89831f13f3ad03d694404d3",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rclcpp",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "sensor_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "qt_gui",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "qt_gui_cpp",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "fanuc_crx_description",
+      "version": "2.3.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_crx_description/package.xml",
+      "source_sha256": "e016d38aad147c7953838f1bc3ca0ba5b143e22a3cc6319f441aa3535363d045",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "joint_state_publisher_gui",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "launch",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "launch_ros",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "robot_state_publisher",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz2",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "urdf",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "xacro",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    }
+  ],
+  "required_python_modules": [
+    "rclpy",
+    "control_msgs",
+    "sensor_msgs",
+    "controller_manager_msgs",
+    "action_msgs",
+    "launch",
+    "launch_ros",
+    "ament_index_python",
+    "xacro",
+    "yaml"
+  ],
+  "required_installed_closure": "Actual installed compatible ROS/ABI/RMW/provider/model/config files pinned by deployment; declaration alone is not closure",
+  "installed_closure_qualified_for_public_Wasm": false
+}

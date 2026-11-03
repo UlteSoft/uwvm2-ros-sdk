@@ -1,0 +1,199 @@
+{
+  "format": "uwvm-sdk07-ruby-official-relay-stage-a-v1",
+  "deployment": {
+    "format": "uwvm-native-ros-run-v2",
+    "runtime": "/opt/uwvm/bin/uwvm2-ros",
+    "gateway": "/opt/uwvm-host/bin/uwvm-ros2-gateway",
+    "backend": "ros2",
+    "distribution": "jazzy",
+    "connection": {
+      "node-name": "sdk07_ruby_stage_a",
+      "namespace": "/sdk07_stage_a",
+      "domain-id": "77",
+      "rmw-implementation": "rmw_fastrtps_cpp",
+      "security-mode": "disabled-test",
+      "keystore": "not-applicable",
+      "enclave": "not-applicable"
+    },
+    "runtime_features": [],
+    "execution_timeout_seconds": 120,
+    "examples": {
+      "status": {
+        "arguments": [
+          "0123456789abcdef0123456789abcdef"
+        ],
+        "main_module": "main",
+        "preloads": [],
+        "modules": {
+          "main": {
+            "ros_enabled": true,
+            "wasi_grants": [
+              "stdio-full-rights",
+              "monotonic-clock"
+            ],
+            "grants": [
+              {
+                "alias": "send",
+                "operation": "topic.publish",
+                "resource": "/sdk07_stage_a/request",
+                "type": "std_msgs/msg/String",
+                "identity": "RIHS01_df668c740482bbd48fb39d76a70dfd4bd59db1288021743503259e948f6b1a18",
+                "limits": {
+                  "max-message-bytes": "256",
+                  "max-rate-hz": "200",
+                  "burst": "4",
+                  "max-bytes-per-second": "65536",
+                  "max-queue-bytes": "1024",
+                  "overflow-policy": "reject",
+                  "validator": "none",
+                  "audit": "allow-and-deny",
+                  "max-inflight": "1",
+                  "qos.reliability": "reliable",
+                  "qos.durability": "transient-local",
+                  "qos.history": "keep-last",
+                  "qos.depth": "4",
+                  "qos.deadline": "infinite",
+                  "qos.lifespan": "infinite",
+                  "qos.liveliness": "automatic",
+                  "qos.liveliness-lease-duration": "infinite",
+                  "max-publishers": "1",
+                  "audit-max-rate-hz": "500",
+                  "audit-burst": "64",
+                  "audit-max-records": "4096",
+                  "audit-max-bytes": "1048576"
+                }
+              },
+              {
+                "alias": "receive",
+                "operation": "topic.subscribe",
+                "resource": "/sdk07_stage_a/reply",
+                "type": "std_msgs/msg/String",
+                "identity": "RIHS01_df668c740482bbd48fb39d76a70dfd4bd59db1288021743503259e948f6b1a18",
+                "limits": {
+                  "max-message-bytes": "256",
+                  "max-rate-hz": "200",
+                  "burst": "4",
+                  "max-bytes-per-second": "65536",
+                  "max-queue-bytes": "1024",
+                  "overflow-policy": "reject",
+                  "validator": "none",
+                  "audit": "allow-and-deny",
+                  "max-inflight": "1",
+                  "qos.reliability": "reliable",
+                  "qos.durability": "transient-local",
+                  "qos.history": "keep-last",
+                  "qos.depth": "4",
+                  "qos.deadline": "infinite",
+                  "qos.lifespan": "infinite",
+                  "qos.liveliness": "automatic",
+                  "qos.liveliness-lease-duration": "infinite",
+                  "max-subscribers": "1",
+                  "audit-max-rate-hz": "500",
+                  "audit-burst": "64",
+                  "audit-max-records": "4096",
+                  "audit-max-bytes": "1048576"
+                }
+              },
+              {
+                "alias": "idle",
+                "operation": "topic.subscribe",
+                "resource": "/sdk07_stage_a/idle",
+                "type": "std_msgs/msg/String",
+                "identity": "RIHS01_df668c740482bbd48fb39d76a70dfd4bd59db1288021743503259e948f6b1a18",
+                "limits": {
+                  "max-message-bytes": "256",
+                  "max-rate-hz": "200",
+                  "burst": "4",
+                  "max-bytes-per-second": "65536",
+                  "max-queue-bytes": "1024",
+                  "overflow-policy": "reject",
+                  "validator": "none",
+                  "audit": "allow-and-deny",
+                  "max-inflight": "1",
+                  "qos.reliability": "reliable",
+                  "qos.durability": "transient-local",
+                  "qos.history": "keep-last",
+                  "qos.depth": "4",
+                  "qos.deadline": "infinite",
+                  "qos.lifespan": "infinite",
+                  "qos.liveliness": "automatic",
+                  "qos.liveliness-lease-duration": "infinite",
+                  "max-subscribers": "1",
+                  "audit-max-rate-hz": "500",
+                  "audit-burst": "64",
+                  "audit-max-records": "4096",
+                  "audit-max-bytes": "1048576"
+                }
+              },
+              {
+                "alias": "steady",
+                "operation": "time.read-steady",
+                "resource": "/sdk07_stage_a/steady",
+                "type": "builtin/time-v1",
+                "identity": "builtin:time-nanoseconds-v1",
+                "limits": {
+                  "max-rate-hz": "500",
+                  "burst": "64",
+                  "max-inflight": "1",
+                  "max-response-bytes": "8",
+                  "max-bytes-per-second": "65536",
+                  "audit": "allow-and-deny",
+                  "audit-max-rate-hz": "500",
+                  "audit-burst": "64",
+                  "audit-max-records": "4096",
+                  "audit-max-bytes": "1048576"
+                }
+              }
+            ],
+            "worker_limits": {
+              "connect-timeout-ms": "3000",
+              "audit-deny-max-rate-hz": "20",
+              "audit-deny-burst": "20",
+              "audit-deny-max-records": "64",
+              "audit-deny-max-bytes": "65536"
+            },
+            "gateway_limits": {
+              "timeout-ms": "3000",
+              "max-sessions": "1",
+              "audit-max-records-per-second": "500",
+              "audit-max-records": "4096",
+              "audit-max-bytes": "1048576"
+            }
+          }
+        }
+      }
+    }
+  },
+  "runtime_arguments": [
+    "-Rct",
+    "4",
+    "-Rllvm-policy",
+    "fast-compile",
+    "-Rllvm-cache-path",
+    "path",
+    "/work/sdk07-stage-a-cache"
+  ],
+  "official_peer": {
+    "executable": "/opt/ros/jazzy/lib/topic_tools/relay",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "source_commit": "462af78b06ad8baafc27ce09cb3dfee96421cfab",
+    "arguments": [
+      "/sdk07_stage_a/request",
+      "/sdk07_stage_a/reply"
+    ]
+  },
+  "native_environment": {
+    "PATH": "/opt/uwvm/bin:/usr/bin:/bin",
+    "HOME": "/tmp",
+    "TMPDIR": "/tmp",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "AMENT_PREFIX_PATH": "/opt/ros/jazzy",
+    "LD_LIBRARY_PATH": "/opt/ros/jazzy/lib",
+    "ROS_DISTRO": "jazzy",
+    "ROS_DOMAIN_ID": "77",
+    "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp",
+    "ROS_LOCALHOST_ONLY": "1",
+    "ROS_LOG_DIR": "/tmp/sdk07-stage-a-ros-log"
+  }
+}

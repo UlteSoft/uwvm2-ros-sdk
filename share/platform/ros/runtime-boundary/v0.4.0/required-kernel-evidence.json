@@ -1,0 +1,89 @@
+{
+  "format": "uwvm-sdk-kernel-object-required-evidence-v1",
+  "version": "0.4.0",
+  "status": "HISTORICAL_QUESTIONS_ANSWERED_CANDIDATE_REJECTED_NO_CURRENT_BOOT_ADMISSION",
+  "questions": [
+    {
+      "id": "K0-original-cap0-root-assumption",
+      "question": "Which exact actual kernel operations failed for the existing all-cap0 root bootstrap against the locked nondumpable witness, and at which kernel check?",
+      "required": "Reuse the already collected exact VM originals when available: current boot, caller/target PID+birth, UID/GID/user namespace, every capability set, NNP/seccomp/LSM, dumpable transition, operation/path/errno and retirement. UID0 is not an authorization guarantee.",
+      "decision": "R840 root enrollment is withdrawn by task constraint regardless of hypothetical success. Do not add root observation/signing proxies or test new privilege grants."
+    },
+    {
+      "id": "K1-existing-nonroot-open-permissions",
+      "question": "Under the unchanged UID1000 host-role profile, which exact /proc leaf readers can an existing control role open for controller and guardian?",
+      "required": "Per-operation kernel originals for fdinfo/N, maps, cmdline, environ, status, stat, cgroup, mountinfo and any proposed current-executable relation. No new witness trust/key, dumpability change or privileged helper.",
+      "decision": "A denied/unsupported necessary operation blocks the object transport; reports and copied files cannot replace it."
+    },
+    {
+      "id": "K2-actual-SDK-object-receive-and-read",
+      "question": "Can the unchanged docker-default/cap0/NNP1/seccomp2 SDK process receive and itself read only those actual procfs leaf objects through SCM_RIGHTS?",
+      "required": "Actual send/recv, all FD flags/CLOEXEC, fstatfs=PROC_MAGIC, host proc st_dev, kernel d_path, bounded complete raw bytes or exact errno, app status/LSM before+after. Record the actual receiving syscall, file_receive/read mediation and no permission change.",
+      "decision": "No source/object-copy proxy or EACCES acceptance. A successful open in the sender proves neither successful nor fresh reads in the SDK."
+    },
+    {
+      "id": "K3-current-task-current-executable-relation",
+      "question": "What actual kernel primitive, observable by the SDK under the unchanged profiles, ties every maps/executable object to the target's current address space at verification time?",
+      "required": "A concrete primitive and exact source/syscall contract, not an invented ioctl or sender assertion. Live normal case and actual own same-PID exec with old handles retained, pre-read seq buffers and a shared-mm survivor when possible. Same PID/birth, procfs type/path, nonempty maps and a root-owned ELF FD alone are insufficient.",
+      "decision": "No relation provider is currently accepted. If any real old-mm/old-executable case can satisfy the proposed positive predicate, the scheme is rejected; no fallback to self-reported current-exe hashes."
+    },
+    {
+      "id": "K4-current-FD-generation-and-proc-caching",
+      "question": "Can the SDK force current target FD-table sampling and reject stale cached seq_file contents without trusting a sender timestamp or fresh-open claim?",
+      "required": "Actual close/reuse/swap of an own target FD, role exit, buffered partial read, complete reread and shared OFD offset/contention probes, bound to PID/birth before+after. Preserve current original FDinfo and immutable object full hashes.",
+      "decision": "The challenge orders work but does not authenticate a fresh open. Procfs magic/path and a fresh JSON/header time are not freshness proof."
+    },
+    {
+      "id": "K5-full-source-runtime-and-object-budget",
+      "question": "How is the complete current retained source/runtime census independently established, including interpreted source imports, within unchanged limits?",
+      "required": "Original R5 failure has each role36 sources+121 used runtime files+31 sealed runtime sources+3 metadata+1 launch+1 distinct executable FD =193 original FD numbers. Two roles need386 object occurrences; adding a current actual fdinfo reader per original FD and2 lease readers gives774 handles before maps/argv/env/namespace readers. Even safe payload device/inode deduplication leaves263 payload objects+386 fdinfo+2 lease=651. Both exceed512. Supply a bounded streaming/bracket design with independent current kernel census and actual peak-FD/freshness evidence, or report infeasible.",
+      "decision": "Do not drop31 import sources, compare only88 mapped regions, treat all1346 available inputs as simultaneous FDs, silently raise512/batch/250ms/500ms limits or trust the courier's row count.",
+      "budget_counts_are_original_metadata_not_runtime_probe": true
+    },
+    {
+      "id": "K6-current-namespace-cgroup-identity",
+      "question": "How can the SDK independently bind the current role pid/mnt/user/cgroup/time identities and shared cgroup VFS to the actual target without receiving a namespace or directory capability?",
+      "required": "Actual allowed kernel readlink/metadata operations plus existing namespace-aware cgroup2 reader-root/membership/VFS join, current64GiB/swap0/cpuset and PID/birth bracketing. Identify any per-read mediation; an old pre-opened namespace observation is insufficient.",
+      "decision": "Namespace/root/directory/O_PATH/pid-control FDs remain forbidden. If identity requires a forbidden handle or a copied namespace JSON, no implementation is admitted."
+    },
+    {
+      "id": "K7-lease-OFD-safety-and-lifetime",
+      "question": "Can original controller and inherited guardian canonical FLOCK ownership be checked through current narrow kernel fdinfo readers without transferring the lock-owning OFD or another mutable host capability?",
+      "required": "Actual original device/inode/PID/birth/FD, current kernel fdinfo flags/ino/FLOCK, global /proc/locks and visible RO canonical inode. Demonstrate the app receives no canonical OFD, mutable context/host inode, unsafe shared description, directory/namespace/pid-control/DockerFD; independently substantiate safe descriptions without unsigned kcmp-result authority. Own actual losses and retirement must include every courier/reader.",
+      "decision": "R/O access mode alone is insufficient. No early unlock or borrowed proof, no new capability/LSM/dumpability/credential/permission exception, no root proxy. Any unproved safe-description or retirement relation blocks."
+    }
+  ],
+  "actual_VM_probes_received": 0,
+  "SDK01_new_probe_executions": 0,
+  "primary_source_reasoning": {
+    "host_kernel_match_or_runtime_proof": false,
+    "references": [
+      {
+        "url": "https://man7.org/linux/man-pages/man2/ptrace.2.html",
+        "note": "Ptrace-mode checks depend on matching credentials, dumpability, capabilities and LSM. UID0 alone does not satisfy these checks."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/torvalds/linux/v6.12/fs/proc/fd.c",
+        "note": "Illustrative v6.12 source: fdinfo inode permission checks ptrace access; seq_show resolves a task/files entry. This is not proof of installed-kernel read/receive freshness."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/torvalds/linux/v6.12/fs/proc/task_mmu.c",
+        "note": "Illustrative v6.12 maps readers retain an mm reference from open; iteration checks mm users. This does not by itself prove current task->mm association, especially with cached reads or a surviving shared mm."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/torvalds/linux/v6.12/fs/seq_file.c",
+        "note": "Seq readers have per-open description buffer/position state. Probe caching and offset behavior; a fresh header is not evidence of fresh kernel content."
+      },
+      {
+        "url": "https://man7.org/linux/man-pages/man7/unix.7.html",
+        "note": "SCM_RIGHTS passes an open file description reference. It does not certify the sender's source or the freshness of an open, and it may expose shared state."
+      }
+    ]
+  },
+  "minimum_decision": "Return exact actual kernel originals for these required relations. A positive FD-transfer-only probe is insufficient. If current-exe, current namespace, complete census, freshness, safe-OFD or lease relation is unobservable under unchanged profiles, report NO_ADMISSIBLE_IMPLEMENTATION_UNDER_FIXED_CONSTRAINTS instead of weakening authentication.",
+  "actual_VM_probe_result_available": true,
+  "actual_VM_decision_sha256": "547c718a0a115e873ad69c96d21552aca378222925e0021ee6392a5fb88bea57",
+  "actual_VM_next_repair_contract_sha256": "48cb7688731a42327dddf2e066112fbd188d8e8bf3a070d2ea51e89afc742afa",
+  "current_boot_probe_execution_here": 0,
+  "new_relation_evidence_pending": true
+}

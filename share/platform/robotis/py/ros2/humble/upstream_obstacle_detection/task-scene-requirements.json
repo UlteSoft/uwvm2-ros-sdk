@@ -1,0 +1,65 @@
+{
+  "format": "robotis-original-humble-obstacle-scene-requirements-v1",
+  "owner": "04 officialscene,03 originalapplicationandWasmtestinput,02 actualsharedruntime/producer,05 independentacceptance",
+  "native_environment": "ExactofficialHumbleCPUray Burger,sourcea35a56c8/sameHumbleapp90a68bd2; originalmodel/sensors/plugins untouched",
+  "ready_interface": {
+    "binding_path": "example/platform/robotis/simulation/turtlebot3_burger_humble/scene.binding.json",
+    "binding_observed_sha256": "3e1fddc7745cb58e2f210be1338b94f6aa6f3d775f3b8fdb20dfd5ac09efbc1f",
+    "entrypoint": "native_scene.py",
+    "entrypoint_observed_sha256": "a2bf7e2c0382f42c940fb1b4ec35c20a98a919ac4f457687c5e5a9fdbc982798",
+    "ready_file_is_not_vm_admission": true
+  },
+  "actual_completed_environment": "04Humble-native/live-endpoint-r1:actual360ray packets/livePIDs/stopfile/fullretirement, EMPTYworldonly; no originaltask/obstacle/guestcallback/permission acceptance.",
+  "selected_original_obstacle_world": {
+    "repository": "ROBOTIS-GIT/turtlebot3_simulations",
+    "commit": "a35a56c8b04877dc89772b598084d8ce648a9023",
+    "path": "turtlebot3_gazebo/worlds/turtlebot3_dqn_stage1.world",
+    "sha256": "2910e093134a9793a03dec20764aa7af503038d21960b6ec513a3254f17816fc",
+    "model_path": "turtlebot3_gazebo/models/turtlebot3_dqn_world/model.sdf",
+    "model_sha256": "41a22da780796fe694dfaea5829bc7322b288c6ccb905b3514d70bab38beaff8",
+    "wall_links": [
+      {
+        "name": "Wall_1",
+        "pose": "-2.425 0 0 0 -0 1.5708",
+        "size": "5 0.15 0.5"
+      },
+      {
+        "name": "Wall_2",
+        "pose": "0 2.425 0 0 -0 0",
+        "size": "5 0.15 0.5"
+      },
+      {
+        "name": "Wall_3",
+        "pose": "2.425 0 0 0 0 -1.5708",
+        "size": "5 0.15 0.5"
+      },
+      {
+        "name": "Wall_4",
+        "pose": "0 -2.425 0 0 -0 3.14159",
+        "size": "5 0.15 0.5"
+      }
+    ],
+    "purpose": "Use unchanged officialstaticouterwalls as obstacle environment only. No DQN/RL application/model/policy is needed or claimed."
+  },
+  "required_native_scene_extension": "Current04lifecyclefixesemptyworld/defaultspawn.04must expose frozen allowedworld/spawn selection or actualscenario driver for the exact originalworld below;03does not fork/change officialnative_scene/worlds.",
+  "proposed_spawn": {
+    "x": 1.1,
+    "y": 0.0,
+    "z": 0.01,
+    "yaw_rad": 0.0,
+    "initial_facing": "+X to east innerwall atx2.35; nominalinitialrange~1.25m plus actuallaserextrinsicoffset. All expectedvalues are predictions until realcallback/nativephysics evidence."
+  },
+  "original_task_phases": [
+    "Start testobserver/Wasm inputauthority then originalmain; no rawvelocity input before first obstacle stop",
+    "Observe originaldefault0.2mps causingactualmotion, strictlynewerrealOdometry and actualscan callbacks",
+    "Unchangedoriginalmin360frontsectors sees realstaticwall <0.5m; actualoriginalzero forward command/physicalstop before collision; no zero-angular claim unless currentrawyaw0",
+    "IndependentWasmraw-input sends completeTwist vx0,wz0.5; originalobstaclebranch mustretainyaw soactualrotation occurs whileforwardstayszero",
+    "After actualOdom yawturn around2.3rad, independentWasmraw input sends vx0.2,wz0; actualfrontsectorsclear andactualmotion resumes awayfromwall",
+    "IndependentWasmraw allzero yields actualstrictlynewer six-axiszero state; actualWasmBoolcancel is sent onlyafterzero/nativeevidence, and originaltask/sourceallownersretire"
+  ],
+  "needed_feedback_producer": "Actualnative->typedguestcaller-memory/session/per-occurrence CDR/sequence/source receipts and strictVMrole/memory/resource/lifecycleadmission. No recordingorhashset-onlymembership substitutes for physical/callback evidence.",
+  "not_run": "No obstacleworldstarted, no activeguestrun;03hasnotmodified04files. Clock/QoS/close/nativeRIHSsource/actualframeworkAPI limits remainexactruntimeacceptance.",
+  "runtime": "NOT RUN",
+  "official_simulation": "NOT RUN",
+  "accepted": false
+}

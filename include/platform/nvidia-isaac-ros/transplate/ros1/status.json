@@ -1,0 +1,65 @@
+{
+  "format": "uwvm-nvidia-legacy-ros-transplate-status-v1",
+  "vendor": "nvidia-isaac-ros",
+  "ROS_family": "ros1",
+  "status": "BLOCKED_GUEST_CLIENT_PRODUCTS_AND_RUNTIME_QUALIFICATION_MISSING",
+  "API_implementation_claimed": false,
+  "qualified_examples": 0,
+  "published_client_artifacts": [],
+  "clients": {
+    "roscpp": {
+      "common_owner": "SDK01",
+      "official_source": "https://github.com/ros/ros_comm/tree/noetic-devel/clients/roscpp",
+      "required_guest_execution": "actual ROS1 C++ client sources compiled to Wasm",
+      "state": "NOT_RUN_BLOCKED",
+      "qualified_source_version": null,
+      "complete_Wasm_SHA256": null,
+      "actual_VM_execution": false,
+      "native_fallback_permitted": false
+    },
+    "rospy": {
+      "common_owner": "SDK06",
+      "official_source": "https://github.com/ros/ros_comm/tree/noetic-devel/clients/rospy",
+      "required_guest_execution": "actual ROS1 Python client running in python.wasm",
+      "state": "NOT_RUN_BLOCKED",
+      "qualified_source_version": null,
+      "complete_Wasm_SHA256": null,
+      "actual_VM_execution": false,
+      "native_fallback_permitted": false
+    },
+    "rosjava": {
+      "common_owner": "SDK09",
+      "official_source": "https://github.com/rosjava/rosjava_core",
+      "required_guest_execution": "ROS1 Java client AOT to Wasm; host JVM/native AOT excluded",
+      "state": "NOT_RUN_BLOCKED",
+      "qualified_source_version": null,
+      "complete_Wasm_SHA256": null,
+      "actual_VM_execution": false,
+      "native_fallback_permitted": false
+    }
+  },
+  "release_inventory": {
+    "sdk_path": "share/platform/ros/releases/v0.1.0/inventory.json",
+    "SHA256": "01d1f7eb05d4ccab9af42884569be465a2e5708e6c18fc8e20c1d032cf617db2",
+    "required_rows": 37,
+    "inventory_is_not_NVIDIA_support": true
+  },
+  "required_dimensions": {
+    "Wasm": [
+      "wasm32",
+      "wasm64"
+    ],
+    "library_forms": [
+      "binary",
+      "static",
+      "shared"
+    ],
+    "permission_audit": "VM-owned unified permission/session/native-operation producer",
+    "feedback": "actual callbacks/state/sensor payloads in executing Wasm",
+    "same_algorithm": "complete unchanged frozen Wasm bytes across vendors",
+    "all_original_languages_models_modes_and_ROS_versions": "remain mandatory"
+  },
+  "external_environment": "A qualified official simulator may run externally; SDK-authored host ROS clients/observers/sensor bridges cannot replace guest business/callback/feedback execution",
+  "shared_runtime_owner": "VM owner; no SDK-local VM host implementation",
+  "public_xmake_and_xmake_test": "required for each actual migration example; no completed legacy example currently advertised"
+}

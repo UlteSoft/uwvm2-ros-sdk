@@ -1,0 +1,95 @@
+{
+  "scope": "Argument templates consumed from the real VM-owned deployment; this file creates no deployment or admission authority",
+  "scenarios": {
+    "unchanged_wasm_goal_result_fresh_state": {
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache-unchanged_wasm_goal_result_fresh_state",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot",
+        "{adapter}",
+        "{adapter_sha256}",
+        "{policy}",
+        "{policy_sha256}",
+        "--portable-robot-audit-run",
+        "{run_id}"
+      ]
+    },
+    "permission_denied_no_native_effect": {
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache-permission_denied_no_native_effect",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot-audit-inputs",
+        "{adapter}",
+        "{policy}",
+        "--portable-robot-audit-run",
+        "{run_id}"
+      ]
+    },
+    "stale_authority_reference": {
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache-stale_authority_reference",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot",
+        "{adapter}",
+        "{adapter_sha256}",
+        "{policy}",
+        "{policy_sha256}",
+        "--portable-robot-audit-run",
+        "{run_id}"
+      ]
+    },
+    "native_disconnected_before_guest": {
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache-native_disconnected_before_guest",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot",
+        "{adapter}",
+        "{adapter_sha256}",
+        "{policy}",
+        "{policy_sha256}",
+        "--portable-robot-audit-run",
+        "{run_id}"
+      ]
+    }
+  }
+}

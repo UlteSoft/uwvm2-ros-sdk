@@ -1,0 +1,29 @@
+{
+  "format": "uwvm-sdk-staged-required-cases-v1",
+  "scope": "Numbered guest Ruby callback follow-up over actual official ROS2 replies; source-only, no execution acceptance",
+  "Stage_A": {
+    "required": 9,
+    "cases": [
+      "genuine-runtime-and-raw-abi",
+      "correlated-first-guest-callback",
+      "callback-exception-recovered",
+      "stale-callback-generation-refused",
+      "fresh-replacement-guest-callback",
+      "callback-recursion-refused",
+      "ungranted-topic-alias-denied",
+      "retired-publisher-handle-refused",
+      "bounded-idle-feedback-timeout"
+    ],
+    "execution_status": "NOT_RUN_SOURCE_ONLY"
+  },
+  "Stage_B": {
+    "required": 1,
+    "cases": [
+      "fourier-jazzy-vendor-simulation"
+    ],
+    "status": "BLOCKED_REQUIRED_NOT_RUN"
+  },
+  "component_isolation": "NOT_COVERED_ONE_GENUINE_INTERPRETER_TRUST_DOMAIN",
+  "whole_assignment_complete": false,
+  "local_callback_registry_scope": "One genuine interpreter/trust domain; application routing invariants only, no security principal, cross-instance memory or native callback claim"
+}

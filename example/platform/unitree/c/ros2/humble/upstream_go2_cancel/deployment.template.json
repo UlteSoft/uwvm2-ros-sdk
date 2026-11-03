@@ -1,0 +1,66 @@
+{
+  "format": "uwvm-native-ros-run-v2",
+  "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
+  "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
+  "backend": "ros2",
+  "distribution": "humble",
+  "connection": {
+    "node-name": "uwvm_go2_independent_cancel_gateway",
+    "namespace": "/",
+    "domain-id": "@ADMITTED_ROS_DOMAIN_ID@",
+    "rmw-implementation": "rmw_cyclonedds_cpp",
+    "security-mode": "disabled-test",
+    "keystore": "not-applicable",
+    "enclave": "not-applicable"
+  },
+  "execution_timeout_seconds": 15,
+  "examples": {
+    "upstream_go2_cancel": {
+      "arguments": [
+        "request-stop"
+      ],
+      "main_module": "unitree_go2_cancel",
+      "preloads": [],
+      "modules": {
+        "unitree_go2_cancel": {
+          "ros_enabled": true,
+          "grants": [
+            {
+              "alias": "unitree-go2-stop-request",
+              "operation": "topic.publish",
+              "resource": "/uwvmros/go2_stand/cancel",
+              "type": "std_msgs/msg/Bool",
+              "identity": "RIHS01_feb91e995ff9ebd09c0cb3d2aed18b11077585839fb5db80193b62d74528f6c9",
+              "limits": {
+                "max-rate-hz": "1",
+                "burst": "1",
+                "max-bytes-per-second": "1",
+                "audit": "allow-and-deny",
+                "audit-max-rate-hz": "1000",
+                "audit-burst": "128",
+                "audit-max-records": "10000",
+                "audit-max-bytes": "1048576",
+                "max-message-bytes": "1",
+                "max-queue-bytes": "1",
+                "overflow-policy": "drop-oldest",
+                "validator": "none",
+                "max-inflight": "1",
+                "qos.reliability": "reliable",
+                "qos.durability": "transient-local",
+                "qos.history": "keep-last",
+                "qos.depth": "1",
+                "qos.deadline": "infinite",
+                "qos.lifespan": "infinite",
+                "qos.liveliness": "automatic",
+                "qos.liveliness-lease-duration": "infinite",
+                "max-publishers": "1"
+              }
+            }
+          ],
+          "wasi_grants": [],
+          "call_boundary": "same-module"
+        }
+      }
+    }
+  }
+}

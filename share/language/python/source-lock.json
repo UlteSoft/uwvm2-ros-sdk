@@ -10,6 +10,26 @@
   "logical_build_prefix": "/__uwvm_build__/python",
   "files": [
     {
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "bytes": 12477,
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "path": "include/platform/ros1/c/roswasm/detail/ros1/abi.h",
+      "bytes": 85359,
+      "sha256": "666e50f45ad2b3786abaa858e597b89c4e873cc5214ccd4d11abc7de35c2c991"
+    },
+    {
+      "path": "include/platform/ros2/c/roswasm/detail/ros2/abi.h",
+      "bytes": 95726,
+      "sha256": "ccc978219bd47893b6ce4efae4fcb1ebdb7a75c0aadded0001b7dde97310289b"
+    },
+    {
+      "path": "share/language/python/stdlib.json",
+      "bytes": 119588,
+      "sha256": "14fbb3333f05c8cbd69add85b1599c5e65e73b07217376c752e2f853f7fee997"
+    },
+    {
       "path": "share/language/python/upstream.json",
       "bytes": 1397165,
       "sha256": "435a12f2e2342e35632f3af5546964c07eedd37db34246d92dbe86f626416e03"
@@ -21,8 +41,8 @@
     },
     {
       "path": "src/language/js/support/application.h",
-      "bytes": 1460,
-      "sha256": "d0c1a3b869c9624a72fc0e74925a8883a9b7f481dd0d050f6175da13dbfdd5b1"
+      "bytes": 1501,
+      "sha256": "00626c597aaef0f27aa4287f642bffa2eaecf0d3e7f015b7cf05682f00bb0c44"
     },
     {
       "path": "src/language/python/Setup.local",
@@ -31,8 +51,8 @@
     },
     {
       "path": "src/language/python/command.c",
-      "bytes": 9864,
-      "sha256": "f1cba5ca5f0d13fe1bd33e721be2f4af131ab490cbaa31d87a2e09d5ca1e4576"
+      "bytes": 10074,
+      "sha256": "8e9a6620dbac745ad2d0ea0cf62c966ee79a7866dc124d22377d032bf676f295"
     },
     {
       "path": "src/language/python/modules/observation.py",
@@ -155,14 +175,14 @@
       "sha256": "5374be0529d923ddd6ca66011e623bb408e6ec47c1c2031e369fd43a8bbba9ba"
     },
     {
-      "path": "src/language/python/upstream/Android/testbed/gradle/wrapper/gradle-wrapper.properties",
-      "bytes": 232,
-      "sha256": "14185600879fb02a74d61b14eec29cbb4900b93fbc26fe1f2a978636d9dd1ce6"
-    },
-    {
       "path": "src/language/python/upstream/Android/testbed/gradle.properties",
       "bytes": 1134,
       "sha256": "7f00c53d6c043250041ed27d6946de304e2df942b3bb3765885ee899d9151406"
+    },
+    {
+      "path": "src/language/python/upstream/Android/testbed/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 232,
+      "sha256": "14185600879fb02a74d61b14eec29cbb4900b93fbc26fe1f2a978636d9dd1ce6"
     },
     {
       "path": "src/language/python/upstream/Android/testbed/settings.gradle.kts",
@@ -305,6 +325,21 @@
       "sha256": "67b009445400ef34b7b3b76d14340808c7cc5010ea70f9fce06ae873ff8a523a"
     },
     {
+      "path": "src/language/python/upstream/Apple/testbed/iOSTestbed.xcodeproj/project.pbxproj",
+      "bytes": 23191,
+      "sha256": "eb4091d2577724034ba1874527ff1d0db988f3dbe985ea0abac67a488a3dfd00"
+    },
+    {
+      "path": "src/language/python/upstream/Apple/testbed/iOSTestbed.xcodeproj/xcshareddata/xcschemes/iOSTestbed.xcscheme",
+      "bytes": 3622,
+      "sha256": "8e64956907c730b3086f7a110a48b095caf826788daf94612eb3f0a52b550dfe"
+    },
+    {
+      "path": "src/language/python/upstream/Apple/testbed/iOSTestbed.xctestplan",
+      "bytes": 909,
+      "sha256": "acb3a314a6a581aeda26d58db2a8794862a1832c6de033a07e00bcb3b37f3ab4"
+    },
+    {
       "path": "src/language/python/upstream/Apple/testbed/iOSTestbed/AppDelegate.h",
       "bytes": 387,
       "sha256": "fa52136045535a9b768488ae1a034a5581b8c7a53423f343ea132624f3333da2"
@@ -363,21 +398,6 @@
       "path": "src/language/python/upstream/Apple/testbed/iOSTestbed/main.m",
       "bytes": 331,
       "sha256": "824ac7c419d540d0b1a74ea08d99a0921fd992abccf03fe28c6d8f935b1100e8"
-    },
-    {
-      "path": "src/language/python/upstream/Apple/testbed/iOSTestbed.xcodeproj/project.pbxproj",
-      "bytes": 23191,
-      "sha256": "eb4091d2577724034ba1874527ff1d0db988f3dbe985ea0abac67a488a3dfd00"
-    },
-    {
-      "path": "src/language/python/upstream/Apple/testbed/iOSTestbed.xcodeproj/xcshareddata/xcschemes/iOSTestbed.xcscheme",
-      "bytes": 3622,
-      "sha256": "8e64956907c730b3086f7a110a48b095caf826788daf94612eb3f0a52b550dfe"
-    },
-    {
-      "path": "src/language/python/upstream/Apple/testbed/iOSTestbed.xctestplan",
-      "bytes": 909,
-      "sha256": "acb3a314a6a581aeda26d58db2a8794862a1832c6de033a07e00bcb3b37f3ab4"
     },
     {
       "path": "src/language/python/upstream/Doc/.ruff.toml",
@@ -3990,6 +4010,11 @@
       "sha256": "82d2070657eed912a252e259a9b82d5d1a06dbc4ab7bb0fb2f1dd127289d6c7e"
     },
     {
+      "path": "src/language/python/upstream/Include/internal/mimalloc/mimalloc.h",
+      "bytes": 40122,
+      "sha256": "10091dd950023b44c4bcaf96ff2106d407197da6a4e0499c5227f5453d249151"
+    },
+    {
       "path": "src/language/python/upstream/Include/internal/mimalloc/mimalloc/atomic.h",
       "bytes": 18368,
       "sha256": "704edea738332d2ad6b689b36c072cd7629141d994b5f71d4b86074512ec14e3"
@@ -4013,11 +4038,6 @@
       "path": "src/language/python/upstream/Include/internal/mimalloc/mimalloc/types.h",
       "bytes": 29177,
       "sha256": "3df1bf3a146cf583d330308351dfdaa570b8e9f15a4ab530cc559125a059a082"
-    },
-    {
-      "path": "src/language/python/upstream/Include/internal/mimalloc/mimalloc.h",
-      "bytes": 40122,
-      "sha256": "10091dd950023b44c4bcaf96ff2106d407197da6a4e0499c5227f5453d249151"
     },
     {
       "path": "src/language/python/upstream/Include/internal/pycore_abstract.h",
@@ -13120,14 +13140,14 @@
       "sha256": "2507eab0cb7a594b25fb2fc1c6a0b0f27af53d1980ba358d4e0c1b1dc32a9e63"
     },
     {
-      "path": "src/language/python/upstream/Lib/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test/empty",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
       "path": "src/language/python/upstream/Lib/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test.py",
       "bytes": 147,
       "sha256": "a6bcf5ef7e3d8e314252b59041a8c80e76fd242c61d68a093161b1d0a5bd0c56"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test/empty",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "src/language/python/upstream/Lib/test/test_importlib/namespace_pkgs/nested_portion1.zip",
@@ -14840,21 +14860,6 @@
       "sha256": "5f05f08492107733ad58038c13dd89b7b5700b4be641f532f2e53f8e7882684d"
     },
     {
-      "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/array/file-end-after-val.toml",
-      "bytes": 4,
-      "sha256": "a37e7698e409b6da0461a1f8b2cc88cc6ae6c6f82e5611fe42931940b0153e8a"
-    },
-    {
-      "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/array/unclosed-after-item.toml",
-      "bytes": 5,
-      "sha256": "494148458a3798d3ccd212187e1bf433a1630af911b957838798900cbc5166e5"
-    },
-    {
-      "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/array/unclosed-empty.toml",
-      "bytes": 3,
-      "sha256": "3db51ee5963b73ee35613677d2693587b81ea0cab270f66442b87e45942972b9"
-    },
-    {
       "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/array-missing-comma.toml",
       "bytes": 20,
       "sha256": "15be72d546f383b8b8361cbff8311fb327afb92833ca6e03154db30b5fc93abd"
@@ -14868,6 +14873,21 @@
       "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/array-of-tables/overwrite-bool-with-aot.toml",
       "bytes": 12,
       "sha256": "84532b424b6b7922d81f6a0cf3c5e024630abe402b8f10e70eb4e062042d1583"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/array/file-end-after-val.toml",
+      "bytes": 4,
+      "sha256": "a37e7698e409b6da0461a1f8b2cc88cc6ae6c6f82e5611fe42931940b0153e8a"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/array/unclosed-after-item.toml",
+      "bytes": 5,
+      "sha256": "494148458a3798d3ccd212187e1bf433a1630af911b957838798900cbc5166e5"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/array/unclosed-empty.toml",
+      "bytes": 3,
+      "sha256": "3db51ee5963b73ee35613677d2693587b81ea0cab270f66442b87e45942972b9"
     },
     {
       "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/basic-str-ends-in-escape.toml",
@@ -14908,6 +14928,11 @@
       "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/dotted-keys/extend-defined-table.toml",
       "bytes": 32,
       "sha256": "a94253c0f1b690e64aed86a3aa8eb55027d52d5197a47bba704fcc9695e1b82c"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/inline-table-missing-comma.toml",
+      "bytes": 51,
+      "sha256": "4f42b3e28edfc8204b72994195aea74662b90ee8fc226e7b9af05f493d3b1636"
     },
     {
       "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/inline-table/define-twice-in-subtable.toml",
@@ -14963,11 +14988,6 @@
       "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/inline-table/unclosed-empty.toml",
       "bytes": 3,
       "sha256": "b1615652d240e41102239cf89cc56256d30dbc360e314f2ddbf56829791de1db"
-    },
-    {
-      "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/inline-table-missing-comma.toml",
-      "bytes": 51,
-      "sha256": "4f42b3e28edfc8204b72994195aea74662b90ee8fc226e7b9af05f493d3b1636"
     },
     {
       "path": "src/language/python/upstream/Lib/test/test_tomllib/data/invalid/invalid-comment-char.toml",
@@ -17515,6 +17535,11 @@
       "sha256": "f16699a9276beddfd329bbb16cfe3818c30e0fc41c38b9b01608132d237b5eed"
     },
     {
+      "path": "src/language/python/upstream/Mac/Resources/app-store-compliance.patch",
+      "bytes": 1383,
+      "sha256": "f56e472da7d14223ecab83a3bd62778978dbad3e35433c90310e5054dfdc7a64"
+    },
+    {
       "path": "src/language/python/upstream/Mac/Resources/app/Info.plist.in",
       "bytes": 1686,
       "sha256": "7eee7ba08f50a77169a50d096819805897a4a7cb0279d66ad4dfa0137ed5f2a4"
@@ -17533,11 +17558,6 @@
       "path": "src/language/python/upstream/Mac/Resources/app/Resources/PythonInterpreter.icns",
       "bytes": 42658,
       "sha256": "c5bee95ff6bfdf1a15729e4a822869689ed03b76aace57730c94a9310b66446f"
-    },
-    {
-      "path": "src/language/python/upstream/Mac/Resources/app-store-compliance.patch",
-      "bytes": 1383,
-      "sha256": "f56e472da7d14223ecab83a3bd62778978dbad3e35433c90310e5054dfdc7a64"
     },
     {
       "path": "src/language/python/upstream/Mac/Resources/framework/Info.plist.in",
@@ -18805,6 +18825,16 @@
       "sha256": "0ae6eb9b9157ffe8db001068d8c4f6372ac81c97b7e83f6cf0dfe03a4bbe7973"
     },
     {
+      "path": "src/language/python/upstream/Modules/_ssl.c",
+      "bytes": 213365,
+      "sha256": "d637319bb6561c9e3a47e0f93ee3336a7a3deead13ac169a5c9c5dc8ab65af62"
+    },
+    {
+      "path": "src/language/python/upstream/Modules/_ssl.h",
+      "bytes": 2542,
+      "sha256": "72b80d9bb1d6c30af4770e96b281eb5ff9ffbea6555addd74ebedbf2bca83874"
+    },
+    {
       "path": "src/language/python/upstream/Modules/_ssl/cert.c",
       "bytes": 6721,
       "sha256": "6f026704ee0cbdcb72a724173e7b29bfaa72ddb0815a2b6abe10a099830fd80a"
@@ -18823,16 +18853,6 @@
       "path": "src/language/python/upstream/Modules/_ssl/misc.c",
       "bytes": 1070,
       "sha256": "b69486720f18df77c41ddfefdc1fba7df2b500280f61b232891ad7890fe2420a"
-    },
-    {
-      "path": "src/language/python/upstream/Modules/_ssl.c",
-      "bytes": 213365,
-      "sha256": "d637319bb6561c9e3a47e0f93ee3336a7a3deead13ac169a5c9c5dc8ab65af62"
-    },
-    {
-      "path": "src/language/python/upstream/Modules/_ssl.h",
-      "bytes": 2542,
-      "sha256": "72b80d9bb1d6c30af4770e96b281eb5ff9ffbea6555addd74ebedbf2bca83874"
     },
     {
       "path": "src/language/python/upstream/Modules/_ssl_data_111.h",
@@ -19145,6 +19165,11 @@
       "sha256": "3f00bcbe25396c9667af66c6252aa4439e966148c27cbfadf12da10e77e12fb2"
     },
     {
+      "path": "src/language/python/upstream/Modules/_testinternalcapi.c",
+      "bytes": 83067,
+      "sha256": "a332f7906ef9abfd8c2a1b914d22c369fa400193b672429797aacb6806e32586"
+    },
+    {
       "path": "src/language/python/upstream/Modules/_testinternalcapi/README.txt",
       "bytes": 281,
       "sha256": "85e299d4af4ac69d0c4b4f3add4be7fdae4f21b7eb5a1ab3b4760d0c35fe382b"
@@ -19185,9 +19210,9 @@
       "sha256": "2e7affa443fa756b60df407b8891caf7d37f5eb2625174fe4a092b6c4023cb7a"
     },
     {
-      "path": "src/language/python/upstream/Modules/_testinternalcapi.c",
-      "bytes": 83067,
-      "sha256": "a332f7906ef9abfd8c2a1b914d22c369fa400193b672429797aacb6806e32586"
+      "path": "src/language/python/upstream/Modules/_testlimitedcapi.c",
+      "bytes": 3032,
+      "sha256": "92c13e5a2fb9771015c8f9153de9de9ee950a4cd6acdc4dccea20d53304a4c55"
     },
     {
       "path": "src/language/python/upstream/Modules/_testlimitedcapi/abstract.c",
@@ -19353,11 +19378,6 @@
       "path": "src/language/python/upstream/Modules/_testlimitedcapi/weakref.c",
       "bytes": 2104,
       "sha256": "be089f661b858eb421786e3ef5657cf75833b0678efdf14eb9e1bbd8b82820d3"
-    },
-    {
-      "path": "src/language/python/upstream/Modules/_testlimitedcapi.c",
-      "bytes": 3032,
-      "sha256": "92c13e5a2fb9771015c8f9153de9de9ee950a4cd6acdc4dccea20d53304a4c55"
     },
     {
       "path": "src/language/python/upstream/Modules/_testmultiphase.c",
@@ -25515,16 +25535,6 @@
       "sha256": "6e9d1dbf12a7a98f4f77204767d290f5ab76eb41313576090d0c2c338a890bdb"
     },
     {
-      "path": "src/language/python/upstream/Tools/wasm/wasi/__main__.py",
-      "bytes": 19072,
-      "sha256": "821a4a68131ec959003713a68e9c13aeb662ccbe3693c87c437efa9bd9b3d5f2"
-    },
-    {
-      "path": "src/language/python/upstream/Tools/wasm/wasi/config.site-wasm32-wasi",
-      "bytes": 1724,
-      "sha256": "c5a748adda8e186a2287cf82e02e1167a025838234b46bf7afe7298aa02c9106"
-    },
-    {
       "path": "src/language/python/upstream/Tools/wasm/wasi-env",
       "bytes": 2095,
       "sha256": "7979add4204df3e041de5c57dc6b72d4fa7df855f23664de145df22699106f55"
@@ -25533,6 +25543,16 @@
       "path": "src/language/python/upstream/Tools/wasm/wasi.py",
       "bytes": 505,
       "sha256": "8916af3380e465b3208d1b62c3e9948c1ec659d1883fed8fdc41d25b51ef3c8c"
+    },
+    {
+      "path": "src/language/python/upstream/Tools/wasm/wasi/__main__.py",
+      "bytes": 19072,
+      "sha256": "821a4a68131ec959003713a68e9c13aeb662ccbe3693c87c437efa9bd9b3d5f2"
+    },
+    {
+      "path": "src/language/python/upstream/Tools/wasm/wasi/config.site-wasm32-wasi",
+      "bytes": 1724,
+      "sha256": "c5a748adda8e186a2287cf82e02e1167a025838234b46bf7afe7298aa02c9106"
     },
     {
       "path": "src/language/python/upstream/Tools/wasm/wasm_build.py",
@@ -25650,6 +25670,11 @@
       "sha256": "e5188781c440e38f34241b35f8025cfa9e8947ea51931b35ff9424f9bcda7551"
     },
     {
+      "path": "src/platform/ros/py/_native.c",
+      "bytes": 52515,
+      "sha256": "e25a651450323243f7a06d167b2254d57eee97c57b37c58f136ae8730cb1ca3d"
+    },
+    {
       "path": "tools/language/js/abi_dispatch.py",
       "bytes": 6577,
       "sha256": "06e08835aecda4af454ad7d078d6e568179380c49eb6ce90eafadfd6a5447b5d"
@@ -25661,8 +25686,8 @@
     },
     {
       "path": "tools/language/js/pack.lua",
-      "bytes": 13396,
-      "sha256": "92fd918503bb627a1675f2f402f65d7ab0259cbdabf65dc73cdb0d5daead153a"
+      "bytes": 17494,
+      "sha256": "4c929e48355e8ec21f29b008348fbeac0a2e6eb3e3caf1c2f0eb461fec75c04b"
     },
     {
       "path": "tools/language/js/wasm.py",
@@ -25670,9 +25695,14 @@
       "sha256": "353f7a98053513d6de0f70c1c975c8b04ddb9220484d507c425cfea567df965b"
     },
     {
+      "path": "tools/language/python/bridge.py",
+      "bytes": 1547,
+      "sha256": "2467e8707f36698e89e2f7167dae1b755bd77d3aaad4bce5d601e1f502e85f21"
+    },
+    {
       "path": "tools/language/python/build.py",
-      "bytes": 10302,
-      "sha256": "18dc6579ae1095b8a4ab72fbf1d457c7b722834a281acbc86ad200545b32fb39"
+      "bytes": 10619,
+      "sha256": "5d3fff60b953363c5413d1951a8fbff8d1a9344f7f4132a5208b1d40545c1539"
     },
     {
       "path": "tools/language/python/build_clock.c",
@@ -25700,9 +25730,19 @@
       "sha256": "6d395bcf9fd8270b7bd87c6e74189ff896372af45dc5c2a310eb53aa8409f781"
     },
     {
+      "path": "tools/language/python/relink_stdlib.py",
+      "bytes": 8313,
+      "sha256": "adb2964a90850891a809947b2a0559f006b16096083680693aa9db435fd02e9c"
+    },
+    {
       "path": "tools/language/python/runtime_paths.mk",
       "bytes": 705,
       "sha256": "3709ad9df68d5838b1bb10ab2a1a6dc0b6d0221fd261c258fb856243e598e79b"
+    },
+    {
+      "path": "tools/language/python/transplate.lua",
+      "bytes": 9186,
+      "sha256": "7749fa42894242e5d232f7c164eecb705b655fecd62bbea350cec33a3c1d6e15"
     }
   ],
   "external_inputs": [

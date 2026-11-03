@@ -1,0 +1,39 @@
+{
+  "format": "robotis-humble-original-application-deployment-contract-v1",
+  "application_origin": "ExactoriginalHumble90a68bd2e3c61c12966779da89d8eeaec82730e9,3197Bunchanged",
+  "producer": "Existing common fourgenuine CPython engines and formalstdlib, not custom runtime/nativeapp or sourcefixture",
+  "projects": [
+    "example/platform/robotis/py/ros2/humble/upstream_obstacle_detection",
+    "example/platform/robotis/c/ros2/humble/obstacle_input"
+  ],
+  "original_behavior": "100ms grantedROStimer; source0.2m/s/0.5m strictfrontsector decision; exact[0:int(n/4)]/[int(3*n/4):360]min/IEEE readings; obstacle zerosforward butpreservesrequestedangularz; all6axes originalclearbranch; no invented finalzero or sensorfreshnessgate.",
+  "native_environment": "Pinned official Humble DQNstage1 world/CPUray360 at5Hz, Twist/odom, spawn(1.1,0,.01,yaw0) is prepared; native ready/retirement supports environment only. Actual original app/physical task NOT RUN; no Jazzy transport adapter.",
+  "actual_body_decisions": "Only original module insideWasm; vendorentry configuresbindings/realWASI pacing/independentBoolcontrol and preservesprimary+cleanup errors. Nativebridge onlyfieldtransport to officialdriver, no hostmin/obstacle/raw-input application.",
+  "finite_shared_api_budget": "Implemented public Context lifetime=until_shutdown, one whole-invocation300001 driver-call failure budget. _Pacing.calls is diagnostic only; no65536 guard, reset/reconfigure, slower polling or privateContext. Same1ms actualWASI pacing and actual independentBooltrue+successful ownerclose required for normal return. Shared exhaustion propagates as failure with owner cleanup. Driver credits are not elapsed milliseconds or original task PASS.",
+  "shared_runtime_remaining": [
+    "Public shared33 logger throttle/SYSTEMclock preopen and shared40 until_shutdown are integrated; actual original constructor/callback/log/cancel/lifetime source execution still NOT RUN.",
+    "Actual native trusted IEEE LaserScan registry/codec+exact type support/QoS/private domain/paired gateway/source guard must be real; metadata/readiness alone is not live interoperability.",
+    "Strict05-VM-001 source/collector/typedregistry/PID-birth/lifecycle enrollment and full-stage native/VM capacity must qualify the selected invocation before task execution. Original full normal120/fault/fresh-generation recovery/retirement remains unqualified."
+  ],
+  "required_original_observations": [
+    "Actualno-scan no-publish",
+    "360realranges and originalIEEE min semantics",
+    "Actualfree-space movement+realOdometry displacement",
+    "Actualobstacle below0.5 zerosforward, preservesrawyaw; angularstop onlywhen yaw0",
+    "Actualclearance/resume and explicit zero rawTwist yieldsactualstopfeedback",
+    "IndependentrealWasm cancel onlyafterfeedback/holdrequirements; alldescendants retire",
+    "Actualmemory/interface/module/quota/revocation/invalidinput negatives; no nativeapplication/refeedback replay"
+  ],
+  "build": "PENDING_R54_PUBLIC_COMMON_PRODUCER",
+  "runtime": "NOT RUN",
+  "official_simulation": "NOT RUN",
+  "accepted": false,
+  "task_scene_requirements": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/task-scene-requirements.json",
+  "bootstrap_lifetime": {
+    "profile": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bootstrap-lifetime.profile.json",
+    "sha256": "fe9d945f8430ed764abea294a0c4aee824b64175fefc12bfdbea0da976e50ceb",
+    "single_context_credit_budget": 300001,
+    "watchdog_seconds": 300,
+    "pacing_ns_unchanged": 1000000
+  }
+}

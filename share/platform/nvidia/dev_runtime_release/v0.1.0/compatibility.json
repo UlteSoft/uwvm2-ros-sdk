@@ -1,0 +1,1023 @@
+{
+  "format": "sdk10-nvidia-dev-runtime-release-compatibility-v1",
+  "observed_at_UTC": "2026-10-26T23:16:25.233501+00:00",
+  "state": "PRIMARY_SOURCE_COMPATIBILITY_RESEARCH_ONLY_NO_DEV_BINARY_OR_MIGRATION_ACCEPTANCE",
+  "runtime_release_owner": "VM owner, not SDK10; no workflow/packaging/VM/common source edited",
+  "original_requirements_retained": true,
+  "all_requested_architectures": [
+    {
+      "target": "x86_64",
+      "official_Isaac_profile": "Only exact listed x86_64 tuple; hardware/driver/profile required",
+      "NVIDIA_release_state": "BLOCKED_NOT_QUALIFIED",
+      "general_VM_target_still_required": true,
+      "final_ELF_glibc_symbol_floor": null,
+      "final_ELF_DT_NEEDED_PT_INTERP_RPATH_RUNPATH": "NOT_RUN",
+      "minimum_glibc_environment_actual_execution": "NOT_RUN",
+      "source_only_does_not_qualify_binary": true
+    },
+    {
+      "target": "i686",
+      "official_Isaac_profile": "NO_SUPPORTED_ISAAC_TUPLE_ESTABLISHED; ordinary ROS or historical TK1 CUDA does not establish this Isaac profile",
+      "NVIDIA_release_state": "BLOCKED_UPSTREAM_TUPLE_NOT_SUPPORTED_OR_ESTABLISHED",
+      "general_VM_target_still_required": true,
+      "final_ELF_glibc_symbol_floor": null,
+      "final_ELF_DT_NEEDED_PT_INTERP_RPATH_RUNPATH": "NOT_RUN",
+      "minimum_glibc_environment_actual_execution": "NOT_RUN",
+      "source_only_does_not_qualify_binary": true
+    },
+    {
+      "target": "aarch64",
+      "official_Isaac_profile": "Jetson L4T and DGX/SBSA are distinct; generic aarch64 alone is insufficient",
+      "NVIDIA_release_state": "BLOCKED_NOT_QUALIFIED",
+      "general_VM_target_still_required": true,
+      "final_ELF_glibc_symbol_floor": null,
+      "final_ELF_DT_NEEDED_PT_INTERP_RPATH_RUNPATH": "NOT_RUN",
+      "minimum_glibc_environment_actual_execution": "NOT_RUN",
+      "source_only_does_not_qualify_binary": true
+    },
+    {
+      "target": "arm",
+      "official_Isaac_profile": "NO_SUPPORTED_ISAAC_TUPLE_ESTABLISHED; ordinary ROS or historical TK1 CUDA does not establish this Isaac profile",
+      "NVIDIA_release_state": "BLOCKED_UPSTREAM_TUPLE_NOT_SUPPORTED_OR_ESTABLISHED",
+      "general_VM_target_still_required": true,
+      "final_ELF_glibc_symbol_floor": null,
+      "final_ELF_DT_NEEDED_PT_INTERP_RPATH_RUNPATH": "NOT_RUN",
+      "minimum_glibc_environment_actual_execution": "NOT_RUN",
+      "source_only_does_not_qualify_binary": true
+    },
+    {
+      "target": "armhf",
+      "official_Isaac_profile": "NO_SUPPORTED_ISAAC_TUPLE_ESTABLISHED; ordinary ROS or historical TK1 CUDA does not establish this Isaac profile",
+      "NVIDIA_release_state": "BLOCKED_UPSTREAM_TUPLE_NOT_SUPPORTED_OR_ESTABLISHED",
+      "general_VM_target_still_required": true,
+      "final_ELF_glibc_symbol_floor": null,
+      "final_ELF_DT_NEEDED_PT_INTERP_RPATH_RUNPATH": "NOT_RUN",
+      "minimum_glibc_environment_actual_execution": "NOT_RUN",
+      "source_only_does_not_qualify_binary": true
+    }
+  ],
+  "official_Isaac_release_profiles": [
+    {
+      "id": "0.9.0-ea1",
+      "common_tags": [
+        "v0.9.0-ea1"
+      ],
+      "documented_ROS": "Foxy",
+      "x86_64": {
+        "Ubuntu_documented": "20.04 container source",
+        "CUDA_documented": "11.2.0-devel container default; not measured minimum",
+        "driver_documented": null,
+        "GPU_documented": null,
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Jetson hardware exact list not established from this sparse tag",
+        "JetPack_documented": [
+          "4.6"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "4.6",
+            "L4T": "32.6.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "historical release-specific API, actual source/ABI required",
+      "primary_docs": [
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d1e5562b4afcc8f98d6e74fb8ec4e92985522e23/docker/Dockerfile.x86_64.base",
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d1e5562b4afcc8f98d6e74fb8ec4e92985522e23/docker/Dockerfile.aarch64.base"
+      ],
+      "notes": [
+        "Sparse tag README has no complete support table. NVIDIA-authored aarch64 Dockerfile selects third-party dustynv/ros:foxy-ros-base-l4t-r32.6.1; this is a source default, not a qualified official binary or full hardware matrix."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "0.9.1-ea2",
+      "common_tags": [
+        "v0.9.1-ea2"
+      ],
+      "documented_ROS": "Foxy",
+      "x86_64": {
+        "Ubuntu_documented": "20.04+",
+        "CUDA_documented": "11.1+",
+        "driver_documented": null,
+        "GPU_documented": null,
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Jetson; tag README does not enumerate every model",
+        "JetPack_documented": [
+          "4.6"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "4.6",
+            "L4T": "32.6.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "historical release-specific API, actual source/ABI required",
+      "primary_docs": [
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/b5261b2d7cd3a1e9dfb857ad5a0664766dbd385c/README.md"
+      ],
+      "notes": [],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "0.9.3-ea3",
+      "common_tags": [
+        "v0.9.3-ea3"
+      ],
+      "documented_ROS": "Foxy",
+      "x86_64": {
+        "Ubuntu_documented": "20.04+",
+        "CUDA_documented": "11.4",
+        "driver_documented": null,
+        "GPU_documented": null,
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Jetson; tag README does not enumerate every model",
+        "JetPack_documented": [
+          "4.6.1"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "4.6.1",
+            "L4T": "32.7.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "historical release-specific API, actual source/ABI required",
+      "primary_docs": [
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/db2f8a758e081c487e1e784bec7528221d363ad3/README.md"
+      ],
+      "notes": [],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "0.10-dp",
+      "common_tags": [
+        "v0.10.0-dp",
+        "v0.10.1-dp"
+      ],
+      "documented_ROS": "Humble",
+      "x86_64": {
+        "Ubuntu_documented": "20.04+; development image explicitly uses Focal",
+        "CUDA_documented": "11.6.1+",
+        "driver_documented": null,
+        "GPU_documented": null,
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Orin and Xavier",
+        "JetPack_documented": [
+          "5.0.1 DP"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "5.0.1 DP",
+            "L4T": "34.1.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "historical release-specific API, actual source/ABI required",
+      "primary_docs": [
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/9da5dc1bef4543d36e8c84aeeb0e60f4baf9329f/README.md",
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/ae66a08fd852a994db08fd53f74b82940aacca96/README.md"
+      ],
+      "notes": [],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "0.11-0.20-dp",
+      "common_tags": [
+        "v0.11.0-dp",
+        "v0.20.0-dp"
+      ],
+      "documented_ROS": "Humble",
+      "x86_64": {
+        "Ubuntu_documented": "20.04+",
+        "CUDA_documented": "11.6.1+",
+        "driver_documented": null,
+        "GPU_documented": null,
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Orin and Xavier",
+        "JetPack_documented": [
+          "5.0.2"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "5.0.2",
+            "L4T": "35.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "historical release-specific API, actual source/ABI required",
+      "primary_docs": [
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/bdfca130d1405ca41558c8d3dd29b60d17e666cf/README.md",
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/3a2cf9e3b08d6989439edfe4e3358fc5868b10b5/README.md"
+      ],
+      "notes": [
+        "Tag documentation rejects ROS2 releases earlier than Humble."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "0.30-0.31-dp",
+      "common_tags": [
+        "v0.30.0-dp",
+        "v0.31.0-dp"
+      ],
+      "documented_ROS": "Humble",
+      "x86_64": {
+        "Ubuntu_documented": "20.04+",
+        "CUDA_documented": "11.8+",
+        "driver_documented": null,
+        "GPU_documented": null,
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Orin and Xavier",
+        "JetPack_documented": [
+          "5.1.1"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "5.1.1",
+            "L4T": "35.3.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "historical release-specific API, actual source/ABI required",
+      "primary_docs": [
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a4ad647fda943ad9bf511393d91f1b8e0138c1d0/README.md",
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/b9834877677e759cd19bf878bbc885d02ee54539/README.md"
+      ],
+      "notes": [],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "2.0",
+      "common_tags": [
+        "v2.0.0"
+      ],
+      "documented_ROS": "Humble",
+      "x86_64": {
+        "Ubuntu_documented": "Focal development image README; exact host floor unresolved",
+        "CUDA_documented": "NOT_ESTABLISHED: exact Docker source selects nvcr.io/nvidia/tritonserver:22.09-py3",
+        "driver_documented": null,
+        "GPU_documented": null,
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Exact Docker source selects l4t-base:35.4.1; hardware qualification pending",
+        "JetPack_documented": [
+          "5.1.2"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "5.1.2",
+            "L4T": "35.4.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "historical release-specific API, actual source/ABI required",
+      "primary_docs": [
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/6d3c5c00e0e2b3fc1d75eb4286848d23b05d6dca/README.md",
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/6d3c5c00e0e2b3fc1d75eb4286848d23b05d6dca/docker/Dockerfile.aarch64",
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/6d3c5c00e0e2b3fc1d75eb4286848d23b05d6dca/docker/Dockerfile.x86_64"
+      ],
+      "notes": [
+        "JetPack mapping comes from pinned source L4T default plus NVIDIA JetPack archive. No numeric CUDA minimum inferred from a container tag."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "2.1",
+      "common_tags": [
+        "v2.1.0"
+      ],
+      "documented_ROS": "Humble; ROS1 Noetic only via NITROS bridge",
+      "x86_64": {
+        "Ubuntu_documented": "20.04+",
+        "CUDA_documented": "11.8+",
+        "driver_documented": null,
+        "GPU_documented": "Compute guide: Volta or newer, VRAM>=8GB; host RAM16GB; full per-package support still requires qualification",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Orin and Xavier",
+        "JetPack_documented": [
+          "5.1.2"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "5.1.2",
+            "L4T": "35.4.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS; pinned2.1 GXF source installs CUDA11.8 x86 or JetPack5.1 libraries; wrapper STATIC does not make GXF core/extension binaries static",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-2.1/getting_started/index.html",
+        "https://nvidia-isaac-ros.github.io/v/release-2.1/getting_started/hardware_setup/compute/index.html"
+      ],
+      "notes": [
+        "Focal2.1 buildfarm no longer supported after2025-06-30; old Ubuntu20.04 Humble debs unavailable after infrastructure incident. Source release-2.1 remains. Preserve this required historical row as blocked, not N/A."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "3.0",
+      "common_tags": [
+        "v3.0.0",
+        "v3.0.1"
+      ],
+      "documented_ROS": "Humble",
+      "x86_64": {
+        "Ubuntu_documented": "22.04 release baseline",
+        "CUDA_documented": "12.2 in3.0 release notes",
+        "driver_documented": null,
+        "GPU_documented": null,
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Orin; release3.0 removed Xavier/JetPack5.1.2 support",
+        "JetPack_documented": [
+          "6.0"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "6.0",
+            "L4T": "36.3"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS release-specific client/types; not latest Buffer ABI",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-3.1/releases/index.html"
+      ],
+      "notes": [
+        "3.0.0 release2024-05-30;3.0.1 update2024-06-14. Exact x86 GPU and all patch dependency floors remain unresolved."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "3.1",
+      "common_tags": [
+        "v3.1.0"
+      ],
+      "documented_ROS": "Humble",
+      "x86_64": {
+        "Ubuntu_documented": "22.04+",
+        "CUDA_documented": "12.2+",
+        "driver_documented": null,
+        "GPU_documented": "PRIMARY_CONFLICT: platform table Ampere+; compute guide Volta+, >=8GB. No whole-suite V100 support inferred.",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Orin",
+        "JetPack_documented": [
+          "6.0"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "6.0",
+            "L4T": "36.3"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS release-specific client/types; not latest Buffer ABI",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-3.1/getting_started/index.html",
+        "https://nvidia-isaac-ros.github.io/v/release-3.1/getting_started/hardware_setup/compute/index.html"
+      ],
+      "notes": [
+        "Compute guide requires R36rev3.0; no numeric NVIDIA driver floor established in that page."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "3.2",
+      "common_tags": [
+        "v3.2-1",
+        "v3.2-10",
+        "v3.2-11",
+        "v3.2-12",
+        "v3.2-13",
+        "v3.2-14",
+        "v3.2-15",
+        "v3.2-2",
+        "v3.2-3",
+        "v3.2-4",
+        "v3.2-5",
+        "v3.2-6",
+        "v3.2-7",
+        "v3.2-8",
+        "v3.2-9",
+        "v3.2.0"
+      ],
+      "documented_ROS": "Humble only",
+      "x86_64": {
+        "Ubuntu_documented": "22.04+",
+        "CUDA_documented": "12.6+",
+        "driver_documented": ">=560 per release3.2 compute guide",
+        "GPU_documented": "Ampere+ and >=8GB; host RAM16GB;12GB VRAM recommended",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Orin;4GB Orin Nano not recommended",
+        "JetPack_documented": [
+          "6.1",
+          "6.2"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "6.1",
+            "L4T": "36.4"
+          },
+          {
+            "JetPack": "6.2",
+            "L4T": "36.4.3"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS; v3.2.0 GXF links/install libgxf_core/logger/multimedia/cuda.so; static wrapper is not entire static closure",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-3.2/getting_started/index.html",
+        "https://nvidia-isaac-ros.github.io/v/release-3.2/getting_started/hardware_setup/compute/index.html"
+      ],
+      "notes": [
+        "Compute guide boot marker R36rev4.0; archive maps JetPack6.2 to36.4.3. Do not project6.2 to every3.2 patch tag."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "4.0",
+      "common_tags": [
+        "v4.0-0",
+        "v4.0-1"
+      ],
+      "documented_ROS": "Jazzy",
+      "x86_64": {
+        "Ubuntu_documented": "24.04",
+        "CUDA_documented": "13.0+",
+        "driver_documented": ">=580",
+        "GPU_documented": "Ampere+ and >=8GB",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Thor; table says Thor",
+        "JetPack_documented": [
+          "7.0"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "7.0",
+            "L4T": "38.2/38.2.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS per release; complete package/static closure NOT_RUN",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-4.0/getting_started/index.html"
+      ],
+      "notes": [
+        "Compute instructions pin R38rev2.1."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "4.1",
+      "common_tags": [
+        "v4.1-0"
+      ],
+      "documented_ROS": "Jazzy",
+      "x86_64": {
+        "Ubuntu_documented": "24.04",
+        "CUDA_documented": "13.0+",
+        "driver_documented": ">=580",
+        "GPU_documented": "Ampere+ and >=8GB",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Thor T5000",
+        "JetPack_documented": [
+          "7.0"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "7.0",
+            "L4T": "38.2/38.2.1"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS per release; complete package/static closure NOT_RUN",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-4.1/getting_started/index.html"
+      ],
+      "notes": [
+        "PRIMARY_MAPPING_CONFLICT: instructions say R38rev2.2; JetPack archive7.0 lists38.2/38.2.1. Preserve both; do not silently substitute an L4T patch."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification"
+    },
+    {
+      "id": "4.2",
+      "common_tags": [
+        "v4.2-0"
+      ],
+      "documented_ROS": "Jazzy",
+      "x86_64": {
+        "Ubuntu_documented": "24.04",
+        "CUDA_documented": "13.0+",
+        "driver_documented": ">=580",
+        "GPU_documented": "Ampere+ and >=8GB",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Thor T5000/T4000",
+        "JetPack_documented": [
+          "7.1"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "7.1",
+            "L4T": "38.4"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS; exact release client/type/source graph, not latest Buffer ABI",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-4.2/getting_started/index.html"
+      ],
+      "notes": [],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification",
+      "aarch64_DGX_Spark": {
+        "hardware": "DGX Spark",
+        "OS": "DGX OS7.2.3",
+        "not_Jetson_L4T_or_generic_arm64_qualification": true
+      }
+    },
+    {
+      "id": "4.3",
+      "common_tags": [
+        "v4.3-0"
+      ],
+      "documented_ROS": "Jazzy",
+      "x86_64": {
+        "Ubuntu_documented": "24.04",
+        "CUDA_documented": "13.0+",
+        "driver_documented": ">=580",
+        "GPU_documented": "Ampere+ and >=8GB",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Thor T5000/T4000",
+        "JetPack_documented": [
+          "7.1"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "7.1",
+            "L4T": "38.4"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS; exact release client/type/source graph, not latest Buffer ABI",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-4.3/getting_started/index.html"
+      ],
+      "notes": [],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification",
+      "aarch64_DGX_Spark": {
+        "hardware": "DGX Spark",
+        "OS": "DGX OS7.2.3",
+        "not_Jetson_L4T_or_generic_arm64_qualification": true
+      }
+    },
+    {
+      "id": "4.4",
+      "common_tags": [
+        "v4.4-0"
+      ],
+      "documented_ROS": "Jazzy",
+      "x86_64": {
+        "Ubuntu_documented": "24.04",
+        "CUDA_documented": "13.0+",
+        "driver_documented": ">=580",
+        "GPU_documented": "Ampere+ and >=8GB",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Thor T5000/T4000",
+        "JetPack_documented": [
+          "7.1"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "7.1",
+            "L4T": "38.4"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS; exact release client/type/source graph, not latest Buffer ABI",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-4.4/getting_started/index.html"
+      ],
+      "notes": [],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification",
+      "aarch64_DGX_Spark": {
+        "hardware": "DGX Spark",
+        "OS": "DGX OS7.2.3",
+        "not_Jetson_L4T_or_generic_arm64_qualification": true
+      }
+    },
+    {
+      "id": "4.5",
+      "common_tags": [
+        "v4.5-0"
+      ],
+      "documented_ROS": "Jazzy",
+      "x86_64": {
+        "Ubuntu_documented": "24.04",
+        "CUDA_documented": "13.0+",
+        "driver_documented": ">=580",
+        "GPU_documented": "Ampere+ and >=8GB",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Thor T5000/T4000",
+        "JetPack_documented": [
+          "7.1"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "7.1",
+            "L4T": "38.4"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS; exact release client/type/source graph, not latest Buffer ABI",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-4.5/getting_started/index.html"
+      ],
+      "notes": [],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification",
+      "aarch64_DGX_Spark": {
+        "hardware": "DGX Spark",
+        "OS": "DGX OS7.2.3",
+        "not_Jetson_L4T_or_generic_arm64_qualification": true
+      }
+    },
+    {
+      "id": "4.6",
+      "common_tags": [
+        "v4.6-0"
+      ],
+      "documented_ROS": "Jazzy",
+      "x86_64": {
+        "Ubuntu_documented": "24.04",
+        "CUDA_documented": "13.2+",
+        "driver_documented": ">=595",
+        "GPU_documented": "Ampere+ and >=8GB",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Thor T5000/T4000 and Orin",
+        "JetPack_documented": [
+          "7.2"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "7.2",
+            "L4T": "39.2"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "NITROS; exact pinned4.6 package XML depends on libnvvpi4/vpi4-dev and source builds SHARED",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-4.6/getting_started/index.html"
+      ],
+      "notes": [
+        "Pinned NITROS tag contains old NitrosNode/managed/pynitros/type packages; do not treat5.0 removal as4.6 behavior."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification",
+      "aarch64_DGX_Spark": {
+        "hardware": "DGX Spark",
+        "OS": "DGX OS7.2.3",
+        "not_Jetson_L4T_or_generic_arm64_qualification": true
+      }
+    },
+    {
+      "id": "5.0",
+      "common_tags": [
+        "v5.0-0"
+      ],
+      "documented_ROS": "Lyrical supplied by NVIDIA Noble buildfarm",
+      "x86_64": {
+        "Ubuntu_documented": "24.04; do not substitute ordinary Lyrical OS assumptions",
+        "CUDA_documented": "13.2+",
+        "driver_documented": ">=595",
+        "GPU_documented": "Ampere+ and >=8GB",
+        "official_profile_source_only": true
+      },
+      "aarch64_Jetson": {
+        "hardware": "Thor T5000/T4000 and Orin",
+        "JetPack_documented": [
+          "7.2"
+        ],
+        "L4T_archive_mapping": [
+          {
+            "JetPack": "7.2",
+            "L4T": "39.2"
+          }
+        ],
+        "CUDA_version": "JetPack-specific; x86 CUDA floor is not projected to Jetson",
+        "glibc_symbol_floor": "NOT_MEASURED"
+      },
+      "API_family": "rosidl::Buffer + CUDA buffer backend; direct historical NITROS API needs source migration",
+      "primary_docs": [
+        "https://nvidia-isaac-ros.github.io/v/release-5.0/getting_started/index.html",
+        "https://nvidia-isaac-ros.github.io/v/release-5.0/releases/index.html",
+        "https://nvidia-isaac-ros.github.io/concepts/rosidl_buffer/nitros_migration.html"
+      ],
+      "notes": [
+        "Release5.0.0 dated2026-09-21 removes NitrosNode/managed/pynitros/type packages; bridge retained/deprecated. Exact v5.0-0 Git tree confirms only vendor packages plus bridge, while README uses general future-removal language. Package presence and actual headers/symbols must decide ABI.",
+        "Lyrical native array storage/container/backend ABI differs from historical Humble/Jazzy; standard topic names do not establish binary compatibility."
+      ],
+      "SDK_migration": "BLOCKED_NOT_QUALIFIED",
+      "public_build_test": "NOT_RUN_CURRENT_REVISION",
+      "native_or_single_ELF_release_acceptance": false,
+      "per_tag_ABI_validation": "NOT_RUN; family documentation is not patch-level native ABI qualification",
+      "aarch64_DGX_Spark": {
+        "hardware": "DGX Spark",
+        "OS": "DGX OS7.2.3",
+        "CUDA_tested_dependencies": "13.0 in platform-specific pin; not x86/Jetson13.2",
+        "not_Jetson_L4T_or_generic_arm64_qualification": true
+      }
+    }
+  ],
+  "common_tag_count": 39,
+  "NITROS_tag_count": 36,
+  "exact_source_index": "tag-source-index.json",
+  "same_family_documentation_is_not_patch_ABI_proof": true,
+  "JetPack_archive_mapping": {
+    "4.6": "32.6.1",
+    "4.6.1": "32.7.1",
+    "5.0.1 DP": "34.1.1",
+    "5.0.2": "35.1",
+    "5.1.1": "35.3.1",
+    "5.1.2": "35.4.1",
+    "6.0": "36.3",
+    "6.1": "36.4",
+    "6.2": "36.4.3",
+    "7.0": "38.2/38.2.1",
+    "7.1": "38.4",
+    "7.2": "39.2",
+    "7.2.1": "39.2.1"
+  },
+  "JetPack_mapping_source": "https://developer.nvidia.com/embedded/jetpack-archive",
+  "API_migration_boundaries": [
+    "ROS1 actual roscpp/rospy/rosjava remain distinct required migrations; NITROS Noetic bridge does not turn ROS2 into ROS1 API compatibility",
+    "Foxy and Humble historical profile client/typesupport ABIs cannot be substituted with latest headers",
+    "Humble-to-Jazzy release4.0 transition and NITROS package/version changes require actual ROS/RMW/type-support/driver closure",
+    "4.6 Jazzy NITROS and5.0 Lyrical rosidl::Buffer+CUDA backend require different source/ABI qualification",
+    "Lyrical5.0 uses NVIDIA Ubuntu24.04 buildfarm; ordinary ROS default OS metadata cannot overwrite this profile"
+  ],
+  "link_and_redistribution_components": [
+    {
+      "component": "uwvm2-ros core/LLVM/libunwind/C++/crypto/compression and internal providers",
+      "link_goal": "statically link when real source/platform/license supports it; VM owner actual closure required",
+      "mandatory_dynamic": false,
+      "single_ELF_state": "NOT_QUALIFIED",
+      "source": "coordinator release requirements; exact produced asset audit not yet available"
+    },
+    {
+      "component": "CUDA runtime/device runtime",
+      "link_goal": "libcudart_static.a and libcudadevrt.a available as a static link option for supported Linux CUDA toolchains",
+      "mandatory_dynamic": false,
+      "redistribution": "CUDA EULA AttachmentA lists these runtime files; preserve exact version EULA/notices and all conditions, not blanket approval",
+      "sources": [
+        "https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html",
+        "https://docs.nvidia.com/cuda/eula/index.html"
+      ],
+      "actual_static_link_test": "NOT_RUN"
+    },
+    {
+      "component": "NVIDIA GPU driver and kernel/device stack",
+      "link_goal": "external real matching libcuda.so.1 plus actual driver/kernel/device resources; never ship or count toolkit stub as operating driver",
+      "mandatory_dynamic": true,
+      "scope": "CUDA runtime static link does not remove driver dependency. Exact driver/mapping/feature/GPU floor requires target run. Driver family minor compatibility is not full Isaac release qualification.",
+      "sources": [
+        "https://docs.nvidia.com/deploy/cuda-compatibility/latest/minor-version-compatibility.html",
+        "https://docs.nvidia.com/deploy/cuda-compatibility/latest/forward-compatibility.html",
+        "https://developer.nvidia.com/cuda/faq"
+      ],
+      "actual_final_ELF_driver_path": "NOT_RUN"
+    },
+    {
+      "component": "Historical GXF/NITROS",
+      "link_goal": "v2.1/v3.2 source has STATIC wrapper around shared core/extensions; do not claim full static closure from wrapper keyword",
+      "mandatory_dynamic": "DEPENDENT_ON_EXACT_RELEASE; inspected historical distributions provide .so and no qualified static replacement",
+      "redistribution": "NVIDIA Isaac ROS Software License for inspected root plus component-specific SPDX/notices. Apache CMake header is not license of all bundled binaries.",
+      "sources": [
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nitros/blob/91732780c48bfbb4dde15712c45151e0839428af/isaac_ros_gxf/CMakeLists.txt",
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nitros/blob/91732780c48bfbb4dde15712c45151e0839428af/README.md"
+      ],
+      "single_ELF_state": "BLOCKED_STATIC_CLOSURE_AND_REPLACEMENT_ABI_NOT_QUALIFIED"
+    },
+    {
+      "component": "VPI and selected device backends",
+      "link_goal": "4.6 package explicitly requires libnvvpi4/vpi4-dev; no static archive or static target closure demonstrated",
+      "mandatory_dynamic": "CURRENT_PINNED_PROVIDER_USES_DYNAMIC_VPI; not a universal impossibility assertion",
+      "redistribution": "VPI EULA plus supplement and bundled third-party notices, exact version files required",
+      "sources": [
+        "https://docs.nvidia.com/vpi/EULA.html",
+        "https://docs.nvidia.com/vpi/licenses.html",
+        "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nitros/blob/ddeee2f3a1be0342588f57bcbed115d71b6f1db4/isaac_ros_nitros/package.xml"
+      ],
+      "single_ELF_state": "BLOCKED_ACTUAL_PROVIDER_LINK_AND_LICENSE_AUDIT"
+    },
+    {
+      "component": "TensorRT",
+      "link_goal": "historical8.6.1 static samples documented Linux x86 only and require tar closure; no AArch64 static sample support inferred.10.11+ deprecates static libs;11.0 removes them. Selected Isaac10.16 tuple needs its own exact package audit.",
+      "mandatory_dynamic": "RELEASE_AND_PLATFORM_SPECIFIC; no static generic claim",
+      "redistribution": "exact TensorRT SLA/components/third-party terms required; not inherited from CUDA EULA",
+      "sources": [
+        "https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-861/sample-support-guide/index.html",
+        "https://docs.nvidia.com/deeplearning/tensorrt/10.x.x/getting-started/release-notes-10/10.14.1.html",
+        "https://docs.nvidia.com/deeplearning/tensorrt/11.4.0/getting-started/release-notes-11/11.0.0.html"
+      ],
+      "single_ELF_state": "BLOCKED_EXACT_TENSORRT_PACKAGE_CLOSURE"
+    },
+    {
+      "component": "ROS client/RMW/type support/plugin closure",
+      "link_goal": "open-source runtime components should be considered for actual static build/registration; no blanket dynamic exception for all ROS. Current dlopen plugins, type support and middleware require explicit closure.",
+      "mandatory_dynamic": "NOT_YET_DETERMINED_FOR_FINAL_VM_ASSET",
+      "redistribution": "per exact ROS/RMW/generated package and third-party source license manifest required",
+      "actual_release_tuple_symbols_and_DSO_maps": "NOT_RUN"
+    },
+    {
+      "component": "VM-owned ROS host",
+      "link_goal": "same-executable controlled host subcommand or genuinely qualified single-product mechanism",
+      "mandatory_dynamic": false,
+      "external_helper_blocker": {
+        "historical_private_native_helper_ELF_sha256": "f70d374797abe378d289112c9e1cf32605492cf4232db87d76b53264190321b6",
+        "bytes": 1157128,
+        "public_product": false,
+        "not_statically_merged_into_VM": true,
+        "SDK_native_business_fallback_allowed": false
+      },
+      "single_ELF_state": "BLOCKED_EXTERNAL_PRIVATE_HELPER; do not hide paths/overlays/producer"
+    },
+    {
+      "component": "SDK language compilers, models, simulator assets",
+      "link_goal": "compilers are SDK development tools, not VM runtime dependencies. Exact external official simulators/providers/models have separate environment scope and must be declared.",
+      "mandatory_dynamic": "NO_UNDECLARED_APPLICATION_HELPERS",
+      "guest_model_inference_or_business_native_fallback": false,
+      "world_model": "required; no accepted model inference/world transition/official simulator loop yet"
+    }
+  ],
+  "glibc_policy": {
+    "actual_minimum": "NOT_MEASURED for every final target; no qualified final ELF yet",
+    "Ubuntu_release_is_not_an_ELF_symbol_floor": true,
+    "required_artifact_evidence": [
+      "whole ELF SHA/bytes/source/tool/sysroot identities",
+      "ELF class/machine/endian/CPU ISA/ARM EABI and float ABI",
+      "PT_INTERP,DT_NEEDED,RPATH/RUNPATH and full GLIBC/GLIBCXX/CXXABI symbol requirements",
+      "actual dlopen/provider/helper/process/library mapping closure and SHA",
+      "exact minimum-glibc target runtime and newer environments; old kernel tested separately",
+      "startup,JIT,checked default unwind/EH,thread/TLS,FS/cache,permissioned actual ROS interoperability"
+    ]
+  },
+  "license_policy": {
+    "root_LICENSE_by_tag": true,
+    "common_repository_root_license_variants": [
+      "88bc900529cc5540162d3592cfdee4cf0081839c",
+      "bea32dcab700f732ea3d651f4fdf0c4333e0788d"
+    ],
+    "all_NVIDIA_source_is_Apache_2_0": false,
+    "actual_component_license_and_redistributable_bytes_required": true,
+    "current_binary_redistribution_approval": false,
+    "SDK_business_native_helper_for_single_binary": false
+  },
+  "existing_scoped_evidence": {
+    "native_Torch_SM70_NCCL_TP2": "2ranks V100/CUDA12.8 only; no Isaac Ampere/RTX/model/world/legacy client qualification",
+    "private_frozen_custom_UPR_loop": "same4449-byte c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043 Wasm with own actual VM13/0 native ROS finite evidence; custom contract is not actual rcl/rclcpp port, not public test or full official simulation",
+    "current_machine": "V100 SM70 and driver580.126.18 cannot qualify latest documented Ampere+/driver595 profile or RTX IsaacSim",
+    "formal_official_all_Wasm_NVIDIA_simulation_acceptances": 0,
+    "current_public_Linux_build_tests": 0
+  },
+  "ROS_inventory_reference": {
+    "path": "share/platform/ros/releases/v0.1.0/inventory.json",
+    "sha256": "01d1f7eb05d4ccab9af42884569be465a2e5708e6c18fc8e20c1d032cf617db2",
+    "bytes": 56321,
+    "all37_current_historical_distribution_rows_remain_required": true
+  },
+  "CI_examples_reference": "share/platform/nvidia/ci/linux-examples.v1.json",
+  "full_Wasm_legacy_client_paths": "include/platform/<owned-vendor>/transplate/{ros1,ros2}; actual shared client products/callbacks pending",
+  "final_world_model_multilingual_cross_vendor": "REQUIRED_NOT_RUN_NOT_REPLACED_BY_VLM_CHAT_VIDEO_OR_NATIVE_SERVICE",
+  "ready_for_review_scope": "version/tag/platform/license/source observations only; no runtime/static binary/legacy API support accepted",
+  "known_remaining_gaps": [
+    "actual patch-specific apt/source dependency closure and license-file identities for every applicable profile",
+    "exact ELF symbols/runtime glibc evidence for every release candidate target",
+    "real single-product controlled host without private helper",
+    "actual upstream legacy libraries and callbacks compiled/executed in Wasm",
+    "public135 example build/test and all mandatory official model/provider simulation rows",
+    "RTX/aarch64/native performance/full world-model+multilingual+cross-vendor acceptance"
+  ]
+}

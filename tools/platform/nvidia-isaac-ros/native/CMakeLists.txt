@@ -60,24 +60,10 @@ target_include_directories(uwvm-nvidia-isaac_ros-export PRIVATE "${UWVM_SDK_ROOT
 target_compile_definitions(uwvm-nvidia-isaac_ros-export PRIVATE UWVM_CUSTOM_NATIVE_ROS_VERSION=2)
 target_link_libraries(uwvm-nvidia-isaac_ros-export PRIVATE ${_targets})
 
-# Original detector host is a separate explicit build lane. It needs the actual
-# native CUDA/VPI SDK target; the CPU metadata exporter does not fake this link.
-option(UWVM_NVIDIA_BUILD_DETECTOR "Build actual selected native NVIDIA detector" OFF)
-option(UWVM_NVIDIA_ENABLE_NATIVE_DETECTOR "Explicit finite native perception owner" OFF)
-if(UWVM_NVIDIA_BUILD_DETECTOR)
- if(NOT CMAKE_SYSTEM_NAME STREQUAL "Linux")
-  message(FATAL_ERROR "Actual selected CUDA/VPI detector owner requires Linux")
- endif()
- find_package(isaac_ros_apriltag REQUIRED)
- find_package(rclcpp REQUIRED)
- if(NOT UWVM_APRILTAG_TARGET OR NOT TARGET "${UWVM_APRILTAG_TARGET}")
-  message(FATAL_ERROR "Explicit concrete target from actual NVIDIA SDK build/export required")
- endif()
- uwvm_current_native_link_environment("${UWVM_APRILTAG_TARGET}" rclcpp::rclcpp)
- add_executable(uwvm-nvidia-detector "${UWVM_SDK_ROOT}/src/platform/nvidia-isaac-ros/cpp/detector_owner.cpp")
- target_include_directories(uwvm-nvidia-detector PRIVATE "${UWVM_SDK_ROOT}" "${UWVM_SDK_ROOT}/include/wasm/language/c++/include")
- target_compile_definitions(uwvm-nvidia-detector PRIVATE UWVM_NVIDIA_ENABLE_NATIVE_DETECTOR=$<BOOL:${UWVM_NVIDIA_ENABLE_NATIVE_DETECTOR}>)
- target_link_libraries(uwvm-nvidia-detector PRIVATE "${UWVM_APRILTAG_TARGET}" rclcpp::rclcpp)
+# Native application targets were removed from the public SDK pending real
+# all-Wasm migration. Supplying an old enable must fail before any native build.
+if(UWVM_NVIDIA_BUILD_DETECTOR OR UWVM_NVIDIA_ENABLE_NATIVE_DETECTOR)
+ message(FATAL_ERROR "BLOCKED_LEGACY_ROS_TRANSPLATE: native detector application removed; use qualified guest migration")
 endif()
 
 # Public language imports are resolved from the installed global SDK roots.

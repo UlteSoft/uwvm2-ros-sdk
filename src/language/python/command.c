@@ -12,6 +12,9 @@
 #include "application.h"
 #include <Python.h>
 #include "frozen.h"
+
+/* The source-compatible ROS facade is a real separately linked Wasm C bridge. */
+PyMODINIT_FUNC PyInit__roswasm_native(void);
 #include <stdio.h>
 #include <string.h>
 
@@ -185,7 +188,8 @@ int main(int argc, char** argv)
     {
         return 22;
     }
-    if (PyImport_AppendInittab("_uwvm_ros", PyInit__uwvm_ros) != 0)
+    if (PyImport_AppendInittab("_uwvm_ros", PyInit__uwvm_ros) != 0 ||
+        PyImport_AppendInittab("_roswasm_native", PyInit__roswasm_native) != 0)
     {
         return 12;
     }

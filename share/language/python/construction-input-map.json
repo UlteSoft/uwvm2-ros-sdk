@@ -6,7 +6,14 @@
     "tools/language/js/maintenance.py": "share/language/js/construction-inputs/maintenance.py.txt",
     "tools/language/js/pack.lua": "share/language/js/construction-inputs/pack.lua.txt"
   },
-  "interpreter_implementation_inputs_changed": false,
+  "interpreter_implementation_inputs_changed": true,
   "compiler_payloads_changed": false,
-  "note": "Immutable engine construction provenance remains distinct from the current command packer and common compiler metadata pin. Frozen helper text is data, not an alternate active adapter."
+  "note": "Original CPython core archives and construction lock remain immutable. Both sole common build and formal relink use the exact real C compatibility bridge selector. Formal relink genuinely compiled four commands with16MiB slots and derived memory64/table64 requirements; current runtime/ABI checks remain separately qualified.",
+  "compiled_core_implementation_changed": false,
+  "command_source_slot_capacity": 16777216,
+  "command_relink_source_lock": "share/language/python/stdlib-source-lock.json",
+  "command_relink_source_lock_sha256": "7d4c23fd66be64c329be7b4cd9f293bf58966cd3ab4af4fcee7c475c558c575c",
+  "public_maintenance_entry": "tools/language/python/relink_stdlib.py --sdk ABSOLUTE_SDK --llvm ABSOLUTE_VERIFIED_LLVM --output ABSOLUTE_NEW_OUTPUT",
+  "compatibility_bridge_source_lock": "share/language/python/bridge-source-lock.json",
+  "compatibility_bridge_source_lock_sha256": "2763db7595b039a51c610edc46b19f660e97a5d353b13e2f717c6481136a82ca"
 }

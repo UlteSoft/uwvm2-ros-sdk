@@ -1,0 +1,26 @@
+{
+  "actual_public_build": "NOT_RUN_CURRENT_SOURCE",
+  "actual_public_test": "NOT_RUN_CURRENT_SOURCE",
+  "consumer_language": "java",
+  "default_xmake_test_must_fail": "Without an explicit valid runtime identity configuration",
+  "frozen_wasm_sha256": null,
+  "guest_cases_executed": 0,
+  "host_native_fallback": false,
+  "missing_dependencies": [
+    "Pinned installed uwvm2-ros runtime selection and actual Linux build/test qualification."
+  ],
+  "producer_language": "kotlin",
+  "qualified_cases": 0,
+  "quarantined_source_execution": false,
+  "registration": "One native Xmake suite executes four fresh Wasm cases and binds both compiler receipts to actual emitted module SHA256.",
+  "required_cases": [
+    "guest-contract-normal",
+    "guest-contract-denied",
+    "guest-contract-invalid-input",
+    "guest-contract-cleanup"
+  ],
+  "scenario": "shared_math",
+  "schema": "sdk09-required-guest-test-status-v1",
+  "scope": "Managed AOT/Core module isolation/WASI component only; no ROS or official simulator acceptance",
+  "state": "IMPLEMENTED_SOURCE_NOT_EXECUTED"
+}

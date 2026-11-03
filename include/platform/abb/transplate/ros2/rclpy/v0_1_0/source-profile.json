@@ -1,0 +1,554 @@
+{
+  "format": "sdk02-owned-joint-feedback-source-profile-v1",
+  "at_UTC": "2026-10-27T01:18:20.449966+00:00",
+  "state": "CURRENT_APPLICATION_SYNTAX_PARSED_NATIVE_FIXTURE_PROTOCOL_CHECKED_NOT_BUILT_OR_GUEST_EXECUTED",
+  "canonical_application": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/joint_feedback.py",
+  "application_source_sha256": "52ff146b50aa152d71e4d367e0011cbb287fcb043ec273e12a60e6db1d02117a",
+  "application_Wasm": null,
+  "upstream_schema_references": [
+    {
+      "sdk_path": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/upstream-reference/sensor_msgs/JointState.msg",
+      "upstream_url": "https://github.com/ros2/common_interfaces/blob/a941f14bb318d8d904505ed935ccbb97f24a70a4/sensor_msgs/msg/JointState.msg",
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "Git_blob_sha1": "ffaa9bfb0059383a6282abee168c72fdc92793ce",
+      "bytes": 999,
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d",
+      "unmodified": true
+    },
+    {
+      "sdk_path": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/upstream-reference/std_msgs/Header.msg",
+      "upstream_url": "https://github.com/ros2/common_interfaces/blob/a941f14bb318d8d904505ed935ccbb97f24a70a4/std_msgs/msg/Header.msg",
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "Git_blob_sha1": "6966bb98863c237131a2bd2822298df9511ce948",
+      "bytes": 322,
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2",
+      "unmodified": true
+    },
+    {
+      "sdk_path": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/upstream-reference/sensor_msgs/package.xml",
+      "upstream_url": "https://github.com/ros2/common_interfaces/blob/a941f14bb318d8d904505ed935ccbb97f24a70a4/sensor_msgs/package.xml",
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "Git_blob_sha1": "bfab23e61127aaffd513d72508c28e1f8298d5ad",
+      "bytes": 1298,
+      "sha256": "00cc932b8a1d2a9064c621bfacab56428a5175afe37269da38ba09361e8a4a5a",
+      "unmodified": true
+    },
+    {
+      "sdk_path": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/upstream-reference/builtin_interfaces/Time.msg",
+      "upstream_url": "https://github.com/ros2/rcl_interfaces/blob/7aa3caf43377ea6ad615bc1040832e2c7566bfbe/builtin_interfaces/msg/Time.msg",
+      "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+      "Git_blob_sha1": "03cc83f8622675b1ce70fcc5b6d260b1dd13d860",
+      "bytes": 421,
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd",
+      "unmodified": true
+    },
+    {
+      "sdk_path": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/upstream-reference/sensor_msgs/LICENSE",
+      "upstream_url": "https://github.com/ros2/common_interfaces/blob/a941f14bb318d8d904505ed935ccbb97f24a70a4/sensor_msgs/LICENSE",
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "Git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "unmodified": true
+    },
+    {
+      "sdk_path": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/upstream-reference/std_msgs/LICENSE",
+      "upstream_url": "https://github.com/ros2/common_interfaces/blob/a941f14bb318d8d904505ed935ccbb97f24a70a4/std_msgs/LICENSE",
+      "commit": "a941f14bb318d8d904505ed935ccbb97f24a70a4",
+      "Git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "unmodified": true
+    },
+    {
+      "sdk_path": "include/platform/abb/transplate/ros2/rclpy/v0_1_0/upstream-reference/builtin_interfaces/LICENSE-from-repository-root",
+      "upstream_url": "https://github.com/ros2/rcl_interfaces/blob/7aa3caf43377ea6ad615bc1040832e2c7566bfbe/LICENSE",
+      "commit": "7aa3caf43377ea6ad615bc1040832e2c7566bfbe",
+      "Git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "unmodified": true
+    }
+  ],
+  "shared_readonly_inputs": [
+    {
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "bytes": 12477,
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "path": "include/platform/ros/py/roswasm/__init__.py",
+      "bytes": 1313,
+      "sha256": "c0700f2f09e0d547cc26382705821d609f6ae8f5db601ec211353b43801afe58"
+    },
+    {
+      "path": "include/platform/ros/py/roswasm/_registry.py",
+      "bytes": 3403,
+      "sha256": "64ba2cd4019f5b8368266c643dc49afb3052050f48859db80f299b364be90a5d"
+    },
+    {
+      "path": "include/platform/ros/py/roswasm/client.py",
+      "bytes": 45683,
+      "sha256": "3a62411c436cadf0b7c95a0478f6d3797675a32c78d0369430d52db0e3d84933"
+    },
+    {
+      "path": "include/platform/ros/py/roswasm/codecs.py",
+      "bytes": 30768,
+      "sha256": "20d2268eb9556018f35d3bce3550663e9565439cbd4548b749cfbb796dbc82c4"
+    },
+    {
+      "path": "include/platform/ros/py/roswasm/events.py",
+      "bytes": 11048,
+      "sha256": "4b898ec3aa85f07dd66690bbb5335adfab84de4d1134e3af4014d0b3a27fec76"
+    },
+    {
+      "path": "include/platform/ros/py/roswasm/raw.py",
+      "bytes": 26674,
+      "sha256": "4240576f9dd92e1139a27006f65e5503d460cdd2dab63eb27feb865dda709778"
+    },
+    {
+      "path": "include/platform/ros/py/roswasm/transforms.py",
+      "bytes": 17365,
+      "sha256": "06d1fa6a0aa1927fc878f06a12a22a81746adc14c3219a9899da5fe7a0a2d9e1"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/bundle.json",
+      "bytes": 13542,
+      "sha256": "5db5e19333a1a080f2b1fce9f6eb569fc4698eacb373e192342d92edf28e76bb"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/__init__.py",
+      "bytes": 5357,
+      "sha256": "3f15774195ccd547b0393314d3101c691af607e769db775a504cd4e5561e58a9"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/_dispatch.py",
+      "bytes": 3117,
+      "sha256": "c11a959674f53102579416a005541d603aaa13d24a0f2f98531e56bc64d88ab3"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/_service_support.py",
+      "bytes": 3289,
+      "sha256": "e346ab23a024d2bbebf315ae164757abc19757636e03672969183eca66bcb389"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/client.py",
+      "bytes": 13381,
+      "sha256": "22d04c417ab7b33d3f4e45a5972476519c9083a147e3bcc8199ab7067234280a"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/clock.py",
+      "bytes": 1601,
+      "sha256": "5ecc1897b9d711a3934cc27ce2769579f73263f125052244b71f412c2ce38950"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/context.py",
+      "bytes": 9132,
+      "sha256": "e5da04468d4bb5b611682cb037fc00b5ae2f6e024b9e5d3f8b6df6f477727702"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/node.py",
+      "bytes": 29395,
+      "sha256": "d2df706b26519956b9411e81db121461433267a45dbbc1c78bd687eecc188388"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/qos.py",
+      "bytes": 3113,
+      "sha256": "1902e4e7e817aed08dbd4a4b5a09d55df868792f3b2ec3d3d0bd211041a80c8e"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/service.py",
+      "bytes": 3495,
+      "sha256": "e375a48fcac3c3220bb8397af1d1c3d0dc8a4dbe60ff964cbb117480508da65c"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/task.py",
+      "bytes": 5872,
+      "sha256": "3f5f233129b1f90813c17e268e1c518a2830f730ca1f00d79fae1e88d4895864"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/time.py",
+      "bytes": 1606,
+      "sha256": "a3fab9e3bf93dcf49fef8749b83a3aa7467fd0711b592b469ea994adfff050c3"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/timer.py",
+      "bytes": 2314,
+      "sha256": "a161ef781bf2bc98b01d3ef7f7aedb71ddfc490cb2a508d4dab70c930f9153c8"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/std_msgs/__init__.py",
+      "bytes": 412,
+      "sha256": "7c9d09b13fa56e379cab5c0337170c3e13d84b652dc535463097ae50316a0e4a"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/std_msgs/msg/__init__.py",
+      "bytes": 1965,
+      "sha256": "d9f60f2dd08b738c12c4f03e7817e05c0e35a482987c115ac7a568fa3b837d1b"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/profile.json",
+      "bytes": 3049,
+      "sha256": "e26e44b58649ba6cc86de30b0ded62ce9fc2c55f91d58267c51725f52cc762a7"
+    },
+    {
+      "path": "include/platform/ros2/c/roswasm/detail/ros2/abi.h",
+      "bytes": 95726,
+      "sha256": "ccc978219bd47893b6ce4efae4fcb1ebdb7a75c0aadded0001b7dde97310289b"
+    },
+    {
+      "path": "lib/language/python/wasm32-wasip1/core/core.json",
+      "bytes": 58941,
+      "sha256": "ac74e250e64fea3b7c535a29e0314ec4f94571319d50d9ca77a571abb6d1d866"
+    },
+    {
+      "path": "share/abi/abi-v1.json",
+      "bytes": 74230,
+      "sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0"
+    },
+    {
+      "path": "share/language/python/construction-source-lock.json",
+      "bytes": 1004579,
+      "sha256": "fa53c387ab6b3c7a4824eb42c5683e4a5ac8a0c91b74559a1ba6d5dac434c17f"
+    },
+    {
+      "path": "src/language/python/transplate/command.c",
+      "bytes": 3260,
+      "sha256": "41c4b6b1912fbe2387fc7c7e13dff52b14fa7c1d85b1622c7e1d4dfe82f13a11"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/_collections_abc.py",
+      "bytes": 32275,
+      "sha256": "15fae322d03715bdaf2b9b8f4d365eef56063e1add897bd001498d7d13ab3452"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/_colorize.py",
+      "bytes": 11159,
+      "sha256": "afac49dd382bdce420a4f13ca8b7fd6a688b1a60c746d640d4481d88b2c1c914"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/_opcode_metadata.py",
+      "bytes": 10243,
+      "sha256": "191362e3ab708708599b8eaee3a511b80b2e6f28a995dfd7219f408357ec3000"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/_py_warnings.py",
+      "bytes": 30759,
+      "sha256": "6d47ebd70167acf1685c8dc946029c97a8b4e6c0a4373161080cb5270c6e69c3"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/_weakrefset.py",
+      "bytes": 4090,
+      "sha256": "652b6bf2dc8324b7d72f0e4d7c120f6472228052ea8b8f7cbce91b7344dfc936"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/abc.py",
+      "bytes": 6666,
+      "sha256": "9e0c45d33f6091231c2cef61caf9dd82d3cf46ec854874b647344bf2cc8ee429"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/annotationlib.py",
+      "bytes": 44548,
+      "sha256": "d82dd636ea8a40974a65ad4aac765d22869370e6321d5fbc0fbbf722eff7f059"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/ast.py",
+      "bytes": 25607,
+      "sha256": "edf1332278e76b362cfd7732ec2980390da43ed013d85b49f9f55e080819a807"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/codecs.py",
+      "bytes": 36968,
+      "sha256": "507390925ec440fca521854b6760fc5d372cf34d93af21713e78f4e29a34fbf7"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/collections/__init__.py",
+      "bytes": 53149,
+      "sha256": "89a2bf7aae5154338bcd7e6be12e8b2bca601c00a5c0d40b71e6f6befb6f6633"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/contextlib.py",
+      "bytes": 27929,
+      "sha256": "d5615aa09685158877006702f9736690b0737f479dc8e97cd38d27739c66b081"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/copy.py",
+      "bytes": 8710,
+      "sha256": "8a29e4072bec32c11833888e6331cf399c3918d3e02344eb3b5b5ad2c41d9df8"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/copyreg.py",
+      "bytes": 7844,
+      "sha256": "01b2d74408da3125f76c40deaaec01192b3c28d25f8e3d432646ce9f1b792d88"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/dataclasses.py",
+      "bytes": 71665,
+      "sha256": "e65a246d157e0203ed6301e703e2d90e8e2a47ec243695ba41812476e785ddf6"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/dis.py",
+      "bytes": 45661,
+      "sha256": "98508d3a6c0cb212a44484f7a4066f5601a59c5227f53f0e3fb9b6530e53e085"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/enum.py",
+      "bytes": 85578,
+      "sha256": "4a3bf60ba80ba37786b702dfd230a25d122ee9899e7a6d12b9cdfa760c037c96"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/functools.py",
+      "bytes": 43692,
+      "sha256": "94ddda67559f4abf47540cb6c662e5a2661517be5966e775cfc459df2540e6dd"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/genericpath.py",
+      "bytes": 6375,
+      "sha256": "6ceda1ac3c3821b4811393e2e37def4a14833888433290248b208c8c3b3c002c"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/heapq.py",
+      "bytes": 23568,
+      "sha256": "1dd81d5e3f401252f9b682ab3d12ff71742b4630cea060ab6a3f409b361e121a"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/importlib/__init__.py",
+      "bytes": 4895,
+      "sha256": "37646447fa90996899f32712c3a41e4c243419ff5c409f0fb3600e593213e4ce"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/importlib/machinery.py",
+      "bytes": 2294,
+      "sha256": "86efd3b402aa2a464c780871581a66fec72ef38fba2319e9548bbef2021a2eb8"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/inspect.py",
+      "bytes": 128240,
+      "sha256": "4af33c62a5558189c7212b48efa7973f1e03b86cfcdcbdcac11bc30b9a09b0e2"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/io.py",
+      "bytes": 4864,
+      "sha256": "e1fd7eff340ae2cc63672d4a616be359aee7c4ddb4ecf65d232b6894192f8d04"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/json/__init__.py",
+      "bytes": 14260,
+      "sha256": "e93cb2c8866381717890b4bdc586428dd3a5a9ad0246565c0396f0daac0c6d51"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/json/decoder.py",
+      "bytes": 13005,
+      "sha256": "7370b32ae6ee0ed4c01473785c786db8b3db5b243ef58850a9779f57e078ef83"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/json/encoder.py",
+      "bytes": 17118,
+      "sha256": "71d54373534a7d27a6a0503fb966f8b29a001b8f0bb907c5f01c9d57d5818501"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/json/scanner.py",
+      "bytes": 2562,
+      "sha256": "d183d2d76cdaaa748f0b0452a8c7444e8d4a55b174a9c493346f748c6abb331b"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/keyword.py",
+      "bytes": 1201,
+      "sha256": "ed7ae2021bc03e606ad2d55350ba4be7f17565e05994bb9aefe27d6e3a1eee52"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/linecache.py",
+      "bytes": 8172,
+      "sha256": "e89236e6939165852552f94ac2ede6378d5bc8dfb030d4649a96131f6682e142"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/opcode.py",
+      "bytes": 3280,
+      "sha256": "9b6e6683411203049ff886900ed8013af9fef091d1da892a5b14f941d02347f3"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/operator.py",
+      "bytes": 11286,
+      "sha256": "a16595c5ff449b430fa45a59a866b3a137ad108075f7185b3c53bf07c2622ca4"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/os.py",
+      "bytes": 42086,
+      "sha256": "7a97a9334eaaeba5a896e44872b2a02912b99f81b11b5588fca692ff1f4023a8"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/posixpath.py",
+      "bytes": 18941,
+      "sha256": "ea6e0e129cc4ee0275f6a0b798cb4862afec4f31e1c0fc6ab3f4180397b9d0b9"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/re/__init__.py",
+      "bytes": 18004,
+      "sha256": "faac3a924504abf3dcd6ee67c75b30e6d2b426e2bd6efbc59d2312e639511c5e"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/re/_casefix.py",
+      "bytes": 5572,
+      "sha256": "94c9898b99ac5055d882a2aae6c4a353e0bd2107593f93a7c8b928e58c53995a"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/re/_compiler.py",
+      "bytes": 26983,
+      "sha256": "7d18d26c27c19b794a168216f4245f9d2c7ed7d27723fb4e1c2f3a48b99a9b1d"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/re/_constants.py",
+      "bytes": 6164,
+      "sha256": "288b754f94b9c44d235cccfae8b7c063eafbb5dee0860973fca8e07fe93e2ae6"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/re/_parser.py",
+      "bytes": 40481,
+      "sha256": "f99656cf419642aa602675a9a9f7db0fc7d2af118b9df9f8a08783d6bf18335c"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/reprlib.py",
+      "bytes": 8192,
+      "sha256": "5da98f33ca26602cfc6f33e68685aa97074624212cacadeac570946c76f4a1ea"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/stat.py",
+      "bytes": 6436,
+      "sha256": "fb2e9aaf3effc4624e0c3d82fe4db31e5b438964f1ab9de5ea7344a8d9e097e5"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/textwrap.py",
+      "bytes": 19510,
+      "sha256": "2b31ef13606d62ad63d4791f5005a0a147ab015c055d9f909048c45b2e0ad6e3"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/token.py",
+      "bytes": 2712,
+      "sha256": "b7cf90b758725ec2759f302eabb46c9022ff86b142a444d153581a185b983bf8"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/tokenize.py",
+      "bytes": 21977,
+      "sha256": "d3839144e172b8bb872b23a44062b986004278cacf375c7a17701cf425ad4722"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/traceback.py",
+      "bytes": 70192,
+      "sha256": "d524ca5e593e13cdc7e609680ef2409cc6fb18ac46782e3d968d32201ff69483"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/types.py",
+      "bytes": 11592,
+      "sha256": "ae0e79d31e38a582efef807f67ed99ca0f1aae250a1151a715f52f989c12c312"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/typing.py",
+      "bytes": 136164,
+      "sha256": "d1a6c5beb9d09656e6db8b07e411d2a63e3adad62d5454f615b4da219a483530"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/warnings.py",
+      "bytes": 2094,
+      "sha256": "5df430b7457bb9c34f20889ad81b9a516f03bafd3a812d76bd6a6d240e04c9cb"
+    },
+    {
+      "path": "src/language/python/upstream/Lib/weakref.py",
+      "bytes": 17899,
+      "sha256": "74aaa1c4bbe36db792d5c6326442db233c5ba91dc4ccc63926019abb505acc11"
+    },
+    {
+      "path": "src/platform/ros/py/_native.c",
+      "bytes": 48999,
+      "sha256": "3790f25af5850e6cb6a3a60d3c23e1d2fece97f9b841dfbbfe97221c4c4a6721"
+    },
+    {
+      "path": "tools/language/js/pack.lua",
+      "bytes": 16011,
+      "sha256": "46a60e2189ea1fe4798ab1c07b7cde44052f03903bcfbcaa2e504ade01e5aced"
+    },
+    {
+      "path": "tools/language/python/provider.lua",
+      "bytes": 1096,
+      "sha256": "16c1ea864233f39a9335ade9d806231fef768791e739d4e27b6e4731c0a35bcf"
+    },
+    {
+      "path": "tools/language/python/transplate.lua",
+      "bytes": 7989,
+      "sha256": "e7d685a1e4128eaee755b844245856a38b6d99955884bcebb41a62d6ca86d314"
+    }
+  ],
+  "shared_profile_state": "SOURCE_ONLY_NOT_BUILT_OR_EXECUTED",
+  "native_type_mapping_qualification": "NOT_RUN",
+  "wire_protocol": "Existing controlled canonical LE ABI; not DDS CDR",
+  "source_API_subset": "Vendor guest JointState fields plus shared migrated rclpy Node/create_subscription/nonblocking spin_once; no unchanged upstream sensor_msgs package claim",
+  "runtime_business_native_fallback": false,
+  "new_language_engine_or_shared_implementation_created": false,
+  "guest_component_cases": 9,
+  "actual_new_guest_cases_executed": 0,
+  "component_tests_do_not_complete_required_official_simulation": true,
+  "required_full_framework_simulation_cases_retained": 15,
+  "host_fixture_role": "Process lifecycle, identity sampling and bounded guest-result assertions only; no host ROS message decoding/query/control/callback",
+  "current_blocking_execution_admission": "Published admission still old boot815b and latest immutable pointer target absent; wait VM owner new shared64GiB/0swap/current fixed admission, then re-read lock and all actual readonly inputs, new whole thin SCP/own2case proof. Old R121 source parse is historical only.",
+  "fixed_guest_profile_and_external_host_ABI_are_distinct": true,
+  "source_syntax_evidence": {
+    "packet_manifest_sha256": "d184a562a3dd05b40e5794fd81470238254f213729cacbe1a563eb3206e3cb23",
+    "own_two_case_proof_sha256": "6960bc6b962cd70e8fa4cfc62e871ca8efb39147e68ce15f6d656a0bf4b70c13",
+    "qualification_sha256": "6923ef7cac0a32a2303b5502db1df160ceb0b56f8a41590b7f517ac7376a103e",
+    "application_source_sha256": "48a39780bb504229f4957415f110f4bb736958d14d5fd5ab03a67f4400c9fa02",
+    "guest_executed": false,
+    "full_framework_simulation_accepted": false,
+    "boot_id": "815b614a-e0a5-4600-9d7f-139b323d8190",
+    "historical_only": true,
+    "valid_for_new_boot_execution": false,
+    "applies_to_current_application_source": false
+  },
+  "current_boot_validation": {
+    "expected_boot_from_user": "ee092883-d38e-4abf-a1ef-2d28a8fa722c",
+    "state": "SOURCE_SYNTAX_AND_NATIVE_WRAPPER_PROTOCOL_ONLY",
+    "application_Wasm": null,
+    "genuine_core_installed_Linux_survival": "NOT_VERIFIED_NEW_BOOT",
+    "readonly_compiler348_previous_path": "LOST_VOLATILE_INPUT_DO_NOT_REUSE",
+    "actual_guest_cases_executed": 0,
+    "common_fixed_admission_sha256": "fb38e5e395b6682f3b747a2112f72bbe3a1ed8cca49bb359aaa2ef443d79ba60"
+  },
+  "runtime_delivery_interface_review": {
+    "version": "1.0.0-r2",
+    "manifest_sha256": "7ac1a14feff4e4b4b1d668ef4d759fafcdefdabc13b67ad725327227b0990e94",
+    "published_reference_scope": "Portable URP1 six-joint state-copy and frozen C0 validation; publisher full_task_acceptance=false/live_admission=false; independent coordinator review pending",
+    "Python_JointState_wire_equivalence": "NOT_ESTABLISHED; do not decode URP1 as canonical sensor_msgs/msg/JointState",
+    "generic_rclpy_native_ingress_and_fresh_payload_audit": "NOT_QUALIFIED_FOR_THIS_APPLICATION"
+  },
+  "current_case_evidence_contract": {
+    "case_count": 9,
+    "guest_events": "start/finish records emitted by actual guest, final counts cross-checked",
+    "completed_count_means": "actual verified finish events, not process exit or selected count",
+    "interrupted_case_count_is_known_failure_count": false,
+    "fixture_prerequisite_failure": "blocked9/not_run9/failed0, no fabricated execution",
+    "old_frozen_application_source_sha256": "48a39780bb504229f4957415f110f4bb736958d14d5fd5ab03a67f4400c9fa02",
+    "current_source_not_validated_on_new_boot": false,
+    "current_source_validation_scope": "Syntax only; native fixture counter/log protocol checked independently;9real guest assertion bodies remain unexecuted"
+  },
+  "case_and_binding_source_limits": {
+    "case_diagnostic_maximum_characters": 256,
+    "case_event_line_maximum_bytes_in_fixture": 2048,
+    "feedback_JSON_maximum_UTF8_bytes": 65536,
+    "topic_maximum_UTF8_bytes": 1024,
+    "alias_maximum_UTF8_bytes": 512,
+    "all_are_guest_bounds_not_native_authority": true
+  },
+  "current_source_syntax_evidence": {
+    "boot_id": "ee092883-d38e-4abf-a1ef-2d28a8fa722c",
+    "packet_manifest_sha256": "c2725ada06fd63d451b62137a8b540cb53e20dc57cbcc7e04bc8179325f70118",
+    "own_two_case_proof_sha256": "e5f56404a5a0c89ef546bd8f51102fc8030517bbf650e756c9a1bdaac49f3761",
+    "qualification_sha256": "ae83456229f18423b3318d6d6382b713642d9877c07dfcf88e8528ccf3ac6cd3",
+    "application_source_sha256": "52ff146b50aa152d71e4d367e0011cbb287fcb043ec273e12a60e6db1d02117a",
+    "fixture_sha256": "0db3bf9706d7a354b5f7adbcd799ba5145eb92fc0e2b811f001439f1e2c24f79",
+    "syntax_sources": 6,
+    "native_wrapper_counter_vectors": 14,
+    "native_wrapper_log_bound_checks": 3,
+    "guest_application_evaluated_on_host": false,
+    "guest_cases_executed": 0,
+    "official_scenarios_executed": 0,
+    "covers_new_build_or_runtime_topology": false
+  }
+}

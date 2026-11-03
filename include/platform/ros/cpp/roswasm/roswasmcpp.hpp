@@ -1501,14 +1501,31 @@ namespace roswasmcpp
          */
         uint32_t publish(Message const& message) const
         {
+            return publish(message, 4193786u);
+        }
+
+        /** Encode once and enforce the complete canonical byte quota before I/O.
+         * The codec owns its bounded allocation policy. No partial publication,
+         * buffer truncation, String wrapping or codec replay is performed.
+         */
+        uint32_t publish(Message const& message, size_t maximum_bytes) const
+        {
             if(error())
             {
                 return error();
+            }
+            if(maximum_bytes > 4193786u)
+            {
+                return UWVM_ROS_TOO_LARGE;
             }
             wire::bytes bytes;
             if(!Codec<Message>::encode(message, bytes))
             {
                 return UWVM_ROS_INVALID;
+            }
+            if(bytes.size() > maximum_bytes)
+            {
+                return UWVM_ROS_TOO_LARGE;
             }
             return capability_.publish_bytes(bytes);
         }

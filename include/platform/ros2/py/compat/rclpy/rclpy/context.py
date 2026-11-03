@@ -56,6 +56,19 @@ class _ShutdownFailures:
         raise IndexError(wanted)
 
 
+class SchedulingBudgetExhausted(RuntimeError):
+    """The explicit until_shutdown failure budget expired before a driver stop.
+
+    This is not task completion, Context shutdown, native cancellation, or a
+    wall-clock deadline. Existing finally/owner cleanup remains required.
+    """
+
+    def __init__(self, maximum):
+        super().__init__("until_shutdown scheduling credit budget exhausted before driver stop")
+        self.maximum_credits = maximum
+        self.credits_used = maximum
+
+
 class Context:
     """One ROS2 guest context; no ambient ROS domain or native node is created."""
 
@@ -67,8 +80,13 @@ class Context:
         self.callbacks = []
         self._initialized = False
         self._dispatching = False
-        self._remaining_credits = 4096
+        self._maximum_credits = self._remaining_credits = 4096
+        self._credits_used = 0
+        self._credit_active = False
+        self._scheduling_lifetime = "finite"
+        self._budget_exhausted = SchedulingBudgetExhausted(4096)
         self.prepare_callback_logging = False
+        self.prepare_callback_logging_clock = False
         self.last_shutdown_cleanup = None
 
     def configure(
@@ -78,13 +96,20 @@ class Context:
         idle_wait=None,
         maximum_owners=256,
         maximum_credits=4096,
-        prepare_callback_logging=False
+        prepare_callback_logging=False,
+        prepare_callback_logging_clock=False,
+        lifetime="finite"
     ):
         """Install local aliases before init; all host grants remain independent.
 
         idle_wait is an explicit deployment driver for blocking spin, e.g. a
         bounded supervisor credit read from existing stdin. It must not be
         confused with an implicit ROS wait-set or native executor equivalence.
+        maximum_credits counts driver invocations over this Context's whole
+        lifetime, not milliseconds or callbacks. Default finite mode returns
+        False at exhaustion. Explicit until_shutdown mode raises the reserved
+        SchedulingBudgetExhausted instead; only an explicit driver False or
+        actual Context shutdown ends the run normally. No refill/reset exists.
         """
         if self._initialized:
             raise RuntimeError("configure before rclpy.init")
@@ -102,13 +127,25 @@ class Context:
             raise TypeError("idle_wait must be callable")
         if type(maximum_owners) is not int or not 0 <= maximum_owners <= 65536:
             raise ValueError("owner bound")
-        if type(maximum_credits) is not int or not 0 <= maximum_credits <= 65536:
-            raise ValueError("finite deployment credit bound required")
+        if type(maximum_credits) is not int or not 0 <= maximum_credits <= 4294967295:
+            raise ValueError("finite uint32 deployment credit bound required")
+        if lifetime not in ("finite", "until_shutdown") or type(lifetime) is not str:
+            raise ValueError("explicit finite or until_shutdown lifetime required")
+        if lifetime == "until_shutdown" and maximum_credits == 0:
+            raise ValueError("until_shutdown requires a positive finite failure budget")
         if type(prepare_callback_logging) is not bool:
             raise TypeError("explicit prepare_callback_logging bool required")
+        if type(prepare_callback_logging_clock) is not bool:
+            raise TypeError("explicit prepare_callback_logging_clock bool required")
+        selected_bindings = dict(bindings)
+        exhausted = SchedulingBudgetExhausted(maximum_credits)
+        self.prepare_callback_logging_clock = prepare_callback_logging_clock
         self.prepare_callback_logging = prepare_callback_logging
-        self._remaining_credits = maximum_credits
-        self.bindings = dict(bindings)
+        self._maximum_credits = self._remaining_credits = maximum_credits
+        self._credits_used = 0
+        self._scheduling_lifetime = lifetime
+        self._budget_exhausted = exhausted
+        self.bindings = selected_bindings
         self.idle_wait, self.maximum_owners = idle_wait, maximum_owners
 
     def init(self, args=None, *, initialize_logging=True, domain_id=None):
@@ -129,18 +166,41 @@ class Context:
     def ok(self):
         return self.session is not None and self.session.active
 
+    @property
+    def maximum_credits(self):
+        return self._maximum_credits
+
+    @property
+    def remaining_credits(self):
+        return self._remaining_credits
+
+    @property
+    def credits_used(self):
+        return self._credits_used
+
+    @property
+    def scheduling_lifetime(self):
+        return self._scheduling_lifetime
+
     def next_credit(self):
-        """Explicit finite scheduling credit; no availability/time inference."""
+        """Consume one whole-lifetime driver credit; never infer time/readiness."""
         if not self.ok():
             raise RuntimeError("context is not live")
-        if self._dispatching:
+        if self._dispatching or self._credit_active:
             raise RosError(Result(17))
         if self.idle_wait is None:
             raise NotImplementedError("explicit finite deployment driver required")
         if not self._remaining_credits:
+            if self._scheduling_lifetime == "until_shutdown":
+                raise self._budget_exhausted
             return False
         self._remaining_credits -= 1
-        return self.idle_wait() is not False
+        self._credits_used += 1
+        self._credit_active = True
+        try:
+            return self.idle_wait() is not False
+        finally:
+            self._credit_active = False
 
     def shutdown(self):
         """Reserve all failure/callback storage first, then attempt every callback."""

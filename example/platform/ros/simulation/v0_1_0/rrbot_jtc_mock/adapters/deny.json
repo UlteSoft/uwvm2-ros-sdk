@@ -1,0 +1,55 @@
+{
+  "format": "uwvm-portable-robot-adapter-v1",
+  "contract_version": "0.1.0",
+  "platform_id": "ros-jazzy-rrbot-jtc-software-mock-v0.1.0",
+  "execution_class": "software_simulation",
+  "capability": "joint.position.bounded.v1",
+  "official_source": {
+    "repository": "https://github.com/ros-controls/ros2_control_demos",
+    "commit": "3c35e783e268e5235bb042a71c68112a3ecb777e",
+    "license": "Apache-2.0",
+    "mode": "example_1 RRBotSystemPositionOnlyHardware with official JointTrajectoryController",
+    "scope": "Official software demo hardware; joint-command mock only"
+  },
+  "ros": {
+    "release": "jazzy",
+    "os_abi": "ubuntu-24.04-x86_64",
+    "rmw": "rmw_fastrtps_cpp",
+    "transport": "DDS/isolated-loopback",
+    "security": "Explicit VM permission owner; unsigned/unbound request denied"
+  },
+  "frame": "joint_space",
+  "resources": {
+    "joint_state_topic": "/joint_states",
+    "position_action": "/portable_position_controller/follow_joint_trajectory",
+    "controller_status_service": "/controller_manager/list_controllers"
+  },
+  "joints": [
+    {
+      "slot": 0,
+      "native_joint": "joint1",
+      "kind": "bounded_revolute",
+      "source_unit": "rad",
+      "sign": 1,
+      "zero_offset_microrad": 0,
+      "lower_microrad": -1000000,
+      "upper_microrad": 1000000,
+      "max_step_microrad": 10000,
+      "tolerance_microrad": 100
+    },
+    {
+      "slot": 1,
+      "native_joint": "joint2",
+      "kind": "bounded_revolute",
+      "source_unit": "rad",
+      "sign": 1,
+      "zero_offset_microrad": 0,
+      "lower_microrad": -1000000,
+      "upper_microrad": 1000000,
+      "max_step_microrad": 10000,
+      "tolerance_microrad": 100
+    }
+  ],
+  "policy_sha256": "486115e18194ab36bf7761af3ce31f56a4a5295d54c9f0db9b70bf131a96a8f6",
+  "mapping_epoch": 1
+}

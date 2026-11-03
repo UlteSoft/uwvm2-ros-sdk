@@ -1,0 +1,66 @@
+{
+  "cases": [
+    {
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "assertions": [
+          "ros-denied-open13",
+          "wasip1-denied-write",
+          "fresh-string-publish-reverse-callback",
+          "canonical-native-graph-query",
+          "closed-handle-runtime-denial9",
+          "wasip1-file-roundtrip",
+          "closed-publisher-no-encode-or-publish",
+          "closed-subscription-no-poll-or-callback"
+        ],
+        "format": "uwvm-python-wasm-business-assertions-v1",
+        "native_audit_required": true,
+        "official_ROS_and_isolation_qualified": false,
+        "status": "GUEST_ASSERTIONS_COMPLETE"
+      },
+      "id": "required-wasm-feedback"
+    }
+  ],
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "rclpy-jazzy-python-wasm-business-assertions-v1",
+  "independent_instance_isolation_qualified": false,
+  "native_ROS_audit_and_official_communication_qualified": false,
+  "public_inputs": [
+    {
+      "path": "main.py",
+      "scope": "example",
+      "sha256": "31e53460b500199ee7b67701aa3c7bc2d107b112fa23fb7a04b78b3854043683"
+    },
+    {
+      "path": "binding-requirements.json",
+      "scope": "example",
+      "sha256": "107809436d0e53a60299ce5cc25cc41606599cb559584397b9a37264e94b3cb5"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/bundle.json",
+      "scope": "sdk",
+      "sha256": "cd9a4c6ee06566c35ef912cb69c16f823220ee3ee81942a07433948441b1a057"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/profile.json",
+      "scope": "sdk",
+      "sha256": "7602ec261eec18ac27dc2f4d70f18d7cced9a4fd49140a522826730c8e2ac312"
+    },
+    {
+      "path": "src/platform/ros/py/_native.c",
+      "scope": "sdk",
+      "sha256": "e25a651450323243f7a06d167b2254d57eee97c57b37c58f136ae8730cb1ca3d"
+    },
+    {
+      "path": "lib/language/python/wasm32-wasip1/core/core.json",
+      "scope": "sdk",
+      "sha256": "ac74e250e64fea3b7c535a29e0314ec4f94571319d50d9ca77a571abb6d1d866"
+    },
+    {
+      "path": "lib/language/python/wasm32-wasip1/core/libuwvm-engine.a",
+      "scope": "sdk",
+      "sha256": "fcbe4a07910577d8641f0ce295cb5e4c428f5f1fed8de38a22e1b002b9dcc9fa"
+    }
+  ]
+}

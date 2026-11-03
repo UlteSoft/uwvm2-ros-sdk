@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import org.teavm.interop.Export;
+import org.teavm.diagnostics.DefaultProblemTextConsumer;
+import org.teavm.diagnostics.Problem;
+import org.teavm.tooling.TeaVMProblemRenderer;
 import org.teavm.tooling.ConsoleTeaVMToolLog;
 import org.teavm.tooling.TeaVMTargetType;
 import org.teavm.tooling.TeaVMTool;
@@ -177,8 +180,34 @@ public final class Compile
             compiler.setObfuscated(false);
             compiler.setMinHeapSize(4 * 1024 * 1024);
             compiler.setMaxHeapSize(32 * 1024 * 1024);
-            compiler.setLog(new ConsoleTeaVMToolLog(false));
+            ConsoleTeaVMToolLog log = new ConsoleTeaVMToolLog(false);
+            compiler.setLog(log);
             compiler.generate();
+            // generate() retains diagnostics in ProblemProvider. Rendering
+            // them is a separate API in the exact pinned TeaVM 0.13.1 tooling.
+            // Preserve every problem and its real call stack before rejecting
+            // an emitted module; never replace it with a generic failure only.
+            if(compiler.getDependencyInfo() != null)
+            {
+                TeaVMProblemRenderer.describeProblems(compiler.getDependencyInfo().getCallGraph(),
+                    compiler.getProblemProvider(), log);
+            }
+            else
+            {
+                // Early frontend failures can precede dependency construction.
+                // Their original text/severity/location still belong in stderr.
+                for(Problem problem: compiler.getProblemProvider().getProblems())
+                {
+                    DefaultProblemTextConsumer text = new DefaultProblemTextConsumer();
+                    problem.render(text);
+                    System.err.println(problem.getSeverity() + ": " + text.getText());
+                    if(problem.getLocation() != null)
+                    {
+                        System.err.println("    at " + problem.getLocation().getMethod()
+                            + " " + problem.getLocation().getSourceLocation());
+                    }
+                }
+            }
             if(!compiler.getProblemProvider().getSevereProblems().isEmpty() || !output.isFile())
             {
                 throw new IllegalStateException("TeaVM rejected the requested WASI command");

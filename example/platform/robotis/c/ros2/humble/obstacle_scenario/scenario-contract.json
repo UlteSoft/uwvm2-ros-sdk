@@ -1,0 +1,113 @@
+{
+  "format": "robotis-humble-independent-wasm-obstacle-scenario-v1",
+  "requires": [
+    "03-turtlebot3-humble-application-001",
+    "04 exact original Humble native world/spawn selection",
+    "02 actual public VM typed-native producer/admission",
+    "05 independent actual occurrence/physical acceptance"
+  ],
+  "role": "A separate Wasm test input/observer actor. It cannot publish native /cmd_vel or replace original task/sensors. Source decisions occur inside this real Wasm command, not a native/host planner. Successful completion proves only its observed conditions/input sequence and own closes; actual task callbacks/lifetime/source/permission/native causality remain independently qualified.",
+  "start_protocol": [
+    "Start original official Humble obstacle world with exact unchanged Burger at1.1,0,0.01,yaw0; model original CPU ray360/5Hz, odom30Hz, actual original Twist interface",
+    "Start this actual Wasm actor before original application",
+    "Wait for TB3_PHASE_V1 phase=approach event=baseline-ready from actual received fresh scan/Odometry baseline; application started earlier is protocol failure71",
+    "Start complete original Humble Python Wasm application; no raw velocity input before initial autonomous obstacle stop",
+    "Continue actual strict native occurrence/callback-memory/lifecycle/physics evidence; never convert driver completion into scene PASS"
+  ],
+  "fixed_before_measurement": {
+    "baseline": {
+      "world_x_m": 1.1,
+      "xy_tolerance_m": 0.03,
+      "yaw_rad": 0,
+      "yaw_tolerance_rad": 0.02,
+      "front_scan_range_m": [
+        0.8,
+        1.4
+      ]
+    },
+    "frames": {
+      "Odometry.header": "odom",
+      "Odometry.child": "base_footprint",
+      "LaserScan.header": "base_scan"
+    },
+    "move": {
+      "original_default_forward_mps": 0.2,
+      "observed_linear_tolerance_mps": 0.04,
+      "observed_angular_tolerance_radps": 0.03,
+      "minimum_initial_observed_displacement_m": 0.15,
+      "obstacle_stop_displacement_m": [
+        0.6,
+        1.02
+      ],
+      "max_cross_track_m": 0.04,
+      "max_yaw_rad": 0.04
+    },
+    "zero": {
+      "all_six_axis_linear_tolerance_mps": 0.01,
+      "all_six_axis_angular_tolerance_radps": 0.02,
+      "minimum_actual_odom_stable_ns": 500000000,
+      "task_command_zero_tolerance": 1e-12
+    },
+    "turn": {
+      "raw_forward_mps": 0,
+      "raw_yaw_radps": 0.5,
+      "actual_turn_rad": 2.3,
+      "max_turn_rad": 2.65,
+      "observed_angular_tolerance_radps": 0.08,
+      "observed_linear_tolerance_mps": 0.02
+    },
+    "resume": {
+      "raw_forward_mps": 0.2,
+      "raw_yaw_radps": 0,
+      "minimum_observed_displacement_m": 0.2,
+      "maximum_observed_displacement_m": 0.4,
+      "minimum_actual_odom_elapsed_ns": 1000000000,
+      "maximum_yaw_deviation_from_target_rad": 0.18
+    },
+    "freshness": {
+      "odom_receive_max_ns": 500000000,
+      "scan_receive_max_ns": 800000000,
+      "task_command_receive_max_ns_for_stop": 400000000,
+      "odom_scan_ros_stamps": "Strictly increasing per subscription; no clock substitution or replay acceptance"
+    },
+    "real_wasi_deadlines_ns": {
+      "baseline": 5000000000,
+      "approach": 20000000000,
+      "each_other_phase": 8000000000,
+      "whole_actor": 45000000000
+    }
+  },
+  "inputs": {
+    "success_sequence": [
+      "Raw complete Twist(0,0,0,0,0,0.5) after real initial obstacle stop",
+      "Raw complete Twist(0.2,0,0,0,0,0) after real2.3rad turn/clear front",
+      "Raw complete Twist(0,0,0,0,0,0) after real resumed displacement+duration",
+      "Independent Bool true after strictly newer real all-six-axis stable zero and actual task zero command"
+    ],
+    "each_publish": "Exactly one attempt, original errors preserved; no implicit retry or desired-command-as-feedback",
+    "failure": "One best effort raw zero attempt if publisher open, failure reported separately; no immediate cancel race. Guardian must retire/revoke original actor and perform independently observed direct native-command Wasm stop if task path is broken. This actor does not claim fault/disconnect/recovery safety."
+  },
+  "scan_observer": {
+    "profile": "UWVMROS1_118b67e7232c46ba3857bb5d896af6d174546485a98284b33d0fb557ec203024",
+    "complete_selected_ieee_wire": "Exact full Header/seven metadata/ranges/intensities extent validation;360 original ranges; quotas128/1024; preserve all bytes and IEEE inf/NaN/signedzero, do not sanitize or replace task input",
+    "front_min": "Same ordered comparisons of original [0:90] and[270:360] sectors, including first-NaN behavior. Observer minimum is for test phases only, not an application implementation or guest callback proof."
+  },
+  "odom_observer": {
+    "public_complete_codec": "UWVMROS1_4eb9aa4edb3d288080deaae0326c26a75923e69d40c9b10219baf6d441ea8111",
+    "max_wire_bytes": 1080,
+    "all_fields": "Decode full public Robotis/Humble Odometry including covariance arrays and both bounded frame strings; original canonical full bytes emitted per occurrence",
+    "native_identity_scope": "RIHS01 is standard source graph reference consistent with exact installed Humble .msg field graph; actual compiled Humble native factory/session registry interoperability is not prequalified"
+  },
+  "evidence": {
+    "sample_trace": "TB3_SAMPLE_V1 full canonical wire bytes, per-received-occurrence sequence, real WASI monotonic time and real ROS scan/odom stamp; no hashset-only occurrence proof",
+    "phase_trace": "Actual transitions and counts; pipe/stdout error fails actor",
+    "limits": {
+      "maximum_records": 5000,
+      "maximum_wire_bytes_total": 8388608
+    },
+    "separate_required": "Native CDR/sequence/type/session, original guest scan/timer/command callbacks, actor memory-role grants, physical native causality, cancellation close/retirement and fault recovery. Test observer arrival order alone is insufficient."
+  },
+  "runtime": "NOT RUN",
+  "official_simulation": "NOT RUN",
+  "accepted": false
+}

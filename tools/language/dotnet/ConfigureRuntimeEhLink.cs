@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 
@@ -74,20 +75,34 @@ namespace Uwvm.Ros.Build
             {
                 throw new ArgumentException("The rebuilt native library is missing: " + replacement);
             }
-            string token = "\"" + original.Replace('\\', '/') + "\"";
+            string expected = Path.GetFullPath(original).Replace('\\', '/');
             int count = 0;
-            int offset = 0;
-            while ((offset = source.IndexOf(token, offset, StringComparison.Ordinal)) >= 0)
-            {
+            // The fixed workload can append /lib to a sysroot property that
+            // already ends in /. Compare whole quoted absolute paths after
+            // lexical path normalization; no filename-only, substring or
+            // symbolic-link matching is permitted. Keep exact slot counts.
+            string selected = Regex.Replace(source, "\"([^\"\\r\\n]*)\"", match => {
+                string candidate = match.Groups[1].Value;
+                if (!Path.IsPathFullyQualified(candidate)) return match.Value;
+                string normalized;
+                try
+                {
+                    normalized = Path.GetFullPath(candidate).Replace('\\', '/');
+                }
+                catch (ArgumentException)
+                {
+                    return match.Value;
+                }
+                if (!string.Equals(normalized, expected, StringComparison.Ordinal)) return match.Value;
                 count++;
-                offset += token.Length;
-            }
+                return "\"" + replacement.Replace('\\', '/') + "\"";
+            });
             if (count != expectedCount)
             {
                 throw new ArgumentException("Expected " + expectedCount + " exact native library slots: " + original +
                                             "; actual " + count);
             }
-            return source.Replace(token, "\"" + replacement + "\"", StringComparison.Ordinal);
+            return selected;
         }
 
         /**

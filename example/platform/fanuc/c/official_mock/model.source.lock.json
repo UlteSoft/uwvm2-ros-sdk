@@ -1,0 +1,1443 @@
+{
+  "format": "sdk02-exact-model-descriptor-source-lock-v1",
+  "platform": "fanuc",
+  "mandatory_models": 81,
+  "source_model_rows_verified": 71,
+  "required_unacquired_assets_blocked": 10,
+  "source_identity_review_sha256": "a723968b590f87d1cc154c2ede6aa6539444c5a68bcdfc34e032d578f2a96360",
+  "models": [
+    {
+      "model": "cr_50f_16b",
+      "matrix_ordinal": 0,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_cr_description/robot/cr_50f_16b.urdf.xacro",
+      "git_blob_sha1": "7889c0a95d253bfa5bcf40af5e598e1214d3f459",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_cr_description/robot/cr_50f_16b.urdf.xacro",
+      "source_bytes": 373,
+      "source_sha256": "97c4d690cb4185fada0e2b330ca449866af8bb1282e19ff088648b50a949e0bd",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_cr_description)/urdf/cr_50f_16b_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "crx10ia",
+      "matrix_ordinal": 1,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_crx_description/robot/crx10ia.urdf.xacro",
+      "git_blob_sha1": "b0f07621f8ee06d1a06d1f25f57b9e5149ea46df",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_crx_description/robot/crx10ia.urdf.xacro",
+      "source_bytes": 352,
+      "source_sha256": "37099a3a4a7cf22c25cd4080d6aa051caee787d5ab5fd590ccf01756627ee580",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_crx_description)/urdf/crx10ia_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "crx10ia_l",
+      "matrix_ordinal": 2,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_crx_description/robot/crx10ia_l.urdf.xacro",
+      "git_blob_sha1": "b31148a38712b8bc2fad549de8f96c001d58792d",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_crx_description/robot/crx10ia_l.urdf.xacro",
+      "source_bytes": 360,
+      "source_sha256": "8e0f0f1a0054777d8648e8d6bd0c4bb1808d6b6f3836bdccc8b87b4e5dbbcb13",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_crx_description)/urdf/crx10ia_l_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "crx10ia_lp",
+      "matrix_ordinal": 3,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_crx_description/robot/crx10ia_lp.urdf.xacro",
+      "git_blob_sha1": "41e752105aaf16db3a9e803388e2bd45cc0c9903",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_crx_description/robot/crx10ia_lp.urdf.xacro",
+      "source_bytes": 374,
+      "source_sha256": "8fa8505a5149cbb9c3cc18bf5abd93ce3ec183326983d7539f3e90cb55688fec",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_crx_description)/urdf/crx10ia_lp_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "crx20ia_l",
+      "matrix_ordinal": 4,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_crx_description/robot/crx20ia_l.urdf.xacro",
+      "git_blob_sha1": "4822360b6c1919a426e5bdfff57ac29557994b9c",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_crx_description/robot/crx20ia_l.urdf.xacro",
+      "source_bytes": 360,
+      "source_sha256": "7558b7801162cd0cded40ec98f529992a45e73affe98d7593306a3e1ed41aef4",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_crx_description)/urdf/crx20ia_l_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "crx30ia",
+      "matrix_ordinal": 5,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_crx_description/robot/crx30ia.urdf.xacro",
+      "git_blob_sha1": "6c2e3573c3e959cf3e4aafb7fa77225d14e93af8",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_crx_description/robot/crx30ia.urdf.xacro",
+      "source_bytes": 352,
+      "source_sha256": "07261287f454afd89fec6a5d35072025783778e7c9f7f4c8509f4bbc080dcbfd",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_crx_description)/urdf/crx30ia_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "crx3ia",
+      "matrix_ordinal": 6,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_crx_description/robot/crx3ia.urdf.xacro",
+      "git_blob_sha1": "2f345430b41b973c85552bae8c5deeab17ec7107",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_crx_description/robot/crx3ia.urdf.xacro",
+      "source_bytes": 358,
+      "source_sha256": "73e61b134332a528863abfbb2777ad0bdd3ce711f930163e55c740034245ae43",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_crx_description)/urdf/crx3ia_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "crx5ia",
+      "matrix_ordinal": 7,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_crx_description/robot/crx5ia.urdf.xacro",
+      "git_blob_sha1": "67db1c347d18927adacf2657f647e8e9fbb62960",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_crx_description/robot/crx5ia.urdf.xacro",
+      "source_bytes": 348,
+      "source_sha256": "6dd24c2c5886f03bc4bfc26a4fe97be4ad95617b408148128a77fc0fb732b5b5",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_crx_description)/urdf/crx5ia_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "er4ia",
+      "matrix_ordinal": 8,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/er4ia.urdf.xacro",
+      "git_blob_sha1": "d413e78cd5ceba533df8982abf7db6b64b4384f9",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/er4ia.urdf.xacro",
+      "source_bytes": 357,
+      "source_sha256": "6785fdfa2e47429cc40a087ba08b461a37775b8211b6c8061dd51258a6d851ea",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/er4ia_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate10_11a",
+      "matrix_ordinal": 9,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate10_11a.urdf.xacro",
+      "git_blob_sha1": "69dbe59282fbce96723a4c2b4217c81cbf1b2287",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate10_11a.urdf.xacro",
+      "source_bytes": 385,
+      "source_sha256": "35c1fcd92ff0fa2cf275288ee5e5c211945184fce5955c5081d904adc9bcd56d",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate10_11a_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate10_11afc",
+      "matrix_ordinal": 10,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate10_11afc.urdf.xacro",
+      "git_blob_sha1": "1041a11f16e255b06b4312047b7903224b47ffe1",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate10_11afc.urdf.xacro",
+      "source_bytes": 393,
+      "source_sha256": "22beb84261e32663c45bdf9339a0fd2d3a5ea3a1e440882e55037494d39351b9",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate10_11afc_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate200id",
+      "matrix_ordinal": 11,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate200id.urdf.xacro",
+      "git_blob_sha1": "b5d29db8400a172ff7c8bcecdee174d0f71e2ac0",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate200id.urdf.xacro",
+      "source_bytes": 381,
+      "source_sha256": "2727bb0cdf7aa79f9e67663b2f522ec51530e7b00cbdfe2e358f3869b76d5caa",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate200id_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate200id4s",
+      "matrix_ordinal": 12,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate200id4s.urdf.xacro",
+      "git_blob_sha1": "e9ac56039299c4bede58f339be1ca95605f32350",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate200id4s.urdf.xacro",
+      "source_bytes": 389,
+      "source_sha256": "1f47222d6540d6397bc46cc4b7c6607318b8a08e979f8fbadec7e16f00e6356c",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate200id4s_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate200id7c",
+      "matrix_ordinal": 13,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate200id7c.urdf.xacro",
+      "git_blob_sha1": "dbcb4494e6c3bac0f40853e93cff9a13b56d801d",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate200id7c.urdf.xacro",
+      "source_bytes": 389,
+      "source_sha256": "f73ab92f76952f8a7b8f80173230ddfb2ba8e6771beeec6202cf70732469674e",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate200id7c_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate200id7l",
+      "matrix_ordinal": 14,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate200id7l.urdf.xacro",
+      "git_blob_sha1": "cf46b894d7df073509fc60cec5f00d8e757dfa29",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate200id7l.urdf.xacro",
+      "source_bytes": 389,
+      "source_sha256": "cea2a8023553405c552fd575d1d98ff249efdc1c055caad583cc6507ace000d3",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate200id7l_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate200id7lc",
+      "matrix_ordinal": 15,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate200id7lc.urdf.xacro",
+      "git_blob_sha1": "710471edb4f718cfa88c97b1f409ab512b4c034c",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate200id7lc.urdf.xacro",
+      "source_bytes": 393,
+      "source_sha256": "d32c018161d87f4644af08693248fa99a736ed492202b81b1e179f3868107469",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate200id7lc_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate200id7we",
+      "matrix_ordinal": 16,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate200id7we.urdf.xacro",
+      "git_blob_sha1": "e3c539f98cc1246bf4ace56babddf22104e75909",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate200id7we.urdf.xacro",
+      "source_bytes": 393,
+      "source_sha256": "fc5f6c3d80845433e072e9bddd64289117ecb5c216425da37322d39e41d891ab",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate200id7we_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate25_19a",
+      "matrix_ordinal": 17,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate25_19a.urdf.xacro",
+      "git_blob_sha1": "93e081877489cbd0b853763bcee4c2e41ec25e85",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate25_19a.urdf.xacro",
+      "source_bytes": 385,
+      "source_sha256": "a0b09a87eef99276686732e9d5de86d77c363e7bf84f881bd2df36cfd53c70f7",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate25_19a_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate25_19afc",
+      "matrix_ordinal": 18,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate25_19afc.urdf.xacro",
+      "git_blob_sha1": "45f1b8ef9843e3cb3cf967d1f2820c23415b6950",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate25_19afc.urdf.xacro",
+      "source_bytes": 393,
+      "source_sha256": "e7b7b41cab74cf5fb793401556e815e925afc10e51ed666e7a58598ecc443ebf",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate25_19afc_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "lrmate35_14a",
+      "matrix_ordinal": 19,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_lrmate_description/robot/lrmate35_14a.urdf.xacro",
+      "git_blob_sha1": "c5a69cc51c261821eda2bfdc16c677d72b42717c",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_lrmate_description/robot/lrmate35_14a.urdf.xacro",
+      "source_bytes": 385,
+      "source_sha256": "c384e203bf2c94c4df5a6eec45d7b521105285818393e1845a33cddb96c3501b",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_lrmate_description)/urdf/lrmate35_14a_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m10_10_16d",
+      "matrix_ordinal": 20,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m10_description/robot/m10_10_16d.urdf.xacro",
+      "git_blob_sha1": "6f2d2ffc6649e001f914b157b3cc43f6924c532d",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m10_description/robot/m10_10_16d.urdf.xacro",
+      "source_bytes": 374,
+      "source_sha256": "98d30ba428e19a871aa5c049d36cc360687398269658459290b85c7cd86de7d8",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m10_description)/urdf/m10_10_16d_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m10_12_14d",
+      "matrix_ordinal": 21,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m10_description/robot/m10_12_14d.urdf.xacro",
+      "git_blob_sha1": "863e652c3497905eeef9864def31d38d1cfb1ca5",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m10_description/robot/m10_12_14d.urdf.xacro",
+      "source_bytes": 374,
+      "source_sha256": "e535672ce96ed78b1a3a193ef53bdd72ec08c06091638b9ae196e36378980998",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m10_description)/urdf/m10_12_14d_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m10_16_11d",
+      "matrix_ordinal": 22,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m10_description/robot/m10_16_11d.urdf.xacro",
+      "git_blob_sha1": "b590fa88a77c943d6476a0108f9a2451301af49b",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m10_description/robot/m10_16_11d.urdf.xacro",
+      "source_bytes": 374,
+      "source_sha256": "02988862caa70fd41dc10b02b1ecd89884816d32487b84a038062126819b152f",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m10_description)/urdf/m10_16_11d_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m10_8_20d",
+      "matrix_ordinal": 23,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m10_description/robot/m10_8_20d.urdf.xacro",
+      "git_blob_sha1": "559c84c12aa21eb17cd2c1e34f39448ab51d1fdc",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m10_description/robot/m10_8_20d.urdf.xacro",
+      "source_bytes": 370,
+      "source_sha256": "dea58f9ff1461e754f050ee046ec5ada65317e03beded0b38019ff9626ea5977",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m10_description)/urdf/m10_8_20d_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m20_12_23d",
+      "matrix_ordinal": 24,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m20_description/robot/m20_12_23d.urdf.xacro",
+      "git_blob_sha1": "b17bad191a461030c5d29e94249717122759141b",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m20_description/robot/m20_12_23d.urdf.xacro",
+      "source_bytes": 374,
+      "source_sha256": "6dc6e3d64c0d00467293ad3ca4ee60a8e286557fe1f07f99c80c0d4331c3063f",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m20_description)/urdf/m20_12_23d_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m20_25_18d",
+      "matrix_ordinal": 25,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m20_description/robot/m20_25_18d.urdf.xacro",
+      "git_blob_sha1": "364d0dfd255018c095556517af1cf2fef5bb7d42",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m20_description/robot/m20_25_18d.urdf.xacro",
+      "source_bytes": 374,
+      "source_sha256": "6365f2f9857f56c6ed19d9a5fe257a72fac02c243a6d4a228c96ee173a71fee6",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m20_description)/urdf/m20_25_18d_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m20_35_18d",
+      "matrix_ordinal": 26,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m20_description/robot/m20_35_18d.urdf.xacro",
+      "git_blob_sha1": "16883a4cdd74e42a000c120464e76347a46b64a8",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m20_description/robot/m20_35_18d.urdf.xacro",
+      "source_bytes": 374,
+      "source_sha256": "4bb2010c9640b04ceccb75f5fb5c5cedd638884180255f8cdbdde7e4a0a6a598",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m20_description)/urdf/m20_35_18d_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710ic_12l",
+      "matrix_ordinal": 27,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710ic_12l.urdf.xacro",
+      "git_blob_sha1": "595a66385b21f5f68acaa52e9b48755a25b79d85",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710ic_12l.urdf.xacro",
+      "source_bytes": 375,
+      "source_sha256": "590bef7c85e56a473daff905a15c009f3cf1790d4480e79f29d493260078d4c4",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710ic_12l_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710ic_20l",
+      "matrix_ordinal": 28,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710ic_20l.urdf.xacro",
+      "git_blob_sha1": "704996b2fe618b82c2eb0baeaede8751d4b8d812",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710ic_20l.urdf.xacro",
+      "source_bytes": 375,
+      "source_sha256": "be387bd0a0f083a2e609aeafa88e24198d5747246b458cce2b35a1f9b06d4400",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710ic_20l_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710ic_20m",
+      "matrix_ordinal": 29,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710ic_20m.urdf.xacro",
+      "git_blob_sha1": "fadd6b177f58aa69ef810a462c3e5732e8c0aa0f",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710ic_20m.urdf.xacro",
+      "source_bytes": 375,
+      "source_sha256": "7ecfe2c551584d0e53fde06cf0ee1f3a6d4a29ae059e2ae33561eb0060dec843",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710ic_20m_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710ic_45m",
+      "matrix_ordinal": 30,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710ic_45m.urdf.xacro",
+      "git_blob_sha1": "7007b8158303b08c9ad488065d1909a3a24e2ad7",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710ic_45m.urdf.xacro",
+      "source_bytes": 375,
+      "source_sha256": "16c82721177dad67a9dea3f43ce20e8bfabe8f689adc13dc02bb242941a5737c",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710ic_45m_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710ic_50",
+      "matrix_ordinal": 31,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710ic_50.urdf.xacro",
+      "git_blob_sha1": "8a922aded14d8dbe98057585c6ed93ed3a8a1aa9",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710ic_50.urdf.xacro",
+      "source_bytes": 371,
+      "source_sha256": "f655e66152c1db89dd130c17a1ac61b416b1806a90fd729c0391417fb109a767",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710ic_50_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710ic_50e",
+      "matrix_ordinal": 32,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710ic_50e.urdf.xacro",
+      "git_blob_sha1": "654ab4c1b6d7bd2d56ac54f35ec8b18660762979",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710ic_50e.urdf.xacro",
+      "source_bytes": 375,
+      "source_sha256": "5ffc91cbd89dca51795fcf496e7a3d560b1205b7c2c2f204afa0d99b073b618c",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710ic_50e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710ic_50s",
+      "matrix_ordinal": 33,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710ic_50s.urdf.xacro",
+      "git_blob_sha1": "57d404e46d52996ce76c16cdb86d39e7e7c1f4e3",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710ic_50s.urdf.xacro",
+      "source_bytes": 375,
+      "source_sha256": "8ad4d7dd7334a526ed90389e7c38197de6490196f84fdcace5c9afca8dbc83ee",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710ic_50s_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710ic_70",
+      "matrix_ordinal": 34,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710ic_70.urdf.xacro",
+      "git_blob_sha1": "4ab8ce9da31731917e82240e0a0f23719030ca98",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710ic_70.urdf.xacro",
+      "source_bytes": 371,
+      "source_sha256": "49065bb0c8b0c19e212db704f1816c7d466f21546ecace7093aaa5f5857823b6",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710ic_70_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710id_50m",
+      "matrix_ordinal": 35,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710id_50m.urdf.xacro",
+      "git_blob_sha1": "c3e49873f15c1cde123ee4c96565d65240131a24",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710id_50m.urdf.xacro",
+      "source_bytes": 375,
+      "source_sha256": "6f0414b4e72ee9f9b20a608d40b28eebfef56fd172286e359f53e7d50e349efd",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710id_50m_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m710id_70",
+      "matrix_ordinal": 36,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m710_description/robot/m710id_70.urdf.xacro",
+      "git_blob_sha1": "d8a54f7b42105ca384537eeba7acd9c5829e8b11",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m710_description/robot/m710id_70.urdf.xacro",
+      "source_bytes": 371,
+      "source_sha256": "d74ba41dd6f9bc97f4f7745e9bee0c0096d6880b12191e3ef6eebd5c70b835b6",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m710_description)/urdf/m710id_70_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m800_60_20b",
+      "matrix_ordinal": 37,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m800_description/robot/m800_60_20b.urdf.xacro",
+      "git_blob_sha1": "442a39e8bbbc7f2e8227953588a9467d4ac0c742",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m800_description/robot/m800_60_20b.urdf.xacro",
+      "source_bytes": 379,
+      "source_sha256": "be8cefd123698523845fa69f4307cbe5f10f56cd159ca932854d163a523fbe98",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m800_description)/urdf/m800_60_20b_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m810_190_20b",
+      "matrix_ordinal": 38,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m810_description/robot/m810_190_20b.urdf.xacro",
+      "git_blob_sha1": "ea388ec5a682e60b487c7f0d1084bd0924d10d02",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m810_description/robot/m810_190_20b.urdf.xacro",
+      "source_bytes": 383,
+      "source_sha256": "2eee040ffd837d86a7b1c45fc0b5ded6c3ba42134f9f1d6e595aa6f2bbd34691",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m810_description)/urdf/m810_190_20b_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "m810_270_27b",
+      "matrix_ordinal": 39,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_m810_description/robot/m810_270_27b.urdf.xacro",
+      "git_blob_sha1": "b176c7271d2ee07c5e9a033f2135b093da3b3f35",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_m810_description/robot/m810_270_27b.urdf.xacro",
+      "source_bytes": 383,
+      "source_sha256": "8e0a8a07aa207f24fb6c45b4460452f1d4ce7942611d6ed0120c86fad0101a56",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_m810_description)/urdf/m810_270_27b_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "p350ia_45_lh",
+      "matrix_ordinal": 40,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_paint_description/robot/p350ia_45_lh.urdf.xacro",
+      "git_blob_sha1": "6540dbb8b78b23157a93be3fdb33a8d4f3578914",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_paint_description/robot/p350ia_45_lh.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "1a9aee4c45db3dd25c8451ffdc3b2e707a8daef77f24050e03d1c9ad8e8bf6e9",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_paint_description)/urdf/p350ia_45_lh_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "p350ia_45_rh",
+      "matrix_ordinal": 41,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_paint_description/robot/p350ia_45_rh.urdf.xacro",
+      "git_blob_sha1": "778ccd84903429e3730d9a032c42e74b1ec49c2f",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_paint_description/robot/p350ia_45_rh.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "79c5aaa7365a2df0d72c8cac203d66403ab1b7cf5d1dce8709729534d9bdff00",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_paint_description)/urdf/p350ia_45_rh_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r1000ia_100f",
+      "matrix_ordinal": 42,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r1000ia_description/robot/r1000ia_100f.urdf.xacro",
+      "git_blob_sha1": "4bdc45191cde7e3a2abefc89c4aaac84c509bf4a",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r1000ia_description/robot/r1000ia_100f.urdf.xacro",
+      "source_bytes": 386,
+      "source_sha256": "90dfaef8c90a6faa598169a6f0552225f7b1eaf10239ca2aec6790b27e1cd4fa",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r1000ia_description)/urdf/r1000ia_100f_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r1000ia_130f",
+      "matrix_ordinal": 43,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r1000ia_description/robot/r1000ia_130f.urdf.xacro",
+      "git_blob_sha1": "bb5f0135a49b4083a3c32470b45912de4ab21228",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r1000ia_description/robot/r1000ia_130f.urdf.xacro",
+      "source_bytes": 386,
+      "source_sha256": "c3cbedbfe2262321276676f15291f99584a1fe1c7b46788952b8eb3327fa0ef6",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r1000ia_description)/urdf/r1000ia_130f_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r1000ia_80f",
+      "matrix_ordinal": 44,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r1000ia_description/robot/r1000ia_80f.urdf.xacro",
+      "git_blob_sha1": "f5789df145f1ab46358666b60aef21138cd50ada",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r1000ia_description/robot/r1000ia_80f.urdf.xacro",
+      "source_bytes": 382,
+      "source_sha256": "48595e388378302cc9803923605a988649cd8837a6bcb67b18e3f5ce4b2bd948",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r1000ia_description)/urdf/r1000ia_80f_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000_120r_39e",
+      "matrix_ordinal": 45,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000_120r_39e.urdf.xacro",
+      "git_blob_sha1": "4816e2183d5a4c186c11d42da1e403df82ecf653",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000_120r_39e.urdf.xacro",
+      "source_bytes": 392,
+      "source_sha256": "6b6a345e9b43e7c16ed7b01cd743a45202c99b8d12f2d136c53392fb256ae610",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000_120r_39e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000_125f_31e",
+      "matrix_ordinal": 46,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000_125f_31e.urdf.xacro",
+      "git_blob_sha1": "67c756069ae38f269155980cea4538958a641f90",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000_125f_31e.urdf.xacro",
+      "source_bytes": 392,
+      "source_sha256": "eb2c9377760119d29009473b647e345783038922533439ada7c351806f542c78",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000_125f_31e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000_180f_27e",
+      "matrix_ordinal": 47,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000_180f_27e.urdf.xacro",
+      "git_blob_sha1": "e94fdd230cbf48d8bcb7c9a6fbefdcdc094217d2",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000_180f_27e.urdf.xacro",
+      "source_bytes": 392,
+      "source_sha256": "e2faa264d56fe3d6f37896640a56259abc6182208385197ff10c3041168bcb28",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000_180f_27e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000_210f_31e",
+      "matrix_ordinal": 48,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000_210f_31e.urdf.xacro",
+      "git_blob_sha1": "7f373b4b257632a900b2739a6395afb0a3fb36c1",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000_210f_31e.urdf.xacro",
+      "source_bytes": 392,
+      "source_sha256": "2b7d96073d0d49b187aa1d4674cc0c111c10c92f8c7e0851cabaf8bf93a5341f",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000_210f_31e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000_210r_31e",
+      "matrix_ordinal": 49,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000_210r_31e.urdf.xacro",
+      "git_blob_sha1": "2d0ef24b92b3f0da45dde202bb65307914bad671",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000_210r_31e.urdf.xacro",
+      "source_bytes": 392,
+      "source_sha256": "94aa920ec82fe149a0a0d178c61e4a32466182e284fb9785a15fe9c81ce04227",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000_210r_31e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000_225f_27e",
+      "matrix_ordinal": 50,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000_225f_27e.urdf.xacro",
+      "git_blob_sha1": "deffc6d0def38871ca897abe5e30e67708cc6bbf",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000_225f_27e.urdf.xacro",
+      "source_bytes": 392,
+      "source_sha256": "78d479a00578bfb9ab2bfd7671014ab7c3539b7ed8643859e01607e8b78b21c6",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000_225f_27e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000_270r_31e",
+      "matrix_ordinal": 51,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000_270r_31e.urdf.xacro",
+      "git_blob_sha1": "c22c44f7f3ee040605ab0954eadf68de4cf51fba",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000_270r_31e.urdf.xacro",
+      "source_bytes": 392,
+      "source_sha256": "5cb302600541f61b5cf39129f596b73e23b0c91d7a00ea65580a68d56b7dbd75",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000_270r_31e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000_300f_27e",
+      "matrix_ordinal": 52,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000_300f_27e.urdf.xacro",
+      "git_blob_sha1": "d8ac039d10396c92129f076d344bda654eed9025",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000_300f_27e.urdf.xacro",
+      "source_bytes": 392,
+      "source_sha256": "60340adfe26858cf0fb6cb7eaf89d621385efb4187428f9983b64da5757142e6",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000_300f_27e_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_100p",
+      "matrix_ordinal": 53,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_100p.urdf.xacro",
+      "git_blob_sha1": "d345a7c58321e3f08d148d2dd44cda451c6a13ae",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_100p.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "a8967c8ef4c851448de65f52589a8be8eb5db706745cb512e65b82842f8190c4",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_100p_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_100ph",
+      "matrix_ordinal": 54,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_100ph.urdf.xacro",
+      "git_blob_sha1": "8b060a184a1c8cdc91503b62c4930d8bde57cd0d",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_100ph.urdf.xacro",
+      "source_bytes": 388,
+      "source_sha256": "f7ce22ae5b83caa311e6cd86c082fe91fa78e757a67e09db95e0c57012d5c475",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_100ph_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_125l",
+      "matrix_ordinal": 55,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_125l.urdf.xacro",
+      "git_blob_sha1": "a489c738286247226d9b14ff41e56864f742c012",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_125l.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "332bff805e5878e82460a088192d73f4295bc599f1bad5e1de4e1c82dcc8c5a9",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_125l_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_165f",
+      "matrix_ordinal": 56,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_165f.urdf.xacro",
+      "git_blob_sha1": "81f92abf78215abb5e88aba106be00c50e9d9e6c",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_165f.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "5fd2958458fadc9c67e43d913b9ce6a2b579ac2b3ccaf736973bff3679e334c6",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_165f_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_165r",
+      "matrix_ordinal": 57,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_165r.urdf.xacro",
+      "git_blob_sha1": "366e5d132a93f9dca5727c834f331a104b06fed7",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_165r.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "74b4a78bfc493f9898eec822a2070a5323fbe20697c547875113e633078852c4",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_165r_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_190s",
+      "matrix_ordinal": 58,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_190s.urdf.xacro",
+      "git_blob_sha1": "684e2f71accdf86b1fdc4fc105b564948a003ef6",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_190s.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "5980fa7401dc1c8597fe324426e4d0507535c91fa1dc71c535c3d8d58344c6fa",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_190s_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_190u",
+      "matrix_ordinal": 59,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_190u.urdf.xacro",
+      "git_blob_sha1": "181fa6697ca761be23f811ce39f46662a35fec08",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_190u.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "b5e208794a4bae5621c017d1438d316b176fccced50c7241cda676d6f09a44b7",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_190u_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_210f",
+      "matrix_ordinal": 60,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_210f.urdf.xacro",
+      "git_blob_sha1": "2ed4ccac729a54697dffd7b4e5f4ee08516a670b",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_210f.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "6d05eb561eabc60c0b92da6b4c4d0fd09122c7d3f9353ecd01f0a345a11405b1",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_210f_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_210l",
+      "matrix_ordinal": 61,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_210l.urdf.xacro",
+      "git_blob_sha1": "b5d39b8abf6dc2bbf6b2a8d09e65d53352fdd67f",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_210l.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "e58c03dd64c444de69c7f0fde2e2f2b032d3de7ff39954705ca0468991332de0",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_210l_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_210r",
+      "matrix_ordinal": 62,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_210r.urdf.xacro",
+      "git_blob_sha1": "d36e3d1ea5e05c062cd86eaefbde431f448c5047",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_210r.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "570c32daa8782c414a0634cc46e7aa9542ac672fd0b95a05f96ecdd04e0d714f",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_210r_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_210we",
+      "matrix_ordinal": 63,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_210we.urdf.xacro",
+      "git_blob_sha1": "146e630c9b877f074ec33fb6841cec72c19626f7",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_210we.urdf.xacro",
+      "source_bytes": 388,
+      "source_sha256": "4370ff35b963932de1e569fc618ceff456ee3460f986d41bb1794da254705ba8",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_210we_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_220u",
+      "matrix_ordinal": 64,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_220u.urdf.xacro",
+      "git_blob_sha1": "3b345277ee812c147ac36670200ea4a98f15c5a6",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_220u.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "59c9a0d117d96a8bf977d9c4475c8c3f8118d0dfe8c2df85c9e85c70e6645004",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_220u_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_240f",
+      "matrix_ordinal": 65,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_240f.urdf.xacro",
+      "git_blob_sha1": "6461c41cfe9a789e0eca70bed09d19c2fa557a98",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_240f.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "d6ffe8148ea1fcd92d1d3d41b7d35b4b7e3c39cce1c21ee2dccab98075b046c9",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_240f_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_270f",
+      "matrix_ordinal": 66,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_270f.urdf.xacro",
+      "git_blob_sha1": "78c6e790ea4131cedd25b7e10300ee11268ed23d",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_270f.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "f24b3113a36bec7b40041cb0877fde5ba90ff970cc1235bdfeed3bdd737c20a1",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_270f_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000ic_270r",
+      "matrix_ordinal": 67,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000ic_270r.urdf.xacro",
+      "git_blob_sha1": "4a9b45b24ac202bdc8e21c88fa914eb3a836a795",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000ic_270r.urdf.xacro",
+      "source_bytes": 384,
+      "source_sha256": "0633244409af0cf4936f585aedbb445f5ff4c54b686fcde8658cca00ae1ddddd",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000ic_270r_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000id_100fh",
+      "matrix_ordinal": 68,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000id_100fh.urdf.xacro",
+      "git_blob_sha1": "24c5037e138e71c78c0dfd19101a8665b45fff8e",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000id_100fh.urdf.xacro",
+      "source_bytes": 388,
+      "source_sha256": "45e804568967466a0a085f3750c15ea5e8e74e10cb74bea80a14b4714a169990",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000id_100fh_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000id_165fh",
+      "matrix_ordinal": 69,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000id_165fh.urdf.xacro",
+      "git_blob_sha1": "63251e39e7fd7b15d9b276098e2c57d690468524",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000id_165fh.urdf.xacro",
+      "source_bytes": 388,
+      "source_sha256": "8fc8a5151ac57fde0115c4560908ea98a108279a4c546722032c43873ff1bf76",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000id_165fh_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "r2000id_210fh",
+      "matrix_ordinal": 70,
+      "mandatory": true,
+      "state": "PASS_EXACT_SOURCE_BLOB_IDENTITY_ONLY",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "source_path": "fanuc_r2000_description/robot/r2000id_210fh.urdf.xacro",
+      "git_blob_sha1": "fd78da0e8baff422fbb2416a9fd22aa049ef77df",
+      "source_url": "https://raw.githubusercontent.com/FANUC-CORPORATION/fanuc_description/fb40c9803a826ba68c7c8e28ba904a25efa7fcd2/fanuc_r2000_description/robot/r2000id_210fh.urdf.xacro",
+      "source_bytes": 388,
+      "source_sha256": "65b5ee434052fc5478c486c049f3937372aa6965d15ef7d1730ecab0c4c2436b",
+      "unexpanded_static_xacro_includes": [
+        "$(find fanuc_r2000_description)/urdf/r2000id_210fh_urdf_macro.xacro"
+      ],
+      "unexpanded_static_mesh_URIs": [],
+      "full_mesh_texture_dependency_render_and_native_closure": "NOT_QUALIFIED"
+    },
+    {
+      "model": "crx10ia_l",
+      "matrix_ordinal": 71,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "cr_50f_16b",
+      "matrix_ordinal": 72,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "crx10ia",
+      "matrix_ordinal": 73,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "crx5ia",
+      "matrix_ordinal": 74,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "lrmate200id",
+      "matrix_ordinal": 75,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "m710ic_50",
+      "matrix_ordinal": 76,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "r2000ic_165f",
+      "matrix_ordinal": 77,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "sr12ia",
+      "matrix_ordinal": 78,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "sr3ia",
+      "matrix_ordinal": 79,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    },
+    {
+      "model": "m900ib280",
+      "matrix_ordinal": 80,
+      "mandatory": true,
+      "state": "BLOCKED_ASSET_BYTES_UNACQUIRED_NO_CONTENT_HASH_NO_NATIVE_ACCEPTANCE",
+      "actual_unchanged_Wasm_simulation_accepted": false,
+      "required_unacquired_asset": "Exact asset bytes, complete content hash, compatible licensed runtime/bridge and actual tests remain required"
+    }
+  ],
+  "inventories_exhaustive": false,
+  "all_other_applicable_models_still_required": true,
+  "source_data_identity_is_render_build_native_or_Wasm_acceptance": false,
+  "public_build_or_test_depends_on_private_audit_files": false
+}

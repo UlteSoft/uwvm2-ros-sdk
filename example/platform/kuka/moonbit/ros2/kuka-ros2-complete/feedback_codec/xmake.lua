@@ -1,3 +1,7 @@
+-- @trust This MoonBit value fixture represents one application trust domain.
+-- Classes and libraries do not establish separate private heaps or ROS principals.
+-- Independent components require distinct qualified instances and typed channels;
+-- value tests and unsupported library-kind refusals do not qualify that boundary.
 -- @file xmake.lua
 -- @brief Build one actual-language complete vendor value lesson into a sole Wasm.
 -- @details UWVM_ROS_SDK_ROOT names the installed SDK; it supplies verified dependencies.

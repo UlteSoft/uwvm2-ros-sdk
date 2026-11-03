@@ -332,7 +332,7 @@ function build(target, root, action)
 		)
 	end
 	local directory = path.absolute(target:scriptdir())
-	local cache = path.join(directory, ".uwvm-ros/native", target:name(), language)
+	local cache = path.join(artifacts.workspace(target, "native"), language)
 	local output = path.absolute(target:targetfile())
 	os.mkdir(cache)
 	os.mkdir(path.directory(output))

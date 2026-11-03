@@ -49,6 +49,9 @@ local sdk = root
 target("isaac_sim_decode_argument")
     set_language("rs")
     set_ros_platform("nvidia")
+    -- SDK10: example-local object/dependency output for Linux child-Xmake jobs.
+    set_objectdir(path.join(os.scriptdir(), ".uwvm-ros", "objects", "$(plat)", "$(arch)", "$(mode)"))
+    set_dependir(path.join(os.scriptdir(), ".uwvm-ros", "dependencies", "$(plat)", "$(arch)", "$(mode)"))
     set_values("ros.vendor.component", "nvidia-isaac-sim")
     set_ros2_version("jazzy")
     set_values("ros.vendor.transport", "cpu-value")

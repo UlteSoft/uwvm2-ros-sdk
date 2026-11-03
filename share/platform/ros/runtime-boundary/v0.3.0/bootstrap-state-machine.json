@@ -1,0 +1,86 @@
+{
+  "format": "uwvm-sdk-kernel-witness-bootstrap-state-machine-v1",
+  "version": "0.3.0",
+  "status": "CANDIDATE_NO_ROOT_ISSUER_OR_WITNESS_APPROVED",
+  "authority": "OS root is an explicit trusted computing-base authority, as it already is for kernel/root-owned runtime integrity. A root-owned sealed enrollment object authenticates only that an OS-root principal created it. The separately SDK-approved exact existing issuer code/runtime/profile must bind the object to real measurements; UID0 or a certificate file alone is insufficient.",
+  "no_privilege_extension": "Reuse only the already authorized root resource-envelope bootstrap under its unchanged profile. No new sudo rule, capability, ptrace exception, AppArmor change or long-lived privileged daemon. If exact issuance/measurement is impossible, stop and report BLOCKED.",
+  "states": [
+    {
+      "state": "INPUT_VERIFIED",
+      "requirements": [
+        "Whole new source/input/executor/mount subject transfer and exact file set/SHA/bytes/modes plus all external runtime/tool pins",
+        "Own two real interruptions and independent original/kernel physical retirement review; own bounded benign",
+        "Original shared+actor64GiB/swap0, full-lifetime canonical lease and all original phase floors"
+      ]
+    },
+    {
+      "state": "WITNESS_STARTED_PREKEY",
+      "requirements": [
+        "All threads/processes launched before irreversible lock; no private key exists yet",
+        "UID/GID1000, supplementary Groups empty or1000, every capability set including bounding0; NNP1; exact pinned readonly Python/crypto provider/source/runtime",
+        "Original controller and guardian host security/LSM profiles unchanged; whole role FD lifetime contract never replaces original retained source/runtime/lease FDs",
+        "Closed witness argv follows bootstrap_contract template, sealed source and launch; environment exactly PATH=/usr/bin:/bin LANG/LC_ALL=C.UTF-8 HOME=/nonexistent"
+      ]
+    },
+    {
+      "state": "LOCKED_PREKEY",
+      "requirements": [
+        "PR_SET_DUMPABLE0 before key generation; root issuer measures actual proc ownership/current exe/ns/cgroup/status",
+        "Install exact source-pinned seccomp filter; deny all exec/fork/clone routes, credential/ns changes and dumpability/ptracer reset; deny memory-injection/arbitrary path/sign/lease operations. Do not weaken existing application filter",
+        "Run bounded real denial probes before key creation; source/syscall/raw status originals prove kernel transition. If a destructive probe unexpectedly succeeds it must abort without key/enrollment",
+        "Load every allowed native image before lock; no new executable mapping/image after enrollment. Exact immutable interpreter/provider/DSOs/stdlib closure individually pinned"
+      ]
+    },
+    {
+      "state": "KEY_CREATED",
+      "requirements": [
+        "Generate ephemeral RSA3072/e65537 using pinned provider after lock; key remains witness process private memory only",
+        "No key FD/file/env/output/archive/export; peer challenge API can sign only fixed independently measured job metadata",
+        "Root issuer pins actual public key, caller admission, witness PID/birth/current exe/source/runtime/namespaces/cgroup and complete locked transition. No self-PASS flag without source-qualified original kernel evidence"
+      ]
+    },
+    {
+      "state": "ROOT_ENROLLED",
+      "requirements": [
+        "Existing source-qualified root issuer creates memfd, fchown0:0 fchmod0400 writes exact enrollment frame then F_SEAL_WRITE|GROW|SHRINK|SEAL",
+        "Reopen enrollment independently O_RDONLY non-O_PATH and close every writable view before transfer; root originals include fstat/seals/FDflags/full bytes and full measured issuer/witness closures",
+        "Pass only enrollmentFD to witness, close root control/rootdir/namespace/Docker/mutable file capabilities. Per-job binding includes exact current ownproof/benign and phase subject",
+        "Issuer is registered in current shared ancestor/control actors; actual retirement reviewed. No long-lived issuer or signing key survives job"
+      ]
+    },
+    {
+      "state": "LIVE_READONLY_CHALLENGE",
+      "requirements": [
+        "Host witness authenticates real kernel SO_PEERCRED peer and actual SDK source/image/closed caller/ns/cgroup; request PID/path/role never grants authority",
+        "Pin only enrolled current controller/guardian and current atomic live bundle; sample actual raw proc/files/FDs before+after, never echo request/oldrecord as measurements",
+        "Open safe independent O_RDONLY source/runtime/proc-fdinfo descriptions; whole closed FD census, actual kcmp+identity+flags/seals/hash; never forward canonical lease owning OFD, mutable contextFD, host root/directory/namespace/pidfd/DockerFD",
+        "Sign fresh unpredictable challenge with monotonic strict sequence and complete binding, <=500ms sample and <=250ms exchange; signed facts are rechecked by SDK against independently received kernel objects/direct live birth/cgroup/global locks",
+        "If caller/lease/role/witness/source/image/cgroup/namespace identity changes, socket/clock/probe fails or deadline expires, stop signing and retire the own namespace"
+      ]
+    },
+    {
+      "state": "PHYSICALLY_RETIRED",
+      "requirements": [
+        "Every own application/descendant/witness/issuer/control actor physically gone; exact PID/birth and cgroup evidence",
+        "Key dies with witness; channels and received descriptors close; full original wire/kernel/source/lifecycle evidence retained with file set/SHA/bytes/modes",
+        "Canonical lease competition succeeds only after retirement; foreign owner/container/anchor identities unchanged"
+      ]
+    }
+  ],
+  "consumer_authentication": "Root enrollment + installed exact issuer/witness/source/runtime approvals + fresh RSA-PSS challenge + independent readonlyFD/kernel lifecycle checks are conjunctive. No v2 direct-proc fallback or production approval by source review.",
+  "open_compatibility_requirements": [
+    "Unchanged existing root bootstrap must be able to create/chown/seal/reopen enrollment and observe nondumpable witness without a new permission",
+    "UID1000 unconfined cap0/NNP1/seccomp2 witness must actually read original host roles and kernel caller facts and run kcmp under installed kernel/Yama/LSM",
+    "docker-default application must actually receive/read only allowed SCM_RIGHTS objects, peer labels and exact procfs fdinfo kernel path; actual host installed profile is authoritative",
+    "Exact pinned crypto provider must generate/sign after irreversible filter without needing a denied fork/exec/new image operation; otherwise redesign before source approval"
+  ],
+  "product_state_sequence_only": true,
+  "qualification_probe_lifecycle": {
+    "purpose": "Avoid a circular requirement in which the own proof/benign output hashes would be required before creating those same outputs.",
+    "before_product_enrollment": "The exact frozen executor must run its own two actual interruptions and bounded benign with actual witness/issuer code, source/runtime/lock/filter/resource and physical-retirement coverage. These are non-authorizing control probes. The witness must be included in actual actor/cgroup/lease-retirement evidence.",
+    "probe_is_not_product_authority": "Before the own proof and benign reviews exist, any diagnostic enrollment/sample must use a distinct explicit probe-only format rejected by the public SDK consumer. No app/native ROS/VM product admission and no borrowed historical proof hashes. Test private keys remain ephemeral; no product enrollment or signing authority is emitted.",
+    "source_and_topology": "The exact phase-dependent probe/public paths and all actual actors/FDs must be source-pinned and reviewed before own qualification. Switching from probe to public may populate only the already declared dynamic same-subject proof/benign/admission binding fields; changing code/input/executor/mount restarts whole qualification.",
+    "product_path": "Only after those current same-subject outputs and independent retirement reviews exist may the existing root issuer create uwvm-os-root-witness-enrollment-v1 bound to both exact proof hashes. The numbered states below describe that product enrollment path.",
+    "VM_owner_must_supply": "Exact source for both prequalification probe and public state paths, their raw kernel/original evidence and closed input/argv/FD topology. This candidate has not implemented or run either producer path."
+  }
+}

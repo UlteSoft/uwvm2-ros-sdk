@@ -676,6 +676,10 @@ class Publisher:
 
     def publish(self, value):
         """Encode before the one host effect; return its original ABI result."""
+        # Retirement is checked before user codec code as well as by invoke
+        # afterward. A closed publisher must not run an observable serializer.
+        if not self.owner.handle:
+            return Result(9)
         return self.owner.invoke("topic_publish", self.codec.encode(value))
 
     def close(self):

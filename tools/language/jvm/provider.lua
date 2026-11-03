@@ -173,7 +173,8 @@ function _run_java(closure, programs, arguments, environment)
     -- With an explicit ld-linux entry that executable is the loader. Keep the
     -- full closure in its --library-path and avoid the launcher's re-exec path.
     launcher_environment.LD_LIBRARY_PATH = ""
-    local argv = {"--library-path", library_path, programs.java}
+    local argv = {"--library-path", library_path, programs.java,
+        "-Djava.io.tmpdir=" .. assert(environment.TMPDIR, "Use this target's private JVM temporary directory")}
     table.join2(argv, arguments)
     os.vrunv(loader, argv, {envs = launcher_environment})
 end
@@ -186,7 +187,7 @@ end
 -- @param closure Complete isolated tool input directory.
 -- @param programs Genuine executable entry table from the common bundle installer.
 -- @return No value; any compiler diagnostic or missing Wasm output fails the build.
--- @details Compiler class files and caches stay in .uwvm-ros. No host JVM is part
+-- @details Compiler class files and caches stay in the selected object tree. No host JVM is part
 -- of the produced guest; the final command imports the selected ROS ABI directly.
 function _jvm(target, root, language, backend, closure, programs)
 	-- Each target owns an isolated scratch tree, including when multiple
@@ -196,12 +197,8 @@ function _jvm(target, root, language, backend, closure, programs)
 		target_name:match("^[%w_][%w_.%-]*$"),
 		"Managed target names must use letters, digits, underscores, dots or dashes"
 	)
-	local cache_name = target:fullname() == target_name and target_name
-		or import(
-			"artifact_contract",
-			{ rootdir = path.join(root, "tools/xmake"), anonymous = true }
-		).identity(target)
-	local cache = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/managed-aot", cache_name)
+	local artifacts = import("artifact_contract", { rootdir = path.join(root, "tools/xmake"), anonymous = true })
+	local cache = artifacts.workspace(target, "managed-aot")
 	local classes = path.join(cache, "classes")
 	local kind = target:kind() or "binary"
 	local root_class = target:values("ros.sdk.main_class")
@@ -227,11 +224,13 @@ function _jvm(target, root, language, backend, closure, programs)
 		JAVA_TOOL_OPTIONS = "",
 		JDK_JAVA_OPTIONS = "",
 		CLASSPATH = "",
+		TMPDIR = path.join(cache, "tmp"),
 		LD_LIBRARY_PATH = path.join(closure, "lib/host-runtime") .. ":" .. path.join(
 			closure,
 			"jdk21/lib"
 		) .. ":" .. path.join(closure, "jdk21/lib/server"),
 	}
+	os.mkdir(environment.TMPDIR)
 	-- A successful javac invocation need not regenerate a removed entry class.
 	-- Retire only this application's class directory before compiling its
 	-- current sources; the immutable compiler bundle remains cached.
@@ -252,12 +251,19 @@ function _jvm(target, root, language, backend, closure, programs)
 	-- namespace roots. Scanning the complete backend tree also selects historical
 	-- mirrors of the shared classes and makes genuine javac reject duplicate types.
 	table.join2(sources, os.files(path.join(root, "include/platform", backend, "java/uwvm/**.java")))
-	if backend == "ros1" then
-		-- Select the pinned real rosjava namespace source profile once.
-		table.join2(sources, os.files(path.join(root, "include/platform/ros/transplate/ros1/rosjava/v0_1_0/src/main/java/**.java")))
-	else
-		table.join2(sources, os.files(path.join(root, "include/platform", backend, "java/compat/**.java")))
-	end
+	-- Each maintained legacy client profile has one versioned canonical source
+	-- root. Never compile a second mirror of the same Java packages.
+	local legacy_client = backend == "ros2" and "rcljava" or "rosjava"
+	table.join2(
+		sources,
+		os.files(path.join(
+			root,
+			"include/platform/ros/transplate",
+			backend,
+			legacy_client,
+			(backend == "ros2" and "v0_1_1/src/main/java/**.java" or "v0_1_0/src/main/java/**.java")
+		))
+	)
 	table.join2(sources, os.files(path.join(platform_root, "java/uwvm/**.java")))
 	table.join2(sources, os.files(path.join(platform_root, "java", backend, "**.java")))
 	table.insert(sources, path.join(root, "tools/language/java/Compile.java"))

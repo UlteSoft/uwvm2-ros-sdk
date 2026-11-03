@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-sdk-approved-kernel-object-relation-set-v1",
+  "version": "0.4.0",
+  "default_decision": "DENY",
+  "current_executable_relations": [],
+  "namespace_relations": [],
+  "census_freshness_relations": [],
+  "producers": [],
+  "production_approved": [],
+  "JSON_can_register_new_kernel_primitives": false
+}

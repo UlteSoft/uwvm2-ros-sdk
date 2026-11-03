@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <kinova/c/ros2/mobile-fjt-humble-complete/bounded_records.h>
+#include "guest_contract_tests.h"
 
 int main(int argc, char** argv)
 {
@@ -13,8 +14,14 @@ int main(int argc, char** argv)
     static unsigned char bytes[8581];
     size_t length = 0, index;
     unsigned primary = 0, cleanup = 0;
-    (void)argc;
-    (void)argv;
+    if(argc == 3 && strcmp(argv[1], "--guest-test") == 0)
+    {
+        return kinova_guest_contract_test(argv[2]);
+    }
+    if(argc != 1)
+    {
+        return 22;
+    }
     length = fread(bytes, 1, sizeof bytes, stdin);
     if(ferror(stdin))
     {

@@ -5,7 +5,8 @@ common public Xmake contract. The real library owns its heap; the consumer
 passes only scalar values through actual named Wasm imports. It verifies signed
 sums, a real caught overflow, finally execution, one managed initialization per
 instance, and independent state for two instances of the same library bytes.
-Actual built/executed status is recorded separately in library-coverage.json.
+The producer is Kotlin and the consumer is Java. Actual execution status is
+recorded separately in test-status.json; source registration is not execution.
 
 Edit run-native.json to select your installed runtime and gateway executables.
 Its complete explicit policy enables no ROS module and grants no clocks,
@@ -24,3 +25,15 @@ build/targets/6d61696e/main.wasm, with all compiler intermediates outside build/
 The preload aliases math and math_peer have separate explicit module policies.
 No cross-module object reference or pointer is transferred. This example does
 not qualify native ROS, ARM, memory64 or static archives.
+
+The required public component command is `xmake test -j1` after the build. Its
+four fresh VM cases check real arithmetic/catch/finally behavior, irreversible
+stdout-rights denial, invalid arguments, and independent module state in a new
+process. Both actual compiler receipts must match the complete emitted Wasm
+SHAs and their Kotlin/Java frontend selections. The consumer writes directly
+through WASI so a denied write cannot be swallowed by PrintStream.
+
+Set `UWVM_ROS_JAVA_GUEST_TEST_CONFIG` to an absolute installed VM identity JSON
+with the format documented by the Java shared_math example. Missing runtime or
+any unexecuted required case causes non-success. These component checks do not
+replace the required official ROS simulation and permissioned feedback path.

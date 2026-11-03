@@ -37,6 +37,15 @@ static uint32_t roswasm_cleanup_error;
 #if ROSWASM_OWNED_SERVICE != 0 && ROSWASM_OWNED_SERVICE != 1
 # error "ROSWASM_OWNED_SERVICE must be exactly 0 or 1"
 #endif
+#ifndef ROSWASM_GUEST_MEMORY_PROBE
+# define ROSWASM_GUEST_MEMORY_PROBE 0
+#endif
+#if ROSWASM_GUEST_MEMORY_PROBE != 0 && ROSWASM_GUEST_MEMORY_PROBE != 1
+# error "ROSWASM_GUEST_MEMORY_PROBE must be exactly 0 or 1"
+#endif
+#if ROSWASM_GUEST_MEMORY_PROBE && !defined(__wasm__)
+# error "The private-memory functional probe requires a genuine Wasm build"
+#endif
 #if ROSWASM_OWNED_SERVICE
 # include "_open_witness.h"
 #endif
@@ -1141,13 +1150,86 @@ static PyObject* roswasm_last_cleanup(PyObject* self, PyObject* unused)
     return PyLong_FromUnsignedLong(roswasm_cleanup_error);
 }
 
-/** Only a copied-buffer invocation bridge is exposed; no memory-address API. */
+#if ROSWASM_GUEST_MEMORY_PROBE
+/* Functional diagnostics for the separately selected private-instance profile.
+ * This is one instance-local static array. No caller-selected pointer, peer
+ * memory selector or host address is accepted. Its offset is an observation,
+ * never a memory identity or permission. No runtime/channel import is added. */
+static unsigned char roswasm_private_probe[64];
+
+static PyObject* roswasm_probe_snapshot(PyObject* self, PyObject* unused)
+{
+    (void)self;
+    (void)unused;
+    return Py_BuildValue("(KKy#)",
+        (unsigned long long)(uintptr_t)roswasm_private_probe,
+        (unsigned long long)__builtin_wasm_memory_size(0),
+        (char const*)roswasm_private_probe,
+        (Py_ssize_t)sizeof roswasm_private_probe);
+}
+
+static PyObject* roswasm_probe_write(PyObject* self, PyObject* value)
+{
+    (void)self;
+    if(!PyBytes_CheckExact(value) || PyBytes_GET_SIZE(value) != (Py_ssize_t)sizeof roswasm_private_probe)
+    {
+        PyErr_SetString(PyExc_ValueError, "one exact 64-byte private sentinel is required");
+        return NULL;
+    }
+    memmove(roswasm_private_probe, PyBytes_AS_STRING(value), sizeof roswasm_private_probe);
+    Py_RETURN_NONE;
+}
+
+static PyObject* roswasm_probe_grow(PyObject* self, PyObject* value)
+{
+    (void)self;
+    if(!PyLong_CheckExact(value))
+    {
+        PyErr_SetString(PyExc_TypeError, "an exact private memory growth page count is required");
+        return NULL;
+    }
+    long pages = PyLong_AsLong(value);
+    if(pages == -1 && PyErr_Occurred()) { return NULL; }
+    if(pages < 0 || pages > 16)
+    {
+        PyErr_SetString(PyExc_ValueError, "functional growth is bounded to 0..16 Wasm pages");
+        return NULL;
+    }
+    size_t before = __builtin_wasm_memory_grow(0, (size_t)pages);
+    if(before == (size_t)-1) { return PyLong_FromLong(-1); }
+    return PyLong_FromUnsignedLongLong((unsigned long long)before);
+}
+
+static PyObject* roswasm_probe_fold(PyObject* self, PyObject* value)
+{
+    (void)self;
+    if(!PyBytes_CheckExact(value) || PyBytes_GET_SIZE(value) > 4096)
+    {
+        PyErr_SetString(PyExc_ValueError, "bounded immutable private input bytes are required");
+        return NULL;
+    }
+    unsigned char const* bytes = (unsigned char const*)PyBytes_AS_STRING(value);
+    size_t size = (size_t)PyBytes_GET_SIZE(value);
+    uint64_t result = 0;
+    for(size_t i = 0; i < size; ++i) { result += (uint64_t)(i + 1) * bytes[i]; }
+    return PyLong_FromUnsignedLongLong((unsigned long long)result);
+}
+#endif
+
+/** Default builds expose only copied-buffer ROS invocation. The explicit
+ * functional profile adds bounded probes of this instance's own memory only. */
 static PyMethodDef roswasm_methods[] = {
 #if ROSWASM_OWNED_SERVICE
     ROSWASM_OPEN_METHODS
 #endif
     {"invoke",            roswasm_invoke,       METH_VARARGS, "Invoke one ROS import once using owned output and pinned input storage."    },
     {"last_open_cleanup", roswasm_last_cleanup, METH_NOARGS,  "Return cleanup errno after a failed open-result allocation, otherwise None."},
+#if ROSWASM_GUEST_MEMORY_PROBE
+    {"private_memory_probe_snapshot", roswasm_probe_snapshot, METH_NOARGS, "Copy the private sentinel, its local offset and current memory0 page count."},
+    {"private_memory_probe_write", roswasm_probe_write, METH_O, "Write exactly64 bytes to the instance-local sentinel only."},
+    {"private_memory_probe_grow", roswasm_probe_grow, METH_O, "Execute bounded real memory.grow on this instance's memory0."},
+    {"private_memory_probe_fold", roswasm_probe_fold, METH_O, "Run a bounded ordinary C pointer algorithm on private immutable bytes."},
+#endif
     {NULL,                NULL,                 0,            NULL                                                                         }
 };
 static struct PyModuleDef roswasm_module =

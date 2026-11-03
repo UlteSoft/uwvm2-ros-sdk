@@ -13,6 +13,7 @@ requirement; see the selected original rcl source and its separate native qualif
 
 import re
 import math
+import sys
 from roswasm.client import _factory_failure
 from roswasm import Node as CapabilityNode, Result, RosError, Executor
 from roswasm import codecs
@@ -55,21 +56,80 @@ class _Publisher:
 
 
 class _Logger:
+    """Existing INFO route with Humble's per-caller throttle/skip/once order.
+
+    The default throttle clock is SYSTEM_TIME as in Humble's actual Clock()
+    default, selected through a separate exact time_read_system binding. No
+    WASI/ROS-time fallback or lazy owner creation during a dispatch lease.
+    Other severities/native level introspection remain outside this surface.
+    """
+
     def __init__(self, node):
         self.node = node
+        self.contexts = {}
+        self._default_clock_marker = object()
 
-    def info(self, message, **unsupported):
+    @staticmethod
+    def _caller():
+        frame = sys._getframe(1)
+        while frame is not None and frame.f_globals.get("__name__") == __name__:
+            frame = frame.f_back
+        if frame is None:
+            raise RuntimeError("logger caller frame unavailable")
+        return (frame.f_code.co_name, frame.f_code.co_filename,
+                frame.f_lineno, frame.f_lasti)
+
+    def info(self, message, **filters):
         self.node._live()
-        if unsupported:
-            raise NotImplementedError(
-                "logger filters/once/throttle require compatibility support"
-            )
+        allowed = {"throttle_duration_sec", "throttle_time_source_type", "skip_first", "once"}
+        if any(key not in allowed for key in filters):
+            raise TypeError("unrecognized logging filter option")
+        selected = []
+        parameters = {}
+        if filters.get("throttle_duration_sec") or filters.get("throttle_time_source_type"):
+            duration = filters.get("throttle_duration_sec")
+            if duration is None:
+                raise TypeError("throttle_duration_sec required")
+            clock = filters.get("throttle_time_source_type", self._default_clock_marker)
+            if clock is not self._default_clock_marker and not isinstance(clock, Clock):
+                raise ValueError("throttle time source must be Clock")
+            selected.append("throttle")
+            parameters.update(throttle_duration_sec=duration, throttle_time_source_type=clock)
+        for option in ("skip_first", "once"):
+            if filters.get(option):
+                selected.append(option)
+                parameters[option] = filters[option]
+        caller = self._caller()
+        current = self.contexts.get(caller)
+        if current is None:
+            if len(self.contexts) >= 256:
+                raise RosError(Result(90))
+            current = {"filters": tuple(selected), "parameters": parameters,
+                       "last_logged": 0, "skipped": False, "logged_once": False}
+            self.contexts[caller] = current
+        elif current["filters"] != tuple(selected) or current["parameters"] != parameters:
+            raise ValueError("Logging filter parameters cannot change at a callsite")
+        for option in current["filters"]:
+            if option == "throttle":
+                clock = parameters["throttle_time_source_type"]
+                if clock is self._default_clock_marker:
+                    clock = self.node._get_logging_clock()
+                now = clock.now().nanoseconds
+                if not now >= current["last_logged"] + parameters["throttle_duration_sec"] * 1e9:
+                    return False
+                current["last_logged"] = now
+            elif option == "skip_first" and not current["skipped"]:
+                current["skipped"] = True
+                return False
+            elif option == "once":
+                if current["logged_once"]:
+                    return False
+                current["logged_once"] = True
         payload = codecs.String.encode(message)
         if self.node._logger_owner is None:
-            # Existing logger callbacks remain usable; only a new lazy resource
-            # needs the same factory/reentry/lifetime admission as other opens.
             self.node._open_logger()
         self.node._logger_owner.invoke("log_write", payload).checked()
+        return True
 
     def get_effective_level(self):
         raise NotImplementedError(
@@ -181,6 +241,7 @@ class Node:
         self._executor = ContextExecutor(self.context, 256)
         self.services, self.clients = [], []
         self._clock, self._logger_owner, self._destroyed = None, None, False
+        self._logging_clock = None
         self._destroy_cleanup = None
         self._destroy_future_cleanup = None
         self._logger = _Logger(self)
@@ -534,6 +595,27 @@ class Node:
         finally:
             self.context.session._end_factory(frame, owns)
 
+    def _get_logging_clock(self):
+        self._live()
+        if self._logging_clock is not None:
+            return self._logging_clock
+        self._factory()
+        frame, owns = self.context.session._begin_factory(1)
+        registration = None
+        try:
+            registration = _Registration((self._owners,))
+            clock = Clock(clock_type=ClockType.SYSTEM_TIME, context=self.context,
+                          node_name=self.get_fully_qualified_name())
+            registration.set(0, clock.owner)
+            self._logging_clock = clock
+            frame.committed = True
+            return clock
+        except BaseException as error:
+            self._failure(frame, error, registration)
+            raise
+        finally:
+            self.context.session._end_factory(frame, owns)
+
     def get_clock(self):
         self._live()
         if self._clock is None:
@@ -581,11 +663,20 @@ class Node:
         if not 0 < period < 1 << 63:
             raise ValueError("timer nanosecond range")
         new_clock = clock is None and self._clock is None
-        frame, owns = self.context.session._begin_factory(1 if new_clock else 0)
+        new_logger = self.context.prepare_callback_logging and self._logger_owner is None
+        new_log_clock = self.context.prepare_callback_logging_clock and self._logging_clock is None
+        logger_binding = self.context.binding("log_write", self.get_fully_qualified_name()) if new_logger else None
+        if new_log_clock:
+            self.context.binding("time_read_system", self.get_fully_qualified_name())
+        frame, owns = self.context.session._begin_factory(int(new_clock) + int(new_logger) + int(new_log_clock))
         registration = None
         try:
             collections = (self._sources, self.timers, self._executor.sources)
             if new_clock:
+                collections = collections + (self._owners,)
+            if new_logger:
+                collections = collections + (self._owners,)
+            if new_log_clock:
                 collections = collections + (self._owners,)
             registration = _Registration(collections)
             selected = clock if clock is not None else self._clock
@@ -596,15 +687,32 @@ class Node:
                     node_name=self.get_fully_qualified_name(),
                 )
             timer = Timer(timer_period_sec, callback, selected, autostart=autostart)
+            logger_owner = self.context.session.open(logger_binding.alias) if new_logger else None
+            logging_clock = Clock(clock_type=ClockType.SYSTEM_TIME, context=self.context,
+                                  node_name=self.get_fully_qualified_name()) if new_log_clock else None
             registration.set(0, timer)
             registration.set(1, timer)
             registration.set(2, timer)
             if new_clock:
                 registration.set(3, selected.owner)
                 self._clock = selected
+            position = 3 + int(new_clock)
+            if new_logger:
+                registration.set(position, logger_owner)
+                position += 1
+                self._logger_owner = logger_owner
+            if new_log_clock:
+                registration.set(position, logging_clock.owner)
+                self._logging_clock = logging_clock
             frame.committed = True
             return timer
         except BaseException as error:
+            if new_clock:
+                self._clock = None
+            if new_logger:
+                self._logger_owner = None
+            if new_log_clock:
+                self._logging_clock = None
             self._failure(frame, error, registration)
             raise
         finally:

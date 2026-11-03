@@ -1,0 +1,140 @@
+{
+  "ROS": "ROS2",
+  "declared_target_ABI": [
+    "wasm32-wasip1 noeh",
+    "wasm32-wasip1 eh",
+    "wasm64-wasip1 noeh",
+    "wasm64-wasip1 eh"
+  ],
+  "official_document": {
+    "capture_status": "HTTP200 original retained by SDK03",
+    "full_upstream_commit": null,
+    "full_upstream_commit_status": "REQUIRED_MISSING_DOCUMENT_DOES_NOT_IDENTIFY_COMMIT",
+    "raw_bytes": 19908,
+    "sha256": "f36046afc831a0d6e45100fe75cd91409e9317f9ed6f6e03795655950f41ac4e",
+    "url": "https://docs.universal-robots.com/PolyScopeX_SDK_Documentation/build/SDK-v0.11/_downloads/269b9c285239fcf0175c496d94007a2b/URInterfacesAPI.html"
+  },
+  "official_version": "PolyScopeX SDK-v0.11",
+  "public_header": "include/platform/universal_robots/transplate/ros2/polyscopex/sdk_v0_11/io.h",
+  "public_header_sha256": "07809b43b1cadbc6adba687dff8a138c6c8f1e522e63a6d66ea1b9693e5c607b",
+  "qualification": {
+    "Stage_A": "NOT_RUN",
+    "Stage_B": "NOT_RUN",
+    "compilation": "NOT_RUN",
+    "full_source_commit_custody": "MISSING",
+    "native_exact_version_type_support": "MISSING",
+    "native_provider_mapping": "MISSING",
+    "official_ROS_roundtrip": "NOT_RUN",
+    "real_Wasm_contract_cases": "NOT_RUN",
+    "runtime_permission_and_isolation_negatives": "NOT_RUN",
+    "source": "IMPLEMENTED_UNVERIFIED",
+    "support_enum_enabled": false
+  },
+  "schema": "uwvm-vendor-official-source-lock-v1",
+  "services": [
+    {
+      "native_package_name": null,
+      "native_package_name_status": "REQUIRED_EXACT_NATIVE_PACKAGE_IDENTITY_NOT_PROVED_BY_THIS_DOCUMENT",
+      "official_symbol": "SetAnalogOutput.srv",
+      "request_fields": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "name": "pin",
+          "type": "int8"
+        },
+        {
+          "constants": {
+            "OUTPUT_CURRENT": 0,
+            "OUTPUT_VOLTAGE": 1
+          },
+          "name": "output_type",
+          "type": "bool"
+        },
+        {
+          "finite": true,
+          "mode_units_and_bounds": {
+            "OUTPUT_CURRENT": {
+              "maximum": 0.02,
+              "minimum": 0.002,
+              "unit": "ampere"
+            },
+            "OUTPUT_VOLTAGE": {
+              "maximum": 10,
+              "minimum": 0,
+              "unit": "volt"
+            }
+          },
+          "name": "value",
+          "type": "float64"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "sdk_prefix": "uwvm_ur_psx011_set_analog_output"
+    },
+    {
+      "native_package_name": null,
+      "native_package_name_status": "REQUIRED_EXACT_NATIVE_PACKAGE_IDENTITY_NOT_PROVED_BY_THIS_DOCUMENT",
+      "official_symbol": "SetDigitalOutput.srv",
+      "request_fields": [
+        {
+          "maximum": 7,
+          "minimum": 0,
+          "name": "pin",
+          "type": "int8"
+        },
+        {
+          "constants": {
+            "STATE_OFF": 0,
+            "STATE_ON": 1
+          },
+          "name": "state",
+          "type": "bool"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "sdk_prefix": "uwvm_ur_psx011_set_digital_output"
+    },
+    {
+      "native_package_name": null,
+      "native_package_name_status": "REQUIRED_EXACT_NATIVE_PACKAGE_IDENTITY_NOT_PROVED_BY_THIS_DOCUMENT",
+      "official_symbol": "SetSpeedFraction.srv",
+      "request_fields": [
+        {
+          "finite": true,
+          "maximum": 1,
+          "minimum": 0,
+          "name": "value",
+          "type": "float32"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "sdk_prefix": "uwvm_ur_psx011_set_speed_fraction"
+    }
+  ],
+  "source_semantics": {
+    "Guest_only": true,
+    "canonical_little_endian_not_native_CDR": true,
+    "implicit_retry_or_grant": false,
+    "native_C_struct_ABI_compatibility_claimed": false,
+    "read_or_write_beyond_supplied_objects_authorized": false,
+    "response_false_is_transport_error": false
+  },
+  "updated_utc": "2026-10-29T04:45:18.543135+00:00",
+  "vendor": "universal_robots"
+}

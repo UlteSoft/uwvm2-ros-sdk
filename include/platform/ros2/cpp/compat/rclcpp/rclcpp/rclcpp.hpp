@@ -1,5 +1,5 @@
 /** @file
- * @brief Finite C++20 source adapter for explicitly selected minimal examples.
+ * @brief C++20 source adapter for explicitly selected bounded typed applications.
  * @details Topic/time/log operations use the checked ROS Wasm SDK and immutable
  * selected bindings. This surface supplies caller-driven source behavior, not
  * native rclcpp binary ABI, threads, generic RMW or discovery. Serialize global
@@ -17,6 +17,7 @@
 # include <platform/ros2/cpp/compat/rclcpp/roswasm_rclcpp/selection.hpp>
 # include <platform/ros2/cpp/compat/rclcpp/std_msgs/msg/string.hpp>
 # include <chrono>
+# include <concepts>
 # include <array>
 # include <fast_io.h>  // Explicit current vendored C++20 SDK dependency.
 # include <cstdlib>
@@ -104,6 +105,47 @@ namespace rclcpp
 
     namespace detail
     {
+        [[noreturn]] inline void fail(std::uint32_t code);
+
+        template <class Message>
+        concept CompleteCodec = requires(Message const& value, Message& destination,
+                                          roswasmcpp::wire::bytes& bytes,
+                                          std::span<unsigned char const> input)
+        {
+            { roswasmcpp::Codec<Message>::encode(value, bytes) } -> std::same_as<bool>;
+            { roswasmcpp::Codec<Message>::decode(input, destination) } -> std::same_as<bool>;
+        };
+
+        /** Adapt only explicit source callback forms. SharedPtr callbacks get an
+         * independent owning decoded message per delivery, so retaining/mutating
+         * it cannot change the receive buffer or another delivered snapshot.
+         */
+        template <class Message, class Callback>
+        std::function<void(Message const&)> subscription_callback(Callback&& source)
+        {
+            using Fn = std::decay_t<Callback>;
+            if constexpr(requires(Fn const& fn) { static_cast<bool>(fn); })
+            {
+                if(!static_cast<bool>(source)) fail(22);
+            }
+            if constexpr(std::is_invocable_r_v<void, Fn&, std::shared_ptr<Message>>)
+            {
+                return [callback = Fn(std::forward<Callback>(source))](Message const& message) mutable
+                { std::invoke(callback, std::make_shared<Message>(message)); };
+            }
+            else if constexpr(std::is_invocable_r_v<void, Fn&, std::shared_ptr<Message const>>)
+            {
+                return [callback = Fn(std::forward<Callback>(source))](Message const& message) mutable
+                { std::invoke(callback, std::make_shared<Message const>(message)); };
+            }
+            else
+            {
+                static_assert(std::is_invocable_r_v<void, Fn&, Message const&>,
+                              "Subscription callback must accept const Message&, SharedPtr or ConstSharedPtr");
+                return std::function<void(Message const&)>{std::forward<Callback>(source)};
+            }
+        }
+
         struct Core;
 
         struct State
@@ -342,10 +384,17 @@ namespace rclcpp
         {
             detail::fail(13);
         }
-        if(!selected->backend || selected->backend->version != 2 || !selected->backend->abi_version || !selected->step || !selected->maximum_spin_steps ||
-           selected->maximum_spin_steps > 4096 || selected->topics.size() > 32 || selected->nodes.empty() || selected->nodes.size() > 16)
+        bool bounded = selected->spin_mode == roswasm_rclcpp::SpinMode::bounded;
+        bool continuous = selected->spin_mode == roswasm_rclcpp::SpinMode::until_shutdown;
+        if(!selected->backend || selected->backend->version != 2 || !selected->backend->abi_version || !selected->step ||
+           (!bounded && !continuous) || (bounded && (!selected->maximum_spin_steps || selected->maximum_spin_steps > 4096)) ||
+           (continuous && selected->maximum_spin_steps != 0) || selected->topics.size() > 32 || selected->nodes.empty() || selected->nodes.size() > 16)
         {
             detail::fail(22);
+        }
+        if(continuous && selected->services)
+        {
+            detail::fail(95); // Continuous service-future dispatch needs its own qualified profile.
         }
         for(std::size_t i{}; i != selected->nodes.size(); ++i)
         {
@@ -367,7 +416,7 @@ namespace rclcpp
         {
             auto const& r = selected->topics[i];
             if(!detail::text(r.node, 128) || !detail::text(r.topic, 255) || !detail::text(r.alias, 64) || !r.keep_last_depth || r.keep_last_depth > 4096 ||
-               r.maximum_wire_bytes < 4 || r.maximum_wire_bytes > 32768 ||
+               r.maximum_wire_bytes < 1 || r.maximum_wire_bytes > 4193786 ||
                (r.role != roswasm_rclcpp::Role::publish && r.role != roswasm_rclcpp::Role::subscribe))
             {
                 detail::fail(22);
@@ -740,17 +789,17 @@ namespace rclcpp
         }
     };
 
-    /** @brief Finite source publisher owning one explicitly selected String role.
+    /** @brief Typed source publisher owning one explicitly selected publication role.
      * @details Retains the node core to keep its C context alive. Calls use checked
      * synchronous SDK publication without retries; unsupported Message types fail
      * compilation. Obtain owners through Node so table/byte bounds are validated.
-     * @tparam Message Exactly std_msgs::msg::String for this selected source profile.
+     * @tparam Message Complete owning type with an explicit canonical Codec.
      * @see Node::create_publisher
      */
     template <class Message>
     class Publisher : public detail::Entity
     {
-        static_assert(std::is_same_v<Message, ::std_msgs::msg::String>, "This finite source adapter implements complete String only");
+        static_assert(detail::CompleteCodec<Message>, "A complete owning typed canonical Codec specialization is required");
         std::shared_ptr<detail::Core> core_;
         roswasmcpp::Publisher<Message> publisher_;
         std::size_t maximum_;
@@ -765,7 +814,7 @@ namespace rclcpp
 
         /** @brief Acquire the selected publication alias using a retained node core.
          * @details Factory callers supply a nonnull live Core and a validated byte
-         * capacity of at least four. Setup errors use the adapter failure path.
+         * capacity of at least one. Setup errors use the adapter failure path.
          * @param core Shared internal node owner retained through cleanup.
          * @param alias Explicit granted publication alias, borrowed during acquisition.
          * @param maximum Complete canonical byte capacity validated by the factory.
@@ -777,9 +826,9 @@ namespace rclcpp
             detail::checked(publisher_.error());
         }
 
-        /** @brief Publish one complete String through the selected role once.
-         * @details Requires a running context/live facade, enforces maximum minus
-         * four content bytes, then uses the full SDK codec and checked dispatch.
+        /** @brief Publish one complete typed canonical message through the selected role once.
+         * @details Requires a running context/live facade, encodes exactly once and
+         * enforces the complete wire-byte quota before checked dispatch.
          * Errors use RCLError/abort; no partial send, resize or replay is added.
          * @param value Borrowed source message, valid throughout the synchronous call.
          * @see Publisher::close
@@ -791,11 +840,7 @@ namespace rclcpp
             {
                 detail::fail(9);
             }
-            if(value.data.size() > maximum_ - 4)
-            {
-                detail::fail(90);
-            }
-            detail::checked(publisher_.publish(value));
+            detail::checked(publisher_.publish(value, maximum_));
         }
 
         /** @brief Report no queued work for a publication-only entity.
@@ -841,17 +886,17 @@ namespace rclcpp
         }
     };
 
-    /** @brief Finite String subscription with caller-driven SDK callback delivery.
+    /** @brief Typed subscription with caller-driven complete SDK callback delivery.
      * @details Owns a selected bounded subscription and retains its node core.
      * There is no native callback thread or implicit poll/retry. Callback exceptions
      * follow the SDK/caller stack; serialize use and mutation of shared state.
-     * @tparam Message Exactly std_msgs::msg::String in this source profile.
+     * @tparam Message Complete owning type with an explicit canonical Codec.
      * @see Node::create_subscription
      */
     template <class Message>
     class Subscription : public detail::Entity
     {
-        static_assert(std::is_same_v<Message, ::std_msgs::msg::String>, "This finite source adapter implements complete String only");
+        static_assert(detail::CompleteCodec<Message>, "A complete owning typed canonical Codec specialization is required");
         std::shared_ptr<detail::Core> core_;
         roswasmcpp::Subscription<Message> subscription_;
         bool closed_{};
@@ -1092,7 +1137,7 @@ namespace rclcpp
          * @details Lookup requires running state, factory capacity and the explicit
          * publish role. Missing binding is 13, depth mismatch 95 and mutation during
          * dispatch 17. Opens only the selected publication alias.
-         * @tparam Message Exactly the selected std_msgs::msg::String source type.
+         * @tparam Message Complete owning type with an explicit canonical Codec.
          * @param topic Counted exact selected topic spelling, borrowed during lookup.
          * @param depth Keep-last entries exactly equal to the selected row.
          * @return Shared publication facade with the row's complete byte bound.
@@ -1110,9 +1155,9 @@ namespace rclcpp
         /** @brief Create and activate one exact selected bounded topic subscription.
          * @details Requires an independent subscribe row and matching keep-last
          * depth. Stores an owning callable; decoded const message references are
-         * borrowed only during the synchronous caller-driven delivery callback.
-         * @tparam Message Exactly the selected std_msgs::msg::String source type.
-         * @tparam Callback Convertible to void(Message const&).
+         * borrowed during const-reference callbacks; SharedPtr callbacks own a fresh copy.
+         * @tparam Message Complete owning type with an explicit canonical Codec.
+         * @tparam Callback Accepts const Message&, SharedPtr or ConstSharedPtr.
          * @param topic Exact selected topic name, borrowed during lookup.
          * @param depth Keep-last entry count matching the selected row.
          * @param callback Callable construction source, retained by the subscription.
@@ -1122,11 +1167,13 @@ namespace rclcpp
         template <class Message, class Callback>
         typename Subscription<Message>::SharedPtr create_subscription(std::string_view topic, std::size_t depth, Callback&& callback)
         {
+            // Allocate/copy the callback before opening any capability owner.
+            auto adapted = detail::subscription_callback<Message>(std::forward<Callback>(callback));
             auto const& row = detail::topic(*core_, topic, depth, roswasm_rclcpp::Role::subscribe);
             auto value = std::make_shared<Subscription<Message>>(core_,
                                                                  row.alias,
                                                                  row.maximum_wire_bytes,
-                                                                 std::function<void(Message const&)>{std::forward<Callback>(callback)});
+                                                                 std::move(adapted));
             core_->add(value);
             return value;
         }
@@ -1167,11 +1214,12 @@ namespace rclcpp
             return timer;
         }
 
-        /** @brief Dispatch this finite node under the explicit pacing/pass bound.
+        /** @brief Dispatch this node under the explicit selected pacing/lifecycle mode.
          * @details Requires running state and no global/core/service reentry. Each
          * pass calls the selected pacing hook, snapshots live entities and polls
          * them once. Code 125 requests shutdown; other failures propagate, idle 11
-         * is tolerated and budget exhaustion is 110. A guard closes this core on
+         * is tolerated. Bounded-mode exhaustion is 110; until_shutdown has no pass
+         * cutoff and requires an explicit stop. A guard closes this core on
          * every exit, including callback exceptions. This starts no worker thread.
          * @see spin
          */
@@ -1198,8 +1246,13 @@ namespace rclcpp
             } guard{s.spinning, core_};
 
             s.spinning = true;
-            for(std::size_t pass{}; pass != s.selection->maximum_spin_steps; ++pass)
+            std::size_t pass{};
+            for(;;)
             {
+                if(s.selection->spin_mode == roswasm_rclcpp::SpinMode::bounded && pass == s.selection->maximum_spin_steps)
+                {
+                    detail::fail(110);
+                }
                 if(!ok())
                 {
                     return;
@@ -1238,12 +1291,12 @@ namespace rclcpp
                     }
                 }
                 core_->dispatching = false;
+                if(s.selection->spin_mode == roswasm_rclcpp::SpinMode::bounded) ++pass;
             }
-            detail::fail(110);  // A finite preparation/test budget is a failure, never fake normal shutdown.
         }
     };
 
-    /** @brief Retain a finite Node and run its caller-driven bounded dispatch loop.
+    /** @brief Retain a Node and run its explicitly selected bounded or continuous loop.
      * @details Null input is 22. After normal loop exit, a retained cleanup failure
      * is raised through the adapter failure path. Callbacks execute on this stack;
      * no native executor thread or generic wait-set compatibility is supplied.

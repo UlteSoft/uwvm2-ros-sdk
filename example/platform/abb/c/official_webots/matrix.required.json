@@ -1,0 +1,1726 @@
+{
+  "format": "sdk02-official-simulation-required-matrix-v1",
+  "platform": "abb",
+  "frozen_inventory_utc": "2026-10-26T16:25:39.998067+00:00",
+  "inventory_exhaustive": false,
+  "status": "UNRESOLVED_REQUIRED_SOURCE_AUDIT_AND_NOT_RUN",
+  "missing_dependency_or_licence": "BLOCKED_NOT_NA",
+  "all_rows_required_until_evidence_backed_applicability_resolution": true,
+  "release_axis": [
+    {
+      "backend": "ros1",
+      "name": "box_turtle",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "c_turtle",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "diamondback",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "electric",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "fuerte",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "groovy",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "hydro",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "indigo",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "jade",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "kinetic",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "lunar",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "melodic",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "noetic",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "ardent",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "bouncy",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "crystal",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "dashing",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "eloquent",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "foxy",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "galactic",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "humble",
+      "upstream_lifecycle": "active_at_frozen_rosdistro_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "iron",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "jazzy",
+      "upstream_lifecycle": "active_at_frozen_rosdistro_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "kilted",
+      "upstream_lifecycle": "active_at_frozen_rosdistro_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "lyrical",
+      "upstream_lifecycle": "active_at_frozen_rosdistro_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "rolling",
+      "upstream_lifecycle": "rolling_development_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    }
+  ],
+  "language_kind_width_axis": [
+    {
+      "language": "as",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "as",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "as",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "as",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "as",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "as",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "c",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "c",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "c",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "c",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "c",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "c",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "d",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "d",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "d",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "d",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "d",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "d",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "go",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "go",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "go",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "go",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "go",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "go",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "java",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "java",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "java",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "java",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "java",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "java",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "js",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "js",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "js",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "js",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "js",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "js",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "php",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "php",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "php",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "php",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "php",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "php",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "py",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "py",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "py",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "py",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "py",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "py",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "r",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "r",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "r",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "r",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "r",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "r",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 64,
+      "kind": "static"
+    }
+  ],
+  "versioned_models": [
+    {
+      "id": "abb-humble-tree:irb1200_5_90",
+      "platform": "ABB",
+      "model": "irb1200_5_90",
+      "source_catalog": "abb-humble-tree",
+      "repository": "https://github.com/PickNikRobotics/abb_ros2",
+      "commit": "0b4b29e8aa0b99eea74ea231c41a984e8e9c5782",
+      "source_path": "robot_specific_config/abb_irb1200_support/urdf/irb1200_5_90.xacro",
+      "source_git_blob": "c174a2d5654725b69a77bf33e07111373c848740",
+      "source_reference": "https://github.com/PickNikRobotics/abb_ros2/blob/0b4b29e8aa0b99eea74ea231c41a984e8e9c5782/robot_specific_config/abb_irb1200_support/urdf/irb1200_5_90.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "ff5e22e9381a77e769c9c5f8cd9ec8d8b172cba2d940cc2134d956b0c4f3e7ed",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-humble-tree:irb4600_20_250",
+      "platform": "ABB",
+      "model": "irb4600_20_250",
+      "source_catalog": "abb-humble-tree",
+      "repository": "https://github.com/PickNikRobotics/abb_ros2",
+      "commit": "0b4b29e8aa0b99eea74ea231c41a984e8e9c5782",
+      "source_path": "robot_specific_config/abb_irb4600_support/urdf/irb4600_20_250.xacro",
+      "source_git_blob": "64d13469e223efd895c82ea023a1d78685ed32ae",
+      "source_reference": "https://github.com/PickNikRobotics/abb_ros2/blob/0b4b29e8aa0b99eea74ea231c41a984e8e9c5782/robot_specific_config/abb_irb4600_support/urdf/irb4600_20_250.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "bcb6d9bb1e8bb4a822180272b39e9f22894ffe71b9d3e71a42c6c8127b0ef5dc",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-humble-tree:irb4600_40_255",
+      "platform": "ABB",
+      "model": "irb4600_40_255",
+      "source_catalog": "abb-humble-tree",
+      "repository": "https://github.com/PickNikRobotics/abb_ros2",
+      "commit": "0b4b29e8aa0b99eea74ea231c41a984e8e9c5782",
+      "source_path": "robot_specific_config/abb_irb4600_support/urdf/irb4600_40_255.xacro",
+      "source_git_blob": "04ee5bfe3822fe8068d34752ede7cd93570dc526",
+      "source_reference": "https://github.com/PickNikRobotics/abb_ros2/blob/0b4b29e8aa0b99eea74ea231c41a984e8e9c5782/robot_specific_config/abb_irb4600_support/urdf/irb4600_40_255.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "fbcdf574c931952626af6372f5ba4122ea6ce9b6cfb9e538dbb06f9c22091b3c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-humble-tree:irb4600_60_205",
+      "platform": "ABB",
+      "model": "irb4600_60_205",
+      "source_catalog": "abb-humble-tree",
+      "repository": "https://github.com/PickNikRobotics/abb_ros2",
+      "commit": "0b4b29e8aa0b99eea74ea231c41a984e8e9c5782",
+      "source_path": "robot_specific_config/abb_irb4600_support/urdf/irb4600_60_205.xacro",
+      "source_git_blob": "cce071594e524dcddd174da0d299ca5100dbe07b",
+      "source_reference": "https://github.com/PickNikRobotics/abb_ros2/blob/0b4b29e8aa0b99eea74ea231c41a984e8e9c5782/robot_specific_config/abb_irb4600_support/urdf/irb4600_60_205.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "cdb3ad633b434fc5945d5f30c65d707b6e6ff0a383c9eab188c46437584e676c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-rolling-tree:irb1200_5_90",
+      "platform": "ABB",
+      "model": "irb1200_5_90",
+      "source_catalog": "abb-rolling-tree",
+      "repository": "https://github.com/PickNikRobotics/abb_ros2",
+      "commit": "e6486f7409073cdb2a10d6878bb50191dd50172b",
+      "source_path": "robot_specific_config/abb_irb1200_support/urdf/irb1200_5_90.xacro",
+      "source_git_blob": "4f11cb5e4c78e005f75b47ca891adbe5080cb6ab",
+      "source_reference": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/robot_specific_config/abb_irb1200_support/urdf/irb1200_5_90.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "5dcde2219125f1e6c0aee2d9dab3705c95aa75cfc1a0cada3d51c8bca68629dd",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-rolling-tree:irb4600_20_250",
+      "platform": "ABB",
+      "model": "irb4600_20_250",
+      "source_catalog": "abb-rolling-tree",
+      "repository": "https://github.com/PickNikRobotics/abb_ros2",
+      "commit": "e6486f7409073cdb2a10d6878bb50191dd50172b",
+      "source_path": "robot_specific_config/abb_irb4600_support/urdf/irb4600_20_250.xacro",
+      "source_git_blob": "64d13469e223efd895c82ea023a1d78685ed32ae",
+      "source_reference": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/robot_specific_config/abb_irb4600_support/urdf/irb4600_20_250.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "bcb6d9bb1e8bb4a822180272b39e9f22894ffe71b9d3e71a42c6c8127b0ef5dc",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-rolling-tree:irb4600_40_255",
+      "platform": "ABB",
+      "model": "irb4600_40_255",
+      "source_catalog": "abb-rolling-tree",
+      "repository": "https://github.com/PickNikRobotics/abb_ros2",
+      "commit": "e6486f7409073cdb2a10d6878bb50191dd50172b",
+      "source_path": "robot_specific_config/abb_irb4600_support/urdf/irb4600_40_255.xacro",
+      "source_git_blob": "04ee5bfe3822fe8068d34752ede7cd93570dc526",
+      "source_reference": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/robot_specific_config/abb_irb4600_support/urdf/irb4600_40_255.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "fbcdf574c931952626af6372f5ba4122ea6ce9b6cfb9e538dbb06f9c22091b3c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-rolling-tree:irb4600_60_205",
+      "platform": "ABB",
+      "model": "irb4600_60_205",
+      "source_catalog": "abb-rolling-tree",
+      "repository": "https://github.com/PickNikRobotics/abb_ros2",
+      "commit": "e6486f7409073cdb2a10d6878bb50191dd50172b",
+      "source_path": "robot_specific_config/abb_irb4600_support/urdf/irb4600_60_205.xacro",
+      "source_git_blob": "cce071594e524dcddd174da0d299ca5100dbe07b",
+      "source_reference": "https://github.com/PickNikRobotics/abb_ros2/blob/e6486f7409073cdb2a10d6878bb50191dd50172b/robot_specific_config/abb_irb4600_support/urdf/irb4600_60_205.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "cdb3ad633b434fc5945d5f30c65d707b6e6ff0a383c9eab188c46437584e676c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:crb15000_12_127",
+      "platform": "ABB",
+      "model": "crb15000_12_127",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_crb15000_support/urdf/crb15000_12_127.xacro",
+      "source_git_blob": "7018d87e58504e71b6f9337068d08d0b108248cf",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_crb15000_support/urdf/crb15000_12_127.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "651ff97cb6a176f2178c7c8278b18deb93158441863dce40a3b6843f9e069a82",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:crb15000_5_95",
+      "platform": "ABB",
+      "model": "crb15000_5_95",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_crb15000_support/urdf/crb15000_5_95.xacro",
+      "source_git_blob": "05eb7fedefbe0435a7e7ec30fc1348f20198f950",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_crb15000_support/urdf/crb15000_5_95.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "ad5f1a30855682efa1bdd571d861adaa1b14020b1b12a7347decf4c782569ed0",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb1200_5_90",
+      "platform": "ABB",
+      "model": "irb1200_5_90",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb1200_support/urdf/irb1200_5_90.xacro",
+      "source_git_blob": "240c415cf8b9e1fc89b3975dbce90e21192d125a",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb1200_support/urdf/irb1200_5_90.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "e900dfe3fa6599798842a639a39ffa79d59e862237b22687073923c456d9eb50",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb1200_7_70",
+      "platform": "ABB",
+      "model": "irb1200_7_70",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb1200_support/urdf/irb1200_7_70.xacro",
+      "source_git_blob": "68b3148b89201a2e1a387f290d86551e81b60857",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb1200_support/urdf/irb1200_7_70.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "d40e8a17527a2199c8209b01fc2908b2a0ca60d04ccd7e5888b62473a82e7a35",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb120_3_58",
+      "platform": "ABB",
+      "model": "irb120_3_58",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb120_support/urdf/irb120_3_58.xacro",
+      "source_git_blob": "2141b1c217b37a63ba639dcc4b0a95824cda40ed",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb120_support/urdf/irb120_3_58.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "bf1b16b2eadb2db4812893f553a9ab40549fca5aed86a9625bf7c601f4c048a5",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb120t_3_58",
+      "platform": "ABB",
+      "model": "irb120t_3_58",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb120_support/urdf/irb120t_3_58.xacro",
+      "source_git_blob": "09220cdc99a25aafba1db67b173277bb6124c5d7",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb120_support/urdf/irb120t_3_58.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "90b54fcaba404327f072478462e5371a623bf897b178d59f5e404801f26f7592",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb1600_10_145",
+      "platform": "ABB",
+      "model": "irb1600_10_145",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb1600_support/urdf/irb1600_10_145.xacro",
+      "source_git_blob": "a8ce8c5f398d757c58b9fc3c5c3bd6519aedc8bf",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb1600_support/urdf/irb1600_10_145.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "e456ecae786a0c30066556714d08538fac067e25e72c185efe40d4b238f23bf1",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb1600_6_12",
+      "platform": "ABB",
+      "model": "irb1600_6_12",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb1600_support/urdf/irb1600_6_12.xacro",
+      "source_git_blob": "4d94699fb48a5d7057f370d1f443f58e77e9a700",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb1600_support/urdf/irb1600_6_12.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "4b97d92a7349af813cbfbeb868537366d0997e6bd4e70cdfcb0fbc0d854aa808",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb1600_8_145",
+      "platform": "ABB",
+      "model": "irb1600_8_145",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb1600_support/urdf/irb1600_8_145.xacro",
+      "source_git_blob": "e073a9a18cb456afe8c9cd97e820cab06e165206",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb1600_support/urdf/irb1600_8_145.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "20424bd9b02c5a82fb78982c72a05d3e37a2f417cbbdfd298f69749001a35e0a",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb2400",
+      "platform": "ABB",
+      "model": "irb2400",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb2400_support/urdf/irb2400.xacro",
+      "source_git_blob": "0a194d3a3e975b4b54da1c4542a9b7c25f1cdc59",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb2400_support/urdf/irb2400.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "1af2fb7c47164228035dff3a2427ba0ced677fe951488a9e564ce48d46562790",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb2400_12_155",
+      "platform": "ABB",
+      "model": "irb2400_12_155",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb2400_support/urdf/irb2400_12_155.xacro",
+      "source_git_blob": "585fbc826b6cff04fef9b9c71e934eb5968084b5",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb2400_support/urdf/irb2400_12_155.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "d7d810d43597c083b3a813d0d1b9351ac6a2561f9d3d51a2dcecb19c9ba8389f",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb2600_12_165",
+      "platform": "ABB",
+      "model": "irb2600_12_165",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb2600_support/urdf/irb2600_12_165.xacro",
+      "source_git_blob": "8e4ef870b6adf4e41790596fc8ac102ce61a2dda",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb2600_support/urdf/irb2600_12_165.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "04be6397118c5b19073c861e69ac16fd277868fc17ba1139bd6918d99f825266",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb2600_12_185",
+      "platform": "ABB",
+      "model": "irb2600_12_185",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb2600_support/urdf/irb2600_12_185.xacro",
+      "source_git_blob": "889c14aade282c343d822b304a20c7c64f7604b0",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb2600_support/urdf/irb2600_12_185.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "de98f9a100b07fc18c9980bd8190a5f616ecf7fd859368c6636090cb601969dd",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb4400l_30_243",
+      "platform": "ABB",
+      "model": "irb4400l_30_243",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb4400_support/urdf/irb4400l_30_243.xacro",
+      "source_git_blob": "578fa0144c54ac22c2cfa70f7d591065fe1e93de",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb4400_support/urdf/irb4400l_30_243.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "14ec393b37eb4a1ff7392644d2ea4eec08395485d779dd3b13132f9562c3daf5",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb4600_20_250",
+      "platform": "ABB",
+      "model": "irb4600_20_250",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb4600_support/urdf/irb4600_20_250.xacro",
+      "source_git_blob": "b6914f56246fa2baed965b35cbc51d0185496e49",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb4600_support/urdf/irb4600_20_250.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "9c0875459d03a6124505e8e852c5e801b80e249b982f84190de50a09d031b20a",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb4600_40_255",
+      "platform": "ABB",
+      "model": "irb4600_40_255",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb4600_support/urdf/irb4600_40_255.xacro",
+      "source_git_blob": "a131b6ec21d8ce052ea3d04459e1b1145a34e257",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb4600_support/urdf/irb4600_40_255.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "f360ef43516b9d5790849d02f9cdf5e0aa35e9ea42fd54c8c85e5b786c59cd2a",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb4600_60_205",
+      "platform": "ABB",
+      "model": "irb4600_60_205",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb4600_support/urdf/irb4600_60_205.xacro",
+      "source_git_blob": "f1047b734036c4665a8908062e040c8265b59f5d",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb4600_support/urdf/irb4600_60_205.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "106ce2199a3c6b38918e6d49c1ae02ec2f54c2d31166430e2334a350a2e0b051",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb52_7_120",
+      "platform": "ABB",
+      "model": "irb52_7_120",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb52_support/urdf/irb52_7_120.xacro",
+      "source_git_blob": "5ea6c17769d90baffde184a562acf066c40812c4",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb52_support/urdf/irb52_7_120.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "dc19bea8fe799346fde5f33be6f92ad7bb92e0d5e48d81a5908230517c7b7d1d",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb52_7_145",
+      "platform": "ABB",
+      "model": "irb52_7_145",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb52_support/urdf/irb52_7_145.xacro",
+      "source_git_blob": "8106e763ccf6dde69e24104b3d1f82c6828cb9a7",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb52_support/urdf/irb52_7_145.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "bdf42addf559f0f8aab4bdd39e4807dd15a54f522f9caf4c7a1827c5073d6209",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb5400",
+      "platform": "ABB",
+      "model": "irb5400",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb5400_support/urdf/irb5400.xacro",
+      "source_git_blob": "2dfb35e19ec46d2036e9a23a773356e2732ef926",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb5400_support/urdf/irb5400.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "550f9ca32c3bd97962789d74ecc24ec9bca78615df1b953e32211967c1809d7d",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb6600_225_255",
+      "platform": "ABB",
+      "model": "irb6600_225_255",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb6600_support/urdf/irb6600_225_255.xacro",
+      "source_git_blob": "bd1abe5d415a020852a0ba667b592324af5f89ff",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb6600_support/urdf/irb6600_225_255.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "098e8558129819e1e1c26755f8cc1d91c6681daed83858868ef79efb57ed4ff9",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb6640",
+      "platform": "ABB",
+      "model": "irb6640",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb6600_support/urdf/irb6640.xacro",
+      "source_git_blob": "9c7a4dfbd8c9044c0e3c7ac2a158242a235b365c",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb6600_support/urdf/irb6640.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "b89cfa8260e15d4c3497451f6be49251851660e84379ff0c4fe3ebd1cc9dcec5",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb6640_185_280",
+      "platform": "ABB",
+      "model": "irb6640_185_280",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb6640_support/urdf/irb6640_185_280.xacro",
+      "source_git_blob": "baf165ffe18286fc66bc15051f243f5c4dfabe42",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb6640_support/urdf/irb6640_185_280.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "bcd087423592b7e72d68b1874e1109dfbee871302d55283faca074053ae13b37",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb6650s_125_350",
+      "platform": "ABB",
+      "model": "irb6650s_125_350",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb6650s_support/urdf/irb6650s_125_350.xacro",
+      "source_git_blob": "c75198bdf34cac9ac3d4a73fb47c583a75931610",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb6650s_support/urdf/irb6650s_125_350.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "6111fdba022bdb2347634f4427b9fe5fa9e10a6ff06c819eace6acfa96a538d1",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb6650s_90_390",
+      "platform": "ABB",
+      "model": "irb6650s_90_390",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb6650s_support/urdf/irb6650s_90_390.xacro",
+      "source_git_blob": "9e8e7a13adadf2d02372154c4f907935ee77cef0",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb6650s_support/urdf/irb6650s_90_390.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "b2a112d696b6c8a53e46a0a7587f07411b893cf6bf89b1df742df7edd84f44d4",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb6700_200_260",
+      "platform": "ABB",
+      "model": "irb6700_200_260",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb6700_support/urdf/irb6700_200_260.xacro",
+      "source_git_blob": "1680b1f247b7887be9e6ab4fcb80a8ee5e411875",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb6700_support/urdf/irb6700_200_260.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "72924ee9e95b70944c01b424917057af693adeef92718dd94d2b75b345f621a6",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb6700_235_265",
+      "platform": "ABB",
+      "model": "irb6700_235_265",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb6700_support/urdf/irb6700_235_265.xacro",
+      "source_git_blob": "26dc23530a9bcf09a90c62ef9bfb51c1b6ca87b8",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb6700_support/urdf/irb6700_235_265.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "009357087fc0b04ae420c95bdf0f5ef213833a857cb8830b4e1f8309232425c3",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "abb-noetic-tree:irb7600_150_350",
+      "platform": "ABB",
+      "model": "irb7600_150_350",
+      "source_catalog": "abb-noetic-tree",
+      "repository": "https://github.com/ros-industrial/abb",
+      "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+      "source_path": "abb_irb7600_support/urdf/irb7600_150_350.xacro",
+      "source_git_blob": "ee77c6e69450f71132cdec58783618a0c25775f6",
+      "source_reference": "https://github.com/ros-industrial/abb/blob/45f4769d826cf3ac62a65495f2db67b78b0c81df/abb_irb7600_support/urdf/irb7600_150_350.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "49c2b689c091299f4df49f0e3d4e954a1d444ad122524097d81eb9a3a7bd174a",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "ABB",
+      "model": "Webots_Irb4600-40",
+      "kind": "Webots_official_physics_ROS2",
+      "provider_version": "WebotsR2025a",
+      "engine_commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+      "ROS_bridge_commit": "5f1a18219a6b877c25440a12bdf9056cae299e1d",
+      "PROTO_blob": "9ee959d5f767b77c09251a5ea727f66d923c6298",
+      "official_reference": "https://github.com/cyberbotics/webots_ros2/blob/5f1a18219a6b877c25440a12bdf9056cae299e1d/webots_ros2_universal_robot/launch/multirobot_launch.py",
+      "native_controller": "/abb/abb_joint_trajectory_controller/follow_joint_trajectory",
+      "native_joints": [
+        "A motor",
+        "B motor",
+        "C motor",
+        "D motor",
+        "E motor",
+        "F motor",
+        "finger_1_joint_1",
+        "finger_2_joint_1",
+        "finger_middle_joint_1"
+      ],
+      "limitations": [
+        "Nine-joint arm/gripper group; types/coupling require actual model review",
+        "Published world includes a UR5e, owned by another SDK platform",
+        "Published EXTERNPROTO uses mutable develop URLs; immutable local asset closure required",
+        "Standalone owned ABB composition and combined-world coverage are separate"
+      ],
+      "repository": "https://github.com/cyberbotics/webots",
+      "commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+      "source_path": "projects/robots/abb/irb/protos/Irb4600-40.proto",
+      "source_git_blob": "9ee959d5f767b77c09251a5ea727f66d923c6298",
+      "source_reference": "https://github.com/cyberbotics/webots/blob/c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b/projects/robots/abb/irb/protos/Irb4600-40.proto",
+      "source_descriptor_bytes_SHA256": "6856b6fac14e486e6ad67d1f9029c28f4ff5e196b4741a58b9be6c1e0da5f5c1",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "webots-r2025a-abb",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    }
+  ],
+  "versioned_model_count": 37,
+  "language_kind_width_release_rows": 4524,
+  "additional_axes": [
+    "every applicable official provider mode",
+    "exact OS and compiler ABI",
+    "RMW and transport",
+    "security profile and separately reviewed authority",
+    "positive/boundary/denied/no-effect/stale/foreign/failure/timeout/cancel/disconnect/reconnect/pause/resume/restart/update/rollback",
+    "debug and audit",
+    "native performance; QEMU correctness separately",
+    "multi-language module graph and SDK10 final world-model scenario"
+  ],
+  "whole_frozen_wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+  "no_per_vendor_test_recompile": true,
+  "formal_Wasm_simulation_PASS": 0,
+  "inventory_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/ros2/ros2_documentation/rolling/source/Releases.rst",
+      "path": "ros2-releases.rst",
+      "retrieved_utc": "2026-10-26T15:57:33.835271+00:00",
+      "exit_code": 0,
+      "stderr": "",
+      "bytes": 9057,
+      "sha256": "37166dc87cd108e1578a7477d8be8cee4c9c4e72562686bbf1ef7e4af027d2ab"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml",
+      "path": "rosdistro-index-v4.yaml",
+      "retrieved_utc": "2026-10-26T15:57:34.060498+00:00",
+      "exit_code": 0,
+      "stderr": "",
+      "bytes": 4863,
+      "sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ros-infrastructure/rep/master/rep-0003.rst",
+      "path": "rep-0003.rst",
+      "retrieved_utc": "2026-10-26T15:57:34.468209+00:00",
+      "exit_code": 0,
+      "stderr": "",
+      "bytes": 19240,
+      "sha256": "61a25704b4ec4ad681f9db3c34ab59c7c488868469f41840d9806986ac328e8d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ros-infrastructure/rep/master/rep-2000.rst",
+      "path": "rep-2000.rst",
+      "retrieved_utc": "2026-10-26T15:57:34.945336+00:00",
+      "exit_code": 0,
+      "stderr": "",
+      "bytes": 100963,
+      "sha256": "e84c7100a020ed1bfe8396f175dda43a4f98a3358bb0cf2cea3d3155a4566907"
+    }
+  ],
+  "model_source_lock": "model.source.lock.json",
+  "source_model_rows_byte_verified": 37,
+  "unacquired_asset_rows_still_required": 0
+}

@@ -47,6 +47,10 @@ function load(root, request)
     assert(descriptor.api_version == 1, "Shared language adapter contract version mismatch")
     local contract = import("provider_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
     local kind = request.kind or "binary"
+    if request.artifact_model == "dynamic" or request.artifact_model == "independent" or request.memory_import then
+        assert(contract.contains(descriptor.memory_artifact_models or {}, request.artifact_model),
+               "BLOCKED: this real language adapter has no explicit " .. request.artifact_model .. " memory ABI")
+    end
     local capability = descriptor.artifact_kinds and descriptor.artifact_kinds[kind]
     assert(kind == "binary" or capability, "Shared language adapter does not implement native Xmake kind: " .. kind)
     if capability then

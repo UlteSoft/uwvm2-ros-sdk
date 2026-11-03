@@ -49,6 +49,9 @@ local sdk = root
 target("original-nvidia-array-publish")
     set_language("c")
     set_ros_platform("nvidia-isaac-ros")
+    -- SDK10: example-local object/dependency output for Linux child-Xmake jobs.
+    set_objectdir(path.join(os.scriptdir(), ".uwvm-ros", "objects", "$(plat)", "$(arch)", "$(mode)"))
+    set_dependir(path.join(os.scriptdir(), ".uwvm-ros", "dependencies", "$(plat)", "$(arch)", "$(mode)"))
     set_ros2_version("jazzy")
     set_values("ros.vendor.transport", "dds")
     set_ros_scenario("original_array_publish")

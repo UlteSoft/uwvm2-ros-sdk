@@ -1,0 +1,316 @@
+{
+  "format": "sdk-official-turtlebot3-humble-native-scene-v1",
+  "robot": "TurtleBot3 Burger",
+  "ros_distribution": "humble",
+  "simulator": "Gazebo Classic11.10.2",
+  "source_selection": "Official Humble simulation/model/driver sources to match the original Humble application Twist schema. No implicit Jazzy/TwistStamped conversion.",
+  "sources": [
+    {
+      "id": "turtlebot3-sim-humble",
+      "repository": "https://github.com/ROBOTIS-GIT/turtlebot3_simulations",
+      "ref": "humble",
+      "commit": "a35a56c8b04877dc89772b598084d8ce648a9023",
+      "licenses": [
+        {
+          "path": "LICENSE",
+          "bytes": 11563,
+          "sha256": "ac8793d277f1a08231d10e1b2ebaabb0598bd5561cfc21f97648656b416d901e"
+        }
+      ],
+      "unmaterialized_aliases": [],
+      "lfs_pointers": [],
+      "archive": {
+        "url": "https://codeload.github.com/ROBOTIS-GIT/turtlebot3_simulations/zip/a35a56c8b04877dc89772b598084d8ce648a9023",
+        "sha256": "ee1a9ae3f21a8cae256dd72b117d5336d95bdeb12850c90d88b96485a99af693",
+        "bytes": 13302378
+      }
+    },
+    {
+      "id": "turtlebot3-humble",
+      "repository": "https://github.com/ROBOTIS-GIT/turtlebot3",
+      "ref": "humble",
+      "commit": "90a68bd2e3c61c12966779da89d8eeaec82730e9",
+      "licenses": [
+        {
+          "path": "LICENSE",
+          "bytes": 11361,
+          "sha256": "f9946796a8a5bd5981565142fa42e3b0cc36aef6f80e86beaf5905b3c0fef1b5"
+        }
+      ],
+      "unmaterialized_aliases": [],
+      "lfs_pointers": [],
+      "archive": {
+        "url": "https://codeload.github.com/ROBOTIS-GIT/turtlebot3/zip/90a68bd2e3c61c12966779da89d8eeaec82730e9",
+        "sha256": "05315d59ed6da683d34227ab413c990ff9bad52bfb108c932be64580964e561b",
+        "bytes": 8921086
+      }
+    },
+    {
+      "id": "turtlebot3-msgs-humble",
+      "repository": "https://github.com/ROBOTIS-GIT/turtlebot3_msgs",
+      "ref": "humble",
+      "commit": "cdee60f7618b9ed2f85f65259c0f96e3f02b1c55",
+      "licenses": [
+        {
+          "path": "LICENSE",
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "unmaterialized_aliases": [],
+      "lfs_pointers": [],
+      "archive": {
+        "url": "https://codeload.github.com/ROBOTIS-GIT/turtlebot3_msgs/zip/cdee60f7618b9ed2f85f65259c0f96e3f02b1c55",
+        "sha256": "e895bf640e0b1e867353ebbec2029e134de3bdec1db0b39f412fa4398ef8094b",
+        "bytes": 14666
+      }
+    }
+  ],
+  "package_version": "2.3.8",
+  "original_files": [
+    {
+      "path": "turtlebot3_gazebo/models/turtlebot3_burger/model.sdf",
+      "bytes": 12133,
+      "sha256": "179e9595d4e229cf207c3fc0515aa66f4bc4434a37b398fc3c39753dc2feffb1"
+    },
+    {
+      "path": "turtlebot3_gazebo/worlds/empty_world.world",
+      "bytes": 1271,
+      "sha256": "d7f565a40113eb5a33cce01f73828663c10eafb5f8b640dfd34a24e24f8980b4"
+    },
+    {
+      "path": "turtlebot3_gazebo/urdf/turtlebot3_burger.urdf",
+      "bytes": 5515,
+      "sha256": "e1f4671597b3e578ba31afc492773de31b7e516636287aa152589234de6226e3"
+    },
+    {
+      "path": "turtlebot3_gazebo/launch/empty_world.launch.py",
+      "bytes": 2710,
+      "sha256": "4c19e3025ba6b8d7913bd852c1553d6f9cfac6a8f22a10e4b7039254e1d24085"
+    },
+    {
+      "path": "turtlebot3_gazebo/launch/spawn_turtlebot3.launch.py",
+      "bytes": 2319,
+      "sha256": "d54e9ed7348999a4b4d9e44f2d78ef6b04935c69977655f28715a95a1f4fe76d"
+    },
+    {
+      "path": "turtlebot3_gazebo/worlds/turtlebot3_world.world",
+      "bytes": 1430,
+      "sha256": "b2e545b103330fe3119acbcf619d9b72b1469853ae60e7c6f9f0c3b766c71268"
+    },
+    {
+      "path": "turtlebot3_gazebo/launch/turtlebot3_world.launch.py",
+      "bytes": 2717,
+      "sha256": "66d50f46772c90093ad4411f866de4e40a30fd7e31f27264b421b3909a497179"
+    },
+    {
+      "path": "turtlebot3_gazebo/models/turtlebot3_world/model.sdf",
+      "bytes": 14816,
+      "sha256": "dc2b746eedcd8c9da573de156ebb1c79bfb82b5c8be28689b995dbee4a58fdfd"
+    },
+    {
+      "path": "turtlebot3_gazebo/worlds/turtlebot3_dqn_stage1.world",
+      "bytes": 1442,
+      "sha256": "2910e093134a9793a03dec20764aa7af503038d21960b6ec513a3254f17816fc"
+    },
+    {
+      "path": "turtlebot3_gazebo/models/turtlebot3_dqn_world/model.sdf",
+      "bytes": 3185,
+      "sha256": "41a22da780796fe694dfaea5829bc7322b288c6ccb905b3514d70bab38beaff8"
+    }
+  ],
+  "native_roles": {
+    "gzserver": "Original physics/CPU ray/IMU and original gazebo_ros diff-drive/joint/state/sensor plugins",
+    "robot_state_publisher": "Original native model/driver TF infrastructure",
+    "spawn_entity": "Initialize original source model/pose; no application command generation",
+    "gz_topic_observer": "Read original native sensor packets for infrastructure readiness only; no ROS app callbacks/guest acceptance",
+    "native_scene": "New explicit CPU/headless source composition; checks actual bounded ancestry,verifies source/native closures,starts native actors,emits readiness and handles own stop/retirement"
+  },
+  "required_wasm_roles": [
+    "Original task/control decisions,ROS publishers/subscribers and callbacks",
+    "Actual sensor/state handling and stop/fault/recovery logic",
+    "Exact module/memory/interface/resource/lifecycle permissions and actual callback-memory receipts"
+  ],
+  "interfaces": [
+    {
+      "name": "/cmd_vel",
+      "type": "geometry_msgs/msg/Twist",
+      "direction": "Wasm task -> native diff_drive"
+    },
+    {
+      "name": "/odom",
+      "type": "nav_msgs/msg/Odometry",
+      "direction": "Physical native driver -> Wasm callback"
+    },
+    {
+      "name": "/scan",
+      "type": "sensor_msgs/msg/LaserScan",
+      "direction": "Original native ray -> Wasm callback"
+    },
+    {
+      "name": "/imu",
+      "type": "sensor_msgs/msg/Imu",
+      "direction": "Original native IMU -> Wasm callback"
+    },
+    {
+      "name": "/joint_states",
+      "type": "sensor_msgs/msg/JointState",
+      "direction": "Original native wheel joints -> Wasm callback"
+    }
+  ],
+  "original_sensors": {
+    "ray_type": "ray",
+    "samples": 360,
+    "ray_hz": 5,
+    "imu_hz": 200,
+    "diff_drive_hz": 30,
+    "wheel_diameter_m": 0.066,
+    "wheel_separation_m": 0.16
+  },
+  "world_scope": "Active original-task scene is exact official turtlebot3_dqn_stage1.world plus unchanged turtlebot3_dqn_world model at frozen03 observer pose(1.1,0,0.01),yaw0. This is the test-selected pose, not an assertion of the original DQN launch default. Other world options remain separate native readiness evidence.",
+  "lifecycle_entrypoint": {
+    "path": "native_scene.py",
+    "sha256": "02be0dc91c95c73a1b48d7872c049cd9c551f56296ad833e048ad1749bdff4d4",
+    "argv": [
+      "${PYTHON}",
+      "-B",
+      "native_scene.py",
+      "turtlebot3",
+      "${NATIVE_CLOSURE_JSON}",
+      "${NATIVE_PROCESS_ENVIRONMENT_JSON}",
+      "${ORIGINAL_SOURCE_MANIFEST_JSON}",
+      "--ready-file",
+      "${NATIVE_READY_FILE}",
+      "--stop-file",
+      "${NATIVE_STOP_FILE}",
+      "--lifetime-seconds",
+      "${BOUNDED_NATIVE_LIFETIME_SECONDS}",
+      "--world",
+      "turtlebot3_dqn_stage1.world",
+      "--sdk-root",
+      "${SDK_ROOT}"
+    ],
+    "input_fields": {
+      "native_closure": [
+        "rootfs",
+        "ros",
+        "files:path/bytes/sha256",
+        "aliases:path/link/target"
+      ],
+      "native_process_environment": [
+        "rootfs",
+        "ros=humble",
+        "loader",
+        "environment"
+      ],
+      "source_manifest": [
+        "sources:id/source_root/files:path/bytes/sha256"
+      ]
+    },
+    "native_precondition": "Actual current actor is born under finite<=64GiB/zero-swap leaf and exact shared64GiB ancestor; common producer and strict source/permission enrollment remain external requirements",
+    "readiness_is_authority": false,
+    "production_admission": false,
+    "shared_lifecycle_sources": [
+      {
+        "path": "tools/shared/python/owned_processes.py",
+        "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+      },
+      {
+        "path": "tools/shared/python/runtime_boundary.py",
+        "sha256": "d9b6f1357e247e46ef1212faad4542f283c57230f1670c9c9114b3666485e484"
+      }
+    ],
+    "retirement": "Existing public OwnedProcesses, initialized childless before actor birth; pidfd signals, complete live descendant census, subreaper adoption/reap and original full retirement receipt. Independent queue guardian remains required."
+  },
+  "actual_readiness": {
+    "job": "04-turtlebot3-humble-native-endpoint-r1",
+    "status": "PASS_NATIVE_ONLY",
+    "original_ray_packet_values": 5400,
+    "whole_task_pass": false
+  },
+  "actual_live_lifecycle": {
+    "job": "04-turtlebot3-humble-live-endpoint-r1",
+    "status": "PASS_LIVE_NATIVE_READY_AND_OWN_STOP",
+    "ready_actor_pids_current_cgroup_checked": true,
+    "stop_file_drives_retirement": true,
+    "all_native_processes_retired": true,
+    "native_range_values": 5400,
+    "application_executed": false,
+    "whole_task_pass": false
+  },
+  "differences": [
+    "New native headless composition omits original unconditional gzclient GUI; original model/sensors/plugins and spawn geometry unchanged",
+    "Native CLI sensor observation is supporting readiness only,not guest callback evidence",
+    "No EGL selection shim is used by the official Humble CPU ray model; prior Jazzy gpu_lidar/software-EGL scene stays separate"
+  ],
+  "shared_xmake_native_installer_consumer_owner": "01",
+  "shared_xmake_native_installer_consumer_implemented": true,
+  "actual_original_wasm_task_run": false,
+  "complete_scene_pass": false,
+  "actual_official_obstacle_world": {
+    "job": "04-common-humble-obstacle-live-r1",
+    "status": "PASS_ORIGINAL_HUMBLE_OBSTACLE_WORLD_NATIVE_LIVE_AND_STOP",
+    "world_sha256": "b2e545b103330fe3119acbcf619d9b72b1469853ae60e7c6f9f0c3b766c71268",
+    "spawn_pose": [
+      -2.0,
+      -0.5,
+      0.01
+    ],
+    "actual_native_scan_statistics": {
+      "first_frame_ranges": 360,
+      "front_quadrants_finite_min_m": 0.8910804971927104,
+      "front_nonfinite_count": 36,
+      "data_role": "Native sensor observation only,not a guest callback or task decision"
+    },
+    "native_stop_reason": "stop_file",
+    "original_wasm_application_executed": false,
+    "actual_vm_feedback": "NOT_RUN",
+    "actual_task_motion_stop": "NOT_RUN",
+    "production_admission": false,
+    "scenario_pass": false,
+    "all_native_processes_retired": true,
+    "matches_original_task_world": false,
+    "separate_readiness_only": true
+  },
+  "shared_native_constructor": {
+    "path": "tools/xmake/native_ros.py",
+    "sha256": "1f5004294b3a57c83854acf23ad5e61d7f819245b1658b39168b37c2eb397ba6",
+    "lock_path": "share/toolchains/native/linux-x86_64/ros-humble-jammy.json",
+    "lock_sha256": "a26a9a3221c3ac51ffbb93b8f6e146a7c15a9bf97b4da41fc2e31e16c580e152",
+    "actual_consumption_job": "04-common-humble-obstacle-live-r1",
+    "common_report_sha256": "29e87b677ab3c97cde343cc940e03a28f056e86f8076d72305e772ff85df857a",
+    "construction": "Public constructor output was consumed without reinstalling packages or changing shared files. Independent private copy preserves all regular payload bytes; raw symlinks relocated within the copy using the public root-confined resolver.",
+    "scene_xmake_test_integration": false,
+    "clean_xmake_only_environment_qualified": false,
+    "strict_producer_enrolled": false
+  },
+  "actual_selected_task_scene": {
+    "job": "04-turtlebot3-dqn-shared-lifecycle-r1",
+    "status": "PASS_NATIVE_DQN_STAGE1_MATCHED_WORLD_SPAWN_AND_SHARED_RETIREMENT",
+    "world": "turtlebot3_dqn_stage1.world",
+    "world_sha256": "2910e093134a9793a03dec20764aa7af503038d21960b6ec513a3254f17816fc",
+    "task_selected_spawn_pose": [
+      1.1,
+      0,
+      0.01
+    ],
+    "yaw_rad": 0,
+    "actual_native_range_values": 5400,
+    "initial_native_front_finite_min_m": 1.2640365290658253,
+    "world_and_model_geometry_changed": false,
+    "original_task_contract_sha256": "869ebc85c591a075425d359c2f8fd0385de3cc71809a0db4ab69a9e4eaacdb15",
+    "independent_wasm_observer_contract_sha256": "07f4e16d6125b02049285aeb55b6e7b3947be2a524755e4a786d64dfeb751936",
+    "shared_owned_processes_retirement_status": "RETIRED",
+    "retirement_recorded_processes": 5,
+    "whole_task_pass": false
+  },
+  "actual_native_simulator_loss": {
+    "job": "04-turtlebot3-dqn-native-loss-r2",
+    "status": "PASS_ACTUAL_NATIVE_LEADER_LOSS_AND_SHARED_RETIREMENT",
+    "signal": 9,
+    "actual_native_endpoint_exit_code": 1,
+    "same_birth_remaining": [],
+    "vm_permission_test": false,
+    "whole_task_pass": false
+  }
+}

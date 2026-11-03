@@ -1,0 +1,18 @@
+{
+  "format": "trossen-xs-full-wasm-migration-status-v1",
+  "status": "BLOCKED_NOT_IMPLEMENTED",
+  "public_commands": [
+    "xmake",
+    "xmake test"
+  ],
+  "actual_public_commands_executed": false,
+  "completed_simulations": 0,
+  "native_business_or_witness_helpers_in_this_entry": false,
+  "historical_native_reference_is_full_wasm_acceptance": false,
+  "required_client_families": [
+    "rcl",
+    "rclcpp",
+    "rclpy in python.wasm",
+    "rcljava AOT Wasm"
+  ]
+}

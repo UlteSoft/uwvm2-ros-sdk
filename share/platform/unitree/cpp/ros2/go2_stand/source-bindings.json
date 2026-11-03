@@ -1,0 +1,110 @@
+{
+  "format": "unitree-go2-stand-source-bindings-v1",
+  "upstream_commit": "668d1ec5a05d1c38d3306bdca7d59f2ba3581a88",
+  "model": "Go2",
+  "distribution": "humble",
+  "main_module": "unitree_go2_stand",
+  "selection_header": "include/platform/unitree/cpp/ros2/go2_stand/selection.hpp",
+  "selection_header_sha256": "b707d98a0e293c3921305f3bce88e57e006b9bfbc5297d77caf3b0ec0b42fdf6",
+  "bindings": [
+    {
+      "alias": "unitree-go2-lowcmd",
+      "operation": "topic.publish",
+      "resource": "/lowcmd",
+      "type": "unitree_go/msg/LowCmd",
+      "identity": "RIHS01_0da1142c994d184f6102948c3acf52b9557836cfe5062b924a1f08ac8b72dc34",
+      "codec_identity": "UWVMROS1_efd061d06d38ecc686edb95d1a891c26860b16da1e35747fc97eeaf4a5d93d63",
+      "bytes": 749,
+      "depth": 10,
+      "durability": "volatile",
+      "maximum_native_owners": 2
+    },
+    {
+      "alias": "unitree-go2-lowstate",
+      "operation": "topic.subscribe",
+      "resource": "/lowstate",
+      "type": "unitree_go/msg/LowState",
+      "identity": "RIHS01_db5172cac933e3cfc0e705903343eb4eea42e65e224e9d726d3e672aec0caf0f",
+      "codec_identity": "UWVMROS1_56c01d52b26d7b2ef1fa7475fc8a353777ed6952a6f1ceee01da81f1edad3cab",
+      "bytes": 1050,
+      "depth": 10,
+      "durability": "volatile",
+      "maximum_native_owners": 2
+    },
+    {
+      "alias": "unitree-go2-steady",
+      "operation": "time.read-steady",
+      "resource": "/uwvmros/go2_stand/steady",
+      "type": "builtin/time-v1",
+      "identity": "builtin:time-nanoseconds-v1",
+      "bytes": 8,
+      "maximum_native_owners": 1
+    },
+    {
+      "alias": "unitree-go2-cancel",
+      "operation": "topic.subscribe",
+      "resource": "/uwvmros/go2_stand/cancel",
+      "type": "std_msgs/msg/Bool",
+      "identity": "RIHS01_feb91e995ff9ebd09c0cb3d2aed18b11077585839fb5db80193b62d74528f6c9",
+      "bytes": 1,
+      "depth": 1,
+      "durability": "transient-local",
+      "maximum_native_owners": 1
+    }
+  ],
+  "wasi_grants": [
+    "monotonic-clock"
+  ],
+  "node_name": "low_level_cmd_node",
+  "info_logger_alias": "",
+  "spin_mode": "until_shutdown",
+  "maximum_spin_steps": 0,
+  "wall_timer_period_ns": 2000000,
+  "real_wait_period_ns": 2000000,
+  "real_wait_cancel_quantum_ns": 1000000,
+  "callback_dispatch": "Complete decoded SharedPtr LowState callback and original2ms timer through the public source adapter. Caller-driven dispatch polls one event/entity/pass; native wait-set scheduling/feedback-latency conformance must be checked in the actual scene.",
+  "normal_shutdown": "Only an actual independent Bool true request with successful cancellation-owner retirement returns Selection125.",
+  "error_namespaces": "Actual ROS error/cleanup125 and WASI errno (includingCANCELED11) are retained in diagnostics and mapped to a failing step, never treated as an explicit successful stop.",
+  "temporary_owner_peaks": {
+    "publisher_same_alias": 2,
+    "lowstate_subscriber_same_alias": 2,
+    "clock_shared_by_node": 1,
+    "cancel_subscriber": 1,
+    "successful_setup_peak_total": 4,
+    "explanation": "Original replacements are created before old member reset. Independentcancel opens only after originalconstructor/mainsetup; aftersetup pub/sub/clock/cancel each hasone. Failednativecleanup still requires independentguardian."
+  },
+  "cancellation_authority": "Task can only subscribe. Operator/lifecycle authority separately owns a publisher for the exact managementtopic in the admitted privateROSdomain; no publishing authority, grants or messages are inferred/created by this selection.",
+  "instance_lifecycle": "One original main per fresh guestinstance, serialized caller-driven state. Fresh privateROSdomain/controlendpoint lifecycle prevents stale transient-local stop requests leaking acrossruns.",
+  "native_identity_source": {
+    "path": "share/platform/unitree/native/ros2/jazzy-complete-types/native-metadata.json",
+    "sha256": "882394832fd41676d7dd0014bd0a758b71ab50c4c57d1ad0eb9cbf071e684711",
+    "qualification": "Source-generated complete typegraph only. Existing path is Jazzy; exactHumble installed typesupport/Cyclone/QoS/native closure and liveVM authority remain unqualified. SourceID literals are not native admission."
+  },
+  "official_scene_reference": {
+    "repository": "unitreerobotics/unitree_mujoco",
+    "commit": "1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d",
+    "implementation": "Selected currentpublic020 simulate_python UnitreeSdk2Bridge; original C++ simulator is an unselected separate implementation",
+    "robot_scene": "unitree_robots/go2/scene.xml",
+    "scene_sha256": "6c1fda780e7883665d1c84113b9275b6d448f586a8b1c110e438a37417cbccd0",
+    "policy_required": false,
+    "role": "PERMITTED_NATIVE_OFFICIAL_SIMULATOR_DRIVER_PHYSICS_RENDER_ENDPOINT",
+    "runtime": "NOT RUN",
+    "selected_native_interface": "share/platform/unitree/cpp/ros2/go2_stand/native020-application-interface.json",
+    "selected_native_scene_binding": {
+      "path": "example/platform/unitree/simulation/unitree_ros2_go2_stand/scene.binding.json",
+      "bytes": 4624,
+      "sha256": "3ab1bc9b099dcdb10724a59989e2ed886cd86f43859be9d1625b6dd6c6a32097"
+    },
+    "selected_native_only_cleanup_scope": "020 localcleanup/ownerloss/freshrestart, not originalWasm task"
+  },
+  "runtime": "NOT RUN",
+  "official_simulation": "BLOCKED",
+  "accepted": false,
+  "application_boundary": "Original stand interpolation/CRC/ROS call/callback/state handling executes in Wasm with exact VM grants. Official simulator, physical actuator PD/driver, model, renderer and base libraries may be native; no Wasm port of those endpoint components is required.",
+  "native_020_application_alignment": {
+    "interface": "share/platform/unitree/cpp/ros2/go2_stand/native020-application-interface.json",
+    "declared_endpoint_alignment_only": true,
+    "actual_VM_native_interop_or_task": false,
+    "source_authority": "05-VM-001 REQUIRED_NOT_GRANTED"
+  }
+}

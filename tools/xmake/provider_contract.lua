@@ -110,9 +110,11 @@ function validate(target, root, schema)
     target:set("values", "ros.sdk.backend", backend)
     target:set("values", "ros.sdk.distribution", distribution)
     target:set("values", "ros.sdk.exception_profile", profile)
+    local artifacts = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
     return {
         api_version = 1, root = root, platform = platform, provider = schema.id,
         kind = target:kind() or "binary",
+        artifact_model = artifacts.model(target), memory_import = artifacts.memory_import(target),
         dependency_targets = (target.data and target:data("ros.sdk.dependency_targets")) or {},
         public_include_roots = (target.data and target:data("ros.sdk.public_include_roots")) or {},
         links = table.wrap(target:get("links")), linkdirs = table.wrap(target:get("linkdirs")),

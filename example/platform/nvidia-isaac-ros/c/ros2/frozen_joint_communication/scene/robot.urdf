@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="sdk10_stage_a_communication">
+  <link name="base_link"/>
+  <link name="link1"/>
+  <link name="link2"/>
+  <joint name="stage_a_joint1" type="revolute">
+    <parent link="base_link"/><child link="link1"/>
+    <axis xyz="0 0 1"/><limit lower="-1" upper="1" effort="1" velocity="1"/>
+  </joint>
+  <joint name="stage_a_joint2" type="revolute">
+    <parent link="link1"/><child link="link2"/>
+    <axis xyz="0 1 0"/><limit lower="-1" upper="1" effort="1" velocity="1"/>
+  </joint>
+  <ros2_control name="StageAOfficialGenericSystem" type="system">
+    <hardware><plugin>mock_components/GenericSystem</plugin></hardware>
+    <joint name="stage_a_joint1">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+    <joint name="stage_a_joint2">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+  </ros2_control>
+</robot>

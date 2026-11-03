@@ -1,0 +1,120 @@
+{
+  "boundary_nonce": null,
+  "cases": {
+    "bounded-restricted-Host-disconnect-before-submit": {
+      "vm": {
+        "adapter": {
+          "path": null,
+          "sha256": null
+        },
+        "policy": {
+          "path": null,
+          "sha256": null
+        },
+        "provenance": {
+          "path": null,
+          "sha256": null
+        }
+      }
+    },
+    "official-ROS-result-and-fresh-state-in-frozen-Wasm": {
+      "vm": {
+        "adapter": {
+          "path": null,
+          "sha256": null
+        },
+        "policy": {
+          "path": null,
+          "sha256": null
+        },
+        "provenance": {
+          "path": null,
+          "sha256": null
+        }
+      }
+    },
+    "permission-denied-before-endpoints": {
+      "vm": {
+        "adapter": {
+          "path": null,
+          "sha256": null
+        },
+        "policy": {
+          "path": null,
+          "sha256": null
+        },
+        "provenance": {
+          "path": null,
+          "sha256": null
+        }
+      }
+    },
+    "stale-native-generation-rejected-before-submit": {
+      "native": {
+        "adapter": {
+          "path": null,
+          "sha256": null
+        },
+        "policy": {
+          "path": null,
+          "sha256": null
+        },
+        "provenance": {
+          "path": null,
+          "sha256": null
+        }
+      },
+      "vm": {
+        "adapter": {
+          "path": null,
+          "sha256": null
+        },
+        "policy": {
+          "path": null,
+          "sha256": null
+        },
+        "provenance": {
+          "path": null,
+          "sha256": null
+        }
+      }
+    }
+  },
+  "critical_official_images": [
+    {
+      "path": null,
+      "role": "controller-manager",
+      "sha256": null
+    },
+    {
+      "path": null,
+      "role": "mock-system",
+      "sha256": null
+    },
+    {
+      "path": null,
+      "role": "joint-controller",
+      "sha256": null
+    }
+  ],
+  "endpoint_directory": null,
+  "environment": {},
+  "execution_class": "software_simulation",
+  "format": "sdk03-ur-stage-a-context-TEMPLATE-NOT-EXECUTABLE",
+  "native": {
+    "path": null,
+    "sha256": null
+  },
+  "producer": null,
+  "profile": "jazzy-ur5e-GenericSystem-stage-a-communication",
+  "python": {
+    "path": null,
+    "sha256": null
+  },
+  "requirements": "Only VM-owned producer may fill a fresh readonly context. This vendor input is not a new shared ABI, admission, permission, policy generator or qualified deployment.",
+  "ros2_cli": {
+    "path": null,
+    "sha256": null
+  },
+  "runtime_sha256": null
+}

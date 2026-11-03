@@ -122,6 +122,7 @@ function _command(target, root, triple, extra)
     local compiler = programs[cpp and "cxx" or "cc"]
     local version = os.iorunv(compiler, { "--version" })
     assert(version:find("clang version 23.", 1, true), "The actual application compiler must be LLVM 23")
+    target:data_set("ros.sdk.compiler_version", version:trim())
     local arguments = {
         "--target=" .. triple,
         "--sysroot=" .. _installed(root, selected.sysroot),
@@ -200,7 +201,8 @@ function _command(target, root, triple, extra)
     local output = path.absolute(target:targetfile())
     os.mkdir(path.directory(output))
     table.join2(arguments, { "-o", output })
-    local temporary = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/compiler-tmp")
+    local temporary = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
+        .workspace(target, "compiler-tmp")
     os.mkdir(temporary)
     os.vrunv(compiler, arguments, {envs = {TMPDIR = temporary}})
     target:data_set("ros.sdk.build_command", {program = compiler, arguments = arguments})
@@ -221,6 +223,7 @@ function _linked(target, root, triple, extra)
     local programs = tools(root)
     local version = os.iorunv(programs.cc, {"--version"})
     assert(version:find("clang version 23.", 1, true), "Real LLVM 23 is required for every object")
+    target:data_set("ros.sdk.compiler_version", version:trim())
     local sources, compile_extra = table.copy(target:sourcefiles()), {}
     for _, argument in ipairs(extra or {}) do
         if argument:endswith(".c") or argument:endswith(".cpp") then
@@ -257,11 +260,11 @@ function _linked(target, root, triple, extra)
     local entry = target:values("ros.sdk.entry") or "command"
     if entry == "freestanding" then table.join2(flags, {"-ffreestanding", "-fno-builtin"}) end
     table.join2(flags, compile_extra)
-    local intermediate = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/objects", contract.identity(target))
-    local temporary = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/compiler-tmp", contract.identity(target))
+    local intermediate = contract.workspace(target, "objects")
+    local temporary = contract.workspace(target, "compiler-tmp")
     os.mkdir(intermediate)
     os.mkdir(temporary)
-    local objects, cpp_used = {}, false
+    local objects, cpp_used, compiled = {}, false, {}
     for index, source in ipairs(sources) do
         local extension = path.extension(source)
         local cpp = extension == ".cpp" or extension == ".cc" or extension == ".cxx"
@@ -285,7 +288,11 @@ function _linked(target, root, triple, extra)
         table.join2(arguments, {"-c", path.absolute(source), "-o", object})
         os.vrunv(programs[cpp and "cxx" or "cc"], arguments, {envs = {TMPDIR = temporary}})
         table.insert(objects, object)
+        table.insert(compiled, {program = programs[cpp and "cxx" or "cc"], arguments = arguments,
+            source = path.absolute(source), source_sha256 = hash.sha256(source):lower(),
+            object = object, object_sha256 = hash.sha256(object):lower()})
     end
+    target:data_set("ros.sdk.compile_commands", compiled)
     local output = path.absolute(target:targetfile())
     os.mkdir(path.directory(output))
     if kind == "static" then

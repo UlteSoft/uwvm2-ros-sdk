@@ -1,0 +1,98 @@
+{
+  "format": "uwvm-native-go2-scene-binding-v1",
+  "scene_id": "official_unitree_mujoco_go2_python_bridge",
+  "native_components": {
+    "unitree_mujoco_commit": "1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d",
+    "unitree_sdk2_python_commit": "814556d15970dd2ecf1c9984e845ca02ab07e206",
+    "mujoco": "3.3.6",
+    "unitree_sdk2py": "1.0.1",
+    "cyclonedds_python": "0.10.2",
+    "cyclonedds_core": "0.10.5",
+    "numpy": "2.2.6"
+  },
+  "native_model": {
+    "robot": "go2",
+    "actuators": 12,
+    "sensors": 41,
+    "scene_sha256": "6c1fda780e7883665d1c84113b9275b6d448f586a8b1c110e438a37417cbccd0"
+  },
+  "native_roles": [
+    "Original official native MuJoCo physics,actuator PD,DDS device state and transport",
+    "No native SDKapplication,taskplanner,goal generator or application feedback decision"
+  ],
+  "selected_native_python_physics_state_hz": 200,
+  "original_application_cpp_timer_hz": 500,
+  "original_model_integration_hz": 500,
+  "separate_cpp_bridge_scheduler_hz": 1000,
+  "cpp_runtime_qualified": false,
+  "native_dds_topics": {
+    "command": "rt/lowcmd",
+    "state": "rt/lowstate",
+    "native_message_shapes": "unitree_go20motor slots; ROSIDL/native CDR812/1180B are supporting evidence,not task qualification."
+  },
+  "source_files": [
+    {
+      "path": "native_scene.py",
+      "bytes": 18861,
+      "sha256": "4bd5280d5ab6f4904703f60b22ceb5246a5de6aea44dc146a11d270bfffd9425"
+    },
+    {
+      "path": "native_launcher.py",
+      "bytes": 4061,
+      "sha256": "abd5497821619ee30c700d7733423e9761de4c89443929dfd614b0b35d9ffa36"
+    },
+    {
+      "path": "native_scene.lua",
+      "bytes": 901,
+      "sha256": "c55b9d0c9eca7f0713745752405115b360b252799738e255128e26bf157b7c3c"
+    },
+    {
+      "path": "native-prerequisites.json",
+      "bytes": 3816,
+      "sha256": "520335742d726be86360321307b29e3eb0ef76064eec3418a95b423e8a9d17ff"
+    }
+  ],
+  "public_native_command": "xmake lua native_scene.lua SDK NATIVE_INPUT_BUNDLE OUTPUT READY STOP 5",
+  "scope_of_actual_public_xmake_validation": [
+    "020 actual public Xmake native endpoint startup/normal local thread/channel/factory shutdown",
+    "020 explicit native-object-reserialization provenance and retained raw serialized bytes; no received CDR/guest memory proof",
+    "020 current-source native owner-loss and fresh restart from exact terminal/retired predecessor; guest task resume NOT_RUN"
+  ],
+  "native_environment_versions_not_sdk_language_qualification": true,
+  "host_scope": "Linuxx86_64native reference only",
+  "network_interface": "lo",
+  "renderer_started": false,
+  "physical_hardware": false,
+  "original_application_example": "example/platform/unitree/cpp/ros2/humble/upstream_go2_stand",
+  "original_wasm_fourstage_crc_finalhold_cancel": "NOT_RUN",
+  "qualified_sdk_language_library_width_arch_cases": [],
+  "shared_native_constructor_owner": "01",
+  "shared_automatic_dependency_bootstrap": "REQUIRED_NOT_IMPLEMENTED_HERE",
+  "ready_snapshot_is_not_live_or_production_authority": true,
+  "production_admission": false,
+  "complete_scene_pass": false,
+  "prior018_native_validation_jobs": [
+    "04-go2-public-native-owner-loss-r2",
+    "04-go2-public-native-fresh-restart-r1"
+  ],
+  "prior018_scope": "Immutable prior native owner-loss/fresh-restart facts apply only to018source. Their outer retirement remains valid; no actual leak is claimed. Prior serialized object bytes remain unchanged and are not received RMW/RTPS CDR.",
+  "native_validation_jobs": [
+    "04-go2-guarded-cleanup-ready-denied-r2",
+    "04-go2-guarded-cleanup-trace-denied-r2",
+    "04-go2-guarded-cleanup-positive-r2",
+    "04-go2-native-cleanup-method-errors-r1",
+    "04-go2-native-partial-construction-r1",
+    "04-go2-public-native-020-owner-loss-r1",
+    "04-go2-public-native-020-fresh-restart-r1"
+  ],
+  "native_trace_provenance": {
+    "origin": "native-object-reserialization",
+    "operation": "msg.serialize() on the native callback/state object",
+    "rmw_received_cdr": false,
+    "rtps_receive_capture": false,
+    "wire_delivery_or_guest_memory_proof": false,
+    "driver_packet_counts": "Compatibility field counting object reserialization observations only"
+  },
+  "cleanup_regression_scope": "Actual native bridge and filesystem EACCES for ready/trace creation,post-original Wait/GetResult/Close and partial constructor after first thread start; remaining threads/channels retire. Regression PASS does not turn the expected failing endpoint operation into PASS.",
+  "native_owner_restart_new_source": "Additional current-source jobs are pinned in delivery artifacts; original018results are never relabeled as020source."
+}

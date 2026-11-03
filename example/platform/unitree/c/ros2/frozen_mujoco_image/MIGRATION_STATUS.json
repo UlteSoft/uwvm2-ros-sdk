@@ -1,0 +1,13 @@
+{
+  "format": "sdk06-unitree-full-wasm-migration-status-v1",
+  "status": "BLOCKED_REQUIRED_WASM_ROS_MIGRATION",
+  "qualified_simulation": false,
+  "required_scenarios": 12,
+  "normal_commands": [
+    "xmake",
+    "xmake test"
+  ],
+  "actual_commands": "NOT_RUN_REVISED_SOURCE",
+  "native_ros_business_implementation_in_public_tree": false,
+  "frozen_wasm_sha256": "7061f671b91860cca2867d52bc38bca4c12234426598951451b481cf31c69100"
+}

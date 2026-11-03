@@ -1,0 +1,9 @@
+# ROS发行版库存0.1.0
+
+本版本区分上游生命周期与SDK/运行时的实际支持。库存包含13个具名ROS1发行版、12个具名ROS2稳定发行版、固定的Rolling包快照，以及官方发布文档列出的11个alpha/beta历史条目。当前active ROS2为Humble、Jazzy、Kilted、Lyrical；ROS1属于历史兼容工作。Box Turtle之前的历史仍需核对官方一手资料。
+
+公开native provider目前选择Noetic、Humble、Jazzy。本次不扩展支持枚举。只有确切的原生包、编译器/ABI、库、签名、依赖、权限和回滚实际验收后，才会记录合格版本范围。二进制分发与源码构建预期分别记录；REP3对i386源码的预期不代表当前官方二进制层级。ROS产品目标仍为Linux，QEMU耗时不能作为原生性能证据。
+
+生命周期使用固定的release页面和rosdistro index；REP3/REP2000的平台基线单独保留。当前REP2000快照没有Lyrical章节，Kilted的规划EOL月份也与当前release页面不同，选择实际native ABI前必须结合版本化安装和平台资料解决。Rolling固定于c3c65b52daec7ff56762c0b2d308a1e201059599，发行文件完整SHA为d8894bba5f7aa8d260d865ec8a7edfbe17e253753205c3d6d9007e42c418f358。
+
+统一portable应用必须保留完整Wasm字节，通过外部受权adapter绑定平台。更换发行版选择器后重新编译native ROS示例，不能称为同一Wasm的可移植验收。跨发行版、跨RMW的原生通信必须分别验证。缺少provider、旧依赖、硬件或许可的条目保持BLOCKED，不据此省略或判为不适用。

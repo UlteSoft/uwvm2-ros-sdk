@@ -1,0 +1,5260 @@
+{
+  "format": "uwvm-host-python-original-provenance-v1",
+  "upstream": "https://github.com/astral-sh/python-build-standalone",
+  "release": "20260728",
+  "release_api": "https://api.github.com/repos/astral-sh/python-build-standalone/releases/tags/20260728",
+  "release_api_sha256": "81b95d49476e34ef34060d065ef6e313d9657049a86d29dbb516ef9af72013c4",
+  "release_immutable": true,
+  "archive": {
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260728/cpython-3.12.13%2B20260728-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+    "bytes": 34175396,
+    "sha256": "7ceaf4360f4b4ab44f31d8217cfdc70df8e12b61d9561b4900ee7af87176e50d"
+  },
+  "original_regular_payloads_modified": false,
+  "original_regular_file_count": 3474,
+  "original_links": [
+    {
+      "path": "python/bin/2to3",
+      "original_target": "2to3-3.12",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/bin/idle3",
+      "original_target": "idle3.12",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/bin/pydoc3",
+      "original_target": "pydoc3.12",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/bin/python",
+      "original_target": "python3.12",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/bin/python3",
+      "original_target": "python3.12",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/bin/python3-config",
+      "original_target": "python3.12-config",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/lib/libpython3.12.so",
+      "original_target": "libpython3.12.so.1.0",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/lib/pkgconfig/python3-embed.pc",
+      "original_target": "python-3.12-embed.pc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/lib/pkgconfig/python3.pc",
+      "original_target": "python-3.12.pc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/man/man1/python3.1",
+      "original_target": "python3.12.1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/1/1178",
+      "original_target": "../a/adm1178",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/1/1730-lm",
+      "original_target": "../d/diablo1740-lm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/2/2621",
+      "original_target": "../h/hp2621",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/2/2621-wl",
+      "original_target": "../h/hp2621",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/2/2621A",
+      "original_target": "../h/hp2621",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/2/2621a",
+      "original_target": "../h/hp2621",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/3/386at",
+      "original_target": "../a/att6386",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/3/3b1",
+      "original_target": "../a/att7300",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/4/4025ex",
+      "original_target": "../t/tek4025ex",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/4/4027ex",
+      "original_target": "../t/tek4025ex",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/4/4410-w",
+      "original_target": "../a/att5410-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/5/5051",
+      "original_target": "../i/ibm-pc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/5/5410-w",
+      "original_target": "../a/att5410-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/5/5620",
+      "original_target": "../a/att5620",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/5/5630-24",
+      "original_target": "../a/att630-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/5/5630DMD-24",
+      "original_target": "../a/att630-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/6/6053",
+      "original_target": "../d/dg6053",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/6/6053-dg",
+      "original_target": "../d/dg6053",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/6/605x",
+      "original_target": "../d/dg6053",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/6/605x-dg",
+      "original_target": "../d/dg6053",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/6/630-lm",
+      "original_target": "../d/diablo1740-lm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/6/630MTG-24",
+      "original_target": "../a/att630-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/7/730MTG-24",
+      "original_target": "../a/att730-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/7/730MTG-41",
+      "original_target": "../a/att730-41",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/7/730MTG-41r",
+      "original_target": "../a/att730r-41",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/7/730MTGr",
+      "original_target": "../a/att730r",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/7/730MTGr-24",
+      "original_target": "../a/att730r-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/8/8510",
+      "original_target": "../c/citoh",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/9/955-hb",
+      "original_target": "../t/tvi955-hb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/9/955-w",
+      "original_target": "../t/tvi955-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/A/Apple_Terminal",
+      "original_target": "../n/nsterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/E/Eterm-color",
+      "original_target": "Eterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/L/LFT-PC850",
+      "original_target": "../l/lft",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/N/NCR260VT300WPP",
+      "original_target": "../n/ncr260vt300wpp",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/N/NCRVT100WPP",
+      "original_target": "../n/ncrvt100wan",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P12",
+      "original_target": "../p/prism12",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P12-M",
+      "original_target": "../p/prism12-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P12-M-W",
+      "original_target": "../p/prism12-m-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P12-W",
+      "original_target": "../p/prism12-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P14",
+      "original_target": "../p/prism14",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P14-M",
+      "original_target": "../p/prism14-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P14-M-W",
+      "original_target": "../p/prism14-m-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P14-W",
+      "original_target": "../p/prism14-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P4",
+      "original_target": "../p/prism4",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P5",
+      "original_target": "../p/prism5",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P7",
+      "original_target": "../p/prism7",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P8",
+      "original_target": "../p/prism8",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P8-W",
+      "original_target": "../p/prism8-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P9",
+      "original_target": "../p/prism9",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P9-8",
+      "original_target": "../p/prism9-8",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P9-8-W",
+      "original_target": "../p/prism9-8-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/P/P9-W",
+      "original_target": "../p/prism9-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/Q/Q306-8-pc",
+      "original_target": "../b/bq300-8-pc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/Q/Q310-vip-H",
+      "original_target": "../v/vip-H",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/Q/Q310-vip-H-am",
+      "original_target": "../v/vip-H",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/Q/Q310-vip-Hw",
+      "original_target": "../v/vip-Hw",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/Q/Q310-vip-w",
+      "original_target": "../v/vip-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/Q/Q310-vip-w-am",
+      "original_target": "../v/vip-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/X/X-hpterm",
+      "original_target": "../h/hpterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/X/X-hpterm-color2",
+      "original_target": "../h/hpterm-color2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/a210",
+      "original_target": "ampex210",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/a80",
+      "original_target": "ampex80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/a980",
+      "original_target": "adds980",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aa4080",
+      "original_target": "annarbor4080",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-30",
+      "original_target": "aaa",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-30-s-ctxt",
+      "original_target": "aaa-s-ctxt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-30-s-rv-ct",
+      "original_target": "aaa-s-rv-ctxt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-ctxt",
+      "original_target": "aaa-30-ctxt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-rv",
+      "original_target": "aaa-30-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-rv-ctxt",
+      "original_target": "aaa-30-rv-ctxt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-s",
+      "original_target": "aaa-30-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-s-rv",
+      "original_target": "aaa-30-s-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aaa-unk",
+      "original_target": "aaa+unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/adds200",
+      "original_target": "../r/regent60",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/addsviewpoint",
+      "original_target": "../v/viewpoint",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/addsvp60",
+      "original_target": "../v/vp60",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/adm1",
+      "original_target": "adm1a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aj",
+      "original_target": "aj830",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/aj832",
+      "original_target": "aj830",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/alt2",
+      "original_target": "altos2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/alt3",
+      "original_target": "altos3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/alt4",
+      "original_target": "altos4",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/alt5",
+      "original_target": "altos3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/alt7",
+      "original_target": "altos7",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/alt7pc",
+      "original_target": "altos7pc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/alto-heath",
+      "original_target": "alto-h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/altoh19",
+      "original_target": "alto-h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/altoheath",
+      "original_target": "alto-h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/altos-2",
+      "original_target": "altos2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/altos-3",
+      "original_target": "altos3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/altos-4",
+      "original_target": "altos4",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/altos-5",
+      "original_target": "altos3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/altos5",
+      "original_target": "altos3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ambas",
+      "original_target": "aaa",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ambassador",
+      "original_target": "aaa",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/amp219",
+      "original_target": "ampex219",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/amp219w",
+      "original_target": "ampex219w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ampex-219",
+      "original_target": "ampex219",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ampex-219w",
+      "original_target": "ampex219w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ampex-232",
+      "original_target": "ampex232",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi-mono",
+      "original_target": "ansi-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi43m",
+      "original_target": "../p/pcansi-43-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x25",
+      "original_target": "../c/cons25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x25-mono",
+      "original_target": "../c/cons25-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x25-raw",
+      "original_target": "../c/cons25w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x30",
+      "original_target": "../c/cons30",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x30-mono",
+      "original_target": "../c/cons30-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x43",
+      "original_target": "../c/cons43",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x43-mono",
+      "original_target": "../c/cons43-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x50",
+      "original_target": "../c/cons50",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x50-mono",
+      "original_target": "../c/cons50-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x60",
+      "original_target": "../c/cons60",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansi80x60-mono",
+      "original_target": "../c/cons60-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansil",
+      "original_target": "../c/cons50",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansil-mono",
+      "original_target": "../c/cons50-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansis",
+      "original_target": "../c/cons25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansis-mono",
+      "original_target": "../c/cons25-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansisysk",
+      "original_target": "ansi.sysk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansiterm",
+      "original_target": "ansi-generic",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ansiw",
+      "original_target": "../c/cons25w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/ap-vm80",
+      "original_target": "apple-vm80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/apl",
+      "original_target": "../i/ibm-apl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/appleIIc",
+      "original_target": "appleIIgs",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/appleIIe",
+      "original_target": "appleIIgs",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/arm100-am",
+      "original_target": "arm100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/arm100-wam",
+      "original_target": "arm100-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/at",
+      "original_target": "../s/st52",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/at-color",
+      "original_target": "../s/st52-color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/at-m",
+      "original_target": "../s/st52",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/at386",
+      "original_target": "att6386",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/atari",
+      "original_target": "../s/st52",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/atari-color",
+      "original_target": "../s/st52-color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/atari-m",
+      "original_target": "../s/st52",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/atari_st",
+      "original_target": "../s/st52",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/atari_st-color",
+      "original_target": "../s/st52-color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/atarist-m",
+      "original_target": "../s/st52",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att4410-w",
+      "original_target": "att5410-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att4410v1",
+      "original_target": "att5410v1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att4425",
+      "original_target": "att5425",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att4425-nl",
+      "original_target": "att5425-nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att4425-w",
+      "original_target": "att5425-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att513",
+      "original_target": "att500",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5320",
+      "original_target": "att5310",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5410",
+      "original_target": "att4410",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5410v1-w",
+      "original_target": "att4410v1-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5418",
+      "original_target": "att4418",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5418-w",
+      "original_target": "att4418-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420",
+      "original_target": "att4415",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420+nl",
+      "original_target": "att4415+nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420-nl",
+      "original_target": "att4415-nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420-rv",
+      "original_target": "att4415-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420-rv-nl",
+      "original_target": "att4415-rv-nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420-w",
+      "original_target": "att4415-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420-w-nl",
+      "original_target": "att4415-w-nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420-w-rv",
+      "original_target": "att4415-w-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5420-w-rv-n",
+      "original_target": "att4415-w-rv-n",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/att5430",
+      "original_target": "att505",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/avatar1",
+      "original_target": "avatar",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/avt-rv-s",
+      "original_target": "avt-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/avt-s",
+      "original_target": "avt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/avt-w-rv-s",
+      "original_target": "avt-w-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/a/avt-w-s",
+      "original_target": "avt-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/b-128",
+      "original_target": "../c/commodore",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/basic4",
+      "original_target": "../m/mai",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bct510a",
+      "original_target": "../a/att510a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bct510d",
+      "original_target": "../a/att510d",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bee",
+      "original_target": "beehive",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/beehiveIIIm",
+      "original_target": "beehive3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bg2.0nv",
+      "original_target": "bitgraph",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bg3.10",
+      "original_target": "bg2.0",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bg3.10nv",
+      "original_target": "bitgraph",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bg3.10rv",
+      "original_target": "bg2.0rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bh3m",
+      "original_target": "beehive3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bh4",
+      "original_target": "beehive4",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/b/bsdos-pc-mono",
+      "original_target": "bsdos-pc-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c100-1p",
+      "original_target": "../o/oc100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c100-4p",
+      "original_target": "c100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c100-rv-4p",
+      "original_target": "c100-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c104",
+      "original_target": "c100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c108-8p",
+      "original_target": "c108",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c108-rv-8p",
+      "original_target": "c108-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c108-w-8p",
+      "original_target": "c108-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c300",
+      "original_target": "contel300",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c301",
+      "original_target": "contel301",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/c321",
+      "original_target": "contel301",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cci1",
+      "original_target": "cci",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cgc2",
+      "original_target": "cad68-2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cgc3",
+      "original_target": "cad68-3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/chromatics",
+      "original_target": "cg7900",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/ci8510",
+      "original_target": "citoh",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cit-80",
+      "original_target": "cit80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/citc",
+      "original_target": "cit101",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/citoh-ps",
+      "original_target": "citoh-prop",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/coherent",
+      "original_target": "../p/pc-coherent",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/colorscan",
+      "original_target": "cs10",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept",
+      "original_target": "c100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept-avt",
+      "original_target": "../a/avt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept100",
+      "original_target": "c100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept100-rv",
+      "original_target": "c100-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept108",
+      "original_target": "c108",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept108-4p",
+      "original_target": "c108-4p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept108-8p",
+      "original_target": "c108",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept108-w-8",
+      "original_target": "c108-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept108-w8p",
+      "original_target": "c108-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/concept108rv4p",
+      "original_target": "c108-rv-4p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons25-iso-m",
+      "original_target": "cons25l1-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons25-iso8859",
+      "original_target": "cons25l1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons25-koi8-r",
+      "original_target": "cons25r",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons25-koi8r-m",
+      "original_target": "cons25r-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons50-iso-m",
+      "original_target": "cons50l1-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons50-iso8859",
+      "original_target": "cons50l1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons50-koi8r",
+      "original_target": "cons50r",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons50-koi8r-m",
+      "original_target": "cons50r-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons60-iso",
+      "original_target": "cons60l1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons60-iso-m",
+      "original_target": "cons60l1-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons60-koi8r",
+      "original_target": "cons60r",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cons60-koi8r-m",
+      "original_target": "cons60r-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/contel320",
+      "original_target": "contel300",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/contel321",
+      "original_target": "contel301",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/contour-latest",
+      "original_target": "contour",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cops",
+      "original_target": "cops10",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cops-10",
+      "original_target": "cops10",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/crt-vt220",
+      "original_target": "crt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/ct82",
+      "original_target": "../s/swtp",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cx",
+      "original_target": "color_xterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/c/cx100",
+      "original_target": "color_xterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d2",
+      "original_target": "dg6053",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d2-dg",
+      "original_target": "dg6053",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d200-dg",
+      "original_target": "d200",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d214",
+      "original_target": "d210",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d214-dg",
+      "original_target": "d210-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d215",
+      "original_target": "d211",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d215-7b",
+      "original_target": "d211-7b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d215-dg",
+      "original_target": "d211-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d216+",
+      "original_target": "d216-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d216+25",
+      "original_target": "d216-unix-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d216+dg",
+      "original_target": "d216-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d216e+",
+      "original_target": "d216-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d216e+dg",
+      "original_target": "d216-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d216e-dg",
+      "original_target": "d216-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d216e-unix",
+      "original_target": "d216-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d217-dg",
+      "original_target": "d216-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d230",
+      "original_target": "d230c",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d230-dg",
+      "original_target": "d230c-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d400-dg",
+      "original_target": "d400",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d411",
+      "original_target": "d410",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d411-7b",
+      "original_target": "d410-7b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d411-7b-w",
+      "original_target": "d410-7b-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d411-dg",
+      "original_target": "d410-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d411-w",
+      "original_target": "d410-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d412+",
+      "original_target": "d412-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d412+25",
+      "original_target": "d412-unix-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d412+dg",
+      "original_target": "d412-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d412+s",
+      "original_target": "d412-unix-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d412+sr",
+      "original_target": "d412-unix-sr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d412+w",
+      "original_target": "d412-unix-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d413-dg",
+      "original_target": "d412-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-dg",
+      "original_target": "d430c-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-dg-ccc",
+      "original_target": "d430c-dg-ccc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix",
+      "original_target": "d430c-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-25",
+      "original_target": "d430c-unix-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-25-ccc",
+      "original_target": "d430c-unix-25-ccc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-ccc",
+      "original_target": "d430c-unix-ccc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-s",
+      "original_target": "d430c-unix-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-s-ccc",
+      "original_target": "d430c-unix-s-ccc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-sr",
+      "original_target": "d430c-unix-sr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-sr-ccc",
+      "original_target": "d430c-unix-sr-ccc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-w",
+      "original_target": "d430c-unix-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d430-unix-w-ccc",
+      "original_target": "d430c-unix-w-ccc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d450",
+      "original_target": "d400",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d450-dg",
+      "original_target": "d400",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d460",
+      "original_target": "d410",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d460-7b",
+      "original_target": "d410-7b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d460-7b-w",
+      "original_target": "d410-7b-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d460-dg",
+      "original_target": "d410-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d460-w",
+      "original_target": "d410-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d461",
+      "original_target": "d410",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d461-7b",
+      "original_target": "d410-7b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d461-7b-w",
+      "original_target": "d410-7b-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d461-dg",
+      "original_target": "d410-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d461-w",
+      "original_target": "d410-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462+",
+      "original_target": "d412-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462+25",
+      "original_target": "d412-unix-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462+dg",
+      "original_target": "d412-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462+s",
+      "original_target": "d412-unix-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462+sr",
+      "original_target": "d412-unix-sr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462+w",
+      "original_target": "d412-unix-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462-dg",
+      "original_target": "d412-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462-unix",
+      "original_target": "d412-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462-unix-25",
+      "original_target": "d412-unix-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462-unix-s",
+      "original_target": "d412-unix-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462-unix-sr",
+      "original_target": "d412-unix-sr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462-unix-w",
+      "original_target": "d412-unix-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d462e-dg",
+      "original_target": "d412-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d463-dg",
+      "original_target": "d412-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d463-unix",
+      "original_target": "d413-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d463-unix-25",
+      "original_target": "d413-unix-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d463-unix-s",
+      "original_target": "d413-unix-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d463-unix-sr",
+      "original_target": "d413-unix-sr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d463-unix-w",
+      "original_target": "d413-unix-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d464-unix",
+      "original_target": "d414-unix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d464-unix-25",
+      "original_target": "d414-unix-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d464-unix-s",
+      "original_target": "d414-unix-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d464-unix-sr",
+      "original_target": "d414-unix-sr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d464-unix-w",
+      "original_target": "d414-unix-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d470",
+      "original_target": "d470c",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d470-7b",
+      "original_target": "d470c-7b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d470-dg",
+      "original_target": "d470c-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d578-dg",
+      "original_target": "d577-dg",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/d80",
+      "original_target": "../a/ampex80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin",
+      "original_target": "../x/xnuppc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-100x37",
+      "original_target": "../x/xnuppc-100x37",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-100x37-m",
+      "original_target": "../x/xnuppc-100x37-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-112x37",
+      "original_target": "../x/xnuppc-112x37",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-112x37-m",
+      "original_target": "../x/xnuppc-112x37-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-128x40",
+      "original_target": "../x/xnuppc-128x40",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-128x40-m",
+      "original_target": "../x/xnuppc-128x40-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-128x48",
+      "original_target": "../x/xnuppc-128x48",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-128x48-m",
+      "original_target": "../x/xnuppc-128x48-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-144x48",
+      "original_target": "../x/xnuppc-144x48",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-144x48-m",
+      "original_target": "../x/xnuppc-144x48-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-160x64",
+      "original_target": "../x/xnuppc-160x64",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-160x64-m",
+      "original_target": "../x/xnuppc-160x64-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-200x64",
+      "original_target": "../x/xnuppc-200x64",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-200x64-m",
+      "original_target": "../x/xnuppc-200x64-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-200x75",
+      "original_target": "../x/xnuppc-200x75",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-200x75-m",
+      "original_target": "../x/xnuppc-200x75-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-256x96",
+      "original_target": "../x/xnuppc-256x96",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-256x96-m",
+      "original_target": "../x/xnuppc-256x96-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-80x25",
+      "original_target": "../x/xnuppc-80x25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-80x25-m",
+      "original_target": "../x/xnuppc-80x25-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-80x30",
+      "original_target": "../x/xnuppc-80x30",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-80x30-m",
+      "original_target": "../x/xnuppc-80x30-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-90x30",
+      "original_target": "../x/xnuppc-90x30",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-90x30-m",
+      "original_target": "../x/xnuppc-90x30-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-b",
+      "original_target": "../x/xnuppc-b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-f",
+      "original_target": "../x/xnuppc-f",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-f2",
+      "original_target": "../x/xnuppc-f2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-m",
+      "original_target": "../x/xnuppc-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-m-b",
+      "original_target": "../x/xnuppc-m-b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-m-f",
+      "original_target": "../x/xnuppc-m-f",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/darwin-m-f2",
+      "original_target": "../x/xnuppc-m-f2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/datagraphix",
+      "original_target": "d132",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/datamedia2500",
+      "original_target": "dm2500",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/datapoint",
+      "original_target": "dp3360",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dataspeed40",
+      "original_target": "../t/tty40",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dd5000",
+      "original_target": "delta",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/ddr3180",
+      "original_target": "ddr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dec-vt330",
+      "original_target": "../v/vt340",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dec-vt340",
+      "original_target": "../v/vt340",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dec-vt400",
+      "original_target": "../v/vt400",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/decpro",
+      "original_target": "../p/pro350",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/decwriter",
+      "original_target": "dw2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dg-ansi",
+      "original_target": "dg210",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dg100",
+      "original_target": "dg6053-old",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dg605x",
+      "original_target": "dg6053",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dg6134",
+      "original_target": "dg450",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/diablo",
+      "original_target": "diablo1640",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/diablo-lm",
+      "original_target": "diablo1640-lm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/diablo1640-m8",
+      "original_target": "diablo1620-m8",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/diablo1720",
+      "original_target": "diablo1620",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/diablo1730",
+      "original_target": "diablo1640",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/diablo1740",
+      "original_target": "diablo1640",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/diablo450",
+      "original_target": "diablo1620",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/diablo630",
+      "original_target": "diablo1640",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dialogue",
+      "original_target": "../a/ampex80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dialogue80",
+      "original_target": "../a/ampex80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dku7102",
+      "original_target": "../t/tws-generic",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dku7102-sna",
+      "original_target": "../t/tws2102-sna",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dku7103-sna",
+      "original_target": "../t/tws2103-sna",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dm1521",
+      "original_target": "dm1520",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dmd",
+      "original_target": "../a/att5620",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dmd-24",
+      "original_target": "../a/att5620-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dmd-34",
+      "original_target": "../a/att5620-34",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dmd1",
+      "original_target": "../a/att5620-1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dmdt80",
+      "original_target": "dm80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dmdt80w",
+      "original_target": "dm80w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/ds40",
+      "original_target": "../t/tty40",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/ds40-2",
+      "original_target": "../t/tty40",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dt-100",
+      "original_target": "dt100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dt-100w",
+      "original_target": "dt100w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dt80",
+      "original_target": "dm80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dt80w",
+      "original_target": "dm80w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dw",
+      "original_target": "dw2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/d/dwk-vt",
+      "original_target": "dwk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/e/emots",
+      "original_target": "../g/gs6300",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/e/envision230",
+      "original_target": "env230",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/e/ep4000",
+      "original_target": "ep40",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/e/ep4080",
+      "original_target": "ep48",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/e/excel64",
+      "original_target": "excel62",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/e/excel64-rv",
+      "original_target": "excel62-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/e/excel64-w",
+      "original_target": "excel62-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/e/exec80",
+      "original_target": "../h/hazel",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/f1720a",
+      "original_target": "f1720",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/fenix",
+      "original_target": "../p/pt100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/fenixw",
+      "original_target": "../p/pt100w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/fixterm",
+      "original_target": "../c/cbblit",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/fortune",
+      "original_target": "fos",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/freedom",
+      "original_target": "f100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/freedom-rv",
+      "original_target": "f100-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/freedom100",
+      "original_target": "f100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/freedom110",
+      "original_target": "f110",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/f/freedom200",
+      "original_target": "f200",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/go-225",
+      "original_target": "go225",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/gs5430",
+      "original_target": "../a/att505",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/gs5430-22",
+      "original_target": "../a/att505-22",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/gs5430-24",
+      "original_target": "../a/att505-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/gt100",
+      "original_target": "../i/i100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/gt100a",
+      "original_target": "../i/i100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/guru+unk",
+      "original_target": "guru",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/guru-33",
+      "original_target": "guru",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/guru-33-rv",
+      "original_target": "guru-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/guru-33-s",
+      "original_target": "guru-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/g/guru-lp",
+      "original_target": "guru-76-lp",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h-100",
+      "original_target": "../z/z100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h-100bw",
+      "original_target": "../z/z100bw",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h100",
+      "original_target": "../z/z100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h100bw",
+      "original_target": "../z/z100bw",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h19-b",
+      "original_target": "h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h19-smul",
+      "original_target": "h19-us",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h19a",
+      "original_target": "h19-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h19g",
+      "original_target": "h19-g",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h19kermit",
+      "original_target": "h19k",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h19us",
+      "original_target": "h19-us",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h29a-kc-bc",
+      "original_target": "../z/z29a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h29a-kc-uc",
+      "original_target": "../z/z29a-kc-uc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h29a-nkc-bc",
+      "original_target": "../z/z29a-nkc-bc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h29a-nkc-uc",
+      "original_target": "../z/z29a-nkc-uc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/h80",
+      "original_target": "hazel",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/he80",
+      "original_target": "hazel",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/heath",
+      "original_target": "h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/heath-19",
+      "original_target": "h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/heath-ansi",
+      "original_target": "h19-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/heathkit",
+      "original_target": "h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/heathkit-a",
+      "original_target": "h19-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hft",
+      "original_target": "../i/ibm5081",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp",
+      "original_target": "hpgeneric",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2382",
+      "original_target": "hp2382a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2397",
+      "original_target": "hp2397a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2621-wl",
+      "original_target": "hp2621",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2621A",
+      "original_target": "hp2621",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2621a",
+      "original_target": "hp2621",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2621a-a",
+      "original_target": "hp2621-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2621k45",
+      "original_target": "hp2621-k45",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2622a",
+      "original_target": "hp2622",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2623a",
+      "original_target": "hp2623",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2624a",
+      "original_target": "hp2624",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2624a-10p",
+      "original_target": "hp2624-10p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2624b",
+      "original_target": "hp2624",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2624b-10p",
+      "original_target": "hp2624-10p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2624b-4p",
+      "original_target": "hp2624",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2624b-4p-p",
+      "original_target": "hp2624b-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2626a",
+      "original_target": "hp2626",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2626p",
+      "original_target": "hp2626",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2644a",
+      "original_target": "hp2640b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2645a",
+      "original_target": "hp2641a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2647a",
+      "original_target": "hp2641a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp2648a",
+      "original_target": "hp2648",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp45",
+      "original_target": "hp2645",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp700",
+      "original_target": "hpansi",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp70092A",
+      "original_target": "hp70092",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp70092a",
+      "original_target": "hp70092",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp98550a",
+      "original_target": "hp98550",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp98550a-color",
+      "original_target": "hp98550-color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp98720",
+      "original_target": "hp9837",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hp98721",
+      "original_target": "hp9837",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/hpex2",
+      "original_target": "hp2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/h/htx11",
+      "original_target": "../z/ztx",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/i3101",
+      "original_target": "ibm3101",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/i3164",
+      "original_target": "ibm3164",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibm3163",
+      "original_target": "ibm3161",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibm5051",
+      "original_target": "ibm-pc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibm5154-c",
+      "original_target": "ibmega-c",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibm6154-c",
+      "original_target": "ibmapa8c-c",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibm8507",
+      "original_target": "ibm8503",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibm8513",
+      "original_target": "ibm8512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibm8604",
+      "original_target": "ibm8503",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibmapa16",
+      "original_target": "../r/rtpc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibmapa8",
+      "original_target": "ibmapa8c",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibmmpel-c",
+      "original_target": "ibm5081-c",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibmpc3r",
+      "original_target": "../c/cons25r",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibmpc3r-mono",
+      "original_target": "../c/cons25r-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ibmx",
+      "original_target": "ibmpcx",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/icl6402",
+      "original_target": "icl6404",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/intertec",
+      "original_target": "intertube",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/intextii",
+      "original_target": "intext2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ips",
+      "original_target": "../c/citoh-prop",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/ipsi",
+      "original_target": "../d/diablo1620",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/iq120",
+      "original_target": "../s/soroc120",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/iq140",
+      "original_target": "../s/soroc140",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/iris-ansi-net",
+      "original_target": "iris-ansi",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/iris40",
+      "original_target": "../w/wsiris",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/iterm",
+      "original_target": "iTerm.app",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/i/iterm2",
+      "original_target": "iTerm2.app",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/j/jerq",
+      "original_target": "../b/blit",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/k/k45",
+      "original_target": "../h/hp2621-k45",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/k/kaypro2",
+      "original_target": "kaypro",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/k/kds6402",
+      "original_target": "../i/icl6404",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/k/kds7372",
+      "original_target": "../i/icl6404",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/k/kds7372-w",
+      "original_target": "../i/icl6404-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/k/kon2",
+      "original_target": "kon",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/k/kterm-co",
+      "original_target": "kterm-color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/k/ktm",
+      "original_target": "../s/synertek",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/l/la120",
+      "original_target": "../d/dw3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/l/layer",
+      "original_target": "../a/att5620-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/l/lft-pc850",
+      "original_target": "lft",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/l/luna68k",
+      "original_target": "luna",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/macintosh",
+      "original_target": "mac",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/macterminal-w",
+      "original_target": "mac-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mdl110",
+      "original_target": "../c/cyb110",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/microbee",
+      "original_target": "microb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/microterm",
+      "original_target": "../a/act4",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/microterm5",
+      "original_target": "../a/act5",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mime-3ax",
+      "original_target": "mime3ax",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mime1",
+      "original_target": "mime",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mime2",
+      "original_target": "mime",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mime2a-v",
+      "original_target": "mime2a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mime340",
+      "original_target": "mm340",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mimei",
+      "original_target": "mime",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mimeii",
+      "original_target": "mime",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/minitel",
+      "original_target": "m2-nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/minitel-2",
+      "original_target": "m2-nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/minitel-2-nam",
+      "original_target": "m2-nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/minix-1.5",
+      "original_target": "minix-old",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mm314",
+      "original_target": "mime314",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mod",
+      "original_target": "modgraph48",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mod24",
+      "original_target": "modgraph",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mouse-sun",
+      "original_target": "mterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mskermit227",
+      "original_target": "msk227",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mskermit22714",
+      "original_target": "msk22714",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mskermit227am",
+      "original_target": "msk227am",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/m/mt-70",
+      "original_target": "mt70",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/n7900",
+      "original_target": "ncr7900i",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nansisys",
+      "original_target": "nansi.sys",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nansisysk",
+      "original_target": "nansi.sysk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ncr7900",
+      "original_target": "ncr7900i",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ncrvt100pp",
+      "original_target": "ncrvt100an",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ncrvt100wpp",
+      "original_target": "ncrvt100wan",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ncsa-vt220-8",
+      "original_target": "ncsa-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nd9500",
+      "original_target": "ndr9500",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nec",
+      "original_target": "nec5520",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news",
+      "original_target": "nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news-a",
+      "original_target": "nwp512-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news-o",
+      "original_target": "nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news28-a",
+      "original_target": "news29",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news31",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news31-a",
+      "original_target": "nwp513-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news31-o",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news33",
+      "original_target": "nwp513-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news40",
+      "original_target": "nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news40-a",
+      "original_target": "nwp512-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news40-o",
+      "original_target": "nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/news42",
+      "original_target": "nwp512-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/newscbm",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/newscbm-a",
+      "original_target": "nwp513-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/newscbm-o",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/newscbm33",
+      "original_target": "nwp513-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-256color",
+      "original_target": "nsterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-7-c-s",
+      "original_target": "nsterm-c-s-7",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-7-m",
+      "original_target": "nsterm-m-7",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-7-m-s",
+      "original_target": "nsterm-m-s-7",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-7-s",
+      "original_target": "nsterm-s-7",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-acs-c",
+      "original_target": "nsterm-c-acs",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-acs-c-s",
+      "original_target": "nsterm-c-s-acs",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-acs-m",
+      "original_target": "nsterm-m-acs",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-acs-m-s",
+      "original_target": "nsterm-m-s-acs",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-acs-s",
+      "original_target": "nsterm-s-acs",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nsterm-c-7",
+      "original_target": "nsterm-7-c",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole",
+      "original_target": "../i/interix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-100",
+      "original_target": "../o/opennt-100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-100-nti",
+      "original_target": "../o/opennt-100-nti",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-25",
+      "original_target": "../i/interix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-25-nti",
+      "original_target": "../i/interix-nti",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-25-w",
+      "original_target": "../o/opennt-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-25-w-vt",
+      "original_target": "../o/opennt-w-vt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-35",
+      "original_target": "../o/opennt-35",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-35-nti",
+      "original_target": "../o/opennt-35-nti",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-35-w",
+      "original_target": "../o/opennt-35-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-50",
+      "original_target": "../o/opennt-50",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-50-nti",
+      "original_target": "../o/opennt-50-nti",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-50-w",
+      "original_target": "../o/opennt-50-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-60",
+      "original_target": "../o/opennt-60",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-60-nti",
+      "original_target": "../o/opennt-60-nti",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-60-w",
+      "original_target": "../o/opennt-60-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-w",
+      "original_target": "../o/opennt-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/ntconsole-w-vt",
+      "original_target": "../o/opennt-w-vt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwe501",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwe501-a",
+      "original_target": "nwp513-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwe501-o",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp-511",
+      "original_target": "nwp511",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp-517",
+      "original_target": "nwp517",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp-517-w",
+      "original_target": "nwp517-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp251-a",
+      "original_target": "nwp513-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp251-o",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp512-o",
+      "original_target": "nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp513-o",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp514",
+      "original_target": "nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp514-a",
+      "original_target": "nwp512-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp514-o",
+      "original_target": "nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp518",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp518-a",
+      "original_target": "nwp513-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nwp518-o",
+      "original_target": "nwp513",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/n/nxterm",
+      "original_target": "../x/xterm-color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/o31",
+      "original_target": "../a/adm31-old",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/o4112-nd",
+      "original_target": "otek4112",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/o85h",
+      "original_target": "../a/abm85h-old",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/oabm85h",
+      "original_target": "../a/abm85h-old",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/oconcept",
+      "original_target": "oc100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/ojerq",
+      "original_target": "oblit",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/old-st",
+      "original_target": "../s/simpleterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/oldibmpc3",
+      "original_target": "oldpc3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/opennt",
+      "original_target": "../i/interix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/opennt-25",
+      "original_target": "../i/interix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/opennt-25-nti",
+      "original_target": "../i/interix-nti",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/opennt-25-w",
+      "original_target": "opennt-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/opennt-25-w-vt",
+      "original_target": "opennt-w-vt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/opennt-nti",
+      "original_target": "../i/interix-nti",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/origibmpc3",
+      "original_target": "origpc3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/os9LII",
+      "original_target": "../c/coco3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/osborne1",
+      "original_target": "osborne",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/osborne1-w",
+      "original_target": "osborne-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/otek4113",
+      "original_target": "otek4112",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/o/otek4114",
+      "original_target": "otek4112",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p12",
+      "original_target": "prism12",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p12-m",
+      "original_target": "prism12-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p12-m-w",
+      "original_target": "prism12-m-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p12-w",
+      "original_target": "prism12-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p14",
+      "original_target": "prism14",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p14-m",
+      "original_target": "prism14-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p14-m-w",
+      "original_target": "prism14-m-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p14-w",
+      "original_target": "prism14-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p4",
+      "original_target": "prism4",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p5",
+      "original_target": "prism5",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p7",
+      "original_target": "prism7",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p8",
+      "original_target": "prism8",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p8-w",
+      "original_target": "prism8-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p9",
+      "original_target": "prism9",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p9-8",
+      "original_target": "prism9-8",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p9-8-w",
+      "original_target": "prism9-8-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/p9-w",
+      "original_target": "prism9-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pc3-bold",
+      "original_target": "../i/ibmpc3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pc3r",
+      "original_target": "../c/cons25r",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pc3r-m",
+      "original_target": "../c/cons25r-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pc7300",
+      "original_target": "../a/att7300",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pcansi-mono",
+      "original_target": "pcansi-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pcansi25",
+      "original_target": "pcansi-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pcansi25m",
+      "original_target": "pcansi-25-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pcansi33",
+      "original_target": "pcansi-33",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pcansi33m",
+      "original_target": "pcansi-33-m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pcansi43",
+      "original_target": "pcansi-43",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pcconsole",
+      "original_target": "pccons",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pckermit12",
+      "original_target": "pckermit",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pcz19",
+      "original_target": "pc-coherent",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pe1100",
+      "original_target": "../f/fox",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pe1200",
+      "original_target": "../o/owl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pe550",
+      "original_target": "../b/bantam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pe6100",
+      "original_target": "../b/bantam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pe6300",
+      "original_target": "pe1251",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pe6312",
+      "original_target": "pe1251",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pmconsole",
+      "original_target": "pmcons",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/printer",
+      "original_target": "../l/lpr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/prism8gl",
+      "original_target": "p8gl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/psterm-basic",
+      "original_target": "psterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/psx_ansi",
+      "original_target": "../a/ansi-nt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pt200",
+      "original_target": "pt100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pt200w",
+      "original_target": "pt100w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pt505",
+      "original_target": "../a/att505",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pt505-22",
+      "original_target": "../a/att505-22",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/p/pt505-24",
+      "original_target": "../a/att505-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qdcons",
+      "original_target": "qdss",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qnx4",
+      "original_target": "qnx",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qnxt4",
+      "original_target": "qnxt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qume",
+      "original_target": "qume5",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt101p",
+      "original_target": "qvt101+",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt108",
+      "original_target": "qvt101",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt119",
+      "original_target": "qvt119+",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt119-25-w",
+      "original_target": "qvt119+-25-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt119-w",
+      "original_target": "qvt119+-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt119p",
+      "original_target": "qvt119+",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt119p-25",
+      "original_target": "qvt119+-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt119p-25-w",
+      "original_target": "qvt119+-25-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt119p-w",
+      "original_target": "qvt119+-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt203+",
+      "original_target": "qvt203",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/q/qvt203-w-am",
+      "original_target": "qvt203-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/r/rebus3180",
+      "original_target": "../d/ddr",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/r/regent200",
+      "original_target": "regent60",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/r/rxvt-color",
+      "original_target": "rxvt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/s4",
+      "original_target": "../a/att7300",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sb3",
+      "original_target": "sb2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sbobcat",
+      "original_target": "../b/bobcat",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sc410",
+      "original_target": "scanset",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sc415",
+      "original_target": "scanset",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/screen.linux-s",
+      "original_target": "screen.linux",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/screen.minitel12-80",
+      "original_target": "screen.minitel1b-80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/screen.minitel2-80",
+      "original_target": "screen.minitel1b-80",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/screen.xterm-new",
+      "original_target": "screen.xterm-xfree86",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/securecrt",
+      "original_target": "scrt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/soroc",
+      "original_target": "soroc120",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/spinwriter",
+      "original_target": "../n/nec5520",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/st52-m",
+      "original_target": "st52",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/stterm",
+      "original_target": "st",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/stterm-16color",
+      "original_target": "st-16color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/stterm-256color",
+      "original_target": "st-256color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sun-cmd",
+      "original_target": "sun-c",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sun-nic",
+      "original_target": "sun-e",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sun-s-e",
+      "original_target": "sun-e-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sun-ss5",
+      "original_target": "sun-cgsix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sun1",
+      "original_target": "sun",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sun2",
+      "original_target": "sun",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sune",
+      "original_target": "sun-e",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/superbee",
+      "original_target": "sbi",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/sv80",
+      "original_target": "../a/att2300",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/synertek380",
+      "original_target": "synertek",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/s/system1",
+      "original_target": "../i/ibm-system1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/t653x",
+      "original_target": "tandem653",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tab",
+      "original_target": "tab132",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tab132-15",
+      "original_target": "tab132",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tek4012",
+      "original_target": "tek",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tek4025",
+      "original_target": "tek4024",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tek4027",
+      "original_target": "tek4024",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tek4027-ex",
+      "original_target": "tek4025-ex",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tek4107brl",
+      "original_target": "tek4106brl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tek4109",
+      "original_target": "tek4107",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tek4109brl",
+      "original_target": "tek4106brl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tek4114",
+      "original_target": "tek4112",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/teken-vt",
+      "original_target": "teken",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/teleray",
+      "original_target": "t1061",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/terminet",
+      "original_target": "terminet1200",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/terminet300",
+      "original_target": "terminet1200",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tgtelnet",
+      "original_target": "../p/pilot",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ti707",
+      "original_target": "ti703",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ti707-w",
+      "original_target": "ti703-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ti733",
+      "original_target": "ti700",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ti735",
+      "original_target": "ti700",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ti745",
+      "original_target": "ti700",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ti800",
+      "original_target": "ti700",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ti916-220-7",
+      "original_target": "ti916",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ti916-220-8",
+      "original_target": "ti916-8",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tkterm",
+      "original_target": "tt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tn1200",
+      "original_target": "terminet1200",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tn300",
+      "original_target": "terminet1200",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/trs80II",
+      "original_target": "trs2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/trsII",
+      "original_target": "trs2",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ts-1",
+      "original_target": "../f/falco",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ts-1p",
+      "original_target": "../f/falco-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ts1",
+      "original_target": "../f/falco",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ts100-sp",
+      "original_target": "ts100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ts1p",
+      "original_target": "../f/falco-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty35",
+      "original_target": "tty33",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty4420",
+      "original_target": "../a/att4420",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty4424",
+      "original_target": "../a/att4424",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty4424-1",
+      "original_target": "../a/att4424-1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty4424m",
+      "original_target": "../a/att4424m",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty4426",
+      "original_target": "../a/att4426",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5410",
+      "original_target": "../a/att4410",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5410-w",
+      "original_target": "../a/att5410-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5410v1",
+      "original_target": "../a/att5410v1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5410v1-w",
+      "original_target": "../a/att4410v1-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420",
+      "original_target": "../a/att4415",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420+nl",
+      "original_target": "../a/att4415+nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420-nl",
+      "original_target": "../a/att4415-nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420-rv",
+      "original_target": "../a/att4415-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420-rv-nl",
+      "original_target": "../a/att4415-rv-nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420-w",
+      "original_target": "../a/att4415-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420-w-nl",
+      "original_target": "../a/att4415-w-nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420-w-rv",
+      "original_target": "../a/att4415-w-rv",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5420-w-rv-n",
+      "original_target": "../a/att4415-w-rv-n",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5425",
+      "original_target": "../a/att5425",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5425-nl",
+      "original_target": "../a/att5425-nl",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5425-w",
+      "original_target": "../a/att5425-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5620",
+      "original_target": "../a/att5620",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5620-1",
+      "original_target": "../a/att5620-1",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5620-24",
+      "original_target": "../a/att5620-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5620-34",
+      "original_target": "../a/att5620-34",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tty5620-s",
+      "original_target": "../a/att5620-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/ttydmd",
+      "original_target": "../a/att5620",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912b-mc-2p",
+      "original_target": "tvi912b-2p-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912b-mc-vb",
+      "original_target": "tvi912b-vb-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912b-p-2p",
+      "original_target": "tvi912b-2p-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912b-p-vb",
+      "original_target": "tvi912b-vb-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912b-unk-2p",
+      "original_target": "tvi912b-2p-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912b-unk-vb",
+      "original_target": "tvi912b-vb-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c",
+      "original_target": "tvi912b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-2p",
+      "original_target": "tvi912b-2p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-2p-mc",
+      "original_target": "tvi912b-2p-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-2p-p",
+      "original_target": "tvi912b-2p-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-2p-unk",
+      "original_target": "tvi912b-2p-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-mc",
+      "original_target": "tvi912b-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-mc-2p",
+      "original_target": "tvi912b-2p-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-mc-vb",
+      "original_target": "tvi912b-vb-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-p",
+      "original_target": "tvi912b-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-p-2p",
+      "original_target": "tvi912b-2p-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-p-vb",
+      "original_target": "tvi912b-vb-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-unk",
+      "original_target": "tvi912b-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-unk-2p",
+      "original_target": "tvi912b-2p-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-unk-vb",
+      "original_target": "tvi912b-vb-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-vb",
+      "original_target": "tvi912b-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-vb-mc",
+      "original_target": "tvi912b-vb-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-vb-p",
+      "original_target": "tvi912b-vb-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi912c-vb-unk",
+      "original_target": "tvi912b-vb-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi914",
+      "original_target": "tvi912",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920",
+      "original_target": "tvi912",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920b-mc-2p",
+      "original_target": "tvi920b-2p-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920b-mc-vb",
+      "original_target": "tvi920b-vb-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920b-p-2p",
+      "original_target": "tvi920b-2p-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920b-p-vb",
+      "original_target": "tvi920b-vb-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920b-unk-2p",
+      "original_target": "tvi920b-2p-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920b-unk-vb",
+      "original_target": "tvi920b-vb-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c",
+      "original_target": "tvi920b",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-2p",
+      "original_target": "tvi920b-2p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-2p-mc",
+      "original_target": "tvi920b-2p-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-2p-p",
+      "original_target": "tvi920b-2p-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-2p-unk",
+      "original_target": "tvi920b-2p-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-mc",
+      "original_target": "tvi920b-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-mc-2p",
+      "original_target": "tvi920b-2p-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-mc-vb",
+      "original_target": "tvi920b-vb-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-p",
+      "original_target": "tvi920b-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-p-2p",
+      "original_target": "tvi920b-2p-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-p-vb",
+      "original_target": "tvi920b-vb-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-unk",
+      "original_target": "tvi920b-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-unk-2p",
+      "original_target": "tvi920b-2p-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-unk-vb",
+      "original_target": "tvi920b-vb-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-vb",
+      "original_target": "tvi920b-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-vb-mc",
+      "original_target": "tvi920b-vb-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-vb-p",
+      "original_target": "tvi920b-vb-p",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tvi920c-vb-unk",
+      "original_target": "tvi920b-vb-unk",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/t/tw52-color",
+      "original_target": "tw52",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/u/ultima2",
+      "original_target": "../i/ims-ansi",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/u/ultimaII",
+      "original_target": "../i/ims-ansi",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/u/uniterm49",
+      "original_target": "uniterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/u/unixpc",
+      "original_target": "../a/att7300",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/v200-nam",
+      "original_target": "vt220-nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/v320n",
+      "original_target": "vt320nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vapple",
+      "original_target": "../a/apple-videx3",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vc103",
+      "original_target": "vc303",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vc203",
+      "original_target": "vc303",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vc403a",
+      "original_target": "vc303a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vc414h",
+      "original_target": "vc414",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/venix",
+      "original_target": "../p/pc-venix",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/viewpoint3a+",
+      "original_target": "vp3a+",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/viewpoint60",
+      "original_target": "vp60",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/viewpoint90",
+      "original_target": "vp90",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vip7800-H",
+      "original_target": "vip-H",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vip7800-Hw",
+      "original_target": "vip-Hw",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vip7800-w",
+      "original_target": "vip-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/visual603",
+      "original_target": "vi603",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vitty",
+      "original_target": "../a/att5620-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vk100",
+      "original_target": "../g/gigi",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vs100",
+      "original_target": "../x/xterm-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vs100-x10",
+      "original_target": "../x/x10term",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt-61",
+      "original_target": "vt61",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt-utf8",
+      "original_target": "../m/ms-vt-utf8",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100+",
+      "original_target": "../m/ms-vt100+",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-am",
+      "original_target": "vt100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-bm",
+      "original_target": "../n/nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-bm-o",
+      "original_target": "../n/nwp512",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-bot-s",
+      "original_target": "vt100-s-bot",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-nam",
+      "original_target": "vt100nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-nam-w",
+      "original_target": "vt100-w-nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-s-top",
+      "original_target": "vt100-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-top-s",
+      "original_target": "vt100-s",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-w-am",
+      "original_target": "vt100-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt100-w-nav",
+      "original_target": "vt100-nav-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt200",
+      "original_target": "vt220",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt200-8",
+      "original_target": "vt220-8bit",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt200-8bit",
+      "original_target": "vt220-8bit",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt200-old",
+      "original_target": "vt220-old",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt200-w",
+      "original_target": "vt220-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt220-8",
+      "original_target": "vt220-8bit",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt220-js",
+      "original_target": "vt200-js",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt300",
+      "original_target": "vt320",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt300-nam",
+      "original_target": "vt320-nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt300-w",
+      "original_target": "vt320-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt300-w-nam",
+      "original_target": "vt320-w-nam",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt330",
+      "original_target": "vt340",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt400-24",
+      "original_target": "vt400",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vt61.5",
+      "original_target": "vt61",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vtnt",
+      "original_target": "../m/ms-vt100-color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/v/vv100",
+      "original_target": "../m/mvterm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wren",
+      "original_target": "../p/pt100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wrenw",
+      "original_target": "../p/pt100w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy-75ap",
+      "original_target": "wy75ap",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy-99fgt",
+      "original_target": "wy99f",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy-99fgta",
+      "original_target": "wy99fa",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy120-wvb",
+      "original_target": "wy120-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy150",
+      "original_target": "wy120",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy150-25",
+      "original_target": "wy120-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy150-25-w",
+      "original_target": "wy120-25-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy150-vb",
+      "original_target": "wy120-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy150-w",
+      "original_target": "wy120-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy150-w-vb",
+      "original_target": "wy120-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy160-wvb",
+      "original_target": "wy160-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy325-42wvb",
+      "original_target": "wy325-42w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy325-43wvb",
+      "original_target": "wy325-43w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy325-80",
+      "original_target": "wy325-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy325-wvb",
+      "original_target": "wy325-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy325w-24",
+      "original_target": "wy325-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy370-101k",
+      "original_target": "wy370",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy60-316X",
+      "original_target": "../i/ibm3161",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy60-AT",
+      "original_target": "../i/ibm5151",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy60-PC",
+      "original_target": "../i/ibmpc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy60-wvb",
+      "original_target": "wy60-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy99fgt",
+      "original_target": "wy99f",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy99fgta",
+      "original_target": "wy99fa",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wy99gt-wvb",
+      "original_target": "wy99gt-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse-325",
+      "original_target": "wy325-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse-75ap",
+      "original_target": "wy75ap",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse120",
+      "original_target": "wy120",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse120-25",
+      "original_target": "wy120-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse120-25-w",
+      "original_target": "wy120-25-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse120-vb",
+      "original_target": "wy120-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse120-w",
+      "original_target": "wy120-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse120-wvb",
+      "original_target": "wy120-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse150",
+      "original_target": "wy120",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse150-25",
+      "original_target": "wy120-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse150-25-w",
+      "original_target": "wy120-25-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse150-vb",
+      "original_target": "wy120-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse150-w",
+      "original_target": "wy120-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse150-w-vb",
+      "original_target": "wy120-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160",
+      "original_target": "wy160",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-25",
+      "original_target": "wy160-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-25-w",
+      "original_target": "wy160-25-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-42",
+      "original_target": "wy160-42",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-42-w",
+      "original_target": "wy160-42-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-43",
+      "original_target": "wy160-43",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-43-w",
+      "original_target": "wy160-43-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-vb",
+      "original_target": "wy160-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-w",
+      "original_target": "wy160-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse160-wvb",
+      "original_target": "wy160-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse185",
+      "original_target": "wy185",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse185-24",
+      "original_target": "wy185-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse185-vb",
+      "original_target": "wy185-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse185-w",
+      "original_target": "wy185-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse185-wvb",
+      "original_target": "wy185-wvb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse30",
+      "original_target": "wy30",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse30-mc",
+      "original_target": "wy30-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse30-vb",
+      "original_target": "wy30-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325",
+      "original_target": "wy325",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-25",
+      "original_target": "wy325-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-25w",
+      "original_target": "wy325-25w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-42",
+      "original_target": "wy325-42",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-42w",
+      "original_target": "wy325-42w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-43",
+      "original_target": "wy325-43",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-43w",
+      "original_target": "wy325-43w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-vb",
+      "original_target": "wy325-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-w",
+      "original_target": "wy325-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse325-wvb",
+      "original_target": "wy325-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse350",
+      "original_target": "wy350",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse350-vb",
+      "original_target": "wy350-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse350-w",
+      "original_target": "wy350-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse350-wvb",
+      "original_target": "wy350-wvb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse370",
+      "original_target": "wy370",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse50",
+      "original_target": "wy50",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse50-mc",
+      "original_target": "wy50-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse50-vb",
+      "original_target": "wy50-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse50-w",
+      "original_target": "wy50-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse50-wvb",
+      "original_target": "wy50-wvb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520",
+      "original_target": "wy520",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-24",
+      "original_target": "wy520-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-36",
+      "original_target": "wy520-36",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-36pc",
+      "original_target": "wy520-36pc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-36w",
+      "original_target": "wy520-36w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-36wpc",
+      "original_target": "wy520-36wpc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-48",
+      "original_target": "wy520-48",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-48pc",
+      "original_target": "wy520-48pc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-48w",
+      "original_target": "wy520-48w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-48wpc",
+      "original_target": "wy520-48wpc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-epc",
+      "original_target": "wy520-epc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-epc-w",
+      "original_target": "wy520-epc-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-p-wvb",
+      "original_target": "wy520-epc-wvb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-pc-24",
+      "original_target": "wy520-epc-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-pc-vb",
+      "original_target": "wy520-epc-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-vb",
+      "original_target": "wy520-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-w",
+      "original_target": "wy520-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse520-wvb",
+      "original_target": "wy520-wvb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60",
+      "original_target": "wy60",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-25",
+      "original_target": "wy60-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-25-w",
+      "original_target": "wy60-25-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-316X",
+      "original_target": "../i/ibm3161",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-42",
+      "original_target": "wy60-42",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-42-w",
+      "original_target": "wy60-42-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-43",
+      "original_target": "wy60-43",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-43-w",
+      "original_target": "wy60-43-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-AT",
+      "original_target": "../i/ibm5151",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-PC",
+      "original_target": "../i/ibmpc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-vb",
+      "original_target": "wy60-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-w",
+      "original_target": "wy60-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse60-wvb",
+      "original_target": "wy60-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse75",
+      "original_target": "wy75",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse75-mc",
+      "original_target": "wy75-mc",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse75-vb",
+      "original_target": "wy75-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse75-w",
+      "original_target": "wy75-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse75-wvb",
+      "original_target": "wy75-wvb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse75ap",
+      "original_target": "wy75ap",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse85",
+      "original_target": "wy85",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse85-8bit",
+      "original_target": "wy85-8bit",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse85-vb",
+      "original_target": "wy85-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse85-w",
+      "original_target": "wy85-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse85-wvb",
+      "original_target": "wy85-wvb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse99gt",
+      "original_target": "wy99gt",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse99gt-25",
+      "original_target": "wy99gt-25",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse99gt-25-w",
+      "original_target": "wy99gt-25-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse99gt-vb",
+      "original_target": "wy99gt-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse99gt-w",
+      "original_target": "wy99gt-w",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/w/wyse99gt-wvb",
+      "original_target": "wy99gt-w-vb",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/x1700",
+      "original_target": "../d/diablo1640",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/x1700-lm",
+      "original_target": "../d/diablo1740-lm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/x1720",
+      "original_target": "xerox1720",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/x1750",
+      "original_target": "xerox1720",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/x68k-ite",
+      "original_target": "x68k",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/x820",
+      "original_target": "xerox820",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/xdku",
+      "original_target": "../t/tws2103",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/xenix",
+      "original_target": "../i/ibmpcx",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/xerox",
+      "original_target": "../d/diablo1640",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/xerox-lm",
+      "original_target": "../d/diablo1640-lm",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/xl83",
+      "original_target": "../c/cyb83",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/xterm.js",
+      "original_target": "../v/vscode",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/xterms",
+      "original_target": "xterm-24",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/x/xwsh",
+      "original_target": "../i/iris-color",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z-100",
+      "original_target": "z100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z-100bw",
+      "original_target": "z100bw",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z110",
+      "original_target": "z100",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z110bw",
+      "original_target": "z100bw",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z19",
+      "original_target": "../h/h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z29a-kc-bc",
+      "original_target": "z29a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z29b",
+      "original_target": "z29",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z30",
+      "original_target": "zen30",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z39a",
+      "original_target": "z39-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z50",
+      "original_target": "zen50",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/z8001",
+      "original_target": "../c/cci",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/zen8001",
+      "original_target": "../c/cci",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/zenith",
+      "original_target": "../h/h19",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/zenith29",
+      "original_target": "z29",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/zenith39-a",
+      "original_target": "z39-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/zenith39-ansi",
+      "original_target": "z39-a",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/zt-1",
+      "original_target": "ztx",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/ztx-1-a",
+      "original_target": "ztx",
+      "kind": "symlink"
+    },
+    {
+      "path": "python/share/terminfo/z/ztx11",
+      "original_target": "ztx",
+      "kind": "symlink"
+    }
+  ],
+  "canonical_alias_metadata_only": true,
+  "source_build_performed_here": false,
+  "scope": "Native SDK supervisor interpreter; never an SDK Wasm application"
+}

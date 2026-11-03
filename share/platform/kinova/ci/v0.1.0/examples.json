@@ -1,0 +1,3579 @@
+{
+  "schema": "sdk04-linux-ci-source-inventory-v1",
+  "owner": "SDK04",
+  "vendor": "kinova",
+  "version": "0.1.0",
+  "state": "BLOCKED_SOURCE_DISCOVERY_ONLY_NO_CURRENT_CI_OR_FULL_WASM_ACCEPTANCE",
+  "created_at_UTC": "2026-10-26T23:08:07.762936+00:00",
+  "common_scheduler_owner": "SDK01",
+  "schema_integration": "Owner source inventory; SDK01 common scheduler consumption is NOT_IMPLEMENTED_OR_QUALIFIED. This is not a replacement scheduler or a passing receipt.",
+  "required_examples": 90,
+  "existing_public_xmake_entries": 89,
+  "quarantined_required_entries": 1,
+  "host_os": "linux",
+  "commands_must_run_in_original_example_directory": true,
+  "required_environment": [
+    "Installed Xmake and the exact shared language/toolchain closure for each selected source and pointer width",
+    "Exact qualified uwvm2-ros runtime asset, module/import/features and explicit permission/audit deployment",
+    "Applicable installed official simulator/provider with pinned ROS release, ABI/RMW and full library identity",
+    "Real guest ROS client/callback/feedback/sensor/file behavior in Wasm; no host business-client fallback",
+    "Permission-denied/no-native-effect and audited reverse-feedback evidence, plus required lifecycle/fault scenarios"
+  ],
+  "non_success_conditions": [
+    "Missing runtime, provider, toolchain, grant or actual mandatory scenario",
+    "Zero selected/executed tests or a missing/quarantined required example",
+    "Only source compilation, static metadata, old receipt inspection or native reference execution",
+    "Lost resource/lock/actor identity or missing complete retirement"
+  ],
+  "manual_SSH_resources": {
+    "shared_ancestor_memory_max_bytes": 68719476736,
+    "memory_swap_max_bytes": 0,
+    "global_lock_lifetime": "All heavy descendants through full retirement",
+    "root_child_Xmake_parallelism_does_not_waive_simulator_global_lock": true,
+    "original_storage_reserves_retained": true
+  },
+  "CI_resource_policy": "SDK01 owns Linux GitHub workflow and bounded parent/child Xmake scheduling; GitHub job resource measurements do not qualify manual SSH execution.",
+  "current_descriptor_profiles": [
+    "ros2_humble"
+  ],
+  "all_historical_models_modes_release_ABI_language_library_architecture_obligations_retained": true,
+  "accepted_full_routes": [],
+  "examples": [
+    {
+      "example": "example/platform/kinova/as/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "0b16f5211282476daf9448fded6e83bc37e1dd680b9f146a7455cd4d1750f12f",
+      "literal_target_declarations": [
+        "kinova-as-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "as",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/as/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/as/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/as/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/as/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "f0d1e38d9da864dce72c1bc11073b0858659be11ad913d9d958f17998f6e913b",
+      "literal_target_declarations": [
+        "kinova-as-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "as",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/as/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/as/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/as/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/as/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "aa120ee17db508fd80d03173c4bdcc971d3682132776469449539e7df778af6c",
+      "literal_target_declarations": [
+        "kinova-as-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "as",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/as/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/as/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/as/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/codec_cpp_shared",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "c2faa7df32ef92efe9dd56d77f690bcc8bd609f9c1e0545839861c250d6aafbd",
+      "literal_target_declarations": [
+        "record_codec",
+        "main"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/codec_cpp_shared"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/codec_cpp_shared"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/codec_cpp_shared",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/codec_cpp_static",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "7759c3833807d64e8b9d52b7e50abc974529cbd7e668e175658a6181113df623",
+      "literal_target_declarations": [
+        "record_codec",
+        "main"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/codec_cpp_static"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/codec_cpp_static"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/codec_cpp_static",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/codec_shared",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "de3caabf05a2e3aa1a5e02faf60d497fb40228db6c56ffe535be541f2af7cd1c",
+      "literal_target_declarations": [
+        "record_codec",
+        "main"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/codec_shared"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/codec_shared"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/codec_shared",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/codec_static",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "80796d8ec20beed77cc277e43b9dd86fc597bb3caf969ffcc2c0c07b90375024",
+      "literal_target_declarations": [
+        "record_codec",
+        "main"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/codec_static"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/codec_static"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/codec_static",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "3147b74cea2acbbe5972ace64041515ec029412504ef84427570659e9ca23e47",
+      "literal_target_declarations": [
+        "kinova-c-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "490b244bc2239921403e57d4a6b82a78845b95453a87b3153a667ca8d19809bd",
+      "literal_target_declarations": [
+        "kinova-c-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/observe",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "9fdaef28ac32bdfd67a2e4b4edafc5e8146093038cccd5b57d7ff64515b43cd0",
+      "literal_target_declarations": [
+        "kinova-c-ros2_humble-observe"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/observe"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/observe"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/observe",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "43021bdad5f824c201bfb7abeb3409b51aecb92a149a5c6c14ce3e8c647e7545",
+      "literal_target_declarations": [
+        "kinova-c-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "GENUINE_GUEST_ASSERTION_SOURCE_AUTHORED_NOT_RUN",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false,
+      "expected_component_groups": [
+        "guest-bounds",
+        "guest-sequence",
+        "guest-codec"
+      ],
+      "assertion_body": "Actual Gen3 validator and full codec run inside Wasm; no host assertion substitute",
+      "full_ROS_simulation_qualified": false
+    },
+    {
+      "example": "example/platform/kinova/c_ffi_bridge/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "3ac759590b7c9547066068b7c4aa1de533479c89a99143d8dbf3c59737f6a95f",
+      "literal_target_declarations": [
+        "kinova-c_ffi_bridge-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c_ffi_bridge",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c_ffi_bridge/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c_ffi_bridge/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c_ffi_bridge/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c_ffi_bridge/ros2/humble/observe",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "f8ff0e985aefcc086e2222c5b63a42982916ca94d60ce51957c501cdaa00e360",
+      "literal_target_declarations": [
+        "kinova-c_ffi_bridge-ros2_humble-observe"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c_ffi_bridge",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c_ffi_bridge/ros2/humble/observe"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c_ffi_bridge/ros2/humble/observe"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c_ffi_bridge/ros2/humble/observe",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c_ffi_bridge/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "e1597273968cbe738c3ab1ba55edc2bdca43e685038b64eb26e0d44031f1dbba",
+      "literal_target_declarations": [
+        "kinova-c_ffi_bridge-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "c_ffi_bridge",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c_ffi_bridge/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c_ffi_bridge/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c_ffi_bridge/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/cpp/ros2/humble/codec_c_shared",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "a099a16865de2d152c3654f371c754caa963fd36ea55dddbb1c9b80a2877f7c9",
+      "literal_target_declarations": [
+        "record_codec",
+        "main"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "cpp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/codec_c_shared"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/codec_c_shared"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/cpp/ros2/humble/codec_c_shared",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/cpp/ros2/humble/codec_c_static",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "d47b77df60b38b4c86564d237d26a0090b77f60926ca9eedde7668c28feaa7ae",
+      "literal_target_declarations": [
+        "record_codec",
+        "main"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "cpp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/codec_c_static"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/codec_c_static"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/cpp/ros2/humble/codec_c_static",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/cpp/ros2/humble/codec_shared",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "4c65706c73db5f4cede66914336466bf1bf538e181fc79e7d7a8452a2d4d407d",
+      "literal_target_declarations": [
+        "record_codec",
+        "main"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "cpp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/codec_shared"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/codec_shared"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/cpp/ros2/humble/codec_shared",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/cpp/ros2/humble/codec_static",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "85db581fe532805e9274662dfb95bd5fcc47da6b84edc70a2ff57c4cdafd774c",
+      "literal_target_declarations": [
+        "record_codec",
+        "main"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "cpp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/codec_static"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/codec_static"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/cpp/ros2/humble/codec_static",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/cpp/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "4597729048c6ecc437c37a6d64c2cf47d6e12e35b9004d2ec11a6fb5a4a878d7",
+      "literal_target_declarations": [
+        "kinova-cpp-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "cpp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/cpp/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/cpp/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "6c80fcdfb469a29c6283342d3bc9d9bfba3204b991960fb589a10871697f7efd",
+      "literal_target_declarations": [
+        "kinova-cpp-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "cpp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/cpp/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/cpp/ros2/humble/observe",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "da7c7197695d416cc24e23ce74d03713ee8ee026e5236d164f8bc51785de346b",
+      "literal_target_declarations": [
+        "kinova-cpp-ros2_humble-observe"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "cpp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/observe"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/observe"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/cpp/ros2/humble/observe",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/cpp/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "f89e75d44793a428722e7ab77c04bb599184a8593c2327e4dfd5962a1ce684a9",
+      "literal_target_declarations": [
+        "kinova-cpp-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "cpp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/cpp/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/cpp/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/csharp/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "729da29f545a61868e8b1c823db861f739e87f764496a4494168f8d46905231f",
+      "literal_target_declarations": [
+        "kinova-csharp-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "csharp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/csharp/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/csharp/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/csharp/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/csharp/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "d7c4dd1eed21e1492b913c29de439d84c46aef2fb4e6560a4f6edaa409cea352",
+      "literal_target_declarations": [
+        "kinova-csharp-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "csharp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/csharp/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/csharp/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/csharp/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/csharp/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "e94804a9bf5b67343aa2cf6c1eb1433c5fd67397638714b7026807e1a6503c90",
+      "literal_target_declarations": [
+        "kinova-csharp-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "csharp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/csharp/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/csharp/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/csharp/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/d/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "5e91f53795eee155396c343f40f0291a3a71d35a48a521fcc91c96633389ff6d",
+      "literal_target_declarations": [
+        "kinova-d-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "d",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/d/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/d/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/d/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/d/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "a4e419608bc17cb3c5472e503195e404b3ce9f6a7dfc07250ec8adefce63ca98",
+      "literal_target_declarations": [
+        "kinova-d-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "d",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/d/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/d/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/d/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/d/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "3e87090ed1c589f3df685a0960383b4c19231d8e2a70e17ae6a9ba4da84e53ff",
+      "literal_target_declarations": [
+        "kinova-d-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "d",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/d/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/d/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/d/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/fsharp/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "80ce55f1ac215ef3a095efb8df9a0509d94b2e848127e61a50ef92ee73080b51",
+      "literal_target_declarations": [
+        "kinova-fsharp-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "fsharp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/fsharp/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/fsharp/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/fsharp/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/fsharp/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "a753808780ce5df3147a75fdf994f5c45dbdb45902cfdbb4d2f3fb7aac1d7400",
+      "literal_target_declarations": [
+        "kinova-fsharp-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "fsharp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/fsharp/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/fsharp/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/fsharp/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/fsharp/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "bc38e6274623f1053744b37d768cd9d1446361ef8df429ffa30918bde82277eb",
+      "literal_target_declarations": [
+        "kinova-fsharp-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "fsharp",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/fsharp/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/fsharp/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/fsharp/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/go/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "c4ff3c2697cff33cef46c32c7f6e322a818ed518a50f0cdb9090bb9c3e3a269a",
+      "literal_target_declarations": [
+        "kinova-go-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "go",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/go/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/go/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/go/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/go/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "73599906c6181ba8935f0c4ca1180f672910cb6f9353e8dda6a498a3518782a3",
+      "literal_target_declarations": [
+        "kinova-go-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "go",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/go/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/go/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/go/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/go/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "1f46dcdc4b65876053e5c521d4e654fecbcecb480df59433cf15064a6a7827cd",
+      "literal_target_declarations": [
+        "kinova-go-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "go",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/go/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/go/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/go/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/haskell/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "22343029e15b8d0459a43570bdb8518f9e38e06d9c61af45fc49aad1c3c6b935",
+      "literal_target_declarations": [
+        "kinova-haskell-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "haskell",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/haskell/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/haskell/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/haskell/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/haskell/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "ecb3e2a1363e76d38d29bf21c90561218d2d1411700a95b1d9d2de62cf687670",
+      "literal_target_declarations": [
+        "kinova-haskell-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "haskell",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/haskell/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/haskell/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/haskell/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/haskell/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "b689df87db894222ce62b78191384a9bc8db94a2e52cac0ba29fb0dd78fce59b",
+      "literal_target_declarations": [
+        "kinova-haskell-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "haskell",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/haskell/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/haskell/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/haskell/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/java/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "ff5aa8b34ce59ae0df76a693256f66cad9771b9b7f87a9fc068f7c8f9cbfbace",
+      "literal_target_declarations": [
+        "kinova-java-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "java",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/java/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/java/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/java/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/java/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "c6e883862e11bc4f33339c37b9d461a66818b6843b2cf5357c3a637617fce98a",
+      "literal_target_declarations": [
+        "kinova-java-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "java",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/java/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/java/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/java/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/java/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "733abaefe13d12bdc8b0383cc3ab4d22b5f995e2a0d6e9f91385e9c8dbf0279e",
+      "literal_target_declarations": [
+        "kinova-java-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "java",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/java/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/java/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/java/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/js/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "0406cd285afc42c6969aada68d3eff10dc587f78fa6000499f27b05e72cb4e8a",
+      "literal_target_declarations": [
+        "kinova-js-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "js",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/js/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/js/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/js/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/js/ros2/humble/observe",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "6ecae865268867a3f1b3cf194c65dda5cec3f91a6f7d260423bac053f4ec168e",
+      "literal_target_declarations": [
+        "kinova-js-ros2_humble-observe"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "js",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/js/ros2/humble/observe"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/js/ros2/humble/observe"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/js/ros2/humble/observe",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/js/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "a1f8fa817ea38c3ef98076534e48a977b973ee25c4f5e049751ba5ae40f1d6b1",
+      "literal_target_declarations": [
+        "kinova-js-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "js",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/js/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/js/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/js/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/kotlin/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "67769e5f13c1b3c8ce1a33ede3c3f879558a31da136afa4c05051098151038c8",
+      "literal_target_declarations": [
+        "kinova-kotlin-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "kotlin",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/kotlin/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/kotlin/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/kotlin/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/kotlin/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "5c39bfa35a8f0c11165604835c49e33d5fb48da178ce3888a1d1cb749acff03a",
+      "literal_target_declarations": [
+        "kinova-kotlin-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "kotlin",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/kotlin/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/kotlin/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/kotlin/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/kotlin/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "d97443b5d2310c57ef379699409134572bdbb914287f74d3ab83fa2ad3008efe",
+      "literal_target_declarations": [
+        "kinova-kotlin-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "kotlin",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/kotlin/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/kotlin/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/kotlin/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/lua/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "23f8d71fe7e47763ac6fe3877c1e986ab50878663ddae3c503f45cbced252bb3",
+      "literal_target_declarations": [
+        "kinova-lua-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "lua",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/lua/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/lua/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/lua/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/lua/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "852d5cd1005ec7e0d1646dc90eee88cbd841e8907823ba12fb232a86923d3c44",
+      "literal_target_declarations": [
+        "kinova-lua-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "lua",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/lua/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/lua/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/lua/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/lua/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "02f43af1b4ec2c84eed466e7cc5fffd67f25f2100f17c42e490b4889bd2824f0",
+      "literal_target_declarations": [
+        "kinova-lua-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "lua",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/lua/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/lua/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/lua/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/moonbit/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "cabd0491a5b9b8a0661e8cd6956b767f2e1798f7fb8ed13417c7ceb7eb158ff5",
+      "literal_target_declarations": [
+        "kinova-moonbit-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "moonbit",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/moonbit/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/moonbit/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/moonbit/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/moonbit/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "6cdf8c7c2dad0cb596c97ae80a49b6e38157c3b568ad8b81f9affd46564c6047",
+      "literal_target_declarations": [
+        "kinova-moonbit-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "moonbit",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/moonbit/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/moonbit/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/moonbit/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/moonbit/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "1f372576953191d1c861e63abc7a0d0d34fb20de80e99303afdec8ab8cf1c6fc",
+      "literal_target_declarations": [
+        "kinova-moonbit-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "moonbit",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/moonbit/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/moonbit/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/moonbit/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/nim/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "c2c0314cfb5130e2a443b399c028b3f7132014057bb7737a7be996777622db37",
+      "literal_target_declarations": [
+        "kinova-nim-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "nim",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/nim/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/nim/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/nim/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/nim/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "f47a10fd6294b1ef99a28aed939a3001486160fcaf3cd4ab776e7aaaa52ca159",
+      "literal_target_declarations": [
+        "kinova-nim-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "nim",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/nim/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/nim/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/nim/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/nim/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "d4fd1bebc298217724fcb7c138aad3ada136025f554990665702166d95c3a6db",
+      "literal_target_declarations": [
+        "kinova-nim-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "nim",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/nim/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/nim/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/nim/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/objectc/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "830c019cd6b0a707e75220ca2a9330c4f09e9616d170291b97626418f5138833",
+      "literal_target_declarations": [
+        "kinova-objectc-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "objectc",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/objectc/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/objectc/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/objectc/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/objectc/ros2/humble/observe",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "ee299e82d2f419f64c071e357850bff7e5f64ef478076b1a4230ca8bb68b9240",
+      "literal_target_declarations": [
+        "kinova-objectc-ros2_humble-observe"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "objectc",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/objectc/ros2/humble/observe"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/objectc/ros2/humble/observe"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/objectc/ros2/humble/observe",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/objectc/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "1899774f40fc9a43104f190b2196e5f033e0b232a709449e6eafdfc794511f21",
+      "literal_target_declarations": [
+        "kinova-objectc-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "objectc",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/objectc/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/objectc/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/objectc/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/odin/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "5f798bdff6df51bfcd4c1a7a6ab41bbf4d23cc72e13aefb576e821a0704a8ec6",
+      "literal_target_declarations": [
+        "kinova-odin-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "odin",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/odin/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/odin/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/odin/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/odin/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "2bc0742cb328a972838e4d61689916dbb367e3a5f2f2c24df4fc66afd44cfb47",
+      "literal_target_declarations": [
+        "kinova-odin-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "odin",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/odin/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/odin/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/odin/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/odin/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "3e8ad04b7f9c10b11d8a3ab67dcccdd3a3d47e6ad4ee43087f978e4ab0123c8e",
+      "literal_target_declarations": [
+        "kinova-odin-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "odin",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/odin/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/odin/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/odin/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/php/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "6a1a0fe901ba85b69b368e4393d8e2156cb69ab17f7ac6f644b9b8f6f2a90848",
+      "literal_target_declarations": [
+        "kinova-php-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "php",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/php/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/php/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/php/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/php/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "ed1fe55b440eae5bb284077f47336f954c53c8c1215f1fbd162f1d8caeabe774",
+      "literal_target_declarations": [
+        "kinova-php-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "php",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/php/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/php/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/php/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/php/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "70e13609859b4677ffedc5dc4ee6f3263c58f14db2d78e0380fbc95028d7ea2d",
+      "literal_target_declarations": [
+        "kinova-php-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "php",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/php/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/php/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/php/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/py/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "bf488122f5870a34ed802913bd8625f7697760c98c196ec7ae94e8818e841244",
+      "literal_target_declarations": [
+        "kinova-py-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "py",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/py/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/py/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/py/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/py/ros2/humble/observe",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "dc866626517c12b78a8db698e54bec136f01450d164a7de4f6e8d684688ae1e2",
+      "literal_target_declarations": [
+        "kinova-py-ros2_humble-observe"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "py",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/py/ros2/humble/observe"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/py/ros2/humble/observe"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/py/ros2/humble/observe",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/py/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "92dd9419475f107d8ff1da220261319b53cf6555f1ddc7f2d4ee9b7140a66fa6",
+      "literal_target_declarations": [
+        "kinova-py-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "py",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/py/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/py/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/py/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/r/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "53aa3ffd2a665fd7f5100638a3f47ea468ddc4729d048868269c8ee47fae93c3",
+      "literal_target_declarations": [
+        "kinova-r-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "r",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/r/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/r/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/r/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/r/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "51a3de8f25df57a6dabc7a437d281d925cefb378e79fbac50c5da3baeb6d9ad0",
+      "literal_target_declarations": [
+        "kinova-r-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "r",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/r/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/r/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/r/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/r/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "7c0c890e63a555ac7ccdbfea3d42024869505210b33579c5edacd08a07153dc3",
+      "literal_target_declarations": [
+        "kinova-r-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "r",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/r/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/r/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/r/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/rs/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "aca5131e05289324e4795f44561055a505f863e1910c476809f589c028f35ab2",
+      "literal_target_declarations": [
+        "kinova-rs-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "rs",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/rs/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/rs/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/rs/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/rs/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "2f353035b5d65340dcdc89335c5d1145b39e1eb9dcb832b40b47b5e3b1a26e87",
+      "literal_target_declarations": [
+        "kinova-rs-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "rs",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/rs/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/rs/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/rs/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/rs/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "9e7b8e19791b7d771296ad5fcc7ae37f082c34c8033268186815d26c5dfaaf2d",
+      "literal_target_declarations": [
+        "kinova-rs-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "rs",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/rs/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/rs/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/rs/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/ruby/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "9a59afc85e409791f699836fcf2c172d969db28bd06f49d6dd8c1112f576a216",
+      "literal_target_declarations": [
+        "kinova-ruby-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "ruby",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/ruby/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/ruby/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/ruby/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/ruby/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "9a363b3e46b6dfd6e579c2cad239cddbf684be27ffc829fc063dffeb660cb60a",
+      "literal_target_declarations": [
+        "kinova-ruby-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "ruby",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/ruby/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/ruby/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/ruby/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/ruby/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "73e75cdca4b919b1d44303fcfd6a4a31d6f5e35d252fbe56cd6e6875cb6915fa",
+      "literal_target_declarations": [
+        "kinova-ruby-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "ruby",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/ruby/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/ruby/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/ruby/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/swift/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "364b25693f61e685f4fd245c7e0ead40eeb39a798dc06afc51746d866e855ed6",
+      "literal_target_declarations": [
+        "kinova-swift-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "swift",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/swift/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/swift/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/swift/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/swift/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "3e1db245dac405d1fa7c6d1f2ea84a175e34a3457a678b237a4682e86aa96988",
+      "literal_target_declarations": [
+        "kinova-swift-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "swift",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/swift/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/swift/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/swift/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/swift/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "a697b066c84f2cd5e7524456ec034966d824857ebc28a9710461052b06a6b075",
+      "literal_target_declarations": [
+        "kinova-swift-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "swift",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/swift/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/swift/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/swift/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/tinygo/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "713241962edf030efbfc48c4c79aef20a8dd3caf8cfacbbff32606d0ebada817",
+      "literal_target_declarations": [
+        "kinova-tinygo-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "tinygo",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/tinygo/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/tinygo/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/tinygo/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/tinygo/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "b178199e3b6db83ff4174a75721005e75d19eeb874c8f9c1cb9ca360ba3185a1",
+      "literal_target_declarations": [
+        "kinova-tinygo-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "tinygo",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/tinygo/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/tinygo/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/tinygo/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/tinygo/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "a7b2cc10f14496a26d52842189cdfa1d6e4d084d9235d3f4d70995e1db73b14a",
+      "literal_target_declarations": [
+        "kinova-tinygo-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "tinygo",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/tinygo/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/tinygo/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/tinygo/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/vbnet/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "04e18f4d754052076b929e73cf856234d00e0b2fce1c6a8eb4b9ea249e1ef419",
+      "literal_target_declarations": [
+        "kinova-vbnet-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "vbnet",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/vbnet/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/vbnet/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/vbnet/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/vbnet/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "636e0d1ebd20d3b4748bc880e3136d6104ea1e239890c33511d3518aa3ef557e",
+      "literal_target_declarations": [
+        "kinova-vbnet-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "vbnet",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/vbnet/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/vbnet/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/vbnet/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/vbnet/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "38e9e9bee10b389f5c5e0a37a46ba21ff97ee88244cd037d1f42165aefcddbe8",
+      "literal_target_declarations": [
+        "kinova-vbnet-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "vbnet",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/vbnet/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/vbnet/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/vbnet/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/zig/ros2/humble/decode_state",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "ebde2f234876b7b15031567476b1a3823cbe413f0189e25c44851ed180d76c7a",
+      "literal_target_declarations": [
+        "kinova-zig-ros2_humble-decode_state"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "zig",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/zig/ros2/humble/decode_state"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/zig/ros2/humble/decode_state"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/zig/ros2/humble/decode_state",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/zig/ros2/humble/inspect_response",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "7b8ea59800ebcb6928056249d8f16f6978563b3093c7ab2a01e405b522a2bc87",
+      "literal_target_declarations": [
+        "kinova-zig-ros2_humble-inspect_response"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "zig",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/zig/ros2/humble/inspect_response"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/zig/ros2/humble/inspect_response"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/zig/ros2/humble/inspect_response",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/zig/ros2/humble/validate_goal",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "ae9c5f32e77e8078e194a9f8bcd07eafcab252c5d5df4cc45fb445c48699acd5",
+      "literal_target_declarations": [
+        "kinova-zig-ros2_humble-validate_goal"
+      ],
+      "discovery_evidence": "STATIC_SOURCE_ONLY_ACTUAL_CHILD_XMAKE_DISCOVERY_NOT_RUN",
+      "language": "zig",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/zig/ros2/humble/validate_goal"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/zig/ros2/humble/validate_goal"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/zig/ros2/humble/validate_goal",
+      "output_contract": "Shared artifact_contract.lua defaults to per-example build/, build/targets/<full-target-identity> for dependencies/shared targets and .uwvm-ros/archives/<identity> for static inputs; actual concurrent output identity NOT_RUN",
+      "build_status": "NOT_RUN_FOR_CURRENT_SOURCE_ON_QUALIFIED_DEV_ASSET",
+      "test_status": "BLOCKED_REQUIRED_REAL_MIGRATION_SCENARIOS_NOT_DECLARED_OR_EXECUTED",
+      "test_count": null,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "permission_and_reverse_feedback_audit": "NOT_RUN",
+      "parallel_retirement_evidence": "NOT_RUN",
+      "legacy_client_library_compatibility": "NOT_PROVEN",
+      "may_report_success_from_zero_tests": false
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/jazzy/official_joint_step",
+      "required": true,
+      "public_entry_present": false,
+      "source_xmake_sha256": "a8548256402461ba2f3eded9515f17b01d73babf1681f2bec91a6a2512f89a01",
+      "literal_target_declarations": [
+        "kinova-native-message-info",
+        "kinova-gen3-jazzy-official-joint-step"
+      ],
+      "language": "c",
+      "profile": "gen3-7dof-external-cable-jazzy-official-mock",
+      "state": "BLOCKED_QUARANTINED_NATIVE_HOST_OBSERVER_QUERY_IMPLEMENTATION",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/jazzy/official_joint_step"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/jazzy/official_joint_step"
+        }
+      ],
+      "build_status": "BLOCKED_PUBLIC_ENTRY_QUARANTINED",
+      "test_status": "BLOCKED_PUBLIC_ENTRY_QUARANTINED",
+      "test_count": null,
+      "required_scenarios": [
+        "unchanged_wasm_goal_result_fresh_state",
+        "joint_state_reverse_path",
+        "permission_denied_no_native_effect",
+        "bounded_joint_limits",
+        "cancel_timeout_no_replay",
+        "restart_update_permission_preservation"
+      ],
+      "frozen_application_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+      "Wasm_execution": "NOT_RUN",
+      "skip_permitted": false,
+      "native_fallback_permitted": false,
+      "restoration_gate": "Real Wasm migration plus original public xmake / xmake test in uwvm2-ros Linux with permission denial/no native side effects, audited reverse feedback and applicable official simulation. Do not execute archived native source."
+    },
+    {
+      "example": "example/platform/kinova/c/ros2/humble/guest_joint_feedback",
+      "required": true,
+      "public_entry_present": true,
+      "source_xmake_sha256": "3a61d527e3f993781122cdd5207ed94790809a3f67076959dbceea14366ecc7e",
+      "literal_target_declarations": [
+        "kinova-c-ros2_humble-guest_joint_feedback"
+      ],
+      "language": "c",
+      "profile": "ros2_humble",
+      "commands": [
+        {
+          "argv": [
+            "xmake"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/guest_joint_feedback"
+        },
+        {
+          "argv": [
+            "xmake",
+            "test"
+          ],
+          "cwd": "example/platform/kinova/c/ros2/humble/guest_joint_feedback"
+        }
+      ],
+      "independent_output_scope": "example/platform/kinova/c/ros2/humble/guest_joint_feedback",
+      "build_status": "NOT_RUN",
+      "test_status": "BLOCKED_SHARED_RAW_ROS_VERIFIER_AND_CURRENT_CONTROLLED_HOST",
+      "required_scenarios": [
+        "normal_goal_result_fresh_state",
+        "permission_denied_no_native_effect",
+        "boundary_stale_foreign",
+        "cancel_timeout_no_replay",
+        "restart_rollback_permission_preservation",
+        "fresh_reverse_guest_callback"
+      ],
+      "guest_application_logic": "REAL_SUBSCRIBE_SEND_FEEDBACK_RESULT_GUEST_CALLBACK_SOURCE_AUTHORED_NOT_RUN",
+      "implemented_integration_tests": 0,
+      "failure_only_registration_is_implemented_test": false,
+      "actual_Wasm_sha256": null,
+      "runtime_execution": "NOT_RUN",
+      "official_simulation": "NOT_RUN",
+      "no_native_fallback": true
+    }
+  ],
+  "updated_at_UTC": "2026-10-27T06:29:45.365043+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/UBTECH-Robot/WalkerS2-Model",
+  "commit": "ca2ab983363d52a5e22ddf3a4d979ceaa675c374",
+  "Git_blob_SHA": "12bbc97e1c2896827fa18bf19033488432e368a1",
+  "sha256": "2319c779de1b39c220214a892078e4182bd81f41b97b3954c3ef9d763c8b5ac0",
+  "bytes": 47964,
+  "native_axis": "0 1 0",
+  "native_bounds_radians": {
+    "lower": "-0.0872",
+    "upper": "2.2689"
+  },
+  "license_sha256": "fe1d54abf5dcefdc918b1a732bf9869dd22535b9bc33366fcfd4991d1eb20d7f",
+  "license_source": "https://github.com/UBTECH-Robot/WalkerS2-Model/blob/ca2ab983363d52a5e22ddf3a4d979ceaa675c374/LICENSE",
+  "packet_model_path": "official-models/ubtech/model.urdf"
+}

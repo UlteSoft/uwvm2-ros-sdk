@@ -1,0 +1,63 @@
+{
+  "actual_instances_required": [
+    {
+      "WASIp1_actuator_only_path_write": "MUST_DENY_AT_CHECKED_RIGHTS_ON_WRITABLE_NATIVE_FIXTURE",
+      "allowed_role_aliases": [
+        "isolation.reader.input",
+        "isolation.reader.intent",
+        "isolation.reader.ack"
+      ],
+      "arguments": [
+        "reader"
+      ],
+      "label_for_human": "A",
+      "must_deny_peer_alias": "isolation.actuator.command",
+      "private_memory_required": true
+    },
+    {
+      "WASIp1_actuator_only_path": "EXPLICIT_READ_WRITE_ONLY_THIS_ACTUAL_INSTANCE",
+      "allowed_role_aliases": [
+        "isolation.actuator.intent",
+        "isolation.actuator.command",
+        "isolation.actuator.feedback",
+        "isolation.actuator.ack"
+      ],
+      "arguments": [
+        "actuator"
+      ],
+      "label_for_human": "B",
+      "must_deny_peer_alias": "isolation.reader.input",
+      "private_memory_required": true
+    }
+  ],
+  "all_topics_under": "/migration/isolation",
+  "behavior_strings_are_security_principals": false,
+  "candidate_transport": "Existing uwvm_ros2_v1 typed canonical std_msgs/msg/String copies; owner approval and concrete generated component/channel/generation contract remain required. No new runtime protocol is defined.",
+  "format": "sdk06-private-instance-consumer-requirements-only-v1",
+  "logical_node_name_for_both": "wasm_shared_logical_node",
+  "no_sequential_two_scripts_or_one_interpreter_substitute": true,
+  "one_compiled_target": "rclpy-private-instances",
+  "ordinary_algorithm": "One C pointer fold over private immutable bytes computes sum((i+1)*byte[i]); sample7 with private bytes(7,3,1) ->16. No pointer crosses the guest boundary.",
+  "real_memory_probe": "Two instances of identical bytes must report the same static Wasm offset, different private sentinels, real growth and unchanged peer state. Offsets, Python IDs, roles and guest reports are not backing identity; actual runtime binding graph is mandatory.",
+  "remaining_negative_groups_required": [
+    "forged/stolen handles and descriptors with actual ownership (integer collisions alone are not cross-process resource transfer)",
+    "channel generation/offset/length forgery, malformed/replayed/oversized/racy payloads",
+    "private export/import alias exposure and memory.copy bounds/no-partial-write matrix",
+    "callback/reentry/confused-deputy and swapped role arguments under unchanged actual grants",
+    "close/revoke/trap/restart/pause/update/rollback/async stale response",
+    "audit/debug/cache/unwind/native performance and every architecture/ROS/StageB row"
+  ],
+  "required_common_multi_instance_consumer": "SDK01 and VM owner single writers must supply the concrete primary public multi-instance binding and typed-channel/deployment ABI. This requirements file grants/instantiates nothing.",
+  "required_native_oracles": [
+    "two actual runtime/module/instance/generation identities, frozen whole binary SHA and real private memory/backing graph",
+    "live caller-derived independent ROS/WASIp1 grants despite identical node name/hash",
+    "actual controlled host/native official ROS input, intent copy, command and causal feedback bytes",
+    "actual denied alias13 and native no-effect, checked file rights and unchanged reader-denied fixture",
+    "full native readback of actuator receipt bytes",
+    "actual cold/cache-hit budget and code-cache reuse that never restores grants or memory bindings",
+    "all original control/security/canonical/64GiB-swap0/retirement rules"
+  ],
+  "same_whole_Wasm_bytes_required": true,
+  "standard_public_component_test_scope": "The existing guest-cases test executes probe-only in one actual VM and cannot qualify the two-instance route.",
+  "status": "SOURCE_AUTHORED_NOT_COMMON_DEPLOYMENT_ABI_NOT_EXECUTION_ADMISSION"
+}

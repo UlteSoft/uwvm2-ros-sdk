@@ -1,0 +1,460 @@
+{
+  "format": "uwvm-sdk-approved-host-control-source-set-v1",
+  "version": "0.2.0",
+  "default_decision": "DENY",
+  "approved": [
+    {
+      "descriptor_sha256": "97defd651f8ac2686c3a3fb89c0037c86ee287ab0f3cd304e6e886e78bfbd398",
+      "directory": "producers/vm-closed-boundary-r5",
+      "scope": "fixed-input-current-boot-qualification-only",
+      "product_qualified": false,
+      "boot_id": "4a4ef5a2-2ae7-4680-9e31-7dc620a8033f",
+      "source_archive_sha256": "9d7bc623c0dd2fdf24b7fc12130a008076b2387064dd631363dfc04c9a8a86c3",
+      "source_files": 36,
+      "runtime_files": 1346,
+      "control_source_manifest_sha256": "829126f0375c2f3ae05dd32b23d39343c97e114ba39a819847a3b26c52bd6d17",
+      "resource_admission_sha256": "0d32e614620d57ede5f09779ca446646e21868eac4cf2dafd030f7f99990d9e5",
+      "independent_original_census_review_sha256": "6d51dba52fb01f7848bcd48a2ef2433beab90e0d6839e2c5373839775cb4e356",
+      "required_own_subject_interruption_proof": true,
+      "required_own_subject_benign": true,
+      "sdk_consumer_files": [
+        {
+          "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+          "bytes": 6112,
+          "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+        },
+        {
+          "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+          "bytes": 804,
+          "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+        },
+        {
+          "path": "include/platform/ros/portable/v0_1_0/abi.h",
+          "bytes": 3302,
+          "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+        },
+        {
+          "path": "tools/shared/python/actor_control.py",
+          "bytes": 9081,
+          "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+        },
+        {
+          "path": "tools/shared/python/actor_gate.py",
+          "bytes": 3201,
+          "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+        },
+        {
+          "path": "tools/shared/python/example_aggregate.py",
+          "bytes": 10309,
+          "sha256": "efbca2d39e1a7254339b38e190429844c42346750994ff1ce1716662d33ea3c5"
+        },
+        {
+          "path": "tools/shared/python/example_process.py",
+          "bytes": 19538,
+          "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+        },
+        {
+          "path": "tools/shared/python/guest_feedback.py",
+          "bytes": 14411,
+          "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+        },
+        {
+          "path": "tools/shared/python/portable_contract.py",
+          "bytes": 1493,
+          "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+        },
+        {
+          "path": "tools/shared/python/runtime_boundary.py",
+          "bytes": 25560,
+          "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+        },
+        {
+          "path": "tools/shared/python/simulation_example.py",
+          "bytes": 43188,
+          "sha256": "a6b6ecb2afcccd0e12da04dd410a2620f94ec4dae64df725c6a4321ce86a3989"
+        },
+        {
+          "path": "tools/shared/python/trusted_control.py",
+          "bytes": 30932,
+          "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+        },
+        {
+          "path": "tools/shared/python/wasi_component.py",
+          "bytes": 9558,
+          "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+        },
+        {
+          "path": "tools/shared/xmake/simulation_example.lua",
+          "bytes": 12412,
+          "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+        },
+        {
+          "path": "tools/shared/xmake/wasi_component.lua",
+          "bytes": 4506,
+          "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+        },
+        {
+          "path": "tools/xmake/repository.lua",
+          "bytes": 2480,
+          "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+        },
+        {
+          "path": "xmake.lua",
+          "bytes": 1933,
+          "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+        }
+      ],
+      "host_management_scope": "Only the fixed R3 envelope source and actual admitted requester may launch these two closed roles. RPC transport clients are outside the approved producer roles, cannot become application helpers, and acquire no SDK capability from this record. Their original bounded actor/control evidence remains required.",
+      "approval_basis": "Qualification SOURCE ONLY for one exact UR C R5 finite original exception-site diagnostic. SDK simulation consumer only adds bounded raw traceback/errno/filename/stage retention; exact text reversal recovers old source. All other16 SDK pins,36 producer code pins,1346 runtime pins, boot, role FDs, image and security gates remain fixed. The measured AppArmor read refusal is not repaired or excused; public execution/production PASS are NOT approved by this source record.",
+      "supersedes_qualification_source_descriptor_sha256": "17ba4b1b05c5f28cfab571553f00d3f5e1764226e6eb8711546eefc6b1d3d616",
+      "SDK_diagnostic_candidate_result_sha256": "e2d400cf16040c7c0f69e09c3caafd9b869e4cf0f26d179bc7cc71abbc2f6c56",
+      "SDK_diagnostic_patch_sha256": "bda5f42efccbb3139030cc53ea45fe2956f05764fcfd4364a1bed107d8f0f5c0",
+      "original_public_failure_review_sha256": "5e01d3b5dbbfecc460e699e4d572e1a018318ae44c860bf657dac6b2cf64820e",
+      "corresponding_kernel_review_sha256": "ef443dae9a97e9f4e33e9c5065296cd33d554432b1964774136b70a000624b5e",
+      "diagnostic_source_qualification_only": true,
+      "known_current_application_LSM_read_refusal": true,
+      "no_permission_or_LSM_exception_granted": true
+    }
+  ],
+  "candidate_observation_is_approval": false,
+  "required_before_addition": [
+    "Independent exact source/runtime/launch input census and code review",
+    "Explicit fixed-input/current-boot qualification-only record; no general UID/profile approval"
+  ],
+  "currently_live_or_qualified": false,
+  "required_before_runtime_acceptance": [
+    "Actual original public xmake/configure/build/xmake test positive joint cases",
+    "All12 independently observed live rejection families",
+    "Actual complete product/source pins and full original raw retention"
+  ],
+  "approval_row_shape": {
+    "descriptor_sha256": "whole SDK-owned exact descriptor SHA",
+    "directory": "relative SDK versioned producer directory",
+    "scope": "fixed-input-current-boot-qualification-only",
+    "product_qualified": false,
+    "runtime_authority": "None without every actual live guard and own subject proof/benign gate"
+  },
+  "production_approved": [],
+  "required_before_qualification_execution": [
+    "Unchanged resource/space admission and canonical lease for the whole own lifetime",
+    "Same exact subject current-boot two real interruptions, independent originals/physical-retirement review",
+    "Same exact subject bounded benign and independent originals/retirement review",
+    "Actual live kernel role/source/runtime/FD/cgroup/freshness and application isolation checks"
+  ],
+  "historical_source_approvals": [
+    {
+      "descriptor_sha256": "331e50a480f72bf65fd9fa0678ba030c91a3f651690151ed2b392a77160b2f22",
+      "directory": "producers/vm-closed-boundary-r2",
+      "scope": "fixed-input-current-boot-qualification-only",
+      "product_qualified": false,
+      "boot_id": "4a4ef5a2-2ae7-4680-9e31-7dc620a8033f",
+      "source_archive_sha256": "567f13355aca671c56e3da8e9469a2fd0c7c29060f70dc2db0ca19c9180f885a",
+      "source_files": 36,
+      "runtime_files": 1337,
+      "control_source_manifest_sha256": "829126f0375c2f3ae05dd32b23d39343c97e114ba39a819847a3b26c52bd6d17",
+      "resource_admission_sha256": "0d32e614620d57ede5f09779ca446646e21868eac4cf2dafd030f7f99990d9e5",
+      "independent_original_census_review_sha256": "00b71cb2fe2307d7f1a68c595d7c5c3d30c6b926e95172e4ec714f8a7c3c0471",
+      "required_own_subject_interruption_proof": true,
+      "required_own_subject_benign": true,
+      "sdk_consumer_files": [
+        {
+          "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+          "bytes": 6112,
+          "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+        },
+        {
+          "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+          "bytes": 804,
+          "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+        },
+        {
+          "path": "include/platform/ros/portable/v0_1_0/abi.h",
+          "bytes": 3302,
+          "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+        },
+        {
+          "path": "tools/shared/python/actor_control.py",
+          "bytes": 9081,
+          "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+        },
+        {
+          "path": "tools/shared/python/actor_gate.py",
+          "bytes": 3201,
+          "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+        },
+        {
+          "path": "tools/shared/python/example_aggregate.py",
+          "bytes": 10309,
+          "sha256": "efbca2d39e1a7254339b38e190429844c42346750994ff1ce1716662d33ea3c5"
+        },
+        {
+          "path": "tools/shared/python/example_process.py",
+          "bytes": 19538,
+          "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+        },
+        {
+          "path": "tools/shared/python/guest_feedback.py",
+          "bytes": 14411,
+          "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+        },
+        {
+          "path": "tools/shared/python/portable_contract.py",
+          "bytes": 1493,
+          "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+        },
+        {
+          "path": "tools/shared/python/runtime_boundary.py",
+          "bytes": 25560,
+          "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+        },
+        {
+          "path": "tools/shared/python/simulation_example.py",
+          "bytes": 37847,
+          "sha256": "5ec836c7c9573f1cf9febc980df2bd5e2956cc02ca5cfebfbbb924663c642c91"
+        },
+        {
+          "path": "tools/shared/python/trusted_control.py",
+          "bytes": 30932,
+          "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+        },
+        {
+          "path": "tools/shared/python/wasi_component.py",
+          "bytes": 9558,
+          "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+        },
+        {
+          "path": "tools/shared/xmake/simulation_example.lua",
+          "bytes": 12412,
+          "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+        },
+        {
+          "path": "tools/shared/xmake/wasi_component.lua",
+          "bytes": 4506,
+          "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+        },
+        {
+          "path": "tools/xmake/repository.lua",
+          "bytes": 2480,
+          "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+        },
+        {
+          "path": "xmake.lua",
+          "bytes": 1933,
+          "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+        }
+      ],
+      "host_management_scope": "Only the fixed R3 envelope source and actual admitted requester may launch these two closed roles. RPC transport clients are outside the approved producer roles, cannot become application helpers, and acquire no SDK capability from this record. Their original bounded actor/control evidence remains required.",
+      "approval_basis": "SDK01 independently checked fixed archive/current complete source set and actual current-boot root-owned runtime census, and reviewed sealed source/bootstrap/role/context/provenance namespace source. This authorizes only otherwise resource-admitted own bounded qualification; it is not a live boundary, interruption, benign, public execution or product PASS."
+    },
+    {
+      "descriptor_sha256": "17ba4b1b05c5f28cfab571553f00d3f5e1764226e6eb8711546eefc6b1d3d616",
+      "directory": "producers/vm-closed-boundary-r4",
+      "scope": "fixed-input-current-boot-qualification-only",
+      "product_qualified": false,
+      "boot_id": "4a4ef5a2-2ae7-4680-9e31-7dc620a8033f",
+      "source_archive_sha256": "f5e554d8d868a7efe0b864e82572122632aa7015c9749d0189edaff078f28ae3",
+      "source_files": 36,
+      "runtime_files": 1346,
+      "control_source_manifest_sha256": "829126f0375c2f3ae05dd32b23d39343c97e114ba39a819847a3b26c52bd6d17",
+      "resource_admission_sha256": "0d32e614620d57ede5f09779ca446646e21868eac4cf2dafd030f7f99990d9e5",
+      "independent_original_census_review_sha256": "489aaae353daf52a0cc6f93a64079106b5cf61d67c7889f7a32cbf4aa4f5071d",
+      "required_own_subject_interruption_proof": true,
+      "required_own_subject_benign": true,
+      "sdk_consumer_files": [
+        {
+          "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+          "bytes": 6112,
+          "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+        },
+        {
+          "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+          "bytes": 804,
+          "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+        },
+        {
+          "path": "include/platform/ros/portable/v0_1_0/abi.h",
+          "bytes": 3302,
+          "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+        },
+        {
+          "path": "tools/shared/python/actor_control.py",
+          "bytes": 9081,
+          "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+        },
+        {
+          "path": "tools/shared/python/actor_gate.py",
+          "bytes": 3201,
+          "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+        },
+        {
+          "path": "tools/shared/python/example_aggregate.py",
+          "bytes": 10309,
+          "sha256": "efbca2d39e1a7254339b38e190429844c42346750994ff1ce1716662d33ea3c5"
+        },
+        {
+          "path": "tools/shared/python/example_process.py",
+          "bytes": 19538,
+          "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+        },
+        {
+          "path": "tools/shared/python/guest_feedback.py",
+          "bytes": 14411,
+          "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+        },
+        {
+          "path": "tools/shared/python/portable_contract.py",
+          "bytes": 1493,
+          "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+        },
+        {
+          "path": "tools/shared/python/runtime_boundary.py",
+          "bytes": 25560,
+          "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+        },
+        {
+          "path": "tools/shared/python/simulation_example.py",
+          "bytes": 37847,
+          "sha256": "5ec836c7c9573f1cf9febc980df2bd5e2956cc02ca5cfebfbbb924663c642c91"
+        },
+        {
+          "path": "tools/shared/python/trusted_control.py",
+          "bytes": 30932,
+          "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+        },
+        {
+          "path": "tools/shared/python/wasi_component.py",
+          "bytes": 9558,
+          "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+        },
+        {
+          "path": "tools/shared/xmake/simulation_example.lua",
+          "bytes": 12412,
+          "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+        },
+        {
+          "path": "tools/shared/xmake/wasi_component.lua",
+          "bytes": 4506,
+          "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+        },
+        {
+          "path": "tools/xmake/repository.lua",
+          "bytes": 2480,
+          "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+        },
+        {
+          "path": "xmake.lua",
+          "bytes": 1933,
+          "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+        }
+      ],
+      "host_management_scope": "Only the fixed R3 envelope source and actual admitted requester may launch these two closed roles. RPC transport clients are outside the approved producer roles, cannot become application helpers, and acquire no SDK capability from this record. Their original bounded actor/control evidence remains required.",
+      "approval_basis": "Independently verified exact R4 archive/index/current originals, sole bootstrap absence-probe source delta, exact new1346 root-owned runtime inputs including9 added ELF dependencies and unchanged security. Qualification source only; no own proof/benign/public/negative PASS inferred.",
+      "supersedes_qualification_source_descriptor_sha256": "331e50a480f72bf65fd9fa0678ba030c91a3f651690151ed2b392a77160b2f22"
+    },
+    {
+      "descriptor_sha256": "97defd651f8ac2686c3a3fb89c0037c86ee287ab0f3cd304e6e886e78bfbd398",
+      "directory": "producers/vm-closed-boundary-r5",
+      "scope": "fixed-input-current-boot-qualification-only",
+      "product_qualified": false,
+      "boot_id": "4a4ef5a2-2ae7-4680-9e31-7dc620a8033f",
+      "source_archive_sha256": "9d7bc623c0dd2fdf24b7fc12130a008076b2387064dd631363dfc04c9a8a86c3",
+      "source_files": 36,
+      "runtime_files": 1346,
+      "control_source_manifest_sha256": "829126f0375c2f3ae05dd32b23d39343c97e114ba39a819847a3b26c52bd6d17",
+      "resource_admission_sha256": "0d32e614620d57ede5f09779ca446646e21868eac4cf2dafd030f7f99990d9e5",
+      "independent_original_census_review_sha256": "6d51dba52fb01f7848bcd48a2ef2433beab90e0d6839e2c5373839775cb4e356",
+      "required_own_subject_interruption_proof": true,
+      "required_own_subject_benign": true,
+      "sdk_consumer_files": [
+        {
+          "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+          "bytes": 6112,
+          "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+        },
+        {
+          "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+          "bytes": 804,
+          "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+        },
+        {
+          "path": "include/platform/ros/portable/v0_1_0/abi.h",
+          "bytes": 3302,
+          "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+        },
+        {
+          "path": "tools/shared/python/actor_control.py",
+          "bytes": 9081,
+          "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+        },
+        {
+          "path": "tools/shared/python/actor_gate.py",
+          "bytes": 3201,
+          "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+        },
+        {
+          "path": "tools/shared/python/example_aggregate.py",
+          "bytes": 10309,
+          "sha256": "efbca2d39e1a7254339b38e190429844c42346750994ff1ce1716662d33ea3c5"
+        },
+        {
+          "path": "tools/shared/python/example_process.py",
+          "bytes": 19538,
+          "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+        },
+        {
+          "path": "tools/shared/python/guest_feedback.py",
+          "bytes": 14411,
+          "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+        },
+        {
+          "path": "tools/shared/python/portable_contract.py",
+          "bytes": 1493,
+          "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+        },
+        {
+          "path": "tools/shared/python/runtime_boundary.py",
+          "bytes": 25560,
+          "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+        },
+        {
+          "path": "tools/shared/python/simulation_example.py",
+          "bytes": 37847,
+          "sha256": "5ec836c7c9573f1cf9febc980df2bd5e2956cc02ca5cfebfbbb924663c642c91"
+        },
+        {
+          "path": "tools/shared/python/trusted_control.py",
+          "bytes": 30932,
+          "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+        },
+        {
+          "path": "tools/shared/python/wasi_component.py",
+          "bytes": 9558,
+          "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+        },
+        {
+          "path": "tools/shared/xmake/simulation_example.lua",
+          "bytes": 12412,
+          "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+        },
+        {
+          "path": "tools/shared/xmake/wasi_component.lua",
+          "bytes": 4506,
+          "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+        },
+        {
+          "path": "tools/xmake/repository.lua",
+          "bytes": 2480,
+          "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+        },
+        {
+          "path": "xmake.lua",
+          "bytes": 1933,
+          "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+        }
+      ],
+      "host_management_scope": "Only the fixed R3 envelope source and actual admitted requester may launch these two closed roles. RPC transport clients are outside the approved producer roles, cannot become application helpers, and acquire no SDK capability from this record. Their original bounded actor/control evidence remains required.",
+      "approval_basis": "Exact R5 source review: sole public-stage worker delta fixes canonical C0 link basename and independently binds current per-process checked unwind/timing. Complete49 original files,36 sources and unchanged1346 root-owned runtime inputs reverified. Qualification source only; no actual execution or production PASS.",
+      "supersedes_qualification_source_descriptor_sha256": "17ba4b1b05c5f28cfab571553f00d3f5e1764226e6eb8711546eefc6b1d3d616"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "format": "sdk-official-native-driver-scene-binding-v1",
+  "case": "rrbot",
+  "platform": "ros",
+  "robot": "RRBot actual example9 physics",
+  "ros_distribution": "jazzy",
+  "simulator": "Gazebo Harmonic8.15.0 with DART",
+  "native_selection": "Original example_9 use_gazebo:=true; hardware gz_ros2_control/GazeboSimSystem; mock hardware explicitly rejected in generated URDF",
+  "sources": [
+    {
+      "repository": "https://github.com/ros-controls/ros2_control_demos",
+      "ref": "jazzy",
+      "commit": "fbab026e147824971c97996f3789f97c2ee9e9ac",
+      "archive": {
+        "url": "https://codeload.github.com/ros-controls/ros2_control_demos/zip/fbab026e147824971c97996f3789f97c2ee9e9ac",
+        "sha256": "7313f893f2e8c321bc66bdaf5530a30dd9449b010ba5de7f5651a6df80d28355",
+        "bytes": 3628211
+      },
+      "licenses": [
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ],
+      "lfs_pointers": [],
+      "unmaterialized_aliases": []
+    },
+    {
+      "repository": "https://github.com/ros-controls/gz_ros2_control",
+      "ref": "jazzy",
+      "commit": "3e199ced3e775ee2094c323f1f183af6df43f69a",
+      "archive": {
+        "url": "https://codeload.github.com/ros-controls/gz_ros2_control/zip/3e199ced3e775ee2094c323f1f183af6df43f69a",
+        "sha256": "f1d8f6dc0bae40b22fdee5186a55caecc53762487f4063157cb9ed4263c17486",
+        "bytes": 541687
+      },
+      "licenses": [
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "gz_ros2_control/LICENSE",
+          "bytes": 10765,
+          "sha256": "7c87873291f289713ac5df48b1f2010eb6963752bbd6b530416ab99fc37914a8"
+        }
+      ],
+      "lfs_pointers": [],
+      "unmaterialized_aliases": []
+    }
+  ],
+  "lifecycle_entrypoint": {
+    "path": "native_scene.py",
+    "sha256": "84843e1f0b2db5bc9bd304ce2c6a2d6aa39bc962d33f61d14c9b583a6d2dfd87",
+    "argv": [
+      "${PYTHON}",
+      "-B",
+      "native_scene.py",
+      "rrbot",
+      "${PINNED_NATIVE_CLOSURE_JSON}",
+      "${PINNED_NATIVE_PROCESS_ENVIRONMENT_JSON}",
+      "${PINNED_ORIGINAL_SOURCE_MANIFEST_JSON}",
+      "--ready-file",
+      "${PRIVATE_NATIVE_READY_FILE}",
+      "--stop-file",
+      "${PRIVATE_NATIVE_STOP_FILE}",
+      "--lifetime-seconds",
+      "${BOUNDED_NATIVE_LIFETIME_SECONDS}",
+      "--sdk-root",
+      "${SDK_ROOT}"
+    ],
+    "native_resource_precondition": "Actual current process and descendants must be born inside the admitted common64GiB/zero-swap ancestry, bounded leaf<=64GiB. Readiness grants no production or VM permission.",
+    "maximum_lifetime_seconds": 300,
+    "ready_fields": [
+      "pid",
+      "birth_ticks",
+      "cgroup",
+      "budget_ancestry",
+      "script_sha256",
+      "source_commit",
+      "ros_distribution",
+      "ros_domain_id",
+      "command_topic",
+      "command_type",
+      "state_topic",
+      "source_expanded_model_sha256",
+      "native_processes"
+    ],
+    "source_and_native_closures_verified_before_children": true,
+    "shared_lifecycle_sources": [
+      {
+        "path": "tools/shared/python/owned_processes.py",
+        "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+      },
+      {
+        "path": "tools/shared/python/runtime_boundary.py",
+        "sha256": "d9b6f1357e247e46ef1212faad4542f283c57230f1670c9c9114b3666485e484"
+      }
+    ],
+    "retirement": "Public OwnedProcesses,active before first actor; full pidfd/subreaper descendant retirement receipt,not leader-PID-only checks"
+  },
+  "native_roles": {
+    "model_expansion": "Original xacro expands the original model only",
+    "simulator": "Original physics and driver plugins; no app command generator",
+    "robot_state_publisher": "Native model/driver TF infrastructure",
+    "spawner": "Original model/physical-driver controller initialization only",
+    "scene_entrypoint": "New explicit headless composition, native readiness and process lifetime only"
+  },
+  "endpoints": [
+    {
+      "name": "/forward_position_controller/commands",
+      "ros_type": "std_msgs/msg/Float64MultiArray",
+      "direction": "Wasm app -> actual native driver controller",
+      "runtime_interoperation": "NOT_RUN_GUEST"
+    },
+    {
+      "name": "/joint_states",
+      "ros_type": "sensor_msgs/msg/JointState",
+      "direction": "Native physical joints -> Wasm callback",
+      "runtime_interoperation": "NOT_RUN_GUEST"
+    }
+  ],
+  "actual_native_live": {
+    "job": "04-rrbot-native-shared-lifecycle-r1",
+    "status": "PASS_LIVE_NATIVE_READY_AND_SHARED_OWNED_RETIREMENT",
+    "original_source_commit": "fbab026e147824971c97996f3789f97c2ee9e9ac",
+    "expanded_model_sha256": "b20360a4561d61b749765b5a36fc08d5f0fddac65db29a0db3eb799de9b660fe",
+    "all_live_pids_birth_and_same_cgroup_checked": true,
+    "stop_file_triggered_retirement": true,
+    "all_native_processes_retired": true,
+    "scheduler_result_sha256": "8b77bc775c3cf3fda7fa17e873b95e6a53c878fc89c6bffedb9bdf9c4edf06a0",
+    "wasm_application_executed": false,
+    "guest_feedback_accepted": false,
+    "scenario_pass": false,
+    "shared_retirement_status": "RETIRED",
+    "retirement_recorded_processes": 6
+  },
+  "required_wasm_roles": [
+    "Guest command and actual joint response",
+    "Stop/cancel applicable to selected app/controller",
+    "Exact module/interface/memory/lifecycle denials"
+  ],
+  "scene_xmake_test_integration": false,
+  "strict_production_enrollment": false,
+  "complete_scene_pass": false,
+  "controllers": [
+    "joint_state_broadcaster",
+    "forward_position_controller"
+  ],
+  "joints": [
+    "joint1",
+    "joint2"
+  ],
+  "command_interface": "position",
+  "controller_manager_hz": 1000,
+  "source_specific_differences": [
+    "Original default forward-position controller is not FollowJointTrajectory. A JTC/FJT alternative would be a separately labeled real controller configuration,not claimed default upstream behavior.",
+    "New explicit headless composition installs original data destinations,initializes original physical driver controllers,and generates no application commands."
+  ],
+  "native_dependency_origin": {
+    "payload_lock": "share/shared/simulation_examples/v0.1.0/native-jazzy-debian-payloads.lock.json",
+    "payload_lock_sha256": "20ac827d80a64c9d412391dfbc800684159d9e9cc03706a6d0ae5e0c15f7d147",
+    "private_jazzy_environment": true,
+    "common_jazzy_constructor_implemented": false
+  },
+  "prior_live_readiness": {
+    "job": "04-rrbot-native-live-r1",
+    "status": "PASS_LIVE_NATIVE_READY_AND_OWN_STOP",
+    "original_source_commit": "fbab026e147824971c97996f3789f97c2ee9e9ac",
+    "expanded_model_sha256": "b20360a4561d61b749765b5a36fc08d5f0fddac65db29a0db3eb799de9b660fe",
+    "all_live_pids_birth_and_same_cgroup_checked": true,
+    "stop_file_triggered_retirement": true,
+    "all_native_processes_retired": true,
+    "scheduler_result_sha256": "e5b8a74cf2aabbfc1a5b529c211c128b3e6a0dd7f1ef87fb11180d9065aff6f1",
+    "wasm_application_executed": false,
+    "guest_feedback_accepted": false,
+    "scenario_pass": false
+  }
+}

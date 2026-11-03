@@ -1,0 +1,458 @@
+{
+  "schema": "sdk07-official-ideal-Jazzy-package-identity-v1",
+  "scope": "Exact56 authenticated Ubuntu/ROS dependency package bytes from the qualified native reference; base-image executable library identities are separately pinned",
+  "architecture": "amd64",
+  "packages": [
+    {
+      "name": "liblzma5",
+      "version": "5.6.1+really5.4.5-1ubuntu0.4",
+      "architecture": "amd64",
+      "filename": "pool/main/x/xz-utils/liblzma5_5.6.1+really5.4.5-1ubuntu0.4_amd64.deb",
+      "bytes": 127704,
+      "sha256": "5bcf5da2339331e21d3f42a831e82c61c54c6b2f29804010e8d59abd0ae52167"
+    },
+    {
+      "name": "libelf1t64",
+      "version": "0.190-1.1ubuntu0.1",
+      "architecture": "amd64",
+      "filename": "pool/main/e/elfutils/libelf1t64_0.190-1.1ubuntu0.1_amd64.deb",
+      "bytes": 57810,
+      "sha256": "b4aee123a37472d213647594b4f7d4a0d13615b0ca2a6fd33926b768d6b232c2"
+    },
+    {
+      "name": "libedit2",
+      "version": "3.1-20230828-1build1",
+      "architecture": "amd64",
+      "filename": "pool/main/libe/libedit/libedit2_3.1-20230828-1build1_amd64.deb",
+      "bytes": 97586,
+      "sha256": "3afbc8ddf835049dd4d88275b9d13680e4c4cdd59e191cbd63424152cc08e00e"
+    },
+    {
+      "name": "xz-utils",
+      "version": "5.6.1+really5.4.5-1ubuntu0.4",
+      "architecture": "amd64",
+      "filename": "pool/main/x/xz-utils/xz-utils_5.6.1+really5.4.5-1ubuntu0.4_amd64.deb",
+      "bytes": 267426,
+      "sha256": "18ef3c30308990626cfbda8b6336ef6ef5a412d1991bdad0cdaa226fd2041ffe"
+    },
+    {
+      "name": "libboost1.83-dev",
+      "version": "1.83.0-2.1ubuntu3.2",
+      "architecture": "amd64",
+      "filename": "pool/main/b/boost1.83/libboost1.83-dev_1.83.0-2.1ubuntu3.2_amd64.deb",
+      "bytes": 10745362,
+      "sha256": "519ecf2c64308527e15b6582955681d192a832250baa4bc424967aaf7d02d68f"
+    },
+    {
+      "name": "libboost-dev",
+      "version": "1.83.0.1ubuntu2",
+      "architecture": "amd64",
+      "filename": "pool/main/b/boost-defaults/libboost-dev_1.83.0.1ubuntu2_amd64.deb",
+      "bytes": 4308,
+      "sha256": "6ccd980dde9960f27904d3b8a5ef04b419d7d372f7ca67b2a42083f03950f4be"
+    },
+    {
+      "name": "libcap-dev",
+      "version": "1:2.66-5ubuntu2.4",
+      "architecture": "amd64",
+      "filename": "pool/main/libc/libcap2/libcap-dev_2.66-5ubuntu2.4_amd64.deb",
+      "bytes": 595634,
+      "sha256": "07f2462867569a2119a2ad0f1593232663f2d1612b791c230d22a8d73a15abee"
+    },
+    {
+      "name": "libelf-dev",
+      "version": "0.190-1.1ubuntu0.1",
+      "architecture": "amd64",
+      "filename": "pool/main/e/elfutils/libelf-dev_0.190-1.1ubuntu0.1_amd64.deb",
+      "bytes": 68530,
+      "sha256": "81affb95c29f7323f2ae24386aaa1f61d311578e3e27c5f78ef7b7d55cd3cf49"
+    },
+    {
+      "name": "libdw1t64",
+      "version": "0.190-1.1ubuntu0.1",
+      "architecture": "amd64",
+      "filename": "pool/main/e/elfutils/libdw1t64_0.190-1.1ubuntu0.1_amd64.deb",
+      "bytes": 261194,
+      "sha256": "edaa9ce4221d95f4bd72a9805100902e313092a2f31a7a51e7186be97734714d"
+    },
+    {
+      "name": "liblzma-dev",
+      "version": "5.6.1+really5.4.5-1ubuntu0.4",
+      "architecture": "amd64",
+      "filename": "pool/main/x/xz-utils/liblzma-dev_5.6.1+really5.4.5-1ubuntu0.4_amd64.deb",
+      "bytes": 176184,
+      "sha256": "a6af1ee2bd2d5c532465734f474d03d8e08977c881f10898eda0c88b70ff2e5d"
+    },
+    {
+      "name": "libdw-dev",
+      "version": "0.190-1.1ubuntu0.1",
+      "architecture": "amd64",
+      "filename": "pool/main/e/elfutils/libdw-dev_0.190-1.1ubuntu0.1_amd64.deb",
+      "bytes": 339738,
+      "sha256": "048a3e8444958a013545b7364c5bb339e665fccfd2f504bf5ea62bcaabf575d8"
+    },
+    {
+      "name": "libexpected-dev",
+      "version": "1.1.0-2",
+      "architecture": "all",
+      "filename": "pool/universe/t/tl-expected/libexpected-dev_1.1.0-2_all.deb",
+      "bytes": 19090,
+      "sha256": "d288352d53264e381b45c37f6bbc57d395212f554479505db60b9ff7da86eafe"
+    },
+    {
+      "name": "rubygems-integration",
+      "version": "1.18",
+      "architecture": "all",
+      "filename": "pool/main/r/rubygems-integration/rubygems-integration_1.18_all.deb",
+      "bytes": 5336,
+      "sha256": "67b466d6297adeae37786a123ad029153961c4cbdcdd6cf50a6e6964e2d37342"
+    },
+    {
+      "name": "ruby3.2",
+      "version": "3.2.3-1ubuntu0.24.04.8",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ruby3.2/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+      "bytes": 50654,
+      "sha256": "6f11e297b3508e8db95a5a047126a16ccf1358292049a27e3dc72b88180e779a"
+    },
+    {
+      "name": "ruby-rubygems",
+      "version": "3.4.20-1",
+      "architecture": "all",
+      "filename": "pool/main/r/rubygems/ruby-rubygems_3.4.20-1_all.deb",
+      "bytes": 238488,
+      "sha256": "9cb6041d902b74fd6e9373b24922e788bc2d1ed4360705ca6b53945d67b32087"
+    },
+    {
+      "name": "ruby",
+      "version": "1:3.2~ubuntu1",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ruby-defaults/ruby_3.2~ubuntu1_amd64.deb",
+      "bytes": 3466,
+      "sha256": "b4e5390889e4502ce1e88ea016c5fe1ddf2cc4886df5b0652c0dd1eb06fbbf3a"
+    },
+    {
+      "name": "rake",
+      "version": "13.0.6-3",
+      "architecture": "all",
+      "filename": "pool/main/r/rake/rake_13.0.6-3_all.deb",
+      "bytes": 61584,
+      "sha256": "2ebe2591a30542c28d6bc6c8be638ab61cc1295875f364385ade895b23f8492d"
+    },
+    {
+      "name": "ruby-net-telnet",
+      "version": "0.2.0-1",
+      "architecture": "all",
+      "filename": "pool/main/r/ruby-net-telnet/ruby-net-telnet_0.2.0-1_all.deb",
+      "bytes": 13308,
+      "sha256": "ece1fdca00a6a9565a4e425e13cfb320b247280a71d44e11bfee28fd6a7df2b5"
+    },
+    {
+      "name": "ruby-webrick",
+      "version": "1.8.1-1ubuntu0.2",
+      "architecture": "all",
+      "filename": "pool/main/r/ruby-webrick/ruby-webrick_1.8.1-1ubuntu0.2_all.deb",
+      "bytes": 52956,
+      "sha256": "7275a9563e0cd328f6043fc0360886c522b253f280e309a1864549bea8f25d88"
+    },
+    {
+      "name": "ruby-xmlrpc",
+      "version": "0.3.2-2",
+      "architecture": "all",
+      "filename": "pool/main/r/ruby-xmlrpc/ruby-xmlrpc_0.3.2-2_all.deb",
+      "bytes": 24750,
+      "sha256": "9690c5b65b147d22f2b90dbb694c5d2af81ffa68f1a58f094e2afb91f3b20c3c"
+    },
+    {
+      "name": "ruby-sdbm",
+      "version": "1.0.0-5build4",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ruby-sdbm/ruby-sdbm_1.0.0-5build4_amd64.deb",
+      "bytes": 16236,
+      "sha256": "102edbeafb3cc21d00e97c55c0c1b2651ef57913e6966b45d286361f2ddd2f5c"
+    },
+    {
+      "name": "libruby3.2",
+      "version": "3.2.3-1ubuntu0.24.04.8",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ruby3.2/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+      "bytes": 5342224,
+      "sha256": "77c2e98ccfba2c4a4e5edb48ca8c0eb041702e1579eabc40cf07064fd4f3033e"
+    },
+    {
+      "name": "libruby",
+      "version": "1:3.2~ubuntu1",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ruby-defaults/libruby_3.2~ubuntu1_amd64.deb",
+      "bytes": 4694,
+      "sha256": "73aa1a6a68c054b0cb7bef6dd8730f0d569849a5f295e9d42dce5e69c1798a18"
+    },
+    {
+      "name": "python3-filelock",
+      "version": "3.13.1-1",
+      "architecture": "all",
+      "filename": "pool/universe/p/python-filelock/python3-filelock_3.13.1-1_all.deb",
+      "bytes": 10752,
+      "sha256": "e03bc870c69e6c439824cfa8f0266fde4db5b848b6ced1d4c040623530ce8ffa"
+    },
+    {
+      "name": "python3-markupsafe",
+      "version": "2.1.5-1build2",
+      "architecture": "amd64",
+      "filename": "pool/main/m/markupsafe/python3-markupsafe_2.1.5-1build2_amd64.deb",
+      "bytes": 12666,
+      "sha256": "5fd479735e81694be2881d4bd77b0b72e83adb1cb9fbfb1895274ac70ab230f4"
+    },
+    {
+      "name": "python3-jinja2",
+      "version": "3.1.2-1ubuntu1.3",
+      "architecture": "all",
+      "filename": "pool/main/j/jinja2/python3-jinja2_3.1.2-1ubuntu1.3_all.deb",
+      "bytes": 108358,
+      "sha256": "3929521159dd53451b0005ac6b8a1a8dbc42bf74ce83309b50389520f08a937c"
+    },
+    {
+      "name": "python3-typeguard",
+      "version": "4.1.5-1",
+      "architecture": "all",
+      "filename": "pool/universe/p/python-typeguard/python3-typeguard_4.1.5-1_all.deb",
+      "bytes": 32664,
+      "sha256": "3bdb5c4e82398447594c63a7456b4c3b3ef0bfc7ffe0ee94a6bac05d516de868"
+    },
+    {
+      "name": "ros-jazzy-angles",
+      "version": "1.16.1-1noble.20260225.231445",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-angles/ros-jazzy-angles_1.16.1-1noble.20260225.231445_amd64.deb",
+      "bytes": 13866,
+      "sha256": "7138cc42520d0c746cd32f76fc9ac6ecf3f3be8ca14c218f792b070cfa282b83"
+    },
+    {
+      "name": "ros-jazzy-backward-ros",
+      "version": "1.0.8-1noble.20260225.051215",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-backward-ros/ros-jazzy-backward-ros_1.0.8-1noble.20260225.051215_amd64.deb",
+      "bytes": 57454,
+      "sha256": "4e74623daca4885bb5768435365cd9157b42feee776a127de667743d8fadf131"
+    },
+    {
+      "name": "ros-jazzy-control-msgs",
+      "version": "5.10.0-1noble.20260911.141005",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-control-msgs/ros-jazzy-control-msgs_5.10.0-1noble.20260911.141005_amd64.deb",
+      "bytes": 912846,
+      "sha256": "6b59dcbfe9098ce09b3a7b4767ca92ee65e47a6cba7b6af5a8cc71a0548341b7"
+    },
+    {
+      "name": "ros-jazzy-filters",
+      "version": "2.2.2-1noble.20260911.124353",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-filters/ros-jazzy-filters_2.2.2-1noble.20260911.124353_amd64.deb",
+      "bytes": 80246,
+      "sha256": "ddd16e8b6f72930c4ccc67c863f15a51cf84e62fc26095b69faae274a84c2921"
+    },
+    {
+      "name": "ros-jazzy-generate-parameter-library-py",
+      "version": "0.7.6-1noble.20260810.122749",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-generate-parameter-library-py/ros-jazzy-generate-parameter-library-py_0.7.6-1noble.20260810.122749_amd64.deb",
+      "bytes": 58070,
+      "sha256": "2a71e0aa79cec6cd0dcba027815510ba01173ea1c14e5d6ead9018a9582902b0"
+    },
+    {
+      "name": "ros-jazzy-tcb-span",
+      "version": "1.3.2-1noble.20260618.160922",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-tcb-span/ros-jazzy-tcb-span_1.3.2-1noble.20260618.160922_amd64.deb",
+      "bytes": 10972,
+      "sha256": "9f06bc23788bd1ecf690bf72aa872f9c66148b2c362796aea6e2bc18902b08b1"
+    },
+    {
+      "name": "ros-jazzy-rsl",
+      "version": "1.3.0-1noble.20260911.134754",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-rsl/ros-jazzy-rsl_1.3.0-1noble.20260911.134754_amd64.deb",
+      "bytes": 18226,
+      "sha256": "0dc0e20cdffcb5c2704a5266767a487a4c53c444c2088bd77399614fd6d750c6"
+    },
+    {
+      "name": "ros-jazzy-tl-expected",
+      "version": "1.3.2-1noble.20260618.160931",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-tl-expected/ros-jazzy-tl-expected_1.3.2-1noble.20260618.160931_amd64.deb",
+      "bytes": 17496,
+      "sha256": "96ea10ca4d39cef6e3744a58e2ce7afc3ee3712a3cbbb8d24e264f682698d3ee"
+    },
+    {
+      "name": "ros-jazzy-parameter-traits",
+      "version": "0.7.6-1noble.20260911.140311",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-parameter-traits/ros-jazzy-parameter-traits_0.7.6-1noble.20260911.140311_amd64.deb",
+      "bytes": 10488,
+      "sha256": "137db377f42aa8d22019dbb7fa6d5334f93afdb1e8a1cb444e1eec6e271b3854"
+    },
+    {
+      "name": "ros-jazzy-generate-parameter-library",
+      "version": "0.7.6-1noble.20260912.163311",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-generate-parameter-library/ros-jazzy-generate-parameter-library_0.7.6-1noble.20260912.163311_amd64.deb",
+      "bytes": 9524,
+      "sha256": "b0b5d0cd2a14cd19c8e5628b00a8db6dae091b155411ae3bb82a04bab67dc2dd"
+    },
+    {
+      "name": "ros-jazzy-realtime-tools",
+      "version": "3.13.0-1noble.20260924.144326",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-realtime-tools/ros-jazzy-realtime-tools_3.13.0-1noble.20260924.144326_amd64.deb",
+      "bytes": 53824,
+      "sha256": "50045520762fe89bdc3a3b3779929dfdca16b0e0140d522ada2c4862376e372e"
+    },
+    {
+      "name": "ros-jazzy-control-toolbox",
+      "version": "4.11.1-1noble.20260924.184440",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-control-toolbox/ros-jazzy-control-toolbox_4.11.1-1noble.20260924.184440_amd64.deb",
+      "bytes": 195342,
+      "sha256": "c586c8c72dba95a84db039960f62bb154ebac01b58f8b0247dbc7e205b922322"
+    },
+    {
+      "name": "ros-jazzy-joint-limits",
+      "version": "4.48.1-1noble.20260924.184438",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-joint-limits/ros-jazzy-joint-limits_4.48.1-1noble.20260924.184438_amd64.deb",
+      "bytes": 81570,
+      "sha256": "882831fa6933cc6a013818fb31d2a571b9132225ac89b18d37aa466bb92b69d7"
+    },
+    {
+      "name": "ros-jazzy-pal-statistics-msgs",
+      "version": "2.8.2-1noble.20260911.103527",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-pal-statistics-msgs/ros-jazzy-pal-statistics-msgs_2.8.2-1noble.20260911.103527_amd64.deb",
+      "bytes": 83236,
+      "sha256": "2e97e6842afc8f3d69b10207605c4077b8501814cd2c228a4ff211944e758e4b"
+    },
+    {
+      "name": "ros-jazzy-pal-statistics",
+      "version": "2.8.2-1noble.20260912.163343",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-pal-statistics/ros-jazzy-pal-statistics_2.8.2-1noble.20260912.163343_amd64.deb",
+      "bytes": 105334,
+      "sha256": "d76b41cd0911a407681bfdcce93780637306b0e9752a760d078ea641d7d33ccd"
+    },
+    {
+      "name": "ros-jazzy-gz-cmake-vendor",
+      "version": "0.0.12-1noble.20260618.173318",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-gz-cmake-vendor/ros-jazzy-gz-cmake-vendor_0.0.12-1noble.20260618.173318_amd64.deb",
+      "bytes": 198256,
+      "sha256": "7b5f2a8de8d4fe9f6062cd04bd040aa3741654d1c6569169a0e99cc87aaa91c6"
+    },
+    {
+      "name": "ros-jazzy-gz-utils-vendor",
+      "version": "0.0.5-1noble.20260618.173807",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-gz-utils-vendor/ros-jazzy-gz-utils-vendor_0.0.5-1noble.20260618.173807_amd64.deb",
+      "bytes": 104616,
+      "sha256": "fe029b8f86b605bc71057500c4f2a812034fde9c248603e9ce8989c0ea7c4761"
+    },
+    {
+      "name": "ros-jazzy-gz-math-vendor",
+      "version": "0.0.11-1noble.20260905.031649",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-gz-math-vendor/ros-jazzy-gz-math-vendor_0.0.11-1noble.20260905.031649_amd64.deb",
+      "bytes": 1103766,
+      "sha256": "c86e7f8b65e59b25c8b93d513b6c4de7b7d03d4248b85e243c258b77f7d96376"
+    },
+    {
+      "name": "ros-jazzy-gz-tools-vendor",
+      "version": "0.0.8-1noble.20260820.143431",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-gz-tools-vendor/ros-jazzy-gz-tools-vendor_0.0.8-1noble.20260820.143431_amd64.deb",
+      "bytes": 32388,
+      "sha256": "c86c1d56c1bba87132472b35c2fd4820bbec1a71db521e2493d76dd1b2a2dc82"
+    },
+    {
+      "name": "ros-jazzy-sdformat-vendor",
+      "version": "0.0.14-1noble.20260905.033543",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-sdformat-vendor/ros-jazzy-sdformat-vendor_0.0.14-1noble.20260905.033543_amd64.deb",
+      "bytes": 1275442,
+      "sha256": "4ddd40dcf6dd0134ab7543ee276dfb732f3f279c30f2f3de5247546642c6f15a"
+    },
+    {
+      "name": "liburdfdom-headers-dev",
+      "version": "1.0.5-3",
+      "architecture": "all",
+      "filename": "pool/universe/u/urdfdom-headers/liburdfdom-headers-dev_1.0.5-3_all.deb",
+      "bytes": 14108,
+      "sha256": "f6f647646e3380cc53e84e431a99d239da147ed9a30d332d3255ef4deb0d9aaa"
+    },
+    {
+      "name": "ros-jazzy-sdformat-urdf",
+      "version": "1.0.2-1noble.20260911.051524",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-sdformat-urdf/ros-jazzy-sdformat-urdf_1.0.2-1noble.20260911.051524_amd64.deb",
+      "bytes": 48856,
+      "sha256": "8b93d7577ffc7d388febddcee699310b401a4a8658f8461e08c4fd2b25c3f6e4"
+    },
+    {
+      "name": "ros-jazzy-hardware-interface",
+      "version": "4.48.1-1noble.20260924.184843",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-hardware-interface/ros-jazzy-hardware-interface_4.48.1-1noble.20260924.184843_amd64.deb",
+      "bytes": 362412,
+      "sha256": "51ed56df465fd2f382264ee3456a0fa8f2eef3ae3634fe813aa83d7dc083bbd3"
+    },
+    {
+      "name": "ros-jazzy-controller-interface",
+      "version": "4.48.1-1noble.20260924.185925",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-controller-interface/ros-jazzy-controller-interface_4.48.1-1noble.20260924.185925_amd64.deb",
+      "bytes": 95308,
+      "sha256": "ee5cf7af7b7944f720b2d792fc5a02b594db451d3213b781fdf89585d52cbd4b"
+    },
+    {
+      "name": "ros-jazzy-controller-manager-msgs",
+      "version": "4.48.1-1noble.20260911.100117",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-controller-manager-msgs/ros-jazzy-controller-manager-msgs_4.48.1-1noble.20260911.100117_amd64.deb",
+      "bytes": 399402,
+      "sha256": "7de21e15aca7a95140fb28c00a0f20e8c6e10cd8d47b5ef74fa661990d3b5d8d"
+    },
+    {
+      "name": "ros-jazzy-diagnostic-updater",
+      "version": "4.2.7-1noble.20260912.163704",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-diagnostic-updater/ros-jazzy-diagnostic-updater_4.2.7-1noble.20260912.163704_amd64.deb",
+      "bytes": 111894,
+      "sha256": "9c10952df12cfaec78f82d77ff79df79d8c23a07a32b3b78f3a3894a9936698d"
+    },
+    {
+      "name": "ros-jazzy-controller-manager",
+      "version": "4.48.1-1noble.20261006.035021",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-controller-manager/ros-jazzy-controller-manager_4.48.1-1noble.20261006.035021_amd64.deb",
+      "bytes": 528058,
+      "sha256": "3ca600fc6505a624fa8032a60f945e4b059fb229ee6c21034e488ac0d150c1e8"
+    },
+    {
+      "name": "ros-jazzy-joint-state-broadcaster",
+      "version": "4.42.1-1noble.20260924.190601",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-joint-state-broadcaster/ros-jazzy-joint-state-broadcaster_4.42.1-1noble.20260924.190601_amd64.deb",
+      "bytes": 112922,
+      "sha256": "96865877dd720a2594b7b0abfd47ad6604118231b5f534b0df0b170123871234"
+    },
+    {
+      "name": "ros-jazzy-joint-trajectory-controller",
+      "version": "4.42.1-1noble.20260924.190511",
+      "architecture": "amd64",
+      "filename": "pool/main/r/ros-jazzy-joint-trajectory-controller/ros-jazzy-joint-trajectory-controller_4.42.1-1noble.20260924.190511_amd64.deb",
+      "bytes": 334864,
+      "sha256": "d4730895285547915183575cb52f7ee19f94fa7e438047299d130a9f5d4d7155"
+    }
+  ],
+  "automatic_acquisition_or_installation": false,
+  "missing_or_different_dependency_result": "BLOCKED_NONZERO",
+  "package_installation_alone_is_not_simulation_acceptance": true
+}

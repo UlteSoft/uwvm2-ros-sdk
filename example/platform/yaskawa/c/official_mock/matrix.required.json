@@ -1,0 +1,2845 @@
+{
+  "format": "sdk02-official-simulation-required-matrix-v1",
+  "platform": "yaskawa",
+  "frozen_inventory_utc": "2026-10-26T16:25:39.998067+00:00",
+  "inventory_exhaustive": false,
+  "status": "UNRESOLVED_REQUIRED_SOURCE_AUDIT_AND_NOT_RUN",
+  "missing_dependency_or_licence": "BLOCKED_NOT_NA",
+  "all_rows_required_until_evidence_backed_applicability_resolution": true,
+  "release_axis": [
+    {
+      "backend": "ros1",
+      "name": "box_turtle",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "c_turtle",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "diamondback",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "electric",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "fuerte",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "groovy",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "hydro",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "indigo",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "jade",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "kinetic",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "lunar",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "melodic",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros1",
+      "name": "noetic",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "ardent",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "bouncy",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "crystal",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "dashing",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "eloquent",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "foxy",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "galactic",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "humble",
+      "upstream_lifecycle": "active_at_frozen_rosdistro_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "iron",
+      "upstream_lifecycle": "historical_EOL",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "jazzy",
+      "upstream_lifecycle": "active_at_frozen_rosdistro_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "kilted",
+      "upstream_lifecycle": "active_at_frozen_rosdistro_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "lyrical",
+      "upstream_lifecycle": "active_at_frozen_rosdistro_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    },
+    {
+      "backend": "ros2",
+      "name": "rolling",
+      "upstream_lifecycle": "rolling_development_snapshot",
+      "exact_rosdistro_snapshot_sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f",
+      "actual_package_compiler_ABI_RMW_security_qualification": "NOT_RUN_PER_VENDOR_UNLESS_SEPARATE_EXACT_RECEIPT",
+      "upstream_lifecycle_is_product_support": false
+    }
+  ],
+  "language_kind_width_axis": [
+    {
+      "language": "as",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "as",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "as",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "as",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "as",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "as",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "c",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "c",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "c",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "c",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "c",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "c",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "c_ffi_bridge",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "cpp",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "csharp",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "d",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "d",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "d",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "d",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "d",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "d",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "fortran",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "fsharp",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "go",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "go",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "go",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "go",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "go",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "go",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "haskell",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "java",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "java",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "java",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "java",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "java",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "java",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "js",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "js",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "js",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "js",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "js",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "js",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "kotlin",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "lua",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "moonbit",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "nim",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "objectc",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "odin",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "php",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "php",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "php",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "php",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "php",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "php",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "py",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "py",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "py",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "py",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "py",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "py",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "r",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "r",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "r",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "r",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "r",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "r",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "rs",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "ruby",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "swift",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "tinygo",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "typescript",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "vbnet",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "wat",
+      "guest_bits": 64,
+      "kind": "static"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 32,
+      "kind": "binary"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 32,
+      "kind": "shared"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 32,
+      "kind": "static"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 64,
+      "kind": "binary"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 64,
+      "kind": "shared"
+    },
+    {
+      "language": "zig",
+      "guest_bits": 64,
+      "kind": "static"
+    }
+  ],
+  "versioned_models": [
+    {
+      "id": "motoman-noetic-tree:ar2010",
+      "platform": "Yaskawa",
+      "model": "ar2010",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_ar2010_support/urdf/ar2010.xacro",
+      "source_git_blob": "d9827a98c2bef5564e70dca571ffbcca920739dc",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_ar2010_support/urdf/ar2010.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "8e2654ffa48feb05ad682c8c585876cc78709f8e43bc46d4bc9e961350a4ae50",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:es165",
+      "platform": "Yaskawa",
+      "model": "es165",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_es_support/urdf/es165.xacro",
+      "source_git_blob": "2d22ee1e2b625cbc57147f5df2bef49585922452",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_es_support/urdf/es165.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "8eabe27a5853af638a6210141aee9611ca968b184e54946c2cd9ab2316de0345",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:es200_120",
+      "platform": "Yaskawa",
+      "model": "es200_120",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_es_support/urdf/es200_120.xacro",
+      "source_git_blob": "b15551e389ac9df49cf1f936a468e1d00b6879f1",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_es_support/urdf/es200_120.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "598ec05484f90bb175d7a1894975f3159cec73224913a23d3a07224bf3be9239",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp110",
+      "platform": "Yaskawa",
+      "model": "gp110",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp110_support/urdf/gp110.xacro",
+      "source_git_blob": "ae4b0d96bb61cddba140cc24e8d92382d2c20042",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp110_support/urdf/gp110.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "2ae6bb299ab86eade466691a56f5cf61b649416f1cd735105800fc8f54dcc8cf",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp12",
+      "platform": "Yaskawa",
+      "model": "gp12",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp12_support/urdf/gp12.xacro",
+      "source_git_blob": "f4845d4b1cc0ac577d03d18d479158df1388ccd6",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp12_support/urdf/gp12.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "444ccdeea2818756addec85a32d8836bfc1906a46071ab0896f243690890b263",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp165r",
+      "platform": "Yaskawa",
+      "model": "gp165r",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp165r_support/urdf/gp165r.xacro",
+      "source_git_blob": "a28c523631957d80b26827227ca997e92a57fc24",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp165r_support/urdf/gp165r.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "2525b2a9b471e9f3e8d9ae93ad3f67e2291c4b6343a823f0db353b027d2f8dfb",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp165r_equipped",
+      "platform": "Yaskawa",
+      "model": "gp165r_equipped",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp165r_support/urdf/gp165r_equipped.xacro",
+      "source_git_blob": "9dbb6740f05c530845633da2e49454c4e7c89278",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp165r_support/urdf/gp165r_equipped.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "20963748a7218089eca87b0054706fc2c2a4c3771539dd7bb34da6972a839b31",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp180",
+      "platform": "Yaskawa",
+      "model": "gp180",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp180_support/urdf/gp180.xacro",
+      "source_git_blob": "8c1c2ac5decaba349de82b9c8c5de86545793651",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp180_support/urdf/gp180.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "c69da66b24c43e016a73e9254d426d0fd2e23c36bb7e37539718e337cd8d91a7",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp180_120",
+      "platform": "Yaskawa",
+      "model": "gp180_120",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp180_support/urdf/gp180_120.xacro",
+      "source_git_blob": "df3da3665c458105d99ab2b62025ef14d8790ca6",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp180_support/urdf/gp180_120.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "135dd72eaa7df300310de45146db2492ede28650645b77b9a304bf2dc86a248c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp200r",
+      "platform": "Yaskawa",
+      "model": "gp200r",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp200r_support/urdf/gp200r.xacro",
+      "source_git_blob": "3371eb5949a49c0f2ee4c309829fece172954534",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp200r_support/urdf/gp200r.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "7db2ab9b18350f4dd2ad73fdb6502b8ddc85ac5ffff9b924d7bb89b1743a9ef3",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp20hl",
+      "platform": "Yaskawa",
+      "model": "gp20hl",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp20hl_support/urdf/gp20hl.xacro",
+      "source_git_blob": "dd93f67c0875b83d2da44f299d93b93bf418a4e9",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp20hl_support/urdf/gp20hl.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "fe2f48997e6d637086b27633ad4e3a43a42665b6a20b08e5338bb64d01060f53",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp215",
+      "platform": "Yaskawa",
+      "model": "gp215",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp215_support/urdf/gp215.xacro",
+      "source_git_blob": "7b6eceac158956137c114f1a10bac66b685979f9",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp215_support/urdf/gp215.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "a17621c7aec00b6d049aea160b821d36c254a23ca0ae1fd0573e7d1a488152e6",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp225",
+      "platform": "Yaskawa",
+      "model": "gp225",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp225_support/urdf/gp225.xacro",
+      "source_git_blob": "de21256c9a81724ffc7ffafd40f60de1b2cf5b49",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp225_support/urdf/gp225.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "8d7fcb88217418da9810f304269391d6ea43618b46846d22742f7e85ae4e2955",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp250",
+      "platform": "Yaskawa",
+      "model": "gp250",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp250_support/urdf/gp250.xacro",
+      "source_git_blob": "42d39f1f527c51f798257ad75c4be31e9402aa8f",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp250_support/urdf/gp250.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "73d035116d9bf02052a25686eba4c7d26722d611f076ba694678760cff1171e9",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp25",
+      "platform": "Yaskawa",
+      "model": "gp25",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp25_support/urdf/gp25.xacro",
+      "source_git_blob": "cb999f83b3069d6a1a64d492f34069220971e08e",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp25_support/urdf/gp25.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "a78bcab6141c548ac98ba823badee9c9a2c335e2721b619ca3ee172281b5bd94",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp25_12",
+      "platform": "Yaskawa",
+      "model": "gp25_12",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp25_support/urdf/gp25_12.xacro",
+      "source_git_blob": "e390e679c01d71b33d4fb1c5458c29878f778203",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp25_support/urdf/gp25_12.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "8f0374603d95610a31f5b42a9cda9935340e4573c060a4c82018a5a7bb603a35",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp25_20",
+      "platform": "Yaskawa",
+      "model": "gp25_20",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp25_support/urdf/gp25_20.xacro",
+      "source_git_blob": "146c507051f47d77d2f21855e63f925e4d25f702",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp25_support/urdf/gp25_20.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "78308b9d2ab0345c955e0e09cad313954f51c2460a32d59a50d2352c65a658ce",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp35l",
+      "platform": "Yaskawa",
+      "model": "gp35l",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp35l_support/urdf/gp35l.xacro",
+      "source_git_blob": "88a40d60c6aeff10f7991a4d439aabedb034e762",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp35l_support/urdf/gp35l.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "fa9faed88fe83f0e389ee577c8206a7bf61beeb4556645eda1973896eaec0972",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp4",
+      "platform": "Yaskawa",
+      "model": "gp4",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp4_support/urdf/gp4.xacro",
+      "source_git_blob": "18f85089aab1839920cbc5f8afad89b30f7f9232",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp4_support/urdf/gp4.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "8207899a809c107c95029a35dcc9675a6ce7f95cefc56767282fa1bf50b56007",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp50",
+      "platform": "Yaskawa",
+      "model": "gp50",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp50_support/urdf/gp50.xacro",
+      "source_git_blob": "40b24bee89650fb084ac31fe0b82aa094c63e96c",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp50_support/urdf/gp50.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "f2a79a99481c8147b4b70efd33c94782822c7ad2909589a2b5a6502451bae8f7",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp70l",
+      "platform": "Yaskawa",
+      "model": "gp70l",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp70l_support/urdf/gp70l.xacro",
+      "source_git_blob": "dbb77e17728cbb693ae241578fd08706cb2ca69b",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp70l_support/urdf/gp70l.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "1c01848b3c9667bbea0e373432882f78b1891322169d4c5de39392e10fca0458",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp7",
+      "platform": "Yaskawa",
+      "model": "gp7",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp7_support/urdf/gp7.xacro",
+      "source_git_blob": "77c44a508f7dcdb04f8f470a8a4fcaf8931ce3f9",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp7_support/urdf/gp7.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "21c0b774b052abeac50d0a80130242aff1aa9dbcfeafa40e7ebf5692ace6092f",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp88",
+      "platform": "Yaskawa",
+      "model": "gp88",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp88_support/urdf/gp88.xacro",
+      "source_git_blob": "9abe422bd339970bfb06c0ef38dbaac21c06851f",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp88_support/urdf/gp88.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "8e49fb85bfb94f0e850a0b1633910c5da85245fd897bcee8b98e84290d4b7de0",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp8",
+      "platform": "Yaskawa",
+      "model": "gp8",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp8_support/urdf/gp8.xacro",
+      "source_git_blob": "1712ca791746adf748da489bc9818a98456c1e14",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp8_support/urdf/gp8.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "2386ca200c2bd6258aca4271b0cef96df4df493905fdbfe1567e61a0d65234f2",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:gp8l",
+      "platform": "Yaskawa",
+      "model": "gp8l",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_gp8l_support/urdf/gp8l.xacro",
+      "source_git_blob": "77c2a1156384d0afe7fb07be4befdd44ed128cd2",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_gp8l_support/urdf/gp8l.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "be3cd4f8ff9c6d1fbf1ced87bbf21c0d8e119283790ed57ed29ea02cf53a781b",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:hc10",
+      "platform": "Yaskawa",
+      "model": "hc10",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_hc10_support/urdf/hc10.xacro",
+      "source_git_blob": "ab336680f5d4ccf5a7cf4940d05b7d48bc9ef931",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_hc10_support/urdf/hc10.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "e8a7ba391cce2ecf26c6f1325776ce8e14ac10480ad9ca6e022619d58110a4ea",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:hc10dt",
+      "platform": "Yaskawa",
+      "model": "hc10dt",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_hc10_support/urdf/hc10dt.xacro",
+      "source_git_blob": "3074b68053b3f57161a5d9dcd4af2f47ee238683",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_hc10_support/urdf/hc10dt.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "59c6dfe968d5fd1d8a35bb1ac083b08e2f6854a5c472b5d258efa538c910687d",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:hc10dt_b10",
+      "platform": "Yaskawa",
+      "model": "hc10dt_b10",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_hc10_support/urdf/hc10dt_b10.xacro",
+      "source_git_blob": "d74dab2247b3e76768a0e585fbfd59a8a5768e67",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_hc10_support/urdf/hc10dt_b10.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "828d3099fb6c200eed152ab000cd8bd35975a2bba12c8804f6e55c59f9718a59",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:hc10dtp_b00",
+      "platform": "Yaskawa",
+      "model": "hc10dtp_b00",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_hc10_support/urdf/hc10dtp_b00.xacro",
+      "source_git_blob": "2a195676dc5391b4be41baaf1c11842ec2ac4dbf",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_hc10_support/urdf/hc10dtp_b00.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "13f23de43f641eb5a20ffa5afb73ec7eacfcc991fc159b4a7a1f404918fc0a7c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:hc20",
+      "platform": "Yaskawa",
+      "model": "hc20",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_hc20_support/urdf/hc20.xacro",
+      "source_git_blob": "7ca9409a7fecce3f42f8ca8992387db8f331bb60",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_hc20_support/urdf/hc20.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "587972bea01ba3743e85cff879b4cf9cb6b37a1d08587eb5e88afd7e9612e921",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:hc20dtp",
+      "platform": "Yaskawa",
+      "model": "hc20dtp",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_hc20_support/urdf/hc20dtp.xacro",
+      "source_git_blob": "4376f243d26ebff3af7811a4e742110571b90ab4",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_hc20_support/urdf/hc20dtp.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "a324e3ffc78af119fb600efcfe6156cf2d50bb9348c6931765ccd815055c9cad",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:hc30pl",
+      "platform": "Yaskawa",
+      "model": "hc30pl",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_hc20_support/urdf/hc30pl.xacro",
+      "source_git_blob": "50238af19262deb4fc8df47e1d56cf6fb9950419",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_hc20_support/urdf/hc30pl.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "359ed6b7e2d7fe95ab41d8165e1977271ed05e318c3c57a1e42040127d5e7297",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:ma2010",
+      "platform": "Yaskawa",
+      "model": "ma2010",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_ma2010_support/urdf/ma2010.xacro",
+      "source_git_blob": "ca99d84a8ba743a298e78d9459072ba318d560cc",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_ma2010_support/urdf/ma2010.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "8ca2649b0079b697147abd20faf026414426c069da29a3944ed950864e761df2",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:mh110",
+      "platform": "Yaskawa",
+      "model": "mh110",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_mh110_support/urdf/mh110.xacro",
+      "source_git_blob": "ab99718577aa0adcc8a17a0d1143420fd2704e8a",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_mh110_support/urdf/mh110.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "f8a8303e3d6520efecc3835e73069ecf34d04ebe0efa42118a59aae5c485892c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:mh12",
+      "platform": "Yaskawa",
+      "model": "mh12",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_mh12_support/urdf/mh12.xacro",
+      "source_git_blob": "7a5b89f0c7048a783039ef12ca348fce89d0c9aa",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_mh12_support/urdf/mh12.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "ed6a964f0056837a910a500ddc6fc83454751837f526930dc46b8c14c1e58409",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:mh50",
+      "platform": "Yaskawa",
+      "model": "mh50",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_mh50_support/urdf/mh50.xacro",
+      "source_git_blob": "753d2fdf6c65144a5982d0f9473a48d51ca6133e",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_mh50_support/urdf/mh50.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "c42dfce26118b9ea7195fd98f2298d22214e61d1c7b7611c3de225f34bf09e3e",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:mh5",
+      "platform": "Yaskawa",
+      "model": "mh5",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_mh5_support/urdf/mh5.xacro",
+      "source_git_blob": "5efc7d554895f0efc68422581ab8e4d59f6ab438",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_mh5_support/urdf/mh5.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "d2a103fbbbba3843ca4040bdcb14175885208a623c759db586300a312a2308e8",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:mh5l",
+      "platform": "Yaskawa",
+      "model": "mh5l",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_mh5_support/urdf/mh5l.xacro",
+      "source_git_blob": "a31963366a99c6e2ad32e541a547b550288ba552",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_mh5_support/urdf/mh5l.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "b342966440b416e8aed08e571676318598bcb44719683b69f6d616baa27afda8",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:motomini",
+      "platform": "Yaskawa",
+      "model": "motomini",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_motomini_support/urdf/motomini.xacro",
+      "source_git_blob": "fbabc2593e68a7776bce49ccea87ec934a6a324f",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_motomini_support/urdf/motomini.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "a5000366bf5fee8cfa115c815b61133d2a835a58dc28b8ad7f5392c8adc93b96",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:motopos_d500",
+      "platform": "Yaskawa",
+      "model": "motopos_d500",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_motopos_d500_support/urdf/motopos_d500.xacro",
+      "source_git_blob": "4fa380cfd4023cd00a26fb41c6b436d63ca683b4",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_motopos_d500_support/urdf/motopos_d500.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "0e260ac3fc203a3d93c2774b03cc01997b6038e809758262254f1fcd65d6cbc2",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:motopos_mh1655",
+      "platform": "Yaskawa",
+      "model": "motopos_mh1655",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_motopos_mh1655_support/urdf/motopos_mh1655.xacro",
+      "source_git_blob": "0f87838b145b4b32c70dc83c2cf8f4d015d17821",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_motopos_mh1655_support/urdf/motopos_mh1655.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "eb12f434486744af67c4c2cfaccb932e3936d04dd4c01a564a820ddb879658c4",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:mpx1950",
+      "platform": "Yaskawa",
+      "model": "mpx1950",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_mpx1950_support/urdf/mpx1950.xacro",
+      "source_git_blob": "832837b84e2e6d0d88dc9146af280279ddd173bc",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_mpx1950_support/urdf/mpx1950.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "2ae779a8b61ea51a87ec924374d3c3d41f95bf4af7f0ec6d670f325b58eb9271",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:ms210",
+      "platform": "Yaskawa",
+      "model": "ms210",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_ms210_support/urdf/ms210.xacro",
+      "source_git_blob": "48d0868b05cfc9f16d48cd4e0918ac7339712231",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_ms210_support/urdf/ms210.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "3202dec574d4eadcb886379eb0ffa5bf461736282a2b3196282cafe86adf589b",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:csda10f",
+      "platform": "Yaskawa",
+      "model": "csda10f",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_sda10f_support/urdf/csda10f.xacro",
+      "source_git_blob": "cd0ed87ca2270baa18803ac76e582f6a4fb3c707",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_sda10f_support/urdf/csda10f.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "f054d99c63a8fdc54c1cc27b7435a865b9c592c4c8a8e900f8310155354b6311",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:sda10f",
+      "platform": "Yaskawa",
+      "model": "sda10f",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_sda10f_support/urdf/sda10f.xacro",
+      "source_git_blob": "b89e74cd93f2b7319f4793f1b38f81c22c1e9c4c",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_sda10f_support/urdf/sda10f.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "de7dcee26c45347d5e2780f1f0cb8f7b6c169fc5102b97b6ff50a97669ad78b1",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:sia10d",
+      "platform": "Yaskawa",
+      "model": "sia10d",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_sia10d_support/urdf/sia10d.xacro",
+      "source_git_blob": "b1b558347efdca62a7cbd9e12e5c3b7e296620e5",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_sia10d_support/urdf/sia10d.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "e55d61fc364c65de3f71aebf3e76bf043ab5abb18360e2eba88f29cb31cf8f15",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:sia10f",
+      "platform": "Yaskawa",
+      "model": "sia10f",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_sia10f_support/urdf/sia10f.xacro",
+      "source_git_blob": "99803e6cad05bc38759835edc311c9291034a597",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_sia10f_support/urdf/sia10f.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "2da99aaee7a4a05061eee21efac722d1b5f208c2633aa6e40484dbd00cd0fb81",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:sia20d",
+      "platform": "Yaskawa",
+      "model": "sia20d",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_sia20d_support/urdf/sia20d.xacro",
+      "source_git_blob": "1592bebea5501ecda5b4fbc54d7be7d8078ce43d",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_sia20d_support/urdf/sia20d.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "c19c0a90c092d946ea9d309f96a20cafb50b99f218d99ee31d0d440d3cb8a67e",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:sia30d",
+      "platform": "Yaskawa",
+      "model": "sia30d",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_sia30d_support/urdf/sia30d.xacro",
+      "source_git_blob": "1576d51276bdbcd3849041d237656c80a06f5b26",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_sia30d_support/urdf/sia30d.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "ad74672a73688e749639a8efb825d52d762ffcc43f13d02b17ad68865aaf86ca",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:sia50",
+      "platform": "Yaskawa",
+      "model": "sia50",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_sia50_support/urdf/sia50.xacro",
+      "source_git_blob": "dac1518c23f7c4ab32b790b0445fa86fc0f6d6ac",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_sia50_support/urdf/sia50.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "2649a02143a97b2914d196c0a82bbd1e965c5aa2e2d1f40e1da4061b975ff878",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:sia5d",
+      "platform": "Yaskawa",
+      "model": "sia5d",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_sia5d_support/urdf/sia5d.xacro",
+      "source_git_blob": "f8c2b66ed2a84a22064c6deeb43a54c43fdec6c8",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_sia5d_support/urdf/sia5d.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "b89efd71c765b51b34d52a37327230a61f991181d90da4719258bf49075c8572",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "id": "motoman-noetic-tree:up50n_35",
+      "platform": "Yaskawa",
+      "model": "up50n_35",
+      "source_catalog": "motoman-noetic-tree",
+      "repository": "https://github.com/ros-industrial/motoman",
+      "commit": "846fbbc57c60223f12bf4795ea6404982d57709e",
+      "source_path": "motoman_up50n_support/urdf/up50n_35.xacro",
+      "source_git_blob": "78a142be5c03cea2cacdd2d3d4e9a64260c9985a",
+      "source_reference": "https://github.com/ros-industrial/motoman/blob/846fbbc57c60223f12bf4795ea6404982d57709e/motoman_up50n_support/urdf/up50n_35.xacro",
+      "classification": "OFFICIAL_DESCRIBED_MODEL; route qualification separate",
+      "source_descriptor_bytes_SHA256": "8902a526ad9ab3f5ca9c10552118e5e05798ab6dac1e56e20d143643004bdef1",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "ar2010",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_ar2010_support/urdf/ar2010.xacro",
+      "git_blob": "d9827a98c2bef5564e70dca571ffbcca920739dc",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_ar2010_support/urdf/ar2010.xacro",
+      "source_git_blob": "d9827a98c2bef5564e70dca571ffbcca920739dc",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_ar2010_support/urdf/ar2010.xacro",
+      "source_descriptor_bytes_SHA256": "8e2654ffa48feb05ad682c8c585876cc78709f8e43bc46d4bc9e961350a4ae50",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "es165",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_es_support/urdf/es165.xacro",
+      "git_blob": "2d22ee1e2b625cbc57147f5df2bef49585922452",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_es_support/urdf/es165.xacro",
+      "source_git_blob": "2d22ee1e2b625cbc57147f5df2bef49585922452",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_es_support/urdf/es165.xacro",
+      "source_descriptor_bytes_SHA256": "8eabe27a5853af638a6210141aee9611ca968b184e54946c2cd9ab2316de0345",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "es200_120",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_es_support/urdf/es200_120.xacro",
+      "git_blob": "b15551e389ac9df49cf1f936a468e1d00b6879f1",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_es_support/urdf/es200_120.xacro",
+      "source_git_blob": "b15551e389ac9df49cf1f936a468e1d00b6879f1",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_es_support/urdf/es200_120.xacro",
+      "source_descriptor_bytes_SHA256": "598ec05484f90bb175d7a1894975f3159cec73224913a23d3a07224bf3be9239",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp110",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp110_support/urdf/gp110.xacro",
+      "git_blob": "ae4b0d96bb61cddba140cc24e8d92382d2c20042",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp110_support/urdf/gp110.xacro",
+      "source_git_blob": "ae4b0d96bb61cddba140cc24e8d92382d2c20042",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp110_support/urdf/gp110.xacro",
+      "source_descriptor_bytes_SHA256": "2ae6bb299ab86eade466691a56f5cf61b649416f1cd735105800fc8f54dcc8cf",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp12",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp12_support/urdf/gp12.xacro",
+      "git_blob": "f4845d4b1cc0ac577d03d18d479158df1388ccd6",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp12_support/urdf/gp12.xacro",
+      "source_git_blob": "f4845d4b1cc0ac577d03d18d479158df1388ccd6",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp12_support/urdf/gp12.xacro",
+      "source_descriptor_bytes_SHA256": "444ccdeea2818756addec85a32d8836bfc1906a46071ab0896f243690890b263",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp165r",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp165r_support/urdf/gp165r.xacro",
+      "git_blob": "a28c523631957d80b26827227ca997e92a57fc24",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp165r_support/urdf/gp165r.xacro",
+      "source_git_blob": "a28c523631957d80b26827227ca997e92a57fc24",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp165r_support/urdf/gp165r.xacro",
+      "source_descriptor_bytes_SHA256": "2525b2a9b471e9f3e8d9ae93ad3f67e2291c4b6343a823f0db353b027d2f8dfb",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp165r_equipped",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp165r_support/urdf/gp165r_equipped.xacro",
+      "git_blob": "9dbb6740f05c530845633da2e49454c4e7c89278",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp165r_support/urdf/gp165r_equipped.xacro",
+      "source_git_blob": "9dbb6740f05c530845633da2e49454c4e7c89278",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp165r_support/urdf/gp165r_equipped.xacro",
+      "source_descriptor_bytes_SHA256": "20963748a7218089eca87b0054706fc2c2a4c3771539dd7bb34da6972a839b31",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp180",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp180_support/urdf/gp180.xacro",
+      "git_blob": "8c1c2ac5decaba349de82b9c8c5de86545793651",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp180_support/urdf/gp180.xacro",
+      "source_git_blob": "8c1c2ac5decaba349de82b9c8c5de86545793651",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp180_support/urdf/gp180.xacro",
+      "source_descriptor_bytes_SHA256": "c69da66b24c43e016a73e9254d426d0fd2e23c36bb7e37539718e337cd8d91a7",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp180_120",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp180_support/urdf/gp180_120.xacro",
+      "git_blob": "df3da3665c458105d99ab2b62025ef14d8790ca6",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp180_support/urdf/gp180_120.xacro",
+      "source_git_blob": "df3da3665c458105d99ab2b62025ef14d8790ca6",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp180_support/urdf/gp180_120.xacro",
+      "source_descriptor_bytes_SHA256": "135dd72eaa7df300310de45146db2492ede28650645b77b9a304bf2dc86a248c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp200r",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp200r_support/urdf/gp200r.xacro",
+      "git_blob": "3371eb5949a49c0f2ee4c309829fece172954534",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp200r_support/urdf/gp200r.xacro",
+      "source_git_blob": "3371eb5949a49c0f2ee4c309829fece172954534",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp200r_support/urdf/gp200r.xacro",
+      "source_descriptor_bytes_SHA256": "7db2ab9b18350f4dd2ad73fdb6502b8ddc85ac5ffff9b924d7bb89b1743a9ef3",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp20hl",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp20hl_support/urdf/gp20hl.xacro",
+      "git_blob": "dd93f67c0875b83d2da44f299d93b93bf418a4e9",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp20hl_support/urdf/gp20hl.xacro",
+      "source_git_blob": "dd93f67c0875b83d2da44f299d93b93bf418a4e9",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp20hl_support/urdf/gp20hl.xacro",
+      "source_descriptor_bytes_SHA256": "fe2f48997e6d637086b27633ad4e3a43a42665b6a20b08e5338bb64d01060f53",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp215",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp215_support/urdf/gp215.xacro",
+      "git_blob": "7b6eceac158956137c114f1a10bac66b685979f9",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp215_support/urdf/gp215.xacro",
+      "source_git_blob": "7b6eceac158956137c114f1a10bac66b685979f9",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp215_support/urdf/gp215.xacro",
+      "source_descriptor_bytes_SHA256": "a17621c7aec00b6d049aea160b821d36c254a23ca0ae1fd0573e7d1a488152e6",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp225",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp225_support/urdf/gp225.xacro",
+      "git_blob": "de21256c9a81724ffc7ffafd40f60de1b2cf5b49",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp225_support/urdf/gp225.xacro",
+      "source_git_blob": "de21256c9a81724ffc7ffafd40f60de1b2cf5b49",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp225_support/urdf/gp225.xacro",
+      "source_descriptor_bytes_SHA256": "8d7fcb88217418da9810f304269391d6ea43618b46846d22742f7e85ae4e2955",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp250",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp250_support/urdf/gp250.xacro",
+      "git_blob": "42d39f1f527c51f798257ad75c4be31e9402aa8f",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp250_support/urdf/gp250.xacro",
+      "source_git_blob": "42d39f1f527c51f798257ad75c4be31e9402aa8f",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp250_support/urdf/gp250.xacro",
+      "source_descriptor_bytes_SHA256": "73d035116d9bf02052a25686eba4c7d26722d611f076ba694678760cff1171e9",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp25",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp25_support/urdf/gp25.xacro",
+      "git_blob": "cb999f83b3069d6a1a64d492f34069220971e08e",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp25_support/urdf/gp25.xacro",
+      "source_git_blob": "cb999f83b3069d6a1a64d492f34069220971e08e",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp25_support/urdf/gp25.xacro",
+      "source_descriptor_bytes_SHA256": "a78bcab6141c548ac98ba823badee9c9a2c335e2721b619ca3ee172281b5bd94",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp25_12",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp25_support/urdf/gp25_12.xacro",
+      "git_blob": "e390e679c01d71b33d4fb1c5458c29878f778203",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp25_support/urdf/gp25_12.xacro",
+      "source_git_blob": "e390e679c01d71b33d4fb1c5458c29878f778203",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp25_support/urdf/gp25_12.xacro",
+      "source_descriptor_bytes_SHA256": "8f0374603d95610a31f5b42a9cda9935340e4573c060a4c82018a5a7bb603a35",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp25_20",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp25_support/urdf/gp25_20.xacro",
+      "git_blob": "146c507051f47d77d2f21855e63f925e4d25f702",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp25_support/urdf/gp25_20.xacro",
+      "source_git_blob": "146c507051f47d77d2f21855e63f925e4d25f702",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp25_support/urdf/gp25_20.xacro",
+      "source_descriptor_bytes_SHA256": "78308b9d2ab0345c955e0e09cad313954f51c2460a32d59a50d2352c65a658ce",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp35l",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp35l_support/urdf/gp35l.xacro",
+      "git_blob": "88a40d60c6aeff10f7991a4d439aabedb034e762",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp35l_support/urdf/gp35l.xacro",
+      "source_git_blob": "88a40d60c6aeff10f7991a4d439aabedb034e762",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp35l_support/urdf/gp35l.xacro",
+      "source_descriptor_bytes_SHA256": "fa9faed88fe83f0e389ee577c8206a7bf61beeb4556645eda1973896eaec0972",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp4",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp4_support/urdf/gp4.xacro",
+      "git_blob": "18f85089aab1839920cbc5f8afad89b30f7f9232",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp4_support/urdf/gp4.xacro",
+      "source_git_blob": "18f85089aab1839920cbc5f8afad89b30f7f9232",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp4_support/urdf/gp4.xacro",
+      "source_descriptor_bytes_SHA256": "8207899a809c107c95029a35dcc9675a6ce7f95cefc56767282fa1bf50b56007",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp50",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp50_support/urdf/gp50.xacro",
+      "git_blob": "40b24bee89650fb084ac31fe0b82aa094c63e96c",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp50_support/urdf/gp50.xacro",
+      "source_git_blob": "40b24bee89650fb084ac31fe0b82aa094c63e96c",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp50_support/urdf/gp50.xacro",
+      "source_descriptor_bytes_SHA256": "f2a79a99481c8147b4b70efd33c94782822c7ad2909589a2b5a6502451bae8f7",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp70l",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp70l_support/urdf/gp70l.xacro",
+      "git_blob": "dbb77e17728cbb693ae241578fd08706cb2ca69b",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp70l_support/urdf/gp70l.xacro",
+      "source_git_blob": "dbb77e17728cbb693ae241578fd08706cb2ca69b",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp70l_support/urdf/gp70l.xacro",
+      "source_descriptor_bytes_SHA256": "1c01848b3c9667bbea0e373432882f78b1891322169d4c5de39392e10fca0458",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp7",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp7_support/urdf/gp7.xacro",
+      "git_blob": "77c44a508f7dcdb04f8f470a8a4fcaf8931ce3f9",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp7_support/urdf/gp7.xacro",
+      "source_git_blob": "77c44a508f7dcdb04f8f470a8a4fcaf8931ce3f9",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp7_support/urdf/gp7.xacro",
+      "source_descriptor_bytes_SHA256": "21c0b774b052abeac50d0a80130242aff1aa9dbcfeafa40e7ebf5692ace6092f",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp88",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp88_support/urdf/gp88.xacro",
+      "git_blob": "9abe422bd339970bfb06c0ef38dbaac21c06851f",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp88_support/urdf/gp88.xacro",
+      "source_git_blob": "9abe422bd339970bfb06c0ef38dbaac21c06851f",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp88_support/urdf/gp88.xacro",
+      "source_descriptor_bytes_SHA256": "8e49fb85bfb94f0e850a0b1633910c5da85245fd897bcee8b98e84290d4b7de0",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp8",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp8_support/urdf/gp8.xacro",
+      "git_blob": "1712ca791746adf748da489bc9818a98456c1e14",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp8_support/urdf/gp8.xacro",
+      "source_git_blob": "1712ca791746adf748da489bc9818a98456c1e14",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp8_support/urdf/gp8.xacro",
+      "source_descriptor_bytes_SHA256": "2386ca200c2bd6258aca4271b0cef96df4df493905fdbfe1567e61a0d65234f2",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "gp8l",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_gp8l_support/urdf/gp8l.xacro",
+      "git_blob": "77c2a1156384d0afe7fb07be4befdd44ed128cd2",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_gp8l_support/urdf/gp8l.xacro",
+      "source_git_blob": "77c2a1156384d0afe7fb07be4befdd44ed128cd2",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_gp8l_support/urdf/gp8l.xacro",
+      "source_descriptor_bytes_SHA256": "be3cd4f8ff9c6d1fbf1ced87bbf21c0d8e119283790ed57ed29ea02cf53a781b",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "hc10",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_hc10_support/urdf/hc10.xacro",
+      "git_blob": "ab336680f5d4ccf5a7cf4940d05b7d48bc9ef931",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_hc10_support/urdf/hc10.xacro",
+      "source_git_blob": "ab336680f5d4ccf5a7cf4940d05b7d48bc9ef931",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_hc10_support/urdf/hc10.xacro",
+      "source_descriptor_bytes_SHA256": "e8a7ba391cce2ecf26c6f1325776ce8e14ac10480ad9ca6e022619d58110a4ea",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "hc10dt",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_hc10_support/urdf/hc10dt.xacro",
+      "git_blob": "3074b68053b3f57161a5d9dcd4af2f47ee238683",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_hc10_support/urdf/hc10dt.xacro",
+      "source_git_blob": "3074b68053b3f57161a5d9dcd4af2f47ee238683",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_hc10_support/urdf/hc10dt.xacro",
+      "source_descriptor_bytes_SHA256": "59c6dfe968d5fd1d8a35bb1ac083b08e2f6854a5c472b5d258efa538c910687d",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "hc10dt_b10",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_hc10_support/urdf/hc10dt_b10.xacro",
+      "git_blob": "d74dab2247b3e76768a0e585fbfd59a8a5768e67",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_hc10_support/urdf/hc10dt_b10.xacro",
+      "source_git_blob": "d74dab2247b3e76768a0e585fbfd59a8a5768e67",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_hc10_support/urdf/hc10dt_b10.xacro",
+      "source_descriptor_bytes_SHA256": "828d3099fb6c200eed152ab000cd8bd35975a2bba12c8804f6e55c59f9718a59",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "hc10dtp_b00",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_hc10_support/urdf/hc10dtp_b00.xacro",
+      "git_blob": "2a195676dc5391b4be41baaf1c11842ec2ac4dbf",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_hc10_support/urdf/hc10dtp_b00.xacro",
+      "source_git_blob": "2a195676dc5391b4be41baaf1c11842ec2ac4dbf",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_hc10_support/urdf/hc10dtp_b00.xacro",
+      "source_descriptor_bytes_SHA256": "13f23de43f641eb5a20ffa5afb73ec7eacfcc991fc159b4a7a1f404918fc0a7c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "hc20dt",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_hc20_support/urdf/hc20dt.xacro",
+      "git_blob": "82b70d3a61303916e0fd803931306bf0af099003",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_hc20_support/urdf/hc20dt.xacro",
+      "source_git_blob": "82b70d3a61303916e0fd803931306bf0af099003",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_hc20_support/urdf/hc20dt.xacro",
+      "source_descriptor_bytes_SHA256": "d67e76e850e2811dbff1a28d91c444503351c08391ead24219ec6ec09276d22e",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "hc20dtp",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_hc20_support/urdf/hc20dtp.xacro",
+      "git_blob": "4376f243d26ebff3af7811a4e742110571b90ab4",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_hc20_support/urdf/hc20dtp.xacro",
+      "source_git_blob": "4376f243d26ebff3af7811a4e742110571b90ab4",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_hc20_support/urdf/hc20dtp.xacro",
+      "source_descriptor_bytes_SHA256": "a324e3ffc78af119fb600efcfe6156cf2d50bb9348c6931765ccd815055c9cad",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "hc30pl",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_hc20_support/urdf/hc30pl.xacro",
+      "git_blob": "50238af19262deb4fc8df47e1d56cf6fb9950419",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_hc20_support/urdf/hc30pl.xacro",
+      "source_git_blob": "50238af19262deb4fc8df47e1d56cf6fb9950419",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_hc20_support/urdf/hc30pl.xacro",
+      "source_descriptor_bytes_SHA256": "359ed6b7e2d7fe95ab41d8165e1977271ed05e318c3c57a1e42040127d5e7297",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "ma2010",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_ma2010_support/urdf/ma2010.xacro",
+      "git_blob": "ca99d84a8ba743a298e78d9459072ba318d560cc",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_ma2010_support/urdf/ma2010.xacro",
+      "source_git_blob": "ca99d84a8ba743a298e78d9459072ba318d560cc",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_ma2010_support/urdf/ma2010.xacro",
+      "source_descriptor_bytes_SHA256": "8ca2649b0079b697147abd20faf026414426c069da29a3944ed950864e761df2",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "mh110",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_mh110_support/urdf/mh110.xacro",
+      "git_blob": "ab99718577aa0adcc8a17a0d1143420fd2704e8a",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_mh110_support/urdf/mh110.xacro",
+      "source_git_blob": "ab99718577aa0adcc8a17a0d1143420fd2704e8a",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_mh110_support/urdf/mh110.xacro",
+      "source_descriptor_bytes_SHA256": "f8a8303e3d6520efecc3835e73069ecf34d04ebe0efa42118a59aae5c485892c",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "mh12",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_mh12_support/urdf/mh12.xacro",
+      "git_blob": "7a5b89f0c7048a783039ef12ca348fce89d0c9aa",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_mh12_support/urdf/mh12.xacro",
+      "source_git_blob": "7a5b89f0c7048a783039ef12ca348fce89d0c9aa",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_mh12_support/urdf/mh12.xacro",
+      "source_descriptor_bytes_SHA256": "ed6a964f0056837a910a500ddc6fc83454751837f526930dc46b8c14c1e58409",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "mh50",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_mh50_support/urdf/mh50.xacro",
+      "git_blob": "753d2fdf6c65144a5982d0f9473a48d51ca6133e",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_mh50_support/urdf/mh50.xacro",
+      "source_git_blob": "753d2fdf6c65144a5982d0f9473a48d51ca6133e",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_mh50_support/urdf/mh50.xacro",
+      "source_descriptor_bytes_SHA256": "c42dfce26118b9ea7195fd98f2298d22214e61d1c7b7611c3de225f34bf09e3e",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "mh5",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_mh5_support/urdf/mh5.xacro",
+      "git_blob": "5efc7d554895f0efc68422581ab8e4d59f6ab438",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_mh5_support/urdf/mh5.xacro",
+      "source_git_blob": "5efc7d554895f0efc68422581ab8e4d59f6ab438",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_mh5_support/urdf/mh5.xacro",
+      "source_descriptor_bytes_SHA256": "d2a103fbbbba3843ca4040bdcb14175885208a623c759db586300a312a2308e8",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "mh5l",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_mh5_support/urdf/mh5l.xacro",
+      "git_blob": "a31963366a99c6e2ad32e541a547b550288ba552",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_mh5_support/urdf/mh5l.xacro",
+      "source_git_blob": "a31963366a99c6e2ad32e541a547b550288ba552",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_mh5_support/urdf/mh5l.xacro",
+      "source_descriptor_bytes_SHA256": "b342966440b416e8aed08e571676318598bcb44719683b69f6d616baa27afda8",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "motomini",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_motomini_support/urdf/motomini.xacro",
+      "git_blob": "fbabc2593e68a7776bce49ccea87ec934a6a324f",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_motomini_support/urdf/motomini.xacro",
+      "source_git_blob": "fbabc2593e68a7776bce49ccea87ec934a6a324f",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_motomini_support/urdf/motomini.xacro",
+      "source_descriptor_bytes_SHA256": "a5000366bf5fee8cfa115c815b61133d2a835a58dc28b8ad7f5392c8adc93b96",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "motopos_d500",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_motopos_d500_support/urdf/motopos_d500.xacro",
+      "git_blob": "4fa380cfd4023cd00a26fb41c6b436d63ca683b4",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_motopos_d500_support/urdf/motopos_d500.xacro",
+      "source_git_blob": "4fa380cfd4023cd00a26fb41c6b436d63ca683b4",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_motopos_d500_support/urdf/motopos_d500.xacro",
+      "source_descriptor_bytes_SHA256": "0e260ac3fc203a3d93c2774b03cc01997b6038e809758262254f1fcd65d6cbc2",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "motopos_mh1655",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_motopos_mh1655_support/urdf/motopos_mh1655.xacro",
+      "git_blob": "0f87838b145b4b32c70dc83c2cf8f4d015d17821",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_motopos_mh1655_support/urdf/motopos_mh1655.xacro",
+      "source_git_blob": "0f87838b145b4b32c70dc83c2cf8f4d015d17821",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_motopos_mh1655_support/urdf/motopos_mh1655.xacro",
+      "source_descriptor_bytes_SHA256": "eb12f434486744af67c4c2cfaccb932e3936d04dd4c01a564a820ddb879658c4",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "mpx1950",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_mpx1950_support/urdf/mpx1950.xacro",
+      "git_blob": "832837b84e2e6d0d88dc9146af280279ddd173bc",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_mpx1950_support/urdf/mpx1950.xacro",
+      "source_git_blob": "832837b84e2e6d0d88dc9146af280279ddd173bc",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_mpx1950_support/urdf/mpx1950.xacro",
+      "source_descriptor_bytes_SHA256": "2ae779a8b61ea51a87ec924374d3c3d41f95bf4af7f0ec6d670f325b58eb9271",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "ms210",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_ms210_support/urdf/ms210.xacro",
+      "git_blob": "48d0868b05cfc9f16d48cd4e0918ac7339712231",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_ms210_support/urdf/ms210.xacro",
+      "source_git_blob": "48d0868b05cfc9f16d48cd4e0918ac7339712231",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_ms210_support/urdf/ms210.xacro",
+      "source_descriptor_bytes_SHA256": "3202dec574d4eadcb886379eb0ffa5bf461736282a2b3196282cafe86adf589b",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "csda10f",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_sda10f_support/urdf/csda10f.xacro",
+      "git_blob": "c87b37e8ea3688b9977a73af54a01eb52a8c6b38",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_sda10f_support/urdf/csda10f.xacro",
+      "source_git_blob": "c87b37e8ea3688b9977a73af54a01eb52a8c6b38",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_sda10f_support/urdf/csda10f.xacro",
+      "source_descriptor_bytes_SHA256": "b4a8f45fcc69a90dc27c0a4515507426068b0eef6037ecd3cf43c0a2d13f2f57",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "sda10f",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_sda10f_support/urdf/sda10f.xacro",
+      "git_blob": "0ecb45f78fb0e7540b8116d64197470a2e9a7c45",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_sda10f_support/urdf/sda10f.xacro",
+      "source_git_blob": "0ecb45f78fb0e7540b8116d64197470a2e9a7c45",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_sda10f_support/urdf/sda10f.xacro",
+      "source_descriptor_bytes_SHA256": "757cb0441db554f867ed337d1d5c5ec7bb7b01fc9e1cfb969e0ea0ebb11551ee",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "sia10d",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_sia10d_support/urdf/sia10d.xacro",
+      "git_blob": "b1b558347efdca62a7cbd9e12e5c3b7e296620e5",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_sia10d_support/urdf/sia10d.xacro",
+      "source_git_blob": "b1b558347efdca62a7cbd9e12e5c3b7e296620e5",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_sia10d_support/urdf/sia10d.xacro",
+      "source_descriptor_bytes_SHA256": "e55d61fc364c65de3f71aebf3e76bf043ab5abb18360e2eba88f29cb31cf8f15",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "sia10f",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_sia10f_support/urdf/sia10f.xacro",
+      "git_blob": "99803e6cad05bc38759835edc311c9291034a597",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_sia10f_support/urdf/sia10f.xacro",
+      "source_git_blob": "99803e6cad05bc38759835edc311c9291034a597",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_sia10f_support/urdf/sia10f.xacro",
+      "source_descriptor_bytes_SHA256": "2da99aaee7a4a05061eee21efac722d1b5f208c2633aa6e40484dbd00cd0fb81",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "sia20d",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_sia20d_support/urdf/sia20d.xacro",
+      "git_blob": "1592bebea5501ecda5b4fbc54d7be7d8078ce43d",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_sia20d_support/urdf/sia20d.xacro",
+      "source_git_blob": "1592bebea5501ecda5b4fbc54d7be7d8078ce43d",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_sia20d_support/urdf/sia20d.xacro",
+      "source_descriptor_bytes_SHA256": "c19c0a90c092d946ea9d309f96a20cafb50b99f218d99ee31d0d440d3cb8a67e",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "sia30d",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_sia30d_support/urdf/sia30d.xacro",
+      "git_blob": "1576d51276bdbcd3849041d237656c80a06f5b26",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_sia30d_support/urdf/sia30d.xacro",
+      "source_git_blob": "1576d51276bdbcd3849041d237656c80a06f5b26",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_sia30d_support/urdf/sia30d.xacro",
+      "source_descriptor_bytes_SHA256": "ad74672a73688e749639a8efb825d52d762ffcc43f13d02b17ad68865aaf86ca",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "sia50",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_sia50_support/urdf/sia50.xacro",
+      "git_blob": "dac1518c23f7c4ab32b790b0445fa86fc0f6d6ac",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_sia50_support/urdf/sia50.xacro",
+      "source_git_blob": "dac1518c23f7c4ab32b790b0445fa86fc0f6d6ac",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_sia50_support/urdf/sia50.xacro",
+      "source_descriptor_bytes_SHA256": "2649a02143a97b2914d196c0a82bbd1e965c5aa2e2d1f40e1da4061b975ff878",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "sia5d",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_sia5d_support/urdf/sia5d.xacro",
+      "git_blob": "f8c2b66ed2a84a22064c6deeb43a54c43fdec6c8",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_sia5d_support/urdf/sia5d.xacro",
+      "source_git_blob": "f8c2b66ed2a84a22064c6deeb43a54c43fdec6c8",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_sia5d_support/urdf/sia5d.xacro",
+      "source_descriptor_bytes_SHA256": "b89efd71c765b51b34d52a37327230a61f991181d90da4719258bf49075c8572",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "up50n_35",
+      "kind": "ROS2_description",
+      "commit": "a77f186048bd3c35fc3bb5142f9d9270dbebe69f",
+      "path": "motoman_up50n_support/urdf/up50n_35.xacro",
+      "git_blob": "78a142be5c03cea2cacdd2d3d4e9a64260c9985a",
+      "repository": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages",
+      "source_path": "motoman_up50n_support/urdf/up50n_35.xacro",
+      "source_git_blob": "78a142be5c03cea2cacdd2d3d4e9a64260c9985a",
+      "source_reference": "https://github.com/Yaskawa-Global/motoman_ros2_support_packages/blob/a77f186048bd3c35fc3bb5142f9d9270dbebe69f/motoman_up50n_support/urdf/up50n_35.xacro",
+      "source_descriptor_bytes_SHA256": "8902a526ad9ab3f5ca9c10552118e5e05798ab6dac1e56e20d143643004bdef1",
+      "source_descriptor_identity": "VERIFIED_SOURCE_DATA_ONLY; model dependencies/rendering/native/Wasm separate",
+      "source_catalog": "yaskawa-ros2-support-main",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "MotomanNext_NHC12",
+      "kind": "IsaacSim_official_PhysX_asset",
+      "provider_version": "IsaacSim6.2.0",
+      "asset_path": "Yaskawa/Motoman Next/NHC12/NHC12_A00.usd",
+      "asset_SHA256": null,
+      "official_reference": "https://docs.isaacsim.omniverse.nvidia.com/6.2.0/assets/usd_assets_robots_manipulator.html",
+      "license": "3D Content Sharing Agreement",
+      "SDK_current_MotoROS2_backend_equivalence": false,
+      "mapping": "UNRESOLVED_ACTUAL_TYPED_JOINT_LIMITS_AND_NATIVE_BRIDGE",
+      "source_descriptor_identity": "BLOCKED_UNACQUIRED_ASSET_BYTES_AND_CONTENT_HASH",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "MotomanNext_NEX7",
+      "kind": "IsaacSim_official_PhysX_asset",
+      "provider_version": "IsaacSim6.2.0",
+      "asset_path": "Yaskawa/Motoman Next/NEX7/NEX7_C00_c00.usd",
+      "asset_SHA256": null,
+      "official_reference": "https://docs.isaacsim.omniverse.nvidia.com/6.2.0/assets/usd_assets_robots_manipulator.html",
+      "license": "3D Content Sharing Agreement",
+      "SDK_current_MotoROS2_backend_equivalence": false,
+      "mapping": "UNRESOLVED_ACTUAL_TYPED_JOINT_LIMITS_AND_NATIVE_BRIDGE",
+      "source_descriptor_identity": "BLOCKED_UNACQUIRED_ASSET_BYTES_AND_CONTENT_HASH",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "MotomanNext_NEX4",
+      "kind": "IsaacSim_official_PhysX_asset",
+      "provider_version": "IsaacSim6.2.0",
+      "asset_path": "Yaskawa/Motoman Next/NEX4/NEX4_C00.usd",
+      "asset_SHA256": null,
+      "official_reference": "https://docs.isaacsim.omniverse.nvidia.com/6.2.0/assets/usd_assets_robots_manipulator.html",
+      "license": "3D Content Sharing Agreement",
+      "SDK_current_MotoROS2_backend_equivalence": false,
+      "mapping": "UNRESOLVED_ACTUAL_TYPED_JOINT_LIMITS_AND_NATIVE_BRIDGE",
+      "source_descriptor_identity": "BLOCKED_UNACQUIRED_ASSET_BYTES_AND_CONTENT_HASH",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "MotomanNext_NEX35",
+      "kind": "IsaacSim_official_PhysX_asset",
+      "provider_version": "IsaacSim6.2.0",
+      "asset_path": "Yaskawa/Motoman Next/NEX35/NEX35_C00.usd",
+      "asset_SHA256": null,
+      "official_reference": "https://docs.isaacsim.omniverse.nvidia.com/6.2.0/assets/usd_assets_robots_manipulator.html",
+      "license": "3D Content Sharing Agreement",
+      "SDK_current_MotoROS2_backend_equivalence": false,
+      "mapping": "UNRESOLVED_ACTUAL_TYPED_JOINT_LIMITS_AND_NATIVE_BRIDGE",
+      "source_descriptor_identity": "BLOCKED_UNACQUIRED_ASSET_BYTES_AND_CONTENT_HASH",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "MotomanNext_NEX20",
+      "kind": "IsaacSim_official_PhysX_asset",
+      "provider_version": "IsaacSim6.2.0",
+      "asset_path": "Yaskawa/Motoman Next/NEX20/NEX20_C00.usd",
+      "asset_SHA256": null,
+      "official_reference": "https://docs.isaacsim.omniverse.nvidia.com/6.2.0/assets/usd_assets_robots_manipulator.html",
+      "license": "3D Content Sharing Agreement",
+      "SDK_current_MotoROS2_backend_equivalence": false,
+      "mapping": "UNRESOLVED_ACTUAL_TYPED_JOINT_LIMITS_AND_NATIVE_BRIDGE",
+      "source_descriptor_identity": "BLOCKED_UNACQUIRED_ASSET_BYTES_AND_CONTENT_HASH",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    },
+    {
+      "platform": "Yaskawa",
+      "model": "MotomanNext_NEX10",
+      "kind": "IsaacSim_official_PhysX_asset",
+      "provider_version": "IsaacSim6.2.0",
+      "asset_path": "Yaskawa/Motoman Next/NEX10/NEX10_C00.usd",
+      "asset_SHA256": null,
+      "official_reference": "https://docs.isaacsim.omniverse.nvidia.com/6.2.0/assets/usd_assets_robots_manipulator.html",
+      "license": "3D Content Sharing Agreement",
+      "SDK_current_MotoROS2_backend_equivalence": false,
+      "mapping": "UNRESOLVED_ACTUAL_TYPED_JOINT_LIMITS_AND_NATIVE_BRIDGE",
+      "source_descriptor_identity": "BLOCKED_UNACQUIRED_ASSET_BYTES_AND_CONTENT_HASH",
+      "actual_unchanged_Wasm_simulation_accepted": false
+    }
+  ],
+  "versioned_model_count": 110,
+  "language_kind_width_release_rows": 4524,
+  "additional_axes": [
+    "every applicable official provider mode",
+    "exact OS and compiler ABI",
+    "RMW and transport",
+    "security profile and separately reviewed authority",
+    "positive/boundary/denied/no-effect/stale/foreign/failure/timeout/cancel/disconnect/reconnect/pause/resume/restart/update/rollback",
+    "debug and audit",
+    "native performance; QEMU correctness separately",
+    "multi-language module graph and SDK10 final world-model scenario"
+  ],
+  "whole_frozen_wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+  "no_per_vendor_test_recompile": true,
+  "formal_Wasm_simulation_PASS": 0,
+  "inventory_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/ros2/ros2_documentation/rolling/source/Releases.rst",
+      "path": "ros2-releases.rst",
+      "retrieved_utc": "2026-10-26T15:57:33.835271+00:00",
+      "exit_code": 0,
+      "stderr": "",
+      "bytes": 9057,
+      "sha256": "37166dc87cd108e1578a7477d8be8cee4c9c4e72562686bbf1ef7e4af027d2ab"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml",
+      "path": "rosdistro-index-v4.yaml",
+      "retrieved_utc": "2026-10-26T15:57:34.060498+00:00",
+      "exit_code": 0,
+      "stderr": "",
+      "bytes": 4863,
+      "sha256": "56e71c7a9dd209c53322b5d4646a5f3707833475ea3f4b4a0ae4ca39bb7f355f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ros-infrastructure/rep/master/rep-0003.rst",
+      "path": "rep-0003.rst",
+      "retrieved_utc": "2026-10-26T15:57:34.468209+00:00",
+      "exit_code": 0,
+      "stderr": "",
+      "bytes": 19240,
+      "sha256": "61a25704b4ec4ad681f9db3c34ab59c7c488868469f41840d9806986ac328e8d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ros-infrastructure/rep/master/rep-2000.rst",
+      "path": "rep-2000.rst",
+      "retrieved_utc": "2026-10-26T15:57:34.945336+00:00",
+      "exit_code": 0,
+      "stderr": "",
+      "bytes": 100963,
+      "sha256": "e84c7100a020ed1bfe8396f175dda43a4f98a3358bb0cf2cea3d3155a4566907"
+    }
+  ],
+  "model_source_lock": "model.source.lock.json",
+  "source_model_rows_byte_verified": 104,
+  "unacquired_asset_rows_still_required": 6
+}

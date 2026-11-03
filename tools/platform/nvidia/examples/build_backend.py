@@ -110,6 +110,10 @@ def main():
         config.get("format") == "uwvm-nvidia-example-config-v1",
         "explicit NVIDIA backend configuration required",
     )
+    require(
+        request["operation"] not in ("cmake-cpu-native", "cmake-component-programs", "package-python"),
+        "BLOCKED_LEGACY_ROS_TRANSPLATE: host ROS application/native Python packaging routes removed; genuine Wasm migration required",
+    )
     sdk = Path(request["sdk_root"]).resolve(strict=True)
     source = Path(request["source_dir"]).resolve(strict=True)
     require(
@@ -183,7 +187,7 @@ def main():
         argv = [str(value) for value in argv]
         row = {"name": name, "argv": argv, "cwd": str(output)}
         environment = dict(os.environ)
-        if request["operation"] in ("cmake-guest", "cmake-component-programs"):
+        if request["operation"] == "cmake-guest":
             # CMake otherwise prepends ambient CXXFLAGS/LDFLAGS even when its
             # compiler is explicit. Guest builds additionally use shared Clang
             # configs. Preserve the selected tools and flags in both routes.
@@ -243,12 +247,7 @@ def main():
 
     try:
         operation = request["operation"]
-        if operation in (
-            "cmake-guest",
-            "cmake-cpu-native",
-            "cmake-interfaces",
-            "cmake-component-programs",
-        ):
+        if operation in ("cmake-guest", "cmake-interfaces"):
             cmake = pinned_tool(config, "cmake")
             build = output / "cmake"
             arguments = [cmake, "-S", source, "-B", build, "-DCMAKE_BUILD_TYPE=Release",
@@ -341,99 +340,6 @@ def main():
                         )
                     receipt["family_receipt_sha256"] = digest(family_receipt)
                     arguments += ["-DUWVM_NVIDIA_BOUND_BUNDLE=" + str(bundle)]
-            elif operation == "cmake-component-programs":
-                require(
-                    set(config)
-                    == {
-                        "format",
-                        "cmake",
-                        "cxx",
-                        "ninja",
-                        "prefixes",
-                        "enable_native_components",
-                        "enable_usb_pipeline",
-                    },
-                    "exact actual component-program tool/prefix/enable configuration required",
-                )
-                cxx = pinned_tool(config, "cxx")
-                ninja = pinned_tool(config, "ninja")
-                require(
-                    type(config["enable_native_components"]) is bool
-                    and type(config["enable_usb_pipeline"]) is bool,
-                    "independent native-component and USB build enables must be booleans",
-                )
-                require(
-                    type(config["prefixes"]) is list and config["prefixes"],
-                    "actual installed native ROS/NVIDIA prefixes required",
-                )
-                for prefix in config["prefixes"]:
-                    require(
-                        type(prefix) is str
-                        and Path(prefix).is_absolute()
-                        and Path(prefix).is_dir()
-                        and Path(prefix).resolve(strict=True) == Path(prefix)
-                        and ";" not in prefix,
-                        "physical absolute native prefix required",
-                    )
-                arguments += [
-                    "-G",
-                    "Ninja",
-                    "-DCMAKE_MAKE_PROGRAM=" + str(ninja),
-                    "-DCMAKE_CXX_COMPILER=" + str(cxx),
-                    "-DCMAKE_PREFIX_PATH=" + ";".join(config["prefixes"]),
-                    "-DUWVM_NVIDIA_ENABLE_COMPONENT_PROGRAMS="
-                    + ("ON" if config["enable_native_components"] else "OFF"),
-                    "-DUWVM_NVIDIA_ENABLE_USB_PIPELINE="
-                    + ("ON" if config["enable_usb_pipeline"] else "OFF"),
-                ]
-            elif operation == "cmake-cpu-native":
-                allowed = {
-                    "format",
-                    "cmake",
-                    "python",
-                    "prefixes",
-                    "rosidl_buffer_include",
-                    "enable_native_exchange",
-                    "enable_cuda",
-                    "cuda_buffer_include",
-                }
-                require(
-                    set(config) <= allowed
-                    and allowed - {"cuda_buffer_include"} <= set(config),
-                    "exact native CPU backend settings required",
-                )
-                python = pinned_tool(config, "python")
-                require(
-                    type(config["enable_native_exchange"]) is bool
-                    and type(config["enable_cuda"]) is bool,
-                    "explicit independent native build enables required",
-                )
-                require(
-                    type(config["prefixes"]) is list and config["prefixes"],
-                    "actual installed ROS prefixes required",
-                )
-                for prefix in config["prefixes"]:
-                    require(
-                        Path(prefix).is_absolute()
-                        and Path(prefix).is_dir()
-                        and ";" not in prefix,
-                        "actual absolute ROS prefix required",
-                    )
-                arguments += [
-                    "-DCMAKE_PREFIX_PATH=" + ";".join(config["prefixes"]),
-                    "-DPython3_EXECUTABLE=" + str(python),
-                    "-DUWVM_CPU_SENSOR_INCLUDE="
-                    + str(sdk / "include/platform/nvidia-isaac-ros/c"),
-                    "-DUWVM_ROSIDL_BUFFER_INCLUDE=" + config["rosidl_buffer_include"],
-                    "-DUWVM_NVIDIA_ENABLE_CPU_EXCHANGE="
-                    + ("ON" if config["enable_native_exchange"] else "OFF"),
-                    "-DUWVM_NVIDIA_CPU_CUDA="
-                    + ("ON" if config["enable_cuda"] else "OFF"),
-                ]
-                if config["enable_cuda"]:
-                    arguments += [
-                        "-DUWVM_CUDA_BUFFER_INCLUDE=" + config["cuda_buffer_include"]
-                    ]
             else:
                 require(
                     set(config) == {"format", "cmake", "python", "prefixes"},
@@ -476,9 +382,6 @@ def main():
                         digest(family_receipt) == receipt["family_receipt_sha256"],
                         "selected family receipt changed during build",
                     )
-            if operation == "cmake-component-programs":
-                for name in ("cmake", "cxx", "ninja"):
-                    pinned_tool(config, name)
             if operation == "cmake-interfaces":
                 command("cmake-install", [cmake, "--install", build])
                 product = (
@@ -494,32 +397,6 @@ def main():
                 "actual selected CMake product missing",
             )
             receipt["artifact"] = str(product)
-        elif operation == "package-python":
-            require(
-                set(config) == {"format", "python"},
-                "Python packaging accepts only the explicit pinned interpreter",
-            )
-            python = pinned_tool(config, "python")
-            compile_arguments = [
-                python,
-                "-I",
-                "-S",
-                "-B",
-                sdk / "tools/platform/nvidia/examples/compile_sources.py",
-                "--sdk-root",
-                sdk,
-                "--input",
-                source,
-                "--output",
-                output / "package",
-            ]
-            if request.get("python_entry") is not None:
-                compile_arguments += ["--entry", request["python_entry"]]
-            command("python-compile", compile_arguments)
-            package_receipt = strict_json(
-                (output / "package/python-build.json").read_bytes()
-            )
-            receipt["artifact"] = package_receipt["entry_pyc"]
         elif operation == "tinygo-stage":
             require(
                 set(config) == {"format", "version", "goroot"},

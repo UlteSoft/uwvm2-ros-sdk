@@ -19,3 +19,8 @@ xmake run main
 build/targets/6d617468/math.wasm 和 build/targets/6d61696e/main.wasm；编译中间物
 留在 build 外。math 和 math_peer 使用各自明确的模块策略。模块间不传递托管对象
 引用或指针。本例不证明原生 ROS、ARM、memory64 或静态归档已完成。
+
+
+公共组件测试使用 `xmake test -j1`。四项测试分别执行新的 uwvm2-ros 进程，检查真实运算和 catch/finally、不可逆的 stdout 权限缩减、非法参数以及新进程中独立的模块状态。生产库是 Kotlin，消费程序是 Java；测试要求两份实际编译回执的前端和完整 Wasm SHA256 与当前产物一致。直接 WASI 输出会保留真实 errno。
+
+使用 `UWVM_ROS_JAVA_GUEST_TEST_CONFIG` 选择安装的运行时身份 JSON。缺少运行时或任何必需用例未执行都会失败。当前只是源代码实现，尚无本轮 guest 执行结果；这些组件测试也不能替代完整的官方 ROS 仿真和受权限控制的反馈路径。

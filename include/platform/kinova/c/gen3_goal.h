@@ -34,6 +34,34 @@ typedef struct uwvm_gen3_joint_limits
     uint64_t maximum_trajectory_ns;
 } uwvm_gen3_joint_limits;
 
+/** @brief Validate one time_from_start value and commit its duration only on success.
+ * @details Used by the complete Goal validator. Independent Duration values can
+ * exercise ordering without exceeding a selected bounded Goal's point capacity.
+ * The current complete mobile-FJT profile has capacity1; this function grants no
+ * additional Goal capacity, transport capability or native authority.
+ * @return 0 on canonical nonnegative increasing time within the explicit extent,
+ * or22 with duration_ns unchanged. The first point may have duration zero.
+ */
+inline static uint32_t uwvm_gen3_validate_time_from_start(
+    uint64_t maximum_trajectory_ns,
+    roswasmc_bounded_2_builtin_interfaces_msg_Duration const* time_from_start,
+    uint64_t previous_ns, unsigned has_previous, uint64_t* duration_ns)
+{
+    uint64_t duration;
+    if(!maximum_trajectory_ns || !time_from_start || !duration_ns ||
+       time_from_start->sec < 0 || time_from_start->nanosec >= 1000000000u)
+    {
+        return 22;
+    }
+    duration = (uint64_t)time_from_start->sec * UINT64_C(1000000000) + time_from_start->nanosec;
+    if((has_previous && duration <= previous_ns) || duration > maximum_trajectory_ns)
+    {
+        return 22;
+    }
+    *duration_ns = duration;
+    return 0;
+}
+
 /** @brief Validate the whole original Goal for the pinned position-trajectory route.
  * @details Uses the genuine generated validator and every active model bound.
  * Requires exact joint_1..joint_N names, complete position dimensions, optional
@@ -83,12 +111,8 @@ inline static uint32_t uwvm_gen3_validate_goal(uwvm_gen3_joint_limits const* lim
     {
         roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint const* point = &goal->trajectory.points.data[j];
         uint64_t duration;
-        if(point->time_from_start.sec < 0 || point->time_from_start.nanosec >= 1000000000u)
-        {
-            return 22;
-        }
-        duration = (uint64_t)point->time_from_start.sec * 1000000000u + point->time_from_start.nanosec;
-        if((j && duration <= previous) || duration > limits->maximum_trajectory_ns || point->positions.size != n ||
+        if(uwvm_gen3_validate_time_from_start(limits->maximum_trajectory_ns, &point->time_from_start,
+                                              previous, j != 0, &duration) || point->positions.size != n ||
            (point->velocities.size && point->velocities.size != n) || (point->accelerations.size && point->accelerations.size != n))
         {
             return 22;

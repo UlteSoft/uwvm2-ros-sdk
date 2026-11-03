@@ -1,0 +1,100 @@
+{
+  "format": "robotis-humble-original-source-bindings-v1",
+  "node": "/turtlebot3_obstacle_detection",
+  "roles": [
+    {
+      "alias": "robotis-obstacle-cmd-vel",
+      "source_operation": "topic_publish",
+      "source_resource": "/cmd_vel",
+      "resource": "/cmd_vel",
+      "operation": "topic.publish",
+      "type": "geometry_msgs/msg/Twist",
+      "identity": "RIHS01_9c45bf16fe0983d80e3cfe750d6835843d265a9a6c46bd2e609fcddde6fb8d2a",
+      "bytes": 48,
+      "depth": 10,
+      "reliability": "reliable",
+      "durability": "volatile"
+    },
+    {
+      "alias": "robotis-obstacle-scan",
+      "source_operation": "topic_subscribe",
+      "source_resource": "/scan",
+      "resource": "/scan",
+      "operation": "topic.subscribe",
+      "type": "sensor_msgs/msg/LaserScan",
+      "identity": "RIHS01_64c191398013af96509d518dac71d5164f9382553fce5c1f8cca5be7924bd828",
+      "bytes": 8368,
+      "depth": 5,
+      "reliability": "best-effort",
+      "durability": "volatile",
+      "codec_identity": "UWVMROS1_118b67e7232c46ba3857bb5d896af6d174546485a98284b33d0fb557ec203024"
+    },
+    {
+      "alias": "robotis-obstacle-raw-vel",
+      "source_operation": "topic_subscribe",
+      "source_resource": "/cmd_vel_raw",
+      "resource": "/uwvmros/turtlebot3/obstacle/cmd_vel_raw",
+      "operation": "topic.subscribe",
+      "type": "geometry_msgs/msg/Twist",
+      "identity": "RIHS01_9c45bf16fe0983d80e3cfe750d6835843d265a9a6c46bd2e609fcddde6fb8d2a",
+      "bytes": 48,
+      "depth": 5,
+      "reliability": "best-effort",
+      "durability": "volatile"
+    },
+    {
+      "alias": "robotis-obstacle-clock",
+      "source_operation": "time_read_ros",
+      "source_resource": "/turtlebot3_obstacle_detection",
+      "resource": "/uwvmros/turtlebot3/obstacle/clock",
+      "operation": "time.read-ros",
+      "type": "builtin/time-v1",
+      "identity": "builtin:time-nanoseconds-v1",
+      "bytes": 8
+    },
+    {
+      "alias": "robotis-obstacle-log",
+      "source_operation": "log_write",
+      "source_resource": "/turtlebot3_obstacle_detection",
+      "resource": "/turtlebot3_obstacle_detection",
+      "operation": "log.write",
+      "type": "builtin/log-v1",
+      "identity": "builtin:log-utf8-v1",
+      "bytes": 65536
+    },
+    {
+      "alias": "robotis-obstacle-cancel",
+      "resource": "/uwvmros/turtlebot3/obstacle/cancel",
+      "operation": "topic.subscribe",
+      "type": "std_msgs/msg/Bool",
+      "identity": "RIHS01_feb91e995ff9ebd09c0cb3d2aed18b11077585839fb5db80193b62d74528f6c9",
+      "bytes": 1,
+      "depth": 1,
+      "reliability": "reliable",
+      "durability": "transient-local"
+    },
+    {
+      "alias": "robotis-obstacle-log-system-clock",
+      "source_operation": "time_read_system",
+      "source_resource": "/turtlebot3_obstacle_detection",
+      "resource": "/uwvmros/turtlebot3/obstacle/log-system-clock",
+      "operation": "time.read-system",
+      "type": "builtin/time-v1",
+      "identity": "builtin:time-nanoseconds-v1",
+      "bytes": 8,
+      "clock_type": "SYSTEM_TIME",
+      "purpose": "Original Humble Logger.info default throttle clock, separate from original Node ROS timer clock and WASI pacing."
+    }
+  ],
+  "clock_roles": "Three distinct clocks: original Node timer time.read-ros; original INFO throttle default SYSTEM_TIME through exact separate time.read-system binding; genuine WASI monotonic+sleep only deployment pacing. Public create_timer preopens logger+SYSTEM clock before source callback. No ungranted clock fallback.",
+  "transport_adaptation": "NONE. ActualofficialHumble diff_drive consumes originalgeometry_msgs/msg/Twist directly on/cmd_vel; no legacy/Jazzy/TwistStamped bridge input.",
+  "grants_are_not_created_here": true,
+  "native_registry_qualified": false,
+  "runtime": "NOT RUN",
+  "native_type_scope": "Nativehashes reference actualJazzy standardtype descriptions with actualHumble recursive .msg signatures matched below. They are sourcegraphreferences; actualHumble nativefactory/compiledtypesupport/session/codec proof stillrequired.",
+  "owner_budget": {
+    "before_cancel": 6,
+    "with_cancel": 7,
+    "configured_maximum": 8
+  }
+}

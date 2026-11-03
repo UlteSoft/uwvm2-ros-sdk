@@ -1,0 +1,156 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "cpp-static-pointer-library",
+  "scope": "Actual Wasm component only; not Stage A, Stage B or independent-grants acceptance. Runtime qualification required.",
+  "cases": [
+    {
+      "id": "cpp-span-static-visibility",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": ""
+    }
+  ],
+  "current_state": "SOURCE_CANDIDATE_NOT_YET_BUILT_OR_EXECUTED",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/language/cpp/static_pointer_library/algorithm.cpp",
+      "sha256": "8db5994c442ec2405595566837d9169ab083c13eac4356de0d8655fb49a54d41"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/language/cpp/static_pointer_library/algorithm.hpp",
+      "sha256": "b10da7d01780059053ffc116fcbaebfccee33f7d66a4a774eb81830abaac54aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/language/cpp/static_pointer_library/main.cpp",
+      "sha256": "4dc3150db7eb9fb10c7e4f6a2739267c2efb73cb3bdefdfc67526339b1a11f6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/language/cpp/static_pointer_library/xmake.lua",
+      "sha256": "679994b7cb8bb5405e52fd0413855e95f5eea92aad5e848b9df967e1db12933d"
+    },
+    {
+      "scope": "sdk",
+      "path": "xmake.lua",
+      "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/wasi/provider.lua",
+      "sha256": "3b70c0cbb075fd2bb1a63fb9f80040a74b9fc88dd164c17ed63cb5335ab09289"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/wasi/provider.json",
+      "sha256": "4eda02ea3de0d6b5d3ced059ab8e957909a2c57171c21c99df602adb3adfe01c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "sha256": "2820af347b9b4033f0466bc0e654ee84a5caa3736118bb47f31c4c1623620f77"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/example_process.py",
+      "sha256": "fb2526b4b477f5d599e642c25fe7a0a87473df9f1dcf3e5097ded4ea4642638f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/runtime_boundary.py",
+      "sha256": "4f206a6d21747e04a8ae0e74558ef6859c31b9856e8aa3bb797c308da0d557cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/simulation_example.py",
+      "sha256": "e5c21f913af6aa7be09f4e7d8848212e225e93fdbf3cb3b4567dd195a58d6938"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8b0edf7310ee931587937199ba90828c12216097a37a01c11658a3c2b7347dcc"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1af9d3ed5d32bac6b7a420cc6a991368a664fe88f805d12401186a82988f2700"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/dispatch.lua",
+      "sha256": "87b295e0576cbf517804d48bb0a8673c962f4739454b6ef17bb4a30eb28b3f3f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/example_catalog.lua",
+      "sha256": "9df66a0403692e3a2a473979d9fb7ae0d187214817220de172ac3e326a4abdd3"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/language_adapter.lua",
+      "sha256": "4ba0c136ba3ce3a51ad1ec5817f55a5fd9a02a70b7fa0a676f0ed1eea085e8e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/package_bundle.lua",
+      "sha256": "544f0d73508d96285c121030aa0bcaa3f98d7c6fac3d992712652aeabbbb9b5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/package_host.lua",
+      "sha256": "e21233e4d5aa0a6ed7a5f0ed4c3cf9d1a17d7f879d06d0a3ad7b75b478a54803"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/provider_contract.lua",
+      "sha256": "e7d34605eca68fc1753504fa46af81c9c473a4c3e1e7bd23dfede7ea5c35071a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/repository.lua",
+      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/ros.lua",
+      "sha256": "5fa2ade79f22d76915f1a512c4c97cba410b73c943ee5bb00681f407f4266c78"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/run.lua",
+      "sha256": "c098486d0eb62b23e7148e9ad2b7ed9a99c666578024b44c2cf3160dc9d4d5c0"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/targets.lua",
+      "sha256": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/tool_bundle.lua",
+      "sha256": "21c06abae4c7b948c35ba9a3a009eee1816695bd4e89c4b552ed5f2b88a0c6d0"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/wasm_link.lua",
+      "sha256": "fa681aa3e367a4dc675d2b03d4acea52fbc5da5cfbda4736b5e03b735e7a84fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/wasm_module.lua",
+      "sha256": "5dcd67cb10940ce8b86bfc4bce7705ae7597da2ebff1ebc113c61ad5513a44e0"
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+#include "native_observation_profile.h"
+#include "serialized_observation.h"
+#endif
 // Production may never silently select the original Node with its implicit
 // TimeSource subscription, including builds outside this CMake target.
 #if defined(UWVM_ROS2_USE_COMPOSED_NODE) && !UWVM_ROS2_USE_COMPOSED_NODE
@@ -182,6 +186,43 @@ namespace
         gateway::ros2_custom_actions::adapter custom_actions_;
         std::map<std::string, std::shared_ptr<rclcpp::PublisherBase>> publishers_;
         std::map<std::string, std::shared_ptr<rclcpp::SubscriptionBase>> subscribers_;
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+        struct observed_publication_source
+        {
+            std::shared_ptr<gateway::native_observation::writer> writer;
+            std::shared_ptr<gateway::native_observation::endpoint const> source;
+        };
+        std::map<std::string,observed_publication_source> observed_publications_;
+        struct observed_subscription_source
+        {
+            std::shared_ptr<std::atomic<bool>> gate;
+            std::shared_ptr<gateway::native_observation::writer> writer;
+            std::shared_ptr<gateway::native_observation::endpoint const> source;
+        };
+        std::map<std::string,observed_subscription_source> observed_subscription_gates_;
+        void retire_observed_topic(std::string const& alias) noexcept
+        {
+            auto gate=observed_subscription_gates_.find(alias);
+            auto source=observed_publications_.find(alias);
+            if(gate!=observed_subscription_gates_.end())
+            {
+                gate->second.gate->store(false,std::memory_order_release);
+                subscribers_.erase(alias);
+                gateway::native_observation::record closed;closed.event=gateway::native_observation::phase::endpoint_closed;
+                closed.source=gate->second.source.get();auto call=gateway::native_observation::active_call;
+                if(call&&call->connection==gate->second.source->owner)closed.request_id=call->request_id;
+                (void)gate->second.writer->emit(closed);observed_subscription_gates_.erase(gate);
+            }
+            if(source!=observed_publications_.end())
+            {
+                publishers_.erase(source->first);
+                gateway::native_observation::record closed;closed.event=gateway::native_observation::phase::endpoint_closed;
+                closed.source=source->second.source.get();auto call=gateway::native_observation::active_call;
+                if(call&&call->connection==source->second.source->owner)closed.request_id=call->request_id;
+                (void)source->second.writer->emit(closed);observed_publications_.erase(source);
+            }
+        }
+#endif
         std::map<std::string, std::shared_ptr<rclcpp::ServiceBase>> services_;
         std::map<std::string, std::shared_ptr<gateway::service_state>> service_states_;
 #if UWVM_ROS2_OWNED_RCL_SERVICE_PROFILE
@@ -275,8 +316,38 @@ namespace
         }
 
         template <typename M>
-        ipc::call_result send(capability const& c, M const& m)
+        ipc::call_result send(capability const& c, M const& m, std::vector<std::uint8_t> const& input)
         {
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+            auto request=gateway::native_observation::active_call;
+            bool observed=request&&request->output&&!request->output->type_support_path(c.type).empty();
+            if(observed)
+            {
+                using entity_type=gateway::serialized_observation::publisher<M>;
+                if constexpr(!gateway::ros2_qos::supports_entity_qos<entity_type>::value)return {95,{}};
+                if(canonical(m)!=input)return {22,{}};
+                auto p=publishers_.find(c.alias);auto source=observed_publications_.find(c.alias);
+                if(p==publishers_.end())
+                {
+                    auto configured=qos(c);auto binding=gateway::capture_endpoint(*request,c);if(!binding)return {13,{}};
+                    auto library=std::make_shared<rcpputils::SharedLibrary>(request->output->type_support_path(c.type));
+                    rclcpp::PublisherOptions options;options.use_intra_process_comm=rclcpp::IntraProcessSetting::Disable;
+                    auto created=std::make_shared<entity_type>(node_->get_node_base_interface().get(),library,c.resource,c.type,configured,options,4096);
+                    node_->get_node_topics_interface()->add_publisher(created,nullptr);
+                    bool admitted{};try{auto actual=created->get_topic_name();admitted=actual&&std::string_view{actual}==c.resource&&gateway::ros2_qos::entity(*created,configured);}catch(std::exception const&){}
+                    if(!admitted)return {95,{}};
+                    p=publishers_.emplace(c.alias,std::move(created)).first;
+                    source=observed_publications_.emplace(c.alias,observed_publication_source{request->output,binding}).first;
+                    gateway::native_topic_observation::announce(request->output,binding);
+                }
+                if(source==observed_publications_.end()||source->second.source->type!=c.type||source->second.source->identity!=c.type_identity)return {17,{}};
+                gateway::native_topic_observation::publication observation{source->second.writer,source->second.source,input};
+                std::static_pointer_cast<entity_type>(p->second)->publish_observed(m,observation);return {};
+            }
+            if(observed_publications_.count(c.alias))return {17,{}};
+#else
+            (void)input;
+#endif
             if constexpr(!gateway::ros2_qos::supports_entity_qos<rclcpp::Publisher<M>>::value) { return {95, {}}; }
             auto p{publishers_.find(c.alias)};
             if(p == publishers_.end())
@@ -293,6 +364,45 @@ namespace
         template <typename M>
         ipc::call_result listen(capability const& c, std::shared_ptr<gateway::event_queue> q)
         {
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+            if(q->capture_binding)
+            {
+                if(!q->capture_writer||q->observer)return {95,{}};
+                using entity_type=gateway::serialized_observation::subscription;
+                if constexpr(!gateway::ros2_qos::supports_entity_qos<entity_type>::value)return {95,{}};
+                auto library=std::make_shared<rcpputils::SharedLibrary>(q->capture_writer->type_support_path(c.type));
+                gateway::serialized_observation::require_paired_type_support<M>(*library,c.type);
+                std::weak_ptr<gateway::event_queue> weak{q};auto verified=std::make_shared<std::atomic<bool>>(false);
+                auto callback=[weak,verified](gateway::serialized_observation::sample captured)
+                {
+                    auto queue=weak.lock();if(!queue||!verified->load(std::memory_order_acquire))return;
+                    try
+                    {
+                        auto message=gateway::native_topic_observation::deserialize<M>(captured);
+                        auto maximum=gateway::limit(queue->capability,"max-message-bytes");
+                        if constexpr(std::is_same_v<M,std_msgs::msg::String>)
+                        {if(!gateway::wire_size_fits(maximum,{4,message.data.size()})){queue->capture_writer->lost();return;}}
+                        else if constexpr(std::is_same_v<M,sensor_msgs::msg::Image>)
+                        {if(!gateway::ros2_compat::native_bytes_accessible(message.data)||message.is_bigendian>1||message.header.frame_id.size()>255||message.encoding.size()>255||!gateway::wire_size_fits(maximum,{37,message.header.frame_id.size(),message.encoding.size(),message.data.size()})){queue->capture_writer->lost();return;}}
+                        else if constexpr(std::is_same_v<M,geometry_msgs::msg::Twist>)
+                        {if(maximum<48){queue->capture_writer->lost();return;}}
+                        else {if(!maximum){queue->capture_writer->lost();return;}}
+                        auto data=canonical(message);
+                        if(!verified->load(std::memory_order_acquire))return;
+                        gateway::native_topic_observation::delivery(queue,captured,std::move(data));
+                    }
+                    catch(std::exception const&){queue->capture_writer->lost();}
+                };
+                auto configured=qos(c);rclcpp::SubscriptionOptions options;options.use_intra_process_comm=rclcpp::IntraProcessSetting::Disable;
+                auto created=std::make_shared<entity_type>(node_->get_node_base_interface().get(),library,c.resource,c.type,configured,options,4096,std::move(callback));
+                node_->get_node_topics_interface()->add_subscription(created,nullptr);
+                bool admitted{};try{auto actual=created->get_topic_name();admitted=actual&&std::string_view{actual}==c.resource&&gateway::ros2_qos::entity(*created,configured);}catch(std::exception const&){}
+                if(!admitted)return {95,{}};
+                subscribers_.emplace(c.alias,std::move(created));observed_subscription_gates_.emplace(c.alias,observed_subscription_source{verified,q->capture_writer,q->capture_binding});
+                gateway::native_topic_observation::announce(q->capture_writer,q->capture_binding);
+                verified->store(true,std::memory_order_release);return {};
+            }
+#endif
             if constexpr(!gateway::ros2_qos::supports_entity_qos<rclcpp::Subscription<M>>::value) { return {95, {}}; }
             std::weak_ptr<gateway::event_queue> weak{q};
             auto callback{
@@ -424,6 +534,10 @@ namespace
 
         ~ros2_adapter() override
         {
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+            while(!observed_subscription_gates_.empty())retire_observed_topic(observed_subscription_gates_.begin()->first);
+            while(!observed_publications_.empty())retire_observed_topic(observed_publications_.begin()->first);
+#endif
 #if UWVM_ROS2_OWNED_RCL_SERVICE_PROFILE
             clear_owned_rmw_services();
 #endif
@@ -448,13 +562,13 @@ namespace
             {
                 std_msgs::msg::String m;
                 m.data.assign(reinterpret_cast<char const*>(d.data() + 4), d.size() - 4);
-                return send(c, m);
+                return send(c, m, d);
             }
             if(c.type == "std_msgs/msg/Bool")
             {
                 std_msgs::msg::Bool m;
                 m.data = d[0] != 0;
-                return send(c, m);
+                return send(c, m, d);
             }
             if(c.type == "geometry_msgs/msg/Twist")
             {
@@ -465,7 +579,7 @@ namespace
                     auto bits{ipc::get(d.data() + 8 * i, 8)};
                     std::memcpy(v[i], &bits, 8);
                 }
-                return send(c, m);
+                return send(c, m, d);
             }
             if(c.type == "sensor_msgs/msg/Image")
             {
@@ -481,7 +595,7 @@ namespace
                 m.is_bigendian = i.bigendian ? 1 : 0;
                 m.step = i.step;
                 gateway::ros2_compat::assign_bytes(m.data, i.data, i.data + i.data_size);
-                return send(c, m);
+                return send(c, m, d);
             }
             return {95, {}};
         }
@@ -575,6 +689,9 @@ namespace
 
         void close(std::string const& alias) override
         {
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+            retire_observed_topic(alias);
+#endif
 #if UWVM_ROS2_OWNED_RCL_SERVICE_PROFILE
             service_routes_.erase(alias);
 #endif
@@ -895,6 +1012,7 @@ int main(int argc, char** argv)
     {
         char const* owned_profile_path{};
         char const* control_profile_path{};
+        char const* native_observation_path{};
         if(argc < 2 || (argc - 2) % 2)
         {
             throw std::runtime_error(
@@ -905,11 +1023,15 @@ int main(int argc, char** argv)
             std::string_view option{argv[i]};
             if(option == "--owned-rmw-service-profile" && !owned_profile_path) { owned_profile_path = argv[i + 1]; }
             else if(option == "--default-rmw-control-profile" && !control_profile_path) { control_profile_path = argv[i + 1]; }
+            else if(option == "--native-buffer-observation-profile" && !native_observation_path) { native_observation_path = argv[i + 1]; }
             else
             {
                 throw std::runtime_error("Unknown or duplicate explicit Gateway profile selection");
             }
         }
+#if !UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+        if(native_observation_path)throw std::runtime_error("UNSUPPORTED: native serialized-buffer observation was not explicitly built");
+#endif
 #if !UWVM_ROS2_OWNED_RCL_SERVICE_PROFILE
         if(owned_profile_path) { throw std::runtime_error("UNSUPPORTED: explicit original RCL service profile was not built"); }
 #endif
@@ -921,6 +1043,23 @@ int main(int argc, char** argv)
 #else
         auto c{gateway::load(argv[1])};
         if(c.policy.ros_version != uwvm2::imported::ros::version::ros2) { throw std::runtime_error("wrong backend"); }
+# if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+        if(native_observation_path)
+        {
+            auto selected=gateway::native_observation::load_profile(native_observation_path);
+            std::set<std::string> native_types;
+            for(auto const& item:c.policy.capabilities)
+            {
+                auto const& cap=item.second;
+                if(cap.operation=="event.observe")throw std::runtime_error("UNSUPPORTED: native serialized observation requires the raw legacy topic route");
+                if(cap.operation=="topic.publish"||cap.operation=="topic.subscribe")
+                {if(gateway::limit(cap,"max-message-bytes")>1536)throw std::runtime_error("UNSUPPORTED: native serialized journal requires explicit canonical message bounds at most1536 bytes");native_types.insert(cap.type);}
+            }
+            if(native_types.size()!=selected.type_support.size())throw std::runtime_error("native observation type-support selection differs from actual topic grants");
+            for(auto const& type:native_types)if(!selected.type_support.count(type))throw std::runtime_error("native observation missing selected actual type support");
+            c.native_observer=std::make_shared<gateway::native_observation::packet_writer>(std::move(selected));
+        }
+# endif
 # if UWVM_ROS2_OWNED_RCL_SERVICE_PROFILE
         std::shared_ptr<gateway::owned_service_profile::selection const> service_profile;
         if(owned_profile_path)

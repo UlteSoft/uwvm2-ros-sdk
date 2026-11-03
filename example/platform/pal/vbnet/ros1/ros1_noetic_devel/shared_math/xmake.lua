@@ -18,6 +18,7 @@ if not root then
 	end
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/platform/pal/xmake/required_guest_tests.lua"))
 set_policy("run.autobuild", false)
 set_plat(get_config("plat") or "wasm-wasip1")
 set_arch(get_config("arch") or "wasm32")
@@ -49,4 +50,6 @@ add_deps("math")
 after_load(function(current)
 	assert(current:kind() == "binary", "The common dispatcher must preserve set_kind(binary)")
 end)
+    uwvm_pal_required_guest_tests({scenario = "shared_math",
+        cases = {"guest-contract-normal", "guest-contract-denied", "guest-contract-invalid-input", "guest-contract-cleanup"}})
 target_end()

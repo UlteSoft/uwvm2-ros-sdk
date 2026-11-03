@@ -1,0 +1,150 @@
+{
+  "format": "uwvm-native-ursim-prerequisites-v1",
+  "scope": "Official native driver/controller environment only. Original UR application/action/callback/feedback/cancel remains Wasm with strict shared producer admission.",
+  "sdk_common_inputs": [
+    "tools/xmake/python_runtime.lua",
+    "tools/xmake/native_ros.py",
+    "tools/shared/python/owned_processes.py",
+    "tools/shared/python/runtime_boundary.py",
+    "tools/language/python/relink_stdlib.py",
+    "tools/xmake/native_ros.lua",
+    "tools/xmake/native_ur.py",
+    "tools/xmake/native_os.py",
+    "share/toolchains/native/linux-x86_64/bwrap-ubuntu-25.10.json"
+  ],
+  "source_image": {
+    "repository": "universalrobots/ursim_e-series",
+    "manifest_digest": "sha256:c80dfb4ec6b554db6d20ba45fb90d0ec056d0303bd3c7a7040a4e8b503eaaf87",
+    "polyscope": "5.26.3",
+    "robot_model": "UR5 in the official e-Series image",
+    "original_regular_payload_bytes_changed": false,
+    "unprivileged_metadata_normalization_only": true,
+    "lock": "ursim-image.lock.json"
+  },
+  "native_ros": {
+    "distribution": "humble",
+    "ubuntu": "jammy",
+    "architecture": "x86_64",
+    "required_original_packages": {
+      "ur_robot_driver": "2.15.0",
+      "ur_description": "2.14.0",
+      "ur_client_library": "2.15.2"
+    },
+    "environment_source": "Registered shared native dependency constructor; no native application package is used as the SDK application",
+    "common_humble_constructor_already_public": true,
+    "ur_supplement_in_common_constructor": "IMPLEMENTED_SOLE_SHARED_NATIVE_ROS_UR_SCOPE_CURRENT019_CHAIN_VALIDATED",
+    "exact_ur_supplement_lock": "native-ur-humble-supplement.lock.json",
+    "exact_supplement_packages": 54,
+    "exact_supplement_payload_bytes": 76439376,
+    "supplement_scope": "Exact Debian dependency/virtual-provider closure relative to the pinned shared Humble base; signed archive metadata derivation is data only,not a new shared installer or a runtime/task PASS.",
+    "driver_environment_export": "prepare_driver.py exports only the unchanged URlauncher namespace environment allowlist. Shared Gazebo-only audio configuration is not a driver input.",
+    "total_original_driver_packages": 811,
+    "official_ursim_layers": 11
+  },
+  "one_command_bootstrap_remaining": {
+    "owner": "01",
+    "shared_ur_constructor_implemented": true,
+    "shared_constructor_command": "xmake lua SDK/tools/xmake/native_ros.lua SDK CACHE FRESH_NATIVE_OUTPUT online ur",
+    "shared_constructor_offline_command": "xmake lua SDK/tools/xmake/native_ros.lua SDK CACHE FRESH_NATIVE_OUTPUT offline ur",
+    "shared_constructor_output_bundle": "FRESH_NATIVE_OUTPUT/ursim-inputs.json",
+    "implemented_shared_constructor_requirements": [
+      "Extend the existing BlobCache registry scope beyond hardcoded repository:library/ros:pull for the exact official URSim image",
+      "Resolve/install the exact native UR driver package supplement into the shared Humble constructor through the existing shared cache/extractor; do not introduce a scene-private shared installer",
+      "Publish source/ELF/model/closure pins and native input bundle for this scene"
+    ],
+    "required": [
+      "Clean Xmake-only host deployment still requires qualification of trusted bwrap acquisition and the combined missing-Python plus shared-UR constructor route. Existing trusted bwrap and the selected admitted Python were used in current native consumer validation."
+    ],
+    "full_original_wasm_application_deployment_qualified": false
+  },
+  "public_native_model_command": "xmake lua prepare_driver.lua SDK NATIVE_CLOSURE NATIVE_ENV PRIVATE_MODEL_OUTPUT",
+  "public_native_launch_command": "xmake lua native_scene.lua SDK NATIVE_INPUT_BUNDLE PRIVATE_OUTPUT READY_FILE STOP_FILE 60",
+  "input_bundle_schema": {
+    "format": "uwvm-native-ursim-inputs-v1",
+    "official_image_manifest": "Exact source_image.manifest_digest above",
+    "ursim_closure": "path/bytes/sha256 record for original image rootfs/files/symlinks manifest",
+    "driver_closure": "path/bytes/sha256 record from prepare_driver.py",
+    "driver_construction": "path/bytes/sha256 record from prepare_driver.py",
+    "driver_configuration_files": "Exact path/bytes/sha256 rows for ur-driver-parameters.json,ur5e_update_rate.yaml,ur-controllers.resolved.yaml",
+    "bwrap": "path/bytes/sha256 record for the trusted root-owned non-writable OS prerequisite"
+  },
+  "xmake_test_complete_scene_integration": {
+    "owner": "02/root",
+    "status": "BLOCKED_REQUIRED_CONTEXT_AND_PRODUCTION_ENROLLMENT",
+    "required": "Original actual Wasm double trajectory through registered typed native action source,caller memory,per-occurrence feedback/cancel/stop and module/resource/lifecycle denials. Native-only launch is not a scene PASS."
+  },
+  "production_admission": false,
+  "complete_scene_pass": false,
+  "public_command_directory": "example/platform/universal_robots/simulation/ursim_e_series",
+  "public_entry_validation": "Actual public prepare_driver.lua output consumed by actual public native_scene.lua,original headless driver reverse connection/controllers and full shared retirement passed. Complete Wasm action task is NOT_RUN.",
+  "private_common_plus_exact_54_validation": "Actual private common-base+54archives consumed by the existing public Extractor; public model constructor and native URSim/headless driver/live-stop/retirement passed. Shared constructor wiring and production authority are still required.",
+  "native_lifecycle_diagnostics": {
+    "command": "xmake lua native_lifecycle_case.lua SDK INPUT_BUNDLE FRESH_OUTPUT MODE PREPARED_RUNTIME_MANIFEST SHA256 [PREDECESSOR_RECEIPT SHA256]",
+    "runtime_envelope": "Each separate admitted native job retains4GiB/2CPU/120s; predecessor must be terminal/retired before fresh restart.",
+    "classification": "Native process fault/owner-loss/guarded stop/fresh environment restart only. Native signals do not implement Actioncancel; actual guest cancellation,reconnect,recovery and original tasks remain required.",
+    "critical_process_loss_must_fail_endpoint": true,
+    "fresh_restart_requires_pinned_retired_predecessor": true
+  },
+  "public_native_runtime_prepare_command": "xmake lua prepare_runtime.lua SDK INPUT_BUNDLE FRESH_PRIVATE_PREPARED_OUTPUT",
+  "public_native_staged_launch_command": "xmake lua native_scene.lua SDK INPUT_BUNDLE FRESH_OUTPUT READY_FILE STOP_FILE 30 PREPARED_RUNTIME_MANIFEST SHA256",
+  "private_runtime_preparation": {
+    "format": "uwvm-native-ursim-prepared-runtime-v1",
+    "single_consumption": true,
+    "preparation_budget": "Separate4GiB/2CPU/300sjob; no native controller,driver or SDK application starts. Same64GiB/zero-swap common ancestry.",
+    "runtime_budget": "Actual native execution still4GiB/2CPU/120s. Runtime re-verifies the whole prepared regular/alias/mode inventory plus original image identity beforeexclusive consumption.",
+    "context": "Run-specific parentnamespace/cgroup and ROSdomain generated by the consuming runtime,not the preparation job.",
+    "evidence": "Retain separate preparation and actualruntime results,timestamps and total cold-start timeline; never hide preparation/queue gaps as a runtime speed claim.",
+    "original_native_payloads_modified": false,
+    "shared_installer_or_cache_modified": false
+  },
+  "private_common_plus_exact_54_validation_scope_note": "The existing private_common_plus_exact_54_validation text is retained as prior private-only evidence. Current shared constructor implementation and current019 native consumer evidence are recorded separately; no old result is relabeled.",
+  "current_shared_constructor_consumer_validation": {
+    "entrypoint_sha256": "5a2453689f30201b49efa96335fd9e9afa0376e851bfd315ad53a52cdb0f921d",
+    "shared_constructor_owner": "01",
+    "source_bundle_format": "uwvm-native-ursim-inputs-v1",
+    "shared_811_package_11_layer_bundle_reused_with_complete_hash_verification": true,
+    "fresh_private_preparation_and_one_use_consumption": true,
+    "public_prepare_runtime_and_staged_xmake_launch_stop": "PASS_NATIVE_ONLY",
+    "native_30s_environment_adapter": "PASS_NATIVE_ONLY",
+    "actual_readonly_roots_private_namespaces_and_zero_capabilities_checked": true,
+    "local_and_outer_owned_process_retirement": "RETIRED",
+    "native_environment_is_original_application_warmup": false,
+    "actual_original_wasm_double_trajectory_feedback_cancel_recovery": "NOT_RUN",
+    "prior016_or_private54_results_relabelled_current019": false,
+    "missing_Python_trusted_bwrap_or_full_clean_host_deployment_qualified": false,
+    "strict_production_entry_ready": false,
+    "complete_scene_pass": false
+  },
+  "shared_constructor_source_pin_scope": {
+    "declared_constructor": {
+      "path": "tools/xmake/native_ros.py",
+      "bytes": 18766,
+      "sha256": "b3ad5cde9af54ad280c3652e991ac1de8306dd40ee13339aaa154b27f83dbcfd"
+    },
+    "declared_conditional_missing_bwrap_sources": [
+      {
+        "path": "tools/xmake/native_os.py",
+        "bytes": 3651,
+        "sha256": "1568a91e781185f73d9ace87c691c011f394ae84ef18d2a04fa17c2f2022910e"
+      },
+      {
+        "path": "share/toolchains/native/linux-x86_64/bwrap-ubuntu-25.10.json",
+        "bytes": 786920,
+        "sha256": "359fb9b2b1ca0ebf157e04aa517a73c779d9dedeaaba1ecba062999b57b6409f"
+      }
+    ],
+    "requires_coherent_shared_source_integration": true,
+    "declaration_scope": "Target source pins for the matching Ubuntu25.10 archive-staging revision. The declaration is a source/hash consistency update; it does not qualify system installation or a new native consumer execution.",
+    "validated_immutable_bundle_producer": {
+      "path": "tools/xmake/native_ros.py",
+      "bytes": 18311,
+      "sha256": "1aad02e29206e763b5255dc18963adf1eb3f56e9af77a1f810c922a504683afa"
+    },
+    "validated_bundle_producer_scope": "The actual previously constructed shared811package/11URlayer bundle used this producer. Current019 native preparation/one-use/runtime evidence consumed that immutable bundle without rerunning its constructor.",
+    "declared_constructor_retested_with_current019_native_scene": false,
+    "trusted_missing_bwrap_installation_or_live_policy_qualified": false,
+    "combined_missing_Python_and_bwrap_clean_host_native_route_qualified": false,
+    "prior_current019_native_validation_or_producer_identity_relabelled": false,
+    "new_native_or_Wasm_task_passes_from_metadata_change": 0
+  }
+}

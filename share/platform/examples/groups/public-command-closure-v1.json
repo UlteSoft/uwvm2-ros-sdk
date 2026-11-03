@@ -1,0 +1,14 @@
+{
+  "format": "uwvm-sdk-example-group-v1",
+  "id": "public-command-closure-v1",
+  "coverage_scope": "ONE_PUBLIC_CHILD_COMMAND_SUBSET_NOT_ROS_OR_FULL_SDK",
+  "projects": [
+    "example/language/c/public_command_closure"
+  ],
+  "toolchain_manifests": [
+    "share/toolchains/host/linux-x86_64/llvm23.json"
+  ],
+  "per_child_memory_budget_bytes": 2147483648,
+  "required_guest_cases": 1,
+  "full_framework_simulation_acceptance": false
+}

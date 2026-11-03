@@ -51,6 +51,46 @@ module Uwvm
                 @handle
             end
 
+            # @brief Return four exact u64 readiness counters without consuming.
+            # @return [original errno, named Integer counters or nil].
+            # @details Genuine Ruby Integers preserve all64 bits. The snapshot
+            # reserves no event, admission credit or permission, and never waits.
+            def readiness
+                frame = invoke("event_ready", "".b, 32)
+                return [frame[0], nil] unless frame[0] == 0
+                unless frame[1].bytesize == 32 && frame[2].nil? && frame[3].nil?
+                    raise ArgumentError, "successful readiness omitted its exact32-byte snapshot"
+                end
+                values = frame[1].unpack("Q<4")
+                [0, [:ready_events, :next_event_bytes, :admission_slots, :admission_bytes].zip(values).to_h]
+            end
+
+            # @brief Admit one copied canonical request through separately granted owners.
+            # @param observer Explicitly paired live event.observe Capability.
+            # @param request Complete canonical String, at most4193778 bytes.
+            # @return Original [errno, bytes, required, request-ID-or-nil] frame.
+            # @details A request ID is not a capability/rcl signed sequence.
+            # Zero means admission only;11 has no admission credit,107/110 may
+            # follow effects. No retry or ownership transfer is performed.
+            def submit_service(observer, request)
+                return [9, "".b, nil, nil] if @handle.nil?
+                unless observer.instance_of?(Capability) && request.instance_of?(String) && request.bytesize <= 4193778
+                    return [22, "".b, nil, nil]
+                end
+                begin
+                    other = observer.borrow_handle
+                rescue ArgumentError
+                    return [9, "".b, nil, nil]
+                end
+                frame = invoke("service_submit", request, 0, other)
+                if frame[0] == 0 && (frame[1] != "".b || !frame[2].nil? ||
+                    !frame[3].instance_of?(Integer) || frame[3] <= 0 || frame[3] >= (1 << 64))
+                    # Admission may already have happened; never infer safe replay.
+                    raise ArgumentError, "successful admission omitted its exact nonzero request ID"
+                end
+                frame
+            end
+
             # @brief Retire before attempting exactly one capability close.
             # @return Original cleanup errno, or 9 if previously retired.
             def close

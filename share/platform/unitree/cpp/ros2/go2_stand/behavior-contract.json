@@ -1,0 +1,86 @@
+{
+  "original_task": "example/src/src/go2/go2_stand_example.cpp",
+  "preserved_control_body_sha256": "0776725586428cb9e86b7c2fef78c6a66bb6ca83de774d7d17a7aa891df23001",
+  "period_ns": 2000000,
+  "topic_depth": 10,
+  "topics": [
+    {
+      "topic": "/lowcmd",
+      "direction": "publish",
+      "native_type": "unitree_go/msg/LowCmd",
+      "canonical_bytes": 749
+    },
+    {
+      "topic": "/lowstate",
+      "direction": "subscribe",
+      "native_type": "unitree_go/msg/LowState",
+      "canonical_bytes": 1050
+    }
+  ],
+  "initial_wait_callbacks": 499,
+  "phase_duration_parameters": [
+    500,
+    500,
+    1000,
+    900
+  ],
+  "phase_counters": "Original float increments/clamps and sequential ifs, including shared boundary callback behavior.",
+  "done_behavior": "Logs completion once, continues publishing the final pose indefinitely; no synthetic zero-stop or early exit.",
+  "init_start_calls": "Constructor and main both call Init/Start as upstream; framework replacement/callback lifecycle requires qualification.",
+  "required_runtime_checks": [
+    "real LowState feedback influences first interpolation start",
+    "all four original stages and final hold",
+    "all20 motor fields and valid manufacturer raw CRC",
+    "original duplicate entity lifecycle",
+    "external cancel/disconnect and complete retirement",
+    "actual VM bounds/wrong-memory-index/cross-module/ungranted-interface/resource/invalid-handle denial"
+  ],
+  "runtime": "NOT RUN",
+  "negative_tests": "NOT RUN",
+  "official_simulation": "BLOCKED",
+  "library_kinds": {
+    "static": "SOURCE_PREPARED_BUILD_PENDING",
+    "dynamic": "NOT IMPLEMENTED",
+    "independent_multi_memory": "NOT IMPLEMENTED"
+  },
+  "cold_bootstrap": "NOT QUALIFIED",
+  "one_button_deployment": "BLOCKED",
+  "concrete_source_selection": {
+    "header": "include/platform/unitree/cpp/ros2/go2_stand/selection.hpp",
+    "spin_mode": "until_shutdown",
+    "maximum_spin_steps": 0,
+    "pacing_ns": 2000000,
+    "cancel_check_quantum_ns": 1000000,
+    "independent_cancel_alias": "unitree-go2-cancel",
+    "actual_clock_sources": [
+      "Granted ROS2steadyclock for originalTimer",
+      "Granted WASImonotonic clock/poll_oneoff for sourcepacing"
+    ],
+    "native_lifecycle_peaks": {
+      "publisher_same_alias": 2,
+      "lowstate_subscriber_same_alias": 2,
+      "clock_shared_by_node": 1,
+      "cancel_subscriber": 1,
+      "successful_setup_peak_total": 4,
+      "explanation": "Original replacements are created before old member reset. Independentcancel opens only after originalconstructor/mainsetup; aftersetup pub/sub/clock/cancel each hasone. Failednativecleanup still requires independentguardian."
+    },
+    "runtime": "NOT RUN"
+  },
+  "optional_callback_observation": {
+    "enabled_by_default": false,
+    "observed_target": "unitree-upstream-go2-stand-observed",
+    "header": "include/platform/unitree/cpp/ros2/go2_stand/callback_observation.hpp",
+    "source_addition": "Three explicit guarded observation blocks; literal source body changed, all original algorithm statements retained unchanged; guarded-off production identity checked in r29.",
+    "actual_callback_tick": "Original motiontime counter, not Selection spin passes; initial1..499 noLowCmd and firstLowCmd500.",
+    "contract": "share/platform/unitree/cpp/ros2/go2_stand/callback-and-cancel-contract.json",
+    "no_native_application_or_fake_event": true,
+    "runtime": "NOT RUN"
+  },
+  "independent_wasm_cancellation": {
+    "project": "example/platform/unitree/c/ros2/humble/upstream_go2_cancel",
+    "publisher_alias": "unitree-go2-stop-request",
+    "task_subscribe_alias": "unitree-go2-cancel",
+    "separate_instance_required": true,
+    "runtime": "NOT RUN"
+  }
+}

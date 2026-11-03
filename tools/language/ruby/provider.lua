@@ -302,7 +302,8 @@ function build(target, root, request)
 	local output = path.absolute(target:targetfile())
 	os.mkdir(path.directory(output))
 	io.writefile(output, packed, { encoding = "binary" })
-	local cache = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/interpreter")
+	local cache = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
+		.workspace(target, "interpreter")
 	os.mkdir(cache)
 	json.savefile(path.join(cache, "build-receipt.json"), {
 		format = shared and "uwvm-shared-interpreter-module-v1"

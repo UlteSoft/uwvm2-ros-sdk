@@ -76,3 +76,42 @@ for the exact application and runtime bytes. Codec-only checks, old engine
 identity and cross compilation cannot establish that evidence.
 
 The complete original raw-operation signatures, exact scalar/result rules and ownership are documented in `share/language/js/RAW-ABI.md`.
+
+
+The common lazy source loader now merges the exact CPython3.14.8 source graph in
+`stdlib.json` before platform modules. Its286 modules cover the conservative import
+graph rooted at collections, collections.abc, dataclasses, pathlib, typing, json
+and array; genuine collections itself installs its original collections.abc alias.
+Every source member is hashed against the retained CPython source inventory.
+Duplicate platform declarations must have the identical original stdlib bytes.
+All four existing ROS1/ROS2 memory32/memory64 command engines are genuinely
+relinked from the same unchanged core archives with16MiB source slots; JavaScript
+keeps its original4MiB default. `relink_stdlib.py` records the real compiler, target
+libraries, original core hashes, complete ABI imports and new artifact hashes.
+The original core construction lock remains historical; current source and the
+new command relink provenance have separate locks.
+
+The native extensions remain the genuine statically compiled WASI core modules.
+There is no native Python application fallback or invented standard module. This
+is not a claim that every optional desktop/network/platform extension is usable.
+Missing socket, TLS, dynamic loader or host-specific extensions keep their actual
+import/runtime errors. The complete robot ROS/driver/simulator integration still
+requires separate genuine VM and official-environment acceptance.
+
+The public relink maintenance entry requires explicit paths, for example:
+`python3.12 -B tools/language/python/relink_stdlib.py --sdk /absolute/sdk
+--llvm /absolute/verified/llvm23 --output /absolute/fresh-output` (one command).
+Run it through the admitted CPU scheduler. It independently checks the actual
+64GiB/zero-swap ancestor before compiler execution, validates both existing
+genuine core/toolchain closures, and reports their reuse explicitly. It needs
+no UWVM_SDK_OUTPUT variable. Core cold construction remains build.py's separate
+operation. memory64/table64 metadata is derived from the emitted artifact's
+actual memory and table widths; no64-bit guest execution is implied.
+
+The same common cold-build and explicit-output relink entries compile the actual
+`src/platform/ros/py/_native.c` bridge for each selected backend. CPython registers
+its real `_roswasm_native` module alongside the separate `_uwvm_ros` module; no
+name alias or native application fallback is used. The shared bridge.py owns
+the compiler flags and exact source/header inventory. Both source locks and
+runtime metadata record those real bridge inputs. Original core archives remain
+unchanged; capability grants and official scenario execution stay separate.

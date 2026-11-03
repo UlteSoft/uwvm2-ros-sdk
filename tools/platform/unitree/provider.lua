@@ -106,6 +106,11 @@ end
 -- @details Unsupported pairs fail before build. Deploying an existing artifact
 -- does not require a compiler. Source files must use their genuine extensions.
 function provider.configure(target, root, context)
+    if target:values("ros.sdk.unitree.upstream_task") then
+        local installed = sdk(target)
+        return import("upstream_go2_stand", {rootdir = path.join(installed, "tools/platform/unitree"), anonymous = true})
+            .configure(target, installed, context)
+    end
 	local selected = triple(target)
 	local language = target:values("ros.sdk.language")
 	assert(supported[language], "Unitree has no complete command route for " .. tostring(language))
@@ -172,10 +177,11 @@ function provider.configure(target, root, context)
 		path.join(sdk(target), "include/platform")
 	)
 	if language == "js" or language == "py" or language == "lua" then
-		return import(
-			"provider",
-			{ rootdir = path.join(sdk(target), "tools/language/js"), anonymous = true }
-		).configure(target, sdk(target), context)
+		local adapter = import(
+			"language_adapter",
+			{ rootdir = path.join(sdk(target), "tools/xmake"), anonymous = true }
+		).load(sdk(target), context)
+		return adapter.configure(target, sdk(target), context)
 	end
 	if language == "ruby" or language == "php" then
 		assert(
@@ -220,6 +226,11 @@ end
 -- runtime and disables exceptions. Package maps use absolute installed paths,
 -- while examples contain only public module names. No source is renamed.
 function provider.build(target, _root, context)
+    if target:values("ros.sdk.unitree.upstream_task") then
+        local installed = sdk(target)
+        return import("upstream_go2_stand", {rootdir = path.join(installed, "tools/platform/unitree"), anonymous = true})
+            .build(target, installed, context)
+    end
 	local root = sdk(target)
 	local language = target:values("ros.sdk.language")
 	local output = path.absolute(target:targetfile())
@@ -284,6 +295,11 @@ end
 -- @brief Launch an already compiled command through uwvm2-ros and its native gateway.
 -- @param target Existing Wasm target; trusted deployment supplies all permissions.
 function provider.run(target, root, context)
+    if target:values("ros.sdk.unitree.upstream_task") then
+        local installed = sdk(target)
+        return import("upstream_go2_stand", {rootdir = path.join(installed, "tools/platform/unitree"), anonymous = true})
+            .run(target, installed, context)
+    end
 	return import("provider", { rootdir = path.join(root, "tools/platform/ros"), anonymous = true }).run(
 		target,
 		root,

@@ -1,0 +1,43 @@
+{
+  "format": "uwvm-native-source-phase-budget-v1",
+  "generations": 2,
+  "native_startup_seconds": 120,
+  "native_post_ready_max_seconds": 300,
+  "native_retirement_seconds": 20,
+  "source_footer_seconds": 10,
+  "native_generation_queue_seconds": 450,
+  "between_generations_seconds": 120,
+  "outer_journal_open_close_seconds": 20,
+  "required_full_journal_seconds": 1040,
+  "external_post_ready_allocations_seconds": {
+    "producer_attach_and_arm": 15,
+    "warmup": 20,
+    "primary_observation_and_task": 220,
+    "native_fault_or_task_cancel_window": 25,
+    "native_transport_drain": 10
+  },
+  "semantics": "Enforced allocation proposal,not a demonstrated successful guest bound. Full authority/journal arming must precede the first relevant native/VM operation. Strict producer owns all application,arming,warmup and journal completion assertions.",
+  "tb3_primary": {
+    "topic": "/scan",
+    "configured_hz": 5,
+    "minimum_actual_samples": 1000,
+    "minimum_measurement_wall_seconds": 200,
+    "allocated_primary_wall_seconds": 220,
+    "native_gazebo_packets_are_not_guest_callbacks": true
+  },
+  "preparation": "Any preparation performed after observer arming must be added explicitly; UR private cloning has a separate300sallocation and is not silently excluded.",
+  "current_600_second_profile": "INSUFFICIENT_FOR_THIS_FULL_TWO_GENERATION_ALLOCATION",
+  "profile_installed_or_admission_granted": false,
+  "original_rates_models_physics_tasks_changed": false,
+  "scene_pass": false,
+  "reset_allocation_revision": {
+    "previous_allocation_seconds": 30,
+    "actual_split_job_gap_seconds": 45.189618168,
+    "previous_reset_allocation_satisfied": false,
+    "new_reset_allocation_seconds": 120,
+    "includes": "Actual operator/preparation/queue gap is retained. An unbounded future queue delay is not proven bounded; strict producer must fail the120sreset deadline if exceeded."
+  },
+  "native_shutdown_reserve_seconds": 10,
+  "source_live_budget_max_seconds": 290,
+  "shutdown_reserve_semantics": "The source controls stop before the unchanged native backend300sdeadline; external phases have290s,then a10sbackend shutdown reserve. This prevents normal source expiry racing an already retired backend. Startup120+backend300+retirement20+footer10 remains450."
+}

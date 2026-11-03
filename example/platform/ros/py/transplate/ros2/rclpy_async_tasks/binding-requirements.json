@@ -1,0 +1,16 @@
+{
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "format": "uwvm-python-transplate-binding-requirements-v1",
+  "import_module": "uwvm_ros2_v1",
+  "isolation_or_official_ROS_qualified": false,
+  "native_ROS_operations_required_by_this_local_task_case": false,
+  "native_python_business_fallback": false,
+  "required_aliases": [],
+  "runtime_owner_requirements": [
+    "Actual genuine Python.Wasm running the complete frozen module through the common stopped-exec/live-boundary contract",
+    "Existing reviewed import ABI, bounded CPU/memory and explicit stdio; no native network/process/FFI business",
+    "Native ROS Stage A remains separately mandatory in rclpy_pubsub; this local scheduler case does not replace it"
+  ],
+  "status": "REQUIREMENTS_ONLY_NO_GRANTS_CREATED"
+}

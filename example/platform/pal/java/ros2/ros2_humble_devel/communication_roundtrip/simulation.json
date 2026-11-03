@@ -1,0 +1,55 @@
+{
+  "format": "uwvm-sdk-simulation-example-v1",
+  "api_version": 1,
+  "profile": {
+    "id": "pal-java-core-service-stage-a-v0-1-0",
+    "platform": "pal",
+    "ros": "ros2",
+    "distribution": "humble",
+    "official_provider": "unchanged ros2/demos AddTwoInts ServerNode at37e25e0d; Jazzy native fixture build/identity/startup qualified; full demo_nodes_cpp/example_interfaces packages remain unqualified",
+    "scope": "Stage A official ROS service communication; guest compilation profile Humble. Native release/ABI is separately selected and must be qualified; no full robot simulation claim."
+  },
+  "stage": "A",
+  "frozen_wasm": {
+    "sdk_path": "example/platform/pal/java/ros2/ros2_humble_devel/communication_roundtrip/build/artifacts/pal-java-service-roundtrip.wasm",
+    "sha256": "147640c5091b069a465d6688b7d02144f406342e262c821e1e2dd3e216032e09",
+    "state": "R21_CURRENT_GUEST_AOT_FULL_WABT_DEFAULTDENY_ONLY_REAL_ROS_NOT_RUN"
+  },
+  "scenarios": [
+    {
+      "id": "permitted-two-fresh-guest-service-replies",
+      "status": "REQUIRED_NOT_RUN"
+    },
+    {
+      "id": "permission-denied-no-native-effect",
+      "status": "REQUIRED_NOT_RUN"
+    },
+    {
+      "id": "closed-handle-stale-rejection",
+      "status": "REQUIRED_NOT_RUN"
+    },
+    {
+      "id": "bounded-disconnect-timeout-no-replay",
+      "status": "REQUIRED_NOT_RUN"
+    }
+  ],
+  "required_implementation": {
+    "status": "BLOCKED",
+    "diagnostic": "BLOCKED_STAGE_A_OFFICIAL_SERVICE_HOST_AND_PUBLIC_FEEDBACK_CONTRACT",
+    "requirements": [
+      "Build and independently validate the genuine Java Wasm; preserve complete source/compiler identity.",
+      "Consume the pinned source-preserved Jazzy peer and native AddTwoInts interface-subset build/identity/startup evidence; qualify actual restricted service integration separately.",
+      "VM owner: publish qualified restricted service gateway and permission/audit/result identity.",
+      "SDK01: qualify service-result Stage A support in shared public lifecycle/feedback entry; existing joint-feedback success cannot substitute.",
+      "Execute all four public scenarios with actual per-actor/common64GiB/zero swap, full-lifetime canonical lock and retirement."
+    ]
+  },
+  "public_inputs": [],
+  "native_driver": null,
+  "host_jvm_business": false,
+  "host_native_fallback": false,
+  "stage_B": {
+    "required": true,
+    "state": "ALL_APPLICABLE_VENDOR_SIMULATIONS_REMAIN_REQUIRED"
+  }
+}

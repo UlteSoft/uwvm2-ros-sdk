@@ -1,0 +1,103 @@
+{
+  "Mac_SDK_Python_syntax_AST_import_build_test_runtime": false,
+  "any_Git_command_or_metadata_access": false,
+  "files": [
+    {
+      "bytes": 2547,
+      "http_metadata": {
+        "etag": "\"971df9f02a2315bb86a6c3e83876e0609ae2d3f51e763675faded5a1bbf6ff63\"",
+        "last_modified": null
+      },
+      "path": "package.xml",
+      "sha256": "5a844ef73d5d56d05593a6d0c2dad3426a5d89b87e59699e28651971746ef756",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/package.xml"
+    },
+    {
+      "bytes": 4636,
+      "http_metadata": {
+        "etag": "\"83a74139b26bf6bbeb89a70b2a7478afb481283a6a2c5394438e6cfc43bd0043\"",
+        "last_modified": null
+      },
+      "path": "src/rospy/__init__.py",
+      "sha256": "9e5c4e111abae5c45266c74c2ed83ff045d00b29d4c514d31c09b250460c9159",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/__init__.py"
+    },
+    {
+      "bytes": 20902,
+      "http_metadata": {
+        "etag": "\"7f3b76fa0888c966270c87c55ca0cda91161532271eab2a8ab9eb18af3d2d28f\"",
+        "last_modified": null
+      },
+      "path": "src/rospy/client.py",
+      "sha256": "c9c9d5bcd3484bec94b51aa7cc4fcb3d474d199c088ed96aa3e7139bddb1723b",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/client.py"
+    },
+    {
+      "bytes": 53688,
+      "http_metadata": {
+        "etag": "\"ceda180d7959407709ddf0499270d5dcbb5310bbf2a6d8e31dace3d9a2f232bd\"",
+        "last_modified": null
+      },
+      "path": "src/rospy/topics.py",
+      "sha256": "e705097f636798b9c6375bcb6d25916e0a0f432a8a517f581c224e786bd0a766",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/topics.py"
+    },
+    {
+      "bytes": 3143,
+      "http_metadata": {
+        "etag": "\"46831b2d6e6bbbf795c0cb94fdc77aa23a8a0b91cfb3ab4f7e5ac3e7d0f51ea6\"",
+        "last_modified": null
+      },
+      "path": "src/rospy/exceptions.py",
+      "sha256": "244fdb72aac102d457eea107f04f583160e8e98db4a0c3bdf549ee3641cd053f",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/exceptions.py"
+    },
+    {
+      "bytes": 22637,
+      "http_metadata": {
+        "etag": "\"7b38439d70609caff6ea5f795e9ad211a1753ac9d625469f92d2733cbe60fd90\"",
+        "last_modified": null
+      },
+      "path": "src/rospy/core.py",
+      "sha256": "1dec052fbd06f4dce58b5028c3063241f5bcf88c4e8de36c540d0d65d717cc15",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/core.py"
+    },
+    {
+      "bytes": 8899,
+      "http_metadata": {
+        "etag": "\"5beb76080bab679bcae2365ba9e13565ac4bc61a9ae93c4cbc341f3f086ac5a3\"",
+        "last_modified": null
+      },
+      "path": "src/rospy/rostime.py",
+      "sha256": "f38f5bc94d4a88449434619a199aa0c51f2a3d58fdb7e83b12e4a1cc378c1d9b",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/rostime.py"
+    },
+    {
+      "bytes": 9351,
+      "http_metadata": {
+        "etag": "\"87df99e83eecad0ad661da0bc8cb9f8187a117550532f954ae0aaa7bfc3285ae\"",
+        "last_modified": null
+      },
+      "path": "src/rospy/timer.py",
+      "sha256": "7646b9e4e6bb86cdb3f75fcadadb8c1ebbc0ae747597c77410014073d0d4b642",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/timer.py"
+    },
+    {
+      "bytes": 12444,
+      "http_metadata": {
+        "etag": "\"57ccc62e30447bd31b41d4f8702686cdf815196566d03fa11c6aee2ed1193d24\"",
+        "last_modified": null
+      },
+      "path": "src/rospy/names.py",
+      "sha256": "168b3cdc48c37fb339fe9a31f5dc7c3e06fec4b8427ff79c1c123de3d564339d",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/names.py"
+    }
+  ],
+  "format": "sdk06-fixed-upstream-rospy-reference-v1",
+  "package_version_verified_from_exact_original_xml": true,
+  "release_tag": "1.17.4",
+  "repository": "https://github.com/ros/ros_comm",
+  "role": "Upstream API/license reference data only; SDK adaptation is separate. None of these native socket/thread client modules was imported/executed.",
+  "source_bytes_frozen_by_sha256": true,
+  "utc": "2026-10-28T17:45:27.993728+00:00"
+}

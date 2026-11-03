@@ -1,0 +1,21 @@
+{
+  "format": "uwvm-portable-robot-grant-v1",
+  "alias": "robot",
+  "module": "main",
+  "capability": "joint.position.bounded.v1",
+  "wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+  "policy_epoch": 1,
+  "rights": 15,
+  "native": {
+    "socket": "${owned_run_directory}/native.sock",
+    "uid": 1000,
+    "executable_sha256": "${actual_built_native_sha256}",
+    "provenance_sha256": "${actual_accepted_native_provenance_sha256}",
+    "generation": 1
+  },
+  "resources": {
+    "joint_state_topic": "/uwvm_sim/fourier/joint_state_broadcaster/joint_states",
+    "position_action": "/uwvm_sim/fourier/bounded_position_controller/follow_joint_trajectory",
+    "controller_status_service": "/uwvm_sim/fourier/controller_manager/list_controllers"
+  }
+}

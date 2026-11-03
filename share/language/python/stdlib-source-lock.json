@@ -1,0 +1,83 @@
+{
+  "format": "uwvm-cpython-stdlib-source-lock-v1",
+  "python_version": "3.14.8",
+  "original_core_construction_lock": "share/language/python/construction-source-lock.json",
+  "original_core_construction_lock_sha256": "fa53c387ab6b3c7a4824eb42c5683e4a5ac8a0c91b74559a1ba6d5dac434c17f",
+  "application_capacity": 16777216,
+  "files": [
+    {
+      "path": "src/language/js/support/application.h",
+      "bytes": 1501,
+      "sha256": "00626c597aaef0f27aa4287f642bffa2eaecf0d3e7f015b7cf05682f00bb0c44"
+    },
+    {
+      "path": "tools/language/python/build.py",
+      "bytes": 10619,
+      "sha256": "5d3fff60b953363c5413d1951a8fbff8d1a9344f7f4132a5208b1d40545c1539"
+    },
+    {
+      "path": "tools/language/js/pack.lua",
+      "bytes": 17494,
+      "sha256": "4c929e48355e8ec21f29b008348fbeac0a2e6eb3e3caf1c2f0eb461fec75c04b"
+    },
+    {
+      "path": "tools/language/python/transplate.lua",
+      "bytes": 9186,
+      "sha256": "7749fa42894242e5d232f7c164eecb705b655fecd62bbea350cec33a3c1d6e15"
+    },
+    {
+      "path": "share/language/python/stdlib.json",
+      "bytes": 119588,
+      "sha256": "14fbb3333f05c8cbd69add85b1599c5e65e73b07217376c752e2f853f7fee997"
+    },
+    {
+      "path": "tools/language/python/relink_stdlib.py",
+      "bytes": 8313,
+      "sha256": "adb2964a90850891a809947b2a0559f006b16096083680693aa9db435fd02e9c"
+    },
+    {
+      "path": "tools/language/python/bridge.py",
+      "bytes": 1547,
+      "sha256": "2467e8707f36698e89e2f7167dae1b755bd77d3aaad4bce5d601e1f502e85f21"
+    },
+    {
+      "path": "src/language/python/command.c",
+      "bytes": 10074,
+      "sha256": "8e9a6620dbac745ad2d0ea0cf62c966ee79a7866dc124d22377d032bf676f295"
+    },
+    {
+      "path": "src/language/js/support/abi.h",
+      "bytes": 4005,
+      "sha256": "b335dece0f2b468ef11aee0e7cb2640eadd75b235e5309dc4ca640854145eded"
+    },
+    {
+      "path": "tools/language/js/abi_dispatch.py",
+      "bytes": 6577,
+      "sha256": "06e08835aecda4af454ad7d078d6e568179380c49eb6ce90eafadfd6a5447b5d"
+    },
+    {
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "bytes": 12477,
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "path": "include/platform/ros1/c/roswasm/detail/ros1/abi.h",
+      "bytes": 85359,
+      "sha256": "666e50f45ad2b3786abaa858e597b89c4e873cc5214ccd4d11abc7de35c2c991"
+    },
+    {
+      "path": "include/platform/ros2/c/roswasm/detail/ros2/abi.h",
+      "bytes": 95726,
+      "sha256": "ccc978219bd47893b6ce4efae4fcb1ebdb7a75c0aadded0001b7dde97310289b"
+    },
+    {
+      "path": "src/platform/ros/py/_native.c",
+      "bytes": 52515,
+      "sha256": "e25a651450323243f7a06d167b2254d57eee97c57b37c58f136ae8730cb1ca3d"
+    }
+  ],
+  "builtin_modules": [
+    "_uwvm_ros",
+    "_roswasm_native"
+  ]
+}

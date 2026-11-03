@@ -1,0 +1,54 @@
+{
+  "format": "uwvm-portable-family-source-v1",
+  "version": "0.2.0-preview",
+  "state": "FROZEN_SOURCE_PREVIEW_NO_SYNTAX_BUILD_OR_RUNTIME_ACCEPTANCE",
+  "files": [
+    {
+      "path": "example/platform/ros/portable/v0_2_0/planar_goal/main.c",
+      "bytes": 3974,
+      "sha256": "52edad63eab82bd114ccdb21399bdbc6a0fbefb2390aa08c76f2bb50d52f02c8"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_2_0/planar_goal/xmake.lua",
+      "bytes": 728,
+      "sha256": "598185ca2d1e247be3a3a96ff29771d25f70f2d2122500bf5c5f2bb32a237bc3"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_2_0/sensor_digest/main.c",
+      "bytes": 2479,
+      "sha256": "25dbc978defd1723a70fd8ae6c6c165f6b6e3ac1f1a5b6d5dc5270907962135d"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_2_0/sensor_digest/xmake.lua",
+      "bytes": 732,
+      "sha256": "5bad6db99397acb5a0858dd6d9ab3fe0e49b8d9a341826fb1f1955b559afa5eb"
+    },
+    {
+      "path": "document/platform/ros/en_US/portable/v0_2_0/README.md",
+      "bytes": 2757,
+      "sha256": "825f31936a333c90dbf8f8da7fb150202591d86a602be666d3d095661834a9f4"
+    },
+    {
+      "path": "document/platform/ros/zh_CN/portable/v0_2_0/README.md",
+      "bytes": 2599,
+      "sha256": "35e5bb4756b2565a7a2bb63e918a24cedfb9546feaf4a4dbef3c0febc939b4dc"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.2.0/profiles.json",
+      "bytes": 3331,
+      "sha256": "b93cd00b95f5eb02dc96d9f034c4e31ebcc39094c724a2efbe1bf29a7070bdd1"
+    },
+    {
+      "path": "share/platform/ros/portable/v0.2.0/wire.json",
+      "bytes": 3186,
+      "sha256": "989d50567405fcbe0a8cddf81cb6e807f0b26aaa5706b170d800192d41977e40"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "include/platform/ros/portable/v0_1_0/abi.h",
+      "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d",
+      "semantics": "generic call declarations only; distinct family wire profiles do not inherit joint semantics"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "uwvm-sdk-java-legacy-source-profile-v1",
+  "api_version": 1,
+  "profile": "rcljava-source-subset-0.1.1",
+  "source_root": "v0_1_1/src/main/java",
+  "upstream": {
+    "repository": "https://github.com/ros2-java/ros2_java",
+    "commit": "d0e4e952bad1977ce9818d00b520d3ad0aeafd8d",
+    "tree": "152e79bcb6ad7e3e0ef808acbd5ae47191cadb76",
+    "complete_upstream_client_compiled_to_wasm": false
+  },
+  "toolchain": {
+    "existing_manifest": "share/toolchains/host/linux-x86_64/jvm-aot.json",
+    "jdk": "21.0.10+7",
+    "teavm": "0.13.1",
+    "target": "wasm32-wasip1",
+    "exception_profile": "noeh",
+    "host_jvm_role": "DEVELOPMENT_COMPILATION_ONLY",
+    "guest_gc": "TEAVM_LINEAR_MEMORY",
+    "wasm_gc": "NOT_QUALIFIED",
+    "memory64": "UNSUPPORTED",
+    "native_eh": "NOT_QUALIFIED"
+  },
+  "transport": {
+    "implementation": "org.uwvm.roswasm.Ros2Transport",
+    "namespace": "uwvm_ros2_v1",
+    "abi_owner": "SDK01_VM_OWNER_READONLY",
+    "new_imports_invented": false,
+    "host_jvm_application": false,
+    "native_jni_fallback": false,
+    "subscription_observer": "Distinct explicit event.observe alias bound by existing event_watch; versioned event_poll_v1 only",
+    "subscription_validation": [
+      "Complete64-byte existing header",
+      "Exact full64-bit source handle",
+      "Contiguous nonzero sequence",
+      "Stable nonzero native instance/session",
+      "Topic kind/backend/flags/correlation/error/length",
+      "Complete typed String decoding before guest callback",
+      "Terminal malformed/lost/retired stream; no implicit retry"
+    ]
+  },
+  "current_revision": {
+    "relocation": "SOURCE_AUTHORED",
+    "build": "V0_1_1_NOT_RUN",
+    "application_wasm": "NOT_EMITTED_OR_FROZEN",
+    "vm_execution": "V0_1_1_NOT_RUN",
+    "official_simulation": "NOT_RUN",
+    "release_runtime_architectures": "ALL_NOT_RUN",
+    "performance": "NOT_RUN",
+    "subscription_migration": "SOURCE_AUTHORED_NOT_BUILT_OR_EXECUTED",
+    "credit_driver_dispatch_exclusion": "R23_SOURCE_AUTHORED_NOT_LINUX_VERIFIED"
+  },
+  "limitations": [
+    "Maintained source API subset, not complete upstream binary/source compatibility.",
+    "Exact supported message and QoS deployments require real installed provider identity and grants.",
+    "Native wait sets, multithreaded executors, general reflection/JNI, actions and complete parameter/discovery/time semantics remain incomplete.",
+    "Legacy source port and guest reverse feedback have no full runtime qualification."
+  ],
+  "retained_historical_source_root": "v0_1_0/src/main/java"
+}

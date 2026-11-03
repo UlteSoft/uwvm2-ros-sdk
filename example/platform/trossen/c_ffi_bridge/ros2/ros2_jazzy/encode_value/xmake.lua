@@ -16,6 +16,7 @@ if not root then
     end
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/platform/trossen/xmake/required_guest_tests.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -30,4 +31,6 @@ target("trossen_ffi_encode_value")
     set_ros_scenario("encode_value")
     add_includedirs(path.join(root, "include/platform"))
     add_files("Main.c", path.join(root, "src/platform/trossen/c_ffi_bridge/ros2/ros2_jazzy/abi.c"))
+    uwvm_trossen_required_guest_tests({scenario = "encode_value",
+        cases = {"guest-codec-normal", "guest-codec-boundary", "guest-codec-malformed", "guest-codec-abi-refusal"}})
 target_end()

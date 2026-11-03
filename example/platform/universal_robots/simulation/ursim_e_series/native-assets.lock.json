@@ -1,0 +1,51 @@
+{
+  "format": "uwvm-native-ursim-assets-v1",
+  "official_image_manifest": "sha256:c80dfb4ec6b554db6d20ba45fb90d0ec056d0303bd3c7a7040a4e8b503eaaf87",
+  "image_metadata_only_derived_manifest": "sha256:ffb687dd21d2ad700002f80abd89312a599a3c70def003e48b9d4db8cb724f2b",
+  "rootfs_regular_files": 35623,
+  "rootfs_symlinks": 3368,
+  "files": [
+    {
+      "path": "native_assets/native_context.py",
+      "bytes": 861,
+      "sha256": "28ba6be721816ab67ad3a0067de7a7fd89979cd8d2abc09ca05c3de8e9170f31"
+    },
+    {
+      "path": "native_assets/native_controller.sh",
+      "bytes": 1196,
+      "sha256": "80bec59a2a68fa8ee9dd6e4055c1a222be6f032b41a0c178b23141486ef64a57"
+    },
+    {
+      "path": "native_assets/native_driver.py",
+      "bytes": 7196,
+      "sha256": "ab6bcaa46d84e0635628a0447f84e27cd6d0865fbfe81873beeac40dbd3d1d4a"
+    },
+    {
+      "path": "native_assets/native_ui.py",
+      "bytes": 7590,
+      "sha256": "32532d45ee38b16cfbd53d279dfbd13cfa3ce9ba909cfae0f2d52bfbdf27cb44"
+    },
+    {
+      "path": "native_assets/native_ui_plan.json",
+      "bytes": 1722,
+      "sha256": "dd7483e09cf1ff2e336646e73a3f17fa59e72101d8f40356a6834da68d8e25f1"
+    },
+    {
+      "path": "native_assets/remotecontrol-enabled.properties",
+      "bytes": 58,
+      "sha256": "49838a1a0697f023f061f05931c2d8317e61ac32edbfa0968e178eb6cdde52fc"
+    }
+  ],
+  "shared_sources": [
+    {
+      "path": "tools/shared/python/owned_processes.py",
+      "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+    },
+    {
+      "path": "tools/shared/python/runtime_boundary.py",
+      "sha256": "d9b6f1357e247e46ef1212faad4542f283c57230f1670c9c9114b3666485e484"
+    }
+  ],
+  "native_roles_only": true,
+  "production_admission": false
+}

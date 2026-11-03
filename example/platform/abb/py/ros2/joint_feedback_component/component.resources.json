@@ -1,0 +1,49 @@
+{
+  "format": "sdk02-guest-component-resource-contract-v1",
+  "status": "SOURCE_REVIEWED_LIMITS_NOT_EXECUTION_OR_LIVE_ADMISSION",
+  "scope": "Fresh Python guest component build and codec assertions only; official framework simulation remains mandatory",
+  "manual_memory_max_bytes": 68719476736,
+  "manual_memory_swap_max_bytes": 0,
+  "manual_shared_ancestor_same_limits_required": true,
+  "common_pre_admission_floor_bytes": 13958643712,
+  "ordinary_free_reserve_bytes": 12884901888,
+  "root_floor_bytes": 570425344,
+  "controller_additional_root_metadata_headroom_bytes": 33554432,
+  "build": {
+    "public_process_file_limit_bytes": 805306368,
+    "writable_work_output_cap_bytes": 4294967296,
+    "other_input_cap_bytes": 67108864,
+    "control_cap_bytes": 134217728,
+    "container_tmpfs_cap_bytes": 553648128,
+    "required_ordinary_free_with_all_caps_bytes": 17934843904,
+    "LLVM_archive_sha256": "8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522",
+    "LLVM_payload_bytes": 703441603,
+    "LLVM_uncompressed_stream_bytes": 703457036,
+    "LLVM_cold_stream_plus_payload_bytes": 1406898639,
+    "Python_core_archive_bytes": 44156460,
+    "Python_core_archive_sha256": "fcbe4a07910577d8641f0ce295cb5e4c428f5f1fed8de38a22e1b002b9dcc9fa",
+    "Python_core_manifest_sha256": "ac74e250e64fea3b7c535a29e0314ec4f94571319d50d9ca77a571abb6d1d866",
+    "phases_are_sequential": true,
+    "actual_peak_measured": false,
+    "reserve_reason": "4GiB covers the complete fixed compiler payload plus two objects and temporary/copied Wasm at the768MiB per-file ceiling, generated header, log/metadata allowance; /tmp and /run are additionally charged. Exact measured peaks remain required. Any unaccounted file or excess is a failed admission, never a quota waiver."
+  },
+  "runtime": {
+    "arguments": [
+      "--runtime-aot",
+      "--runtime-llvm-jit-cache-path",
+      "disable"
+    ],
+    "maximum_application_wasm_bytes": 67108864,
+    "regular_file_limit_bytes": 134217728,
+    "maximum_log_stream_bytes": 8388608,
+    "maximum_seconds": 300,
+    "persistent_native_object_cache": "explicitly disabled for codec component; cold AOT compilation remains in process and mandatory checked unwind stays unchanged",
+    "persistent_cache_performance_qualification": "NOT_COVERED; original required off/on performance rows remain",
+    "actual_memory_or_storage_peak_measured": false
+  },
+  "hosted_CI_resources": "Record actual CI resources; manual64GiB/0swap enforcement comes from the live enclosing admitted job, never this historical JSON",
+  "required_first_official_scene_groups": 15,
+  "real_guest_assertion_bodies": 9,
+  "actual_guest_assertions_executed": 0,
+  "full_framework_simulation_acceptance": false
+}

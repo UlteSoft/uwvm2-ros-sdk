@@ -119,6 +119,10 @@ def spin(node, executor=None):
 
     The driver must block or return False to end a supervised run. It is not a
     native ROS wait-set and its tests are recorded as a migration profile.
+    Context finite mode returns at credit exhaustion; explicit until_shutdown
+    mode raises its finite failure budget instead of reporting completion.
+    One initial nonblocking pass precedes the first driver credit. Credits are
+    driver invocations, not callback counts or elapsed-time guarantees.
     """
     if executor is not None:
         raise NotImplementedError(
@@ -137,7 +141,9 @@ def spin(node, executor=None):
 def spin_until_future_complete(node, future, executor=None, timeout_sec=None):
     """Drive a real admitted Future with finite explicit credits, never a fake wait.
 
-    Zero performs one nonblocking pass. None uses the finite selected Driver.
+    Zero performs one nonblocking pass. None uses the configured Driver and
+    shares its whole-Context credits with spin/other Future waits. Explicit
+    until_shutdown exhaustion raises; it never completes a pending Future.
     Native positive-timeout, Executor/Task and availability semantics remain
     unavailable; no ungranted time, thread or graph-derived readiness is used.
     """

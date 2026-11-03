@@ -1,0 +1,37 @@
+{
+  "format": "sdk-turtlebot3-original-obstacle-scene-requirements-v2",
+  "native_scene_binding": "scene.binding.json",
+  "application_source": {
+    "repository": "https://github.com/ROBOTIS-GIT/turtlebot3",
+    "commit": "90a68bd2e3c61c12966779da89d8eeaec82730e9",
+    "path": "turtlebot3_example/turtlebot3_example/turtlebot3_obstacle_detection/turtlebot3_obstacle_detection.py"
+  },
+  "authoritative_original_task_scene": {
+    "path": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/task-scene-requirements.json",
+    "sha256": "869ebc85c591a075425d359c2f8fd0385de3cc71809a0db4ab69a9e4eaacdb15"
+  },
+  "authoritative_independent_wasm_scenario": {
+    "path": "example/platform/robotis/c/ros2/humble/obstacle_scenario/scenario-contract.json",
+    "sha256": "07f4e16d6125b02049285aeb55b6e7b3947be2a524755e4a786d64dfeb751936"
+  },
+  "selected_official_world": "turtlebot3_gazebo/worlds/turtlebot3_dqn_stage1.world",
+  "selected_official_static_model": "turtlebot3_gazebo/models/turtlebot3_dqn_world/model.sdf",
+  "test_selected_spawn_pose_m": [
+    1.1,
+    0,
+    0.01
+  ],
+  "test_selected_spawn_yaw_rad": 0,
+  "original_world_model_sensor_app_thresholds_changed": false,
+  "native_scope": "Original DQN-stage1 static world only; no DQN/RL task or policy is loaded. Original Humble obstacle app and separate input/observer remain Wasm,owned03. Exact phases/baseline/time/frame/IEEE and zero/cancel rules come from the frozen public scenario contract,not a private04 rewrite.",
+  "required_actual_evidence": [
+    "VM-owned strict source/module/memory/typed-role/resource/lifecycle admission for both original Python app and separate actual Wasm input/observer",
+    "Actual native scan/odom/type/CDR/session/per-occurrence sequence and caller-memory delivery receipts",
+    "Complete original default approach,real wall stop,retained-yaw turn,resume,all-six-axis zero then cancel with physical causality",
+    "Exact original app callbacks/timers/publications and complete actor retirement",
+    "Required actual VM permissions,resource,memory/module denials,disconnect/recovery and library/width cases"
+  ],
+  "native_ready_is_application_acceptance": false,
+  "current_status": "MATCHED_NATIVE_WORLD_AND_SHARED_LIFECYCLE_PASS_ORIGINAL_WASM_TASK_NOT_RUN",
+  "complete_scene_pass": false
+}

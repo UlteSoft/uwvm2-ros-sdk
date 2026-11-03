@@ -14,6 +14,7 @@
 #include <uwvm2/imported/ros/ipc/event.h>
 #include <fstream>
 #include "native_io.h"
+#include "native_observation_types.h"
 #include <set>
 #include <cmath>
 #include <memory>
@@ -49,6 +50,7 @@ namespace uwvm2::ros_gateway
         std::uint32_t worker_uid{}, worker_pid{}, timeout_ms{}, max_sessions{}, audit_records_per_second{};
         std::uint64_t audit_max_records{},audit_max_bytes{};
         std::string socket{};
+        std::shared_ptr<native_observation::writer> native_observer;
     };
     inline std::uint64_t integer(std::string_view s,std::uint64_t maximum=std::numeric_limits<std::uint32_t>::max())
     {

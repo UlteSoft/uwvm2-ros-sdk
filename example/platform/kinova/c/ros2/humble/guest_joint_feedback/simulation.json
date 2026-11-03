@@ -1,0 +1,118 @@
+{
+  "format": "uwvm-sdk-simulation-example-v1",
+  "api_version": 1,
+  "profile": {
+    "id": "kinova-gen3-typed-guest-feedback-source-v0.1.0",
+    "classification": "OFFICIAL_MOCK_REQUIRED_NOT_YET_QUALIFIED",
+    "official_source": {
+      "repository": "https://github.com/Kinovarobotics/ros2_kortex",
+      "commit": "462dab9aa4732d733be55e1846530dd920c7c7d3",
+      "package": "kortex_description",
+      "version": "0.2.6",
+      "license": "BSD"
+    },
+    "guest_codec_distribution": "humble",
+    "actual_installed_provider_distribution": "jazzy",
+    "cross_release_native_ABI": "NOT_QUALIFIED",
+    "native_business_fallback": false
+  },
+  "frozen_wasm": {
+    "sdk_path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/build/kinova-c-ros2_humble-guest_joint_feedback.wasm",
+    "sha256": null,
+    "state": "NOT_EMITTED_OR_FROZEN"
+  },
+  "scenarios": [
+    {
+      "id": "normal_goal_result_fresh_state",
+      "state": "REQUIRED_NOT_RUN"
+    },
+    {
+      "id": "permission_denied_no_native_effect",
+      "state": "REQUIRED_NOT_RUN"
+    },
+    {
+      "id": "boundary_stale_foreign",
+      "state": "REQUIRED_NOT_RUN"
+    },
+    {
+      "id": "cancel_timeout_no_replay",
+      "state": "REQUIRED_NOT_RUN"
+    },
+    {
+      "id": "restart_rollback_permission_preservation",
+      "state": "REQUIRED_NOT_RUN"
+    },
+    {
+      "id": "fresh_reverse_guest_callback",
+      "state": "REQUIRED_NOT_RUN"
+    }
+  ],
+  "required_implementation": {
+    "status": "BLOCKED",
+    "diagnostic": "BLOCKED_QUALIFIED_RAW_ROS_NATIVE_UUID_REVERSE_GUEST_MEMORY_AND_OFFICIAL_SCENE_CONTRACT",
+    "requirements": [
+      "SDK01 qualified current original-layout public test entry and raw ROS scenario verification; existing portable-only command_binding is not a raw ROS verifier",
+      "VM owner current controlled host/ABI/provenance, command/native UUID and inbound payload-to-executing-module evidence; no SDK native helper or observer",
+      "Pinned exact Humble/Jazzy native schema/type/codec compatibility and official simulator actors; unchanged C0 portability remains separately mandatory",
+      "Actual stale/foreign instances, cancel/timeout, restart/update rollback and preserved permission cases; do not treat this BLOCKED registration as implemented tests",
+      "Real build and freeze of this additional typed Wasm; original xmake and xmake test, complete source/tool/actor/cgroup/lease/denial/no-effect/retirement evidence"
+    ]
+  },
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/main.c",
+      "sha256": "e47531caa45940b402caea7cfc23ad1c062ada2db4c0300865821f6a5a9e427f"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/xmake.lua",
+      "sha256": "3a61d527e3f993781122cdd5207ed94790809a3f67076959dbceea14366ecc7e"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/resources.json",
+      "sha256": "8162703bae8be5af39f107f7b49bbad760415e008c65fcc49d18963ffaa484cf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/kinova/transplate/ros2/v0_1_0/joint_feedback.h",
+      "sha256": "18892ecdb696a0a1a9e11e9fc7c4fe9c65f88e191b5344008c2f86f2c83e41a7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/transplate/v0_1_0/transport.h",
+      "sha256": "e9ae96304cc2911a72c50471b826c65f8540d9952f8229f657fbff8619b4979e"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros/transplate/v0_1_0/ros2_transport.c",
+      "sha256": "bfef3a57e168ef72a374e5eecb5b8f004536645c306871b62ab607e82de4bf31"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "sha256": "08b77da04cf295b23083a25bb497cd72abf3d15f4b3823fd08b3fe40257f14dc"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/simulation_example.py",
+      "sha256": "4837843d0f785eea85d620ea6e95ac193cdb5d3f0e1d85f3bac260ddeff8fbee"
+    },
+    {
+      "scope": "sdk",
+      "path": "xmake.lua",
+      "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/repository.lua",
+      "sha256": "3476d13327d21ce2b54165de11ce5b242f393030a64b2ae4c5ae83c03616d34a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/language_entry.lua",
+      "sha256": "c1f9d6a02a2dcc16f4e6a3b3e30716f8292a743eb6bfba1d7491944d9ddc6062"
+    }
+  ]
+}

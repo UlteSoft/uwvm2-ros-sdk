@@ -1,0 +1,43 @@
+{
+  "format": "uwvm-portable-robot-adapter-v1",
+  "contract_version": "0.1.0",
+  "platform_id": "ubtech",
+  "execution_class": "software_simulation",
+  "capability": "joint.position.bounded.v1",
+  "frame": "joint_space",
+  "official_source": {
+    "repository": "https://github.com/UBTECH-Robot/WalkerS2-Model",
+    "commit": "ca2ab983363d52a5e22ddf3a4d979ceaa675c374",
+    "license": "Root OpenAtom Open Hardware License header 0.4.3/Version1.0 text; package.xml separately says Apache-2.0",
+    "mode": "ROS official mock_components/GenericSystem + JointTrajectoryController",
+    "scope": "One selected vendor-model bounded revolute joint, ideal command-to-state mirroring only"
+  },
+  "ros": {
+    "release": "jazzy",
+    "os_abi": "Ubuntu24.04/x86_64; exact ELF/package closure required",
+    "rmw": "rmw_fastrtps_cpp",
+    "transport": "isolated localhost/private IPC software reference",
+    "security": "DDS security and TLS are separate unqualified profiles"
+  },
+  "resources": {
+    "joint_state_topic": "/uwvm_sim/ubtech/joint_state_broadcaster/joint_states",
+    "position_action": "/uwvm_sim/ubtech/bounded_position_controller/follow_joint_trajectory",
+    "controller_status_service": "/uwvm_sim/ubtech/controller_manager/list_controllers"
+  },
+  "joints": [
+    {
+      "slot": 0,
+      "native_joint": "L_knee_pitch_joint",
+      "kind": "bounded_revolute",
+      "source_unit": "rad",
+      "sign": 1,
+      "zero_offset_microrad": 0,
+      "lower_microrad": -87200,
+      "upper_microrad": 2268900,
+      "max_step_microrad": 10000,
+      "tolerance_microrad": 1000
+    }
+  ],
+  "policy_sha256": "${generated_grant_sha256}",
+  "mapping_epoch": 1
+}

@@ -1,0 +1,37 @@
+{
+  "status": "UNBOUND_MAPPING_REQUEST_NOT_RUNTIME_ADAPTER",
+  "platform_id": "fanuc/crx10ia/mock_hardware",
+  "native_joints": [
+    "J1",
+    "J2",
+    "J3",
+    "J4",
+    "J5",
+    "J6"
+  ],
+  "official_source": {
+    "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+    "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+    "license": "Apache-2.0",
+    "mode": "mock_components/GenericSystem",
+    "scope": "Ideal ros2_control mock joint-state mirroring; no dynamics/contact/firmware emulation"
+  },
+  "resources": {
+    "joint_state_topic": "/fanuc_simulation/joint_states",
+    "position_action": "/fanuc_simulation/joint_trajectory_controller/follow_joint_trajectory",
+    "controller_status_service": "/fanuc_simulation/controller_manager/list_controllers"
+  },
+  "max_step_microrad": 1000,
+  "tolerance_microrad": 250,
+  "runtime_binding_required": [
+    "actual_rendered_URDF",
+    "actual_active_controller_joint_parameters",
+    "actual_ROS_ABI_RMW_transport_security",
+    "authority_policy_file_and_exact_SHA",
+    "mapping_epoch",
+    "exact_unchanged_canonical_Wasm_and_host_grant_binding"
+  ],
+  "SDK01_schema_version": "0.1.0",
+  "runtime_authorized": false,
+  "native_controller_type": "fanuc_controllers/ScaledJointTrajectoryController"
+}

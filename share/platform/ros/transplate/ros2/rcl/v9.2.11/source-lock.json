@@ -1,0 +1,500 @@
+{
+  "format": "uwvm-rcl-clock-component-source-lock-v1",
+  "state": "SOURCE_AUTHORED_NOT_BUILT",
+  "upstream": {
+    "rcl": {
+      "commit": "18d96c9c2b98e616324ae9a2c7701dd0b0886ff0",
+      "version": "9.2.11"
+    },
+    "rcutils": {
+      "commit": "10ae877bb83c09555b6006b17794477376779a7b"
+    },
+    "rmw": {
+      "commit": "8cb94a87cf3f4049abe2d563af893517bf336930"
+    }
+  },
+  "files": [
+    {
+      "path": "src/platform/ros/transplate/ros2/rcl/v9_2_11/upstream/time.c",
+      "source_id": "rcl/rcl/src/rcl/time.c",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/src/rcl/time.c",
+      "sha256": "3dd4b88b6eadb68a416427b4d85b9e525f835c1990e3c11d9c483143d07354a8",
+      "bytes": 15598,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rcl/v9_2_11/upstream/include/rcl/time.h",
+      "source_id": "rcl/rcl/include/rcl/time.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/include/rcl/time.h",
+      "sha256": "3671014f05d57f407a352f2a2757d91edbb6be9c91ce3de269969ccd77b415e3",
+      "bytes": 25978,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rcl/v9_2_11/upstream/include/rcl/allocator.h",
+      "source_id": "rcl/rcl/include/rcl/allocator.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/include/rcl/allocator.h",
+      "sha256": "75100507eb6e1fb8c00c69c34f596171b92f881d6194877d823b9642db7a27df",
+      "bytes": 1805,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rcl/v9_2_11/upstream/include/rcl/macros.h",
+      "source_id": "rcl/rcl/include/rcl/macros.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/include/rcl/macros.h",
+      "sha256": "0f5b91e6e54e26e305fc27bb581c829c5c23b7ec0044f233e2e2d6366df93f5b",
+      "bytes": 948,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rcl/v9_2_11/upstream/include/rcl/types.h",
+      "source_id": "rcl/rcl/include/rcl/types.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/include/rcl/types.h",
+      "sha256": "4c51e951f716723f8d0aa7dd331feb047d60c69f66c15c4dd907d22ca4bb1ddd",
+      "bytes": 4834,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rcl/v9_2_11/upstream/include/rcl/visibility_control.h",
+      "source_id": "rcl/rcl/include/rcl/visibility_control.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/include/rcl/visibility_control.h",
+      "sha256": "5e8f517de86f591ae00f5d3a589276df1d7cdf43f4260d8f3c5f8e3e04ba4deb",
+      "bytes": 1682,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rcl/v9_2_11/upstream/include/rcl/error_handling.h",
+      "source_id": "rcl/rcl/include/rcl/error_handling.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/include/rcl/error_handling.h",
+      "sha256": "a96376e765c5ab9c09f9385cfea7e178ed8d5bfa3da5c41bbfcdc46387df68a4",
+      "bytes": 1752,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "src/platform/ros/transplate/ros2/rcl/v9_2_11/upstream/common.h",
+      "source_id": "rcl/rcl/src/rcl/common.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/rcl/src/rcl/common.h",
+      "sha256": "9bfafb4205335a496c1a4d58e9f23e473405d265a3ad753c45b927a2ad162cde",
+      "bytes": 1077,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/allocator.h",
+      "source_id": "rcutils/include/rcutils/allocator.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/allocator.h",
+      "sha256": "9fa2269decb3fad2b8887cdabe59a8d40b290be7cdba1c5452e0a795c1314ee6",
+      "bytes": 5252,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/macros.h",
+      "source_id": "rcutils/include/rcutils/macros.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/macros.h",
+      "sha256": "ba4c0b1752e27032b22860967920750a02c3326ddf8eea522e3befbbb1172c99",
+      "bytes": 9027,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/stdatomic_helper.h",
+      "source_id": "rcutils/include/rcutils/stdatomic_helper.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/stdatomic_helper.h",
+      "sha256": "64b023d87adbc97673fcabdc20e4ea30789b65a3831db05722b3484c250030da",
+      "bytes": 5506,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/time.h",
+      "source_id": "rcutils/include/rcutils/time.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/time.h",
+      "sha256": "774933cb976bb2c67eb63805ef5500d68a6a2854073e6cdc1198ceb43e47e8a4",
+      "bytes": 9216,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/error_handling.h",
+      "source_id": "rcutils/include/rcutils/error_handling.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/error_handling.h",
+      "sha256": "e5049ca840b95857b757a4efe9a2d6d5984486229615f467ba1b07d3aeccfa03",
+      "bytes": 15219,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/types.h",
+      "source_id": "rcutils/include/rcutils/types.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/types.h",
+      "sha256": "2f24ad9a87f8d0762c0766ead0c610f6402c08f327c69c23f949f4ffc9eed7ee",
+      "bytes": 1035,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/visibility_control.h",
+      "source_id": "rcutils/include/rcutils/visibility_control.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/visibility_control.h",
+      "sha256": "42937a88446b7f90067410cfa497d6ab28c873d680cfe4f1821e336cd74cce3a",
+      "bytes": 1154,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "src/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/allocator.c",
+      "source_id": "rcutils/src/allocator.c",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/src/allocator.c",
+      "sha256": "dd6b18bc9dfa8f1aacd17c53ed99b0d9b60e054300f337fd84668fe1ae94f53a",
+      "bytes": 3331,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "src/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/error_handling.c",
+      "source_id": "rcutils/src/error_handling.c",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/src/error_handling.c",
+      "sha256": "2e1c2512ee3aea5fc7d681304b4b17bdaf05aba66ba17a957cdeca5becf27fc3",
+      "bytes": 8759,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/types/rcutils_ret.h",
+      "source_id": "rcutils/include/rcutils/types/rcutils_ret.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/types/rcutils_ret.h",
+      "sha256": "368daf51a38d066f606de5eae62d82c33655e546797cf94cfb609336001a0113",
+      "bytes": 2107,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/testing/fault_injection.h",
+      "source_id": "rcutils/include/rcutils/testing/fault_injection.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/testing/fault_injection.h",
+      "sha256": "97e0dff1a93418da88e22b3e077945d5394367a28d4477d78f73384998f85885",
+      "bytes": 7579,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/snprintf.h",
+      "source_id": "rcutils/include/rcutils/snprintf.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/snprintf.h",
+      "sha256": "238f27e35f8ab9e13de896deedb078fb098d61e106c55ad39a8a2dfb31b247d9",
+      "bytes": 2456,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/strdup.h",
+      "source_id": "rcutils/include/rcutils/strdup.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/strdup.h",
+      "sha256": "7ad5f816993f585a0dbd2bf10a4f9b487f60572f8b87a92d00c9759ef2657344",
+      "bytes": 2514,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/visibility_control_macros.h",
+      "source_id": "rcutils/include/rcutils/visibility_control_macros.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/visibility_control_macros.h",
+      "sha256": "a1bfde88183188eb7b54119fb77b4a924122ecb9a8b79ab74b9af2bf0102f7e6",
+      "bytes": 2937,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/types/array_list.h",
+      "source_id": "rcutils/include/rcutils/types/array_list.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/types/array_list.h",
+      "sha256": "642a40d3335627a6947542cb82617d27a23892777180e563190f3f253718219a",
+      "bytes": 9404,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/types/char_array.h",
+      "source_id": "rcutils/include/rcutils/types/char_array.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/types/char_array.h",
+      "sha256": "0cc2c5b3662d67d2911d41bf2cb412e5f8d54f3b8ca363addb77c83f1a4d17f4",
+      "bytes": 9639,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/types/hash_map.h",
+      "source_id": "rcutils/include/rcutils/types/hash_map.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/types/hash_map.h",
+      "sha256": "46d9e58f8a985a9d7f2c99519529d54c5380efb37c7fc2005332fdeeffa2f99a",
+      "bytes": 15117,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/types/string_array.h",
+      "source_id": "rcutils/include/rcutils/types/string_array.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/types/string_array.h",
+      "sha256": "82ec541360cf3815080557b616f27126ba5187e328e44e7e5414fb0d4d02d5c7",
+      "bytes": 7387,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/types/string_map.h",
+      "source_id": "rcutils/include/rcutils/types/string_map.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/types/string_map.h",
+      "sha256": "de78a3ec8fa12c7a9c14c63e4bd6b2e87305d4eb196e517ae295fe016bcaa2b7",
+      "bytes": 17001,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/types/uint8_array.h",
+      "source_id": "rcutils/include/rcutils/types/uint8_array.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/types/uint8_array.h",
+      "sha256": "d544373ea17a7b6020d5130401228ec6d41d338e2aad144640de60893dd8be1b",
+      "bytes": 4133,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "src/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/error_handling_helpers.h",
+      "source_id": "rcutils/src/error_handling_helpers.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/src/error_handling_helpers.h",
+      "sha256": "a90d541af45f3f391d9dadbb0ad39f150b08664d3663a7ae098cf4f0dfd5fa8a",
+      "bytes": 5701,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "src/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/snprintf.c",
+      "source_id": "rcutils/src/snprintf.c",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/src/snprintf.c",
+      "sha256": "430d986290ca977b4bb0d6b5ed9cecbc764bf101f54572a561f7c9f1d22eba6d",
+      "bytes": 1910,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "src/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/strdup.c",
+      "source_id": "rcutils/src/strdup.c",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/src/strdup.c",
+      "sha256": "cd4ed5779c75ce654a5b6bd3951d414c7a4e839cbd5704f07dd3e7d37f1be95c",
+      "bytes": 1568,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/types.h",
+      "source_id": "rmw/rmw/include/rmw/types.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/types.h",
+      "sha256": "c1e7be9e420d3c32cf6b24db62c3fbd6b97d0518811f6f4677db09d835cf3830",
+      "bytes": 29478,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/time.h",
+      "source_id": "rmw/rmw/include/rmw/time.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/time.h",
+      "sha256": "5a59df5de3ef1d4a97b9f7fdc7351118b825e0353d77937aaf9e3c63b8f18d32",
+      "bytes": 2923,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/ret_types.h",
+      "source_id": "rmw/rmw/include/rmw/ret_types.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/ret_types.h",
+      "sha256": "0c34ce5575e891523314c9a4f07f45a94483236fecf908fe0a62f79431d6d551",
+      "bytes": 1554,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/macros.h",
+      "source_id": "rmw/rmw/include/rmw/macros.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/macros.h",
+      "sha256": "769e6d429a7fe62a61b48d5ea029b43add0f0c6cb96b120dc3b117cc485e7d80",
+      "bytes": 972,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/visibility_control.h",
+      "source_id": "rmw/rmw/include/rmw/visibility_control.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/visibility_control.h",
+      "sha256": "682f233f8053c902cddc853323726168adbc34a4cee55e0711629bc2da6b0f38",
+      "bytes": 1682,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "share/platform/ros/transplate/ros2/rcl/v9.2.11/licenses/rmw-LICENSE",
+      "source_id": "rmw/LICENSE",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/qsort.h",
+      "source_id": "rcutils/include/rcutils/qsort.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/qsort.h",
+      "sha256": "8dd1b85a4286dd4ec3a63c832f7ede8219029b25b5fa843613209a570bf8d81e",
+      "bytes": 1690,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "src/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/common.h",
+      "source_id": "rcutils/src/common.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/src/common.h",
+      "sha256": "b316026889cf3de02e3cffb45955db76e016a26dbd735557a4b8734e241fb735",
+      "bytes": 779,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "share/platform/ros/transplate/ros2/rcl/v9.2.11/licenses/rcutils-LICENSE",
+      "source_id": "rcutils/LICENSE",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "share/platform/ros/transplate/ros2/rcl/v9.2.11/licenses/rcl-LICENSE",
+      "source_id": "rcl/LICENSE",
+      "url": "https://raw.githubusercontent.com/ros2/rcl/18d96c9c2b98e616324ae9a2c7701dd0b0886ff0/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/events_statuses.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/events_statuses.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/events_statuses.h",
+      "sha256": "e5897d6940c64ac2dcf5e32eb1ff7657e47fd05905431c41b396e621c4cdb1f6",
+      "bytes": 1172,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/init.h",
+      "source_id": "rmw/rmw/include/rmw/init.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/init.h",
+      "sha256": "d86587fe0ff3dfab90df292ec3ada5157ef3fc8e964a29f5cf6d9b4e14271978",
+      "bytes": 6271,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/init_options.h",
+      "source_id": "rmw/rmw/include/rmw/init_options.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/init_options.h",
+      "sha256": "f473fea3207d07b1d0e566566bfeba31742fc68455ae036dd643956169b59f23",
+      "bytes": 6925,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/security_options.h",
+      "source_id": "rmw/rmw/include/rmw/security_options.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/security_options.h",
+      "sha256": "c88c66e375104d9594224e703a4863ba2e42ff36a6c6358d1dd24ef55e4a5b71",
+      "bytes": 2875,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/serialized_message.h",
+      "source_id": "rmw/rmw/include/rmw/serialized_message.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/serialized_message.h",
+      "sha256": "dff95def5858e7c03de4f3f89722a465a528c7427d37711b571dfdc68fc1f7d6",
+      "bytes": 4111,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/subscription_content_filter_options.h",
+      "source_id": "rmw/rmw/include/rmw/subscription_content_filter_options.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/subscription_content_filter_options.h",
+      "sha256": "72d7ae6457a6a4719cae5c7134864b28b193c43444f4246a0182b16f0e195a6d",
+      "bytes": 4421,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rcutils/10ae877bb83c09555b6006b17794477376779a7b/upstream/rcutils/logging.h",
+      "source_id": "rcutils/include/rcutils/logging.h",
+      "url": "https://raw.githubusercontent.com/ros2/rcutils/10ae877bb83c09555b6006b17794477376779a7b/include/rcutils/logging.h",
+      "sha256": "f44bc33a8694e0a7845e062897f660bc535a3a20d0eaebf6104a32146293b826",
+      "bytes": 21381,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/incompatible_qos.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/incompatible_qos.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/incompatible_qos.h",
+      "sha256": "b1faf9e81e6ae5e506eb6bdb2c5dd71f2ed30f1126b6254f6f5a7944015b80e3",
+      "bytes": 1939,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/incompatible_type.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/incompatible_type.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/incompatible_type.h",
+      "sha256": "a2f040bea9500dde8dc502302356c377d56b290323a5b1e78be17bf91627e53e",
+      "bytes": 1258,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/liveliness_changed.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/liveliness_changed.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/liveliness_changed.h",
+      "sha256": "df7e386edd25ee3081c0f5e02072900578684f018031d590ba7eae26a2f21980",
+      "bytes": 2295,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/liveliness_lost.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/liveliness_lost.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/liveliness_lost.h",
+      "sha256": "447c17ed59f6f683871738ec86e2a43a251e9a9a54881c889a8cd1bd0ddae697",
+      "bytes": 1507,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/matched.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/matched.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/matched.h",
+      "sha256": "b6b4715d465f739905939c95b6c0edf8c0e2485302052053655a306c7bdc11e4",
+      "bytes": 1632,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/message_lost.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/message_lost.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/message_lost.h",
+      "sha256": "0ffd4cfa92be1e9ac66d682c3170e610ddfe526b6fb9d24b9676c3efe1fb20b3",
+      "bytes": 1112,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/offered_deadline_missed.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/offered_deadline_missed.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/offered_deadline_missed.h",
+      "sha256": "d4bb079e369e67abde65317c3b10e9a81d15898b3695c1b4df799bb17155250e",
+      "bytes": 1467,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/events_statuses/requested_deadline_missed.h",
+      "source_id": "rmw/rmw/include/rmw/events_statuses/requested_deadline_missed.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/events_statuses/requested_deadline_missed.h",
+      "sha256": "06bc4c83136381d4944f60fbfec38a323bc862db3ed4a3c60b70db3dfeef55ad",
+      "bytes": 1527,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/discovery_options.h",
+      "source_id": "rmw/rmw/include/rmw/discovery_options.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/discovery_options.h",
+      "sha256": "d89b6757fd23f145fa19e7d2f9dab6ac22d842ff6af4702fe26a6696636b7fd9",
+      "bytes": 6240,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/domain_id.h",
+      "source_id": "rmw/rmw/include/rmw/domain_id.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/domain_id.h",
+      "sha256": "3e40ce9f0c54d12837158d4cc08b1c5b794d0e00867231ab6f15db6e1cb19939",
+      "bytes": 760,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/localhost.h",
+      "source_id": "rmw/rmw/include/rmw/localhost.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/localhost.h",
+      "sha256": "6584ea49c29066ae7955db49249eeb7d5d2602fb90a6e66b02b99707c9ac05d5",
+      "bytes": 1184,
+      "upstream_body_modified": false
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/qos_policy_kind.h",
+      "source_id": "rmw/rmw/include/rmw/qos_policy_kind.h",
+      "url": "https://raw.githubusercontent.com/ros2/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/rmw/include/rmw/qos_policy_kind.h",
+      "sha256": "a18493ede6858531a5584b341782a4edc19db134e63db19a83ede81af3099c30",
+      "bytes": 1398,
+      "upstream_body_modified": false
+    }
+  ],
+  "scope": "Unmodified real rcl time.c and its selected genuine headers/rcutils implementation. Not a full rcl/rclcpp/roscpp migration.",
+  "runtime_and_simulation_qualified": false
+}

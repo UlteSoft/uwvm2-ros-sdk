@@ -78,11 +78,9 @@ function configure(target, root)
     target:set("values", "ros.sdk.triple", architecture .. "-wasip1")
     target:set("values", "ros.sdk.producer", "shared-genuine-interpreter")
     target:set("kind", "binary")
-    target:set("extension", ".wasm")
-    target:set("filename", target:name() .. ".wasm")
-    target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build"))
-    target:set("objectdir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/objects"))
-    target:set("dependir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/dependencies"))
+    -- Preserve Xmake's chosen output/object/dependency trees, including an
+    -- external build directory for a read-only SDK or two concurrent ABIs.
+    import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).configure(target)
     target:set("toolchains", "ros.wasm.command")
 end
 
@@ -92,13 +90,38 @@ end
 -- @return Guest source bundle and every exact module/entry byte identity.
 -- @details Module order is significant for ordinary Python package initialization.
 -- JS imports retain the real module loader; Lua modules use ordinary package.preload.
+local function python_stdlib(root, manifest)
+    import("core.base.json")
+    local member = "share/language/python/stdlib.json"
+    local filename = member_path(root, member)
+    local stdlib = assert(json.loadfile(filename))
+    assert(stdlib.format == "uwvm-cpython-source-stdlib-v1" and stdlib.python_version == "3.14.8",
+        "Install the matching complete CPython source closure")
+    assert(hash.sha256(member_path(root, stdlib.source_manifest)):lower() == stdlib.source_manifest_sha256,
+        "The original CPython source inventory changed")
+    local modules, standard = {}, {}
+    for _, row in ipairs(stdlib.modules) do modules[#modules + 1] = row; standard[row.name] = row end
+    for _, row in ipairs(manifest.modules) do
+        local shared = standard[row.name]
+        if shared then
+            assert(row.sha256 == shared.sha256 and hash.sha256(member_path(root, row.file)):lower() == shared.sha256,
+                "A platform must use the original shared CPython module: " .. row.name)
+        else modules[#modules + 1] = row end
+    end
+    return modules, { { path = member, sha256 = hash.sha256(filename):lower() },
+        { path = stdlib.source_manifest, sha256 = stdlib.source_manifest_sha256 } }
+end
+
 function bundle(root, language, entry, manifest)
     assert(manifest.format == "uwvm-language-bundle-v1" and manifest.language == language,
         "The platform must supply the versioned genuine-language module manifest")
-    assert(type(manifest.modules) == "table" and #manifest.modules <= (language == "js" and 63 or 256),
+    assert(type(manifest.modules) == "table" and #manifest.modules <= (language == "js" and 63 or 512),
         "The complete source closure exceeds the engine's declared module bound")
     local inputs, modules, names = {}, {}, {}
-    for _, module in ipairs(manifest.modules) do
+    local declared = manifest.modules
+    if language == "py" and manifest.module_loading == "lazy" then declared, inputs = python_stdlib(root, manifest) end
+    assert(#declared <= (language == "py" and 768 or 256), "The complete module closure exceeds its finite bound")
+    for _, module in ipairs(declared) do
         assert(type(module.name) == "string" and #module.name >= 1 and #module.name <= 159,
             "Declare a finite public module name")
         assert(module.name:match("^[A-Za-z_][A-Za-z0-9_./-]*$") and not module.name:find("..", 1, true),
@@ -127,6 +150,43 @@ function bundle(root, language, entry, manifest)
             parts[#parts + 1] = word(#module.name) .. word(#module.source) .. module.name .. module.source .. "\0"
         end
     elseif language == "py" then
+        assert(manifest.module_loading == nil or manifest.module_loading == "eager"
+            or manifest.module_loading == "lazy", "Unknown Python source loading profile")
+        if manifest.module_loading == "lazy" then
+            -- Ordinary CPython import machinery owns insertion, circular imports
+            -- and rollback on failure. The finite registry contains source only;
+            -- it cannot consult a host package, filesystem or extension loader.
+            parts = {
+                "import sys as _uwvm_sys",
+                "import _frozen_importlib as _uwvm_importlib",
+                "_uwvm_sources = {}",
+                "class _UwvmSourceLoader:",
+                "    def find_spec(self, fullname, path=None, target=None):",
+                "        row = _uwvm_sources.get(fullname)",
+                "        if row is None: return None",
+                "        spec = _uwvm_importlib.ModuleSpec(fullname, self, origin=row[1], is_package=row[2])",
+                "        spec.has_location = True",
+                "        return spec",
+                "    def create_module(self, spec): return None",
+                "    def exec_module(self, module):",
+                "        row = _uwvm_sources[module.__name__]",
+                "        exec(compile(row[0], row[1], 'exec'), module.__dict__)",
+                "    def get_source(self, fullname): return _uwvm_sources[fullname][0].decode('utf-8')",
+                "    def get_filename(self, fullname): return _uwvm_sources[fullname][1]",
+            }
+            for _, module in ipairs(modules) do
+                local filename = "/__uwvm_source__/" .. module.name:gsub("%.", "/")
+                    .. (module.package and "/__init__.py" or ".py")
+                parts[#parts + 1] = "_uwvm_sources['" .. module.name .. "'] = ("
+                    .. python_bytes(module.source) .. ", '" .. filename .. "', "
+                    .. (module.package and "True" or "False") .. ")"
+            end
+            parts[#parts + 1] = "_uwvm_sys.meta_path.insert(0, _UwvmSourceLoader())"
+            parts[#parts + 1] = "__file__ = '/__uwvm_source__/application.py'"
+            parts[#parts + 1] = "exec(compile(" .. python_bytes(raw_entry)
+                .. ", __file__, 'exec'), globals())"
+            return table.concat(parts, "\n") .. "\n", inputs
+        end
         parts = {
             "import sys",
             "def _uwvm_register(name, source, package=False):",
@@ -160,7 +220,7 @@ end
 -- @brief Produce one application Wasm by changing only the checked empty data slot.
 -- @param target Fully configured shared DSL target. @param root Installed SDK root.
 -- @details Requires the exact locked runtime version, backend, target, SHA and
--- source slot. Build metadata stays in .uwvm-ros; build/ contains only the Wasm.
+-- source slot. Build metadata stays in the selected private object tree.
 function build(target, root, compiled)
     configure(target, root)
     import("core.base.json")
@@ -187,7 +247,7 @@ function build(target, root, compiled)
         "The installed common ABI descriptor differs from the complete static bridge")
     assert(hash.sha256(runtime):lower() == metadata.sha256:lower(), "The genuine interpreter bytes changed")
     local raw = assert(io.readfile(runtime, { encoding = "binary" }))
-    local capacity = language == "lua" and 2097152 or 4194304
+    local capacity = language == "lua" and 2097152 or language == "py" and 16777216 or 4194304
     local marker = language == "lua" and "UWVM-LUA-APP-v1!" or "UWVM-SRC-APP-v1!"
     assert(metadata.application_capacity == capacity and metadata.application_marker == marker,
         "The versioned application source-slot contract differs")
@@ -213,7 +273,8 @@ function build(target, root, compiled)
     local destination = path.absolute(target:targetfile())
     os.mkdir(path.directory(destination))
     io.writefile(destination, packed, { encoding = "binary" })
-    local cache = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/interpreter")
+    local cache = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
+        .workspace(target, "interpreter")
     os.mkdir(cache)
     json.savefile(path.join(cache, "build-receipt.json"), {
         format = "uwvm-shared-interpreter-application-v2", status = "PACKAGED",

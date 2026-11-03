@@ -1,0 +1,23 @@
+{
+  "closed_launch_contract_sha256": "ca49cee97f0f3bc12f7f9138232fc599a330acf874d8fc229ec08ee12b0bcbb1",
+  "format": "uwvm-sdk-approved-host-control-descriptor-v1",
+  "roles": {
+    "controller": {
+      "argv_contract_sha256": "adfa27eed6f98d9a9567b862289e1aafda14bae4732edbef6dda914283386677",
+      "entry_relative": "keeper.py",
+      "entry_sha256": "2e61285b1aafc575958a757cf737fe853ea1b1f621cbac05ab13957218422349",
+      "interpreter_sha256": "b8d8288faefdd300201f43fcf00f6f539a27218eeed3a3dff5ab10b9c4c99700",
+      "source_descriptor_contract_sha256": "67429e75c2cb366079609e56eed31431c560134347a69d43f5af850e42c1e597"
+    },
+    "guardian": {
+      "argv_contract_sha256": "acf0cb879fda42eb4a7d566013eac72207adb912bfef9e700a35c7b68897f8bf",
+      "entry_relative": "guardian.py",
+      "entry_sha256": "81f3c7d81a24f991111bfc1ee42d4c1d3c358052a3092d5011072aa2c676eb15",
+      "interpreter_sha256": "b8d8288faefdd300201f43fcf00f6f539a27218eeed3a3dff5ab10b9c4c99700",
+      "source_descriptor_contract_sha256": "67429e75c2cb366079609e56eed31431c560134347a69d43f5af850e42c1e597"
+    }
+  },
+  "runtime_manifest_sha256": "bbb1dd8ffcd4680517edefe5f0ac8257ea766b98b155ba2d5b4d79ae6a57036f",
+  "security_profile": "uid1000-pinned-external-control-v1",
+  "source_manifest_sha256": "e6a79b2fdc500cd97a0cdb6ac3a4e8fe37d07c52809af7c11454b86d583cf8c1"
+}

@@ -265,7 +265,8 @@ function build(target, root, action)
 		profile = profile,
 		kind = target:kind(),
 		directory = directory,
-		cache = path.join(directory, ".uwvm-ros/native-library", target:name()),
+		cache = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
+			.workspace(target, "native-library"),
 		output = path.absolute(target:targetfile()),
 		sources = {},
 	}

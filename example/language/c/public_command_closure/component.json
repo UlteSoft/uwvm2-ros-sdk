@@ -1,0 +1,132 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "sdk-public-child-command",
+  "scope": "One genuine WASI command for ordinary child-cwd build/product/test dispatch. ROS Stage A, full Stage B and component isolation remain separate mandatory work.",
+  "cases": [
+    {
+      "id": "public-child-stdout",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "sdk-public-child\n"
+    }
+  ],
+  "current_state": "SOURCE_CANDIDATE_REQUIRES_ACTUAL_EXECUTION",
+  "required_full_framework_simulation": "Not satisfied by this finite guest command",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "xmake.lua",
+      "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/language/c/public_command_closure/main.c",
+      "sha256": "67acb2c4c8f5cc4a7baafeaf429ef00a39015547f8112d4791ff1c7664925587"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/language/c/public_command_closure/xmake.lua",
+      "sha256": "d89b04f04cb9294dac9c3622032148f94cbf8313a3cd32bf489022c44a94210b"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/repository.lua",
+      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/ros.lua",
+      "sha256": "70fcfc66b0aaa683c7d2064091b70ee3da0fbf3332ce46b4be0553bda99df801"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/targets.lua",
+      "sha256": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1cc559cb2ac74d2c3d98fe08c817d2000d351da4c2b2a2deb6dc8d2d6fc361d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "967d02f990e753ef350952bfc18fd62a39b6fbef936f34b8b4b9129a80ac3f76"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/core.lua",
+      "sha256": "a29dc9417d2745bfbf63cf96db8a0e0dc727f9506b4f6f88c84894f2d01c0625"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/actor_control.py",
+      "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/actor_gate.py",
+      "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/example_aggregate.py",
+      "sha256": "efbca2d39e1a7254339b38e190429844c42346750994ff1ce1716662d33ea3c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/example_process.py",
+      "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/guest_feedback.py",
+      "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/portable_contract.py",
+      "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/runtime_boundary.py",
+      "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/simulation_example.py",
+      "sha256": "5ec836c7c9573f1cf9febc980df2bd5e2956cc02ca5cfebfbbb924663c642c91"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/trusted_control.py",
+      "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/contract.json",
+      "sha256": "df06eb92025bb48d2fcb270a5725886986e020c949723141b091ef3ca7018321"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/approved-producers.json",
+      "sha256": "4f701e90d06f6cacd4ed759890abee1cd429467326355cdda3a00cca64855f97"
+    }
+  ]
+}

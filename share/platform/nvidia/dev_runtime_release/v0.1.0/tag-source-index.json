@@ -1,0 +1,1022 @@
+{
+  "format": "sdk10-isaac-common-tag-source-index-v1",
+  "observed_at_UTC": "2026-10-26T23:16:25.233501+00:00",
+  "state": "PINNED_FILE_METADATA_ONLY",
+  "tags": [
+    {
+      "tag": "v0.10.0-dp",
+      "exact_common_commit": "9da5dc1bef4543d36e8c84aeeb0e60f4baf9329f",
+      "matching_NITROS_exact_tag_commit": "bd38dd37260ae22976c08b53d75ddc5536a4be0b",
+      "profile_reference": "0.10-dp",
+      "README": {
+        "tag": "v0.10.0-dp",
+        "commit": "9da5dc1bef4543d36e8c84aeeb0e60f4baf9329f",
+        "path": "README.md",
+        "Git_blob": "3d54e724bbb1885880ed9075228b519ae16490bd",
+        "sha256": "3fe2f86e458ee306a2d001795665978f3bbb97485c8fa49a139fec05c75578b3",
+        "bytes": 8531
+      },
+      "LICENSE": {
+        "tag": "v0.10.0-dp",
+        "commit": "9da5dc1bef4543d36e8c84aeeb0e60f4baf9329f",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/9da5dc1bef4543d36e8c84aeeb0e60f4baf9329f/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/9da5dc1bef4543d36e8c84aeeb0e60f4baf9329f/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v0.10.1-dp",
+      "exact_common_commit": "ae66a08fd852a994db08fd53f74b82940aacca96",
+      "matching_NITROS_exact_tag_commit": "d51b5203fa03411864b7226ee8688674b506cea7",
+      "profile_reference": "0.10-dp",
+      "README": {
+        "tag": "v0.10.1-dp",
+        "commit": "ae66a08fd852a994db08fd53f74b82940aacca96",
+        "path": "README.md",
+        "Git_blob": "3d54e724bbb1885880ed9075228b519ae16490bd",
+        "sha256": "3fe2f86e458ee306a2d001795665978f3bbb97485c8fa49a139fec05c75578b3",
+        "bytes": 8531
+      },
+      "LICENSE": {
+        "tag": "v0.10.1-dp",
+        "commit": "ae66a08fd852a994db08fd53f74b82940aacca96",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/ae66a08fd852a994db08fd53f74b82940aacca96/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/ae66a08fd852a994db08fd53f74b82940aacca96/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v0.11.0-dp",
+      "exact_common_commit": "bdfca130d1405ca41558c8d3dd29b60d17e666cf",
+      "matching_NITROS_exact_tag_commit": "2678112714602c321c155a10877e7082a4f83685",
+      "profile_reference": "0.11-0.20-dp",
+      "README": {
+        "tag": "v0.11.0-dp",
+        "commit": "bdfca130d1405ca41558c8d3dd29b60d17e666cf",
+        "path": "README.md",
+        "Git_blob": "3592aeff171bd9371cfe783f502663a30d8b9742",
+        "sha256": "800b2fdc661556811b957cc0864e551b7813c02f022eb092befff2bdaa31a56a",
+        "bytes": 8896
+      },
+      "LICENSE": {
+        "tag": "v0.11.0-dp",
+        "commit": "bdfca130d1405ca41558c8d3dd29b60d17e666cf",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/bdfca130d1405ca41558c8d3dd29b60d17e666cf/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/bdfca130d1405ca41558c8d3dd29b60d17e666cf/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v0.20.0-dp",
+      "exact_common_commit": "3a2cf9e3b08d6989439edfe4e3358fc5868b10b5",
+      "matching_NITROS_exact_tag_commit": "ca8be663b712558161e754448d2f481b60536f72",
+      "profile_reference": "0.11-0.20-dp",
+      "README": {
+        "tag": "v0.20.0-dp",
+        "commit": "3a2cf9e3b08d6989439edfe4e3358fc5868b10b5",
+        "path": "README.md",
+        "Git_blob": "09461ee22819732d6d5d7ef92c016c8abf9986f8",
+        "sha256": "6dc49b8f40156185968589a3de17a944968669f5bea7eee868112532a43b8005",
+        "bytes": 9066
+      },
+      "LICENSE": {
+        "tag": "v0.20.0-dp",
+        "commit": "3a2cf9e3b08d6989439edfe4e3358fc5868b10b5",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/3a2cf9e3b08d6989439edfe4e3358fc5868b10b5/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/3a2cf9e3b08d6989439edfe4e3358fc5868b10b5/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v0.30.0-dp",
+      "exact_common_commit": "a4ad647fda943ad9bf511393d91f1b8e0138c1d0",
+      "matching_NITROS_exact_tag_commit": "51c942cf7fdff4e7f486e51c7e18f6f26a2db95a",
+      "profile_reference": "0.30-0.31-dp",
+      "README": {
+        "tag": "v0.30.0-dp",
+        "commit": "a4ad647fda943ad9bf511393d91f1b8e0138c1d0",
+        "path": "README.md",
+        "Git_blob": "a18a7d4cf1cf973f621efaa583a6301aa31d2dee",
+        "sha256": "e9fd4adcb0f2b7c7114c6d2159158491b3b421250896d7e2216e2cddf7a17e1b",
+        "bytes": 9512
+      },
+      "LICENSE": {
+        "tag": "v0.30.0-dp",
+        "commit": "a4ad647fda943ad9bf511393d91f1b8e0138c1d0",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a4ad647fda943ad9bf511393d91f1b8e0138c1d0/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a4ad647fda943ad9bf511393d91f1b8e0138c1d0/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v0.31.0-dp",
+      "exact_common_commit": "b9834877677e759cd19bf878bbc885d02ee54539",
+      "matching_NITROS_exact_tag_commit": "bbbd0b33a0b426d3b13d9b0a9e385a450a6dc3d4",
+      "profile_reference": "0.30-0.31-dp",
+      "README": {
+        "tag": "v0.31.0-dp",
+        "commit": "b9834877677e759cd19bf878bbc885d02ee54539",
+        "path": "README.md",
+        "Git_blob": "132963c037081efe78f8debfc704e7a8850b8f33",
+        "sha256": "21ba59778d849610a5a51abb0e816afd58806248429cf1be3d5a8846a3f93aea",
+        "bytes": 9681
+      },
+      "LICENSE": {
+        "tag": "v0.31.0-dp",
+        "commit": "b9834877677e759cd19bf878bbc885d02ee54539",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/b9834877677e759cd19bf878bbc885d02ee54539/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/b9834877677e759cd19bf878bbc885d02ee54539/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v0.9.0-ea1",
+      "exact_common_commit": "d1e5562b4afcc8f98d6e74fb8ec4e92985522e23",
+      "matching_NITROS_exact_tag_commit": null,
+      "profile_reference": "0.9.0-ea1",
+      "README": {
+        "tag": "v0.9.0-ea1",
+        "commit": "d1e5562b4afcc8f98d6e74fb8ec4e92985522e23",
+        "path": "README.md",
+        "Git_blob": "4dd680a36d8ed2464e960e84b9ec2a74337242bf",
+        "sha256": "64a9ab9f3a2e4751bfaa4a1dacee079ef17aa8603d3fe260f4531bd4ddc9c16b",
+        "bytes": 191
+      },
+      "LICENSE": {
+        "tag": "v0.9.0-ea1",
+        "path": "LICENSE",
+        "Git_blob": "bea32dcab700f732ea3d651f4fdf0c4333e0788d",
+        "sha256": "9424bdd4a3cc121a113b554e6aa9183c6979f0ded15bbd0cac12f2f23faa42f4",
+        "bytes": 36579
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d1e5562b4afcc8f98d6e74fb8ec4e92985522e23/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d1e5562b4afcc8f98d6e74fb8ec4e92985522e23/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v0.9.1-ea2",
+      "exact_common_commit": "b5261b2d7cd3a1e9dfb857ad5a0664766dbd385c",
+      "matching_NITROS_exact_tag_commit": null,
+      "profile_reference": "0.9.1-ea2",
+      "README": {
+        "tag": "v0.9.1-ea2",
+        "commit": "b5261b2d7cd3a1e9dfb857ad5a0664766dbd385c",
+        "path": "README.md",
+        "Git_blob": "4c6fa925fd4c66ff157e752e2e31abf22362d0ee",
+        "sha256": "32d0cc0b04414ab2162839f5d8cc842b4d8e83604ad79e5dcef03a0a6c3bb36f",
+        "bytes": 3074
+      },
+      "LICENSE": {
+        "tag": "v0.9.1-ea2",
+        "commit": "b5261b2d7cd3a1e9dfb857ad5a0664766dbd385c",
+        "path": "LICENSE",
+        "Git_blob": "bea32dcab700f732ea3d651f4fdf0c4333e0788d",
+        "sha256": "9424bdd4a3cc121a113b554e6aa9183c6979f0ded15bbd0cac12f2f23faa42f4",
+        "bytes": 36579
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/b5261b2d7cd3a1e9dfb857ad5a0664766dbd385c/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/b5261b2d7cd3a1e9dfb857ad5a0664766dbd385c/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v0.9.3-ea3",
+      "exact_common_commit": "db2f8a758e081c487e1e784bec7528221d363ad3",
+      "matching_NITROS_exact_tag_commit": null,
+      "profile_reference": "0.9.3-ea3",
+      "README": {
+        "tag": "v0.9.3-ea3",
+        "commit": "db2f8a758e081c487e1e784bec7528221d363ad3",
+        "path": "README.md",
+        "Git_blob": "9c5549ceb127e1652235792e72631000c046f79c",
+        "sha256": "66e245f235c82219ae95b921905068973fa7309ecb0b8c509f783637bbd8ad55",
+        "bytes": 4250
+      },
+      "LICENSE": {
+        "tag": "v0.9.3-ea3",
+        "commit": "db2f8a758e081c487e1e784bec7528221d363ad3",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/db2f8a758e081c487e1e784bec7528221d363ad3/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/db2f8a758e081c487e1e784bec7528221d363ad3/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v2.0.0",
+      "exact_common_commit": "6d3c5c00e0e2b3fc1d75eb4286848d23b05d6dca",
+      "matching_NITROS_exact_tag_commit": "8ed6f2a7e7dcde22010fb46f09ab95490ba0468b",
+      "profile_reference": "2.0",
+      "README": {
+        "tag": "v2.0.0",
+        "commit": "6d3c5c00e0e2b3fc1d75eb4286848d23b05d6dca",
+        "path": "README.md",
+        "Git_blob": "050bdaea1177c47473d1dd423ce459099caaeaaf",
+        "sha256": "4aa2974befbf66673bcf067ae19d7a686deaeb10c25bdf55ffba43cec81b77d3",
+        "bytes": 1864
+      },
+      "LICENSE": {
+        "tag": "v2.0.0",
+        "commit": "6d3c5c00e0e2b3fc1d75eb4286848d23b05d6dca",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/6d3c5c00e0e2b3fc1d75eb4286848d23b05d6dca/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/6d3c5c00e0e2b3fc1d75eb4286848d23b05d6dca/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v2.1.0",
+      "exact_common_commit": "a30370273cd1db2d5100ecaa386e3b35c2910f3d",
+      "matching_NITROS_exact_tag_commit": "da49a97663d6d6be6f66b9bc4eaa21d0750ebac5",
+      "profile_reference": "2.1",
+      "README": {
+        "tag": "v2.1.0",
+        "commit": "a30370273cd1db2d5100ecaa386e3b35c2910f3d",
+        "path": "README.md",
+        "Git_blob": "050bdaea1177c47473d1dd423ce459099caaeaaf",
+        "sha256": "4aa2974befbf66673bcf067ae19d7a686deaeb10c25bdf55ffba43cec81b77d3",
+        "bytes": 1864
+      },
+      "LICENSE": {
+        "tag": "v2.1.0",
+        "commit": "a30370273cd1db2d5100ecaa386e3b35c2910f3d",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a30370273cd1db2d5100ecaa386e3b35c2910f3d/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a30370273cd1db2d5100ecaa386e3b35c2910f3d/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.0.0",
+      "exact_common_commit": "d679b2aaf2e3c1a4ad6de95760ff48e013574dc1",
+      "matching_NITROS_exact_tag_commit": "9d91389aad6f4d32635a8afef1a645e90da38bd6",
+      "profile_reference": "3.0",
+      "README": {
+        "tag": "v3.0.0",
+        "commit": "d679b2aaf2e3c1a4ad6de95760ff48e013574dc1",
+        "path": "README.md",
+        "Git_blob": "493943c680e16376aca635a71487adae4e4a7e0f",
+        "sha256": "f85d4908af8efd59d02d41c36a67cdab91d9f43338434b77af1d44bb12022b04",
+        "bytes": 1720
+      },
+      "LICENSE": {
+        "tag": "v3.0.0",
+        "commit": "d679b2aaf2e3c1a4ad6de95760ff48e013574dc1",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d679b2aaf2e3c1a4ad6de95760ff48e013574dc1/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d679b2aaf2e3c1a4ad6de95760ff48e013574dc1/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.0.1",
+      "exact_common_commit": "855d4081b4f22eec0d39c73bcf357beaa03b5722",
+      "matching_NITROS_exact_tag_commit": "771e9116c3c63fde93d30aa10c9b3457a34686ff",
+      "profile_reference": "3.0",
+      "README": {
+        "tag": "v3.0.1",
+        "commit": "855d4081b4f22eec0d39c73bcf357beaa03b5722",
+        "path": "README.md",
+        "Git_blob": "493943c680e16376aca635a71487adae4e4a7e0f",
+        "sha256": "f85d4908af8efd59d02d41c36a67cdab91d9f43338434b77af1d44bb12022b04",
+        "bytes": 1720
+      },
+      "LICENSE": {
+        "tag": "v3.0.1",
+        "commit": "855d4081b4f22eec0d39c73bcf357beaa03b5722",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/855d4081b4f22eec0d39c73bcf357beaa03b5722/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/855d4081b4f22eec0d39c73bcf357beaa03b5722/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.1.0",
+      "exact_common_commit": "80f28e05ddcc71524029cbe024f03af530c400b5",
+      "matching_NITROS_exact_tag_commit": "33aeabbcda9f972594709334a496af29da60b0a5",
+      "profile_reference": "3.1",
+      "README": {
+        "tag": "v3.1.0",
+        "commit": "80f28e05ddcc71524029cbe024f03af530c400b5",
+        "path": "README.md",
+        "Git_blob": "b07b86419e54e9b7acdc6dd58081f1bb443759bd",
+        "sha256": "a109b9422bc8e850fe8b8be2851684266dfafe58f690a22f4874c9458336c963",
+        "bytes": 1705
+      },
+      "LICENSE": {
+        "tag": "v3.1.0",
+        "commit": "80f28e05ddcc71524029cbe024f03af530c400b5",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/80f28e05ddcc71524029cbe024f03af530c400b5/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/80f28e05ddcc71524029cbe024f03af530c400b5/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-1",
+      "exact_common_commit": "a706661561afee2d805adff7c7614d32a01ecd3f",
+      "matching_NITROS_exact_tag_commit": "91732780c48bfbb4dde15712c45151e0839428af",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-1",
+        "commit": "a706661561afee2d805adff7c7614d32a01ecd3f",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-1",
+        "commit": "a706661561afee2d805adff7c7614d32a01ecd3f",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a706661561afee2d805adff7c7614d32a01ecd3f/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a706661561afee2d805adff7c7614d32a01ecd3f/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-10",
+      "exact_common_commit": "d068d425efbb285fb0e6c0a82203910503fe1957",
+      "matching_NITROS_exact_tag_commit": "746f53fee9bee4e34258299dbe40871e50b79ded",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-10",
+        "commit": "d068d425efbb285fb0e6c0a82203910503fe1957",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-10",
+        "commit": "d068d425efbb285fb0e6c0a82203910503fe1957",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d068d425efbb285fb0e6c0a82203910503fe1957/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d068d425efbb285fb0e6c0a82203910503fe1957/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-11",
+      "exact_common_commit": "e516c452bda914b631dac626e457594b6b73c2ea",
+      "matching_NITROS_exact_tag_commit": "c80636002842b12c68b8b1c6f99a741a75c05ea7",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-11",
+        "commit": "e516c452bda914b631dac626e457594b6b73c2ea",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-11",
+        "commit": "e516c452bda914b631dac626e457594b6b73c2ea",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/e516c452bda914b631dac626e457594b6b73c2ea/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/e516c452bda914b631dac626e457594b6b73c2ea/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-12",
+      "exact_common_commit": "e516c452bda914b631dac626e457594b6b73c2ea",
+      "matching_NITROS_exact_tag_commit": "c80636002842b12c68b8b1c6f99a741a75c05ea7",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-12",
+        "commit": "e516c452bda914b631dac626e457594b6b73c2ea",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-12",
+        "commit": "e516c452bda914b631dac626e457594b6b73c2ea",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/e516c452bda914b631dac626e457594b6b73c2ea/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/e516c452bda914b631dac626e457594b6b73c2ea/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-13",
+      "exact_common_commit": "2338f7e1b46132fd2dac0a43048d7354a10c0b31",
+      "matching_NITROS_exact_tag_commit": "9d749e8346914d813514bf475888d204526b924c",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-13",
+        "commit": "2338f7e1b46132fd2dac0a43048d7354a10c0b31",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-13",
+        "commit": "2338f7e1b46132fd2dac0a43048d7354a10c0b31",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/2338f7e1b46132fd2dac0a43048d7354a10c0b31/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/2338f7e1b46132fd2dac0a43048d7354a10c0b31/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-14",
+      "exact_common_commit": "fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01",
+      "matching_NITROS_exact_tag_commit": "e3a29804b6de38fefbf7040864124d983bfceb6a",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-14",
+        "commit": "fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01",
+        "path": "README.md",
+        "Git_blob": "7961b85e23dc5e546fa32b36456f18cd7b2ecf0b",
+        "sha256": "19cc17ac1cd4e23ee5050ead071d957c95a1357e9d69133c1517151bcf18c21f",
+        "bytes": 1660
+      },
+      "LICENSE": {
+        "tag": "v3.2-14",
+        "commit": "fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-15",
+      "exact_common_commit": "fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01",
+      "matching_NITROS_exact_tag_commit": "e3a29804b6de38fefbf7040864124d983bfceb6a",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-15",
+        "commit": "fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01",
+        "path": "README.md",
+        "Git_blob": "7961b85e23dc5e546fa32b36456f18cd7b2ecf0b",
+        "sha256": "19cc17ac1cd4e23ee5050ead071d957c95a1357e9d69133c1517151bcf18c21f",
+        "bytes": 1660
+      },
+      "LICENSE": {
+        "tag": "v3.2-15",
+        "commit": "fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/fcf4d9e17f8f0a7f47f1d22d6a18421ce3768c01/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-2",
+      "exact_common_commit": "c39cfe8714c2849f59d5ec86b1dad0560922c9e6",
+      "matching_NITROS_exact_tag_commit": "98ff8d91f13df423256e89bbc9e8582f2d0fea94",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-2",
+        "commit": "c39cfe8714c2849f59d5ec86b1dad0560922c9e6",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-2",
+        "commit": "c39cfe8714c2849f59d5ec86b1dad0560922c9e6",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/c39cfe8714c2849f59d5ec86b1dad0560922c9e6/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/c39cfe8714c2849f59d5ec86b1dad0560922c9e6/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-3",
+      "exact_common_commit": "c39cfe8714c2849f59d5ec86b1dad0560922c9e6",
+      "matching_NITROS_exact_tag_commit": "98ff8d91f13df423256e89bbc9e8582f2d0fea94",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-3",
+        "commit": "c39cfe8714c2849f59d5ec86b1dad0560922c9e6",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-3",
+        "commit": "c39cfe8714c2849f59d5ec86b1dad0560922c9e6",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/c39cfe8714c2849f59d5ec86b1dad0560922c9e6/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/c39cfe8714c2849f59d5ec86b1dad0560922c9e6/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-4",
+      "exact_common_commit": "04d1036a10b809f7803a3d9a0cbdb5353ba04ea8",
+      "matching_NITROS_exact_tag_commit": "4c808e759ffba807b01ace46299bcea442ccc249",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-4",
+        "commit": "04d1036a10b809f7803a3d9a0cbdb5353ba04ea8",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-4",
+        "commit": "04d1036a10b809f7803a3d9a0cbdb5353ba04ea8",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/04d1036a10b809f7803a3d9a0cbdb5353ba04ea8/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/04d1036a10b809f7803a3d9a0cbdb5353ba04ea8/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-5",
+      "exact_common_commit": "e641adc34ab7d7b89322321b6a26e39b5fa8daae",
+      "matching_NITROS_exact_tag_commit": "f4eefc0fabf3c347a484fc190970b420639c7c6c",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-5",
+        "commit": "e641adc34ab7d7b89322321b6a26e39b5fa8daae",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-5",
+        "commit": "e641adc34ab7d7b89322321b6a26e39b5fa8daae",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/e641adc34ab7d7b89322321b6a26e39b5fa8daae/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/e641adc34ab7d7b89322321b6a26e39b5fa8daae/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-6",
+      "exact_common_commit": "5e58ac872030bded4acf8bea3170dea0b4ecaed0",
+      "matching_NITROS_exact_tag_commit": "f4eefc0fabf3c347a484fc190970b420639c7c6c",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-6",
+        "commit": "5e58ac872030bded4acf8bea3170dea0b4ecaed0",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-6",
+        "commit": "5e58ac872030bded4acf8bea3170dea0b4ecaed0",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/5e58ac872030bded4acf8bea3170dea0b4ecaed0/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/5e58ac872030bded4acf8bea3170dea0b4ecaed0/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-7",
+      "exact_common_commit": "422db6e33a0199bf49af7c38eed54767a26bf7ca",
+      "matching_NITROS_exact_tag_commit": "f4eefc0fabf3c347a484fc190970b420639c7c6c",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-7",
+        "commit": "422db6e33a0199bf49af7c38eed54767a26bf7ca",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-7",
+        "commit": "422db6e33a0199bf49af7c38eed54767a26bf7ca",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/422db6e33a0199bf49af7c38eed54767a26bf7ca/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/422db6e33a0199bf49af7c38eed54767a26bf7ca/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-8",
+      "exact_common_commit": "4af74e5d8d2a5ca9ee070bf87dbc536830830e2d",
+      "matching_NITROS_exact_tag_commit": "f4eefc0fabf3c347a484fc190970b420639c7c6c",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-8",
+        "commit": "4af74e5d8d2a5ca9ee070bf87dbc536830830e2d",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-8",
+        "commit": "4af74e5d8d2a5ca9ee070bf87dbc536830830e2d",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/4af74e5d8d2a5ca9ee070bf87dbc536830830e2d/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/4af74e5d8d2a5ca9ee070bf87dbc536830830e2d/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2-9",
+      "exact_common_commit": "39f716cb00dfdc9478c485fb193bc5d15c9587fd",
+      "matching_NITROS_exact_tag_commit": "f4eefc0fabf3c347a484fc190970b420639c7c6c",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2-9",
+        "commit": "39f716cb00dfdc9478c485fb193bc5d15c9587fd",
+        "path": "README.md",
+        "Git_blob": "ab476bb275de876ba9d000127b73dc343e04762d",
+        "sha256": "bcfede54d2f1d7cfcdaad1c3b78622a9f252c9dad7f35e3e4cb7ee4dd18ba0fc",
+        "bytes": 1646
+      },
+      "LICENSE": {
+        "tag": "v3.2-9",
+        "commit": "39f716cb00dfdc9478c485fb193bc5d15c9587fd",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/39f716cb00dfdc9478c485fb193bc5d15c9587fd/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/39f716cb00dfdc9478c485fb193bc5d15c9587fd/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v3.2.0",
+      "exact_common_commit": "daff86f160295ca482c7a62da5e2966c9ec3b282",
+      "matching_NITROS_exact_tag_commit": "91732780c48bfbb4dde15712c45151e0839428af",
+      "profile_reference": "3.2",
+      "README": {
+        "tag": "v3.2.0",
+        "commit": "daff86f160295ca482c7a62da5e2966c9ec3b282",
+        "path": "README.md",
+        "Git_blob": "329c7a7e7652b65741e6482f0928fbda959d0194",
+        "sha256": "2ac1d9b1d6a3b01e7ef7dfaf542766aa46fef7d70115c1f727fb00f062ea9923",
+        "bytes": 1702
+      },
+      "LICENSE": {
+        "tag": "v3.2.0",
+        "commit": "daff86f160295ca482c7a62da5e2966c9ec3b282",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/daff86f160295ca482c7a62da5e2966c9ec3b282/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/daff86f160295ca482c7a62da5e2966c9ec3b282/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v4.0-0",
+      "exact_common_commit": "68d835816a906e1b5d643bffbfe72e940ae37ea9",
+      "matching_NITROS_exact_tag_commit": "8d2a14f301f8b169626637c8d87feb8317e22369",
+      "profile_reference": "4.0",
+      "README": {
+        "tag": "v4.0-0",
+        "commit": "68d835816a906e1b5d643bffbfe72e940ae37ea9",
+        "path": "README.md",
+        "Git_blob": "2349d2a45e043d5994fe9e0df6a34f90dfde4052",
+        "sha256": "3e9a7742f936aae5a47a8c81d8fdd139f65abad3227424fec577498ff98e7a00",
+        "bytes": 1173
+      },
+      "LICENSE": {
+        "tag": "v4.0-0",
+        "commit": "68d835816a906e1b5d643bffbfe72e940ae37ea9",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/68d835816a906e1b5d643bffbfe72e940ae37ea9/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/68d835816a906e1b5d643bffbfe72e940ae37ea9/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v4.0-1",
+      "exact_common_commit": "dd280f455c9243ad8ce00906c1720e038234bbfd",
+      "matching_NITROS_exact_tag_commit": "8d2a14f301f8b169626637c8d87feb8317e22369",
+      "profile_reference": "4.0",
+      "README": {
+        "tag": "v4.0-1",
+        "commit": "dd280f455c9243ad8ce00906c1720e038234bbfd",
+        "path": "README.md",
+        "Git_blob": "2349d2a45e043d5994fe9e0df6a34f90dfde4052",
+        "sha256": "3e9a7742f936aae5a47a8c81d8fdd139f65abad3227424fec577498ff98e7a00",
+        "bytes": 1173
+      },
+      "LICENSE": {
+        "tag": "v4.0-1",
+        "commit": "dd280f455c9243ad8ce00906c1720e038234bbfd",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/dd280f455c9243ad8ce00906c1720e038234bbfd/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/dd280f455c9243ad8ce00906c1720e038234bbfd/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v4.1-0",
+      "exact_common_commit": "1df4335377eaab5ef8a6610ba82aeb716ab9148d",
+      "matching_NITROS_exact_tag_commit": "2da4b9c7fd59c7942673e34f4cfc8b2a40dade72",
+      "profile_reference": "4.1",
+      "README": {
+        "tag": "v4.1-0",
+        "commit": "1df4335377eaab5ef8a6610ba82aeb716ab9148d",
+        "path": "README.md",
+        "Git_blob": "f4181ceea8cd86a41a5f7fd2509352754337b526",
+        "sha256": "67f9074c72697ad0f929bc73d4162a6c7fd801002d772a93c6873c120e12d365",
+        "bytes": 1159
+      },
+      "LICENSE": {
+        "tag": "v4.1-0",
+        "commit": "1df4335377eaab5ef8a6610ba82aeb716ab9148d",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/1df4335377eaab5ef8a6610ba82aeb716ab9148d/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/1df4335377eaab5ef8a6610ba82aeb716ab9148d/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v4.2-0",
+      "exact_common_commit": "0eb5434c695cc649a501428876380c3e371dbc00",
+      "matching_NITROS_exact_tag_commit": "6a03dff0f3b0ef252b0c6ad7eadd504069cf218d",
+      "profile_reference": "4.2",
+      "README": {
+        "tag": "v4.2-0",
+        "commit": "0eb5434c695cc649a501428876380c3e371dbc00",
+        "path": "README.md",
+        "Git_blob": "f6b0401076efc47d629bba06cf63a8237de96909",
+        "sha256": "6b0b6f5f47260e732db8386d14d87f92058d41545ab436f62db1f5ae05ddc6d0",
+        "bytes": 1128
+      },
+      "LICENSE": {
+        "tag": "v4.2-0",
+        "commit": "0eb5434c695cc649a501428876380c3e371dbc00",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/0eb5434c695cc649a501428876380c3e371dbc00/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/0eb5434c695cc649a501428876380c3e371dbc00/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v4.3-0",
+      "exact_common_commit": "f148919d665ee29da6d4a075d9c1064570b424a1",
+      "matching_NITROS_exact_tag_commit": "f864589e7dbcd179ac1fbb295b3b3b843e06c8ba",
+      "profile_reference": "4.3",
+      "README": {
+        "tag": "v4.3-0",
+        "commit": "f148919d665ee29da6d4a075d9c1064570b424a1",
+        "path": "README.md",
+        "Git_blob": "edca46b8aba86db913f6f0288f73decd0f7cf70f",
+        "sha256": "108b8de42e6e3013156087dec342dd1b4569d327bdc65ed7df76e819cc4d4de9",
+        "bytes": 1191
+      },
+      "LICENSE": {
+        "tag": "v4.3-0",
+        "commit": "f148919d665ee29da6d4a075d9c1064570b424a1",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/f148919d665ee29da6d4a075d9c1064570b424a1/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/f148919d665ee29da6d4a075d9c1064570b424a1/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v4.4-0",
+      "exact_common_commit": "d7164701715edfd4adbec87355461069bc8071d6",
+      "matching_NITROS_exact_tag_commit": "4fbeb113fdf98b8dea857c1044ed414b25ec9271",
+      "profile_reference": "4.4",
+      "README": {
+        "tag": "v4.4-0",
+        "commit": "d7164701715edfd4adbec87355461069bc8071d6",
+        "path": "README.md",
+        "Git_blob": "1e9dc970c5c244f5f6f86363cc7961fe0ffbd23c",
+        "sha256": "6eb4f980eed78b9bf340af8765584d0e6a3fdb9c8e81a47cf3d5303fac4a28d8",
+        "bytes": 1160
+      },
+      "LICENSE": {
+        "tag": "v4.4-0",
+        "commit": "d7164701715edfd4adbec87355461069bc8071d6",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d7164701715edfd4adbec87355461069bc8071d6/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/d7164701715edfd4adbec87355461069bc8071d6/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v4.5-0",
+      "exact_common_commit": "12b9d03a67b3f193ad27a4a58eab2c987a458ce8",
+      "matching_NITROS_exact_tag_commit": "82310fce298d3d9db26945a3a988d5c471d14973",
+      "profile_reference": "4.5",
+      "README": {
+        "tag": "v4.5-0",
+        "commit": "12b9d03a67b3f193ad27a4a58eab2c987a458ce8",
+        "path": "README.md",
+        "Git_blob": "6b18229efbcc92eef132cc66ac22c2b4e772ac6f",
+        "sha256": "5c595dd80e9a6358180d58a7a97be6527ae6e7f87b4dff72ec8d00eb45c34292",
+        "bytes": 1160
+      },
+      "LICENSE": {
+        "tag": "v4.5-0",
+        "commit": "12b9d03a67b3f193ad27a4a58eab2c987a458ce8",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/12b9d03a67b3f193ad27a4a58eab2c987a458ce8/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/12b9d03a67b3f193ad27a4a58eab2c987a458ce8/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v4.6-0",
+      "exact_common_commit": "a0705d84c865f71d7a9e0a29e17c569d4245efed",
+      "matching_NITROS_exact_tag_commit": "ddeee2f3a1be0342588f57bcbed115d71b6f1db4",
+      "profile_reference": "4.6",
+      "README": {
+        "tag": "v4.6-0",
+        "commit": "a0705d84c865f71d7a9e0a29e17c569d4245efed",
+        "path": "README.md",
+        "Git_blob": "0b902d59f96fdc0571387fe3ee6367ef23ccc380",
+        "sha256": "c471fa62300f5ddc29f1cb0e935327ba4862fdcc9a6f6080dbfa93c45dd10136",
+        "bytes": 1160
+      },
+      "LICENSE": {
+        "tag": "v4.6-0",
+        "commit": "a0705d84c865f71d7a9e0a29e17c569d4245efed",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a0705d84c865f71d7a9e0a29e17c569d4245efed/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/a0705d84c865f71d7a9e0a29e17c569d4245efed/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    },
+    {
+      "tag": "v5.0-0",
+      "exact_common_commit": "7bec6ae5dbb2faa11617f40226e8932a4a94e6e4",
+      "matching_NITROS_exact_tag_commit": "260cee67e8344db363f7584256ae161d03abfd01",
+      "profile_reference": "5.0",
+      "README": {
+        "tag": "v5.0-0",
+        "commit": "7bec6ae5dbb2faa11617f40226e8932a4a94e6e4",
+        "path": "README.md",
+        "Git_blob": "999814e05568a9852f5cada96d22ebe506e45318",
+        "sha256": "539f726bf5743a5ab819f1e55ddba1026776e3c7d6398fe9a6ba38bad4921858",
+        "bytes": 1278
+      },
+      "LICENSE": {
+        "tag": "v5.0-0",
+        "path": "LICENSE",
+        "Git_blob": "88bc900529cc5540162d3592cfdee4cf0081839c",
+        "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d",
+        "bytes": 14844
+      },
+      "source_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/7bec6ae5dbb2faa11617f40226e8932a4a94e6e4/README.md",
+      "license_link": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common/blob/7bec6ae5dbb2faa11617f40226e8932a4a94e6e4/LICENSE",
+      "exact_ABI_or_binary_qualification": false,
+      "family_profile_does_not_qualify_this_patch": true
+    }
+  ],
+  "not_whole_package_or_binary_identity": true,
+  "primary_Git_file_blob_verifications": 85,
+  "README_and_root_LICENSE_file_verifications": 78
+}

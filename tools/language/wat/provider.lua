@@ -16,7 +16,8 @@ function describe()
     return {api_version = 1, languages = {"wat"}, targets = {"wasm32-wasip1", "wasm64-wasip1"},
         exception_profiles = {"noeh"}, entry_profiles = {"command", "freestanding"},
         features = {"memory64", "table64", "simd128", "relaxed-simd", "bulk-memory", "reference-types",
-                    "multi-value", "sign-extension", "nontrapping-fptoint", "tail-call", "extended-const"},
+                    "multi-value", "sign-extension", "nontrapping-fptoint", "tail-call", "extended-const", "multi-memory"},
+        memory_artifact_models = {"binary", "dynamic", "independent"},
         artifact_kinds = kinds}
 end
 
@@ -34,6 +35,12 @@ function configure(target, root, request)
         assert(path.extension(source) == ".wat", "set_language(wat) requires actual .wat source")
     end
     assert(#(request.native_sources or {}) == 0, "A WAT binding must not substitute another source language")
+    if request.artifact_model == "independent" then
+        local selected = {}
+        for _, feature in ipairs(request.features) do selected[feature] = true end
+        assert(selected["multi-memory"] and selected["bulk-memory"],
+               "Independent WAT libraries explicitly select multi-memory and bulk-memory")
+    end
 end
 
 -- @brief Restore WABT and reuse the already pinned LLVM native runtime closure.
@@ -66,24 +73,30 @@ function build(target, root, request)
     local loader, prefix, programs = tools(root)
     local version = os.iorunv(loader, table.join(prefix, {programs.wat2wasm, "--version"}))
     assert(version:trim() == "1.0.42", "The shared WAT assembler must be the pinned WABT 1.0.42")
+    target:data_set("ros.sdk.compiler_version", "WABT " .. version:trim())
     local artifacts = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
     local metadata = import("wasm_module", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
     local linker = import("wasm_link", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
     local relocatable = target:kind() == "static" or #request.sources > 1
         or #artifacts.static_closure(target) > 0 or #request.links > 0
-    local intermediate = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/objects", artifacts.identity(target))
+    assert(not request.memory_import or not relocatable,
+           "BLOCKED: this explicit multi-memory ABI requires one complete WAT module; relocatable multi-memory linking is not implemented")
+    local intermediate = artifacts.workspace(target, "wat-objects")
     os.mkdir(intermediate)
     local objects, exports, imports, import_modules = {}, {}, {}, {}
     local output = path.absolute(target:targetfile())
     os.mkdir(path.directory(output))
     for index, source in ipairs(request.sources) do
         local filename = relocatable and path.join(intermediate, string.format("%04d_%s.o", index, path.filename(source))) or output
-        local arguments = table.join(prefix, {programs.wat2wasm, "--disable-exceptions", "--disable-multi-memory"})
+        local arguments = table.join(prefix, {programs.wat2wasm, "--disable-exceptions"})
+        local multi_memory = false
+        for _, feature in ipairs(request.features) do multi_memory = multi_memory or feature == "multi-memory" end
+        if not multi_memory then table.insert(arguments, "--disable-multi-memory") end
         if request.address_bits == 32 then table.insert(arguments, "--disable-memory64") end
         if relocatable then table.insert(arguments, "--relocatable") end
         table.join2(arguments, {path.absolute(source), "-o", filename})
         os.vrunv(loader, arguments)
-        local facts = metadata.validate_memory(filename, request.address_bits, not relocatable)
+        local facts = metadata.validate_memory(filename, request.address_bits, not relocatable, request)
         if relocatable then
             assert(facts.start_index == nil, "Relocatable WAT inputs declare initialization through an explicit callable function")
             linker.validate_exports(filename)
@@ -107,11 +120,11 @@ function build(target, root, request)
         linker.build(target, root, request, objects, {exports = table.unique(exports), allowed_undefined_symbols = table.unique(imports)})
     end
     if target:kind() ~= "static" then
-        metadata.validate_memory(output, request.address_bits, true)
-        if target:kind() == "shared" then
+        local facts = metadata.validate_memory(output, request.address_bits, true, request)
+        if request.artifact_model == "core-preload" then
             metadata.initialize(output, "_initialize")
-        else
-            local facts = metadata.inspect(assert(io.readfile(output, {encoding = "binary"})))
+            facts = metadata.inspect(assert(io.readfile(output, {encoding = "binary"})))
+        elseif target:kind() == "binary" then
             local start
             for _, entry in ipairs(facts.exports) do
                 if entry.kind == 0 and entry.name == "_start" then start = entry end
@@ -119,5 +132,6 @@ function build(target, root, request)
             assert(start and #start.signature.parameters == 0 and #start.signature.results == 0,
                    "A WAT command supplies its own actual no-argument/no-result _start export")
         end
+        target:data_set("ros.sdk.module_metadata", metadata.describe(facts))
     end
 end

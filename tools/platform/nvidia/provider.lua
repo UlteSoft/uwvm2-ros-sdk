@@ -1,8 +1,8 @@
 -- @file provider.lua
 -- @brief Describe NVIDIA applications to the one shared Wasm compiler dispatcher.
 -- @details This provider owns platform data, not a language compiler or VM.
--- Native GPU owners are separately built host programs and are never bundled
--- into a guest application or treated as permission to access a GPU.
+-- SDK application logic executes in Wasm; this provider adds no host client,
+-- native ROS observer, Python service or GPU execution authority.
 
 local components = {
     ["nvidia-groot"] = "dac54b313160c201c450f97df0fd74ebd379c892",

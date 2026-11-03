@@ -17,6 +17,7 @@ if not root then
     end
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/platform/pal/xmake/required_guest_tests.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -31,4 +32,6 @@ target("pal_led_group")
     set_ros_scenario("led_group")
     set_values("ros.sdk.main_class", "uwvm.pal.example.Main")
     add_files("Main.kt")
+    uwvm_pal_required_guest_tests({scenario = "led_group",
+        cases = {"guest-contract-normal", "guest-contract-denied", "guest-contract-invalid-input", "guest-contract-cleanup"}})
 target_end()

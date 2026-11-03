@@ -33,6 +33,7 @@ function main(closure, destination)
     import("core.base.json")
     import("core.base.bytes")
     import("core.compress.lz4")
+    local confinement = import("tool_bundle", {rootdir = os.scriptdir(), anonymous = true})
     closure = path.absolute(closure)
     destination = path.absolute(destination)
     local relative_manifest = "share/uwvm/llvm23-host-closure.json"
@@ -50,15 +51,12 @@ function main(closure, destination)
     table.sort(names)
     local files, aliases, inputs = {}, {}, {}
     for _, relative in ipairs(names) do
-        assert(
-            not path.is_absolute(relative) and not relative:startswith(".."),
-            "Use a closure-relative file inventory"
-        )
+        local location = confinement.payload_path(closure, relative)
         local entry = inventory[relative]
         if entry.symlink then
             table.insert(aliases, { path = relative, target = _canonical(inventory, relative) })
         else
-            local location = path.join(closure, relative)
+            assert(os.isfile(location) and not os.islink(location), "Declare a regular compiler payload or an explicit alias")
             assert(hash.sha256(location):lower() == entry.sha256:lower(), "Changed compiler input: " .. relative)
             table.insert(inputs, location)
             table.insert(files, {
@@ -72,10 +70,13 @@ function main(closure, destination)
     os.mkdir(destination)
     local archive_name = "llvm23-" .. original.version .. ".xmz"
     local archive = path.join(destination, archive_name)
+    local manifest_path = path.join(destination, "llvm23.json")
     -- Keep the intermediate beside this owned output. The embedded XMZ helper
     -- otherwise assumes that the host's default temporary directory is writable,
     -- which need not hold in an Xmake-only container or read-only installation.
     local temporary = archive .. ".uncompressed"
+    assert(not os.exists(archive) and not os.exists(manifest_path) and not os.exists(temporary),
+           "Use a fresh compiler package destination; preserve previous packages")
     local stream = assert(io.open(temporary, "wb"))
     try({
         function()
@@ -83,6 +84,8 @@ function main(closure, destination)
                 local content = assert(io.readfile(path.join(closure, item.path), {encoding = "binary"}))
                 assert(#item.path < 65536 and #content == item.bytes and #content < 4294967296,
                        "XMZ filename or file extent cannot represent this payload")
+                assert(hash.sha256(bytes(content)):lower() == item.sha256:lower(),
+                       "Compiler payload changed during packaging: " .. item.path)
                 stream:write(bytes(2):u16be_set(1, #item.path))
                 stream:write(item.path)
                 stream:write(bytes(4):u32be_set(1, #content))
@@ -97,7 +100,7 @@ function main(closure, destination)
             os.tryrm(temporary)
         end})
     })
-    json.savefile(path.join(destination, "llvm23.json"), {
+    json.savefile(manifest_path, {
         format = "uwvm-host-tool-bundle-v1",
         host = os.host(),
         arch = os.arch(),

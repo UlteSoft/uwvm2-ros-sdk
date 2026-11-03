@@ -153,6 +153,8 @@ static inline int roswasmc_bounded_2_builtin_interfaces_msg_Time_valid(roswasmc_
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_builtin_interfaces_msg_Time_wire_size(roswasmc_bounded_2_builtin_interfaces_msg_Time const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 4;
     n += 4;
@@ -292,6 +294,8 @@ static inline int roswasmc_bounded_2_geometry_msgs_msg_Point_valid(roswasmc_boun
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_geometry_msgs_msg_Point_wire_size(roswasmc_bounded_2_geometry_msgs_msg_Point const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 8;
     n += 8;
@@ -472,6 +476,8 @@ static inline int roswasmc_bounded_2_geometry_msgs_msg_Quaternion_valid(roswasmc
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_geometry_msgs_msg_Quaternion_wire_size(roswasmc_bounded_2_geometry_msgs_msg_Quaternion const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 8;
     n += 8;
@@ -930,6 +936,8 @@ static inline int roswasmc_bounded_2_geometry_msgs_msg_Vector3_valid(roswasmc_bo
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_geometry_msgs_msg_Vector3_wire_size(roswasmc_bounded_2_geometry_msgs_msg_Vector3 const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 8;
     n += 8;
@@ -3709,6 +3717,8 @@ static inline int roswasmc_bounded_2_std_srvs_srv_SetBool_Request_valid(roswasmc
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_std_srvs_srv_SetBool_Request_wire_size(roswasmc_bounded_2_std_srvs_srv_SetBool_Request const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 1;
     return n;
@@ -3950,6 +3960,8 @@ static inline int roswasmc_bounded_2_std_srvs_srv_Trigger_Request_valid(roswasmc
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_std_srvs_srv_Trigger_Request_wire_size(roswasmc_bounded_2_std_srvs_srv_Trigger_Request const* value)
 {
+    (void)value;
+
     size_t n = 0;
     return n;
 }
@@ -3958,6 +3970,10 @@ static inline size_t roswasmc_bounded_2_std_srvs_srv_Trigger_Request_wire_size(r
 static inline void
     roswasmc_bounded_2_std_srvs_srv_Trigger_Request_write_fields(roswasmc_bounded_2_std_srvs_srv_Trigger_Request const* value, unsigned char* p, size_t* offset)
 {
+    (void)value;
+    (void)p;
+    (void)offset;
+
 }
 
 /** @brief Internal reader fills only the public decoder temporary and checks every cursor move. */
@@ -3966,6 +3982,10 @@ static inline int roswasmc_bounded_2_std_srvs_srv_Trigger_Request_read_fields(un
                                                                               size_t* offset,
                                                                               roswasmc_bounded_2_std_srvs_srv_Trigger_Request* value)
 {
+    (void)p;
+    (void)n;
+    (void)offset;
+
     return roswasmc_bounded_2_std_srvs_srv_Trigger_Request_valid(value);
 }
 
@@ -4828,6 +4848,8 @@ static inline int roswasmc_bounded_2_turtlebot3_msgs_msg_Sound_valid(roswasmc_bo
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_turtlebot3_msgs_msg_Sound_wire_size(roswasmc_bounded_2_turtlebot3_msgs_msg_Sound const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 1;
     return n;
@@ -5107,6 +5129,8 @@ static inline int roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_Request_valid(roswa
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_Request_wire_size(roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_Request const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 1;
     n += 1;
@@ -5423,6 +5447,8 @@ static inline int roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request_valid(rosw
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request_wire_size(roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request const* value)
 {
+    (void)value;
+
     size_t n = 0;
     return n;
 }
@@ -5432,6 +5458,10 @@ static inline void roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request_write_fie
                                                                                     unsigned char* p,
                                                                                     size_t* offset)
 {
+    (void)value;
+    (void)p;
+    (void)offset;
+
 }
 
 /** @brief Internal reader fills only the public decoder temporary and checks every cursor move. */
@@ -5440,6 +5470,10 @@ static inline int roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request_read_field
                                                                                   size_t* offset,
                                                                                   roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request* value)
 {
+    (void)p;
+    (void)n;
+    (void)offset;
+
     return roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request_valid(value);
 }
 
@@ -5539,6 +5573,8 @@ static inline int roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Response_valid(ros
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Response_wire_size(roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Response const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 4;
     n += 4;
@@ -5675,6 +5711,8 @@ static inline int roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_Request_valid(ros
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_Request_wire_size(roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_Request const* value)
 {
+    (void)value;
+
     size_t n = 0;
     n += 1;
     return n;

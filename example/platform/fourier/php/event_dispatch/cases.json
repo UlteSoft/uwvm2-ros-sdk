@@ -1,0 +1,122 @@
+{
+  "format": "uwvm-sdk-event-dispatch-required-cases-v1",
+  "language": "php",
+  "required": 21,
+  "selected": 0,
+  "executed": 0,
+  "passed": 0,
+  "failed": 0,
+  "blocked": 21,
+  "not_run": 0,
+  "cases": [
+    {
+      "name": "genuine-engine-and-ABI",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "full-width-ready-snapshot",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "explicit-metadata-watch",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "invalid-capacity-does-not-poll",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Local framing/binding, not runtime permission proof"
+    },
+    {
+      "name": "invalid-signed-source-binding",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Local framing/binding, not runtime permission proof"
+    },
+    {
+      "name": "oversized-service-request-before-admission",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "explicit-source-close",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "source-after-close-service-refused",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "explicit-small-capacity-keeps-pinned-event",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "closed-event-dispatched",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "callback-committed-once",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "nested-dispatch-refused",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "nested-retirement-refused",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "local-event-replay-refused",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Local framing/binding, not runtime permission proof"
+    },
+    {
+      "name": "local-source-binding-refused",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Local framing/binding, not runtime permission proof"
+    },
+    {
+      "name": "local-reserved-header-refused",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Local framing/binding, not runtime permission proof"
+    },
+    {
+      "name": "local-payload-extent-refused",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Local framing/binding, not runtime permission proof"
+    },
+    {
+      "name": "explicit-binding-retirement-no-poll",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "new-generation-and-stale-raw-owner-refused",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "callback-exception-after-commit",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    },
+    {
+      "name": "explicit-idle-after-exception-no-callback-replay",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_PUBLIC_VM_ROUTE_REQUIRED",
+      "scope": "Real caller-driven metadata/lifetime ABI"
+    }
+  ],
+  "service_submit_positive_real_ROS_response_and_admission_error_cases_still_mandatory_and_not_covered": true,
+  "all29_route_and_full_official_API_scope_still_required": true,
+  "Stage_A_or_B_pass": false,
+  "component_isolation_pass": false
+}

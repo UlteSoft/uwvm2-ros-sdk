@@ -7,7 +7,8 @@
 ros_native_command <- function(operation) {
     if (length(operation) != 1L || is.na(operation) || !operation %in% 1:3) stop("operation 1, 2 or 3 required")
     invoke <- function(name, handle = raw(8), request = raw(), capacity = 0) {
-        .Call("uwvm_ros_invoke", name, handle, request, as.double(capacity), PACKAGE = "uwvmros")
+        frame <- UwvmRNative$invoke(name, handle, request, as.double(capacity))
+        list(status = frame[[1L]], data = frame[[2L]], length = frame[[3L]], value = frame[[4L]])
     }
     word_one <- c(as.raw(1), raw(7))
     version <- invoke("abi_version")
@@ -42,7 +43,8 @@ ros_native_command <- function(operation) {
                 rpc <- invoke("topic_publish", handle, request)$status
                 primary <- rpc
                 if (primary != 0) break
-                Sys.sleep(if (sample == 1L) 1 else 0.2)
+                primary <- UwvmRNative$pause_ms(if (sample == 1L) 1000 else 200)
+                if (primary != 0) break
             }
         } else if (operation == 2L) {
             primary <- invoke("topic_subscribe", handle)$status
@@ -53,7 +55,8 @@ ros_native_command <- function(operation) {
                     wire <- frame$data
                     required <- frame$length
                     if (primary != 11 || attempt == 250L) break
-                    Sys.sleep(0.02)
+                    primary <- UwvmRNative$pause_ms(20)
+                    if (primary != 0) break
                 }
             }
         } else {

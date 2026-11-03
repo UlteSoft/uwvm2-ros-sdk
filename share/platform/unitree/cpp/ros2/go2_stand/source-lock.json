@@ -1,0 +1,83 @@
+{
+  "repository": "unitreerobotics/unitree_ros2",
+  "commit": "668d1ec5a05d1c38d3306bdca7d59f2ba3581a88",
+  "original_files": [
+    {
+      "path": "example/src/src/go2/go2_stand_example.cpp",
+      "bytes": 6046,
+      "sha256": "efa80ee6f2d91866f9c1d27b0fb8c29628d44d7c3576d2ac8b067aa27b22080e",
+      "git_blob_sha1": "5c24ce4e0c76fa421b21cc63763c8bb1a1806178",
+      "url": "https://github.com/unitreerobotics/unitree_ros2/blob/668d1ec5a05d1c38d3306bdca7d59f2ba3581a88/example/src/src/go2/go2_stand_example.cpp"
+    },
+    {
+      "path": "example/src/include/common/motor_crc.h",
+      "bytes": 1929,
+      "sha256": "a9cc6b1a578535500716264149ab5e495b9bea4c0d1d66e23b21d216a14460c4",
+      "git_blob_sha1": "239fc21995015a8738b222a1ebf120ccce566b92",
+      "url": "https://github.com/unitreerobotics/unitree_ros2/blob/668d1ec5a05d1c38d3306bdca7d59f2ba3581a88/example/src/include/common/motor_crc.h"
+    },
+    {
+      "path": "example/src/src/common/motor_crc.cpp",
+      "bytes": 1618,
+      "sha256": "772be2ca8900fc0494236408815f4800b112af1dd222f2c8172e5374ced63038",
+      "git_blob_sha1": "9a0b0fb90520bf08516d7ffa89e2638a4137ba7b",
+      "url": "https://github.com/unitreerobotics/unitree_ros2/blob/668d1ec5a05d1c38d3306bdca7d59f2ba3581a88/example/src/src/common/motor_crc.cpp"
+    },
+    {
+      "path": "example/src/CMakeLists.txt",
+      "bytes": 7239,
+      "sha256": "82f0ddd9a84081a7f30a11d07595f190e01eb50be80c22688c6d56b8cca0de19",
+      "git_blob_sha1": "55c125794c53cb795b9fa4d2232be7d959df2f6f",
+      "url": "https://github.com/unitreerobotics/unitree_ros2/blob/668d1ec5a05d1c38d3306bdca7d59f2ba3581a88/example/src/CMakeLists.txt"
+    },
+    {
+      "path": "example/src/package.xml",
+      "bytes": 696,
+      "sha256": "4916c493a827db46ae5fc825b8fa39373bd724cb255f7b5c8fd5662e91c87167",
+      "git_blob_sha1": "89cc2c199710286ee6bb14e68ba399bd841bce8d",
+      "url": "https://github.com/unitreerobotics/unitree_ros2/blob/668d1ec5a05d1c38d3306bdca7d59f2ba3581a88/example/src/package.xml"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1559,
+      "sha256": "a5d73fc4aca9074e3e6fe0b1a0ba763cf9514b2249b7390ed20fe8d53630bf25",
+      "git_blob_sha1": "42d2e648c8881ea075a3bc386c91669290b2e386",
+      "url": "https://github.com/unitreerobotics/unitree_ros2/blob/668d1ec5a05d1c38d3306bdca7d59f2ba3581a88/LICENSE"
+    }
+  ],
+  "source_only": true,
+  "port_status": "CONCRETE_VENDOR_SELECTION_SOURCE_PREPARED_RUNTIME_UNQUALIFIED",
+  "official_simulation": "BLOCKED",
+  "format": "unitree-go2-upstream-task-port-v1",
+  "archive": "share/platform/unitree/cpp/ros2/go2_stand/upstream-original.tar.gz",
+  "archive_sha256": "3e96da843c611878e28148ce113d978e5464dec922fc06dcd8c340f8232a6883",
+  "archive_member_count": 173,
+  "original_selected_root": "src/platform/unitree/cpp/ros2/go2_stand/upstream",
+  "ported_root": "src/platform/unitree/cpp/ros2/go2_stand/ported",
+  "patch": "share/platform/unitree/cpp/ros2/go2_stand/port.patch",
+  "language": "cpp",
+  "original_cxx_standard": "c++20",
+  "main_body_unchanged": false,
+  "original_main_sha256": "efa80ee6f2d91866f9c1d27b0fb8c29628d44d7c3576d2ac8b067aa27b22080e",
+  "ported_main_sha256": "cd0f107655db69878aa092e348a26d7f8d7d476ada91e3426bd0489abf444dbc",
+  "dependency_closure_status": "INCOMPLETE_EXTERNAL_ROS_AND_SIMULATION_DEPENDENCIES",
+  "wasm_build": "PENDING_R29 production/observed/cancel graphs",
+  "accepted": false,
+  "selected_distribution": "humble",
+  "distribution_source": "Exact upstream README recommends Ubuntu22.04/ROS2Humble; SDK source adapter remains incomplete/unqualified for this complete task.",
+  "prior_candidates_note": "001/002 used available legacy SDK Jazzy declaration; neither was qualified and both remain historical.003 selects the manufacturer-recommended original distribution explicitly.",
+  "source_bindings": "share/platform/unitree/cpp/ros2/go2_stand/source-bindings.json",
+  "source_bindings_sha256": "f37058185ae792309dd644ee692b5be25643e29311c5b1177ee0335764d2f8d3",
+  "selection_header": "include/platform/unitree/cpp/ros2/go2_stand/selection.hpp",
+  "selection_header_sha256": "b707d98a0e293c3921305f3bce88e57e006b9bfbc5297d77caf3b0ec0b42fdf6",
+  "original_task_body_unchanged": false,
+  "full_native_framework_and_scene": "Selected application/ROS behavior must execute in Wasm. Typed/sharedptr/until_shutdown guest APIs exist; native official driver/simulator/physics/render and their infrastructure are permitted external endpoints and are not required Wasm ports.",
+  "runtime": "NOT RUN",
+  "native_environment_status": "NOT RUN; exact installation/deployment and real communication still required, not a physics-engine Wasm-port blocker.",
+  "original_control_algorithm_unchanged": true,
+  "optional_observation_only": true,
+  "production_preprocessed_code_expected_unchanged": true,
+  "callback_observation_contract": "share/platform/unitree/cpp/ros2/go2_stand/callback-and-cancel-contract.json",
+  "patch_sha256": "f58710a4f3b51315df1dc0bcc6f6182f73e8c79419db18cdc63bedf9c50f3a75",
+  "callback_observation_patch_note": "callback-observation.patch is an inspection-only main diff. port.patch is the single authoritative complete three-file application/CRC patch."
+}

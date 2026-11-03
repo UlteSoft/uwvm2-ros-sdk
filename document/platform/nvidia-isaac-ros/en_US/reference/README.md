@@ -1,65 +1,11 @@
-# Isaac ROS full AprilTag values
+# Isaac ROS typed values and legacy migration status
 
-The selected fixed NVIDIA source publishes the genuine
-`isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray` at tag_detections.
-The full catalog preserves array Header; every detection's family/id/center/four
-corners; its independently stamped complete PoseWithCovariance; all36 covariance
-values; nested Point/Quaternion/Time and full source files/licenses. A maximum16
-detections,64-byte family/frame text and finite floating values are explicit
-canonical quotas. They do not reduce native detector capacities or turn64
-native detections into16 successful detections; the whole oversized value is90.
+The retained complete AprilTag message graph, generated codecs, canonical identities and language bindings remain source inputs for the SDK. Pure ROSIDL-to-canonical conversion traits and native type identity exporters are metadata/controlled-boundary integration inputs; they do not create a ROS client node or establish a migrated rcl/rclcpp library.
 
-The actual current detector uses rosidl::Buffer and CUDA backend input promotion,
-while exposing genuine CPU-visible typed AprilTag result messages. The NITROS
-repository's fixed README announces deprecation in favor of the new native
-buffer path. This package does not cast a GPU buffer into a CPU vector, expose
-CUDA pointers through Wasm, or claim the old NITROS ABI still works. Image input
-bridging needs its own actual CPU-copy/format/stride/lifetime proof; only the
-complete result profile is selected here. Sensor/camera/calibration/TF hardware
-are trusted native dependencies, not Guest privileges.
+SDK-authored native detector, component-manager and CPU pub/sub application candidates have been removed from the public SDK. Their full original sources, build entries and dependencies remain historical qualification material. Public builds cannot restore them, silently fall back to them or use a host observer to supply guest feedback.
 
-`native_programs/apriltag_components.cpp` adds a distinct complete application
-source module: actual ROS ComponentManager/class-loader/executor, all three
-detector variants and the USB/Rectify/AprilTag composition with the complete
-selected camera parameter map. Its installed catalog ID is
-`native-apriltag-components`. `../NATIVE-PROGRAMS.md` describes exact source scope,
-separate default-disabled enables, tool configuration and finite command forms.
-Genuine native compilation and variant-specific data exchange remain unrun.
+Actual application ROS calls, callbacks, state/sensor feedback and file I/O must execute as Wasm in uwvm2-ros through its unified permission and operation audit. The VM owner maintains the narrowly controlled native ROS host. Unmodified official NVIDIA components may be the external provider, with exact per-release identities; an SDK-written native launcher/executor is not itself an official provider.
 
-First prepare actual records from the whole catalog with the real complete-v1
-vendor producer. Build the modern metadata exporter against the actual
-interfaces and all real standard targets, freeze its full actual source/Event/
-constant/default graph, then bind the output. `native/CMakeLists.txt` has a real
-strong exporter. No Native hash is supplied by this source package.
+Historical NITROS and current rosidl Buffer/CUDA buffer profiles require separate source and ABI qualification. CPU DDS transfer or a generated message header does not prove NITROS negotiation, CUDA/VPI execution, device ownership or native AArch64 support. A current header must not be projected onto older releases.
 
-For a genuine native detector process, explicitly select
-UWVM_NVIDIA_BUILD_DETECTOR and the concrete exported/build target from the actual
-NVIDIA SDK (the original Source creates apriltag_node). Do not invent a target
-name or suppress unresolved symbols. UWVM_NVIDIA_ENABLE_NATIVE_DETECTOR defaults
-OFF and returns13. The positive executable takes DOMAIN LIFETIME_MS IMAGE_TOPIC
-CAMERA_INFO_TOPIC DETECTIONS_TOPIC; lifetime1..10000ms. It constructs the actual
-original AprilTagNode and SingleThreadedExecutor, keeps full default NodeOptions
-and native backend semantics, uses finite positive spin slices, then retires
-executor/node/context separately. A blocking native callback still requires the
-outer process owner. It is perception only, not a robot driver.
-
-Build installed examples through xmake as described in `../examples/README.md`,
-using a genuine selected wasm32 WASI provider. The retained CMake backend uses
-the installed SDK/family. Positive artifacts require an actual native-bound
-family receipt; a source-only family can build the empty-authority branch.
-telemetry.cpp opens only nvidia-apriltags and exposes every typed value, including
-all corners/covariance entries; it never counts opaque blobs as SDK support.
-The default build expects denial13. A separate positive Source needs only its
-explicit topic.subscribe alias, full actual native/root/canonical identity,
-message and byte quotas and peer-bound Gateway configuration. Each stdin R asks
-one actual poll, up to64 observations; it is not a fake clock. Receive error,
-primary output failure and independent close/rollback are retained. Follow the
-root tutorial for actual CLI and C++ DBG steps; zero effects need an independent
-native observation, not only a process return code.
-
-`native_cpu/` adds a separate real-API CPU snapshot/exchange module. It is
-default-disabled, rejects CUDA buffers without separate admission, checks full
-metadata before payload conversion and retains ownership through synchronization.
-Its ROS message/link/exchange acceptance remains blocked by actual native SDK
-dependencies; genuine upstream Buffer storage tests alone do not qualify it.
-
+The new upstream client migration examples and official all-Wasm simulation tests are BLOCKED/NOT_RUN. Reintroduction requires genuine guest client products, Linux public `xmake` and `xmake test`, mandatory nonzero cases, denied operations without native effects and correlated command/result/reverse feedback audit evidence.

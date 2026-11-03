@@ -33,7 +33,7 @@ end
 -- @brief Derive private compilation paths without materializing files on load.
 local function workspace(target, root)
     local artifacts = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
-    return path.join(path.absolute(target:scriptdir()), ".uwvm-ros/typescript", artifacts.identity(target))
+    return artifacts.workspace(target, "typescript")
 end
 
 -- @brief Present emitted JS to an existing provider while preserving TS metadata.

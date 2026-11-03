@@ -16,6 +16,7 @@ if not root then
     end
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/platform/hello_robot/xmake/required_guest_tests.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -30,4 +31,6 @@ target("hello_robot_ffi_reject_frame")
     set_ros_scenario("reject_frame")
     add_includedirs(path.join(root, "include/platform"))
     add_files("Main.c", path.join(root, "src/platform/hello_robot/c_ffi_bridge/ros2/mobile_fjt_humble/abi.c"))
+    uwvm_hello_robot_required_guest_tests({scenario = "reject_frame",
+        cases = {"guest-codec-normal", "guest-codec-boundary", "guest-codec-malformed", "guest-codec-abi-refusal"}})
 target_end()

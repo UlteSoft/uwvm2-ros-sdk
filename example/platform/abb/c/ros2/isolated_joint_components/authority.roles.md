@@ -1,0 +1,11 @@
+# Separate component authority requests
+
+These are application authority requirements, not a deployment/channel schema or a grant. SDK01's actual versioned deployment and typed-copy ABI must be selected before either component is run.
+
+The reader/planner requests only `feedback_read` for its selected official joint-state source. Its static planner library shares the reader's private memory and trust domain. The reader has no `command_write` native authority. Its narrow common-channel endpoint may deliver validated bounded plans and snapshots to the actuator; no ordinary pointer, memory index or guest-provided identity establishes authority.
+
+The actuator requests `command_write` for its exact selected official command/action endpoint. Its separate `actuator_feedback` and `actuator_result` aliases must be restricted to feedback and terminal results for that same originating command owner. These aliases do not confer the reader's `feedback_read` authority. The actuator also requires separately admitted common-channel endpoints for incoming plans/state and reverse terminal feedback. It validates model/epoch, limits, age, step, request/correlation and terminal state in its own memory before emitting a receipt. Channel data is copied/validated under SDK01's contract; there is no permission union or native SDK algorithm.
+
+Each component requires its own native policy and socket bound to its actual VM PID/UID and verified originating module/instance. SDK01 must supply the trusted channel and policy-generation bindings. A guest-provided owner, model, epoch or correlation value remains data and cannot authorize a handle or channel operation. The source alias lists in `component.integration.json` are requests; all actual bindings remain pending.
+
+The six first isolation cases remain blocked/unexecuted: distinct private memories, genuine cross-component plan and command, reverse fresh feedback, denied other-role alias, independently originated foreign handle, and retired/stale generation. The public source's ordinary C pointers stay inside their own component. Local business checks cannot stand in for these cases. Root/operator binding must prove actual instance/owner/epoch and resource survival after denials.

@@ -1,0 +1,420 @@
+{
+  "format": "sdk02-source-declared-package-closure-v1",
+  "profile": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
+  "packages": [
+    {
+      "name": "webots_ros2_driver",
+      "version": "2025.0.1",
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "source_package_xml": "official-reference/webots_ros2_driver/package.xml",
+      "source_sha256": "5208a9814c97e78c0d4c60e667a165c61ebcfc817d2b6b141a30c373ca9545c0",
+      "declared_dependencies": [
+        {
+          "kind": "build_depend",
+          "name": "ros_environment",
+          "condition": null
+        },
+        {
+          "kind": "build_depend",
+          "name": "python3-dev",
+          "condition": null
+        },
+        {
+          "kind": "build_export_depend",
+          "name": "python3-dev",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "python_cmake_module",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake_python",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "pluginlib",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rclcpp",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rclpy",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "sensor_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "geometry_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "tf2_geometry_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "tf2_ros",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "vision_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "tinyxml2_vendor",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "webots_ros2_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "webots_ros2_importer",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "yaml-cpp",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "webots_ros2_control",
+      "version": "2025.0.1",
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "source_package_xml": "official-reference/webots_ros2_control/package.xml",
+      "source_sha256": "f706e2fe1a37a07c8c0be99fdceeed8eb966d1df5d69d6addf19f3206eee7043",
+      "declared_dependencies": [
+        {
+          "kind": "depend",
+          "name": "hardware_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "controller_manager",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "pluginlib",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rclcpp",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rclcpp_lifecycle",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "webots_ros2_driver",
+          "condition": null
+        },
+        {
+          "kind": "build_depend",
+          "name": "ros_environment",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "webots_ros2_importer",
+      "version": "2025.0.1",
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "source_package_xml": "official-reference/webots_ros2_importer/package.xml",
+      "source_sha256": "78be688c740e6e58fa7cad1c198e6578c2d144e6cb2ff1002e3d2f074fa93863",
+      "declared_dependencies": [
+        {
+          "kind": "exec_depend",
+          "name": "builtin_interfaces",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "python3-collada",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "python3-lark-parser",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "xacro",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_copyright",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "python3-pycodestyle",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "python3-pil",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "python3-numpy",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "python3-pytest",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "webots_ros2_msgs",
+      "version": "2025.0.1",
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "source_package_xml": "official-reference/webots_ros2_msgs/package.xml",
+      "source_sha256": "b9240849de541317d921743b8ccf34f024e833a833e5a5c7cfb5ba18b66cf09a",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "build_depend",
+          "name": "builtin_interfaces",
+          "condition": null
+        },
+        {
+          "kind": "build_depend",
+          "name": "geometry_msgs",
+          "condition": null
+        },
+        {
+          "kind": "build_depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "build_depend",
+          "name": "vision_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "builtin_interfaces",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "geometry_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "vision_msgs",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "webots_ros2_universal_robot",
+      "version": "2025.0.1",
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "source_package_xml": "official-reference/webots_ros2_universal_robot/package.xml",
+      "source_sha256": "6ec8d2270ce7b0b147e998a9a3b5416300cb988602ac1ba0235c22a871a12e9d",
+      "declared_dependencies": [
+        {
+          "kind": "exec_depend",
+          "name": "rclpy",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "builtin_interfaces",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "control_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "trajectory_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz2",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "webots_ros2_driver",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "webots_ros2_control",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "robot_state_publisher",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "controller_manager",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "joint_trajectory_controller",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "joint_state_broadcaster",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "xacro",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_copyright",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "python3-pytest",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    }
+  ],
+  "required_python_modules": [
+    "rclpy",
+    "control_msgs",
+    "sensor_msgs",
+    "controller_manager_msgs",
+    "action_msgs",
+    "launch",
+    "launch_ros",
+    "ament_index_python",
+    "xacro",
+    "yaml"
+  ],
+  "required_installed_closure": "Actual installed compatible ROS/ABI/RMW/provider/model/config files pinned by deployment; declaration alone is not closure",
+  "installed_closure_qualified_for_public_Wasm": false
+}

@@ -1,0 +1,1121 @@
+{
+  "format": "upstream-source-closure-acquisition-v1",
+  "repository": "ROBOTIS-GIT/turtlebot3",
+  "commit": "90a68bd2e3c61c12966779da89d8eeaec82730e9",
+  "archive_bytes": 8862240,
+  "archive_sha256": "8f110df576bb5f346e04550061f82edfa67fed0cc2d19a79772315adc92606a9",
+  "unpacked_bytes": 41711484,
+  "file_count": 134,
+  "records": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "kind": "regular",
+      "bytes": 2493,
+      "sha256": "031f8eec44a43a74ca4950345ac4e5bc3c9c9651ab098734f26c60439ac0877c",
+      "git_blob_sha1": "32e0d0a23b7899b4278b10789c1c574fe10cbe6a",
+      "mode": 436
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/help_report.yml",
+      "kind": "regular",
+      "bytes": 2776,
+      "sha256": "c5bbe69e895c50503971d33f8581893d58928b123614139ef6e06440e637e256",
+      "git_blob_sha1": "0669ebabe319f241ba23e943ec0ae3e909f4c245",
+      "mode": 436
+    },
+    {
+      "path": ".github/workflows/ros-ci.yml",
+      "kind": "regular",
+      "bytes": 2665,
+      "sha256": "6a51fcf6fd907f34e5c049bb27d08aa822ea5445df3ffc59eedd0d9aab196466",
+      "git_blob_sha1": "734e1484fc38005655343898be139b3c22f045a7",
+      "mode": 436
+    },
+    {
+      "path": ".github/workflows/ros-lint.yml",
+      "kind": "regular",
+      "bytes": 858,
+      "sha256": "98aafa553cc5544ff20f00a97d8efb908d41014949091d291febff862abff43a",
+      "git_blob_sha1": "c6eb5be18e2c5bc2e91cfec4753432b4b6a2080c",
+      "mode": 436
+    },
+    {
+      "path": ".gitignore",
+      "kind": "regular",
+      "bytes": 555,
+      "sha256": "8c4aa0a4a274982c400bd49a6d12bcf31eab6d3bba8c70fcd9f591974f41589f",
+      "git_blob_sha1": "7b853979f352dcef6336fa639c0a3ebb0a2885b8",
+      "mode": 436
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "kind": "regular",
+      "bytes": 915,
+      "sha256": "18352086da36852db5e54371213942cf99ff05344ef40522b3067eb4836cba8e",
+      "git_blob_sha1": "cfba094dace53df09974dc9bf5bb9e3c2c677e97",
+      "mode": 436
+    },
+    {
+      "path": "ISSUE_TEMPLATE.md",
+      "kind": "regular",
+      "bytes": 1548,
+      "sha256": "9d0f903f6ce61aef05ed3bc6cc0296718defee27bf4e3e7485a85655dcaabb1b",
+      "git_blob_sha1": "56988b246b96432856fde6ee37537d1b9e865493",
+      "mode": 436
+    },
+    {
+      "path": "LICENSE",
+      "kind": "regular",
+      "bytes": 11361,
+      "sha256": "f9946796a8a5bd5981565142fa42e3b0cc36aef6f80e86beaf5905b3c0fef1b5",
+      "git_blob_sha1": "f4f87bd4ed6dca2480e257335a4063ef4127624c",
+      "mode": 436
+    },
+    {
+      "path": "README.md",
+      "kind": "regular",
+      "bytes": 2673,
+      "sha256": "c0927e87557d5c5578842edf538fd2d9b2b6da2b883c5eceae5be219d2d6d24f",
+      "git_blob_sha1": "dbdc612abcf36dd02b2ec6f11c259559f36bf15b",
+      "mode": 436
+    },
+    {
+      "path": "docker/humble/Dockerfile",
+      "kind": "regular",
+      "bytes": 2819,
+      "sha256": "9c508935d063beba50a547ac5af5573b516144852bfe24087e80b712d1f09c63",
+      "git_blob_sha1": "9aaef5f8c6159420c74b15016d98936b24898fc6",
+      "mode": 436
+    },
+    {
+      "path": "docker/humble/container.sh",
+      "kind": "regular",
+      "bytes": 3387,
+      "sha256": "08eb30be7d16d436e3c201ba895b546b422e0a2eac81d502cc30714e35d3d388",
+      "git_blob_sha1": "a80aa890344f4cb94e01810713ce48deca8db029",
+      "mode": 509
+    },
+    {
+      "path": "docker/humble/docker-compose.yml",
+      "kind": "regular",
+      "bytes": 722,
+      "sha256": "e4d02dc6722fe21b7640c42f32ed84493719dd2cbdf7509fd9fe81bc60944061",
+      "git_blob_sha1": "4c0706b591bf41a0495c3f831556123e82e8b487",
+      "mode": 436
+    },
+    {
+      "path": "docker/jazzy/Dockerfile",
+      "kind": "regular",
+      "bytes": 2816,
+      "sha256": "1c734d9b881be56b1e66d4abc8017927a210fe1946c263bc5e1539baa2c8f721",
+      "git_blob_sha1": "cababa63cb3060afec06fc906742b2d82a6864d6",
+      "mode": 436
+    },
+    {
+      "path": "docker/jazzy/container.sh",
+      "kind": "regular",
+      "bytes": 3387,
+      "sha256": "08eb30be7d16d436e3c201ba895b546b422e0a2eac81d502cc30714e35d3d388",
+      "git_blob_sha1": "a80aa890344f4cb94e01810713ce48deca8db029",
+      "mode": 509
+    },
+    {
+      "path": "docker/jazzy/docker-compose.yml",
+      "kind": "regular",
+      "bytes": 724,
+      "sha256": "9400ad2755d48741a715591a4643e57a5888cdba2657552d391d07239946765a",
+      "git_blob_sha1": "2c7ad9d724b5775f734d27da63d9a2e118c96319",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3.repos",
+      "kind": "regular",
+      "bytes": 729,
+      "sha256": "d2fc137aecbd938c81807f4b1401d4726685e794ccb2ff65c441bc0e0eba5692",
+      "git_blob_sha1": "38495fcf93961d781e112a0e1cbf68090e652243",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3/CHANGELOG.rst",
+      "kind": "regular",
+      "bytes": 10442,
+      "sha256": "7253280b04f29c349559e9c1d83b876fd44413026872cec1f97f71504a5a3ad4",
+      "git_blob_sha1": "6df2bbb92730bc1e8c69f4c400076ef288da8db6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3/CMakeLists.txt",
+      "kind": "regular",
+      "bytes": 830,
+      "sha256": "0ad7a188049a512ecd4ada52114b90336b033370394a02a89c8d2ed641b236cc",
+      "git_blob_sha1": "fe177dd860a3475851e3093b64739220ee39ace3",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3/package.xml",
+      "kind": "regular",
+      "bytes": 1323,
+      "sha256": "437e5bb69bc8cb78dde3defa9318b68a168727c18b527cd09dd2cbe7c3406341",
+      "git_blob_sha1": "d3c0fad64c52753672596c98767df7cda24e8842",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/CHANGELOG.rst",
+      "kind": "regular",
+      "bytes": 5672,
+      "sha256": "ed0dd05e2b193253d9b97d969fc44424a5c8cef037e98f3a57b3d3641510df54",
+      "git_blob_sha1": "0343dd69900d3ee335bd3062a725cfa7e74f0bf0",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/CMakeLists.txt",
+      "kind": "regular",
+      "bytes": 1217,
+      "sha256": "886541d7814ded6b55f16ba72fe57b16151e5be24e174e84eb7c65e44b722290",
+      "git_blob_sha1": "bfbbc5b2385e195f13c8dce2e0986029974ebfeb",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/launch/camera.launch.py",
+      "kind": "regular",
+      "bytes": 3873,
+      "sha256": "26aee763ebda7d7c0f02f5947d01f0714926c30622e70c9d5a4ba938891b2a63",
+      "git_blob_sha1": "d09d42ac7f60ffcc72105fafbbe3ce7f54038e4a",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/launch/robot.launch.py",
+      "kind": "regular",
+      "bytes": 4538,
+      "sha256": "30e0df75a1bd5de0ef8657b4ecadae013ea3e39cb8799581b8599b18e2b97a72",
+      "git_blob_sha1": "0bbcee1f37794051617deeaddc24d526caa4e8db",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/launch/rviz2.launch.py",
+      "kind": "regular",
+      "bytes": 1173,
+      "sha256": "41248d7a1509e4cbd935d5d2216179a4915be05cf0f4a35a83156bedf8f3f3ba",
+      "git_blob_sha1": "76dd09a73a7d929c7dc7b29bbefd2e7ed3fc856e",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/launch/turtlebot3_state_publisher.launch.py",
+      "kind": "regular",
+      "bytes": 2284,
+      "sha256": "4f25b293fd83fc5d4bb4e43f1dcd097552740405b1778d356c02a772229a3821",
+      "git_blob_sha1": "f1fbf123ac41a08879e3e2383103627d9b2e884b",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/package.xml",
+      "kind": "regular",
+      "bytes": 1181,
+      "sha256": "ad27c068da9447135f4ad51a1a248f58dba8874e6f95f4652b08da753bb5005e",
+      "git_blob_sha1": "f58ff398c9c34e4c30c476b49cb98b328c501dc6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/param/burger.yaml",
+      "kind": "regular",
+      "bytes": 731,
+      "sha256": "ea79acaa38dc7f9eec9eeefb21c010c0c131dee118522366d21e1c886408b297",
+      "git_blob_sha1": "99d71c36434f69f5f7cd826df8f28fb92f01ab07",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/param/humble/burger.yaml",
+      "kind": "regular",
+      "bytes": 732,
+      "sha256": "86ed01b39837504895d274882a72057bf9ffef72efeccb554e4306fb6aa8137b",
+      "git_blob_sha1": "b32b3178df4c5eac002fd0fa35a5b72d479b5483",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/param/humble/waffle.yaml",
+      "kind": "regular",
+      "bytes": 732,
+      "sha256": "1c2023f1bf3b2a4f1888d12dd490f3e29782186f9e5948e0631b30335265d3dc",
+      "git_blob_sha1": "4e5eaffe0919e3eace6aceb99ba2a05ac2e624e6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/param/humble/waffle_pi.yaml",
+      "kind": "regular",
+      "bytes": 732,
+      "sha256": "1c2023f1bf3b2a4f1888d12dd490f3e29782186f9e5948e0631b30335265d3dc",
+      "git_blob_sha1": "4e5eaffe0919e3eace6aceb99ba2a05ac2e624e6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/param/waffle.yaml",
+      "kind": "regular",
+      "bytes": 731,
+      "sha256": "9f4fc4c30e2a917cac6b86348d141a75cf0edb48377c52d5fc5cf1a6b494f06d",
+      "git_blob_sha1": "e356921c80a1ce55e0fb4c14d463917bfe4e95e6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/param/waffle_pi.yaml",
+      "kind": "regular",
+      "bytes": 731,
+      "sha256": "9f4fc4c30e2a917cac6b86348d141a75cf0edb48377c52d5fc5cf1a6b494f06d",
+      "git_blob_sha1": "e356921c80a1ce55e0fb4c14d463917bfe4e95e6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/script/99-turtlebot3-cdc.rules",
+      "kind": "regular",
+      "bytes": 537,
+      "sha256": "ae58ff1eafbdd210f1356c16158350120fd37661461a6d8c9219db3bcab8380a",
+      "git_blob_sha1": "f4b876c6f671cd9d3e4b8710ecd0a7a00df7c5fe",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_bringup/script/create_udev_rules",
+      "kind": "regular",
+      "bytes": 363,
+      "sha256": "780dd0c0c31ea94f7e31a02fed083445f16c34ad9f7799420c134f202ce0f273",
+      "git_blob_sha1": "3408de2d36a947ed8bc5a415b88717f71b0b233b",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_cartographer/CHANGELOG.rst",
+      "kind": "regular",
+      "bytes": 4436,
+      "sha256": "e8b885bcfe9ca17e634cb578502275d58efb7f8640a9a7ef248584f00e55dd3f",
+      "git_blob_sha1": "ecd46f903530e4ebe1bf405b145f962653eeeefc",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_cartographer/CMakeLists.txt",
+      "kind": "regular",
+      "bytes": 1094,
+      "sha256": "1e7d623c283d1f7cae1f13870cf444aada7716910424c213c900bedc2326673a",
+      "git_blob_sha1": "3351bab381160b0ae65808827dedd666a054336e",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_cartographer/config/turtlebot3_lds_2d.lua",
+      "kind": "regular",
+      "bytes": 1983,
+      "sha256": "5e9619c353726157b30dd0e3fdbc6dc1fd134494f19ab2560979af309030de4b",
+      "git_blob_sha1": "ffedf92914f589f43d6467bd38bd4eeb6e430d77",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_cartographer/launch/cartographer.launch.py",
+      "kind": "regular",
+      "bytes": 3902,
+      "sha256": "c5b7c3c5af057c08fe0ad7876700fb8f566372ba975cd123f6b30bddffd9c6ab",
+      "git_blob_sha1": "bcc25b99a3d2ecdc8a08941e0f8c3004dc10af23",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_cartographer/launch/occupancy_grid.launch.py",
+      "kind": "regular",
+      "bytes": 1958,
+      "sha256": "3b206a31521b9864e3bce23c66c77d3d037aef700a85e1e7659b5aac710a45c0",
+      "git_blob_sha1": "2044f1ead6408324c4e691bd79f5f43c47675bed",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_cartographer/package.xml",
+      "kind": "regular",
+      "bytes": 932,
+      "sha256": "febf6b622c7d159e2bb3782c10efe082442709e80b09ab96a6382e8a39fa0c23",
+      "git_blob_sha1": "5dc70ca0f59d442215f45a2c537272273f61f200",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_cartographer/rviz/tb3_cartographer.rviz",
+      "kind": "regular",
+      "bytes": 15096,
+      "sha256": "3ca4745e79b5e47cc9797cc547cd7ac7d763f9c02d63195bc402bdd4f95ad9cf",
+      "git_blob_sha1": "dda4bbc726d52f1991d2ca68678ebe6b2dc27553",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_ci.repos",
+      "kind": "regular",
+      "bytes": 481,
+      "sha256": "805847b32ece8b8ace5ff894ff81d3806d090b46da7ae5b92a896ed010abdc68",
+      "git_blob_sha1": "fd5f66d0a768e47d919a9dda1bb0728def9ca4c0",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/CHANGELOG.rst",
+      "kind": "regular",
+      "bytes": 4622,
+      "sha256": "8df990a8676d5acb2bb940180c78b8834ff6f097850ec909a411f337ae4b5b8b",
+      "git_blob_sha1": "89b5c6a21a7573b0e604866bacd6a0dab6e97572",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/CMakeLists.txt",
+      "kind": "regular",
+      "bytes": 1243,
+      "sha256": "f4bd488279a329cffd6dee99c82ff66b85a2bfb7a0bc836750a8d9f028d9b6cc",
+      "git_blob_sha1": "44862b4f5713a450a8c6c298cf347dcf66c592d7",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/meshes/bases/burger_base.stl",
+      "kind": "regular",
+      "bytes": 4826284,
+      "sha256": "7d7f3329a437b43bbcbbec59f9a2d1df1d88b59c3882c543d979baf73670f025",
+      "git_blob_sha1": "2329a00e9bf95fdf55dc3f01acc1ebeb1b2a56de",
+      "mode": 509
+    },
+    {
+      "path": "turtlebot3_description/meshes/bases/waffle_base.stl",
+      "kind": "regular",
+      "bytes": 16291984,
+      "sha256": "fcc85458c31f6c4bf2afdc93469128c49723189c5a4c07b8c91baebc132e9a0d",
+      "git_blob_sha1": "025b6f9ee31563105c8b4a77c8e62280d52bbce4",
+      "mode": 509
+    },
+    {
+      "path": "turtlebot3_description/meshes/bases/waffle_pi_base.stl",
+      "kind": "regular",
+      "bytes": 7878884,
+      "sha256": "706230121a287ff953c4c84d344014a147fc27615b0e95221aaf04cb0dca7e42",
+      "git_blob_sha1": "a2ff2c7ac8021dc7e51fdd07a3ae0f65d1adf9e8",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/meshes/sensors/astra.dae",
+      "kind": "regular",
+      "bytes": 8977174,
+      "sha256": "7573fc3cc9d5f4e42223a3f22496fe1aa817d678d1ee48a36637dd23ae45dcc4",
+      "git_blob_sha1": "eb1ea6be3fed3f6cf5ccecfef8f410488d82cdb9",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/meshes/sensors/astra.jpg",
+      "kind": "regular",
+      "bytes": 65411,
+      "sha256": "36f4c46895a73035f71cf01570c76316663e68c30ee0b789372469af3da48546",
+      "git_blob_sha1": "670c5b8296b5a3bf1422dc4a18de541bc9296965",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/meshes/sensors/lds.stl",
+      "kind": "regular",
+      "bytes": 728384,
+      "sha256": "98f0bd7046159f83caab9509293112ef13534368535669124b91b5114c3132f6",
+      "git_blob_sha1": "80a5fe33563aaa73d1cae521e82d0699ad525f4a",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/meshes/sensors/r200.dae",
+      "kind": "regular",
+      "bytes": 208224,
+      "sha256": "ef8122d367ec4abc4ff5b1aa31c9c90f161648907ad9da7c503db1244692342a",
+      "git_blob_sha1": "c1ebc6ab218d3140099d2d1cd3ab11d45d1a0197",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/meshes/sensors/r200.jpg",
+      "kind": "regular",
+      "bytes": 2508,
+      "sha256": "499a7bb6e1d7bc1c2c47a9a769c34cda69b4809695149fa017f4161cdb581c45",
+      "git_blob_sha1": "8956fcfcb83eab1bac701cc67b9452489010b95e",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/meshes/wheels/left_tire.stl",
+      "kind": "regular",
+      "bytes": 1083684,
+      "sha256": "578c9452ee51c2f71e5e6723b503d784e58a6ac317fa53ee308e645f204c8d6a",
+      "git_blob_sha1": "29bfa039c30feb5f93a310fde2b39277d66596a8",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/meshes/wheels/right_tire.stl",
+      "kind": "regular",
+      "bytes": 1083684,
+      "sha256": "407aaf271ba7051c6186b220e1dc36b2a6eca688fced66a3347f49747b684596",
+      "git_blob_sha1": "43c27e67c96bbf60839a5db6792f73f2ee16590e",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/package.xml",
+      "kind": "regular",
+      "bytes": 957,
+      "sha256": "6c208f957addb35bbf2ee2abc1da354796d638b63da1d7d95ade693403bdcbb6",
+      "git_blob_sha1": "ee063c94c03166c04bb1632eebcf5535b98273c0",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/rviz/model.rviz",
+      "kind": "regular",
+      "bytes": 8565,
+      "sha256": "8d231423734bbd058e418c138455fdc448f5459b793e1734d4cecd313eb2aada",
+      "git_blob_sha1": "1a15663b1d1026d35985588145cc870d7fc914c0",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/urdf/common_properties.urdf",
+      "kind": "regular",
+      "bytes": 943,
+      "sha256": "12c424e353b6ee75ad5287b78b16991f73d874d565570c58f4e766e07cb4de55",
+      "git_blob_sha1": "9d457ea1d6bffd026f432d697d83b3ee2ae2ac16",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/urdf/turtlebot3_burger.urdf",
+      "kind": "regular",
+      "bytes": 5645,
+      "sha256": "bc453d08d6a3f2da1530201a15807edafffa5158c291dc40f5edb19ae35ca603",
+      "git_blob_sha1": "5b1470e40ee3431475ecd85fbd4294c36933cb40",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/urdf/turtlebot3_waffle.urdf",
+      "kind": "regular",
+      "bytes": 8926,
+      "sha256": "f9fa59f734cf444f857effaa2334a1b71e0f07bacc63d029accf3f5093c69032",
+      "git_blob_sha1": "d4676fe2e9dedbb2e4627437c961559421153a34",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_description/urdf/turtlebot3_waffle_pi.urdf",
+      "kind": "regular",
+      "bytes": 7431,
+      "sha256": "33c201d21492246e9eba8ecd7f1ca9ae4bd7c88a1da5bc360584002ba61ab9ce",
+      "git_blob_sha1": "ce39db97a6171fb3f0414fc84fc0daaa2d2bdf02",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/CHANGELOG.rst",
+      "kind": "regular",
+      "bytes": 3711,
+      "sha256": "1e4cc9a61c6be9bf40c7c421244cec126ac44d1f55467ec22e25f357a88437ad",
+      "git_blob_sha1": "95fcc65eae7200cd7323945814200f46ff284cba",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/package.xml",
+      "kind": "regular",
+      "bytes": 1340,
+      "sha256": "360f7ba0b9f5f644d1fe6b1faa31ea0feeee21994c821161373cab20f9d4d342",
+      "git_blob_sha1": "cbd90a747ca185f9f658ed0d63deab28d7d4ac00",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/resource/turtlebot3_example",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/setup.cfg",
+      "kind": "regular",
+      "bytes": 105,
+      "sha256": "6eb3d6d5632db383b8747f47cdf58d6515f1a72c31d627add716faaf3b229d8b",
+      "git_blob_sha1": "ba13e1bfebe89bedcfc30dbfd8c26016e901a398",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/setup.py",
+      "kind": "regular",
+      "bytes": 2288,
+      "sha256": "1f4b201a10085efb43b77e02cba248ed6bd1b4d254ef535d6de311f43646c3da",
+      "git_blob_sha1": "75c9c864dc849f8ee2e02d7ac9e14c146255aa3d",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/__init__.py",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_absolute_move/__init__.py",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_absolute_move/turtlebot3_absolute_move.py",
+      "kind": "regular",
+      "bytes": 6216,
+      "sha256": "81ac18d98124fd3cfd2563f1e92ae09c78a39d67b95f2d89a6872c42e31a4de9",
+      "git_blob_sha1": "c295c14b59b4ac5c30b0faf625a86e9e2e5e6295",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_interactive_marker/__init__.py",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_interactive_marker/turtlebot3_interactive_marker.py",
+      "kind": "regular",
+      "bytes": 6101,
+      "sha256": "4a7e8ab5ed0a08233d3bbcbbc518d08d1ac7efebdc824ab13df619516dd045e4",
+      "git_blob_sha1": "6a62dab12c8964f43e0412fff2913414f3b4e701",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_obstacle_detection/__init__.py",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_obstacle_detection/turtlebot3_obstacle_detection.py",
+      "kind": "regular",
+      "bytes": 3197,
+      "sha256": "ca77972db3f6415dc80f1ed1b32a6c81abd9c11ba561192c704cf1dd1ef79ff6",
+      "git_blob_sha1": "8a4950c129b48c1cb59e716e95253534902834f9",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_patrol/__init__.py",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_patrol/turtlebot3_patrol_client.py",
+      "kind": "regular",
+      "bytes": 3369,
+      "sha256": "7c1099be57c37f91bc3697aab3672808e8b8e181e6c792074ea3ef758508d1c0",
+      "git_blob_sha1": "d40734972bcb95bf6f3e6de3491a839a4befdee4",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_patrol/turtlebot3_patrol_server.py",
+      "kind": "regular",
+      "bytes": 5659,
+      "sha256": "581b51b12e419a8f93cc9f500335b5f269d39295cb81368512484b2e92344a27",
+      "git_blob_sha1": "1ded3034eeebecc0dfa5a6f8a817329be723a3c6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_relative_move/__init__.py",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_relative_move/turtlebot3_relative_move.py",
+      "kind": "regular",
+      "bytes": 7226,
+      "sha256": "b67bed1d8e9369c3d6e575a4892b455ecd1da1f1b328bdf39710bf5c20883716",
+      "git_blob_sha1": "328c7679002d9d60ca825773fa63da9fe0df3ed3",
+      "mode": 509
+    },
+    {
+      "path": "turtlebot3_navigation2/CHANGELOG.rst",
+      "kind": "regular",
+      "bytes": 5147,
+      "sha256": "75777e157af3a01c2ecae2f76557712b559642fd016e6c5da11851dbc6d799c8",
+      "git_blob_sha1": "1ff19626f6c58eed268f11affb1712c60dee93f1",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/CMakeLists.txt",
+      "kind": "regular",
+      "bytes": 1096,
+      "sha256": "fb56e8b1aeb19054672fa50d345d4b726fef3a1e3319d5472162b6e44972e0c7",
+      "git_blob_sha1": "3f7de9bc3e12d5c74ee744f36e7d542dd335871b",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/launch/navigation2.launch.py",
+      "kind": "regular",
+      "bytes": 3256,
+      "sha256": "218f499c0a88f56f18a77772c04647a787df05f4a700d6cdaaa320899544c012",
+      "git_blob_sha1": "d01111d8b3b8ebb392b3db9b9a33aca74550368a",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/map/map.pgm",
+      "kind": "regular",
+      "bytes": 147508,
+      "sha256": "57eaad9291fcf02e068cbcd1874990694838a74a3304755bae1bd7b726c4522f",
+      "git_blob_sha1": "663f40b53c154394ae90997d43894617139976d1",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/map/map.yaml",
+      "kind": "regular",
+      "bytes": 131,
+      "sha256": "964566f958dbee800d2e9961cb438476218526f4363b5fe550b9ea962efe584b",
+      "git_blob_sha1": "6ad3381b85b741277cb50bb3afca07e3c666a35e",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/package.xml",
+      "kind": "regular",
+      "bytes": 926,
+      "sha256": "871ad2266db46d000d1aec643d2c30de418ab053c932b5c06aea0e2ef6409e15",
+      "git_blob_sha1": "d00750c57374917237f86892479778423bfd6345",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/param/burger.yaml",
+      "kind": "regular",
+      "bytes": 12822,
+      "sha256": "477c7bf179542dc801f82e0af6cb22636732f98a9f10fd69b539b7d9790b34b2",
+      "git_blob_sha1": "711d09584b6a2cc50544387adbacf73d66e31306",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/param/burger_cam.yaml",
+      "kind": "regular",
+      "bytes": 12822,
+      "sha256": "477c7bf179542dc801f82e0af6cb22636732f98a9f10fd69b539b7d9790b34b2",
+      "git_blob_sha1": "711d09584b6a2cc50544387adbacf73d66e31306",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/param/humble/burger.yaml",
+      "kind": "regular",
+      "bytes": 9839,
+      "sha256": "da7587d242281b1767408aa42e062ab2d4c029e38044bef42d2f98335e1d293d",
+      "git_blob_sha1": "a9a7ea15fba4df34dca236b2ccfdc2265d411469",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/param/humble/burger_cam.yaml",
+      "kind": "regular",
+      "bytes": 9839,
+      "sha256": "da7587d242281b1767408aa42e062ab2d4c029e38044bef42d2f98335e1d293d",
+      "git_blob_sha1": "a9a7ea15fba4df34dca236b2ccfdc2265d411469",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/param/humble/waffle.yaml",
+      "kind": "regular",
+      "bytes": 9840,
+      "sha256": "327348af5a2f9fb941fb8306625d94718ea25976a728c281e30bedd59ee40f38",
+      "git_blob_sha1": "a35f173c0289678763b5d9b0e487d4fb574f1ad1",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/param/humble/waffle_pi.yaml",
+      "kind": "regular",
+      "bytes": 9819,
+      "sha256": "2113240b687f85669c41a22e09d293f08cbe8bffd10829d70a7ef6d2f65bbc9e",
+      "git_blob_sha1": "36b89c32d9686411f78fa578c33a78085c65c079",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/param/waffle.yaml",
+      "kind": "regular",
+      "bytes": 12824,
+      "sha256": "5610a11840ad3c03b372ccedd8f3ec313f25955df87e97b443b960e87735fcb9",
+      "git_blob_sha1": "1adab1eadc755775b08a32902ac30778e20075ef",
+      "mode": 509
+    },
+    {
+      "path": "turtlebot3_navigation2/param/waffle_pi.yaml",
+      "kind": "regular",
+      "bytes": 12824,
+      "sha256": "5610a11840ad3c03b372ccedd8f3ec313f25955df87e97b443b960e87735fcb9",
+      "git_blob_sha1": "1adab1eadc755775b08a32902ac30778e20075ef",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_navigation2/rviz/tb3_navigation2.rviz",
+      "kind": "regular",
+      "bytes": 18781,
+      "sha256": "8680d6c3510d0d0b129c75f9c2d73414a8ce60f3b92619753b8bd7b5e84e2f13",
+      "git_blob_sha1": "0b8a5a47552360cc8bd0b876d116bb53f07aca75",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/CHANGELOG.rst",
+      "kind": "regular",
+      "bytes": 3441,
+      "sha256": "060f17d2947981edd8ccd216d71c311cd2d7ab270ba6b8b85de2a0d3ea6676e8",
+      "git_blob_sha1": "8b51bba71f5e8e15cd4743156ee7438d771573f7",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/CMakeLists.txt",
+      "kind": "regular",
+      "bytes": 3148,
+      "sha256": "8ae4bbefa884afb98263a0069383e22604cfd5ab94dea6175c0c96dd4e7d5795",
+      "git_blob_sha1": "d4d7539c9976d29c1b5d5fd9bc637f143dda25ff",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/control_table.hpp",
+      "kind": "regular",
+      "bytes": 4060,
+      "sha256": "582f3fa1888e206a20c28dd5cc255645b566ebe8548057317c598e0eb61e5aee",
+      "git_blob_sha1": "35e7e42c9539c6c391a999d4600276090c3883a9",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/devices/devices.hpp",
+      "kind": "regular",
+      "bytes": 1573,
+      "sha256": "7bcc18ba8c94847f3d1d48605589c154ac12215abb98d310f793813a15cc9f20",
+      "git_blob_sha1": "cc4f7008bb281f7934470fbaf8cf5a15752ca6ff",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/devices/motor_power.hpp",
+      "kind": "regular",
+      "bytes": 1523,
+      "sha256": "c509d71ec9674428b0c5c46f1615f96c46ed8a52f3d3d2ce7a39a085f054ab87",
+      "git_blob_sha1": "07b6de7c4927683555d7be0437226f4b8dd88d94",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/devices/reset.hpp",
+      "kind": "regular",
+      "bytes": 1560,
+      "sha256": "d0c7a0b36f80a4103fcf0a84ed866cd80e499088833cf852b6a9c12c9c9617c4",
+      "git_blob_sha1": "fcc818e32cde48844514d2fbcb92d64faecf49f0",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/devices/sound.hpp",
+      "kind": "regular",
+      "bytes": 1506,
+      "sha256": "592227ace6e009dbe9204d61c0fe1cd8250bedf717c1c1405951edbaac7b58a5",
+      "git_blob_sha1": "c03d291617067fbfea28a529ff7cc790bcc2bca0",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/diff_drive_controller.hpp",
+      "kind": "regular",
+      "bytes": 1234,
+      "sha256": "18c6652003d0aee76825ff20e173f0ede12fb9a60615ce6d8b304ecc46bea4b5",
+      "git_blob_sha1": "7df1a37981c6a3690bd325b81b6a6b677c6b791c",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/dynamixel_sdk_wrapper.hpp",
+      "kind": "regular",
+      "bytes": 3450,
+      "sha256": "ddf4f7a3185712ec80b3ff066a504a1c918602d8581d115ef13bd66ff8528783",
+      "git_blob_sha1": "9309285db3c019ccfc42420346bb40f182842c4b",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/odometry.hpp",
+      "kind": "regular",
+      "bytes": 3493,
+      "sha256": "7a0aaa01f0d6ec7deeff44ea4d34d93228e74e5d93e6ee0fc821b7b25eb01791",
+      "git_blob_sha1": "b3b54cc8ee6a4bc41fc5501cc0c4485aa99d13bb",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/sensors/battery_state.hpp",
+      "kind": "regular",
+      "bytes": 1416,
+      "sha256": "fafc2f5cd522efa5f8a32c9405781255f358018f007463d17d8a42681f9cadd3",
+      "git_blob_sha1": "31eaa8242d44354a673aa05f6440ce70e6eda2cb",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/sensors/imu.hpp",
+      "kind": "regular",
+      "bytes": 1601,
+      "sha256": "59b8f8ec50d9b2a87bd8887aa38155288514fef6c4c1b0a60c35a311bc86ffee",
+      "git_blob_sha1": "cbb487a30c238f070d00847b9406f3f2527eb1dc",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/sensors/joint_state.hpp",
+      "kind": "regular",
+      "bytes": 1922,
+      "sha256": "2cbf7aec69f2e433caea8645df0f1de1a0cb0a3dbd1d8b85e3ebe4c68d150ec9",
+      "git_blob_sha1": "50e19f7e20bade603d10b81cc59a27f80496a9ee",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/sensors/sensor_state.hpp",
+      "kind": "regular",
+      "bytes": 1714,
+      "sha256": "2c289c902b8bcd16cc03f04c29dc220c5761b2d3887aa282f9edd98d0e246917",
+      "git_blob_sha1": "be536b5931bb6c0eb4a5e4749709ce08f58474cd",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/sensors/sensors.hpp",
+      "kind": "regular",
+      "bytes": 1556,
+      "sha256": "718d0f388457c77c27b429b285a42184558a9da7211c21a88d1a6ce5d6a56926",
+      "git_blob_sha1": "917430d1102bdfa83502d4b1b615290f4dff5b09",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/turtlebot3.hpp",
+      "kind": "regular",
+      "bytes": 3308,
+      "sha256": "8de3d0f0ff11a6e36e713a607846b51b14c9098f7c6a90ffabdf98397892adda",
+      "git_blob_sha1": "fdc70e472e47ef266a92ca8e41396b2350115491",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/twist_publisher.hpp",
+      "kind": "regular",
+      "bytes": 2783,
+      "sha256": "c8e9d51a940aad83debf7dadf96c022223128eef1398edf3ddda9807835f25a8",
+      "git_blob_sha1": "194076ddc1c51e98a7ada7b8340dd40910b545a6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/include/turtlebot3_node/twist_subscriber.hpp",
+      "kind": "regular",
+      "bytes": 5773,
+      "sha256": "5bd1d56ca3366e08182965dd4536e655664c3d8c004515392b7db3c58998f313",
+      "git_blob_sha1": "3f7ebb8756e852016f8b8e6b5e1f60ddf21e6593",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/package.xml",
+      "kind": "regular",
+      "bytes": 1331,
+      "sha256": "428b14d58dbe5dd1333d168eee5175f7c167c1b14d910e96220a9599951712cb",
+      "git_blob_sha1": "4824a0ab0445d8ed0d374972d4fe47c0da9cb888",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/param/burger.yaml",
+      "kind": "regular",
+      "bytes": 632,
+      "sha256": "ecb32826e28cfbf0b0b44166bf25cff254d4ccef8e6a9757a747028708fb9484",
+      "git_blob_sha1": "5263900a18a96ce55997d3dbecde3db3f8326696",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/param/waffle.yaml",
+      "kind": "regular",
+      "bytes": 632,
+      "sha256": "d91756067bb965f17d93f00f251d82c2360844f995debc1f14b2704208b706bf",
+      "git_blob_sha1": "4154b3003f8811dea12eef62a9cf91abc65d3d56",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/param/waffle_pi.yaml",
+      "kind": "regular",
+      "bytes": 632,
+      "sha256": "d91756067bb965f17d93f00f251d82c2360844f995debc1f14b2704208b706bf",
+      "git_blob_sha1": "4154b3003f8811dea12eef62a9cf91abc65d3d56",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/devices/motor_power.cpp",
+      "kind": "regular",
+      "bytes": 2084,
+      "sha256": "db5cbc2070cd94727ed41d9bfd7dc11656440378c793732693b4f690c858acc2",
+      "git_blob_sha1": "abd0dce20cabe43aea3bcfa14b0f690dbcc7317a",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/devices/reset.cpp",
+      "kind": "regular",
+      "bytes": 2896,
+      "sha256": "cc8fd16deeeabaa46ad3bca67ba653f883e9d63b9e3ef3f4a6ae307fc5880c33",
+      "git_blob_sha1": "8f551a40b4f888b191dfb71a0aa55f661b90b199",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/devices/sound.cpp",
+      "kind": "regular",
+      "bytes": 2070,
+      "sha256": "eb8c02c278fda387e9424bb0a60edc396fe4bd30f8f22b57187e22d1c14405d6",
+      "git_blob_sha1": "95dd11267de784de1dca288d4d01b9c9534194b3",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/diff_drive_controller.cpp",
+      "kind": "regular",
+      "bytes": 1136,
+      "sha256": "c1d37f7b4a8cc67ad761f884c376fdf5a3e6cb1f342b983ac8cb5349677f2ccd",
+      "git_blob_sha1": "488f707232e8f9675c0d8da6e4706df9e5a0afad",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/dynamixel_sdk_wrapper.cpp",
+      "kind": "regular",
+      "bytes": 4713,
+      "sha256": "0082a155ffb6b60f1f8f2f703fc67f2d8ad5f37e0d4e52f66777915577476e1c",
+      "git_blob_sha1": "1ec8e018898419f64cb1c6de394cf93cfd18f1e6",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/node_main.cpp",
+      "kind": "regular",
+      "bytes": 1932,
+      "sha256": "5104933c393f32e2944e9f361ae8e52e72ed93c970a41e8ba8063cb1776598f2",
+      "git_blob_sha1": "39033f9a165c6ee2dbfe5d94395cec4054faa9bf",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/odometry.cpp",
+      "kind": "regular",
+      "bytes": 9433,
+      "sha256": "92648471d089b24f2612141e9bf1c4fd3384bdb713dd43cc815eb3e526814318",
+      "git_blob_sha1": "2bcc81576b06c05748d4be16fa2cceffddd0408d",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/sensors/battery_state.cpp",
+      "kind": "regular",
+      "bytes": 1765,
+      "sha256": "f76e46d5648d558239ddf79b531b40db64872a51c57d78c7895ada3cf8d25960",
+      "git_blob_sha1": "705cf2470e62e660a84bfb4a25f454594fc6c6a8",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/sensors/imu.cpp",
+      "kind": "regular",
+      "bytes": 4235,
+      "sha256": "5ac5d3e8d0802f4d8403b1c5a790e83a3c338ed2bd3549a61b104bc90091857f",
+      "git_blob_sha1": "16d5c3a78e596ce5f762e902452efc58b88e5aad",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/sensors/joint_state.cpp",
+      "kind": "regular",
+      "bytes": 3912,
+      "sha256": "0ff9d0dfb8b78c1d1b4a4f955f9587bc515cf1db77861502b72e745f888fa41d",
+      "git_blob_sha1": "d7da0501a52c94eb4ceee1996a29cf1c25990c7f",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/sensors/sensor_state.cpp",
+      "kind": "regular",
+      "bytes": 4188,
+      "sha256": "bc5a68d15ae144e5fb0ba19899c3168242db7c1c084356b981d0a35df96f85d5",
+      "git_blob_sha1": "2aa320918c82786ff90e92dda0eba5654ca2eb29",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_node/src/turtlebot3.cpp",
+      "kind": "regular",
+      "bytes": 11836,
+      "sha256": "b9320febf38e78f480b9a94a702f19ba24554703d190a406686437b220e935a4",
+      "git_blob_sha1": "55bb2e31ba4c93fa855019c7fd70ecd6c4bf0959",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_teleop/CHANGELOG.rst",
+      "kind": "regular",
+      "bytes": 3049,
+      "sha256": "38cec64893192ad62322a705781117d7c0a8877ffebc3d555a21562e51238628",
+      "git_blob_sha1": "7838349ed5d31f855f3b0ec20fca066ffc39d125",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_teleop/package.xml",
+      "kind": "regular",
+      "bytes": 920,
+      "sha256": "80939af0deaf109aa16d2408203c615cb7b138b45715e3f7b04f22924e8c621a",
+      "git_blob_sha1": "ee44360f95dd25ce90a6db4a9fa2f33a7a6400d4",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_teleop/resource/turtlebot3_teleop",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_teleop/setup.cfg",
+      "kind": "regular",
+      "bytes": 103,
+      "sha256": "ce3ca1f800a4467228daa164871581e12f2aa6239750200e10b8b2d376ea8419",
+      "git_blob_sha1": "688c8520f8faaf48db5fddd232474c466fa36af8",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_teleop/setup.py",
+      "kind": "regular",
+      "bytes": 1089,
+      "sha256": "dd47b1b0880331b99cbbead49cc9d02b36c3496104ee76d28789f0ab7d2c75aa",
+      "git_blob_sha1": "14b22f325d12c12a075bdbf8243c64164d1eada0",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_teleop/turtlebot3_teleop/__init__.py",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_teleop/turtlebot3_teleop/script/__init__.py",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": 436
+    },
+    {
+      "path": "turtlebot3_teleop/turtlebot3_teleop/script/teleop_keyboard.py",
+      "kind": "regular",
+      "bytes": 8464,
+      "sha256": "824d4b2037773eed4617d0945e78c5e17ee21def47cb19208a472b5dd9eebcef",
+      "git_blob_sha1": "6610b041e4d8c55725f8d43652f20a40d633654c",
+      "mode": 509
+    }
+  ],
+  "critical_blob_verification": [
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_obstacle_detection/turtlebot3_obstacle_detection.py",
+      "expected": "8a4950c129b48c1cb59e716e95253534902834f9",
+      "actual": "8a4950c129b48c1cb59e716e95253534902834f9",
+      "matches": true
+    },
+    {
+      "path": "turtlebot3_example/package.xml",
+      "expected": "cbd90a747ca185f9f658ed0d63deab28d7d4ac00",
+      "actual": "cbd90a747ca185f9f658ed0d63deab28d7d4ac00",
+      "matches": true
+    },
+    {
+      "path": "turtlebot3_example/setup.py",
+      "expected": "75c9c864dc849f8ee2e02d7ac9e14c146255aa3d",
+      "actual": "75c9c864dc849f8ee2e02d7ac9e14c146255aa3d",
+      "matches": true
+    },
+    {
+      "path": "turtlebot3_example/setup.cfg",
+      "expected": "ba13e1bfebe89bedcfc30dbfd8c26016e901a398",
+      "actual": "ba13e1bfebe89bedcfc30dbfd8c26016e901a398",
+      "matches": true
+    },
+    {
+      "path": "LICENSE",
+      "expected": "f4f87bd4ed6dca2480e257335a4063ef4127624c",
+      "actual": "f4f87bd4ed6dca2480e257335a4063ef4127624c",
+      "matches": true
+    }
+  ],
+  "status": "SOURCE_ACQUIRED_EXACT_CRITICAL_BLOBS_VERIFIED",
+  "upstream_code_executed": false,
+  "wasm_build": "NOT RUN",
+  "official_simulation": "NOT RUN",
+  "unextracted_entries": [],
+  "archive_url": "https://codeload.github.com/ROBOTIS-GIT/turtlebot3/tar.gz/90a68bd2e3c61c12966779da89d8eeaec82730e9"
+}

@@ -1,0 +1,43 @@
+{
+  "format": "uwvm-sdk-publisher-api-cases-v1",
+  "language": "php",
+  "genuine_engine_version": "8.4.13",
+  "required": 6,
+  "selected": 0,
+  "executed": 0,
+  "passed": 0,
+  "failed": 0,
+  "blocked": 6,
+  "not_run": 0,
+  "cases": [
+    {
+      "name": "genuine-pinned-engine",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_RUNTIME_AND_TYPED_PEER_REQUIRED"
+    },
+    {
+      "name": "reject-oversized-field-before-acquisition",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_RUNTIME_AND_TYPED_PEER_REQUIRED"
+    },
+    {
+      "name": "reject-nonfinite-field-before-acquisition",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_RUNTIME_AND_TYPED_PEER_REQUIRED"
+    },
+    {
+      "name": "default-denied-publisher-has-no-publish-call",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_RUNTIME_AND_TYPED_PEER_REQUIRED"
+    },
+    {
+      "name": "one-accepted-typed-publish-and-explicit-close",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_RUNTIME_AND_TYPED_PEER_REQUIRED"
+    },
+    {
+      "name": "fresh-complete-typed-echo-inside-guest",
+      "status": "BLOCKED_CURRENT_OWNER_QUALIFIED_RUNTIME_AND_TYPED_PEER_REQUIRED"
+    }
+  ],
+  "source_only": true,
+  "no_zero_case_success": true,
+  "vendor_official_API_compatibility": false,
+  "component_isolation_pass": false,
+  "Stage_B_pass": false
+}

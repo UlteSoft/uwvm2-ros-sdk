@@ -1,0 +1,166 @@
+{
+  "ROS_owner_import_assertions": {
+    "blocked": 6,
+    "executed": 0,
+    "fail": 0,
+    "independent_harness_required": [
+      "actual two runtime instances and module/Wasm/policy identities",
+      "real originating peer handle and non-collision observation",
+      "permission/audit attribution and no native side effect",
+      "foreign peer resource survives the refused close"
+    ],
+    "not_run": 6,
+    "pass": 0,
+    "per_component": [
+      "other-role alias denied13 with untouched output",
+      "independently observed foreign owner handle denied9; own handle still closes once",
+      "retired own handle close/use denied9"
+    ],
+    "required": 6,
+    "selected": 6
+  },
+  "Stage_A": {
+    "blocked": 4,
+    "executed": 0,
+    "fail": 0,
+    "not_run": 4,
+    "pass": 0,
+    "required": 4,
+    "selected": 4
+  },
+  "Stage_B": {
+    "blocked": 15,
+    "executed": 0,
+    "fail": 0,
+    "not_run": 15,
+    "pass": 0,
+    "required": 15,
+    "selected": 0
+  },
+  "common_channel_ABI_selected": null,
+  "common_component_deployment_selected": null,
+  "execution_rule": "All compilation/parsing/build/tests occur only in the SSH Linux admitted environment with current boot, actual64GiB/0swap actors/ancestor, whole heavy canonical lease, unchanged disk reserves and applicable source topology proof/benign.",
+  "first_component_isolation_cases": {
+    "blocked": 6,
+    "cases": [
+      "same offsets different private backing and sentinel/grow independence",
+      "allowed SDK01 typed copy plus genuine fresh reverse ROS feedback",
+      "private memory export/import graph denial",
+      "foreign or stale common channel capability/generation denial",
+      "foreign ROS handle or descriptor no-effect denial",
+      "identical frozen Wasm instantiated twice with different grants"
+    ],
+    "executed": 0,
+    "fail": 0,
+    "not_run": 6,
+    "pass": 0,
+    "required": 6,
+    "selected": 6
+  },
+  "format": "sdk02-owned-guest-components-development-status-v1",
+  "guest_business": {
+    "actuation": "exact request/cookie correlation, stale/replayed request refusal, no successful receipt before native terminal success plus fresh at-target feedback",
+    "default_execution": "Exit78 with SDK01-channel-integration-pending diagnostic; no fabricated forwarding or ROS operation.",
+    "feedback": "Each receiver maintains its own observation counter; compare stamps/positions across independent components, not their local counters.",
+    "planning": "Validated bounded per-joint clamp; recheck cached sample age/time direction immediately before planning; preserve output, pending state and request sequence on refusal. One pending request and bounded backpressure.",
+    "retirement": "Local abandonment does not acknowledge native cancellation; common runtime must separately retire native resources and generations.",
+    "units": "micro-radians and ROS nanoseconds; actual selected model bounds/step/tolerance are copied into each private state"
+  },
+  "intended_graph": {
+    "actuator": {
+      "ROS_aliases_intended": [
+        "command_write",
+        "actuator_feedback",
+        "actuator_result"
+      ],
+      "artifact_target": "abb-component-actuator",
+      "channel": "PENDING_SDK01_TYPED_COPY_SNAPSHOT",
+      "explicitly_denied_alias": "feedback_read",
+      "private_state": [
+        "actuator state",
+        "model limits",
+        "native causal cookie",
+        "pending command",
+        "fresh feedback snapshot",
+        "stack"
+      ]
+    },
+    "common_communication_memory": "No memory is implicitly shared; typed bounded copies are the intended default. No slot partitioning security claim.",
+    "private_memory_exports_to_other_component": "FORBIDDEN_BY_REQUIRED_RUNTIME_GRAPH; not verified",
+    "reader_planner": {
+      "ROS_aliases_intended": [
+        "feedback_read"
+      ],
+      "artifact_target": "abb-component-reader-planner",
+      "channel": "PENDING_SDK01_TYPED_COPY_SNAPSHOT",
+      "explicitly_denied_alias": "command_write",
+      "private_state": [
+        "reader state",
+        "feedback snapshot",
+        "model limits",
+        "pending command",
+        "local observation counter",
+        "stack"
+      ],
+      "same_trust_static_library": "abb-component-private-planner"
+    },
+    "static_pointer_library": "Ordinary pointers remain within reader/planner private heap. Its C structs are local values, never serialized padding or addresses."
+  },
+  "local_guest_business_cases": {
+    "blocked": 24,
+    "executed": 0,
+    "fail": 0,
+    "not_run": 24,
+    "pass": 0,
+    "required": 24,
+    "scope": "Actual guest-only assertions when executed; never Stage A, Stage B or component isolation acceptance",
+    "selected": 24
+  },
+  "parallel_channel_ABI_or_native_business_bridge_defined": false,
+  "private_planner_freshness_source": {
+    "new_shared_channel_ABI": false,
+    "now_ns": "Explicit caller observation in the accepted sample time domain; checked inside reader Wasm before producing a command",
+    "same_existing12_reader_cases_extended_with_future_and_aged_planning_atomicity_checks": true,
+    "state": "SOURCE_ONLY_NOT_LINUX_PARSED_BUILT_OR_EXECUTED"
+  },
+  "public_commands": {
+    "all_sources_inside_public_example": true,
+    "build": "xmake",
+    "full_example": "xmake test includes private-memory-channel-real-ros-required, which currently fails visibly until the real common ABI is integrated",
+    "narrow_business_checks": "xmake test abb-component-reader-planner / xmake test abb-component-actuator, using an explicit existing uwvm-ros-command-run-v1 configuration",
+    "private_tmp_implementation_dependency": false
+  },
+  "required_common_owner": "SDK01",
+  "scope": "Two independent intended guest trust domains; source/build targets do not establish actual runtime memory or permission isolation. This file is application development status, not a common deployment/channel ABI.",
+  "source_authority_requests": {
+    "actual_common_channel_ABI_selected": null,
+    "actual_grants_bound_or_verified": false,
+    "actuator": {
+      "denied_other_role_aliases": [
+        "feedback_read"
+      ],
+      "feedback_and_result_restricted_to_same_originating_command_owner": true,
+      "requested_ROS_aliases": [
+        "command_write",
+        "actuator_feedback",
+        "actuator_result"
+      ]
+    },
+    "binding_rule": "Separate native policies/sockets for the actual originating module/instance, verified VM PID/UID and policy/channel generations; SDK01 publishes the actual binding and typed-copy contract. No union of component permissions. Guest-supplied identifiers remain data, never authority.",
+    "reader_planner": {
+      "denied_other_role_aliases": [
+        "command_write",
+        "actuator_feedback",
+        "actuator_result"
+      ],
+      "requested_ROS_aliases": [
+        "feedback_read"
+      ],
+      "static_planner_shares_reader_trust": true
+    },
+    "roles_document": "authority.roles.md",
+    "source_alias_lists_are_requests_not_grants": true
+  },
+  "source_freeze_rule": "New guest algorithms are a new source/artifact version. Freeze their complete emitted Wasm hashes after genuine build, then reuse those exact bytes across ABB/FANUC/Yaskawa mappings. Existing joint-step c0d886e8 bytes are not claimed for these sources.",
+  "status": "SOURCE_AUTHORED_UNCOMPILED_UNEXECUTED_COMMON_ABI_INTEGRATION_PENDING"
+}

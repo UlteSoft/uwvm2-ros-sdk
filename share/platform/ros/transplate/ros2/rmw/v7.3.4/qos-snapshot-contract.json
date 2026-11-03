@@ -1,0 +1,78 @@
+{
+  "format": "sdk01-existing-UMRE-QoS-guest-copy-contract-v1",
+  "state": "PURE_GUEST_CODEC_SOURCE_UNVERIFIED_NATIVE_EXPORT_AND_CALLER_BINDING_STILL_REQUIRED",
+  "upstream": {
+    "rmw_version": "7.3.4",
+    "rmw_commit": "8cb94a87cf3f4049abe2d563af893517bf336930"
+  },
+  "existing_VM_source_references": [
+    {
+      "logical_VM_path": "src/uwvm2/imported/ros/ipc/rmw_endpoint.h",
+      "sha256": "149fdf4584e0b413d0768e7571de769aa83611cc2be40197e33c45ada8295e81",
+      "bytes": 8249,
+      "scope": "Read-only current source reference; not qualified ELF/native tuple or grant"
+    },
+    {
+      "logical_VM_path": "src/uwvm2/uwvm/imported/ros/rmw_publisher_host.h",
+      "sha256": "3e6ba29d7f3268ad1edfa481c733deb6fc3789e8096885b3cf53b5502b565b85",
+      "bytes": 18537,
+      "scope": "Read-only current source reference; not qualified ELF/native tuple or grant"
+    }
+  ],
+  "existing_encoding": {
+    "magic": "UMRE",
+    "version": 1,
+    "total_bytes": 256,
+    "profile_value_bytes": 80,
+    "profile_offsets": [
+      64,
+      144
+    ],
+    "GID_offset": 224,
+    "namespace_bool_value_offset_in_profile": 72,
+    "namespace_bool_valid": [
+      0,
+      1
+    ],
+    "reserved_bytes_zero": true
+  },
+  "effective_protocol_enums": {
+    "history": {
+      "1": "KEEP_LAST",
+      "2": "KEEP_ALL"
+    },
+    "reliability": {
+      "1": "RELIABLE",
+      "2": "BEST_EFFORT"
+    },
+    "durability": {
+      "1": "TRANSIENT_LOCAL",
+      "2": "VOLATILE"
+    },
+    "liveliness": {
+      "1": "AUTOMATIC",
+      "2": "MANUAL_BY_TOPIC mapped to genuine RMW7.3.4 value3"
+    }
+  },
+  "declared_profile_compatibility": "UMRE effective resolved endpoint values do not export named/declaration profiles. SYSTEM_DEFAULT/UNKNOWN/BEST_AVAILABLE enum profiles cannot be silently forced through its1..2 vocabulary.",
+  "checked_copy_semantics": [
+    "Exact256 bytes, version/magic/reserved/GID/profile-count validation before output assignment",
+    "Complete private guest value copy; every parser failure leaves output unchanged",
+    "Compare expected source/instance/generation/session/incarnation associations supplied by qualified actual runtime context; parser equality is not caller authorization",
+    "Inspect requires a nonzero exact expected native incarnation; first activation may learn the returned fresh incarnation",
+    "uint64 depth preserved; Java int narrowing rejects >INT32_MAX with75 and unchanged output",
+    "Seconds/nanoseconds retained separately; RMW0/0 UNSPECIFIED and9223372036/854775807 INFINITE preserved; deadline/lease9223372036/854775806 BEST_AVAILABLE distinguished; lifespan equal tuple is finite",
+    "No native pointer, native QoS address, host allocator or backing object is exposed"
+  ],
+  "required_real_runtime_binding": [
+    "Source-qualified native named profile export/lookup and exact ROS/rcl/RMW commit/ABI/profile-name/ELF provenance; existing copied tokens are not profiles",
+    "Real VM caller identity and current source capability leases at export AND endpoint use; default deny before native effects",
+    "Reject revoked/stale/foreign instance handles in actual runtime; snapshot data and expected association values grant no authority",
+    "Fresh inspect of the same retained native object/incarnation used for actual traffic",
+    "Real source-produced raw events, audit/native effects,2/3instance private memories and all29route consumer implementations"
+  ],
+  "SDK09_upstream_commit": "d0e4e952bad1977ce9818d00b520d3ad0aeafd8d",
+  "SDK09_request_sha256": "937b69eabdb3bc024dcdf197b8f1374b866efdcdfc6107ca1b9c6d34715b7dca",
+  "new_VM_import_schema_or_grant_registered": false,
+  "root_routes_VM_owner_integration": true
+}

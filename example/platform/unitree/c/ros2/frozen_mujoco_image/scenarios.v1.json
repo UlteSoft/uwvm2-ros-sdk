@@ -1,0 +1,110 @@
+{
+  "format": "uwvm-sdk-simulation-example-v1",
+  "api_version": 1,
+  "profile": {
+    "id": "unitree-full-wasm-ros-migration-required-v1",
+    "vendor": "unitree",
+    "official_model_commit": "1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d",
+    "required_models": [
+      "B2",
+      "A2",
+      "AS2"
+    ],
+    "ros_release": "jazzy",
+    "execution_class": "software_simulation",
+    "status": "BLOCKED_FULL_WASM_ROS_MIGRATION_REQUIRED"
+  },
+  "frozen_wasm": {
+    "sdk_path": "lib/platform/ros/portable/v0.3.0/sensor-digest.wasm",
+    "bytes": 20095,
+    "sha256": "7061f671b91860cca2867d52bc38bca4c12234426598951451b481cf31c69100"
+  },
+  "python_dependencies": [],
+  "scenarios": [
+    {
+      "id": "rgb8-integrity",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "denied-no-native-effect",
+      "kind": "denied",
+      "expected_vm_exit": 13,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "image-dimensions-and-payload-boundaries",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "mono8-format-boundary",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "stale-and-foreign-handles",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "native-read-failure",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "read-timeout-and-cancel",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "disconnect-and-reconnect",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "pause-and-resume",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "simulator-restart",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "update-rollback-permission-preservation",
+      "kind": "sensor",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "foreign-runtime-policy-source",
+      "kind": "denied",
+      "expected_vm_exit": 13,
+      "deadline_seconds": 30
+    }
+  ],
+  "remaining_required_cases": "BLOCKED until implemented and Linux-qualified; no optional or skipped mandatory rows",
+  "qualification": "SOURCE_AUTHORED_NOT_BUILT_NOT_RUN_REVISED_SHARED_DECLARATION",
+  "physical_hardware_authorized": false,
+  "migration_status": "Required ROS business and feedback must execute through the actual Wasm runtime and controlled host. No native SDK bridge is available through this public target.",
+  "required_implementation": {
+    "status": "BLOCKED",
+    "diagnostic": "BLOCKED_REQUIRED_WASM_ROS_MIGRATION",
+    "requirements": [
+      "Python application, ROS calls and reverse image processing must run inside the actual Wasm runtime",
+      "VM-owned controlled host and native image-copy audit must be installed and independently qualified",
+      "Genuine applicable official simulator/ROS plugin and all twelve required scenarios must execute"
+    ]
+  }
+}

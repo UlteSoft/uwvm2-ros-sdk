@@ -1,0 +1,126 @@
+{
+  "C1_emitted_Wasm_hashes": null,
+  "actual_runtime_memory_graph_verified": false,
+  "all_original_Stage_B_languages_architectures_ABIs_link_forms_debug_security_update_performance_world_model_scope_retained": true,
+  "common_ABI_owner": "SDK01 and VM owner; no new common component/channel ABI is implemented here",
+  "counts": {
+    "blocked_before_selection": 10,
+    "executed": 0,
+    "failed": 0,
+    "full_mandatory_denominator": null,
+    "not_run": 10,
+    "passed": 0,
+    "required_first_slice": 10,
+    "selected": 0
+  },
+  "families": [
+    {
+      "id": "private-memory-and-binding",
+      "requirements": [
+        "Same offsets and distinct private sentinels; writes, reads and growth cannot mutate the peer",
+        "Alias imports versus distinct backing objects; swapped names/indices, forbidden private export/import, missing imports and mismatched address width/limits",
+        "Actual load/store/size/grow and supported memory64/shared/atomic combinations; unsupported feature gates must refuse"
+      ]
+    },
+    {
+      "id": "bulk-memory-bounds",
+      "requirements": [
+        "Valid in-memory and cross-memory copy; overlap and aliased backing semantics",
+        "Boundary and beyond-boundary zero lengths, integer overflow, out-of-bounds source/destination and no partial writes on bounds failure"
+      ]
+    },
+    {
+      "id": "same-domain-library-and-preload",
+      "requirements": [
+        "Real static pointer algorithm correctness and archive linkage inside the planner domain",
+        "Explicit opt-in preload ABI/allocator/lifetime compatibility; forbidden implicit binding/private exposure and visible missing dependency failures"
+      ]
+    },
+    {
+      "id": "typed-channel-copy-and-replay",
+      "requirements": [
+        "Actual authenticated request/response and immutable bounded payload snapshots",
+        "Malformed offsets/lengths, forged/replayed capability or generation, stale handles, payload mutation races, oversized records and bounded backpressure"
+      ]
+    },
+    {
+      "id": "instance-grants-and-caller-attribution",
+      "requirements": [
+        "Identical Wasm bytes in two actual instances with different memory, ROS and WASIp1 grants",
+        "Planner ROS open denied without native side effect; actuator narrow write and fresh response permitted",
+        "Stolen descriptors/handles, unknown operation, callback reentry, cross-module caller/callee attribution and confused-deputy refusal"
+      ]
+    },
+    {
+      "id": "lifecycle-audit-debug-and-update",
+      "requirements": [
+        "Trap/crash, allocation failure, pause/resume, attach/detach, unload/reinstantiation, function/module update and rollback",
+        "Stale async reply/shared-channel lifetime cannot grant or corrupt the peer",
+        "Actual audit attribution/loss counts and sensitive defaults; source/Wasm/ASM debug memory ownership",
+        "Cold/cache-hit/checked-unwind/intra-component/channel/ROS/WASIp1 cost, audit off/on and attach/detach on native hardware; QEMU only correctness"
+      ]
+    }
+  ],
+  "format": "sdk03-component-required-isolation-source-v1",
+  "negative_family_count": 6,
+  "public_integration_entry": {
+    "currently_blocked_before_VM_launch": true,
+    "diagnostic": "BLOCKED_QUALIFIED_SDK01_VM_MULTI_INSTANCE_CHANNEL_BINDING_REQUIRED",
+    "target": "ur-component-actuator",
+    "test": "private-memory-ROS-roundtrip"
+  },
+  "retained_first_slice_cases": [
+    {
+      "id": 1,
+      "requirement": "equal offsets and different private sentinels",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 2,
+      "requirement": "A writes/grows without B change; stale host pointer invalidation",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 3,
+      "requirement": "private export/import or implicit preload exposure refused",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 4,
+      "requirement": "aliased memory imports versus distinct backing objects",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 5,
+      "requirement": "memory.copy bounds/overlap/zero-length/no-partial-write behavior",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 6,
+      "requirement": "forged or replayed channel capability/generation",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 7,
+      "requirement": "payload mutation/TOCTOU and bounded backpressure",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 8,
+      "requirement": "planner ROS write denied while actuator narrow write allowed",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 9,
+      "requirement": "same Wasm bytes in two instances with different grants and callback attribution",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": 10,
+      "requirement": "unload/revoke/update/rollback and stale response leave peer unchanged",
+      "status": "NOT_RUN"
+    }
+  ],
+  "same_frozen_artifacts_across_adapters_required": true,
+  "status": "SOURCE_ONLY_NOT_COMPILED_OR_EXECUTED"
+}

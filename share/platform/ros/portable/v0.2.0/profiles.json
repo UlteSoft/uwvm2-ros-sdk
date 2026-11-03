@@ -1,0 +1,48 @@
+{
+  "schema": "uwvm-portable-capability-profiles-v1",
+  "version": "0.2.0-preview",
+  "publication": "SOURCE_AUTHORED_NOT_COMPILED_NOT_HOSTED",
+  "availability_is_source_seal_snapshot": true,
+  "actual_artifact_receipts": "Publish separately after actual Linux compilation; never upgrade source-seal status silently",
+  "generic_abi": "share/platform/ros/portable/v0.1.0/abi.json",
+  "generic_abi_version": 1,
+  "wire": "share/platform/ros/portable/v0.2.0/wire.json",
+  "platform_selection": "External exact-byte adapter document and separately authorized grant",
+  "artifact_rule": "Freeze one emitted Wasm per applicable algorithm; reuse whole SHA256-identical bytes on each platform. A rebuild from identical source is not byte-reuse evidence.",
+  "families": [
+    {
+      "capability": "planar.pose.goal.v1",
+      "algorithm": "example/platform/ros/portable/v0_2_0/planar_goal",
+      "logical_alias": "navigation",
+      "rights": ["describe", "read_state", "submit", "wait"],
+      "semantics": "One finite bounded planar pose goal, followed by native terminal result and fresh resulting pose",
+      "units": {"x_y": "millimetre", "yaw": "milliradian", "duration": "nanosecond"},
+      "frame_and_mapping": "External adapter must pin one supported planar frame, transform provenance, units, simulator, native action and map/odometry identity; conversion stays outside Wasm",
+      "native_success": "Native navigation terminal success AND a fresh pose satisfying the configured component tolerances, correlated to the submitted operation and simulator instance",
+      "unsupported_semantics": ["direct motor actuation", "gait generation", "balance", "torque", "3D pose", "unbounded travel", "silent joint-command emulation"],
+      "source_status": "SOURCE_AUTHORED",
+      "build_status": "NOT_RUN",
+      "wasm_sha256": null,
+      "vm_host_status": "NOT_IMPLEMENTED",
+      "simulation_status": "NOT_RUN"
+    },
+    {
+      "capability": "sensor.frame.integrity.v1",
+      "algorithm": "example/platform/ros/portable/v0_2_0/sensor_digest",
+      "logical_alias": "sensor",
+      "rights": ["describe", "read_state"],
+      "semantics": "One actual bounded simulator image sample enters Wasm; Wasm computes FNV-1a-32 over exact payload bytes including row padding and emits the computed integrity value",
+      "formats": ["mono8", "rgb8"],
+      "limits": {"payload_bytes": 1048576, "width": 512, "height": 512},
+      "frame_and_mapping": "External adapter pins native topic/type, encoding, camera/frame identity, calibration identity and simulator instance; host validates sample freshness before returning it",
+      "oracle": "Independently capture the correlated native simulator sample, compare exact sequence/frame identity and payload SHA256, then recompute the algorithm's FNV-1a-32 from that sample",
+      "integrity_limit": "FNV is a correctness oracle, not authentication, collision resistance, perception, detection or camera calibration",
+      "unsupported_semantics": ["object detection", "depth reconstruction", "lidar processing", "IMU fusion", "actuation", "precomputed digest supplied by the adapter"],
+      "source_status": "SOURCE_AUTHORED",
+      "build_status": "NOT_RUN",
+      "wasm_sha256": null,
+      "vm_host_status": "NOT_IMPLEMENTED",
+      "simulation_status": "NOT_RUN"
+    }
+  ]
+}

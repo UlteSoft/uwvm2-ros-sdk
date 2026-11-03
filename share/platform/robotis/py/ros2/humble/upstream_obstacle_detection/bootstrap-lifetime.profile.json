@@ -1,0 +1,23 @@
+{
+  "format": "robotis-humble-obstacle-whole-invocation-lifetime-v1",
+  "bootstrap": {
+    "path": "example/platform/robotis/py/ros2/humble/upstream_obstacle_detection/main.py",
+    "sha256": "4716488dc1923224be765bd38289f40572208473424dcae61f334b9bb8657cbb"
+  },
+  "lifetime": "until_shutdown",
+  "maximum_credits": 300001,
+  "credit_unit": "One public Context.next_credit driver invocation, debited before calling idle_wait, across the entire initialized Context. No refill/reset across callbacks/epochs/reconnect/spin/Future waits.",
+  "single_authoritative_credit_owner": "public rclpy.context.Context",
+  "pacing_calls_counter": "Diagnostic only; no independent finite limit.",
+  "pacing_period_ns_unchanged": 1000000,
+  "whole_invocation_watchdog_seconds": 300,
+  "watchdog_authority": "Actual admitted public producer owns the whole VM invocation, including startup/ROS callbacks/IPC/logging/drain/retirement. This deployment timeout is a failure ceiling, not a sleep, normal-window duration or permission. Actual native/collector lifecycle contract must cover its selected full stages.",
+  "budget_derivation": "Public deployment.prepare allows at most300s per invocation; selected ceil(300s / unchanged1ms) + 1 =300001 driver invocations covers its one complete lifetime, including full source warmup+120normal+stop. Actual early wakes, IPC, phase duration and native ingress require source-bound authentication and measurement. Count is not proof of elapsed time or an unconditional native-event upper bound.",
+  "failure": "Public preallocated SchedulingBudgetExhausted propagates; original main finally/owner cleanup runs. Exhaustion never means task completion or ROS cancellation.",
+  "normal_return": "Only actual independent canonical Booltrue and successful cancel-owner close sets pacing.stopped; original-return without receipt raises. DriverFalse alone is not native robot stop or Context shutdown.",
+  "normal_120_seconds": "Complete new long scenario source has a240s failure window and fits this300s per-invocation ceiling without shortening any phase. Require complete actual source warmup plus >=120s normal physical feedback and subsequent stop/cancel/retirement under exact admitted scene. A120s score does not bound total invocation.",
+  "capacity": "r42/r43 240s conditional planning reports remain historical. These conditional240s reservations must be recomputed for the selected complete300s failure envelope before launch. Recompute/admit exact selected actor full-stage source/native/collector count/row/file budgets before robot execution. No count/file/payload clipping or suppressed evidence accepted.",
+  "actual_original_application": "NOT RUN",
+  "official_simulation": "NOT RUN",
+  "source_admission": false
+}

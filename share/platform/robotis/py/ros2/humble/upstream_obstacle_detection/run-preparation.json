@@ -1,0 +1,82 @@
+{
+  "format": "robotis-humble-original-run-preparation-v1",
+  "native_scene": {
+    "binding": "example/platform/robotis/simulation/turtlebot3_burger_humble/scene.binding.json",
+    "binding_sha256": "849d39277de030b5348c012bfa253043e66408ec8b6fe8781271748647933e26",
+    "requirements": "example/platform/robotis/simulation/turtlebot3_burger_humble/scenario.requirements.json",
+    "requirements_sha256": "34efad7672906608f77312668e491180d78b602de2b9204dc95c70d74eadceb0",
+    "entrypoint": "example/platform/robotis/simulation/turtlebot3_burger_humble/native_scene.py",
+    "entrypoint_sha256": "02be0dc91c95c73a1b48d7872c049cd9c551f56296ad833e048ad1749bdff4d4",
+    "world": "turtlebot3_dqn_stage1.world",
+    "spawn_pose": [
+      1.1,
+      0,
+      0.01
+    ],
+    "yaw_rad": 0,
+    "native_matched_world_and_retirement": "PASS supporting04 actual selected task scene only; original application runtime/official still NOT RUN",
+    "shared_owned_lifecycle": [
+      {
+        "path": "tools/shared/python/owned_processes.py",
+        "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+      },
+      {
+        "path": "tools/shared/python/runtime_boundary.py",
+        "sha256": "d9b6f1357e247e46ef1212faad4542f283c57230f1670c9c9114b3666485e484"
+      }
+    ]
+  },
+  "native_launch_argv": [
+    "${PYTHON}",
+    "-B",
+    "native_scene.py",
+    "turtlebot3",
+    "${NATIVE_CLOSURE_JSON}",
+    "${NATIVE_PROCESS_ENVIRONMENT_JSON}",
+    "${ORIGINAL_SOURCE_MANIFEST_JSON}",
+    "--ready-file",
+    "${NATIVE_READY_FILE}",
+    "--stop-file",
+    "${NATIVE_STOP_FILE}",
+    "--lifetime-seconds",
+    "${BOUNDED_NATIVE_LIFETIME_SECONDS}",
+    "--world",
+    "turtlebot3_dqn_stage1.world",
+    "--sdk-root",
+    "${SDK_ROOT}"
+  ],
+  "independent_actors": [
+    {
+      "role": "original_application",
+      "project": "example/platform/robotis/py/ros2/humble/upstream_obstacle_detection",
+      "scenario": "upstream_obstacle_detection",
+      "deployment": "example/platform/robotis/py/ros2/humble/upstream_obstacle_detection/deployment.template.json",
+      "artifact_target": "robotis-upstream_obstacle_detection",
+      "ros_grants": 7,
+      "owner_budget": 8
+    },
+    {
+      "role": "feedback_driven_scenario_input_observer",
+      "project": "example/platform/robotis/c/ros2/humble/obstacle_scenario",
+      "scenario": "obstacle_scenario",
+      "deployment": "example/platform/robotis/c/ros2/humble/obstacle_scenario/deployment.template.json",
+      "artifact_target": "robotis-obstacle_scenario",
+      "ros_grants": 5,
+      "has_native_cmd_vel_publish_authority": false
+    }
+  ],
+  "launch_checkpoints": [
+    "Authenticate actual current VM/source/gateway/collector/lifecycle enrollment under05-VM-001, all actors born in common64GiB/zero swap; queue admission alone is not source/ROS admission",
+    "Use only public04 exact nativeDQNstage1 entrypoint and original source/native closures, selectedpose(1.1,0,.01,yaw0). Verify actual current native source/role/domain/live descendants readiness; no reuse of old turtlebot3_world evidence",
+    "Materialize one exact deployment per actual VM source, same admitted native domain, unique infrastructure node names, actual current runtime/gateway paths and hashes; never replace @ADMITTED_ROS_DOMAIN_ID@ from ambient defaults",
+    "Start actual separate Wasm scenario first; wait actual baseline-ready event from fresh fullnative scan/Odometry before launching original Python application",
+    "Run whole unchanged original main/constructor/subscriptions with public33preopen logger+SYSTEM clock, actual100ms timer, source callbacks and native real drive decisions",
+    "Scenario alone sends actual rawturn/resume/zero/Boolcancel after its actual physical feedback conditions; require actual original callback/per-occurrence/native causality, shutdown and all owner/process retirement",
+    "Journal source/Wasm/module/memory/session/request and native CDR/callback/queue occurrence proofs plus VM permissions/fault/recovery required; local driver result or native readiness cannot grant scene PASS"
+  ],
+  "negative_templates": "Do not widen grants for negative cases; derive independent exact-source denied systemclock/logger/scan/publish/cancel/module/memory/resource/stamp/codec/retired-handle profiles at real producer boundary. Preserve primary/cleanup/effect-uncertainty outcomes. No running negative case is credited here.",
+  "actual_deployment_validation": "PENDING_R40 actual public deployment.prepare+command/gateway_policy serialization for both exact built widths; this is source/config verification without launching native/VM actors or providing authority.",
+  "runtime": "NOT RUN",
+  "official_simulation": "NOT RUN",
+  "accepted": false
+}

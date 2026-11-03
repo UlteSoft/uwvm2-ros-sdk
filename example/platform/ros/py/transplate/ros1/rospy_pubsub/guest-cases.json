@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "backend": 1,
+        "format": "uwvm-rospy-wasm-assertions-v1",
+        "native_audit_required": true,
+        "official_ROS_and_isolation_qualified": false,
+        "status": "GUEST_ASSERTIONS_COMPLETE"
+      },
+      "id": "required-ros1-wasm-feedback"
+    }
+  ],
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "rospy-noetic-genuine-business-v1",
+  "native_ROS_and_isolation_qualification": false,
+  "public_inputs": [
+    {
+      "path": "main.py",
+      "scope": "example",
+      "sha256": "34a032d930eba46c4573acf3b8e798dbccf052cad3f99dc96694b61b3959528d"
+    },
+    {
+      "path": "binding-requirements.json",
+      "scope": "example",
+      "sha256": "4a7200f53d7414b3b85f0ff00589b8efac7eea8b6ac23f6e5571f95d8dec0aa0"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros1/rospy/v1/profile.json",
+      "scope": "sdk",
+      "sha256": "b7ac62de39fcaffecda2632260eb2d8d1cff3bc1122fe876e37c0a95dda2f856"
+    }
+  ]
+}

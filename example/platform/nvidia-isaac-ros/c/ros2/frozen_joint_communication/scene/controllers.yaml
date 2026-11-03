@@ -1,0 +1,18 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    portable_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+portable_position_controller:
+  ros__parameters:
+    joints: [stage_a_joint1, stage_a_joint2]
+    command_interfaces: [position]
+    state_interfaces: [position, velocity]
+    state_publish_rate: 100.0
+    action_monitor_rate: 50.0
+    allow_partial_joints_goal: false
+    constraints:
+      goal_time: 0.5
+      stopped_velocity_tolerance: 0.01

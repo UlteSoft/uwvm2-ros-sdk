@@ -1,0 +1,127 @@
+{
+  "format": "sdk01-common-artifact-layout-source-v1",
+  "version": "0.2.1",
+  "status": "SOURCE_AUTHORED_LINUX_QUALIFICATION_NOT_RUN",
+  "created_utc": "2026-10-28T10:32:09.423733+00:00",
+  "sources": [
+    {
+      "path": "tools/xmake/artifact_contract.lua",
+      "bytes": 12903,
+      "sha256": "967d02f990e753ef350952bfc18fd62a39b6fbef936f34b8b4b9129a80ac3f76",
+      "mode": 420
+    },
+    {
+      "path": "tools/xmake/cfamily.lua",
+      "bytes": 18901,
+      "sha256": "1cc559cb2ac74d2c3d98fe08c817d2000d351da4c2b2a2deb6dc8d2d6fc361d7",
+      "mode": 420
+    },
+    {
+      "path": "tools/platform/ros/provider.lua",
+      "bytes": 5791,
+      "sha256": "e364c2dd3ffed8885c2ac02183ebecba4d9a19c29f327fc2c0d3fa2a806a5ae4",
+      "mode": 420
+    },
+    {
+      "path": "tools/language/native/core.lua",
+      "bytes": 7007,
+      "sha256": "a29dc9417d2745bfbf63cf96db8a0e0dc727f9506b4f6f88c84894f2d01c0625",
+      "mode": 420
+    },
+    {
+      "path": "tools/language/native/provider.lua",
+      "bytes": 11822,
+      "sha256": "d5a66cc0e452bd40daf8d3e62857a3793c9b802d0836c2edb980b249371faa52",
+      "mode": 420
+    },
+    {
+      "path": "tools/language/native/library.lua",
+      "bytes": 14262,
+      "sha256": "ef22e465f24e2b6433fafcb50076d7c2480c923e4c64f741027cd3d2a4029bad",
+      "mode": 420
+    },
+    {
+      "path": "tools/language/wat/provider.lua",
+      "bytes": 7621,
+      "sha256": "27f7335a247c2580401cebe482b7c93cab13b25694c196d44f547b94af79d9ba",
+      "mode": 420
+    },
+    {
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "bytes": 4506,
+      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a",
+      "mode": 420
+    },
+    {
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "bytes": 12412,
+      "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0",
+      "mode": 420
+    },
+    {
+      "path": "tools/shared/xmake/example_matrix.lua",
+      "bytes": 19313,
+      "sha256": "f40dfcd304fb0858e23ed81abd957db7230e3bfe59e880cddb739c64dedce700",
+      "mode": 420
+    },
+    {
+      "path": "tools/shared/xmake/examples_task.lua",
+      "bytes": 1360,
+      "sha256": "b962be0a0c408dddb8e19599c8a2f3d9cf498f76a8b4efe94f6c3a9e54518648",
+      "mode": 420
+    },
+    {
+      "path": "tools/shared/python/example_process.py",
+      "bytes": 19489,
+      "sha256": "c607a916bd593b45cbf62362f1f1d80c74b4fdd389a1c49c7e10d58bdf28cd17",
+      "mode": 420
+    },
+    {
+      "path": "tools/shared/python/example_aggregate.py",
+      "bytes": 10309,
+      "sha256": "efbca2d39e1a7254339b38e190429844c42346750994ff1ce1716662d33ea3c5",
+      "mode": 420
+    },
+    {
+      "path": ".github/workflows/linux-examples.yml",
+      "bytes": 5639,
+      "sha256": "926308a0159bebb2401793b5b03549afc2827e0fea28b8886b4750e49e2b547b",
+      "mode": 420
+    },
+    {
+      "path": "document/shared/en_US/artifact_layout/README.md",
+      "bytes": 2873,
+      "sha256": "cf058622d8a557c97da8ffeb8593839befb9b32f63658228f85bcefce8643eba",
+      "mode": 420
+    },
+    {
+      "path": "document/shared/en_US/linux_ci/README.md",
+      "bytes": 6528,
+      "sha256": "e594d4c7fe9175149a2f71b7cefa42b20bdaa63445124fd3a31c4ac497b33afc",
+      "mode": 420
+    }
+  ],
+  "semantics": {
+    "default_buildroot": "Xmake config.builddir, actual selected default or explicit -o",
+    "binary": "artifacts/",
+    "static": ".archives/<hex-fullname>/",
+    "shared_or_dependent_binary": "artifacts/targets/<hex-fullname>/",
+    "record": "<actual-target-objectdir>/ros-artifacts/<hex-fullname>.json",
+    "compiler_state": "<actual-target-objectdir>/ros/<category>/",
+    "test_evidence": "actual target object tree or explicit absolute per-invocation evidence root",
+    "explicit_paths": "preserved; overlaps and scheduler-boundary escapes fail",
+    "record_schema": "uwvm-sdk-target-artifacts-v1 unchanged",
+    "dependency_preload_identity_permission_checks": "retained",
+    "root_scheduler": "native Xmake async.runjobs; separate real config/build/test, bounded child -j1",
+    "full_inventory": "all public projects plus required simulations, shared dispatch/ABI/toolchain/provider declarations"
+  },
+  "new_boot_heavy_admission": "NOT_VERIFIED",
+  "actual_binary_static_shared_all_language_builds": "NOT_RUN",
+  "actual_public_xmake_test": "NOT_RUN",
+  "actual_root_positive_parallelism": "NOT_RUN",
+  "actual_GitHub_SDK_CI": "NOT_RUN",
+  "official_simulation_acceptance": false,
+  "full_assignment_complete": false,
+  "exclusive_Python_Java_vendor_implementation_edits": false,
+  "exclusive_ownership_note": "TypeScript remains SDK09-owned. SDK01 own unqualified workspace/view changes were preserved as a proposal and restored to the exact preimage after explicit new assignment. No TypeScript qualification is claimed."
+}

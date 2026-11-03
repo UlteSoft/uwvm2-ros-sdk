@@ -1,0 +1,393 @@
+{
+  "schema": "sdk07-Jazzy-native-runtime-image-candidates-v1",
+  "candidate_images": [
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libcontrol_msgs__rosidl_generator_c.so",
+      "sha256": "b69d7f2e89e593d3e9851c20523e3d3c01c96b79775c79fc83936230c2be78e9"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libcontrol_msgs__rosidl_typesupport_cpp.so",
+      "sha256": "eb84e947a8e52bd5b0aee064019d286d438f9954c751118f5a7f65d4389e8694"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libcontrol_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "c22379f8a2407ca6c0dea11d4e1aebd7a0c999b9d735830fa6af58084ad83c94"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libcontrol_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "0ae606caa21c9d2830365df711e9692c310439bbb7812ecfb59193860e9da21f"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libcontroller_manager_msgs__rosidl_generator_c.so",
+      "sha256": "65148386775df7938c738ee7d9986898a0662638304da13b1a4075b5074c924f"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libcontroller_manager_msgs__rosidl_typesupport_cpp.so",
+      "sha256": "7e5a2f2e58a941984cff87c48642e4c3f78021c28bf8adf69984bb68a54ff994"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libcontroller_manager_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "79c519c561ca95f19d2c07932428d24bb3b9ead0186ea2dde22925b5494aed4f"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libaction_msgs__rosidl_generator_c.so",
+      "sha256": "6dabfc9ca29eed7d32b9421ec7f1af362a77fd71c9a8f0c6e13dd008d260863b"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libaction_msgs__rosidl_typesupport_cpp.so",
+      "sha256": "36d929d88dfd29959fbcee0a7d4b17d7e95129f4bbef40f2e906d7c7d5fc7e3c"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libaction_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "5b05a7e2735e07a08a1c2bc96f8198a3dd5434bf74d5023039620bf2496610f9"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libaction_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "fe5bb9aa6bc4c330178379f4180e72e19e2878edcde3046518f570298a13ef24"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libament_index_cpp.so",
+      "sha256": "bb0be3b8f451661297707fff0ba6372ea7c88e3eea0c3d30f785025eadf8cbcb"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libbuiltin_interfaces__rosidl_generator_c.so",
+      "sha256": "78859acd77d15abec729778a48690851d631b32d377b7c7c6d2e7c3f0c4884d9"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_c.so",
+      "sha256": "c395a73179033066454d89692005df75ab12a12029ebc96e1bbb08f6d1155dda"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "73aa4075163f6cadafc7738d2ada75a2a78d4e8a061b82e1b3c7b924813778b5"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "8bac6eb2961e9578a8ff8e275d0e3cdd108a035af4a01ace31c12eb68bba56d0"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libfastcdr.so.2.2.8",
+      "sha256": "805bc734c8dacbeb9383bea4539484c2cc89f3f6d33823251d4a8236e3f1f043"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libfastrtps.so.2.14.6",
+      "sha256": "5c42ee390b403e0bacfbc5c535dc13fce0fe86b4a1f0243a115f3236f4b9c7de"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libgeometry_msgs__rosidl_generator_c.so",
+      "sha256": "bc0a58fd27e1d89442f89af8fa4c48459e330d6b3d7ac740a45a06dfc6392268"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "b0d212e5a3994fe1336c8b8cc2d20ccf27747ee1bacc0df7934bc9e460b1a4a7"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "54e62cb65315f66c02c9c9f70161558b0a5fbd6fe3f02809596f58a74ffdd119"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/liblibstatistics_collector.so",
+      "sha256": "e2cd2ad379f0aef2eb6a0ecf65c40bf28d3474782badfa9b78dfd1c10261b947"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_generator_c.so",
+      "sha256": "9539a511bf507f5326779f9758ab9112ad7d92f9eb935bece5977c7b605e767b"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "09156fc6691a8ace7d903cfb54a4db61fa30598c08f08bc7433854b3693a3efd"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl.so",
+      "sha256": "0aaf292207e3d28b2d47bcb6d2a31c25257e4793525fd67d5016645b07360d96"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_action.so",
+      "sha256": "85690798c5c6a7a668dba5f8fc7913765ba34c994bf622ac46dd0e5c73340566"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_interfaces__rosidl_generator_c.so",
+      "sha256": "dfc874eaafca2fcb5da1767f84ec016fbe8bef95c47988b2a955943cd3ce24de"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_interfaces__rosidl_typesupport_c.so",
+      "sha256": "dba802649c77157c4787adc38a2e6a523be5965d4a7ebef4aea70d0c9a1681f8"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_interfaces__rosidl_typesupport_cpp.so",
+      "sha256": "8b1033df6df982865da260b814f5fc193b9d49a2914a28f3f13a644338acbd17"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_interfaces__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "64dce843632db9fa60276c9adcfd6f0e4eba4343b2e7f213c21cba438439dcd7"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "5d478046604cbe71ae68b8c3dc0d039bcfa5eb8a18a018bf68ae03a36d70f744"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_logging_interface.so",
+      "sha256": "f8f258a13ff9bf6ee1b419c49c41ce60e2ea41ba4d62b75c48e2f1b6c70bb6be"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_logging_spdlog.so",
+      "sha256": "f8dd0c37a603eae9450af9416d30934deb78463060a12811b18fed5571585ba8"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcl_yaml_param_parser.so",
+      "sha256": "4dbd6ca19621dd0889c460179aed3a49f600872b8b22acee427fcda909272b0e"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librclcpp.so",
+      "sha256": "d408b1781b150ad6078ce0432c44c7faf5b8a61f43764feada7a3766bfd4dbcd"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librclcpp_action.so",
+      "sha256": "57a14f568bec8926cba61c2c5f7638d55be9f6f66b29f9c776459fc1154be597"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcpputils.so",
+      "sha256": "859e9d590d439b93d08de772c7dd8862721b4d5cc462364276aa283f83b9fd64"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librcutils.so",
+      "sha256": "5baa0a38a693794edae9376242bccc2edc9c9eea642454e1da2e57d881eef3b7"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw.so",
+      "sha256": "defb216f9b2e9a20bcaa17b134dbc3a06d00bcf906cc41e071abebaebe825aff"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw_dds_common.so",
+      "sha256": "63f7c3a414301ad1833af00809d20f3888e801d447faff173cbe06cdd54f1a3a"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw_dds_common__rosidl_generator_c.so",
+      "sha256": "9e10473236b48d28e6de265920c29967cb0a286f5041eaef79ed715e4537e99b"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw_dds_common__rosidl_typesupport_cpp.so",
+      "sha256": "909e596e9678c241710f52f23005bf6e396d6b17eb9207e4ac389808b07a00ac"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw_dds_common__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "08b5fbdb53f2829228817a31b73010a4db847af0bdcc77dee1948b4d86b2bd7a"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw_dds_common__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "94078cdbc8498724679e46d7d33f5c852a40980320ef008050c5703425785778"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw_fastrtps_cpp.so",
+      "sha256": "51c1476d193f62f8f75535b52998c84f3e64177ab0c97368042aac8653bc02d0"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw_fastrtps_shared_cpp.so",
+      "sha256": "a0af2d5cc832ca8c99203f66bf2d929be553759775be4828c67bf8675534241e"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librmw_implementation.so",
+      "sha256": "a6f6fbcdb17f6da39f358d56abfea319fa44f8be9d015dd4052184f1f73e12d5"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosgraph_msgs__rosidl_generator_c.so",
+      "sha256": "8bd4766f7e7a1882b1a2ce473cd46d8e5155d8d444f41538c35155274de74ceb"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosgraph_msgs__rosidl_typesupport_cpp.so",
+      "sha256": "6b438d272738e59d55fc79ae600aebdbecaf9b6495a2632e66385c8510798d54"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_dynamic_typesupport.so",
+      "sha256": "16b26d3e91e91ed5cc4bbef0d5ac494e3aa07497b08df10d3bf43fbdbfc1a28f"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_dynamic_typesupport_fastrtps.so",
+      "sha256": "ae59121d4554ef2bfca5c758fe4acc998ea5a5c14181528be8d3eb36225d1b05"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_runtime_c.so",
+      "sha256": "0820bac681d3aadefc15cf243f958653d13d34c0aa480398765c74e479819b88"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_typesupport_c.so",
+      "sha256": "f8794330dfaacc8c144cacc20d9715da4f1756e9c76a629908a0796419656192"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_typesupport_cpp.so",
+      "sha256": "2ce1166747b2fc59bf32ec72fdb2a56f9d90ff025c4301399d95ebce3582ed89"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_typesupport_fastrtps_c.so",
+      "sha256": "9985f539c45ac37ca5a7b71c2bd576c60e3367ed93ff0b2ac3c6490c249a9669"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "27cab195a256c37f2e5ddc0a9523fca3878f5e2f15906ed04453e4e339ff7531"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_typesupport_introspection_c.so",
+      "sha256": "6b024923cbd71a78130b27193ec313c1cddce8129c3432d5bc92596115628808"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/librosidl_typesupport_introspection_cpp.so",
+      "sha256": "c7cb622ab2e82d355eafc59e6370b49a681005e917e61c67347a65e781c0e875"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libsensor_msgs__rosidl_generator_c.so",
+      "sha256": "2de44e2243c21ac6564c5ccb423a943ca025f9b0f664679829b93b5b4694b936"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libsensor_msgs__rosidl_typesupport_cpp.so",
+      "sha256": "0f9cc40fad86d4db7ffbf29898a476898518739afaef57e0ce96cf3ed7731fae"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "68ae64f7328717477112f20409b009c377e1014581c71806494cd8049e36d37e"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "cc7ff0aab64fb3a875eacf009e2046e6da7c5b843ffed2487e2b3ce98ee59fd7"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libservice_msgs__rosidl_generator_c.so",
+      "sha256": "3bf08debaa26a687c8cde3f39b265adf4b7edfb0b19b9c7b7e96b6c64fe33ef8"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libservice_msgs__rosidl_typesupport_fastrtps_c.so",
+      "sha256": "0e417203f4137696abfa4af1094d47f3d2d375df4b2f2e3c0758fc4ec77524dc"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libservice_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "a26f226076e6d6449a1df79ae9a425db9cdea0b1f457d20af774068aa4df3437"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libservice_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "69a77f52df901c2b5c78de609c13bae4298a1d7474fa7e3ccb95e959afc3b1ab"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libstatistics_msgs__rosidl_generator_c.so",
+      "sha256": "f7e781b0a1567d7e4811353694fd05aa30b0f092cbafcfd128485ed1067503df"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libstatistics_msgs__rosidl_typesupport_cpp.so",
+      "sha256": "7a81883c914d7330f368fb6fde6ac88e051f1acef51062387f6f81869611b3d9"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libstd_msgs__rosidl_generator_c.so",
+      "sha256": "d9ecf15a3f40015391142361b53b0b404bb1da8b7520b39ffefe5bc59cbdf9fb"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "988b82c85decb951fc72991ec13e9535f1448f6be25e9f7aa65556184872f6fc"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "546bdc4ada8efda4e67c4ead893dc4982713d0fd39fceb857457c5f737f9adc0"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libtracetools.so",
+      "sha256": "03b82a25885ddd4f51a0a8bd6f8f380aa9376a2066987bd661d3936e02cdebaa"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libtrajectory_msgs__rosidl_generator_c.so",
+      "sha256": "554e4b6c75f7d99d50eedd1c2f2ae11fe9740c33695b9c2236480b9ffe01dccd"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libtrajectory_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "bc5f3b77ab04cb51acbb7629df0cb8b16a8322fadb0db8dd039947870f414220"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libtrajectory_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "86501fe5636f5aa3731da9e36a664f62a0e2ca74ac76eff5dc1c0fb5e9c6825f"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libtype_description_interfaces__rosidl_generator_c.so",
+      "sha256": "2b41be65aa2c8c01899bb60a0a97981baed31d934215d99c252a3005432f5a5a"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libtype_description_interfaces__rosidl_typesupport_c.so",
+      "sha256": "ddac399e1b2a395e43b4a03269165e02a8ad0189d3de1fa08dde51d510abcec4"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libtype_description_interfaces__rosidl_typesupport_fastrtps_c.so",
+      "sha256": "2216985d916a16e51512ac0816f25046256caf845c94cc8c5f7ea133758843d8"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libunique_identifier_msgs__rosidl_generator_c.so",
+      "sha256": "615cae58b589ea5ec7514dc0d5c8946fa4d601c76b6348bbca3fed6629228453"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libunique_identifier_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "a63bc3c465ab14593fa28b64f30318facc16f738648a6f3e5043033034f3cf8d"
+    },
+    {
+      "installed_logical_path": "/opt/ros/jazzy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "72067f63fd71db8a76830cf8ce4409fce2c68b8dd4e61eeb5b4dcf76525b6d8d"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "sha256": "c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "sha256": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3",
+      "sha256": "6866ed711dab8927e1bf82bf1cd30e828bdfc34f3cc1e83b1c9eb01ce6c37d9a"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libfmt.so.9.1.0",
+      "sha256": "da008b908b32e428eaa1c09e36d6894c8f88362e254b503c7c2c6112b4ec9ed0"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "sha256": "d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/liblttng-ust-common.so.1.0.0",
+      "sha256": "28c3025315634619a7d278fff9e5bfa85ef85a58db8a52ce3ecf0054093fe0be"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/liblttng-ust-tracepoint.so.1.0.0",
+      "sha256": "c5a75aea47fbfa1380e75fad869a00e225a947bbfa99edc6c62c2241959e1eb8"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/liblttng-ust.so.1.0.0",
+      "sha256": "3dda3aff8ce04c7a1d5f1c5f20bd725d63e686a2042ee4834d8c25cde288f27b"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "sha256": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0",
+      "sha256": "02d7582c5d391e460e56aa67a414360e3183b968206645b9123f9dc7bff5d009"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libspdlog.so.1.12.0",
+      "sha256": "62bb2fbc92edc05b35888e624882b78f5b38c0aca6a3df7ab7db32bb9c2629b6"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libssl.so.3",
+      "sha256": "a40e7b67489bbd257e432c700ff8f6a1ad796425b5eccecdc2930127fdd86624"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33",
+      "sha256": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libtinyxml2.so.10.0.0",
+      "sha256": "f9e01d87fb78af744a426af8c992e94abf8cd3810a256e117bcc94cd84d2be6d"
+    },
+    {
+      "installed_logical_path": "/usr/lib/x86_64-linux-gnu/libyaml-0.so.2.0.9",
+      "sha256": "a518a0ec7ee915fbeabe80551b8c9573b34e37b9402cc3e3eeab0fe346ba6ef0"
+    }
+  ],
+  "actual_maps_census_required": true,
+  "native_image_must_be_added_from_actual_build": true,
+  "actual_public_native_constructor_must_accept_whole_actual_image_set": true,
+  "candidate_is_not_runtime_acceptance": true
+}

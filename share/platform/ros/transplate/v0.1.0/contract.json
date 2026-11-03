@@ -1,0 +1,2799 @@
+{
+  "format": "uwvm-ros-transplate-boundary-v0.1.0",
+  "status": "SOURCE_ONLY_RUNTIME_NOT_RUN",
+  "header": "include/platform/ros/transplate/v0_1_0/transport.h",
+  "sources": [
+    "src/platform/ros/transplate/v0_1_0/ros1_transport.c",
+    "src/platform/ros/transplate/v0_1_0/ros2_transport.c"
+  ],
+  "upstream_client_compatibility": {
+    "rcl": "NOT_IMPLEMENTED",
+    "rclcpp": "NOT_IMPLEMENTED",
+    "roscpp": "NOT_IMPLEMENTED",
+    "rclpy": "SDK06_OWNED_NOT_ASSERTED",
+    "rospy": "SDK06_OWNED_NOT_ASSERTED",
+    "rcljava": "SDK09_OWNED_NOT_ASSERTED",
+    "rosjava": "SDK09_OWNED_NOT_ASSERTED"
+  },
+  "abi_declaration_source": {
+    "path": "share/platform/ros/abi-v1.json",
+    "sha256": "8f9cf4b070b0d95a601d64240c4ffd02ed30fa23646503eb44dc492ccf1e1a66",
+    "authority_source_as_declared": {
+      "path": "src/uwvm2/uwvm/imported/ros/host.h",
+      "sha256": "438497194ce9fd2f1bf6a59e7a9f97452cb6a51cd6da7986bf75e03dd8ca5f8e"
+    },
+    "runtime_support_inferred": false,
+    "finite_review": "share/platform/ros/runtime-evidence/v1.0.0/sdk-review.json"
+  },
+  "declared_import_counts": {
+    "uwvm_ros1_v1": 38,
+    "uwvm_ros2_v1": 43
+  },
+  "memory_contract": {
+    "memory_index": "i32",
+    "offset_length_handle": "i64",
+    "endianness": "little",
+    "output_slot_bytes": 8,
+    "pointer_wrappers_memory": 0,
+    "maximum_IPC_payload_bytes": 4194304,
+    "maximum_request_data_bytes": 4193786,
+    "length_error_contract": "Error 90 may leave the output-length slot untouched. Read it only if a UINT64_MAX sentinel was overwritten. An insufficient legacy receive buffer may already have consumed the event; event_poll_v1 retains its pinned event on capacity90."
+  },
+  "authority_contract": "All ROS resources start without authority. Opening an alias uses an explicit trusted grant; SDK factories, codecs and node objects grant no rights.",
+  "errors": {
+    "0": "success",
+    "2": "missing resource",
+    "9": "bad/stale/foreign handle",
+    "11": "empty queue or quota refusal",
+    "13": "permission denied",
+    "17": "contract conflict",
+    "22": "invalid argument/memory/canonical value",
+    "90": "byte/capacity quota",
+    "95": "unsupported",
+    "107": "disconnected",
+    "110": "timeout; admitted effects may persist",
+    "125": "revoked alias"
+  },
+  "exports": [
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_abi_version",
+      "module": "uwvm_ros1_v1",
+      "import": "abi_version",
+      "params": [],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_capability_open",
+      "module": "uwvm_ros1_v1",
+      "import": "capability_open",
+      "params": [
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "alias_offset",
+          "type": "i64"
+        },
+        {
+          "name": "alias_length",
+          "type": "i64"
+        },
+        {
+          "name": "handle_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_capability_close",
+      "module": "uwvm_ros1_v1",
+      "import": "capability_close",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_capability_revoke",
+      "module": "uwvm_ros1_v1",
+      "import": "capability_revoke",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_topic_publish",
+      "module": "uwvm_ros1_v1",
+      "import": "topic_publish",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "payload_offset",
+          "type": "i64"
+        },
+        {
+          "name": "payload_length",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_topic_subscribe",
+      "module": "uwvm_ros1_v1",
+      "import": "topic_subscribe",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_event_poll",
+      "module": "uwvm_ros1_v1",
+      "import": "event_poll",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_event_watch",
+      "module": "uwvm_ros1_v1",
+      "import": "event_watch",
+      "params": [
+        {
+          "name": "observer_handle",
+          "type": "i64"
+        },
+        {
+          "name": "source_handle",
+          "type": "i64"
+        },
+        {
+          "name": "correlation",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_event_poll_v1",
+      "module": "uwvm_ros1_v1",
+      "import": "event_poll_v1",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_event_ready",
+      "module": "uwvm_ros1_v1",
+      "import": "event_ready",
+      "params": [
+        {
+          "name": "observer_handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_service_submit",
+      "module": "uwvm_ros1_v1",
+      "import": "service_submit",
+      "params": [
+        {
+          "name": "source_handle",
+          "type": "i64"
+        },
+        {
+          "name": "observer_handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "request_id_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_service_call",
+      "module": "uwvm_ros1_v1",
+      "import": "service_call",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_service_advertise",
+      "module": "uwvm_ros1_v1",
+      "import": "service_advertise",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_service_respond",
+      "module": "uwvm_ros1_v1",
+      "import": "service_respond",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_action_send_goal",
+      "module": "uwvm_ros1_v1",
+      "import": "action_send_goal",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_action_cancel_own_goal",
+      "module": "uwvm_ros1_v1",
+      "import": "action_cancel_own_goal",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_action_cancel_any_goal",
+      "module": "uwvm_ros1_v1",
+      "import": "action_cancel_any_goal",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_action_receive_feedback",
+      "module": "uwvm_ros1_v1",
+      "import": "action_receive_feedback",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_action_receive_result",
+      "module": "uwvm_ros1_v1",
+      "import": "action_receive_result",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_action_advertise",
+      "module": "uwvm_ros1_v1",
+      "import": "action_advertise",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_action_respond",
+      "module": "uwvm_ros1_v1",
+      "import": "action_respond",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_tf_lookup",
+      "module": "uwvm_ros1_v1",
+      "import": "tf_lookup",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_tf_broadcast",
+      "module": "uwvm_ros1_v1",
+      "import": "tf_broadcast",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_parameter_get",
+      "module": "uwvm_ros1_v1",
+      "import": "parameter_get",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_parameter_set",
+      "module": "uwvm_ros1_v1",
+      "import": "parameter_set",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_parameter_delete",
+      "module": "uwvm_ros1_v1",
+      "import": "parameter_delete",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_parameter_exists",
+      "module": "uwvm_ros1_v1",
+      "import": "parameter_exists",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_parameter_list",
+      "module": "uwvm_ros1_v1",
+      "import": "parameter_list",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_parameter_search",
+      "module": "uwvm_ros1_v1",
+      "import": "parameter_search",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_graph_inspect_topic",
+      "module": "uwvm_ros1_v1",
+      "import": "graph_inspect_topic",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_graph_inspect_node",
+      "module": "uwvm_ros1_v1",
+      "import": "graph_inspect_node",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_graph_inspect_service",
+      "module": "uwvm_ros1_v1",
+      "import": "graph_inspect_service",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_graph_list_topics",
+      "module": "uwvm_ros1_v1",
+      "import": "graph_list_topics",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_graph_list_nodes",
+      "module": "uwvm_ros1_v1",
+      "import": "graph_list_nodes",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_graph_list_services",
+      "module": "uwvm_ros1_v1",
+      "import": "graph_list_services",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_time_read_ros",
+      "module": "uwvm_ros1_v1",
+      "import": "time_read_ros",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_time_read_wall",
+      "module": "uwvm_ros1_v1",
+      "import": "time_read_wall",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros1_log_write",
+      "module": "uwvm_ros1_v1",
+      "import": "log_write",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "payload_offset",
+          "type": "i64"
+        },
+        {
+          "name": "payload_length",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_abi_version",
+      "module": "uwvm_ros2_v1",
+      "import": "abi_version",
+      "params": [],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_capability_open",
+      "module": "uwvm_ros2_v1",
+      "import": "capability_open",
+      "params": [
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "alias_offset",
+          "type": "i64"
+        },
+        {
+          "name": "alias_length",
+          "type": "i64"
+        },
+        {
+          "name": "handle_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_capability_close",
+      "module": "uwvm_ros2_v1",
+      "import": "capability_close",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_capability_revoke",
+      "module": "uwvm_ros2_v1",
+      "import": "capability_revoke",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_topic_publish",
+      "module": "uwvm_ros2_v1",
+      "import": "topic_publish",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "payload_offset",
+          "type": "i64"
+        },
+        {
+          "name": "payload_length",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_topic_subscribe",
+      "module": "uwvm_ros2_v1",
+      "import": "topic_subscribe",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_event_poll",
+      "module": "uwvm_ros2_v1",
+      "import": "event_poll",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_event_watch",
+      "module": "uwvm_ros2_v1",
+      "import": "event_watch",
+      "params": [
+        {
+          "name": "observer_handle",
+          "type": "i64"
+        },
+        {
+          "name": "source_handle",
+          "type": "i64"
+        },
+        {
+          "name": "correlation",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_event_poll_v1",
+      "module": "uwvm_ros2_v1",
+      "import": "event_poll_v1",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_event_ready",
+      "module": "uwvm_ros2_v1",
+      "import": "event_ready",
+      "params": [
+        {
+          "name": "observer_handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "output_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_service_submit",
+      "module": "uwvm_ros2_v1",
+      "import": "service_submit",
+      "params": [
+        {
+          "name": "source_handle",
+          "type": "i64"
+        },
+        {
+          "name": "observer_handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "request_id_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_service_call",
+      "module": "uwvm_ros2_v1",
+      "import": "service_call",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_service_advertise",
+      "module": "uwvm_ros2_v1",
+      "import": "service_advertise",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_service_respond",
+      "module": "uwvm_ros2_v1",
+      "import": "service_respond",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_action_send_goal",
+      "module": "uwvm_ros2_v1",
+      "import": "action_send_goal",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_action_cancel_own_goal",
+      "module": "uwvm_ros2_v1",
+      "import": "action_cancel_own_goal",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_action_cancel_any_goal",
+      "module": "uwvm_ros2_v1",
+      "import": "action_cancel_any_goal",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_action_receive_feedback",
+      "module": "uwvm_ros2_v1",
+      "import": "action_receive_feedback",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_action_receive_result",
+      "module": "uwvm_ros2_v1",
+      "import": "action_receive_result",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_action_advertise",
+      "module": "uwvm_ros2_v1",
+      "import": "action_advertise",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_action_respond",
+      "module": "uwvm_ros2_v1",
+      "import": "action_respond",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_tf_lookup",
+      "module": "uwvm_ros2_v1",
+      "import": "tf_lookup",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_tf_broadcast",
+      "module": "uwvm_ros2_v1",
+      "import": "tf_broadcast",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_parameter_get",
+      "module": "uwvm_ros2_v1",
+      "import": "parameter_get",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_parameter_set",
+      "module": "uwvm_ros2_v1",
+      "import": "parameter_set",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_parameter_list",
+      "module": "uwvm_ros2_v1",
+      "import": "parameter_list",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_parameter_describe",
+      "module": "uwvm_ros2_v1",
+      "import": "parameter_describe",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_parameter_declare",
+      "module": "uwvm_ros2_v1",
+      "import": "parameter_declare",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_parameter_undeclare",
+      "module": "uwvm_ros2_v1",
+      "import": "parameter_undeclare",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_graph_inspect_topic",
+      "module": "uwvm_ros2_v1",
+      "import": "graph_inspect_topic",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_graph_inspect_node",
+      "module": "uwvm_ros2_v1",
+      "import": "graph_inspect_node",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_graph_inspect_service",
+      "module": "uwvm_ros2_v1",
+      "import": "graph_inspect_service",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_graph_inspect_action",
+      "module": "uwvm_ros2_v1",
+      "import": "graph_inspect_action",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_parameter_subscribe_events",
+      "module": "uwvm_ros2_v1",
+      "import": "parameter_subscribe_events",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_graph_list_topics",
+      "module": "uwvm_ros2_v1",
+      "import": "graph_list_topics",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_graph_list_nodes",
+      "module": "uwvm_ros2_v1",
+      "import": "graph_list_nodes",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_graph_list_services",
+      "module": "uwvm_ros2_v1",
+      "import": "graph_list_services",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_lifecycle_get_state",
+      "module": "uwvm_ros2_v1",
+      "import": "lifecycle_get_state",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_lifecycle_change_state",
+      "module": "uwvm_ros2_v1",
+      "import": "lifecycle_change_state",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_time_read_ros",
+      "module": "uwvm_ros2_v1",
+      "import": "time_read_ros",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_time_read_system",
+      "module": "uwvm_ros2_v1",
+      "import": "time_read_system",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_time_read_steady",
+      "module": "uwvm_ros2_v1",
+      "import": "time_read_steady",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "request_offset",
+          "type": "i64"
+        },
+        {
+          "name": "request_length",
+          "type": "i64"
+        },
+        {
+          "name": "response_offset",
+          "type": "i64"
+        },
+        {
+          "name": "capacity",
+          "type": "i64"
+        },
+        {
+          "name": "length_out_offset",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    },
+    {
+      "symbol": "uwvm_transplate_v0_1_0_ros2_log_write",
+      "module": "uwvm_ros2_v1",
+      "import": "log_write",
+      "params": [
+        {
+          "name": "handle",
+          "type": "i64"
+        },
+        {
+          "name": "memory",
+          "type": "i32"
+        },
+        {
+          "name": "payload_offset",
+          "type": "i64"
+        },
+        {
+          "name": "payload_length",
+          "type": "i64"
+        }
+      ],
+      "results": [
+        "i32"
+      ],
+      "runtime_qualification": "NOT_RUN"
+    }
+  ],
+  "rules": [
+    "No implicit grants, retry, native callbacks, process/shell/socket escape or host native ROS client",
+    "Application callbacks consume bounded event_poll_v1 records on the guest execution thread",
+    "Version and symbol presence do not establish support; every operation/profile needs actual VM/native/official simulation qualification",
+    "A ROS1 alias and ROS2 alias are different backend-owned authorities",
+    "No placeholder rcl/rclcpp/roscpp headers are installed"
+  ],
+  "required_semantics": {
+    "initialization_shutdown": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "messages_serialization": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "pubsub": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "services": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "actions": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "qos": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "timers_ros_time": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "executors_callbacks": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "cancellation": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "handle_ownership": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "lifecycle": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "parameters_discovery": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "exceptions_allocator": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "threads": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "pause_resume_restart": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "permission_preserving_update_rollback": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION",
+    "reverse_feedback_sensor": "BLOCKED_UPSTREAM_CLIENT_SOURCE_PORT_AND_RUNTIME_QUALIFICATION"
+  },
+  "ownership": {
+    "common_C_ROS1_C_CPP_ROS2_rcl_rclcpp": "SDK01",
+    "ros2/rclpy_and_ros1/rospy": "SDK06",
+    "ros2/rcljava_and_ros1/rosjava": "SDK09"
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "all_other_models_modes_releases_ABIs_languages": "Mandatory assigned matrix remains open; selected finite profile is not exhaustive",
+  "all_required_cases_currently_blocked": true,
+  "api_version": 1,
+  "authored_execution_branches": [],
+  "current_qualification_status": "BLOCKED_ALL_WASM_LEGACY_ROS_TRANSPLATE_NOT_IMPLEMENTED",
+  "format": "uwvm-sdk-simulation-example-v1",
+  "frozen_wasm": {
+    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "main_program_scope": "Existing portable UPR joint-step algorithm; not a compiled upstream rcl/rclcpp library or rclpy/rcljava Wasm port",
+  "profile": {
+    "execution_class": "software_simulation",
+    "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+    "mode": "official-physics",
+    "model": "Franka/Panda",
+    "os_abi": "ubuntu24.04-linux-x86_64",
+    "ros_release": "jazzy",
+    "simulator": "Isaac Sim 6.0.0",
+    "vendor": "nvidia-isaac-sim"
+  },
+  "public_inputs": [
+    {
+      "path": "main.c",
+      "scope": "example",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "path": "run_simulation.py",
+      "scope": "example",
+      "sha256": "d8256585c305d1e04bdf2d70e97d13154970d74ad0ebb4e9ae1df5f5bbbd98d2"
+    },
+    {
+      "path": "xmake.lua",
+      "scope": "example",
+      "sha256": "e0ea068e3161b087f0534de9f4fd809ed761fe7ee2c2cb8d9f7b45a87ca5e8d1"
+    },
+    {
+      "path": "include/platform/ros/portable/v0_1_0/abi.h",
+      "scope": "sdk",
+      "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+      "scope": "sdk",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+      "scope": "sdk",
+      "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/approved-producers.json",
+      "scope": "sdk",
+      "sha256": "eac69485faec6cee6a2994f84ebc2858c7271f4c277a472f1323c25e3ec73a15"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/contract.json",
+      "scope": "sdk",
+      "sha256": "c9fee9daf6ef8e9b2483e1aadfd4b0b7c348e766b0a2ed73961577e3134ba062"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/controller-argv-contract.json",
+      "scope": "sdk",
+      "sha256": "adfa27eed6f98d9a9567b862289e1aafda14bae4732edbef6dda914283386677"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/descriptor.json",
+      "scope": "sdk",
+      "sha256": "97defd651f8ac2686c3a3fb89c0037c86ee287ab0f3cd304e6e886e78bfbd398"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/guardian-argv-contract.json",
+      "scope": "sdk",
+      "sha256": "acf0cb879fda42eb4a7d566013eac72207adb912bfef9e700a35c7b68897f8bf"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/host-runtime-manifest.json",
+      "scope": "sdk",
+      "sha256": "bbb1dd8ffcd4680517edefe5f0ac8257ea766b98b155ba2d5b4d79ae6a57036f"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/producer-source-manifest.json",
+      "scope": "sdk",
+      "sha256": "e6a79b2fdc500cd97a0cdb6ac3a4e8fe37d07c52809af7c11454b86d583cf8c1"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/retained-source-fd-contract.json",
+      "scope": "sdk",
+      "sha256": "67429e75c2cb366079609e56eed31431c560134347a69d43f5af850e42c1e597"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/sealed-launch-contract.json",
+      "scope": "sdk",
+      "sha256": "ca49cee97f0f3bc12f7f9138232fc599a330acf874d8fc229ec08ee12b0bcbb1"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/required-negatives.json",
+      "scope": "sdk",
+      "sha256": "5e071df0243939ba841cbea36deedab2ee45dc08e561d427c56f11b162200a18"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/trusted-control-descriptor.schema.json",
+      "scope": "sdk",
+      "sha256": "affee995a7ba101ac6276975fe1cf0ddfd3bed0724825096557c8fbabe1158d1"
+    },
+    {
+      "path": "tools/shared/python/actor_control.py",
+      "scope": "sdk",
+      "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+    },
+    {
+      "path": "tools/shared/python/actor_gate.py",
+      "scope": "sdk",
+      "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+    },
+    {
+      "path": "tools/shared/python/example_aggregate.py",
+      "scope": "sdk",
+      "sha256": "efbca2d39e1a7254339b38e190429844c42346750994ff1ce1716662d33ea3c5"
+    },
+    {
+      "path": "tools/shared/python/example_process.py",
+      "scope": "sdk",
+      "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+    },
+    {
+      "path": "tools/shared/python/guest_feedback.py",
+      "scope": "sdk",
+      "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+    },
+    {
+      "path": "tools/shared/python/portable_contract.py",
+      "scope": "sdk",
+      "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+    },
+    {
+      "path": "tools/shared/python/runtime_boundary.py",
+      "scope": "sdk",
+      "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+    },
+    {
+      "path": "tools/shared/python/simulation_example.py",
+      "scope": "sdk",
+      "sha256": "a6b6ecb2afcccd0e12da04dd410a2620f94ec4dae64df725c6a4321ce86a3989"
+    },
+    {
+      "path": "tools/shared/python/trusted_control.py",
+      "scope": "sdk",
+      "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+    },
+    {
+      "path": "tools/shared/python/wasi_component.py",
+      "scope": "sdk",
+      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+    },
+    {
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "scope": "sdk",
+      "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+    },
+    {
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "scope": "sdk",
+      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+    },
+    {
+      "path": "tools/xmake/repository.lua",
+      "scope": "sdk",
+      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+    },
+    {
+      "path": "xmake.lua",
+      "scope": "sdk",
+      "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+    }
+  ],
+  "python_dependencies": [],
+  "remaining_required_cases": "All nine remain mandatory; unavailable guest products/callbacks are BLOCKED, never replaced by host clients or skipped",
+  "scenarios": [
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": 13,
+      "id": "default-deny-no-native-effect",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "denied"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": 0,
+      "id": "normal-correlated-result",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "joint"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": null,
+      "id": "joint-boundaries",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "joint"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": null,
+      "id": "stale-and-foreign-handles",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "joint"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": null,
+      "id": "timeout-and-cancel",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "joint"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": null,
+      "id": "disconnect-and-reconnect",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "joint"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": null,
+      "id": "pause-and-resume",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "joint"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": null,
+      "id": "restart-update-rollback-permissions",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "joint"
+    },
+    {
+      "deadline_seconds": 90,
+      "expected_vm_exit": null,
+      "id": "reverse-sensor-into-Wasm",
+      "implementation_status": "BLOCKED_REQUIRED_GUEST_LEGACY_LIBRARY_AND_CALLBACK_PATH",
+      "kind": "sensor"
+    }
+  ],
+  "world_model_multilingual_cross_vendor": "An additional mandatory nvidia-groot SDK example remains required and unqualified"
+}

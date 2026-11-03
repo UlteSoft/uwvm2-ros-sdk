@@ -1,0 +1,103 @@
+{
+  "format": "uwvm-single-genuine-r-platform-module-interface-v1",
+  "status": "SOURCE_INTERFACE_COMPLETE_GENUINE_WASM_RUNTIME_UNAVAILABLE",
+  "owner": "07",
+  "platform_binding_owner": "06 for Unitree",
+  "upstream": {
+    "language": "GNU R",
+    "version": "4.5.1",
+    "archive_sha256": "3c29f587f438588160cc8a82a2b3fcc0abff392f731d930b4eaa7f85fa022a32",
+    "original_files": 5081
+  },
+  "control_revision": 7,
+  "control_lock_sha256": "410a2718f230870d6368ed5b4a20a6af81cb640e794e79aac7df79418d17e812",
+  "common_module_order": [
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/r/roswasm/wire.R"
+    },
+    {
+      "name": "uwvm/r/bootstrap",
+      "path": "src/language/r/bootstrap.R"
+    },
+    {
+      "name": "uwvm/r/native",
+      "path": "src/language/r/native.R"
+    },
+    {
+      "name": "<platform>/r/<profile>/records",
+      "path": "include/platform/<platform>/r/<profile>/records.R"
+    },
+    {
+      "name": "uwvm/r/observation",
+      "path": "src/language/r/observation.R"
+    },
+    {
+      "name": "<platform>/r/<profile>/observation",
+      "path": "include/platform/<platform>/r/<profile>/observation.R"
+    }
+  ],
+  "original_record_factory": "UwvmRos$records(schemas)",
+  "codec_methods": [
+    "new(values = list())",
+    "encode(value)",
+    "decode(bytes)"
+  ],
+  "codec_metadata": [
+    "native_type",
+    "native_identity",
+    "codec_identity",
+    "constants",
+    "minimum_wire_bytes",
+    "maximum_wire_bytes"
+  ],
+  "record_values": "Named classed lists preserving every original field; nested generated values and list arrays. int64/uint64 use typed eight-byte little-endian raw vectors; integral <=32-bit domains use exact numeric scalars including INT32_MIN.",
+  "word_api": [
+    "UwvmRos$word64(raw_eight_bytes, signed)",
+    "UwvmRos$from_decimal(canonical_text, signed)",
+    "UwvmRos$to_decimal(typed_word)"
+  ],
+  "native_api": {
+    "call": "UwvmRNative$invoke(operation, owner, request, capacity, other, correlation)",
+    "arguments": 6,
+    "result": [
+      "numeric_errno_u32",
+      "owned_raw_response",
+      "nullable_raw_u64_required_extent",
+      "nullable_raw_u64_result"
+    ],
+    "static_registration": "R_getEmbeddingDllInfo / R_registerRoutines; no dyn.load",
+    "authority": "No implicit ROS grant. Every resource requires the submitted explicit module policy."
+  },
+  "compatibility_fix": {
+    "source": "include/platform/ros/r/roswasm/native_command.R",
+    "before_sha256": "47359e10bd84c59ce6678031cdd69235be5ae44489c0676d2d60efc8f4f545a3",
+    "after_sha256": "b28dca58291dea2884fd3801556211ac61f2aeb7405227a6f2342af8e3825bc6",
+    "reason": "Map the old four-argument/named-result wrapper to the sole six-argument/four-element adapter; use the explicit shared WASI timer."
+  },
+  "producer": {
+    "public_language": "r",
+    "provider": "tools/language/r/provider.lua",
+    "genuine_runtime_required": true,
+    "currently_installed": false,
+    "static_shared_memory64_qualified": false
+  },
+  "blocking_dependencies": [
+    {
+      "owner": "08",
+      "component": "LLVM23 Flang target C/Fortran ABI lowering and genuine target runtime for all51 unchanged original numerical sources",
+      "state": "required-not-yet-built-or-qualified"
+    },
+    {
+      "owner": "07",
+      "component": "Full GNU R build with original numerical closure, WASI dependencies, embedded original R_HOME/base package lazy-load data, original GC/conditions and static .Call",
+      "state": "NOT_BUILT_OR_EXECUTED"
+    }
+  ],
+  "no_unitree_binding_reimplemented": true,
+  "fortran_sources_replaced": false,
+  "private_compiler_created": false,
+  "real_R_runtime_built": false,
+  "language_execution_qualified": false,
+  "native_ros_qualified": false
+}

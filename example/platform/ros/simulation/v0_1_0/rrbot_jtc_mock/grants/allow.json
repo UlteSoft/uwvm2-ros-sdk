@@ -1,0 +1,27 @@
+{
+  "format": "uwvm-sdk-simulation-grant-request-v1",
+  "api_version": 1,
+  "subject": {
+    "wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+    "logical_alias": "robot",
+    "import_namespace": "uwvm_portable_robot_v1"
+  },
+  "execution_class": "software_simulation",
+  "capability": "joint.position.bounded.v1",
+  "default": "deny",
+  "resources": {
+    "joint_state_topic": "/joint_states",
+    "position_action": "/portable_position_controller/follow_joint_trajectory",
+    "controller_status_service": "/controller_manager/list_controllers"
+  },
+  "rights": [
+    "describe",
+    "read_state",
+    "submit",
+    "wait",
+    "close"
+  ],
+  "physical_actuation": false,
+  "binding_requirement": "Installed VM must validate module/instance/permission owner, exact external adapter and grant SHA before import execution; this document is a request, not an authority token.",
+  "decision": "ALLOW"
+}

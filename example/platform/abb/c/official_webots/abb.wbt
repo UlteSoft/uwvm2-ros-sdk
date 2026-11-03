@@ -1,0 +1,36 @@
+#VRML_SIM R2025a utf8
+# Isolated owned world; exact pinned official ABB node and built-in floor.
+EXTERNPROTO "webots://projects/robots/abb/irb/protos/Irb4600-40.proto"
+EXTERNPROTO "webots://projects/devices/robotiq/protos/Robotiq3fGripper.proto"
+WorldInfo { basicTimeStep 32 randomSeed 0 }
+Viewpoint { orientation 0.12 0.48 0.87 2.6 position 4 4 3 }
+Solid { translation 0 0 -0.08 children [ Shape { geometry Box { size 10 10 0.1 } } ] boundingObject Box { size 10 10 0.1 } }
+Irb4600-40 {
+  translation 1.48 0.58 -0.02
+  rotation 0 0 1 3.14159
+  name "abbirb4600"
+  controller "<extern>"
+  handSlot [
+    DistanceSensor {
+      translation 0 0 0.05
+      rotation 0 1 0 -1.5707953071795862
+      name "object_present_sensor"
+      lookupTable [
+        0 0 0
+        0.2 0.2 0
+      ]
+    }
+    Robotiq3fGripper {
+      translation 0 0 -0.0100001
+      rotation 0 0.70710528118436 0.707108281185553 3.14159
+    }
+  ]
+  staticBase TRUE
+}
+
+# Exact node emitted by official WebotsLauncher(ros2_supervisor=True).
+Robot {
+  name "Ros2Supervisor"
+  controller "<extern>"
+  supervisor TRUE
+}

@@ -5,6 +5,22 @@
 -- dependencies are deployment modules, never native shared-link inputs. This
 -- module grants no runtime authority and executes no compiler during configure.
 
+-- @brief Keep SDK library semantics separate from Xmake's shared-file kind.
+function model(target)
+    local kind = target:kind() or "binary"
+    return target:values("ros.sdk.artifact_kind") or (kind == "shared" and "core-preload" or kind)
+end
+
+-- @brief Describe a requested loader binding without inventing its identity.
+function memory_import(target)
+    local module, name = target:values("ros.sdk.memory_module"), target:values("ros.sdk.memory_export")
+    if module or name then
+        assert(type(module) == "string" and type(name) == "string" and #module > 0 and #name > 0,
+               "Explicit imported memory needs both module and export names")
+        return {module = module, name = name}
+    end
+end
+
 -- @brief Encode a complete namespaced target identity without path collisions.
 -- @param target Loaded Xmake target with a namespace-qualified name.
 -- @return Reversible hexadecimal identifier used only for private directories.
@@ -12,14 +28,52 @@ function identity(target)
     return (target:fullname():gsub(".", function(value) return string.format("%02x", value:byte()) end))
 end
 
+-- @brief Derive isolated compiler state from Xmake's selected object directory.
+-- @param target Loaded target, including native namespace/ABI/mode isolation.
+-- @param category One fixed compiler-state category; never a source input path.
+-- @return Absolute private directory; the caller materializes it during build.
+function workspace(target, category)
+    import("core.project.config")
+    assert(type(category) == "string" and category:match("^[a-z][a-z0-9%-]*$"),
+           "Use one fixed private compiler-state category")
+    local triple = assert(target:values("ros.sdk.triple"), "Resolve the exact target ABI before selecting compiler state")
+    local profile = target:values("ros.sdk.exception_profile") or config.get("ros-exceptions") or "noeh"
+    local mode = config.get("mode") or "default"
+    assert(type(triple) == "string" and triple:match("^wasm%d+%-[a-z0-9%-]+$")
+           and (profile == "noeh" or profile == "eh") and type(mode) == "string"
+           and mode ~= "." and mode ~= ".." and mode:match("^[%w_.%-]+$"),
+           "Use resolved ABI/profile/mode identities for private compiler state")
+    -- Explicitly shared object roots must not collapse namespaced targets,
+    -- different pointer widths, exception profiles or concurrent build modes.
+    return path.join(path.absolute(target:objectdir()), "ros", category, identity(target), triple, profile, mode)
+end
+
+-- @brief Locate a target's deployment record without writing its source tree.
+-- @param target Real Xmake target; the full namespaced name prevents collisions.
+-- @return Metadata path in its actual object tree, outside deployment artifacts.
+function metadatafile(target)
+    return path.join(path.absolute(target:objectdir()), "ros-artifacts", identity(target) .. ".json")
+end
+
 -- @brief Keep explicitly selected names/directories and choose a kind extension.
 -- @param target Source target requesting binary, static or shared output.
 -- @details Explicit filenames and target directories retain Xmake semantics;
 -- default archives are private link inputs and deployed modules end in .wasm.
 function configure(target)
+    import("core.project.config")
     local kind = target:kind() or "binary"
     assert(kind == "binary" or kind == "static" or kind == "shared",
            "SDK targets support native binary, static and shared kinds")
+    local semantic = model(target)
+    local mapping = {binary = "binary", static = "static", ["core-preload"] = "shared",
+                     dynamic = "shared", independent = "shared"}
+    assert(mapping[semantic] == kind, "set_kind conflicts with the explicit Wasm artifact contract")
+    local binding = memory_import(target)
+    if semantic == "dynamic" or semantic == "independent" then
+        assert(binding, "Dynamic/independent libraries require set_wasm_memory_import(module, export)")
+    elseif binding then
+        assert(semantic == "binary", "Only an explicit library or binary consumer imports communication memory")
+    end
     target:set("kind", kind)
     local extension = kind == "static" and ".a" or ".wasm"
     local basename = target:get("basename") or target:name()
@@ -28,12 +82,14 @@ function configure(target)
            and path.extension(filename) == extension, "The selected kind requires a sole " .. extension .. " filename")
     target:set("filename", filename)
     if not target:get("targetdir") then
+        local builddir = config.builddir({absolute = true})
         local directory
         if kind == "static" then
             -- Static archives are private link inputs, never Wasm deployments.
-            directory = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/archives", identity(target))
+            directory = path.join(builddir, ".archives", identity(target))
         else
-            directory = path.join(path.absolute(target:scriptdir()), "build")
+            -- Deployment-only directories exclude objects, records and caches.
+            directory = path.join(builddir, "artifacts")
             if kind == "shared" or #table.wrap(target:get("deps")) > 0 then
                 directory = path.join(directory, "targets", identity(target))
             end
@@ -103,7 +159,8 @@ function request(target)
         local usage = linked[dependency:fullname()] and "static-link"
             or (visible[dependency:fullname()] and kind == "shared" and "preload" or "build-only")
         table.insert(result, {
-            name = dependency:fullname(), kind = kind, inherit = visible[dependency:fullname()] or false, usage = usage,
+            name = dependency:fullname(), kind = kind, artifact_model = model(dependency),
+            memory_import = memory_import(dependency), inherit = visible[dependency:fullname()] or false, usage = usage,
             language = dependency:values("ros.sdk.language"),
             triple = dependency:values("ros.sdk.triple"),
             exception_profile = dependency:values("ros.sdk.exception_profile") or "noeh",
@@ -127,6 +184,36 @@ function uses_libraries(target)
     return #table.wrap(target:get("links")) > 0
 end
 
+-- @brief Reject compiler state nested inside a deployment-only output tree.
+-- @param target Target whose providers have selected their actual object paths.
+-- @details Explicit targetdir/objectdir/dependir settings retain their meaning;
+-- overlapping deployment and private state is an error, never a path fallback.
+function validate_layout(target)
+    import("core.project.project")
+    for _, candidate in pairs(project.targets()) do
+        if candidate:values("ros.sdk.root") then
+            local output = path.absolute(candidate:targetdir())
+            local function inside(value, directory)
+                local relative = path.relative(value, directory):gsub("\\", "/")
+                return not path.is_absolute(relative) and relative ~= ".." and relative:sub(1, 3) ~= "../"
+            end
+            local boundary = os.getenv("UWVM_ROS_XMAKE_OUTPUT_ROOT")
+            if boundary then
+                assert(path.is_absolute(boundary) and inside(output, path.absolute(boundary)),
+                       "SDK targetdir leaves this child's isolated build tree: " .. output)
+            end
+            for _, private in ipairs({path.absolute(target:objectdir()), path.absolute(target:dependir())}) do
+                assert(not inside(private, output) and not inside(output, private),
+                       "Compiler state overlaps a deployment directory; select separate targetdir and objectdir/dependir: " .. private)
+                if boundary then
+                    assert(inside(private, path.absolute(boundary)),
+                           "SDK compiler state leaves this child's isolated build tree: " .. private)
+                end
+            end
+        end
+    end
+end
+
 -- @brief Reject kind/ABI/output conflicts after native dependencies are available.
 -- @param target Loaded source target with an exact ABI and exception profile.
 -- @param root Installed SDK root; validation never restores or executes tools.
@@ -143,6 +230,7 @@ function validate(target, root)
         assert((dependency:values("ros.sdk.exception_profile") or "noeh") == profile,
                "Dependency exception profile mismatch")
     end
+    validate_layout(target)
     local outputs = {}
     for _, candidate in pairs(project.targets()) do
         if candidate:values("ros.sdk.root") then
@@ -162,21 +250,36 @@ end
 -- @details Record actual artifact hashes without synthesizing runtime grants.
 function record(target, root)
     import("core.base.json")
+    -- A language may configure its object tree again during its build action.
+    validate_layout(target)
     local artifacts = {}
     for _, dependency in ipairs(target:orderdeps({inherit = true})) do
         if dependency:kind() == "shared" then
             assert(os.isfile(dependency:targetfile()), "Build each preload dependency first")
-            table.insert(artifacts, {module = dependency:fullname(),
+            table.insert(artifacts, {module = dependency:fullname(), artifact_model = model(dependency),
                                      artifact = path.absolute(dependency:targetfile()),
                                      sha256 = hash.sha256(dependency:targetfile()):lower()})
         end
     end
-    local filename = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/artifacts", identity(target) .. ".json")
+    local linked = {}
+    if target:kind() ~= "static" then
+        for _, dependency in ipairs(static_closure(target)) do
+            table.insert(linked, {target = dependency:fullname(), artifact = path.absolute(dependency:targetfile()),
+                sha256 = hash.sha256(dependency:targetfile()):lower(), trust_domain = "consumer shared heap"})
+        end
+    end
+    local filename = metadatafile(target)
     os.mkdir(path.directory(filename))
     json.savefile(filename, {format = "uwvm-sdk-target-artifacts-v1", target = target:fullname(),
-                            kind = target:kind(), triple = target:values("ros.sdk.triple"),
+                            kind = target:kind(), artifact_model = model(target),
+                            memory_import = memory_import(target),
+                            module_metadata = target:data("ros.sdk.module_metadata"),
+                            runtime_memory_binding_verified = false,
+                            triple = target:values("ros.sdk.triple"),
                             artifact = path.absolute(target:targetfile()),
                             sha256 = hash.sha256(target:targetfile()):lower(),
                             build_command = target:data("ros.sdk.build_command"),
+                            compiler_version = target:data("ros.sdk.compiler_version"),
+                            compile_commands = target:data("ros.sdk.compile_commands"), static_link_inputs = linked,
                             preload = artifacts, permissions = "explicit manual runtime configuration only"})
 end

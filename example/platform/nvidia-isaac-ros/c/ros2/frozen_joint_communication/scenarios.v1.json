@@ -1,0 +1,285 @@
+{
+  "Stage_B_required_example": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+  "all_four_communication_cases_required": true,
+  "api_version": 1,
+  "component_isolation_remains_mandatory_but_does_not_gate_this_communication_slice": true,
+  "component_memory_design_is_not_runtime_enforcement": true,
+  "format": "uwvm-sdk-simulation-example-v1",
+  "frozen_wasm": {
+    "bytes": 4449,
+    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "full_Stage_A_pass_requires_all_selected_actual_cases": true,
+  "full_original_matrix_and_final_world_model_required": true,
+  "native_oracle_scope": "Fixed official ROS CLI after real guest-feedback verification only; no goal submission or guest input/callback replacement. Explicit staged requirement oracle exception.",
+  "profile": {
+    "NVIDIA_hardware_or_full_vendor_simulation_qualified": false,
+    "execution_class": "software_simulation",
+    "id": "sdk10-jazzy-generic-system-jtc-communication-v1",
+    "mode": "official ROS GenericSystem/JTC software communication peer",
+    "os_abi": "ubuntu24.04-linux-x86_64",
+    "physics": false,
+    "ros_release": "jazzy",
+    "stage": "A",
+    "vendor": "nvidia-isaac-ros"
+  },
+  "public_command_state": "NOT_RUN_SOURCE_AUTHORED_ONLY",
+  "public_inputs": [
+    {
+      "path": "README.md",
+      "scope": "example",
+      "sha256": "f62fbfe89efc8362699d9fe290578122f26e8e9e55ab2360d55ca8a61c12631c"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "scope": "example",
+      "sha256": "6b5218d68b785765c060efc72dbd1fdde0576e211186e5d8d40b55b642b44a6f"
+    },
+    {
+      "path": "component-memory.v1.json",
+      "scope": "example",
+      "sha256": "cc1d3e34219bf1ee42a4b739969dbc1d7fe1c376917f89afa1752a5e4995c625"
+    },
+    {
+      "path": "deployment-requirements.v1.json",
+      "scope": "example",
+      "sha256": "9bc4c2caaf3a919fb07fafe30c5aa8922dfd86793f7acefa39c1f76b8cb791dd"
+    },
+    {
+      "path": "main.c",
+      "scope": "example",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "path": "provider-packages.v1.json",
+      "scope": "example",
+      "sha256": "6c58d0823b3be16b6643a6b47ee6aef0781e5bcfd790e47c393989e7be1df273"
+    },
+    {
+      "path": "run_communication.py",
+      "scope": "example",
+      "sha256": "4f61e3dc7adda0f0cee0b45cbc0089294655a91a03475f84e8427a68124d3bc8"
+    },
+    {
+      "path": "scene/controllers.yaml",
+      "scope": "example",
+      "sha256": "66924ffa2f24814d11822fd23ad74322b66e8e187650481913162b0ad4e9d490"
+    },
+    {
+      "path": "scene/robot.urdf",
+      "scope": "example",
+      "sha256": "3c88c16462561a3d189b759331ee17b5c8d2a6edcb0c6b8e839debf06b2f10b3"
+    },
+    {
+      "path": "xmake.lua",
+      "scope": "example",
+      "sha256": "cd692f028da2139ed531d120a5fec51d444efb3299cff81f37ec0e53250ad012"
+    },
+    {
+      "path": "include/platform/ros/portable/v0_1_0/abi.h",
+      "scope": "sdk",
+      "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+    },
+    {
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "scope": "sdk",
+      "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+    },
+    {
+      "path": "tools/shared/python/simulation_example.py",
+      "scope": "sdk",
+      "sha256": "a6b6ecb2afcccd0e12da04dd410a2620f94ec4dae64df725c6a4321ce86a3989"
+    },
+    {
+      "path": "tools/shared/python/runtime_boundary.py",
+      "scope": "sdk",
+      "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+    },
+    {
+      "path": "tools/shared/python/actor_gate.py",
+      "scope": "sdk",
+      "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+    },
+    {
+      "path": "tools/shared/python/actor_control.py",
+      "scope": "sdk",
+      "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+    },
+    {
+      "path": "tools/shared/python/guest_feedback.py",
+      "scope": "sdk",
+      "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+    },
+    {
+      "path": "tools/shared/python/example_process.py",
+      "scope": "sdk",
+      "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+    },
+    {
+      "path": "tools/shared/python/wasi_component.py",
+      "scope": "sdk",
+      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+    },
+    {
+      "path": "xmake.lua",
+      "scope": "sdk",
+      "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+    },
+    {
+      "path": "tools/xmake/repository.lua",
+      "scope": "sdk",
+      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+    },
+    {
+      "path": "tools/shared/xmake/language_entry.lua",
+      "scope": "sdk",
+      "sha256": "c1f9d6a02a2dcc16f4e6a3b3e30716f8292a743eb6bfba1d7491944d9ddc6062"
+    },
+    {
+      "path": "tools/xmake/artifact_contract.lua",
+      "scope": "sdk",
+      "sha256": "967d02f990e753ef350952bfc18fd62a39b6fbef936f34b8b4b9129a80ac3f76"
+    },
+    {
+      "path": "tools/xmake/dispatch.lua",
+      "scope": "sdk",
+      "sha256": "8a8cd39c6294f07591c76eee08c2168439a699f249976a0d8beaa348fa6bc3ae"
+    },
+    {
+      "path": "share/shared/artifact-layout/v0.2.1/manifest.json",
+      "scope": "sdk",
+      "sha256": "89adac1794158c19b7b9ea310372736ca3b36f0d92b57a7bd748b76da38148f3"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+      "scope": "sdk",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+      "scope": "sdk",
+      "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/approved-producers.json",
+      "scope": "sdk",
+      "sha256": "eac69485faec6cee6a2994f84ebc2858c7271f4c277a472f1323c25e3ec73a15"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/contract.json",
+      "scope": "sdk",
+      "sha256": "c9fee9daf6ef8e9b2483e1aadfd4b0b7c348e766b0a2ed73961577e3134ba062"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/controller-argv-contract.json",
+      "scope": "sdk",
+      "sha256": "adfa27eed6f98d9a9567b862289e1aafda14bae4732edbef6dda914283386677"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/descriptor.json",
+      "scope": "sdk",
+      "sha256": "97defd651f8ac2686c3a3fb89c0037c86ee287ab0f3cd304e6e886e78bfbd398"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/guardian-argv-contract.json",
+      "scope": "sdk",
+      "sha256": "acf0cb879fda42eb4a7d566013eac72207adb912bfef9e700a35c7b68897f8bf"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/host-runtime-manifest.json",
+      "scope": "sdk",
+      "sha256": "bbb1dd8ffcd4680517edefe5f0ac8257ea766b98b155ba2d5b4d79ae6a57036f"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/producer-source-manifest.json",
+      "scope": "sdk",
+      "sha256": "e6a79b2fdc500cd97a0cdb6ac3a4e8fe37d07c52809af7c11454b86d583cf8c1"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/retained-source-fd-contract.json",
+      "scope": "sdk",
+      "sha256": "67429e75c2cb366079609e56eed31431c560134347a69d43f5af850e42c1e597"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/producers/vm-closed-boundary-r5/sealed-launch-contract.json",
+      "scope": "sdk",
+      "sha256": "ca49cee97f0f3bc12f7f9138232fc599a330acf874d8fc229ec08ee12b0bcbb1"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/required-negatives.json",
+      "scope": "sdk",
+      "sha256": "5e071df0243939ba841cbea36deedab2ee45dc08e561d427c56f11b162200a18"
+    },
+    {
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/trusted-control-descriptor.schema.json",
+      "scope": "sdk",
+      "sha256": "affee995a7ba101ac6276975fe1cf0ddfd3bed0724825096557c8fbabe1158d1"
+    },
+    {
+      "path": "tools/shared/python/example_aggregate.py",
+      "scope": "sdk",
+      "sha256": "efbca2d39e1a7254339b38e190429844c42346750994ff1ce1716662d33ea3c5"
+    },
+    {
+      "path": "tools/shared/python/portable_contract.py",
+      "scope": "sdk",
+      "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+    },
+    {
+      "path": "tools/shared/python/trusted_control.py",
+      "scope": "sdk",
+      "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+    },
+    {
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "scope": "sdk",
+      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+    }
+  ],
+  "python_dependencies": [
+    "yaml"
+  ],
+  "required_followup_component_case": {
+    "deadline_seconds": 30,
+    "expected_vm_exit": null,
+    "id": "independent-memory-and-authority",
+    "implementation_status": "BLOCKED_REQUIRED_REAL_INSTANCE_MEMORY_CHANNEL_AND_PERMISSION_ABI",
+    "kind": "component-isolation",
+    "stage": "A"
+  },
+  "scenarios": [
+    {
+      "deadline_seconds": 30,
+      "expected_vm_exit": 13,
+      "id": "permission-denied-no-effect",
+      "implementation_status": "SOURCE_AUTHORED_REQUIRES_QUALIFIED_CURRENT_PUBLIC_VM_PRODUCER",
+      "kind": "denied",
+      "stage": "A"
+    },
+    {
+      "deadline_seconds": 30,
+      "expected_vm_exit": 0,
+      "id": "normal-correlated-result",
+      "implementation_status": "SOURCE_AUTHORED_REQUIRES_QUALIFIED_CURRENT_PUBLIC_VM_PRODUCER",
+      "kind": "joint",
+      "stage": "A"
+    },
+    {
+      "deadline_seconds": 30,
+      "expected_vm_exit": null,
+      "id": "stale-reference-or-feedback",
+      "implementation_status": "BLOCKED_REQUIRED_NEGATIVE_GUEST_FEEDBACK_CONTRACT",
+      "kind": "joint",
+      "stage": "A"
+    },
+    {
+      "deadline_seconds": 30,
+      "expected_vm_exit": null,
+      "id": "bounded-disconnect-timeout",
+      "implementation_status": "BLOCKED_REQUIRED_NEGATIVE_GUEST_FEEDBACK_CONTRACT",
+      "kind": "joint",
+      "stage": "A"
+    }
+  ]
+}

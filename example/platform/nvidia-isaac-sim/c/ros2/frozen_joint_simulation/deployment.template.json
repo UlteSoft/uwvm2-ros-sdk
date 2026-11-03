@@ -1,0 +1,90 @@
+{
+  "format": "uwvm-sdk-simulation-deployment-v1",
+  "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+  "runtime": {
+    "executable": null,
+    "sha256": null,
+    "source_identity": null,
+    "paired_providers": [],
+    "observation_contracts": [
+      "uwvm-sdk-simulation-command-binding-v1"
+    ]
+  },
+  "official_provider_files": [],
+  "scenarios": {
+    "default-deny-no-native-effect": {
+      "runtime_arguments": []
+    },
+    "normal-correlated-result": {
+      "runtime_arguments": []
+    },
+    "joint-boundaries": {
+      "runtime_arguments": []
+    },
+    "stale-and-foreign-handles": {
+      "runtime_arguments": []
+    },
+    "timeout-and-cancel": {
+      "runtime_arguments": []
+    },
+    "disconnect-and-reconnect": {
+      "runtime_arguments": []
+    },
+    "pause-and-resume": {
+      "runtime_arguments": []
+    },
+    "restart-update-rollback-permissions": {
+      "runtime_arguments": []
+    },
+    "reverse-sensor-into-Wasm": {
+      "runtime_arguments": []
+    }
+  },
+  "nvidia_isaacsim_v1": {
+    "version": "6.0.0",
+    "model": "Franka/Panda",
+    "mode": "official-physics",
+    "execution_class": "software_simulation",
+    "official_source": {
+      "repository": "https://github.com/isaac-sim/IsaacSim",
+      "commit": null
+    },
+    "GPU_UUIDs": [],
+    "model_files": [],
+    "scene_files": [],
+    "robot_description_topic": "/robot_description",
+    "physics_hardware_plugins": [],
+    "simulator": {
+      "argv": [],
+      "executable_sha256": null
+    },
+    "controller": {
+      "argv": [],
+      "executable_sha256": null,
+      "required_loaded_images": []
+    },
+    "native": {
+      "path": null,
+      "sha256": null,
+      "source_commit": null,
+      "availability": "REQUIRED_PUBLISHED_COMPONENT"
+    },
+    "adapter": {
+      "path": null,
+      "sha256": null
+    },
+    "grant": {
+      "path": null,
+      "sha256": null
+    },
+    "native_provenance": {
+      "path": null,
+      "sha256": null
+    },
+    "robot_state_publisher": {
+      "argv": [],
+      "executable_sha256": null
+    },
+    "robot_description_sha256": null
+  }
+}

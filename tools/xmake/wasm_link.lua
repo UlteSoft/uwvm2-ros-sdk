@@ -147,7 +147,7 @@ function build(target, root, request, objects, options)
         table.insert(arguments, "-Wl,--export=" .. symbol)
     end
     if #(options.allowed_undefined_symbols or {}) > 0 then
-        local directory = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/links", contract.identity(target))
+        local directory = contract.workspace(target, "declared-link-imports")
         os.mkdir(directory)
         local names = {}
         for _, symbol in ipairs(options.allowed_undefined_symbols) do

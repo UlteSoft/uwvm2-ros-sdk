@@ -1,0 +1,33 @@
+--- a/example/src/src/go2/go2_stand_example.cpp
++++ b/example/src/src/go2/go2_stand_example.cpp
+@@ -1,6 +1,10 @@
++#if defined(UWVM_GO2_STAND_OBSERVE_CALLBACKS)
++#include <platform/unitree/cpp/ros2/go2_stand/callback_observation.hpp>
++#endif
+ #include <chrono>
+ #include <cmath>
+ #include <cstring>
++#include <iostream>
+ #include <string>
+ 
+ #include "motor_crc.h"
+@@ -105,6 +109,9 @@
+ }
+ 
+ void LowLevelCmdNode::LowCmdWrite() {
++#if defined(UWVM_GO2_STAND_OBSERVE_CALLBACKS)
++  uwvm_unitree_go2_observation::begin(motiontime_);
++#endif
+   if (percent_4_ < 1) {
+     std::cout << "Read sensor data example: " << std::endl;
+     std::cout << "Joint 0 pos: " << low_state_.motor_state[0].q << std::endl;
+@@ -184,6 +191,9 @@
+     get_crc(low_cmd_);  // Check motor cmd crc
+     low_cmd_pub_->publish(low_cmd_);
+   }
++#if defined(UWVM_GO2_STAND_OBSERVE_CALLBACKS)
++  uwvm_unitree_go2_observation::end(motiontime_, done_, percent_1_, percent_2_, percent_3_, percent_4_);
++#endif
+ }
+ 
+ int main(int argc, char** argv) {

@@ -1,0 +1,81 @@
+{
+  "format": "uwvm-python-transplate-source-origins-v1",
+  "implementation": "Existing SDK source compatibility implementation, adapted for the explicitly limited Jazzy profile; not unmodified upstream rclpy",
+  "existing_sdk_sources": [
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/__init__.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/__init__.py",
+      "original_sha256": "239654a0c94cf294bf790c380456caafdafc7fcd85ed83c6413fd2fcd9a2e2a6"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/_dispatch.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/_dispatch.py",
+      "original_sha256": "c11a959674f53102579416a005541d603aaa13d24a0f2f98531e56bc64d88ab3"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/_service_support.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/_service_support.py",
+      "original_sha256": "e346ab23a024d2bbebf315ae164757abc19757636e03672969183eca66bcb389"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/client.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/client.py",
+      "original_sha256": "22d04c417ab7b33d3f4e45a5972476519c9083a147e3bcc8199ab7067234280a"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/clock.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/clock.py",
+      "original_sha256": "5ecc1897b9d711a3934cc27ce2769579f73263f125052244b71f412c2ce38950"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/context.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/context.py",
+      "original_sha256": "e5da04468d4bb5b611682cb037fc00b5ae2f6e024b9e5d3f8b6df6f477727702"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/node.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/node.py",
+      "original_sha256": "a7716f375429b3d969e2408a8d0335dc4502a50e761e8ae67768a1a1931a3d3b"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/qos.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/qos.py",
+      "original_sha256": "1902e4e7e817aed08dbd4a4b5a09d55df868792f3b2ec3d3d0bd211041a80c8e"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/service.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/service.py",
+      "original_sha256": "e375a48fcac3c3220bb8397af1d1c3d0dc8a4dbe60ff964cbb117480508da65c"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/task.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/task.py",
+      "original_sha256": "3f5f233129b1f90813c17e268e1c518a2830f730ca1f00d79fae1e88d4895864"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/time.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/time.py",
+      "original_sha256": "a3fab9e3bf93dcf49fef8749b83a3aa7467fd0711b592b469ea994adfff050c3"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/rclpy/timer.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/rclpy/timer.py",
+      "original_sha256": "a161ef781bf2bc98b01d3ef7f7aedb71ddfc490cb2a508d4dab70c930f9153c8"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/std_msgs/__init__.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/std_msgs/__init__.py",
+      "original_sha256": "7c9d09b13fa56e379cab5c0337170c3e13d84b652dc535463097ae50316a0e4a"
+    },
+    {
+      "origin": "include/platform/ros/py/compat/rclpy/std_msgs/msg/__init__.py",
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/modules/std_msgs/msg/__init__.py",
+      "original_sha256": "d9f60f2dd08b738c12c4f03e7817e05c0e35a482987c115ac7a568fa3b837d1b"
+    }
+  ],
+  "changed_semantics": [
+    "init returns None matching pinned Jazzy API",
+    "unsupported implicit rosout/parameter services fail before owner construction"
+  ],
+  "stdlib": "Exact CPython 3.14.8 source files in the existing core source lock; no per-vendor runtime copy"
+}

@@ -1,0 +1,66 @@
+{
+  "format": "uwvm-sdk-simulation-contracts-v1",
+  "api_version": 1,
+  "status": "FINITE_VM_COMMAND_PRODUCER_QUALIFIED_PUBLIC_ADMISSION_AND_FULL_GUEST_FEEDBACK_PENDING",
+  "command_binding": {
+    "format": "uwvm-sdk-simulation-command-binding-v1",
+    "producer": "uwvm2-ros/runtime/portable-host",
+    "transport": "Fresh actual pinned VM process stdout NDJSON. No native observer, platform adapter, wrapper or SDK-generated substitute.",
+    "required_fields": [
+      "format",
+      "producer",
+      "run_id",
+      "pid",
+      "monotonic_ns",
+      "module_sha256",
+      "module_instance",
+      "permission_session",
+      "call_sequence",
+      "portable_call",
+      "adapter_sha256",
+      "policy_sha256",
+      "decision",
+      "phase",
+      "native_operation_id"
+    ],
+    "allow": {
+      "decision": "ALLOW",
+      "phase": "native-goal-accepted",
+      "portable_call": "submit",
+      "guest_command_sha256": "SHA256 of exact validated guest command bytes read from executing module memory",
+      "native_operation_id": "Actual 16-byte UUID returned by native action SendGoal; lowercase 32 hexadecimal characters"
+    },
+    "deny": {
+      "decision": "DENY",
+      "phase": "permission-denied",
+      "error_code": 13,
+      "native_operation_id": null
+    },
+    "session_semantics": "VM producer binds current executing module instance and verified permission owner to actual imported call sequence, exact adapter/grant digests, guest command bytes and native accepted goal. Independent native GetResult and fresh state must match that actual UUID.",
+    "replay_protection": "Fresh parent-generated run ID plus actual producing VM PID/birth/executable/cgroup, event monotonic time after this run start. Native UUID alone is insufficient.",
+    "missing_producer_diagnostic": "BLOCKED_VM_COMMAND_SESSION_NATIVE_UUID_PRODUCER_V1",
+    "missing_event_diagnostic": "BLOCKED_VM_COMMAND_SESSION_NATIVE_UUID_EVENT_V1",
+    "finite_evidence": {
+      "sdk_manifest": "share/platform/ros/runtime-evidence/v1.0.0/manifest.json",
+      "sha256": "220087e8b729df8525bc3fb138896ba6ed63b18656b5dcb328f1d64ba3e807f3",
+      "scope": "Exact VM-owner private R11 loop only; no permission for a new public SDK run"
+    }
+  },
+  "sensor_status": "Separate actual inbound native payload-to-module-memory receipt production contract remains required; v1 generic completion explicitly BLOCKED_SENSOR_RUNTIME_PRODUCER_CONTRACT_UNAVAILABLE_V1",
+  "prohibited_substitutes": [
+    "Copying observer UUID into a VM field",
+    "Echo server or host-precomputed guest digest",
+    "Historical result receipt",
+    "Reconstructed field from an unrelated native session",
+    "Unmatched/zero selected Xmake tests"
+  ],
+  "full_wasm_requirement": {
+    "business_execution": "All application queries, callbacks, state feedback and sensor processing execute in Wasm via the controlled VM host",
+    "native_sdk_clients": "Forbidden in public acceptance; confirmed implementations physically quarantined",
+    "common_feedback_verifier": "NOT_IMPLEMENTED_NOT_QUALIFIED",
+    "missing_verifier_diagnostic": "BLOCKED_FULL_WASM_GUEST_FEEDBACK_VERIFIER_NOT_IMPLEMENTED_V1",
+    "required_implementation": "Manifest may declare status BLOCKED with diagnostic and nonempty requirements; omit executable driver; all mandatory scenarios remain non-success and no scene starts"
+  },
+  "public_live_admission_emitted": false,
+  "generic_reverse_guest_feedback_implemented": false
+}

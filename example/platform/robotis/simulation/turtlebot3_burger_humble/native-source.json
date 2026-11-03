@@ -1,0 +1,31 @@
+{
+  "format": "uwvm-native-source-entry-v1",
+  "scene": "turtlebot3",
+  "native_entrypoint": {
+    "path": "example/platform/robotis/simulation/turtlebot3_burger_humble/native_scene.py",
+    "sha256": "02be0dc91c95c73a1b48d7872c049cd9c551f56296ad833e048ad1749bdff4d4"
+  },
+  "session_entry": "example/platform/ros/simulation/native_source_session/native_source_session.lua",
+  "phase_budget": "example/platform/ros/simulation/native_source_session/phase-budget.json",
+  "post_ready_max_seconds": 300,
+  "whole_source_queue_allocation_seconds": 450,
+  "two_generation_full_journal_allocation_seconds": 1040,
+  "whole_journal_600_seconds_sufficient": false,
+  "budget_is_successful_guest_bound": false,
+  "phase_responsibilities": {
+    "native_preparation": "01 supplies exact pinned constructor outputs; per-run private URclone is separately timed,add300sifinside armed interval.",
+    "native_startup": "04 source session records entry,verification,birth and actual ready; complete startup allocation120s.",
+    "producer_arming": "02 strict source/caller/VM/memory/module/resource enrollment and journal open before relevant operations; no native file grants authority.",
+    "warmup": "02/05 actual selected primary source events/callbacks,not ready or elapsed sleeps.",
+    "normal_task": "02/03 original application ROS/control executes only in permissioned Wasm;04 runs only native drivers/physics.",
+    "fault_cancel": "Native actor SIGKILL is a native fault diagnostic; actual ROSActioncancel/Wasm cancellation and guest recovery remain required.",
+    "fresh_generation": "Retire old actual PID/births,bind a new native owner/run and exact source inputs; separate VM sessions/roles/journal continuity belong to strict producer.",
+    "drain": "02/05 account for actual operation/observer buffers and loss-free footer;04 withdraws native readiness and proves owned native retirement."
+  },
+  "native_readiness_is_execution_or_task_authority": false,
+  "strict_production_entry_ready": false,
+  "scene_pass": false,
+  "between_generations_allocation_seconds": 120,
+  "source_live_budget_max_seconds": 290,
+  "native_shutdown_reserve_seconds": 10
+}

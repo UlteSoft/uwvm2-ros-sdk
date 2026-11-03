@@ -27,6 +27,19 @@ if os.isfile(repository) then
     end
 end
 
+-- The header-only SDK root has no selected official scenario. Reuse the
+-- shared test action so xmake test cannot report an empty selection as success.
+local simulation_entry = path.join(sdk_root, "tools/shared/xmake/simulation_example.lua")
+if os.isfile(simulation_entry) then
+    includes(simulation_entry)
+end
+
+-- One main-Xmake scheduler owns public child build/test pairs.
+local examples_entry = path.join(sdk_root, "tools/shared/xmake/examples_task.lua")
+if os.isfile(examples_entry) then
+    includes(examples_entry)
+end
+
 set_project("uwvm-platform-sdk")
 target("ros-sdk-headers")
 set_kind("headeronly")

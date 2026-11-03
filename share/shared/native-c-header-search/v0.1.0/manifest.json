@@ -1,0 +1,71 @@
+{
+  "format": "uwvm-sdk-shared-native-C-header-source-v1",
+  "version": "0.1.0",
+  "status": "SOURCE_AUTHORED_NOT_LINUX_QUALIFIED",
+  "source": "tools/language/native/core.lua",
+  "before_sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137",
+  "source_sha256": "a29dc9417d2745bfbf63cf96db8a0e0dc727f9506b4f6f88c84894f2d01c0625",
+  "proposal_handoff_sha256": "9195d5c7a1955be552ce96dbe2f6ae0bacf025de92f79b068afb8def3b9b7328",
+  "proposal_patch_sha256": "8345be2749ba9248887c4606910ecad0664988a35a696d0ab39984daabd6361a",
+  "independent_choice": "Exact selected triple/profile C-header leaf precedes common root; missing paired leaf/assert.h blocks. Compiler/sysroot/resource identity and provider includes remain selected inputs.",
+  "targets": [
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "noeh",
+      "arch": "wasm32",
+      "target_C_header_dir": "include/wasm/llvm23/noeh/wasm32-wasip1/wasm32-wasip1",
+      "sysroot": "lib/wasm/llvm23/noeh/wasm32-wasip1",
+      "resource_dir": "lib/language/cfamily/clang/23",
+      "assert_h_bytes": 428,
+      "assert_h_sha256": "477f9fcf67e8eccb59dea935f0dc7abd40829f8d61a3e73e4151ff6a18ef25f9",
+      "C_actual_compile": "NOT_RUN",
+      "CXX_actual_compile": "NOT_RUN",
+      "full_EH_or_runtime_acceptance": false
+    },
+    {
+      "triple": "wasm32-wasip1",
+      "profile": "eh",
+      "arch": "wasm32",
+      "target_C_header_dir": "include/wasm/llvm23/eh/wasm32-wasip1/wasm32-wasip1",
+      "sysroot": "lib/wasm/llvm23/eh/wasm32-wasip1",
+      "resource_dir": "lib/language/cfamily/clang/23",
+      "assert_h_bytes": 428,
+      "assert_h_sha256": "477f9fcf67e8eccb59dea935f0dc7abd40829f8d61a3e73e4151ff6a18ef25f9",
+      "C_actual_compile": "NOT_RUN",
+      "CXX_actual_compile": "NOT_RUN",
+      "full_EH_or_runtime_acceptance": false
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "noeh",
+      "arch": "wasm64",
+      "target_C_header_dir": "include/wasm/llvm23/noeh/wasm64-wasip1/wasm64-wasip1",
+      "sysroot": "lib/wasm/llvm23/noeh/wasm64-wasip1",
+      "resource_dir": "lib/language/cfamily/clang/23",
+      "assert_h_bytes": 428,
+      "assert_h_sha256": "477f9fcf67e8eccb59dea935f0dc7abd40829f8d61a3e73e4151ff6a18ef25f9",
+      "C_actual_compile": "NOT_RUN",
+      "CXX_actual_compile": "NOT_RUN",
+      "full_EH_or_runtime_acceptance": false
+    },
+    {
+      "triple": "wasm64-wasip1",
+      "profile": "eh",
+      "arch": "wasm64",
+      "target_C_header_dir": "include/wasm/llvm23/eh/wasm64-wasip1/wasm64-wasip1",
+      "sysroot": "lib/wasm/llvm23/eh/wasm64-wasip1",
+      "resource_dir": "lib/language/cfamily/clang/23",
+      "assert_h_bytes": 428,
+      "assert_h_sha256": "477f9fcf67e8eccb59dea935f0dc7abd40829f8d61a3e73e4151ff6a18ef25f9",
+      "C_actual_compile": "NOT_RUN",
+      "CXX_actual_compile": "NOT_RUN",
+      "full_EH_or_runtime_acceptance": false
+    }
+  ],
+  "actual_Clang_verbose_search_lists": "NOT_RUN",
+  "genuine_Python_Wasm_build_regression": "NOT_RUN",
+  "Python_implementation_modified": false,
+  "Linux_execution_requires_new_whole_packet_and_own_proofs": true,
+  "public_runtime_or_simulation_acceptance": false,
+  "created_utc": "2026-10-27T07:04:44.347496+00:00"
+}

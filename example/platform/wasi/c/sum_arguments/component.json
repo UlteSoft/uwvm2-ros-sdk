@@ -1,0 +1,123 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "wasi-c-sum-arguments",
+  "scope": "Actual integer-argument handling in executing Wasm; a WASI component, not native ROS or official simulation",
+  "cases": [
+    {
+      "id": "sum-normal",
+      "arguments": [
+        "19",
+        "23"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "42\n"
+    },
+    {
+      "id": "sum-empty",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "0\n"
+    },
+    {
+      "id": "sum-malformed",
+      "arguments": [
+        "12bad"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "sum-overflow",
+      "arguments": [
+        "2147483647",
+        "1"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ],
+  "current_state": "REQUIRED_CASES_DEFINED_ACCEPTANCE_REQUIRES_EXACT_FRESH_EXECUTION_EVIDENCE",
+  "required_full_framework_simulation": "Not satisfied by this WASI component; applicable official ROS scenarios remain separately mandatory",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/c/sum_arguments/main.c",
+      "sha256": "a362cd1e4f895d2e9d7a6d6958a87bcdd42bda0898db8c97743a02a936ff3f86"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/c/sum_arguments/xmake.lua",
+      "sha256": "cd1f7a5cb4bc96b006f9c6ff04f09c2548984adc8e2e3588b74363649060d75c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/example_process.py",
+      "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/simulation_example.py",
+      "sha256": "5ec836c7c9573f1cf9febc980df2bd5e2956cc02ca5cfebfbbb924663c642c91"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/runtime_boundary.py",
+      "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/actor_gate.py",
+      "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/actor_control.py",
+      "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/guest_feedback.py",
+      "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/portable_contract.py",
+      "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/repository.lua",
+      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/trusted_control.py",
+      "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/contract.json",
+      "sha256": "df06eb92025bb48d2fcb270a5725886986e020c949723141b091ef3ca7018321"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/approved-producers.json",
+      "sha256": "4f701e90d06f6cacd4ed759890abee1cd429467326355cdda3a00cca64855f97"
+    }
+  ]
+}

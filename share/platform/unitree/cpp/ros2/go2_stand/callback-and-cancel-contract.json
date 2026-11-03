@@ -1,0 +1,47 @@
+{
+  "format": "unitree-go2-observed-callback-and-independent-stop-v1",
+  "source_main": "src/platform/unitree/cpp/ros2/go2_stand/ported/go2_stand_example.cpp",
+  "production_trace_enabled": false,
+  "observed_define": "UWVM_GO2_STAND_OBSERVE_CALLBACKS=1",
+  "semantic_preservation": "Only three guarded observation blocks added; deleting those exact blocks recovers current ported original bytes. All original Init/Start repeats, timer, ++motiontime, sequentialfloat phaseifs/CRC/publication/done/output/finalhold remain unchanged. No timer pass counter substitutes for actual LowCmdWrite callback.",
+  "timer_contract": {
+    "period_ns": 2000000,
+    "actual_begin_end_source": "LowCmdWrite actual guest entry/normalreturn, WASI clock_time_get(MONOTONIC)",
+    "initial_ticks_without_lowcmd": [
+      1,
+      499
+    ],
+    "first_lowcmd_tick": 500,
+    "phase_values": "Actual original float32 accumulator bit patterns from end events; do not derive phase progress from elapsed wallclock or command count.",
+    "completion": "Original done log is evaluated before increment/phase advancement: it occurs once on the callback after percent4 first reaches1. Preserve original source order.",
+    "hold": "Original finalpose publications continue without callback or command count cutoff; acceptance observes >=100 actual finaltarget callbacks/publications and a causally later fresh native state before independent cancellation. This100 is the selected acceptance minimum, not source stop logic.",
+    "measurement": "Retain every timestamp/delta/overrun; actual2ms scheduling cannot be asserted from build or nominal source period. Observed build adds clock/output overhead, which must be measured independently from the production target."
+  },
+  "trace": "stderr UWVM_GO2_TIMER_V1 begin/end; source ordinal, actual monotonic timestamp, done and four IEEEfloat32 hex bit patterns. No synthetic or sampled-away events. Source traces alone do not prove native delivery/apply/causality.",
+  "independent_cancel": {
+    "project": "example/platform/unitree/c/ros2/humble/upstream_go2_cancel",
+    "instance": "Separate actual Wasm instance/process/module from stand task",
+    "required_argument": "request-stop",
+    "publish_alias": "unitree-go2-stop-request",
+    "task_subscribe_alias": "unitree-go2-cancel",
+    "topic": "/uwvmros/go2_stand/cancel",
+    "type": "std_msgs/msg/Bool",
+    "value": true,
+    "qos": "Reliable/transient-local/keep-last1, same private admitted ROSdomain",
+    "publication_attempts": 1,
+    "close_attempts": 1,
+    "authority": "Publisher only; task retains subscribe-only grant; no crossmodule/taskmemory authority.",
+    "when": "Actual authorised operator/test authority launches this real Wasm after verifying full task/hold criteria. No fixed host sleep or elapsed-only completion assumption.",
+    "receipt_limit": "Publisher success is not task receipt/stop; require actual target subscription delivery, normal task shutdown, distinct close/error paths and full VM/native guardian retirement."
+  },
+  "negative_requirements": [
+    "Denied/missing/crossmodule/wrongtype/quota Bool publisher and canceled/revoked task subscription remain actual failures",
+    "No false successful stop for ROS125 or WASI11; existing sourceSelection raw error handling retained",
+    "Late stale/transientlocal true must not leak into a new run: new exact private domain/generation or independently proven publisher lifecycle/clearance",
+    "Real nativeCDR/gateway occurrence and session/sequence evidence, actual initial499callbacks, firstpub500,2ms schedule, once-onlydone, >=100finalhold and laterstate; no hashset-only membership proof"
+  ],
+  "build": "PENDING_R29",
+  "runtime": "NOT RUN",
+  "official_simulation": "NOT RUN",
+  "accepted": false
+}

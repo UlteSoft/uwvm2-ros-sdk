@@ -1,0 +1,41 @@
+{
+  "actual_independent_instance_graphs_executed": 0,
+  "actual_isolation_groups_passed": 0,
+  "actual_isolation_groups_required": 6,
+  "application_scalar_exports": [
+    "name_configure(i32,i32)->i32",
+    "name_revision()->i64",
+    "name_length()->i32",
+    "name_byte(i32)->i32",
+    "allocation_step(i32)->i32"
+  ],
+  "graphs": [
+    {
+      "application_modules": [
+        "heap_a:name-endpoint",
+        "main:name-copy-consumer"
+      ],
+      "instances": 2,
+      "state": "REQUIRED_NOT_RUN"
+    },
+    {
+      "application_modules": [
+        "heap_a:name-endpoint",
+        "heap_b:same exact name-endpoint Wasm SHA",
+        "main:alias-name-consumer"
+      ],
+      "instances": 3,
+      "state": "REQUIRED_NOT_RUN"
+    }
+  ],
+  "host_JVM_business": false,
+  "native_ROS_acceptance": false,
+  "new_shared_VM_ABI": false,
+  "public_codec": "org.uwvm.roswasm.Codecs.STRING",
+  "runtime_policy_or_grants_defined_here": false,
+  "schema": "sdk09-application-value-copy-graph-intents-v1",
+  "shared_authority_owner": "VM owner + SDK01; unchanged",
+  "true_ROS_service_cases_executed": 0,
+  "true_ROS_service_cases_required": 4,
+  "typed_consumer": "org.ros.namespace.GraphNameSnapshot"
+}

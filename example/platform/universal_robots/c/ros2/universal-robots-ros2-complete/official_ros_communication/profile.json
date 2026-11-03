@@ -1,0 +1,108 @@
+{
+  "URDF_sha256": "3b9a650cdb2aec67981cadcfc990d3f40aaa890dd4366582dee6c66155d483ee",
+  "controller": "joint_trajectory_controller",
+  "current_native_host_reference": {
+    "scope": "Qualified private candidate CLI/communication capability reference; actual invocation identities remain required",
+    "sha256": "b377db559e629f4caadd3edf21880240cfb7c2e228751c69a015d56e2a19be37",
+    "source_identity": "sha256:ac9e031bae7f1917c780f6b29159338f8cc6cd21f170f86baf859e3f3b3cc19b"
+  },
+  "description_commit": "710505166d0399b506838d55663f634880d235fe",
+  "format": "sdk03-UR-official-communication-profile-v1",
+  "full_Stage_A_acceptance": false,
+  "hardware_plugin": "mock_components/GenericSystem",
+  "id": "jazzy-ur5e-GenericSystem-stage-a-communication",
+  "joints": [
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "shoulder_pan_joint",
+      "sign": 1,
+      "slot": 0,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "upper_microrad": 6283185,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "shoulder_lift_joint",
+      "sign": 1,
+      "slot": 1,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "upper_microrad": 6283185,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -3141592,
+      "max_step_microrad": 10000,
+      "native_joint": "elbow_joint",
+      "sign": 1,
+      "slot": 2,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "upper_microrad": 3141592,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "wrist_1_joint",
+      "sign": 1,
+      "slot": 3,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "upper_microrad": 6283185,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "wrist_2_joint",
+      "sign": 1,
+      "slot": 4,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "upper_microrad": 6283185,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "wrist_3_joint",
+      "sign": 1,
+      "slot": 5,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "upper_microrad": 6283185,
+      "zero_offset_microrad": 0
+    }
+  ],
+  "known_missing_unwind_runtime_sha256": "623de8c3ffee2df67932c4313aee574297d8537341b4acc29018fab1f1107ecc",
+  "model": "ur5e",
+  "new_public_commands_run": 0,
+  "official_mode": "official-mock-hardware",
+  "official_source": {
+    "commit": "55854cceb1b319dfa6e9333d2c64671c80f4e5f1",
+    "license": "BSD-3-Clause",
+    "mode": "official-mock-hardware",
+    "repository": "https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver",
+    "scope": "UR5e Jazzy original 3.9.0 driver, GenericSystem native reference only"
+  },
+  "release": "jazzy",
+  "resources": {
+    "controller_status_service": "/controller_manager/list_controllers",
+    "joint_state_topic": "/joint_states",
+    "position_action": "/joint_trajectory_controller/follow_joint_trajectory"
+  },
+  "scope": "Stage A real official ROS communication; no physical/vendor Stage B acceptance",
+  "source_consumed_capability_sha256": "be7f837201fa65e43cd972e576c096c583f41bb25a1ea7cd45c5de15e428b96c",
+  "vendor": "universal_robots"
+}

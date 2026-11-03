@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "uwvm-native-source-inputs-v1",
+  "title": "Native-only source constructor inputs; never execution authority",
+  "type": "object",
+  "required": [
+    "format",
+    "scene",
+    "entrypoint",
+    "ready_format",
+    "arguments",
+    "inputs"
+  ],
+  "properties": {
+    "format": {
+      "const": "uwvm-native-source-inputs-v1"
+    },
+    "scene": {
+      "enum": [
+        "turtlebot3",
+        "scout",
+        "rrbot",
+        "go2",
+        "ur"
+      ]
+    },
+    "entrypoint": {
+      "type": "object",
+      "required": [
+        "path",
+        "bytes",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ready_format": {
+      "type": "string"
+    },
+    "arguments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "bytes",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "preparation": {
+      "type": "object"
+    },
+    "native_output_role": {
+      "type": "string"
+    },
+    "trace_origin": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Arguments are literal argv strings with only {sdk},{output},{ready},{stop},{live_seconds} placeholders. The strict producer must bind this full config,public native entrypoint,source/dependency closure,VM/caller/memory/resources and whole timeline; JSON/file readiness creates no authority."
+}

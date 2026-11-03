@@ -1,0 +1,143 @@
+{
+  "format": "unitree-go2-public-native020-application-interface-v1",
+  "native_scene": {
+    "path": "example/platform/unitree/simulation/unitree_ros2_go2_stand/scene.binding.json",
+    "bytes": 4624,
+    "sha256": "3ab1bc9b099dcdb10724a59989e2ed886cd86f43859be9d1625b6dd6c6a32097"
+  },
+  "native_sources": [
+    {
+      "path": "example/platform/unitree/simulation/unitree_ros2_go2_stand/native_scene.py",
+      "bytes": 18861,
+      "sha256": "4bd5280d5ab6f4904703f60b22ceb5246a5de6aea44dc146a11d270bfffd9425"
+    },
+    {
+      "path": "example/platform/unitree/simulation/unitree_ros2_go2_stand/native_launcher.py",
+      "bytes": 4061,
+      "sha256": "abd5497821619ee30c700d7733423e9761de4c89443929dfd614b0b35d9ffa36"
+    },
+    {
+      "path": "example/platform/unitree/simulation/unitree_ros2_go2_stand/native_scene.lua",
+      "bytes": 901,
+      "sha256": "c55b9d0c9eca7f0713745752405115b360b252799738e255128e26bf157b7c3c"
+    },
+    {
+      "path": "example/platform/unitree/simulation/unitree_ros2_go2_stand/native-prerequisites.json",
+      "bytes": 3816,
+      "sha256": "520335742d726be86360321307b29e3eb0ef76064eec3418a95b423e8a9d17ff"
+    }
+  ],
+  "model": {
+    "robot": "go2",
+    "actuators": 12,
+    "sensors": 41,
+    "scene_sha256": "6c1fda780e7883665d1c84113b9275b6d448f586a8b1c110e438a37417cbccd0"
+  },
+  "versions": {
+    "unitree_mujoco_commit": "1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d",
+    "unitree_sdk2_python_commit": "814556d15970dd2ecf1c9984e845ca02ab07e206",
+    "mujoco": "3.3.6",
+    "unitree_sdk2py": "1.0.1",
+    "cyclonedds_python": "0.10.2",
+    "cyclonedds_core": "0.10.5",
+    "numpy": "2.2.6"
+  },
+  "selected_endpoint": "Original official simulate_python UnitreeSdk2Bridge with MuJoCo model/actuatorPD/nativeDDS only; currentpublic020 guardedthread/channel/factory/filesystem cleanup.",
+  "application": "Complete originalC++ fourstage interpolation/CRC/finalhold/callback/ROSlogic executes trueWasm. Originalbody/2ms/499wait/500firstpub/all20motors andexistinggrants unchanged.",
+  "rates": {
+    "selected_native_python_lowstate_hz": 200,
+    "original_application_timer_hz": 500,
+    "selected_model_integration_hz": 500,
+    "separate_unselected_cpp_bridge_scheduler_hz": 1000,
+    "not_interchangeable": true,
+    "actualwall_hz_and_causal_sampling_qualified": false
+  },
+  "interfaces": [
+    {
+      "alias": "unitree-go2-lowcmd",
+      "ROS_resource": "/lowcmd",
+      "native_DDS_topic": "rt/lowcmd",
+      "ROS_type": "unitree_go/msg/LowCmd",
+      "canonical_bytes": 749,
+      "native_type_or_CDR_extent_qualified": false
+    },
+    {
+      "alias": "unitree-go2-lowstate",
+      "ROS_resource": "/lowstate",
+      "native_DDS_topic": "rt/lowstate",
+      "ROS_type": "unitree_go/msg/LowState",
+      "canonical_bytes": 1050,
+      "native_type_or_CDR_extent_qualified": false
+    }
+  ],
+  "mapping_requirement": "Actual sameprocess finalVM/gateway/nativefactory exactHumble Cyclone typesupport/DDS typename/RIHS/codec/session/sequence/QoS andresource-to-DDS mapping must be enrolled. Literalmatching ROS-to-DDS names are requirements, not a privateROS remap orsuccessfulinterop proof.",
+  "native_trace": {
+    "origin": "native-object-reserialization",
+    "operation": "msg.serialize() on the native callback/state object",
+    "rmw_received_cdr": false,
+    "rtps_receive_capture": false,
+    "wire_delivery_or_guest_memory_proof": false,
+    "driver_packet_counts": "Compatibility field counting object reserialization observations only"
+  },
+  "primary": "Actualunique200Hz nativeLowState capture/ready -> actualoriginal Wasm LowState callback completion andmatchednativeROScallback; enrollsameclock native/IPC/VM/callback chain. Existing observed500Hz LowCmdWrite timer tick/end is secondary anddoesnotmake200Hzprimarysamples.",
+  "current_native_020_scope": [
+    "020 actual public Xmake native endpoint startup/normal local thread/channel/factory shutdown",
+    "020 explicit native-object-reserialization provenance and retained raw serialized bytes; no received CDR/guest memory proof",
+    "020 current-source native owner-loss and fresh restart from exact terminal/retired predecessor; guest task resume NOT_RUN"
+  ],
+  "current_native_owner_restart_jobs": [
+    "04-go2-guarded-cleanup-ready-denied-r2",
+    "04-go2-guarded-cleanup-trace-denied-r2",
+    "04-go2-guarded-cleanup-positive-r2",
+    "04-go2-native-cleanup-method-errors-r1",
+    "04-go2-native-partial-construction-r1",
+    "04-go2-public-native-020-owner-loss-r1",
+    "04-go2-public-native-020-fresh-restart-r1"
+  ],
+  "launch": "Use existingnative_scene.lua/native_launcher.py withfreshbundle/current020sourcehash andcanonicalsharedconstructor. Launcher<=300live seconds,2GiB/2CPUchild budget; no03venv/nativeimplementation ordaemon. ExactPID/birthreadyfile isobservationnotauthority.",
+  "full_lifecycle": "Current020normalcleanup/ready-traceEACCES/methoderrors/partialctor/ownerloss/freshrestart applytonativeenvironmentonly. Preserveevery cleanup failure. Actualtaskfaults/cancel/safestop/newsession/fullwarmup+120/recovery remainunqualified.",
+  "VM_coherence": "OldUnitreetypedVM5450232e... andcurrent818String/logcapacity fixtures cannotcombine asoneGo2task proof. RequireoneactualselectedcurrentVM supportingalloriginaltypedoperations andsourcecollector enrollment.",
+  "application_permissions_changed": false,
+  "production_admission": false,
+  "original_task_runtime": "NOT RUN",
+  "official_simulation_pass": 0,
+  "formal_performance": "NOT RUN",
+  "public_native_source_session021": {
+    "descriptor": {
+      "path": "example/platform/unitree/simulation/unitree_ros2_go2_stand/native-source.json",
+      "bytes": 2150,
+      "sha256": "5f75fec88d910584ee534dac75f6e3cfb11ce137311c73f1199e02d1b0cb41c4"
+    },
+    "session_source": {
+      "path": "example/platform/ros/simulation/native_source_session/native_source_session.py",
+      "bytes": 12246,
+      "sha256": "fc8b5cfa90651b1ea840c0e3506d64cb76a9faa4cf2398f0497ce57763acf4a0"
+    },
+    "public_entry": {
+      "path": "example/platform/ros/simulation/native_source_session/native_source_session.lua",
+      "bytes": 948,
+      "sha256": "67f8258038e6e37eb71667b120e1876d0519370e5e78c1b1652d145a900d48f1"
+    },
+    "consumer_contract": {
+      "path": "example/platform/ros/simulation/native_source_session/consumer-interface.json",
+      "bytes": 4366,
+      "sha256": "89f826306eb6ae271fd2b59ba48b1dcc8835326aa642fa1b3042678ce99a51c8"
+    },
+    "phase_budget": {
+      "path": "example/platform/ros/simulation/native_source_session/phase-budget.json",
+      "bytes": 2281,
+      "sha256": "20207dcf13dc3feba7699fd4e4cb0e4156dcf621018dde695116bf807c1ce0c3"
+    },
+    "meaning": "Public021 wraps unchanged020native driver/physics endpoint with current sourceentry/ready/live/retirement ownership. Use existingcommonconstructor outputs andcurrentpublicsession, not a03nativeimplementation. Rootreadonlysource/typedproducer/actualWasm authority remainsrequired.",
+    "native_postready_seconds_maximum": 300,
+    "source_live_seconds_maximum": 290,
+    "native_generation_queue_seconds": 450,
+    "two_native_generation_declared_window_seconds": 1040,
+    "native_observer_warmup_seconds": 20,
+    "warmup_is_full_original_application_epoch": false,
+    "full_original_application_fourstage_hold_cancel_fault_recovery_qualified": false,
+    "ready_snapshot_or_native_owner_restart_is_guest_authority": false,
+    "clock": "Source021 phases arehostMONOTONIC; externalwholeappgenerationmustrecordbeforeexec-to-allretired/drained andcalibratedsameclock asactualprimary.1040/290/20arenotautomaticfullapp/performancefit.",
+    "additional_source_capacity_and_performance": "Keep originalGo2primary200Hz vs500HzLowCmdWritetimer, all4stage/CRC/hold/cancel unchanged. Exactactualrawsource/callback/IPC/memory/perf/lifecycle plusnative/reference/profile/disk/PID budgetstillunqualified. No0.002timer/200Hzcounts substituted forcausalprimary."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "format": "uwvm-sdk-proc-leaf-candidate-disposition-v1",
+  "version": "0.4.0",
+  "status": "REJECTED_FOR_PUBLIC_ADMISSION_FIXED_PROC_LEAF_CANDIDATE",
+  "basis_decision_sha256": "547c718a0a115e873ad69c96d21552aca378222925e0021ee6392a5fb88bea57",
+  "basis_repair_sha256": "48cb7688731a42327dddf2e066112fbd188d8e8bf3a070d2ea51e89afc742afa",
+  "original_boot_id": "4a4ef5a2-2ae7-4680-9e31-7dc620a8033f",
+  "current_boot_id_at_intake": "11460767-5958-478c-b45e-6d64cca05bf1",
+  "historical_negative_semantics_are_current_execution_admission": false,
+  "actuals": [
+    {
+      "question": "K0",
+      "result": "18 cap0 UID0 protected reopens EACCES,15 retained reads succeeded,3 selfsame kcmp EPERM; exact UID0 diagnostic, not formal UID1000 witness qualification."
+    },
+    {
+      "question": "K1/K2",
+      "result": "Both exact UID1000 unconfined host-role cases opened/sent19 scoped proc leaf readers; same-profile diagnostic receiver received/read19 per case under caps0/NNP1/seccomp2/docker-default. SDK public consumer not executed."
+    },
+    {
+      "question": "K3",
+      "result": "Two same-PID/same-birth Python-to-sleep execs retained old cached maps; cached mapping also survived exit. Rewind EOF/ESRCH in non-shared-mm cases does not establish current task-mm relation; shared-mm survivor untested; receiver direct exe readlink EACCES13."
+    },
+    {
+      "question": "K4",
+      "result": "Two actual target FD slots reused different sealed memfd inodes; cached partial fdinfo returned old inode, rewind and independent reader returned new. Challenge/timestamp cannot prove atomic current FD-table census."
+    },
+    {
+      "question": "K5",
+      "result": "386 role FD occurrences require774 paired handles,651 even with payload device/inode deduplication. Unchanged max512; complete source/import/executable/namespace census and streaming250ms/500ms unproved."
+    },
+    {
+      "question": "K6",
+      "result": "Four actual cgroup membership/VFS joins succeeded; all20 target pid/mnt/user/cgroup/time readlinks EACCES13. cgroup.procs exposed zero entries in receiver view; no false host PID visibility."
+    },
+    {
+      "question": "K7",
+      "result": "Narrow lease fdinfo/global locks/RO canonical inode observed; no canonical OFD transferred. Host selfsame kcmp0 and distinct positive1/2, receiver same/distinct both-1/EPERM1. Unsigned host kcmp is not safe-description authority."
+    }
+  ],
+  "public_UR_executed": 0,
+  "actual_public_refusals": 0,
+  "source_approvals": 0,
+  "same_R2_benign_executed": false,
+  "scope": "Rejects the measured R842 proc-leaf candidate. Does not prove every possible future architecture or kernel interface impossible.",
+  "forbidden": [
+    "v3 root enrollment or root proxy/service",
+    "Capability/LSM/dumpability/credential/authentication/permission relaxation",
+    "Ignored fdinfo EACCES or receiver kcmp EPERM",
+    "Cached proc objects/timestamp/sender JSON as live authority",
+    "Silent512 or250ms/500ms expansion",
+    "Old-boot path/PID/lease/proof inheritance"
+  ],
+  "next": "A materially different closed public SDK entry can be considered only with an explicit source-owned trust-domain contract and actual current-boot kernel/lifecycle proof; no accepted implementation or source/runtime admission exists."
+}

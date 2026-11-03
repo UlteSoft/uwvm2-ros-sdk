@@ -112,8 +112,11 @@ trajectory applications contain a synthetic loopback fixture only; forwarding
 that fixture to a physical controller is outside its contract. No example
 switches controllers, plays a Dashboard program, grants an alias or certifies
 physical stopping. Read the platform's `CONTROLLERS.md` before any independently
-authorized native integration. Tests live in the unified repository test tree,
-and are not a dependency of the installed SDK example build.
+authorized native integration. Developer-facing official simulation fixtures belong in the installed SDK
+examples under `c/official_webots`; the common Xmake test integration is owned by
+SDK01 and remains pending. Independent qualification harnesses, raw logs and
+evidence archives stay in the VM repository. Required public simulation tests
+must return non-success when prerequisites are missing.
 
 Current qualification is recorded separately in the task 07 round-two handoff.
 The presence of these sources or a catalog entry is not a whole-platform pass.

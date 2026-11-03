@@ -11,6 +11,12 @@ function resolve(target)
     import("core.project.config")
     local arch = target:arch()
     local plat = target:plat()
+    -- A target-local declaration may not silently replace an explicit Xmake
+    -- selection. Every provider receives the exact configured width/profile.
+    assert(not config.get("arch") or config.get("arch") == arch,
+           "Configured architecture conflicts with the source target: " .. tostring(config.get("arch")) .. " / " .. tostring(arch))
+    assert(not config.get("plat") or config.get("plat") == plat,
+           "Configured WASI platform conflicts with the source target: " .. tostring(config.get("plat")) .. " / " .. tostring(plat))
     assert(arch == "wasm32" or arch == "wasm64", "Select wasm32 or wasm64")
     local profiles = {
         ["wasm-wasip1"] = {preview = 1, threads = false},
@@ -59,7 +65,8 @@ end
 -- @param target Current application target.
 function configure(target)
     for _, key in ipairs({"language", "platform", "scenario", "distribution", "options",
-                            "exceptions", "features", "run_config", "version", "variant", "entry"}) do
+                            "exceptions", "features", "run_config", "version", "variant", "entry",
+                            "artifact_kind", "memory_import"}) do
         local invalid = target:values("ros.sdk.invalid." .. key)
         assert(not invalid, invalid or "Invalid SDK declaration")
     end
@@ -77,6 +84,15 @@ function configure(target)
     local root = target:values("ros.sdk.root")
     import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).configure(target)
     local selected, root, context = provider(target)
+    if context.language == "c" or context.language == "cpp" or context.language == "c_ffi_bridge" then
+        assert(not context.memory_import and context.artifact_model ~= "dynamic" and context.artifact_model ~= "independent",
+               "BLOCKED: C-family explicit shared-memory stack/allocator ABI and independent multi-memory lowering are not implemented")
+    elseif context.memory_import or context.artifact_model == "dynamic" or context.artifact_model == "independent" then
+        -- A binary with an imported communication memory may have no Xmake
+        -- dependencies. Its explicit memory ABI still requires an adapter
+        -- declaration before platform configuration or compilation begins.
+        import("language_adapter", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).load(root, context)
+    end
     assert(type(selected.configure) == "function", "Provider must implement configure(target, root, context)")
     selected.configure(target, root, context)
 end
@@ -111,6 +127,10 @@ function build(target)
     local bytes = io.readfile(target:targetfile(), {encoding = "binary"})
     assert(bytes and bytes:sub(1, 8) == (target:kind() == "static" and "!<arch>\n" or "\0asm\1\0\0\0"),
            "Expected a genuine Wasm module or real indexed static archive")
+    if target:kind() ~= "static" and (context.language == "c" or context.language == "cpp" or context.language == "c_ffi_bridge") then
+        local metadata = import("wasm_module", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
+        target:data_set("ros.sdk.module_metadata", metadata.describe(metadata.inspect(bytes)))
+    end
     local declared = {}
     for _, candidate in pairs(project.targets()) do
         if candidate:values("ros.sdk.root") then declared[path.absolute(candidate:targetfile())] = true end

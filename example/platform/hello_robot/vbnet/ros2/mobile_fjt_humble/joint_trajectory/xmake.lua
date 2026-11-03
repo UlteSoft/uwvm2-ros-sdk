@@ -17,6 +17,7 @@ if not root then
     end
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/platform/hello_robot/xmake/required_guest_tests.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -32,4 +33,6 @@ target("hello_robot_joint_trajectory")
     set_ros_scenario("joint_trajectory")
     set_values("ros.sdk.main_class", "uwvm.hello_robot.example.Main")
     add_files("Main.vb")
+    uwvm_hello_robot_required_guest_tests({scenario = "joint_trajectory",
+        cases = {"guest-contract-normal", "guest-contract-denied", "guest-contract-invalid-input", "guest-contract-cleanup"}})
 target_end()

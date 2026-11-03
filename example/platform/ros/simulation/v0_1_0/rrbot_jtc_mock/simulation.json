@@ -1,0 +1,266 @@
+{
+  "format": "uwvm-sdk-simulation-example-v1",
+  "api_version": 1,
+  "profile": {
+    "id": "ros-jazzy-rrbot-jtc-software-mock-v0.1.0",
+    "ros_release": "jazzy",
+    "os": "Ubuntu 24.04",
+    "architecture": "x86_64",
+    "official_repository": "https://github.com/ros-controls/ros2_control_demos",
+    "official_commit": "3c35e783e268e5235bb042a71c68112a3ecb777e",
+    "model": "example_1/RRBot",
+    "mode": "RRBotSystemPositionOnlyHardware + official JointTrajectoryController",
+    "simulation_class": "official_software_mock",
+    "physics": false,
+    "qualification": "BLOCKED_FULL_WASM_MIGRATION"
+  },
+  "frozen_wasm": {
+    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+    "bytes": 4449
+  },
+  "python_dependencies": [
+    "ament_index_python",
+    "launch",
+    "launch_ros",
+    "xacro"
+  ],
+  "official_dependencies": [
+    "ros2_control_demo_example_1",
+    "ros2_control_demo_description",
+    "controller_manager",
+    "joint_trajectory_controller",
+    "joint_state_broadcaster",
+    "robot_state_publisher",
+    "rmw_fastrtps_cpp"
+  ],
+  "official_source_pins": [
+    {
+      "repository": "https://github.com/ros-controls/ros2_control_demos",
+      "commit": "3c35e783e268e5235bb042a71c68112a3ecb777e",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/ros-controls/ros2_control_demos/3c35e783e268e5235bb042a71c68112a3ecb777e/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "repository": "https://github.com/ros-controls/ros2_control_demos",
+      "commit": "3c35e783e268e5235bb042a71c68112a3ecb777e",
+      "path": "example_1/bringup/launch/rrbot.launch.py",
+      "url": "https://raw.githubusercontent.com/ros-controls/ros2_control_demos/3c35e783e268e5235bb042a71c68112a3ecb777e/example_1/bringup/launch/rrbot.launch.py",
+      "bytes": 3909,
+      "sha256": "9e6d4d8c96079639939306305f29a5ff47fbf1590a2ed364016c853932b6a00f"
+    },
+    {
+      "repository": "https://github.com/ros-controls/ros2_control_demos",
+      "commit": "3c35e783e268e5235bb042a71c68112a3ecb777e",
+      "path": "example_1/bringup/config/rrbot_jtc.yaml",
+      "url": "https://raw.githubusercontent.com/ros-controls/ros2_control_demos/3c35e783e268e5235bb042a71c68112a3ecb777e/example_1/bringup/config/rrbot_jtc.yaml",
+      "bytes": 576,
+      "sha256": "aeb1fe4b0eb4ab3769e0ce8ef503f76bc5fc0f33de9d5118680030f5d455790c"
+    },
+    {
+      "repository": "https://github.com/ros-controls/ros2_control_demos",
+      "commit": "3c35e783e268e5235bb042a71c68112a3ecb777e",
+      "path": "example_1/package.xml",
+      "url": "https://raw.githubusercontent.com/ros-controls/ros2_control_demos/3c35e783e268e5235bb042a71c68112a3ecb777e/example_1/package.xml",
+      "bytes": 2151,
+      "sha256": "ae6893e888de01f8a28ae41a07fc9dd3247e604237906e016fbef51e2899a4b5"
+    }
+  ],
+  "dependency_closure": "Complete installed package/source/compiler/ABI/plugin closure with exact versions is mandatory in VM-owned deployment; copied source pins alone do not qualify installation.",
+  "required_observation_contract": "uwvm-sdk-simulation-command-binding-v1",
+  "scenarios": [
+    {
+      "id": "bounded-joint-step",
+      "kind": "joint",
+      "adapter": "adapters/allow.json",
+      "grant": "grants/allow.json",
+      "expected_vm_exit": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "permission-denied-no-effect",
+      "kind": "denied",
+      "adapter": "adapters/deny.json",
+      "grant": "grants/deny.json",
+      "expected_vm_exit": 13,
+      "deadline_seconds": 30
+    }
+  ],
+  "open_required_matrix": [
+    "ROS release/ABI history and active Humble/Jazzy/Kilted/Lyrical provider qualification",
+    "aarch64 and remaining architectures",
+    "All remaining owned official models/modes",
+    "Physics, navigation and reverse sensor bytes",
+    "Security, cancellation/timeout/restart, native performance, debug/audit/update and deploy/rollback",
+    "Other language/static/shared graphs as additional coverage"
+  ],
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "024589f38c1f5bf9827c23ab8393295f8af724cd5379c9e1019a7943068a010e"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh-CN.md",
+      "sha256": "1d437f48b1ddad8d8d6b312ba05df7abe3a18627ae2a161592c6b008b0427998"
+    },
+    {
+      "scope": "example",
+      "path": "adapters/allow.json",
+      "sha256": "c847e37b215a5134cf1322674cce4de759a4e277e216522a6d1ea9d83242d0d0"
+    },
+    {
+      "scope": "example",
+      "path": "adapters/deny.json",
+      "sha256": "862e04743e8520a6d04dfc8df79e2955a029aea9ffda748a234531b40b3ae57d"
+    },
+    {
+      "scope": "example",
+      "path": "grants/allow.json",
+      "sha256": "482e0ea25b94d97523cec1dfb5ca5d30d0575ca7ab4791164ad4af33db3e58fb"
+    },
+    {
+      "scope": "example",
+      "path": "grants/deny.json",
+      "sha256": "486115e18194ab36bf7761af3ce31f56a4a5295d54c9f0db9b70bf131a96a8f6"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/example_1/bringup/config/rrbot_jtc.yaml",
+      "sha256": "aeb1fe4b0eb4ab3769e0ce8ef503f76bc5fc0f33de9d5118680030f5d455790c"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/example_1/bringup/launch/rrbot.launch.py",
+      "sha256": "9e6d4d8c96079639939306305f29a5ff47fbf1590a2ed364016c853932b6a00f"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/example_1/package.xml",
+      "sha256": "ae6893e888de01f8a28ae41a07fc9dd3247e604237906e016fbef51e2899a4b5"
+    },
+    {
+      "scope": "example",
+      "path": "scene/controllers.yaml",
+      "sha256": "01b0659e975feb15a3c63e862e0c7a474d4eacf99997240fa2764026ffc19ce7"
+    },
+    {
+      "scope": "example",
+      "path": "scene/official_scene.py",
+      "sha256": "62d06e602b233cfd0a1afd2bddc4b38735babf184e5f5f687d1a06a6b7078ece"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "19c557afeb45b75ba6a1ee9f74030bb8e725cb16a30867febdb2715401bf6ad6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "sha256": "2333b770ff5b9e05bd83a6ea113fa4a585ae8ade8f991be21225af3de6d112f0"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/simulation_example.py",
+      "sha256": "5ec836c7c9573f1cf9febc980df2bd5e2956cc02ca5cfebfbbb924663c642c91"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/shared/simulation_examples/v0.1.0/contracts.json",
+      "sha256": "bd376ff5e7735eb8a37d5a7b58d9831b24608c33b01b4e1c2ee2c769c7242987"
+    },
+    {
+      "scope": "sdk",
+      "path": "document/shared/en_US/simulation_examples/v0_1_0/README.md",
+      "sha256": "6d8cc334e29aee45e3609a00a0db93d619ef3c3369fa038c61f418b23ecbe99f"
+    },
+    {
+      "scope": "sdk",
+      "path": "xmake.lua",
+      "sha256": "1a61d8ce5a1a9e512121adb75a2e76050288a5763d0d8a6035581f8459f3a428"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/repository.lua",
+      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/language_entry.lua",
+      "sha256": "c1f9d6a02a2dcc16f4e6a3b3e30716f8292a743eb6bfba1d7491944d9ddc6062"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/runtime_boundary.py",
+      "sha256": "2a78d6cc7873c8b7c0131f981d6132d1a9b9dc72afb13214c5f1b08363945c18"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/actor_gate.py",
+      "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/actor_control.py",
+      "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/guest_feedback.py",
+      "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/example_process.py",
+      "sha256": "d3c06e8ee14a6ad191385e9186af2655a04a0b9bda66ea2b0763187aeb27a7da"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/portable_contract.py",
+      "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/trusted_control.py",
+      "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/contract.json",
+      "sha256": "df06eb92025bb48d2fcb270a5725886986e020c949723141b091ef3ca7018321"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/approved-producers.json",
+      "sha256": "4f701e90d06f6cacd4ed759890abee1cd429467326355cdda3a00cca64855f97"
+    }
+  ],
+  "required_implementation": {
+    "status": "BLOCKED",
+    "diagnostic": "BLOCKED_REQUIRED_WASM_ROS_QUERY_FEEDBACK_IMPLEMENTATION",
+    "requirements": [
+      "Real supported ROS client application and client-side implementation compiled to Wasm",
+      "ROS controller query, result, callback and state feedback consumed by executing Wasm",
+      "VM-owned permission/audit and reverse feedback verifier with actual module/import/native operation identities",
+      "Public Linux xmake and xmake test plus denied-operation no-effect and exact official simulation qualification"
+    ]
+  }
+}

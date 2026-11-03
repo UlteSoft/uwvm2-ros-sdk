@@ -1,0 +1,203 @@
+{
+  "format": "uwvm-sdk-simulation-example-v1",
+  "profile": {
+    "id": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
+    "vendor": "abb",
+    "official_controller_type": "joint_trajectory_controller/JointTrajectoryController",
+    "native_joint_names": [
+      "A motor",
+      "B motor",
+      "C motor",
+      "D motor",
+      "E motor",
+      "F motor",
+      "finger_1_joint_1",
+      "finger_2_joint_1",
+      "finger_middle_joint_1"
+    ]
+  },
+  "frozen_wasm": {
+    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "python_dependencies": [],
+  "scenarios": [
+    {
+      "id": "unchanged_wasm_joint_step",
+      "kind": "positive",
+      "required": true,
+      "expected_vm_exit": 0,
+      "deadline_seconds": 45
+    },
+    {
+      "id": "denied_permission_no_native_effect",
+      "kind": "denied",
+      "required": true,
+      "expected_vm_exit": 13,
+      "deadline_seconds": 45
+    },
+    {
+      "id": "bounds_stale_foreign",
+      "kind": "lifecycle",
+      "required": true,
+      "expected_vm_exit": 1,
+      "deadline_seconds": 45
+    },
+    {
+      "id": "cancel_timeout_disconnect",
+      "kind": "lifecycle",
+      "required": true,
+      "expected_vm_exit": 1,
+      "deadline_seconds": 45
+    },
+    {
+      "id": "pause_restart_update_rollback",
+      "kind": "lifecycle",
+      "required": true,
+      "expected_vm_exit": 1,
+      "deadline_seconds": 45
+    }
+  ],
+  "required_matrix": "matrix.required.json",
+  "physical_robot_authorized": false,
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "6ea17ac6a23482d89656737176bc04813e2ffa19aae9613ad55ae71745d80da8"
+    },
+    {
+      "scope": "example",
+      "path": "abb-controller.yaml",
+      "sha256": "9147c2ceddbbaef1ee845106d6afabb8a2bcf67f84bdc1f4afef8fe98934503f"
+    },
+    {
+      "scope": "example",
+      "path": "abb-driver.urdf",
+      "sha256": "cc576bc9c9ac1de46a7c9290f126f80267ae5648751ba3846de0b18de8f6e385"
+    },
+    {
+      "scope": "example",
+      "path": "abb.wbt",
+      "sha256": "47fe05009fc9216d038e14a10414ba670008823fb438d75620777bf66ec1558f"
+    },
+    {
+      "scope": "example",
+      "path": "authority.request.json",
+      "sha256": "d1243c96474ae31b2c3006683869cf07147541b2e94b4d25022a29c6702fba76"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "b33fe0e029a1cf863ee8cb5400a5827a640f5babd763d888ad8f65b78ece68f8"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "scope": "example",
+      "path": "mapping.request.json",
+      "sha256": "eeb71f9dde069aa06e76b98c9288a94e8d43b7f4acfd9ca2f3970a5af9cac511"
+    },
+    {
+      "scope": "example",
+      "path": "matrix.required.json",
+      "sha256": "e1e7322a5527030338b7bfe231b100e12930637f394a021e5e3b453488d1c525"
+    },
+    {
+      "scope": "example",
+      "path": "model.source.lock.json",
+      "sha256": "465a5b7d9df6114f59c0aabe901a61101736b51c06f6b999bc28366ada2d6efe"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/webots_ros2_control/package.xml",
+      "sha256": "f706e2fe1a37a07c8c0be99fdceeed8eb966d1df5d69d6addf19f3206eee7043"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/webots_ros2_driver/package.xml",
+      "sha256": "5208a9814c97e78c0d4c60e667a165c61ebcfc817d2b6b141a30c373ca9545c0"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/webots_ros2_importer/package.xml",
+      "sha256": "78be688c740e6e58fa7cad1c198e6578c2d144e6cb2ff1002e3d2f074fa93863"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/webots_ros2_msgs/package.xml",
+      "sha256": "b9240849de541317d921743b8ccf34f024e833a833e5a5c7cfb5ba18b66cf09a"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/webots_ros2_universal_robot/package.xml",
+      "sha256": "6ec8d2270ce7b0b147e998a9a3b5416300cb988602ac1ba0235c22a871a12e9d"
+    },
+    {
+      "scope": "example",
+      "path": "provider.dependencies.json",
+      "sha256": "ec1c70d23a9d63ae2649b037c5ab5ae0a2eec41ec221f034fbd94e4dbfb61878"
+    },
+    {
+      "scope": "example",
+      "path": "provider.source.lock.json",
+      "sha256": "9fbde8379cbf3d262eb0b9e863d4419db0483a0db50befe040b9be6e0aad2aec"
+    },
+    {
+      "scope": "example",
+      "path": "release.applicability.json",
+      "sha256": "75c7c51fd3d05ca8e7b59a20e0c783247d9495d05e68b01d42f606113aaf3e77"
+    },
+    {
+      "scope": "example",
+      "path": "run_scene.py",
+      "sha256": "a6770f27ac5e74458316b08ddf09a5243df18c83e173e8dd1cc281e1377bcf33"
+    },
+    {
+      "scope": "example",
+      "path": "runtime-dependencies.lock.json",
+      "sha256": "cd18e7ab72c024c7e2a993614ccdb5025fc1185e5514d2c81e9022693a61a9bd"
+    },
+    {
+      "scope": "example",
+      "path": "scene.launch.py",
+      "sha256": "d96e4de96fe0527c3d5f8d25304404ba8d80ca2fdd237aa83253c6a906712be0"
+    },
+    {
+      "scope": "example",
+      "path": "simulation.profile.json",
+      "sha256": "62e62974e0ba80cad6c2a390f23cccb2d414f4e15f966062ead26f978abdc61e"
+    },
+    {
+      "scope": "example",
+      "path": "vendor-config.lock.json",
+      "sha256": "f51cadb87dd5880b45bfee58497f0e65307a6ec265fc0a390469ee91a492038b"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "5eff4535c41563839d7ba6fb7a87a4043f466762f01f3a52842da12c2cf5dc9e"
+    }
+  ],
+  "migration_status": "BLOCKED_REQUIRED_FULL_WASM_ROS_LIBRARY_MIGRATION",
+  "native_witness_implementation_in_public_SDK": false,
+  "required_implementation": {
+    "status": "BLOCKED",
+    "diagnostic": "BLOCKED_REAL_WASM_ROS_MIGRATION_REQUIRED",
+    "requirements": [
+      "Actual guest ROS client libraries, query/callback/state processing and their pinned compiler/message/runtime closure",
+      "Production VM command/result and reverse-feedback audit binding the executing unchanged Wasm, grants and official provider",
+      "Public Linux xmake and xmake test with permission refusal/no unauthorized effect and all mandatory scenarios executed",
+      "Corresponding original official simulation provider and source-compatible ROS release profile; no native SDK client fallback"
+    ]
+  },
+  "native_environment_role": "Original official simulator/controller and supplied ROS plugins only; no SDK host-native business/query/feedback substitute"
+}

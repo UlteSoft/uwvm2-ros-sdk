@@ -1,0 +1,51 @@
+{
+  "backend": "ros1",
+  "distribution": "noetic",
+  "format": "uwvm-python-transplate-binding-requirements-v1",
+  "host_rospy_business_fallback": false,
+  "import_module": "uwvm_ros1_v1",
+  "intentionally_ungranted_aliases": [
+    {
+      "expected_open_error": 13,
+      "guest_alias": "migration.denied.publish",
+      "native_operation": "topic.publish",
+      "resource": "/migration/denied",
+      "type": "std_msgs/String"
+    }
+  ],
+  "native_roles_require_exact": [
+    "ROS1 TCPROS transport",
+    "queue-depth10",
+    "nonlatched publisher",
+    "String MD5/type-support identity",
+    "bounded full bytes/rate/burst/queues",
+    "original actual caller/generation/decision/result/no-effect audit"
+  ],
+  "qualification": "SOURCE_ONLY_NOT_LINUX_VALIDATED",
+  "required_aliases": [
+    {
+      "guest_alias": "migration.string.publish",
+      "md5": "992ce8a1687cec8c8bd883ec73ca41d1",
+      "native_operation": "topic.publish",
+      "resource": "/migration/echo",
+      "type": "std_msgs/String"
+    },
+    {
+      "guest_alias": "migration.string.subscribe",
+      "guest_output_capacity": 4096,
+      "native_operation": "topic.subscribe",
+      "resource": "/migration/echo",
+      "type": "std_msgs/String"
+    },
+    {
+      "allowed_name_prefix": "/migration",
+      "guest_alias": "migration.graph.topics",
+      "guest_output_capacity": 65536,
+      "native_operation": "graph.list-topics",
+      "resource": "/",
+      "type": "builtin/graph-list-v1"
+    }
+  ],
+  "scoped_WASIp1_clock_and_sleep_required": true,
+  "status": "REQUIREMENTS_ONLY_NO_RUNTIME_GRANTS_CREATED"
+}

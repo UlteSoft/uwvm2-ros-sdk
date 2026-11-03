@@ -1,0 +1,43 @@
+{
+  "format": "uwvm-portable-robot-adapter-v1",
+  "contract_version": "0.1.0",
+  "platform_id": "fourier",
+  "execution_class": "software_simulation",
+  "capability": "joint.position.bounded.v1",
+  "frame": "joint_space",
+  "official_source": {
+    "repository": "https://github.com/FFTAI/Wiki-GRx-Gazebo",
+    "commit": "36170420c2eaa9ca5c0cad7a0c4abdfee2344efe",
+    "license": "GPL-3.0 (root LICENCE); rl_sim package.xml says TODO",
+    "mode": "ROS official mock_components/GenericSystem + JointTrajectoryController",
+    "scope": "One selected vendor-model bounded revolute joint, ideal command-to-state mirroring only"
+  },
+  "ros": {
+    "release": "jazzy",
+    "os_abi": "Ubuntu24.04/x86_64; exact ELF/package closure required",
+    "rmw": "rmw_fastrtps_cpp",
+    "transport": "isolated localhost/private IPC software reference",
+    "security": "DDS security and TLS are separate unqualified profiles"
+  },
+  "resources": {
+    "joint_state_topic": "/uwvm_sim/fourier/joint_state_broadcaster/joint_states",
+    "position_action": "/uwvm_sim/fourier/bounded_position_controller/follow_joint_trajectory",
+    "controller_status_service": "/uwvm_sim/fourier/controller_manager/list_controllers"
+  },
+  "joints": [
+    {
+      "slot": 0,
+      "native_joint": "l_knee_pitch",
+      "kind": "bounded_revolute",
+      "source_unit": "rad",
+      "sign": 1,
+      "zero_offset_microrad": 0,
+      "lower_microrad": -90000,
+      "upper_microrad": 1920000,
+      "max_step_microrad": 10000,
+      "tolerance_microrad": 1000
+    }
+  ],
+  "policy_sha256": "${generated_grant_sha256}",
+  "mapping_epoch": 1
+}

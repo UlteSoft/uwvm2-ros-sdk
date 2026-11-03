@@ -160,11 +160,7 @@ function build(target, root, request)
 	local selected = compiler.selection(root, request.triple, request.exception_profile)
 	local programs = compiler.tools(root)
 	local own_core = core(root, request.language, request.triple)
-	local work = path.join(
-		path.absolute(target:scriptdir()),
-		".uwvm-ros/genuine",
-		artifacts.identity(target)
-	)
+	local work = artifacts.workspace(target, "genuine")
 	local temporary = path.join(work, "tmp")
 	os.mkdir(temporary)
 	local commands = {}

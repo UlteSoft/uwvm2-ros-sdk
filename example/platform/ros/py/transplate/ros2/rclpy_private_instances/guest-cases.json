@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "arguments": [
+        "probe-only"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "format": "uwvm-python-private-memory-self-probe-v1",
+        "independent_instances_qualified": false,
+        "status": "GUEST_SELF_PROBE_COMPLETE"
+      },
+      "id": "private-memory-self-probe-only"
+    }
+  ],
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "genuine-python-private-self-probe-v1",
+  "independent_instance_acceptance": false,
+  "public_inputs": [
+    {
+      "path": "main.py",
+      "scope": "example",
+      "sha256": "8a94e6570ae1aeb4aa3256827c99e39e0ff496d2c2ba756befcf93d969045276"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/private_instances/v1/profile.json",
+      "scope": "sdk",
+      "sha256": "37aed7a95df75bfc97d300e64c1133474b64be67efdec3e16b439afc8653c30e"
+    }
+  ],
+  "two_instance_cases_executed": 0
+}

@@ -1,0 +1,8 @@
+{
+  "format": "uwvm-java-component-runtime-v1",
+  "runtime": "/absolute/installed/runtime/uwvm2-ros",
+  "sha256": null,
+  "source_identity": null,
+  "arguments": ["--runtime-aot"],
+  "environment": {}
+}

@@ -1,0 +1,92 @@
+{
+  "platform": "unitree",
+  "robot": "Go2",
+  "task": "upstream Go2 stand",
+  "commit": "668d1ec5a05d1c38d3306bdca7d59f2ba3581a88",
+  "components": [
+    {
+      "component": "go2_stand_example.cpp",
+      "original": "example/src/src/go2/go2_stand_example.cpp",
+      "wasm_module": "unitree-upstream-go2-stand.wasm",
+      "state": "ORIGINAL_COMPLETE_CPP_BUILD_QUALIFIED;CONCRETE_SELECTION_BUILD_PENDING",
+      "behavior": "Original initialization, 2ms callback, LowState copy, four interpolation stages, full20-motor publication and indefinite final-pose hold; duplicate Init/Start retained.",
+      "remaining": "Whole original class/main remain unchanged. Actual native/simulator application execution is not qualified."
+    },
+    {
+      "component": "motor_crc.cpp/h",
+      "original": [
+        "example/src/src/common/motor_crc.cpp",
+        "example/src/include/common/motor_crc.h"
+      ],
+      "wasm_module": "static libunitree-upstream-go2-motor-crc.a linked into task",
+      "state": "REAL_STATIC_WASM_ARCHIVE_BUILD_QUALIFIED;CURRENT_GRAPH_PENDING",
+      "changes": "Explicit fixed packet layout, zero padding, alias-safe uint32_t copy and unsigned shift; original full field mapping and polynomial retained."
+    },
+    {
+      "component": "unitree_go generated message values/codecs",
+      "original": "cyclonedds_ws/src/unitree/unitree_go/msg",
+      "wasm_module": "inline in the CRC/task graph",
+      "state": "COMPLETE_CODEC_SOURCE_COMPILED_WITH_GENERIC_TYPED_RCLCPP",
+      "remaining": "Full ROSIDL ABI/type support is not ported; task uses complete canonical SDK field values."
+    },
+    {
+      "component": "rclcpp source semantics",
+      "original": "external ROS2 dependency",
+      "wasm_module": "proposed shared SDK source adapter",
+      "state": "TYPED_SHARED_PTR_UNTIL_SHUTDOWN_SDK_SOURCE_API_IMPLEMENTED_BUILD_QUALIFIED",
+      "remaining": "The selected typed Codec/SharedPtr/until_shutdown/WASI APIs are integrated and build-qualified; actual source-selected permissions, callback/timing/lifecycle conformance in the real native official scene remain to be run. Native rclcpp may only be transport/driver infrastructure, never execute this application business logic."
+    },
+    {
+      "component": "Guest ROS API and native ROS2/RMW/Cyclone transport dependencies",
+      "original": "ament_cmake,rclcpp,std_msgs,unitree_go,unitree_hg,unitree_api,rosbag2_cpp",
+      "wasm_module": null,
+      "state": "GUEST_TYPED_API_IMPLEMENTED;NATIVE_TRANSPORT_ENDPOINT_ALLOWED_UNQUALIFIED",
+      "remaining": "Guest-selected ROS operations/callbacks/state handling remain in Wasm. Native gateway/type conversion/RMW may provide transport only with exact types/QoS/permissions and full actual source/license/loaded-file provenance. Unused original global build dependencies are not a reason to require whole native ROS stacks to be Wasm ports."
+    },
+    {
+      "component": "Eigen3/build tooling",
+      "original": "global example CMake requirement",
+      "wasm_module": null,
+      "state": "BUILD_SYSTEM_REPLACEMENT_UNQUALIFIED",
+      "remaining": "Selected TUs do not include Eigen; Xmake replaces CMake/ament build orchestration only. This is not an Eigen port."
+    },
+    {
+      "component": "unitree_mujoco simulator/SDK2 bridge/model/render/physics",
+      "original": "official open-source simulation stack; exact scene lock owned by simulation workstream",
+      "wasm_module": null,
+      "state": "PERMITTED_NATIVE_OFFICIAL_EXTERNAL_ENVIRONMENT_NOT_RUN",
+      "remaining": "Latest explicit user boundary permits native unitree_mujoco, SDK2 driver, actuator PD/physics, model/render and infrastructure. Start the pinned official Go2 environment and prove guest communication; do not wait for these components to become Wasm, or relabel them as application migration PASS."
+    },
+    {
+      "component": "uwvm2-ros VM/native transport boundary",
+      "wasm_module": null,
+      "state": "EXPLICIT_VENDOR_DEPLOYMENT_INPUTS_PREPARED_NOT_QUALIFIED",
+      "remaining": "Explicit source-selected aliases and module-local deployment inputs are provided. Real VM/gateway native registry, exact Humble type/QoS installation, admitted guardian and actual official scene execution remain required; these data checks grant no authority."
+    }
+  ],
+  "accepted": false,
+  "full_port_status": "BLOCKED",
+  "selected_distribution": "humble",
+  "distribution_support": "SOURCE_DECLARATION_ONLY; shared typed source adapter and production framework/middleware closure remain BLOCKED",
+  "source_bindings": "share/platform/unitree/cpp/ros2/go2_stand/source-bindings.json",
+  "concrete_selection": "SOURCE_PREPARED_BUILD_PENDING",
+  "runtime": "NOT RUN",
+  "boundary_revision": "Native official driver/simulation infrastructure is allowed; all application/ROS business logic still must execute inside Wasm.",
+  "optional_callback_observation": {
+    "enabled_by_default": false,
+    "observed_target": "unitree-upstream-go2-stand-observed",
+    "header": "include/platform/unitree/cpp/ros2/go2_stand/callback_observation.hpp",
+    "source_addition": "Three explicit guarded observation blocks; literal source body changed, all original algorithm statements retained unchanged; guarded-off production identity checked in r29.",
+    "actual_callback_tick": "Original motiontime counter, not Selection spin passes; initial1..499 noLowCmd and firstLowCmd500.",
+    "contract": "share/platform/unitree/cpp/ros2/go2_stand/callback-and-cancel-contract.json",
+    "no_native_application_or_fake_event": true,
+    "runtime": "NOT RUN"
+  },
+  "independent_wasm_cancellation": {
+    "project": "example/platform/unitree/c/ros2/humble/upstream_go2_cancel",
+    "publisher_alias": "unitree-go2-stop-request",
+    "task_subscribe_alias": "unitree-go2-cancel",
+    "separate_instance_required": true,
+    "runtime": "NOT RUN"
+  }
+}

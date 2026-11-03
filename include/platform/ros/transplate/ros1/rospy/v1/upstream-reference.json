@@ -1,0 +1,66 @@
+{
+  "format": "uwvm-upstream-source-reference-v1",
+  "licenses": "Original full BSD headers are preserved in upstream-reference; the exception module retains its original BSD header.",
+  "native_source_modules_executed": false,
+  "package": "rospy",
+  "reference_files": [
+    {
+      "bytes": 2547,
+      "path": "package.xml",
+      "sha256": "5a844ef73d5d56d05593a6d0c2dad3426a5d89b87e59699e28651971746ef756",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/package.xml"
+    },
+    {
+      "bytes": 4636,
+      "path": "src/rospy/__init__.py",
+      "sha256": "9e5c4e111abae5c45266c74c2ed83ff045d00b29d4c514d31c09b250460c9159",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/__init__.py"
+    },
+    {
+      "bytes": 20902,
+      "path": "src/rospy/client.py",
+      "sha256": "c9c9d5bcd3484bec94b51aa7cc4fcb3d474d199c088ed96aa3e7139bddb1723b",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/client.py"
+    },
+    {
+      "bytes": 53688,
+      "path": "src/rospy/topics.py",
+      "sha256": "e705097f636798b9c6375bcb6d25916e0a0f432a8a517f581c224e786bd0a766",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/topics.py"
+    },
+    {
+      "bytes": 3143,
+      "path": "src/rospy/exceptions.py",
+      "sha256": "244fdb72aac102d457eea107f04f583160e8e98db4a0c3bdf549ee3641cd053f",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/exceptions.py"
+    },
+    {
+      "bytes": 22637,
+      "path": "src/rospy/core.py",
+      "sha256": "1dec052fbd06f4dce58b5028c3063241f5bcf88c4e8de36c540d0d65d717cc15",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/core.py"
+    },
+    {
+      "bytes": 8899,
+      "path": "src/rospy/rostime.py",
+      "sha256": "f38f5bc94d4a88449434619a199aa0c51f2a3d58fdb7e83b12e4a1cc378c1d9b",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/rostime.py"
+    },
+    {
+      "bytes": 9351,
+      "path": "src/rospy/timer.py",
+      "sha256": "7646b9e4e6bb86cdb3f75fcadadb8c1ebbc0ae747597c77410014073d0d4b642",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/timer.py"
+    },
+    {
+      "bytes": 12444,
+      "path": "src/rospy/names.py",
+      "sha256": "168b3cdc48c37fb339fe9a31f5dc7c3e06fec4b8427ff79c1c123de3d564339d",
+      "url": "https://raw.githubusercontent.com/ros/ros_comm/1.17.4/clients/rospy/src/rospy/names.py"
+    }
+  ],
+  "release_tag": "1.17.4",
+  "repository": "https://github.com/ros/ros_comm",
+  "scope": "API/license references plus selected independently adapted capability implementation; not an unmodified full native rospy distribution.",
+  "version": "1.17.4"
+}

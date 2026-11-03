@@ -54,4 +54,33 @@ target("fourier-php-status")
     set_values("ros.sdk.profile", "ros2_aurora_bridge_v1")
     set_ros_scenario("status")
     add_files("main.php", {rule = "ros.wasm.source"})
+    -- Required execution is pending the actual all-Wasm ROS/client route.
+    -- Keep this project visible to Linux CI and fail instead of zero-test green.
+    add_tests("official-ros-wasm-required")
+    on_test(function(target, opt)
+        import("core.base.json")
+        local diagnostic = "BLOCKED_REQUIRED_FOURIER_WASM_ROS_STATUS: actual guest query/callback audit and official provider qualification are missing"
+        local output = path.join(path.absolute(target:scriptdir()), ".uwvm-ros", "required-tests",
+            path.filename(os.tmpfile({ramdisk = false})))
+        assert(not os.exists(output), "Refusing to overwrite a required test invocation")
+        os.mkdir(output)
+        json.savefile(path.join(output, "blocked.json"), {
+            format = "uwvm-sdk-required-test-blocker-v1", target = target:name(),
+            status = "BLOCKED", diagnostic = diagnostic,
+            application = path.absolute(target:targetfile()),
+            application_sha256 = os.isfile(target:targetfile()) and hash.sha256(target:targetfile()):lower() or nil,
+            count_unit = "required-test-suite",
+            selected = 1, executed = 0, passed = 0, failed = 0, blocked = 1, skipped = 0,
+            required_operation_case_count = 3, selected_operation_cases = 0,
+            executed_operation_cases = 0, blocked_operation_cases = 3,
+            required_cases = {"audited-fresh-status-enters-Wasm", "denied-query-no-native-effect",
+                              "bounded-callback-and-retirement"},
+            missing = {"qualified guest client/query callback contract", "actual audited runtime/provider installation",
+                       "corresponding official Fourier simulation"},
+            xmake_pid = os.getpid(), guest_execution_started = false,
+            native_ROS_application_started = false
+        })
+        opt.errors = diagnostic
+        return false
+    end)
 target_end()

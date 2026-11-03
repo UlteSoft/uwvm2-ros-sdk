@@ -1,0 +1,1121 @@
+{
+  "format": "sdk02-official-provider-source-lock-v1",
+  "profile": "yaskawa-gp8-official-mock-humble",
+  "scope": "Pinned unmodified provider references and declared package dependencies; installed native closure and all scenarios require separate actual execution",
+  "official_source": {
+    "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+    "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+    "license": "BSD-3-Clause in selected model/config packages"
+  },
+  "files": [
+    {
+      "path": "official-reference/starter/src/motoXY/moto_description/CHANGELOG.rst",
+      "source_path": "src/motoXY/moto_description/CHANGELOG.rst",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 950,
+      "sha256": "de4865fe57f7d5acd65635aba2e7bd778acec17e436baf915ea76a9bf64a0c8e",
+      "git_blob_sha1": "55dbe14c0cb98054a55ea88d3e1134283fab3698"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_description/CMakeLists.txt",
+      "source_path": "src/motoXY/moto_description/CMakeLists.txt",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 200,
+      "sha256": "8e96b9d0d661bf7dd79a918ddcb3278d810bda5af99a37178da3de93fe6cabb3",
+      "git_blob_sha1": "63874c500e4891d2a69e70a7ca2373d3e390a262"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_description/LICENSE",
+      "source_path": "src/motoXY/moto_description/LICENSE",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 1577,
+      "sha256": "84fd5e7adf8b18c239ff05bc4ef9c1364392113f38542be79d0798f1ea952cdc",
+      "git_blob_sha1": "81669a60931ef64e13a40770c5e56b358746e81f"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_description/README.md",
+      "source_path": "src/motoXY/moto_description/README.md",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 20,
+      "sha256": "8c0f07a0d503257072a4721e7c549bf9f7e50a62fa2493cd8694a267fc42f27a",
+      "git_blob_sha1": "2649f136707e5dc8ff760a212450b80e89e7e95f"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_description/dim_color_ref_gp8.xacro.urdf",
+      "source_path": "src/motoXY/moto_description/dim_color_ref_gp8.xacro.urdf",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 5837,
+      "sha256": "b5ab8e28d785a7c5ab957d940124c5b526c42296f20b86d2ca2511b548cb338f",
+      "git_blob_sha1": "f7a7f9f7e2b191a7972469498bbe769dbb6cbb6f"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_description/package.xml",
+      "source_path": "src/motoXY/moto_description/package.xml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 690,
+      "sha256": "c9a75ce126b524c8c7a1ea7b66a352130522d39de8c45712d0d012d802d3cd80",
+      "git_blob_sha1": "ec124bea77a6ad5f27ac18fb63aec305fa3789ab"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_description/urdf/moto.urdf",
+      "source_path": "src/motoXY/moto_description/urdf/moto.urdf",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 6371,
+      "sha256": "aae7d33b2037f183f5656526cd19e73835f10225fc124602a6cedef6e0e42491",
+      "git_blob_sha1": "7b56a16c1614483322ab307778e42c3a1bc39334"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/.setup_assistant",
+      "source_path": "src/motoXY/moto_moveit_config/.setup_assistant",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 284,
+      "sha256": "6bd46351c565791e159ec0dd7c5f88023e4f42428cad87b9dbbab0043b1c85d9",
+      "git_blob_sha1": "b848b19c2df32f9caf72f1005fd9f52c950acae8"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/CHANGELOG.rst",
+      "source_path": "src/motoXY/moto_moveit_config/CHANGELOG.rst",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 2478,
+      "sha256": "668c3d2ce7411ba47ff6420fd5c69fb1db1dbfac5864df814a2b7109c5fd554f",
+      "git_blob_sha1": "27e984df947184c803aa5beb726dd2a98301512a"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/CMakeLists.txt",
+      "source_path": "src/motoXY/moto_moveit_config/CMakeLists.txt",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 365,
+      "sha256": "7efaeb5837ca1d52f12d3e6a1ae434040a9274c9295edde2783dc6a642b5b32d",
+      "git_blob_sha1": "dd469b0a03f571a9e75012d890e3d728f86a510b"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/LICENSE",
+      "source_path": "src/motoXY/moto_moveit_config/LICENSE",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 1577,
+      "sha256": "84fd5e7adf8b18c239ff05bc4ef9c1364392113f38542be79d0798f1ea952cdc",
+      "git_blob_sha1": "81669a60931ef64e13a40770c5e56b358746e81f"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/README.md",
+      "source_path": "src/motoXY/moto_moveit_config/README.md",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 42,
+      "sha256": "f9af7a7ea7fea427e253850d668a551f7954daf99607c8c2ff2dec2f6ee9ad77",
+      "git_blob_sha1": "65df159236c33471ab33ebbba5ae6a421c807d95"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/chomp_planning.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/chomp_planning.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 878,
+      "sha256": "d99842bf6ad1eb77c28aab1723bda214303878996ce87d6a961889a3bb3ddc41",
+      "git_blob_sha1": "6136a68606a7a206bd8b894bd1bb98be2670d627"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/initial_positions.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/initial_positions.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 181,
+      "sha256": "feb5b84033ed56f0e260d53d5395110c91ac3a624f4e86cc15d0d940fc549e6e",
+      "git_blob_sha1": "e0250f1cac476912a69858358e334ccade2c4632"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/joint_limits.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/joint_limits.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 1447,
+      "sha256": "2fc98be4839eb839f92214091686da828fb22bf3686b01e4ca4d2aea26e37e17",
+      "git_blob_sha1": "7d2beb0bb442de85226d178c54d71b39b7dde43b"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/kinematics.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/kinematics.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 186,
+      "sha256": "c4d34dc28d6db32bfaf8fb4f700c8bbb42ac58875ecdc3f181f24293618a043f",
+      "git_blob_sha1": "2cb210748e641aa2fc8ff290d15401247887905e"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moto.ros2_control.xacro",
+      "source_path": "src/motoXY/moto_moveit_config/config/moto.ros2_control.xacro",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 2473,
+      "sha256": "db3c2a641a3e1303dfe63a37469758307e6b56361d149945ca3c0270034a5943",
+      "git_blob_sha1": "fc734470a1bf63601f8c3fdfe69f13c84ee8abcb"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moto.srdf",
+      "source_path": "src/motoXY/moto_moveit_config/config/moto.srdf",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 2945,
+      "sha256": "a7b4c4ad8278c523b3f0162bc11be5d7e138f461361b08ae068306e51deddd6b",
+      "git_blob_sha1": "3a4773f108c257708d0c555d896d2cd3a23ec673"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moto.urdf.xacro",
+      "source_path": "src/motoXY/moto_moveit_config/config/moto.urdf.xacro",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 529,
+      "sha256": "c7e54e75f158613add86843864008d69fe17e012f8500da8193b8be579336e8c",
+      "git_blob_sha1": "6234b611bfb05bfe0aa88065c32e9b4569b908c5"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moveit_controllers.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/moveit_controllers.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 657,
+      "sha256": "980653707a04b1e7302c27ff5c98bf983cf1f72968fe6294698890b9c6d64dfd",
+      "git_blob_sha1": "6f812bcf1f0552a44dffa959a753383f3d7d329a"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/ompl_planning.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/ompl_planning.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 9622,
+      "sha256": "1ee794809e60c0c7d2c3866f071123608691aaa85cc738318acf5283d54f9fb9",
+      "git_blob_sha1": "9076dd64a24c4b93f6b1c040d199acb2d1e91536"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/pilz_cartesian_limits.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/pilz_cartesian_limits.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 133,
+      "sha256": "fed80b213b77f13fb7b913d703609a66caa72ccb0617b41e83d3057e31749047",
+      "git_blob_sha1": "b2997caf4d9fc28c5d0dd1cb94e361afd37e3aab"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/ros2_controllers.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/ros2_controllers.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 478,
+      "sha256": "5113ac552470571c2a54e85a1a3f5423ab06de611d414b450648728b772fbdc7",
+      "git_blob_sha1": "2714d33d57ddb22d98a2b645e0b295f8f176d234"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/sensors_3d.yaml",
+      "source_path": "src/motoXY/moto_moveit_config/config/sensors_3d.yaml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 102,
+      "sha256": "1510ccd1381d8b2d2701447e76ff7b03de02ca4c1e39fdfd7c0ffa4d7fafc099",
+      "git_blob_sha1": "751e46386a9bb760524b3a71bc23897d4b3ec6c1"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/demo.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/demo.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 322,
+      "sha256": "e5cc137a4ef1b348d8363ea10233e4f0af8a45d2ce637dd20481866642fbb24a",
+      "git_blob_sha1": "5c4de407d4cd46a29c1186eebc87772b38160733"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/move_group.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/move_group.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 334,
+      "sha256": "d902ed8b6c509ca71a15dd7f316c16174488ab333dc8b2027f7aa00beb623ddf",
+      "git_blob_sha1": "cee136366821519c1338302db154cd91cbc3ee98"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/moveit_rviz.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/moveit_rviz.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 336,
+      "sha256": "ac9bd21a75dfe1920f1e61cebcbef8050e75201e927cfb5118f7d193c4f7be38",
+      "git_blob_sha1": "4d65d45543acae8bfae11f6b3f062f96b2df1676"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/rsp.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/rsp.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 320,
+      "sha256": "3c79e9210468b4cc83658eb9a2d5d3535d07d3371df3a06c0102580e5a58844d",
+      "git_blob_sha1": "dabe6f9819b0156bb5abe1bcf30818a1773b5885"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/setup_assistant.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/setup_assistant.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 344,
+      "sha256": "8f6676b19718840655e2c3aec092d826cc78eb637673cbacc8376d24ac6927d6",
+      "git_blob_sha1": "d8194355245131481a92dd469d32c90977fab5e0"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/sim_start.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/sim_start.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 5246,
+      "sha256": "70f41517129ee845bf96380fdc4dcb1cdcf2b5cd3e5c5b6628d5d841cb72d6be",
+      "git_blob_sha1": "be58d13a0f8c3a65cee909cfecd80ab89887d516"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/spawn_controllers.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/spawn_controllers.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 348,
+      "sha256": "e2a927c695ec855ce17f5480b7570043b33c3488538e4a29f9c6ac29eb569353",
+      "git_blob_sha1": "9c2250c05ffc8c36ea3119a169fb9d1f6b0df590"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/start.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/start.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 5254,
+      "sha256": "62fd471897afc00907b303b0804747f671b86c1e73e41378dec29c348dcf76d9",
+      "git_blob_sha1": "ef57a8c7f9de10126d988ace4af533ea0b4eca7d"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/static_virtual_joint_tfs.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/static_virtual_joint_tfs.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 362,
+      "sha256": "a82498ed21257b743570e869c74a70c66a2d1a76b8019734acc844cf1f7056f4",
+      "git_blob_sha1": "7e33d2f3562799f9b304404e090e720cf182b778"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/test.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/test.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 1490,
+      "sha256": "5635037fb48917d9470df06b131685caab6d6458713a1cb82ab0fe517f4695cb",
+      "git_blob_sha1": "a5fd0f38fd780f178fb8082540edb4fb75595c8f"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/warehouse_db.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/warehouse_db.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 338,
+      "sha256": "202416f38d063caf2b0782aba867ab630ae0789a2575474649ff6fad557a7b2b",
+      "git_blob_sha1": "f473a48ea29a2bb6b091d9d20748a10db7ca6a7a"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/xy_start.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/xy_start.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 7202,
+      "sha256": "06d135522a0227310eed8487814b53ecd5c7c9b21693c5cdbf5819c146a3a442",
+      "git_blob_sha1": "716bbd47fde68b06df2348a8e4d1df3b5173f177"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/yaskawa_hw.launch.py",
+      "source_path": "src/motoXY/moto_moveit_config/launch/yaskawa_hw.launch.py",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 469,
+      "sha256": "a8a355fa9061df3ab5fde8cdddc156fea469ec31990d4dd28802cf67c85ab000",
+      "git_blob_sha1": "6f4acd9843cf73c7fa1ab6e11500131fb772d2d5"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/package.xml",
+      "source_path": "src/motoXY/moto_moveit_config/package.xml",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 2210,
+      "sha256": "69820e819abbaaefa71cd05fb74f430e99a99e3c4d14a84dcb231a2dae981a4f",
+      "git_blob_sha1": "bbabbe4a942ecb8524bb790cc8d688d752bf4010"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/worlds/gp8.world",
+      "source_path": "src/motoXY/moto_moveit_config/worlds/gp8.world",
+      "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+      "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+      "bytes": 3131,
+      "sha256": "b2356d910cc0e8da1e6cfd2043c12ed850cd6e80130c4e41c421f2c7102455b7",
+      "git_blob_sha1": "8c3ea520cd16d80c9da9f30b407af4fb572ac627"
+    },
+    {
+      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/CMakeLists.txt",
+      "source_path": "CMakeLists.txt",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_client_interface_dependencies",
+      "commit": "7259a484619807a66d6da84de273c024f487984f",
+      "bytes": 135,
+      "sha256": "e159c0beab0c3d096a3638c7acde5c934f5e9ea672bd623ed97ebd4c83891d21",
+      "git_blob_sha1": "96ff6de140de9c198b72f464524771ca25aa99d7"
+    },
+    {
+      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/LICENSE",
+      "source_path": "LICENSE",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_client_interface_dependencies",
+      "commit": "7259a484619807a66d6da84de273c024f487984f",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/README.md",
+      "source_path": "README.md",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_client_interface_dependencies",
+      "commit": "7259a484619807a66d6da84de273c024f487984f",
+      "bytes": 3232,
+      "sha256": "514d60fd9cf2f42029fd0bc5c26e8ccecc95f94895601e645c72bbd70cefb20e",
+      "git_blob_sha1": "675fb255abbc5ccc071f1fcd3b67dcaaf100405d"
+    },
+    {
+      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/package.xml",
+      "source_path": "package.xml",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_client_interface_dependencies",
+      "commit": "7259a484619807a66d6da84de273c024f487984f",
+      "bytes": 1079,
+      "sha256": "8c20fe14461b93c19d452c538f815a6de8b0e9343fd3b494989bc52a8b42077a",
+      "git_blob_sha1": "c4bf0ee41fb12b86849eb1fcdee48c889011a3b1"
+    },
+    {
+      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/source_deps.repos",
+      "source_path": "source_deps.repos",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_client_interface_dependencies",
+      "commit": "7259a484619807a66d6da84de273c024f487984f",
+      "bytes": 305,
+      "sha256": "934aac04b0bd664d30f11165384f8b533cfb9e91bb70097db9f8a6f161d4dc8e",
+      "git_blob_sha1": "e9b85ec0bd3d19a998f2dd6ae44176d6fd761d45"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/README.md",
+      "source_path": "README.md",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 2565,
+      "sha256": "6fdff85c525577b4e2c8343c64f903912ae80c57a2316ea85bcf23370017bd3f",
+      "git_blob_sha1": "abf68123e21e7a122058555212d79bd1c675078b"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/CMakeLists.txt",
+      "source_path": "industrial_msgs/CMakeLists.txt",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 917,
+      "sha256": "e4452e1a16baef0d56a3b09b2bfcaa66623363416bff668adeb9811b16fe82d9",
+      "git_blob_sha1": "dd61e23b25ff520e94d4549a6025617f8b3feeb3"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/DebugLevel.msg",
+      "source_path": "industrial_msgs/msg/DebugLevel.msg",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 267,
+      "sha256": "b578049ef18456b8b5a9474fdd1285ceb5a20667c48cc2f433eb4aaba53a343a",
+      "git_blob_sha1": "346bd7f5b929910c627cd562d6a175269abce541"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/DeviceInfo.msg",
+      "source_path": "industrial_msgs/msg/DeviceInfo.msg",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 445,
+      "sha256": "1d2b39c295e3a3909e74a076823cf935fa3c92c6fa153aefbbcac272b26bbb51",
+      "git_blob_sha1": "2da2025d5261de7197b0df7cb714bed6e245ca1f"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/RobotMode.msg",
+      "source_path": "industrial_msgs/msg/RobotMode.msg",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 333,
+      "sha256": "3bf60f0bcad9b250fe68c5fbd65f0a9671788c0c9c33f4f5c2e028a3213d0bee",
+      "git_blob_sha1": "fdcb79f6f877ee614442daebe1b8c5e6135a9226"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/RobotStatus.msg",
+      "source_path": "industrial_msgs/msg/RobotStatus.msg",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 1352,
+      "sha256": "0389afd8460bf5fca47744e1bfc41bf2d62c889870025a257dd46ab76e1b1945",
+      "git_blob_sha1": "70ba309de26e4c12eda4a296853cd2627db1f419"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/ServiceReturnCode.msg",
+      "source_path": "industrial_msgs/msg/ServiceReturnCode.msg",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 259,
+      "sha256": "8f6de01d824b4c9c64103680cebf91b134ae4c17f006ba55e547fe68fc9a52a9",
+      "git_blob_sha1": "25782658bfdb045ce0ed9d25ef6fa38520b5a13d"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/TriState.msg",
+      "source_path": "industrial_msgs/msg/TriState.msg",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 330,
+      "sha256": "2f663b2c98d7e01b68d41beed26dd39a1adf8fa71ca9888702cee4e643efeee9",
+      "git_blob_sha1": "c5766265748024e97b1b3fff75bbff60d4a4f00c"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/package.xml",
+      "source_path": "industrial_msgs/package.xml",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 1000,
+      "sha256": "196ce19a5a0920a6c10a9363a049d011dacb34a99d771cf02f9b17d4254b846f",
+      "git_blob_sha1": "6185e105dffdc46b7ccdf93537e9f610b6587129"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/CmdJointTrajectory.srv",
+      "source_path": "industrial_msgs/srv/CmdJointTrajectory.srv",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 397,
+      "sha256": "c22ae18b625b680429b05d4f2fe96475f7ba7fc9b97edef68814647ee90e5648",
+      "git_blob_sha1": "2fbab979f994ebfed479142a5959d0f8ac3b6780"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/GetRobotInfo.srv",
+      "source_path": "industrial_msgs/srv/GetRobotInfo.srv",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 228,
+      "sha256": "f294153cd4b92d8d5540678077257e3aefa61be8cc6bca50fa7517841856b8b9",
+      "git_blob_sha1": "748e1ec699bff32bf62c44de2c160475c15294da"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/SetDrivePower.srv",
+      "source_path": "industrial_msgs/srv/SetDrivePower.srv",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 223,
+      "sha256": "adc36620c8d85b1bf40b55297742c036707bb41393a2aa6a30f77dd8df8799ca",
+      "git_blob_sha1": "79b2088c58f4d5202832cd3ed421f5150d386fd1"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/SetRemoteLoggerLevel.srv",
+      "source_path": "industrial_msgs/srv/SetRemoteLoggerLevel.srv",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 301,
+      "sha256": "316136a5cd5d17a81c4f3c1ddc6a09895cf21e7e85aef1c8f2e5ea3ea151a238",
+      "git_blob_sha1": "9515e21f25ca0d30c9063143592007c7db95bcb9"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/StartMotion.srv",
+      "source_path": "industrial_msgs/srv/StartMotion.srv",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 114,
+      "sha256": "06934498171e4d97b6df2dd9d7f0d39e5fbb9cea156573ea98d5acc01b73b1ed",
+      "git_blob_sha1": "8c5b4d45aa5e5bf96687cb47c63b5631a9d0efdf"
+    },
+    {
+      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/StopMotion.srv",
+      "source_path": "industrial_msgs/srv/StopMotion.srv",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "bytes": 157,
+      "sha256": "2eed9a17e1d7ed421fd3ecd2583499c14cb295302a459f0b2406fd3f8aa12daf",
+      "git_blob_sha1": "f7546ed371b07a3668c0cc19475d643abb04bbab"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/.editorconfig",
+      "source_path": ".editorconfig",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 221,
+      "sha256": "e20d3f5cc95e8af988c4fbd5473d185f4ef2788d6873631c021dae72a29239e8",
+      "git_blob_sha1": "8beea95392e483169186debb967a67cc30e6ee54"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/.github/workflows/ci_reuse.yaml",
+      "source_path": ".github/workflows/ci_reuse.yaml",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 375,
+      "sha256": "0948cb336bd19904e58b81a82626ba893bc930d7772fc7a59e4839b51348be87",
+      "git_blob_sha1": "82b166eef585ae98ff4f9a550978effe3584f7c2"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/.gitignore",
+      "source_path": ".gitignore",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 621,
+      "sha256": "04cfb1485265b54c869191c8084184e8ce65c123925219fc4a8801d4560ecdb2",
+      "git_blob_sha1": "2704c66e50bcfd9cc9eed52ee5d944cda56a8922"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/.reuse/dep5",
+      "source_path": ".reuse/dep5",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 270,
+      "sha256": "8dfee615a2d66e832e0892b8f73aa04e997f5707b7d676abd6117251a29c71af",
+      "git_blob_sha1": "399be90faaeb82d35e640618d319a3c73d79d393"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/CMakeLists.txt",
+      "source_path": "CMakeLists.txt",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 1071,
+      "sha256": "2e262327001ff1660fa792c64b1e5344ee9826a41885610c555d0cae856579f3",
+      "git_blob_sha1": "52ec2792396afa2cea231928f172a5a0527a9e44"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/LICENSES/Apache-2.0.txt",
+      "source_path": "LICENSES/Apache-2.0.txt",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 10280,
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "git_blob_sha1": "137069b823873b8bcf42979bcf8e9371052d26a2"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/LICENSES/CC-BY-SA-4.0.txt",
+      "source_path": "LICENSES/CC-BY-SA-4.0.txt",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966",
+      "git_blob_sha1": "835a6836b385fa068fdd625685548845cda60c2f"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/LICENSES/CC0-1.0.txt",
+      "source_path": "LICENSES/CC0-1.0.txt",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "git_blob_sha1": "0e259d42c996742e9e3cba14c677129b2c1b6311"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/README.md",
+      "source_path": "README.md",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 2802,
+      "sha256": "1b0936854cb937a3e61d33021487fe5012e7e25eba34eaeaff63570a18908125",
+      "git_blob_sha1": "e1fc440dbb5cdaca7a2e46faea4a3351fe8e02b1"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/msg/IoResultCodes.msg",
+      "source_path": "msg/IoResultCodes.msg",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 1185,
+      "sha256": "17c2bd4276006972b4467092477d3cb8a9867c9f17c35ac1ee94df364c4766f9",
+      "git_blob_sha1": "9944ed889f1d79d43c4d542c95bf26f5530e19bc"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/msg/MotionReadyEnum.msg",
+      "source_path": "msg/MotionReadyEnum.msg",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 2345,
+      "sha256": "af1998282bd0b85b9a83acc967746c43c2311e931b23040c458c907497411013",
+      "git_blob_sha1": "3c805b42a67685968774d5189ade7690d70453d2"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/msg/QueueResultEnum.msg",
+      "source_path": "msg/QueueResultEnum.msg",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 834,
+      "sha256": "e239b39512cb3731622ba82103f51a08ad75abe9dacf0f21c84bcd7edac2a06a",
+      "git_blob_sha1": "31a7d10f503ab5d897187cca28ee7cfcc34354ca"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/msg/SelectionResultCodes.msg",
+      "source_path": "msg/SelectionResultCodes.msg",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 944,
+      "sha256": "7c94b744ec47c89da4f37ddfa2113d816edfc4ad99d359ff30d9cd5e832b4fe4",
+      "git_blob_sha1": "d2c6a8250e8e5a36d01ce31eb1919abb4c44ca6a"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/package.xml",
+      "source_path": "package.xml",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 1368,
+      "sha256": "6c18ce99fd2ef1971b944e40aa931e9ff6a8d21985b7c808aeef7aa8b372df94",
+      "git_blob_sha1": "ee12529ac986f19e16eae5759994e45f69a53b1f"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/QueueTrajPoint.srv",
+      "source_path": "srv/QueueTrajPoint.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 688,
+      "sha256": "a512280116529112aedfeb35549fdc0c547c34b217aa57eac6254d59513bcf02",
+      "git_blob_sha1": "222fc4b7d954db8f079d5513db5984cd94138f71"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/ReadGroupIO.srv",
+      "source_path": "srv/ReadGroupIO.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 921,
+      "sha256": "cdf7cb3980ca2f186963b7251aa707ae69c921d7f7f2a59ca32da4abe1a476d6",
+      "git_blob_sha1": "f7c50820a6002c33806c34e93a18c9ff251c64cd"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/ReadMRegister.srv",
+      "source_path": "srv/ReadMRegister.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 942,
+      "sha256": "cdff2fbbc252dac1ab90754f9dd4afb5ed852f54a0eef2b8db77a149b397b226",
+      "git_blob_sha1": "06ce54e867b8b15aa640266fa544b63e8d69791a"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/ReadSingleIO.srv",
+      "source_path": "srv/ReadSingleIO.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 709,
+      "sha256": "1aa2349d0a045b6ac941ea25ba1361f432e077f9233cb699d0c0beb2c2a1920f",
+      "git_blob_sha1": "23762163fc2270d3dbd828c36cd7c0204475b072"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/ResetError.srv",
+      "source_path": "srv/ResetError.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 776,
+      "sha256": "eb19edd21e082cf866bb4a8b2a07679d0301e3c3fcf116230e77e87acf8df768",
+      "git_blob_sha1": "c3a9f1d07b7086bdcbb3d96c240b93853f141042"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/SelectMotionTool.srv",
+      "source_path": "srv/SelectMotionTool.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 4776,
+      "sha256": "89b2f66e3dea72582cb03180d0b5a0c6a98f8e1a432928810310215545a396e5",
+      "git_blob_sha1": "77f4f1d6fa1a6508d13a6d9910bfbf191e01921d"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/StartPointQueueMode.srv",
+      "source_path": "srv/StartPointQueueMode.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 994,
+      "sha256": "2c29a9cef3ecb09a9e22c72c5c19a912f3be4460fe2f6c49a7a2a0f4d7ed879c",
+      "git_blob_sha1": "3d4b13d5c7661eb78600fade156f8606edbd8be6"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/StartTrajMode.srv",
+      "source_path": "srv/StartTrajMode.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 1005,
+      "sha256": "bc4a560b33854a1927af0df0680a03c476616b1cefa9c7e7277f4ea3ec694c4d",
+      "git_blob_sha1": "fc3027001f222eceb70228590fa020d7f96569ee"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/WriteGroupIO.srv",
+      "source_path": "srv/WriteGroupIO.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 923,
+      "sha256": "fb664112f34580ec57df3892da0089956d7d9d123174dd00ff7c01f480ab0445",
+      "git_blob_sha1": "fc24ed6252de7b2ef33fd24ddc5caa4f7fa8223a"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/WriteMRegister.srv",
+      "source_path": "srv/WriteMRegister.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 925,
+      "sha256": "2211208e517e78901dae3bc0ccee62f9528b2be1d2d77e6df3aeff6a3649a1a8",
+      "git_blob_sha1": "1912e006fbd75cc68f2907f0640b0e56b4e79f4a"
+    },
+    {
+      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/WriteSingleIO.srv",
+      "source_path": "srv/WriteSingleIO.srv",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "bytes": 760,
+      "sha256": "3e8c1d04236c7e4a8ded058621ab662c9b83f9ca6128469f91de520402205073",
+      "git_blob_sha1": "6c7c621fd3a3aa1626eac719690b39c81602f766"
+    }
+  ],
+  "packages": [
+    {
+      "name": "moveit_resources_moto_description",
+      "version": "1.0.0",
+      "licenses": [
+        "BSD"
+      ],
+      "source_package_xml": "official-reference/starter/src/motoXY/moto_description/package.xml",
+      "source_sha256": "c9a75ce126b524c8c7a1ea7b66a352130522d39de8c45712d0d012d802d3cd80",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "moveit_resources_moto_moveit_config",
+      "version": "1.0.0",
+      "licenses": [
+        "BSD"
+      ],
+      "source_package_xml": "official-reference/starter/src/motoXY/moto_moveit_config/package.xml",
+      "source_sha256": "69820e819abbaaefa71cd05fb74f430e99a99e3c4d14a84dcb231a2dae981a4f",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_ros_move_group",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_kinematics",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_planners",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_simple_controller_manager",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "joint_state_publisher",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "joint_state_publisher_gui",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "tf2_ros",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "xacro",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "controller_manager",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_configs_utils",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_resources_moto_description",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_ros_move_group",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_ros_visualization",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_ros_warehouse",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_setup_assistant",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "robot_state_publisher",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz2",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz_common",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz_default_plugins",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "tf2_ros",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "warehouse_ros_mongo",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "motoros2_client_interface_dependencies",
+      "version": "0.1.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/package.xml",
+      "source_sha256": "8c20fe14461b93c19d452c538f815a6de8b0e9343fd3b494989bc52a8b42077a",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "control_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "geometry_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "sensor_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "std_srvs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "tf2_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "industrial_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "motoros2_interfaces",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "industrial_msgs",
+      "version": "0.7.3",
+      "licenses": [
+        "BSD-3-Clause"
+      ],
+      "source_package_xml": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/package.xml",
+      "source_sha256": "196ce19a5a0920a6c10a9363a049d011dacb34a99d771cf02f9b17d4254b846f",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "motoros2_interfaces",
+      "version": "0.1.0",
+      "licenses": [
+        "Apache-2.0",
+        "CC-BY-SA-4.0",
+        "CC0-1.0"
+      ],
+      "source_package_xml": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/package.xml",
+      "source_sha256": "6c18ce99fd2ef1971b944e40aa931e9ff6a8d21985b7c808aeef7aa8b372df94",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "trajectory_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    }
+  ],
+  "model_catalog": {
+    "manifest": "matrix.required.json",
+    "versioned_models": 110,
+    "inventory_exhaustive": false,
+    "all_remaining_models_required": true,
+    "model_source_inventory_is_native_simulation_coverage": false
+  },
+  "physical_robot_authorized": false,
+  "parent_source_archive": {
+    "source_url": "https://codeload.github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots/tar.gz/b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+    "bytes": 2044639,
+    "sha256": "7398c6216f14789e0cb3d16dd6483dc4a1b34ba0c02db8e87e2b01540dbab2d9",
+    "complete_blobs_verified": 103
+  },
+  "gitlinks": [
+    {
+      "gitlink_path": "src/motoros2_client_interface_dependencies",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_client_interface_dependencies",
+      "commit": "7259a484619807a66d6da84de273c024f487984f",
+      "git_tree_sha1": "f7c7865c75e50d01da062a1370055969c383373f",
+      "source_url": "https://codeload.github.com/Yaskawa-Global/motoros2_client_interface_dependencies/tar.gz/7259a484619807a66d6da84de273c024f487984f",
+      "archive_bytes": 6097,
+      "archive_sha256": "186aa87a6be6f6a9393781b053f5498fb136375603b4cbdadc381ef27943ae06",
+      "complete_blobs_verified": 5,
+      "nested_gitlinks": []
+    },
+    {
+      "gitlink_path": "src/ros-industrial/industrial_core_ros2_msgs_only",
+      "repository": "https://github.com/ros-industrial/industrial_core",
+      "commit": "d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "git_tree_sha1": "3fe453f70bd9b4dbba008968b61fa38a069f5c3a",
+      "source_url": "https://codeload.github.com/ros-industrial/industrial_core/tar.gz/d547cdcfdaf3bc0d46325215b8219b0a190c8e6c",
+      "archive_bytes": 4520,
+      "archive_sha256": "04a96d7fb60460221ae88f820d567626ca3f28f2c1e3f830273f22b5be0d33b7",
+      "complete_blobs_verified": 15,
+      "nested_gitlinks": []
+    },
+    {
+      "gitlink_path": "src/yaskawa-global/motoros2_interfaces",
+      "repository": "https://github.com/Yaskawa-Global/motoros2_interfaces",
+      "commit": "134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "git_tree_sha1": "e2ba87e6d7587cc7f924ef11e865a201b49c07c1",
+      "source_url": "https://codeload.github.com/Yaskawa-Global/motoros2_interfaces/tar.gz/134e2b4110f21f5e72aadf9f5af30644a46573b0",
+      "archive_bytes": 18571,
+      "archive_sha256": "c6ffff679adcae1f3397f4774b586ffd635b29c77a256ce1f06101fe0421196a",
+      "complete_blobs_verified": 25,
+      "nested_gitlinks": []
+    }
+  ],
+  "source_gitlink_closure": "ALL_THREE_EXACT_SOURCE_TREES_ACQUIRED_AND_45_BLOBS_VERIFIED; not a Humble binary/provider qualification",
+  "unchanged_upstream_blockers": [
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moto.urdf.xacro",
+      "finding": "Original ros2_control include and macro invocation are commented; original expanded geometric model has no ros2_control tag"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/ros2_controllers.yaml",
+      "finding": "Declares controller yaskawa with empty command/state interface arrays"
+    },
+    {
+      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/sim_start.launch.py",
+      "finding": "Spawns moto_controller, differing from original YAML controller yaskawa"
+    }
+  ]
+}

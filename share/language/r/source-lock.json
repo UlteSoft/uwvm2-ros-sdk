@@ -1,0 +1,43 @@
+{
+  "format": "uwvm-genuine-r-source-lock-v1",
+  "language": "r",
+  "version": "4.5.1",
+  "status": "SOURCE_COMPLETE_RUNTIME_INCOMPLETE",
+  "upstream_archive": {
+    "url": "https://cran.r-project.org/src/base/R-4/R-4.5.1.tar.xz",
+    "sha256": "3c29f587f438588160cc8a82a2b3fcc0abff392f731d930b4eaa7f85fa022a32",
+    "archive_retained_here": false
+  },
+  "source_root": "src/language/r/upstream",
+  "source_manifest": {
+    "path": "src/language/r/file-manifest.json",
+    "sha256": "194c23107380c22701971d134749cc4a242fc88ead54b2ffa03ed5c244be85b3",
+    "files": 5081
+  },
+  "source_origin": "Full retained maintained GNU R closure; all 5081 files matched before any new port work",
+  "candidate_port_sources": [
+    {
+      "path": "src/language/r/command.c",
+      "sha256": "b8d27071fcdc2bdde64cd0f31fdf5d0a01dedcddbff090b49b33c52af6a0dc0e"
+    },
+    {
+      "path": "src/language/r/native.R",
+      "sha256": "3339408ecfd7185489e95256245a8bd6a927546e6c2eaf042045b11874a72dcd"
+    },
+    {
+      "path": "src/language/r/native.c",
+      "sha256": "c76fd209a47ea8aa1b7577ffaba11ffc680f26ce79318fd20c7c1db93cd636bf"
+    },
+    {
+      "path": "src/language/r/native.h",
+      "sha256": "1f38d01e1ad99b664628f57e4c60914bad6f3a012f657a7a1d9a9050b14af3b2"
+    },
+    {
+      "path": "src/language/r/observation.R",
+      "sha256": "fea9a5570b0fe86c3f7078b4afc9817b65a8233822eb0c60a78820ddd6377d22"
+    }
+  ],
+  "runtime_installed": false,
+  "target_compiler": "LLVM 23.1.4",
+  "substitutes_installed": false
+}

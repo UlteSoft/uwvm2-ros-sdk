@@ -8,9 +8,11 @@
  */
 #ifndef UWVM_NVIDIA_CPU_SENSOR_CONTRACT_H
 #define UWVM_NVIDIA_CPU_SENSOR_CONTRACT_H
+#include <float.h>
 #include <limits.h>
 #include <stddef.h>
 #include <stdint.h>
+#include <string.h>
 
 #if CHAR_BIT != 8
 # error "The canonical CPU sensor contract requires eight-bit bytes"
@@ -283,7 +285,7 @@ static inline int uwvm_nvidia_sensor_literal(struct uwvm_nvidia_text_view text, 
 }
 
 /**
- * @brief Validate a complete CPU Image for the pinned AprilTag input profile.
+ * @brief Validate a complete CPU Image against the AprilTag VPI encoding set.
  * @details Admits exactly rgb8, bgr8, rgba8, bgra8 and mono8. Validates the full
  * header, positive dimensions, 0/1 endian flag, packed minimum row width,
  * overflow-safe step*height and exact payload length, including padding. Never
@@ -298,6 +300,7 @@ static inline int uwvm_nvidia_sensor_literal(struct uwvm_nvidia_text_view text, 
  * @return OK, INVALID, QUOTA, or UNSUPPORTED for an unlisted encoding. Earlier
  * metadata failures take precedence; the input is unchanged on every result.
  * @see uwvm_nvidia_cpu_image
+ * @see uwvm_nvidia_validate_apriltag_image_profile
  * @see uwvm_nvidia_sensor_status
  * @see ../../../../example/platform/nvidia-isaac-ros/c/cpu_values.c
  */
@@ -334,6 +337,212 @@ static inline int uwvm_nvidia_validate_apriltag_cpu_image(const struct uwvm_nvid
     if(bytes > maximum_bytes)
         return UWVM_NVIDIA_SENSOR_QUOTA;
     if(image->data.size != bytes || (bytes && !image->data.data))
+        return UWVM_NVIDIA_SENSOR_INVALID;
+    return UWVM_NVIDIA_SENSOR_OK;
+}
+
+/**
+ * @brief Encoding set of one explicitly selected AprilTag implementation.
+ * @details At NVIDIA isaac_ros_apriltag commit
+ * 95df59e5dc9c253b6e8e11471c10fd510b036fdd, the CUDA implementation accepts
+ * rgb8/bgr8; the VPI conversion table additionally accepts rgba8/bgra8/mono8.
+ * This selects local validation only. VPI CPU/PVA selection still does not
+ * establish CUDA-buffer availability, device access, or native runtime support.
+ */
+enum uwvm_nvidia_apriltag_image_profile
+{
+    UWVM_NVIDIA_APRILTAG_CUDA_RGB_BGR = 1,
+    UWVM_NVIDIA_APRILTAG_VPI_COLOR_MONO = 2
+};
+
+/**
+ * @brief Validate complete Image metadata against the selected backend encoding set.
+ * @details Retains every check and quota of the complete CPU Image validator.
+ * A CUDA profile rejects VPI-only encodings without converting or touching the
+ * payload. Unknown profiles return UNSUPPORTED. No imports, ROS operation,
+ * allocation, asynchronous callback, ownership transfer or grant occurs.
+ * The caller must establish all referenced extents and keep them immutable.
+ * @param[in] image Complete immutable local view; not a ROS native or Wasm ABI.
+ * @param[in] maximum_bytes Maximum complete padded image payload.
+ * @param[in] maximum_text Maximum frame and encoding UTF-8 extent.
+ * @param[in] profile Explicit implementation encoding contract.
+ * @return OK, INVALID, QUOTA or UNSUPPORTED; inputs remain unchanged.
+ */
+static inline int uwvm_nvidia_validate_apriltag_image_profile(
+    const struct uwvm_nvidia_cpu_image* image, size_t maximum_bytes,
+    size_t maximum_text, enum uwvm_nvidia_apriltag_image_profile profile)
+{
+    int status;
+    if(profile != UWVM_NVIDIA_APRILTAG_CUDA_RGB_BGR &&
+       profile != UWVM_NVIDIA_APRILTAG_VPI_COLOR_MONO)
+        return UWVM_NVIDIA_SENSOR_UNSUPPORTED;
+    status = uwvm_nvidia_validate_apriltag_cpu_image(image, maximum_bytes, maximum_text);
+    if(status)
+        return status;
+    if(profile == UWVM_NVIDIA_APRILTAG_CUDA_RGB_BGR &&
+       !uwvm_nvidia_sensor_literal(image->encoding, "rgb8", 4) &&
+       !uwvm_nvidia_sensor_literal(image->encoding, "bgr8", 4))
+        return UWVM_NVIDIA_SENSOR_UNSUPPORTED;
+    return UWVM_NVIDIA_SENSOR_OK;
+}
+
+/**
+ * @brief Validate a tag family for the pinned AprilTag implementation.
+ * @details NVIDIA commit 95df59e5dc9c253b6e8e11471c10fd510b036fdd
+ * supports tag36h11 in CUAprilTagImpl and nine exact family names in VPI.
+ * The profile identifies that implementation; it grants no backend, CUDA or
+ * device access. This local check does not declare/set a ROS parameter or
+ * recreate the native constructor's runtime_error exception ABI. Unsupported
+ * family/profile maps to UNSUPPORTED without truncation or fallback.
+ * @param[in] family Complete immutable counted UTF-8 family name.
+ * @param[in] maximum_text Maximum admitted encoded name bytes.
+ * @param[in] profile Pinned CUDA or VPI implementation selection.
+ * @return OK, INVALID, QUOTA or UNSUPPORTED; borrowed input is unchanged.
+ */
+static inline int uwvm_nvidia_validate_apriltag_tag_family(
+    struct uwvm_nvidia_text_view family, size_t maximum_text,
+    enum uwvm_nvidia_apriltag_image_profile profile)
+{
+    int status;
+    if(profile != UWVM_NVIDIA_APRILTAG_CUDA_RGB_BGR &&
+       profile != UWVM_NVIDIA_APRILTAG_VPI_COLOR_MONO)
+        return UWVM_NVIDIA_SENSOR_UNSUPPORTED;
+    status = uwvm_nvidia_sensor_text(family, maximum_text);
+    if(status)
+        return status;
+    if(uwvm_nvidia_sensor_literal(family, "tag36h11", 8))
+        return UWVM_NVIDIA_SENSOR_OK;
+    if(profile == UWVM_NVIDIA_APRILTAG_CUDA_RGB_BGR)
+        return UWVM_NVIDIA_SENSOR_UNSUPPORTED;
+    if(uwvm_nvidia_sensor_literal(family, "tag16h5", 7) ||
+       uwvm_nvidia_sensor_literal(family, "tag25h9", 7) ||
+       uwvm_nvidia_sensor_literal(family, "tag36h10", 8) ||
+       uwvm_nvidia_sensor_literal(family, "circle21h7", 10) ||
+       uwvm_nvidia_sensor_literal(family, "circle49h12", 11) ||
+       uwvm_nvidia_sensor_literal(family, "custom48h12", 11) ||
+       uwvm_nvidia_sensor_literal(family, "standard41h12", 13) ||
+       uwvm_nvidia_sensor_literal(family, "standard52h13", 13))
+        return UWVM_NVIDIA_SENSOR_OK;
+    return UWVM_NVIDIA_SENSOR_UNSUPPORTED;
+}
+
+/** @brief Complete borrowed variable-length calibration coefficient sequence.
+ * @details The owner establishes size readable immutable IEEE754 binary64
+ * elements. This is a local view, never a cross-instance pointer/ABI contract.
+ */
+struct uwvm_nvidia_f64_view
+{
+    const double* data;
+    size_t size;
+};
+
+/** @brief Complete unbinned camera ROI, preserving the native zero/default values. */
+struct uwvm_nvidia_camera_roi
+{
+    uint32_t x_offset, y_offset, height, width;
+    uint8_t do_rectify;
+};
+
+/** @brief Complete sensor_msgs/CameraInfo value for a trusted local copy.
+ * @details D is not limited to one distortion model. Calibration dimensions,
+ * all matrices, binning and ROI remain unchanged. K[0]==0 is retained as the
+ * standard uncalibrated indicator. No GPU buffer or ROS native layout is implied.
+ */
+struct uwvm_nvidia_camera_info
+{
+    struct uwvm_nvidia_header header;
+    uint32_t height, width;
+    struct uwvm_nvidia_text_view distortion_model;
+    struct uwvm_nvidia_f64_view d;
+    double k[9], r[9], p[12];
+    uint32_t binning_x, binning_y;
+    struct uwvm_nvidia_camera_roi roi;
+};
+
+/** @brief Inspect a local binary64 exponent without floating point conversion.
+ * @details Targets use IEEE754 binary64; caller retains the readable double.
+ * This bit check rejects infinities/NaNs without depending on FP comparison flags.
+ */
+static inline int uwvm_nvidia_sensor_f64_finite(const double* value)
+{
+    uint64_t bits;
+    if(!value || sizeof(double) != sizeof bits ||
+       FLT_RADIX != 2 || DBL_MANT_DIG != 53 || DBL_MAX_EXP != 1024)
+        return 0;
+    memcpy(&bits, value, sizeof bits);
+    return (bits & UINT64_C(0x7ff0000000000000)) != UINT64_C(0x7ff0000000000000);
+}
+
+/** @brief Validate a complete CameraInfo local value without changing its model.
+ * @details Preserves unknown distortion model names, arbitrary bounded D lengths,
+ * zero binning defaults, an all-zero ROI and uncalibrated zero matrices.
+ * The SDK finite-value policy rejects NaN/Inf and nonboolean do_rectify.
+ * No ROI resizing, calibration, model-specific coefficient-count rule or ROS
+ * operation is performed. Memory extents and immutable ownership are caller
+ * prerequisites. Native shared pointers must first be copied by their owner.
+ * @param[in] info Complete readable local value.
+ * @param[in] maximum_coefficients Explicit D element quota, never a truncation.
+ * @param[in] maximum_text Maximum frame and distortion-model UTF-8 bytes.
+ * @return OK, INVALID, QUOTA or UNSUPPORTED on a nonbinary64 target.
+ */
+static inline int uwvm_nvidia_validate_camera_info(
+    const struct uwvm_nvidia_camera_info* info,
+    size_t maximum_coefficients, size_t maximum_text)
+{
+    size_t i;
+    int status;
+    if(!info)
+        return UWVM_NVIDIA_SENSOR_INVALID;
+    if(sizeof(double) != sizeof(uint64_t) ||
+       FLT_RADIX != 2 || DBL_MANT_DIG != 53 || DBL_MAX_EXP != 1024)
+        return UWVM_NVIDIA_SENSOR_UNSUPPORTED;
+    status = uwvm_nvidia_sensor_header(&info->header, maximum_text);
+    if(status)
+        return status;
+    status = uwvm_nvidia_sensor_text(info->distortion_model, maximum_text);
+    if(status)
+        return status;
+    if(info->roi.do_rectify > 1 || (info->d.size && !info->d.data))
+        return UWVM_NVIDIA_SENSOR_INVALID;
+    if(info->d.size > maximum_coefficients ||
+       info->d.size > SIZE_MAX / sizeof(double))
+        return UWVM_NVIDIA_SENSOR_QUOTA;
+    for(i = 0; i < info->d.size; ++i)
+        if(!uwvm_nvidia_sensor_f64_finite(&info->d.data[i]))
+            return UWVM_NVIDIA_SENSOR_INVALID;
+    for(i = 0; i < 9; ++i)
+        if(!uwvm_nvidia_sensor_f64_finite(&info->k[i]) ||
+           !uwvm_nvidia_sensor_f64_finite(&info->r[i]))
+            return UWVM_NVIDIA_SENSOR_INVALID;
+    for(i = 0; i < 12; ++i)
+        if(!uwvm_nvidia_sensor_f64_finite(&info->p[i]))
+            return UWVM_NVIDIA_SENSOR_INVALID;
+    return UWVM_NVIDIA_SENSOR_OK;
+}
+
+/** @brief Validate the exact timestamp pairing used by the pinned detector.
+ * @details Validates each complete local value and the explicitly selected
+ * image encoding profile, then compares signed seconds and nanoseconds.
+ * It does not synchronize, queue, subscribe, grant authority, or alter frame IDs,
+ * calibration dimensions, ROI or binning. Callback lifetime/provenance and full
+ * data copies remain the actual Wasm/typed-channel caller's responsibility.
+ */
+static inline int uwvm_nvidia_validate_apriltag_exact_time_pair(
+    const struct uwvm_nvidia_cpu_image* image,
+    const struct uwvm_nvidia_camera_info* camera_info,
+    size_t maximum_image_bytes, size_t maximum_coefficients,
+    size_t maximum_text, enum uwvm_nvidia_apriltag_image_profile profile)
+{
+    int status = uwvm_nvidia_validate_apriltag_image_profile(
+        image, maximum_image_bytes, maximum_text, profile);
+    if(status)
+        return status;
+    status = uwvm_nvidia_validate_camera_info(
+        camera_info, maximum_coefficients, maximum_text);
+    if(status)
+        return status;
+    if(image->header.stamp.sec != camera_info->header.stamp.sec ||
+       image->header.stamp.nanosec != camera_info->header.stamp.nanosec)
         return UWVM_NVIDIA_SENSOR_INVALID;
     return UWVM_NVIDIA_SENSOR_OK;
 }

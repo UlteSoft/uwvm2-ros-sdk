@@ -1,0 +1,307 @@
+{
+  "format": "sdk02-source-declared-package-closure-v1",
+  "profile": "yaskawa-gp8-official-mock-humble",
+  "packages": [
+    {
+      "name": "moveit_resources_moto_description",
+      "version": "1.0.0",
+      "licenses": [
+        "BSD"
+      ],
+      "source_package_xml": "official-reference/starter/src/motoXY/moto_description/package.xml",
+      "source_sha256": "c9a75ce126b524c8c7a1ea7b66a352130522d39de8c45712d0d012d802d3cd80",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "moveit_resources_moto_moveit_config",
+      "version": "1.0.0",
+      "licenses": [
+        "BSD"
+      ],
+      "source_package_xml": "official-reference/starter/src/motoXY/moto_moveit_config/package.xml",
+      "source_sha256": "69820e819abbaaefa71cd05fb74f430e99a99e3c4d14a84dcb231a2dae981a4f",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_ros_move_group",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_kinematics",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_planners",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_simple_controller_manager",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "joint_state_publisher",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "joint_state_publisher_gui",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "tf2_ros",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "xacro",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "controller_manager",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_configs_utils",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_resources_moto_description",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_ros_move_group",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_ros_visualization",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_ros_warehouse",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "moveit_setup_assistant",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "robot_state_publisher",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz2",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz_common",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz_default_plugins",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "tf2_ros",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "warehouse_ros_mongo",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "motoros2_client_interface_dependencies",
+      "version": "0.1.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/package.xml",
+      "source_sha256": "8c20fe14461b93c19d452c538f815a6de8b0e9343fd3b494989bc52a8b42077a",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "control_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "geometry_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "sensor_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "std_srvs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "tf2_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "industrial_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "motoros2_interfaces",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "industrial_msgs",
+      "version": "0.7.3",
+      "licenses": [
+        "BSD-3-Clause"
+      ],
+      "source_package_xml": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/package.xml",
+      "source_sha256": "196ce19a5a0920a6c10a9363a049d011dacb34a99d771cf02f9b17d4254b846f",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "motoros2_interfaces",
+      "version": "0.1.0",
+      "licenses": [
+        "Apache-2.0",
+        "CC-BY-SA-4.0",
+        "CC0-1.0"
+      ],
+      "source_package_xml": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/package.xml",
+      "source_sha256": "6c18ce99fd2ef1971b944e40aa931e9ff6a8d21985b7c808aeef7aa8b372df94",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "trajectory_msgs",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    }
+  ],
+  "required_python_modules": [
+    "rclpy",
+    "control_msgs",
+    "sensor_msgs",
+    "controller_manager_msgs",
+    "action_msgs",
+    "launch",
+    "launch_ros",
+    "ament_index_python",
+    "xacro",
+    "yaml"
+  ],
+  "required_installed_closure": "Actual installed compatible ROS/ABI/RMW/provider/model/config files pinned by deployment; declaration alone is not closure",
+  "installed_closure_qualified_for_public_Wasm": false
+}

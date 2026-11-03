@@ -1,0 +1,1526 @@
+{
+  "format": "uwvm-sdk-required-simulations-v1",
+  "scope": "Known required public official simulation profiles and retained quarantine obligations; all referenced model/release/ABI matrices remain required.",
+  "inventory_discovery_complete": false,
+  "additional_applicable_frameworks_and_models": "REQUIRED_NOT_YET_EXHAUSTIVELY_ENUMERATED",
+  "component_tests_are_official_simulation_acceptance": false,
+  "entries": [
+    {
+      "id": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy::bounds_stale_foreign",
+      "project": "example/platform/abb/c/official_webots",
+      "profile": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
+      "scenario": "bounds_stale_foreign",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/abb/c/official_webots/simulation.example.json",
+        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/abb/c/official_webots/matrix.required.json",
+          "sha256": "e1e7322a5527030338b7bfe231b100e12930637f394a021e5e3b453488d1c525"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/release.applicability.json",
+          "sha256": "75c7c51fd3d05ca8e7b59a20e0c783247d9495d05e68b01d42f606113aaf3e77"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/model.source.lock.json",
+          "sha256": "465a5b7d9df6114f59c0aabe901a61101736b51c06f6b999bc28366ada2d6efe"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/provider.source.lock.json",
+          "sha256": "9fbde8379cbf3d262eb0b9e863d4419db0483a0db50befe040b9be6e0aad2aec"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "abb SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy::cancel_timeout_disconnect",
+      "project": "example/platform/abb/c/official_webots",
+      "profile": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
+      "scenario": "cancel_timeout_disconnect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/abb/c/official_webots/simulation.example.json",
+        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/abb/c/official_webots/matrix.required.json",
+          "sha256": "e1e7322a5527030338b7bfe231b100e12930637f394a021e5e3b453488d1c525"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/release.applicability.json",
+          "sha256": "75c7c51fd3d05ca8e7b59a20e0c783247d9495d05e68b01d42f606113aaf3e77"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/model.source.lock.json",
+          "sha256": "465a5b7d9df6114f59c0aabe901a61101736b51c06f6b999bc28366ada2d6efe"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/provider.source.lock.json",
+          "sha256": "9fbde8379cbf3d262eb0b9e863d4419db0483a0db50befe040b9be6e0aad2aec"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "abb SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy::denied_permission_no_native_effect",
+      "project": "example/platform/abb/c/official_webots",
+      "profile": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
+      "scenario": "denied_permission_no_native_effect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/abb/c/official_webots/simulation.example.json",
+        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/abb/c/official_webots/matrix.required.json",
+          "sha256": "e1e7322a5527030338b7bfe231b100e12930637f394a021e5e3b453488d1c525"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/release.applicability.json",
+          "sha256": "75c7c51fd3d05ca8e7b59a20e0c783247d9495d05e68b01d42f606113aaf3e77"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/model.source.lock.json",
+          "sha256": "465a5b7d9df6114f59c0aabe901a61101736b51c06f6b999bc28366ada2d6efe"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/provider.source.lock.json",
+          "sha256": "9fbde8379cbf3d262eb0b9e863d4419db0483a0db50befe040b9be6e0aad2aec"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "abb SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy::pause_restart_update_rollback",
+      "project": "example/platform/abb/c/official_webots",
+      "profile": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
+      "scenario": "pause_restart_update_rollback",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/abb/c/official_webots/simulation.example.json",
+        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/abb/c/official_webots/matrix.required.json",
+          "sha256": "e1e7322a5527030338b7bfe231b100e12930637f394a021e5e3b453488d1c525"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/release.applicability.json",
+          "sha256": "75c7c51fd3d05ca8e7b59a20e0c783247d9495d05e68b01d42f606113aaf3e77"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/model.source.lock.json",
+          "sha256": "465a5b7d9df6114f59c0aabe901a61101736b51c06f6b999bc28366ada2d6efe"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/provider.source.lock.json",
+          "sha256": "9fbde8379cbf3d262eb0b9e863d4419db0483a0db50befe040b9be6e0aad2aec"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "abb SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy::unchanged_wasm_joint_step",
+      "project": "example/platform/abb/c/official_webots",
+      "profile": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
+      "scenario": "unchanged_wasm_joint_step",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/abb/c/official_webots/simulation.example.json",
+        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/abb/c/official_webots/matrix.required.json",
+          "sha256": "e1e7322a5527030338b7bfe231b100e12930637f394a021e5e3b453488d1c525"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/release.applicability.json",
+          "sha256": "75c7c51fd3d05ca8e7b59a20e0c783247d9495d05e68b01d42f606113aaf3e77"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/model.source.lock.json",
+          "sha256": "465a5b7d9df6114f59c0aabe901a61101736b51c06f6b999bc28366ada2d6efe"
+        },
+        {
+          "path": "example/platform/abb/c/official_webots/provider.source.lock.json",
+          "sha256": "9fbde8379cbf3d262eb0b9e863d4419db0483a0db50befe040b9be6e0aad2aec"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "abb SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "doosan-ros1-aws-official-simulation-required::all-required-scenarios",
+      "project": "example/platform/doosan/simulation/ros1_aws_official_required",
+      "profile": "doosan-ros1-aws-official-simulation-required",
+      "scenario": "all-required-scenarios",
+      "required": true,
+      "status": "NOT_RUN",
+      "scenario_inventory": "INCOMPLETE_REQUIRED_GAP_NOT_AN_EXECUTED_CASE",
+      "owners": [
+        "VM owner: production admission and audited reverse feedback",
+        "SDK01: common Wasm client",
+        "doosan SDK owner: restore genuine guest-only public implementation and complete applicable scenario/model matrix"
+      ],
+      "blocker": "Required official simulation remains after native-client quarantine or codec-only component coverage",
+      "next_action": "Publish the versioned original official simulation manifest with every mandatory scenario and a genuine guest client; run public xmake and xmake test without native business fallback",
+      "required_matrix_references": [
+        {
+          "path": "share/platform/doosan/ros1/doosan-ros1-aws-simulation-complete/profile-selection.json",
+          "sha256": "aa5bec40a6252d09580de41aac5e0abb32b2a38327863e30210d63db56dc0b87"
+        }
+      ],
+      "public_project_implementation": "NOT_YET_IMPLEMENTED_REQUIRED_GAP; existing language codec projects remain component rows"
+    },
+    {
+      "id": "fanuc-crx10ia-official-mock-jazzy::bounds_stale_foreign",
+      "project": "example/platform/fanuc/c/official_mock",
+      "profile": "fanuc-crx10ia-official-mock-jazzy",
+      "scenario": "bounds_stale_foreign",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
+        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/fanuc/c/official_mock/matrix.required.json",
+          "sha256": "97bf7b9fef46a9679951f45994dcb9e2d755c2b98a0ec3758d76e14eaa43a6ba"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/release.applicability.json",
+          "sha256": "f5236c95a80362752faf22003f4b0fb89a99b484464a1fd5b686563e7266eacc"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/model.source.lock.json",
+          "sha256": "a0435659c5fcbb5ce86a0b9fdfbed31b463e91a6eef26e6740894ca4524b6137"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/provider.source.lock.json",
+          "sha256": "2fbef1b8f9fe3306ca3dcd8ecdd333800164e550cff0b63ee40969adcc2fb158"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fanuc SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "fanuc-crx10ia-official-mock-jazzy::cancel_timeout_disconnect",
+      "project": "example/platform/fanuc/c/official_mock",
+      "profile": "fanuc-crx10ia-official-mock-jazzy",
+      "scenario": "cancel_timeout_disconnect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
+        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/fanuc/c/official_mock/matrix.required.json",
+          "sha256": "97bf7b9fef46a9679951f45994dcb9e2d755c2b98a0ec3758d76e14eaa43a6ba"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/release.applicability.json",
+          "sha256": "f5236c95a80362752faf22003f4b0fb89a99b484464a1fd5b686563e7266eacc"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/model.source.lock.json",
+          "sha256": "a0435659c5fcbb5ce86a0b9fdfbed31b463e91a6eef26e6740894ca4524b6137"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/provider.source.lock.json",
+          "sha256": "2fbef1b8f9fe3306ca3dcd8ecdd333800164e550cff0b63ee40969adcc2fb158"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fanuc SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "fanuc-crx10ia-official-mock-jazzy::denied_permission_no_native_effect",
+      "project": "example/platform/fanuc/c/official_mock",
+      "profile": "fanuc-crx10ia-official-mock-jazzy",
+      "scenario": "denied_permission_no_native_effect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
+        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/fanuc/c/official_mock/matrix.required.json",
+          "sha256": "97bf7b9fef46a9679951f45994dcb9e2d755c2b98a0ec3758d76e14eaa43a6ba"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/release.applicability.json",
+          "sha256": "f5236c95a80362752faf22003f4b0fb89a99b484464a1fd5b686563e7266eacc"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/model.source.lock.json",
+          "sha256": "a0435659c5fcbb5ce86a0b9fdfbed31b463e91a6eef26e6740894ca4524b6137"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/provider.source.lock.json",
+          "sha256": "2fbef1b8f9fe3306ca3dcd8ecdd333800164e550cff0b63ee40969adcc2fb158"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fanuc SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "fanuc-crx10ia-official-mock-jazzy::pause_restart_update_rollback",
+      "project": "example/platform/fanuc/c/official_mock",
+      "profile": "fanuc-crx10ia-official-mock-jazzy",
+      "scenario": "pause_restart_update_rollback",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
+        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/fanuc/c/official_mock/matrix.required.json",
+          "sha256": "97bf7b9fef46a9679951f45994dcb9e2d755c2b98a0ec3758d76e14eaa43a6ba"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/release.applicability.json",
+          "sha256": "f5236c95a80362752faf22003f4b0fb89a99b484464a1fd5b686563e7266eacc"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/model.source.lock.json",
+          "sha256": "a0435659c5fcbb5ce86a0b9fdfbed31b463e91a6eef26e6740894ca4524b6137"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/provider.source.lock.json",
+          "sha256": "2fbef1b8f9fe3306ca3dcd8ecdd333800164e550cff0b63ee40969adcc2fb158"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fanuc SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "fanuc-crx10ia-official-mock-jazzy::unchanged_wasm_joint_step",
+      "project": "example/platform/fanuc/c/official_mock",
+      "profile": "fanuc-crx10ia-official-mock-jazzy",
+      "scenario": "unchanged_wasm_joint_step",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
+        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/fanuc/c/official_mock/matrix.required.json",
+          "sha256": "97bf7b9fef46a9679951f45994dcb9e2d755c2b98a0ec3758d76e14eaa43a6ba"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/release.applicability.json",
+          "sha256": "f5236c95a80362752faf22003f4b0fb89a99b484464a1fd5b686563e7266eacc"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/model.source.lock.json",
+          "sha256": "a0435659c5fcbb5ce86a0b9fdfbed31b463e91a6eef26e6740894ca4524b6137"
+        },
+        {
+          "path": "example/platform/fanuc/c/official_mock/provider.source.lock.json",
+          "sha256": "2fbef1b8f9fe3306ca3dcd8ecdd333800164e550cff0b63ee40969adcc2fb158"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fanuc SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "fourier-jazzy-ubuntu24-x86_64-ideal-v1::default_deny",
+      "project": "example/platform/fourier/simulation/jazzy_joint_step",
+      "profile": "fourier-jazzy-ubuntu24-x86_64-ideal-v1",
+      "scenario": "default_deny",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fourier/simulation/jazzy_joint_step/simulation.json",
+        "sha256": "e93ad2d4975a11bef5dd2ad1710cc9358efa3a2474043fadd988fb4b6a250b63"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fourier SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "fourier-jazzy-ubuntu24-x86_64-ideal-v1::normal",
+      "project": "example/platform/fourier/simulation/jazzy_joint_step",
+      "profile": "fourier-jazzy-ubuntu24-x86_64-ideal-v1",
+      "scenario": "normal",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fourier/simulation/jazzy_joint_step/simulation.json",
+        "sha256": "e93ad2d4975a11bef5dd2ad1710cc9358efa3a2474043fadd988fb4b6a250b63"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fourier SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "fourier-jazzy-ubuntu24-x86_64-ideal-v1::official_disable_commands",
+      "project": "example/platform/fourier/simulation/jazzy_joint_step",
+      "profile": "fourier-jazzy-ubuntu24-x86_64-ideal-v1",
+      "scenario": "official_disable_commands",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fourier/simulation/jazzy_joint_step/simulation.json",
+        "sha256": "e93ad2d4975a11bef5dd2ad1710cc9358efa3a2474043fadd988fb4b6a250b63"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fourier SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "fourier-jazzy-ubuntu24-x86_64-ideal-v1::ungranted_alias",
+      "project": "example/platform/fourier/simulation/jazzy_joint_step",
+      "profile": "fourier-jazzy-ubuntu24-x86_64-ideal-v1",
+      "scenario": "ungranted_alias",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/fourier/simulation/jazzy_joint_step/simulation.json",
+        "sha256": "e93ad2d4975a11bef5dd2ad1710cc9358efa3a2474043fadd988fb4b6a250b63"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "fourier SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::default-deny-no-native-effect",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "default-deny-no-native-effect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::disconnect-and-reconnect",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "disconnect-and-reconnect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::joint-boundaries",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "joint-boundaries",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::normal-correlated-result",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "normal-correlated-result",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::pause-and-resume",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "pause-and-resume",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::restart-update-rollback-permissions",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "restart-update-rollback-permissions",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::reverse-sensor-into-Wasm",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "reverse-sensor-into-Wasm",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::stale-and-foreign-handles",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "stale-and-foreign-handles",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64::timeout-and-cancel",
+      "project": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation",
+      "profile": "isaacsim-6-franka-jazzy-ubuntu24.04-x86_64",
+      "scenario": "timeout-and-cancel",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
+        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "nvidia-isaac-sim SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "kinova-gen3-typed-guest-feedback-source-v0.1.0::boundary_stale_foreign",
+      "project": "example/platform/kinova/c/ros2/humble/guest_joint_feedback",
+      "profile": "kinova-gen3-typed-guest-feedback-source-v0.1.0",
+      "scenario": "boundary_stale_foreign",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
+        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "kinova SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "kinova-gen3-typed-guest-feedback-source-v0.1.0::cancel_timeout_no_replay",
+      "project": "example/platform/kinova/c/ros2/humble/guest_joint_feedback",
+      "profile": "kinova-gen3-typed-guest-feedback-source-v0.1.0",
+      "scenario": "cancel_timeout_no_replay",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
+        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "kinova SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "kinova-gen3-typed-guest-feedback-source-v0.1.0::fresh_reverse_guest_callback",
+      "project": "example/platform/kinova/c/ros2/humble/guest_joint_feedback",
+      "profile": "kinova-gen3-typed-guest-feedback-source-v0.1.0",
+      "scenario": "fresh_reverse_guest_callback",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
+        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "kinova SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "kinova-gen3-typed-guest-feedback-source-v0.1.0::normal_goal_result_fresh_state",
+      "project": "example/platform/kinova/c/ros2/humble/guest_joint_feedback",
+      "profile": "kinova-gen3-typed-guest-feedback-source-v0.1.0",
+      "scenario": "normal_goal_result_fresh_state",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
+        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "kinova SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "kinova-gen3-typed-guest-feedback-source-v0.1.0::permission_denied_no_native_effect",
+      "project": "example/platform/kinova/c/ros2/humble/guest_joint_feedback",
+      "profile": "kinova-gen3-typed-guest-feedback-source-v0.1.0",
+      "scenario": "permission_denied_no_native_effect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
+        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "kinova SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "kinova-gen3-typed-guest-feedback-source-v0.1.0::restart_rollback_permission_preservation",
+      "project": "example/platform/kinova/c/ros2/humble/guest_joint_feedback",
+      "profile": "kinova-gen3-typed-guest-feedback-source-v0.1.0",
+      "scenario": "restart_rollback_permission_preservation",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
+        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "kinova SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0::callback-failure-cleanup",
+      "project": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback",
+      "profile": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0",
+      "scenario": "callback-failure-cleanup",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback/simulation.json",
+        "sha256": "c020117018f2c8d92f350ecaaca75c65cae629b25db8728521ed27d2e41f4762"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "pal SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0::foreign-handle-refusal",
+      "project": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback",
+      "profile": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0",
+      "scenario": "foreign-handle-refusal",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback/simulation.json",
+        "sha256": "c020117018f2c8d92f350ecaaca75c65cae629b25db8728521ed27d2e41f4762"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "pal SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0::legacy-publish-and-guest-callback",
+      "project": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback",
+      "profile": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0",
+      "scenario": "legacy-publish-and-guest-callback",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback/simulation.json",
+        "sha256": "c020117018f2c8d92f350ecaaca75c65cae629b25db8728521ed27d2e41f4762"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "pal SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0::official-simulator-reverse-feedback",
+      "project": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback",
+      "profile": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0",
+      "scenario": "official-simulator-reverse-feedback",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback/simulation.json",
+        "sha256": "c020117018f2c8d92f350ecaaca75c65cae629b25db8728521ed27d2e41f4762"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "pal SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0::permission-denied-no-native-effect",
+      "project": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback",
+      "profile": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0",
+      "scenario": "permission-denied-no-native-effect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback/simulation.json",
+        "sha256": "c020117018f2c8d92f350ecaaca75c65cae629b25db8728521ed27d2e41f4762"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "pal SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0::restart-permission-preservation",
+      "project": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback",
+      "profile": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0",
+      "scenario": "restart-permission-preservation",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback/simulation.json",
+        "sha256": "c020117018f2c8d92f350ecaaca75c65cae629b25db8728521ed27d2e41f4762"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "pal SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0::stale-handle-refusal",
+      "project": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback",
+      "profile": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0",
+      "scenario": "stale-handle-refusal",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback/simulation.json",
+        "sha256": "c020117018f2c8d92f350ecaaca75c65cae629b25db8728521ed27d2e41f4762"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "pal SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0::update-rollback-permission-preservation",
+      "project": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback",
+      "profile": "pal-rcljava-maintained-subset-humble-wasm32-v0-1-0",
+      "scenario": "update-rollback-permission-preservation",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/pal/java/ros2/ros2_humble_devel/legacy_string_feedback/simulation.json",
+        "sha256": "c020117018f2c8d92f350ecaaca75c65cae629b25db8728521ed27d2e41f4762"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "pal SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "ros-jazzy-rrbot-jtc-software-mock-v0.1.0::bounded-joint-step",
+      "project": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock",
+      "profile": "ros-jazzy-rrbot-jtc-software-mock-v0.1.0",
+      "scenario": "bounded-joint-step",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock/simulation.json",
+        "sha256": "6ee8d6fe50cdcb372fc5cbdadd38c0481b8fb322580729a5e987f24615d202fc"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "ros SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "ros-jazzy-rrbot-jtc-software-mock-v0.1.0::permission-denied-no-effect",
+      "project": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock",
+      "profile": "ros-jazzy-rrbot-jtc-software-mock-v0.1.0",
+      "scenario": "permission-denied-no-effect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock/simulation.json",
+        "sha256": "6ee8d6fe50cdcb372fc5cbdadd38c0481b8fb322580729a5e987f24615d202fc"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "ros SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "trossen-xs-px100-jazzy-required::all-required-scenarios",
+      "project": "example/platform/trossen/simulation/ros2_jazzy_xs_px100",
+      "profile": "trossen-xs-px100-jazzy-required",
+      "scenario": "all-required-scenarios",
+      "required": true,
+      "status": "NOT_RUN",
+      "scenario_inventory": "INCOMPLETE_REQUIRED_GAP_NOT_AN_EXECUTED_CASE",
+      "owners": [
+        "VM owner: production admission and audited reverse feedback",
+        "SDK01: common Wasm client",
+        "trossen SDK owner: restore genuine guest-only public implementation and complete applicable scenario/model matrix"
+      ],
+      "blocker": "Required official simulation remains after native-client quarantine or codec-only component coverage",
+      "next_action": "Publish the versioned original official simulation manifest with every mandatory scenario and a genuine guest client; run public xmake and xmake test without native business fallback",
+      "required_matrix_references": [
+        {
+          "path": "example/platform/trossen/simulation/ros2_jazzy_xs_px100/migration-status.json",
+          "sha256": "2ddab8979041c4b219168863a9543f9f0e4b8c77c62892998fe7b804b5cc4cb2"
+        }
+      ]
+    },
+    {
+      "id": "ubtech-jazzy-ubuntu24-x86_64-ideal-v1::default_deny",
+      "project": "example/platform/ubtech/simulation/jazzy_joint_step",
+      "profile": "ubtech-jazzy-ubuntu24-x86_64-ideal-v1",
+      "scenario": "default_deny",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/ubtech/simulation/jazzy_joint_step/simulation.json",
+        "sha256": "1b623737f1c22865360200f1d41f541bedab615412ca4f20f0be2ca2925b9578"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "ubtech SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "ubtech-jazzy-ubuntu24-x86_64-ideal-v1::normal",
+      "project": "example/platform/ubtech/simulation/jazzy_joint_step",
+      "profile": "ubtech-jazzy-ubuntu24-x86_64-ideal-v1",
+      "scenario": "normal",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/ubtech/simulation/jazzy_joint_step/simulation.json",
+        "sha256": "1b623737f1c22865360200f1d41f541bedab615412ca4f20f0be2ca2925b9578"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "ubtech SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "ubtech-jazzy-ubuntu24-x86_64-ideal-v1::official_disable_commands",
+      "project": "example/platform/ubtech/simulation/jazzy_joint_step",
+      "profile": "ubtech-jazzy-ubuntu24-x86_64-ideal-v1",
+      "scenario": "official_disable_commands",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/ubtech/simulation/jazzy_joint_step/simulation.json",
+        "sha256": "1b623737f1c22865360200f1d41f541bedab615412ca4f20f0be2ca2925b9578"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "ubtech SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "ubtech-jazzy-ubuntu24-x86_64-ideal-v1::ungranted_alias",
+      "project": "example/platform/ubtech/simulation/jazzy_joint_step",
+      "profile": "ubtech-jazzy-ubuntu24-x86_64-ideal-v1",
+      "scenario": "ungranted_alias",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/ubtech/simulation/jazzy_joint_step/simulation.json",
+        "sha256": "1b623737f1c22865360200f1d41f541bedab615412ca4f20f0be2ca2925b9578"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "ubtech SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::denied-no-native-effect",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "denied-no-native-effect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::disconnect-and-reconnect",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "disconnect-and-reconnect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::foreign-runtime-policy-source",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "foreign-runtime-policy-source",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::image-dimensions-and-payload-boundaries",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "image-dimensions-and-payload-boundaries",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::mono8-format-boundary",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "mono8-format-boundary",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::native-read-failure",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "native-read-failure",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::pause-and-resume",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "pause-and-resume",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::read-timeout-and-cancel",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "read-timeout-and-cancel",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::rgb8-integrity",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "rgb8-integrity",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::simulator-restart",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "simulator-restart",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::stale-and-foreign-handles",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "stale-and-foreign-handles",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "unitree-full-wasm-ros-migration-required-v1::update-rollback-permission-preservation",
+      "project": "example/platform/unitree/c/ros2/frozen_mujoco_image",
+      "profile": "unitree-full-wasm-ros-migration-required-v1",
+      "scenario": "update-rollback-permission-preservation",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/unitree/c/ros2/frozen_mujoco_image/scenarios.v1.json",
+        "sha256": "4fc1e34e7f515edf3e1d64b164f61bf385d34f82a598c99c596267375fe80e9d"
+      },
+      "required_matrix_references": [],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "unitree SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "ur5e-official-mock-required::all-required-scenarios",
+      "project": "example/platform/universal_robots/c/ros2/universal-robots-ros2-complete/official_mock_joint_step",
+      "profile": "ur5e-official-mock-required",
+      "scenario": "all-required-scenarios",
+      "required": true,
+      "status": "NOT_RUN",
+      "scenario_inventory": "INCOMPLETE_REQUIRED_GAP_NOT_AN_EXECUTED_CASE",
+      "owners": [
+        "VM owner: production admission and audited reverse feedback",
+        "SDK01: common Wasm client",
+        "universal_robots SDK owner: restore genuine guest-only public implementation and complete applicable scenario/model matrix"
+      ],
+      "blocker": "Required official simulation remains after native-client quarantine or codec-only component coverage",
+      "next_action": "Publish the versioned original official simulation manifest with every mandatory scenario and a genuine guest client; run public xmake and xmake test without native business fallback",
+      "required_matrix_references": []
+    },
+    {
+      "id": "yaskawa-gp8-official-mock-humble::bounds_stale_foreign",
+      "project": "example/platform/yaskawa/c/official_mock",
+      "profile": "yaskawa-gp8-official-mock-humble",
+      "scenario": "bounds_stale_foreign",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
+        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/yaskawa/c/official_mock/matrix.required.json",
+          "sha256": "590cbf43f1e3c57f588e5af5eea57aa784167019f111ffd7c04e030292be8651"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/release.applicability.json",
+          "sha256": "3f6d73505aff07c5bda7ca80b0c0a78d82dd6843c3799e4f67a26bfa9ef95351"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/model.source.lock.json",
+          "sha256": "cb9ee4de0362360cd011ceba0e9b800ac3fd3d91eac8e7971f7748b582fabdaa"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/provider.source.lock.json",
+          "sha256": "c9173083ff629129176f5b25022bb71c6b2a83f4a3f94513289c623ff1175452"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "yaskawa SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "yaskawa-gp8-official-mock-humble::cancel_timeout_disconnect",
+      "project": "example/platform/yaskawa/c/official_mock",
+      "profile": "yaskawa-gp8-official-mock-humble",
+      "scenario": "cancel_timeout_disconnect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
+        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/yaskawa/c/official_mock/matrix.required.json",
+          "sha256": "590cbf43f1e3c57f588e5af5eea57aa784167019f111ffd7c04e030292be8651"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/release.applicability.json",
+          "sha256": "3f6d73505aff07c5bda7ca80b0c0a78d82dd6843c3799e4f67a26bfa9ef95351"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/model.source.lock.json",
+          "sha256": "cb9ee4de0362360cd011ceba0e9b800ac3fd3d91eac8e7971f7748b582fabdaa"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/provider.source.lock.json",
+          "sha256": "c9173083ff629129176f5b25022bb71c6b2a83f4a3f94513289c623ff1175452"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "yaskawa SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "yaskawa-gp8-official-mock-humble::denied_permission_no_native_effect",
+      "project": "example/platform/yaskawa/c/official_mock",
+      "profile": "yaskawa-gp8-official-mock-humble",
+      "scenario": "denied_permission_no_native_effect",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
+        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/yaskawa/c/official_mock/matrix.required.json",
+          "sha256": "590cbf43f1e3c57f588e5af5eea57aa784167019f111ffd7c04e030292be8651"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/release.applicability.json",
+          "sha256": "3f6d73505aff07c5bda7ca80b0c0a78d82dd6843c3799e4f67a26bfa9ef95351"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/model.source.lock.json",
+          "sha256": "cb9ee4de0362360cd011ceba0e9b800ac3fd3d91eac8e7971f7748b582fabdaa"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/provider.source.lock.json",
+          "sha256": "c9173083ff629129176f5b25022bb71c6b2a83f4a3f94513289c623ff1175452"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "yaskawa SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "yaskawa-gp8-official-mock-humble::pause_restart_update_rollback",
+      "project": "example/platform/yaskawa/c/official_mock",
+      "profile": "yaskawa-gp8-official-mock-humble",
+      "scenario": "pause_restart_update_rollback",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
+        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/yaskawa/c/official_mock/matrix.required.json",
+          "sha256": "590cbf43f1e3c57f588e5af5eea57aa784167019f111ffd7c04e030292be8651"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/release.applicability.json",
+          "sha256": "3f6d73505aff07c5bda7ca80b0c0a78d82dd6843c3799e4f67a26bfa9ef95351"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/model.source.lock.json",
+          "sha256": "cb9ee4de0362360cd011ceba0e9b800ac3fd3d91eac8e7971f7748b582fabdaa"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/provider.source.lock.json",
+          "sha256": "c9173083ff629129176f5b25022bb71c6b2a83f4a3f94513289c623ff1175452"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "yaskawa SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    },
+    {
+      "id": "yaskawa-gp8-official-mock-humble::unchanged_wasm_joint_step",
+      "project": "example/platform/yaskawa/c/official_mock",
+      "profile": "yaskawa-gp8-official-mock-humble",
+      "scenario": "unchanged_wasm_joint_step",
+      "required": true,
+      "manifest": {
+        "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
+        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+      },
+      "required_matrix_references": [
+        {
+          "path": "example/platform/yaskawa/c/official_mock/matrix.required.json",
+          "sha256": "590cbf43f1e3c57f588e5af5eea57aa784167019f111ffd7c04e030292be8651"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/release.applicability.json",
+          "sha256": "3f6d73505aff07c5bda7ca80b0c0a78d82dd6843c3799e4f67a26bfa9ef95351"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/model.source.lock.json",
+          "sha256": "cb9ee4de0362360cd011ceba0e9b800ac3fd3d91eac8e7971f7748b582fabdaa"
+        },
+        {
+          "path": "example/platform/yaskawa/c/official_mock/provider.source.lock.json",
+          "sha256": "c9173083ff629129176f5b25022bb71c6b2a83f4a3f94513289c623ff1175452"
+        }
+      ],
+      "status": "NOT_RUN",
+      "owners": [
+        "VM owner: public admission, ROS ABI, runtime audit and reverse guest feedback",
+        "SDK01: common guest client and public test integration",
+        "yaskawa SDK owner: original official provider/model and assertions"
+      ],
+      "blocker": "Full executing Wasm client and fresh official feedback path are not qualified",
+      "next_action": "Build and freeze the genuine guest client; supply the VM-owned production admission/deployment and execute xmake then xmake test in this public project"
+    }
+  ]
+}

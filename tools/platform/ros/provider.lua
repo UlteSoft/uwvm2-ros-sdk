@@ -60,8 +60,8 @@ end
 -- @param context Validated provider context.
 function configure(target, root, context)
 	local selected = request(target, root, context)
-	target:set("objectdir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/objects"))
-	target:set("dependir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/dependencies"))
+	-- Xmake derives private state from its selected builddir. Preserve explicit
+	-- objectdir/dependir declarations instead of forcing writes into SDK sources.
 	target:set("values", "ros.sdk.binding", selected.binding)
 	if
 		selected.language ~= "c"
@@ -136,13 +136,11 @@ function run(target, root, context)
 		deployment.backend == context.backend and deployment.distribution == context.distribution,
 		"Native deployment backend/distribution does not match this application"
 	)
-	local python = assert(
-		find_program("python3"),
-		"Native gateway process orchestration requires installed Python 3"
-	)
+	local python = import("python_runtime", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).resolve()
 	os.execv(
 		python,
 		{
+			"-B",
 			path.join(root, "tools/platform/ros/run.py"),
 			"--target",
 			context.triple,

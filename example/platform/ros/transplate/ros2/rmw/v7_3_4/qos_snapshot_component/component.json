@@ -1,0 +1,206 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "rmw-7.3.4-qos-snapshot-codec",
+  "scope": "Finite pure guest existing-encoding/associated-copy fixtures only; zero actual native profiles, caller authorizations, revoked runtime handle proofs, physical memory-isolation or ROS acceptance",
+  "runtime_deployment_environment": "UWVM_ROS_RUNTIME_TEST_DEPLOYMENT",
+  "default_permissions": "default deny; eventual runtime must provide explicit current-instance stdio only; codec requests no ROS/native host operation",
+  "cases": [
+    {
+      "id": "decode-fixture",
+      "arguments": [
+        "decode-fixture"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "decode-fixture",
+        "vectors": 1
+      }
+    },
+    {
+      "id": "malformed-preserves-output",
+      "arguments": [
+        "malformed-preserves-output"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "malformed-preserves-output",
+        "vectors": 15
+      }
+    },
+    {
+      "id": "exact-extent",
+      "arguments": [
+        "exact-extent"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "exact-extent",
+        "vectors": 257
+      }
+    },
+    {
+      "id": "foreign-binding",
+      "arguments": [
+        "foreign-binding"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "foreign-binding",
+        "vectors": 5
+      }
+    },
+    {
+      "id": "depth-narrowing",
+      "arguments": [
+        "depth-narrowing"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "depth-narrowing",
+        "vectors": 5
+      }
+    },
+    {
+      "id": "duration-specials",
+      "arguments": [
+        "duration-specials"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "duration-specials",
+        "vectors": 6
+      }
+    },
+    {
+      "id": "lifecycle-shape",
+      "arguments": [
+        "lifecycle-shape"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "lifecycle-shape",
+        "vectors": 2
+      }
+    },
+    {
+      "id": "independent-value-copy",
+      "arguments": [
+        "independent-value-copy"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "independent-value-copy",
+        "vectors": 1
+      }
+    }
+  ],
+  "current_state": "SOURCE_AUTHORED_NOT_BUILT_OR_EXECUTED",
+  "required_full_framework_simulation": "MISSING_NATIVE_PROFILE_EXPORT_CALLER_BINDING_REAL_ROS_AND_STAGEB",
+  "source_lock": {
+    "path": "share/platform/ros/transplate/ros2/rmw/v7.3.4/qos-snapshot-source-lock.json",
+    "sha256": "0075e7b2d8f57b4d64072d7dec9c3c213b3c9b5dc2787cc7504758b7c3e7a2ac"
+  },
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/example_process.py",
+      "sha256": "fb2526b4b477f5d599e642c25fe7a0a87473df9f1dcf3e5097ded4ea4642638f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/simulation_example.py",
+      "sha256": "e5c21f913af6aa7be09f4e7d8848212e225e93fdbf3cb3b4567dd195a58d6938"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/case_accounting.py",
+      "sha256": "25447f966396fde83a9c1977d08e2495af140f9c868876dc5f418db64398406f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/runtime_boundary.py",
+      "sha256": "4f206a6d21747e04a8ae0e74558ef6859c31b9856e8aa3bb797c308da0d557cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/trusted_control.py",
+      "sha256": "b3113ef3f7ec16284b806b084a59ee92ddd8d1c1e43b27a2ceb1ce71a7a98414"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/trusted_control_v3.py",
+      "sha256": "cffcae6413269fdfefe5693c399b91bb6546bb7e32d1426a90dafeafda43424f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/witness_transport.py",
+      "sha256": "ab3d21983b17a643528232f296ca6f2457f008dd9642c9c06423799a6725a407"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/actor_gate.py",
+      "sha256": "7f5cde0b3ec495ac3a1db946ef9ccd5c9bdddf8cc42e430fbcff9679529d0e0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/actor_control.py",
+      "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/guest_feedback.py",
+      "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/portable_contract.py",
+      "sha256": "a3d2f26da52fc280a031d96c5389655183b91e48ce64a4b0479016451d62826a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "sha256": "2820af347b9b4033f0466bc0e654ee84a5caa3736118bb47f31c4c1623620f77"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/ros.lua",
+      "sha256": "70fcfc66b0aaa683c7d2064091b70ee3da0fbf3332ce46b4be0553bda99df801"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/repository.lua",
+      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/contract.json",
+      "sha256": "c9fee9daf6ef8e9b2483e1aadfd4b0b7c348e766b0a2ed73961577e3134ba062"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/runtime-boundary/v0.2.0/approved-producers.json",
+      "sha256": "eac69485faec6cee6a2994f84ebc2858c7271f4c277a472f1323c25e3ec73a15"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/ros/transplate/ros2/rmw/v7_3_4/qos_snapshot_component/main.c",
+      "sha256": "6df18d08414e0c954b9da2b81b80ee2ac9260e420e9705653ace70f621710727"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/ros/transplate/ros2/rmw/v7_3_4/qos_snapshot_component/xmake.lua",
+      "sha256": "842aaeb409221ba21f266a78ea8313474ba5768374e82e5ad3ef4c63df779d9c"
+    }
+  ],
+  "native_snapshot_authority": false
+}

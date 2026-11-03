@@ -1,0 +1,23 @@
+{
+  "actual_public_build": "NOT_RUN",
+  "actual_public_test": "NOT_RUN",
+  "default_xmake_test_must_fail": true,
+  "guest_cases_executed": 0,
+  "host_native_fallback": false,
+  "missing_dependencies": [
+    "Genuine Wasm test implementation and frozen whole application identity.",
+    "Exact released runtime, controlled authority/audit and applicable actual provider/dependency closure."
+  ],
+  "qualified_cases": 0,
+  "quarantined_source_execution": false,
+  "registration": "Actual native Xmake add_tests/on_test failure-only guard. It is not an implemented guest test.",
+  "required_cases": [
+    "guest-contract-normal",
+    "guest-contract-denied",
+    "guest-contract-invalid-input",
+    "guest-contract-cleanup"
+  ],
+  "scenario": "joint_single_command",
+  "schema": "sdk09-required-guest-test-status-v1",
+  "state": "BLOCKED_REQUIRED_TEST_IMPLEMENTATION"
+}

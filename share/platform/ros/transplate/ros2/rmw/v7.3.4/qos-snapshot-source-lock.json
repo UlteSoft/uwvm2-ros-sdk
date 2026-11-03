@@ -1,0 +1,33 @@
+{
+  "format": "uwvm-rmw-QoS-guest-codec-source-lock-v1",
+  "state": "SOURCE_AUTHORED_NOT_COMPILED_OR_EXECUTED",
+  "files": [
+    {
+      "path": "include/platform/ros/transplate/ros2/rmw/v7_3_4/qos_snapshot.h",
+      "sha256": "606233125831ffb6aeae121964e4e73cd0e7af765ab947d08294942c06148942",
+      "bytes": 8674,
+      "mode": 420
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/types.h",
+      "sha256": "c1e7be9e420d3c32cf6b24db62c3fbd6b97d0518811f6f4677db09d835cf3830",
+      "bytes": 29478,
+      "mode": 420
+    },
+    {
+      "path": "include/platform/ros/transplate/dependencies/rmw/8cb94a87cf3f4049abe2d563af893517bf336930/upstream/rmw/time.h",
+      "sha256": "5a59df5de3ef1d4a97b9f7fdc7351118b825e0353d77937aaf9e3c63b8f18d32",
+      "bytes": 2923,
+      "mode": 420
+    },
+    {
+      "path": "share/platform/ros/transplate/ros2/rmw/v7.3.4/qos-snapshot-contract.json",
+      "sha256": "cd6636101c192deedbb82e184c3361a138f36be3bee119264fec46f85927e66d",
+      "bytes": 3690,
+      "mode": 420
+    }
+  ],
+  "scope": "SDK pure guest parser/helpers for existing source-observed UMRE-v1 encoding only; unit fixtures are not native snapshots, caller/grant authority, physical isolation, middleware or StageB evidence.",
+  "native_profile_export_implemented": false,
+  "runtime_and_simulation_qualified": false
+}

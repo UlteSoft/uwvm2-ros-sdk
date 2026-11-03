@@ -1,0 +1,227 @@
+{
+  "format": "uwvm-sdk-simulation-deployment-v1",
+  "template_state": "UNBOUND_NO_AUTHORITY_DO_NOT_EXECUTE_AS_DEPLOYMENT",
+  "profile": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
+  "runtime": {
+    "executable": "<installed public uwvm2-ros>",
+    "sha256": "<actual complete runtime ELF SHA256>",
+    "source_identity": "<actual complete runtime source identity>",
+    "paired_providers": [
+      {
+        "path": "<actual paired LLVM provider>",
+        "sha256": "<actual whole file SHA256>"
+      }
+    ],
+    "observation_contracts": [
+      "uwvm-sdk-simulation-command-binding-v1"
+    ],
+    "required_producer": "Actual pinned runtime portable-host event; a declaration alone grants nothing, R7 lacks this producer"
+  },
+  "official_provider_files": [
+    {
+      "path": "<actual immutable official provider/model/config input>",
+      "sha256": "<actual whole file SHA256>"
+    }
+  ],
+  "scenarios": {
+    "unchanged_wasm_joint_step": {
+      "adapter": {
+        "path": "<actual separately reviewed adapter JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "grant": {
+        "path": "<actual separate trusted grant JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native_provenance": {
+        "path": "<actual live native loaded-image provenance JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native": {
+        "executable": "<installed compatible public native backend>",
+        "sha256": "<actual whole ELF SHA256>"
+      },
+      "scene_environment": {},
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot",
+        "{adapter}",
+        "<actual-adapter-whole-sha256>",
+        "{policy}",
+        "<actual-separate-grant-whole-sha256>"
+      ]
+    },
+    "denied_permission_no_native_effect": {
+      "adapter": {
+        "path": "<actual separately reviewed adapter JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "grant": {
+        "path": "<actual separate trusted grant JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native_provenance": {
+        "path": "<actual live native loaded-image provenance JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native": {
+        "executable": "<installed compatible public native backend>",
+        "sha256": "<actual whole ELF SHA256>"
+      },
+      "scene_environment": {},
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot",
+        "{adapter}",
+        "<actual-adapter-whole-sha256>",
+        "{policy}",
+        "<actual-separate-grant-whole-sha256>"
+      ]
+    },
+    "bounds_stale_foreign": {
+      "adapter": {
+        "path": "<actual separately reviewed adapter JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "grant": {
+        "path": "<actual separate trusted grant JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native_provenance": {
+        "path": "<actual live native loaded-image provenance JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native": {
+        "executable": "<installed compatible public native backend>",
+        "sha256": "<actual whole ELF SHA256>"
+      },
+      "scene_environment": {},
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot",
+        "{adapter}",
+        "<actual-adapter-whole-sha256>",
+        "{policy}",
+        "<actual-separate-grant-whole-sha256>"
+      ]
+    },
+    "cancel_timeout_disconnect": {
+      "adapter": {
+        "path": "<actual separately reviewed adapter JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "grant": {
+        "path": "<actual separate trusted grant JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native_provenance": {
+        "path": "<actual live native loaded-image provenance JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native": {
+        "executable": "<installed compatible public native backend>",
+        "sha256": "<actual whole ELF SHA256>"
+      },
+      "scene_environment": {},
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot",
+        "{adapter}",
+        "<actual-adapter-whole-sha256>",
+        "{policy}",
+        "<actual-separate-grant-whole-sha256>"
+      ]
+    },
+    "pause_restart_update_rollback": {
+      "adapter": {
+        "path": "<actual separately reviewed adapter JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "grant": {
+        "path": "<actual separate trusted grant JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native_provenance": {
+        "path": "<actual live native loaded-image provenance JSON>",
+        "sha256": "<actual whole SHA256>"
+      },
+      "native": {
+        "executable": "<installed compatible public native backend>",
+        "sha256": "<actual whole ELF SHA256>"
+      },
+      "scene_environment": {},
+      "runtime_arguments": [
+        "-Raot",
+        "-Rct",
+        "0",
+        "--log-verbose",
+        "--runtime-compiler-log",
+        "err",
+        "-Rllvm-cache-path",
+        "path",
+        "{session_dir}/vm-cache",
+        "--wasm-set-main-module-name",
+        "main",
+        "--wasip1-global-noinherit-system-environment",
+        "--portable-robot",
+        "{adapter}",
+        "<actual-adapter-whole-sha256>",
+        "{policy}",
+        "<actual-separate-grant-whole-sha256>"
+      ]
+    }
+  },
+  "physical_robot_authorized": false,
+  "required_before_use": [
+    "VM owner publishes/consumes real v1 admission; example must not manufacture it",
+    "All original provider/config/controller and live ROS graph identities",
+    "Exact whole frozen Wasm; no per-vendor compilation during test",
+    "Separate actual native/VM UUID and command-target association API; unavailable is BLOCKED",
+    "Required denial/lifecycle scenes implemented; unavailable is BLOCKED",
+    "VM owner must supply an actual command-binding-v1 producer in the pinned whole runtime; never derive runtime session/UUID evidence from the native observer"
+  ]
+}

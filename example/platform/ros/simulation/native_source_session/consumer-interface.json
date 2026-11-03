@@ -1,0 +1,58 @@
+{
+  "format": "uwvm-native-source-consumer-interface-v1",
+  "native_source_entry": "native_source_session.lua",
+  "config_schema": "native-inputs.schema.json",
+  "phase_budget": "phase-budget.json",
+  "native_ready_format": "uwvm-native-source-ready-v1",
+  "native_result_format": "uwvm-native-source-session-v1",
+  "native_phase_format": "uwvm-native-source-phase-v1",
+  "native_phase_events": [
+    "source_entry",
+    "native_inputs_verified",
+    "native_owner_born",
+    "native_endpoint_ready",
+    "native_live_health",
+    "native_stop_requested",
+    "native_failed",
+    "native_retirement_begin",
+    "native_retirement_complete"
+  ],
+  "native_manifest_verification": "native_inputs_verified means exact config/input manifest file pins verified by the session; each original endpoint independently verifies the complete referenced native payload closure before driver/simulator startup.",
+  "clocks": {
+    "all_phase_times": "HostCLOCK_MONOTONIC nanoseconds,boot identity included; compare across generations only with the same boot",
+    "birth_identity": "KernelPID+start ticks+cgroup+user/pid/net/mount/ipc/uts identities,restricted to the actual owned ledger",
+    "simulation_sensor_time": "Distinct native physics/sensor clock; do not substitute it for armed wall time or guest callback timing"
+  },
+  "consumer_required_checks": [
+    "Pin config,budget,session source,actual native entrypoint and complete dependency manifests",
+    "Reserve the complete entry-to-retirement queue interval,not merely postready lifetime",
+    "Arm authoritative VM/native journals before relevant operations; current native source readiness creates no VM authority",
+    "Bind source-ready run/owner/critical PID+births and per-occurrence typed actual native/guest operations; never replay stored readiness",
+    "Select exactly the independent acceptance primary; TB3scan5Hz requires at least1000actual selected callbacks and>=200smeasurement,not higher-rate side-channel or nativepacket substitutes",
+    "Keep startup,arming,warmup,normal task,fault/fresh generation and drain separately accounted",
+    "Require all old actual owned births retired before fresh generation; new generation does not itself prove guest reconnect/recovery",
+    "Require complete loss-free VM/native observer footer and counts before application acceptance; native retirement JSON alone is insufficient"
+  ],
+  "external_phases_not_emitted_or_qualified_by_native_source": [
+    "producer_authority_armed",
+    "guest_warmup_complete",
+    "task_or_callback_measurement_complete",
+    "ROS_action_cancel_or_guest_recovery_complete",
+    "VM_native_journal_drain_complete"
+  ],
+  "tb3_native_observation_provenance": "Original Gazebo Transport LaserScanStamped text recorded by original gz topic only. Not received RMWCDR,not guest callbacks,not physical task success.",
+  "go2_native_trace_provenance": "native-object-reserialization from msg.serialize(); not received RMWCDR/RTPS capture.",
+  "profile_installed_or_authority_granted": false,
+  "complete_wasm_scene_passes": 0,
+  "whole_window_allocation_semantics": "1040s is the declared two-generation450seach+reset120+outerjournal20 allocation. The provisional30sreset was exceeded by the actual split-job gap and is explicitly superseded. This is not a successful Wasmcase or a universal minimum. Current600s cannot reserve it; all in-armed preparation must be added.",
+  "source_live_max_seconds": 290,
+  "backend_post_ready_ceiling_seconds": 300,
+  "native_shutdown_reserve_seconds": 10,
+  "normal_source_expiry": "Source stops the backend10sbefore its existing native lifetime deadline; any early native loss or cleanup failure remains failure.",
+  "cold_preparation_accounting": {
+    "ur_independent_private_clone_allocation_seconds_per_generation": 300,
+    "two_generation_source_plus_if_both_clones_included_seconds": 1640,
+    "semantics": "1040scovers the declared native-source/producer phase allocation only after constructor inputs exist. Retain preparation timestamps and cold startup separately. If either300sprivate clone is inside the armed interval,add it explicitly; no complete cold task/journal bound or download success is qualified."
+  },
+  "native_ready_publication": "Write complete JSON to a private.pending path then atomically replace ready; revoke both ready/pending during all cleanup paths."
+}

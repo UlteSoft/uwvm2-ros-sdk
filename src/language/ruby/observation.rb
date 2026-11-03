@@ -15,6 +15,48 @@ module Uwvm
                  required: nil, rpc_status_present: false, rpc_status: nil, wire_hex: "", value: nil}
             end
 
+            # @brief Encode a generated message and attempt one explicit publication.
+            # @param alias_name Explicit publisher grant for the message's native type.
+            # @param message Trusted generated value; its class owns encode/bounds.
+            # @return Independent primary/cleanup and publish facts, no response value.
+            # @details Encode before acquisition. Zero means the raw publish accepted
+            # the bytes, not subscriber delivery. QoS and native type registration
+            # stay in host policy. No pointer/loaned-message ABI is claimed. Neither
+            # an operation error nor cleanup failure causes an automatic replay.
+            def publish(alias_name, message)
+                result = outcome.merge(publish_invoked: false, publish_accepted: false)
+                codec = message.class
+                unless codec.respond_to?(:encode) && codec.const_defined?(:MAX_WIRE_BYTES, false) &&
+                    codec.const_defined?(:MIN_WIRE_BYTES, false)
+                    return result.merge(primary: 22)
+                end
+                maximum, minimum = codec::MAX_WIRE_BYTES, codec::MIN_WIRE_BYTES
+                unless maximum.instance_of?(Integer) && minimum.instance_of?(Integer) &&
+                    minimum.between?(0, 32768) && maximum.between?(minimum, 32768)
+                    return result.merge(primary: 22)
+                end
+                begin
+                    bytes = codec.encode(message)
+                    unless bytes.instance_of?(String) && bytes.bytesize.between?(minimum, maximum)
+                        return result.merge(primary: 22)
+                    end
+                rescue ArgumentError, RangeError
+                    return result.merge(primary: 22)
+                end
+                result[:wire_hex] = bytes.unpack1("H*")
+                owner, result[:primary] = Uwvm::RosWasm::Capability.open(alias_name)
+                return result if owner.nil?
+                begin
+                    result[:publish_invoked] = true
+                    result[:primary] = owner.invoke("topic_publish", bytes)[0]
+                    result[:publish_accepted] = result[:primary] == 0
+                ensure
+                    result[:cleanup_present] = true
+                    result[:cleanup] = owner.close
+                end
+                result
+            end
+
             # @brief Receive exactly one complete original message or service response.
             # @param alias_name Explicit strict UTF-8 capability alias, 1..255 bytes.
             # @param codec Complete original response class with checked canonical codecs.

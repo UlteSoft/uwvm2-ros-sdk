@@ -91,6 +91,7 @@ def main():
         version = job.run("target-compiler-version", [llvm / "bin/clang", "--version"], wasi)
         if b"clang version 23.1.4" not in version:
             raise ValueError("The actual target compiler differs from the shared lock")
+        common.append("-DUWVM_APPLICATION_CAPACITY=16777216u")
         link_flags = ["-Wl,-z,stack-size=8388608", "-Wl,--max-memory=268435456", "-Wl,--threads=1"]
         environment = {"CC": shlex.join([str(llvm / "bin/clang"), *common]),
                        "AR": str(llvm / "bin/llvm-ar"), "RANLIB": str(llvm / "bin/llvm-ranlib"),
@@ -127,14 +128,18 @@ def main():
         bits = 64 if args.target.startswith("wasm64-") else 32
         job.report["raw_abi_bridges"] = []
         job.report["typed_backend_imports"] = {}
+        from bridge import bridge
         for backend in ("ros1", "ros2"):
+            compatibility = bridge(sdk, backend)
+            job.report.setdefault("compatibility_bridges", {})[backend] = compatibility["inputs"]
             (output / backend).mkdir()
             generated = cache / (backend + "-abi")
             job.report["raw_abi_bridges"].append(emit(sdk, backend, generated))
             application = output / backend / "cpython.wasm"
             job.run("link-" + backend, [llvm / "bin/clang", *common, "-I" + str(wasi),
                     "-I" + str(source / "Include"), "-I" + str(build), "-I" + str(support), "-I" + str(generated),
-                    sdk / "src/language/python/command.c", wasi / "libpython3.14.a", *lib_args,
+                    *compatibility["flags"], sdk / "src/language/python/command.c",
+                    *compatibility["sources"], wasi / "libpython3.14.a", *lib_args,
                     *link_flags, "-Wl,--trace", "-o", application], wasi, environment)
             job.report["typed_backend_imports"][backend] = validate(application.read_bytes(), abi, backend, address_bits=bits)
         objects = [{"path": p.relative_to(wasi).as_posix(), "bytes": p.stat().st_size,
@@ -154,7 +159,7 @@ def main():
         job.report["fresh_target_archive"] = {"sha256": digest(wasi / "libpython3.14.a")}
         lock = digest(sdk / "share/language/python/source-lock.json")
         job.report["artifacts"] = [job.artifact(output / backend / "cpython.wasm", "py", backend,
-                                   profile["triple"], "CPython", 4194304, lock)
+                                   profile["triple"], "CPython", 16777216, lock)
                                    for backend in ("ros1", "ros2")]
         if sources != source_files(sdk, "python"):
             raise ValueError("An admitted source changed during the cold build")

@@ -1,0 +1,327 @@
+{
+  "backend": "ros1",
+  "default_authority": [],
+  "format": "uwvm-language-bundle-v1",
+  "language": "py",
+  "module_loading": "lazy",
+  "modules": [
+    {
+      "file": "src/language/python/upstream/Lib/_collections_abc.py",
+      "name": "_collections_abc",
+      "sha256": "15fae322d03715bdaf2b9b8f4d365eef56063e1add897bd001498d7d13ab3452"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/_colorize.py",
+      "name": "_colorize",
+      "sha256": "afac49dd382bdce420a4f13ca8b7fd6a688b1a60c746d640d4481d88b2c1c914"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/_opcode_metadata.py",
+      "name": "_opcode_metadata",
+      "sha256": "191362e3ab708708599b8eaee3a511b80b2e6f28a995dfd7219f408357ec3000"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/_py_warnings.py",
+      "name": "_py_warnings",
+      "sha256": "6d47ebd70167acf1685c8dc946029c97a8b4e6c0a4373161080cb5270c6e69c3"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/_weakrefset.py",
+      "name": "_weakrefset",
+      "sha256": "652b6bf2dc8324b7d72f0e4d7c120f6472228052ea8b8f7cbce91b7344dfc936"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/abc.py",
+      "name": "abc",
+      "sha256": "9e0c45d33f6091231c2cef61caf9dd82d3cf46ec854874b647344bf2cc8ee429"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/annotationlib.py",
+      "name": "annotationlib",
+      "sha256": "d82dd636ea8a40974a65ad4aac765d22869370e6321d5fbc0fbbf722eff7f059"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/ast.py",
+      "name": "ast",
+      "sha256": "edf1332278e76b362cfd7732ec2980390da43ed013d85b49f9f55e080819a807"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/codecs.py",
+      "name": "codecs",
+      "sha256": "507390925ec440fca521854b6760fc5d372cf34d93af21713e78f4e29a34fbf7"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/collections/__init__.py",
+      "name": "collections",
+      "package": true,
+      "sha256": "89a2bf7aae5154338bcd7e6be12e8b2bca601c00a5c0d40b71e6f6befb6f6633"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/contextlib.py",
+      "name": "contextlib",
+      "sha256": "d5615aa09685158877006702f9736690b0737f479dc8e97cd38d27739c66b081"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/copy.py",
+      "name": "copy",
+      "sha256": "8a29e4072bec32c11833888e6331cf399c3918d3e02344eb3b5b5ad2c41d9df8"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/copyreg.py",
+      "name": "copyreg",
+      "sha256": "01b2d74408da3125f76c40deaaec01192b3c28d25f8e3d432646ce9f1b792d88"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/dataclasses.py",
+      "name": "dataclasses",
+      "sha256": "e65a246d157e0203ed6301e703e2d90e8e2a47ec243695ba41812476e785ddf6"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/dis.py",
+      "name": "dis",
+      "sha256": "98508d3a6c0cb212a44484f7a4066f5601a59c5227f53f0e3fb9b6530e53e085"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/enum.py",
+      "name": "enum",
+      "sha256": "4a3bf60ba80ba37786b702dfd230a25d122ee9899e7a6d12b9cdfa760c037c96"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/functools.py",
+      "name": "functools",
+      "sha256": "94ddda67559f4abf47540cb6c662e5a2661517be5966e775cfc459df2540e6dd"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/genericpath.py",
+      "name": "genericpath",
+      "sha256": "6ceda1ac3c3821b4811393e2e37def4a14833888433290248b208c8c3b3c002c"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/heapq.py",
+      "name": "heapq",
+      "sha256": "1dd81d5e3f401252f9b682ab3d12ff71742b4630cea060ab6a3f409b361e121a"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/importlib/__init__.py",
+      "name": "importlib",
+      "package": true,
+      "sha256": "37646447fa90996899f32712c3a41e4c243419ff5c409f0fb3600e593213e4ce"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/importlib/machinery.py",
+      "name": "importlib.machinery",
+      "sha256": "86efd3b402aa2a464c780871581a66fec72ef38fba2319e9548bbef2021a2eb8"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/inspect.py",
+      "name": "inspect",
+      "sha256": "4af33c62a5558189c7212b48efa7973f1e03b86cfcdcbdcac11bc30b9a09b0e2"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/io.py",
+      "name": "io",
+      "sha256": "e1fd7eff340ae2cc63672d4a616be359aee7c4ddb4ecf65d232b6894192f8d04"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/json/__init__.py",
+      "name": "json",
+      "package": true,
+      "sha256": "e93cb2c8866381717890b4bdc586428dd3a5a9ad0246565c0396f0daac0c6d51"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/json/decoder.py",
+      "name": "json.decoder",
+      "sha256": "7370b32ae6ee0ed4c01473785c786db8b3db5b243ef58850a9779f57e078ef83"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/json/encoder.py",
+      "name": "json.encoder",
+      "sha256": "71d54373534a7d27a6a0503fb966f8b29a001b8f0bb907c5f01c9d57d5818501"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/json/scanner.py",
+      "name": "json.scanner",
+      "sha256": "d183d2d76cdaaa748f0b0452a8c7444e8d4a55b174a9c493346f748c6abb331b"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/keyword.py",
+      "name": "keyword",
+      "sha256": "ed7ae2021bc03e606ad2d55350ba4be7f17565e05994bb9aefe27d6e3a1eee52"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/linecache.py",
+      "name": "linecache",
+      "sha256": "e89236e6939165852552f94ac2ede6378d5bc8dfb030d4649a96131f6682e142"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/opcode.py",
+      "name": "opcode",
+      "sha256": "9b6e6683411203049ff886900ed8013af9fef091d1da892a5b14f941d02347f3"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/operator.py",
+      "name": "operator",
+      "sha256": "a16595c5ff449b430fa45a59a866b3a137ad108075f7185b3c53bf07c2622ca4"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/os.py",
+      "name": "os",
+      "sha256": "7a97a9334eaaeba5a896e44872b2a02912b99f81b11b5588fca692ff1f4023a8"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/posixpath.py",
+      "name": "posixpath",
+      "sha256": "ea6e0e129cc4ee0275f6a0b798cb4862afec4f31e1c0fc6ab3f4180397b9d0b9"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/re/__init__.py",
+      "name": "re",
+      "package": true,
+      "sha256": "faac3a924504abf3dcd6ee67c75b30e6d2b426e2bd6efbc59d2312e639511c5e"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/re/_casefix.py",
+      "name": "re._casefix",
+      "sha256": "94c9898b99ac5055d882a2aae6c4a353e0bd2107593f93a7c8b928e58c53995a"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/re/_compiler.py",
+      "name": "re._compiler",
+      "sha256": "7d18d26c27c19b794a168216f4245f9d2c7ed7d27723fb4e1c2f3a48b99a9b1d"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/re/_constants.py",
+      "name": "re._constants",
+      "sha256": "288b754f94b9c44d235cccfae8b7c063eafbb5dee0860973fca8e07fe93e2ae6"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/re/_parser.py",
+      "name": "re._parser",
+      "sha256": "f99656cf419642aa602675a9a9f7db0fc7d2af118b9df9f8a08783d6bf18335c"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/reprlib.py",
+      "name": "reprlib",
+      "sha256": "5da98f33ca26602cfc6f33e68685aa97074624212cacadeac570946c76f4a1ea"
+    },
+    {
+      "file": "include/platform/ros/transplate/ros1/rospy/v1/modules/rospy/__init__.py",
+      "name": "rospy",
+      "package": true,
+      "sha256": "c6dbd99f7d6616354cdc921bf5ac85d349c39e3dca3f0911951c5c2a1c1f7174"
+    },
+    {
+      "file": "include/platform/ros/transplate/ros1/rospy/v1/modules/rospy/_state.py",
+      "name": "rospy._state",
+      "sha256": "1c7f6085550adc656a55ff9734210b8140721980f1f9d5f1f1af2324cf5c820a"
+    },
+    {
+      "file": "include/platform/ros/transplate/ros1/rospy/v1/modules/rospy/exceptions.py",
+      "name": "rospy.exceptions",
+      "sha256": "244fdb72aac102d457eea107f04f583160e8e98db4a0c3bdf549ee3641cd053f"
+    },
+    {
+      "file": "include/platform/ros/transplate/ros1/rospy/v1/modules/rospy/topics.py",
+      "name": "rospy.topics",
+      "sha256": "8a9d1516f21c81208e84a1acfab9d7f2220caa002cfed7eda8ded00109d4de30"
+    },
+    {
+      "file": "include/platform/ros/py/roswasm/__init__.py",
+      "name": "roswasm",
+      "package": true,
+      "sha256": "c0700f2f09e0d547cc26382705821d609f6ae8f5db601ec211353b43801afe58"
+    },
+    {
+      "file": "include/platform/ros/py/roswasm/_registry.py",
+      "name": "roswasm._registry",
+      "sha256": "64ba2cd4019f5b8368266c643dc49afb3052050f48859db80f299b364be90a5d"
+    },
+    {
+      "file": "include/platform/ros/py/roswasm/client.py",
+      "name": "roswasm.client",
+      "sha256": "646ec713d96b6a280ffd579923eb93230a9d29a4ee33edd861ef2d1ce5cf224f"
+    },
+    {
+      "file": "include/platform/ros/py/roswasm/codecs.py",
+      "name": "roswasm.codecs",
+      "sha256": "20d2268eb9556018f35d3bce3550663e9565439cbd4548b749cfbb796dbc82c4"
+    },
+    {
+      "file": "include/platform/ros/py/roswasm/events.py",
+      "name": "roswasm.events",
+      "sha256": "4b898ec3aa85f07dd66690bbb5335adfab84de4d1134e3af4014d0b3a27fec76"
+    },
+    {
+      "file": "include/platform/ros/py/roswasm/raw.py",
+      "name": "roswasm.raw",
+      "sha256": "4240576f9dd92e1139a27006f65e5503d460cdd2dab63eb27feb865dda709778"
+    },
+    {
+      "file": "include/platform/ros/py/roswasm/transforms.py",
+      "name": "roswasm.transforms",
+      "sha256": "06d1fa6a0aa1927fc878f06a12a22a81746adc14c3219a9899da5fe7a0a2d9e1"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/stat.py",
+      "name": "stat",
+      "sha256": "fb2e9aaf3effc4624e0c3d82fe4db31e5b438964f1ab9de5ea7344a8d9e097e5"
+    },
+    {
+      "file": "include/platform/ros/transplate/ros1/rospy/v1/modules/std_msgs/__init__.py",
+      "name": "std_msgs",
+      "package": true,
+      "sha256": "24cf796c5a3b6886713b1970083131ee3f8bafd28eba5d52a39f791ac07033ec"
+    },
+    {
+      "file": "include/platform/ros/transplate/ros1/rospy/v1/modules/std_msgs/msg/__init__.py",
+      "name": "std_msgs.msg",
+      "package": true,
+      "sha256": "d65f149f12fdd6a10b52de5a79c0941c6fd72092be0f32e934cec43a0acfa6b8"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/struct.py",
+      "name": "struct",
+      "sha256": "987c7d4251f854a46fd57b30894aabf3bc8a9d5d3bac2dbb7d6d9f26bd582713"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/textwrap.py",
+      "name": "textwrap",
+      "sha256": "2b31ef13606d62ad63d4791f5005a0a147ab015c055d9f909048c45b2e0ad6e3"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/token.py",
+      "name": "token",
+      "sha256": "b7cf90b758725ec2759f302eabb46c9022ff86b142a444d153581a185b983bf8"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/tokenize.py",
+      "name": "tokenize",
+      "sha256": "d3839144e172b8bb872b23a44062b986004278cacf375c7a17701cf425ad4722"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/traceback.py",
+      "name": "traceback",
+      "sha256": "d524ca5e593e13cdc7e609680ef2409cc6fb18ac46782e3d968d32201ff69483"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/types.py",
+      "name": "types",
+      "sha256": "ae0e79d31e38a582efef807f67ed99ca0f1aae250a1151a715f52f989c12c312"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/typing.py",
+      "name": "typing",
+      "sha256": "d1a6c5beb9d09656e6db8b07e411d2a63e3adad62d5454f615b4da219a483530"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/warnings.py",
+      "name": "warnings",
+      "sha256": "5df430b7457bb9c34f20889ad81b9a516f03bafd3a812d76bd6a6d240e04c9cb"
+    },
+    {
+      "file": "src/language/python/upstream/Lib/weakref.py",
+      "name": "weakref",
+      "sha256": "74aaa1c4bbe36db792d5c6326442db233c5ba91dc4ccc63926019abb505acc11"
+    }
+  ]
+}

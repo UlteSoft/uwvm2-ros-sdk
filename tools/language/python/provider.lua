@@ -5,6 +5,9 @@ function describe()
     return import("provider", { rootdir = path.join(os.scriptdir(), "..", "js"), anonymous = true }).describe()
 end
 function configure(target, root, request)
+    if target:values("ros.sdk.python.transplate") then
+        return import("transplate", { rootdir = path.join(root, "tools/language/python"), anonymous = true }).configure(target, root, request)
+    end
     return import("provider", { rootdir = path.join(root, "tools/language/js"), anonymous = true }).configure(
         target,
         root,
@@ -12,6 +15,9 @@ function configure(target, root, request)
     )
 end
 function build(target, root, request)
+    if target:values("ros.sdk.python.transplate") then
+        return import("transplate", { rootdir = path.join(root, "tools/language/python"), anonymous = true }).build(target, root, request)
+    end
     return import("provider", { rootdir = path.join(root, "tools/language/js"), anonymous = true }).build(
         target,
         root,

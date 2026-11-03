@@ -1,0 +1,128 @@
+{
+  "format": "robotis-original-humble-application-source-lock-v1",
+  "repository": "ROBOTIS-GIT/turtlebot3",
+  "commit": "90a68bd2e3c61c12966779da89d8eeaec82730e9",
+  "distribution": "humble",
+  "application_package_version": "2.3.7",
+  "selected_task": "turtlebot3_example/turtlebot3_example/turtlebot3_obstacle_detection/turtlebot3_obstacle_detection.py",
+  "original_files": [
+    {
+      "path": "turtlebot3_example/turtlebot3_example/turtlebot3_obstacle_detection/turtlebot3_obstacle_detection.py",
+      "sha256": "ca77972db3f6415dc80f1ed1b32a6c81abd9c11ba561192c704cf1dd1ef79ff6",
+      "bytes": 3197,
+      "git_blob_sha1": "8a4950c129b48c1cb59e716e95253534902834f9"
+    },
+    {
+      "path": "turtlebot3_example/package.xml",
+      "sha256": "360f7ba0b9f5f644d1fe6b1faa31ea0feeee21994c821161373cab20f9d4d342",
+      "bytes": 1340,
+      "git_blob_sha1": "cbd90a747ca185f9f658ed0d63deab28d7d4ac00"
+    },
+    {
+      "path": "turtlebot3_example/setup.py",
+      "sha256": "1f4b201a10085efb43b77e02cba248ed6bd1b4d254ef535d6de311f43646c3da",
+      "bytes": 2288,
+      "git_blob_sha1": "75c9c864dc849f8ee2e02d7ac9e14c146255aa3d"
+    },
+    {
+      "path": "turtlebot3_example/setup.cfg",
+      "sha256": "6eb3d6d5632db383b8747f47cdf58d6515f1a72c31d627add716faaf3b229d8b",
+      "bytes": 105,
+      "git_blob_sha1": "ba13e1bfebe89bedcfc30dbfd8c26016e901a398"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "f9946796a8a5bd5981565142fa42e3b0cc36aef6f80e86beaf5905b3c0fef1b5",
+      "bytes": 11361,
+      "git_blob_sha1": "f4f87bd4ed6dca2480e257335a4063ef4127624c"
+    }
+  ],
+  "application_source_unchanged": true,
+  "application_source_patch": "EMPTY",
+  "source_git_blob_sha1": "8a4950c129b48c1cb59e716e95253534902834f9",
+  "active_native_environment": "OfficialHumble simulatora35a56c8,originalCPUray360samples5Hz,Twist/odom; package2.3.8. Exactmatchingapplicationrepo90a68bd2/messagescdee60f7,Humble source/driver selected explicitly.",
+  "historical_jazzy": "03 Jazzyapplication002/r32 and04 JazzyTwistStamped/llvmpipe remain separatehistoricalsource/build/environment evidence,not this task or a replacementHumbleclaim. No Jazzytransport adapter used.",
+  "producer": "Existing shared genuine CPython3.14.8 formalstdlib/realCbridge fourengines; no nativeapp/privateAPI fork",
+  "build": "PENDING_R54_PUBLIC_COMMON_PRODUCER",
+  "runtime": "NOT RUN",
+  "official_simulation": "NOT RUN",
+  "accepted": false,
+  "bootstrap": {
+    "path": "example/platform/robotis/py/ros2/humble/upstream_obstacle_detection/main.py",
+    "sha256": "4716488dc1923224be765bd38289f40572208473424dcae61f334b9bb8657cbb",
+    "flags": {
+      "prepare_callback_logging": true,
+      "prepare_callback_logging_clock": true
+    },
+    "system_clock_binding": {
+      "key": [
+        "time_read_system",
+        "/turtlebot3_obstacle_detection",
+        ""
+      ],
+      "alias": "separately selected exact system-time alias",
+      "capacity": 8
+    },
+    "original_source_unchanged_sha256": "ca77972db3f6415dc80f1ed1b32a6c81abd9c11ba561192c704cf1dd1ef79ff6",
+    "shared_source_sha256": {
+      "include/platform/ros2/py/compat/rclpy/rclpy/node.py": "63f4348fd6c2542520705f81685c2f7cd7efd9767146b43d451d90578d9de0a3",
+      "include/platform/ros2/py/compat/rclpy/rclpy/context.py": "d7b9190b1adaae4bc5ba0b03ed874cdb82bb4e511f58bcd2979fa77a11cc7451",
+      "include/platform/ros2/py/compat/rclpy/rclpy/clock.py": "01c6c0976c9f4c09b11c6eb389aa8130f9a90611c7e9724a04668c5eca0b9b11",
+      "tools/platform/ros/deployment.py": "72b1c2ee85b6e27a5c584f76b610edb7a26055b999ab833e17ac12c142423710",
+      "tools/platform/ros/run.py": "d78f1d06c56b64fc6d186ff3e4517fdc1f863625b1df5291b39af556fefbb10c",
+      "include/platform/ros2/py/compat/rclpy/rclpy/__init__.py": "012f0cfaee5f279a03a676de49808c85ee77443df196f262fe98d6a7d1a42437"
+    },
+    "scheduling": {
+      "lifetime": "until_shutdown",
+      "maximum_credits": 300001,
+      "duplicate_pacing_credit_limit": null,
+      "period_ns_unchanged": 1000000
+    },
+    "bundle": {
+      "path": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bundle.json",
+      "sha256": "219f1a5684b3066efacd88d017e835a48103b9058741f1402cedf0b5216f4513",
+      "modules": 26
+    },
+    "whole_invocation": {
+      "profile": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bootstrap-lifetime.profile.json",
+      "sha256": "fe9d945f8430ed764abea294a0c4aee824b64175fefc12bfdbea0da976e50ceb",
+      "single_context_credit_budget": 300001,
+      "watchdog_seconds": 300,
+      "pacing_ns_unchanged": 1000000
+    },
+    "runtime_interface": {
+      "path": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bootstrap-runtime-interface.json",
+      "sha256": "6f8fb9cbd271c5e3d0f09e8356c338f625c0f155067b4e6f0dcfd47820a29909"
+    },
+    "runtime_contract": {
+      "path": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bootstrap-runtime-contract.json",
+      "sha256": "b15c26e2b8d15b6a2d483a6b119c5b500c75f5bc6e25b1aa21e131da11aebb61"
+    }
+  },
+  "native_task_scene": {
+    "binding": "example/platform/robotis/simulation/turtlebot3_burger_humble/scene.binding.json",
+    "binding_sha256": "849d39277de030b5348c012bfa253043e66408ec8b6fe8781271748647933e26",
+    "requirements": "example/platform/robotis/simulation/turtlebot3_burger_humble/scenario.requirements.json",
+    "requirements_sha256": "34efad7672906608f77312668e491180d78b602de2b9204dc95c70d74eadceb0",
+    "entrypoint": "example/platform/robotis/simulation/turtlebot3_burger_humble/native_scene.py",
+    "entrypoint_sha256": "02be0dc91c95c73a1b48d7872c049cd9c551f56296ad833e048ad1749bdff4d4",
+    "world": "turtlebot3_dqn_stage1.world",
+    "spawn_pose": [
+      1.1,
+      0,
+      0.01
+    ],
+    "yaw_rad": 0,
+    "native_matched_world_and_retirement": "PASS supporting04 actual selected task scene only; original application runtime/official still NOT RUN",
+    "shared_owned_lifecycle": [
+      {
+        "path": "tools/shared/python/owned_processes.py",
+        "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+      },
+      {
+        "path": "tools/shared/python/runtime_boundary.py",
+        "sha256": "d9b6f1357e247e46ef1212faad4542f283c57230f1670c9c9114b3666485e484"
+      }
+    ]
+  }
+}

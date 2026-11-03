@@ -1,0 +1,46 @@
+{
+  "format": "uwvm-python-legacy-upstream-reference-v1",
+  "rclpy_version": "7.1.12",
+  "commit": "bd637294dd02b1c128422395c059fa06df8387a3",
+  "references": [
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/upstream-reference/__init__.py",
+      "bytes": 10985,
+      "sha256": "15b5665a97a688645545e704a6111a5be5f5b2d147cfcf099e2f92aabcbdf00f",
+      "git_blob": "dcc5ff056cf4b360de802a98132e7a3b6ea8ba9d",
+      "upstream_commit": "bd637294dd02b1c128422395c059fa06df8387a3",
+      "url": "https://github.com/ros2/rclpy/blob/bd637294dd02b1c128422395c059fa06df8387a3/rclpy/rclpy/__init__.py",
+      "role": "Original API/license reference only; not executed instead of the Wasm compatibility implementation"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/upstream-reference/context.py",
+      "bytes": 7038,
+      "sha256": "a33eb8a3a7bf4f43b45e7acc3d5efd85a5fbf8da7626c069494215a342df6c77",
+      "git_blob": "c3a27953e37b3e34cd1fb71a49cee40a3d6478dc",
+      "upstream_commit": "bd637294dd02b1c128422395c059fa06df8387a3",
+      "url": "https://github.com/ros2/rclpy/blob/bd637294dd02b1c128422395c059fa06df8387a3/rclpy/rclpy/context.py",
+      "role": "Original API/license reference only; not executed instead of the Wasm compatibility implementation"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/upstream-reference/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "upstream_commit": "bd637294dd02b1c128422395c059fa06df8387a3",
+      "url": "https://github.com/ros2/rclpy/blob/bd637294dd02b1c128422395c059fa06df8387a3/LICENSE",
+      "role": "Original API/license reference only; not executed instead of the Wasm compatibility implementation"
+    }
+  ],
+  "cpython_source_lock_sha256": "fa53c387ab6b3c7a4824eb42c5683e4a5ac8a0c91b74559a1ba6d5dac434c17f",
+  "packaged_stdlib_files_verified_against_existing_source_lock": 48,
+  "implementation_is_unmodified_upstream": false,
+  "sdk_implementation_license": {
+    "path": "LICENSE",
+    "name": "MIT",
+    "sha256": "b177692769e0a35000a582c5e1f38657ff1816fcc96ef682c47bfd2f5899545e"
+  },
+  "cpython_license": {
+    "path": "src/language/python/upstream/LICENSE",
+    "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231"
+  }
+}

@@ -46,8 +46,12 @@ def main():
     build.mkdir(exist_ok=True)
     manifest = json.loads((qualified / 'share/wasm/toolchains.json').read_text())
     profile = next(item for item in manifest['targets'] if item['triple'] == args.target and item['profile'] == 'noeh')
-    if not profile['tested'] or profile['llvm_major'] != 23:
-        raise RuntimeError('The tested LLVM 23 target profile is required')
+    # The public catalog describes exact ABI structure; qualification belongs
+    # to the selected compiler/runtime originals and their execution evidence.
+    if (profile['llvm_major'] != 23 or profile['triple'] != args.target or
+            profile['profile'] != 'noeh' or profile['threads'] or
+            profile['memory64'] != args.target.startswith('wasm64-')):
+        raise RuntimeError('The exact LLVM 23 noeh WASIp1 target profile is required')
     common = ['--target=' + args.target, '-no-canonical-prefixes', '-fintegrated-cc1', '--sysroot=' + str(qualified / profile['sysroot']),
         '-isystem', str(qualified / profile['include_dir']), '-resource-dir=' + str(qualified / profile['resource_dir']),
         '-B' + str(qualified / profile['lib_dir']), '-L' + str(qualified / profile['lib_dir']),
@@ -76,6 +80,9 @@ def main():
         commands.append(dict(name=name, argv=argv, cwd=str(cwd) if cwd else None, exit=result.returncode))
         if result.returncode:
             report['failure_step'] = name
+            break
+        if name == 'llvm-version' and 'clang version 23.' not in (cache / (name + '.log')).read_text():
+            report['failure_step'] = 'actual-LLVM-major-version'
             break
     (cache / 'build-receipt.json').write_text(json.dumps(report, indent=4) + '\n')
     print(json.dumps(report))

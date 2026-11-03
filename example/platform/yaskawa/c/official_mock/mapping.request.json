@@ -1,0 +1,34 @@
+{
+  "status": "UNBOUND_MAPPING_REQUEST_NOT_RUNTIME_ADAPTER",
+  "platform_id": "yaskawa/gp8/europe_mock_hardware",
+  "native_joints": [
+    "joint_1",
+    "joint_2",
+    "joint_3",
+    "joint_4",
+    "joint_5",
+    "joint_6"
+  ],
+  "official_source": {
+    "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
+    "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
+    "license": "BSD-3-Clause in selected model/config packages",
+    "mode": "mock_components/GenericSystem",
+    "scope": "Official GP8 Humble ideal ros2_control mock; default controller configuration inconsistent and not yet runtime-qualified"
+  },
+  "resources": {
+    "joint_state_topic": "/sdk02_yaskawa/joint_states",
+    "position_action": "/sdk02_yaskawa/moto_controller/follow_joint_trajectory",
+    "controller_status_service": "/sdk02_yaskawa/controller_manager/list_controllers"
+  },
+  "max_step_microrad": 1000,
+  "tolerance_microrad": 250,
+  "runtime_authorized": false,
+  "runtime_binding_required": [
+    "Compatible native ROS/image/provider closure",
+    "Observed actual controller/URDF and review of default configuration issues",
+    "Policy bytes/epoch and exact same canonical Wasm",
+    "Real VM portable host import/grant/native confirmation"
+  ],
+  "native_controller_type": "joint_trajectory_controller/JointTrajectoryController"
+}

@@ -68,8 +68,8 @@ namespace roswasm_rclcpp
          * @see TopicBinding::maximum_wire_bytes
          */
         std::size_t keep_last_depth;
-        /** @brief Complete canonical message-buffer capacity, 4..32768 bytes.
-         * @details Includes the String length prefix; this is not a character count.
+        /** @brief Complete canonical message-buffer capacity, 1..4193786 bytes.
+         * @details Includes all selected type framing; this is not a character count.
          * @see TopicBinding::keep_last_depth
          */
         std::size_t maximum_wire_bytes;
@@ -210,6 +210,12 @@ namespace roswasm_rclcpp
         roswasmc_service_client_backend const* clients{};
     };
 
+    /** Explicit lifecycle mode, selected in pinned source before initialization.
+     * until_shutdown requires real blocking pacing and independent cancellation;
+     * it never turns an iteration budget into successful task completion.
+     */
+    enum class SpinMode { bounded, until_shutdown };
+
     /** @brief Immutable complete configuration for the finite source adapter.
      * @details init validates the required topic/node/pacing subset. Service tables
      * are separately validated when a service factory uses them. The selected
@@ -247,8 +253,9 @@ namespace roswasm_rclcpp
          * @see Selection::step
          */
         void* step_context{};
-        /** @brief Maximum caller-driven spin passes, 1..4096.
-         * @details This is an iteration bound rather than a duration or rate promise.
+        /** @brief Maximum caller-driven spin passes, 1..4096 for bounded mode.
+         * @details Zero is required for explicit until_shutdown. The bounded count is
+         * an iteration limit rather than a duration or rate promise.
          * @see Selection::step
          */
         std::size_t maximum_spin_steps{};
@@ -258,6 +265,12 @@ namespace roswasm_rclcpp
          * @see ServiceProfile
          */
         ServiceProfile const* services{};
+        /** Existing aggregate selections retain their finite semantics. A source
+         * port may explicitly choose until_shutdown with maximum_spin_steps=0.
+         * Its step callback must perform genuine admitted waiting/cancellation.
+         * No synthetic clock, implicit grant or native application loop is used.
+         */
+        SpinMode spin_mode{SpinMode::bounded};
     };
 }  // namespace roswasm_rclcpp
 

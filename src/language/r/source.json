@@ -1,0 +1,13 @@
+{
+  "language": "r",
+  "version": "4.5.1",
+  "official_archive": "https://cran.r-project.org/src/base/R-4/R-4.5.1.tar.xz",
+  "archive_sha256": "3c29f587f438588160cc8a82a2b3fcc0abff392f731d930b4eaa7f85fa022a32",
+  "status": "INCOMPLETE_NO_STANDALONE_VM",
+  "file_manifest": "file-manifest.json",
+  "file_manifest_sha256": "194c23107380c22701971d134749cc4a242fc88ead54b2ffa03ed5c244be85b3",
+  "formatting": "four-space Allman C/C++; generated data-table layouts, include order and original legal notices retained",
+  "qualification": "share/language/r/port-status.json",
+  "retained_source_files": 5081,
+  "retained_source_bytes": 122692122
+}

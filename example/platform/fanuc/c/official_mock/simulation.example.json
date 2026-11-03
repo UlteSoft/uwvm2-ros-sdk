@@ -1,0 +1,220 @@
+{
+  "format": "uwvm-sdk-simulation-example-v1",
+  "profile": {
+    "id": "fanuc-crx10ia-official-mock-jazzy",
+    "vendor": "fanuc",
+    "official_controller_type": "fanuc_controllers/ScaledJointTrajectoryController",
+    "native_joint_names": [
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5",
+      "J6"
+    ]
+  },
+  "frozen_wasm": {
+    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "python_dependencies": [],
+  "scenarios": [
+    {
+      "id": "unchanged_wasm_joint_step",
+      "kind": "positive",
+      "required": true,
+      "expected_vm_exit": 0,
+      "deadline_seconds": 45
+    },
+    {
+      "id": "denied_permission_no_native_effect",
+      "kind": "denied",
+      "required": true,
+      "expected_vm_exit": 13,
+      "deadline_seconds": 45
+    },
+    {
+      "id": "bounds_stale_foreign",
+      "kind": "lifecycle",
+      "required": true,
+      "expected_vm_exit": 1,
+      "deadline_seconds": 45
+    },
+    {
+      "id": "cancel_timeout_disconnect",
+      "kind": "lifecycle",
+      "required": true,
+      "expected_vm_exit": 1,
+      "deadline_seconds": 45
+    },
+    {
+      "id": "pause_restart_update_rollback",
+      "kind": "lifecycle",
+      "required": true,
+      "expected_vm_exit": 1,
+      "deadline_seconds": 45
+    }
+  ],
+  "required_matrix": "matrix.required.json",
+  "physical_robot_authorized": false,
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "a338b3bfad6fc0b81494971516a2dd395addfe1f0ae55efc7fe7f1e1a7b798ad"
+    },
+    {
+      "scope": "example",
+      "path": "authority.request.json",
+      "sha256": "d1243c96474ae31b2c3006683869cf07147541b2e94b4d25022a29c6702fba76"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "fd85cd599e071ae436f82af3bd8300ebc26cd1f2e99821ce9e8132da3b0e32ab"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "scope": "example",
+      "path": "mapping.request.json",
+      "sha256": "a10e21d365945246198462cad773b58f68d3e9273e4c3c4f46633ae47abb9c42"
+    },
+    {
+      "scope": "example",
+      "path": "matrix.required.json",
+      "sha256": "97bf7b9fef46a9679951f45994dcb9e2d755c2b98a0ec3758d76e14eaa43a6ba"
+    },
+    {
+      "scope": "example",
+      "path": "model.source.lock.json",
+      "sha256": "a0435659c5fcbb5ce86a0b9fdfbed31b463e91a6eef26e6740894ca4524b6137"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/LICENSES/Apache-2.0.txt",
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/LICENSES/BSD-2-Clause.txt",
+      "sha256": "017b5ee48f680e82cba79141c7895a1f02b856df2512225f5c427fe36765ef0b"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/LICENSES/BSD-3-Clause.txt",
+      "sha256": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/LICENSES/MIT.txt",
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_controllers/package.xml",
+      "sha256": "975b392912cebb67c0797a5442f3554a1fe5d5b18a712d27e03904d609724c78"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_crx_description/package.xml",
+      "sha256": "e016d38aad147c7953838f1bc3ca0ba5b143e22a3cc6319f441aa3535363d045"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_hardware_interface/config/crx_mock_ros2_control_macro.xacro",
+      "sha256": "211fd39bc4612631ece92bf30de6408d87b104204d2b63227bb3f0798b42b197"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_hardware_interface/config/example_gpio_config.yaml",
+      "sha256": "2753311cb6f1bf71e408660615cc8ab7753ce843304d45f26e32664b58fc2063"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_hardware_interface/config/ros2_controllers.yaml",
+      "sha256": "c72cae62ff9db942ee6fc5298f48c0b11e44ecba59e69717321922cddd4857df"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_hardware_interface/package.xml",
+      "sha256": "4b6ee4942b0ba80ef8e5484f8053eb2b5ba18491fbda14ce0ec8648f30bd94f5"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_hardware_interface/robot/crx10ia.urdf.xacro",
+      "sha256": "3d7aa551768c19f6f99b565ccbfc5199bd3b5be866efc5dcc27e2e4bbac380c6"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_libs/package.xml",
+      "sha256": "2e42be36d23d34f6e542b886b73118e3ff3ee7d62955c1e2066b3873e10a8182"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/fanuc_msgs/package.xml",
+      "sha256": "bbb22cc4cc9570bb26c7cddd0c4747b2d06807ba52604f01cfc0747aa4250347"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/rmi_msgs/package.xml",
+      "sha256": "a2eaa367ebe44388338e8566fac437cb9263d49fc246379789f7e44538faf893"
+    },
+    {
+      "scope": "example",
+      "path": "official-reference/slider_publisher/package.xml",
+      "sha256": "d1e845633f5077df7f5f82a53ec31437bbaefc64c89831f13f3ad03d694404d3"
+    },
+    {
+      "scope": "example",
+      "path": "provider.dependencies.json",
+      "sha256": "83c767233608e2d835ab4f28497ed4d3bca09ef50641033fe89b4cff59560c38"
+    },
+    {
+      "scope": "example",
+      "path": "provider.source.lock.json",
+      "sha256": "2fbef1b8f9fe3306ca3dcd8ecdd333800164e550cff0b63ee40969adcc2fb158"
+    },
+    {
+      "scope": "example",
+      "path": "release.applicability.json",
+      "sha256": "f5236c95a80362752faf22003f4b0fb89a99b484464a1fd5b686563e7266eacc"
+    },
+    {
+      "scope": "example",
+      "path": "run_scene.py",
+      "sha256": "a6770f27ac5e74458316b08ddf09a5243df18c83e173e8dd1cc281e1377bcf33"
+    },
+    {
+      "scope": "example",
+      "path": "scene.launch.py",
+      "sha256": "dc63aee29fd80834bb17c568fbe561b984c4a20307cd58d77c7fc34863dfd8c9"
+    },
+    {
+      "scope": "example",
+      "path": "simulation.profile.json",
+      "sha256": "4b91327b41653aeb6ed56a7310ba553356a5f7c7ed75c8534370f4885cc1f577"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "41e7e93689c5064e8ac38a56a369e74e1ebea1c1089441dd67f37b93dedd8d92"
+    }
+  ],
+  "migration_status": "BLOCKED_REQUIRED_FULL_WASM_ROS_LIBRARY_MIGRATION",
+  "native_witness_implementation_in_public_SDK": false,
+  "required_implementation": {
+    "status": "BLOCKED",
+    "diagnostic": "BLOCKED_REAL_WASM_ROS_MIGRATION_REQUIRED",
+    "requirements": [
+      "Actual guest ROS client libraries, query/callback/state processing and their pinned compiler/message/runtime closure",
+      "Production VM command/result and reverse-feedback audit binding the executing unchanged Wasm, grants and official provider",
+      "Public Linux xmake and xmake test with permission refusal/no unauthorized effect and all mandatory scenarios executed",
+      "Corresponding original official simulation provider and source-compatible ROS release profile; no native SDK client fallback"
+    ]
+  },
+  "native_environment_role": "Original official simulator/controller and supplied ROS plugins only; no SDK host-native business/query/feedback substitute"
+}

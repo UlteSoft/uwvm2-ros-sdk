@@ -1,0 +1,84 @@
+{
+  "actual_isolation_tests_executed": 0,
+  "component_definition": "ROS application trust boundary, distinct from C++ class or WIT Component Model",
+  "current_example": {
+    "ROS_rights": "Current bounded joint capability describe/read_state/submit/wait/close within this one principal",
+    "independent_component_memories_or_grants_qualified": false,
+    "mode": "static same-instance trust",
+    "module": "canonical joint-step.wasm",
+    "static_pointer_algorithm": "Private source buffers remain within the originating single instance; not cross-private pointers.",
+    "trust_domains": 1,
+    "whole_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "enforcement_dependencies": {
+    "SDK01": "Frozen versioned component/channel/grant ABI and real guest wrappers/Xmake entry. This design defines no competing common ABI.",
+    "VM owner": "Actual instance principal, memory backing graph, bound copy channel capability/generation/offset/length, per-caller permissions/audit, callback owner and revocation/update/cache safety."
+  },
+  "format": "sdk10-component-memory-design-v1",
+  "mandatory_independent_case": {
+    "actual_executed": 0,
+    "id": "independent-memory-and-authority",
+    "original_13_validation_groups_retained": true,
+    "pass": 0,
+    "required": true,
+    "scope": "Separate component-memory qualification; not a prerequisite for the first CPU/headless permission/communication/stale/disconnect route",
+    "selected_validation_groups": 1,
+    "status": "BLOCKED_REAL_VM_SDK01_INSTANCE_CHANNEL_AND_GRANT_ABI"
+  },
+  "multi_memory_is_read_only_or_byte_ACL": false,
+  "ordinary_private_pointer_selects_other_memory_automatically": false,
+  "references": [
+    "https://webassembly.github.io/spec/core/exec/runtime.html#module-instances",
+    "https://webassembly.github.io/spec/core/exec/runtime.html#memory-instances",
+    "https://webassembly.github.io/spec/core/valid/instructions.html#memory-instructions",
+    "https://github.com/WebAssembly/multi-memory/blob/main/proposals/multi-memory/Overview.md"
+  ],
+  "required_negative_groups": [
+    "same-offset private sentinels and growth isolation",
+    "intentional aliases versus distinct memory and forbidden private imports/exports",
+    "memory.copy overlap/alias/zero length/OOB/overflow/no partial write",
+    "forged or replayed channel capability/generation, mutation races and backpressure",
+    "identical Wasm bytes with different instance grants, stolen handles and confused deputy",
+    "callback/reentry/parallel owner, unload/update/rollback/cache/debug/audit attribution",
+    "real ROS denial without effect and fresh sensor/result feedback in guest"
+  ],
+  "ring_slot_convention_is_isolation": false,
+  "status": "DESIGN_AND_SOURCE_INTAKE_NOT_RUNTIME_ABI_OR_QUALIFICATION",
+  "target_graph": {
+    "actuator": {
+      "grants": "Only bounded action write/result and explicit incoming command channel. No permission union.",
+      "private_memory": "actuator-private"
+    },
+    "channels": [
+      {
+        "from": "perception",
+        "mode": "validated host-mediated bounded snapshot",
+        "to": "planner",
+        "whole_region_shared_with_peer": false
+      },
+      {
+        "from": "planner",
+        "mode": "validated host-mediated bounded snapshot",
+        "to": "actuator",
+        "whole_region_shared_with_peer": false
+      }
+    ],
+    "first_slice": "At least two real separate instances, allowed typed transfer, one independent denied operation, real ROS input/result through Wasm; then three instances.",
+    "new_module_version_required": "Splitting current monolithic C0 creates new version/hashes. Freeze every resulting module and graph for cross-vendor reuse; never claim original C0 hash continuity.",
+    "perception": {
+      "grants": "Only actual sensor/topic receive and permitted copy channel. No action write.",
+      "native_provider": "Verified bounded model/sensor primitive only; no guest business delegation.",
+      "private_memory": "perception-private"
+    },
+    "planner": {
+      "grants": "Only typed copy channels and narrowly scoped file access; no ROS action grant.",
+      "private_memory": "planner-private",
+      "static_library": "Ordinary pointer algorithm is statically linked into planner trust domain."
+    }
+  },
+  "three_modes": {
+    "explicit_preload": "Opt-in compatibility only, discouraged default; entire intentionally bound memory is visible and pointer/allocator/lifetime/ABI ownership must be qualified.",
+    "isolated_default": "Separate Wasm instances and private language heaps/stacks/globals; no peer imports private memories.",
+    "static": "Same instance, heap and effective authority; no independent sandbox claim."
+  }
+}

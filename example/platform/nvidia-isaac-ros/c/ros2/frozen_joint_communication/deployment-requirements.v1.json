@@ -1,0 +1,48 @@
+{
+  "SDK10_does_not_emit_admission_deployment_session_or_native_UUID": true,
+  "actual_native_host_command": "VM-owned ros2_joint_main restricted CLI: adapter adapterSHA grant grantSHA provenance vmELFSHA --portable-robot-audit-run freshSDKRunID",
+  "actual_runtime_command": "Shared Context.run_vm consumes only exact qualified runtime_arguments, AOT, four portable host pins, fresh audit run and sole frozen Wasm --run.",
+  "adapter_requirements": {
+    "execution_class": "software_simulation",
+    "joint_names": [
+      "stage_a_joint1",
+      "stage_a_joint2"
+    ],
+    "joint_state_topic": "/joint_states",
+    "lower_microrad": -1000000,
+    "mapping_epoch": "actual positive generation",
+    "max_step_microrad": 10000,
+    "native": "Actual socket/UID/native ELF SHA/provenance SHA/generation; produced by VM trusted deployment",
+    "position_action": "/portable_position_controller/follow_joint_trajectory",
+    "tolerance_microrad": 100,
+    "upper_microrad": 1000000
+  },
+  "current_missing_owner_work": {
+    "SDK01": "Qualified current public build/entry and exact negative-feedback/component-channel contracts; source fields are not runtime enforcement.",
+    "VM owner": "Current-boot qualified restricted host and public live admission/deployment producer. Native source/policy and actual reverse guest records must be independently qualified."
+  },
+  "format": "sdk10-stage-a-deployment-requirements-v1",
+  "nvidia_ros_communication_v1": {
+    "environment": {
+      "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp",
+      "ROS_DOMAIN_ID": "isolated admitted domain",
+      "ROS_LOCALHOST_ONLY": "1",
+      "provider_paths": "Only qualified read-only installed dependencies; no SDK business implementation."
+    },
+    "native_host": "Exactly runtime.controlled_native_host, kind uwvm2-ros-restricted-ros2-joint-host-v1, path, SHA256 and qualified source_identity. Not an arbitrary program.",
+    "physics": false,
+    "program_entries": "Each has path and whole SHA256 and is present identically in official_provider_files. Actual programs and source/package closure are pinned by the qualified deployment.",
+    "program_roles": [
+      "python",
+      "controller_manager",
+      "robot_state_publisher",
+      "controller_spawner",
+      "ros2_cli"
+    ],
+    "scenarios": "Each case binds actual adapter/path/SHA256 and policy/path/SHA256. Positive case also binds native_provenance/path/SHA256. No placeholder is accepted at runtime.",
+    "stage": "A"
+  },
+  "profile": "sdk10-jazzy-generic-system-jtc-communication-v1",
+  "shared_contract": "uwvm-sdk-simulation-deployment-v1 plus VM-produced live admission",
+  "status": "REQUIREMENTS_ONLY_NO_AUTHORITY_NO_LIVE_DEPLOYMENT"
+}

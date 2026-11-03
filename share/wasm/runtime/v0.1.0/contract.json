@@ -1,0 +1,1666 @@
+{
+  "format": "uwvm-sdk-runtime-install-contract-v0.1.0",
+  "status": "REQUIREMENTS_AND_SCOPED_INVENTORY_DEV_RELEASE_NOT_QUALIFIED",
+  "single_runtime_executable": {
+    "name": "uwvm2-ros",
+    "goal": "One ELF per Linux target, as static as the actual supported runtime/provider contract permits",
+    "packaging_owner": "VM owner in VM repository",
+    "language_compilers": "SDK build dependencies; never infer a runtime release dependency from their presence",
+    "install_selection": "Installed PATH default uwvm2-ros, or explicit trusted runtime path in the existing command-run configuration"
+  },
+  "execution_contract": {
+    "format": "uwvm-ros-command-run-v1",
+    "launcher": "tools/xmake/run.lua",
+    "launcher_sha256": "c098486d0eb62b23e7148e9ad2b7ed9a99c666578024b44c2cf3160dc9d4d5c0",
+    "fields": [
+      "target",
+      "backend",
+      "distribution",
+      "runtime",
+      "runtime_arguments",
+      "app_arguments"
+    ],
+    "permissions": "Explicit user/runtime policy only; no SDK implicit grants, feature switches, EH overrides or native ROS business fallback",
+    "application_operand": "Launcher appends the sole --run with already-built target; run does not compile"
+  },
+  "capability_manifest_producer": {
+    "owner": "VM owner",
+    "required_install_identity": [
+      "ELF full SHA256 and target/source/build identity",
+      "Actual supported Wasm proposals and exact import signatures/semantics",
+      "Memory/table width and limits, threads/TLS/EH/GC constraints",
+      "Native runtime providers, actual dynamic dependencies and paired unwind closure",
+      "ROS distribution/RMW/type-support/generated message ABI and permission/audit contract",
+      "Original release smoke/public-command evidence identities"
+    ],
+    "state": "NO_CURRENT_DEV_RELEASE_MANIFEST_OR_ELF_QUALIFIED",
+    "consumer_rule": "Missing producer or an unmatched identity is BLOCKED; an enum/version string is not support"
+  },
+  "compiler_identity": {
+    "source": "share/wasm/toolchains.json",
+    "sha256": "4e149950a461982f2eb7d873a405598fc103428c7081e24747471363efb5f583",
+    "version": "clang version 23.1.4 (https://github.com/llvm/llvm-project 7a941dfb2877a0b8cf30323fefa85ad019e0b0f5)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix",
+    "sha256_declared": "c336d48383874cffaab0dc4c5c359456d871f21380b746520dde5c7f4c125a67",
+    "runtime_compiler_is_distinct": true
+  },
+  "declared_compile_profiles": [
+    {
+      "arch": "wasm32",
+      "triple": "wasm32-wasip1",
+      "abi": "wasi_snapshot_preview1",
+      "profile": "noeh",
+      "memory64": false,
+      "table64": false,
+      "threads": false,
+      "shared_libraries": false,
+      "runtime_flags": [],
+      "cflags": [
+        "--target=wasm32-wasip1"
+      ],
+      "cxxflags": [
+        "-stdlib=libc++",
+        "-fno-exceptions"
+      ],
+      "ldflags": [
+        "-rtlib=compiler-rt"
+      ],
+      "libcxx_abi_version": 2,
+      "state": "SDK_COMPILE_TARGET_DECLARATION_NOT_DEV_RUNTIME_SUPPORT"
+    },
+    {
+      "arch": "wasm32",
+      "triple": "wasm32-wasip1",
+      "abi": "wasi_snapshot_preview1",
+      "profile": "eh",
+      "memory64": false,
+      "table64": false,
+      "threads": false,
+      "shared_libraries": false,
+      "runtime_flags": [
+        "--wasm-feature-enable-exceptions"
+      ],
+      "cflags": [
+        "--target=wasm32-wasip1"
+      ],
+      "cxxflags": [
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "-mllvm",
+        "-wasm-use-legacy-eh=false"
+      ],
+      "ldflags": [
+        "-rtlib=compiler-rt",
+        "-lunwind"
+      ],
+      "libcxx_abi_version": 2,
+      "state": "SDK_COMPILE_TARGET_DECLARATION_NOT_DEV_RUNTIME_SUPPORT"
+    },
+    {
+      "arch": "wasm64",
+      "triple": "wasm64-wasip1",
+      "abi": "uwvm-preview1-memory64-extension",
+      "profile": "noeh",
+      "memory64": true,
+      "table64": true,
+      "threads": false,
+      "shared_libraries": false,
+      "runtime_flags": [
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64"
+      ],
+      "cflags": [
+        "--target=wasm64-wasip1"
+      ],
+      "cxxflags": [
+        "-stdlib=libc++",
+        "-fno-exceptions"
+      ],
+      "ldflags": [
+        "-rtlib=compiler-rt"
+      ],
+      "libcxx_abi_version": 2,
+      "state": "SDK_COMPILE_TARGET_DECLARATION_NOT_DEV_RUNTIME_SUPPORT"
+    },
+    {
+      "arch": "wasm64",
+      "triple": "wasm64-wasip1",
+      "abi": "uwvm-preview1-memory64-extension",
+      "profile": "eh",
+      "memory64": true,
+      "table64": true,
+      "threads": false,
+      "shared_libraries": false,
+      "runtime_flags": [
+        "--wasm-feature-enable-memory64",
+        "--wasm-feature-enable-table64",
+        "--wasm-feature-enable-exceptions"
+      ],
+      "cflags": [
+        "--target=wasm64-wasip1"
+      ],
+      "cxxflags": [
+        "-stdlib=libc++",
+        "-fwasm-exceptions",
+        "-mllvm",
+        "-wasm-use-legacy-eh=false"
+      ],
+      "ldflags": [
+        "-rtlib=compiler-rt",
+        "-lunwind"
+      ],
+      "libcxx_abi_version": 2,
+      "state": "SDK_COMPILE_TARGET_DECLARATION_NOT_DEV_RUNTIME_SUPPORT"
+    }
+  ],
+  "language_inventory": [
+    {
+      "language": "as",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/as/provider.lua",
+          "sha256": "fd6a6f93193aaa84b598bef5b6e0b7139d12b2bcb32ce22c5b957d3ae1d70b1c"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "c",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/xmake/cfamily.lua",
+          "sha256": "b229f93f5412b95e7ee038b3cc6de33e42662b759b770675cc34ece671d87c27"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "c_ffi_bridge",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/xmake/cfamily.lua",
+          "sha256": "b229f93f5412b95e7ee038b3cc6de33e42662b759b770675cc34ece671d87c27"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "cpp",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/xmake/cfamily.lua",
+          "sha256": "b229f93f5412b95e7ee038b3cc6de33e42662b759b770675cc34ece671d87c27"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "csharp",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "d",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "fortran",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "fsharp",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "go",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "haskell",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "java",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "js",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/js/provider.lua",
+          "sha256": "ae22fa3a2cfa38e6ca4ea27150d357f8dfbc9db062c87d2d6840469c023aaaee"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "kotlin",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "lua",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/lua/provider.lua",
+          "sha256": "0edebde51ef002f5c9aa5bf26d488b7240e1062a23d14636f557329378179ec1"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "moonbit",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "nim",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "objectc",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/xmake/cfamily.lua",
+          "sha256": "b229f93f5412b95e7ee038b3cc6de33e42662b759b770675cc34ece671d87c27"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "odin",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "php",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/php/provider.lua",
+          "sha256": "62181a9f3ad874740753bd85147eb9b6654f88c65ed8323a96d4ea670c38456f"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": [
+        {
+          "path": "share/language/php/import-features-v1.json",
+          "sha256": "1924998b472fae28b8e57aeb4fa2de6b9c45a410576b49506576def44675e7fb",
+          "scope": "Existing owner-reported inventory; not independently re-executed against dev release"
+        },
+        {
+          "path": "share/language/php/module-status.json",
+          "sha256": "04d13627357c947922ee37106f130191358117ed391dd7b52793fbd70f6e9360",
+          "scope": "Existing owner-reported inventory; not independently re-executed against dev release"
+        }
+      ],
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "py",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "r",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/r/provider.lua",
+          "sha256": "555c22042f9918bdfb4ecb4cff8c1b65d154321d1d9fe9ac8c539b8db0fab7bb"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "rs",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "ruby",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/ruby/provider.lua",
+          "sha256": "75887f8a6a28b0bc62a1421b1114ad0d3c4d7de125cefb34b22f543611a48744"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": [
+        {
+          "path": "share/language/ruby/import-features-v1.json",
+          "sha256": "49fe5f6bb4dcb7996c7e3892ce78ccb98184249d0d2efcf5a9c9c6e862bc313d",
+          "scope": "Existing owner-reported inventory; not independently re-executed against dev release"
+        },
+        {
+          "path": "share/language/ruby/module-status.json",
+          "sha256": "3ed413c157daf7e02dc1c62ec0ae01cf4c572a30cf402cdc686d2e71c9e8d643",
+          "scope": "Existing owner-reported inventory; not independently re-executed against dev release"
+        }
+      ],
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "swift",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "tinygo",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "typescript",
+      "enumeration_source": "TypeScript compiler descriptor and existing example source",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/typescript/provider.lua",
+          "sha256": "20885286efc29fc35509daef641601291e53b694455903803d3c4de3cfacacb4"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": [
+        {
+          "path": "share/language/typescript/qualification.json",
+          "sha256": "0d83dced4a900167eb0f1f9032227f90622aa1d82ded12014dbc3160aeff82b0",
+          "scope": "Existing owner-reported inventory; not independently re-executed against dev release"
+        }
+      ],
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "vbnet",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "wat",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/wat/provider.lua",
+          "sha256": "f406059ab68fb6f6223ed732e5ac4a973db5f7e8be2f3a106f8ea5676e7a111d"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    },
+    {
+      "language": "zig",
+      "enumeration_source": "Existing shared ROS provider declaration",
+      "provider_source_refs": [
+        {
+          "path": "tools/language/native/core.lua",
+          "sha256": "a6a96aa4d97452c6483692a43be12fa2a2bbc9580a7378471949187f0372f137"
+        }
+      ],
+      "declared_common_requests": {
+        "targets": [
+          "wasm32-wasip1",
+          "wasm64-wasip1"
+        ],
+        "artifact_kinds": [
+          "binary",
+          "static",
+          "shared"
+        ],
+        "features": [
+          "simd128",
+          "relaxed-simd",
+          "bulk-memory",
+          "reference-types",
+          "multi-value",
+          "sign-extension",
+          "nontrapping-fptoint",
+          "tail-call",
+          "extended-const",
+          "multi-memory",
+          "gc",
+          "exceptions",
+          "memory64",
+          "table64"
+        ],
+        "qualification": "ENUM_AND_REQUEST_SHAPES_ONLY_NOT_PER_LANGUAGE_IMPLEMENTATION_OR_RUNTIME_SUPPORT"
+      },
+      "actual_emitted_import_feature_inventory": "NOT_YET_INVENTORIED_PER_FINAL_PRODUCT",
+      "dev_runtime_binary_static_shared_regression": "NOT_RUN",
+      "required_runtime_features": "Actual emitted product/import inventory must determine this; do not copy the global enum as required/support",
+      "unqualified_dimensions": [
+        "Per-language target acceptance",
+        "Actual emitted proposals/imports and final module graph",
+        "TLS/threads/EH/GC and memory/table widths",
+        "Exact dev ELF and provider ABI",
+        "Public xmake test runtime case count"
+      ]
+    }
+  ],
+  "ros_import_contract": {
+    "source": "share/platform/ros/abi-v1.json",
+    "sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+    "declarations_only": true,
+    "migration_boundary": "share/platform/ros/transplate/v0.1.0/contract.json",
+    "actual_runtime_signature_semantics": "NOT_RUN_AGAINST_DEV_ELF"
+  },
+  "tls_threads_eh_memory": {
+    "guest_TLS": "Thread-local storage requires actual Wasm TLS/thread initialization, shared memory, atomics and scheduling qualification. SDK target profiles currently declare threads=false. Native ELF TLS is a different property.",
+    "transport_TLS": "DDS/network transport encryption belongs to explicit native provider policy; Wasm TLS storage or WASI sockets do not establish encrypted ROS transport.",
+    "guest_EH": "noeh and modern wasm exceptions are separate compile profiles; emitted proposal and generated code must be inventoried and actually run.",
+    "native_EH_CFI_unwind": "Native paired unwind/CFI and mandatory generated-chain checked unwind/no body fallback need original runtime evidence for every actual app.",
+    "memory_table": "Wasm32/64 and table32/64 are independent; exact emitted types/limits and actual runtime support are mandatory. Existing 64-bit target descriptor currently requests memory64 and table64.",
+    "multi_module": "Binary, indexed static archive and shared/preload graph pin every complete module SHA and import signature; never treat a native shared object as the guest module."
+  },
+  "ros_native_abi": {
+    "declared_backends": {
+      "ros1": {
+        "distributions": [
+          "noetic"
+        ]
+      },
+      "ros2": {
+        "distributions": [
+          "humble",
+          "jazzy"
+        ]
+      }
+    },
+    "qualified_dev_rows": [],
+    "required_per_row": [
+      "Exact ROS1 historical/current or ROS2 distro, OS and architecture",
+      "rcl/rclcpp/roscpp/client and generated message/type-support source/ABI",
+      "RMW implementation, DDS/library versions and selected typesupport plugins",
+      "Provider executable/plugin DSO SHAs and actual loaded identities",
+      "Permission/ownership/UUID/result/state/reverse feedback and official simulation evidence"
+    ],
+    "all_release_history_rows_still_required": true
+  },
+  "frozen_public_wasm": [
+    {
+      "path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+      "bytes": 4449,
+      "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+      "dev_runtime_qualified": false,
+      "same_module_across_vendors_required": true
+    },
+    {
+      "path": "lib/platform/ros/portable/v0.3.0/planar-goal.wasm",
+      "bytes": 3797,
+      "sha256": "54884d1513c2e5256450128627a5cc6f4130ca9ed533322a5035f77f81b59ff9",
+      "dev_runtime_qualified": false,
+      "same_module_across_vendors_required": true
+    },
+    {
+      "path": "lib/platform/ros/portable/v0.3.0/sensor-digest.wasm",
+      "bytes": 20095,
+      "sha256": "7061f671b91860cca2867d52bc38bca4c12234426598951451b481cf31c69100",
+      "dev_runtime_qualified": false,
+      "same_module_across_vendors_required": true
+    }
+  ],
+  "public_release_smoke": {
+    "project": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock",
+    "build": [
+      "xmake"
+    ],
+    "test": [
+      "xmake",
+      "test"
+    ],
+    "registered_aggregate": "portable-joint-step-v0-1-0/official-scenarios",
+    "mandatory_scenarios": 2,
+    "current_status": "BLOCKED_REQUIRED_WASM_ROS_QUERY_FEEDBACK_IMPLEMENTATION",
+    "rule": "Reuse existing public entry; absent environment, quarantined required capability and zero cases return non-success. No private receipt/snapshot runner."
+  },
+  "finite_existing_runtime_observation": {
+    "scope": "SDK01 finite r672/r680 C/WASI evidence only; not a dev release or ROS-wide acceptance",
+    "elf_sha256": "45974160d0c93b0a99fe186709b82dfb11fa480005426f5e0a67efbbf2eccc53",
+    "observed_needed": [
+      "libm.so.6",
+      "libc.so.6",
+      "ld-linux-x86-64.so.2",
+      "libatomic.so.1"
+    ],
+    "fully_static": false,
+    "typescript_runtime_regression": "r702 sealed, not executed; six binary/static/shared \u00d732/64 cases and twelve planned cold/warm app runs",
+    "new_release_qualification": false
+  }
+}

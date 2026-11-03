@@ -1,0 +1,61 @@
+{
+  "format": "robotis-humble-obstacle-bootstrap-public-interface-v1",
+  "source_interfaces": {
+    "context": "include/platform/ros2/py/compat/rclpy/rclpy/context.py",
+    "node": "include/platform/ros2/py/compat/rclpy/rclpy/node.py",
+    "clock": "include/platform/ros2/py/compat/rclpy/rclpy/clock.py",
+    "bootstrap": "example/platform/robotis/py/ros2/humble/upstream_obstacle_detection/main.py",
+    "bindings": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/source-bindings.json",
+    "rclpy_init": "include/platform/ros2/py/compat/rclpy/rclpy/__init__.py"
+  },
+  "required_context_configure": {
+    "prepare_callback_logging": true,
+    "prepare_callback_logging_clock": true,
+    "maximum_owners": 8,
+    "lifetime": "until_shutdown",
+    "maximum_credits": 300001
+  },
+  "required_system_clock": {
+    "source_key": [
+      "time_read_system",
+      "/turtlebot3_obstacle_detection",
+      ""
+    ],
+    "alias": "robotis-obstacle-log-system-clock",
+    "capacity": 8,
+    "operation": "time.read-system",
+    "type": "builtin/time-v1",
+    "identity": "builtin:time-nanoseconds-v1"
+  },
+  "separate_timer_clock": {
+    "source_key": [
+      "time_read_ros",
+      "/turtlebot3_obstacle_detection",
+      ""
+    ],
+    "alias": "robotis-obstacle-clock",
+    "operation": "time.read-ros"
+  },
+  "ownership": "Public Node.create_timer preopens original ROS timer clock, INFO logger and SYSTEM throttle clock before actual callback. Original full source and info(...throttle_duration_sec=2) remain unchanged.6constructor owners/7with independentcancel, max8. No API fallback/clock substitution or native application.",
+  "evidence_policy": "All paths here are SDK-relative public interface references. Campaign absolute evidence references belong in development receipts outside the release SDK; this interface is not production/source admission.",
+  "source_admission": false,
+  "runtime_qualification": false,
+  "whole_invocation": {
+    "profile": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bootstrap-lifetime.profile.json",
+    "sha256": "fe9d945f8430ed764abea294a0c4aee824b64175fefc12bfdbea0da976e50ceb",
+    "single_context_credit_budget": 300001,
+    "watchdog_seconds": 300,
+    "pacing_ns_unchanged": 1000000
+  },
+  "shared_source_sha256": {
+    "include/platform/ros2/py/compat/rclpy/rclpy/context.py": "d7b9190b1adaae4bc5ba0b03ed874cdb82bb4e511f58bcd2979fa77a11cc7451",
+    "include/platform/ros2/py/compat/rclpy/rclpy/__init__.py": "012f0cfaee5f279a03a676de49808c85ee77443df196f262fe98d6a7d1a42437"
+  },
+  "bootstrap_sha256": "4716488dc1923224be765bd38289f40572208473424dcae61f334b9bb8657cbb",
+  "bundle": {
+    "path": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bundle.json",
+    "sha256": "219f1a5684b3066efacd88d017e835a48103b9058741f1402cedf0b5216f4513",
+    "modules": 26
+  },
+  "remaining_runtime_gate": "Shared40 is now integrated and bootstrap credit source gap is implemented. Actual original callbacks/cancel/physical normal120 and strict05-VM-001/source/native capacity remain NOT RUN. No reset/slower polling/privateContext or additional clock/grant."
+}

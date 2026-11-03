@@ -1,0 +1,88 @@
+{
+  "api_version": 1,
+  "cases": [
+    {
+      "arguments": [
+        "values"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "values",
+        "checks": 14,
+        "failures": 0
+      },
+      "id": "values"
+    },
+    {
+      "arguments": [
+        "invalid"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "invalid",
+        "checks": 34,
+        "failures": 0
+      },
+      "id": "invalid"
+    },
+    {
+      "arguments": [
+        "client"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "client",
+        "checks": 20,
+        "failures": 0
+      },
+      "id": "client"
+    },
+    {
+      "arguments": [
+        "server"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "case": "server",
+        "checks": 20,
+        "failures": 0
+      },
+      "id": "server"
+    }
+  ],
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "ur-polyscopex-sdk-v0.11-scalar-facade",
+  "public_inputs": [
+    {
+      "path": "include/platform/universal_robots/transplate/ros2/polyscopex/sdk_v0_11/io.h",
+      "scope": "sdk",
+      "sha256": "07809b43b1cadbc6adba687dff8a138c6c8f1e522e63a6d66ea1b9693e5c607b"
+    },
+    {
+      "path": "main.c",
+      "scope": "example",
+      "sha256": "531a394deb7331108c377d5c1539f1217c221e7e0eebda91b4f03c440fd09451"
+    },
+    {
+      "path": "xmake.lua",
+      "scope": "example",
+      "sha256": "b2e3b082da90d3586b399146b4e724f5e55821c8b2f807aaad9bb5956664c79d"
+    },
+    {
+      "path": "include/platform/ros/c/roswasm/codec.h",
+      "scope": "sdk",
+      "sha256": "b96510d62c400169f1c214d5ff9f3113a09ffff6057ef7fccd61e25410bf73a3"
+    },
+    {
+      "path": "include/platform/ros/c/roswasm/roswasmc.h",
+      "scope": "sdk",
+      "sha256": "ba68039a0052d27e5abb3d6fa6503661085ea86229f60f2974b239099dc410aa"
+    },
+    {
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "scope": "sdk",
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    }
+  ],
+  "scope": "Auxiliary real-Wasm Guest facade contracts with a Guest-local scripted backend; not official ROS, runtime grants/private memory, or Stage A/B acceptance"
+}

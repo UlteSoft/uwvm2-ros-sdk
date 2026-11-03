@@ -71,12 +71,8 @@ function build(target, root, language, backend, closure, programs, library_feed,
 		target_name:match("^[%w_][%w_.%-]*$"),
 		"Managed target names must use letters, digits, underscores, dots or dashes"
 	)
-	local cache_name = target:fullname() == target_name and target_name
-		or import(
-			"artifact_contract",
-			{ rootdir = path.join(root, "tools/xmake"), anonymous = true }
-		).identity(target)
-	local cache = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/managed-aot", cache_name)
+	local artifacts = import("artifact_contract", { rootdir = path.join(root, "tools/xmake"), anonymous = true })
+	local cache = artifacts.workspace(target, "managed-aot")
 	local kind = target:kind() or "binary"
 	assert(kind == "binary" or kind == "shared", "Select an implemented CLR binary/shared producer")
 	assert(
@@ -124,10 +120,25 @@ function build(target, root, language, backend, closure, programs, library_feed,
 		DOTNET_ROOT = dotnet_root,
 		DOTNET_HOST_PATH = programs.dotnet,
 		DOTNET_MULTILEVEL_LOOKUP = "0",
+		-- First-use, certificate, NuGet and MSBuild state belongs to this target.
+		-- Do not let a compiler invocation use the logged-in user's profile.
+		HOME = path.join(cache, "home"),
+		USERPROFILE = path.join(cache, "home"),
 		DOTNET_CLI_HOME = path.join(cache, "cli-home"),
+		XDG_CACHE_HOME = path.join(cache, "xdg-cache"),
+		XDG_CONFIG_HOME = path.join(cache, "xdg-config"),
+		XDG_DATA_HOME = path.join(cache, "xdg-data"),
+		XDG_STATE_HOME = path.join(cache, "xdg-state"),
+		DOTNET_BUNDLE_EXTRACT_BASE_DIR = path.join(cache, "bundle-extract"),
+		MSBuildUserExtensionsPath = path.join(cache, "msbuild-user"),
+		NUGET_HTTP_CACHE_PATH = path.join(cache, "nuget-http"),
+		NUGET_PLUGINS_CACHE_PATH = path.join(cache, "nuget-plugins"),
+		NUGET_SCRATCH = path.join(cache, "nuget-scratch"),
 		DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1",
 		DOTNET_CLI_TELEMETRY_OPTOUT = "1",
 		DOTNET_SKIP_FIRST_TIME_EXPERIENCE = "1",
+		DOTNET_GENERATE_ASPNET_CERTIFICATE = "false",
+		DOTNET_ADD_GLOBAL_TOOLS_TO_PATH = "false",
 		DOTNET_PROCESSOR_COUNT = "2",
 		DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE = "1",
 		DOTNET_CLI_DO_NOT_USE_MSBUILD_SERVER = "1",
@@ -143,6 +154,13 @@ function build(target, root, language, backend, closure, programs, library_feed,
 		UWVM_MANAGED_LLVM_RESOURCE = path.join(wasi_root, "lib/clang/23"),
 		UWVM_MANAGED_LLVM_LINKER = linker,
 	}
+	for _, name in ipairs({
+		"HOME", "DOTNET_CLI_HOME", "XDG_CACHE_HOME", "XDG_CONFIG_HOME", "XDG_DATA_HOME",
+		"XDG_STATE_HOME", "DOTNET_BUNDLE_EXTRACT_BASE_DIR", "MSBuildUserExtensionsPath",
+		"NUGET_HTTP_CACHE_PATH", "NUGET_PLUGINS_CACHE_PATH", "NUGET_SCRATCH", "NUGET_PACKAGES",
+	}) do
+		os.mkdir(environment[name])
+	end
 	io.writefile(
 		path.join(cache, "global.json"),
 		json.encode({
@@ -231,6 +249,10 @@ function build(target, root, language, backend, closure, programs, library_feed,
 	end
 	append_bindings(path.join(root, "include/platform/ros/csharp"))
 	append_bindings(path.join(root, "include/platform", backend, "csharp"))
+	-- This is part of the common binding's declared Uwvm.RosWasm source
+	-- library, outside RosWasm/*.cs. Preserve the actual CLR command facade;
+	-- omitting it makes all ordinary C#/F#/VB application mains fail to compile.
+	table.insert(sdk_sources, path.join(root, "include/platform/ros/dotnet/NativeCommand.cs"))
 	table.join2(sdk_sources, os.files(path.join(root, "src/language/dotnet/**.cs")))
 	table.join2(sdk_sources, os.files(path.join(platform_root, "csharp/Uwvm/**.cs")))
 	table.join2(sdk_sources, os.files(path.join(platform_root, "csharp", backend, "**.cs")))
@@ -369,6 +391,16 @@ function build(target, root, language, backend, closure, programs, library_feed,
 	json.savefile(path.join(cache, "aot-receipt.json"), {
 		language = language,
 		backend = backend,
+		compiler_user_state = {
+			home = environment.HOME,
+			cli_home = environment.DOTNET_CLI_HOME,
+			xdg_cache = environment.XDG_CACHE_HOME,
+			xdg_config = environment.XDG_CONFIG_HOME,
+			xdg_data = environment.XDG_DATA_HOME,
+			xdg_state = environment.XDG_STATE_HOME,
+			aspnet_certificate_generation = environment.DOTNET_GENERATE_ASPNET_CERTIFICATE,
+			global_tools_path_setup = environment.DOTNET_ADD_GLOBAL_TOOLS_TO_PATH,
+		},
 		actual_ros_binding_namespace = "Uwvm.RosWasm",
 		actual_backend_constant = backend == "ros1" and "UWVM_ROS1" or "UWVM_ROS2",
 		actual_managed_sdk_sources = actual_sdk_sources,

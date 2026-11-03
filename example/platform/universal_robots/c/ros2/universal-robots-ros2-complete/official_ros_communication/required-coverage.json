@@ -1,0 +1,54 @@
+{
+  "Stage_A": {
+    "blocked": 0,
+    "cases": [
+      {
+        "deadline_seconds": 30,
+        "expected_vm_exit": 13,
+        "id": "permission-denied-before-endpoints",
+        "kind": "denied"
+      },
+      {
+        "deadline_seconds": 90,
+        "expected_vm_exit": 0,
+        "id": "official-ROS-result-and-fresh-state-in-frozen-Wasm",
+        "kind": "joint"
+      },
+      {
+        "deadline_seconds": 30,
+        "expected_vm_exit": 110,
+        "id": "stale-native-generation-rejected-before-submit",
+        "kind": "stale_reference"
+      },
+      {
+        "deadline_seconds": 30,
+        "expected_vm_exit": 38,
+        "id": "bounded-restricted-Host-disconnect-before-submit",
+        "kind": "disconnect"
+      }
+    ],
+    "executed": 0,
+    "fail": 0,
+    "not_run": 4,
+    "pass": 0,
+    "required": 4,
+    "selected": 0,
+    "smoke_scope": "Explicitly selected first two cases only, never full Stage A acceptance"
+  },
+  "Stage_B": {
+    "all_original_vendor_model_mode_release_ABI_language_rows_retained": true,
+    "executed": 0,
+    "full_case_denominator": null,
+    "pass": 0,
+    "required": true,
+    "selected": 0
+  },
+  "component_isolation": {
+    "common_channel_and_per_instance_runtime_qualification_pending": true,
+    "executed": 0,
+    "pass": 0,
+    "required": true
+  },
+  "current_public_qualification": false,
+  "format": "sdk03-required-communication-and-followups-v1"
+}

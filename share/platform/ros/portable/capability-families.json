@@ -1,0 +1,154 @@
+{
+  "schema": "uwvm-portable-capability-family-inventory-v1",
+  "discovery_date": "2026-10-26",
+  "status": "PARTIAL_CAPABILITY_DISCOVERY_NOT_OFFICIAL_MODEL_INVENTORY",
+  "exhaustive": false,
+  "applicability_rule": "Each robot/model and official simulation mode needs official-source applicability evidence. Missing dependencies or host support never imply NOT_APPLICABLE.",
+  "families": [
+    {
+      "id": "joint.position.bounded.v1",
+      "domain": "bounded independent revolute joint motion, including applicable arms",
+      "contract": "v0.1.0/contract.json",
+      "source": "SOURCE_AUTHORED_FROZEN",
+      "wasm": "NOT_RUN",
+      "host": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "planar.pose.goal.v1",
+      "domain": "planar navigation goal",
+      "contract": "v0.3.0/contract.json",
+      "source": "VERSIONED_SOURCE_FROZEN",
+      "wasm": "COMPILED_STRUCTURE_CHECKED_EXECUTION_NOT_RUN",
+      "host": "NOT_IMPLEMENTED",
+      "artifact_manifest": "share/platform/ros/portable/artifacts/planar-goal-v0.3.0.json",
+      "artifact_sha256": "54884d1513c2e5256450128627a5cc6f4130ca9ed533322a5035f77f81b59ff9"
+    },
+    {
+      "id": "sensor.frame.integrity.v1",
+      "domain": "inbound bounded camera sample integrity",
+      "contract": "v0.3.0/contract.json",
+      "source": "VERSIONED_SOURCE_FROZEN",
+      "wasm": "COMPILED_STRUCTURE_CHECKED_EXECUTION_NOT_RUN",
+      "host": "NOT_IMPLEMENTED",
+      "artifact_manifest": "share/platform/ros/portable/artifacts/sensor-digest-v0.3.0.json",
+      "artifact_sha256": "7061f671b91860cca2867d52bc38bca4c12234426598951451b481cf31c69100"
+    },
+    {
+      "id": "manipulation.cartesian.pose.v1",
+      "domain": "Cartesian arm planning and terminal pose",
+      "contract": null,
+      "source": "UNRESOLVED_SEMANTIC_DESIGN",
+      "requirements": [
+        "frame/transform and tool identity",
+        "translation and orientation units",
+        "collision/planning semantics",
+        "native plan/execute outcome and fresh end-effector state"
+      ]
+    },
+    {
+      "id": "gripper.width.force.v1",
+      "domain": "prismatic/coupled grippers",
+      "contract": null,
+      "source": "UNRESOLVED_SEMANTIC_DESIGN",
+      "requirements": [
+        "opening width and force units",
+        "coupling/calibration",
+        "stall/contact semantics",
+        "native result and measured gripper state"
+      ]
+    },
+    {
+      "id": "locomotion.body.twist.v1",
+      "domain": "legged/humanoid body locomotion",
+      "contract": null,
+      "source": "UNRESOLVED_SEMANTIC_DESIGN",
+      "requirements": [
+        "body/world frame",
+        "linear/angular units",
+        "balance and fall state",
+        "bounded duration",
+        "controller acknowledgement and observed motion"
+      ]
+    },
+    {
+      "id": "gait.footstep.sequence.v1",
+      "domain": "legged footstep planning",
+      "contract": null,
+      "source": "UNRESOLVED_SEMANTIC_DESIGN",
+      "requirements": [
+        "foot/contact identities",
+        "support polygon and terrain",
+        "timing and stability",
+        "native footstep result and contact observations"
+      ]
+    },
+    {
+      "id": "actuator.effort.bounded.v1",
+      "domain": "torque/effort control",
+      "contract": null,
+      "source": "UNRESOLVED_SEMANTIC_DESIGN",
+      "requirements": [
+        "effort units",
+        "joint type and coupling",
+        "rate/duration limits",
+        "native bounded controller and measured effort"
+      ]
+    },
+    {
+      "id": "sensor.scan.planar.v1",
+      "domain": "lidar/planar range processing",
+      "contract": null,
+      "source": "UNRESOLVED_SEMANTIC_DESIGN",
+      "requirements": [
+        "range and angle units",
+        "invalid/no-return values",
+        "scan timing and frame",
+        "actual simulator sample provenance"
+      ]
+    },
+    {
+      "id": "sensor.imu.sample.v1",
+      "domain": "IMU sample processing",
+      "contract": null,
+      "source": "UNRESOLVED_SEMANTIC_DESIGN",
+      "requirements": [
+        "orientation convention",
+        "acceleration/angular velocity units",
+        "covariance/availability",
+        "sample timing and calibration"
+      ]
+    },
+    {
+      "id": "vision.frame.features.v1",
+      "domain": "actual image/depth perception",
+      "contract": null,
+      "source": "UNRESOLVED_SEMANTIC_DESIGN",
+      "requirements": [
+        "encoding and calibrated camera model",
+        "depth units and invalid pixels",
+        "deterministic algorithm/model identity",
+        "native sample and computed result oracle"
+      ]
+    }
+  ],
+  "required_common_acceptance": [
+    "exact frozen Wasm SHA256 across every applicable platform",
+    "actual uwvm2-ros execution",
+    "external explicit grants and adapters",
+    "correlated native acknowledgement/result or inbound simulator sample",
+    "normal, boundary, denial, timeout/cancel, stale, pause, reconnect and restart scenarios",
+    "separate ROS distro/ABI, language/library and architecture rows"
+  ],
+  "official_simulation_modes_to_audit": [
+    "fake/mock hardware",
+    "ros_control/ros2_control",
+    "manufacturer controller emulator",
+    "physics",
+    "trajectory/planning",
+    "mobile navigation/odometry",
+    "legged/humanoid",
+    "camera/depth/lidar/IMU/transforms/simulated time",
+    "perception/vision"
+  ],
+  "official_simulation_acceptance": "NOT_RUN"
+}

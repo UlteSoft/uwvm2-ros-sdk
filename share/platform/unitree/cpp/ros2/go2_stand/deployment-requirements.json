@@ -1,0 +1,28 @@
+{
+  "format": "unitree-go2-stand-deployment-requirements-v1",
+  "template": "example/platform/unitree/cpp/ros2/humble/upstream_go2_stand/deployment.template.json",
+  "template_sha256": "a6ca3115337a9a7499c334c9eeaffd978e62418ee896c2dec486e9af5ab3d702",
+  "source_bindings": "share/platform/unitree/cpp/ros2/go2_stand/source-bindings.json",
+  "source_bindings_sha256": "f37058185ae792309dd644ee692b5be25643e29311c5b1177ee0335764d2f8d3",
+  "required_before_launch": [
+    "Actual Linux runtime and Humble gateway binaries plus source/hash/mapped-file provenance",
+    "Compiled trusted LowCmd/LowState native/codec registry shared by actual runtime and gateway; complete native Humble typesupport graph must match fixedsource-identities",
+    "Admitted privateROSdomain substituted consistently in runtime/gateway and originalGo2simulator",
+    "Actual loopback-only Cyclone configuration, bounded descendant birth/lifecycle and independentguardian; CPUqueue admission alone is not publicproductionVM admission",
+    "Independent authorized stop publisher lifecycle for exact Bool controltopic; task itself has no stop-publishing authority",
+    "Version/license/model/hash pinned official native unitree_mujoco Go2 C++ simulator and SDK2/physics/render endpoints actually started in the same admitted budget. Native endpoint control must only implement simulator/driver behavior, never the guest application trajectory/CRC/callback/feedback logic."
+  ],
+  "launch_behavior": "xmake run consumes only an explicitly supplied matching configuration and delegates to publicrun.py. The template is deliberately non-runnable until the domain token and actual installation/admission inputs are supplied. The source table itself grants nothing.",
+  "resource_positive_requirements": "Original Init/Start replacement overlaps require2 publishers and2 LowState subscribers per respective alias; independentcancel opens after setup. Reducedquota negativecases must be denied by actualVM, not weakened factory order.",
+  "independent_cancel": "Bool true is externalshutdown, not task done. Official acceptance must first observe all originalstages and continuingfinalhold. Stopchannel/clock errors are failures with separately retained raw namespace/cleanup facts.",
+  "callback_timing_conformance": "Real2ms absolute pacing and sourceTimer remain; the finite adapter polls oneevent/entity/pass rather than implementing a nativewaitset. Compare actualfeedback/loss/latency under the officialscene; no exact nativeexecutor equivalence claimed frombuild.",
+  "library_shapes": {
+    "static": "Real CRC archive plus whole linked consumer; compilepending currentSelection",
+    "dynamic": "NOT IMPLEMENTED",
+    "independent_multi_memory": "NOT IMPLEMENTED"
+  },
+  "runtime": "NOT RUN",
+  "official_simulation": "BLOCKED",
+  "accepted": false,
+  "boundary_revision": "Latest explicit user direction: official native driver/simulator/physics/render infrastructure is permitted and is not a Wasm-migration prerequisite."
+}

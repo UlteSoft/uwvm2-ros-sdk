@@ -1,0 +1,32 @@
+{
+  "format": "uwvm-sdk-runtime-boundary-consumer-source-v1",
+  "version": "0.1.0",
+  "boundary_protocol": "uwvm-sdk-live-boundary-v1",
+  "status": "SOURCE_DRAFT_NOT_LINUX_QUALIFIED",
+  "producer_implemented_by_sdk": false,
+  "producer_protocol_agreed": false,
+  "public_live_entry_qualified": false,
+  "own_new_boot_proof": "NOT_RUN",
+  "Linux_syntax_import_build_test": "NOT_RUN",
+  "native_business_fallback": false,
+  "source_modules": [
+    "tools/shared/python/runtime_boundary.py",
+    "tools/shared/python/actor_gate.py",
+    "tools/shared/python/actor_control.py",
+    "tools/shared/python/guest_feedback.py",
+    "tools/shared/python/simulation_example.py",
+    "tools/shared/python/wasi_component.py"
+  ],
+  "schemas": [
+    "admission.schema.json",
+    "lease-observations.schema.json"
+  ],
+  "qualified_reference_metadata": "share/platform/ros/runtime-evidence/v1.1.0/manifest.json",
+  "remaining_required": [
+    "VM-owned installed live producer and deployment interface",
+    "Exact changed executor two real interruption proofs and harmless successor on current boot",
+    "Actual public xmake and xmake test per required project/case",
+    "Generic callbacks/sensors/cancellation/restart and official model/release/ABI matrix",
+    "Full upstream rcl/rclcpp/roscpp execution and release closure"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "format": "sdk-official-native-driver-scene-binding-v1",
+  "case": "scout",
+  "platform": "agilex",
+  "robot": "SCOUT2.0",
+  "ros_distribution": "humble",
+  "simulator": "Gazebo11.10.2 (official Ubuntu22.04/Humble/Gazebo11 support)",
+  "native_selection": "Original scout_v2.xacro+scout_v2.gazebo+libgazebo_ros_diff_drive.so; actual four-wheel physics",
+  "sources": [
+    {
+      "repository": "https://github.com/agilexrobotics/ugv_gazebo_sim",
+      "ref": "humble",
+      "commit": "9d7888affce35321c657c1c8528307f3115b9d41",
+      "archive": {
+        "url": "https://codeload.github.com/agilexrobotics/ugv_gazebo_sim/zip/9d7888affce35321c657c1c8528307f3115b9d41",
+        "sha256": "8f7e46120a544002ef40d3da9367132c9a253c1cf5b53d199bc761eb1377751c",
+        "bytes": 269051618
+      },
+      "licenses": [],
+      "lfs_pointers": [
+        "ranger/ranger_mini/meshes/ranger_base.dae"
+      ],
+      "unmaterialized_aliases": []
+    }
+  ],
+  "lifecycle_entrypoint": {
+    "path": "native_scene.py",
+    "sha256": "83879f3c264c1c8208542cc311a4287510c3a6225d73b8707278d6ea15c5042c",
+    "argv": [
+      "${PYTHON}",
+      "-B",
+      "native_scene.py",
+      "scout",
+      "${PINNED_NATIVE_CLOSURE_JSON}",
+      "${PINNED_NATIVE_PROCESS_ENVIRONMENT_JSON}",
+      "${PINNED_ORIGINAL_SOURCE_MANIFEST_JSON}",
+      "--ready-file",
+      "${PRIVATE_NATIVE_READY_FILE}",
+      "--stop-file",
+      "${PRIVATE_NATIVE_STOP_FILE}",
+      "--lifetime-seconds",
+      "${BOUNDED_NATIVE_LIFETIME_SECONDS}",
+      "--sdk-root",
+      "${SDK_ROOT}"
+    ],
+    "native_resource_precondition": "Actual current process and descendants must be born inside the admitted common64GiB/zero-swap ancestry, bounded leaf<=64GiB. Readiness grants no production or VM permission.",
+    "maximum_lifetime_seconds": 300,
+    "ready_fields": [
+      "pid",
+      "birth_ticks",
+      "cgroup",
+      "budget_ancestry",
+      "script_sha256",
+      "source_commit",
+      "ros_distribution",
+      "ros_domain_id",
+      "command_topic",
+      "command_type",
+      "state_topic",
+      "source_expanded_model_sha256",
+      "native_processes"
+    ],
+    "source_and_native_closures_verified_before_children": true,
+    "shared_lifecycle_sources": [
+      {
+        "path": "tools/shared/python/owned_processes.py",
+        "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+      },
+      {
+        "path": "tools/shared/python/runtime_boundary.py",
+        "sha256": "d9b6f1357e247e46ef1212faad4542f283c57230f1670c9c9114b3666485e484"
+      }
+    ],
+    "retirement": "Public OwnedProcesses,active before first actor; full pidfd/subreaper descendant retirement receipt,not leader-PID-only checks"
+  },
+  "native_roles": {
+    "model_expansion": "Original xacro expands the original model only",
+    "simulator": "Original physics and driver plugins; no app command generator",
+    "robot_state_publisher": "Native model/driver TF infrastructure",
+    "spawner": "Original model/physical-driver controller initialization only",
+    "scene_entrypoint": "New explicit headless composition, native readiness and process lifetime only"
+  },
+  "endpoints": [
+    {
+      "name": "/cmd_vel",
+      "ros_type": "geometry_msgs/msg/Twist",
+      "direction": "Wasm app -> native driver",
+      "runtime_interoperation": "NOT_RUN_GUEST"
+    },
+    {
+      "name": "/odom",
+      "ros_type": "nav_msgs/msg/Odometry",
+      "direction": "Native physical driver -> Wasm callback",
+      "runtime_interoperation": "NOT_RUN_GUEST"
+    }
+  ],
+  "actual_native_live": {
+    "job": "04-scout-native-shared-lifecycle-r1",
+    "status": "PASS_LIVE_NATIVE_READY_AND_SHARED_OWNED_RETIREMENT",
+    "original_source_commit": "9d7888affce35321c657c1c8528307f3115b9d41",
+    "expanded_model_sha256": "88995d5c1a27977e9986b6abf10590ec2e1b3a97ddb37746361c328fcd35362a",
+    "all_live_pids_birth_and_same_cgroup_checked": true,
+    "stop_file_triggered_retirement": true,
+    "all_native_processes_retired": true,
+    "scheduler_result_sha256": "221bd9bb94eb7cbf541af7fd9007da79f91bfd4f48cad03653706f724732aa95",
+    "wasm_application_executed": false,
+    "guest_feedback_accepted": false,
+    "scenario_pass": false,
+    "shared_retirement_status": "RETIRED",
+    "retirement_recorded_processes": 4
+  },
+  "required_wasm_roles": [
+    "Actual guest motion and odometry",
+    "Zero-speed stop",
+    "Disconnect/recovery/retirement",
+    "Permission denials"
+  ],
+  "scene_xmake_test_integration": false,
+  "strict_production_enrollment": false,
+  "complete_scene_pass": false,
+  "source_caveats": [
+    "Original plugin wheel_diameter0.08m and separation0.451m differ from model wheel_radius0.16459m and track0.58306m. Preserved and must quantify physical/odom error; never tune to force acceptance.",
+    "Root repo has unrelated ranger_mini mesh LFS pointer; selected SCOUT resource closure has no such pointer.",
+    "scout_gazebo_sim/package.xml declares TODO license; keep exact uncertainty/private acquisition and do not assert a repository-wide model redistribution license."
+  ],
+  "native_dependency_origin": {
+    "public_common_constructor": "tools/xmake/native_ros.py",
+    "public_common_lock": "share/toolchains/native/linux-x86_64/ros-humble-jammy.json",
+    "actual_runtime_view_prepared_by_job": "04-common-humble-obstacle-live-r1",
+    "actual_view_consumed_by_job": "04-scout-native-live-r1",
+    "shared_payload_modified": false
+  },
+  "prior_live_readiness": {
+    "job": "04-scout-native-live-r1",
+    "status": "PASS_LIVE_NATIVE_READY_AND_OWN_STOP",
+    "original_source_commit": "9d7888affce35321c657c1c8528307f3115b9d41",
+    "expanded_model_sha256": "88995d5c1a27977e9986b6abf10590ec2e1b3a97ddb37746361c328fcd35362a",
+    "all_live_pids_birth_and_same_cgroup_checked": true,
+    "stop_file_triggered_retirement": true,
+    "all_native_processes_retired": true,
+    "scheduler_result_sha256": "d3a321456d7852e5533f857bad8b1b75d6940c9fb847917f2eb5f9c18f16b276",
+    "wasm_application_executed": false,
+    "guest_feedback_accepted": false,
+    "scenario_pass": false
+  }
+}

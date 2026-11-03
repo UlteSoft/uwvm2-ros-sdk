@@ -1,0 +1,223 @@
+{
+  "approval_record_excluded": true,
+  "files": [
+    {
+      "bytes": 4507,
+      "path": "actor_exec_gate.py",
+      "scope": "packet",
+      "sha256": "f00ce3cc47e0cedf970e20c25829129b3e0db1bdf379fc87e99b13ba566d8e9b"
+    },
+    {
+      "bytes": 5357,
+      "path": "actor_metadata.py",
+      "scope": "packet",
+      "sha256": "e3bfe2a6c078c305e8080a44edc49b2195405b00a21a00196721c5266d234187"
+    },
+    {
+      "bytes": 2186,
+      "path": "actor_self_identity.py",
+      "scope": "packet",
+      "sha256": "42cb22e51caed4b9f5074f3aaf7df5b6fef12db97aae9dc81c725ee405ae1765"
+    },
+    {
+      "bytes": 1804,
+      "path": "benign.py",
+      "scope": "packet",
+      "sha256": "99618089b0b45e2dfbc459565b16b268d3d1841a867b1d63f46f02d56e191f3a"
+    },
+    {
+      "bytes": 3095,
+      "path": "binding_checks.py",
+      "scope": "packet",
+      "sha256": "54e0d356a92b8c49bbf58a436d03e1c69a7a8a3df91c23d103ea28b81e20663c"
+    },
+    {
+      "bytes": 3739,
+      "path": "bridge_inputs.py",
+      "scope": "packet",
+      "sha256": "3378ad5cc7092b4af64566729abef133436129d1fbdea7b1edc5be0659d19e6b"
+    },
+    {
+      "bytes": 405,
+      "path": "capture_ros_env.py",
+      "scope": "packet",
+      "sha256": "dcdf54946a9d4d19a5a027b5aee047bbd5450b5801e8da8492f52ed8ba2ed51f"
+    },
+    {
+      "bytes": 19391,
+      "path": "common.py",
+      "scope": "packet",
+      "sha256": "5c3d601bb2b7e7c455456dc56f1364a295e9b3d9bd6515e31c07c759609ceba8"
+    },
+    {
+      "bytes": 2873,
+      "path": "environment_hooks.py",
+      "scope": "packet",
+      "sha256": "8d34c289f27321cbfe5b4a4f4993460963ccf34b86fac8a2ac7ff8ff0e96419a"
+    },
+    {
+      "bytes": 788,
+      "path": "exec_guard.py",
+      "scope": "packet",
+      "sha256": "d8be29eb92f06176c803c85217afad9df66adafffd1c45712dec070ac400e814"
+    },
+    {
+      "bytes": 3787,
+      "path": "execution_inputs.py",
+      "scope": "packet",
+      "sha256": "fe4e66e76d0d92855ae7f7cbc07591ca51cb1c040bb05f402dc66cf5079d22a6"
+    },
+    {
+      "bytes": 13882,
+      "path": "feedback_checks.py",
+      "scope": "packet",
+      "sha256": "5276e45a266ffede360e180053e1ae24c5b5ee722f866a79962b3aaaa7dd022a"
+    },
+    {
+      "bytes": 19077,
+      "path": "guardian.py",
+      "scope": "packet",
+      "sha256": "81f3c7d81a24f991111bfc1ee42d4c1d3c358052a3092d5011072aa2c676eb15"
+    },
+    {
+      "bytes": 7593,
+      "path": "host_abi_probes.py",
+      "scope": "packet",
+      "sha256": "8d9030c574f95c9852ccfdfc238b4904be136f1e4ad6d7f41581b20c3dba718e"
+    },
+    {
+      "bytes": 10990,
+      "path": "input_verify.py",
+      "scope": "packet",
+      "sha256": "271e730ea452cb81c3f82ef3e0c949b54aba077b8296f859f5e5f93d5168b1d4"
+    },
+    {
+      "bytes": 16481,
+      "path": "keeper.py",
+      "scope": "packet",
+      "sha256": "2e61285b1aafc575958a757cf737fe853ea1b1f621cbac05ab13957218422349"
+    },
+    {
+      "bytes": 26125,
+      "path": "launch.py",
+      "scope": "packet",
+      "sha256": "8168078a2356480c4ce91143a6978b884ca29eb75e2ac68380901e62a88f4303"
+    },
+    {
+      "bytes": 3990,
+      "path": "namespace_cgroup_join.py",
+      "scope": "packet",
+      "sha256": "24920e465c537d459ed5a0b2d331e19b747fa6f7d84f4597dd1bd7eca4f2d11a"
+    },
+    {
+      "bytes": 2103,
+      "path": "native_environment.py",
+      "scope": "packet",
+      "sha256": "f1857a476a6d6729d9d361bb7902cf57e60120945f2ed7c05cdbd42d4c47073d"
+    },
+    {
+      "bytes": 3180,
+      "path": "native_witness.py",
+      "scope": "packet",
+      "sha256": "3864a3b5acfd7de635059454afb2292a27e88e49a62f6b648b1c33c6190c787f"
+    },
+    {
+      "bytes": 5604,
+      "path": "producer_control.py",
+      "scope": "packet",
+      "sha256": "ecccbe0e683f8ba0890fbf761a0458da089b9e2b69159ca66f21975a61965213"
+    },
+    {
+      "bytes": 9583,
+      "path": "producer_role_observation.py",
+      "scope": "packet",
+      "sha256": "9643bfd0a7536d99bd00e3ce0338ed4cac8d94e840bc28b0c9e83229bf0592d6"
+    },
+    {
+      "bytes": 16810,
+      "path": "product_execution.py",
+      "scope": "packet",
+      "sha256": "f1f7de6a83b324f613a4aea4e23667beef7c88c86032cb568685a181a57e6616"
+    },
+    {
+      "bytes": 281,
+      "path": "proof_sentinel.py",
+      "scope": "packet",
+      "sha256": "91f4e72fdc6fe236e8dd9063c6a6bd1ccf748ce78ccc38be90abcec2b49ea7c4"
+    },
+    {
+      "bytes": 2634,
+      "path": "proof_worker.py",
+      "scope": "packet",
+      "sha256": "2dd4042d12be8a8ac9ab33eed8086ded2b313b39708174ec0dbbb01362f5a85a"
+    },
+    {
+      "bytes": 8336,
+      "path": "public_stage_a.py",
+      "scope": "packet",
+      "sha256": "c2d4f879f35ec624eecbd9def779fea692fe0237b73cc6d7df733dc8f5122f4f"
+    },
+    {
+      "bytes": 20949,
+      "path": "role_bootstrap.py",
+      "scope": "packet",
+      "sha256": "c5e848eed862bd4c6d01f055e361720093aafd8676c64601879ffba2f7b30427"
+    },
+    {
+      "bytes": 20652,
+      "path": "sdk_boundary_producer.py",
+      "scope": "packet",
+      "sha256": "a1f5b263406810e652876c8ca11f172b371eddde871b7e5e01346ef436d17f87"
+    },
+    {
+      "bytes": 10646,
+      "path": "sdk_deployment_producer.py",
+      "scope": "packet",
+      "sha256": "e507a6724ce6ca8c9c20bebb52d017782910f42522127a12169bf1f04662b3ff"
+    },
+    {
+      "bytes": 7238,
+      "path": "sdk_inputs.py",
+      "scope": "packet",
+      "sha256": "991d9b9a78debf4cd62c458ee2c8cc9ef8e5bbde8f664df188b76964382ee27d"
+    },
+    {
+      "bytes": 7930,
+      "path": "sealed_launch.py",
+      "scope": "packet",
+      "sha256": "404f2a5b729064c4b8aa6b4341d8d75fd74ee97c5600a693a7237e9a3c62ff58"
+    },
+    {
+      "bytes": 1723,
+      "path": "try_lease.py",
+      "scope": "packet",
+      "sha256": "0c6c473240f7d37f5c7a362212dd3065ce3ea58179e462724a08e662650895a5"
+    },
+    {
+      "bytes": 7962,
+      "path": "bootstrap.py",
+      "scope": "control",
+      "sha256": "b9f253f59224d352841535ebaa714bf1cbc5cb92c8042c1da9535fc125addf2b"
+    },
+    {
+      "bytes": 513,
+      "path": "client_gate.py",
+      "scope": "control",
+      "sha256": "0f60d05afc67412d3a0b119859fe612dfc6178ba9b4d906ec2ce56c52d6f85a4"
+    },
+    {
+      "bytes": 3597,
+      "path": "control.py",
+      "scope": "control",
+      "sha256": "6e3739d7aff7fa12488ef85c171ca2fb1d910e8c507ae2d99263d6f36241dcf3"
+    },
+    {
+      "bytes": 6326,
+      "path": "setup.py",
+      "scope": "control",
+      "sha256": "10e9314f664debbb6010e3b1f6ef1c563e43ee732f6267eeb13c42eefd51a677"
+    }
+  ],
+  "format": "uwvm-exact-host-producer-source-manifest-v2",
+  "subject_packet_proof_separately_bound": true
+}

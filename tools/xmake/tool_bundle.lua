@@ -15,7 +15,9 @@ function _inside(root, relative)
         type(relative) == "string" and #relative > 0 and not path.is_absolute(relative),
         "Tool manifest paths must be relative"
     )
-    assert(not relative:find("\\", 1, true) and not relative:find("%z"), "Use normalized tool manifest paths")
+    assert(not relative:find("\\", 1, true) and not relative:find("[:%z\1-\31\127]")
+           and relative:sub(1, 1) ~= "/" and relative:sub(-1) ~= "/"
+           and not relative:find("//", 1, true), "Use normalized tool manifest paths")
     for part in relative:gmatch("[^/]+") do
         assert(part ~= "." and part ~= "..", "Tool manifest path contains a parent or current-directory segment")
     end
@@ -30,14 +32,88 @@ function payload_path(root, relative)
     return _inside(root, relative)
 end
 
+-- @brief Validate the complete bundle schema before inspecting or mutating cache.
+-- @param manifest Decoded bundle metadata; no caller-supplied field is executed.
+-- @details Programs and aliases must resolve to declared payloads. Program
+-- entries may name source files consumed by another pinned tool (TypeScript),
+-- while data-only runtime bundles legitimately have an empty program map.
+-- Dense inventories and path-prefix checks prevent silently omitted entries or
+-- a file/alias from serving as another payload's directory during extraction.
+function validate_manifest(manifest)
+    assert(type(manifest) == "table" and manifest.format == "uwvm-host-tool-bundle-v1",
+           "Unknown host tool bundle manifest format")
+    if manifest.package ~= nil then
+        assert(type(manifest.package) == "string" and manifest.package:match("^[a-z][a-z0-9%-]*$"), "Invalid tool package name")
+    end
+    if manifest.version ~= nil then
+        assert(type(manifest.version) == "string" and manifest.version:match("^[%w%.%+%-]+$"), "Invalid tool package version")
+    end
+    local function digest(value)
+        return type(value) == "string" and #value == 64 and value:match("^%x+$")
+    end
+    local function array(value, label)
+        assert(type(value) == "table", label .. " must be an array")
+        local count = 0
+        for key in pairs(value) do
+            count = count + 1
+            assert(type(key) == "number" and key >= 1 and key <= #value and key % 1 == 0,
+                   label .. " must form a dense array")
+        end
+        assert(count == #value, label .. " must form a dense array")
+    end
+    assert(digest(manifest.sha256), "Malformed archive SHA256")
+    _inside(".", manifest.archive)
+    array(manifest.files, "Host files")
+    assert(#manifest.files > 0, "Host tool bundle must enumerate every file")
+    local files, paths = {}, {}
+    for _, file in ipairs(manifest.files) do
+        assert(type(file) == "table", "Invalid file descriptor")
+        _inside(".", file.path)
+        assert(not paths[file.path], "Duplicate host file path")
+        assert(digest(file.sha256) and type(file.bytes) == "number" and file.bytes >= 0
+               and file.bytes < 4294967296 and file.bytes % 1 == 0 and #file.path < 65536,
+               "Invalid host file hash or extent")
+        assert(type(file.executable) == "boolean", "Executable mode must be explicit")
+        files[file.path], paths[file.path] = file, true
+    end
+    local aliases = {}
+    array(manifest.aliases or {}, "Host aliases")
+    for _, alias in ipairs(manifest.aliases or {}) do
+        assert(type(alias) == "table", "Invalid alias descriptor")
+        _inside(".", alias.path)
+        _inside(".", alias.target)
+        assert(not paths[alias.path] and files[alias.target], "Aliases must uniquely name declared regular files")
+        aliases[alias.path], paths[alias.path] = alias.target, true
+    end
+    for relative in pairs(paths) do
+        local parent = path.directory(relative):gsub("\\", "/")
+        while parent ~= "." and parent ~= "" do
+            assert(not paths[parent], "A host payload/alias cannot also be a directory")
+            parent = path.directory(parent):gsub("\\", "/")
+        end
+    end
+    assert(type(manifest.programs) == "table", "Declare the host program map, including an empty map for data-only bundles")
+    for name, relative in pairs(manifest.programs) do
+        assert(type(name) == "string" and name:match("^[%w_%-]+$"), "Invalid program identifier")
+        _inside(".", relative)
+        local file = files[aliases[relative] or relative]
+        assert(file, "A host program must name a declared payload")
+    end
+    _inside(".", manifest.provenance)
+    -- Older JVM bundles name their SDK-level provenance document here rather
+    -- than a payload member. It remains a confined metadata reference; exact
+    -- archive and every payload hash are mandatory for both manifest forms.
+end
+
 -- @brief Validate the bytes of every file in the extracted payload.
 -- @param root Directory containing exactly the declared bundle payload.
 -- @param files Array of {path, sha256, executable} entries from the manifest.
 -- @return True only when every declared file retains its expected bytes.
 function _complete(root, files, aliases)
+    if os.islink(root) then return false end
     for _, file in ipairs(files) do
         local location = _inside(root, file.path)
-        if not os.isfile(location) or hash.sha256(location):lower() ~= file.sha256:lower() then
+        if os.islink(location) or not os.isfile(location) or hash.sha256(location):lower() ~= file.sha256:lower() then
             return false
         end
     end
@@ -67,8 +143,27 @@ function _extract(archive, output, files)
         expected_extent = expected_extent + 6 + #file.path + file.bytes
     end
     local unpacked = output .. ".uncompressed"
-    lz4.decompress_file(archive, unpacked)
-    local stream = assert(io.open(unpacked, "rb"))
+    import("core.base.json")
+    local diagnostic = output .. ".decode.json"
+    local state = {format = "uwvm-host-tool-decode-v1", status = "DECODING",
+        archive = archive, output = unpacked, expected_bytes = expected_extent}
+    json.savefile(diagnostic, state)
+    try({function()
+        lz4.decompress_file(archive, unpacked)
+    end, catch({function(error)
+        -- Capture errno before diagnostic I/O. Keep the original decoder error
+        -- and partial file; never retry with different file/resource limits.
+        local system_error = os.strerror()
+        state.status, state.codec_error, state.os_error = "FAILED", tostring(error), system_error
+        state.observed_bytes = os.isfile(unpacked) and os.filesize(unpacked) or 0
+        json.savefile(diagnostic, state)
+        raise(string.format("Host tool decompression failed: codec=%s; os=%s; expected=%s; observed=%s; archive=%s; diagnostic=%s",
+            tostring(error), tostring(system_error), expected_extent, state.observed_bytes, archive, diagnostic))
+    end})})
+    state.status = "DECODED"
+    state.observed_bytes = os.isfile(unpacked) and os.filesize(unpacked) or 0
+    json.savefile(diagnostic, state)
+    local stream = assert(io.open(unpacked, "rb"), "Cannot open decoded host tool payload; original decode diagnostic: " .. diagnostic)
     try({
         function()
             local total = stream:size()
@@ -130,9 +225,8 @@ end
 function install(manifest_path, cache)
     import("core.base.json")
     local manifest = json.loadfile(manifest_path)
-    assert(manifest.format == "uwvm-host-tool-bundle-v1", "Unknown host tool bundle manifest format")
+    validate_manifest(manifest)
     assert(manifest.host == os.host() and manifest.arch == os.arch(), "The host tool bundle targets another machine")
-    assert(type(manifest.files) == "table" and #manifest.files > 0, "Host tool bundle must enumerate every file")
     local archive = _inside(path.directory(manifest_path), manifest.archive)
     assert(os.isfile(archive), "Install the matching SDK host-tool archive: " .. archive)
     assert(hash.sha256(archive):lower() == manifest.sha256:lower(), "Host tool archive checksum mismatch")

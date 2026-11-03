@@ -1,0 +1,64 @@
+{
+  "scope": "Select Remote Control only for the owning isolated official URSim,whose network remains private and cap0. No power/program/motion or ROS task.",
+  "steps": [
+    {
+      "id": "confirm-unmodified-stock-safety",
+      "regions": [
+        [
+          127,
+          61,
+          1153,
+          88
+        ],
+        [
+          492,
+          690,
+          787,
+          724
+        ]
+      ],
+      "expected_rgb_sha256": "8f6b984c639eb425469f53b0f0206be322cc0a6069a7265b23afa66d77abaea2",
+      "point": [
+        640,
+        707
+      ],
+      "purpose": "Accept current original safety values,without editing any value"
+    },
+    {
+      "id": "open-private-native-control-mode-menu",
+      "regions": [
+        [
+          1088,
+          7,
+          1148,
+          64
+        ]
+      ],
+      "point": [
+        1116,
+        33
+      ],
+      "expected_rgb_sha256": "4ee2956119b764210b3b0563a5550686f5d90ac0d4ebd20acd2979be9b1721dc",
+      "observed_image_sha256": "dd0d1d5ea2820e3c895316aaaea3597e1e173456fe6b0cbfa06db80ddd83c467",
+      "purpose": "Inspect official Local/Remote control mode selection in own isolated native URSim"
+    },
+    {
+      "id": "select-private-native-remote-control-mode",
+      "regions": [
+        [
+          964,
+          69,
+          1148,
+          109
+        ]
+      ],
+      "point": [
+        1057,
+        88
+      ],
+      "expected_rgb_sha256": "2db16579e874fcaaa88c9fc08e3938b48905efb0215b383aa993401d61d95f3e",
+      "observed_image_sha256": "9d43460ce4ec34e3450f92c98146663fbd7219edef6ba98a9e857d7652c9f73f",
+      "purpose": "Select official Remote Control mode of own isolated native URSim; preserve host/VM permission boundaries"
+    }
+  ]
+}

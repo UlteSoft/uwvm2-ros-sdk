@@ -56,6 +56,9 @@ function main(inventory_path, closure, destination)
     try({function()
         for _, item in ipairs(files) do
             local content = assert(io.readfile(confinement.payload_path(closure, item.path), {encoding = "binary"}))
+            local actual = #content == 0 and "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" or hash.sha256(bytes(content)):lower()
+            assert(#content == item.bytes and actual == item.sha256,
+                   "Native payload changed during packaging: " .. item.path)
             stream:write(bytes(2):u16be_set(1, #item.path))
             stream:write(item.path)
             stream:write(bytes(4):u32be_set(1, #content))

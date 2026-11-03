@@ -1,0 +1,16 @@
+{
+  "format": "uwvm-sdk-guest-safety-required-cases-v1",
+  "language": "php",
+  "runtime_version": "8.4.13",
+  "backend": "ros2",
+  "required_cases": [
+    "genuine-runtime-version",
+    "raw-ros-abi-v1",
+    "guest-rejects-empty-alias",
+    "guest-rejects-invalid-utf8",
+    "raw-ungranted-alias-denied"
+  ],
+  "count_unit": "actual-guest-assertion",
+  "required_case_count": 5,
+  "scope": "Genuine interpreter/ROS ABI and guest validation/permission denial component; official vendor simulation and fresh feedback remain separately mandatory."
+}

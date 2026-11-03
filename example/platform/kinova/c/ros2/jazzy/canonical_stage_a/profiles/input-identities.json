@@ -1,0 +1,27 @@
+{
+  "format": "sdk04-kinova-canonical-input-identities-v1",
+  "whole_wasm": {
+    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "bytes": 4449,
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "runtime": {
+    "sha256": "4bb3b421b998325374495da63780836613e21ccf5181d6397aee84752b7a0d7f",
+    "bytes": 90500304,
+    "source_identity": "sha256:7b8192fed6aad6f1a7ae03a028bff9e58211f6520f34da1272455967a2c5844a"
+  },
+  "native": {
+    "sha256": "3730d41563eef7c0ee8a82bc1997bb6d884fbb5fa65e2b491761d518b75f7f79",
+    "bytes": 1176352,
+    "source_identity": "sha256:450a8e6214cb142d6afe21fd1450a2909176809f7c777b497eefbfc2a4103ff5"
+  },
+  "scope": "Exact R12/native450/C0 source candidate; no public deployment, release, negative-field isolation or Stage B credit",
+  "model_source": {
+    "repository": "https://github.com/Kinovarobotics/ros2_kortex",
+    "commit": "462dab9aa4732d733be55e1846530dd920c7c7d3",
+    "mode": "official-mock-hardware",
+    "license_file": "vendor-prefix/share/kortex_description/LICENSE",
+    "license_sha256": "bac9561b1f2b94aad4e33e3379cf3e2d6cca140b0276339762f0d411b1e85610",
+    "scope": "Gen3 seven bounded joints, original external-cable GenericSystem model; full physics/sensor/assets/release coverage remains required"
+  }
+}

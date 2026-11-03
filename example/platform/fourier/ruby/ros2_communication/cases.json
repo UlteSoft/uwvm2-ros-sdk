@@ -1,0 +1,24 @@
+{
+  "format": "uwvm-sdk-staged-required-cases-v1",
+  "scope": "Representative Fourier Ruby ROS2 Jazzy communication route; the full owned matrix remains mandatory",
+  "Stage_A": {
+    "required": 6,
+    "cases": [
+      "genuine-runtime-and-raw-abi",
+      "official-ros-correlated-first-reply",
+      "official-ros-fresh-second-reply",
+      "ungranted-topic-alias-denied",
+      "retired-publisher-handle-refused",
+      "bounded-idle-feedback-timeout"
+    ]
+  },
+  "Stage_B": {
+    "required": 1,
+    "cases": [
+      "fourier-jazzy-vendor-simulation"
+    ],
+    "status": "BLOCKED_REQUIRED_NOT_RUN"
+  },
+  "component_isolation": "NOT_COVERED_ONE_GENUINE_INTERPRETER_TRUST_DOMAIN",
+  "whole_assignment_complete": false
+}

@@ -189,6 +189,7 @@ inline static int roswasmc_bounded_2_builtin_interfaces_msg_Duration_valid(roswa
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 inline static size_t roswasmc_bounded_2_builtin_interfaces_msg_Duration_wire_size(roswasmc_bounded_2_builtin_interfaces_msg_Duration const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     n += 4;
@@ -341,6 +342,7 @@ inline static int roswasmc_bounded_2_builtin_interfaces_msg_Time_valid(roswasmc_
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 inline static size_t roswasmc_bounded_2_builtin_interfaces_msg_Time_wire_size(roswasmc_bounded_2_builtin_interfaces_msg_Time const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     n += 4;
@@ -1424,6 +1426,7 @@ inline static int roswasmc_bounded_2_geometry_msgs_msg_Vector3_valid(roswasmc_bo
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 inline static size_t roswasmc_bounded_2_geometry_msgs_msg_Vector3_wire_size(roswasmc_bounded_2_geometry_msgs_msg_Vector3 const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -1657,6 +1660,7 @@ inline static int roswasmc_bounded_2_geometry_msgs_msg_Quaternion_valid(roswasmc
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 inline static size_t roswasmc_bounded_2_geometry_msgs_msg_Quaternion_wire_size(roswasmc_bounded_2_geometry_msgs_msg_Quaternion const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;

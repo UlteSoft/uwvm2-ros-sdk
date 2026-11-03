@@ -1,0 +1,3 @@
+The maintained rcljava scheduling subset runs its explicit credit supplier under the same dispatch exclusion as Future-driven progress. Recursive credit consumption, node creation and context shutdown must fail17 before mutation; an Error must retain its identity and release the guest exclusion in finally. The finite credit bound still applies after a failed credit callback.
+
+CreditDriverChecks compiles through ordinary public Xmake and executes its assertions inside genuine Wasm. Its ABI-only guest Transport permits version lookup and refuses every ROS operation. This fixture qualifies guest-local migration scheduling only. It provides no native ROS, service, whole-rcljava or component-grant acceptance.

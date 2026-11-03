@@ -1,0 +1,30 @@
+{
+  "format": "uwvm-ros-command-run-v1",
+  "target": "wasm32-wasip1",
+  "backend": "ros2",
+  "distribution": "jazzy",
+  "runtime": "uwvm2-ros",
+  "runtime_arguments": [
+    "-Raot",
+    "-Rct",
+    "4",
+    "-Rllvm-policy",
+    "fast-compile",
+    "--wasm-set-main-module-name",
+    "main",
+    "--wasip1-global-noinherit-system-environment",
+    "-Rllvm-cache-path",
+    "path",
+    ".uwvm-ros/guest-cache",
+    "--ros2-global-disable",
+    "--ros2-global-audit-deny-max-rate-hz",
+    "4",
+    "--ros2-global-audit-deny-burst",
+    "4",
+    "--ros2-global-audit-deny-max-records",
+    "4",
+    "--ros2-global-audit-deny-max-bytes",
+    "4096"
+  ],
+  "application_arguments": []
+}

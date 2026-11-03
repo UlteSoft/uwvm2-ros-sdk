@@ -1,0 +1,373 @@
+{
+  "automatic_xmake_test_registration_state": "PENDING_SHARED_VM_BACKED_PUBLIC_TEST_RUNNER_INTEGRATION",
+  "blocked": 32,
+  "cases": [
+    {
+      "argv": [
+        "cuda",
+        "rgb8",
+        "3",
+        "3",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "cuda-rgb8"
+    },
+    {
+      "argv": [
+        "cuda",
+        "bgr8",
+        "3",
+        "3",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "cuda-bgr8"
+    },
+    {
+      "argv": [
+        "cuda",
+        "mono8",
+        "1",
+        "1",
+        "95"
+      ],
+      "expected_exit": 0,
+      "id": "cuda-rejects-mono8"
+    },
+    {
+      "argv": [
+        "cuda",
+        "rgba8",
+        "4",
+        "4",
+        "95"
+      ],
+      "expected_exit": 0,
+      "id": "cuda-rejects-rgba8"
+    },
+    {
+      "argv": [
+        "vpi",
+        "mono8",
+        "1",
+        "1",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "vpi-mono8"
+    },
+    {
+      "argv": [
+        "vpi",
+        "rgba8",
+        "4",
+        "4",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "vpi-rgba8"
+    },
+    {
+      "argv": [
+        "unknown",
+        "rgb8",
+        "3",
+        "3",
+        "95"
+      ],
+      "expected_exit": 0,
+      "id": "rejects-unknown-profile"
+    },
+    {
+      "argv": [
+        "cuda",
+        "rgb8",
+        "1",
+        "1",
+        "22"
+      ],
+      "expected_exit": 0,
+      "id": "rejects-short-row"
+    },
+    {
+      "argv": [
+        "vpi",
+        "rgba8",
+        "4",
+        "3",
+        "22"
+      ],
+      "expected_exit": 0,
+      "id": "rejects-short-payload"
+    },
+    {
+      "argv": [
+        "cuda",
+        "rgb8",
+        "5",
+        "5",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "preserves-padded-row"
+    },
+    {
+      "argv": [
+        "pair",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "pair-negative-time-preserved"
+    },
+    {
+      "argv": [
+        "pair",
+        "0",
+        "8",
+        "8",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "pair-model-D-count-preserved"
+    },
+    {
+      "argv": [
+        "pair",
+        "0",
+        "5",
+        "4",
+        "0",
+        "0",
+        "90"
+      ],
+      "expected_exit": 0,
+      "id": "pair-coefficient-quota"
+    },
+    {
+      "argv": [
+        "pair",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "22"
+      ],
+      "expected_exit": 0,
+      "id": "pair-stale-seconds"
+    },
+    {
+      "argv": [
+        "pair",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "22"
+      ],
+      "expected_exit": 0,
+      "id": "pair-invalid-ROI-bool"
+    },
+    {
+      "argv": [
+        "pair",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "22"
+      ],
+      "expected_exit": 0,
+      "id": "pair-nonfinite-calibration"
+    },
+    {
+      "argv": [
+        "pair",
+        "0",
+        "0",
+        "8",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "pair-zero-binning-full-ROI-default"
+    },
+    {
+      "argv": [
+        "pair",
+        "0",
+        "5",
+        "5",
+        "1",
+        "0",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "pair-valid-rectification-flag"
+    },
+    {
+      "argv": [
+        "family",
+        "cuda",
+        "tag36h11",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-cuda-tag36h11"
+    },
+    {
+      "argv": [
+        "family",
+        "cuda",
+        "tag16h5",
+        "95"
+      ],
+      "expected_exit": 0,
+      "id": "family-cuda-rejects-tag16h5"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "tag36h11",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-tag36h11"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "tag16h5",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-tag16h5"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "tag25h9",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-tag25h9"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "tag36h10",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-tag36h10"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "circle21h7",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-circle21h7"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "circle49h12",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-circle49h12"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "custom48h12",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-custom48h12"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "standard41h12",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-standard41h12"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "standard52h13",
+        "0"
+      ],
+      "expected_exit": 0,
+      "id": "family-vpi-standard52h13"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "unknown",
+        "95"
+      ],
+      "expected_exit": 0,
+      "id": "family-rejects-unknown-name"
+    },
+    {
+      "argv": [
+        "family",
+        "vpi",
+        "tag36h11_extra",
+        "95"
+      ],
+      "expected_exit": 0,
+      "id": "family-rejects-prefix-match"
+    },
+    {
+      "argv": [
+        "family",
+        "unknown",
+        "tag36h11",
+        "95"
+      ],
+      "expected_exit": 0,
+      "id": "family-rejects-unknown-profile"
+    }
+  ],
+  "executed": 0,
+  "execution": "Only actual uwvm2-ros Wasm through the public runner with explicit stdio grants; no native business substitution",
+  "failed": 0,
+  "local_value_semantics": "Includes complete CameraInfo/unknown distortion model/D quota/uncalibrated zero defaults and exact signed timestamp matching; no native pointer ABI, queue or ROS detector qualification. Includes exact backend-specific tag-family names without native parameter or detector authority.",
+  "not_run": 0,
+  "note": "Local input contract cases do not replace official callbacks, permissions/isolation, detector, ROS or StageB tests.",
+  "official_ROS_or_detector_acceptance": false,
+  "official_commit": "95df59e5dc9c253b6e8e11471c10fd510b036fdd",
+  "official_url": "https://raw.githubusercontent.com/NVIDIA-ISAAC-ROS/isaac_ros_apriltag/95df59e5dc9c253b6e8e11471c10fd510b036fdd/isaac_ros_apriltag/src/apriltag_node.cpp",
+  "passed": 0,
+  "required": 32,
+  "schema": "sdk10-apriltag-backend-contract-public-cases-v1",
+  "selected": 32
+}

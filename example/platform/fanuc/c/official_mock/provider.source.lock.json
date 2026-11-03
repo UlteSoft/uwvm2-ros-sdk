@@ -1,0 +1,521 @@
+{
+  "format": "sdk02-official-provider-source-lock-v1",
+  "profile": "fanuc-crx10ia-official-mock-jazzy",
+  "scope": "Pinned unmodified provider references and declared package dependencies; installed native closure and all scenarios require separate actual execution",
+  "official_source": {
+    "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+    "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+    "license": "Apache-2.0"
+  },
+  "files": [
+    {
+      "path": "official-reference/fanuc_controllers/package.xml",
+      "source_path": "fanuc_controllers/package.xml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 1293,
+      "sha256": "975b392912cebb67c0797a5442f3554a1fe5d5b18a712d27e03904d609724c78",
+      "git_blob_sha1": "2fb12edf98b9383e143e87ca80dc45a782559eac",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_hardware_interface/package.xml",
+      "source_path": "fanuc_hardware_interface/package.xml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 971,
+      "sha256": "4b6ee4942b0ba80ef8e5484f8053eb2b5ba18491fbda14ce0ec8648f30bd94f5",
+      "git_blob_sha1": "039a96dc3cd617ef72ed60db52ed8a8eae918a4e",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_libs/package.xml",
+      "source_path": "fanuc_libs/package.xml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 872,
+      "sha256": "2e42be36d23d34f6e542b886b73118e3ff3ee7d62955c1e2066b3873e10a8182",
+      "git_blob_sha1": "a6b5df158a9de5b5079890503919bbe09776a221",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_msgs/package.xml",
+      "source_path": "fanuc_msgs/package.xml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 876,
+      "sha256": "bbb22cc4cc9570bb26c7cddd0c4747b2d06807ba52604f01cfc0747aa4250347",
+      "git_blob_sha1": "26ed4455f3f849dc384adefe84b7fd8288bc7eed",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/rmi_msgs/package.xml",
+      "source_path": "rmi_msgs/package.xml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 872,
+      "sha256": "a2eaa367ebe44388338e8566fac437cb9263d49fc246379789f7e44538faf893",
+      "git_blob_sha1": "0d4e0e613f57dca32fd6504224a0e6fe08e219fc",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/slider_publisher/package.xml",
+      "source_path": "slider_publisher/package.xml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 922,
+      "sha256": "d1e845633f5077df7f5f82a53ec31437bbaefc64c89831f13f3ad03d694404d3",
+      "git_blob_sha1": "28a14925fd6b9b881fbbcb1a6f220a290f4693b2",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_hardware_interface/robot/crx10ia.urdf.xacro",
+      "source_path": "fanuc_hardware_interface/robot/crx10ia.urdf.xacro",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 1589,
+      "sha256": "3d7aa551768c19f6f99b565ccbfc5199bd3b5be866efc5dcc27e2e4bbac380c6",
+      "git_blob_sha1": "0c629e594c09223f9bb4d061f6bb79bfb73a2f68",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_hardware_interface/config/ros2_controllers.yaml",
+      "source_path": "fanuc_hardware_interface/config/ros2_controllers.yaml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 2195,
+      "sha256": "c72cae62ff9db942ee6fc5298f48c0b11e44ecba59e69717321922cddd4857df",
+      "git_blob_sha1": "ec1b895a5c3174f4c021c22385ef141adb35965b",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_hardware_interface/config/example_gpio_config.yaml",
+      "source_path": "fanuc_hardware_interface/config/example_gpio_config.yaml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 512,
+      "sha256": "2753311cb6f1bf71e408660615cc8ab7753ce843304d45f26e32664b58fc2063",
+      "git_blob_sha1": "99d062417288d4c52f847dbfde0d83ece464a2ee",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/LICENSES/Apache-2.0.txt",
+      "source_path": "LICENSES/Apache-2.0.txt",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 10280,
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "git_blob_sha1": "137069b823873b8bcf42979bcf8e9371052d26a2",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/LICENSES/BSD-2-Clause.txt",
+      "source_path": "LICENSES/BSD-2-Clause.txt",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 1266,
+      "sha256": "017b5ee48f680e82cba79141c7895a1f02b856df2512225f5c427fe36765ef0b",
+      "git_blob_sha1": "eb3c575b88d226e12e2f60b4d597e7296e43a41b",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/LICENSES/BSD-3-Clause.txt",
+      "source_path": "LICENSES/BSD-3-Clause.txt",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 1459,
+      "sha256": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+      "git_blob_sha1": "086d3992cb3a8f7000127bda96d6cbe673c8e788",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/LICENSES/MIT.txt",
+      "source_path": "LICENSES/MIT.txt",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 1078,
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "git_blob_sha1": "2071b23b0e08594ea6bc99ac71129ef992abf498",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_crx_description/package.xml",
+      "source_path": "fanuc_crx_description/package.xml",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "bytes": 993,
+      "sha256": "e016d38aad147c7953838f1bc3ca0ba5b143e22a3cc6319f441aa3535363d045",
+      "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_hardware_interface/config/crx_mock_ros2_control_macro.xacro",
+      "source_path": "fanuc_hardware_interface/config/crx_mock_ros2_control_macro.xacro",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+      "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+      "bytes": 7218,
+      "sha256": "211fd39bc4612631ece92bf30de6408d87b104204d2b63227bb3f0798b42b197",
+      "git_blob_sha1": "f8b4bb34f70005cfddcfa2beb99e44c1f8014a9e",
+      "matches_original_successful_native_source_file": true
+    }
+  ],
+  "packages": [
+    {
+      "name": "fanuc_controllers",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_controllers/package.xml",
+      "source_sha256": "975b392912cebb67c0797a5442f3554a1fe5d5b18a712d27e03904d609724c78",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "controller_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "fanuc_hardware_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "fanuc_libs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "fanuc_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rmi_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "geometry_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "hardware_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "joint_trajectory_controller",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "lifecycle_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "pluginlib",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rclcpp",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "realtime_tools",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "sensor_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "trajectory_msgs",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "fanuc_hardware_interface",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_hardware_interface/package.xml",
+      "source_sha256": "4b6ee4942b0ba80ef8e5484f8053eb2b5ba18491fbda14ce0ec8648f30bd94f5",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "fanuc_libs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "hardware_interface",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "pluginlib",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "controller_manager",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "fanuc_libs",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_libs/package.xml",
+      "source_sha256": "2e42be36d23d34f6e542b886b73118e3ff3ee7d62955c1e2066b3873e10a8182",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "eigen",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "fanuc_msgs",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_msgs/package.xml",
+      "source_sha256": "bbb22cc4cc9570bb26c7cddd0c4747b2d06807ba52604f01cfc0747aa4250347",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "rmi_msgs",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/rmi_msgs/package.xml",
+      "source_sha256": "a2eaa367ebe44388338e8566fac437cb9263d49fc246379789f7e44538faf893",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "buildtool_depend",
+          "name": "rosidl_default_generators",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rosidl_default_runtime",
+          "condition": null
+        },
+        {
+          "kind": "member_of_group",
+          "name": "rosidl_interface_packages",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "slider_publisher",
+      "version": "2.4.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/slider_publisher/package.xml",
+      "source_sha256": "d1e845633f5077df7f5f82a53ec31437bbaefc64c89831f13f3ad03d694404d3",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "rclcpp",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "std_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "sensor_msgs",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "qt_gui",
+          "condition": null
+        },
+        {
+          "kind": "depend",
+          "name": "qt_gui_cpp",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_auto",
+          "condition": null
+        },
+        {
+          "kind": "test_depend",
+          "name": "ament_lint_common",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    },
+    {
+      "name": "fanuc_crx_description",
+      "version": "2.3.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "source_package_xml": "official-reference/fanuc_crx_description/package.xml",
+      "source_sha256": "e016d38aad147c7953838f1bc3ca0ba5b143e22a3cc6319f441aa3535363d045",
+      "declared_dependencies": [
+        {
+          "kind": "buildtool_depend",
+          "name": "ament_cmake",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "joint_state_publisher_gui",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "launch",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "launch_ros",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "robot_state_publisher",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "rviz2",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "urdf",
+          "condition": null
+        },
+        {
+          "kind": "exec_depend",
+          "name": "xacro",
+          "condition": null
+        }
+      ],
+      "declaration_is_installed_ABI_or_release_qualification": false
+    }
+  ],
+  "model_catalog": {
+    "manifest": "matrix.required.json",
+    "versioned_models": 81,
+    "inventory_exhaustive": false,
+    "all_remaining_models_required": true,
+    "model_source_inventory_is_native_simulation_coverage": false
+  },
+  "physical_robot_authorized": false,
+  "original_native_smoke_scope": "Four finite native cases previously passed; this is not unchanged-Wasm public example acceptance"
+}

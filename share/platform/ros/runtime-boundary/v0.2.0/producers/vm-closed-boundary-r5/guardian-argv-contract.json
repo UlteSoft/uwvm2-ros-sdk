@@ -1,0 +1,1 @@
+{"arguments":["--context","{context}","--lease-fd","{lease_fd}","--controller-watch-fd","{controller_fd}","--requester-watch-fd","{requester_fd}"],"entry_relative":"guardian.py","kernel_argv":["{pinned_interpreter}","-I","-S","-B","/proc/self/fd/{bootstrap_fd}","--role","{role}","--context","{context}","--launch-fd","{launch_fd}"],"role":"guardian"}

@@ -1,0 +1,165 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "py",
+  "backend": "ros2",
+  "module_loading": "lazy",
+  "default_authority": [],
+  "modules": [
+    {
+      "name": "_robotis_obstacle_messages",
+      "file": "include/platform/robotis/py/ros2/humble/upstream_obstacle_detection/compat/_robotis_obstacle_messages.py",
+      "package": false,
+      "sha256": "d2280e308842b6085ec86c9ecd4481a582d1f5b881bb6e73620fee1ae524195d"
+    },
+    {
+      "name": "geometry_msgs",
+      "file": "include/platform/robotis/py/ros2/humble/upstream_obstacle_detection/compat/geometry_msgs/__init__.py",
+      "package": true,
+      "sha256": "eee483b0422f010be6a6f8f47a40a5d3b8d7c1af1fec698b2c6e7188010f7f14"
+    },
+    {
+      "name": "rclpy",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/__init__.py",
+      "package": true,
+      "sha256": "012f0cfaee5f279a03a676de49808c85ee77443df196f262fe98d6a7d1a42437"
+    },
+    {
+      "name": "robotis_humble_records",
+      "file": "include/platform/robotis/py/ros2/humble/bounded_records.py",
+      "package": false,
+      "sha256": "f058f044a90c30766cfac875366f2da9c9932cc52a9f650b3532d36fb0ac4761"
+    },
+    {
+      "name": "robotis_original_obstacle",
+      "file": "src/platform/robotis/py/ros2/robotis-turtlebot3-humble-complete/upstream_obstacle_detection/ported/turtlebot3_obstacle_detection.py",
+      "package": false,
+      "sha256": "ca77972db3f6415dc80f1ed1b32a6c81abd9c11ba561192c704cf1dd1ef79ff6"
+    },
+    {
+      "name": "roswasm",
+      "file": "include/platform/ros/py/roswasm/__init__.py",
+      "package": true,
+      "sha256": "c0700f2f09e0d547cc26382705821d609f6ae8f5db601ec211353b43801afe58"
+    },
+    {
+      "name": "sensor_msgs",
+      "file": "include/platform/robotis/py/ros2/humble/upstream_obstacle_detection/compat/sensor_msgs/__init__.py",
+      "package": true,
+      "sha256": "152acdc779761a5d71b1ae55aa656f0cc1ec1ed5d640b4a098282ec45a8114df"
+    },
+    {
+      "name": "geometry_msgs.msg",
+      "file": "include/platform/robotis/py/ros2/humble/upstream_obstacle_detection/compat/geometry_msgs/msg/__init__.py",
+      "package": true,
+      "sha256": "d448011274897fe50add9299cd57c6a095151db695bc0637bcb1a91a8c982878"
+    },
+    {
+      "name": "rclpy._dispatch",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/_dispatch.py",
+      "package": false,
+      "sha256": "291a0bed791c125bde01e36583bf899fac023b4a520f01878e4ad8e74872bd8d"
+    },
+    {
+      "name": "rclpy._service_support",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/_service_support.py",
+      "package": false,
+      "sha256": "f7561a819d280d01dc029fbc6f7b06a288f85c8c28708fed55ff587cf8945566"
+    },
+    {
+      "name": "rclpy.client",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/client.py",
+      "package": false,
+      "sha256": "12187f937a6b8b643950319fb98377d0d79d7bed5d0ee4965ee80c4bc5efe29e"
+    },
+    {
+      "name": "rclpy.clock",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/clock.py",
+      "package": false,
+      "sha256": "01c6c0976c9f4c09b11c6eb389aa8130f9a90611c7e9724a04668c5eca0b9b11"
+    },
+    {
+      "name": "rclpy.context",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/context.py",
+      "package": false,
+      "sha256": "d7b9190b1adaae4bc5ba0b03ed874cdb82bb4e511f58bcd2979fa77a11cc7451"
+    },
+    {
+      "name": "rclpy.node",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/node.py",
+      "package": false,
+      "sha256": "63f4348fd6c2542520705f81685c2f7cd7efd9767146b43d451d90578d9de0a3"
+    },
+    {
+      "name": "rclpy.qos",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/qos.py",
+      "package": false,
+      "sha256": "269c093c0f86abd9fc2e9cd51cc9314bea635f04ab54a43e1da72621a3e7f0e5"
+    },
+    {
+      "name": "rclpy.service",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/service.py",
+      "package": false,
+      "sha256": "e045927777a70d7bc8c627ef0430ed392c9af2d4b7e19dff339d514efe837f44"
+    },
+    {
+      "name": "rclpy.task",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/task.py",
+      "package": false,
+      "sha256": "a06b4a3d9c07d4bbf2d4c843d5364a1772c262a275bc461c36a9d5665c6bb881"
+    },
+    {
+      "name": "rclpy.time",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/time.py",
+      "package": false,
+      "sha256": "5a0beef58e2cec1fe5829f4ee9c86369fb19d53106894d0cca4c6c5e969b277e"
+    },
+    {
+      "name": "rclpy.timer",
+      "file": "include/platform/ros2/py/compat/rclpy/rclpy/timer.py",
+      "package": false,
+      "sha256": "305def517c1fc3587b64ef221c1d54860b7563df26dd348df17096bb2dd83dd3"
+    },
+    {
+      "name": "roswasm._registry",
+      "file": "include/platform/ros/py/roswasm/_registry.py",
+      "package": false,
+      "sha256": "64ba2cd4019f5b8368266c643dc49afb3052050f48859db80f299b364be90a5d"
+    },
+    {
+      "name": "roswasm.client",
+      "file": "include/platform/ros/py/roswasm/client.py",
+      "package": false,
+      "sha256": "646ec713d96b6a280ffd579923eb93230a9d29a4ee33edd861ef2d1ce5cf224f"
+    },
+    {
+      "name": "roswasm.codecs",
+      "file": "include/platform/ros/py/roswasm/codecs.py",
+      "package": false,
+      "sha256": "20d2268eb9556018f35d3bce3550663e9565439cbd4548b749cfbb796dbc82c4"
+    },
+    {
+      "name": "roswasm.events",
+      "file": "include/platform/ros/py/roswasm/events.py",
+      "package": false,
+      "sha256": "4b898ec3aa85f07dd66690bbb5335adfab84de4d1134e3af4014d0b3a27fec76"
+    },
+    {
+      "name": "roswasm.raw",
+      "file": "include/platform/ros/py/roswasm/raw.py",
+      "package": false,
+      "sha256": "4240576f9dd92e1139a27006f65e5503d460cdd2dab63eb27feb865dda709778"
+    },
+    {
+      "name": "roswasm.transforms",
+      "file": "include/platform/ros/py/roswasm/transforms.py",
+      "package": false,
+      "sha256": "06d1fa6a0aa1927fc878f06a12a22a81746adc14c3219a9899da5fe7a0a2d9e1"
+    },
+    {
+      "name": "sensor_msgs.msg",
+      "file": "include/platform/robotis/py/ros2/humble/upstream_obstacle_detection/compat/sensor_msgs/msg/__init__.py",
+      "package": true,
+      "sha256": "cead4fcaec2f3af3411f46fbd48f1d88202f687a4c67ce9e9161ceb086612f1d"
+    }
+  ]
+}

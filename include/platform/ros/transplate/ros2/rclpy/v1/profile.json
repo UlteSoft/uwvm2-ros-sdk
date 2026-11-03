@@ -1,0 +1,86 @@
+{
+  "backend": "ros2",
+  "bundle": "include/platform/ros/transplate/ros2/rclpy/v1/bundle.json",
+  "c_sources": [
+    "src/language/python/transplate/command.c",
+    "src/platform/ros/py/_native.c"
+  ],
+  "compiler": "LLVM 23.1.4",
+  "core_manifest": "lib/language/python/wasm32-wasip1/core/core.json",
+  "core_manifest_sha256": "ac74e250e64fea3b7c535a29e0314ec4f94571319d50d9ca77a571abb6d1d866",
+  "distribution": "jazzy",
+  "exception_profile": "noeh",
+  "format": "uwvm-python-transplate-profile-v1",
+  "guest_memory_probe": false,
+  "id": "rclpy-jazzy-pubsub-v1",
+  "implicit_authority": [],
+  "include_dirs": [
+    "include/platform/ros2/c/roswasm/detail"
+  ],
+  "inputs": [
+    {
+      "bytes": 52515,
+      "path": "src/platform/ros/py/_native.c",
+      "sha256": "e25a651450323243f7a06d167b2254d57eee97c57b37c58f136ae8730cb1ca3d"
+    },
+    {
+      "bytes": 3260,
+      "path": "src/language/python/transplate/command.c",
+      "sha256": "41c4b6b1912fbe2387fc7c7e13dff52b14fa7c1d85b1622c7e1d4dfe82f13a11"
+    },
+    {
+      "bytes": 95726,
+      "path": "include/platform/ros2/c/roswasm/detail/ros2/abi.h",
+      "sha256": "ccc978219bd47893b6ce4efae4fcb1ebdb7a75c0aadded0001b7dde97310289b"
+    },
+    {
+      "bytes": 12477,
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "bytes": 74230,
+      "path": "share/abi/abi-v1.json",
+      "sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0"
+    },
+    {
+      "bytes": 1004579,
+      "path": "share/language/python/construction-source-lock.json",
+      "sha256": "fa53c387ab6b3c7a4824eb42c5683e4a5ac8a0c91b74559a1ba6d5dac434c17f"
+    },
+    {
+      "bytes": 13722,
+      "path": "include/platform/ros/transplate/ros2/rclpy/v1/bundle.json",
+      "sha256": "cd9a4c6ee06566c35ef912cb69c16f823220ee3ee81942a07433948441b1a057"
+    }
+  ],
+  "native_python_business_fallback": false,
+  "python_version": "3.14.8",
+  "qualification": "SOURCE_CHANGED_REQUALIFICATION_REQUIRED",
+  "supported_source_subset": [
+    "Context configure/init/ok/shutdown",
+    "Node with explicit rosout/parameter-service disable",
+    "std_msgs.msg.String/Bool codecs",
+    "create_publisher/publish/create_subscription",
+    "single-thread spin_once(timeout_sec=0)",
+    "explicit owner retirement"
+  ],
+  "target": "wasm32-wasip1",
+  "threads": false,
+  "unqualified_required_semantics": [
+    "actual controlled-import runtime",
+    "real native pub/sub feedback and permission denial audit",
+    "services/actions/discovery/lifecycle/parameters",
+    "concurrent and asynchronous executors",
+    "ROS clock/timer behavior",
+    "official simulators",
+    "all other runtime/ABI/language/distribution rows",
+    "ROS reentry from callbacks (current lease rejects with status17)"
+  ],
+  "upstream_api": {
+    "api_reference_blob": "dcc5ff056cf4b360de802a98132e7a3b6ea8ba9d",
+    "commit": "bd637294dd02b1c128422395c059fa06df8387a3",
+    "repository": "https://github.com/ros2/rclpy",
+    "version": "7.1.12"
+  }
+}

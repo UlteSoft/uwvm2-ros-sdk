@@ -17,6 +17,7 @@ if not root then
     end
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/platform/trossen/xmake/required_guest_tests.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -32,4 +33,6 @@ target("trossen_joint_single_command")
     set_ros_scenario("joint_single_command")
     set_values("ros.sdk.main_class", "uwvm.trossen.example.Main")
     add_files("Main.vb")
+    uwvm_trossen_required_guest_tests({scenario = "joint_single_command",
+        cases = {"guest-contract-normal", "guest-contract-denied", "guest-contract-invalid-input", "guest-contract-cleanup"}})
 target_end()

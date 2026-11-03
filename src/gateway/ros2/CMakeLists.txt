@@ -33,6 +33,14 @@ find_package(OpenSSL QUIET COMPONENTS Crypto)
 include(compat/Probe.cmake)
 add_executable(uwvm-ros2-gateway main.cc)
 target_compile_definitions(uwvm-ros2-gateway PRIVATE UWVM_ROS2_USE_COMPOSED_NODE=1)
+option(UWVM_ROS2_BUILD_NATIVE_BUFFER_OBSERVATION "Build explicit authenticated native serialized-buffer observation" OFF)
+if(UWVM_ROS2_BUILD_NATIVE_BUFFER_OBSERVATION)
+  find_package(OpenSSL REQUIRED COMPONENTS Crypto)
+  target_compile_definitions(uwvm-ros2-gateway PRIVATE UWVM_ROS2_NATIVE_BUFFER_OBSERVATION=1)
+else()
+  target_compile_definitions(uwvm-ros2-gateway PRIVATE UWVM_ROS2_NATIVE_BUFFER_OBSERVATION=0)
+endif()
+
 # C++20 and newer protocol helpers use the VM's matching fast_io headers.
 # Keep this dependency rooted in the selected VM checkout after repository
 # separation; no installed or independently versioned copy is substituted.

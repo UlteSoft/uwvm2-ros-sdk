@@ -1,0 +1,15 @@
+{
+  "format": "uwvm-sdk-example-group-v1",
+  "id": "wasi-c-clock-v1",
+  "coverage_scope": "EXPLICIT_COMPONENT_SUBSET_NOT_FULL_SDK_OR_SIMULATION",
+  "projects": [
+    "example/platform/wasi/c/sum_arguments",
+    "example/platform/ros/transplate/ros2/rcl/v9_2_11/clock_component"
+  ],
+  "toolchain_manifests": [
+    "share/toolchains/host/linux-x86_64/llvm23.json"
+  ],
+  "per_child_memory_budget_bytes": 2147483648,
+  "required_guest_cases": 8,
+  "full_framework_simulation_acceptance": false
+}

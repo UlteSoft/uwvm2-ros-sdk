@@ -1,0 +1,97 @@
+{
+  "acceptance": {
+    "Stage_B_passes": 0,
+    "actual_VM_executions": 0,
+    "memory_isolation_passes": 0,
+    "official_ROS_roundtrips": 0
+  },
+  "actual_channel_generations": null,
+  "actual_grants": null,
+  "actual_instance_ids": null,
+  "actual_memory_bindings": null,
+  "channel_adapter": {
+    "application_records": [
+      "snapshot",
+      "plan",
+      "result"
+    ],
+    "implemented_by_this_source": false,
+    "owner": "SDK01/VM",
+    "records_confer_authority": false,
+    "required": "Actual generation-bound per-instance typed copy capability; bounded immutable snapshot; narrow descriptor ownership; no node-wide grant union"
+  },
+  "components": [
+    {
+      "ROS_denial_probe": {
+        "call": "open(robot)",
+        "expected_error": 13,
+        "out_slot_must_remain_unchanged": true
+      },
+      "ROS_grants": [],
+      "WASIp1": {
+        "FD3": [
+          "fd_read",
+          "poll_fd_readwrite"
+        ],
+        "FD4": [
+          "fd_write",
+          "poll_fd_readwrite"
+        ],
+        "clock": "verified monotonic domain; snapshot age <250ms",
+        "fd_flags": "nonblock",
+        "inheriting_rights": 0
+      },
+      "channels": [
+        "receive bounded snapshot/result",
+        "send bounded plan"
+      ],
+      "name": "planner",
+      "private_memory": {
+        "expected": "defined unshared backing object planner-private",
+        "observed_identity": null
+      },
+      "private_memory_imports_or_peer_exports": [],
+      "source": "planner.c",
+      "static_library": "planner_kernel.c in the same instance/heap/authority"
+    },
+    {
+      "ROS_grants": [
+        "joint.position.bounded.v1 describe/read/submit/wait for selected adapter and controller only"
+      ],
+      "WASIp1": {
+        "FD3": [
+          "fd_read",
+          "poll_fd_readwrite"
+        ],
+        "FD4": [
+          "fd_write",
+          "poll_fd_readwrite"
+        ],
+        "clock": "same verified monotonic domain",
+        "fd_flags": "nonblock",
+        "inheriting_rights": 0
+      },
+      "channels": [
+        "send bounded actual snapshot/result",
+        "receive bounded plan"
+      ],
+      "name": "actuator",
+      "private_memory": {
+        "expected": "defined unshared backing object actuator-private",
+        "observed_identity": null
+      },
+      "private_memory_imports_or_peer_exports": [],
+      "source": "actuator.c"
+    }
+  ],
+  "format": "sdk03-component-intended-memory-graph-v1",
+  "logical_ROS_node": "sdk03.bounded-controller",
+  "next_three_instance_extension": {
+    "actuator": "narrow bounded ROS write/action grant",
+    "planner": "same private pointer library; communication/file grants only",
+    "sensor_reader": "third private memory with narrow real ROS receive grant"
+  },
+  "pointer_sharing_preload_mode": "Separate explicit opt-in compatibility mode; not used by this source",
+  "same_heap_pointer_sharing_mode": "Planner static library only; no independent sandbox claim",
+  "status": "INTENDED_BINDINGS_NOT_OBSERVED_RUNTIME"
+}

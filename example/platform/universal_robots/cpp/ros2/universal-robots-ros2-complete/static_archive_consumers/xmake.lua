@@ -1,3 +1,6 @@
+-- @trust The archive and each consumer share one Wasm instance, heap and authority.
+-- Separate grants require independent instances and an explicitly authorized typed channel.
+-- This scalar archive fixture does not qualify ROS communication or component isolation.
 -- @file xmake.lua
 -- @brief Build an indexed C archive and genuine C/C++ Wasm consumers.
 -- @details UWVM_ROS_SDK_ROOT names the installed SDK; it supplies verified dependencies.

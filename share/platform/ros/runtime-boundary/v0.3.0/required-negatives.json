@@ -1,0 +1,114 @@
+{
+  "format": "uwvm-sdk-kernel-witness-required-rejections-v1",
+  "version": "0.3.0",
+  "required": 12,
+  "selected": 0,
+  "executed": 0,
+  "passed": 0,
+  "not_run": 12,
+  "cases": [
+    {
+      "id": "unknown-host-or-UID-only-trust",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Real own unapproved UID1000 endpoint supplies a valid-looking self key/descriptor and sealed proof; no installed root-enrolled witness authority.",
+      "required_originals": "No role/ROS admission; capture actual peer label, PID/birth and consumer refusal."
+    },
+    {
+      "id": "wrong-controller-or-guardian-PID-birth",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Use a real distinct own managed PID or stale own retired PID birth against current enrolled role.",
+      "required_originals": "Capture real /proc birth before/after, challenge and refusal; do not claim edited offline receipt alone."
+    },
+    {
+      "id": "wrong-source-closure-or-retained-source-FD",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "In a dedicated own negative subject actually omit, substitute or unseal one retained source FD.",
+      "required_originals": "Actual descriptor flags/seals/full bytes and trusted witness/SDK rejection before business dispatch."
+    },
+    {
+      "id": "wrong-interpreter-runtime-image-or-argv",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Launch an own bounded role with an actual different interpreter/runtime map or closed argv.",
+      "required_originals": "Capture real exe/maps/argv, exact expected pins and refusal."
+    },
+    {
+      "id": "unexpected-active-effective-permitted-inheritable-ambient-capability",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Present an already authorized own root-bootstrap actor's real nonconforming status as a forbidden role; never grant a new capability to an application or host role.",
+      "required_originals": "Preserve actual kernel capability status and precise rejecting stage. A broader UID/source refusal alone does not prove the specific capability predicate; report coverage honestly."
+    },
+    {
+      "id": "wrong-approved-bounding-set-NNP-seccomp-or-supplementary-groups",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Present an actual own actor already carrying a different fixed profile, or a pre-key witness whose lock/probe is incomplete.",
+      "required_originals": "No new privilege/LSM exception; capture actual status, seccomp installation and failed reset/exec/fork probes before any private key."
+    },
+    {
+      "id": "application-claiming-trusted-control-profile",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "A real own docker-default application tries to register as host control/witness or requests metadata for a foreign actual actor.",
+      "required_originals": "Kernel SO_PEERCRED/caller image/cgroup/LSM capture and refusal; no host-control privilege transfer."
+    },
+    {
+      "id": "wrong-canonical-inode-or-nonowner-lease-FD",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Use a separate own local lock file or a genuinely open nonowner FD, while original canonical lease remains protected.",
+      "required_originals": "Original kernel fdinfo/locks/VFS and actual consumer refusal. Never send the true canonical owning OFD to the application."
+    },
+    {
+      "id": "same-process-controller-guardian-or-missing-inherited-guardian-FD",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Dedicated own negative subject uses one actual PID for both roles or actually closes/omits guardian inherited lease FD.",
+      "required_originals": "Actual PID/FD evidence; guardian retires descendants before original lease release."
+    },
+    {
+      "id": "stale-replayed-or-split-observation-generation",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Replay an actual previous signed proof/enrollment/batch at a fresh challenge, or split real consecutive sample batches.",
+      "required_originals": "Actual received raw frames, new nonce/counters/times, signature/hash checks and refusal."
+    },
+    {
+      "id": "escaped-delegated-or-wrong-budget-cgroup",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Use an own bounded helper with actual wrong ancestor/leaf/namespace identity; never move a foreign actor.",
+      "required_originals": "Actual VFS/membership/64GiB/swap0/cpuset originals and rejection; do not loosen resource floors."
+    },
+    {
+      "id": "unapproved-or-application-writable-context-and-approval-record",
+      "required": true,
+      "status": "NOT_RUN",
+      "actual_action": "Dedicated own bounded subject exposes an actually writable private context or supplies an unapproved issuer/policy file.",
+      "required_originals": "Actual mountinfo/stat/os.access and SDK-owned policy bytes prove refusal; no writable host-root/canonical/context alias in positive subject."
+    }
+  ],
+  "rules": [
+    "Each case needs actual own kernel actors/FD/lifecycle/channel evidence and independently reviewed full originals, not static/offline JSON edits.",
+    "Keep exact product consumer source and capture precise rejection stage. A mutation rejected earlier does not prove a later specific predicate.",
+    "Never create extra privileges, change AppArmor, stop foreign actors, release a foreign lease or omit physical retirement to manufacture coverage.",
+    "Source/witness/issuer/executor/mount changes create a new subject requiring whole transfer, exact verification, own two interruptions and own bounded benign.",
+    "Wire/crypto conformance cases below are additional prerequisites, not replacements for the12 real actor refusals."
+  ],
+  "additional_linux_conformance": [
+    "RSA3072-PSS OpenSSL independent valid vector and exact salt32 verification; bad signature/message/hash/domain/e/salt/trailer/top-bit/range vectors",
+    "Duplicate-key/noncanonical/float JSON, framing lengths, batch reorder/duplicate/extra/truncated SCM_RIGHTS and EOF/timeout; verify all receivedFDs closed on every rejection",
+    "Root-owned enrollment creation/seals/O_RDONLY admission, UID1000 forged-root refusal, root issuer closure/key transition and no private key in files/FDs/env/archive",
+    "Actual fixed-profile caller exe/ns/cgroup/LSM reads, SO_PEERSEC, cross-PID-namespace SO_PEERCRED, readonly socket bind mount and independently reopened object FD delivery",
+    "Actual procfs fdinfo SCM_RIGHTS readonly reader survives app LSM mediation, fstatfs/hostproc dev and exact kernel d_path match, full raw SHA/flags/inode/flock",
+    "kcmp(KCMP_FILE) actual valid own-role read check, originalFD lifecycle no replacement, all passedFD objects immutable/source or root-runtime or narrow procfs; canonical OFD never delivered",
+    "Actual pre-key irreversible execve/execveat/fork/vfork/clone/clone3 and dumpability-reset denial probes, pinned exact filter bytes/source; no privilege fallback"
+  ],
+  "positive_live_route": "NOT_RUN",
+  "full_stage_A_Stage_B": "NOT_RUN",
+  "candidate_or_source_approval_is_execution_admission": false
+}

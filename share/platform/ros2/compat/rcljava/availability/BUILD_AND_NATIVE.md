@@ -1,3 +1,5 @@
+Current canonical Java guest source: `include/platform/ros/transplate/ros2/rcljava/v0_1_0/src/main/java`. The old compatibility-tree and retired source-layout commands below are historical local-model records, not current public build/test or native/full-Wasm qualification. The current source profile and example use the installed SDK and standard `xmake` / `xmake test` entrypoints.
+
 # Qualification recipe for the optional Java availability cohort
 
 These are instructions for the separately authorized executor. The author has not invoked any command, compiler, probe, model, producer, Guest or Native executable in this recipe. Source compatibility, local JVM models, accepted Wasm imports and actual Native interoperability are distinct qualifications.

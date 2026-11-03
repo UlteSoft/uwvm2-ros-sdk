@@ -13,6 +13,9 @@
 #include "custom_topics.h"
 #include "native_rmw_publisher.h"
 #include "native_rmw_subscription.h"
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+#include "serialized_observation.h"
+#endif
 
 namespace uwvm2::ros_gateway::ros2_custom_topics
 {
@@ -25,10 +28,39 @@ namespace uwvm2::ros_gateway::ros2_custom_topics
         if(data.size()>limit(cap,"max-message-bytes")) { return {90,{}}; }
         Native native;
         if(!Codec::decode(data.data(),data.size(),native)||!Codec::valid(native)) { return {22,{}}; }
+        bool wants_serialized{};
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+        auto request=native_observation::active_call;
+        wants_serialized=request&&request->output&&!request->output->type_support_path(cap.type).empty();
+        if(wants_serialized)
+        {
+            std::vector<std::uint8_t> roundtrip;
+            if(!Codec::encode(native,roundtrip)||roundtrip!=data)return {22,{}};
+        }
+#endif
         auto found{publishers_.find(cap.alias)};
         if(found==publishers_.end())
         {
             auto configured{ros2_qos::configured(cap)};
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+            if(wants_serialized)
+            {
+                using entity_type=serialized_observation::publisher<Native>;
+                if constexpr(!ros2_qos::supports_entity_qos<entity_type>::value)return {95,{}};
+                auto source=capture_endpoint(*request,cap);
+                if(!source)return {13,{}};
+                auto library=std::make_shared<rcpputils::SharedLibrary>(request->output->type_support_path(cap.type));
+                rclcpp::PublisherOptions options;options.use_intra_process_comm=rclcpp::IntraProcessSetting::Disable;
+                auto entity=std::make_shared<entity_type>(node_->get_node_base_interface().get(),library,cap.resource,cap.type,configured,options,4096);
+                node_->get_node_topics_interface()->add_publisher(entity,nullptr);
+                bool admitted{};try{auto actual=entity->get_topic_name();admitted=actual&&std::string_view{actual}==cap.resource&&ros2_qos::entity(*entity,configured);}catch(std::exception const&){}
+                if(!admitted){entity.reset();notify();return {95,{}};}
+                found=publishers_.emplace(cap.alias,publisher_entry{cap,std::move(entity),true,request->output,source}).first;
+                native_topic_observation::announce(request->output,source);
+            }
+            else
+#endif
+            {
             if constexpr(!ros2_qos::supports_entity_qos<rclcpp::Publisher<Native>>::value) { return {95,{}}; }
             auto entity{ros2_compat::create_publisher<Native>(node_,cap.resource,configured)};
             bool admitted{};
@@ -41,6 +73,7 @@ namespace uwvm2::ros_gateway::ros2_custom_topics
             if(!admitted)
             { entity.reset();notify();return {95,{}}; }
             found=publishers_.emplace(cap.alias,publisher_entry{cap,std::move(entity)}).first;
+            }
         }
         // Protect the typed cast even when called directly by a native
         // fixture: a policy alias cannot be reused with another descriptor,
@@ -48,6 +81,16 @@ namespace uwvm2::ros_gateway::ros2_custom_topics
         auto const& previous{found->second.capability};
         if(previous.operation!=cap.operation||previous.resource!=cap.resource||previous.type!=cap.type||
            previous.type_identity!=cap.type_identity||previous.limits!=cap.limits) { return {13,{}}; }
+        if(found->second.serialized!=wants_serialized)return {17,{}};
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+        if(wants_serialized)
+        {
+            auto const& entry=found->second;
+            native_topic_observation::publication observation{entry.capture_writer,entry.capture_binding,data};
+            std::static_pointer_cast<serialized_observation::publisher<Native>>(entry.entity)->publish_observed(native,observation);
+        }
+        else
+#endif
         std::static_pointer_cast<rclcpp::Publisher<Native>>(found->second.entity)->publish(native);
         return {};
     }
@@ -64,6 +107,44 @@ namespace uwvm2::ros_gateway::ros2_custom_topics
         if(subscribers_.count(cap.alias)) { return {17,{}}; }
         std::weak_ptr<event_queue> weak{queue};
         auto verified{std::make_shared<std::atomic<bool>>(false)};
+#if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+        if(queue->capture_binding)
+        {
+            if(!queue->capture_writer||queue->observer)return {95,{}};
+            using entity_type=serialized_observation::subscription;
+            if constexpr(!ros2_qos::supports_entity_qos<entity_type>::value)return {95,{}};
+            auto path=queue->capture_writer->type_support_path(cap.type);if(path.empty())return {95,{}};
+            auto library=std::make_shared<rcpputils::SharedLibrary>(path);
+            serialized_observation::require_paired_type_support<Native>(*library,cap.type);
+            auto callback=[weak,verified,descriptor](serialized_observation::sample captured)
+            {
+                auto selected=weak.lock();if(!selected||!verified->load(std::memory_order_acquire))return;
+                try
+                {
+                    auto message=native_topic_observation::deserialize<Native>(captured);
+                    if(!Codec::valid(message)){selected->capture_writer->lost();return;}
+                    std::size_t active_bytes{};
+                    if constexpr(bounded_generated_codec<Codec>::value){if(!Codec::encoded_size(message,active_bytes)){selected->capture_writer->lost();return;}}
+                    else active_bytes=Codec::wire_bytes;
+                    if(active_bytes>limit(selected->capability,"max-message-bytes")){selected->capture_writer->lost();return;}
+                    std::vector<std::uint8_t> data;
+                    if(!Codec::encode(message,data)||!ipc::validate_custom_topic(*descriptor,data.data(),data.size())){selected->capture_writer->lost();return;}
+                    if(!verified->load(std::memory_order_acquire))return;
+                    native_topic_observation::delivery(selected,captured,std::move(data));
+                }
+                catch(std::exception const&){selected->capture_writer->lost();}
+            };
+            auto configured=ros2_qos::configured(cap);rclcpp::SubscriptionOptions options;
+            options.use_intra_process_comm=rclcpp::IntraProcessSetting::Disable;
+            auto entity=std::make_shared<entity_type>(node_->get_node_base_interface().get(),library,cap.resource,cap.type,configured,options,4096,std::move(callback));
+            node_->get_node_topics_interface()->add_subscription(entity,nullptr);
+            bool admitted{};try{auto actual=entity->get_topic_name();admitted=actual&&std::string_view{actual}==cap.resource&&ros2_qos::entity(*entity,configured);}catch(std::exception const&){}
+            if(!admitted){entity.reset();notify();return {95,{}};}
+            subscribers_.emplace(cap.alias,subscriber_entry{verified,queue,std::move(entity),queue->capture_writer,queue->capture_binding});
+            native_topic_observation::announce(queue->capture_writer,queue->capture_binding);
+            verified->store(true,std::memory_order_release);return {};
+        }
+#endif
         auto callback{[weak,verified,descriptor](std::shared_ptr<Native const> message)
         {
             if(!verified->load(std::memory_order_acquire)||!message||!Codec::valid(*message)) { return; }

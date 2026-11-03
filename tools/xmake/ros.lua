@@ -15,6 +15,12 @@ end
 local sdk_root = path.directory(path.directory(path.absolute(os.scriptdir())))
 includes(path.join(sdk_root, "tools/xmake/targets.lua"))
 set_policy("run.autobuild", false)
+-- Every application loads the same mandatory test accounting, including a
+-- directly selected independent child description. An empty native Xmake test
+-- selection must fail rather than return a misleading successful command.
+if not uwvm_register_required_test then
+    includes(path.join(sdk_root, "tools/shared/xmake/simulation_example.lua"))
+end
 
 rule("ros.wasm.source")
     set_extensions(".c", ".cc", ".cpp", ".cxx", ".m", ".go", ".rs", ".ts", ".mts",
@@ -125,6 +131,34 @@ function set_wasm_entry(entry)
         entry = "invalid"
     end
     set_values("ros.sdk.entry", entry)
+end
+
+-- @brief Select a Wasm artifact contract independently of Xmake's file kinds.
+-- @param kind binary, static, dynamic (one imported heap), or independent.
+-- @details Dynamic and independent produce Core .wasm libraries. Existing
+-- set_kind("shared") keeps its module-owned-memory Core preload behavior.
+function set_wasm_kind(kind)
+    local native = {binary = "binary", static = "static", dynamic = "shared", independent = "shared"}
+    if not check(type(kind) == "string" and native[kind], "artifact_kind",
+                 "Select binary, static, dynamic or independent Wasm semantics") then return end
+    set_kind(native[kind])
+    set_values("ros.sdk.artifact_kind", kind)
+end
+
+-- @brief Name the one explicit imported communication/shared memory.
+-- @param module Exact preload module identity, resolved by the runtime loader.
+-- @param name Exact exported memory name; this is never a host pointer.
+-- @details A build records an import requirement, not a runtime memory binding
+-- or grant. Width, ownership and actual indices are checked in emitted Wasm.
+function set_wasm_memory_import(module, name)
+    local function valid(value)
+        return type(value) == "string" and #value > 0 and #value <= 255
+            and not value:find("%z")
+    end
+    if not check(valid(module) and valid(name), "memory_import",
+                 "Name one explicit Wasm module and exported memory") then return end
+    set_values("ros.sdk.memory_module", module)
+    set_values("ros.sdk.memory_export", name)
 end
 
 -- @brief Request named Wasm Core features without silently enabling host grants.

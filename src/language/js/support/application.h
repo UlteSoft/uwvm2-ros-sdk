@@ -10,7 +10,9 @@
 #ifndef UWVM_EMBEDDED_APPLICATION_H
 #define UWVM_EMBEDDED_APPLICATION_H
 #include <stdint.h>
+#ifndef UWVM_APPLICATION_CAPACITY
 #define UWVM_APPLICATION_CAPACITY 4194304u
+#endif
 
 /**
  * @brief Retain the full slot with a nonzero guard and volatile runtime length.

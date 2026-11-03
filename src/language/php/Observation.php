@@ -21,6 +21,71 @@ final class PhpObservation
             'rpc_status' => null, 'wire_hex' => '', 'value' => null];
     }
 
+    /**
+     * @brief Encode one complete generated value and publish it once in Zend Wasm.
+     * @param string $alias Explicitly granted publisher alias for this native type.
+     * @param object $message Trusted generated record with SCHEMA and encode().
+     * @return array Separate publish/cleanup facts; response_present stays false.
+     * @details Encoding and complete bounds are checked before acquisition.
+     * publish_invoked means one raw call was attempted; publish_accepted means
+     * that call returned zero, not that a subscriber acknowledged delivery.
+     * QoS/type registration remain explicit host policy. No owner or pointer
+     * escapes, and cleanup failure never replays or reverses a publication.
+     * This is typed-copy migration, not rcl_publish's pointer/allocation ABI.
+     * @throws \Throwable Unexpected encoding/native exceptions after one cleanup.
+     */
+    public static function publish(string $alias, object $message): array
+    {
+        $result = self::outcome();
+        $result['publish_invoked'] = false;
+        $result['publish_accepted'] = false;
+        $class = get_class($message);
+        if (!defined($class . '::SCHEMA') || !method_exists($message, 'encode'))
+        {
+            $result['primary'] = 22;
+            return $result;
+        }
+        $schema = $class::SCHEMA;
+        if (!is_array($schema) || !isset($schema['minimum'], $schema['maximum'])
+            || !is_int($schema['minimum']) || !is_int($schema['maximum'])
+            || $schema['minimum'] < 0 || $schema['maximum'] < $schema['minimum']
+            || $schema['maximum'] > 32768)
+        {
+            $result['primary'] = 22;
+            return $result;
+        }
+        try
+        {
+            $bytes = $message->encode();
+            if (!is_string($bytes) || strlen($bytes) < $schema['minimum']
+                || strlen($bytes) > $schema['maximum'])
+            {
+                $result['primary'] = 22;
+                return $result;
+            }
+        }
+        catch (\InvalidArgumentException|\RangeException $invalid)
+        {
+            $result['primary'] = 22;
+            return $result;
+        }
+        $result['wire_hex'] = bin2hex($bytes);
+        [$owner, $result['primary']] = Capability::open($alias);
+        if ($owner === null) { return $result; }
+        try
+        {
+            $result['publish_invoked'] = true;
+            $result['primary'] = $owner->invoke('topic_publish', $bytes)[0];
+            $result['publish_accepted'] = $result['primary'] === 0;
+        }
+        finally
+        {
+            $result['cleanup_present'] = true;
+            $result['cleanup'] = $owner->close();
+        }
+        return $result;
+    }
+
     /** @brief Receive one complete original typed message or service response.
      * @param string $alias Exact explicitly granted UTF-8 capability alias.
      * @param string $class Complete original generated record class.

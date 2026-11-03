@@ -1,0 +1,85 @@
+{
+  "format": "uwvm-sdk-trusted-control-required-rejections-v1",
+  "version": "0.2.0",
+  "required": 12,
+  "selected": 0,
+  "executed": 0,
+  "passed": 0,
+  "not_run": 12,
+  "cases": [
+    {
+      "id": "unknown-host-or-UID-only-trust",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "wrong-controller-or-guardian-PID-birth",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "wrong-source-closure-or-retained-source-FD",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "wrong-interpreter-runtime-image-or-argv",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "unexpected-active-effective-permitted-inheritable-ambient-capability",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "wrong-approved-bounding-set-NNP-seccomp-or-supplementary-groups",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "application-claiming-trusted-control-profile",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "wrong-canonical-inode-or-nonowner-lease-FD",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "same-process-controller-guardian-or-missing-inherited-guardian-FD",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "stale-replayed-or-split-observation-generation",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "escaped-delegated-or-wrong-budget-cgroup",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    },
+    {
+      "id": "unapproved-or-application-writable-context-and-approval-record",
+      "required": true,
+      "status": "NOT_RUN",
+      "evidence": "Independent actual actor/kernel/source/FD/lifecycle case; edited offline JSON alone does not qualify this rejection."
+    }
+  ],
+  "positive_live_route": "NOT_RUN",
+  "full_stage_A_Stage_B": "NOT_RUN"
+}

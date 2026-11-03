@@ -546,12 +546,17 @@ namespace uwvm2::ros_gateway::ros2_custom_topics
         {
             ros::capability_spec capability;
             std::shared_ptr<rclcpp::PublisherBase> entity;
+            bool serialized{};
+            std::shared_ptr<native_observation::writer> capture_writer;
+            std::shared_ptr<native_observation::endpoint const> capture_binding;
         };
         struct subscriber_entry
         {
             std::shared_ptr<std::atomic<bool>> verified;
             std::weak_ptr<event_queue> queue;
             std::shared_ptr<rclcpp::SubscriptionBase> entity;
+            std::shared_ptr<native_observation::writer> capture_writer;
+            std::shared_ptr<native_observation::endpoint const> capture_binding;
         };
         std::shared_ptr<::uwvm2::ros_gateway::ros2_compat::node_type> node_;
         std::map<std::string,publisher_entry> publishers_;
@@ -574,9 +579,13 @@ namespace uwvm2::ros_gateway::ros2_custom_topics
         adapter& operator=(adapter const&)=delete;
         ~adapter()
         {
-            for(auto const& item:subscribers_)
-            { item.second.verified->store(false,std::memory_order_release);if(auto queue=item.second.queue.lock()) { queue->deactivate(); } }
-            subscribers_.clear();publishers_.clear();notify();
+            while(!subscribers_.empty())close(subscribers_.begin()->first);
+            for(auto& item:publishers_)if(item.second.capture_binding)
+            {
+                item.second.entity.reset();native_observation::record closed;closed.event=native_observation::phase::endpoint_closed;
+                closed.source=item.second.capture_binding.get();(void)item.second.capture_writer->emit(closed);
+            }
+            publishers_.clear();notify();
         }
 
         ipc::call_result publish(ros::capability_spec const& cap,std::vector<std::uint8_t> const& data)
@@ -604,9 +613,31 @@ namespace uwvm2::ros_gateway::ros2_custom_topics
         void close(std::string const& alias) noexcept
         {
             auto found{subscribers_.find(alias)};
+            auto publisher=publishers_.find(alias);
             if(found!=subscribers_.end())
-            { found->second.verified->store(false,std::memory_order_release);if(auto queue=found->second.queue.lock()) { queue->deactivate(); }subscribers_.erase(found); }
-            publishers_.erase(alias);notify();
+            {
+                found->second.verified->store(false,std::memory_order_release);
+                if(auto queue=found->second.queue.lock()) { queue->deactivate(); }
+                found->second.entity.reset();
+                if(found->second.capture_binding)
+                {
+                    native_observation::record closed;closed.event=native_observation::phase::endpoint_closed;
+                    closed.source=found->second.capture_binding.get();auto request=native_observation::active_call;
+                    if(request&&request->connection==found->second.capture_binding->owner)closed.request_id=request->request_id;
+                    (void)found->second.capture_writer->emit(closed);
+                }
+                subscribers_.erase(found);
+            }
+            if(publisher!=publishers_.end()&&publisher->second.capture_binding)
+            {
+                native_observation::record closed;closed.event=native_observation::phase::endpoint_closed;
+                closed.source=publisher->second.capture_binding.get();
+                auto request=native_observation::active_call;
+                if(request&&request->connection==publisher->second.capture_binding->owner)closed.request_id=request->request_id;
+                publisher->second.entity.reset();
+                (void)publisher->second.capture_writer->emit(closed);
+            }
+            if(publisher!=publishers_.end())publishers_.erase(publisher);notify();
         }
     };
 }

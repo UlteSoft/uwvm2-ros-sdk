@@ -31,8 +31,8 @@
     },
     {
       "path": "src/language/js/support/application.h",
-      "bytes": 1460,
-      "sha256": "d0c1a3b869c9624a72fc0e74925a8883a9b7f481dd0d050f6175da13dbfdd5b1"
+      "bytes": 1501,
+      "sha256": "00626c597aaef0f27aa4287f642bffa2eaecf0d3e7f015b7cf05682f00bb0c44"
     },
     {
       "path": "src/language/js/upstream/LICENSE",
@@ -136,8 +136,8 @@
     },
     {
       "path": "tools/language/js/pack.lua",
-      "bytes": 13396,
-      "sha256": "92fd918503bb627a1675f2f402f65d7ab0259cbdabf65dc73cdb0d5daead153a"
+      "bytes": 17494,
+      "sha256": "4c929e48355e8ec21f29b008348fbeac0a2e6eb3e3caf1c2f0eb461fec75c04b"
     },
     {
       "path": "tools/language/js/records.py",

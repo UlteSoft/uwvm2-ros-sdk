@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/FFTAI/Wiki-GRx-Gazebo",
+  "commit": "36170420c2eaa9ca5c0cad7a0c4abdfee2344efe",
+  "Git_blob_SHA": "c755c3fb226d511ea74f4552d1f779bead37edae",
+  "sha256": "431c5ec0e19c88d4b18d0c70abfe64bb3fbc9d59a9b7e3b4fb79347d95a3619a",
+  "bytes": 51932,
+  "native_axis": "0 1 6.8349E-05",
+  "native_bounds_radians": {
+    "lower": "-0.09",
+    "upper": "1.92"
+  },
+  "license_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+  "license_source": "https://github.com/FFTAI/Wiki-GRx-Gazebo/blob/36170420c2eaa9ca5c0cad7a0c4abdfee2344efe/LICENCE",
+  "packet_model_path": "official-models/fourier/model.urdf"
+}

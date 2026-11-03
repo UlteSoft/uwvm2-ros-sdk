@@ -1,0 +1,85 @@
+{
+  "cases": [
+    {
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "assertions": [
+          "function-deferred",
+          "function-arguments-result",
+          "task-fifo",
+          "task-exception-result",
+          "completion-callback-deferred",
+          "late-callback-deferred",
+          "late-callback-executed",
+          "callback-removal",
+          "coroutine-suspended",
+          "coroutine-await-resume",
+          "yield-none-next-spin",
+          "await-or-execute-normal-arguments",
+          "await-or-execute-coroutine",
+          "normal-callback-future-not-implicitly-awaited",
+          "foreign-executor-rejected",
+          "invalid-coroutine-yield-rejected",
+          "cancel-closes-and-unregisters-resume",
+          "future-cancel-not-finished",
+          "callback-error-preserves-terminal-result",
+          "late-direct-callback-error-propagates",
+          "callback-quota-before-registration",
+          "task-quota-before-execution",
+          "quota-slot-reuse-and-shutdown-cancel",
+          "callback-slot-reserved-before-completion",
+          "spin-reentry-denied-and-restored",
+          "unsupported-wait-has-no-task-effect",
+          "shutdown-rejects-new-work"
+        ],
+        "format": "uwvm-python-wasm-async-task-assertions-v1",
+        "independent_instance_isolation_qualified": false,
+        "native_ROS_roundtrip_qualified": false,
+        "status": "GUEST_ASSERTIONS_COMPLETE"
+      },
+      "id": "required-genuine-python-task-semantics"
+    }
+  ],
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "rclpy-jazzy-async-tasks-v2",
+  "independent_instance_isolation_qualified": false,
+  "native_ROS_audit_and_official_communication_qualified": false,
+  "public_inputs": [
+    {
+      "path": "main.py",
+      "scope": "example",
+      "sha256": "c6cdf5e1d8edc56fca26712baf0d2088f1b29fc6a4b45a1b8690fa6bc881d78a"
+    },
+    {
+      "path": "binding-requirements.json",
+      "scope": "example",
+      "sha256": "0a1b26533144ba6135028cae7f77f2a7981ea3622de49038e3864e70f3a9ebe8"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v2/bundle.json",
+      "scope": "sdk",
+      "sha256": "3290a16b4a7e3a9f04283def6b8d757a4630ad2c14c58cdd2170cc9f9bac7f8d"
+    },
+    {
+      "path": "include/platform/ros/transplate/ros2/rclpy/v2/profile.json",
+      "scope": "sdk",
+      "sha256": "d6d8166fde965b64715a35986548b84c4738c67dc213f8bfe3218f1b03f66c4f"
+    },
+    {
+      "path": "src/platform/ros/py/_native.c",
+      "scope": "sdk",
+      "sha256": "e25a651450323243f7a06d167b2254d57eee97c57b37c58f136ae8730cb1ca3d"
+    },
+    {
+      "path": "lib/language/python/wasm32-wasip1/core/core.json",
+      "scope": "sdk",
+      "sha256": "ac74e250e64fea3b7c535a29e0314ec4f94571319d50d9ca77a571abb6d1d866"
+    },
+    {
+      "path": "lib/language/python/wasm32-wasip1/core/libuwvm-engine.a",
+      "scope": "sdk",
+      "sha256": "fcbe4a07910577d8641f0ce295cb5e4c428f5f1fed8de38a22e1b002b9dcc9fa"
+    }
+  ]
+}

@@ -78,12 +78,21 @@ end
 -- @param action Provider-owned source and include-path descriptor.
 -- @return Independent argument vector; caller may append compile/link operands.
 function cflags(root, selected, action)
+	-- Generated C must use the same target/profile C headers as its sysroot.
+	-- Keep the ABI leaf ahead of the common include root; never search PATH or
+	-- a host include directory to repair a missing target distribution.
+	local c_header_relative = path.join(selected.include_dir, selected.triple)
+	local c_header_dir = installed(root, c_header_relative)
+	assert(os.isdir(c_header_dir) and os.isfile(path.join(c_header_dir, "assert.h")),
+		"Install the paired target C headers: " .. c_header_relative)
 	local flags = {
 		"--target=" .. selected.triple,
 		"--sysroot=" .. installed(root, selected.sysroot),
 		"-resource-dir=" .. installed(root, selected.resource_dir),
 		"-fintegrated-cc1",
 		"-no-canonical-prefixes",
+		"-isystem",
+		c_header_dir,
 		"-isystem",
 		installed(root, selected.include_dir),
 		"-O2",

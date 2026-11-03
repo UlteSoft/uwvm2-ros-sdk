@@ -1,0 +1,9 @@
+{
+  "format": "uwvm-sdk-approved-kernel-witness-set-v1",
+  "version": "0.3.0",
+  "default_decision": "DENY",
+  "approved": [],
+  "production_approved": [],
+  "candidate_observation_is_approval": false,
+  "requires_exact_fixed_existing_root_issuer_and_full_witness_inputs": true
+}

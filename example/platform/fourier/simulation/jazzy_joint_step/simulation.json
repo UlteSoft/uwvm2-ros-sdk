@@ -1,0 +1,164 @@
+{
+  "format": "uwvm-sdk-simulation-example-v1",
+  "api_version": 1,
+  "profile": {
+    "id": "fourier-jazzy-ubuntu24-x86_64-ideal-v1",
+    "execution_class": "software_simulation",
+    "scope": "Official ROS GenericSystem/JTC ideal joint reference only; vendor physics and remaining matrix remain mandatory"
+  },
+  "vendor_profile": "profiles/jazzy-ubuntu24-x86_64-ideal-v1.json",
+  "frozen_wasm": {
+    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
+  },
+  "python_dependencies": [
+    "rclpy",
+    "action_msgs",
+    "control_msgs",
+    "sensor_msgs",
+    "controller_manager_msgs"
+  ],
+  "scenarios": [
+    {
+      "id": "normal",
+      "kind": "joint",
+      "expected_vm_exit": 0,
+      "expected_final_rad": 0.01,
+      "deadline_seconds": 30,
+      "expected_native_status": 4,
+      "expected_native_error": 0
+    },
+    {
+      "id": "default_deny",
+      "kind": "denied",
+      "expected_vm_exit": 13,
+      "expected_final_rad": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "ungranted_alias",
+      "kind": "denied",
+      "expected_vm_exit": 13,
+      "expected_final_rad": 0,
+      "deadline_seconds": 30
+    },
+    {
+      "id": "official_disable_commands",
+      "kind": "joint",
+      "expected_vm_exit": 5,
+      "expected_final_rad": 0,
+      "deadline_seconds": 30,
+      "expected_native_status": 6,
+      "expected_native_error": -5
+    }
+  ],
+  "uuid_correlation": "Require actual public VM runtime command-binding producer event; independently join its native UUID with native_terminal and official GetResult, then verify post-result native state. Missing runtime producer is BLOCKED; no derived synthetic VM UUID.",
+  "required_runtime_observation_contracts": [
+    "uwvm-sdk-simulation-command-binding-v1"
+  ],
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "802fea92779f35fc73074863ea5e1a3935892117e8fe70e23b0a0448caff8bf1"
+    },
+    {
+      "scope": "example",
+      "path": "application/main.c",
+      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
+    },
+    {
+      "scope": "example",
+      "path": "models/LICENSE.upstream",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "scope": "example",
+      "path": "models/model.urdf",
+      "sha256": "431c5ec0e19c88d4b18d0c70abfe64bb3fbc9d59a9b7e3b4fb79347d95a3619a"
+    },
+    {
+      "scope": "example",
+      "path": "models/origin.json",
+      "sha256": "9ce0f4e83fef0e9732b11e1b853c9d77db04c42961ade0e7e6ef6066b703599c"
+    },
+    {
+      "scope": "example",
+      "path": "profiles/adapter-v1.template.json",
+      "sha256": "61aa362a902959542b91b09e5742e7db45a296c7629405a611cf9063149886cf"
+    },
+    {
+      "scope": "example",
+      "path": "profiles/dependencies-v1.lock.json",
+      "sha256": "4bd336de74a9f62f70631afd4f13e4a09e79dff4e5a3b45a0e5f4d8390a713de"
+    },
+    {
+      "scope": "example",
+      "path": "profiles/grant-v1.template.json",
+      "sha256": "cc1df847e95c2c9458152781ecaccd5ec1961ce258ee88f13ff37a42d666de43"
+    },
+    {
+      "scope": "example",
+      "path": "profiles/jazzy-ubuntu24-x86_64-ideal-v1.json",
+      "sha256": "664a86064c04f2cc9a17e5de39f9fd574cd0b3b8898521482256e90d5c49a488"
+    },
+    {
+      "scope": "example",
+      "path": "profiles/native-public-source-v1.json",
+      "sha256": "b03f8f6d0a8b3b65c0f38583d42535d57800939f7253cd845f8b44bbfbbd5031"
+    },
+    {
+      "scope": "example",
+      "path": "profiles/native-runtime-images-v1.json",
+      "sha256": "42a3ce848ee39b62b9b6ab96ba79d95d45088fe85e01bf50961ef540b95e7672"
+    },
+    {
+      "scope": "example",
+      "path": "profiles/remaining-mandatory-matrix.json",
+      "sha256": "aa79f6f5defc3f611fd57548b359c0b7ae3ef9b56337f82a6a90ee60cff5d0cf"
+    },
+    {
+      "scope": "example",
+      "path": "scene/build.py",
+      "sha256": "68a1d879f3512b37a6db184e8eba8e566e23996621cedc84e77ecf7db679a554"
+    },
+    {
+      "scope": "example",
+      "path": "scene/example_support.py",
+      "sha256": "c18da7fae126dc359f852eac65883f30f7ffc4f6810737cbdbbe7bc64baf94ce"
+    },
+    {
+      "scope": "example",
+      "path": "scene/official.launch.py",
+      "sha256": "b2eb6ca5b6c804b48daa632d0a7a99a9a09002622141a957a0ba14675fa8b356"
+    },
+    {
+      "scope": "example",
+      "path": "scene/prepare.py",
+      "sha256": "fbaeabe2a5018717f8d8c5e0ab350e379591ca9f3c3683a3b5caa7817e0607d0"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "e845bacc7d7c5c2378c3b529557dbea95ec3e86d7d193318a4bfca7efed19366"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/simulation_example.py",
+      "sha256": "ba25a19a15d2ee5a12787518c8dae650d77dc3eafc0007fe5fa23dd4c56f04f2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/simulation_example.lua",
+      "sha256": "c55968e054ca45a1b93cca117147a3b09752aa142a34cbce584bec88126a0ccd"
+    }
+  ],
+  "native_bypass_audit": {
+    "native_observer": "Removed from public SDK; no fallback path",
+    "native_dependent_driver": "Removed from public SDK; no private dispatch",
+    "business_application": "Frozen C0 retained; required legacy client/query/callback/feedback migration unqualified",
+    "legacy_ros_transplate": "BLOCKED_REQUIRED_REAL_GUEST_CLIENT_IMPLEMENTATION",
+    "single_executable_release": "BLOCKED_SEPARATE_NATIVE_HOST_AND_EXTERNAL_OFFICIAL_ROS_CLOSURE"
+  },
+  "status": "BLOCKED_REQUIRED_WASM_ROS_QUERY_FEEDBACK"
+}

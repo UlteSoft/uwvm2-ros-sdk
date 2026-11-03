@@ -1,0 +1,122 @@
+{
+  "format": "sdk02-official-simulation-example-profile-v1",
+  "id": "fanuc-crx10ia-official-mock-jazzy",
+  "execution_class": "software_simulation",
+  "state": "BLOCKED_SDK_NATIVE_ROS_QUERY_IMPLEMENTATION_QUARANTINED",
+  "official_scope": "Official mock_components/GenericSystem; ideal command/state mirroring",
+  "ros_release": "jazzy",
+  "ros_abi": "x86_64 Linux; exact installed ABI/RMW/security are external pinned prerequisites",
+  "original_controller_type": "fanuc_controllers/ScaledJointTrajectoryController",
+  "application": {
+    "source": "example/platform/ros/portable/v0_1_0/joint_step/main.c",
+    "source_sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616",
+    "build_project": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
+    "target": "portable-joint-step-v0-1-0",
+    "frozen_artifact": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
+    "bytes": 4449,
+    "whole_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+    "test_recompilation_relink_or_import_rewrite": false,
+    "example_source": "main.c"
+  },
+  "official_source": {
+    "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
+    "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
+    "license": "Apache-2.0"
+  },
+  "mapping_request": "mapping.request.json",
+  "grant_requirements": "authority.request.json",
+  "required_scenarios": [
+    {
+      "name": "unchanged_wasm_joint_step",
+      "required": true,
+      "assertions": [
+        "Same complete frozen Wasm SHA before and after actual VM execution",
+        "Actual authorized portable host and native ROS backend",
+        "Exact native goal UUID and successful native result",
+        "Independent fresh official provider joint state matches the command within canonical mapping tolerance",
+        "Reverse actual JointState consumed by executing Wasm read_state"
+      ]
+    },
+    {
+      "name": "denied_permission_no_native_effect",
+      "required": true,
+      "assertions": [
+        "Separate missing/denied authority must refuse",
+        "Independent native goal/state witness proves no native effect"
+      ]
+    },
+    {
+      "name": "bounds_stale_foreign",
+      "required": true,
+      "assertions": [
+        "Boundary, stale and foreign references refuse without native effect"
+      ]
+    },
+    {
+      "name": "cancel_timeout_disconnect",
+      "required": true,
+      "assertions": [
+        "Owned operation correlation, bounded cancellation and timeout",
+        "Disconnect/reconnect invalidates stale native ownership"
+      ]
+    },
+    {
+      "name": "pause_restart_update_rollback",
+      "required": true,
+      "assertions": [
+        "Real simulator pause/resume and restart",
+        "Update rollback preserves explicit permissions and rejects old epochs"
+      ]
+    }
+  ],
+  "remaining_required_dimensions": [
+    "All applicable official modes/models/releases/ABI/RMW/security profiles",
+    "Required multi-language and binary/static/shared widths, debug/audit and native performance",
+    "Official commercial controller emulators; licensed software must be installed separately",
+    "Sensor/perception capabilities beyond joint state, including reverse execution into Wasm"
+  ],
+  "missing_required_dependency_behavior": {
+    "status": "BLOCKED",
+    "overall_success": false,
+    "implicit_skip": false,
+    "zero_test_success": false
+  },
+  "current_blocking_prerequisites": "SDK01 common Xmake test integration; shared native binding must support original FANUC ScaledJointTrajectoryController",
+  "qualification": {
+    "BUILT": "NOT_RUN",
+    "WASM_EMITTED": "NOT_RUN",
+    "VM_EXECUTED": "NOT_RUN",
+    "NATIVE_ROS": "NOT_RUN",
+    "OFFICIAL_SIMULATION": "NOT_RUN",
+    "QEMU": "NOT_RUN",
+    "NATIVE_PERFORMANCE": "NOT_RUN"
+  },
+  "physical_robot_authorized": false,
+  "scene": {
+    "launch": "scene.launch.py",
+    "namespace": "fanuc_simulation",
+    "xacro_package": "fanuc_hardware_interface",
+    "xacro": "robot/crx10ia.urdf.xacro",
+    "official_xacro_arguments": [
+      "use_mock:=true",
+      "robot_ip:=127.0.0.1",
+      "prefix:=",
+      "origin_xyz:=0 0 0",
+      "origin_rpy:=0 0 0",
+      "parent_link:=world",
+      "child_link:=end_effector"
+    ],
+    "controller_yaml": "fanuc_hardware_interface/config/ros2_controllers.yaml",
+    "vendor_source_or_controller_type_changed": false
+  },
+  "public_build_target": "fanuc-official-joint-step",
+  "public_test_suite": "fanuc-official-joint-step/official-scenarios",
+  "provider_source_lock": "provider.source.lock.json",
+  "declared_package_dependencies": "provider.dependencies.json",
+  "legacy_ros_transplate": {
+    "status": "BLOCKED_REAL_GUEST_ROS_LIBRARY_PORTS_AND_UNIFIED_FEEDBACK_AUDIT_NOT_QUALIFIED",
+    "read_only_native_witness_is_full_Wasm_acceptance": false,
+    "host_query_implementation_present_in_public_SDK": false,
+    "business_implementation": "main.c unchanged Wasm portable reference; genuine legacy ROS library examples require shared port integration"
+  }
+}

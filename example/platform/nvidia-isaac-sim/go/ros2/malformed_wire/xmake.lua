@@ -49,6 +49,9 @@ local sdk = root
 target("malformed_wire")
     set_language("go")
     set_ros_platform("nvidia-isaac-sim")
+    -- SDK10: example-local object/dependency output for Linux child-Xmake jobs.
+    set_objectdir(path.join(os.scriptdir(), ".uwvm-ros", "objects", "$(plat)", "$(arch)", "$(mode)"))
+    set_dependir(path.join(os.scriptdir(), ".uwvm-ros", "dependencies", "$(plat)", "$(arch)", "$(mode)"))
     set_ros2_version("jazzy")
     set_values("ros.vendor.transport", "cpu-value")
     set_ros_scenario("malformed_wire")

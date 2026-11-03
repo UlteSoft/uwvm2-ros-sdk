@@ -1,0 +1,107 @@
+{
+  "schema": "sdk04-kinova-seven-joint-external-adapter-inputs-v1",
+  "platform_id": "kinova.gen3.external-cable.mock.jazzy",
+  "URDF_sha256": "bc2794800551813d930d1cb729b6b3a7230fff559628188df1ef8fc6ac37992d",
+  "official_source": {
+    "repository": "https://github.com/Kinovarobotics/ros2_kortex",
+    "commit": "462dab9aa4732d733be55e1846530dd920c7c7d3",
+    "mode": "official-mock-hardware",
+    "license_file": "vendor-prefix/share/kortex_description/LICENSE",
+    "license_sha256": "bac9561b1f2b94aad4e33e3379cf3e2d6cca140b0276339762f0d411b1e85610",
+    "scope": "Gen3 seven bounded joints, original external-cable GenericSystem model; full physics/sensor/assets/release coverage remains required"
+  },
+  "resources": {
+    "controller_status_service": "/controller_manager/list_controllers",
+    "joint_state_topic": "/joint_states",
+    "position_action": "/joint_trajectory_controller/follow_joint_trajectory"
+  },
+  "joints": [
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "upper_microrad": 6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "joint_1",
+      "sign": 1,
+      "slot": 0,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -2240000,
+      "upper_microrad": 2240000,
+      "max_step_microrad": 10000,
+      "native_joint": "joint_2",
+      "sign": 1,
+      "slot": 1,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "upper_microrad": 6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "joint_3",
+      "sign": 1,
+      "slot": 2,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -2570000,
+      "upper_microrad": 2570000,
+      "max_step_microrad": 10000,
+      "native_joint": "joint_4",
+      "sign": 1,
+      "slot": 3,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "upper_microrad": 6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "joint_5",
+      "sign": 1,
+      "slot": 4,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -2089999,
+      "upper_microrad": 2089999,
+      "max_step_microrad": 10000,
+      "native_joint": "joint_6",
+      "sign": 1,
+      "slot": 5,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "zero_offset_microrad": 0
+    },
+    {
+      "kind": "bounded_revolute",
+      "lower_microrad": -6283185,
+      "upper_microrad": 6283185,
+      "max_step_microrad": 10000,
+      "native_joint": "joint_7",
+      "sign": 1,
+      "slot": 6,
+      "source_unit": "rad",
+      "tolerance_microrad": 1000,
+      "zero_offset_microrad": 0
+    }
+  ],
+  "native_executable_sha256": "3730d41563eef7c0ee8a82bc1997bb6d884fbb5fa65e2b491761d518b75f7f79",
+  "whole_unchanged_Wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
+  "qualification": "SOURCE_CANDIDATE; actual public xmake/xmake test not yet run"
+}
